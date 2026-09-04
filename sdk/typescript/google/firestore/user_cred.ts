@@ -11,18 +11,10 @@ const UserCred_ResourceIdentityFields: FieldMap = {
 };
 
 export interface UserCredConfig {
-  /** Output only. The time the user creds were created. */
-  createTime?: string | Computed<string>;
   /** Identifier. The resource name of the UserCreds. Format: `projects/{project}/databases/{database}/userCreds/{user_creds}` */
   name?: string | Computed<string>;
   /** Describes a Resource Identity principal. */
   resourceIdentity?: UserCred_ResourceIdentity | Computed<UserCred_ResourceIdentity>;
-  /** Output only. The plaintext server-generated password for the user creds. Only populated in responses for CreateUserCreds and ResetUserPassword. */
-  securePassword?: string | Computed<string>;
-  /** Output only. Whether the user creds are enabled or disabled. Defaults to ENABLED on creation. */
-  state?: string | Computed<string>;
-  /** Output only. The time the user creds were last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface UserCredAttrs {
@@ -43,15 +35,11 @@ export interface UserCredAttrs {
 export const UserCred: ResourceBinding<UserCredConfig, UserCredAttrs> = {
   wireType: "google_firestore_user_cred",
   fields: {
-    createTime: "create_time",
     name: "name",
     resourceIdentity: {
       wireName: "resource_identity",
       kind: "object",
       fields: UserCred_ResourceIdentityFields,
     },
-    securePassword: "secure_password",
-    state: "state",
-    updateTime: "update_time",
   },
 };

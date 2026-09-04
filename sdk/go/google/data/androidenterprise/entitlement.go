@@ -4,13 +4,13 @@ package androidenterprise
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EntitlementConfig struct {
-	EnterpriseId any
+	EnterpriseId  any
 	EntitlementId any
-	UserId any
+	UserId        any
 }
 
 type EntitlementAttrs struct {
-	EnterpriseId any
+	EnterpriseId  any
 	EntitlementId any
 	// The ID of the product that the entitlement is for. For example, "app:com.google.android.gm".
 	ProductId any
@@ -22,8 +22,8 @@ type EntitlementAttrs struct {
 var Entitlement = ubx.DataSourceBinding{
 	WireType: "google_androidenterprise_entitlement",
 	Fields: ubx.FieldMap{
-		"EnterpriseId": ubx.FieldSpec{WireName: "enterprise_id"},
+		"EnterpriseId":  ubx.FieldSpec{WireName: "enterprise_id"},
 		"EntitlementId": ubx.FieldSpec{WireName: "entitlement_id"},
-		"UserId": ubx.FieldSpec{WireName: "user_id"},
+		"UserId":        ubx.FieldSpec{WireName: "user_id"},
 	},
 }

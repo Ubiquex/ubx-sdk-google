@@ -2,10 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ChannelConfig {
-  /** Output only. The activation token for the channel. The token must be used by the provider to register the channel for publishing. */
-  activationToken?: string | Computed<string>;
-  /** Output only. The creation time. */
-  createTime?: string | Computed<string>;
   /** Optional. Resource name of a KMS crypto key (managed by the user) used to encrypt/decrypt their event data. It must match the pattern `projects/* /locations/* /keyRings/* /cryptoKeys/*`. */
   cryptoKeyName?: string | Computed<string>;
   /** Optional. Resource labels. */
@@ -14,16 +10,6 @@ export interface ChannelConfig {
   name?: string | Computed<string>;
   /** The name of the event provider (e.g. Eventarc SaaS partner) associated with the channel. This provider will be granted permissions to publish events to the channel. Format: `projects/{project}/locations/{location}/providers/{provider_id}`. */
   provider?: string | Computed<string>;
-  /** Output only. The name of the Pub/Sub topic created and managed by Eventarc system as a transport for the event delivery. Format: `projects/{project}/topics/{topic_id}`. */
-  pubsubTopic?: string | Computed<string>;
-  /** Output only. Whether or not this Channel satisfies the requirements of physical zone separation */
-  satisfiesPzs?: boolean | Computed<boolean>;
-  /** Output only. The state of a Channel. */
-  state?: string | Computed<string>;
-  /** Output only. Server assigned unique identifier for the channel. The value is a UUID4 string and guaranteed to remain unchanged until the resource is deleted. */
-  uid?: string | Computed<string>;
-  /** Output only. The last-modified time. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface ChannelAttrs {
@@ -54,16 +40,9 @@ export interface ChannelAttrs {
 export const Channel: ResourceBinding<ChannelConfig, ChannelAttrs> = {
   wireType: "google_eventarc_channel",
   fields: {
-    activationToken: "activation_token",
-    createTime: "create_time",
     cryptoKeyName: "crypto_key_name",
     labels: "labels",
     name: "name",
     provider: "provider",
-    pubsubTopic: "pubsub_topic",
-    satisfiesPzs: "satisfies_pzs",
-    state: "state",
-    uid: "uid",
-    updateTime: "update_time",
   },
 };

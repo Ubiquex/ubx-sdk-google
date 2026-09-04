@@ -22,16 +22,16 @@ type InboundSamlSsoProfile_SpConfig struct {
 }
 
 var InboundSamlSsoProfile_IdpConfigFields = ubx.FieldMap{
-		"ChangePasswordUri": ubx.FieldSpec{WireName: "change_password_uri"},
-		"EntityId": ubx.FieldSpec{WireName: "entity_id"},
-		"LogoutRedirectUri": ubx.FieldSpec{WireName: "logout_redirect_uri"},
-		"SingleSignOnServiceUri": ubx.FieldSpec{WireName: "single_sign_on_service_uri"},
-	}
+	"ChangePasswordUri":      ubx.FieldSpec{WireName: "change_password_uri"},
+	"EntityId":               ubx.FieldSpec{WireName: "entity_id"},
+	"LogoutRedirectUri":      ubx.FieldSpec{WireName: "logout_redirect_uri"},
+	"SingleSignOnServiceUri": ubx.FieldSpec{WireName: "single_sign_on_service_uri"},
+}
 
 var InboundSamlSsoProfile_SpConfigFields = ubx.FieldMap{
-		"AssertionConsumerServiceUri": ubx.FieldSpec{WireName: "assertion_consumer_service_uri"},
-		"EntityId": ubx.FieldSpec{WireName: "entity_id"},
-	}
+	"AssertionConsumerServiceUri": ubx.FieldSpec{WireName: "assertion_consumer_service_uri"},
+	"EntityId":                    ubx.FieldSpec{WireName: "entity_id"},
+}
 
 type InboundSamlSsoProfileConfig struct {
 	// Immutable. The customer. For example: `customers/C0123abc`.
@@ -40,8 +40,6 @@ type InboundSamlSsoProfileConfig struct {
 	DisplayName any
 	// SAML IDP (identity provider) configuration.
 	IdpConfig any
-	// Output only. [Resource name](https://cloud.google.com/apis/design/resource_names) of the SAML SSO profile.
-	Name any
 	// SAML SP (service provider) configuration.
 	SpConfig any
 }
@@ -62,18 +60,17 @@ type InboundSamlSsoProfileAttrs struct {
 var InboundSamlSsoProfile = ubx.ResourceBinding{
 	WireType: "google_cloudidentity_inbound_saml_sso_profile",
 	Fields: ubx.FieldMap{
-		"Customer": ubx.FieldSpec{WireName: "customer"},
+		"Customer":    ubx.FieldSpec{WireName: "customer"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"IdpConfig": ubx.FieldSpec{
 			WireName: "idp_config",
-			Kind: "object",
-			Fields: InboundSamlSsoProfile_IdpConfigFields,
+			Kind:     "object",
+			Fields:   InboundSamlSsoProfile_IdpConfigFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
 		"SpConfig": ubx.FieldSpec{
 			WireName: "sp_config",
-			Kind: "object",
-			Fields: InboundSamlSsoProfile_SpConfigFields,
+			Kind:     "object",
+			Fields:   InboundSamlSsoProfile_SpConfigFields,
 		},
 	},
 }

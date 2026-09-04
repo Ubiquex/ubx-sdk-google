@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, DataSourceBinding } from "@ubx/sdk";
 
 export interface AnnouncementConfig {
-  name: string | Computed<string>;
 }
 
 export interface AnnouncementAttrs {
@@ -32,6 +31,5 @@ export interface AnnouncementAttrs {
 export const Announcement: DataSourceBinding<AnnouncementConfig, AnnouncementAttrs> = {
   wireType: "google_vmwareengine_announcement",
   fields: {
-    name: "name",
   },
 };

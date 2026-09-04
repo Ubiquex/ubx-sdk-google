@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, DataSourceBinding } from "@ubx/sdk";
 
 export interface NodeTypeConfig {
-  name: string | Computed<string>;
 }
 
 export interface NodeTypeAttrs {
@@ -32,6 +31,5 @@ export interface NodeTypeAttrs {
 export const NodeType: DataSourceBinding<NodeTypeConfig, NodeTypeAttrs> = {
   wireType: "google_vmwareengine_node_type",
   fields: {
-    name: "name",
   },
 };

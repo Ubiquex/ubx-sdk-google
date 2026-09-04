@@ -9,9 +9,9 @@ type V1beta1IndexEndpoint_DeployedIndexes_AutomaticResources struct {
 }
 
 type V1beta1IndexEndpoint_DeployedIndexes_DedicatedResources_AutoscalingMetricSpecs struct {
-	MetricName any
+	MetricName              any
 	MonitoredResourceLabels any
-	Target any
+	Target                  any
 }
 
 type V1beta1IndexEndpoint_DeployedIndexes_DedicatedResources_FlexStart struct {
@@ -19,42 +19,42 @@ type V1beta1IndexEndpoint_DeployedIndexes_DedicatedResources_FlexStart struct {
 }
 
 type V1beta1IndexEndpoint_DeployedIndexes_DedicatedResources_MachineSpec_ReservationAffinity struct {
-	Key any
+	Key                     any
 	ReservationAffinityType any
-	Values any
+	Values                  any
 }
 
 type V1beta1IndexEndpoint_DeployedIndexes_DedicatedResources_MachineSpec struct {
-	AcceleratorCount any
-	AcceleratorType any
-	GpuPartitionSize any
-	MachineType any
-	MinGpuDriverVersion any
+	AcceleratorCount      any
+	AcceleratorType       any
+	GpuPartitionSize      any
+	MachineType           any
+	MinGpuDriverVersion   any
 	MultihostGpuNodeCount any
-	ReservationAffinity any
-	TpuTopology any
+	ReservationAffinity   any
+	TpuTopology           any
 }
 
 type V1beta1IndexEndpoint_DeployedIndexes_DedicatedResources_ScaleToZeroSpec struct {
 	IdleScaledownPeriod any
-	MinScaleupPeriod any
+	MinScaleupPeriod    any
 }
 
 type V1beta1IndexEndpoint_DeployedIndexes_DedicatedResources struct {
 	AutoscalingMetricSpecs any
-	FlexStart any
-	InitialReplicaCount any
-	MachineSpec any
-	MaxReplicaCount any
-	MinReplicaCount any
-	RequiredReplicaCount any
-	ScaleToZeroSpec any
-	Spot any
+	FlexStart              any
+	InitialReplicaCount    any
+	MachineSpec            any
+	MaxReplicaCount        any
+	MinReplicaCount        any
+	RequiredReplicaCount   any
+	ScaleToZeroSpec        any
+	Spot                   any
 }
 
 type V1beta1IndexEndpoint_DeployedIndexes_DeployedIndexAuthConfig_AuthProvider struct {
 	AllowedIssuers any
-	Audiences any
+	Audiences      any
 }
 
 type V1beta1IndexEndpoint_DeployedIndexes_DeployedIndexAuthConfig struct {
@@ -63,41 +63,41 @@ type V1beta1IndexEndpoint_DeployedIndexes_DeployedIndexAuthConfig struct {
 
 type V1beta1IndexEndpoint_DeployedIndexes_PrivateEndpoints_PscAutomatedEndpoints struct {
 	MatchAddress any
-	Network any
-	ProjectId any
+	Network      any
+	ProjectId    any
 }
 
 type V1beta1IndexEndpoint_DeployedIndexes_PrivateEndpoints struct {
-	MatchGrpcAddress any
+	MatchGrpcAddress      any
 	PscAutomatedEndpoints any
-	ServiceAttachment any
+	ServiceAttachment     any
 }
 
 type V1beta1IndexEndpoint_DeployedIndexes_PscAutomationConfigs struct {
-	ErrorMessage any
+	ErrorMessage   any
 	ForwardingRule any
-	IpAddress any
-	Network any
-	ProjectId any
-	State any
+	IpAddress      any
+	Network        any
+	ProjectId      any
+	State          any
 }
 
 type V1beta1IndexEndpoint_DeployedIndexes struct {
-	AutomaticResources any
-	CreateTime any
-	DedicatedResources any
-	DeployedIndexAuthConfig any
-	DeploymentGroup any
-	DeploymentTier any
-	DisplayName any
-	EnableAccessLogging any
+	AutomaticResources           any
+	CreateTime                   any
+	DedicatedResources           any
+	DeployedIndexAuthConfig      any
+	DeploymentGroup              any
+	DeploymentTier               any
+	DisplayName                  any
+	EnableAccessLogging          any
 	EnableDatapointUpsertLogging any
-	Id any
-	Index any
-	IndexSyncTime any
-	PrivateEndpoints any
-	PscAutomationConfigs any
-	ReservedIpRanges any
+	Id                           any
+	Index                        any
+	IndexSyncTime                any
+	PrivateEndpoints             any
+	PscAutomationConfigs         any
+	ReservedIpRanges             any
 }
 
 type V1beta1IndexEndpoint_EncryptionSpec struct {
@@ -118,172 +118,32 @@ type V1beta1IndexEndpoint_PrivateServiceConnectConfig struct {
 	ServiceAttachment any
 }
 
-var V1beta1IndexEndpoint_DeployedIndexes_AutomaticResourcesFields = ubx.FieldMap{
-		"MaxReplicaCount": ubx.FieldSpec{WireName: "max_replica_count"},
-		"MinReplicaCount": ubx.FieldSpec{WireName: "min_replica_count"},
-	}
-
-var V1beta1IndexEndpoint_DeployedIndexes_DedicatedResources_AutoscalingMetricSpecsFields = ubx.FieldMap{
-		"MetricName": ubx.FieldSpec{WireName: "metric_name"},
-		"MonitoredResourceLabels": ubx.FieldSpec{WireName: "monitored_resource_labels"},
-		"Target": ubx.FieldSpec{WireName: "target"},
-	}
-
-var V1beta1IndexEndpoint_DeployedIndexes_DedicatedResources_FlexStartFields = ubx.FieldMap{
-		"MaxRuntimeDuration": ubx.FieldSpec{WireName: "max_runtime_duration"},
-	}
-
-var V1beta1IndexEndpoint_DeployedIndexes_DedicatedResources_MachineSpec_ReservationAffinityFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"ReservationAffinityType": ubx.FieldSpec{WireName: "reservation_affinity_type"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
-
-var V1beta1IndexEndpoint_DeployedIndexes_DedicatedResources_MachineSpecFields = ubx.FieldMap{
-		"AcceleratorCount": ubx.FieldSpec{WireName: "accelerator_count"},
-		"AcceleratorType": ubx.FieldSpec{WireName: "accelerator_type"},
-		"GpuPartitionSize": ubx.FieldSpec{WireName: "gpu_partition_size"},
-		"MachineType": ubx.FieldSpec{WireName: "machine_type"},
-		"MinGpuDriverVersion": ubx.FieldSpec{WireName: "min_gpu_driver_version"},
-		"MultihostGpuNodeCount": ubx.FieldSpec{WireName: "multihost_gpu_node_count"},
-		"ReservationAffinity": ubx.FieldSpec{
-			WireName: "reservation_affinity",
-			Kind: "object",
-			Fields: V1beta1IndexEndpoint_DeployedIndexes_DedicatedResources_MachineSpec_ReservationAffinityFields,
-		},
-		"TpuTopology": ubx.FieldSpec{WireName: "tpu_topology"},
-	}
-
-var V1beta1IndexEndpoint_DeployedIndexes_DedicatedResources_ScaleToZeroSpecFields = ubx.FieldMap{
-		"IdleScaledownPeriod": ubx.FieldSpec{WireName: "idle_scaledown_period"},
-		"MinScaleupPeriod": ubx.FieldSpec{WireName: "min_scaleup_period"},
-	}
-
-var V1beta1IndexEndpoint_DeployedIndexes_DedicatedResourcesFields = ubx.FieldMap{
-		"AutoscalingMetricSpecs": ubx.FieldSpec{
-			WireName: "autoscaling_metric_specs",
-			Kind: "list",
-			Fields: V1beta1IndexEndpoint_DeployedIndexes_DedicatedResources_AutoscalingMetricSpecsFields,
-		},
-		"FlexStart": ubx.FieldSpec{
-			WireName: "flex_start",
-			Kind: "object",
-			Fields: V1beta1IndexEndpoint_DeployedIndexes_DedicatedResources_FlexStartFields,
-		},
-		"InitialReplicaCount": ubx.FieldSpec{WireName: "initial_replica_count"},
-		"MachineSpec": ubx.FieldSpec{
-			WireName: "machine_spec",
-			Kind: "object",
-			Fields: V1beta1IndexEndpoint_DeployedIndexes_DedicatedResources_MachineSpecFields,
-		},
-		"MaxReplicaCount": ubx.FieldSpec{WireName: "max_replica_count"},
-		"MinReplicaCount": ubx.FieldSpec{WireName: "min_replica_count"},
-		"RequiredReplicaCount": ubx.FieldSpec{WireName: "required_replica_count"},
-		"ScaleToZeroSpec": ubx.FieldSpec{
-			WireName: "scale_to_zero_spec",
-			Kind: "object",
-			Fields: V1beta1IndexEndpoint_DeployedIndexes_DedicatedResources_ScaleToZeroSpecFields,
-		},
-		"Spot": ubx.FieldSpec{WireName: "spot"},
-	}
-
-var V1beta1IndexEndpoint_DeployedIndexes_DeployedIndexAuthConfig_AuthProviderFields = ubx.FieldMap{
-		"AllowedIssuers": ubx.FieldSpec{WireName: "allowed_issuers"},
-		"Audiences": ubx.FieldSpec{WireName: "audiences"},
-	}
-
-var V1beta1IndexEndpoint_DeployedIndexes_DeployedIndexAuthConfigFields = ubx.FieldMap{
-		"AuthProvider": ubx.FieldSpec{
-			WireName: "auth_provider",
-			Kind: "object",
-			Fields: V1beta1IndexEndpoint_DeployedIndexes_DeployedIndexAuthConfig_AuthProviderFields,
-		},
-	}
-
-var V1beta1IndexEndpoint_DeployedIndexes_PrivateEndpoints_PscAutomatedEndpointsFields = ubx.FieldMap{
-		"MatchAddress": ubx.FieldSpec{WireName: "match_address"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-	}
-
-var V1beta1IndexEndpoint_DeployedIndexes_PrivateEndpointsFields = ubx.FieldMap{
-		"MatchGrpcAddress": ubx.FieldSpec{WireName: "match_grpc_address"},
-		"PscAutomatedEndpoints": ubx.FieldSpec{
-			WireName: "psc_automated_endpoints",
-			Kind: "list",
-			Fields: V1beta1IndexEndpoint_DeployedIndexes_PrivateEndpoints_PscAutomatedEndpointsFields,
-		},
-		"ServiceAttachment": ubx.FieldSpec{WireName: "service_attachment"},
-	}
+var V1beta1IndexEndpoint_EncryptionSpecFields = ubx.FieldMap{
+	"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
+}
 
 var V1beta1IndexEndpoint_DeployedIndexes_PscAutomationConfigsFields = ubx.FieldMap{
-		"ErrorMessage": ubx.FieldSpec{WireName: "error_message"},
-		"ForwardingRule": ubx.FieldSpec{WireName: "forwarding_rule"},
-		"IpAddress": ubx.FieldSpec{WireName: "ip_address"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
-
-var V1beta1IndexEndpoint_DeployedIndexesFields = ubx.FieldMap{
-		"AutomaticResources": ubx.FieldSpec{
-			WireName: "automatic_resources",
-			Kind: "object",
-			Fields: V1beta1IndexEndpoint_DeployedIndexes_AutomaticResourcesFields,
-		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DedicatedResources": ubx.FieldSpec{
-			WireName: "dedicated_resources",
-			Kind: "object",
-			Fields: V1beta1IndexEndpoint_DeployedIndexes_DedicatedResourcesFields,
-		},
-		"DeployedIndexAuthConfig": ubx.FieldSpec{
-			WireName: "deployed_index_auth_config",
-			Kind: "object",
-			Fields: V1beta1IndexEndpoint_DeployedIndexes_DeployedIndexAuthConfigFields,
-		},
-		"DeploymentGroup": ubx.FieldSpec{WireName: "deployment_group"},
-		"DeploymentTier": ubx.FieldSpec{WireName: "deployment_tier"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"EnableAccessLogging": ubx.FieldSpec{WireName: "enable_access_logging"},
-		"EnableDatapointUpsertLogging": ubx.FieldSpec{WireName: "enable_datapoint_upsert_logging"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Index": ubx.FieldSpec{WireName: "index"},
-		"IndexSyncTime": ubx.FieldSpec{WireName: "index_sync_time"},
-		"PrivateEndpoints": ubx.FieldSpec{
-			WireName: "private_endpoints",
-			Kind: "object",
-			Fields: V1beta1IndexEndpoint_DeployedIndexes_PrivateEndpointsFields,
-		},
-		"PscAutomationConfigs": ubx.FieldSpec{
-			WireName: "psc_automation_configs",
-			Kind: "list",
-			Fields: V1beta1IndexEndpoint_DeployedIndexes_PscAutomationConfigsFields,
-		},
-		"ReservedIpRanges": ubx.FieldSpec{WireName: "reserved_ip_ranges"},
-	}
-
-var V1beta1IndexEndpoint_EncryptionSpecFields = ubx.FieldMap{
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-	}
+	"ErrorMessage":   ubx.FieldSpec{WireName: "error_message"},
+	"ForwardingRule": ubx.FieldSpec{WireName: "forwarding_rule"},
+	"IpAddress":      ubx.FieldSpec{WireName: "ip_address"},
+	"Network":        ubx.FieldSpec{WireName: "network"},
+	"ProjectId":      ubx.FieldSpec{WireName: "project_id"},
+	"State":          ubx.FieldSpec{WireName: "state"},
+}
 
 var V1beta1IndexEndpoint_PrivateServiceConnectConfigFields = ubx.FieldMap{
-		"EnablePrivateServiceConnect": ubx.FieldSpec{WireName: "enable_private_service_connect"},
-		"EnableSecurePrivateServiceConnect": ubx.FieldSpec{WireName: "enable_secure_private_service_connect"},
-		"ProjectAllowlist": ubx.FieldSpec{WireName: "project_allowlist"},
-		"PscAutomationConfigs": ubx.FieldSpec{
-			WireName: "psc_automation_configs",
-			Kind: "list",
-			Fields: V1beta1IndexEndpoint_DeployedIndexes_PscAutomationConfigsFields,
-		},
-		"ServiceAttachment": ubx.FieldSpec{WireName: "service_attachment"},
-	}
+	"EnablePrivateServiceConnect":       ubx.FieldSpec{WireName: "enable_private_service_connect"},
+	"EnableSecurePrivateServiceConnect": ubx.FieldSpec{WireName: "enable_secure_private_service_connect"},
+	"ProjectAllowlist":                  ubx.FieldSpec{WireName: "project_allowlist"},
+	"PscAutomationConfigs": ubx.FieldSpec{
+		WireName: "psc_automation_configs",
+		Kind:     "list",
+		Fields:   V1beta1IndexEndpoint_DeployedIndexes_PscAutomationConfigsFields,
+	},
+	"ServiceAttachment": ubx.FieldSpec{WireName: "service_attachment"},
+}
 
 type V1beta1IndexEndpointConfig struct {
-	// Output only. Timestamp when this IndexEndpoint was created.
-	CreateTime any
-	// Output only. The indexes deployed in this endpoint.
-	DeployedIndexes any
 	// The description of the IndexEndpoint.
 	Description any
 	// Required. The display name of the IndexEndpoint. The name can be up to 128 characters long and can consist of any UTF-8 characters.
@@ -296,22 +156,12 @@ type V1beta1IndexEndpointConfig struct {
 	Etag any
 	// The labels with user-defined metadata to organize your IndexEndpoints. Label keys and values can be no longer than 64 characters (Unicode codepoints), can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. See https://goo.gl/xmQnxf for more information and examples of labels.
 	Labels any
-	// Output only. The resource name of the IndexEndpoint.
-	Name any
 	// Optional. The full name of the Google Compute Engine [network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks) to which the IndexEndpoint should be peered. Private services access must already be configured for the network. If left unspecified, the Endpoint is not peered with any network. network and private_service_connect_config are mutually exclusive. [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert): `projects/{project}/global/networks/{network}`. Where {project} is a project number, as in '12345', and {network} is network name.
 	Network any
 	// Represents configuration for private service connect.
 	PrivateServiceConnectConfig any
-	// Output only. If public_endpoint_enabled is true, this field will be populated with the domain name to use for this index endpoint.
-	PublicEndpointDomainName any
 	// Optional. If true, the deployed index will be accessible through public endpoint.
 	PublicEndpointEnabled any
-	// Output only. Reserved for future use.
-	SatisfiesPzi any
-	// Output only. Reserved for future use.
-	SatisfiesPzs any
-	// Output only. Timestamp when this IndexEndpoint was last updated. This timestamp is not updated when the endpoint's DeployedIndexes are updated, e.g. due to updates of the original Indexes they are the deployments of.
-	UpdateTime any
 }
 
 type V1beta1IndexEndpointAttrs struct {
@@ -352,33 +202,22 @@ type V1beta1IndexEndpointAttrs struct {
 var V1beta1IndexEndpoint = ubx.ResourceBinding{
 	WireType: "google_aiplatform_v1beta1_index_endpoint",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DeployedIndexes": ubx.FieldSpec{
-			WireName: "deployed_indexes",
-			Kind: "list",
-			Fields: V1beta1IndexEndpoint_DeployedIndexesFields,
-		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"Description":                 ubx.FieldSpec{WireName: "description"},
+		"DisplayName":                 ubx.FieldSpec{WireName: "display_name"},
 		"EnablePrivateServiceConnect": ubx.FieldSpec{WireName: "enable_private_service_connect"},
 		"EncryptionSpec": ubx.FieldSpec{
 			WireName: "encryption_spec",
-			Kind: "object",
-			Fields: V1beta1IndexEndpoint_EncryptionSpecFields,
+			Kind:     "object",
+			Fields:   V1beta1IndexEndpoint_EncryptionSpecFields,
 		},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Etag":    ubx.FieldSpec{WireName: "etag"},
+		"Labels":  ubx.FieldSpec{WireName: "labels"},
 		"Network": ubx.FieldSpec{WireName: "network"},
 		"PrivateServiceConnectConfig": ubx.FieldSpec{
 			WireName: "private_service_connect_config",
-			Kind: "object",
-			Fields: V1beta1IndexEndpoint_PrivateServiceConnectConfigFields,
+			Kind:     "object",
+			Fields:   V1beta1IndexEndpoint_PrivateServiceConnectConfigFields,
 		},
-		"PublicEndpointDomainName": ubx.FieldSpec{WireName: "public_endpoint_domain_name"},
 		"PublicEndpointEnabled": ubx.FieldSpec{WireName: "public_endpoint_enabled"},
-		"SatisfiesPzi": ubx.FieldSpec{WireName: "satisfies_pzi"},
-		"SatisfiesPzs": ubx.FieldSpec{WireName: "satisfies_pzs"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

@@ -487,22 +487,16 @@ const Playbook_LlmModelSettingsFields: FieldMap = {
 
 export interface PlaybookConfig {
   codeBlock?: Playbook_CodeBlock | Computed<Playbook_CodeBlock>;
-  createTime?: string | Computed<string>;
   displayName?: string | Computed<string>;
   goal?: string | Computed<string>;
   handlers?: Playbook_Handlers[] | Computed<Playbook_Handlers[]>;
-  inlineActions?: string[] | Computed<string[]>;
   inputParameterDefinitions?: Playbook_InputParameterDefinitions[] | Computed<Playbook_InputParameterDefinitions[]>;
   instruction?: Playbook_Instruction | Computed<Playbook_Instruction>;
   llmModelSettings?: Playbook_LlmModelSettings | Computed<Playbook_LlmModelSettings>;
   name?: string | Computed<string>;
   outputParameterDefinitions?: Playbook_InputParameterDefinitions[] | Computed<Playbook_InputParameterDefinitions[]>;
   playbookType?: string | Computed<string>;
-  referencedFlows?: string[] | Computed<string[]>;
-  referencedPlaybooks?: string[] | Computed<string[]>;
   referencedTools?: string[] | Computed<string[]>;
-  tokenCount?: string | Computed<string>;
-  updateTime?: string | Computed<string>;
 }
 
 export interface PlaybookAttrs {
@@ -533,7 +527,6 @@ export const Playbook: ResourceBinding<PlaybookConfig, PlaybookAttrs> = {
       kind: "object",
       fields: Playbook_CodeBlockFields,
     },
-    createTime: "create_time",
     displayName: "display_name",
     goal: "goal",
     handlers: {
@@ -541,7 +534,6 @@ export const Playbook: ResourceBinding<PlaybookConfig, PlaybookAttrs> = {
       kind: "list",
       fields: Playbook_HandlersFields,
     },
-    inlineActions: "inline_actions",
     inputParameterDefinitions: {
       wireName: "input_parameter_definitions",
       kind: "list",
@@ -564,10 +556,6 @@ export const Playbook: ResourceBinding<PlaybookConfig, PlaybookAttrs> = {
       fields: Playbook_InputParameterDefinitionsFields,
     },
     playbookType: "playbook_type",
-    referencedFlows: "referenced_flows",
-    referencedPlaybooks: "referenced_playbooks",
     referencedTools: "referenced_tools",
-    tokenCount: "token_count",
-    updateTime: "update_time",
   },
 };

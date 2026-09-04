@@ -4,12 +4,12 @@ package aiplatform
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_JobExecutionDetail_BaselineDatasets_TimeRange struct {
-	EndTime any
+	EndTime   any
 	StartTime any
 }
 
 type V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_JobExecutionDetail_BaselineDatasets struct {
-	Location any
+	Location  any
 	TimeRange any
 }
 
@@ -107,40 +107,40 @@ type V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMon
 }
 
 type V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_ExplanationSpec_Metadata_Inputs_FeatureValueDomain struct {
-	MaxValue any
-	MinValue any
-	OriginalMean any
+	MaxValue       any
+	MinValue       any
+	OriginalMean   any
 	OriginalStddev any
 }
 
 type V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_ExplanationSpec_Metadata_Inputs_Visualization struct {
 	ClipPercentLowerbound any
 	ClipPercentUpperbound any
-	ColorMap any
-	OverlayType any
-	Polarity any
-	Type any
+	ColorMap              any
+	OverlayType           any
+	Polarity              any
+	Type                  any
 }
 
 type V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_ExplanationSpec_Metadata_Inputs struct {
 	DenseShapeTensorName any
-	EncodedBaselines any
-	EncodedTensorName any
-	Encoding any
-	FeatureValueDomain any
-	GroupName any
-	IndexFeatureMapping any
-	IndicesTensorName any
-	InputBaselines any
-	InputTensorName any
-	Modality any
-	Visualization any
+	EncodedBaselines     any
+	EncodedTensorName    any
+	Encoding             any
+	FeatureValueDomain   any
+	GroupName            any
+	IndexFeatureMapping  any
+	IndicesTensorName    any
+	InputBaselines       any
+	InputTensorName      any
+	Modality             any
+	Visualization        any
 }
 
 type V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_ExplanationSpec_Metadata_Outputs struct {
-	DisplayNameMappingKey any
+	DisplayNameMappingKey   any
 	IndexDisplayNameMapping any
-	OutputTensorName any
+	OutputTensorName        any
 }
 
 type V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_ExplanationSpec_Metadata struct {
@@ -192,7 +192,7 @@ type V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMon
 }
 
 type V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfig_FeatureNoiseSigma_NoiseSigma struct {
-	Name any
+	Name  any
 	Sigma any
 }
 
@@ -553,29 +553,29 @@ type V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail_PipelineCont
 }
 
 type V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail_TaskDetails_Execution struct {
-	CreateTime any
-	Description any
-	DisplayName any
-	Etag any
-	Labels any
-	Metadata any
-	Name any
-	SchemaTitle any
+	CreateTime    any
+	Description   any
+	DisplayName   any
+	Etag          any
+	Labels        any
+	Metadata      any
+	Name          any
+	SchemaTitle   any
 	SchemaVersion any
-	State any
-	UpdateTime any
+	State         any
+	UpdateTime    any
 }
 
 type V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail_TaskDetails_ExecutorDetail_ContainerDetail struct {
-	FailedMainJobs any
+	FailedMainJobs            any
 	FailedPreCachingCheckJobs any
-	MainJob any
-	PreCachingCheckJob any
+	MainJob                   any
+	PreCachingCheckJob        any
 }
 
 type V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail_TaskDetails_ExecutorDetail_CustomJobDetail struct {
 	FailedJobs any
-	Job any
+	Job        any
 }
 
 type V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail_TaskDetails_ExecutorDetail struct {
@@ -584,18 +584,18 @@ type V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail_TaskDetails_
 }
 
 type V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail_TaskDetails_Inputs_Artifacts struct {
-	CreateTime any
-	Description any
-	DisplayName any
-	Etag any
-	Labels any
-	Metadata any
-	Name any
-	SchemaTitle any
+	CreateTime    any
+	Description   any
+	DisplayName   any
+	Etag          any
+	Labels        any
+	Metadata      any
+	Name          any
+	SchemaTitle   any
 	SchemaVersion any
-	State any
-	UpdateTime any
-	Uri any
+	State         any
+	UpdateTime    any
+	Uri           any
 }
 
 type V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail_TaskDetails_Inputs struct {
@@ -603,26 +603,26 @@ type V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail_TaskDetails_
 }
 
 type V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail_TaskDetails_PipelineTaskStatus struct {
-	Error any
-	State any
+	Error      any
+	State      any
 	UpdateTime any
 }
 
 type V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail_TaskDetails struct {
-	CreateTime any
-	EndTime any
-	Error any
-	Execution any
-	ExecutorDetail any
-	Inputs any
-	Outputs any
-	ParentTaskId any
+	CreateTime         any
+	EndTime            any
+	Error              any
+	Execution          any
+	ExecutorDetail     any
+	Inputs             any
+	Outputs            any
+	ParentTaskId       any
 	PipelineTaskStatus any
-	StartTime any
-	State any
-	TaskId any
-	TaskName any
-	TaskUniqueName any
+	StartTime          any
+	State              any
+	TaskId             any
+	TaskName           any
+	TaskUniqueName     any
 }
 
 type V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail struct {
@@ -636,24 +636,24 @@ type V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail struct {
 
 type V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_PipelineTaskRerunConfigs_Inputs_Artifacts_Artifacts_CustomProperties struct {
 	DoubleValue any
-	IntValue any
+	IntValue    any
 	StringValue any
 }
 
 type V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_PipelineTaskRerunConfigs_Inputs_Artifacts_Artifacts_Type struct {
 	InstanceSchema any
-	SchemaTitle any
-	SchemaUri any
-	SchemaVersion any
+	SchemaTitle    any
+	SchemaUri      any
+	SchemaVersion  any
 }
 
 type V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_PipelineTaskRerunConfigs_Inputs_Artifacts_Artifacts struct {
 	CustomProperties any
-	Metadata any
-	Name any
-	Properties any
-	Type any
-	Uri any
+	Metadata         any
+	Name             any
+	Properties       any
+	Type             any
+	Uri              any
 }
 
 type V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_PipelineTaskRerunConfigs_Inputs_Artifacts struct {
@@ -661,20 +661,20 @@ type V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_PipelineTaskRerunConfi
 }
 
 type V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_PipelineTaskRerunConfigs_Inputs struct {
-	Artifacts any
+	Artifacts       any
 	ParameterValues any
 }
 
 type V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_PipelineTaskRerunConfigs struct {
-	Inputs any
+	Inputs              any
 	SkipDownstreamTasks any
-	SkipTask any
-	TaskId any
-	TaskName any
+	SkipTask            any
+	TaskId              any
+	TaskName            any
 }
 
 type V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_PscInterfaceConfig_DnsPeeringConfigs struct {
-	Domain any
+	Domain        any
 	TargetNetwork any
 	TargetProject any
 }
@@ -794,1006 +794,998 @@ type V1beta1Schedule_LastScheduledRunResponse struct {
 }
 
 var V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_JobExecutionDetail_BaselineDatasets_TimeRangeFields = ubx.FieldMap{
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-	}
+	"EndTime":   ubx.FieldSpec{WireName: "end_time"},
+	"StartTime": ubx.FieldSpec{WireName: "start_time"},
+}
 
 var V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_JobExecutionDetail_BaselineDatasetsFields = ubx.FieldMap{
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"TimeRange": ubx.FieldSpec{
-			WireName: "time_range",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_JobExecutionDetail_BaselineDatasets_TimeRangeFields,
-		},
-	}
+	"Location": ubx.FieldSpec{WireName: "location"},
+	"TimeRange": ubx.FieldSpec{
+		WireName: "time_range",
+		Kind:     "object",
+		Fields:   V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_JobExecutionDetail_BaselineDatasets_TimeRangeFields,
+	},
+}
 
 var V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_JobExecutionDetail_ErrorFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"Code":    ubx.FieldSpec{WireName: "code"},
+	"Details": ubx.FieldSpec{WireName: "details"},
+	"Message": ubx.FieldSpec{WireName: "message"},
+}
 
 var V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_JobExecutionDetailFields = ubx.FieldMap{
-		"BaselineDatasets": ubx.FieldSpec{
-			WireName: "baseline_datasets",
-			Kind: "list",
-			Fields: V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_JobExecutionDetail_BaselineDatasetsFields,
-		},
-		"Error": ubx.FieldSpec{
-			WireName: "error",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_JobExecutionDetail_ErrorFields,
-		},
-		"ObjectiveStatus": ubx.FieldSpec{
-			WireName: "objective_status",
-			Kind: "map",
-			Fields: V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_JobExecutionDetail_ErrorFields,
-		},
-		"TargetDatasets": ubx.FieldSpec{
-			WireName: "target_datasets",
-			Kind: "list",
-			Fields: V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_JobExecutionDetail_BaselineDatasetsFields,
-		},
-	}
+	"BaselineDatasets": ubx.FieldSpec{
+		WireName: "baseline_datasets",
+		Kind:     "list",
+		Fields:   V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_JobExecutionDetail_BaselineDatasetsFields,
+	},
+	"Error": ubx.FieldSpec{
+		WireName: "error",
+		Kind:     "object",
+		Fields:   V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_JobExecutionDetail_ErrorFields,
+	},
+	"ObjectiveStatus": ubx.FieldSpec{
+		WireName: "objective_status",
+		Kind:     "map",
+		Fields:   V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_JobExecutionDetail_ErrorFields,
+	},
+	"TargetDatasets": ubx.FieldSpec{
+		WireName: "target_datasets",
+		Kind:     "list",
+		Fields:   V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_JobExecutionDetail_BaselineDatasetsFields,
+	},
+}
 
 var V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_NotificationSpec_EmailConfigFields = ubx.FieldMap{
-		"UserEmails": ubx.FieldSpec{WireName: "user_emails"},
-	}
+	"UserEmails": ubx.FieldSpec{WireName: "user_emails"},
+}
 
 var V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_NotificationSpec_NotificationChannelConfigsFields = ubx.FieldMap{
-		"NotificationChannel": ubx.FieldSpec{WireName: "notification_channel"},
-	}
+	"NotificationChannel": ubx.FieldSpec{WireName: "notification_channel"},
+}
 
 var V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_NotificationSpecFields = ubx.FieldMap{
-		"EmailConfig": ubx.FieldSpec{
-			WireName: "email_config",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_NotificationSpec_EmailConfigFields,
-		},
-		"EnableCloudLogging": ubx.FieldSpec{WireName: "enable_cloud_logging"},
-		"NotificationChannelConfigs": ubx.FieldSpec{
-			WireName: "notification_channel_configs",
-			Kind: "list",
-			Fields: V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_NotificationSpec_NotificationChannelConfigsFields,
-		},
-	}
+	"EmailConfig": ubx.FieldSpec{
+		WireName: "email_config",
+		Kind:     "object",
+		Fields:   V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_NotificationSpec_EmailConfigFields,
+	},
+	"EnableCloudLogging": ubx.FieldSpec{WireName: "enable_cloud_logging"},
+	"NotificationChannelConfigs": ubx.FieldSpec{
+		WireName: "notification_channel_configs",
+		Kind:     "list",
+		Fields:   V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_NotificationSpec_NotificationChannelConfigsFields,
+	},
+}
 
 var V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_BaselineDataset_BatchPredictionOutputFields = ubx.FieldMap{
-		"BatchPredictionJob": ubx.FieldSpec{WireName: "batch_prediction_job"},
-	}
+	"BatchPredictionJob": ubx.FieldSpec{WireName: "batch_prediction_job"},
+}
 
 var V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_BaselineDataset_ColumnizedDataset_BigquerySourceFields = ubx.FieldMap{
-		"Query": ubx.FieldSpec{WireName: "query"},
-		"TableUri": ubx.FieldSpec{WireName: "table_uri"},
-	}
+	"Query":    ubx.FieldSpec{WireName: "query"},
+	"TableUri": ubx.FieldSpec{WireName: "table_uri"},
+}
 
 var V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_BaselineDataset_ColumnizedDataset_GcsSourceFields = ubx.FieldMap{
-		"Format": ubx.FieldSpec{WireName: "format"},
-		"GcsUri": ubx.FieldSpec{WireName: "gcs_uri"},
-	}
+	"Format": ubx.FieldSpec{WireName: "format"},
+	"GcsUri": ubx.FieldSpec{WireName: "gcs_uri"},
+}
 
 var V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_BaselineDataset_ColumnizedDatasetFields = ubx.FieldMap{
-		"BigquerySource": ubx.FieldSpec{
-			WireName: "bigquery_source",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_BaselineDataset_ColumnizedDataset_BigquerySourceFields,
-		},
-		"GcsSource": ubx.FieldSpec{
-			WireName: "gcs_source",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_BaselineDataset_ColumnizedDataset_GcsSourceFields,
-		},
-		"TimestampField": ubx.FieldSpec{WireName: "timestamp_field"},
-		"VertexDataset": ubx.FieldSpec{WireName: "vertex_dataset"},
-	}
+	"BigquerySource": ubx.FieldSpec{
+		WireName: "bigquery_source",
+		Kind:     "object",
+		Fields:   V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_BaselineDataset_ColumnizedDataset_BigquerySourceFields,
+	},
+	"GcsSource": ubx.FieldSpec{
+		WireName: "gcs_source",
+		Kind:     "object",
+		Fields:   V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_BaselineDataset_ColumnizedDataset_GcsSourceFields,
+	},
+	"TimestampField": ubx.FieldSpec{WireName: "timestamp_field"},
+	"VertexDataset":  ubx.FieldSpec{WireName: "vertex_dataset"},
+}
 
 var V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_BaselineDataset_TimeOffsetFields = ubx.FieldMap{
-		"Offset": ubx.FieldSpec{WireName: "offset"},
-		"Window": ubx.FieldSpec{WireName: "window"},
-	}
+	"Offset": ubx.FieldSpec{WireName: "offset"},
+	"Window": ubx.FieldSpec{WireName: "window"},
+}
 
 var V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_BaselineDataset_VertexEndpointLogsFields = ubx.FieldMap{
-		"Endpoints": ubx.FieldSpec{WireName: "endpoints"},
-	}
+	"Endpoints": ubx.FieldSpec{WireName: "endpoints"},
+}
 
 var V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_BaselineDatasetFields = ubx.FieldMap{
-		"BatchPredictionOutput": ubx.FieldSpec{
-			WireName: "batch_prediction_output",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_BaselineDataset_BatchPredictionOutputFields,
-		},
-		"ColumnizedDataset": ubx.FieldSpec{
-			WireName: "columnized_dataset",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_BaselineDataset_ColumnizedDatasetFields,
-		},
-		"TimeInterval": ubx.FieldSpec{
-			WireName: "time_interval",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_JobExecutionDetail_BaselineDatasets_TimeRangeFields,
-		},
-		"TimeOffset": ubx.FieldSpec{
-			WireName: "time_offset",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_BaselineDataset_TimeOffsetFields,
-		},
-		"VertexEndpointLogs": ubx.FieldSpec{
-			WireName: "vertex_endpoint_logs",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_BaselineDataset_VertexEndpointLogsFields,
-		},
-	}
+	"BatchPredictionOutput": ubx.FieldSpec{
+		WireName: "batch_prediction_output",
+		Kind:     "object",
+		Fields:   V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_BaselineDataset_BatchPredictionOutputFields,
+	},
+	"ColumnizedDataset": ubx.FieldSpec{
+		WireName: "columnized_dataset",
+		Kind:     "object",
+		Fields:   V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_BaselineDataset_ColumnizedDatasetFields,
+	},
+	"TimeInterval": ubx.FieldSpec{
+		WireName: "time_interval",
+		Kind:     "object",
+		Fields:   V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_JobExecutionDetail_BaselineDatasets_TimeRangeFields,
+	},
+	"TimeOffset": ubx.FieldSpec{
+		WireName: "time_offset",
+		Kind:     "object",
+		Fields:   V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_BaselineDataset_TimeOffsetFields,
+	},
+	"VertexEndpointLogs": ubx.FieldSpec{
+		WireName: "vertex_endpoint_logs",
+		Kind:     "object",
+		Fields:   V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_BaselineDataset_VertexEndpointLogsFields,
+	},
+}
 
 var V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_ExplanationSpec_Metadata_Inputs_FeatureValueDomainFields = ubx.FieldMap{
-		"MaxValue": ubx.FieldSpec{WireName: "max_value"},
-		"MinValue": ubx.FieldSpec{WireName: "min_value"},
-		"OriginalMean": ubx.FieldSpec{WireName: "original_mean"},
-		"OriginalStddev": ubx.FieldSpec{WireName: "original_stddev"},
-	}
+	"MaxValue":       ubx.FieldSpec{WireName: "max_value"},
+	"MinValue":       ubx.FieldSpec{WireName: "min_value"},
+	"OriginalMean":   ubx.FieldSpec{WireName: "original_mean"},
+	"OriginalStddev": ubx.FieldSpec{WireName: "original_stddev"},
+}
 
 var V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_ExplanationSpec_Metadata_Inputs_VisualizationFields = ubx.FieldMap{
-		"ClipPercentLowerbound": ubx.FieldSpec{WireName: "clip_percent_lowerbound"},
-		"ClipPercentUpperbound": ubx.FieldSpec{WireName: "clip_percent_upperbound"},
-		"ColorMap": ubx.FieldSpec{WireName: "color_map"},
-		"OverlayType": ubx.FieldSpec{WireName: "overlay_type"},
-		"Polarity": ubx.FieldSpec{WireName: "polarity"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"ClipPercentLowerbound": ubx.FieldSpec{WireName: "clip_percent_lowerbound"},
+	"ClipPercentUpperbound": ubx.FieldSpec{WireName: "clip_percent_upperbound"},
+	"ColorMap":              ubx.FieldSpec{WireName: "color_map"},
+	"OverlayType":           ubx.FieldSpec{WireName: "overlay_type"},
+	"Polarity":              ubx.FieldSpec{WireName: "polarity"},
+	"Type":                  ubx.FieldSpec{WireName: "type"},
+}
 
 var V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_ExplanationSpec_Metadata_InputsFields = ubx.FieldMap{
-		"DenseShapeTensorName": ubx.FieldSpec{WireName: "dense_shape_tensor_name"},
-		"EncodedBaselines": ubx.FieldSpec{WireName: "encoded_baselines"},
-		"EncodedTensorName": ubx.FieldSpec{WireName: "encoded_tensor_name"},
-		"Encoding": ubx.FieldSpec{WireName: "encoding"},
-		"FeatureValueDomain": ubx.FieldSpec{
-			WireName: "feature_value_domain",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_ExplanationSpec_Metadata_Inputs_FeatureValueDomainFields,
-		},
-		"GroupName": ubx.FieldSpec{WireName: "group_name"},
-		"IndexFeatureMapping": ubx.FieldSpec{WireName: "index_feature_mapping"},
-		"IndicesTensorName": ubx.FieldSpec{WireName: "indices_tensor_name"},
-		"InputBaselines": ubx.FieldSpec{WireName: "input_baselines"},
-		"InputTensorName": ubx.FieldSpec{WireName: "input_tensor_name"},
-		"Modality": ubx.FieldSpec{WireName: "modality"},
-		"Visualization": ubx.FieldSpec{
-			WireName: "visualization",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_ExplanationSpec_Metadata_Inputs_VisualizationFields,
-		},
-	}
+	"DenseShapeTensorName": ubx.FieldSpec{WireName: "dense_shape_tensor_name"},
+	"EncodedBaselines":     ubx.FieldSpec{WireName: "encoded_baselines"},
+	"EncodedTensorName":    ubx.FieldSpec{WireName: "encoded_tensor_name"},
+	"Encoding":             ubx.FieldSpec{WireName: "encoding"},
+	"FeatureValueDomain": ubx.FieldSpec{
+		WireName: "feature_value_domain",
+		Kind:     "object",
+		Fields:   V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_ExplanationSpec_Metadata_Inputs_FeatureValueDomainFields,
+	},
+	"GroupName":           ubx.FieldSpec{WireName: "group_name"},
+	"IndexFeatureMapping": ubx.FieldSpec{WireName: "index_feature_mapping"},
+	"IndicesTensorName":   ubx.FieldSpec{WireName: "indices_tensor_name"},
+	"InputBaselines":      ubx.FieldSpec{WireName: "input_baselines"},
+	"InputTensorName":     ubx.FieldSpec{WireName: "input_tensor_name"},
+	"Modality":            ubx.FieldSpec{WireName: "modality"},
+	"Visualization": ubx.FieldSpec{
+		WireName: "visualization",
+		Kind:     "object",
+		Fields:   V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_ExplanationSpec_Metadata_Inputs_VisualizationFields,
+	},
+}
 
 var V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_ExplanationSpec_Metadata_OutputsFields = ubx.FieldMap{
-		"DisplayNameMappingKey": ubx.FieldSpec{WireName: "display_name_mapping_key"},
-		"IndexDisplayNameMapping": ubx.FieldSpec{WireName: "index_display_name_mapping"},
-		"OutputTensorName": ubx.FieldSpec{WireName: "output_tensor_name"},
-	}
+	"DisplayNameMappingKey":   ubx.FieldSpec{WireName: "display_name_mapping_key"},
+	"IndexDisplayNameMapping": ubx.FieldSpec{WireName: "index_display_name_mapping"},
+	"OutputTensorName":        ubx.FieldSpec{WireName: "output_tensor_name"},
+}
 
 var V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_ExplanationSpec_MetadataFields = ubx.FieldMap{
-		"FeatureAttributionsSchemaUri": ubx.FieldSpec{WireName: "feature_attributions_schema_uri"},
-		"Inputs": ubx.FieldSpec{
-			WireName: "inputs",
-			Kind: "map",
-			Fields: V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_ExplanationSpec_Metadata_InputsFields,
-		},
-		"LatentSpaceSource": ubx.FieldSpec{WireName: "latent_space_source"},
-		"Outputs": ubx.FieldSpec{
-			WireName: "outputs",
-			Kind: "map",
-			Fields: V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_ExplanationSpec_Metadata_OutputsFields,
-		},
-	}
+	"FeatureAttributionsSchemaUri": ubx.FieldSpec{WireName: "feature_attributions_schema_uri"},
+	"Inputs": ubx.FieldSpec{
+		WireName: "inputs",
+		Kind:     "map",
+		Fields:   V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_ExplanationSpec_Metadata_InputsFields,
+	},
+	"LatentSpaceSource": ubx.FieldSpec{WireName: "latent_space_source"},
+	"Outputs": ubx.FieldSpec{
+		WireName: "outputs",
+		Kind:     "map",
+		Fields:   V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_ExplanationSpec_Metadata_OutputsFields,
+	},
+}
 
 var V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_ExplanationSpec_Parameters_Examples_ExampleGcsSource_GcsSourceFields = ubx.FieldMap{
-		"Uris": ubx.FieldSpec{WireName: "uris"},
-	}
+	"Uris": ubx.FieldSpec{WireName: "uris"},
+}
 
 var V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_ExplanationSpec_Parameters_Examples_ExampleGcsSourceFields = ubx.FieldMap{
-		"DataFormat": ubx.FieldSpec{WireName: "data_format"},
-		"GcsSource": ubx.FieldSpec{
-			WireName: "gcs_source",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_ExplanationSpec_Parameters_Examples_ExampleGcsSource_GcsSourceFields,
-		},
-	}
+	"DataFormat": ubx.FieldSpec{WireName: "data_format"},
+	"GcsSource": ubx.FieldSpec{
+		WireName: "gcs_source",
+		Kind:     "object",
+		Fields:   V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_ExplanationSpec_Parameters_Examples_ExampleGcsSource_GcsSourceFields,
+	},
+}
 
 var V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_ExplanationSpec_Parameters_Examples_PresetsFields = ubx.FieldMap{
-		"Modality": ubx.FieldSpec{WireName: "modality"},
-		"Query": ubx.FieldSpec{WireName: "query"},
-	}
+	"Modality": ubx.FieldSpec{WireName: "modality"},
+	"Query":    ubx.FieldSpec{WireName: "query"},
+}
 
 var V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_ExplanationSpec_Parameters_ExamplesFields = ubx.FieldMap{
-		"ExampleGcsSource": ubx.FieldSpec{
-			WireName: "example_gcs_source",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_ExplanationSpec_Parameters_Examples_ExampleGcsSourceFields,
-		},
-		"GcsSource": ubx.FieldSpec{
-			WireName: "gcs_source",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_ExplanationSpec_Parameters_Examples_ExampleGcsSource_GcsSourceFields,
-		},
-		"NearestNeighborSearchConfig": ubx.FieldSpec{WireName: "nearest_neighbor_search_config"},
-		"NeighborCount": ubx.FieldSpec{WireName: "neighbor_count"},
-		"Presets": ubx.FieldSpec{
-			WireName: "presets",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_ExplanationSpec_Parameters_Examples_PresetsFields,
-		},
-	}
+	"ExampleGcsSource": ubx.FieldSpec{
+		WireName: "example_gcs_source",
+		Kind:     "object",
+		Fields:   V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_ExplanationSpec_Parameters_Examples_ExampleGcsSourceFields,
+	},
+	"GcsSource": ubx.FieldSpec{
+		WireName: "gcs_source",
+		Kind:     "object",
+		Fields:   V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_ExplanationSpec_Parameters_Examples_ExampleGcsSource_GcsSourceFields,
+	},
+	"NearestNeighborSearchConfig": ubx.FieldSpec{WireName: "nearest_neighbor_search_config"},
+	"NeighborCount":               ubx.FieldSpec{WireName: "neighbor_count"},
+	"Presets": ubx.FieldSpec{
+		WireName: "presets",
+		Kind:     "object",
+		Fields:   V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_ExplanationSpec_Parameters_Examples_PresetsFields,
+	},
+}
 
 var V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_ExplanationSpec_Parameters_IntegratedGradientsAttribution_BlurBaselineConfigFields = ubx.FieldMap{
-		"MaxBlurSigma": ubx.FieldSpec{WireName: "max_blur_sigma"},
-	}
+	"MaxBlurSigma": ubx.FieldSpec{WireName: "max_blur_sigma"},
+}
 
 var V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfig_FeatureNoiseSigma_NoiseSigmaFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Sigma": ubx.FieldSpec{WireName: "sigma"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Sigma": ubx.FieldSpec{WireName: "sigma"},
+}
 
 var V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfig_FeatureNoiseSigmaFields = ubx.FieldMap{
-		"NoiseSigma": ubx.FieldSpec{
-			WireName: "noise_sigma",
-			Kind: "list",
-			Fields: V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfig_FeatureNoiseSigma_NoiseSigmaFields,
-		},
-	}
+	"NoiseSigma": ubx.FieldSpec{
+		WireName: "noise_sigma",
+		Kind:     "list",
+		Fields:   V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfig_FeatureNoiseSigma_NoiseSigmaFields,
+	},
+}
 
 var V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfigFields = ubx.FieldMap{
-		"FeatureNoiseSigma": ubx.FieldSpec{
-			WireName: "feature_noise_sigma",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfig_FeatureNoiseSigmaFields,
-		},
-		"NoiseSigma": ubx.FieldSpec{WireName: "noise_sigma"},
-		"NoisySampleCount": ubx.FieldSpec{WireName: "noisy_sample_count"},
-	}
+	"FeatureNoiseSigma": ubx.FieldSpec{
+		WireName: "feature_noise_sigma",
+		Kind:     "object",
+		Fields:   V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfig_FeatureNoiseSigmaFields,
+	},
+	"NoiseSigma":       ubx.FieldSpec{WireName: "noise_sigma"},
+	"NoisySampleCount": ubx.FieldSpec{WireName: "noisy_sample_count"},
+}
 
 var V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_ExplanationSpec_Parameters_IntegratedGradientsAttributionFields = ubx.FieldMap{
-		"BlurBaselineConfig": ubx.FieldSpec{
-			WireName: "blur_baseline_config",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_ExplanationSpec_Parameters_IntegratedGradientsAttribution_BlurBaselineConfigFields,
-		},
-		"SmoothGradConfig": ubx.FieldSpec{
-			WireName: "smooth_grad_config",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfigFields,
-		},
-		"StepCount": ubx.FieldSpec{WireName: "step_count"},
-	}
+	"BlurBaselineConfig": ubx.FieldSpec{
+		WireName: "blur_baseline_config",
+		Kind:     "object",
+		Fields:   V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_ExplanationSpec_Parameters_IntegratedGradientsAttribution_BlurBaselineConfigFields,
+	},
+	"SmoothGradConfig": ubx.FieldSpec{
+		WireName: "smooth_grad_config",
+		Kind:     "object",
+		Fields:   V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfigFields,
+	},
+	"StepCount": ubx.FieldSpec{WireName: "step_count"},
+}
 
 var V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_ExplanationSpec_Parameters_SampledShapleyAttributionFields = ubx.FieldMap{
-		"PathCount": ubx.FieldSpec{WireName: "path_count"},
-	}
+	"PathCount": ubx.FieldSpec{WireName: "path_count"},
+}
 
 var V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_ExplanationSpec_ParametersFields = ubx.FieldMap{
-		"Examples": ubx.FieldSpec{
-			WireName: "examples",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_ExplanationSpec_Parameters_ExamplesFields,
-		},
-		"IntegratedGradientsAttribution": ubx.FieldSpec{
-			WireName: "integrated_gradients_attribution",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_ExplanationSpec_Parameters_IntegratedGradientsAttributionFields,
-		},
-		"OutputIndices": ubx.FieldSpec{WireName: "output_indices"},
-		"SampledShapleyAttribution": ubx.FieldSpec{
-			WireName: "sampled_shapley_attribution",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_ExplanationSpec_Parameters_SampledShapleyAttributionFields,
-		},
-		"TopK": ubx.FieldSpec{WireName: "top_k"},
-		"XraiAttribution": ubx.FieldSpec{
-			WireName: "xrai_attribution",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_ExplanationSpec_Parameters_IntegratedGradientsAttributionFields,
-		},
-	}
+	"Examples": ubx.FieldSpec{
+		WireName: "examples",
+		Kind:     "object",
+		Fields:   V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_ExplanationSpec_Parameters_ExamplesFields,
+	},
+	"IntegratedGradientsAttribution": ubx.FieldSpec{
+		WireName: "integrated_gradients_attribution",
+		Kind:     "object",
+		Fields:   V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_ExplanationSpec_Parameters_IntegratedGradientsAttributionFields,
+	},
+	"OutputIndices": ubx.FieldSpec{WireName: "output_indices"},
+	"SampledShapleyAttribution": ubx.FieldSpec{
+		WireName: "sampled_shapley_attribution",
+		Kind:     "object",
+		Fields:   V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_ExplanationSpec_Parameters_SampledShapleyAttributionFields,
+	},
+	"TopK": ubx.FieldSpec{WireName: "top_k"},
+	"XraiAttribution": ubx.FieldSpec{
+		WireName: "xrai_attribution",
+		Kind:     "object",
+		Fields:   V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_ExplanationSpec_Parameters_IntegratedGradientsAttributionFields,
+	},
+}
 
 var V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_ExplanationSpecFields = ubx.FieldMap{
-		"Metadata": ubx.FieldSpec{
-			WireName: "metadata",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_ExplanationSpec_MetadataFields,
-		},
-		"Parameters": ubx.FieldSpec{
-			WireName: "parameters",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_ExplanationSpec_ParametersFields,
-		},
-	}
+	"Metadata": ubx.FieldSpec{
+		WireName: "metadata",
+		Kind:     "object",
+		Fields:   V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_ExplanationSpec_MetadataFields,
+	},
+	"Parameters": ubx.FieldSpec{
+		WireName: "parameters",
+		Kind:     "object",
+		Fields:   V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_ExplanationSpec_ParametersFields,
+	},
+}
 
 var V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_TabularObjective_FeatureAttributionSpec_BatchExplanationDedicatedResources_FlexStartFields = ubx.FieldMap{
-		"MaxRuntimeDuration": ubx.FieldSpec{WireName: "max_runtime_duration"},
-	}
+	"MaxRuntimeDuration": ubx.FieldSpec{WireName: "max_runtime_duration"},
+}
 
 var V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_TabularObjective_FeatureAttributionSpec_BatchExplanationDedicatedResources_MachineSpec_ReservationAffinityFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"ReservationAffinityType": ubx.FieldSpec{WireName: "reservation_affinity_type"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Key":                     ubx.FieldSpec{WireName: "key"},
+	"ReservationAffinityType": ubx.FieldSpec{WireName: "reservation_affinity_type"},
+	"Values":                  ubx.FieldSpec{WireName: "values"},
+}
 
 var V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_TabularObjective_FeatureAttributionSpec_BatchExplanationDedicatedResources_MachineSpecFields = ubx.FieldMap{
-		"AcceleratorCount": ubx.FieldSpec{WireName: "accelerator_count"},
-		"AcceleratorType": ubx.FieldSpec{WireName: "accelerator_type"},
-		"GpuPartitionSize": ubx.FieldSpec{WireName: "gpu_partition_size"},
-		"MachineType": ubx.FieldSpec{WireName: "machine_type"},
-		"MinGpuDriverVersion": ubx.FieldSpec{WireName: "min_gpu_driver_version"},
-		"MultihostGpuNodeCount": ubx.FieldSpec{WireName: "multihost_gpu_node_count"},
-		"ReservationAffinity": ubx.FieldSpec{
-			WireName: "reservation_affinity",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_TabularObjective_FeatureAttributionSpec_BatchExplanationDedicatedResources_MachineSpec_ReservationAffinityFields,
-		},
-		"TpuTopology": ubx.FieldSpec{WireName: "tpu_topology"},
-	}
+	"AcceleratorCount":      ubx.FieldSpec{WireName: "accelerator_count"},
+	"AcceleratorType":       ubx.FieldSpec{WireName: "accelerator_type"},
+	"GpuPartitionSize":      ubx.FieldSpec{WireName: "gpu_partition_size"},
+	"MachineType":           ubx.FieldSpec{WireName: "machine_type"},
+	"MinGpuDriverVersion":   ubx.FieldSpec{WireName: "min_gpu_driver_version"},
+	"MultihostGpuNodeCount": ubx.FieldSpec{WireName: "multihost_gpu_node_count"},
+	"ReservationAffinity": ubx.FieldSpec{
+		WireName: "reservation_affinity",
+		Kind:     "object",
+		Fields:   V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_TabularObjective_FeatureAttributionSpec_BatchExplanationDedicatedResources_MachineSpec_ReservationAffinityFields,
+	},
+	"TpuTopology": ubx.FieldSpec{WireName: "tpu_topology"},
+}
 
 var V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_TabularObjective_FeatureAttributionSpec_BatchExplanationDedicatedResourcesFields = ubx.FieldMap{
-		"FlexStart": ubx.FieldSpec{
-			WireName: "flex_start",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_TabularObjective_FeatureAttributionSpec_BatchExplanationDedicatedResources_FlexStartFields,
-		},
-		"MachineSpec": ubx.FieldSpec{
-			WireName: "machine_spec",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_TabularObjective_FeatureAttributionSpec_BatchExplanationDedicatedResources_MachineSpecFields,
-		},
-		"MaxReplicaCount": ubx.FieldSpec{WireName: "max_replica_count"},
-		"Spot": ubx.FieldSpec{WireName: "spot"},
-		"StartingReplicaCount": ubx.FieldSpec{WireName: "starting_replica_count"},
-	}
+	"FlexStart": ubx.FieldSpec{
+		WireName: "flex_start",
+		Kind:     "object",
+		Fields:   V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_TabularObjective_FeatureAttributionSpec_BatchExplanationDedicatedResources_FlexStartFields,
+	},
+	"MachineSpec": ubx.FieldSpec{
+		WireName: "machine_spec",
+		Kind:     "object",
+		Fields:   V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_TabularObjective_FeatureAttributionSpec_BatchExplanationDedicatedResources_MachineSpecFields,
+	},
+	"MaxReplicaCount":      ubx.FieldSpec{WireName: "max_replica_count"},
+	"Spot":                 ubx.FieldSpec{WireName: "spot"},
+	"StartingReplicaCount": ubx.FieldSpec{WireName: "starting_replica_count"},
+}
 
 var V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_TabularObjective_FeatureAttributionSpec_DefaultAlertConditionFields = ubx.FieldMap{
-		"Threshold": ubx.FieldSpec{WireName: "threshold"},
-	}
+	"Threshold": ubx.FieldSpec{WireName: "threshold"},
+}
 
 var V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_TabularObjective_FeatureAttributionSpecFields = ubx.FieldMap{
-		"BatchExplanationDedicatedResources": ubx.FieldSpec{
-			WireName: "batch_explanation_dedicated_resources",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_TabularObjective_FeatureAttributionSpec_BatchExplanationDedicatedResourcesFields,
-		},
-		"DefaultAlertCondition": ubx.FieldSpec{
-			WireName: "default_alert_condition",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_TabularObjective_FeatureAttributionSpec_DefaultAlertConditionFields,
-		},
-		"FeatureAlertConditions": ubx.FieldSpec{
-			WireName: "feature_alert_conditions",
-			Kind: "map",
-			Fields: V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_TabularObjective_FeatureAttributionSpec_DefaultAlertConditionFields,
-		},
-		"Features": ubx.FieldSpec{WireName: "features"},
-	}
+	"BatchExplanationDedicatedResources": ubx.FieldSpec{
+		WireName: "batch_explanation_dedicated_resources",
+		Kind:     "object",
+		Fields:   V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_TabularObjective_FeatureAttributionSpec_BatchExplanationDedicatedResourcesFields,
+	},
+	"DefaultAlertCondition": ubx.FieldSpec{
+		WireName: "default_alert_condition",
+		Kind:     "object",
+		Fields:   V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_TabularObjective_FeatureAttributionSpec_DefaultAlertConditionFields,
+	},
+	"FeatureAlertConditions": ubx.FieldSpec{
+		WireName: "feature_alert_conditions",
+		Kind:     "map",
+		Fields:   V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_TabularObjective_FeatureAttributionSpec_DefaultAlertConditionFields,
+	},
+	"Features": ubx.FieldSpec{WireName: "features"},
+}
 
 var V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_TabularObjective_FeatureDriftSpecFields = ubx.FieldMap{
-		"CategoricalMetricType": ubx.FieldSpec{WireName: "categorical_metric_type"},
-		"DefaultCategoricalAlertCondition": ubx.FieldSpec{
-			WireName: "default_categorical_alert_condition",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_TabularObjective_FeatureAttributionSpec_DefaultAlertConditionFields,
-		},
-		"DefaultNumericAlertCondition": ubx.FieldSpec{
-			WireName: "default_numeric_alert_condition",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_TabularObjective_FeatureAttributionSpec_DefaultAlertConditionFields,
-		},
-		"FeatureAlertConditions": ubx.FieldSpec{
-			WireName: "feature_alert_conditions",
-			Kind: "map",
-			Fields: V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_TabularObjective_FeatureAttributionSpec_DefaultAlertConditionFields,
-		},
-		"Features": ubx.FieldSpec{WireName: "features"},
-		"NumericMetricType": ubx.FieldSpec{WireName: "numeric_metric_type"},
-	}
+	"CategoricalMetricType": ubx.FieldSpec{WireName: "categorical_metric_type"},
+	"DefaultCategoricalAlertCondition": ubx.FieldSpec{
+		WireName: "default_categorical_alert_condition",
+		Kind:     "object",
+		Fields:   V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_TabularObjective_FeatureAttributionSpec_DefaultAlertConditionFields,
+	},
+	"DefaultNumericAlertCondition": ubx.FieldSpec{
+		WireName: "default_numeric_alert_condition",
+		Kind:     "object",
+		Fields:   V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_TabularObjective_FeatureAttributionSpec_DefaultAlertConditionFields,
+	},
+	"FeatureAlertConditions": ubx.FieldSpec{
+		WireName: "feature_alert_conditions",
+		Kind:     "map",
+		Fields:   V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_TabularObjective_FeatureAttributionSpec_DefaultAlertConditionFields,
+	},
+	"Features":          ubx.FieldSpec{WireName: "features"},
+	"NumericMetricType": ubx.FieldSpec{WireName: "numeric_metric_type"},
+}
 
 var V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_TabularObjectiveFields = ubx.FieldMap{
-		"FeatureAttributionSpec": ubx.FieldSpec{
-			WireName: "feature_attribution_spec",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_TabularObjective_FeatureAttributionSpecFields,
-		},
-		"FeatureDriftSpec": ubx.FieldSpec{
-			WireName: "feature_drift_spec",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_TabularObjective_FeatureDriftSpecFields,
-		},
-		"PredictionOutputDriftSpec": ubx.FieldSpec{
-			WireName: "prediction_output_drift_spec",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_TabularObjective_FeatureDriftSpecFields,
-		},
-	}
+	"FeatureAttributionSpec": ubx.FieldSpec{
+		WireName: "feature_attribution_spec",
+		Kind:     "object",
+		Fields:   V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_TabularObjective_FeatureAttributionSpecFields,
+	},
+	"FeatureDriftSpec": ubx.FieldSpec{
+		WireName: "feature_drift_spec",
+		Kind:     "object",
+		Fields:   V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_TabularObjective_FeatureDriftSpecFields,
+	},
+	"PredictionOutputDriftSpec": ubx.FieldSpec{
+		WireName: "prediction_output_drift_spec",
+		Kind:     "object",
+		Fields:   V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_TabularObjective_FeatureDriftSpecFields,
+	},
+}
 
 var V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpecFields = ubx.FieldMap{
-		"BaselineDataset": ubx.FieldSpec{
-			WireName: "baseline_dataset",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_BaselineDatasetFields,
-		},
-		"ExplanationSpec": ubx.FieldSpec{
-			WireName: "explanation_spec",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_ExplanationSpecFields,
-		},
-		"TabularObjective": ubx.FieldSpec{
-			WireName: "tabular_objective",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_TabularObjectiveFields,
-		},
-		"TargetDataset": ubx.FieldSpec{
-			WireName: "target_dataset",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_BaselineDatasetFields,
-		},
-	}
+	"BaselineDataset": ubx.FieldSpec{
+		WireName: "baseline_dataset",
+		Kind:     "object",
+		Fields:   V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_BaselineDatasetFields,
+	},
+	"ExplanationSpec": ubx.FieldSpec{
+		WireName: "explanation_spec",
+		Kind:     "object",
+		Fields:   V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_ExplanationSpecFields,
+	},
+	"TabularObjective": ubx.FieldSpec{
+		WireName: "tabular_objective",
+		Kind:     "object",
+		Fields:   V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_TabularObjectiveFields,
+	},
+	"TargetDataset": ubx.FieldSpec{
+		WireName: "target_dataset",
+		Kind:     "object",
+		Fields:   V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_BaselineDatasetFields,
+	},
+}
 
 var V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_OutputSpec_GcsBaseDirectoryFields = ubx.FieldMap{
-		"OutputUriPrefix": ubx.FieldSpec{WireName: "output_uri_prefix"},
-	}
+	"OutputUriPrefix": ubx.FieldSpec{WireName: "output_uri_prefix"},
+}
 
 var V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_OutputSpecFields = ubx.FieldMap{
-		"GcsBaseDirectory": ubx.FieldSpec{
-			WireName: "gcs_base_directory",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_OutputSpec_GcsBaseDirectoryFields,
-		},
-	}
+	"GcsBaseDirectory": ubx.FieldSpec{
+		WireName: "gcs_base_directory",
+		Kind:     "object",
+		Fields:   V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_OutputSpec_GcsBaseDirectoryFields,
+	},
+}
 
 var V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpecFields = ubx.FieldMap{
-		"NotificationSpec": ubx.FieldSpec{
-			WireName: "notification_spec",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_NotificationSpecFields,
-		},
-		"ObjectiveSpec": ubx.FieldSpec{
-			WireName: "objective_spec",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpecFields,
-		},
-		"OutputSpec": ubx.FieldSpec{
-			WireName: "output_spec",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_OutputSpecFields,
-		},
-	}
+	"NotificationSpec": ubx.FieldSpec{
+		WireName: "notification_spec",
+		Kind:     "object",
+		Fields:   V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_NotificationSpecFields,
+	},
+	"ObjectiveSpec": ubx.FieldSpec{
+		WireName: "objective_spec",
+		Kind:     "object",
+		Fields:   V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpecFields,
+	},
+	"OutputSpec": ubx.FieldSpec{
+		WireName: "output_spec",
+		Kind:     "object",
+		Fields:   V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_OutputSpecFields,
+	},
+}
 
 var V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJobFields = ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"JobExecutionDetail": ubx.FieldSpec{
-			WireName: "job_execution_detail",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_JobExecutionDetailFields,
-		},
-		"ModelMonitoringSpec": ubx.FieldSpec{
-			WireName: "model_monitoring_spec",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpecFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Schedule": ubx.FieldSpec{WireName: "schedule"},
-		"ScheduleTime": ubx.FieldSpec{WireName: "schedule_time"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-	}
+	"CreateTime":  ubx.FieldSpec{WireName: "create_time"},
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"JobExecutionDetail": ubx.FieldSpec{
+		WireName: "job_execution_detail",
+		Kind:     "object",
+		Fields:   V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_JobExecutionDetailFields,
+	},
+	"ModelMonitoringSpec": ubx.FieldSpec{
+		WireName: "model_monitoring_spec",
+		Kind:     "object",
+		Fields:   V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpecFields,
+	},
+	"Name":         ubx.FieldSpec{WireName: "name"},
+	"Schedule":     ubx.FieldSpec{WireName: "schedule"},
+	"ScheduleTime": ubx.FieldSpec{WireName: "schedule_time"},
+	"State":        ubx.FieldSpec{WireName: "state"},
+	"UpdateTime":   ubx.FieldSpec{WireName: "update_time"},
+}
 
 var V1beta1Schedule_CreateModelMonitoringJobRequestFields = ubx.FieldMap{
-		"ModelMonitoringJob": ubx.FieldSpec{
-			WireName: "model_monitoring_job",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJobFields,
-		},
-		"ModelMonitoringJobId": ubx.FieldSpec{WireName: "model_monitoring_job_id"},
-		"Parent": ubx.FieldSpec{WireName: "parent"},
-	}
+	"ModelMonitoringJob": ubx.FieldSpec{
+		WireName: "model_monitoring_job",
+		Kind:     "object",
+		Fields:   V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJobFields,
+	},
+	"ModelMonitoringJobId": ubx.FieldSpec{WireName: "model_monitoring_job_id"},
+	"Parent":               ubx.FieldSpec{WireName: "parent"},
+}
 
 var V1beta1Schedule_CreateNotebookExecutionJobRequest_NotebookExecutionJob_CustomEnvironmentSpec_NetworkSpecFields = ubx.FieldMap{
-		"EnableInternetAccess": ubx.FieldSpec{WireName: "enable_internet_access"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"Subnetwork": ubx.FieldSpec{WireName: "subnetwork"},
-	}
+	"EnableInternetAccess": ubx.FieldSpec{WireName: "enable_internet_access"},
+	"Network":              ubx.FieldSpec{WireName: "network"},
+	"Subnetwork":           ubx.FieldSpec{WireName: "subnetwork"},
+}
 
 var V1beta1Schedule_CreateNotebookExecutionJobRequest_NotebookExecutionJob_CustomEnvironmentSpec_PersistentDiskSpecFields = ubx.FieldMap{
-		"DiskSizeGb": ubx.FieldSpec{WireName: "disk_size_gb"},
-		"DiskType": ubx.FieldSpec{WireName: "disk_type"},
-	}
+	"DiskSizeGb": ubx.FieldSpec{WireName: "disk_size_gb"},
+	"DiskType":   ubx.FieldSpec{WireName: "disk_type"},
+}
 
 var V1beta1Schedule_CreateNotebookExecutionJobRequest_NotebookExecutionJob_CustomEnvironmentSpec_ShieldedInstanceConfigFields = ubx.FieldMap{
-		"EnableIntegrityMonitoring": ubx.FieldSpec{WireName: "enable_integrity_monitoring"},
-		"EnableSecureBoot": ubx.FieldSpec{WireName: "enable_secure_boot"},
-		"EnableVtpm": ubx.FieldSpec{WireName: "enable_vtpm"},
-	}
+	"EnableIntegrityMonitoring": ubx.FieldSpec{WireName: "enable_integrity_monitoring"},
+	"EnableSecureBoot":          ubx.FieldSpec{WireName: "enable_secure_boot"},
+	"EnableVtpm":                ubx.FieldSpec{WireName: "enable_vtpm"},
+}
 
 var V1beta1Schedule_CreateNotebookExecutionJobRequest_NotebookExecutionJob_CustomEnvironmentSpecFields = ubx.FieldMap{
-		"MachineSpec": ubx.FieldSpec{
-			WireName: "machine_spec",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_TabularObjective_FeatureAttributionSpec_BatchExplanationDedicatedResources_MachineSpecFields,
-		},
-		"NetworkSpec": ubx.FieldSpec{
-			WireName: "network_spec",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreateNotebookExecutionJobRequest_NotebookExecutionJob_CustomEnvironmentSpec_NetworkSpecFields,
-		},
-		"PersistentDiskSpec": ubx.FieldSpec{
-			WireName: "persistent_disk_spec",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreateNotebookExecutionJobRequest_NotebookExecutionJob_CustomEnvironmentSpec_PersistentDiskSpecFields,
-		},
-		"ShieldedInstanceConfig": ubx.FieldSpec{
-			WireName: "shielded_instance_config",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreateNotebookExecutionJobRequest_NotebookExecutionJob_CustomEnvironmentSpec_ShieldedInstanceConfigFields,
-		},
-	}
+	"MachineSpec": ubx.FieldSpec{
+		WireName: "machine_spec",
+		Kind:     "object",
+		Fields:   V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_ModelMonitoringSpec_ObjectiveSpec_TabularObjective_FeatureAttributionSpec_BatchExplanationDedicatedResources_MachineSpecFields,
+	},
+	"NetworkSpec": ubx.FieldSpec{
+		WireName: "network_spec",
+		Kind:     "object",
+		Fields:   V1beta1Schedule_CreateNotebookExecutionJobRequest_NotebookExecutionJob_CustomEnvironmentSpec_NetworkSpecFields,
+	},
+	"PersistentDiskSpec": ubx.FieldSpec{
+		WireName: "persistent_disk_spec",
+		Kind:     "object",
+		Fields:   V1beta1Schedule_CreateNotebookExecutionJobRequest_NotebookExecutionJob_CustomEnvironmentSpec_PersistentDiskSpecFields,
+	},
+	"ShieldedInstanceConfig": ubx.FieldSpec{
+		WireName: "shielded_instance_config",
+		Kind:     "object",
+		Fields:   V1beta1Schedule_CreateNotebookExecutionJobRequest_NotebookExecutionJob_CustomEnvironmentSpec_ShieldedInstanceConfigFields,
+	},
+}
 
 var V1beta1Schedule_CreateNotebookExecutionJobRequest_NotebookExecutionJob_DataformRepositorySourceFields = ubx.FieldMap{
-		"CommitSha": ubx.FieldSpec{WireName: "commit_sha"},
-		"DataformRepositoryResourceName": ubx.FieldSpec{WireName: "dataform_repository_resource_name"},
-	}
+	"CommitSha":                      ubx.FieldSpec{WireName: "commit_sha"},
+	"DataformRepositoryResourceName": ubx.FieldSpec{WireName: "dataform_repository_resource_name"},
+}
 
 var V1beta1Schedule_CreateNotebookExecutionJobRequest_NotebookExecutionJob_DirectNotebookSourceFields = ubx.FieldMap{
-		"Content": ubx.FieldSpec{WireName: "content"},
-	}
+	"Content": ubx.FieldSpec{WireName: "content"},
+}
 
 var V1beta1Schedule_CreateNotebookExecutionJobRequest_NotebookExecutionJob_EncryptionSpecFields = ubx.FieldMap{
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-	}
+	"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
+}
 
 var V1beta1Schedule_CreateNotebookExecutionJobRequest_NotebookExecutionJob_GcsNotebookSourceFields = ubx.FieldMap{
-		"Generation": ubx.FieldSpec{WireName: "generation"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"Generation": ubx.FieldSpec{WireName: "generation"},
+	"Uri":        ubx.FieldSpec{WireName: "uri"},
+}
 
 var V1beta1Schedule_CreateNotebookExecutionJobRequest_NotebookExecutionJob_WorkbenchRuntime_CustomContainerImageFields = ubx.FieldMap{
-		"Repository": ubx.FieldSpec{WireName: "repository"},
-		"Tag": ubx.FieldSpec{WireName: "tag"},
-	}
+	"Repository": ubx.FieldSpec{WireName: "repository"},
+	"Tag":        ubx.FieldSpec{WireName: "tag"},
+}
 
 var V1beta1Schedule_CreateNotebookExecutionJobRequest_NotebookExecutionJob_WorkbenchRuntime_VmImageFields = ubx.FieldMap{
-		"Family": ubx.FieldSpec{WireName: "family"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Project": ubx.FieldSpec{WireName: "project"},
-	}
+	"Family":  ubx.FieldSpec{WireName: "family"},
+	"Name":    ubx.FieldSpec{WireName: "name"},
+	"Project": ubx.FieldSpec{WireName: "project"},
+}
 
 var V1beta1Schedule_CreateNotebookExecutionJobRequest_NotebookExecutionJob_WorkbenchRuntimeFields = ubx.FieldMap{
-		"CustomContainerImage": ubx.FieldSpec{
-			WireName: "custom_container_image",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreateNotebookExecutionJobRequest_NotebookExecutionJob_WorkbenchRuntime_CustomContainerImageFields,
-		},
-		"VmImage": ubx.FieldSpec{
-			WireName: "vm_image",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreateNotebookExecutionJobRequest_NotebookExecutionJob_WorkbenchRuntime_VmImageFields,
-		},
-	}
+	"CustomContainerImage": ubx.FieldSpec{
+		WireName: "custom_container_image",
+		Kind:     "object",
+		Fields:   V1beta1Schedule_CreateNotebookExecutionJobRequest_NotebookExecutionJob_WorkbenchRuntime_CustomContainerImageFields,
+	},
+	"VmImage": ubx.FieldSpec{
+		WireName: "vm_image",
+		Kind:     "object",
+		Fields:   V1beta1Schedule_CreateNotebookExecutionJobRequest_NotebookExecutionJob_WorkbenchRuntime_VmImageFields,
+	},
+}
 
 var V1beta1Schedule_CreateNotebookExecutionJobRequest_NotebookExecutionJobFields = ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"CustomEnvironmentSpec": ubx.FieldSpec{
-			WireName: "custom_environment_spec",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreateNotebookExecutionJobRequest_NotebookExecutionJob_CustomEnvironmentSpecFields,
-		},
-		"DataformRepositorySource": ubx.FieldSpec{
-			WireName: "dataform_repository_source",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreateNotebookExecutionJobRequest_NotebookExecutionJob_DataformRepositorySourceFields,
-		},
-		"DirectNotebookSource": ubx.FieldSpec{
-			WireName: "direct_notebook_source",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreateNotebookExecutionJobRequest_NotebookExecutionJob_DirectNotebookSourceFields,
-		},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"EncryptionSpec": ubx.FieldSpec{
-			WireName: "encryption_spec",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreateNotebookExecutionJobRequest_NotebookExecutionJob_EncryptionSpecFields,
-		},
-		"ExecutionTimeout": ubx.FieldSpec{WireName: "execution_timeout"},
-		"ExecutionUser": ubx.FieldSpec{WireName: "execution_user"},
-		"GcsNotebookSource": ubx.FieldSpec{
-			WireName: "gcs_notebook_source",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreateNotebookExecutionJobRequest_NotebookExecutionJob_GcsNotebookSourceFields,
-		},
-		"GcsOutputUri": ubx.FieldSpec{WireName: "gcs_output_uri"},
-		"JobState": ubx.FieldSpec{WireName: "job_state"},
-		"KernelName": ubx.FieldSpec{WireName: "kernel_name"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NotebookRuntimeTemplateResourceName": ubx.FieldSpec{WireName: "notebook_runtime_template_resource_name"},
-		"ScheduleResourceName": ubx.FieldSpec{WireName: "schedule_resource_name"},
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-		"Status": ubx.FieldSpec{
-			WireName: "status",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_JobExecutionDetail_ErrorFields,
-		},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-		"WorkbenchRuntime": ubx.FieldSpec{
-			WireName: "workbench_runtime",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreateNotebookExecutionJobRequest_NotebookExecutionJob_WorkbenchRuntimeFields,
-		},
-	}
+	"CreateTime": ubx.FieldSpec{WireName: "create_time"},
+	"CustomEnvironmentSpec": ubx.FieldSpec{
+		WireName: "custom_environment_spec",
+		Kind:     "object",
+		Fields:   V1beta1Schedule_CreateNotebookExecutionJobRequest_NotebookExecutionJob_CustomEnvironmentSpecFields,
+	},
+	"DataformRepositorySource": ubx.FieldSpec{
+		WireName: "dataform_repository_source",
+		Kind:     "object",
+		Fields:   V1beta1Schedule_CreateNotebookExecutionJobRequest_NotebookExecutionJob_DataformRepositorySourceFields,
+	},
+	"DirectNotebookSource": ubx.FieldSpec{
+		WireName: "direct_notebook_source",
+		Kind:     "object",
+		Fields:   V1beta1Schedule_CreateNotebookExecutionJobRequest_NotebookExecutionJob_DirectNotebookSourceFields,
+	},
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"EncryptionSpec": ubx.FieldSpec{
+		WireName: "encryption_spec",
+		Kind:     "object",
+		Fields:   V1beta1Schedule_CreateNotebookExecutionJobRequest_NotebookExecutionJob_EncryptionSpecFields,
+	},
+	"ExecutionTimeout": ubx.FieldSpec{WireName: "execution_timeout"},
+	"ExecutionUser":    ubx.FieldSpec{WireName: "execution_user"},
+	"GcsNotebookSource": ubx.FieldSpec{
+		WireName: "gcs_notebook_source",
+		Kind:     "object",
+		Fields:   V1beta1Schedule_CreateNotebookExecutionJobRequest_NotebookExecutionJob_GcsNotebookSourceFields,
+	},
+	"GcsOutputUri":                        ubx.FieldSpec{WireName: "gcs_output_uri"},
+	"JobState":                            ubx.FieldSpec{WireName: "job_state"},
+	"KernelName":                          ubx.FieldSpec{WireName: "kernel_name"},
+	"Labels":                              ubx.FieldSpec{WireName: "labels"},
+	"Name":                                ubx.FieldSpec{WireName: "name"},
+	"NotebookRuntimeTemplateResourceName": ubx.FieldSpec{WireName: "notebook_runtime_template_resource_name"},
+	"ScheduleResourceName":                ubx.FieldSpec{WireName: "schedule_resource_name"},
+	"ServiceAccount":                      ubx.FieldSpec{WireName: "service_account"},
+	"Status": ubx.FieldSpec{
+		WireName: "status",
+		Kind:     "object",
+		Fields:   V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_JobExecutionDetail_ErrorFields,
+	},
+	"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+	"WorkbenchRuntime": ubx.FieldSpec{
+		WireName: "workbench_runtime",
+		Kind:     "object",
+		Fields:   V1beta1Schedule_CreateNotebookExecutionJobRequest_NotebookExecutionJob_WorkbenchRuntimeFields,
+	},
+}
 
 var V1beta1Schedule_CreateNotebookExecutionJobRequestFields = ubx.FieldMap{
-		"NotebookExecutionJob": ubx.FieldSpec{
-			WireName: "notebook_execution_job",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreateNotebookExecutionJobRequest_NotebookExecutionJobFields,
-		},
-		"NotebookExecutionJobId": ubx.FieldSpec{WireName: "notebook_execution_job_id"},
-		"Parent": ubx.FieldSpec{WireName: "parent"},
-	}
+	"NotebookExecutionJob": ubx.FieldSpec{
+		WireName: "notebook_execution_job",
+		Kind:     "object",
+		Fields:   V1beta1Schedule_CreateNotebookExecutionJobRequest_NotebookExecutionJobFields,
+	},
+	"NotebookExecutionJobId": ubx.FieldSpec{WireName: "notebook_execution_job_id"},
+	"Parent":                 ubx.FieldSpec{WireName: "parent"},
+}
 
 var V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail_PipelineContextFields = ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ParentContexts": ubx.FieldSpec{WireName: "parent_contexts"},
-		"SchemaTitle": ubx.FieldSpec{WireName: "schema_title"},
-		"SchemaVersion": ubx.FieldSpec{WireName: "schema_version"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-	}
+	"CreateTime":     ubx.FieldSpec{WireName: "create_time"},
+	"Description":    ubx.FieldSpec{WireName: "description"},
+	"DisplayName":    ubx.FieldSpec{WireName: "display_name"},
+	"Etag":           ubx.FieldSpec{WireName: "etag"},
+	"Labels":         ubx.FieldSpec{WireName: "labels"},
+	"Metadata":       ubx.FieldSpec{WireName: "metadata"},
+	"Name":           ubx.FieldSpec{WireName: "name"},
+	"ParentContexts": ubx.FieldSpec{WireName: "parent_contexts"},
+	"SchemaTitle":    ubx.FieldSpec{WireName: "schema_title"},
+	"SchemaVersion":  ubx.FieldSpec{WireName: "schema_version"},
+	"UpdateTime":     ubx.FieldSpec{WireName: "update_time"},
+}
 
 var V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail_TaskDetails_ExecutionFields = ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SchemaTitle": ubx.FieldSpec{WireName: "schema_title"},
-		"SchemaVersion": ubx.FieldSpec{WireName: "schema_version"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-	}
+	"CreateTime":    ubx.FieldSpec{WireName: "create_time"},
+	"Description":   ubx.FieldSpec{WireName: "description"},
+	"DisplayName":   ubx.FieldSpec{WireName: "display_name"},
+	"Etag":          ubx.FieldSpec{WireName: "etag"},
+	"Labels":        ubx.FieldSpec{WireName: "labels"},
+	"Metadata":      ubx.FieldSpec{WireName: "metadata"},
+	"Name":          ubx.FieldSpec{WireName: "name"},
+	"SchemaTitle":   ubx.FieldSpec{WireName: "schema_title"},
+	"SchemaVersion": ubx.FieldSpec{WireName: "schema_version"},
+	"State":         ubx.FieldSpec{WireName: "state"},
+	"UpdateTime":    ubx.FieldSpec{WireName: "update_time"},
+}
 
 var V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail_TaskDetails_ExecutorDetail_ContainerDetailFields = ubx.FieldMap{
-		"FailedMainJobs": ubx.FieldSpec{WireName: "failed_main_jobs"},
-		"FailedPreCachingCheckJobs": ubx.FieldSpec{WireName: "failed_pre_caching_check_jobs"},
-		"MainJob": ubx.FieldSpec{WireName: "main_job"},
-		"PreCachingCheckJob": ubx.FieldSpec{WireName: "pre_caching_check_job"},
-	}
+	"FailedMainJobs":            ubx.FieldSpec{WireName: "failed_main_jobs"},
+	"FailedPreCachingCheckJobs": ubx.FieldSpec{WireName: "failed_pre_caching_check_jobs"},
+	"MainJob":                   ubx.FieldSpec{WireName: "main_job"},
+	"PreCachingCheckJob":        ubx.FieldSpec{WireName: "pre_caching_check_job"},
+}
 
 var V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail_TaskDetails_ExecutorDetail_CustomJobDetailFields = ubx.FieldMap{
-		"FailedJobs": ubx.FieldSpec{WireName: "failed_jobs"},
-		"Job": ubx.FieldSpec{WireName: "job"},
-	}
+	"FailedJobs": ubx.FieldSpec{WireName: "failed_jobs"},
+	"Job":        ubx.FieldSpec{WireName: "job"},
+}
 
 var V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail_TaskDetails_ExecutorDetailFields = ubx.FieldMap{
-		"ContainerDetail": ubx.FieldSpec{
-			WireName: "container_detail",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail_TaskDetails_ExecutorDetail_ContainerDetailFields,
-		},
-		"CustomJobDetail": ubx.FieldSpec{
-			WireName: "custom_job_detail",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail_TaskDetails_ExecutorDetail_CustomJobDetailFields,
-		},
-	}
+	"ContainerDetail": ubx.FieldSpec{
+		WireName: "container_detail",
+		Kind:     "object",
+		Fields:   V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail_TaskDetails_ExecutorDetail_ContainerDetailFields,
+	},
+	"CustomJobDetail": ubx.FieldSpec{
+		WireName: "custom_job_detail",
+		Kind:     "object",
+		Fields:   V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail_TaskDetails_ExecutorDetail_CustomJobDetailFields,
+	},
+}
 
 var V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail_TaskDetails_Inputs_ArtifactsFields = ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SchemaTitle": ubx.FieldSpec{WireName: "schema_title"},
-		"SchemaVersion": ubx.FieldSpec{WireName: "schema_version"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"CreateTime":    ubx.FieldSpec{WireName: "create_time"},
+	"Description":   ubx.FieldSpec{WireName: "description"},
+	"DisplayName":   ubx.FieldSpec{WireName: "display_name"},
+	"Etag":          ubx.FieldSpec{WireName: "etag"},
+	"Labels":        ubx.FieldSpec{WireName: "labels"},
+	"Metadata":      ubx.FieldSpec{WireName: "metadata"},
+	"Name":          ubx.FieldSpec{WireName: "name"},
+	"SchemaTitle":   ubx.FieldSpec{WireName: "schema_title"},
+	"SchemaVersion": ubx.FieldSpec{WireName: "schema_version"},
+	"State":         ubx.FieldSpec{WireName: "state"},
+	"UpdateTime":    ubx.FieldSpec{WireName: "update_time"},
+	"Uri":           ubx.FieldSpec{WireName: "uri"},
+}
 
 var V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail_TaskDetails_InputsFields = ubx.FieldMap{
-		"Artifacts": ubx.FieldSpec{
-			WireName: "artifacts",
-			Kind: "list",
-			Fields: V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail_TaskDetails_Inputs_ArtifactsFields,
-		},
-	}
+	"Artifacts": ubx.FieldSpec{
+		WireName: "artifacts",
+		Kind:     "list",
+		Fields:   V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail_TaskDetails_Inputs_ArtifactsFields,
+	},
+}
 
 var V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail_TaskDetails_PipelineTaskStatusFields = ubx.FieldMap{
-		"Error": ubx.FieldSpec{
-			WireName: "error",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_JobExecutionDetail_ErrorFields,
-		},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-	}
+	"Error": ubx.FieldSpec{
+		WireName: "error",
+		Kind:     "object",
+		Fields:   V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_JobExecutionDetail_ErrorFields,
+	},
+	"State":      ubx.FieldSpec{WireName: "state"},
+	"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+}
 
 var V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail_TaskDetailsFields = ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"Error": ubx.FieldSpec{
-			WireName: "error",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_JobExecutionDetail_ErrorFields,
-		},
-		"Execution": ubx.FieldSpec{
-			WireName: "execution",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail_TaskDetails_ExecutionFields,
-		},
-		"ExecutorDetail": ubx.FieldSpec{
-			WireName: "executor_detail",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail_TaskDetails_ExecutorDetailFields,
-		},
-		"Inputs": ubx.FieldSpec{
-			WireName: "inputs",
-			Kind: "map",
-			Fields: V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail_TaskDetails_InputsFields,
-		},
-		"Outputs": ubx.FieldSpec{
-			WireName: "outputs",
-			Kind: "map",
-			Fields: V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail_TaskDetails_InputsFields,
-		},
-		"ParentTaskId": ubx.FieldSpec{WireName: "parent_task_id"},
-		"PipelineTaskStatus": ubx.FieldSpec{
-			WireName: "pipeline_task_status",
-			Kind: "list",
-			Fields: V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail_TaskDetails_PipelineTaskStatusFields,
-		},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"TaskId": ubx.FieldSpec{WireName: "task_id"},
-		"TaskName": ubx.FieldSpec{WireName: "task_name"},
-		"TaskUniqueName": ubx.FieldSpec{WireName: "task_unique_name"},
-	}
+	"CreateTime": ubx.FieldSpec{WireName: "create_time"},
+	"EndTime":    ubx.FieldSpec{WireName: "end_time"},
+	"Error": ubx.FieldSpec{
+		WireName: "error",
+		Kind:     "object",
+		Fields:   V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_JobExecutionDetail_ErrorFields,
+	},
+	"Execution": ubx.FieldSpec{
+		WireName: "execution",
+		Kind:     "object",
+		Fields:   V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail_TaskDetails_ExecutionFields,
+	},
+	"ExecutorDetail": ubx.FieldSpec{
+		WireName: "executor_detail",
+		Kind:     "object",
+		Fields:   V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail_TaskDetails_ExecutorDetailFields,
+	},
+	"Inputs": ubx.FieldSpec{
+		WireName: "inputs",
+		Kind:     "map",
+		Fields:   V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail_TaskDetails_InputsFields,
+	},
+	"Outputs": ubx.FieldSpec{
+		WireName: "outputs",
+		Kind:     "map",
+		Fields:   V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail_TaskDetails_InputsFields,
+	},
+	"ParentTaskId": ubx.FieldSpec{WireName: "parent_task_id"},
+	"PipelineTaskStatus": ubx.FieldSpec{
+		WireName: "pipeline_task_status",
+		Kind:     "list",
+		Fields:   V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail_TaskDetails_PipelineTaskStatusFields,
+	},
+	"StartTime":      ubx.FieldSpec{WireName: "start_time"},
+	"State":          ubx.FieldSpec{WireName: "state"},
+	"TaskId":         ubx.FieldSpec{WireName: "task_id"},
+	"TaskName":       ubx.FieldSpec{WireName: "task_name"},
+	"TaskUniqueName": ubx.FieldSpec{WireName: "task_unique_name"},
+}
 
 var V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_JobDetailFields = ubx.FieldMap{
-		"PipelineContext": ubx.FieldSpec{
-			WireName: "pipeline_context",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail_PipelineContextFields,
-		},
-		"PipelineRunContext": ubx.FieldSpec{
-			WireName: "pipeline_run_context",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail_PipelineContextFields,
-		},
-		"TaskDetails": ubx.FieldSpec{
-			WireName: "task_details",
-			Kind: "list",
-			Fields: V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail_TaskDetailsFields,
-		},
-	}
+	"PipelineContext": ubx.FieldSpec{
+		WireName: "pipeline_context",
+		Kind:     "object",
+		Fields:   V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail_PipelineContextFields,
+	},
+	"PipelineRunContext": ubx.FieldSpec{
+		WireName: "pipeline_run_context",
+		Kind:     "object",
+		Fields:   V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail_PipelineContextFields,
+	},
+	"TaskDetails": ubx.FieldSpec{
+		WireName: "task_details",
+		Kind:     "list",
+		Fields:   V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_JobDetail_TaskDetailsFields,
+	},
+}
 
 var V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_PipelineTaskRerunConfigs_Inputs_Artifacts_Artifacts_CustomPropertiesFields = ubx.FieldMap{
-		"DoubleValue": ubx.FieldSpec{WireName: "double_value"},
-		"IntValue": ubx.FieldSpec{WireName: "int_value"},
-		"StringValue": ubx.FieldSpec{WireName: "string_value"},
-	}
+	"DoubleValue": ubx.FieldSpec{WireName: "double_value"},
+	"IntValue":    ubx.FieldSpec{WireName: "int_value"},
+	"StringValue": ubx.FieldSpec{WireName: "string_value"},
+}
 
 var V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_PipelineTaskRerunConfigs_Inputs_Artifacts_Artifacts_TypeFields = ubx.FieldMap{
-		"InstanceSchema": ubx.FieldSpec{WireName: "instance_schema"},
-		"SchemaTitle": ubx.FieldSpec{WireName: "schema_title"},
-		"SchemaUri": ubx.FieldSpec{WireName: "schema_uri"},
-		"SchemaVersion": ubx.FieldSpec{WireName: "schema_version"},
-	}
+	"InstanceSchema": ubx.FieldSpec{WireName: "instance_schema"},
+	"SchemaTitle":    ubx.FieldSpec{WireName: "schema_title"},
+	"SchemaUri":      ubx.FieldSpec{WireName: "schema_uri"},
+	"SchemaVersion":  ubx.FieldSpec{WireName: "schema_version"},
+}
 
 var V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_PipelineTaskRerunConfigs_Inputs_Artifacts_ArtifactsFields = ubx.FieldMap{
-		"CustomProperties": ubx.FieldSpec{
-			WireName: "custom_properties",
-			Kind: "map",
-			Fields: V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_PipelineTaskRerunConfigs_Inputs_Artifacts_Artifacts_CustomPropertiesFields,
-		},
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Properties": ubx.FieldSpec{
-			WireName: "properties",
-			Kind: "map",
-			Fields: V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_PipelineTaskRerunConfigs_Inputs_Artifacts_Artifacts_CustomPropertiesFields,
-		},
-		"Type": ubx.FieldSpec{
-			WireName: "type",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_PipelineTaskRerunConfigs_Inputs_Artifacts_Artifacts_TypeFields,
-		},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"CustomProperties": ubx.FieldSpec{
+		WireName: "custom_properties",
+		Kind:     "map",
+		Fields:   V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_PipelineTaskRerunConfigs_Inputs_Artifacts_Artifacts_CustomPropertiesFields,
+	},
+	"Metadata": ubx.FieldSpec{WireName: "metadata"},
+	"Name":     ubx.FieldSpec{WireName: "name"},
+	"Properties": ubx.FieldSpec{
+		WireName: "properties",
+		Kind:     "map",
+		Fields:   V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_PipelineTaskRerunConfigs_Inputs_Artifacts_Artifacts_CustomPropertiesFields,
+	},
+	"Type": ubx.FieldSpec{
+		WireName: "type",
+		Kind:     "object",
+		Fields:   V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_PipelineTaskRerunConfigs_Inputs_Artifacts_Artifacts_TypeFields,
+	},
+	"Uri": ubx.FieldSpec{WireName: "uri"},
+}
 
 var V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_PipelineTaskRerunConfigs_Inputs_ArtifactsFields = ubx.FieldMap{
-		"Artifacts": ubx.FieldSpec{
-			WireName: "artifacts",
-			Kind: "list",
-			Fields: V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_PipelineTaskRerunConfigs_Inputs_Artifacts_ArtifactsFields,
-		},
-	}
+	"Artifacts": ubx.FieldSpec{
+		WireName: "artifacts",
+		Kind:     "list",
+		Fields:   V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_PipelineTaskRerunConfigs_Inputs_Artifacts_ArtifactsFields,
+	},
+}
 
 var V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_PipelineTaskRerunConfigs_InputsFields = ubx.FieldMap{
-		"Artifacts": ubx.FieldSpec{
-			WireName: "artifacts",
-			Kind: "map",
-			Fields: V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_PipelineTaskRerunConfigs_Inputs_ArtifactsFields,
-		},
-		"ParameterValues": ubx.FieldSpec{WireName: "parameter_values"},
-	}
+	"Artifacts": ubx.FieldSpec{
+		WireName: "artifacts",
+		Kind:     "map",
+		Fields:   V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_PipelineTaskRerunConfigs_Inputs_ArtifactsFields,
+	},
+	"ParameterValues": ubx.FieldSpec{WireName: "parameter_values"},
+}
 
 var V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_PipelineTaskRerunConfigsFields = ubx.FieldMap{
-		"Inputs": ubx.FieldSpec{
-			WireName: "inputs",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_PipelineTaskRerunConfigs_InputsFields,
-		},
-		"SkipDownstreamTasks": ubx.FieldSpec{WireName: "skip_downstream_tasks"},
-		"SkipTask": ubx.FieldSpec{WireName: "skip_task"},
-		"TaskId": ubx.FieldSpec{WireName: "task_id"},
-		"TaskName": ubx.FieldSpec{WireName: "task_name"},
-	}
+	"Inputs": ubx.FieldSpec{
+		WireName: "inputs",
+		Kind:     "object",
+		Fields:   V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_PipelineTaskRerunConfigs_InputsFields,
+	},
+	"SkipDownstreamTasks": ubx.FieldSpec{WireName: "skip_downstream_tasks"},
+	"SkipTask":            ubx.FieldSpec{WireName: "skip_task"},
+	"TaskId":              ubx.FieldSpec{WireName: "task_id"},
+	"TaskName":            ubx.FieldSpec{WireName: "task_name"},
+}
 
 var V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_PscInterfaceConfig_DnsPeeringConfigsFields = ubx.FieldMap{
-		"Domain": ubx.FieldSpec{WireName: "domain"},
-		"TargetNetwork": ubx.FieldSpec{WireName: "target_network"},
-		"TargetProject": ubx.FieldSpec{WireName: "target_project"},
-	}
+	"Domain":        ubx.FieldSpec{WireName: "domain"},
+	"TargetNetwork": ubx.FieldSpec{WireName: "target_network"},
+	"TargetProject": ubx.FieldSpec{WireName: "target_project"},
+}
 
 var V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_PscInterfaceConfigFields = ubx.FieldMap{
-		"DnsPeeringConfigs": ubx.FieldSpec{
-			WireName: "dns_peering_configs",
-			Kind: "list",
-			Fields: V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_PscInterfaceConfig_DnsPeeringConfigsFields,
-		},
-		"NetworkAttachment": ubx.FieldSpec{WireName: "network_attachment"},
-	}
+	"DnsPeeringConfigs": ubx.FieldSpec{
+		WireName: "dns_peering_configs",
+		Kind:     "list",
+		Fields:   V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_PscInterfaceConfig_DnsPeeringConfigsFields,
+	},
+	"NetworkAttachment": ubx.FieldSpec{WireName: "network_attachment"},
+}
 
 var V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_RuntimeConfig_DefaultRuntime_PersistentResourceRuntimeDetailFields = ubx.FieldMap{
-		"PersistentResourceName": ubx.FieldSpec{WireName: "persistent_resource_name"},
-		"TaskResourceUnavailableTimeoutBehavior": ubx.FieldSpec{WireName: "task_resource_unavailable_timeout_behavior"},
-		"TaskResourceUnavailableWaitTimeMs": ubx.FieldSpec{WireName: "task_resource_unavailable_wait_time_ms"},
-	}
+	"PersistentResourceName":                 ubx.FieldSpec{WireName: "persistent_resource_name"},
+	"TaskResourceUnavailableTimeoutBehavior": ubx.FieldSpec{WireName: "task_resource_unavailable_timeout_behavior"},
+	"TaskResourceUnavailableWaitTimeMs":      ubx.FieldSpec{WireName: "task_resource_unavailable_wait_time_ms"},
+}
 
 var V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_RuntimeConfig_DefaultRuntimeFields = ubx.FieldMap{
-		"PersistentResourceRuntimeDetail": ubx.FieldSpec{
-			WireName: "persistent_resource_runtime_detail",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_RuntimeConfig_DefaultRuntime_PersistentResourceRuntimeDetailFields,
-		},
-	}
+	"PersistentResourceRuntimeDetail": ubx.FieldSpec{
+		WireName: "persistent_resource_runtime_detail",
+		Kind:     "object",
+		Fields:   V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_RuntimeConfig_DefaultRuntime_PersistentResourceRuntimeDetailFields,
+	},
+}
 
 var V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_RuntimeConfig_InputArtifactsFields = ubx.FieldMap{
-		"ArtifactId": ubx.FieldSpec{WireName: "artifact_id"},
-	}
+	"ArtifactId": ubx.FieldSpec{WireName: "artifact_id"},
+}
 
 var V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_RuntimeConfigFields = ubx.FieldMap{
-		"DefaultRuntime": ubx.FieldSpec{
-			WireName: "default_runtime",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_RuntimeConfig_DefaultRuntimeFields,
-		},
-		"FailurePolicy": ubx.FieldSpec{WireName: "failure_policy"},
-		"GcsOutputDirectory": ubx.FieldSpec{WireName: "gcs_output_directory"},
-		"InputArtifacts": ubx.FieldSpec{
-			WireName: "input_artifacts",
-			Kind: "map",
-			Fields: V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_RuntimeConfig_InputArtifactsFields,
-		},
-		"ParameterValues": ubx.FieldSpec{WireName: "parameter_values"},
-		"Parameters": ubx.FieldSpec{
-			WireName: "parameters",
-			Kind: "map",
-			Fields: V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_PipelineTaskRerunConfigs_Inputs_Artifacts_Artifacts_CustomPropertiesFields,
-		},
-	}
+	"DefaultRuntime": ubx.FieldSpec{
+		WireName: "default_runtime",
+		Kind:     "object",
+		Fields:   V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_RuntimeConfig_DefaultRuntimeFields,
+	},
+	"FailurePolicy":      ubx.FieldSpec{WireName: "failure_policy"},
+	"GcsOutputDirectory": ubx.FieldSpec{WireName: "gcs_output_directory"},
+	"InputArtifacts": ubx.FieldSpec{
+		WireName: "input_artifacts",
+		Kind:     "map",
+		Fields:   V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_RuntimeConfig_InputArtifactsFields,
+	},
+	"ParameterValues": ubx.FieldSpec{WireName: "parameter_values"},
+	"Parameters": ubx.FieldSpec{
+		WireName: "parameters",
+		Kind:     "map",
+		Fields:   V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_PipelineTaskRerunConfigs_Inputs_Artifacts_Artifacts_CustomPropertiesFields,
+	},
+}
 
 var V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_TemplateMetadataFields = ubx.FieldMap{
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"Version": ubx.FieldSpec{WireName: "version"},
+}
 
 var V1beta1Schedule_CreatePipelineJobRequest_PipelineJobFields = ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"EncryptionSpec": ubx.FieldSpec{
-			WireName: "encryption_spec",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreateNotebookExecutionJobRequest_NotebookExecutionJob_EncryptionSpecFields,
-		},
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"Error": ubx.FieldSpec{
-			WireName: "error",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_JobExecutionDetail_ErrorFields,
-		},
-		"JobDetail": ubx.FieldSpec{
-			WireName: "job_detail",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_JobDetailFields,
-		},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"OriginalPipelineJobId": ubx.FieldSpec{WireName: "original_pipeline_job_id"},
-		"PipelineSpec": ubx.FieldSpec{WireName: "pipeline_spec"},
-		"PipelineTaskRerunConfigs": ubx.FieldSpec{
-			WireName: "pipeline_task_rerun_configs",
-			Kind: "list",
-			Fields: V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_PipelineTaskRerunConfigsFields,
-		},
-		"PreflightValidations": ubx.FieldSpec{WireName: "preflight_validations"},
-		"PscInterfaceConfig": ubx.FieldSpec{
-			WireName: "psc_interface_config",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_PscInterfaceConfigFields,
-		},
-		"ReservedIpRanges": ubx.FieldSpec{WireName: "reserved_ip_ranges"},
-		"RuntimeConfig": ubx.FieldSpec{
-			WireName: "runtime_config",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_RuntimeConfigFields,
-		},
-		"SatisfiesPzi": ubx.FieldSpec{WireName: "satisfies_pzi"},
-		"SatisfiesPzs": ubx.FieldSpec{WireName: "satisfies_pzs"},
-		"ScheduleName": ubx.FieldSpec{WireName: "schedule_name"},
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"TemplateMetadata": ubx.FieldSpec{
-			WireName: "template_metadata",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_TemplateMetadataFields,
-		},
-		"TemplateUri": ubx.FieldSpec{WireName: "template_uri"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-	}
+	"CreateTime":  ubx.FieldSpec{WireName: "create_time"},
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"EncryptionSpec": ubx.FieldSpec{
+		WireName: "encryption_spec",
+		Kind:     "object",
+		Fields:   V1beta1Schedule_CreateNotebookExecutionJobRequest_NotebookExecutionJob_EncryptionSpecFields,
+	},
+	"EndTime": ubx.FieldSpec{WireName: "end_time"},
+	"Error": ubx.FieldSpec{
+		WireName: "error",
+		Kind:     "object",
+		Fields:   V1beta1Schedule_CreateModelMonitoringJobRequest_ModelMonitoringJob_JobExecutionDetail_ErrorFields,
+	},
+	"JobDetail": ubx.FieldSpec{
+		WireName: "job_detail",
+		Kind:     "object",
+		Fields:   V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_JobDetailFields,
+	},
+	"Labels":                ubx.FieldSpec{WireName: "labels"},
+	"Name":                  ubx.FieldSpec{WireName: "name"},
+	"Network":               ubx.FieldSpec{WireName: "network"},
+	"OriginalPipelineJobId": ubx.FieldSpec{WireName: "original_pipeline_job_id"},
+	"PipelineSpec":          ubx.FieldSpec{WireName: "pipeline_spec"},
+	"PipelineTaskRerunConfigs": ubx.FieldSpec{
+		WireName: "pipeline_task_rerun_configs",
+		Kind:     "list",
+		Fields:   V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_PipelineTaskRerunConfigsFields,
+	},
+	"PreflightValidations": ubx.FieldSpec{WireName: "preflight_validations"},
+	"PscInterfaceConfig": ubx.FieldSpec{
+		WireName: "psc_interface_config",
+		Kind:     "object",
+		Fields:   V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_PscInterfaceConfigFields,
+	},
+	"ReservedIpRanges": ubx.FieldSpec{WireName: "reserved_ip_ranges"},
+	"RuntimeConfig": ubx.FieldSpec{
+		WireName: "runtime_config",
+		Kind:     "object",
+		Fields:   V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_RuntimeConfigFields,
+	},
+	"SatisfiesPzi":   ubx.FieldSpec{WireName: "satisfies_pzi"},
+	"SatisfiesPzs":   ubx.FieldSpec{WireName: "satisfies_pzs"},
+	"ScheduleName":   ubx.FieldSpec{WireName: "schedule_name"},
+	"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
+	"StartTime":      ubx.FieldSpec{WireName: "start_time"},
+	"State":          ubx.FieldSpec{WireName: "state"},
+	"TemplateMetadata": ubx.FieldSpec{
+		WireName: "template_metadata",
+		Kind:     "object",
+		Fields:   V1beta1Schedule_CreatePipelineJobRequest_PipelineJob_TemplateMetadataFields,
+	},
+	"TemplateUri": ubx.FieldSpec{WireName: "template_uri"},
+	"UpdateTime":  ubx.FieldSpec{WireName: "update_time"},
+}
 
 var V1beta1Schedule_CreatePipelineJobRequestFields = ubx.FieldMap{
-		"Parent": ubx.FieldSpec{WireName: "parent"},
-		"PipelineJob": ubx.FieldSpec{
-			WireName: "pipeline_job",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreatePipelineJobRequest_PipelineJobFields,
-		},
-		"PipelineJobId": ubx.FieldSpec{WireName: "pipeline_job_id"},
-	}
+	"Parent": ubx.FieldSpec{WireName: "parent"},
+	"PipelineJob": ubx.FieldSpec{
+		WireName: "pipeline_job",
+		Kind:     "object",
+		Fields:   V1beta1Schedule_CreatePipelineJobRequest_PipelineJobFields,
+	},
+	"PipelineJobId": ubx.FieldSpec{WireName: "pipeline_job_id"},
+}
 
 var V1beta1Schedule_LastScheduledRunResponseFields = ubx.FieldMap{
-		"RunResponse": ubx.FieldSpec{WireName: "run_response"},
-		"ScheduledRunTime": ubx.FieldSpec{WireName: "scheduled_run_time"},
-	}
+	"RunResponse":      ubx.FieldSpec{WireName: "run_response"},
+	"ScheduledRunTime": ubx.FieldSpec{WireName: "scheduled_run_time"},
+}
 
 type V1beta1ScheduleConfig struct {
 	// Optional. Whether new scheduled runs can be queued when max_concurrent_runs limit is reached. If set to true, new runs will be queued instead of skipped. Default to false.
 	AllowQueueing any
-	// Output only. Whether to backfill missed runs when the schedule is resumed from PAUSED state. If set to true, all missed runs will be scheduled. New runs will be scheduled after the backfill is complete. Default to false.
-	CatchUp any
 	// Request message for ModelMonitoringService.CreateModelMonitoringJob.
 	CreateModelMonitoringJobRequest any
 	// Request message for [NotebookService.CreateNotebookExecutionJob]
 	CreateNotebookExecutionJobRequest any
 	// Request message for PipelineService.CreatePipelineJob.
 	CreatePipelineJobRequest any
-	// Output only. Timestamp when this Schedule was created.
-	CreateTime any
 	// Cron schedule (https://en.wikipedia.org/wiki/Cron) to launch scheduled runs. To explicitly set a timezone to the cron tab, apply a prefix in the cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or "TZ=${IANA_TIME_ZONE}". The ${IANA_TIME_ZONE} may only be a valid string from IANA time zone database. For example, "CRON_TZ=America/New_York 1 * * * *", or "TZ=America/New_York 1 * * * *".
 	Cron any
 	// Required. User provided name of the Schedule. The name can be up to 128 characters long and can consist of any UTF-8 characters.
 	DisplayName any
 	// Optional. Timestamp after which no new runs can be scheduled. If specified, The schedule will be completed when either end_time is reached or when scheduled_run_count >= max_run_count. If not specified, new runs will keep getting scheduled until this Schedule is paused or deleted. Already scheduled runs will be allowed to complete. Unset if not specified.
 	EndTime any
-	// Output only. Timestamp when this Schedule was last paused. Unset if never paused.
-	LastPauseTime any
-	// Output only. Timestamp when this Schedule was last resumed. Unset if never resumed from pause.
-	LastResumeTime any
 	// Status of a scheduled run.
 	LastScheduledRunResponse any
 	// Optional. Specifies the maximum number of active runs that can be executed concurrently for this Schedule. This limits the number of runs that can be in a non-terminal state at the same time. Currently, this field is only supported for requests of type CreatePipelineJobRequest.
@@ -1804,16 +1796,8 @@ type V1beta1ScheduleConfig struct {
 	MaxRunCount any
 	// Immutable. The resource name of the Schedule.
 	Name any
-	// Output only. Timestamp when this Schedule should schedule the next run. Having a next_run_time in the past means the runs are being started behind schedule.
-	NextRunTime any
 	// Optional. Timestamp after which the first run can be scheduled. Default to Schedule create time if not specified.
 	StartTime any
-	// Output only. The number of runs started by this schedule.
-	StartedRunCount any
-	// Output only. The state of this Schedule.
-	State any
-	// Output only. Timestamp when this Schedule was updated.
-	UpdateTime any
 }
 
 type V1beta1ScheduleAttrs struct {
@@ -1865,41 +1849,33 @@ var V1beta1Schedule = ubx.ResourceBinding{
 	WireType: "google_aiplatform_v1beta1_schedule",
 	Fields: ubx.FieldMap{
 		"AllowQueueing": ubx.FieldSpec{WireName: "allow_queueing"},
-		"CatchUp": ubx.FieldSpec{WireName: "catch_up"},
 		"CreateModelMonitoringJobRequest": ubx.FieldSpec{
 			WireName: "create_model_monitoring_job_request",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreateModelMonitoringJobRequestFields,
+			Kind:     "object",
+			Fields:   V1beta1Schedule_CreateModelMonitoringJobRequestFields,
 		},
 		"CreateNotebookExecutionJobRequest": ubx.FieldSpec{
 			WireName: "create_notebook_execution_job_request",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreateNotebookExecutionJobRequestFields,
+			Kind:     "object",
+			Fields:   V1beta1Schedule_CreateNotebookExecutionJobRequestFields,
 		},
 		"CreatePipelineJobRequest": ubx.FieldSpec{
 			WireName: "create_pipeline_job_request",
-			Kind: "object",
-			Fields: V1beta1Schedule_CreatePipelineJobRequestFields,
+			Kind:     "object",
+			Fields:   V1beta1Schedule_CreatePipelineJobRequestFields,
 		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Cron": ubx.FieldSpec{WireName: "cron"},
+		"Cron":        ubx.FieldSpec{WireName: "cron"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"LastPauseTime": ubx.FieldSpec{WireName: "last_pause_time"},
-		"LastResumeTime": ubx.FieldSpec{WireName: "last_resume_time"},
+		"EndTime":     ubx.FieldSpec{WireName: "end_time"},
 		"LastScheduledRunResponse": ubx.FieldSpec{
 			WireName: "last_scheduled_run_response",
-			Kind: "object",
-			Fields: V1beta1Schedule_LastScheduledRunResponseFields,
+			Kind:     "object",
+			Fields:   V1beta1Schedule_LastScheduledRunResponseFields,
 		},
 		"MaxConcurrentActiveRunCount": ubx.FieldSpec{WireName: "max_concurrent_active_run_count"},
-		"MaxConcurrentRunCount": ubx.FieldSpec{WireName: "max_concurrent_run_count"},
-		"MaxRunCount": ubx.FieldSpec{WireName: "max_run_count"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NextRunTime": ubx.FieldSpec{WireName: "next_run_time"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"StartedRunCount": ubx.FieldSpec{WireName: "started_run_count"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"MaxConcurrentRunCount":       ubx.FieldSpec{WireName: "max_concurrent_run_count"},
+		"MaxRunCount":                 ubx.FieldSpec{WireName: "max_run_count"},
+		"Name":                        ubx.FieldSpec{WireName: "name"},
+		"StartTime":                   ubx.FieldSpec{WireName: "start_time"},
 	},
 }

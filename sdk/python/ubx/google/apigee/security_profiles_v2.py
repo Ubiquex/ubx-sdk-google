@@ -30,20 +30,14 @@ _SecurityProfilesV2_ProfileAssessmentConfigsFields = {
 
 @dataclasses.dataclass
 class SecurityProfilesV2Config:
-    # Output only. The time of the security profile creation.
-    create_time: Any = None
     # Optional. The description of the security profile.
     description: Any = None
-    # Output only. Whether the security profile is google defined.
-    google_defined: Any = None
     # Identifier. Name of the security profile v2 resource. Format: organizations/{org}/securityProfilesV2/{profile}
     name: Any = None
     # Required. The configuration for each assessment in this profile. Key is the name/id of the assessment.
     profile_assessment_configs: Any = None
     # Optional. The risk assessment type of the security profile. Defaults to ADVANCED_API_SECURITY.
     risk_assessment_type: Any = None
-    # Output only. The time of the security profile update.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class SecurityProfilesV2Attrs:
@@ -65,9 +59,7 @@ class SecurityProfilesV2Attrs:
 SecurityProfilesV2 = ubx.ResourceBinding(
     wire_type="google_apigee_security_profiles_v2",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
-        "google_defined": ubx.FieldSpec(wire_name="google_defined"),
         "name": ubx.FieldSpec(wire_name="name"),
         "profile_assessment_configs": ubx.FieldSpec(
             wire_name="profile_assessment_configs",
@@ -75,6 +67,5 @@ SecurityProfilesV2 = ubx.ResourceBinding(
             fields=_SecurityProfilesV2_ProfileAssessmentConfigsFields,
         ),
         "risk_assessment_type": ubx.FieldSpec(wire_name="risk_assessment_type"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

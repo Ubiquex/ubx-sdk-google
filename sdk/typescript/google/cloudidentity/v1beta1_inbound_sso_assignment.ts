@@ -31,8 +31,6 @@ const V1beta1InboundSsoAssignment_SignInBehaviorFields: FieldMap = {
 export interface V1beta1InboundSsoAssignmentConfig {
   /** Immutable. The customer. For example: `customers/C0123abc`. */
   customer?: string | Computed<string>;
-  /** Output only. [Resource name](https://cloud.google.com/apis/design/resource_names) of the Inbound SSO Assignment. */
-  name?: string | Computed<string>;
   /** Details that are applicable when `sso_mode` is set to `OIDC_SSO`. */
   oidcSsoInfo?: V1beta1InboundSsoAssignment_OidcSsoInfo | Computed<V1beta1InboundSsoAssignment_OidcSsoInfo>;
   /** Must be zero (which is the default value so it can be omitted) for assignments with `target_org_unit` set and must be greater-than-or-equal-to one for assignments with `target_group` set. */
@@ -74,7 +72,6 @@ export const V1beta1InboundSsoAssignment: ResourceBinding<V1beta1InboundSsoAssig
   wireType: "google_cloudidentity_v1beta1_inbound_sso_assignment",
   fields: {
     customer: "customer",
-    name: "name",
     oidcSsoInfo: {
       wireName: "oidc_sso_info",
       kind: "object",

@@ -4,8 +4,6 @@ package aiplatform
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta1ExperimentConfig struct {
-	// Output only. Timestamp when this TensorboardExperiment was created.
-	CreateTime any
 	// Description of this TensorboardExperiment.
 	Description any
 	// User provided name of this TensorboardExperiment.
@@ -14,12 +12,8 @@ type V1beta1ExperimentConfig struct {
 	Etag any
 	// The labels with user-defined metadata to organize your TensorboardExperiment. Label keys and values cannot be longer than 64 characters (Unicode codepoints), can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. No more than 64 user labels can be associated with one Dataset (System labels are excluded). See https://goo.gl/xmQnxf for more information and examples of labels. System reserved label keys are prefixed with `aiplatform.googleapis.com/` and are immutable. The following system labels exist for each Dataset: * `aiplatform.googleapis.com/dataset_metadata_schema`: output only. Its value is the metadata_schema's title.
 	Labels any
-	// Output only. Name of the TensorboardExperiment. Format: `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}`
-	Name any
 	// Immutable. Source of the TensorboardExperiment. Example: a custom training job.
 	Source any
-	// Output only. Timestamp when this TensorboardExperiment was last updated.
-	UpdateTime any
 }
 
 type V1beta1ExperimentAttrs struct {
@@ -44,13 +38,10 @@ type V1beta1ExperimentAttrs struct {
 var V1beta1Experiment = ubx.ResourceBinding{
 	WireType: "google_aiplatform_v1beta1_experiment",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Source": ubx.FieldSpec{WireName: "source"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"Etag":        ubx.FieldSpec{WireName: "etag"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
+		"Source":      ubx.FieldSpec{WireName: "source"},
 	},
 }

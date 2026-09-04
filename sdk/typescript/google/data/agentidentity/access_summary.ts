@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, DataSourceBinding } from "@ubx/sdk";
 
 export interface AccessSummaryConfig {
-  name: string | Computed<string>;
 }
 
 export interface AccessSummaryAttrs {
@@ -32,6 +31,5 @@ export interface AccessSummaryAttrs {
 export const AccessSummary: DataSourceBinding<AccessSummaryConfig, AccessSummaryAttrs> = {
   wireType: "google_agentidentity_access_summary",
   fields: {
-    name: "name",
   },
 };

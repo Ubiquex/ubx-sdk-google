@@ -23,15 +23,15 @@ type AlphaRegionInstanceGroupManager_AutoHealingPolicies_AutoHealingTriggers str
 
 type AlphaRegionInstanceGroupManager_AutoHealingPolicies_MaxUnavailable struct {
 	Calculated any
-	Fixed any
-	Percent any
+	Fixed      any
+	Percent    any
 }
 
 type AlphaRegionInstanceGroupManager_AutoHealingPolicies struct {
 	AutoHealingTriggers any
-	HealthCheck any
-	InitialDelaySec any
-	MaxUnavailable any
+	HealthCheck         any
+	InitialDelaySec     any
+	MaxUnavailable      any
 }
 
 type AlphaRegionInstanceGroupManager_CurrentActions struct {
@@ -83,11 +83,11 @@ type AlphaRegionInstanceGroupManager_DistributionPolicy struct {
 }
 
 type AlphaRegionInstanceGroupManager_InstanceFlexibilityPolicy_InstanceSelectionLists_Disks_DiskEncryptionKey struct {
-	KmsKeyName any
+	KmsKeyName           any
 	KmsKeyServiceAccount any
-	RawKey any
-	RsaEncryptedKey any
-	Sha256 any
+	RawKey               any
+	RsaEncryptedKey      any
+	Sha256               any
 }
 
 type AlphaRegionInstanceGroupManager_InstanceFlexibilityPolicy_InstanceSelectionLists_Disks_GuestOsFeatures struct {
@@ -95,71 +95,71 @@ type AlphaRegionInstanceGroupManager_InstanceFlexibilityPolicy_InstanceSelection
 }
 
 type AlphaRegionInstanceGroupManager_InstanceFlexibilityPolicy_InstanceSelectionLists_Disks_InitializeParams struct {
-	Architecture any
-	Description any
-	DiskName any
-	DiskSizeGb any
-	DiskType any
-	EnableConfidentialCompute any
-	GuestOsFeatures any
-	Interface any
-	Labels any
-	LicenseCodes any
-	Licenses any
-	MultiWriter any
-	OnUpdateAction any
-	ProvisionedIops any
-	ProvisionedThroughput any
-	ReplicaZones any
-	ResourceManagerTags any
-	ResourcePolicies any
-	SourceImage any
-	SourceImageEncryptionKey any
-	SourceInstantSnapshot any
-	SourceSnapshot any
+	Architecture                any
+	Description                 any
+	DiskName                    any
+	DiskSizeGb                  any
+	DiskType                    any
+	EnableConfidentialCompute   any
+	GuestOsFeatures             any
+	Interface                   any
+	Labels                      any
+	LicenseCodes                any
+	Licenses                    any
+	MultiWriter                 any
+	OnUpdateAction              any
+	ProvisionedIops             any
+	ProvisionedThroughput       any
+	ReplicaZones                any
+	ResourceManagerTags         any
+	ResourcePolicies            any
+	SourceImage                 any
+	SourceImageEncryptionKey    any
+	SourceInstantSnapshot       any
+	SourceSnapshot              any
 	SourceSnapshotEncryptionKey any
-	StoragePool any
+	StoragePool                 any
 }
 
 type AlphaRegionInstanceGroupManager_InstanceFlexibilityPolicy_InstanceSelectionLists_Disks_ShieldedInstanceInitialState_Dbs struct {
-	Content any
+	Content  any
 	FileType any
 }
 
 type AlphaRegionInstanceGroupManager_InstanceFlexibilityPolicy_InstanceSelectionLists_Disks_ShieldedInstanceInitialState struct {
-	Dbs any
+	Dbs  any
 	Dbxs any
 	Keks any
-	Pk any
+	Pk   any
 }
 
 type AlphaRegionInstanceGroupManager_InstanceFlexibilityPolicy_InstanceSelectionLists_Disks struct {
-	Architecture any
-	AutoDelete any
-	Boot any
-	DeviceName any
-	DiskEncryptionKey any
-	DiskSizeGb any
-	ForceAttach any
-	GuestOsFeatures any
-	Index any
-	InitializeParams any
-	Interface any
-	Kind any
-	Licenses any
-	Locked any
-	Mode any
-	SavedState any
+	Architecture                 any
+	AutoDelete                   any
+	Boot                         any
+	DeviceName                   any
+	DiskEncryptionKey            any
+	DiskSizeGb                   any
+	ForceAttach                  any
+	GuestOsFeatures              any
+	Index                        any
+	InitializeParams             any
+	Interface                    any
+	Kind                         any
+	Licenses                     any
+	Locked                       any
+	Mode                         any
+	SavedState                   any
 	ShieldedInstanceInitialState any
-	Source any
-	Type any
+	Source                       any
+	Type                         any
 }
 
 type AlphaRegionInstanceGroupManager_InstanceFlexibilityPolicy_InstanceSelectionLists struct {
-	Disks any
-	MachineTypes any
+	Disks          any
+	MachineTypes   any
 	MinCpuPlatform any
-	Rank any
+	Rank           any
 }
 
 type AlphaRegionInstanceGroupManager_InstanceFlexibilityPolicy_ProvisioningModelMix struct {
@@ -173,7 +173,7 @@ type AlphaRegionInstanceGroupManager_InstanceFlexibilityPolicy struct {
 	// Named instance selections configuring properties that the group will use when creating new VMs.
 	InstanceSelectionLists any
 	// Named instance selections configuring properties that the group will use when creating new VMs.
-	InstanceSelections any
+	InstanceSelections   any
 	ProvisioningModelMix any
 }
 
@@ -191,7 +191,7 @@ type AlphaRegionInstanceGroupManager_InstanceLifecyclePolicy struct {
 	// The action that a MIG performs on a failed VM. If the value of the onFailedHealthCheck field is `DEFAULT_ACTION`, then the same action also applies to the VMs on which your application fails a health check. Valid values are - REPAIR (default): MIG automatically repairs a failed VM by recreating it. For more information, see About repairing VMs in a MIG. - DO_NOTHING: MIG does not repair a failed VM.
 	DefaultActionOnFailure any
 	// A bit indicating whether to forcefully apply the group's latest configuration when repairing a VM. Valid options are: - NO (default): If configuration updates are available, they are not forcefully applied during repair. Instead, configuration updates are applied according to the group's update policy. - YES: If configuration updates are available, they are applied during repair.
-	ForceUpdateOnRepair any
+	ForceUpdateOnRepair          any
 	MetadataBasedReadinessSignal any
 	// The action that a MIG performs on an unhealthy VM. A VM is marked as unhealthy when the application running on that VM fails a health check. Valid values are: - DEFAULT_ACTION (default): MIG uses the same action configured for instanceLifecyclePolicy.defaultActionOnFailure field. - REPAIR: MIG automatically repairs an unhealthy VM by recreating it. - DO_NOTHING: MIG doesn't repair an unhealthy VM. For more information, see About repairing VMs in a MIG.
 	OnFailedHealthCheck any
@@ -247,14 +247,14 @@ type AlphaRegionInstanceGroupManager_Status_AllInstancesConfig struct {
 }
 
 type AlphaRegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_ErrorInfo struct {
-	Domain any
+	Domain    any
 	Metadatas any
-	Reason any
+	Reason    any
 }
 
 type AlphaRegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_Help_Links struct {
 	Description any
-	Url any
+	Url         any
 }
 
 type AlphaRegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_Help struct {
@@ -262,31 +262,31 @@ type AlphaRegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDe
 }
 
 type AlphaRegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_LocalizedMessage struct {
-	Locale any
+	Locale  any
 	Message any
 }
 
 type AlphaRegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_QuotaInfo struct {
-	Dimensions any
-	FutureLimit any
-	Limit any
-	LimitName any
-	MetricName any
+	Dimensions    any
+	FutureLimit   any
+	Limit         any
+	LimitName     any
+	MetricName    any
 	RolloutStatus any
 }
 
 type AlphaRegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails struct {
-	ErrorInfo any
-	Help any
+	ErrorInfo        any
+	Help             any
 	LocalizedMessage any
-	QuotaInfo any
+	QuotaInfo        any
 }
 
 type AlphaRegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors struct {
-	Code any
+	Code         any
 	ErrorDetails any
-	Location any
-	Message any
+	Location     any
+	Message      any
 }
 
 type AlphaRegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error struct {
@@ -294,19 +294,19 @@ type AlphaRegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDe
 }
 
 type AlphaRegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails struct {
-	Error any
+	Error     any
 	Timestamp any
 }
 
 type AlphaRegionInstanceGroupManager_Status_AppliedAcceleratorTopologies struct {
 	AcceleratorTopology any
-	State any
-	StateDetails any
+	State               any
+	StateDetails        any
 }
 
 type AlphaRegionInstanceGroupManager_Status_BulkInstanceOperation struct {
 	// Output only. Informs whether bulk instance operation is in progress.
-	InProgress any
+	InProgress        any
 	LastProgressCheck any
 }
 
@@ -348,7 +348,7 @@ type AlphaRegionInstanceGroupManager_Status_Stateful struct {
 	// Output only. A bit indicating whether the managed instance group has stateful configuration, that is, if you have configured any items in a stateful policy or in per-instance configs. The group might report that it has no stateful configuration even when there is still some preserved state on a managed instance, for example, if you have deleted all PICs but not yet applied those deletions.
 	HasStatefulConfig any
 	// Output only. A bit indicating whether the managed instance group has stateful configuration, that is, if you have configured any items in a stateful policy or in per-instance configs. The group might report that it has no stateful configuration even when there is still some preserved state on a managed instance, for example, if you have deleted all PICs but not yet applied those deletions. This field is deprecated in favor of has_stateful_config.
-	IsStateful any
+	IsStateful         any
 	PerInstanceConfigs any
 }
 
@@ -368,8 +368,8 @@ type AlphaRegionInstanceGroupManager_Status struct {
 	// The list of instance statuses and the number of instances in this managed instance group that have the status. For more information about how to interpret each status check the instance lifecycle documentation. Currently only shown for TPU MIGs.
 	CurrentInstanceStatuses any
 	// Output only. A bit indicating whether the managed instance group is in a stable state. A stable state means that: none of the instances in the managed instance group is currently undergoing any type of change (for example, creation, restart, or deletion); no future changes are scheduled for instances in the managed instance group; and the managed instance group itself is not being modified.
-	IsStable any
-	Stateful any
+	IsStable      any
+	Stateful      any
 	VersionTarget any
 }
 
@@ -401,517 +401,517 @@ type AlphaRegionInstanceGroupManager_UpdatePolicy struct {
 
 type AlphaRegionInstanceGroupManager_Versions struct {
 	InstanceTemplate any
-	Name any
-	Tag any
-	TargetSize any
+	Name             any
+	Tag              any
+	TargetSize       any
 }
 
 var AlphaRegionInstanceGroupManager_AllInstancesConfig_PropertiesFields = ubx.FieldMap{
-		"ExposeHostTopology": ubx.FieldSpec{WireName: "expose_host_topology"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-	}
+	"ExposeHostTopology": ubx.FieldSpec{WireName: "expose_host_topology"},
+	"Labels":             ubx.FieldSpec{WireName: "labels"},
+	"Metadata":           ubx.FieldSpec{WireName: "metadata"},
+}
 
 var AlphaRegionInstanceGroupManager_AllInstancesConfigFields = ubx.FieldMap{
-		"Properties": ubx.FieldSpec{
-			WireName: "properties",
-			Kind: "object",
-			Fields: AlphaRegionInstanceGroupManager_AllInstancesConfig_PropertiesFields,
-		},
-	}
+	"Properties": ubx.FieldSpec{
+		WireName: "properties",
+		Kind:     "object",
+		Fields:   AlphaRegionInstanceGroupManager_AllInstancesConfig_PropertiesFields,
+	},
+}
 
 var AlphaRegionInstanceGroupManager_AutoHealingPolicies_AutoHealingTriggersFields = ubx.FieldMap{
-		"OnHealthCheck": ubx.FieldSpec{WireName: "on_health_check"},
-	}
+	"OnHealthCheck": ubx.FieldSpec{WireName: "on_health_check"},
+}
 
 var AlphaRegionInstanceGroupManager_AutoHealingPolicies_MaxUnavailableFields = ubx.FieldMap{
-		"Calculated": ubx.FieldSpec{WireName: "calculated"},
-		"Fixed": ubx.FieldSpec{WireName: "fixed"},
-		"Percent": ubx.FieldSpec{WireName: "percent"},
-	}
+	"Calculated": ubx.FieldSpec{WireName: "calculated"},
+	"Fixed":      ubx.FieldSpec{WireName: "fixed"},
+	"Percent":    ubx.FieldSpec{WireName: "percent"},
+}
 
 var AlphaRegionInstanceGroupManager_AutoHealingPoliciesFields = ubx.FieldMap{
-		"AutoHealingTriggers": ubx.FieldSpec{
-			WireName: "auto_healing_triggers",
-			Kind: "object",
-			Fields: AlphaRegionInstanceGroupManager_AutoHealingPolicies_AutoHealingTriggersFields,
-		},
-		"HealthCheck": ubx.FieldSpec{WireName: "health_check"},
-		"InitialDelaySec": ubx.FieldSpec{WireName: "initial_delay_sec"},
-		"MaxUnavailable": ubx.FieldSpec{
-			WireName: "max_unavailable",
-			Kind: "object",
-			Fields: AlphaRegionInstanceGroupManager_AutoHealingPolicies_MaxUnavailableFields,
-		},
-	}
+	"AutoHealingTriggers": ubx.FieldSpec{
+		WireName: "auto_healing_triggers",
+		Kind:     "object",
+		Fields:   AlphaRegionInstanceGroupManager_AutoHealingPolicies_AutoHealingTriggersFields,
+	},
+	"HealthCheck":     ubx.FieldSpec{WireName: "health_check"},
+	"InitialDelaySec": ubx.FieldSpec{WireName: "initial_delay_sec"},
+	"MaxUnavailable": ubx.FieldSpec{
+		WireName: "max_unavailable",
+		Kind:     "object",
+		Fields:   AlphaRegionInstanceGroupManager_AutoHealingPolicies_MaxUnavailableFields,
+	},
+}
 
 var AlphaRegionInstanceGroupManager_CurrentActionsFields = ubx.FieldMap{
-		"Abandoning": ubx.FieldSpec{WireName: "abandoning"},
-		"Adopting": ubx.FieldSpec{WireName: "adopting"},
-		"Creating": ubx.FieldSpec{WireName: "creating"},
-		"CreatingAtomically": ubx.FieldSpec{WireName: "creating_atomically"},
-		"CreatingWithoutRetries": ubx.FieldSpec{WireName: "creating_without_retries"},
-		"Deleting": ubx.FieldSpec{WireName: "deleting"},
-		"None": ubx.FieldSpec{WireName: "none"},
-		"Queuing": ubx.FieldSpec{WireName: "queuing"},
-		"Recreating": ubx.FieldSpec{WireName: "recreating"},
-		"Refreshing": ubx.FieldSpec{WireName: "refreshing"},
-		"Restarting": ubx.FieldSpec{WireName: "restarting"},
-		"RestartingInPlace": ubx.FieldSpec{WireName: "restarting_in_place"},
-		"Resuming": ubx.FieldSpec{WireName: "resuming"},
-		"Starting": ubx.FieldSpec{WireName: "starting"},
-		"Stopping": ubx.FieldSpec{WireName: "stopping"},
-		"Suspending": ubx.FieldSpec{WireName: "suspending"},
-		"Verifying": ubx.FieldSpec{WireName: "verifying"},
-	}
+	"Abandoning":             ubx.FieldSpec{WireName: "abandoning"},
+	"Adopting":               ubx.FieldSpec{WireName: "adopting"},
+	"Creating":               ubx.FieldSpec{WireName: "creating"},
+	"CreatingAtomically":     ubx.FieldSpec{WireName: "creating_atomically"},
+	"CreatingWithoutRetries": ubx.FieldSpec{WireName: "creating_without_retries"},
+	"Deleting":               ubx.FieldSpec{WireName: "deleting"},
+	"None":                   ubx.FieldSpec{WireName: "none"},
+	"Queuing":                ubx.FieldSpec{WireName: "queuing"},
+	"Recreating":             ubx.FieldSpec{WireName: "recreating"},
+	"Refreshing":             ubx.FieldSpec{WireName: "refreshing"},
+	"Restarting":             ubx.FieldSpec{WireName: "restarting"},
+	"RestartingInPlace":      ubx.FieldSpec{WireName: "restarting_in_place"},
+	"Resuming":               ubx.FieldSpec{WireName: "resuming"},
+	"Starting":               ubx.FieldSpec{WireName: "starting"},
+	"Stopping":               ubx.FieldSpec{WireName: "stopping"},
+	"Suspending":             ubx.FieldSpec{WireName: "suspending"},
+	"Verifying":              ubx.FieldSpec{WireName: "verifying"},
+}
 
 var AlphaRegionInstanceGroupManager_DistributionPolicy_ZonesFields = ubx.FieldMap{
-		"Zone": ubx.FieldSpec{WireName: "zone"},
-	}
+	"Zone": ubx.FieldSpec{WireName: "zone"},
+}
 
 var AlphaRegionInstanceGroupManager_DistributionPolicyFields = ubx.FieldMap{
-		"TargetShape": ubx.FieldSpec{WireName: "target_shape"},
-		"Zones": ubx.FieldSpec{
-			WireName: "zones",
-			Kind: "list",
-			Fields: AlphaRegionInstanceGroupManager_DistributionPolicy_ZonesFields,
-		},
-	}
+	"TargetShape": ubx.FieldSpec{WireName: "target_shape"},
+	"Zones": ubx.FieldSpec{
+		WireName: "zones",
+		Kind:     "list",
+		Fields:   AlphaRegionInstanceGroupManager_DistributionPolicy_ZonesFields,
+	},
+}
 
 var AlphaRegionInstanceGroupManager_InstanceFlexibilityPolicy_InstanceSelectionLists_Disks_DiskEncryptionKeyFields = ubx.FieldMap{
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-		"KmsKeyServiceAccount": ubx.FieldSpec{WireName: "kms_key_service_account"},
-		"RawKey": ubx.FieldSpec{WireName: "raw_key"},
-		"RsaEncryptedKey": ubx.FieldSpec{WireName: "rsa_encrypted_key"},
-		"Sha256": ubx.FieldSpec{WireName: "sha256"},
-	}
+	"KmsKeyName":           ubx.FieldSpec{WireName: "kms_key_name"},
+	"KmsKeyServiceAccount": ubx.FieldSpec{WireName: "kms_key_service_account"},
+	"RawKey":               ubx.FieldSpec{WireName: "raw_key"},
+	"RsaEncryptedKey":      ubx.FieldSpec{WireName: "rsa_encrypted_key"},
+	"Sha256":               ubx.FieldSpec{WireName: "sha256"},
+}
 
 var AlphaRegionInstanceGroupManager_InstanceFlexibilityPolicy_InstanceSelectionLists_Disks_GuestOsFeaturesFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var AlphaRegionInstanceGroupManager_InstanceFlexibilityPolicy_InstanceSelectionLists_Disks_InitializeParamsFields = ubx.FieldMap{
-		"Architecture": ubx.FieldSpec{WireName: "architecture"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DiskName": ubx.FieldSpec{WireName: "disk_name"},
-		"DiskSizeGb": ubx.FieldSpec{WireName: "disk_size_gb"},
-		"DiskType": ubx.FieldSpec{WireName: "disk_type"},
-		"EnableConfidentialCompute": ubx.FieldSpec{WireName: "enable_confidential_compute"},
-		"GuestOsFeatures": ubx.FieldSpec{
-			WireName: "guest_os_features",
-			Kind: "list",
-			Fields: AlphaRegionInstanceGroupManager_InstanceFlexibilityPolicy_InstanceSelectionLists_Disks_GuestOsFeaturesFields,
-		},
-		"Interface": ubx.FieldSpec{WireName: "interface"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"LicenseCodes": ubx.FieldSpec{WireName: "license_codes"},
-		"Licenses": ubx.FieldSpec{WireName: "licenses"},
-		"MultiWriter": ubx.FieldSpec{WireName: "multi_writer"},
-		"OnUpdateAction": ubx.FieldSpec{WireName: "on_update_action"},
-		"ProvisionedIops": ubx.FieldSpec{WireName: "provisioned_iops"},
-		"ProvisionedThroughput": ubx.FieldSpec{WireName: "provisioned_throughput"},
-		"ReplicaZones": ubx.FieldSpec{WireName: "replica_zones"},
-		"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
-		"ResourcePolicies": ubx.FieldSpec{WireName: "resource_policies"},
-		"SourceImage": ubx.FieldSpec{WireName: "source_image"},
-		"SourceImageEncryptionKey": ubx.FieldSpec{
-			WireName: "source_image_encryption_key",
-			Kind: "object",
-			Fields: AlphaRegionInstanceGroupManager_InstanceFlexibilityPolicy_InstanceSelectionLists_Disks_DiskEncryptionKeyFields,
-		},
-		"SourceInstantSnapshot": ubx.FieldSpec{WireName: "source_instant_snapshot"},
-		"SourceSnapshot": ubx.FieldSpec{WireName: "source_snapshot"},
-		"SourceSnapshotEncryptionKey": ubx.FieldSpec{
-			WireName: "source_snapshot_encryption_key",
-			Kind: "object",
-			Fields: AlphaRegionInstanceGroupManager_InstanceFlexibilityPolicy_InstanceSelectionLists_Disks_DiskEncryptionKeyFields,
-		},
-		"StoragePool": ubx.FieldSpec{WireName: "storage_pool"},
-	}
+	"Architecture":              ubx.FieldSpec{WireName: "architecture"},
+	"Description":               ubx.FieldSpec{WireName: "description"},
+	"DiskName":                  ubx.FieldSpec{WireName: "disk_name"},
+	"DiskSizeGb":                ubx.FieldSpec{WireName: "disk_size_gb"},
+	"DiskType":                  ubx.FieldSpec{WireName: "disk_type"},
+	"EnableConfidentialCompute": ubx.FieldSpec{WireName: "enable_confidential_compute"},
+	"GuestOsFeatures": ubx.FieldSpec{
+		WireName: "guest_os_features",
+		Kind:     "list",
+		Fields:   AlphaRegionInstanceGroupManager_InstanceFlexibilityPolicy_InstanceSelectionLists_Disks_GuestOsFeaturesFields,
+	},
+	"Interface":             ubx.FieldSpec{WireName: "interface"},
+	"Labels":                ubx.FieldSpec{WireName: "labels"},
+	"LicenseCodes":          ubx.FieldSpec{WireName: "license_codes"},
+	"Licenses":              ubx.FieldSpec{WireName: "licenses"},
+	"MultiWriter":           ubx.FieldSpec{WireName: "multi_writer"},
+	"OnUpdateAction":        ubx.FieldSpec{WireName: "on_update_action"},
+	"ProvisionedIops":       ubx.FieldSpec{WireName: "provisioned_iops"},
+	"ProvisionedThroughput": ubx.FieldSpec{WireName: "provisioned_throughput"},
+	"ReplicaZones":          ubx.FieldSpec{WireName: "replica_zones"},
+	"ResourceManagerTags":   ubx.FieldSpec{WireName: "resource_manager_tags"},
+	"ResourcePolicies":      ubx.FieldSpec{WireName: "resource_policies"},
+	"SourceImage":           ubx.FieldSpec{WireName: "source_image"},
+	"SourceImageEncryptionKey": ubx.FieldSpec{
+		WireName: "source_image_encryption_key",
+		Kind:     "object",
+		Fields:   AlphaRegionInstanceGroupManager_InstanceFlexibilityPolicy_InstanceSelectionLists_Disks_DiskEncryptionKeyFields,
+	},
+	"SourceInstantSnapshot": ubx.FieldSpec{WireName: "source_instant_snapshot"},
+	"SourceSnapshot":        ubx.FieldSpec{WireName: "source_snapshot"},
+	"SourceSnapshotEncryptionKey": ubx.FieldSpec{
+		WireName: "source_snapshot_encryption_key",
+		Kind:     "object",
+		Fields:   AlphaRegionInstanceGroupManager_InstanceFlexibilityPolicy_InstanceSelectionLists_Disks_DiskEncryptionKeyFields,
+	},
+	"StoragePool": ubx.FieldSpec{WireName: "storage_pool"},
+}
 
 var AlphaRegionInstanceGroupManager_InstanceFlexibilityPolicy_InstanceSelectionLists_Disks_ShieldedInstanceInitialState_DbsFields = ubx.FieldMap{
-		"Content": ubx.FieldSpec{WireName: "content"},
-		"FileType": ubx.FieldSpec{WireName: "file_type"},
-	}
+	"Content":  ubx.FieldSpec{WireName: "content"},
+	"FileType": ubx.FieldSpec{WireName: "file_type"},
+}
 
 var AlphaRegionInstanceGroupManager_InstanceFlexibilityPolicy_InstanceSelectionLists_Disks_ShieldedInstanceInitialStateFields = ubx.FieldMap{
-		"Dbs": ubx.FieldSpec{
-			WireName: "dbs",
-			Kind: "list",
-			Fields: AlphaRegionInstanceGroupManager_InstanceFlexibilityPolicy_InstanceSelectionLists_Disks_ShieldedInstanceInitialState_DbsFields,
-		},
-		"Dbxs": ubx.FieldSpec{
-			WireName: "dbxs",
-			Kind: "list",
-			Fields: AlphaRegionInstanceGroupManager_InstanceFlexibilityPolicy_InstanceSelectionLists_Disks_ShieldedInstanceInitialState_DbsFields,
-		},
-		"Keks": ubx.FieldSpec{
-			WireName: "keks",
-			Kind: "list",
-			Fields: AlphaRegionInstanceGroupManager_InstanceFlexibilityPolicy_InstanceSelectionLists_Disks_ShieldedInstanceInitialState_DbsFields,
-		},
-		"Pk": ubx.FieldSpec{
-			WireName: "pk",
-			Kind: "object",
-			Fields: AlphaRegionInstanceGroupManager_InstanceFlexibilityPolicy_InstanceSelectionLists_Disks_ShieldedInstanceInitialState_DbsFields,
-		},
-	}
+	"Dbs": ubx.FieldSpec{
+		WireName: "dbs",
+		Kind:     "list",
+		Fields:   AlphaRegionInstanceGroupManager_InstanceFlexibilityPolicy_InstanceSelectionLists_Disks_ShieldedInstanceInitialState_DbsFields,
+	},
+	"Dbxs": ubx.FieldSpec{
+		WireName: "dbxs",
+		Kind:     "list",
+		Fields:   AlphaRegionInstanceGroupManager_InstanceFlexibilityPolicy_InstanceSelectionLists_Disks_ShieldedInstanceInitialState_DbsFields,
+	},
+	"Keks": ubx.FieldSpec{
+		WireName: "keks",
+		Kind:     "list",
+		Fields:   AlphaRegionInstanceGroupManager_InstanceFlexibilityPolicy_InstanceSelectionLists_Disks_ShieldedInstanceInitialState_DbsFields,
+	},
+	"Pk": ubx.FieldSpec{
+		WireName: "pk",
+		Kind:     "object",
+		Fields:   AlphaRegionInstanceGroupManager_InstanceFlexibilityPolicy_InstanceSelectionLists_Disks_ShieldedInstanceInitialState_DbsFields,
+	},
+}
 
 var AlphaRegionInstanceGroupManager_InstanceFlexibilityPolicy_InstanceSelectionLists_DisksFields = ubx.FieldMap{
-		"Architecture": ubx.FieldSpec{WireName: "architecture"},
-		"AutoDelete": ubx.FieldSpec{WireName: "auto_delete"},
-		"Boot": ubx.FieldSpec{WireName: "boot"},
-		"DeviceName": ubx.FieldSpec{WireName: "device_name"},
-		"DiskEncryptionKey": ubx.FieldSpec{
-			WireName: "disk_encryption_key",
-			Kind: "object",
-			Fields: AlphaRegionInstanceGroupManager_InstanceFlexibilityPolicy_InstanceSelectionLists_Disks_DiskEncryptionKeyFields,
-		},
-		"DiskSizeGb": ubx.FieldSpec{WireName: "disk_size_gb"},
-		"ForceAttach": ubx.FieldSpec{WireName: "force_attach"},
-		"GuestOsFeatures": ubx.FieldSpec{
-			WireName: "guest_os_features",
-			Kind: "list",
-			Fields: AlphaRegionInstanceGroupManager_InstanceFlexibilityPolicy_InstanceSelectionLists_Disks_GuestOsFeaturesFields,
-		},
-		"Index": ubx.FieldSpec{WireName: "index"},
-		"InitializeParams": ubx.FieldSpec{
-			WireName: "initialize_params",
-			Kind: "object",
-			Fields: AlphaRegionInstanceGroupManager_InstanceFlexibilityPolicy_InstanceSelectionLists_Disks_InitializeParamsFields,
-		},
-		"Interface": ubx.FieldSpec{WireName: "interface"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Licenses": ubx.FieldSpec{WireName: "licenses"},
-		"Locked": ubx.FieldSpec{WireName: "locked"},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"SavedState": ubx.FieldSpec{WireName: "saved_state"},
-		"ShieldedInstanceInitialState": ubx.FieldSpec{
-			WireName: "shielded_instance_initial_state",
-			Kind: "object",
-			Fields: AlphaRegionInstanceGroupManager_InstanceFlexibilityPolicy_InstanceSelectionLists_Disks_ShieldedInstanceInitialStateFields,
-		},
-		"Source": ubx.FieldSpec{WireName: "source"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Architecture": ubx.FieldSpec{WireName: "architecture"},
+	"AutoDelete":   ubx.FieldSpec{WireName: "auto_delete"},
+	"Boot":         ubx.FieldSpec{WireName: "boot"},
+	"DeviceName":   ubx.FieldSpec{WireName: "device_name"},
+	"DiskEncryptionKey": ubx.FieldSpec{
+		WireName: "disk_encryption_key",
+		Kind:     "object",
+		Fields:   AlphaRegionInstanceGroupManager_InstanceFlexibilityPolicy_InstanceSelectionLists_Disks_DiskEncryptionKeyFields,
+	},
+	"DiskSizeGb":  ubx.FieldSpec{WireName: "disk_size_gb"},
+	"ForceAttach": ubx.FieldSpec{WireName: "force_attach"},
+	"GuestOsFeatures": ubx.FieldSpec{
+		WireName: "guest_os_features",
+		Kind:     "list",
+		Fields:   AlphaRegionInstanceGroupManager_InstanceFlexibilityPolicy_InstanceSelectionLists_Disks_GuestOsFeaturesFields,
+	},
+	"Index": ubx.FieldSpec{WireName: "index"},
+	"InitializeParams": ubx.FieldSpec{
+		WireName: "initialize_params",
+		Kind:     "object",
+		Fields:   AlphaRegionInstanceGroupManager_InstanceFlexibilityPolicy_InstanceSelectionLists_Disks_InitializeParamsFields,
+	},
+	"Interface":  ubx.FieldSpec{WireName: "interface"},
+	"Kind":       ubx.FieldSpec{WireName: "kind"},
+	"Licenses":   ubx.FieldSpec{WireName: "licenses"},
+	"Locked":     ubx.FieldSpec{WireName: "locked"},
+	"Mode":       ubx.FieldSpec{WireName: "mode"},
+	"SavedState": ubx.FieldSpec{WireName: "saved_state"},
+	"ShieldedInstanceInitialState": ubx.FieldSpec{
+		WireName: "shielded_instance_initial_state",
+		Kind:     "object",
+		Fields:   AlphaRegionInstanceGroupManager_InstanceFlexibilityPolicy_InstanceSelectionLists_Disks_ShieldedInstanceInitialStateFields,
+	},
+	"Source": ubx.FieldSpec{WireName: "source"},
+	"Type":   ubx.FieldSpec{WireName: "type"},
+}
 
 var AlphaRegionInstanceGroupManager_InstanceFlexibilityPolicy_InstanceSelectionListsFields = ubx.FieldMap{
-		"Disks": ubx.FieldSpec{
-			WireName: "disks",
-			Kind: "list",
-			Fields: AlphaRegionInstanceGroupManager_InstanceFlexibilityPolicy_InstanceSelectionLists_DisksFields,
-		},
-		"MachineTypes": ubx.FieldSpec{WireName: "machine_types"},
-		"MinCpuPlatform": ubx.FieldSpec{WireName: "min_cpu_platform"},
-		"Rank": ubx.FieldSpec{WireName: "rank"},
-	}
+	"Disks": ubx.FieldSpec{
+		WireName: "disks",
+		Kind:     "list",
+		Fields:   AlphaRegionInstanceGroupManager_InstanceFlexibilityPolicy_InstanceSelectionLists_DisksFields,
+	},
+	"MachineTypes":   ubx.FieldSpec{WireName: "machine_types"},
+	"MinCpuPlatform": ubx.FieldSpec{WireName: "min_cpu_platform"},
+	"Rank":           ubx.FieldSpec{WireName: "rank"},
+}
 
 var AlphaRegionInstanceGroupManager_InstanceFlexibilityPolicy_ProvisioningModelMixFields = ubx.FieldMap{
-		"StandardCapacityBase": ubx.FieldSpec{WireName: "standard_capacity_base"},
-		"StandardCapacityPercentAboveBase": ubx.FieldSpec{WireName: "standard_capacity_percent_above_base"},
-	}
+	"StandardCapacityBase":             ubx.FieldSpec{WireName: "standard_capacity_base"},
+	"StandardCapacityPercentAboveBase": ubx.FieldSpec{WireName: "standard_capacity_percent_above_base"},
+}
 
 var AlphaRegionInstanceGroupManager_InstanceFlexibilityPolicyFields = ubx.FieldMap{
-		"InstanceSelectionLists": ubx.FieldSpec{
-			WireName: "instance_selection_lists",
-			Kind: "map",
-			Fields: AlphaRegionInstanceGroupManager_InstanceFlexibilityPolicy_InstanceSelectionListsFields,
-		},
-		"InstanceSelections": ubx.FieldSpec{
-			WireName: "instance_selections",
-			Kind: "map",
-			Fields: AlphaRegionInstanceGroupManager_InstanceFlexibilityPolicy_InstanceSelectionListsFields,
-		},
-		"ProvisioningModelMix": ubx.FieldSpec{
-			WireName: "provisioning_model_mix",
-			Kind: "object",
-			Fields: AlphaRegionInstanceGroupManager_InstanceFlexibilityPolicy_ProvisioningModelMixFields,
-		},
-	}
+	"InstanceSelectionLists": ubx.FieldSpec{
+		WireName: "instance_selection_lists",
+		Kind:     "map",
+		Fields:   AlphaRegionInstanceGroupManager_InstanceFlexibilityPolicy_InstanceSelectionListsFields,
+	},
+	"InstanceSelections": ubx.FieldSpec{
+		WireName: "instance_selections",
+		Kind:     "map",
+		Fields:   AlphaRegionInstanceGroupManager_InstanceFlexibilityPolicy_InstanceSelectionListsFields,
+	},
+	"ProvisioningModelMix": ubx.FieldSpec{
+		WireName: "provisioning_model_mix",
+		Kind:     "object",
+		Fields:   AlphaRegionInstanceGroupManager_InstanceFlexibilityPolicy_ProvisioningModelMixFields,
+	},
+}
 
 var AlphaRegionInstanceGroupManager_InstanceLifecyclePolicy_MetadataBasedReadinessSignalFields = ubx.FieldMap{
-		"TimeoutSec": ubx.FieldSpec{WireName: "timeout_sec"},
-	}
+	"TimeoutSec": ubx.FieldSpec{WireName: "timeout_sec"},
+}
 
 var AlphaRegionInstanceGroupManager_InstanceLifecyclePolicy_OnRepairFields = ubx.FieldMap{
-		"AllowChangingZone": ubx.FieldSpec{WireName: "allow_changing_zone"},
-	}
+	"AllowChangingZone": ubx.FieldSpec{WireName: "allow_changing_zone"},
+}
 
 var AlphaRegionInstanceGroupManager_InstanceLifecyclePolicyFields = ubx.FieldMap{
-		"DefaultActionOnFailure": ubx.FieldSpec{WireName: "default_action_on_failure"},
-		"ForceUpdateOnRepair": ubx.FieldSpec{WireName: "force_update_on_repair"},
-		"MetadataBasedReadinessSignal": ubx.FieldSpec{
-			WireName: "metadata_based_readiness_signal",
-			Kind: "object",
-			Fields: AlphaRegionInstanceGroupManager_InstanceLifecyclePolicy_MetadataBasedReadinessSignalFields,
-		},
-		"OnFailedHealthCheck": ubx.FieldSpec{WireName: "on_failed_health_check"},
-		"OnRepair": ubx.FieldSpec{
-			WireName: "on_repair",
-			Kind: "object",
-			Fields: AlphaRegionInstanceGroupManager_InstanceLifecyclePolicy_OnRepairFields,
-		},
-	}
+	"DefaultActionOnFailure": ubx.FieldSpec{WireName: "default_action_on_failure"},
+	"ForceUpdateOnRepair":    ubx.FieldSpec{WireName: "force_update_on_repair"},
+	"MetadataBasedReadinessSignal": ubx.FieldSpec{
+		WireName: "metadata_based_readiness_signal",
+		Kind:     "object",
+		Fields:   AlphaRegionInstanceGroupManager_InstanceLifecyclePolicy_MetadataBasedReadinessSignalFields,
+	},
+	"OnFailedHealthCheck": ubx.FieldSpec{WireName: "on_failed_health_check"},
+	"OnRepair": ubx.FieldSpec{
+		WireName: "on_repair",
+		Kind:     "object",
+		Fields:   AlphaRegionInstanceGroupManager_InstanceLifecyclePolicy_OnRepairFields,
+	},
+}
 
 var AlphaRegionInstanceGroupManager_NamedPortsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Port": ubx.FieldSpec{WireName: "port"},
+}
 
 var AlphaRegionInstanceGroupManager_ParamsFields = ubx.FieldMap{
-		"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
-	}
+	"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
+}
 
 var AlphaRegionInstanceGroupManager_ResourcePoliciesFields = ubx.FieldMap{
-		"WorkloadPolicy": ubx.FieldSpec{WireName: "workload_policy"},
-	}
+	"WorkloadPolicy": ubx.FieldSpec{WireName: "workload_policy"},
+}
 
 var AlphaRegionInstanceGroupManager_StandbyPolicyFields = ubx.FieldMap{
-		"InitialDelaySec": ubx.FieldSpec{WireName: "initial_delay_sec"},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-	}
+	"InitialDelaySec": ubx.FieldSpec{WireName: "initial_delay_sec"},
+	"Mode":            ubx.FieldSpec{WireName: "mode"},
+}
 
 var AlphaRegionInstanceGroupManager_StatefulPolicy_PreservedState_DisksFields = ubx.FieldMap{
-		"AutoDelete": ubx.FieldSpec{WireName: "auto_delete"},
-	}
+	"AutoDelete": ubx.FieldSpec{WireName: "auto_delete"},
+}
 
 var AlphaRegionInstanceGroupManager_StatefulPolicy_PreservedStateFields = ubx.FieldMap{
-		"Disks": ubx.FieldSpec{
-			WireName: "disks",
-			Kind: "map",
-			Fields: AlphaRegionInstanceGroupManager_StatefulPolicy_PreservedState_DisksFields,
-		},
-		"ExternalIps": ubx.FieldSpec{
-			WireName: "external_ips",
-			Kind: "map",
-			Fields: AlphaRegionInstanceGroupManager_StatefulPolicy_PreservedState_DisksFields,
-		},
-		"InternalIps": ubx.FieldSpec{
-			WireName: "internal_ips",
-			Kind: "map",
-			Fields: AlphaRegionInstanceGroupManager_StatefulPolicy_PreservedState_DisksFields,
-		},
-	}
+	"Disks": ubx.FieldSpec{
+		WireName: "disks",
+		Kind:     "map",
+		Fields:   AlphaRegionInstanceGroupManager_StatefulPolicy_PreservedState_DisksFields,
+	},
+	"ExternalIps": ubx.FieldSpec{
+		WireName: "external_ips",
+		Kind:     "map",
+		Fields:   AlphaRegionInstanceGroupManager_StatefulPolicy_PreservedState_DisksFields,
+	},
+	"InternalIps": ubx.FieldSpec{
+		WireName: "internal_ips",
+		Kind:     "map",
+		Fields:   AlphaRegionInstanceGroupManager_StatefulPolicy_PreservedState_DisksFields,
+	},
+}
 
 var AlphaRegionInstanceGroupManager_StatefulPolicyFields = ubx.FieldMap{
-		"PreservedState": ubx.FieldSpec{
-			WireName: "preserved_state",
-			Kind: "object",
-			Fields: AlphaRegionInstanceGroupManager_StatefulPolicy_PreservedStateFields,
-		},
-	}
+	"PreservedState": ubx.FieldSpec{
+		WireName: "preserved_state",
+		Kind:     "object",
+		Fields:   AlphaRegionInstanceGroupManager_StatefulPolicy_PreservedStateFields,
+	},
+}
 
 var AlphaRegionInstanceGroupManager_Status_AllInstancesConfigFields = ubx.FieldMap{
-		"CurrentRevision": ubx.FieldSpec{WireName: "current_revision"},
-		"Effective": ubx.FieldSpec{WireName: "effective"},
-	}
+	"CurrentRevision": ubx.FieldSpec{WireName: "current_revision"},
+	"Effective":       ubx.FieldSpec{WireName: "effective"},
+}
 
 var AlphaRegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_ErrorInfoFields = ubx.FieldMap{
-		"Domain": ubx.FieldSpec{WireName: "domain"},
-		"Metadatas": ubx.FieldSpec{WireName: "metadatas"},
-		"Reason": ubx.FieldSpec{WireName: "reason"},
-	}
+	"Domain":    ubx.FieldSpec{WireName: "domain"},
+	"Metadatas": ubx.FieldSpec{WireName: "metadatas"},
+	"Reason":    ubx.FieldSpec{WireName: "reason"},
+}
 
 var AlphaRegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_Help_LinksFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Url": ubx.FieldSpec{WireName: "url"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Url":         ubx.FieldSpec{WireName: "url"},
+}
 
 var AlphaRegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_HelpFields = ubx.FieldMap{
-		"Links": ubx.FieldSpec{
-			WireName: "links",
-			Kind: "list",
-			Fields: AlphaRegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_Help_LinksFields,
-		},
-	}
+	"Links": ubx.FieldSpec{
+		WireName: "links",
+		Kind:     "list",
+		Fields:   AlphaRegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_Help_LinksFields,
+	},
+}
 
 var AlphaRegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_LocalizedMessageFields = ubx.FieldMap{
-		"Locale": ubx.FieldSpec{WireName: "locale"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"Locale":  ubx.FieldSpec{WireName: "locale"},
+	"Message": ubx.FieldSpec{WireName: "message"},
+}
 
 var AlphaRegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_QuotaInfoFields = ubx.FieldMap{
-		"Dimensions": ubx.FieldSpec{WireName: "dimensions"},
-		"FutureLimit": ubx.FieldSpec{WireName: "future_limit"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"LimitName": ubx.FieldSpec{WireName: "limit_name"},
-		"MetricName": ubx.FieldSpec{WireName: "metric_name"},
-		"RolloutStatus": ubx.FieldSpec{WireName: "rollout_status"},
-	}
+	"Dimensions":    ubx.FieldSpec{WireName: "dimensions"},
+	"FutureLimit":   ubx.FieldSpec{WireName: "future_limit"},
+	"Limit":         ubx.FieldSpec{WireName: "limit"},
+	"LimitName":     ubx.FieldSpec{WireName: "limit_name"},
+	"MetricName":    ubx.FieldSpec{WireName: "metric_name"},
+	"RolloutStatus": ubx.FieldSpec{WireName: "rollout_status"},
+}
 
 var AlphaRegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetailsFields = ubx.FieldMap{
-		"ErrorInfo": ubx.FieldSpec{
-			WireName: "error_info",
-			Kind: "object",
-			Fields: AlphaRegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_ErrorInfoFields,
-		},
-		"Help": ubx.FieldSpec{
-			WireName: "help",
-			Kind: "object",
-			Fields: AlphaRegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_HelpFields,
-		},
-		"LocalizedMessage": ubx.FieldSpec{
-			WireName: "localized_message",
-			Kind: "object",
-			Fields: AlphaRegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_LocalizedMessageFields,
-		},
-		"QuotaInfo": ubx.FieldSpec{
-			WireName: "quota_info",
-			Kind: "object",
-			Fields: AlphaRegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_QuotaInfoFields,
-		},
-	}
+	"ErrorInfo": ubx.FieldSpec{
+		WireName: "error_info",
+		Kind:     "object",
+		Fields:   AlphaRegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_ErrorInfoFields,
+	},
+	"Help": ubx.FieldSpec{
+		WireName: "help",
+		Kind:     "object",
+		Fields:   AlphaRegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_HelpFields,
+	},
+	"LocalizedMessage": ubx.FieldSpec{
+		WireName: "localized_message",
+		Kind:     "object",
+		Fields:   AlphaRegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_LocalizedMessageFields,
+	},
+	"QuotaInfo": ubx.FieldSpec{
+		WireName: "quota_info",
+		Kind:     "object",
+		Fields:   AlphaRegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_QuotaInfoFields,
+	},
+}
 
 var AlphaRegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_ErrorsFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"ErrorDetails": ubx.FieldSpec{
-			WireName: "error_details",
-			Kind: "list",
-			Fields: AlphaRegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetailsFields,
-		},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"Code": ubx.FieldSpec{WireName: "code"},
+	"ErrorDetails": ubx.FieldSpec{
+		WireName: "error_details",
+		Kind:     "list",
+		Fields:   AlphaRegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetailsFields,
+	},
+	"Location": ubx.FieldSpec{WireName: "location"},
+	"Message":  ubx.FieldSpec{WireName: "message"},
+}
 
 var AlphaRegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_ErrorFields = ubx.FieldMap{
-		"Errors": ubx.FieldSpec{
-			WireName: "errors",
-			Kind: "list",
-			Fields: AlphaRegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_ErrorsFields,
-		},
-	}
+	"Errors": ubx.FieldSpec{
+		WireName: "errors",
+		Kind:     "list",
+		Fields:   AlphaRegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_ErrorsFields,
+	},
+}
 
 var AlphaRegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetailsFields = ubx.FieldMap{
-		"Error": ubx.FieldSpec{
-			WireName: "error",
-			Kind: "object",
-			Fields: AlphaRegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_ErrorFields,
-		},
-		"Timestamp": ubx.FieldSpec{WireName: "timestamp"},
-	}
+	"Error": ubx.FieldSpec{
+		WireName: "error",
+		Kind:     "object",
+		Fields:   AlphaRegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_ErrorFields,
+	},
+	"Timestamp": ubx.FieldSpec{WireName: "timestamp"},
+}
 
 var AlphaRegionInstanceGroupManager_Status_AppliedAcceleratorTopologiesFields = ubx.FieldMap{
-		"AcceleratorTopology": ubx.FieldSpec{WireName: "accelerator_topology"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"StateDetails": ubx.FieldSpec{
-			WireName: "state_details",
-			Kind: "object",
-			Fields: AlphaRegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetailsFields,
-		},
-	}
+	"AcceleratorTopology": ubx.FieldSpec{WireName: "accelerator_topology"},
+	"State":               ubx.FieldSpec{WireName: "state"},
+	"StateDetails": ubx.FieldSpec{
+		WireName: "state_details",
+		Kind:     "object",
+		Fields:   AlphaRegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetailsFields,
+	},
+}
 
 var AlphaRegionInstanceGroupManager_Status_BulkInstanceOperationFields = ubx.FieldMap{
-		"InProgress": ubx.FieldSpec{WireName: "in_progress"},
-		"LastProgressCheck": ubx.FieldSpec{
-			WireName: "last_progress_check",
-			Kind: "object",
-			Fields: AlphaRegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetailsFields,
-		},
-	}
+	"InProgress": ubx.FieldSpec{WireName: "in_progress"},
+	"LastProgressCheck": ubx.FieldSpec{
+		WireName: "last_progress_check",
+		Kind:     "object",
+		Fields:   AlphaRegionInstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetailsFields,
+	},
+}
 
 var AlphaRegionInstanceGroupManager_Status_CurrentInstanceStatusesFields = ubx.FieldMap{
-		"Deprovisioning": ubx.FieldSpec{WireName: "deprovisioning"},
-		"NonExistent": ubx.FieldSpec{WireName: "non_existent"},
-		"Pending": ubx.FieldSpec{WireName: "pending"},
-		"PendingStop": ubx.FieldSpec{WireName: "pending_stop"},
-		"Provisioning": ubx.FieldSpec{WireName: "provisioning"},
-		"Repairing": ubx.FieldSpec{WireName: "repairing"},
-		"Running": ubx.FieldSpec{WireName: "running"},
-		"Staging": ubx.FieldSpec{WireName: "staging"},
-		"Stopped": ubx.FieldSpec{WireName: "stopped"},
-		"Stopping": ubx.FieldSpec{WireName: "stopping"},
-		"Suspended": ubx.FieldSpec{WireName: "suspended"},
-		"Suspending": ubx.FieldSpec{WireName: "suspending"},
-		"Terminated": ubx.FieldSpec{WireName: "terminated"},
-	}
+	"Deprovisioning": ubx.FieldSpec{WireName: "deprovisioning"},
+	"NonExistent":    ubx.FieldSpec{WireName: "non_existent"},
+	"Pending":        ubx.FieldSpec{WireName: "pending"},
+	"PendingStop":    ubx.FieldSpec{WireName: "pending_stop"},
+	"Provisioning":   ubx.FieldSpec{WireName: "provisioning"},
+	"Repairing":      ubx.FieldSpec{WireName: "repairing"},
+	"Running":        ubx.FieldSpec{WireName: "running"},
+	"Staging":        ubx.FieldSpec{WireName: "staging"},
+	"Stopped":        ubx.FieldSpec{WireName: "stopped"},
+	"Stopping":       ubx.FieldSpec{WireName: "stopping"},
+	"Suspended":      ubx.FieldSpec{WireName: "suspended"},
+	"Suspending":     ubx.FieldSpec{WireName: "suspending"},
+	"Terminated":     ubx.FieldSpec{WireName: "terminated"},
+}
 
 var AlphaRegionInstanceGroupManager_Status_Stateful_PerInstanceConfigsFields = ubx.FieldMap{
-		"AllEffective": ubx.FieldSpec{WireName: "all_effective"},
-	}
+	"AllEffective": ubx.FieldSpec{WireName: "all_effective"},
+}
 
 var AlphaRegionInstanceGroupManager_Status_StatefulFields = ubx.FieldMap{
-		"HasStatefulConfig": ubx.FieldSpec{WireName: "has_stateful_config"},
-		"IsStateful": ubx.FieldSpec{WireName: "is_stateful"},
-		"PerInstanceConfigs": ubx.FieldSpec{
-			WireName: "per_instance_configs",
-			Kind: "object",
-			Fields: AlphaRegionInstanceGroupManager_Status_Stateful_PerInstanceConfigsFields,
-		},
-	}
+	"HasStatefulConfig": ubx.FieldSpec{WireName: "has_stateful_config"},
+	"IsStateful":        ubx.FieldSpec{WireName: "is_stateful"},
+	"PerInstanceConfigs": ubx.FieldSpec{
+		WireName: "per_instance_configs",
+		Kind:     "object",
+		Fields:   AlphaRegionInstanceGroupManager_Status_Stateful_PerInstanceConfigsFields,
+	},
+}
 
 var AlphaRegionInstanceGroupManager_Status_VersionTargetFields = ubx.FieldMap{
-		"IsReached": ubx.FieldSpec{WireName: "is_reached"},
-	}
+	"IsReached": ubx.FieldSpec{WireName: "is_reached"},
+}
 
 var AlphaRegionInstanceGroupManager_StatusFields = ubx.FieldMap{
-		"AllInstancesConfig": ubx.FieldSpec{
-			WireName: "all_instances_config",
-			Kind: "object",
-			Fields: AlphaRegionInstanceGroupManager_Status_AllInstancesConfigFields,
-		},
-		"AppliedAcceleratorTopologies": ubx.FieldSpec{
-			WireName: "applied_accelerator_topologies",
-			Kind: "list",
-			Fields: AlphaRegionInstanceGroupManager_Status_AppliedAcceleratorTopologiesFields,
-		},
-		"Autoscaler": ubx.FieldSpec{WireName: "autoscaler"},
-		"BulkInstanceOperation": ubx.FieldSpec{
-			WireName: "bulk_instance_operation",
-			Kind: "object",
-			Fields: AlphaRegionInstanceGroupManager_Status_BulkInstanceOperationFields,
-		},
-		"CurrentInstanceStatuses": ubx.FieldSpec{
-			WireName: "current_instance_statuses",
-			Kind: "object",
-			Fields: AlphaRegionInstanceGroupManager_Status_CurrentInstanceStatusesFields,
-		},
-		"IsStable": ubx.FieldSpec{WireName: "is_stable"},
-		"Stateful": ubx.FieldSpec{
-			WireName: "stateful",
-			Kind: "object",
-			Fields: AlphaRegionInstanceGroupManager_Status_StatefulFields,
-		},
-		"VersionTarget": ubx.FieldSpec{
-			WireName: "version_target",
-			Kind: "object",
-			Fields: AlphaRegionInstanceGroupManager_Status_VersionTargetFields,
-		},
-	}
+	"AllInstancesConfig": ubx.FieldSpec{
+		WireName: "all_instances_config",
+		Kind:     "object",
+		Fields:   AlphaRegionInstanceGroupManager_Status_AllInstancesConfigFields,
+	},
+	"AppliedAcceleratorTopologies": ubx.FieldSpec{
+		WireName: "applied_accelerator_topologies",
+		Kind:     "list",
+		Fields:   AlphaRegionInstanceGroupManager_Status_AppliedAcceleratorTopologiesFields,
+	},
+	"Autoscaler": ubx.FieldSpec{WireName: "autoscaler"},
+	"BulkInstanceOperation": ubx.FieldSpec{
+		WireName: "bulk_instance_operation",
+		Kind:     "object",
+		Fields:   AlphaRegionInstanceGroupManager_Status_BulkInstanceOperationFields,
+	},
+	"CurrentInstanceStatuses": ubx.FieldSpec{
+		WireName: "current_instance_statuses",
+		Kind:     "object",
+		Fields:   AlphaRegionInstanceGroupManager_Status_CurrentInstanceStatusesFields,
+	},
+	"IsStable": ubx.FieldSpec{WireName: "is_stable"},
+	"Stateful": ubx.FieldSpec{
+		WireName: "stateful",
+		Kind:     "object",
+		Fields:   AlphaRegionInstanceGroupManager_Status_StatefulFields,
+	},
+	"VersionTarget": ubx.FieldSpec{
+		WireName: "version_target",
+		Kind:     "object",
+		Fields:   AlphaRegionInstanceGroupManager_Status_VersionTargetFields,
+	},
+}
 
 var AlphaRegionInstanceGroupManager_TargetSizePolicyFields = ubx.FieldMap{
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-	}
+	"Mode": ubx.FieldSpec{WireName: "mode"},
+}
 
 var AlphaRegionInstanceGroupManager_UpdatePolicyFields = ubx.FieldMap{
-		"AllowedActions": ubx.FieldSpec{WireName: "allowed_actions"},
-		"InstanceRedistributionType": ubx.FieldSpec{WireName: "instance_redistribution_type"},
-		"MaxSurge": ubx.FieldSpec{
-			WireName: "max_surge",
-			Kind: "object",
-			Fields: AlphaRegionInstanceGroupManager_AutoHealingPolicies_MaxUnavailableFields,
-		},
-		"MaxUnavailable": ubx.FieldSpec{
-			WireName: "max_unavailable",
-			Kind: "object",
-			Fields: AlphaRegionInstanceGroupManager_AutoHealingPolicies_MaxUnavailableFields,
-		},
-		"MinReadySec": ubx.FieldSpec{WireName: "min_ready_sec"},
-		"MinimalAction": ubx.FieldSpec{WireName: "minimal_action"},
-		"MostDisruptiveAllowedAction": ubx.FieldSpec{WireName: "most_disruptive_allowed_action"},
-		"ReplacementMethod": ubx.FieldSpec{WireName: "replacement_method"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"AllowedActions":             ubx.FieldSpec{WireName: "allowed_actions"},
+	"InstanceRedistributionType": ubx.FieldSpec{WireName: "instance_redistribution_type"},
+	"MaxSurge": ubx.FieldSpec{
+		WireName: "max_surge",
+		Kind:     "object",
+		Fields:   AlphaRegionInstanceGroupManager_AutoHealingPolicies_MaxUnavailableFields,
+	},
+	"MaxUnavailable": ubx.FieldSpec{
+		WireName: "max_unavailable",
+		Kind:     "object",
+		Fields:   AlphaRegionInstanceGroupManager_AutoHealingPolicies_MaxUnavailableFields,
+	},
+	"MinReadySec":                 ubx.FieldSpec{WireName: "min_ready_sec"},
+	"MinimalAction":               ubx.FieldSpec{WireName: "minimal_action"},
+	"MostDisruptiveAllowedAction": ubx.FieldSpec{WireName: "most_disruptive_allowed_action"},
+	"ReplacementMethod":           ubx.FieldSpec{WireName: "replacement_method"},
+	"Type":                        ubx.FieldSpec{WireName: "type"},
+}
 
 var AlphaRegionInstanceGroupManager_VersionsFields = ubx.FieldMap{
-		"InstanceTemplate": ubx.FieldSpec{WireName: "instance_template"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Tag": ubx.FieldSpec{WireName: "tag"},
-		"TargetSize": ubx.FieldSpec{
-			WireName: "target_size",
-			Kind: "object",
-			Fields: AlphaRegionInstanceGroupManager_AutoHealingPolicies_MaxUnavailableFields,
-		},
-	}
+	"InstanceTemplate": ubx.FieldSpec{WireName: "instance_template"},
+	"Name":             ubx.FieldSpec{WireName: "name"},
+	"Tag":              ubx.FieldSpec{WireName: "tag"},
+	"TargetSize": ubx.FieldSpec{
+		WireName: "target_size",
+		Kind:     "object",
+		Fields:   AlphaRegionInstanceGroupManager_AutoHealingPolicies_MaxUnavailableFields,
+	},
+}
 
 type AlphaRegionInstanceGroupManagerConfig struct {
 	AllInstancesConfig any
@@ -919,26 +919,18 @@ type AlphaRegionInstanceGroupManagerConfig struct {
 	AutoHealingPolicies any
 	// The base instance name is a prefix that you want to attach to the names of all VMs in a MIG. The maximum character length is 58 and the name must comply with RFC1035 format. When a VM is created in the group, the MIG appends a hyphen and a random four-character string to the base instance name. If you want the MIG to assign sequential numbers instead of a random string, then end the base instance name with a hyphen followed by one or more hash symbols. The hash symbols indicate the number of digits. For example, a base instance name of "vm-###" results in "vm-001" as a VM name. @pattern [a-z](([-a-z0-9]{0,57})|([-a-z0-9]{0,51}-#{1,10}(\\[[0-9]{1,10}\\])?))
 	BaseInstanceName any
-	// Output only. The creation timestamp for this managed instance group inRFC3339 text format.
-	CreationTimestamp any
-	CurrentActions any
+	CurrentActions   any
 	// An optional description of this resource.
-	Description any
+	Description        any
 	DistributionPolicy any
 	// The action to perform in case of zone failure. Only one value is supported,NO_FAILOVER. The default is NO_FAILOVER.
 	FailoverAction any
 	// Fingerprint of this resource. This field may be used in optimistic locking. It will be ignored when inserting an InstanceGroupManager. An up-to-date fingerprint must be provided in order to update the InstanceGroupManager, otherwise the request will fail with error412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an InstanceGroupManager.
-	Fingerprint any
-	// Output only. A unique identifier for this resource type. The server generates this identifier.
-	Id any
+	Fingerprint               any
 	InstanceFlexibilityPolicy any
-	// Output only. The URL of the Instance Group resource.
-	InstanceGroup any
-	InstanceLifecyclePolicy any
+	InstanceLifecyclePolicy   any
 	// The URL of the instance template that is specified for this managed instance group. The group uses this template to create all new instances in the managed instance group. The templates for existing instances in the group do not change unless you run recreateInstances, runapplyUpdatesToInstances, or set the group'supdatePolicy.type to PROACTIVE.
 	InstanceTemplate any
-	// Output only. The resource type, which is alwayscompute#instanceGroupManager for managed instance groups.
-	Kind any
 	// Pagination behavior of the listManagedInstances API method for this managed instance group.
 	ListManagedInstancesResults any
 	// URL to the multi-MIG that this Managed Instance Group belongs to.
@@ -948,27 +940,17 @@ type AlphaRegionInstanceGroupManagerConfig struct {
 	// [Output Only] Named ports configured on the Instance Groups complementary to this Instance Group Manager.
 	NamedPorts any
 	// Input only additional params for instance group manager creation.
-	Params any
-	// Output only. [Output Only] The URL of theregion where the managed instance group resides (for regional resources).
-	Region any
+	Params           any
 	ResourcePolicies any
-	// Output only. Reserved for future use.
-	SatisfiesPzi any
-	// Output only. Reserved for future use.
-	SatisfiesPzs any
-	// Output only. The URL for this managed instance group. The server defines this URL.
-	SelfLink any
-	// Output only. Server-defined URL for this resource with the resource id.
-	SelfLinkWithId any
 	// The service account to be used as credentials for all operations performed by the managed instance group on instances. The service accounts needs all permissions required to create and delete instances. By default, the service account {projectNumber}@cloudservices.gserviceaccount.com is used.
 	ServiceAccount any
-	StandbyPolicy any
+	StandbyPolicy  any
 	StatefulPolicy any
-	Status any
+	Status         any
 	// The URLs for all TargetPool resources to which instances in theinstanceGroup field are added. The target pools automatically apply to all of the instances in the managed instance group.
 	TargetPools any
 	// The target number of running instances for this managed instance group. You can reduce this number by using the instanceGroupManager deleteInstances or abandonInstances methods. Resizing the group also changes this number.
-	TargetSize any
+	TargetSize       any
 	TargetSizePolicy any
 	// The unit of measure for the target size.
 	TargetSizeUnit any
@@ -976,11 +958,9 @@ type AlphaRegionInstanceGroupManagerConfig struct {
 	TargetStoppedSize any
 	// The target number of suspended instances for this managed instance group. This number changes when you: - Suspend instance using the suspendInstances method or resume instances using the resumeInstances method. - Manually change the targetSuspendedSize using the update method.
 	TargetSuspendedSize any
-	UpdatePolicy any
+	UpdatePolicy        any
 	// Specifies the instance templates used by this managed instance group to create instances. Each version is defined by an instanceTemplate and aname. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about therelationships between these fields. Exactly one version must leave thetargetSize field unset. That version will be applied to all remaining instances. For more information, read aboutcanary updates.
 	Versions any
-	// Output only. The URL of azone where the managed instance group is located (for zonal resources).
-	Zone any
 }
 
 type AlphaRegionInstanceGroupManagerAttrs struct {
@@ -991,19 +971,19 @@ type AlphaRegionInstanceGroupManagerAttrs struct {
 	BaseInstanceName any
 	// Output only. The creation timestamp for this managed instance group inRFC3339 text format.
 	CreationTimestamp any
-	CurrentActions any
+	CurrentActions    any
 	// An optional description of this resource.
-	Description any
+	Description        any
 	DistributionPolicy any
 	// The action to perform in case of zone failure. Only one value is supported,NO_FAILOVER. The default is NO_FAILOVER.
 	FailoverAction any
 	// Fingerprint of this resource. This field may be used in optimistic locking. It will be ignored when inserting an InstanceGroupManager. An up-to-date fingerprint must be provided in order to update the InstanceGroupManager, otherwise the request will fail with error412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an InstanceGroupManager.
 	Fingerprint any
 	// Output only. A unique identifier for this resource type. The server generates this identifier.
-	Id any
+	Id                        any
 	InstanceFlexibilityPolicy any
 	// Output only. The URL of the Instance Group resource.
-	InstanceGroup any
+	InstanceGroup           any
 	InstanceLifecyclePolicy any
 	// The URL of the instance template that is specified for this managed instance group. The group uses this template to create all new instances in the managed instance group. The templates for existing instances in the group do not change unless you run recreateInstances, runapplyUpdatesToInstances, or set the group'supdatePolicy.type to PROACTIVE.
 	InstanceTemplate any
@@ -1020,7 +1000,7 @@ type AlphaRegionInstanceGroupManagerAttrs struct {
 	// Input only additional params for instance group manager creation.
 	Params any
 	// Output only. [Output Only] The URL of theregion where the managed instance group resides (for regional resources).
-	Region any
+	Region           any
 	ResourcePolicies any
 	// Output only. Reserved for future use.
 	SatisfiesPzi any
@@ -1032,13 +1012,13 @@ type AlphaRegionInstanceGroupManagerAttrs struct {
 	SelfLinkWithId any
 	// The service account to be used as credentials for all operations performed by the managed instance group on instances. The service accounts needs all permissions required to create and delete instances. By default, the service account {projectNumber}@cloudservices.gserviceaccount.com is used.
 	ServiceAccount any
-	StandbyPolicy any
+	StandbyPolicy  any
 	StatefulPolicy any
-	Status any
+	Status         any
 	// The URLs for all TargetPool resources to which instances in theinstanceGroup field are added. The target pools automatically apply to all of the instances in the managed instance group.
 	TargetPools any
 	// The target number of running instances for this managed instance group. You can reduce this number by using the instanceGroupManager deleteInstances or abandonInstances methods. Resizing the group also changes this number.
-	TargetSize any
+	TargetSize       any
 	TargetSizePolicy any
 	// The unit of measure for the target size.
 	TargetSizeUnit any
@@ -1046,7 +1026,7 @@ type AlphaRegionInstanceGroupManagerAttrs struct {
 	TargetStoppedSize any
 	// The target number of suspended instances for this managed instance group. This number changes when you: - Suspend instance using the suspendInstances method or resume instances using the resumeInstances method. - Manually change the targetSuspendedSize using the update method.
 	TargetSuspendedSize any
-	UpdatePolicy any
+	UpdatePolicy        any
 	// Specifies the instance templates used by this managed instance group to create instances. Each version is defined by an instanceTemplate and aname. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about therelationships between these fields. Exactly one version must leave thetargetSize field unset. That version will be applied to all remaining instances. For more information, read aboutcanary updates.
 	Versions any
 	// Output only. The URL of azone where the managed instance group is located (for zonal resources).
@@ -1058,102 +1038,92 @@ var AlphaRegionInstanceGroupManager = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AllInstancesConfig": ubx.FieldSpec{
 			WireName: "all_instances_config",
-			Kind: "object",
-			Fields: AlphaRegionInstanceGroupManager_AllInstancesConfigFields,
+			Kind:     "object",
+			Fields:   AlphaRegionInstanceGroupManager_AllInstancesConfigFields,
 		},
 		"AutoHealingPolicies": ubx.FieldSpec{
 			WireName: "auto_healing_policies",
-			Kind: "list",
-			Fields: AlphaRegionInstanceGroupManager_AutoHealingPoliciesFields,
+			Kind:     "list",
+			Fields:   AlphaRegionInstanceGroupManager_AutoHealingPoliciesFields,
 		},
 		"BaseInstanceName": ubx.FieldSpec{WireName: "base_instance_name"},
-		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
 		"CurrentActions": ubx.FieldSpec{
 			WireName: "current_actions",
-			Kind: "object",
-			Fields: AlphaRegionInstanceGroupManager_CurrentActionsFields,
+			Kind:     "object",
+			Fields:   AlphaRegionInstanceGroupManager_CurrentActionsFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DistributionPolicy": ubx.FieldSpec{
 			WireName: "distribution_policy",
-			Kind: "object",
-			Fields: AlphaRegionInstanceGroupManager_DistributionPolicyFields,
+			Kind:     "object",
+			Fields:   AlphaRegionInstanceGroupManager_DistributionPolicyFields,
 		},
 		"FailoverAction": ubx.FieldSpec{WireName: "failover_action"},
-		"Fingerprint": ubx.FieldSpec{WireName: "fingerprint"},
-		"Id": ubx.FieldSpec{WireName: "id"},
+		"Fingerprint":    ubx.FieldSpec{WireName: "fingerprint"},
 		"InstanceFlexibilityPolicy": ubx.FieldSpec{
 			WireName: "instance_flexibility_policy",
-			Kind: "object",
-			Fields: AlphaRegionInstanceGroupManager_InstanceFlexibilityPolicyFields,
+			Kind:     "object",
+			Fields:   AlphaRegionInstanceGroupManager_InstanceFlexibilityPolicyFields,
 		},
-		"InstanceGroup": ubx.FieldSpec{WireName: "instance_group"},
 		"InstanceLifecyclePolicy": ubx.FieldSpec{
 			WireName: "instance_lifecycle_policy",
-			Kind: "object",
-			Fields: AlphaRegionInstanceGroupManager_InstanceLifecyclePolicyFields,
+			Kind:     "object",
+			Fields:   AlphaRegionInstanceGroupManager_InstanceLifecyclePolicyFields,
 		},
-		"InstanceTemplate": ubx.FieldSpec{WireName: "instance_template"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
+		"InstanceTemplate":            ubx.FieldSpec{WireName: "instance_template"},
 		"ListManagedInstancesResults": ubx.FieldSpec{WireName: "list_managed_instances_results"},
-		"MultiMig": ubx.FieldSpec{WireName: "multi_mig"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"MultiMig":                    ubx.FieldSpec{WireName: "multi_mig"},
+		"Name":                        ubx.FieldSpec{WireName: "name"},
 		"NamedPorts": ubx.FieldSpec{
 			WireName: "named_ports",
-			Kind: "list",
-			Fields: AlphaRegionInstanceGroupManager_NamedPortsFields,
+			Kind:     "list",
+			Fields:   AlphaRegionInstanceGroupManager_NamedPortsFields,
 		},
 		"Params": ubx.FieldSpec{
 			WireName: "params",
-			Kind: "object",
-			Fields: AlphaRegionInstanceGroupManager_ParamsFields,
+			Kind:     "object",
+			Fields:   AlphaRegionInstanceGroupManager_ParamsFields,
 		},
-		"Region": ubx.FieldSpec{WireName: "region"},
 		"ResourcePolicies": ubx.FieldSpec{
 			WireName: "resource_policies",
-			Kind: "object",
-			Fields: AlphaRegionInstanceGroupManager_ResourcePoliciesFields,
+			Kind:     "object",
+			Fields:   AlphaRegionInstanceGroupManager_ResourcePoliciesFields,
 		},
-		"SatisfiesPzi": ubx.FieldSpec{WireName: "satisfies_pzi"},
-		"SatisfiesPzs": ubx.FieldSpec{WireName: "satisfies_pzs"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"SelfLinkWithId": ubx.FieldSpec{WireName: "self_link_with_id"},
 		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
 		"StandbyPolicy": ubx.FieldSpec{
 			WireName: "standby_policy",
-			Kind: "object",
-			Fields: AlphaRegionInstanceGroupManager_StandbyPolicyFields,
+			Kind:     "object",
+			Fields:   AlphaRegionInstanceGroupManager_StandbyPolicyFields,
 		},
 		"StatefulPolicy": ubx.FieldSpec{
 			WireName: "stateful_policy",
-			Kind: "object",
-			Fields: AlphaRegionInstanceGroupManager_StatefulPolicyFields,
+			Kind:     "object",
+			Fields:   AlphaRegionInstanceGroupManager_StatefulPolicyFields,
 		},
 		"Status": ubx.FieldSpec{
 			WireName: "status",
-			Kind: "object",
-			Fields: AlphaRegionInstanceGroupManager_StatusFields,
+			Kind:     "object",
+			Fields:   AlphaRegionInstanceGroupManager_StatusFields,
 		},
 		"TargetPools": ubx.FieldSpec{WireName: "target_pools"},
-		"TargetSize": ubx.FieldSpec{WireName: "target_size"},
+		"TargetSize":  ubx.FieldSpec{WireName: "target_size"},
 		"TargetSizePolicy": ubx.FieldSpec{
 			WireName: "target_size_policy",
-			Kind: "object",
-			Fields: AlphaRegionInstanceGroupManager_TargetSizePolicyFields,
+			Kind:     "object",
+			Fields:   AlphaRegionInstanceGroupManager_TargetSizePolicyFields,
 		},
-		"TargetSizeUnit": ubx.FieldSpec{WireName: "target_size_unit"},
-		"TargetStoppedSize": ubx.FieldSpec{WireName: "target_stopped_size"},
+		"TargetSizeUnit":      ubx.FieldSpec{WireName: "target_size_unit"},
+		"TargetStoppedSize":   ubx.FieldSpec{WireName: "target_stopped_size"},
 		"TargetSuspendedSize": ubx.FieldSpec{WireName: "target_suspended_size"},
 		"UpdatePolicy": ubx.FieldSpec{
 			WireName: "update_policy",
-			Kind: "object",
-			Fields: AlphaRegionInstanceGroupManager_UpdatePolicyFields,
+			Kind:     "object",
+			Fields:   AlphaRegionInstanceGroupManager_UpdatePolicyFields,
 		},
 		"Versions": ubx.FieldSpec{
 			WireName: "versions",
-			Kind: "list",
-			Fields: AlphaRegionInstanceGroupManager_VersionsFields,
+			Kind:     "list",
+			Fields:   AlphaRegionInstanceGroupManager_VersionsFields,
 		},
-		"Zone": ubx.FieldSpec{WireName: "zone"},
 	},
 }

@@ -112,8 +112,8 @@ type Version_Deployment_Container struct {
 }
 
 type Version_Deployment_Files struct {
-	MimeType any
-	Sha1Sum any
+	MimeType  any
+	Sha1Sum   any
 	SourceUrl any
 }
 
@@ -152,8 +152,8 @@ type Version_Entrypoint struct {
 }
 
 type Version_ErrorHandlers struct {
-	ErrorCode any
-	MimeType any
+	ErrorCode  any
+	MimeType   any
 	StaticFile any
 }
 
@@ -170,23 +170,23 @@ type Version_Handlers_ApiEndpoint struct {
 
 type Version_Handlers_StaticFiles struct {
 	ApplicationReadable any
-	Expiration any
-	HttpHeaders any
-	MimeType any
-	Path any
+	Expiration          any
+	HttpHeaders         any
+	MimeType            any
+	Path                any
 	RequireMatchingFile any
-	UploadPathRegex any
+	UploadPathRegex     any
 }
 
 type Version_Handlers struct {
-	ApiEndpoint any
-	AuthFailAction any
-	Login any
+	ApiEndpoint              any
+	AuthFailAction           any
+	Login                    any
 	RedirectHttpResponseCode any
-	Script any
-	SecurityLevel any
-	StaticFiles any
-	UrlRegex any
+	Script                   any
+	SecurityLevel            any
+	StaticFiles              any
+	UrlRegex                 any
 }
 
 type Version_HealthCheck struct {
@@ -207,7 +207,7 @@ type Version_HealthCheck struct {
 }
 
 type Version_Libraries struct {
-	Name any
+	Name    any
 	Version any
 }
 
@@ -266,8 +266,8 @@ type Version_ReadinessCheck struct {
 }
 
 type Version_Resources_Volumes struct {
-	Name any
-	SizeGb any
+	Name       any
+	SizeGb     any
 	VolumeType any
 }
 
@@ -292,257 +292,257 @@ type Version_VpcAccessConnector struct {
 }
 
 var Version_ApiConfigFields = ubx.FieldMap{
-		"AuthFailAction": ubx.FieldSpec{WireName: "auth_fail_action"},
-		"Login": ubx.FieldSpec{WireName: "login"},
-		"Script": ubx.FieldSpec{WireName: "script"},
-		"SecurityLevel": ubx.FieldSpec{WireName: "security_level"},
-		"Url": ubx.FieldSpec{WireName: "url"},
-	}
+	"AuthFailAction": ubx.FieldSpec{WireName: "auth_fail_action"},
+	"Login":          ubx.FieldSpec{WireName: "login"},
+	"Script":         ubx.FieldSpec{WireName: "script"},
+	"SecurityLevel":  ubx.FieldSpec{WireName: "security_level"},
+	"Url":            ubx.FieldSpec{WireName: "url"},
+}
 
 var Version_AutomaticScaling_CpuUtilizationFields = ubx.FieldMap{
-		"AggregationWindowLength": ubx.FieldSpec{WireName: "aggregation_window_length"},
-		"TargetUtilization": ubx.FieldSpec{WireName: "target_utilization"},
-	}
+	"AggregationWindowLength": ubx.FieldSpec{WireName: "aggregation_window_length"},
+	"TargetUtilization":       ubx.FieldSpec{WireName: "target_utilization"},
+}
 
 var Version_AutomaticScaling_DiskUtilizationFields = ubx.FieldMap{
-		"TargetReadBytesPerSecond": ubx.FieldSpec{WireName: "target_read_bytes_per_second"},
-		"TargetReadOpsPerSecond": ubx.FieldSpec{WireName: "target_read_ops_per_second"},
-		"TargetWriteBytesPerSecond": ubx.FieldSpec{WireName: "target_write_bytes_per_second"},
-		"TargetWriteOpsPerSecond": ubx.FieldSpec{WireName: "target_write_ops_per_second"},
-	}
+	"TargetReadBytesPerSecond":  ubx.FieldSpec{WireName: "target_read_bytes_per_second"},
+	"TargetReadOpsPerSecond":    ubx.FieldSpec{WireName: "target_read_ops_per_second"},
+	"TargetWriteBytesPerSecond": ubx.FieldSpec{WireName: "target_write_bytes_per_second"},
+	"TargetWriteOpsPerSecond":   ubx.FieldSpec{WireName: "target_write_ops_per_second"},
+}
 
 var Version_AutomaticScaling_NetworkUtilizationFields = ubx.FieldMap{
-		"TargetReceivedBytesPerSecond": ubx.FieldSpec{WireName: "target_received_bytes_per_second"},
-		"TargetReceivedPacketsPerSecond": ubx.FieldSpec{WireName: "target_received_packets_per_second"},
-		"TargetSentBytesPerSecond": ubx.FieldSpec{WireName: "target_sent_bytes_per_second"},
-		"TargetSentPacketsPerSecond": ubx.FieldSpec{WireName: "target_sent_packets_per_second"},
-	}
+	"TargetReceivedBytesPerSecond":   ubx.FieldSpec{WireName: "target_received_bytes_per_second"},
+	"TargetReceivedPacketsPerSecond": ubx.FieldSpec{WireName: "target_received_packets_per_second"},
+	"TargetSentBytesPerSecond":       ubx.FieldSpec{WireName: "target_sent_bytes_per_second"},
+	"TargetSentPacketsPerSecond":     ubx.FieldSpec{WireName: "target_sent_packets_per_second"},
+}
 
 var Version_AutomaticScaling_RequestUtilizationFields = ubx.FieldMap{
-		"TargetConcurrentRequests": ubx.FieldSpec{WireName: "target_concurrent_requests"},
-		"TargetRequestCountPerSecond": ubx.FieldSpec{WireName: "target_request_count_per_second"},
-	}
+	"TargetConcurrentRequests":    ubx.FieldSpec{WireName: "target_concurrent_requests"},
+	"TargetRequestCountPerSecond": ubx.FieldSpec{WireName: "target_request_count_per_second"},
+}
 
 var Version_AutomaticScaling_StandardSchedulerSettingsFields = ubx.FieldMap{
-		"MaxInstances": ubx.FieldSpec{WireName: "max_instances"},
-		"MinInstances": ubx.FieldSpec{WireName: "min_instances"},
-		"TargetCpuUtilization": ubx.FieldSpec{WireName: "target_cpu_utilization"},
-		"TargetThroughputUtilization": ubx.FieldSpec{WireName: "target_throughput_utilization"},
-	}
+	"MaxInstances":                ubx.FieldSpec{WireName: "max_instances"},
+	"MinInstances":                ubx.FieldSpec{WireName: "min_instances"},
+	"TargetCpuUtilization":        ubx.FieldSpec{WireName: "target_cpu_utilization"},
+	"TargetThroughputUtilization": ubx.FieldSpec{WireName: "target_throughput_utilization"},
+}
 
 var Version_AutomaticScalingFields = ubx.FieldMap{
-		"CoolDownPeriod": ubx.FieldSpec{WireName: "cool_down_period"},
-		"CpuUtilization": ubx.FieldSpec{
-			WireName: "cpu_utilization",
-			Kind: "object",
-			Fields: Version_AutomaticScaling_CpuUtilizationFields,
-		},
-		"DiskUtilization": ubx.FieldSpec{
-			WireName: "disk_utilization",
-			Kind: "object",
-			Fields: Version_AutomaticScaling_DiskUtilizationFields,
-		},
-		"MaxConcurrentRequests": ubx.FieldSpec{WireName: "max_concurrent_requests"},
-		"MaxIdleInstances": ubx.FieldSpec{WireName: "max_idle_instances"},
-		"MaxPendingLatency": ubx.FieldSpec{WireName: "max_pending_latency"},
-		"MaxTotalInstances": ubx.FieldSpec{WireName: "max_total_instances"},
-		"MinIdleInstances": ubx.FieldSpec{WireName: "min_idle_instances"},
-		"MinPendingLatency": ubx.FieldSpec{WireName: "min_pending_latency"},
-		"MinTotalInstances": ubx.FieldSpec{WireName: "min_total_instances"},
-		"NetworkUtilization": ubx.FieldSpec{
-			WireName: "network_utilization",
-			Kind: "object",
-			Fields: Version_AutomaticScaling_NetworkUtilizationFields,
-		},
-		"RequestUtilization": ubx.FieldSpec{
-			WireName: "request_utilization",
-			Kind: "object",
-			Fields: Version_AutomaticScaling_RequestUtilizationFields,
-		},
-		"StandardSchedulerSettings": ubx.FieldSpec{
-			WireName: "standard_scheduler_settings",
-			Kind: "object",
-			Fields: Version_AutomaticScaling_StandardSchedulerSettingsFields,
-		},
-	}
+	"CoolDownPeriod": ubx.FieldSpec{WireName: "cool_down_period"},
+	"CpuUtilization": ubx.FieldSpec{
+		WireName: "cpu_utilization",
+		Kind:     "object",
+		Fields:   Version_AutomaticScaling_CpuUtilizationFields,
+	},
+	"DiskUtilization": ubx.FieldSpec{
+		WireName: "disk_utilization",
+		Kind:     "object",
+		Fields:   Version_AutomaticScaling_DiskUtilizationFields,
+	},
+	"MaxConcurrentRequests": ubx.FieldSpec{WireName: "max_concurrent_requests"},
+	"MaxIdleInstances":      ubx.FieldSpec{WireName: "max_idle_instances"},
+	"MaxPendingLatency":     ubx.FieldSpec{WireName: "max_pending_latency"},
+	"MaxTotalInstances":     ubx.FieldSpec{WireName: "max_total_instances"},
+	"MinIdleInstances":      ubx.FieldSpec{WireName: "min_idle_instances"},
+	"MinPendingLatency":     ubx.FieldSpec{WireName: "min_pending_latency"},
+	"MinTotalInstances":     ubx.FieldSpec{WireName: "min_total_instances"},
+	"NetworkUtilization": ubx.FieldSpec{
+		WireName: "network_utilization",
+		Kind:     "object",
+		Fields:   Version_AutomaticScaling_NetworkUtilizationFields,
+	},
+	"RequestUtilization": ubx.FieldSpec{
+		WireName: "request_utilization",
+		Kind:     "object",
+		Fields:   Version_AutomaticScaling_RequestUtilizationFields,
+	},
+	"StandardSchedulerSettings": ubx.FieldSpec{
+		WireName: "standard_scheduler_settings",
+		Kind:     "object",
+		Fields:   Version_AutomaticScaling_StandardSchedulerSettingsFields,
+	},
+}
 
 var Version_BasicScalingFields = ubx.FieldMap{
-		"IdleTimeout": ubx.FieldSpec{WireName: "idle_timeout"},
-		"MaxInstances": ubx.FieldSpec{WireName: "max_instances"},
-	}
+	"IdleTimeout":  ubx.FieldSpec{WireName: "idle_timeout"},
+	"MaxInstances": ubx.FieldSpec{WireName: "max_instances"},
+}
 
 var Version_Deployment_CloudBuildOptionsFields = ubx.FieldMap{
-		"AppYamlPath": ubx.FieldSpec{WireName: "app_yaml_path"},
-		"CloudBuildTimeout": ubx.FieldSpec{WireName: "cloud_build_timeout"},
-	}
+	"AppYamlPath":       ubx.FieldSpec{WireName: "app_yaml_path"},
+	"CloudBuildTimeout": ubx.FieldSpec{WireName: "cloud_build_timeout"},
+}
 
 var Version_Deployment_ContainerFields = ubx.FieldMap{
-		"Image": ubx.FieldSpec{WireName: "image"},
-	}
+	"Image": ubx.FieldSpec{WireName: "image"},
+}
 
 var Version_Deployment_FilesFields = ubx.FieldMap{
-		"MimeType": ubx.FieldSpec{WireName: "mime_type"},
-		"Sha1Sum": ubx.FieldSpec{WireName: "sha1_sum"},
-		"SourceUrl": ubx.FieldSpec{WireName: "source_url"},
-	}
+	"MimeType":  ubx.FieldSpec{WireName: "mime_type"},
+	"Sha1Sum":   ubx.FieldSpec{WireName: "sha1_sum"},
+	"SourceUrl": ubx.FieldSpec{WireName: "source_url"},
+}
 
 var Version_Deployment_ZipFields = ubx.FieldMap{
-		"FilesCount": ubx.FieldSpec{WireName: "files_count"},
-		"SourceUrl": ubx.FieldSpec{WireName: "source_url"},
-	}
+	"FilesCount": ubx.FieldSpec{WireName: "files_count"},
+	"SourceUrl":  ubx.FieldSpec{WireName: "source_url"},
+}
 
 var Version_DeploymentFields = ubx.FieldMap{
-		"CloudBuildOptions": ubx.FieldSpec{
-			WireName: "cloud_build_options",
-			Kind: "object",
-			Fields: Version_Deployment_CloudBuildOptionsFields,
-		},
-		"Container": ubx.FieldSpec{
-			WireName: "container",
-			Kind: "object",
-			Fields: Version_Deployment_ContainerFields,
-		},
-		"Files": ubx.FieldSpec{
-			WireName: "files",
-			Kind: "map",
-			Fields: Version_Deployment_FilesFields,
-		},
-		"Zip": ubx.FieldSpec{
-			WireName: "zip",
-			Kind: "object",
-			Fields: Version_Deployment_ZipFields,
-		},
-	}
+	"CloudBuildOptions": ubx.FieldSpec{
+		WireName: "cloud_build_options",
+		Kind:     "object",
+		Fields:   Version_Deployment_CloudBuildOptionsFields,
+	},
+	"Container": ubx.FieldSpec{
+		WireName: "container",
+		Kind:     "object",
+		Fields:   Version_Deployment_ContainerFields,
+	},
+	"Files": ubx.FieldSpec{
+		WireName: "files",
+		Kind:     "map",
+		Fields:   Version_Deployment_FilesFields,
+	},
+	"Zip": ubx.FieldSpec{
+		WireName: "zip",
+		Kind:     "object",
+		Fields:   Version_Deployment_ZipFields,
+	},
+}
 
 var Version_EndpointsApiServiceFields = ubx.FieldMap{
-		"ConfigId": ubx.FieldSpec{WireName: "config_id"},
-		"DisableTraceSampling": ubx.FieldSpec{WireName: "disable_trace_sampling"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"RolloutStrategy": ubx.FieldSpec{WireName: "rollout_strategy"},
-	}
+	"ConfigId":             ubx.FieldSpec{WireName: "config_id"},
+	"DisableTraceSampling": ubx.FieldSpec{WireName: "disable_trace_sampling"},
+	"Name":                 ubx.FieldSpec{WireName: "name"},
+	"RolloutStrategy":      ubx.FieldSpec{WireName: "rollout_strategy"},
+}
 
 var Version_EntrypointFields = ubx.FieldMap{
-		"Shell": ubx.FieldSpec{WireName: "shell"},
-	}
+	"Shell": ubx.FieldSpec{WireName: "shell"},
+}
 
 var Version_ErrorHandlersFields = ubx.FieldMap{
-		"ErrorCode": ubx.FieldSpec{WireName: "error_code"},
-		"MimeType": ubx.FieldSpec{WireName: "mime_type"},
-		"StaticFile": ubx.FieldSpec{WireName: "static_file"},
-	}
+	"ErrorCode":  ubx.FieldSpec{WireName: "error_code"},
+	"MimeType":   ubx.FieldSpec{WireName: "mime_type"},
+	"StaticFile": ubx.FieldSpec{WireName: "static_file"},
+}
 
 var Version_FlexibleRuntimeSettingsFields = ubx.FieldMap{
-		"OperatingSystem": ubx.FieldSpec{WireName: "operating_system"},
-		"RuntimeVersion": ubx.FieldSpec{WireName: "runtime_version"},
-	}
+	"OperatingSystem": ubx.FieldSpec{WireName: "operating_system"},
+	"RuntimeVersion":  ubx.FieldSpec{WireName: "runtime_version"},
+}
 
 var Version_Handlers_ApiEndpointFields = ubx.FieldMap{
-		"ScriptPath": ubx.FieldSpec{WireName: "script_path"},
-	}
+	"ScriptPath": ubx.FieldSpec{WireName: "script_path"},
+}
 
 var Version_Handlers_StaticFilesFields = ubx.FieldMap{
-		"ApplicationReadable": ubx.FieldSpec{WireName: "application_readable"},
-		"Expiration": ubx.FieldSpec{WireName: "expiration"},
-		"HttpHeaders": ubx.FieldSpec{WireName: "http_headers"},
-		"MimeType": ubx.FieldSpec{WireName: "mime_type"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"RequireMatchingFile": ubx.FieldSpec{WireName: "require_matching_file"},
-		"UploadPathRegex": ubx.FieldSpec{WireName: "upload_path_regex"},
-	}
+	"ApplicationReadable": ubx.FieldSpec{WireName: "application_readable"},
+	"Expiration":          ubx.FieldSpec{WireName: "expiration"},
+	"HttpHeaders":         ubx.FieldSpec{WireName: "http_headers"},
+	"MimeType":            ubx.FieldSpec{WireName: "mime_type"},
+	"Path":                ubx.FieldSpec{WireName: "path"},
+	"RequireMatchingFile": ubx.FieldSpec{WireName: "require_matching_file"},
+	"UploadPathRegex":     ubx.FieldSpec{WireName: "upload_path_regex"},
+}
 
 var Version_HandlersFields = ubx.FieldMap{
-		"ApiEndpoint": ubx.FieldSpec{
-			WireName: "api_endpoint",
-			Kind: "object",
-			Fields: Version_Handlers_ApiEndpointFields,
-		},
-		"AuthFailAction": ubx.FieldSpec{WireName: "auth_fail_action"},
-		"Login": ubx.FieldSpec{WireName: "login"},
-		"RedirectHttpResponseCode": ubx.FieldSpec{WireName: "redirect_http_response_code"},
-		"Script": ubx.FieldSpec{
-			WireName: "script",
-			Kind: "object",
-			Fields: Version_Handlers_ApiEndpointFields,
-		},
-		"SecurityLevel": ubx.FieldSpec{WireName: "security_level"},
-		"StaticFiles": ubx.FieldSpec{
-			WireName: "static_files",
-			Kind: "object",
-			Fields: Version_Handlers_StaticFilesFields,
-		},
-		"UrlRegex": ubx.FieldSpec{WireName: "url_regex"},
-	}
+	"ApiEndpoint": ubx.FieldSpec{
+		WireName: "api_endpoint",
+		Kind:     "object",
+		Fields:   Version_Handlers_ApiEndpointFields,
+	},
+	"AuthFailAction":           ubx.FieldSpec{WireName: "auth_fail_action"},
+	"Login":                    ubx.FieldSpec{WireName: "login"},
+	"RedirectHttpResponseCode": ubx.FieldSpec{WireName: "redirect_http_response_code"},
+	"Script": ubx.FieldSpec{
+		WireName: "script",
+		Kind:     "object",
+		Fields:   Version_Handlers_ApiEndpointFields,
+	},
+	"SecurityLevel": ubx.FieldSpec{WireName: "security_level"},
+	"StaticFiles": ubx.FieldSpec{
+		WireName: "static_files",
+		Kind:     "object",
+		Fields:   Version_Handlers_StaticFilesFields,
+	},
+	"UrlRegex": ubx.FieldSpec{WireName: "url_regex"},
+}
 
 var Version_HealthCheckFields = ubx.FieldMap{
-		"CheckInterval": ubx.FieldSpec{WireName: "check_interval"},
-		"DisableHealthCheck": ubx.FieldSpec{WireName: "disable_health_check"},
-		"HealthyThreshold": ubx.FieldSpec{WireName: "healthy_threshold"},
-		"Host": ubx.FieldSpec{WireName: "host"},
-		"RestartThreshold": ubx.FieldSpec{WireName: "restart_threshold"},
-		"Timeout": ubx.FieldSpec{WireName: "timeout"},
-		"UnhealthyThreshold": ubx.FieldSpec{WireName: "unhealthy_threshold"},
-	}
+	"CheckInterval":      ubx.FieldSpec{WireName: "check_interval"},
+	"DisableHealthCheck": ubx.FieldSpec{WireName: "disable_health_check"},
+	"HealthyThreshold":   ubx.FieldSpec{WireName: "healthy_threshold"},
+	"Host":               ubx.FieldSpec{WireName: "host"},
+	"RestartThreshold":   ubx.FieldSpec{WireName: "restart_threshold"},
+	"Timeout":            ubx.FieldSpec{WireName: "timeout"},
+	"UnhealthyThreshold": ubx.FieldSpec{WireName: "unhealthy_threshold"},
+}
 
 var Version_LibrariesFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"Name":    ubx.FieldSpec{WireName: "name"},
+	"Version": ubx.FieldSpec{WireName: "version"},
+}
 
 var Version_LivenessCheckFields = ubx.FieldMap{
-		"CheckInterval": ubx.FieldSpec{WireName: "check_interval"},
-		"FailureThreshold": ubx.FieldSpec{WireName: "failure_threshold"},
-		"Host": ubx.FieldSpec{WireName: "host"},
-		"InitialDelay": ubx.FieldSpec{WireName: "initial_delay"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"SuccessThreshold": ubx.FieldSpec{WireName: "success_threshold"},
-		"Timeout": ubx.FieldSpec{WireName: "timeout"},
-	}
+	"CheckInterval":    ubx.FieldSpec{WireName: "check_interval"},
+	"FailureThreshold": ubx.FieldSpec{WireName: "failure_threshold"},
+	"Host":             ubx.FieldSpec{WireName: "host"},
+	"InitialDelay":     ubx.FieldSpec{WireName: "initial_delay"},
+	"Path":             ubx.FieldSpec{WireName: "path"},
+	"SuccessThreshold": ubx.FieldSpec{WireName: "success_threshold"},
+	"Timeout":          ubx.FieldSpec{WireName: "timeout"},
+}
 
 var Version_ManualScalingFields = ubx.FieldMap{
-		"Instances": ubx.FieldSpec{WireName: "instances"},
-	}
+	"Instances": ubx.FieldSpec{WireName: "instances"},
+}
 
 var Version_NetworkFields = ubx.FieldMap{
-		"ForwardedPorts": ubx.FieldSpec{WireName: "forwarded_ports"},
-		"InstanceIpMode": ubx.FieldSpec{WireName: "instance_ip_mode"},
-		"InstanceTag": ubx.FieldSpec{WireName: "instance_tag"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SessionAffinity": ubx.FieldSpec{WireName: "session_affinity"},
-		"SubnetworkName": ubx.FieldSpec{WireName: "subnetwork_name"},
-	}
+	"ForwardedPorts":  ubx.FieldSpec{WireName: "forwarded_ports"},
+	"InstanceIpMode":  ubx.FieldSpec{WireName: "instance_ip_mode"},
+	"InstanceTag":     ubx.FieldSpec{WireName: "instance_tag"},
+	"Name":            ubx.FieldSpec{WireName: "name"},
+	"SessionAffinity": ubx.FieldSpec{WireName: "session_affinity"},
+	"SubnetworkName":  ubx.FieldSpec{WireName: "subnetwork_name"},
+}
 
 var Version_ReadinessCheckFields = ubx.FieldMap{
-		"AppStartTimeout": ubx.FieldSpec{WireName: "app_start_timeout"},
-		"CheckInterval": ubx.FieldSpec{WireName: "check_interval"},
-		"FailureThreshold": ubx.FieldSpec{WireName: "failure_threshold"},
-		"Host": ubx.FieldSpec{WireName: "host"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"SuccessThreshold": ubx.FieldSpec{WireName: "success_threshold"},
-		"Timeout": ubx.FieldSpec{WireName: "timeout"},
-	}
+	"AppStartTimeout":  ubx.FieldSpec{WireName: "app_start_timeout"},
+	"CheckInterval":    ubx.FieldSpec{WireName: "check_interval"},
+	"FailureThreshold": ubx.FieldSpec{WireName: "failure_threshold"},
+	"Host":             ubx.FieldSpec{WireName: "host"},
+	"Path":             ubx.FieldSpec{WireName: "path"},
+	"SuccessThreshold": ubx.FieldSpec{WireName: "success_threshold"},
+	"Timeout":          ubx.FieldSpec{WireName: "timeout"},
+}
 
 var Version_Resources_VolumesFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SizeGb": ubx.FieldSpec{WireName: "size_gb"},
-		"VolumeType": ubx.FieldSpec{WireName: "volume_type"},
-	}
+	"Name":       ubx.FieldSpec{WireName: "name"},
+	"SizeGb":     ubx.FieldSpec{WireName: "size_gb"},
+	"VolumeType": ubx.FieldSpec{WireName: "volume_type"},
+}
 
 var Version_ResourcesFields = ubx.FieldMap{
-		"Cpu": ubx.FieldSpec{WireName: "cpu"},
-		"DiskGb": ubx.FieldSpec{WireName: "disk_gb"},
-		"KmsKeyReference": ubx.FieldSpec{WireName: "kms_key_reference"},
-		"MemoryGb": ubx.FieldSpec{WireName: "memory_gb"},
-		"Volumes": ubx.FieldSpec{
-			WireName: "volumes",
-			Kind: "list",
-			Fields: Version_Resources_VolumesFields,
-		},
-	}
+	"Cpu":             ubx.FieldSpec{WireName: "cpu"},
+	"DiskGb":          ubx.FieldSpec{WireName: "disk_gb"},
+	"KmsKeyReference": ubx.FieldSpec{WireName: "kms_key_reference"},
+	"MemoryGb":        ubx.FieldSpec{WireName: "memory_gb"},
+	"Volumes": ubx.FieldSpec{
+		WireName: "volumes",
+		Kind:     "list",
+		Fields:   Version_Resources_VolumesFields,
+	},
+}
 
 var Version_VpcAccessConnectorFields = ubx.FieldMap{
-		"EgressSetting": ubx.FieldSpec{WireName: "egress_setting"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"EgressSetting": ubx.FieldSpec{WireName: "egress_setting"},
+	"Name":          ubx.FieldSpec{WireName: "name"},
+}
 
 type VersionConfig struct {
 	// Google Cloud Endpoints (https://cloud.google.com/endpoints) configuration for API handlers.
@@ -561,14 +561,10 @@ type VersionConfig struct {
 	BuildEnvVariables any
 	// Time that this version was created.@OutputOnly
 	CreateTime any
-	// Output only. Email address of the user who created this version.@OutputOnly
-	CreatedBy any
 	// Duration that static files should be cached by web proxies and browsers. Only applicable if the corresponding StaticFilesHandler (https://cloud.google.com/appengine/docs/admin-api/reference/rest/v1/apps.services.versions#StaticFilesHandler) does not specify its own expiration time.Only returned in GET requests if view=FULL is set.
 	DefaultExpiration any
 	// Code and application artifacts used to deploy a version to App Engine.
 	Deployment any
-	// Output only. Total size in bytes of all the files that are included in this version and currently hosted on the App Engine disk.@OutputOnly
-	DiskUsageBytes any
 	// Google Cloud Endpoints (https://cloud.google.com/endpoints) configuration. The Endpoints API Service provides tooling for serving Open API and gRPC endpoints via an NGINX proxy. Only valid for App Engine Flexible environment deployments.The fields here refer to the name and configuration ID of a "service" resource in the Service Management API (https://cloud.google.com/service-management/overview).
 	EndpointsApiService any
 	// The entrypoint for the application.
@@ -599,8 +595,6 @@ type VersionConfig struct {
 	LivenessCheck any
 	// A service with manual scaling runs continuously, allowing you to perform complex initialization and rely on the state of its memory over time.
 	ManualScaling any
-	// Output only. Full path to the Version resource in the API. Example: apps/myapp/services/default/versions/v1.@OutputOnly
-	Name any
 	// Extra network settings. Only applicable in the App Engine flexible environment.
 	Network any
 	// Files that match this pattern will not be built into this version. Only applicable for Go runtimes.Only returned in GET requests if view=FULL is set.
@@ -623,8 +617,6 @@ type VersionConfig struct {
 	ServingStatus any
 	// Whether multiple requests can be dispatched to this version at once.
 	Threadsafe any
-	// Output only. Serving URL for this version. Example: "https://myversion-dot-myservice-dot-myapp.appspot.com"@OutputOnly
-	VersionUrl any
 	// Whether to deploy this version in a container on a virtual machine.
 	Vm any
 	// VPC access connector specification.
@@ -727,113 +719,109 @@ var Version = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ApiConfig": ubx.FieldSpec{
 			WireName: "api_config",
-			Kind: "object",
-			Fields: Version_ApiConfigFields,
+			Kind:     "object",
+			Fields:   Version_ApiConfigFields,
 		},
-		"AppEngineApis": ubx.FieldSpec{WireName: "app_engine_apis"},
+		"AppEngineApis":            ubx.FieldSpec{WireName: "app_engine_apis"},
 		"AppEngineBundledServices": ubx.FieldSpec{WireName: "app_engine_bundled_services"},
 		"AutomaticScaling": ubx.FieldSpec{
 			WireName: "automatic_scaling",
-			Kind: "object",
-			Fields: Version_AutomaticScalingFields,
+			Kind:     "object",
+			Fields:   Version_AutomaticScalingFields,
 		},
 		"BasicScaling": ubx.FieldSpec{
 			WireName: "basic_scaling",
-			Kind: "object",
-			Fields: Version_BasicScalingFields,
+			Kind:     "object",
+			Fields:   Version_BasicScalingFields,
 		},
-		"BetaSettings": ubx.FieldSpec{WireName: "beta_settings"},
+		"BetaSettings":      ubx.FieldSpec{WireName: "beta_settings"},
 		"BuildEnvVariables": ubx.FieldSpec{WireName: "build_env_variables"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"CreatedBy": ubx.FieldSpec{WireName: "created_by"},
+		"CreateTime":        ubx.FieldSpec{WireName: "create_time"},
 		"DefaultExpiration": ubx.FieldSpec{WireName: "default_expiration"},
 		"Deployment": ubx.FieldSpec{
 			WireName: "deployment",
-			Kind: "object",
-			Fields: Version_DeploymentFields,
+			Kind:     "object",
+			Fields:   Version_DeploymentFields,
 		},
-		"DiskUsageBytes": ubx.FieldSpec{WireName: "disk_usage_bytes"},
 		"EndpointsApiService": ubx.FieldSpec{
 			WireName: "endpoints_api_service",
-			Kind: "object",
-			Fields: Version_EndpointsApiServiceFields,
+			Kind:     "object",
+			Fields:   Version_EndpointsApiServiceFields,
 		},
 		"Entrypoint": ubx.FieldSpec{
 			WireName: "entrypoint",
-			Kind: "object",
-			Fields: Version_EntrypointFields,
+			Kind:     "object",
+			Fields:   Version_EntrypointFields,
 		},
-		"Env": ubx.FieldSpec{WireName: "env"},
+		"Env":          ubx.FieldSpec{WireName: "env"},
 		"EnvVariables": ubx.FieldSpec{WireName: "env_variables"},
 		"ErrorHandlers": ubx.FieldSpec{
 			WireName: "error_handlers",
-			Kind: "list",
-			Fields: Version_ErrorHandlersFields,
+			Kind:     "list",
+			Fields:   Version_ErrorHandlersFields,
 		},
 		"FlexibleRuntimeSettings": ubx.FieldSpec{
 			WireName: "flexible_runtime_settings",
-			Kind: "object",
-			Fields: Version_FlexibleRuntimeSettingsFields,
+			Kind:     "object",
+			Fields:   Version_FlexibleRuntimeSettingsFields,
 		},
 		"GeneratedCustomerMetadata": ubx.FieldSpec{WireName: "generated_customer_metadata"},
 		"Handlers": ubx.FieldSpec{
 			WireName: "handlers",
-			Kind: "list",
-			Fields: Version_HandlersFields,
+			Kind:     "list",
+			Fields:   Version_HandlersFields,
 		},
 		"HealthCheck": ubx.FieldSpec{
 			WireName: "health_check",
-			Kind: "object",
-			Fields: Version_HealthCheckFields,
+			Kind:     "object",
+			Fields:   Version_HealthCheckFields,
 		},
-		"Id": ubx.FieldSpec{WireName: "id"},
+		"Id":              ubx.FieldSpec{WireName: "id"},
 		"InboundServices": ubx.FieldSpec{WireName: "inbound_services"},
-		"InstanceClass": ubx.FieldSpec{WireName: "instance_class"},
+		"InstanceClass":   ubx.FieldSpec{WireName: "instance_class"},
 		"Libraries": ubx.FieldSpec{
 			WireName: "libraries",
-			Kind: "list",
-			Fields: Version_LibrariesFields,
+			Kind:     "list",
+			Fields:   Version_LibrariesFields,
 		},
 		"LivenessCheck": ubx.FieldSpec{
 			WireName: "liveness_check",
-			Kind: "object",
-			Fields: Version_LivenessCheckFields,
+			Kind:     "object",
+			Fields:   Version_LivenessCheckFields,
 		},
 		"ManualScaling": ubx.FieldSpec{
 			WireName: "manual_scaling",
-			Kind: "object",
-			Fields: Version_ManualScalingFields,
+			Kind:     "object",
+			Fields:   Version_ManualScalingFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
 		"Network": ubx.FieldSpec{
 			WireName: "network",
-			Kind: "object",
-			Fields: Version_NetworkFields,
+			Kind:     "object",
+			Fields:   Version_NetworkFields,
 		},
 		"NobuildFilesRegex": ubx.FieldSpec{WireName: "nobuild_files_regex"},
 		"ReadinessCheck": ubx.FieldSpec{
 			WireName: "readiness_check",
-			Kind: "object",
-			Fields: Version_ReadinessCheckFields,
+			Kind:     "object",
+			Fields:   Version_ReadinessCheckFields,
 		},
 		"Resources": ubx.FieldSpec{
 			WireName: "resources",
-			Kind: "object",
-			Fields: Version_ResourcesFields,
+			Kind:     "object",
+			Fields:   Version_ResourcesFields,
 		},
-		"Runtime": ubx.FieldSpec{WireName: "runtime"},
-		"RuntimeApiVersion": ubx.FieldSpec{WireName: "runtime_api_version"},
-		"RuntimeChannel": ubx.FieldSpec{WireName: "runtime_channel"},
+		"Runtime":                   ubx.FieldSpec{WireName: "runtime"},
+		"RuntimeApiVersion":         ubx.FieldSpec{WireName: "runtime_api_version"},
+		"RuntimeChannel":            ubx.FieldSpec{WireName: "runtime_channel"},
 		"RuntimeMainExecutablePath": ubx.FieldSpec{WireName: "runtime_main_executable_path"},
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-		"ServingStatus": ubx.FieldSpec{WireName: "serving_status"},
-		"Threadsafe": ubx.FieldSpec{WireName: "threadsafe"},
-		"VersionUrl": ubx.FieldSpec{WireName: "version_url"},
-		"Vm": ubx.FieldSpec{WireName: "vm"},
+		"ServiceAccount":            ubx.FieldSpec{WireName: "service_account"},
+		"ServingStatus":             ubx.FieldSpec{WireName: "serving_status"},
+		"Threadsafe":                ubx.FieldSpec{WireName: "threadsafe"},
+		"Vm":                        ubx.FieldSpec{WireName: "vm"},
 		"VpcAccessConnector": ubx.FieldSpec{
 			WireName: "vpc_access_connector",
-			Kind: "object",
-			Fields: Version_VpcAccessConnectorFields,
+			Kind:     "object",
+			Fields:   Version_VpcAccessConnectorFields,
 		},
 		"Zones": ubx.FieldSpec{WireName: "zones"},
 	},

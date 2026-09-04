@@ -243,34 +243,16 @@ _V1betaMembership_StateFields = {
 class V1betaMembershipConfig:
     # Authority encodes how Google will recognize identities from this Membership. See the workload identity documentation for more details: https://cloud.google.com/kubernetes-engine/docs/how-to/workload-identity
     authority: Any = None
-    # Output only. The tier of the cluster.
-    cluster_tier: Any = None
-    # Output only. When the Membership was created.
-    create_time: Any = None
-    # Output only. When the Membership was deleted.
-    delete_time: Any = None
-    # Output only. Description of this membership, limited to 63 characters. Must match the regex: `a-zA-Z0-9*` This field is present for legacy purposes.
-    description: Any = None
     # MembershipEndpoint contains information needed to contact a Kubernetes API, endpoint and any additional Kubernetes metadata.
     endpoint: Any = None
     # Optional. An externally-generated and managed ID for this Membership. This ID may be modified after creation, but this is not recommended. The ID must match the regex: `a-zA-Z0-9*` If this Membership represents a Kubernetes cluster, this value should be set to the UID of the `kube-system` namespace object.
     external_id: Any = None
     # Optional. Labels for this membership. These labels are not leveraged by multi-cluster features, instead, we prefer cluster labels, which can be set on GKE cluster or other cluster types.
     labels: Any = None
-    # Output only. For clusters using Connect, the timestamp of the most recent connection established with Google Cloud. This time is updated every several minutes, not continuously. For clusters that do not use GKE Connect, or that have never connected successfully, this field will be unset.
-    last_connection_time: Any = None
-    # Output only. The type of the membership.
-    membership_type: Any = None
     # MonitoringConfig informs Fleet-based applications/services/UIs how the metrics for the underlying cluster is reported to cloud monitoring services. It can be set from empty to non-empty, but can't be mutated directly to prevent accidentally breaking the constinousty of metrics.
     monitoring_config: Any = None
-    # Output only. The full, unique name of this Membership resource in the format `projects/*/locations/*/memberships/{membership_id}`, set during creation. `membership_id` must be a valid RFC 1123 compliant DNS label: 1. At most 63 characters in length 2. It must consist of lower case alphanumeric characters or `-` 3. It must start and end with an alphanumeric character Which can be expressed as the regex: `[a-z0-9]([-a-z0-9]*[a-z0-9])?`, with a maximum length of 63 characters.
-    name: Any = None
     # MembershipState describes the state of a Membership resource.
     state: Any = None
-    # Output only. Google-generated UUID for this resource. This is unique across all Membership resources. If a Membership resource is deleted and another resource with the same name is created, it gets a different unique_id.
-    unique_id: Any = None
-    # Output only. When the Membership was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V1betaMembershipAttrs:
@@ -313,10 +295,6 @@ V1betaMembership = ubx.ResourceBinding(
             kind="object",
             fields=_V1betaMembership_AuthorityFields,
         ),
-        "cluster_tier": ubx.FieldSpec(wire_name="cluster_tier"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
-        "delete_time": ubx.FieldSpec(wire_name="delete_time"),
-        "description": ubx.FieldSpec(wire_name="description"),
         "endpoint": ubx.FieldSpec(
             wire_name="endpoint",
             kind="object",
@@ -324,20 +302,15 @@ V1betaMembership = ubx.ResourceBinding(
         ),
         "external_id": ubx.FieldSpec(wire_name="external_id"),
         "labels": ubx.FieldSpec(wire_name="labels"),
-        "last_connection_time": ubx.FieldSpec(wire_name="last_connection_time"),
-        "membership_type": ubx.FieldSpec(wire_name="membership_type"),
         "monitoring_config": ubx.FieldSpec(
             wire_name="monitoring_config",
             kind="object",
             fields=_V1betaMembership_MonitoringConfigFields,
         ),
-        "name": ubx.FieldSpec(wire_name="name"),
         "state": ubx.FieldSpec(
             wire_name="state",
             kind="object",
             fields=_V1betaMembership_StateFields,
         ),
-        "unique_id": ubx.FieldSpec(wire_name="unique_id"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

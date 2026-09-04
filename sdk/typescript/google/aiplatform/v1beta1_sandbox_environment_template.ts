@@ -153,8 +153,6 @@ const V1beta1SandboxEnvironmentTemplate_IngressControlConfigFields: FieldMap = {
 };
 
 export interface V1beta1SandboxEnvironmentTemplateConfig {
-  /** Output only. The timestamp when this SandboxEnvironmentTemplate was created. */
-  createTime?: string | Computed<string>;
   /** The customized sandbox runtime environment for BYOC. */
   customContainerEnvironment?: V1beta1SandboxEnvironmentTemplate_CustomContainerEnvironment | Computed<V1beta1SandboxEnvironmentTemplate_CustomContainerEnvironment>;
   /** The default sandbox runtime environment for default container workloads. */
@@ -167,10 +165,6 @@ export interface V1beta1SandboxEnvironmentTemplateConfig {
   ingressControlConfig?: V1beta1SandboxEnvironmentTemplate_IngressControlConfig | Computed<V1beta1SandboxEnvironmentTemplate_IngressControlConfig>;
   /** Identifier. The resource name of the SandboxEnvironmentTemplate. Format: `projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}/sandboxEnvironmentTemplates/{sandbox_environment_template}` */
   name?: string | Computed<string>;
-  /** Output only. The state of the sandbox environment template. */
-  state?: string | Computed<string>;
-  /** Output only. The timestamp when this SandboxEnvironmentTemplate was most recently updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1beta1SandboxEnvironmentTemplateAttrs {
@@ -197,7 +191,6 @@ export interface V1beta1SandboxEnvironmentTemplateAttrs {
 export const V1beta1SandboxEnvironmentTemplate: ResourceBinding<V1beta1SandboxEnvironmentTemplateConfig, V1beta1SandboxEnvironmentTemplateAttrs> = {
   wireType: "google_aiplatform_v1beta1_sandbox_environment_template",
   fields: {
-    createTime: "create_time",
     customContainerEnvironment: {
       wireName: "custom_container_environment",
       kind: "object",
@@ -220,7 +213,5 @@ export const V1beta1SandboxEnvironmentTemplate: ResourceBinding<V1beta1SandboxEn
       fields: V1beta1SandboxEnvironmentTemplate_IngressControlConfigFields,
     },
     name: "name",
-    state: "state",
-    updateTime: "update_time",
   },
 };

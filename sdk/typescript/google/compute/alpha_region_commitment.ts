@@ -519,19 +519,11 @@ export interface AlphaRegionCommitmentConfig {
   autoRenew?: boolean | Computed<boolean>;
   /** The category of the commitment; specifies whether the commitment is for hardware or software resources. Category MACHINE specifies that you are committing to hardware machine resources such asVCPU or MEMORY, listed in resources. Category LICENSE specifies that you are committing to software licenses, listed in licenseResources. Note that if you specify MACHINE commitments, then you must also specify a type to indicate the machine series of the hardware resource that you are committing to. */
   category?: string | Computed<string>;
-  /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
-  creationTimestamp?: string | Computed<string>;
   /** [Input Only] Optional, specifies the requested commitment end time inRFC3339 text format. Use this option when the desired commitment's end date is later than the start date + term duration. */
   customEndTimestamp?: string | Computed<string>;
   /** An optional description of the commitment. You can provide this property when you create the resource. */
   description?: string | Computed<string>;
-  /** Output only. [Output Only] Commitment end time inRFC3339 text format. */
-  endTimestamp?: string | Computed<string>;
   existingReservations?: string[] | Computed<string[]>;
-  /** Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server. */
-  id?: string | Computed<string>;
-  /** Output only. [Output Only] Type of the resource. Always compute#commitment for commitments. */
-  kind?: string | Computed<string>;
   /** Commitment for a particular license resource. */
   licenseResource?: AlphaRegionCommitment_LicenseResource | Computed<AlphaRegionCommitment_LicenseResource>;
   /** The list of source commitments that you are merging to create the new merged commitment. For more information, see Merging commitments. */
@@ -544,26 +536,14 @@ export interface AlphaRegionCommitmentConfig {
   persistentDiskResources?: AlphaRegionCommitment_PersistentDiskResources[] | Computed<AlphaRegionCommitment_PersistentDiskResources[]>;
   /** The minimum time duration that you commit to purchasing resources. The plan that you choose determines the preset term length of the commitment (which is 1 year or 3 years) and affects the discount rate that you receive for your resources. Committing to a longer time duration typically gives you a higher discount rate. The supported values for this field are TWELVE_MONTH (1 year), andTHIRTY_SIX_MONTH (3 years). */
   plan?: string | Computed<string>;
-  /** Output only. [Output Only] URL of the region where the commitment and committed resources are located. */
-  region?: string | Computed<string>;
   /** The list of new reservations that you want to create and attach to this commitment. You must attach reservations to your commitment if your commitment specifies any GPUs or Local SSD disks. For more information, see Attach reservations to resource-based commitments. Specify this property only if you want to create new reservations to attach. To attach existing reservations, specify theexistingReservations property instead. */
   reservations?: AlphaRegionCommitment_Reservations[] | Computed<AlphaRegionCommitment_Reservations[]>;
   /** [Output Only] Contains output only fields. */
   resourceStatus?: AlphaRegionCommitment_ResourceStatus | Computed<AlphaRegionCommitment_ResourceStatus>;
   /** The list of all the hardware resources, with their types and amounts, that you want to commit to. Specify as a separate entry in the list for each individual resource type. */
   resources?: AlphaRegionCommitment_Resources[] | Computed<AlphaRegionCommitment_Resources[]>;
-  /** Output only. [Output Only] Server-defined URL for the resource. */
-  selfLink?: string | Computed<string>;
-  /** Output only. [Output Only] Server-defined URL for this resource with the resource id. */
-  selfLinkWithId?: string | Computed<string>;
   /** The source commitment from which you are transferring resources to create the new split commitment. For more information, see Split commitments. */
   splitSourceCommitment?: string | Computed<string>;
-  /** Output only. [Output Only] Commitment start time inRFC3339 text format. */
-  startTimestamp?: string | Computed<string>;
-  /** Output only. [Output Only] Status of the commitment with regards to eventual expiration (each commitment has an end date defined). Status can be one of the following values: NOT_YET_ACTIVE, ACTIVE, orEXPIRED. */
-  status?: string | Computed<string>;
-  /** Output only. [Output Only] An optional, human-readable explanation of the status. */
-  statusMessage?: string | Computed<string>;
   /** The type of commitment; specifies the machine series for which you want to commit to purchasing resources. The choice of machine series affects the discount rate and the eligible resource types. The type must be one of the following:ACCELERATOR_OPTIMIZED, ACCELERATOR_OPTIMIZED_A3,ACCELERATOR_OPTIMIZED_A3_MEGA,COMPUTE_OPTIMIZED, COMPUTE_OPTIMIZED_C2D, COMPUTE_OPTIMIZED_C3, COMPUTE_OPTIMIZED_C3D,COMPUTE_OPTIMIZED_H3, GENERAL_PURPOSE,GENERAL_PURPOSE_C4, GENERAL_PURPOSE_E2,GENERAL_PURPOSE_N2, GENERAL_PURPOSE_N2D,GENERAL_PURPOSE_N4, GENERAL_PURPOSE_T2D,GRAPHICS_OPTIMIZED, GRAPHICS_OPTIMIZED_G4,GRAPHICS_OPTIMIZED_G4_VGPU,MEMORY_OPTIMIZED, MEMORY_OPTIMIZED_M3,MEMORY_OPTIMIZED_X4, STORAGE_OPTIMIZED_Z3. For example, type MEMORY_OPTIMIZED specifies a commitment that applies only to eligible resources of memory optimized M1 and M2 machine series. Type GENERAL_PURPOSE specifies a commitment that applies only to eligible resources of general purpose N1 machine series. */
   type?: string | Computed<string>;
 }
@@ -627,13 +607,9 @@ export const AlphaRegionCommitment: ResourceBinding<AlphaRegionCommitmentConfig,
   fields: {
     autoRenew: "auto_renew",
     category: "category",
-    creationTimestamp: "creation_timestamp",
     customEndTimestamp: "custom_end_timestamp",
     description: "description",
-    endTimestamp: "end_timestamp",
     existingReservations: "existing_reservations",
-    id: "id",
-    kind: "kind",
     licenseResource: {
       wireName: "license_resource",
       kind: "object",
@@ -652,7 +628,6 @@ export const AlphaRegionCommitment: ResourceBinding<AlphaRegionCommitmentConfig,
       fields: AlphaRegionCommitment_PersistentDiskResourcesFields,
     },
     plan: "plan",
-    region: "region",
     reservations: {
       wireName: "reservations",
       kind: "list",
@@ -668,12 +643,7 @@ export const AlphaRegionCommitment: ResourceBinding<AlphaRegionCommitmentConfig,
       kind: "list",
       fields: AlphaRegionCommitment_ResourcesFields,
     },
-    selfLink: "self_link",
-    selfLinkWithId: "self_link_with_id",
     splitSourceCommitment: "split_source_commitment",
-    startTimestamp: "start_timestamp",
-    status: "status",
-    statusMessage: "status_message",
     type: "type",
   },
 };

@@ -75,14 +75,14 @@ type V2alpha1QueuedResource_State struct {
 }
 
 type V2alpha1QueuedResource_Tpu_NodeSpec_MultiNodeParams struct {
-	NodeCount any
+	NodeCount    any
 	NodeIdPrefix any
 	WorkloadType any
 }
 
 type V2alpha1QueuedResource_Tpu_NodeSpec_Node_AcceleratorConfig struct {
 	Topology any
-	Type any
+	Type     any
 }
 
 type V2alpha1QueuedResource_Tpu_NodeSpec_Node_BootDiskConfig_CustomerEncryptionKey struct {
@@ -90,27 +90,27 @@ type V2alpha1QueuedResource_Tpu_NodeSpec_Node_BootDiskConfig_CustomerEncryptionK
 }
 
 type V2alpha1QueuedResource_Tpu_NodeSpec_Node_BootDiskConfig struct {
-	CustomerEncryptionKey any
-	DiskSizeGb any
+	CustomerEncryptionKey     any
+	DiskSizeGb                any
 	EnableConfidentialCompute any
-	ProvisionedIops any
-	ProvisionedThroughput any
-	SourceImage any
-	StoragePool any
+	ProvisionedIops           any
+	ProvisionedThroughput     any
+	SourceImage               any
+	StoragePool               any
 }
 
 type V2alpha1QueuedResource_Tpu_NodeSpec_Node_DataDisks struct {
-	Mode any
+	Mode       any
 	SourceDisk any
-	WorkerIds any
+	WorkerIds  any
 }
 
 type V2alpha1QueuedResource_Tpu_NodeSpec_Node_NetworkConfig struct {
-	CanIpForward any
+	CanIpForward      any
 	EnableExternalIps any
-	Network any
-	QueueCount any
-	Subnetwork any
+	Network           any
+	QueueCount        any
+	Subnetwork        any
 }
 
 type V2alpha1QueuedResource_Tpu_NodeSpec_Node_NetworkEndpoints_AccessConfig struct {
@@ -119,16 +119,16 @@ type V2alpha1QueuedResource_Tpu_NodeSpec_Node_NetworkEndpoints_AccessConfig stru
 
 type V2alpha1QueuedResource_Tpu_NodeSpec_Node_NetworkEndpoints struct {
 	AccessConfig any
-	IpAddress any
-	Port any
+	IpAddress    any
+	Port         any
 }
 
 type V2alpha1QueuedResource_Tpu_NodeSpec_Node_SchedulingConfig struct {
-	Preemptible any
-	ProvisioningModel any
-	ReservationName any
-	Reserved any
-	Spot any
+	Preemptible          any
+	ProvisioningModel    any
+	ReservationName      any
+	Reserved             any
+	Spot                 any
 	TerminationTimestamp any
 }
 
@@ -142,57 +142,57 @@ type V2alpha1QueuedResource_Tpu_NodeSpec_Node_ShieldedInstanceConfig struct {
 }
 
 type V2alpha1QueuedResource_Tpu_NodeSpec_Node_Symptoms struct {
-	CreateTime any
-	Details any
+	CreateTime  any
+	Details     any
 	SymptomType any
-	WorkerId any
+	WorkerId    any
 }
 
 type V2alpha1QueuedResource_Tpu_NodeSpec_Node_UpcomingMaintenance struct {
-	CanReschedule any
+	CanReschedule         any
 	LatestWindowStartTime any
-	MaintenanceStatus any
-	Type any
-	WindowEndTime any
-	WindowStartTime any
+	MaintenanceStatus     any
+	Type                  any
+	WindowEndTime         any
+	WindowStartTime       any
 }
 
 type V2alpha1QueuedResource_Tpu_NodeSpec_Node struct {
-	AcceleratorConfig any
-	AcceleratorType any
-	ApiVersion any
-	AutocheckpointEnabled any
-	BootDiskConfig any
-	CidrBlock any
-	CreateTime any
-	DataDisks any
-	Description any
-	Health any
-	HealthDescription any
-	Id any
-	Labels any
-	Metadata any
-	MultisliceNode any
-	Name any
-	NetworkConfig any
-	NetworkConfigs any
-	NetworkEndpoints any
-	QueuedResource any
-	RuntimeVersion any
-	SchedulingConfig any
-	ServiceAccount any
+	AcceleratorConfig      any
+	AcceleratorType        any
+	ApiVersion             any
+	AutocheckpointEnabled  any
+	BootDiskConfig         any
+	CidrBlock              any
+	CreateTime             any
+	DataDisks              any
+	Description            any
+	Health                 any
+	HealthDescription      any
+	Id                     any
+	Labels                 any
+	Metadata               any
+	MultisliceNode         any
+	Name                   any
+	NetworkConfig          any
+	NetworkConfigs         any
+	NetworkEndpoints       any
+	QueuedResource         any
+	RuntimeVersion         any
+	SchedulingConfig       any
+	ServiceAccount         any
 	ShieldedInstanceConfig any
-	State any
-	Symptoms any
-	Tags any
-	UpcomingMaintenance any
+	State                  any
+	Symptoms               any
+	Tags                   any
+	UpcomingMaintenance    any
 }
 
 type V2alpha1QueuedResource_Tpu_NodeSpec struct {
 	MultiNodeParams any
-	Node any
-	NodeId any
-	Parent any
+	Node            any
+	NodeId          any
+	Parent          any
 }
 
 type V2alpha1QueuedResource_Tpu struct {
@@ -201,261 +201,257 @@ type V2alpha1QueuedResource_Tpu struct {
 }
 
 var V2alpha1QueuedResource_GuaranteedFields = ubx.FieldMap{
-		"MinDuration": ubx.FieldSpec{WireName: "min_duration"},
-		"Reserved": ubx.FieldSpec{WireName: "reserved"},
-	}
+	"MinDuration": ubx.FieldSpec{WireName: "min_duration"},
+	"Reserved":    ubx.FieldSpec{WireName: "reserved"},
+}
 
 var V2alpha1QueuedResource_QueueingPolicy_ValidIntervalFields = ubx.FieldMap{
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-	}
+	"EndTime":   ubx.FieldSpec{WireName: "end_time"},
+	"StartTime": ubx.FieldSpec{WireName: "start_time"},
+}
 
 var V2alpha1QueuedResource_QueueingPolicyFields = ubx.FieldMap{
-		"ValidAfterDuration": ubx.FieldSpec{WireName: "valid_after_duration"},
-		"ValidAfterTime": ubx.FieldSpec{WireName: "valid_after_time"},
-		"ValidInterval": ubx.FieldSpec{
-			WireName: "valid_interval",
-			Kind: "object",
-			Fields: V2alpha1QueuedResource_QueueingPolicy_ValidIntervalFields,
-		},
-		"ValidUntilDuration": ubx.FieldSpec{WireName: "valid_until_duration"},
-		"ValidUntilTime": ubx.FieldSpec{WireName: "valid_until_time"},
-	}
+	"ValidAfterDuration": ubx.FieldSpec{WireName: "valid_after_duration"},
+	"ValidAfterTime":     ubx.FieldSpec{WireName: "valid_after_time"},
+	"ValidInterval": ubx.FieldSpec{
+		WireName: "valid_interval",
+		Kind:     "object",
+		Fields:   V2alpha1QueuedResource_QueueingPolicy_ValidIntervalFields,
+	},
+	"ValidUntilDuration": ubx.FieldSpec{WireName: "valid_until_duration"},
+	"ValidUntilTime":     ubx.FieldSpec{WireName: "valid_until_time"},
+}
 
 var V2alpha1QueuedResource_RunDurationFields = ubx.FieldMap{
-		"MaxRunDuration": ubx.FieldSpec{WireName: "max_run_duration"},
-		"TerminationTime": ubx.FieldSpec{WireName: "termination_time"},
-	}
+	"MaxRunDuration":  ubx.FieldSpec{WireName: "max_run_duration"},
+	"TerminationTime": ubx.FieldSpec{WireName: "termination_time"},
+}
 
 var V2alpha1QueuedResource_State_FailedData_ErrorFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"Code":    ubx.FieldSpec{WireName: "code"},
+	"Details": ubx.FieldSpec{WireName: "details"},
+	"Message": ubx.FieldSpec{WireName: "message"},
+}
 
 var V2alpha1QueuedResource_State_FailedDataFields = ubx.FieldMap{
-		"Error": ubx.FieldSpec{
-			WireName: "error",
-			Kind: "object",
-			Fields: V2alpha1QueuedResource_State_FailedData_ErrorFields,
-		},
-	}
+	"Error": ubx.FieldSpec{
+		WireName: "error",
+		Kind:     "object",
+		Fields:   V2alpha1QueuedResource_State_FailedData_ErrorFields,
+	},
+}
 
 var V2alpha1QueuedResource_StateFields = ubx.FieldMap{
-		"AcceptedData": ubx.FieldSpec{WireName: "accepted_data"},
-		"ActiveData": ubx.FieldSpec{WireName: "active_data"},
-		"CreatingData": ubx.FieldSpec{WireName: "creating_data"},
-		"DeletingData": ubx.FieldSpec{WireName: "deleting_data"},
-		"FailedData": ubx.FieldSpec{
-			WireName: "failed_data",
-			Kind: "object",
-			Fields: V2alpha1QueuedResource_State_FailedDataFields,
-		},
-		"ProvisioningData": ubx.FieldSpec{WireName: "provisioning_data"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"StateInitiator": ubx.FieldSpec{WireName: "state_initiator"},
-		"SuspendedData": ubx.FieldSpec{WireName: "suspended_data"},
-		"SuspendingData": ubx.FieldSpec{WireName: "suspending_data"},
-	}
+	"AcceptedData": ubx.FieldSpec{WireName: "accepted_data"},
+	"ActiveData":   ubx.FieldSpec{WireName: "active_data"},
+	"CreatingData": ubx.FieldSpec{WireName: "creating_data"},
+	"DeletingData": ubx.FieldSpec{WireName: "deleting_data"},
+	"FailedData": ubx.FieldSpec{
+		WireName: "failed_data",
+		Kind:     "object",
+		Fields:   V2alpha1QueuedResource_State_FailedDataFields,
+	},
+	"ProvisioningData": ubx.FieldSpec{WireName: "provisioning_data"},
+	"State":            ubx.FieldSpec{WireName: "state"},
+	"StateInitiator":   ubx.FieldSpec{WireName: "state_initiator"},
+	"SuspendedData":    ubx.FieldSpec{WireName: "suspended_data"},
+	"SuspendingData":   ubx.FieldSpec{WireName: "suspending_data"},
+}
 
 var V2alpha1QueuedResource_Tpu_NodeSpec_MultiNodeParamsFields = ubx.FieldMap{
-		"NodeCount": ubx.FieldSpec{WireName: "node_count"},
-		"NodeIdPrefix": ubx.FieldSpec{WireName: "node_id_prefix"},
-		"WorkloadType": ubx.FieldSpec{WireName: "workload_type"},
-	}
+	"NodeCount":    ubx.FieldSpec{WireName: "node_count"},
+	"NodeIdPrefix": ubx.FieldSpec{WireName: "node_id_prefix"},
+	"WorkloadType": ubx.FieldSpec{WireName: "workload_type"},
+}
 
 var V2alpha1QueuedResource_Tpu_NodeSpec_Node_AcceleratorConfigFields = ubx.FieldMap{
-		"Topology": ubx.FieldSpec{WireName: "topology"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Topology": ubx.FieldSpec{WireName: "topology"},
+	"Type":     ubx.FieldSpec{WireName: "type"},
+}
 
 var V2alpha1QueuedResource_Tpu_NodeSpec_Node_BootDiskConfig_CustomerEncryptionKeyFields = ubx.FieldMap{
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-	}
+	"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
+}
 
 var V2alpha1QueuedResource_Tpu_NodeSpec_Node_BootDiskConfigFields = ubx.FieldMap{
-		"CustomerEncryptionKey": ubx.FieldSpec{
-			WireName: "customer_encryption_key",
-			Kind: "object",
-			Fields: V2alpha1QueuedResource_Tpu_NodeSpec_Node_BootDiskConfig_CustomerEncryptionKeyFields,
-		},
-		"DiskSizeGb": ubx.FieldSpec{WireName: "disk_size_gb"},
-		"EnableConfidentialCompute": ubx.FieldSpec{WireName: "enable_confidential_compute"},
-		"ProvisionedIops": ubx.FieldSpec{WireName: "provisioned_iops"},
-		"ProvisionedThroughput": ubx.FieldSpec{WireName: "provisioned_throughput"},
-		"SourceImage": ubx.FieldSpec{WireName: "source_image"},
-		"StoragePool": ubx.FieldSpec{WireName: "storage_pool"},
-	}
+	"CustomerEncryptionKey": ubx.FieldSpec{
+		WireName: "customer_encryption_key",
+		Kind:     "object",
+		Fields:   V2alpha1QueuedResource_Tpu_NodeSpec_Node_BootDiskConfig_CustomerEncryptionKeyFields,
+	},
+	"DiskSizeGb":                ubx.FieldSpec{WireName: "disk_size_gb"},
+	"EnableConfidentialCompute": ubx.FieldSpec{WireName: "enable_confidential_compute"},
+	"ProvisionedIops":           ubx.FieldSpec{WireName: "provisioned_iops"},
+	"ProvisionedThroughput":     ubx.FieldSpec{WireName: "provisioned_throughput"},
+	"SourceImage":               ubx.FieldSpec{WireName: "source_image"},
+	"StoragePool":               ubx.FieldSpec{WireName: "storage_pool"},
+}
 
 var V2alpha1QueuedResource_Tpu_NodeSpec_Node_DataDisksFields = ubx.FieldMap{
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"SourceDisk": ubx.FieldSpec{WireName: "source_disk"},
-		"WorkerIds": ubx.FieldSpec{WireName: "worker_ids"},
-	}
+	"Mode":       ubx.FieldSpec{WireName: "mode"},
+	"SourceDisk": ubx.FieldSpec{WireName: "source_disk"},
+	"WorkerIds":  ubx.FieldSpec{WireName: "worker_ids"},
+}
 
 var V2alpha1QueuedResource_Tpu_NodeSpec_Node_NetworkConfigFields = ubx.FieldMap{
-		"CanIpForward": ubx.FieldSpec{WireName: "can_ip_forward"},
-		"EnableExternalIps": ubx.FieldSpec{WireName: "enable_external_ips"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"QueueCount": ubx.FieldSpec{WireName: "queue_count"},
-		"Subnetwork": ubx.FieldSpec{WireName: "subnetwork"},
-	}
+	"CanIpForward":      ubx.FieldSpec{WireName: "can_ip_forward"},
+	"EnableExternalIps": ubx.FieldSpec{WireName: "enable_external_ips"},
+	"Network":           ubx.FieldSpec{WireName: "network"},
+	"QueueCount":        ubx.FieldSpec{WireName: "queue_count"},
+	"Subnetwork":        ubx.FieldSpec{WireName: "subnetwork"},
+}
 
 var V2alpha1QueuedResource_Tpu_NodeSpec_Node_NetworkEndpoints_AccessConfigFields = ubx.FieldMap{
-		"ExternalIp": ubx.FieldSpec{WireName: "external_ip"},
-	}
+	"ExternalIp": ubx.FieldSpec{WireName: "external_ip"},
+}
 
 var V2alpha1QueuedResource_Tpu_NodeSpec_Node_NetworkEndpointsFields = ubx.FieldMap{
-		"AccessConfig": ubx.FieldSpec{
-			WireName: "access_config",
-			Kind: "object",
-			Fields: V2alpha1QueuedResource_Tpu_NodeSpec_Node_NetworkEndpoints_AccessConfigFields,
-		},
-		"IpAddress": ubx.FieldSpec{WireName: "ip_address"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-	}
+	"AccessConfig": ubx.FieldSpec{
+		WireName: "access_config",
+		Kind:     "object",
+		Fields:   V2alpha1QueuedResource_Tpu_NodeSpec_Node_NetworkEndpoints_AccessConfigFields,
+	},
+	"IpAddress": ubx.FieldSpec{WireName: "ip_address"},
+	"Port":      ubx.FieldSpec{WireName: "port"},
+}
 
 var V2alpha1QueuedResource_Tpu_NodeSpec_Node_SchedulingConfigFields = ubx.FieldMap{
-		"Preemptible": ubx.FieldSpec{WireName: "preemptible"},
-		"ProvisioningModel": ubx.FieldSpec{WireName: "provisioning_model"},
-		"ReservationName": ubx.FieldSpec{WireName: "reservation_name"},
-		"Reserved": ubx.FieldSpec{WireName: "reserved"},
-		"Spot": ubx.FieldSpec{WireName: "spot"},
-		"TerminationTimestamp": ubx.FieldSpec{WireName: "termination_timestamp"},
-	}
+	"Preemptible":          ubx.FieldSpec{WireName: "preemptible"},
+	"ProvisioningModel":    ubx.FieldSpec{WireName: "provisioning_model"},
+	"ReservationName":      ubx.FieldSpec{WireName: "reservation_name"},
+	"Reserved":             ubx.FieldSpec{WireName: "reserved"},
+	"Spot":                 ubx.FieldSpec{WireName: "spot"},
+	"TerminationTimestamp": ubx.FieldSpec{WireName: "termination_timestamp"},
+}
 
 var V2alpha1QueuedResource_Tpu_NodeSpec_Node_ServiceAccountFields = ubx.FieldMap{
-		"Email": ubx.FieldSpec{WireName: "email"},
-		"Scope": ubx.FieldSpec{WireName: "scope"},
-	}
+	"Email": ubx.FieldSpec{WireName: "email"},
+	"Scope": ubx.FieldSpec{WireName: "scope"},
+}
 
 var V2alpha1QueuedResource_Tpu_NodeSpec_Node_ShieldedInstanceConfigFields = ubx.FieldMap{
-		"EnableSecureBoot": ubx.FieldSpec{WireName: "enable_secure_boot"},
-	}
+	"EnableSecureBoot": ubx.FieldSpec{WireName: "enable_secure_boot"},
+}
 
 var V2alpha1QueuedResource_Tpu_NodeSpec_Node_SymptomsFields = ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"SymptomType": ubx.FieldSpec{WireName: "symptom_type"},
-		"WorkerId": ubx.FieldSpec{WireName: "worker_id"},
-	}
+	"CreateTime":  ubx.FieldSpec{WireName: "create_time"},
+	"Details":     ubx.FieldSpec{WireName: "details"},
+	"SymptomType": ubx.FieldSpec{WireName: "symptom_type"},
+	"WorkerId":    ubx.FieldSpec{WireName: "worker_id"},
+}
 
 var V2alpha1QueuedResource_Tpu_NodeSpec_Node_UpcomingMaintenanceFields = ubx.FieldMap{
-		"CanReschedule": ubx.FieldSpec{WireName: "can_reschedule"},
-		"LatestWindowStartTime": ubx.FieldSpec{WireName: "latest_window_start_time"},
-		"MaintenanceStatus": ubx.FieldSpec{WireName: "maintenance_status"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"WindowEndTime": ubx.FieldSpec{WireName: "window_end_time"},
-		"WindowStartTime": ubx.FieldSpec{WireName: "window_start_time"},
-	}
+	"CanReschedule":         ubx.FieldSpec{WireName: "can_reschedule"},
+	"LatestWindowStartTime": ubx.FieldSpec{WireName: "latest_window_start_time"},
+	"MaintenanceStatus":     ubx.FieldSpec{WireName: "maintenance_status"},
+	"Type":                  ubx.FieldSpec{WireName: "type"},
+	"WindowEndTime":         ubx.FieldSpec{WireName: "window_end_time"},
+	"WindowStartTime":       ubx.FieldSpec{WireName: "window_start_time"},
+}
 
 var V2alpha1QueuedResource_Tpu_NodeSpec_NodeFields = ubx.FieldMap{
-		"AcceleratorConfig": ubx.FieldSpec{
-			WireName: "accelerator_config",
-			Kind: "object",
-			Fields: V2alpha1QueuedResource_Tpu_NodeSpec_Node_AcceleratorConfigFields,
-		},
-		"AcceleratorType": ubx.FieldSpec{WireName: "accelerator_type"},
-		"ApiVersion": ubx.FieldSpec{WireName: "api_version"},
-		"AutocheckpointEnabled": ubx.FieldSpec{WireName: "autocheckpoint_enabled"},
-		"BootDiskConfig": ubx.FieldSpec{
-			WireName: "boot_disk_config",
-			Kind: "object",
-			Fields: V2alpha1QueuedResource_Tpu_NodeSpec_Node_BootDiskConfigFields,
-		},
-		"CidrBlock": ubx.FieldSpec{WireName: "cidr_block"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DataDisks": ubx.FieldSpec{
-			WireName: "data_disks",
-			Kind: "list",
-			Fields: V2alpha1QueuedResource_Tpu_NodeSpec_Node_DataDisksFields,
-		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Health": ubx.FieldSpec{WireName: "health"},
-		"HealthDescription": ubx.FieldSpec{WireName: "health_description"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-		"MultisliceNode": ubx.FieldSpec{WireName: "multislice_node"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NetworkConfig": ubx.FieldSpec{
-			WireName: "network_config",
-			Kind: "object",
-			Fields: V2alpha1QueuedResource_Tpu_NodeSpec_Node_NetworkConfigFields,
-		},
-		"NetworkConfigs": ubx.FieldSpec{
-			WireName: "network_configs",
-			Kind: "list",
-			Fields: V2alpha1QueuedResource_Tpu_NodeSpec_Node_NetworkConfigFields,
-		},
-		"NetworkEndpoints": ubx.FieldSpec{
-			WireName: "network_endpoints",
-			Kind: "list",
-			Fields: V2alpha1QueuedResource_Tpu_NodeSpec_Node_NetworkEndpointsFields,
-		},
-		"QueuedResource": ubx.FieldSpec{WireName: "queued_resource"},
-		"RuntimeVersion": ubx.FieldSpec{WireName: "runtime_version"},
-		"SchedulingConfig": ubx.FieldSpec{
-			WireName: "scheduling_config",
-			Kind: "object",
-			Fields: V2alpha1QueuedResource_Tpu_NodeSpec_Node_SchedulingConfigFields,
-		},
-		"ServiceAccount": ubx.FieldSpec{
-			WireName: "service_account",
-			Kind: "object",
-			Fields: V2alpha1QueuedResource_Tpu_NodeSpec_Node_ServiceAccountFields,
-		},
-		"ShieldedInstanceConfig": ubx.FieldSpec{
-			WireName: "shielded_instance_config",
-			Kind: "object",
-			Fields: V2alpha1QueuedResource_Tpu_NodeSpec_Node_ShieldedInstanceConfigFields,
-		},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"Symptoms": ubx.FieldSpec{
-			WireName: "symptoms",
-			Kind: "list",
-			Fields: V2alpha1QueuedResource_Tpu_NodeSpec_Node_SymptomsFields,
-		},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"UpcomingMaintenance": ubx.FieldSpec{
-			WireName: "upcoming_maintenance",
-			Kind: "object",
-			Fields: V2alpha1QueuedResource_Tpu_NodeSpec_Node_UpcomingMaintenanceFields,
-		},
-	}
+	"AcceleratorConfig": ubx.FieldSpec{
+		WireName: "accelerator_config",
+		Kind:     "object",
+		Fields:   V2alpha1QueuedResource_Tpu_NodeSpec_Node_AcceleratorConfigFields,
+	},
+	"AcceleratorType":       ubx.FieldSpec{WireName: "accelerator_type"},
+	"ApiVersion":            ubx.FieldSpec{WireName: "api_version"},
+	"AutocheckpointEnabled": ubx.FieldSpec{WireName: "autocheckpoint_enabled"},
+	"BootDiskConfig": ubx.FieldSpec{
+		WireName: "boot_disk_config",
+		Kind:     "object",
+		Fields:   V2alpha1QueuedResource_Tpu_NodeSpec_Node_BootDiskConfigFields,
+	},
+	"CidrBlock":  ubx.FieldSpec{WireName: "cidr_block"},
+	"CreateTime": ubx.FieldSpec{WireName: "create_time"},
+	"DataDisks": ubx.FieldSpec{
+		WireName: "data_disks",
+		Kind:     "list",
+		Fields:   V2alpha1QueuedResource_Tpu_NodeSpec_Node_DataDisksFields,
+	},
+	"Description":       ubx.FieldSpec{WireName: "description"},
+	"Health":            ubx.FieldSpec{WireName: "health"},
+	"HealthDescription": ubx.FieldSpec{WireName: "health_description"},
+	"Id":                ubx.FieldSpec{WireName: "id"},
+	"Labels":            ubx.FieldSpec{WireName: "labels"},
+	"Metadata":          ubx.FieldSpec{WireName: "metadata"},
+	"MultisliceNode":    ubx.FieldSpec{WireName: "multislice_node"},
+	"Name":              ubx.FieldSpec{WireName: "name"},
+	"NetworkConfig": ubx.FieldSpec{
+		WireName: "network_config",
+		Kind:     "object",
+		Fields:   V2alpha1QueuedResource_Tpu_NodeSpec_Node_NetworkConfigFields,
+	},
+	"NetworkConfigs": ubx.FieldSpec{
+		WireName: "network_configs",
+		Kind:     "list",
+		Fields:   V2alpha1QueuedResource_Tpu_NodeSpec_Node_NetworkConfigFields,
+	},
+	"NetworkEndpoints": ubx.FieldSpec{
+		WireName: "network_endpoints",
+		Kind:     "list",
+		Fields:   V2alpha1QueuedResource_Tpu_NodeSpec_Node_NetworkEndpointsFields,
+	},
+	"QueuedResource": ubx.FieldSpec{WireName: "queued_resource"},
+	"RuntimeVersion": ubx.FieldSpec{WireName: "runtime_version"},
+	"SchedulingConfig": ubx.FieldSpec{
+		WireName: "scheduling_config",
+		Kind:     "object",
+		Fields:   V2alpha1QueuedResource_Tpu_NodeSpec_Node_SchedulingConfigFields,
+	},
+	"ServiceAccount": ubx.FieldSpec{
+		WireName: "service_account",
+		Kind:     "object",
+		Fields:   V2alpha1QueuedResource_Tpu_NodeSpec_Node_ServiceAccountFields,
+	},
+	"ShieldedInstanceConfig": ubx.FieldSpec{
+		WireName: "shielded_instance_config",
+		Kind:     "object",
+		Fields:   V2alpha1QueuedResource_Tpu_NodeSpec_Node_ShieldedInstanceConfigFields,
+	},
+	"State": ubx.FieldSpec{WireName: "state"},
+	"Symptoms": ubx.FieldSpec{
+		WireName: "symptoms",
+		Kind:     "list",
+		Fields:   V2alpha1QueuedResource_Tpu_NodeSpec_Node_SymptomsFields,
+	},
+	"Tags": ubx.FieldSpec{WireName: "tags"},
+	"UpcomingMaintenance": ubx.FieldSpec{
+		WireName: "upcoming_maintenance",
+		Kind:     "object",
+		Fields:   V2alpha1QueuedResource_Tpu_NodeSpec_Node_UpcomingMaintenanceFields,
+	},
+}
 
 var V2alpha1QueuedResource_Tpu_NodeSpecFields = ubx.FieldMap{
-		"MultiNodeParams": ubx.FieldSpec{
-			WireName: "multi_node_params",
-			Kind: "object",
-			Fields: V2alpha1QueuedResource_Tpu_NodeSpec_MultiNodeParamsFields,
-		},
-		"Node": ubx.FieldSpec{
-			WireName: "node",
-			Kind: "object",
-			Fields: V2alpha1QueuedResource_Tpu_NodeSpec_NodeFields,
-		},
-		"NodeId": ubx.FieldSpec{WireName: "node_id"},
-		"Parent": ubx.FieldSpec{WireName: "parent"},
-	}
+	"MultiNodeParams": ubx.FieldSpec{
+		WireName: "multi_node_params",
+		Kind:     "object",
+		Fields:   V2alpha1QueuedResource_Tpu_NodeSpec_MultiNodeParamsFields,
+	},
+	"Node": ubx.FieldSpec{
+		WireName: "node",
+		Kind:     "object",
+		Fields:   V2alpha1QueuedResource_Tpu_NodeSpec_NodeFields,
+	},
+	"NodeId": ubx.FieldSpec{WireName: "node_id"},
+	"Parent": ubx.FieldSpec{WireName: "parent"},
+}
 
 var V2alpha1QueuedResource_TpuFields = ubx.FieldMap{
-		"NodeSpec": ubx.FieldSpec{
-			WireName: "node_spec",
-			Kind: "list",
-			Fields: V2alpha1QueuedResource_Tpu_NodeSpecFields,
-		},
-	}
+	"NodeSpec": ubx.FieldSpec{
+		WireName: "node_spec",
+		Kind:     "list",
+		Fields:   V2alpha1QueuedResource_Tpu_NodeSpecFields,
+	},
+}
 
 type V2alpha1QueuedResourceConfig struct {
 	// BestEffort tier definition.
 	BestEffort any
-	// Output only. The time when the QueuedResource was created.
-	CreateTime any
 	// Guaranteed tier definition.
 	Guaranteed any
-	// Output only. Immutable. The name of the QueuedResource.
-	Name any
 	// Optional. The provisioning model for the resource.
 	ProvisioningModel any
 	// Defines the policy of the QueuedRequest.
@@ -501,35 +497,33 @@ var V2alpha1QueuedResource = ubx.ResourceBinding{
 	WireType: "google_tpu_v2alpha1_queued_resource",
 	Fields: ubx.FieldMap{
 		"BestEffort": ubx.FieldSpec{WireName: "best_effort"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Guaranteed": ubx.FieldSpec{
 			WireName: "guaranteed",
-			Kind: "object",
-			Fields: V2alpha1QueuedResource_GuaranteedFields,
+			Kind:     "object",
+			Fields:   V2alpha1QueuedResource_GuaranteedFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
 		"ProvisioningModel": ubx.FieldSpec{WireName: "provisioning_model"},
 		"QueueingPolicy": ubx.FieldSpec{
 			WireName: "queueing_policy",
-			Kind: "object",
-			Fields: V2alpha1QueuedResource_QueueingPolicyFields,
+			Kind:     "object",
+			Fields:   V2alpha1QueuedResource_QueueingPolicyFields,
 		},
 		"ReservationName": ubx.FieldSpec{WireName: "reservation_name"},
 		"RunDuration": ubx.FieldSpec{
 			WireName: "run_duration",
-			Kind: "object",
-			Fields: V2alpha1QueuedResource_RunDurationFields,
+			Kind:     "object",
+			Fields:   V2alpha1QueuedResource_RunDurationFields,
 		},
 		"Spot": ubx.FieldSpec{WireName: "spot"},
 		"State": ubx.FieldSpec{
 			WireName: "state",
-			Kind: "object",
-			Fields: V2alpha1QueuedResource_StateFields,
+			Kind:     "object",
+			Fields:   V2alpha1QueuedResource_StateFields,
 		},
 		"Tpu": ubx.FieldSpec{
 			WireName: "tpu",
-			Kind: "object",
-			Fields: V2alpha1QueuedResource_TpuFields,
+			Kind:     "object",
+			Fields:   V2alpha1QueuedResource_TpuFields,
 		},
 	},
 }

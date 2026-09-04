@@ -26,12 +26,12 @@ type Model_BaseModelSource struct {
 
 type Model_Checkpoints struct {
 	CheckpointId any
-	Epoch any
-	Step any
+	Epoch        any
+	Step         any
 }
 
 type Model_ContainerSpec_Env struct {
-	Name any
+	Name  any
 	Value any
 }
 
@@ -139,9 +139,9 @@ type Model_DataStats struct {
 }
 
 type Model_DeployedModels struct {
-	CheckpointId any
+	CheckpointId    any
 	DeployedModelId any
-	Endpoint any
+	Endpoint        any
 }
 
 type Model_EncryptionSpec struct {
@@ -150,40 +150,40 @@ type Model_EncryptionSpec struct {
 }
 
 type Model_ExplanationSpec_Metadata_Inputs_FeatureValueDomain struct {
-	MaxValue any
-	MinValue any
-	OriginalMean any
+	MaxValue       any
+	MinValue       any
+	OriginalMean   any
 	OriginalStddev any
 }
 
 type Model_ExplanationSpec_Metadata_Inputs_Visualization struct {
 	ClipPercentLowerbound any
 	ClipPercentUpperbound any
-	ColorMap any
-	OverlayType any
-	Polarity any
-	Type any
+	ColorMap              any
+	OverlayType           any
+	Polarity              any
+	Type                  any
 }
 
 type Model_ExplanationSpec_Metadata_Inputs struct {
 	DenseShapeTensorName any
-	EncodedBaselines any
-	EncodedTensorName any
-	Encoding any
-	FeatureValueDomain any
-	GroupName any
-	IndexFeatureMapping any
-	IndicesTensorName any
-	InputBaselines any
-	InputTensorName any
-	Modality any
-	Visualization any
+	EncodedBaselines     any
+	EncodedTensorName    any
+	Encoding             any
+	FeatureValueDomain   any
+	GroupName            any
+	IndexFeatureMapping  any
+	IndicesTensorName    any
+	InputBaselines       any
+	InputTensorName      any
+	Modality             any
+	Visualization        any
 }
 
 type Model_ExplanationSpec_Metadata_Outputs struct {
-	DisplayNameMappingKey any
+	DisplayNameMappingKey   any
 	IndexDisplayNameMapping any
-	OutputTensorName any
+	OutputTensorName        any
 }
 
 type Model_ExplanationSpec_Metadata struct {
@@ -233,7 +233,7 @@ type Model_ExplanationSpec_Parameters_IntegratedGradientsAttribution_BlurBaselin
 }
 
 type Model_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfig_FeatureNoiseSigma_NoiseSigma struct {
-	Name any
+	Name  any
 	Sigma any
 }
 
@@ -310,7 +310,7 @@ type Model_PredictSchemata struct {
 
 type Model_SupportedExportFormats struct {
 	ExportableContents any
-	Id any
+	Id                 any
 }
 
 type ModelConfig struct {
@@ -354,7 +354,7 @@ type ModelAttrs struct {
 	MetadataSchemaUri any
 	// Detail description of the source information of the model.
 	ModelSourceInfo any
-	Name any
+	Name            any
 	// Contains information about the original Model if this Model is a copy.
 	OriginalModelInfo any
 	// Optional. This field is populated if the model is produced by a pipeline job.

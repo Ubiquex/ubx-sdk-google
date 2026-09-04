@@ -29,47 +29,37 @@ type Table_HiveOptions struct {
 }
 
 var Table_HiveOptions_StorageDescriptor_SerdeInfoFields = ubx.FieldMap{
-		"SerializationLib": ubx.FieldSpec{WireName: "serialization_lib"},
-	}
+	"SerializationLib": ubx.FieldSpec{WireName: "serialization_lib"},
+}
 
 var Table_HiveOptions_StorageDescriptorFields = ubx.FieldMap{
-		"InputFormat": ubx.FieldSpec{WireName: "input_format"},
-		"LocationUri": ubx.FieldSpec{WireName: "location_uri"},
-		"OutputFormat": ubx.FieldSpec{WireName: "output_format"},
-		"SerdeInfo": ubx.FieldSpec{
-			WireName: "serde_info",
-			Kind: "object",
-			Fields: Table_HiveOptions_StorageDescriptor_SerdeInfoFields,
-		},
-	}
+	"InputFormat":  ubx.FieldSpec{WireName: "input_format"},
+	"LocationUri":  ubx.FieldSpec{WireName: "location_uri"},
+	"OutputFormat": ubx.FieldSpec{WireName: "output_format"},
+	"SerdeInfo": ubx.FieldSpec{
+		WireName: "serde_info",
+		Kind:     "object",
+		Fields:   Table_HiveOptions_StorageDescriptor_SerdeInfoFields,
+	},
+}
 
 var Table_HiveOptionsFields = ubx.FieldMap{
-		"Parameters": ubx.FieldSpec{WireName: "parameters"},
-		"StorageDescriptor": ubx.FieldSpec{
-			WireName: "storage_descriptor",
-			Kind: "object",
-			Fields: Table_HiveOptions_StorageDescriptorFields,
-		},
-		"TableType": ubx.FieldSpec{WireName: "table_type"},
-	}
+	"Parameters": ubx.FieldSpec{WireName: "parameters"},
+	"StorageDescriptor": ubx.FieldSpec{
+		WireName: "storage_descriptor",
+		Kind:     "object",
+		Fields:   Table_HiveOptions_StorageDescriptorFields,
+	},
+	"TableType": ubx.FieldSpec{WireName: "table_type"},
+}
 
 type TableConfig struct {
-	// Output only. The creation time of the table.
-	CreateTime any
-	// Output only. The deletion time of the table. Only set after the table is deleted.
-	DeleteTime any
 	// The checksum of a table object computed by the server based on the value of other fields. It may be sent on update requests to ensure the client has an up-to-date value before proceeding. It is only checked for update table operations.
 	Etag any
-	// Output only. The time when this table is considered expired. Only set after the table is deleted.
-	ExpireTime any
 	// Options of a Hive table.
 	HiveOptions any
-	// Output only. The resource name. Format: projects/{project_id_or_number}/locations/{location_id}/catalogs/{catalog_id}/databases/{database_id}/tables/{table_id}
-	Name any
 	// The table type.
 	Type any
-	// Output only. The last modification time of the table.
-	UpdateTime any
 }
 
 type TableAttrs struct {
@@ -94,17 +84,12 @@ type TableAttrs struct {
 var Table = ubx.ResourceBinding{
 	WireType: "google_biglake_table",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DeleteTime": ubx.FieldSpec{WireName: "delete_time"},
 		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"ExpireTime": ubx.FieldSpec{WireName: "expire_time"},
 		"HiveOptions": ubx.FieldSpec{
 			WireName: "hive_options",
-			Kind: "object",
-			Fields: Table_HiveOptionsFields,
+			Kind:     "object",
+			Fields:   Table_HiveOptionsFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
 		"Type": ubx.FieldSpec{WireName: "type"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

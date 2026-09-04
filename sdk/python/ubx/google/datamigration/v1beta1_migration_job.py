@@ -62,8 +62,6 @@ _V1beta1MigrationJob_VpcPeeringConnectivityFields = {
 
 @dataclasses.dataclass
 class V1beta1MigrationJobConfig:
-    # Output only. The timestamp when the migration job resource was created. A timestamp in RFC3339 UTC "Zulu" format, accurate to nanoseconds. Example: "2014-10-02T15:01:23.045123456Z".
-    create_time: Any = None
     # Required. The resource name (URI) of the destination connection profile.
     destination: Any = None
     # A message defining the database engine and provider.
@@ -72,18 +70,12 @@ class V1beta1MigrationJobConfig:
     display_name: Any = None
     # The path to the dump file in Google Cloud Storage, in the format: (gs://[BUCKET_NAME]/[OBJECT_NAME]).
     dump_path: Any = None
-    # Output only. The duration of the migration job (in seconds). A duration in seconds with up to nine fractional digits, terminated by 's'. Example: "3.5s".
-    duration: Any = None
-    # Output only. If the migration job is completed, the time when it was completed.
-    end_time: Any = None
     # The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
     error: Any = None
     # The resource labels for migration job to use to annotate any related underlying resources such as Compute Engine VMs. An object containing a list of "key": "value" pairs. Example: `{ "name": "wrench", "mass": "1.3kg", "count": "3" }`.
     labels: Any = None
     # The name (URI) of this migration job resource, in the form of: projects/{project}/locations/{location}/migrationJobs/{migrationJob}.
     name: Any = None
-    # Output only. The current migration job phase.
-    phase: Any = None
     # The details needed to configure a reverse SSH tunnel between the source and destination databases. These details will be used when calling the generateSshScript method (see https://cloud.google.com/database-migration/docs/reference/rest/v1beta1/projects.locations.migrationJobs/generateSshScript) to produce the script that will help set up the reverse SSH tunnel, and to set up the VPC peering between the Cloud SQL private network and the VPC.
     reverse_ssh_connectivity: Any = None
     # Required. The resource name (URI) of the source connection profile.
@@ -96,8 +88,6 @@ class V1beta1MigrationJobConfig:
     static_ip_connectivity: Any = None
     # Required. The migration job type.
     type: Any = None
-    # Output only. The timestamp when the migration job resource was last updated. A timestamp in RFC3339 UTC "Zulu" format, accurate to nanoseconds. Example: "2014-10-02T15:01:23.045123456Z".
-    update_time: Any = None
     # The details of the VPC where the source database is located in Google Cloud. We will use this information to set up the VPC peering connection between Cloud SQL and this VPC.
     vpc_peering_connectivity: Any = None
 
@@ -145,7 +135,6 @@ class V1beta1MigrationJobAttrs:
 V1beta1MigrationJob = ubx.ResourceBinding(
     wire_type="google_datamigration_v1beta1_migration_job",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "destination": ubx.FieldSpec(wire_name="destination"),
         "destination_database": ubx.FieldSpec(
             wire_name="destination_database",
@@ -154,8 +143,6 @@ V1beta1MigrationJob = ubx.ResourceBinding(
         ),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "dump_path": ubx.FieldSpec(wire_name="dump_path"),
-        "duration": ubx.FieldSpec(wire_name="duration"),
-        "end_time": ubx.FieldSpec(wire_name="end_time"),
         "error": ubx.FieldSpec(
             wire_name="error",
             kind="object",
@@ -163,7 +150,6 @@ V1beta1MigrationJob = ubx.ResourceBinding(
         ),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "phase": ubx.FieldSpec(wire_name="phase"),
         "reverse_ssh_connectivity": ubx.FieldSpec(
             wire_name="reverse_ssh_connectivity",
             kind="object",
@@ -178,7 +164,6 @@ V1beta1MigrationJob = ubx.ResourceBinding(
         "state": ubx.FieldSpec(wire_name="state"),
         "static_ip_connectivity": ubx.FieldSpec(wire_name="static_ip_connectivity"),
         "type": ubx.FieldSpec(wire_name="type"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
         "vpc_peering_connectivity": ubx.FieldSpec(
             wire_name="vpc_peering_connectivity",
             kind="object",

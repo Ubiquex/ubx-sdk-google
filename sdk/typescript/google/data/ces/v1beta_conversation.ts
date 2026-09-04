@@ -70,7 +70,6 @@ export interface V1betaConversation_Turns {
 
 export interface V1betaConversationConfig {
   name: string | Computed<string>;
-  source?: string | Computed<string>;
   view?: string | Computed<string>;
 }
 
@@ -106,7 +105,6 @@ export const V1betaConversation: DataSourceBinding<V1betaConversationConfig, V1b
   wireType: "google_ces_v1beta_conversation",
   fields: {
     name: "name",
-    source: "source",
     view: "view",
   },
 };

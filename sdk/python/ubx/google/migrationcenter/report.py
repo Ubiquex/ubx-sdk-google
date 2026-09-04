@@ -477,22 +477,16 @@ _Report_SummaryFields = {
 
 @dataclasses.dataclass
 class ReportConfig_:
-    # Output only. Creation timestamp.
-    create_time: Any = None
     # Free-text description.
     description: Any = None
     # User-friendly display name. Maximum length is 63 characters.
     display_name: Any = None
-    # Output only. Name of resource.
-    name: Any = None
     # Report creation state.
     state: Any = None
     # Describes the Summary view of a Report, which contains aggregated values for all the groups and preference sets included in this Report.
     summary: Any = None
     # Report type.
     type: Any = None
-    # Output only. Last update timestamp.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class ReportAttrs:
@@ -516,10 +510,8 @@ class ReportAttrs:
 Report = ubx.ResourceBinding(
     wire_type="google_migrationcenter_report",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
-        "name": ubx.FieldSpec(wire_name="name"),
         "state": ubx.FieldSpec(wire_name="state"),
         "summary": ubx.FieldSpec(
             wire_name="summary",
@@ -527,6 +519,5 @@ Report = ubx.ResourceBinding(
             fields=_Report_SummaryFields,
         ),
         "type": ubx.FieldSpec(wire_name="type"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

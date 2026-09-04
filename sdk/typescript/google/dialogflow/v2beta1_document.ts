@@ -38,7 +38,6 @@ export interface V2beta1DocumentConfig {
   mimeType?: string | Computed<string>;
   name?: string | Computed<string>;
   rawContent?: string | Computed<string>;
-  state?: string | Computed<string>;
 }
 
 export interface V2beta1DocumentAttrs {
@@ -72,6 +71,5 @@ export const V2beta1Document: ResourceBinding<V2beta1DocumentConfig, V2beta1Docu
     mimeType: "mime_type",
     name: "name",
     rawContent: "raw_content",
-    state: "state",
   },
 };

@@ -217,21 +217,6 @@ const Job_DeleteObjectFields: FieldMap = {
   permanentObjectDeletionEnabled: "permanent_object_deletion_enabled",
 };
 
-const Job_ErrorSummaries_ErrorLogEntriesFields: FieldMap = {
-  errorDetails: "error_details",
-  objectUri: "object_uri",
-};
-
-const Job_ErrorSummariesFields: FieldMap = {
-  errorCode: "error_code",
-  errorCount: "error_count",
-  errorLogEntries: {
-    wireName: "error_log_entries",
-    kind: "list",
-    fields: Job_ErrorSummaries_ErrorLogEntriesFields,
-  },
-};
-
 const Job_LoggingConfigFields: FieldMap = {
   logActionStates: "log_action_states",
   logActions: "log_actions",
@@ -348,22 +333,14 @@ const Job_UpdateObjectCustomContextFields: FieldMap = {
 export interface JobConfig {
   /** Describes list of buckets and their objects to be transformed. */
   bucketList?: Job_BucketList | Computed<Job_BucketList>;
-  /** Output only. The time that the job was completed. */
-  completeTime?: string | Computed<string>;
   /** Describes details about the progress of the job. */
   counters?: Job_Counters | Computed<Job_Counters>;
-  /** Output only. The time that the job was created. */
-  createTime?: string | Computed<string>;
   /** Describes options to delete an object. */
   deleteObject?: Job_DeleteObject | Computed<Job_DeleteObject>;
   /** Optional. A user-provided description for the job. Maximum length: 1024 bytes when unicode-encoded. */
   description?: string | Computed<string>;
   /** Optional. If true, the job runs in dry run mode, returning the total object count and, if the object configuration is a prefix list, the bytes found from source. No transformations are performed. */
   dryRun?: boolean | Computed<boolean>;
-  /** Output only. Summarizes errors encountered with sample error log entries. */
-  errorSummaries?: Job_ErrorSummaries[] | Computed<Job_ErrorSummaries[]>;
-  /** Output only. If true, this job operates on multiple buckets. Multi-bucket jobs are subject to different quota limits than single-bucket jobs. */
-  isMultiBucketJob?: boolean | Computed<boolean>;
   /** Specifies the Cloud Logging behavior. */
   loggingConfig?: Job_LoggingConfig | Computed<Job_LoggingConfig>;
   /** Identifier. The resource name of the job. Format: `projects/{project_id}/locations/global/jobs/{job_id}`. For example: `projects/123456/locations/global/jobs/job01`. `job_id` is unique in a given project. */
@@ -376,12 +353,8 @@ export interface JobConfig {
   putObjectHold?: Job_PutObjectHold | Computed<Job_PutObjectHold>;
   /** Describes options for object rewrite. */
   rewriteObject?: Job_RewriteObject | Computed<Job_RewriteObject>;
-  /** Output only. The time that the job was scheduled. */
-  scheduleTime?: string | Computed<string>;
   /** Describes options for setting object ACLs. */
   setObjectAcls?: Job_SetObjectAcls | Computed<Job_SetObjectAcls>;
-  /** Output only. State of the job. */
-  state?: string | Computed<string>;
   /** Describes options to update object custom contexts. */
   updateObjectCustomContext?: Job_UpdateObjectCustomContext | Computed<Job_UpdateObjectCustomContext>;
 }
@@ -435,13 +408,11 @@ export const Job: ResourceBinding<JobConfig, JobAttrs> = {
       kind: "object",
       fields: Job_BucketListFields,
     },
-    completeTime: "complete_time",
     counters: {
       wireName: "counters",
       kind: "object",
       fields: Job_CountersFields,
     },
-    createTime: "create_time",
     deleteObject: {
       wireName: "delete_object",
       kind: "object",
@@ -449,12 +420,6 @@ export const Job: ResourceBinding<JobConfig, JobAttrs> = {
     },
     description: "description",
     dryRun: "dry_run",
-    errorSummaries: {
-      wireName: "error_summaries",
-      kind: "list",
-      fields: Job_ErrorSummariesFields,
-    },
-    isMultiBucketJob: "is_multi_bucket_job",
     loggingConfig: {
       wireName: "logging_config",
       kind: "object",
@@ -481,13 +446,11 @@ export const Job: ResourceBinding<JobConfig, JobAttrs> = {
       kind: "object",
       fields: Job_RewriteObjectFields,
     },
-    scheduleTime: "schedule_time",
     setObjectAcls: {
       wireName: "set_object_acls",
       kind: "object",
       fields: Job_SetObjectAclsFields,
     },
-    state: "state",
     updateObjectCustomContext: {
       wireName: "update_object_custom_context",
       kind: "object",

@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, DataSourceBinding } from "@ubx/sdk";
 
 export interface RelationConfig {
-  name: string | Computed<string>;
 }
 
 export interface RelationAttrs {
@@ -20,6 +19,5 @@ export interface RelationAttrs {
 export const Relation: DataSourceBinding<RelationConfig, RelationAttrs> = {
   wireType: "google_migrationcenter_relation",
   fields: {
-    name: "name",
   },
 };

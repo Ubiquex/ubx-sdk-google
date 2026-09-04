@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, DataSourceBinding } from "@ubx/sdk";
 
 export interface AnnotationSpecConfig {
-  name: string | Computed<string>;
   readMask?: string | Computed<string>;
 }
 
@@ -22,7 +21,6 @@ export interface AnnotationSpecAttrs {
 export const AnnotationSpec: DataSourceBinding<AnnotationSpecConfig, AnnotationSpecAttrs> = {
   wireType: "google_aiplatform_annotation_spec",
   fields: {
-    name: "name",
     readMask: "read_mask",
   },
 };

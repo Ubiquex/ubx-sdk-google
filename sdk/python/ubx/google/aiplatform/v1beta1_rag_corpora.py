@@ -338,28 +338,16 @@ class V1beta1RagCorporaConfig:
     corpus_status: Any = None
     # The config for the corpus type of the RagCorpus.
     corpus_type_config: Any = None
-    # Output only. Timestamp when this RagCorpus was created.
-    create_time: Any = None
     # Optional. The description of the RagCorpus.
     description: Any = None
     # Required. The display name of the RagCorpus. The name can be up to 128 characters long and can consist of any UTF-8 characters.
     display_name: Any = None
     # Represents a customer-managed encryption key specification that can be applied to a Vertex AI resource.
     encryption_spec: Any = None
-    # Output only. The resource name of the RagCorpus.
-    name: Any = None
     # Config for the embedding model to use for RAG.
     rag_embedding_model_config: Any = None
-    # Output only. Number of RagFiles in the RagCorpus. NOTE: This field is not populated in the response of VertexRagDataService.ListRagCorpora.
-    rag_files_count: Any = None
     # Config for the Vector DB to use for RAG.
     rag_vector_db_config: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzi: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzs: Any = None
-    # Output only. Timestamp when this RagCorpus was last updated.
-    update_time: Any = None
     # Config for the Vector DB to use for RAG.
     vector_db_config: Any = None
     # Config for the Vertex AI Search.
@@ -411,7 +399,6 @@ V1beta1RagCorpora = ubx.ResourceBinding(
             kind="object",
             fields=_V1beta1RagCorpora_CorpusTypeConfigFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "encryption_spec": ubx.FieldSpec(
@@ -419,21 +406,16 @@ V1beta1RagCorpora = ubx.ResourceBinding(
             kind="object",
             fields=_V1beta1RagCorpora_EncryptionSpecFields,
         ),
-        "name": ubx.FieldSpec(wire_name="name"),
         "rag_embedding_model_config": ubx.FieldSpec(
             wire_name="rag_embedding_model_config",
             kind="object",
             fields=_V1beta1RagCorpora_RagEmbeddingModelConfigFields,
         ),
-        "rag_files_count": ubx.FieldSpec(wire_name="rag_files_count"),
         "rag_vector_db_config": ubx.FieldSpec(
             wire_name="rag_vector_db_config",
             kind="object",
             fields=_V1beta1RagCorpora_RagVectorDbConfigFields,
         ),
-        "satisfies_pzi": ubx.FieldSpec(wire_name="satisfies_pzi"),
-        "satisfies_pzs": ubx.FieldSpec(wire_name="satisfies_pzs"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
         "vector_db_config": ubx.FieldSpec(
             wire_name="vector_db_config",
             kind="object",

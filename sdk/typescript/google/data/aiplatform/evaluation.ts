@@ -130,7 +130,6 @@ export interface Evaluation_ModelExplanation {
 }
 
 export interface EvaluationConfig {
-  name: string | Computed<string>;
 }
 
 export interface EvaluationAttrs {
@@ -160,6 +159,5 @@ export interface EvaluationAttrs {
 export const Evaluation: DataSourceBinding<EvaluationConfig, EvaluationAttrs> = {
   wireType: "google_aiplatform_evaluation",
   fields: {
-    name: "name",
   },
 };

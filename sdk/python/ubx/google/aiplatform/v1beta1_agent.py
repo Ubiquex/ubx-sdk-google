@@ -26,8 +26,6 @@ class V1beta1AgentConfig:
     base_agent: Any = None
     # Optional. The base environment configuration for the agent. Valid types: * A string value for the environment ID, or `remote` for the default. * A struct value for the `environment_config`.
     base_environment: Any = None
-    # Output only. The time the agent was created.
-    created: Any = None
     # Optional. The description of the agent.
     description: Any = None
     # Immutable. The user-specified ID for the agent. This ID becomes the final component of the agent resource name. If not provided, Vertex AI will generate a value for this ID. The ID can be up to 63 characters and must match the regular expression `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`.
@@ -36,14 +34,10 @@ class V1beta1AgentConfig:
     metadata: Any = None
     # Identifier. The resource name of the agent. Format: `projects/{project}/locations/{location}/agents/{agent}`.
     name: Any = None
-    # Output only. The object type of the resource. For agents, the value is `agent`.
-    object: Any = None
     # Optional. The instructions for the agent to follow. These instructions are passed to the LLM as a system instruction.
     system_instruction: Any = None
     # Optional. The tools available to the agent.
     tools: Any = None
-    # Output only. The time the agent was last updated.
-    updated: Any = None
 
 @dataclasses.dataclass
 class V1beta1AgentAttrs:
@@ -75,18 +69,15 @@ V1beta1Agent = ubx.ResourceBinding(
     fields={
         "base_agent": ubx.FieldSpec(wire_name="base_agent"),
         "base_environment": ubx.FieldSpec(wire_name="base_environment"),
-        "created": ubx.FieldSpec(wire_name="created"),
         "description": ubx.FieldSpec(wire_name="description"),
         "id": ubx.FieldSpec(wire_name="id"),
         "metadata": ubx.FieldSpec(wire_name="metadata"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "object": ubx.FieldSpec(wire_name="object"),
         "system_instruction": ubx.FieldSpec(wire_name="system_instruction"),
         "tools": ubx.FieldSpec(
             wire_name="tools",
             kind="list",
             fields=_V1beta1Agent_ToolsFields,
         ),
-        "updated": ubx.FieldSpec(wire_name="updated"),
     },
 )

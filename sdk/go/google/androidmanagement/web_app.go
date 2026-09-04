@@ -8,8 +8,8 @@ type WebApp_Icons struct {
 }
 
 var WebApp_IconsFields = ubx.FieldMap{
-		"ImageData": ubx.FieldSpec{WireName: "image_data"},
-	}
+	"ImageData": ubx.FieldSpec{WireName: "image_data"},
+}
 
 type WebAppConfig struct {
 	// The display mode of the web app.
@@ -47,12 +47,12 @@ var WebApp = ubx.ResourceBinding{
 		"DisplayMode": ubx.FieldSpec{WireName: "display_mode"},
 		"Icons": ubx.FieldSpec{
 			WireName: "icons",
-			Kind: "list",
-			Fields: WebApp_IconsFields,
+			Kind:     "list",
+			Fields:   WebApp_IconsFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"StartUrl": ubx.FieldSpec{WireName: "start_url"},
-		"Title": ubx.FieldSpec{WireName: "title"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"StartUrl":    ubx.FieldSpec{WireName: "start_url"},
+		"Title":       ubx.FieldSpec{WireName: "title"},
 		"VersionCode": ubx.FieldSpec{WireName: "version_code"},
 	},
 }

@@ -66,54 +66,6 @@ _BetaNetwork_ParamsFields = {
     "resource_manager_tags": ubx.FieldSpec(wire_name="resource_manager_tags"),
 }
 
-_BetaNetwork_Peerings_ConnectionStatus_ConsensusStateFields = {
-    "delete_status": ubx.FieldSpec(wire_name="delete_status"),
-    "update_status": ubx.FieldSpec(wire_name="update_status"),
-}
-
-_BetaNetwork_Peerings_ConnectionStatus_TrafficConfigurationFields = {
-    "export_custom_routes_to_peer": ubx.FieldSpec(wire_name="export_custom_routes_to_peer"),
-    "export_subnet_routes_with_public_ip_to_peer": ubx.FieldSpec(wire_name="export_subnet_routes_with_public_ip_to_peer"),
-    "import_custom_routes_from_peer": ubx.FieldSpec(wire_name="import_custom_routes_from_peer"),
-    "import_subnet_routes_with_public_ip_from_peer": ubx.FieldSpec(wire_name="import_subnet_routes_with_public_ip_from_peer"),
-    "stack_type": ubx.FieldSpec(wire_name="stack_type"),
-}
-
-_BetaNetwork_Peerings_ConnectionStatusFields = {
-    "consensus_state": ubx.FieldSpec(
-        wire_name="consensus_state",
-        kind="object",
-        fields=_BetaNetwork_Peerings_ConnectionStatus_ConsensusStateFields,
-    ),
-    "traffic_configuration": ubx.FieldSpec(
-        wire_name="traffic_configuration",
-        kind="object",
-        fields=_BetaNetwork_Peerings_ConnectionStatus_TrafficConfigurationFields,
-    ),
-    "update_strategy": ubx.FieldSpec(wire_name="update_strategy"),
-}
-
-_BetaNetwork_PeeringsFields = {
-    "auto_create_routes": ubx.FieldSpec(wire_name="auto_create_routes"),
-    "connection_status": ubx.FieldSpec(
-        wire_name="connection_status",
-        kind="object",
-        fields=_BetaNetwork_Peerings_ConnectionStatusFields,
-    ),
-    "exchange_subnet_routes": ubx.FieldSpec(wire_name="exchange_subnet_routes"),
-    "export_custom_routes": ubx.FieldSpec(wire_name="export_custom_routes"),
-    "export_subnet_routes_with_public_ip": ubx.FieldSpec(wire_name="export_subnet_routes_with_public_ip"),
-    "import_custom_routes": ubx.FieldSpec(wire_name="import_custom_routes"),
-    "import_subnet_routes_with_public_ip": ubx.FieldSpec(wire_name="import_subnet_routes_with_public_ip"),
-    "name": ubx.FieldSpec(wire_name="name"),
-    "network": ubx.FieldSpec(wire_name="network"),
-    "peer_mtu": ubx.FieldSpec(wire_name="peer_mtu"),
-    "stack_type": ubx.FieldSpec(wire_name="stack_type"),
-    "state": ubx.FieldSpec(wire_name="state"),
-    "state_details": ubx.FieldSpec(wire_name="state_details"),
-    "update_strategy": ubx.FieldSpec(wire_name="update_strategy"),
-}
-
 _BetaNetwork_RoutingConfigFields = {
     "bgp_always_compare_med": ubx.FieldSpec(wire_name="bgp_always_compare_med"),
     "bgp_best_path_selection_mode": ubx.FieldSpec(wire_name="bgp_best_path_selection_mode"),
@@ -127,24 +79,16 @@ _BetaNetwork_RoutingConfigFields = {
 class BetaNetworkConfig:
     # Must be set to create a VPC network. If not set, a legacy network is created. When set to true, the VPC network is created in auto mode. When set to false, the VPC network is created in custom mode. An auto mode VPC network starts with one subnet per region. Each subnet has a predetermined range as described inAuto mode VPC network IP ranges. For custom mode VPC networks, you can add subnets using the subnetworksinsert method.
     auto_create_subnetworks: Any = None
-    # Output only. [Output Only] Creation timestamp inRFC3339 text format.
-    creation_timestamp: Any = None
     # An optional description of this resource. Provide this field when you create the resource.
     description: Any = None
     # Enable ULA internal ipv6 on this network. Enabling this feature will assign a /48 from google defined ULA prefix fd20::/20. .
     enable_ula_internal_ipv6: Any = None
-    # Output only. [Output Only] URL of the firewall policy the network is associated with.
-    firewall_policy: Any = None
     # [Output Only] The gateway address for default routing out of the network, selected by Google Cloud.
     gateway_ipv4: Any = None
-    # Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-    id: Any = None
     # When enabling ula internal ipv6, caller optionally can specify the /48 range they want from the google defined ULA prefix fd20::/20. The input must be a valid /48 ULA IPv6 address and must be within the fd20::/20. Operation will fail if the speficied /48 is already in used by another resource. If the field is not speficied, then a /48 range will be randomly allocated from fd20::/20 and returned via this field. .
     internal_ipv6_range: Any = None
     # Deprecated in favor of subnet mode networks. The range of internal addresses that are legal on this network. This range is aCIDR specification, for example:192.168.0.0/16. Provided by the client when the network is created.
     ipv4_range: Any = None
-    # Output only. [Output Only] Type of the resource. Always compute#network for networks.
-    kind: Any = None
     # Maximum Transmission Unit in bytes. The minimum value for this field is 1300 and the maximum value is 8896. The suggested value is 1500, which is the default MTU used on the Internet, or 8896 if you want to use Jumbo frames. If unspecified, the value defaults to 1460.
     mtu: Any = None
     # Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
@@ -155,14 +99,10 @@ class BetaNetworkConfig:
     network_profile: Any = None
     # Additional network parameters.
     params: Any = None
-    # Output only. [Output Only] A list of network peerings for the resource.
-    peerings: Any = None
     # A routing configuration attached to a network resource. The message includes the list of routers associated with the network, and a flag indicating the type of routing behavior to enforce network-wide.
     routing_config: Any = None
     # [Output Only] Server-defined URL for the resource.
     self_link: Any = None
-    # Output only. [Output Only] Server-defined URL for this resource with the resource id.
-    self_link_with_id: Any = None
     # [Output Only] Server-defined fully-qualified URLs for all subnetworks in this VPC network.
     subnetworks: Any = None
 
@@ -213,15 +153,11 @@ BetaNetwork = ubx.ResourceBinding(
     wire_type="google_compute_beta_network",
     fields={
         "auto_create_subnetworks": ubx.FieldSpec(wire_name="auto_create_subnetworks"),
-        "creation_timestamp": ubx.FieldSpec(wire_name="creation_timestamp"),
         "description": ubx.FieldSpec(wire_name="description"),
         "enable_ula_internal_ipv6": ubx.FieldSpec(wire_name="enable_ula_internal_ipv6"),
-        "firewall_policy": ubx.FieldSpec(wire_name="firewall_policy"),
         "gateway_ipv4": ubx.FieldSpec(wire_name="gateway_ipv4"),
-        "id": ubx.FieldSpec(wire_name="id"),
         "internal_ipv6_range": ubx.FieldSpec(wire_name="internal_ipv6_range"),
         "ipv4_range": ubx.FieldSpec(wire_name="ipv4_range"),
-        "kind": ubx.FieldSpec(wire_name="kind"),
         "mtu": ubx.FieldSpec(wire_name="mtu"),
         "name": ubx.FieldSpec(wire_name="name"),
         "network_firewall_policy_enforcement_order": ubx.FieldSpec(wire_name="network_firewall_policy_enforcement_order"),
@@ -231,18 +167,12 @@ BetaNetwork = ubx.ResourceBinding(
             kind="object",
             fields=_BetaNetwork_ParamsFields,
         ),
-        "peerings": ubx.FieldSpec(
-            wire_name="peerings",
-            kind="list",
-            fields=_BetaNetwork_PeeringsFields,
-        ),
         "routing_config": ubx.FieldSpec(
             wire_name="routing_config",
             kind="object",
             fields=_BetaNetwork_RoutingConfigFields,
         ),
         "self_link": ubx.FieldSpec(wire_name="self_link"),
-        "self_link_with_id": ubx.FieldSpec(wire_name="self_link_with_id"),
         "subnetworks": ubx.FieldSpec(wire_name="subnetworks"),
     },
 )

@@ -252,18 +252,6 @@ const Job_BinaryAuthorizationFields: FieldMap = {
   useDefault: "use_default",
 };
 
-const Job_ConditionsFields: FieldMap = {
-  executionReason: "execution_reason",
-  instanceReason: "instance_reason",
-  lastTransitionTime: "last_transition_time",
-  message: "message",
-  reason: "reason",
-  revisionReason: "revision_reason",
-  severity: "severity",
-  state: "state",
-  type: "type",
-};
-
 const Job_LatestCreatedExecutionFields: FieldMap = {
   completionStatus: "completion_status",
   completionTime: "completion_time",
@@ -581,6 +569,18 @@ const Job_TemplateFields: FieldMap = {
   },
 };
 
+const Job_ConditionsFields: FieldMap = {
+  executionReason: "execution_reason",
+  instanceReason: "instance_reason",
+  lastTransitionTime: "last_transition_time",
+  message: "message",
+  reason: "reason",
+  revisionReason: "revision_reason",
+  severity: "severity",
+  state: "state",
+  type: "type",
+};
+
 export interface JobConfig {
   /** Unstructured key value map that may be set by external tools to store and arbitrary metadata. They are not queryable and should be preserved when modifying objects. Cloud Run API v2 does not support annotations with `run.googleapis.com`, `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev` namespaces, and they will be rejected on new resources. All system annotations in v1 now have a corresponding field in v2 Job. This field follows Kubernetes annotations' namespacing, limits, and rules. */
   annotations?: Record<string, string> | Computed<Record<string, string>>;
@@ -590,50 +590,24 @@ export interface JobConfig {
   client?: string | Computed<string>;
   /** Arbitrary version identifier for the API client. */
   clientVersion?: string | Computed<string>;
-  /** Output only. The Conditions of all other associated sub-resources. They contain additional diagnostics information in case the Job does not reach its desired state. See comments in `reconciling` for additional information on reconciliation process in Cloud Run. */
-  conditions?: Job_Conditions[] | Computed<Job_Conditions[]>;
-  /** Output only. The creation time. */
-  createTime?: string | Computed<string>;
-  /** Output only. Email address of the authenticated creator. */
-  creator?: string | Computed<string>;
-  /** Output only. The deletion time. It is only populated as a response to a Delete request. */
-  deleteTime?: string | Computed<string>;
   /** Optional. A system-generated fingerprint for this version of the resource. May be used to detect modification conflict during updates. */
   etag?: string | Computed<string>;
-  /** Output only. Number of executions created for this job. */
-  executionCount?: number | Computed<number>;
-  /** Output only. For a deleted resource, the time after which it will be permamently deleted. */
-  expireTime?: string | Computed<string>;
-  /** Output only. A number that monotonically increases every time the user modifies the desired state. */
-  generation?: string | Computed<string>;
   /** Unstructured key value map that can be used to organize and categorize objects. User-provided labels are shared with Google's billing system, so they can be used to filter, or break down billing charges by team, component, environment, state, etc. For more information, visit https://cloud.google.com/resource-manager/docs/creating-managing-labels or https://cloud.google.com/run/docs/configuring/labels. Cloud Run API v2 does not support labels with `run.googleapis.com`, `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev` namespaces, and they will be rejected. All system labels in v1 now have a corresponding field in v2 Job. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. Email address of the last authenticated modifier. */
-  lastModifier?: string | Computed<string>;
   /** Reference to an Execution. Use /Executions.GetExecution with the given name to get full execution including the latest status. */
   latestCreatedExecution?: Job_LatestCreatedExecution | Computed<Job_LatestCreatedExecution>;
   /** The launch stage as defined by [Google Cloud Platform Launch Stages](https://cloud.google.com/terms/launch-stages). Cloud Run supports `ALPHA`, `BETA`, and `GA`. If no value is specified, GA is assumed. Set the launch stage to a preview stage on input to allow use of preview features in that stage. On read (or output), describes whether the resource uses preview features. For example, if ALPHA is provided as input, but only BETA and GA-level features are used, this field will be BETA on output. */
   launchStage?: string | Computed<string>;
   /** The fully qualified name of this Job. Format: projects/{project}/locations/{location}/jobs/{job} */
   name?: string | Computed<string>;
-  /** Output only. The generation of this Job. See comments in `reconciling` for additional information on reconciliation process in Cloud Run. */
-  observedGeneration?: string | Computed<string>;
-  /** Output only. Returns true if the Job is currently being acted upon by the system to bring it into the desired state. When a new Job is created, or an existing one is updated, Cloud Run will asynchronously perform all necessary steps to bring the Job to the desired state. This process is called reconciliation. While reconciliation is in process, `observed_generation` and `latest_succeeded_execution`, will have transient values that might mismatch the intended state: Once reconciliation is over (and this field is false), there are two possible outcomes: reconciliation succeeded and the state matches the Job, or there was an error, and reconciliation failed. This state can be found in `terminal_condition.state`. If reconciliation succeeded, the following fields will match: `observed_generation` and `generation`, `latest_succeeded_execution` and `latest_created_execution`. If reconciliation failed, `observed_generation` and `latest_succeeded_execution` will have the state of the last succeeded execution or empty for newly created Job. Additional information on the failure can be found in `terminal_condition` and `conditions`. */
-  reconciling?: boolean | Computed<boolean>;
   /** A unique string used as a suffix for creating a new execution. The Job will become ready when the execution is successfully completed. The sum of job name and token length must be fewer than 63 characters. */
   runExecutionToken?: string | Computed<string>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzs?: boolean | Computed<boolean>;
   /** A unique string used as a suffix creating a new execution. The Job will become ready when the execution is successfully started. The sum of job name and token length must be fewer than 63 characters. */
   startExecutionToken?: string | Computed<string>;
   /** ExecutionTemplate describes the data an execution should have when created from a template. */
   template?: Job_Template | Computed<Job_Template>;
   /** Defines a status condition for a resource. */
   terminalCondition?: Job_Conditions | Computed<Job_Conditions>;
-  /** Output only. Server assigned unique identifier for the Execution. The value is a UUID4 string and guaranteed to remain unchanged until the resource is deleted. */
-  uid?: string | Computed<string>;
-  /** Output only. The last-modified time. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface JobAttrs {
@@ -702,20 +676,8 @@ export const Job: ResourceBinding<JobConfig, JobAttrs> = {
     },
     client: "client",
     clientVersion: "client_version",
-    conditions: {
-      wireName: "conditions",
-      kind: "list",
-      fields: Job_ConditionsFields,
-    },
-    createTime: "create_time",
-    creator: "creator",
-    deleteTime: "delete_time",
     etag: "etag",
-    executionCount: "execution_count",
-    expireTime: "expire_time",
-    generation: "generation",
     labels: "labels",
-    lastModifier: "last_modifier",
     latestCreatedExecution: {
       wireName: "latest_created_execution",
       kind: "object",
@@ -723,10 +685,7 @@ export const Job: ResourceBinding<JobConfig, JobAttrs> = {
     },
     launchStage: "launch_stage",
     name: "name",
-    observedGeneration: "observed_generation",
-    reconciling: "reconciling",
     runExecutionToken: "run_execution_token",
-    satisfiesPzs: "satisfies_pzs",
     startExecutionToken: "start_execution_token",
     template: {
       wireName: "template",
@@ -738,7 +697,5 @@ export const Job: ResourceBinding<JobConfig, JobAttrs> = {
       kind: "object",
       fields: Job_ConditionsFields,
     },
-    uid: "uid",
-    updateTime: "update_time",
   },
 };

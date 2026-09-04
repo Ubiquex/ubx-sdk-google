@@ -211,8 +211,6 @@ export interface AgentConfig {
   locked?: boolean | Computed<boolean>;
   name?: string | Computed<string>;
   personalizationSettings?: Agent_PersonalizationSettings | Computed<Agent_PersonalizationSettings>;
-  satisfiesPzi?: boolean | Computed<boolean>;
-  satisfiesPzs?: boolean | Computed<boolean>;
   securitySettings?: string | Computed<string>;
   speechToTextSettings?: Agent_SpeechToTextSettings | Computed<Agent_SpeechToTextSettings>;
   startFlow?: string | Computed<string>;
@@ -291,8 +289,6 @@ export const Agent: ResourceBinding<AgentConfig, AgentAttrs> = {
       kind: "object",
       fields: Agent_PersonalizationSettingsFields,
     },
-    satisfiesPzi: "satisfies_pzi",
-    satisfiesPzs: "satisfies_pzs",
     securitySettings: "security_settings",
     speechToTextSettings: {
       wireName: "speech_to_text_settings",

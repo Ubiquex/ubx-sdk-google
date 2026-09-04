@@ -40,7 +40,7 @@ class Connector_MarketplaceConnectorDetails:
 
 @dataclasses.dataclass
 class ConnectorConfig:
-    name: Any = None
+    pass
 
 @dataclasses.dataclass
 class ConnectorAttrs:
@@ -77,6 +77,5 @@ class ConnectorAttrs:
 Connector = ubx.DataSourceBinding(
     wire_type="google_connectors_connector",
     fields={
-        "name": ubx.FieldSpec(wire_name="name"),
     },
 )

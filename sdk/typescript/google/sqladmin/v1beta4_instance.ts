@@ -569,13 +569,6 @@ const V1beta4Instance_DiskEncryptionStatusFields: FieldMap = {
   kmsKeyVersionName: "kms_key_version_name",
 };
 
-const V1beta4Instance_DnsNamesFields: FieldMap = {
-  connectionType: "connection_type",
-  dnsScope: "dns_scope",
-  name: "name",
-  recordManager: "record_manager",
-};
-
 const V1beta4Instance_FailoverReplicaFields: FieldMap = {
   available: "available",
   name: "name",
@@ -594,41 +587,6 @@ const V1beta4Instance_IpAddressesFields: FieldMap = {
   ipAddress: "ip_address",
   timeToRetire: "time_to_retire",
   type: "type",
-};
-
-const V1beta4Instance_Nodes_PscAutoConnectionsFields: FieldMap = {
-  consumerNetwork: "consumer_network",
-  consumerNetworkStatus: "consumer_network_status",
-  consumerProject: "consumer_project",
-  instanceAutoDnsStatus: "instance_auto_dns_status",
-  ipAddress: "ip_address",
-  serviceConnectionPolicy: "service_connection_policy",
-  serviceConnectionPolicyCreationResult: "service_connection_policy_creation_result",
-  status: "status",
-  writeEndpointAutoDnsStatus: "write_endpoint_auto_dns_status",
-};
-
-const V1beta4Instance_NodesFields: FieldMap = {
-  dnsName: "dns_name",
-  dnsNames: {
-    wireName: "dns_names",
-    kind: "list",
-    fields: V1beta4Instance_DnsNamesFields,
-  },
-  gceZone: "gce_zone",
-  ipAddresses: {
-    wireName: "ip_addresses",
-    kind: "list",
-    fields: V1beta4Instance_IpAddressesFields,
-  },
-  name: "name",
-  pscAutoConnections: {
-    wireName: "psc_auto_connections",
-    kind: "list",
-    fields: V1beta4Instance_Nodes_PscAutoConnectionsFields,
-  },
-  pscServiceAttachmentLink: "psc_service_attachment_link",
-  state: "state",
 };
 
 const V1beta4Instance_OnPremisesConfiguration_SelectedObjectsFields: FieldMap = {
@@ -805,6 +763,18 @@ const V1beta4Instance_Settings_IpConfiguration_AuthorizedNetworksFields: FieldMa
   kind: "kind",
   name: "name",
   value: "value",
+};
+
+const V1beta4Instance_Nodes_PscAutoConnectionsFields: FieldMap = {
+  consumerNetwork: "consumer_network",
+  consumerNetworkStatus: "consumer_network_status",
+  consumerProject: "consumer_project",
+  instanceAutoDnsStatus: "instance_auto_dns_status",
+  ipAddress: "ip_address",
+  serviceConnectionPolicy: "service_connection_policy",
+  serviceConnectionPolicyCreationResult: "service_connection_policy_creation_result",
+  status: "status",
+  writeEndpointAutoDnsStatus: "write_endpoint_auto_dns_status",
 };
 
 const V1beta4Instance_Settings_IpConfiguration_PscConfigFields: FieldMap = {
@@ -1028,37 +998,21 @@ const V1beta4Instance_SettingsFields: FieldMap = {
   userLabels: "user_labels",
 };
 
-const V1beta4Instance_UpgradableDatabaseVersionsFields: FieldMap = {
-  displayName: "display_name",
-  majorVersion: "major_version",
-  name: "name",
-};
-
 export interface V1beta4InstanceConfig {
-  /** Output only. List all maintenance versions applicable on the instance */
-  availableMaintenanceVersions?: string[] | Computed<string[]>;
   /** The backend type. `SECOND_GEN`: Cloud SQL database instance. `EXTERNAL`: A database server that is not managed by Google. This property is read-only; use the `tier` property in the `settings` object to determine the database type. */
   backendType?: string | Computed<string>;
   /** Connection name of the Cloud SQL instance used in connection strings. */
   connectionName?: string | Computed<string>;
-  /** Output only. The time when the instance was created in [RFC 3339](https://tools.ietf.org/html/rfc3339) format, for example `2012-11-15T16:19:00.094Z`. */
-  createTime?: string | Computed<string>;
   /** The current disk usage of the instance in bytes. This property has been deprecated. Use the "cloudsql.googleapis.com/database/disk/bytes_used" metric in Cloud Monitoring API instead. Please see [this announcement](https://groups.google.com/d/msg/google-cloud-sql-announce/I_7-F9EBhT0/BtvFtdFeAgAJ) for details. */
   currentDiskSize?: string | Computed<string>;
   /** Optional. If true, instance metadata is sent to the Database Center. If false, instance metadata is not sent to the Database Center. */
   databaseCenterIntegrationEnabled?: boolean | Computed<boolean>;
-  /** Output only. Stores the current database version running on the instance including minor version such as `MYSQL_8_0_18`. */
-  databaseInstalledVersion?: string | Computed<string>;
   /** The database engine type and version. The `databaseVersion` field cannot be changed after instance creation. */
   databaseVersion?: string | Computed<string>;
   /** Disk encryption configuration for an instance. */
   diskEncryptionConfiguration?: V1beta4Instance_DiskEncryptionConfiguration | Computed<V1beta4Instance_DiskEncryptionConfiguration>;
   /** Disk encryption status for an instance. */
   diskEncryptionStatus?: V1beta4Instance_DiskEncryptionStatus | Computed<V1beta4Instance_DiskEncryptionStatus>;
-  /** Output only. The dns name of the instance. */
-  dnsName?: string | Computed<string>;
-  /** Output only. The list of DNS names used by this instance. */
-  dnsNames?: V1beta4Instance_DnsNames[] | Computed<V1beta4Instance_DnsNames[]>;
   /** This field is deprecated and will be removed from a future version of the API. Use the `settings.settingsVersion` field instead. */
   etag?: string | Computed<string>;
   /** The name and status of the failover replica. */
@@ -1087,18 +1041,12 @@ export interface V1beta4InstanceConfig {
   name?: string | Computed<string>;
   /** The number of read pool nodes in a read pool. */
   nodeCount?: number | Computed<number>;
-  /** Output only. Entries containing information about each read pool node of the read pool. */
-  nodes?: V1beta4Instance_Nodes[] | Computed<V1beta4Instance_Nodes[]>;
   /** On-premises instance configuration. */
   onPremisesConfiguration?: V1beta4Instance_OnPremisesConfiguration | Computed<V1beta4Instance_OnPremisesConfiguration>;
   /** This message wraps up the information written by out-of-disk detection job. */
   outOfDiskReport?: V1beta4Instance_OutOfDiskReport | Computed<V1beta4Instance_OutOfDiskReport>;
-  /** Output only. DEPRECATED: please use write_endpoint instead. */
-  primaryDnsName?: string | Computed<string>;
   /** The project ID of the project containing the Cloud SQL instance. The Google apps domain is prefixed if applicable. */
   project?: string | Computed<string>;
-  /** Output only. The link to service attachment of PSC instance. */
-  pscServiceAttachmentLink?: string | Computed<string>;
   /** The geographical region of the Cloud SQL instance. It can be one of the [regions](https://cloud.google.com/sql/docs/mysql/locations#location-r) where Cloud SQL operates: For example, `asia-east1`, `europe-west1`, and `us-central1`. The default value is `us-central1`. */
   region?: string | Computed<string>;
   /** Read-replica configuration for connecting to the primary instance. */
@@ -1109,8 +1057,6 @@ export interface V1beta4InstanceConfig {
   replicationCluster?: V1beta4Instance_ReplicationCluster | Computed<V1beta4Instance_ReplicationCluster>;
   /** Initial root password. Use only on creation. You must set root passwords before you can connect to PostgreSQL instances. */
   rootPassword?: string | Computed<string>;
-  /** Output only. This status indicates whether the instance satisfies PZI. The status is reserved for future use. */
-  satisfiesPzi?: boolean | Computed<boolean>;
   /** This status indicates whether the instance satisfies PZS. The status is reserved for future use. */
   satisfiesPzs?: boolean | Computed<boolean>;
   /** Any scheduled maintenance for this instance. */
@@ -1135,10 +1081,6 @@ export interface V1beta4InstanceConfig {
   switchTransactionLogsToCloudStorageEnabled?: boolean | Computed<boolean>;
   /** Optional. Input only. Immutable. Tag keys and tag values that are bound to this instance. You must represent each item in the map as: `"" : ""`. For example, a single resource can have the following tags: ``` "123/environment": "production", "123/costCenter": "marketing", ``` For more information on tag creation and management, see https://cloud.google.com/resource-manager/docs/tags/tags-overview. */
   tags?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. All database versions that are available for upgrade. */
-  upgradableDatabaseVersions?: V1beta4Instance_UpgradableDatabaseVersions[] | Computed<V1beta4Instance_UpgradableDatabaseVersions[]>;
-  /** Output only. The dns name of the primary instance in a replication group. */
-  writeEndpoint?: string | Computed<string>;
 }
 
 export interface V1beta4InstanceAttrs {
@@ -1251,13 +1193,10 @@ export interface V1beta4InstanceAttrs {
 export const V1beta4Instance: ResourceBinding<V1beta4InstanceConfig, V1beta4InstanceAttrs> = {
   wireType: "google_sqladmin_v1beta4_instance",
   fields: {
-    availableMaintenanceVersions: "available_maintenance_versions",
     backendType: "backend_type",
     connectionName: "connection_name",
-    createTime: "create_time",
     currentDiskSize: "current_disk_size",
     databaseCenterIntegrationEnabled: "database_center_integration_enabled",
-    databaseInstalledVersion: "database_installed_version",
     databaseVersion: "database_version",
     diskEncryptionConfiguration: {
       wireName: "disk_encryption_configuration",
@@ -1268,12 +1207,6 @@ export const V1beta4Instance: ResourceBinding<V1beta4InstanceConfig, V1beta4Inst
       wireName: "disk_encryption_status",
       kind: "object",
       fields: V1beta4Instance_DiskEncryptionStatusFields,
-    },
-    dnsName: "dns_name",
-    dnsNames: {
-      wireName: "dns_names",
-      kind: "list",
-      fields: V1beta4Instance_DnsNamesFields,
     },
     etag: "etag",
     failoverReplica: {
@@ -1301,11 +1234,6 @@ export const V1beta4Instance: ResourceBinding<V1beta4InstanceConfig, V1beta4Inst
     maxDiskSize: "max_disk_size",
     name: "name",
     nodeCount: "node_count",
-    nodes: {
-      wireName: "nodes",
-      kind: "list",
-      fields: V1beta4Instance_NodesFields,
-    },
     onPremisesConfiguration: {
       wireName: "on_premises_configuration",
       kind: "object",
@@ -1316,9 +1244,7 @@ export const V1beta4Instance: ResourceBinding<V1beta4InstanceConfig, V1beta4Inst
       kind: "object",
       fields: V1beta4Instance_OutOfDiskReportFields,
     },
-    primaryDnsName: "primary_dns_name",
     project: "project",
-    pscServiceAttachmentLink: "psc_service_attachment_link",
     region: "region",
     replicaConfiguration: {
       wireName: "replica_configuration",
@@ -1332,7 +1258,6 @@ export const V1beta4Instance: ResourceBinding<V1beta4InstanceConfig, V1beta4Inst
       fields: V1beta4Instance_ReplicationClusterFields,
     },
     rootPassword: "root_password",
-    satisfiesPzi: "satisfies_pzi",
     satisfiesPzs: "satisfies_pzs",
     scheduledMaintenance: {
       wireName: "scheduled_maintenance",
@@ -1357,11 +1282,5 @@ export const V1beta4Instance: ResourceBinding<V1beta4InstanceConfig, V1beta4Inst
     suspensionReason: "suspension_reason",
     switchTransactionLogsToCloudStorageEnabled: "switch_transaction_logs_to_cloud_storage_enabled",
     tags: "tags",
-    upgradableDatabaseVersions: {
-      wireName: "upgradable_database_versions",
-      kind: "list",
-      fields: V1beta4Instance_UpgradableDatabaseVersionsFields,
-    },
-    writeEndpoint: "write_endpoint",
   },
 };

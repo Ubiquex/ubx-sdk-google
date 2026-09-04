@@ -158,61 +158,6 @@ class V1beta1Extension_ToolUseExamples:
     response_params: Any = None
     response_summary: Any = None
 
-_V1beta1Extension_ExtensionOperations_FunctionDeclaration_ParametersFields = {
-    "additional_properties": ubx.FieldSpec(wire_name="additional_properties"),
-    "any_of": ubx.FieldSpec(wire_name="any_of"),
-    "default": ubx.FieldSpec(wire_name="default"),
-    "defs": ubx.FieldSpec(wire_name="defs"),
-    "description": ubx.FieldSpec(wire_name="description"),
-    "enum": ubx.FieldSpec(wire_name="enum"),
-    "example": ubx.FieldSpec(wire_name="example"),
-    "format": ubx.FieldSpec(wire_name="format"),
-    "items": ubx.FieldSpec(wire_name="items"),
-    "max_items": ubx.FieldSpec(wire_name="max_items"),
-    "max_length": ubx.FieldSpec(wire_name="max_length"),
-    "max_properties": ubx.FieldSpec(wire_name="max_properties"),
-    "maximum": ubx.FieldSpec(wire_name="maximum"),
-    "min_items": ubx.FieldSpec(wire_name="min_items"),
-    "min_length": ubx.FieldSpec(wire_name="min_length"),
-    "min_properties": ubx.FieldSpec(wire_name="min_properties"),
-    "minimum": ubx.FieldSpec(wire_name="minimum"),
-    "nullable": ubx.FieldSpec(wire_name="nullable"),
-    "pattern": ubx.FieldSpec(wire_name="pattern"),
-    "properties": ubx.FieldSpec(wire_name="properties"),
-    "property_ordering": ubx.FieldSpec(wire_name="property_ordering"),
-    "ref": ubx.FieldSpec(wire_name="ref"),
-    "required": ubx.FieldSpec(wire_name="required"),
-    "title": ubx.FieldSpec(wire_name="title"),
-    "type": ubx.FieldSpec(wire_name="type"),
-}
-
-_V1beta1Extension_ExtensionOperations_FunctionDeclarationFields = {
-    "behavior": ubx.FieldSpec(wire_name="behavior"),
-    "description": ubx.FieldSpec(wire_name="description"),
-    "name": ubx.FieldSpec(wire_name="name"),
-    "parameters": ubx.FieldSpec(
-        wire_name="parameters",
-        kind="object",
-        fields=_V1beta1Extension_ExtensionOperations_FunctionDeclaration_ParametersFields,
-    ),
-    "parameters_json_schema": ubx.FieldSpec(wire_name="parameters_json_schema"),
-    "response": ubx.FieldSpec(
-        wire_name="response",
-        kind="object",
-        fields=_V1beta1Extension_ExtensionOperations_FunctionDeclaration_ParametersFields,
-    ),
-    "response_json_schema": ubx.FieldSpec(wire_name="response_json_schema"),
-}
-
-_V1beta1Extension_ExtensionOperationsFields = {
-    "function_declaration": ubx.FieldSpec(
-        wire_name="function_declaration",
-        kind="object",
-        fields=_V1beta1Extension_ExtensionOperations_FunctionDeclarationFields,
-    ),
-    "operation_id": ubx.FieldSpec(wire_name="operation_id"),
-}
-
 _V1beta1Extension_Manifest_ApiSpecFields = {
     "open_api_gcs_uri": ubx.FieldSpec(wire_name="open_api_gcs_uri"),
     "open_api_yaml": ubx.FieldSpec(wire_name="open_api_yaml"),
@@ -336,16 +281,12 @@ _V1beta1Extension_ToolUseExamplesFields = {
 
 @dataclasses.dataclass
 class V1beta1ExtensionConfig:
-    # Output only. Timestamp when this Extension was created.
-    create_time: Any = None
     # Optional. The description of the Extension.
     description: Any = None
     # Required. The display name of the Extension. The name can be up to 128 characters long and can consist of any UTF-8 characters.
     display_name: Any = None
     # Optional. Used to perform consistent read-modify-write updates. If not set, a blind "overwrite" update happens.
     etag: Any = None
-    # Output only. Supported operations.
-    extension_operations: Any = None
     # Manifest spec of an Extension needed for runtime execution.
     manifest: Any = None
     # Identifier. The resource name of the Extension.
@@ -354,14 +295,8 @@ class V1beta1ExtensionConfig:
     private_service_connect_config: Any = None
     # Runtime configuration to run the extension.
     runtime_config: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzi: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzs: Any = None
     # Optional. Examples to illustrate the usage of the extension as a tool.
     tool_use_examples: Any = None
-    # Output only. Timestamp when this Extension was most recently updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V1beta1ExtensionAttrs:
@@ -395,15 +330,9 @@ class V1beta1ExtensionAttrs:
 V1beta1Extension = ubx.ResourceBinding(
     wire_type="google_aiplatform_v1beta1_extension",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "etag": ubx.FieldSpec(wire_name="etag"),
-        "extension_operations": ubx.FieldSpec(
-            wire_name="extension_operations",
-            kind="list",
-            fields=_V1beta1Extension_ExtensionOperationsFields,
-        ),
         "manifest": ubx.FieldSpec(
             wire_name="manifest",
             kind="object",
@@ -420,13 +349,10 @@ V1beta1Extension = ubx.ResourceBinding(
             kind="object",
             fields=_V1beta1Extension_RuntimeConfigFields,
         ),
-        "satisfies_pzi": ubx.FieldSpec(wire_name="satisfies_pzi"),
-        "satisfies_pzs": ubx.FieldSpec(wire_name="satisfies_pzs"),
         "tool_use_examples": ubx.FieldSpec(
             wire_name="tool_use_examples",
             kind="list",
             fields=_V1beta1Extension_ToolUseExamplesFields,
         ),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

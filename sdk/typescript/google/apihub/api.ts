@@ -108,23 +108,6 @@ const Api_OwnerFields: FieldMap = {
   email: "email",
 };
 
-const Api_SourceMetadata_PluginInstanceActionSourceFields: FieldMap = {
-  actionId: "action_id",
-  pluginInstance: "plugin_instance",
-};
-
-const Api_SourceMetadataFields: FieldMap = {
-  originalResourceCreateTime: "original_resource_create_time",
-  originalResourceId: "original_resource_id",
-  originalResourceUpdateTime: "original_resource_update_time",
-  pluginInstanceActionSource: {
-    wireName: "plugin_instance_action_source",
-    kind: "object",
-    fields: Api_SourceMetadata_PluginInstanceActionSourceFields,
-  },
-  sourceType: "source_type",
-};
-
 export interface ApiConfig {
   /** The attribute values associated with resource. */
   apiFunctionalRequirements?: Api_ApiFunctionalRequirements | Computed<Api_ApiFunctionalRequirements>;
@@ -138,8 +121,6 @@ export interface ApiConfig {
   attributes?: Record<string, Api_ApiFunctionalRequirements> | Computed<Record<string, Api_ApiFunctionalRequirements>>;
   /** The attribute values associated with resource. */
   businessUnit?: Api_ApiFunctionalRequirements | Computed<Api_ApiFunctionalRequirements>;
-  /** Output only. The time at which the API resource was created. */
-  createTime?: string | Computed<string>;
   /** Optional. The description of the API resource. */
   description?: string | Computed<string>;
   /** Required. The display name of the API resource. */
@@ -156,16 +137,10 @@ export interface ApiConfig {
   owner?: Api_Owner | Computed<Api_Owner>;
   /** Optional. The selected version for an API resource. This can be used when special handling is needed on client side for particular version of the API. Format is `projects/{project}/locations/{location}/apis/{api}/versions/{version}` */
   selectedVersion?: string | Computed<string>;
-  /** Output only. The list of sources and metadata from the sources of the API resource. */
-  sourceMetadata?: Api_SourceMetadata[] | Computed<Api_SourceMetadata[]>;
   /** The attribute values associated with resource. */
   targetUser?: Api_ApiFunctionalRequirements | Computed<Api_ApiFunctionalRequirements>;
   /** The attribute values associated with resource. */
   team?: Api_ApiFunctionalRequirements | Computed<Api_ApiFunctionalRequirements>;
-  /** Output only. The time at which the API resource was last updated. */
-  updateTime?: string | Computed<string>;
-  /** Output only. The list of versions present in an API resource. Note: An API resource can be associated with more than 1 version. Format is `projects/{project}/locations/{location}/apis/{api}/versions/{version}` */
-  versions?: string[] | Computed<string[]>;
 }
 
 export interface ApiAttrs {
@@ -244,7 +219,6 @@ export const Api: ResourceBinding<ApiConfig, ApiAttrs> = {
       kind: "object",
       fields: Api_ApiFunctionalRequirementsFields,
     },
-    createTime: "create_time",
     description: "description",
     displayName: "display_name",
     documentation: {
@@ -265,11 +239,6 @@ export const Api: ResourceBinding<ApiConfig, ApiAttrs> = {
       fields: Api_OwnerFields,
     },
     selectedVersion: "selected_version",
-    sourceMetadata: {
-      wireName: "source_metadata",
-      kind: "list",
-      fields: Api_SourceMetadataFields,
-    },
     targetUser: {
       wireName: "target_user",
       kind: "object",
@@ -280,7 +249,5 @@ export const Api: ResourceBinding<ApiConfig, ApiAttrs> = {
       kind: "object",
       fields: Api_ApiFunctionalRequirementsFields,
     },
-    updateTime: "update_time",
-    versions: "versions",
   },
 };

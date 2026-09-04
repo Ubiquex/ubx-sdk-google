@@ -193,8 +193,6 @@ const NotebookRuntimeTemplate_SoftwareConfigFields: FieldMap = {
 };
 
 export interface NotebookRuntimeTemplateConfig {
-  /** Output only. Timestamp when this NotebookRuntimeTemplate was created. */
-  createTime?: string | Computed<string>;
   /** Represents the spec of persistent disk and hyperdisk options. */
   dataPersistentDiskSpec?: NotebookRuntimeTemplate_DataPersistentDiskSpec | Computed<NotebookRuntimeTemplate_DataPersistentDiskSpec>;
   /** The description of the NotebookRuntimeTemplate. */
@@ -209,8 +207,6 @@ export interface NotebookRuntimeTemplateConfig {
   eucConfig?: NotebookRuntimeTemplate_EucConfig | Computed<NotebookRuntimeTemplate_EucConfig>;
   /** The idle shutdown configuration of NotebookRuntimeTemplate, which contains the idle_timeout as required field. */
   idleShutdownConfig?: NotebookRuntimeTemplate_IdleShutdownConfig | Computed<NotebookRuntimeTemplate_IdleShutdownConfig>;
-  /** Output only. Deprecated: This field has no behavior. Use notebook_runtime_type = 'ONE_CLICK' instead. The default template to use if not specified. */
-  isDefault?: boolean | Computed<boolean>;
   /** The labels with user-defined metadata to organize the NotebookRuntimeTemplates. Label keys and values can be no longer than 64 characters (Unicode codepoints), can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. See https://goo.gl/xmQnxf for more information and examples of labels. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Specification of a single machine. */
@@ -231,8 +227,6 @@ export interface NotebookRuntimeTemplateConfig {
   shieldedVmConfig?: NotebookRuntimeTemplate_ShieldedVmConfig | Computed<NotebookRuntimeTemplate_ShieldedVmConfig>;
   /** Notebook Software Config. This is passed to the backend when user makes software configurations in UI. */
   softwareConfig?: NotebookRuntimeTemplate_SoftwareConfig | Computed<NotebookRuntimeTemplate_SoftwareConfig>;
-  /** Output only. Timestamp when this NotebookRuntimeTemplate was most recently updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface NotebookRuntimeTemplateAttrs {
@@ -281,7 +275,6 @@ export interface NotebookRuntimeTemplateAttrs {
 export const NotebookRuntimeTemplate: ResourceBinding<NotebookRuntimeTemplateConfig, NotebookRuntimeTemplateAttrs> = {
   wireType: "google_aiplatform_notebook_runtime_template",
   fields: {
-    createTime: "create_time",
     dataPersistentDiskSpec: {
       wireName: "data_persistent_disk_spec",
       kind: "object",
@@ -305,7 +298,6 @@ export const NotebookRuntimeTemplate: ResourceBinding<NotebookRuntimeTemplateCon
       kind: "object",
       fields: NotebookRuntimeTemplate_IdleShutdownConfigFields,
     },
-    isDefault: "is_default",
     labels: "labels",
     machineSpec: {
       wireName: "machine_spec",
@@ -336,6 +328,5 @@ export const NotebookRuntimeTemplate: ResourceBinding<NotebookRuntimeTemplateCon
       kind: "object",
       fields: NotebookRuntimeTemplate_SoftwareConfigFields,
     },
-    updateTime: "update_time",
   },
 };

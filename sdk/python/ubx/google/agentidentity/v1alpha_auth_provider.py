@@ -95,22 +95,12 @@ class V1alphaAuthProviderConfig:
     auth_provider_type_params: Any = None
     # Optional. List of scopes that are blocked from being requested for this auth provider. If a scope appears in this list, it will not be requested, even if it also appears in `allowed_scopes`. `blocked_scopes` takes precedence over `allowed_scopes`. The number of blocked scopes is limited to 200.
     blocked_scopes: Any = None
-    # Output only. The creation timestamp.
-    create_time: Any = None
-    # Output only. Set to `true` if the auth provider is deleted.
-    deleted: Any = None
     # Optional. Description of the resource. Must be less than 256 characters.
     description: Any = None
-    # Output only. The time when the auth provider will expire.
-    expire_time: Any = None
     # Optional. Labels as key-value pairs.
     labels: Any = None
     # Identifier. The full resource name of the auth provider. Format: projects/{project}/locations/{location}/authProviders/{auth_provider}
     name: Any = None
-    # Output only. The state of the auth provider.
-    state: Any = None
-    # Output only. The update timestamp.
-    update_time: Any = None
     # Optional. Input only. Identifiers for the agents that will use this auth provider, starting with `principal://`. For example: `principal://agents.global.org-${ORG_ID}.system.id.goog/resources/aiplatform/projects/{PROJECT_ID}/locations/{LOCATIONS}/reasoningEngines/{ID}`
     workload_ids: Any = None
 
@@ -151,14 +141,9 @@ V1alphaAuthProvider = ubx.ResourceBinding(
             fields=_V1alphaAuthProvider_AuthProviderTypeParamsFields,
         ),
         "blocked_scopes": ubx.FieldSpec(wire_name="blocked_scopes"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
-        "deleted": ubx.FieldSpec(wire_name="deleted"),
         "description": ubx.FieldSpec(wire_name="description"),
-        "expire_time": ubx.FieldSpec(wire_name="expire_time"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
         "workload_ids": ubx.FieldSpec(wire_name="workload_ids"),
     },
 )

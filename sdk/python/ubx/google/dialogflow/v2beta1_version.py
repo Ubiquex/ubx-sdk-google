@@ -8,11 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class V2beta1VersionConfig:
-    create_time: Any = None
     description: Any = None
-    name: Any = None
-    status: Any = None
-    version_number: Any = None
 
 @dataclasses.dataclass
 class V2beta1VersionAttrs:
@@ -25,10 +21,6 @@ class V2beta1VersionAttrs:
 V2beta1Version = ubx.ResourceBinding(
     wire_type="google_dialogflow_v2beta1_version",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "status": ubx.FieldSpec(wire_name="status"),
-        "version_number": ubx.FieldSpec(wire_name="version_number"),
     },
 )

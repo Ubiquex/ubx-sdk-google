@@ -102,67 +102,67 @@ type CloudVmCluster_Properties struct {
 }
 
 var CloudVmCluster_IdentityConnectorFields = ubx.FieldMap{
-		"ConnectionState": ubx.FieldSpec{WireName: "connection_state"},
-		"ServiceAgentEmail": ubx.FieldSpec{WireName: "service_agent_email"},
-	}
+	"ConnectionState":   ubx.FieldSpec{WireName: "connection_state"},
+	"ServiceAgentEmail": ubx.FieldSpec{WireName: "service_agent_email"},
+}
 
 var CloudVmCluster_Properties_DiagnosticsDataCollectionOptionsFields = ubx.FieldMap{
-		"DiagnosticsEventsEnabled": ubx.FieldSpec{WireName: "diagnostics_events_enabled"},
-		"HealthMonitoringEnabled": ubx.FieldSpec{WireName: "health_monitoring_enabled"},
-		"IncidentLogsEnabled": ubx.FieldSpec{WireName: "incident_logs_enabled"},
-	}
+	"DiagnosticsEventsEnabled": ubx.FieldSpec{WireName: "diagnostics_events_enabled"},
+	"HealthMonitoringEnabled":  ubx.FieldSpec{WireName: "health_monitoring_enabled"},
+	"IncidentLogsEnabled":      ubx.FieldSpec{WireName: "incident_logs_enabled"},
+}
 
 var CloudVmCluster_Properties_TimeZoneFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"Id":      ubx.FieldSpec{WireName: "id"},
+	"Version": ubx.FieldSpec{WireName: "version"},
+}
 
 var CloudVmCluster_PropertiesFields = ubx.FieldMap{
-		"ClusterName": ubx.FieldSpec{WireName: "cluster_name"},
-		"CompartmentId": ubx.FieldSpec{WireName: "compartment_id"},
-		"ComputeModel": ubx.FieldSpec{WireName: "compute_model"},
-		"CpuCoreCount": ubx.FieldSpec{WireName: "cpu_core_count"},
-		"DataStorageSizeTb": ubx.FieldSpec{WireName: "data_storage_size_tb"},
-		"DbNodeStorageSizeGb": ubx.FieldSpec{WireName: "db_node_storage_size_gb"},
-		"DbServerOcids": ubx.FieldSpec{WireName: "db_server_ocids"},
-		"DiagnosticsDataCollectionOptions": ubx.FieldSpec{
-			WireName: "diagnostics_data_collection_options",
-			Kind: "object",
-			Fields: CloudVmCluster_Properties_DiagnosticsDataCollectionOptionsFields,
-		},
-		"DiskRedundancy": ubx.FieldSpec{WireName: "disk_redundancy"},
-		"DnsListenerIp": ubx.FieldSpec{WireName: "dns_listener_ip"},
-		"Domain": ubx.FieldSpec{WireName: "domain"},
-		"GiVersion": ubx.FieldSpec{WireName: "gi_version"},
-		"Hostname": ubx.FieldSpec{WireName: "hostname"},
-		"HostnamePrefix": ubx.FieldSpec{WireName: "hostname_prefix"},
-		"LicenseType": ubx.FieldSpec{WireName: "license_type"},
-		"LocalBackupEnabled": ubx.FieldSpec{WireName: "local_backup_enabled"},
-		"MemorySizeGb": ubx.FieldSpec{WireName: "memory_size_gb"},
-		"NodeCount": ubx.FieldSpec{WireName: "node_count"},
-		"OciUrl": ubx.FieldSpec{WireName: "oci_url"},
-		"Ocid": ubx.FieldSpec{WireName: "ocid"},
-		"OcpuCount": ubx.FieldSpec{WireName: "ocpu_count"},
-		"ScanDns": ubx.FieldSpec{WireName: "scan_dns"},
-		"ScanDnsRecordId": ubx.FieldSpec{WireName: "scan_dns_record_id"},
-		"ScanIpIds": ubx.FieldSpec{WireName: "scan_ip_ids"},
-		"ScanListenerPortTcp": ubx.FieldSpec{WireName: "scan_listener_port_tcp"},
-		"ScanListenerPortTcpSsl": ubx.FieldSpec{WireName: "scan_listener_port_tcp_ssl"},
-		"Shape": ubx.FieldSpec{WireName: "shape"},
-		"SparseDiskgroupEnabled": ubx.FieldSpec{WireName: "sparse_diskgroup_enabled"},
-		"SshPublicKeys": ubx.FieldSpec{WireName: "ssh_public_keys"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"StorageManagementType": ubx.FieldSpec{WireName: "storage_management_type"},
-		"StorageSizeGb": ubx.FieldSpec{WireName: "storage_size_gb"},
-		"SystemVersion": ubx.FieldSpec{WireName: "system_version"},
-		"TimeZone": ubx.FieldSpec{
-			WireName: "time_zone",
-			Kind: "object",
-			Fields: CloudVmCluster_Properties_TimeZoneFields,
-		},
-		"VmBackupStorageType": ubx.FieldSpec{WireName: "vm_backup_storage_type"},
-		"VmFileSystemStorageType": ubx.FieldSpec{WireName: "vm_file_system_storage_type"},
-	}
+	"ClusterName":         ubx.FieldSpec{WireName: "cluster_name"},
+	"CompartmentId":       ubx.FieldSpec{WireName: "compartment_id"},
+	"ComputeModel":        ubx.FieldSpec{WireName: "compute_model"},
+	"CpuCoreCount":        ubx.FieldSpec{WireName: "cpu_core_count"},
+	"DataStorageSizeTb":   ubx.FieldSpec{WireName: "data_storage_size_tb"},
+	"DbNodeStorageSizeGb": ubx.FieldSpec{WireName: "db_node_storage_size_gb"},
+	"DbServerOcids":       ubx.FieldSpec{WireName: "db_server_ocids"},
+	"DiagnosticsDataCollectionOptions": ubx.FieldSpec{
+		WireName: "diagnostics_data_collection_options",
+		Kind:     "object",
+		Fields:   CloudVmCluster_Properties_DiagnosticsDataCollectionOptionsFields,
+	},
+	"DiskRedundancy":         ubx.FieldSpec{WireName: "disk_redundancy"},
+	"DnsListenerIp":          ubx.FieldSpec{WireName: "dns_listener_ip"},
+	"Domain":                 ubx.FieldSpec{WireName: "domain"},
+	"GiVersion":              ubx.FieldSpec{WireName: "gi_version"},
+	"Hostname":               ubx.FieldSpec{WireName: "hostname"},
+	"HostnamePrefix":         ubx.FieldSpec{WireName: "hostname_prefix"},
+	"LicenseType":            ubx.FieldSpec{WireName: "license_type"},
+	"LocalBackupEnabled":     ubx.FieldSpec{WireName: "local_backup_enabled"},
+	"MemorySizeGb":           ubx.FieldSpec{WireName: "memory_size_gb"},
+	"NodeCount":              ubx.FieldSpec{WireName: "node_count"},
+	"OciUrl":                 ubx.FieldSpec{WireName: "oci_url"},
+	"Ocid":                   ubx.FieldSpec{WireName: "ocid"},
+	"OcpuCount":              ubx.FieldSpec{WireName: "ocpu_count"},
+	"ScanDns":                ubx.FieldSpec{WireName: "scan_dns"},
+	"ScanDnsRecordId":        ubx.FieldSpec{WireName: "scan_dns_record_id"},
+	"ScanIpIds":              ubx.FieldSpec{WireName: "scan_ip_ids"},
+	"ScanListenerPortTcp":    ubx.FieldSpec{WireName: "scan_listener_port_tcp"},
+	"ScanListenerPortTcpSsl": ubx.FieldSpec{WireName: "scan_listener_port_tcp_ssl"},
+	"Shape":                  ubx.FieldSpec{WireName: "shape"},
+	"SparseDiskgroupEnabled": ubx.FieldSpec{WireName: "sparse_diskgroup_enabled"},
+	"SshPublicKeys":          ubx.FieldSpec{WireName: "ssh_public_keys"},
+	"State":                  ubx.FieldSpec{WireName: "state"},
+	"StorageManagementType":  ubx.FieldSpec{WireName: "storage_management_type"},
+	"StorageSizeGb":          ubx.FieldSpec{WireName: "storage_size_gb"},
+	"SystemVersion":          ubx.FieldSpec{WireName: "system_version"},
+	"TimeZone": ubx.FieldSpec{
+		WireName: "time_zone",
+		Kind:     "object",
+		Fields:   CloudVmCluster_Properties_TimeZoneFields,
+	},
+	"VmBackupStorageType":     ubx.FieldSpec{WireName: "vm_backup_storage_type"},
+	"VmFileSystemStorageType": ubx.FieldSpec{WireName: "vm_file_system_storage_type"},
+}
 
 type CloudVmClusterConfig struct {
 	// Optional. The name of the backup OdbSubnet associated with the VM Cluster. Format: projects/{project}/locations/{location}/odbNetworks/{odb_network}/odbSubnets/{odb_subnet}
@@ -171,16 +171,12 @@ type CloudVmClusterConfig struct {
 	BackupSubnetCidr any
 	// Optional. Network settings. CIDR to use for cluster IP allocation.
 	Cidr any
-	// Output only. The date and time that the VM cluster was created.
-	CreateTime any
 	// Optional. User friendly name for this resource.
 	DisplayName any
 	// Required. The name of the Exadata Infrastructure resource on which VM cluster resource is created, in the following format: projects/{project}/locations/{region}/cloudExadataInfrastuctures/{cloud_extradata_infrastructure}
 	ExadataInfrastructure any
 	// Optional. The name of ExascaleDbStorageVault associated with the VM Cluster. Format: projects/{project}/locations/{location}/exascaleDbStorageVaults/{exascale_db_storage_vault}
 	ExascaleDbStorageVault any
-	// Output only. The GCP Oracle zone where Oracle CloudVmCluster is hosted. This will be the same as the gcp_oracle_zone of the CloudExadataInfrastructure. Example: us-east4-b-r2.
-	GcpOracleZone any
 	// The identity connector details which will allow OCI to securely access the resources in the customer project.
 	IdentityConnector any
 	// Optional. Labels or tags associated with the VM Cluster.
@@ -233,28 +229,26 @@ type CloudVmClusterAttrs struct {
 var CloudVmCluster = ubx.ResourceBinding{
 	WireType: "google_oracledatabase_cloud_vm_cluster",
 	Fields: ubx.FieldMap{
-		"BackupOdbSubnet": ubx.FieldSpec{WireName: "backup_odb_subnet"},
-		"BackupSubnetCidr": ubx.FieldSpec{WireName: "backup_subnet_cidr"},
-		"Cidr": ubx.FieldSpec{WireName: "cidr"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"ExadataInfrastructure": ubx.FieldSpec{WireName: "exadata_infrastructure"},
+		"BackupOdbSubnet":        ubx.FieldSpec{WireName: "backup_odb_subnet"},
+		"BackupSubnetCidr":       ubx.FieldSpec{WireName: "backup_subnet_cidr"},
+		"Cidr":                   ubx.FieldSpec{WireName: "cidr"},
+		"DisplayName":            ubx.FieldSpec{WireName: "display_name"},
+		"ExadataInfrastructure":  ubx.FieldSpec{WireName: "exadata_infrastructure"},
 		"ExascaleDbStorageVault": ubx.FieldSpec{WireName: "exascale_db_storage_vault"},
-		"GcpOracleZone": ubx.FieldSpec{WireName: "gcp_oracle_zone"},
 		"IdentityConnector": ubx.FieldSpec{
 			WireName: "identity_connector",
-			Kind: "object",
-			Fields: CloudVmCluster_IdentityConnectorFields,
+			Kind:     "object",
+			Fields:   CloudVmCluster_IdentityConnectorFields,
 		},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Network": ubx.FieldSpec{WireName: "network"},
+		"Labels":     ubx.FieldSpec{WireName: "labels"},
+		"Name":       ubx.FieldSpec{WireName: "name"},
+		"Network":    ubx.FieldSpec{WireName: "network"},
 		"OdbNetwork": ubx.FieldSpec{WireName: "odb_network"},
-		"OdbSubnet": ubx.FieldSpec{WireName: "odb_subnet"},
+		"OdbSubnet":  ubx.FieldSpec{WireName: "odb_subnet"},
 		"Properties": ubx.FieldSpec{
 			WireName: "properties",
-			Kind: "object",
-			Fields: CloudVmCluster_PropertiesFields,
+			Kind:     "object",
+			Fields:   CloudVmCluster_PropertiesFields,
 		},
 	},
 }

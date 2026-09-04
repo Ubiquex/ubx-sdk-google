@@ -13,8 +13,8 @@ type AlphaFolderGlobalVmExtensionPolicy_ExtensionPolicies_InstalledSoftwareSelec
 
 type AlphaFolderGlobalVmExtensionPolicy_ExtensionPolicies struct {
 	InstalledSoftwareSelector any
-	PinnedVersion any
-	StringConfig any
+	PinnedVersion             any
+	StringConfig              any
 }
 
 type AlphaFolderGlobalVmExtensionPolicy_InstanceSelectors_LabelSelector struct {
@@ -42,9 +42,9 @@ type AlphaFolderGlobalVmExtensionPolicy_RolloutOperation_RolloutStatus_CurrentRo
 
 type AlphaFolderGlobalVmExtensionPolicy_RolloutOperation_RolloutStatus_CurrentRollouts struct {
 	LocationRolloutStatus any
-	Rollout any
-	RolloutPlan any
-	State any
+	Rollout               any
+	RolloutPlan           any
+	State                 any
 }
 
 type AlphaFolderGlobalVmExtensionPolicy_RolloutOperation_RolloutStatus struct {
@@ -54,119 +54,105 @@ type AlphaFolderGlobalVmExtensionPolicy_RolloutOperation_RolloutStatus struct {
 }
 
 type AlphaFolderGlobalVmExtensionPolicy_RolloutOperation struct {
-	RolloutInput any
+	RolloutInput  any
 	RolloutStatus any
 }
 
 var AlphaFolderGlobalVmExtensionPolicy_ExtensionPolicies_InstalledSoftwareSelector_AnyOfSelectorsFields = ubx.FieldMap{
-		"AllOfSelectors": ubx.FieldSpec{WireName: "all_of_selectors"},
-	}
+	"AllOfSelectors": ubx.FieldSpec{WireName: "all_of_selectors"},
+}
 
 var AlphaFolderGlobalVmExtensionPolicy_ExtensionPolicies_InstalledSoftwareSelectorFields = ubx.FieldMap{
-		"AnyOfSelectors": ubx.FieldSpec{
-			WireName: "any_of_selectors",
-			Kind: "map",
-			Fields: AlphaFolderGlobalVmExtensionPolicy_ExtensionPolicies_InstalledSoftwareSelector_AnyOfSelectorsFields,
-		},
-	}
+	"AnyOfSelectors": ubx.FieldSpec{
+		WireName: "any_of_selectors",
+		Kind:     "map",
+		Fields:   AlphaFolderGlobalVmExtensionPolicy_ExtensionPolicies_InstalledSoftwareSelector_AnyOfSelectorsFields,
+	},
+}
 
 var AlphaFolderGlobalVmExtensionPolicy_ExtensionPoliciesFields = ubx.FieldMap{
-		"InstalledSoftwareSelector": ubx.FieldSpec{
-			WireName: "installed_software_selector",
-			Kind: "object",
-			Fields: AlphaFolderGlobalVmExtensionPolicy_ExtensionPolicies_InstalledSoftwareSelectorFields,
-		},
-		"PinnedVersion": ubx.FieldSpec{WireName: "pinned_version"},
-		"StringConfig": ubx.FieldSpec{WireName: "string_config"},
-	}
+	"InstalledSoftwareSelector": ubx.FieldSpec{
+		WireName: "installed_software_selector",
+		Kind:     "object",
+		Fields:   AlphaFolderGlobalVmExtensionPolicy_ExtensionPolicies_InstalledSoftwareSelectorFields,
+	},
+	"PinnedVersion": ubx.FieldSpec{WireName: "pinned_version"},
+	"StringConfig":  ubx.FieldSpec{WireName: "string_config"},
+}
 
 var AlphaFolderGlobalVmExtensionPolicy_InstanceSelectors_LabelSelectorFields = ubx.FieldMap{
-		"InclusionLabels": ubx.FieldSpec{WireName: "inclusion_labels"},
-	}
+	"InclusionLabels": ubx.FieldSpec{WireName: "inclusion_labels"},
+}
 
 var AlphaFolderGlobalVmExtensionPolicy_InstanceSelectorsFields = ubx.FieldMap{
-		"LabelSelector": ubx.FieldSpec{
-			WireName: "label_selector",
-			Kind: "object",
-			Fields: AlphaFolderGlobalVmExtensionPolicy_InstanceSelectors_LabelSelectorFields,
-		},
-	}
+	"LabelSelector": ubx.FieldSpec{
+		WireName: "label_selector",
+		Kind:     "object",
+		Fields:   AlphaFolderGlobalVmExtensionPolicy_InstanceSelectors_LabelSelectorFields,
+	},
+}
 
 var AlphaFolderGlobalVmExtensionPolicy_RolloutOperation_RolloutInputFields = ubx.FieldMap{
-		"ConflictBehavior": ubx.FieldSpec{WireName: "conflict_behavior"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PredefinedRolloutPlan": ubx.FieldSpec{WireName: "predefined_rollout_plan"},
-		"RetryUuid": ubx.FieldSpec{WireName: "retry_uuid"},
-	}
+	"ConflictBehavior":      ubx.FieldSpec{WireName: "conflict_behavior"},
+	"Name":                  ubx.FieldSpec{WireName: "name"},
+	"PredefinedRolloutPlan": ubx.FieldSpec{WireName: "predefined_rollout_plan"},
+	"RetryUuid":             ubx.FieldSpec{WireName: "retry_uuid"},
+}
 
 var AlphaFolderGlobalVmExtensionPolicy_RolloutOperation_RolloutStatus_CurrentRollouts_LocationRolloutStatusFields = ubx.FieldMap{
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"State": ubx.FieldSpec{WireName: "state"},
+}
 
 var AlphaFolderGlobalVmExtensionPolicy_RolloutOperation_RolloutStatus_CurrentRolloutsFields = ubx.FieldMap{
-		"LocationRolloutStatus": ubx.FieldSpec{
-			WireName: "location_rollout_status",
-			Kind: "map",
-			Fields: AlphaFolderGlobalVmExtensionPolicy_RolloutOperation_RolloutStatus_CurrentRollouts_LocationRolloutStatusFields,
-		},
-		"Rollout": ubx.FieldSpec{WireName: "rollout"},
-		"RolloutPlan": ubx.FieldSpec{WireName: "rollout_plan"},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"LocationRolloutStatus": ubx.FieldSpec{
+		WireName: "location_rollout_status",
+		Kind:     "map",
+		Fields:   AlphaFolderGlobalVmExtensionPolicy_RolloutOperation_RolloutStatus_CurrentRollouts_LocationRolloutStatusFields,
+	},
+	"Rollout":     ubx.FieldSpec{WireName: "rollout"},
+	"RolloutPlan": ubx.FieldSpec{WireName: "rollout_plan"},
+	"State":       ubx.FieldSpec{WireName: "state"},
+}
 
 var AlphaFolderGlobalVmExtensionPolicy_RolloutOperation_RolloutStatusFields = ubx.FieldMap{
-		"CurrentRollouts": ubx.FieldSpec{
-			WireName: "current_rollouts",
-			Kind: "list",
-			Fields: AlphaFolderGlobalVmExtensionPolicy_RolloutOperation_RolloutStatus_CurrentRolloutsFields,
-		},
-		"PreviousRollout": ubx.FieldSpec{
-			WireName: "previous_rollout",
-			Kind: "object",
-			Fields: AlphaFolderGlobalVmExtensionPolicy_RolloutOperation_RolloutStatus_CurrentRolloutsFields,
-		},
-	}
+	"CurrentRollouts": ubx.FieldSpec{
+		WireName: "current_rollouts",
+		Kind:     "list",
+		Fields:   AlphaFolderGlobalVmExtensionPolicy_RolloutOperation_RolloutStatus_CurrentRolloutsFields,
+	},
+	"PreviousRollout": ubx.FieldSpec{
+		WireName: "previous_rollout",
+		Kind:     "object",
+		Fields:   AlphaFolderGlobalVmExtensionPolicy_RolloutOperation_RolloutStatus_CurrentRolloutsFields,
+	},
+}
 
 var AlphaFolderGlobalVmExtensionPolicy_RolloutOperationFields = ubx.FieldMap{
-		"RolloutInput": ubx.FieldSpec{
-			WireName: "rollout_input",
-			Kind: "object",
-			Fields: AlphaFolderGlobalVmExtensionPolicy_RolloutOperation_RolloutInputFields,
-		},
-		"RolloutStatus": ubx.FieldSpec{
-			WireName: "rollout_status",
-			Kind: "object",
-			Fields: AlphaFolderGlobalVmExtensionPolicy_RolloutOperation_RolloutStatusFields,
-		},
-	}
+	"RolloutInput": ubx.FieldSpec{
+		WireName: "rollout_input",
+		Kind:     "object",
+		Fields:   AlphaFolderGlobalVmExtensionPolicy_RolloutOperation_RolloutInputFields,
+	},
+	"RolloutStatus": ubx.FieldSpec{
+		WireName: "rollout_status",
+		Kind:     "object",
+		Fields:   AlphaFolderGlobalVmExtensionPolicy_RolloutOperation_RolloutStatusFields,
+	},
+}
 
 type AlphaFolderGlobalVmExtensionPolicyConfig struct {
-	// Output only. [Output Only] Creation timestamp inRFC3339 text format.
-	CreationTimestamp any
 	// An optional description of this resource. Provide this property when you create the resource.
 	Description any
 	// Required. Map from extension (eg: "cloudops") to its policy configuration. The key is the name of the extension.
 	ExtensionPolicies any
-	// Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-	Id any
 	// Optional. Selector to target VMs for a policy. There is a logical "AND" between instance_selectors.
 	InstanceSelectors any
-	// Output only. [Output Only] Type of the resource. Alwayscompute#globalVmExtensionPolicy for globalVmExtensionPolicies.
-	Kind any
 	// Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
 	Name any
 	// Optional. Used to resolve conflicts when multiple policies are active for the same extension. Defaults to 0. Larger the number, higher the priority. When the priority is the same, the policy with the newer create time has higher priority.
 	Priority any
 	// Represents the rollout operation
 	RolloutOperation any
-	// Output only. [Output Only] The scoped resource status. It's only for tracking the purging status of the policy.
-	ScopedResourceStatus any
-	// Output only. [Output Only] Server-defined fully-qualified URL for this resource.
-	SelfLink any
-	// Output only. [Output Only] Server-defined URL for this resource's resource id.
-	SelfLinkWithId any
-	// Output only. [Output Only] Update timestamp inRFC3339 text format.
-	UpdateTimestamp any
 }
 
 type AlphaFolderGlobalVmExtensionPolicyAttrs struct {
@@ -201,30 +187,23 @@ type AlphaFolderGlobalVmExtensionPolicyAttrs struct {
 var AlphaFolderGlobalVmExtensionPolicy = ubx.ResourceBinding{
 	WireType: "google_compute_alpha_folder_global_vm_extension_policy",
 	Fields: ubx.FieldMap{
-		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"ExtensionPolicies": ubx.FieldSpec{
 			WireName: "extension_policies",
-			Kind: "map",
-			Fields: AlphaFolderGlobalVmExtensionPolicy_ExtensionPoliciesFields,
+			Kind:     "map",
+			Fields:   AlphaFolderGlobalVmExtensionPolicy_ExtensionPoliciesFields,
 		},
-		"Id": ubx.FieldSpec{WireName: "id"},
 		"InstanceSelectors": ubx.FieldSpec{
 			WireName: "instance_selectors",
-			Kind: "list",
-			Fields: AlphaFolderGlobalVmExtensionPolicy_InstanceSelectorsFields,
+			Kind:     "list",
+			Fields:   AlphaFolderGlobalVmExtensionPolicy_InstanceSelectorsFields,
 		},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":     ubx.FieldSpec{WireName: "name"},
 		"Priority": ubx.FieldSpec{WireName: "priority"},
 		"RolloutOperation": ubx.FieldSpec{
 			WireName: "rollout_operation",
-			Kind: "object",
-			Fields: AlphaFolderGlobalVmExtensionPolicy_RolloutOperationFields,
+			Kind:     "object",
+			Fields:   AlphaFolderGlobalVmExtensionPolicy_RolloutOperationFields,
 		},
-		"ScopedResourceStatus": ubx.FieldSpec{WireName: "scoped_resource_status"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"SelfLinkWithId": ubx.FieldSpec{WireName: "self_link_with_id"},
-		"UpdateTimestamp": ubx.FieldSpec{WireName: "update_timestamp"},
 	},
 }

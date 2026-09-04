@@ -491,8 +491,6 @@ class DeliveryPipelineConfig:
     annotations: Any = None
     # PipelineCondition contains all conditions relevant to a Delivery Pipeline.
     condition: Any = None
-    # Output only. Time at which the pipeline was created.
-    create_time: Any = None
     # Optional. Description of the `DeliveryPipeline`. Max length is 255 characters.
     description: Any = None
     # This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding.
@@ -505,10 +503,6 @@ class DeliveryPipelineConfig:
     serial_pipeline: Any = None
     # Optional. When suspended, no new releases or rollouts can be created, but in-progress ones will complete.
     suspended: Any = None
-    # Output only. Unique identifier of the `DeliveryPipeline`.
-    uid: Any = None
-    # Output only. Most recent time at which the pipeline was updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class DeliveryPipelineAttrs:
@@ -544,7 +538,6 @@ DeliveryPipeline = ubx.ResourceBinding(
             kind="object",
             fields=_DeliveryPipeline_ConditionFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "etag": ubx.FieldSpec(wire_name="etag"),
         "labels": ubx.FieldSpec(wire_name="labels"),
@@ -555,7 +548,5 @@ DeliveryPipeline = ubx.ResourceBinding(
             fields=_DeliveryPipeline_SerialPipelineFields,
         ),
         "suspended": ubx.FieldSpec(wire_name="suspended"),
-        "uid": ubx.FieldSpec(wire_name="uid"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

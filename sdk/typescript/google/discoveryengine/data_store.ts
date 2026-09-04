@@ -380,14 +380,8 @@ export interface DataStoreConfig {
   cmekConfig?: DataStore_CmekConfig | Computed<DataStore_CmekConfig>;
   /** Optional. Configuration for configurable billing approach. See */
   configurableBillingApproach?: string | Computed<string>;
-  /** Output only. The timestamp when configurable_billing_approach was last updated. */
-  configurableBillingApproachUpdateTime?: string | Computed<string>;
   /** Immutable. The content config of the data store. If this field is unset, the server behavior defaults to ContentConfig.NO_CONTENT. */
   contentConfig?: string | Computed<string>;
-  /** Output only. Timestamp the DataStore was created at. */
-  createTime?: string | Computed<string>;
-  /** Output only. The id of the default Schema associated to this data store. */
-  defaultSchemaId?: string | Computed<string>;
   /** Required. The data store display name. This field must be a UTF-8 encoded string with a length limit of 128 characters. Otherwise, an INVALID_ARGUMENT error is returned. */
   displayName?: string | Computed<string>;
   /** A singleton resource of DataStore. If it's empty when DataStore is created and DataStore is set to DataStore.ContentConfig.CONTENT_REQUIRED, the default parser will default to digital parser. */
@@ -487,10 +481,7 @@ export const DataStore: ResourceBinding<DataStoreConfig, DataStoreAttrs> = {
       fields: DataStore_CmekConfigFields,
     },
     configurableBillingApproach: "configurable_billing_approach",
-    configurableBillingApproachUpdateTime: "configurable_billing_approach_update_time",
     contentConfig: "content_config",
-    createTime: "create_time",
-    defaultSchemaId: "default_schema_id",
     displayName: "display_name",
     documentProcessingConfig: {
       wireName: "document_processing_config",

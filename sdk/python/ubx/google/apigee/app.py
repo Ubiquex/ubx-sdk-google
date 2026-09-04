@@ -32,30 +32,6 @@ _App_AttributesFields = {
     "value": ubx.FieldSpec(wire_name="value"),
 }
 
-_App_Credentials_ApiProductsFields = {
-    "apiproduct": ubx.FieldSpec(wire_name="apiproduct"),
-    "status": ubx.FieldSpec(wire_name="status"),
-}
-
-_App_CredentialsFields = {
-    "api_products": ubx.FieldSpec(
-        wire_name="api_products",
-        kind="list",
-        fields=_App_Credentials_ApiProductsFields,
-    ),
-    "attributes": ubx.FieldSpec(
-        wire_name="attributes",
-        kind="list",
-        fields=_App_AttributesFields,
-    ),
-    "consumer_key": ubx.FieldSpec(wire_name="consumer_key"),
-    "consumer_secret": ubx.FieldSpec(wire_name="consumer_secret"),
-    "expires_at": ubx.FieldSpec(wire_name="expires_at"),
-    "issued_at": ubx.FieldSpec(wire_name="issued_at"),
-    "scopes": ubx.FieldSpec(wire_name="scopes"),
-    "status": ubx.FieldSpec(wire_name="status"),
-}
-
 @dataclasses.dataclass
 class AppConfig:
     # List of API products associated with the AppGroup app.
@@ -68,14 +44,8 @@ class AppConfig:
     attributes: Any = None
     # Callback URL used by OAuth 2.0 authorization servers to communicate authorization codes back to AppGroup apps.
     callback_url: Any = None
-    # Output only. Time the AppGroup app was created in milliseconds since epoch.
-    created_at: Any = None
-    # Output only. Set of credentials for the AppGroup app consisting of the consumer key/secret pairs associated with the API products.
-    credentials: Any = None
     # Immutable. Expiration time, in seconds, for the consumer key that is generated for the AppGroup app. If not set or left to the default value of `-1`, the API key never expires. The expiration time can't be updated after it is set.
     key_expires_in: Any = None
-    # Output only. Time the AppGroup app was modified in milliseconds since epoch.
-    last_modified_at: Any = None
     # Immutable. Name of the AppGroup app whose resource name format is of syntax (organizations/*/appgroups/*/apps/*).
     name: Any = None
     # Scopes to apply to the AppGroup app. The specified scopes must already exist for the API product that you associate with the AppGroup app.
@@ -122,14 +92,7 @@ App = ubx.ResourceBinding(
             fields=_App_AttributesFields,
         ),
         "callback_url": ubx.FieldSpec(wire_name="callback_url"),
-        "created_at": ubx.FieldSpec(wire_name="created_at"),
-        "credentials": ubx.FieldSpec(
-            wire_name="credentials",
-            kind="list",
-            fields=_App_CredentialsFields,
-        ),
         "key_expires_in": ubx.FieldSpec(wire_name="key_expires_in"),
-        "last_modified_at": ubx.FieldSpec(wire_name="last_modified_at"),
         "name": ubx.FieldSpec(wire_name="name"),
         "scopes": ubx.FieldSpec(wire_name="scopes"),
         "status": ubx.FieldSpec(wire_name="status"),

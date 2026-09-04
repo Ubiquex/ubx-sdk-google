@@ -8,8 +8,6 @@ type NamespaceConfig struct {
 	Labels any
 	// Immutable. The resource name for the namespace in the format `projects/*/locations/*/namespaces/*`.
 	Name any
-	// Output only. The globally unique identifier of the namespace in the UUID4 format.
-	Uid any
 }
 
 type NamespaceAttrs struct {
@@ -25,7 +23,6 @@ var Namespace = ubx.ResourceBinding{
 	WireType: "google_servicedirectory_namespace",
 	Fields: ubx.FieldMap{
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
+		"Name":   ubx.FieldSpec{WireName: "name"},
 	},
 }

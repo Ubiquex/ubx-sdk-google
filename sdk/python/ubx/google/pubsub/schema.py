@@ -12,10 +12,6 @@ class SchemaConfig:
     definition: Any = None
     # Required. Name of the schema. Format is `projects/{project}/schemas/{schema}`.
     name: Any = None
-    # Output only. The timestamp that the revision was created.
-    revision_create_time: Any = None
-    # Output only. Immutable. The revision ID of the schema.
-    revision_id: Any = None
     # The type of the schema definition.
     type: Any = None
 
@@ -37,8 +33,6 @@ Schema = ubx.ResourceBinding(
     fields={
         "definition": ubx.FieldSpec(wire_name="definition"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "revision_create_time": ubx.FieldSpec(wire_name="revision_create_time"),
-        "revision_id": ubx.FieldSpec(wire_name="revision_id"),
         "type": ubx.FieldSpec(wire_name="type"),
     },
 )

@@ -16,20 +16,20 @@ type BetaDiskSetting_AccessLocation struct {
 
 type BetaDiskSettingConfig struct {
 	Project any
-	Zone any
+	Zone    any
 }
 
 type BetaDiskSettingAttrs struct {
 	// AccessLocation is only used for regional snapshot. It contains which regions are allowed to create a regional snapshot from disks located in the given region/zone. It includes key-value pairs designed to store the following structure. The keys should match their corresponding values, which must be provided: access_location: { locations { us-central1 { region: "us-central1" }, asia-west2 { region: "asia-west2" } } }
 	AccessLocation any
-	Project any
-	Zone any
+	Project        any
+	Zone           any
 }
 
 var BetaDiskSetting = ubx.DataSourceBinding{
 	WireType: "google_compute_beta_disk_setting",
 	Fields: ubx.FieldMap{
 		"Project": ubx.FieldSpec{WireName: "project"},
-		"Zone": ubx.FieldSpec{WireName: "zone"},
+		"Zone":    ubx.FieldSpec{WireName: "zone"},
 	},
 }

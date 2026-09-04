@@ -153,210 +153,21 @@ const Rollout_MetadataFields: FieldMap = {
   },
 };
 
-const Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_AnalysisJob_CustomChecks_Task_ContainerFields: FieldMap = {
-  args: "args",
-  command: "command",
-  env: "env",
-  image: "image",
-};
-
-const Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_AnalysisJob_CustomChecks_TaskFields: FieldMap = {
-  container: {
-    wireName: "container",
-    kind: "object",
-    fields: Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_AnalysisJob_CustomChecks_Task_ContainerFields,
-  },
-};
-
-const Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_AnalysisJob_CustomChecksFields: FieldMap = {
-  frequency: "frequency",
-  id: "id",
-  task: {
-    wireName: "task",
-    kind: "object",
-    fields: Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_AnalysisJob_CustomChecks_TaskFields,
-  },
-};
-
-const Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_AnalysisJob_GoogleCloud_AlertPolicyChecksFields: FieldMap = {
-  alertPolicies: "alert_policies",
-  id: "id",
-  labels: "labels",
-};
-
-const Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_AnalysisJob_GoogleCloudFields: FieldMap = {
-  alertPolicyChecks: {
-    wireName: "alert_policy_checks",
-    kind: "list",
-    fields: Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_AnalysisJob_GoogleCloud_AlertPolicyChecksFields,
-  },
-};
-
-const Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_AnalysisJobFields: FieldMap = {
-  customChecks: {
-    wireName: "custom_checks",
-    kind: "list",
-    fields: Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_AnalysisJob_CustomChecksFields,
-  },
-  duration: "duration",
-  googleCloud: {
-    wireName: "google_cloud",
-    kind: "object",
-    fields: Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_AnalysisJob_GoogleCloudFields,
-  },
-};
-
-const Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_PostdeployJobFields: FieldMap = {
-  actions: "actions",
-  tasks: {
-    wireName: "tasks",
-    kind: "list",
-    fields: Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_AnalysisJob_CustomChecks_TaskFields,
-  },
-};
-
-const Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_VerifyJobFields: FieldMap = {
-  tasks: {
-    wireName: "tasks",
-    kind: "list",
-    fields: Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_AnalysisJob_CustomChecks_TaskFields,
-  },
-};
-
-const Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobsFields: FieldMap = {
-  advanceChildRolloutJob: "advance_child_rollout_job",
-  analysisJob: {
-    wireName: "analysis_job",
-    kind: "object",
-    fields: Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_AnalysisJobFields,
-  },
-  createChildRolloutJob: "create_child_rollout_job",
-  deployJob: "deploy_job",
-  id: "id",
-  jobRun: "job_run",
-  postdeployJob: {
-    wireName: "postdeploy_job",
-    kind: "object",
-    fields: Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_PostdeployJobFields,
-  },
-  predeployJob: {
-    wireName: "predeploy_job",
-    kind: "object",
-    fields: Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_PostdeployJobFields,
-  },
-  skipMessage: "skip_message",
-  state: "state",
-  verifyJob: {
-    wireName: "verify_job",
-    kind: "object",
-    fields: Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_VerifyJobFields,
-  },
-};
-
-const Rollout_Phases_ChildRolloutJobsFields: FieldMap = {
-  advanceRolloutJobs: {
-    wireName: "advance_rollout_jobs",
-    kind: "list",
-    fields: Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobsFields,
-  },
-  createRolloutJobs: {
-    wireName: "create_rollout_jobs",
-    kind: "list",
-    fields: Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobsFields,
-  },
-};
-
-const Rollout_Phases_DeploymentJobsFields: FieldMap = {
-  analysisJob: {
-    wireName: "analysis_job",
-    kind: "object",
-    fields: Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobsFields,
-  },
-  deployJob: {
-    wireName: "deploy_job",
-    kind: "object",
-    fields: Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobsFields,
-  },
-  postdeployJob: {
-    wireName: "postdeploy_job",
-    kind: "object",
-    fields: Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobsFields,
-  },
-  predeployJob: {
-    wireName: "predeploy_job",
-    kind: "object",
-    fields: Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobsFields,
-  },
-  verifyJob: {
-    wireName: "verify_job",
-    kind: "object",
-    fields: Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobsFields,
-  },
-};
-
-const Rollout_PhasesFields: FieldMap = {
-  childRolloutJobs: {
-    wireName: "child_rollout_jobs",
-    kind: "object",
-    fields: Rollout_Phases_ChildRolloutJobsFields,
-  },
-  deploymentJobs: {
-    wireName: "deployment_jobs",
-    kind: "object",
-    fields: Rollout_Phases_DeploymentJobsFields,
-  },
-  id: "id",
-  skipMessage: "skip_message",
-  state: "state",
-};
-
 export interface RolloutConfig {
-  /** Output only. The AutomationRun actively repairing the rollout. */
-  activeRepairAutomationRun?: string | Computed<string>;
   /** Optional. User annotations. These attributes can only be set and used by the user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations for more details such as format and size limitations. */
   annotations?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. Approval state of the `Rollout`. */
-  approvalState?: string | Computed<string>;
-  /** Output only. Time at which the `Rollout` was approved. */
-  approveTime?: string | Computed<string>;
-  /** Output only. Name of the `ControllerRollout`. Format is `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/{rollout}`. */
-  controllerRollout?: string | Computed<string>;
-  /** Output only. Time at which the `Rollout` was created. */
-  createTime?: string | Computed<string>;
-  /** Output only. Time at which the `Rollout` finished deploying. */
-  deployEndTime?: string | Computed<string>;
-  /** Output only. The reason this rollout failed. This will always be unspecified while the rollout is in progress. */
-  deployFailureCause?: string | Computed<string>;
-  /** Output only. Time at which the `Rollout` started deploying. */
-  deployStartTime?: string | Computed<string>;
-  /** Output only. The resource name of the Cloud Build `Build` object that is used to deploy the Rollout. Format is `projects/{project}/locations/{location}/builds/{build}`. */
-  deployingBuild?: string | Computed<string>;
   /** Optional. Description of the `Rollout` for user purposes. Max length is 255 characters. */
   description?: string | Computed<string>;
-  /** Output only. Time at which the `Rollout` was enqueued. */
-  enqueueTime?: string | Computed<string>;
   /** This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding. */
   etag?: string | Computed<string>;
-  /** Output only. Additional information about the rollout failure, if available. */
-  failureReason?: string | Computed<string>;
   /** Labels are attributes that can be set and used by both the user and by Cloud Deploy. Labels must meet the following constraints: * Keys and values can contain only lowercase letters, numeric characters, underscores, and dashes. * All characters must use UTF-8 encoding, and international characters are allowed. * Keys must start with a lowercase letter or international character. * Each resource is limited to a maximum of 64 labels. Both keys and values are additionally constrained to be <= 128 bytes. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Metadata includes information associated with a `Rollout`. */
   metadata?: Rollout_Metadata | Computed<Rollout_Metadata>;
   /** Identifier. Name of the `Rollout`. Format is `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/{rollout}`. The `rollout` component must match `[a-z]([a-z0-9-]{0,61}[a-z0-9])?` */
   name?: string | Computed<string>;
-  /** Output only. The phases that represent the workflows of this `Rollout`. */
-  phases?: Rollout_Phases[] | Computed<Rollout_Phases[]>;
-  /** Output only. Name of the `Rollout` that is rolled back by this `Rollout`. Empty if this `Rollout` wasn't created as a rollback. */
-  rollbackOfRollout?: string | Computed<string>;
-  /** Output only. Names of `Rollouts` that rolled back this `Rollout`. */
-  rolledBackByRollouts?: string[] | Computed<string[]>;
-  /** Output only. Current state of the `Rollout`. */
-  state?: string | Computed<string>;
   /** Required. The ID of Target to which this `Rollout` is deploying. */
   targetId?: string | Computed<string>;
-  /** Output only. Unique identifier of the `Rollout`. */
-  uid?: string | Computed<string>;
 }
 
 export interface RolloutAttrs {
@@ -411,20 +222,9 @@ export interface RolloutAttrs {
 export const Rollout: ResourceBinding<RolloutConfig, RolloutAttrs> = {
   wireType: "google_clouddeploy_rollout",
   fields: {
-    activeRepairAutomationRun: "active_repair_automation_run",
     annotations: "annotations",
-    approvalState: "approval_state",
-    approveTime: "approve_time",
-    controllerRollout: "controller_rollout",
-    createTime: "create_time",
-    deployEndTime: "deploy_end_time",
-    deployFailureCause: "deploy_failure_cause",
-    deployStartTime: "deploy_start_time",
-    deployingBuild: "deploying_build",
     description: "description",
-    enqueueTime: "enqueue_time",
     etag: "etag",
-    failureReason: "failure_reason",
     labels: "labels",
     metadata: {
       wireName: "metadata",
@@ -432,15 +232,6 @@ export const Rollout: ResourceBinding<RolloutConfig, RolloutAttrs> = {
       fields: Rollout_MetadataFields,
     },
     name: "name",
-    phases: {
-      wireName: "phases",
-      kind: "list",
-      fields: Rollout_PhasesFields,
-    },
-    rollbackOfRollout: "rollback_of_rollout",
-    rolledBackByRollouts: "rolled_back_by_rollouts",
-    state: "state",
     targetId: "target_id",
-    uid: "uid",
   },
 };

@@ -81,11 +81,6 @@ class Trigger_Transport:
     # Represents a Pub/Sub transport.
     pubsub: Any = None
 
-_Trigger_ConditionsFields = {
-    "code": ubx.FieldSpec(wire_name="code"),
-    "message": ubx.FieldSpec(wire_name="message"),
-}
-
 _Trigger_Destination_CloudRunFields = {
     "path": ubx.FieldSpec(wire_name="path"),
     "region": ubx.FieldSpec(wire_name="region"),
@@ -160,14 +155,8 @@ _Trigger_TransportFields = {
 class TriggerConfig:
     # Optional. The name of the channel associated with the trigger in `projects/{project}/locations/{location}/channels/{channel}` format. You must provide a channel to receive events from Eventarc SaaS partners.
     channel: Any = None
-    # Output only. The reason(s) why a trigger is in FAILED state.
-    conditions: Any = None
-    # Output only. The creation time.
-    create_time: Any = None
     # Represents a target of an invocation over HTTP.
     destination: Any = None
-    # Output only. This checksum is computed by the server based on the value of other fields, and might be sent only on create requests to ensure that the client has an up-to-date value before proceeding.
-    etag: Any = None
     # Optional. EventDataContentType specifies the type of payload in MIME format that is expected from the CloudEvent data field. This is set to `application/json` if the value is not defined.
     event_data_content_type: Any = None
     # Required. Unordered list. The list of filters that applies to event attributes. Only events that match all the provided filters are sent to the destination.
@@ -178,16 +167,10 @@ class TriggerConfig:
     name: Any = None
     # The retry policy configuration for the Trigger. Can only be set with Cloud Run destinations.
     retry_policy: Any = None
-    # Output only. Whether or not this Trigger satisfies the requirements of physical zone separation
-    satisfies_pzs: Any = None
     # Optional. The IAM service account email associated with the trigger. The service account represents the identity of the trigger. The `iam.serviceAccounts.actAs` permission must be granted on the service account to allow a principal to impersonate the service account. For more information, see the [Roles and permissions](/eventarc/docs/all-roles-permissions) page specific to the trigger destination.
     service_account: Any = None
     # Represents the transport intermediaries created for the trigger to deliver events.
     transport: Any = None
-    # Output only. Server-assigned unique identifier for the trigger. The value is a UUID4 string and guaranteed to remain unchanged until the resource is deleted.
-    uid: Any = None
-    # Output only. The last-modified time.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class TriggerAttrs:
@@ -226,18 +209,11 @@ Trigger = ubx.ResourceBinding(
     wire_type="google_eventarc_trigger",
     fields={
         "channel": ubx.FieldSpec(wire_name="channel"),
-        "conditions": ubx.FieldSpec(
-            wire_name="conditions",
-            kind="map",
-            fields=_Trigger_ConditionsFields,
-        ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "destination": ubx.FieldSpec(
             wire_name="destination",
             kind="object",
             fields=_Trigger_DestinationFields,
         ),
-        "etag": ubx.FieldSpec(wire_name="etag"),
         "event_data_content_type": ubx.FieldSpec(wire_name="event_data_content_type"),
         "event_filters": ubx.FieldSpec(
             wire_name="event_filters",
@@ -251,14 +227,11 @@ Trigger = ubx.ResourceBinding(
             kind="object",
             fields=_Trigger_RetryPolicyFields,
         ),
-        "satisfies_pzs": ubx.FieldSpec(wire_name="satisfies_pzs"),
         "service_account": ubx.FieldSpec(wire_name="service_account"),
         "transport": ubx.FieldSpec(
             wire_name="transport",
             kind="object",
             fields=_Trigger_TransportFields,
         ),
-        "uid": ubx.FieldSpec(wire_name="uid"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

@@ -62,8 +62,6 @@ _Evaluation_ResourceStatusFields = {
 class EvaluationConfig:
     # BigQuery destination for evaluation results.
     big_query_destination: Any = None
-    # Output only. [Output only] Create time stamp.
-    create_time: Any = None
     # The Cloud Storage bucket name for custom rules.
     custom_rules_bucket: Any = None
     # Description of the Evaluation.
@@ -84,8 +82,6 @@ class EvaluationConfig:
     rule_names: Any = None
     # Crontab format schedule for scheduled evaluation, currently only supports the following fixed schedules: * `0 */1 * * *` # Hourly * `0 */6 * * *` # Every 6 hours * `0 */12 * * *` # Every 12 hours * `0 0 */1 * *` # Daily * `0 0 */7 * *` # Weekly * `0 0 */14 * *` # Every 14 days * `0 0 1 */1 *` # Monthly
     schedule: Any = None
-    # Output only. [Output only] Update time stamp.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class EvaluationAttrs:
@@ -124,7 +120,6 @@ Evaluation = ubx.ResourceBinding(
             kind="object",
             fields=_Evaluation_BigQueryDestinationFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "custom_rules_bucket": ubx.FieldSpec(wire_name="custom_rules_bucket"),
         "description": ubx.FieldSpec(wire_name="description"),
         "evaluation_type": ubx.FieldSpec(wire_name="evaluation_type"),
@@ -143,6 +138,5 @@ Evaluation = ubx.ResourceBinding(
         ),
         "rule_names": ubx.FieldSpec(wire_name="rule_names"),
         "schedule": ubx.FieldSpec(wire_name="schedule"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

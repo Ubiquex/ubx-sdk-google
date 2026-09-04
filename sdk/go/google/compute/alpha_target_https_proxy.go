@@ -12,8 +12,6 @@ type AlphaTargetHttpsProxyConfig struct {
 	AuthorizationPolicy any
 	// URL of a certificate map that identifies a certificate map associated with the given target proxy. This field can only be set for Global external Application Load Balancer or Classic Application Load Balancer. For other products use Certificate Manager Certificates instead. If set, sslCertificates will be ignored. Accepted format is//certificatemanager.googleapis.com/projects/{project}/locations/{location}/certificateMaps/{resourceName}.
 	CertificateMap any
-	// Output only. [Output Only] Creation timestamp inRFC3339 text format.
-	CreationTimestamp any
 	// An optional description of this resource. Provide this property when you create the resource.
 	Description any
 	// Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a TargetHttpsProxy. An up-to-date fingerprint must be provided in order to patch the TargetHttpsProxy; otherwise, the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve the TargetHttpsProxy.
@@ -24,20 +22,14 @@ type AlphaTargetHttpsProxyConfig struct {
 	HttpKeepAliveTimeoutSec any
 	// [Output Only] The unique identifier for the resource. This identifier is defined by the server.
 	Id any
-	// Output only. [Output Only] Type of resource. Alwayscompute#targetHttpsProxy for target HTTPS proxies.
-	Kind any
 	// Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
 	Name any
 	// This field only applies when the forwarding rule that references this target proxy has a loadBalancingScheme set toINTERNAL_SELF_MANAGED. When this field is set to true, Envoy proxies set up inbound traffic interception and bind to the IP address and port specified in the forwarding rule. This is generally useful when using Traffic Director to configure Envoy as a gateway or middle proxy (in other words, not a sidecar proxy). The Envoy proxy listens for inbound requests and handles requests when it receives them. The default is false.
 	ProxyBind any
 	// Specifies the QUIC override policy for this TargetHttpsProxy resource. This setting determines whether the load balancer attempts to negotiate QUIC with clients. You can specify NONE, ENABLE, orDISABLE. - When quic-override is set to NONE, Google manages whether QUIC is used. - When quic-override is set to ENABLE, the load balancer uses QUIC when possible. - When quic-override is set to DISABLE, the load balancer doesn't use QUIC. - If the quic-override flag is not specified,NONE is implied.
 	QuicOverride any
-	// Output only. [Output Only] URL of the region where the regional TargetHttpsProxy resides. This field is not applicable to global TargetHttpsProxies.
-	Region any
 	// [Output Only] Server-defined URL for the resource.
 	SelfLink any
-	// Output only. [Output Only] Server-defined URL for this resource with the resource id.
-	SelfLinkWithId any
 	// Optional. A URL referring to a networksecurity.ServerTlsPolicy resource that describes how the proxy should authenticate inbound traffic. serverTlsPolicy only applies to a globalTargetHttpsProxy attached toglobalForwardingRules with theloadBalancingScheme set to INTERNAL_SELF_MANAGED or EXTERNAL orEXTERNAL_MANAGED or INTERNAL_MANAGED. It also applies to a regional TargetHttpsProxy attached to regional forwardingRules with theloadBalancingScheme set to EXTERNAL_MANAGED orINTERNAL_MANAGED. For details whichServerTlsPolicy resources are accepted withINTERNAL_SELF_MANAGED and which with EXTERNAL,INTERNAL_MANAGED, EXTERNAL_MANAGEDloadBalancingScheme consult ServerTlsPolicy documentation. If left blank, communications are not encrypted.
 	ServerTlsPolicy any
 	// URLs to SslCertificate resources that are used to authenticate connections between users and the load balancer. At least one SSL certificate must be specified. SslCertificates do not apply when the load balancing scheme is set to INTERNAL_SELF_MANAGED. The URLs should refer to a SSL Certificate resource or Certificate Manager Certificate resource. Mixing Classic Certificates and Certificate Manager Certificates is not allowed. Certificate Manager Certificates must include the certificatemanager API namespace. Using Certificate Manager Certificates in this field is not supported by Global external Application Load Balancer or Classic Application Load Balancer, use certificate_map instead. Currently, you may specify up to 15 Classic SSL Certificates or up to 100 Certificate Manager Certificates. Certificate Manager Certificates accepted formats are: - //certificatemanager.googleapis.com/projects/{project}/locations/{location}/certificates/{resourceName}. - https://certificatemanager.googleapis.com/v1alpha1/projects/{project}/locations/{location}/certificates/{resourceName}.
@@ -100,27 +92,23 @@ type AlphaTargetHttpsProxyAttrs struct {
 var AlphaTargetHttpsProxy = ubx.ResourceBinding{
 	WireType: "google_compute_alpha_target_https_proxy",
 	Fields: ubx.FieldMap{
-		"Authentication": ubx.FieldSpec{WireName: "authentication"},
-		"Authorization": ubx.FieldSpec{WireName: "authorization"},
-		"AuthorizationPolicy": ubx.FieldSpec{WireName: "authorization_policy"},
-		"CertificateMap": ubx.FieldSpec{WireName: "certificate_map"},
-		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Fingerprint": ubx.FieldSpec{WireName: "fingerprint"},
-		"HttpFilters": ubx.FieldSpec{WireName: "http_filters"},
+		"Authentication":          ubx.FieldSpec{WireName: "authentication"},
+		"Authorization":           ubx.FieldSpec{WireName: "authorization"},
+		"AuthorizationPolicy":     ubx.FieldSpec{WireName: "authorization_policy"},
+		"CertificateMap":          ubx.FieldSpec{WireName: "certificate_map"},
+		"Description":             ubx.FieldSpec{WireName: "description"},
+		"Fingerprint":             ubx.FieldSpec{WireName: "fingerprint"},
+		"HttpFilters":             ubx.FieldSpec{WireName: "http_filters"},
 		"HttpKeepAliveTimeoutSec": ubx.FieldSpec{WireName: "http_keep_alive_timeout_sec"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ProxyBind": ubx.FieldSpec{WireName: "proxy_bind"},
-		"QuicOverride": ubx.FieldSpec{WireName: "quic_override"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"SelfLinkWithId": ubx.FieldSpec{WireName: "self_link_with_id"},
-		"ServerTlsPolicy": ubx.FieldSpec{WireName: "server_tls_policy"},
-		"SslCertificates": ubx.FieldSpec{WireName: "ssl_certificates"},
-		"SslPolicy": ubx.FieldSpec{WireName: "ssl_policy"},
-		"TlsEarlyData": ubx.FieldSpec{WireName: "tls_early_data"},
-		"UrlMap": ubx.FieldSpec{WireName: "url_map"},
+		"Id":                      ubx.FieldSpec{WireName: "id"},
+		"Name":                    ubx.FieldSpec{WireName: "name"},
+		"ProxyBind":               ubx.FieldSpec{WireName: "proxy_bind"},
+		"QuicOverride":            ubx.FieldSpec{WireName: "quic_override"},
+		"SelfLink":                ubx.FieldSpec{WireName: "self_link"},
+		"ServerTlsPolicy":         ubx.FieldSpec{WireName: "server_tls_policy"},
+		"SslCertificates":         ubx.FieldSpec{WireName: "ssl_certificates"},
+		"SslPolicy":               ubx.FieldSpec{WireName: "ssl_policy"},
+		"TlsEarlyData":            ubx.FieldSpec{WireName: "tls_early_data"},
+		"UrlMap":                  ubx.FieldSpec{WireName: "url_map"},
 	},
 }

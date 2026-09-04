@@ -8,16 +8,10 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class EnvgroupConfig:
-    # Output only. The time at which the environment group was created as milliseconds since epoch.
-    created_at: Any = None
     # Required. Host names for this environment group.
     hostnames: Any = None
-    # Output only. The time at which the environment group was last updated as milliseconds since epoch.
-    last_modified_at: Any = None
     # ID of the environment group.
     name: Any = None
-    # Output only. State of the environment group. Values other than ACTIVE means the resource is not ready to use.
-    state: Any = None
 
 @dataclasses.dataclass
 class EnvgroupAttrs:
@@ -35,10 +29,7 @@ class EnvgroupAttrs:
 Envgroup = ubx.ResourceBinding(
     wire_type="google_apigee_envgroup",
     fields={
-        "created_at": ubx.FieldSpec(wire_name="created_at"),
         "hostnames": ubx.FieldSpec(wire_name="hostnames"),
-        "last_modified_at": ubx.FieldSpec(wire_name="last_modified_at"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "state": ubx.FieldSpec(wire_name="state"),
     },
 )

@@ -412,10 +412,6 @@ class MappingRuleConfig:
     multi_entity_rename: Any = None
     # Full name of the mapping rule resource, in the form of: projects/{project}/locations/{location}/conversionWorkspaces/{set}/mappingRule/{rule}.
     name: Any = None
-    # Output only. The timestamp that the revision was created.
-    revision_create_time: Any = None
-    # Output only. The revision ID of the mapping rule. A new revision is committed whenever the mapping rule is changed in any way. The format is an 8-character hexadecimal string.
-    revision_id: Any = None
     # Required. The order in which the rule is applied. Lower order rules are applied before higher value rules so they may end up being overridden.
     rule_order: Any = None
     # Required. The rule scope
@@ -514,8 +510,6 @@ MappingRule = ubx.ResourceBinding(
             fields=_MappingRule_MultiEntityRenameFields,
         ),
         "name": ubx.FieldSpec(wire_name="name"),
-        "revision_create_time": ubx.FieldSpec(wire_name="revision_create_time"),
-        "revision_id": ubx.FieldSpec(wire_name="revision_id"),
         "rule_order": ubx.FieldSpec(wire_name="rule_order"),
         "rule_scope": ubx.FieldSpec(wire_name="rule_scope"),
         "set_table_primary_key": ubx.FieldSpec(

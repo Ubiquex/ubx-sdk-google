@@ -12,12 +12,6 @@ type V1alpha1HubConfig struct {
 	Labels any
 	// Immutable. The name of a Hub resource.
 	Name any
-	// Output only. A list of the URIs of all attached spokes. This field is deprecated and will not be included in future API versions. Call ListSpokes on each region instead.
-	Spokes any
-	// Output only. The current lifecycle state of this Hub.
-	State any
-	// Output only. Google-generated UUID for this resource. This is unique across all Hub resources. If a Hub resource is deleted and another with the same name is created, it gets a different unique_id.
-	UniqueId any
 	// Time when the Hub was updated.
 	UpdateTime any
 }
@@ -44,13 +38,10 @@ type V1alpha1HubAttrs struct {
 var V1alpha1Hub = ubx.ResourceBinding{
 	WireType: "google_networkconnectivity_v1alpha1_hub",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
+		"CreateTime":  ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Spokes": ubx.FieldSpec{WireName: "spokes"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"UniqueId": ubx.FieldSpec{WireName: "unique_id"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"UpdateTime":  ubx.FieldSpec{WireName: "update_time"},
 	},
 }

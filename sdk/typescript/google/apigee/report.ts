@@ -40,22 +40,14 @@ export interface ReportConfig {
   chartType?: string | Computed<string>;
   /** Legacy field: not used. This field contains a list of comments associated with custom report */
   comments?: string[] | Computed<string[]>;
-  /** Output only. Unix time when the app was created json key: createdAt */
-  createdAt?: string | Computed<string>;
   /** This contains the list of dimensions for the report */
   dimensions?: string[] | Computed<string[]>;
   /** This is the display name for the report */
   displayName?: string | Computed<string>;
-  /** Output only. Environment name */
-  environment?: string | Computed<string>;
   /** This field contains the filter expression */
   filter?: string | Computed<string>;
   /** Legacy field: not used. Contains the from time for the report */
   fromTime?: string | Computed<string>;
-  /** Output only. Modified time of this entity as milliseconds since epoch. json key: lastModifiedAt */
-  lastModifiedAt?: string | Computed<string>;
-  /** Output only. Last viewed time of this entity as milliseconds since epoch */
-  lastViewedAt?: string | Computed<string>;
   /** Legacy field: not used This field contains the limit for the result retrieved */
   limit?: string | Computed<string>;
   /** Required. This contains the list of metrics */
@@ -64,8 +56,6 @@ export interface ReportConfig {
   name?: string | Computed<string>;
   /** Legacy field: not used. This field contains the offset for the data */
   offset?: string | Computed<string>;
-  /** Output only. Organization name */
-  organization?: string | Computed<string>;
   /** This field contains report properties such as ui metadata etc. */
   properties?: Report_Properties[] | Computed<Report_Properties[]>;
   /** Legacy field: not used much. Contains the list of sort by columns */
@@ -134,14 +124,10 @@ export const Report: ResourceBinding<ReportConfig, ReportAttrs> = {
   fields: {
     chartType: "chart_type",
     comments: "comments",
-    createdAt: "created_at",
     dimensions: "dimensions",
     displayName: "display_name",
-    environment: "environment",
     filter: "filter",
     fromTime: "from_time",
-    lastModifiedAt: "last_modified_at",
-    lastViewedAt: "last_viewed_at",
     limit: "limit",
     metrics: {
       wireName: "metrics",
@@ -150,7 +136,6 @@ export const Report: ResourceBinding<ReportConfig, ReportAttrs> = {
     },
     name: "name",
     offset: "offset",
-    organization: "organization",
     properties: {
       wireName: "properties",
       kind: "list",

@@ -289,20 +289,14 @@ _DbSystem_PropertiesFields = {
 
 @dataclasses.dataclass
 class DbSystemConfig:
-    # Output only. The date and time that the DbSystem was created.
-    create_time: Any = None
     # Required. The display name for the System db. The name does not have to be unique within your project.
     display_name: Any = None
-    # Output only. The ID of the subscription entitlement associated with the DbSystem
-    entitlement_id: Any = None
     # Optional. The GCP Oracle zone where Oracle DbSystem is hosted. Example: us-east4-b-r2. If not specified, the system will pick a zone based on availability.
     gcp_oracle_zone: Any = None
     # Optional. The labels or tags associated with the DbSystem.
     labels: Any = None
     # Identifier. The name of the DbSystem resource in the following format: projects/{project}/locations/{region}/dbSystems/{db_system}
     name: Any = None
-    # Output only. HTTPS link to OCI resources exposed to Customer via UI Interface.
-    oci_url: Any = None
     # Optional. The name of the OdbNetwork associated with the DbSystem. Format: projects/{project}/locations/{location}/odbNetworks/{odb_network} It is optional but if specified, this should match the parent ODBNetwork of the OdbSubnet.
     odb_network: Any = None
     # Required. The name of the OdbSubnet associated with the DbSystem for IP allocation. Format: projects/{project}/locations/{location}/odbNetworks/{odb_network}/odbSubnets/{odb_subnet}
@@ -336,13 +330,10 @@ class DbSystemAttrs:
 DbSystem = ubx.ResourceBinding(
     wire_type="google_oracledatabase_db_system",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
-        "entitlement_id": ubx.FieldSpec(wire_name="entitlement_id"),
         "gcp_oracle_zone": ubx.FieldSpec(wire_name="gcp_oracle_zone"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "oci_url": ubx.FieldSpec(wire_name="oci_url"),
         "odb_network": ubx.FieldSpec(wire_name="odb_network"),
         "odb_subnet": ubx.FieldSpec(wire_name="odb_subnet"),
         "properties": ubx.FieldSpec(

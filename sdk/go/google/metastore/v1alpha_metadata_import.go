@@ -15,27 +15,19 @@ type V1alphaMetadataImport_DatabaseDump struct {
 }
 
 var V1alphaMetadataImport_DatabaseDumpFields = ubx.FieldMap{
-		"DatabaseType": ubx.FieldSpec{WireName: "database_type"},
-		"GcsUri": ubx.FieldSpec{WireName: "gcs_uri"},
-		"SourceDatabase": ubx.FieldSpec{WireName: "source_database"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"DatabaseType":   ubx.FieldSpec{WireName: "database_type"},
+	"GcsUri":         ubx.FieldSpec{WireName: "gcs_uri"},
+	"SourceDatabase": ubx.FieldSpec{WireName: "source_database"},
+	"Type":           ubx.FieldSpec{WireName: "type"},
+}
 
 type V1alphaMetadataImportConfig struct {
-	// Output only. The time when the metadata import was started.
-	CreateTime any
 	// A specification of the location of and metadata about a database dump from a relational database management system.
 	DatabaseDump any
 	// Optional. The description of the metadata import.
 	Description any
-	// Output only. The time when the metadata import finished.
-	EndTime any
 	// Immutable. Identifier. The relative resource name of the metadata import, of the form:projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports/{metadata_import_id}.
 	Name any
-	// Output only. The current state of the metadata import.
-	State any
-	// Output only. The time when the metadata import was last updated.
-	UpdateTime any
 }
 
 type V1alphaMetadataImportAttrs struct {
@@ -58,16 +50,12 @@ type V1alphaMetadataImportAttrs struct {
 var V1alphaMetadataImport = ubx.ResourceBinding{
 	WireType: "google_metastore_v1alpha_metadata_import",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"DatabaseDump": ubx.FieldSpec{
 			WireName: "database_dump",
-			Kind: "object",
-			Fields: V1alphaMetadataImport_DatabaseDumpFields,
+			Kind:     "object",
+			Fields:   V1alphaMetadataImport_DatabaseDumpFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 	},
 }

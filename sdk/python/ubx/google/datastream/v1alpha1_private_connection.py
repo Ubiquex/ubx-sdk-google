@@ -41,20 +41,12 @@ _V1alpha1PrivateConnection_VpcPeeringConfigFields = {
 
 @dataclasses.dataclass
 class V1alpha1PrivateConnectionConfig:
-    # Output only. The create time of the resource.
-    create_time: Any = None
     # Required. Display name.
     display_name: Any = None
     # Represent a user-facing Error.
     error: Any = None
     # Labels.
     labels: Any = None
-    # Output only. The resource's name.
-    name: Any = None
-    # Output only. The state of the Private Connection.
-    state: Any = None
-    # Output only. The update time of the resource.
-    update_time: Any = None
     # The VPC Peering configuration is used to create VPC peering between Datastream and the consumer's VPC.
     vpc_peering_config: Any = None
 
@@ -80,7 +72,6 @@ class V1alpha1PrivateConnectionAttrs:
 V1alpha1PrivateConnection = ubx.ResourceBinding(
     wire_type="google_datastream_v1alpha1_private_connection",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "error": ubx.FieldSpec(
             wire_name="error",
@@ -88,9 +79,6 @@ V1alpha1PrivateConnection = ubx.ResourceBinding(
             fields=_V1alpha1PrivateConnection_ErrorFields,
         ),
         "labels": ubx.FieldSpec(wire_name="labels"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
         "vpc_peering_config": ubx.FieldSpec(
             wire_name="vpc_peering_config",
             kind="object",

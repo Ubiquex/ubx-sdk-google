@@ -328,8 +328,6 @@ export interface TenantConfig {
   mobileLinksConfig?: Tenant_MobileLinksConfig | Computed<Tenant_MobileLinksConfig>;
   /** Configuration related to monitoring project activity. */
   monitoring?: Tenant_Monitoring | Computed<Tenant_Monitoring>;
-  /** Output only. Resource name of a tenant. For example: "projects/{project-id}/tenants/{tenant-id}" */
-  name?: string | Computed<string>;
   /** The configuration for the password policy on the project. */
   passwordPolicyConfig?: Tenant_PasswordPolicyConfig | Computed<Tenant_PasswordPolicyConfig>;
   /** The reCAPTCHA Enterprise integration config. */
@@ -423,7 +421,6 @@ export const Tenant: ResourceBinding<TenantConfig, TenantAttrs> = {
       kind: "object",
       fields: Tenant_MonitoringFields,
     },
-    name: "name",
     passwordPolicyConfig: {
       wireName: "password_policy_config",
       kind: "object",

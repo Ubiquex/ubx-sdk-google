@@ -4,18 +4,12 @@ package migrationcenter
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type GroupConfig struct {
-	// Output only. The timestamp when the group was created.
-	CreateTime any
 	// Optional. The description of the group.
 	Description any
 	// Optional. User-friendly display name.
 	DisplayName any
 	// Labels as key value pairs.
 	Labels any
-	// Output only. The name of the group.
-	Name any
-	// Output only. The timestamp when the group was last updated.
-	UpdateTime any
 }
 
 type GroupAttrs struct {
@@ -36,11 +30,8 @@ type GroupAttrs struct {
 var Group = ubx.ResourceBinding{
 	WireType: "google_migrationcenter_group",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
 	},
 }

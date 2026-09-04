@@ -4,8 +4,6 @@ package logging
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ExclusionConfig struct {
-	// Output only. The creation timestamp of the exclusion.This field may not be present for older exclusions.
-	CreateTime any
 	// Optional. A description of this exclusion.
 	Description any
 	// Optional. If set to True, then this exclusion is disabled and it does not exclude any log entries. You can update an exclusion to change the value of this field.
@@ -14,8 +12,6 @@ type ExclusionConfig struct {
 	Filter any
 	// Optional. A client-assigned identifier, such as "load-balancer-exclusion". Identifiers are limited to 100 characters and can include only letters, digits, underscores, hyphens, and periods. First character has to be alphanumeric.
 	Name any
-	// Output only. The last update timestamp of the exclusion.This field may not be present for older exclusions.
-	UpdateTime any
 }
 
 type ExclusionAttrs struct {
@@ -36,11 +32,9 @@ type ExclusionAttrs struct {
 var Exclusion = ubx.ResourceBinding{
 	WireType: "google_logging_exclusion",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Disabled": ubx.FieldSpec{WireName: "disabled"},
-		"Filter": ubx.FieldSpec{WireName: "filter"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"Disabled":    ubx.FieldSpec{WireName: "disabled"},
+		"Filter":      ubx.FieldSpec{WireName: "filter"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 	},
 }

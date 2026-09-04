@@ -40,28 +40,28 @@ type NetworkEndpointGroup_PscData struct {
 }
 
 var NetworkEndpointGroup_AppEngineFields = ubx.FieldMap{
-		"Service": ubx.FieldSpec{WireName: "service"},
-		"UrlMask": ubx.FieldSpec{WireName: "url_mask"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"Service": ubx.FieldSpec{WireName: "service"},
+	"UrlMask": ubx.FieldSpec{WireName: "url_mask"},
+	"Version": ubx.FieldSpec{WireName: "version"},
+}
 
 var NetworkEndpointGroup_CloudFunctionFields = ubx.FieldMap{
-		"Function": ubx.FieldSpec{WireName: "function"},
-		"UrlMask": ubx.FieldSpec{WireName: "url_mask"},
-	}
+	"Function": ubx.FieldSpec{WireName: "function"},
+	"UrlMask":  ubx.FieldSpec{WireName: "url_mask"},
+}
 
 var NetworkEndpointGroup_CloudRunFields = ubx.FieldMap{
-		"Service": ubx.FieldSpec{WireName: "service"},
-		"Tag": ubx.FieldSpec{WireName: "tag"},
-		"UrlMask": ubx.FieldSpec{WireName: "url_mask"},
-	}
+	"Service": ubx.FieldSpec{WireName: "service"},
+	"Tag":     ubx.FieldSpec{WireName: "tag"},
+	"UrlMask": ubx.FieldSpec{WireName: "url_mask"},
+}
 
 var NetworkEndpointGroup_PscDataFields = ubx.FieldMap{
-		"ConsumerPscAddress": ubx.FieldSpec{WireName: "consumer_psc_address"},
-		"ProducerPort": ubx.FieldSpec{WireName: "producer_port"},
-		"PscConnectionId": ubx.FieldSpec{WireName: "psc_connection_id"},
-		"PscConnectionStatus": ubx.FieldSpec{WireName: "psc_connection_status"},
-	}
+	"ConsumerPscAddress":  ubx.FieldSpec{WireName: "consumer_psc_address"},
+	"ProducerPort":        ubx.FieldSpec{WireName: "producer_port"},
+	"PscConnectionId":     ubx.FieldSpec{WireName: "psc_connection_id"},
+	"PscConnectionStatus": ubx.FieldSpec{WireName: "psc_connection_status"},
+}
 
 type NetworkEndpointGroupConfig struct {
 	// Optional. Metadata defined as annotations on the network endpoint group.
@@ -72,16 +72,10 @@ type NetworkEndpointGroupConfig struct {
 	CloudFunction any
 	// Configuration for a Cloud Run network endpoint group (NEG). The service must be provided explicitly or in the URL mask. The tag is optional, may be provided explicitly or in the URL mask. Note: Cloud Run service must be in the same project and located in the same region as the Serverless NEG.
 	CloudRun any
-	// Output only. [Output Only] Creation timestamp inRFC3339 text format.
-	CreationTimestamp any
 	// The default port used if the port number is not specified in the network endpoint. Optional. If the network endpoint type is either GCE_VM_IP,SERVERLESS or PRIVATE_SERVICE_CONNECT, this field must not be specified.
 	DefaultPort any
 	// An optional description of this resource. Provide this property when you create the resource.
 	Description any
-	// Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-	Id any
-	// Output only. [Output Only] Type of the resource. Alwayscompute#networkEndpointGroup for network endpoint group.
-	Kind any
 	// Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
 	Name any
 	// The URL of the network to which all network endpoints in the NEG belong. For networkEndpointType GCE_VM_IP_PORT,GCE_VM_IP_PORTMAP or NON_GCP_PRIVATE_IP_PORT, if this field is not specified, a default network will be used. This field cannot be set for NEGs with networkEndpointType set toSERVERLESS or PRIVATE_SERVICE_CONNECT and for global NEGs. For all other network endpoint types, this field is required.
@@ -92,16 +86,8 @@ type NetworkEndpointGroupConfig struct {
 	PscData any
 	// The target service url used to set up private service connection to a Google API or a PSC Producer Service Attachment. An example value is: asia-northeast3-cloudkms.googleapis.com. Optional. Only valid when networkEndpointType isPRIVATE_SERVICE_CONNECT.
 	PscTargetService any
-	// Output only. [Output Only] The URL of theregion where the network endpoint group is located.
-	Region any
-	// Output only. [Output Only] Server-defined URL for the resource.
-	SelfLink any
-	// Output only. [Output only] Number of network endpoints in the network endpoint group.
-	Size any
 	// Optional URL of the subnetwork to which all network endpoints in the NEG belong.
 	Subnetwork any
-	// Output only. [Output Only] The URL of thezone where the network endpoint group is located.
-	Zone any
 }
 
 type NetworkEndpointGroupAttrs struct {
@@ -151,37 +137,30 @@ var NetworkEndpointGroup = ubx.ResourceBinding{
 		"Annotations": ubx.FieldSpec{WireName: "annotations"},
 		"AppEngine": ubx.FieldSpec{
 			WireName: "app_engine",
-			Kind: "object",
-			Fields: NetworkEndpointGroup_AppEngineFields,
+			Kind:     "object",
+			Fields:   NetworkEndpointGroup_AppEngineFields,
 		},
 		"CloudFunction": ubx.FieldSpec{
 			WireName: "cloud_function",
-			Kind: "object",
-			Fields: NetworkEndpointGroup_CloudFunctionFields,
+			Kind:     "object",
+			Fields:   NetworkEndpointGroup_CloudFunctionFields,
 		},
 		"CloudRun": ubx.FieldSpec{
 			WireName: "cloud_run",
-			Kind: "object",
-			Fields: NetworkEndpointGroup_CloudRunFields,
+			Kind:     "object",
+			Fields:   NetworkEndpointGroup_CloudRunFields,
 		},
-		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
-		"DefaultPort": ubx.FieldSpec{WireName: "default_port"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Network": ubx.FieldSpec{WireName: "network"},
+		"DefaultPort":         ubx.FieldSpec{WireName: "default_port"},
+		"Description":         ubx.FieldSpec{WireName: "description"},
+		"Name":                ubx.FieldSpec{WireName: "name"},
+		"Network":             ubx.FieldSpec{WireName: "network"},
 		"NetworkEndpointType": ubx.FieldSpec{WireName: "network_endpoint_type"},
 		"PscData": ubx.FieldSpec{
 			WireName: "psc_data",
-			Kind: "object",
-			Fields: NetworkEndpointGroup_PscDataFields,
+			Kind:     "object",
+			Fields:   NetworkEndpointGroup_PscDataFields,
 		},
 		"PscTargetService": ubx.FieldSpec{WireName: "psc_target_service"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"Size": ubx.FieldSpec{WireName: "size"},
-		"Subnetwork": ubx.FieldSpec{WireName: "subnetwork"},
-		"Zone": ubx.FieldSpec{WireName: "zone"},
+		"Subnetwork":       ubx.FieldSpec{WireName: "subnetwork"},
 	},
 }

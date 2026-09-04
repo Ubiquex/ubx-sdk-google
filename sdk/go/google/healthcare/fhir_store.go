@@ -39,26 +39,26 @@ type FhirStore_NotificationConfig struct {
 }
 
 type FhirStore_NotificationConfigs struct {
-	PubsubTopic any
-	SendFullResource any
+	PubsubTopic                  any
+	SendFullResource             any
 	SendPreviousResourceOnDelete any
 }
 
 type FhirStore_StreamConfigs_BigqueryDestination_SchemaConfig_LastUpdatedPartitionConfig struct {
 	ExpirationMs any
-	Type any
+	Type         any
 }
 
 type FhirStore_StreamConfigs_BigqueryDestination_SchemaConfig struct {
 	LastUpdatedPartitionConfig any
-	RecursiveStructureDepth any
-	SchemaType any
+	RecursiveStructureDepth    any
+	SchemaType                 any
 }
 
 type FhirStore_StreamConfigs_BigqueryDestination struct {
-	DatasetUri any
-	Force any
-	SchemaConfig any
+	DatasetUri       any
+	Force            any
+	SchemaConfig     any
 	WriteDisposition any
 }
 
@@ -67,20 +67,20 @@ type FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Dicom_KeepList 
 }
 
 type FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Dicom struct {
-	FilterProfile any
-	KeepList any
-	RemoveList any
+	FilterProfile   any
+	KeepList        any
+	RemoveList      any
 	SkipIdRedaction any
 }
 
 type FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Fhir_FieldMetadataList struct {
 	Action any
-	Paths any
+	Paths  any
 }
 
 type FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Fhir struct {
 	DefaultKeepExtensions any
-	FieldMetadataList any
+	FieldMetadataList     any
 }
 
 type FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Image struct {
@@ -92,47 +92,47 @@ type FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Text_Additional
 }
 
 type FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Text_AdditionalTransformations_CryptoHashConfig_KmsWrapped struct {
-	CryptoKey any
+	CryptoKey  any
 	WrappedKey any
 }
 
 type FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Text_AdditionalTransformations_CryptoHashConfig struct {
-	CryptoKey any
+	CryptoKey  any
 	KmsWrapped any
 }
 
 type FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Text_AdditionalTransformations struct {
-	CharacterMaskConfig any
-	CryptoHashConfig any
-	DateShiftConfig any
-	InfoTypes any
-	RedactConfig any
+	CharacterMaskConfig       any
+	CryptoHashConfig          any
+	DateShiftConfig           any
+	InfoTypes                 any
+	RedactConfig              any
 	ReplaceWithInfoTypeConfig any
 }
 
 type FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Text struct {
 	AdditionalTransformations any
-	ExcludeInfoTypes any
-	Transformations any
+	ExcludeInfoTypes          any
+	Transformations           any
 }
 
 type FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config struct {
-	Dicom any
-	Fhir any
-	Image any
-	Text any
+	Dicom                     any
+	Fhir                      any
+	Image                     any
+	Text                      any
 	UseRegionalDataProcessing any
 }
 
 type FhirStore_StreamConfigs_DeidentifiedStoreDestination struct {
 	Config any
-	Store any
+	Store  any
 }
 
 type FhirStore_StreamConfigs struct {
-	BigqueryDestination any
+	BigqueryDestination          any
 	DeidentifiedStoreDestination any
-	ResourceTypes any
+	ResourceTypes                any
 }
 
 type FhirStore_ValidationConfig struct {
@@ -151,215 +151,215 @@ type FhirStore_ValidationConfig struct {
 }
 
 var FhirStore_BulkExportGcsDestinationFields = ubx.FieldMap{
-		"UriPrefix": ubx.FieldSpec{WireName: "uri_prefix"},
-	}
+	"UriPrefix": ubx.FieldSpec{WireName: "uri_prefix"},
+}
 
 var FhirStore_ConsentConfig_AccessDeterminationLogConfigFields = ubx.FieldMap{
-		"LogLevel": ubx.FieldSpec{WireName: "log_level"},
-	}
+	"LogLevel": ubx.FieldSpec{WireName: "log_level"},
+}
 
 var FhirStore_ConsentConfig_ConsentHeaderHandlingFields = ubx.FieldMap{
-		"Profile": ubx.FieldSpec{WireName: "profile"},
-	}
+	"Profile": ubx.FieldSpec{WireName: "profile"},
+}
 
 var FhirStore_ConsentConfigFields = ubx.FieldMap{
-		"AccessDeterminationLogConfig": ubx.FieldSpec{
-			WireName: "access_determination_log_config",
-			Kind: "object",
-			Fields: FhirStore_ConsentConfig_AccessDeterminationLogConfigFields,
-		},
-		"AccessEnforced": ubx.FieldSpec{WireName: "access_enforced"},
-		"ConsentHeaderHandling": ubx.FieldSpec{
-			WireName: "consent_header_handling",
-			Kind: "object",
-			Fields: FhirStore_ConsentConfig_ConsentHeaderHandlingFields,
-		},
-		"EnforcedAdminConsents": ubx.FieldSpec{WireName: "enforced_admin_consents"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"AccessDeterminationLogConfig": ubx.FieldSpec{
+		WireName: "access_determination_log_config",
+		Kind:     "object",
+		Fields:   FhirStore_ConsentConfig_AccessDeterminationLogConfigFields,
+	},
+	"AccessEnforced": ubx.FieldSpec{WireName: "access_enforced"},
+	"ConsentHeaderHandling": ubx.FieldSpec{
+		WireName: "consent_header_handling",
+		Kind:     "object",
+		Fields:   FhirStore_ConsentConfig_ConsentHeaderHandlingFields,
+	},
+	"EnforcedAdminConsents": ubx.FieldSpec{WireName: "enforced_admin_consents"},
+	"Version":               ubx.FieldSpec{WireName: "version"},
+}
 
 var FhirStore_NotificationConfigFields = ubx.FieldMap{
-		"PubsubTopic": ubx.FieldSpec{WireName: "pubsub_topic"},
-		"SendForBulkImport": ubx.FieldSpec{WireName: "send_for_bulk_import"},
-	}
+	"PubsubTopic":       ubx.FieldSpec{WireName: "pubsub_topic"},
+	"SendForBulkImport": ubx.FieldSpec{WireName: "send_for_bulk_import"},
+}
 
 var FhirStore_NotificationConfigsFields = ubx.FieldMap{
-		"PubsubTopic": ubx.FieldSpec{WireName: "pubsub_topic"},
-		"SendFullResource": ubx.FieldSpec{WireName: "send_full_resource"},
-		"SendPreviousResourceOnDelete": ubx.FieldSpec{WireName: "send_previous_resource_on_delete"},
-	}
+	"PubsubTopic":                  ubx.FieldSpec{WireName: "pubsub_topic"},
+	"SendFullResource":             ubx.FieldSpec{WireName: "send_full_resource"},
+	"SendPreviousResourceOnDelete": ubx.FieldSpec{WireName: "send_previous_resource_on_delete"},
+}
 
 var FhirStore_StreamConfigs_BigqueryDestination_SchemaConfig_LastUpdatedPartitionConfigFields = ubx.FieldMap{
-		"ExpirationMs": ubx.FieldSpec{WireName: "expiration_ms"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"ExpirationMs": ubx.FieldSpec{WireName: "expiration_ms"},
+	"Type":         ubx.FieldSpec{WireName: "type"},
+}
 
 var FhirStore_StreamConfigs_BigqueryDestination_SchemaConfigFields = ubx.FieldMap{
-		"LastUpdatedPartitionConfig": ubx.FieldSpec{
-			WireName: "last_updated_partition_config",
-			Kind: "object",
-			Fields: FhirStore_StreamConfigs_BigqueryDestination_SchemaConfig_LastUpdatedPartitionConfigFields,
-		},
-		"RecursiveStructureDepth": ubx.FieldSpec{WireName: "recursive_structure_depth"},
-		"SchemaType": ubx.FieldSpec{WireName: "schema_type"},
-	}
+	"LastUpdatedPartitionConfig": ubx.FieldSpec{
+		WireName: "last_updated_partition_config",
+		Kind:     "object",
+		Fields:   FhirStore_StreamConfigs_BigqueryDestination_SchemaConfig_LastUpdatedPartitionConfigFields,
+	},
+	"RecursiveStructureDepth": ubx.FieldSpec{WireName: "recursive_structure_depth"},
+	"SchemaType":              ubx.FieldSpec{WireName: "schema_type"},
+}
 
 var FhirStore_StreamConfigs_BigqueryDestinationFields = ubx.FieldMap{
-		"DatasetUri": ubx.FieldSpec{WireName: "dataset_uri"},
-		"Force": ubx.FieldSpec{WireName: "force"},
-		"SchemaConfig": ubx.FieldSpec{
-			WireName: "schema_config",
-			Kind: "object",
-			Fields: FhirStore_StreamConfigs_BigqueryDestination_SchemaConfigFields,
-		},
-		"WriteDisposition": ubx.FieldSpec{WireName: "write_disposition"},
-	}
+	"DatasetUri": ubx.FieldSpec{WireName: "dataset_uri"},
+	"Force":      ubx.FieldSpec{WireName: "force"},
+	"SchemaConfig": ubx.FieldSpec{
+		WireName: "schema_config",
+		Kind:     "object",
+		Fields:   FhirStore_StreamConfigs_BigqueryDestination_SchemaConfigFields,
+	},
+	"WriteDisposition": ubx.FieldSpec{WireName: "write_disposition"},
+}
 
 var FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Dicom_KeepListFields = ubx.FieldMap{
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-	}
+	"Tags": ubx.FieldSpec{WireName: "tags"},
+}
 
 var FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_DicomFields = ubx.FieldMap{
-		"FilterProfile": ubx.FieldSpec{WireName: "filter_profile"},
-		"KeepList": ubx.FieldSpec{
-			WireName: "keep_list",
-			Kind: "object",
-			Fields: FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Dicom_KeepListFields,
-		},
-		"RemoveList": ubx.FieldSpec{
-			WireName: "remove_list",
-			Kind: "object",
-			Fields: FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Dicom_KeepListFields,
-		},
-		"SkipIdRedaction": ubx.FieldSpec{WireName: "skip_id_redaction"},
-	}
+	"FilterProfile": ubx.FieldSpec{WireName: "filter_profile"},
+	"KeepList": ubx.FieldSpec{
+		WireName: "keep_list",
+		Kind:     "object",
+		Fields:   FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Dicom_KeepListFields,
+	},
+	"RemoveList": ubx.FieldSpec{
+		WireName: "remove_list",
+		Kind:     "object",
+		Fields:   FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Dicom_KeepListFields,
+	},
+	"SkipIdRedaction": ubx.FieldSpec{WireName: "skip_id_redaction"},
+}
 
 var FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Fhir_FieldMetadataListFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
-		"Paths": ubx.FieldSpec{WireName: "paths"},
-	}
+	"Action": ubx.FieldSpec{WireName: "action"},
+	"Paths":  ubx.FieldSpec{WireName: "paths"},
+}
 
 var FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_FhirFields = ubx.FieldMap{
-		"DefaultKeepExtensions": ubx.FieldSpec{WireName: "default_keep_extensions"},
-		"FieldMetadataList": ubx.FieldSpec{
-			WireName: "field_metadata_list",
-			Kind: "list",
-			Fields: FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Fhir_FieldMetadataListFields,
-		},
-	}
+	"DefaultKeepExtensions": ubx.FieldSpec{WireName: "default_keep_extensions"},
+	"FieldMetadataList": ubx.FieldSpec{
+		WireName: "field_metadata_list",
+		Kind:     "list",
+		Fields:   FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Fhir_FieldMetadataListFields,
+	},
+}
 
 var FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_ImageFields = ubx.FieldMap{
-		"TextRedactionMode": ubx.FieldSpec{WireName: "text_redaction_mode"},
-	}
+	"TextRedactionMode": ubx.FieldSpec{WireName: "text_redaction_mode"},
+}
 
 var FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Text_AdditionalTransformations_CharacterMaskConfigFields = ubx.FieldMap{
-		"MaskingCharacter": ubx.FieldSpec{WireName: "masking_character"},
-	}
+	"MaskingCharacter": ubx.FieldSpec{WireName: "masking_character"},
+}
 
 var FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Text_AdditionalTransformations_CryptoHashConfig_KmsWrappedFields = ubx.FieldMap{
-		"CryptoKey": ubx.FieldSpec{WireName: "crypto_key"},
-		"WrappedKey": ubx.FieldSpec{WireName: "wrapped_key"},
-	}
+	"CryptoKey":  ubx.FieldSpec{WireName: "crypto_key"},
+	"WrappedKey": ubx.FieldSpec{WireName: "wrapped_key"},
+}
 
 var FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Text_AdditionalTransformations_CryptoHashConfigFields = ubx.FieldMap{
-		"CryptoKey": ubx.FieldSpec{WireName: "crypto_key"},
-		"KmsWrapped": ubx.FieldSpec{
-			WireName: "kms_wrapped",
-			Kind: "object",
-			Fields: FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Text_AdditionalTransformations_CryptoHashConfig_KmsWrappedFields,
-		},
-	}
+	"CryptoKey": ubx.FieldSpec{WireName: "crypto_key"},
+	"KmsWrapped": ubx.FieldSpec{
+		WireName: "kms_wrapped",
+		Kind:     "object",
+		Fields:   FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Text_AdditionalTransformations_CryptoHashConfig_KmsWrappedFields,
+	},
+}
 
 var FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Text_AdditionalTransformationsFields = ubx.FieldMap{
-		"CharacterMaskConfig": ubx.FieldSpec{
-			WireName: "character_mask_config",
-			Kind: "object",
-			Fields: FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Text_AdditionalTransformations_CharacterMaskConfigFields,
-		},
-		"CryptoHashConfig": ubx.FieldSpec{
-			WireName: "crypto_hash_config",
-			Kind: "object",
-			Fields: FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Text_AdditionalTransformations_CryptoHashConfigFields,
-		},
-		"DateShiftConfig": ubx.FieldSpec{
-			WireName: "date_shift_config",
-			Kind: "object",
-			Fields: FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Text_AdditionalTransformations_CryptoHashConfigFields,
-		},
-		"InfoTypes": ubx.FieldSpec{WireName: "info_types"},
-		"RedactConfig": ubx.FieldSpec{WireName: "redact_config"},
-		"ReplaceWithInfoTypeConfig": ubx.FieldSpec{WireName: "replace_with_info_type_config"},
-	}
+	"CharacterMaskConfig": ubx.FieldSpec{
+		WireName: "character_mask_config",
+		Kind:     "object",
+		Fields:   FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Text_AdditionalTransformations_CharacterMaskConfigFields,
+	},
+	"CryptoHashConfig": ubx.FieldSpec{
+		WireName: "crypto_hash_config",
+		Kind:     "object",
+		Fields:   FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Text_AdditionalTransformations_CryptoHashConfigFields,
+	},
+	"DateShiftConfig": ubx.FieldSpec{
+		WireName: "date_shift_config",
+		Kind:     "object",
+		Fields:   FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Text_AdditionalTransformations_CryptoHashConfigFields,
+	},
+	"InfoTypes":                 ubx.FieldSpec{WireName: "info_types"},
+	"RedactConfig":              ubx.FieldSpec{WireName: "redact_config"},
+	"ReplaceWithInfoTypeConfig": ubx.FieldSpec{WireName: "replace_with_info_type_config"},
+}
 
 var FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_TextFields = ubx.FieldMap{
-		"AdditionalTransformations": ubx.FieldSpec{
-			WireName: "additional_transformations",
-			Kind: "list",
-			Fields: FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Text_AdditionalTransformationsFields,
-		},
-		"ExcludeInfoTypes": ubx.FieldSpec{WireName: "exclude_info_types"},
-		"Transformations": ubx.FieldSpec{
-			WireName: "transformations",
-			Kind: "list",
-			Fields: FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Text_AdditionalTransformationsFields,
-		},
-	}
+	"AdditionalTransformations": ubx.FieldSpec{
+		WireName: "additional_transformations",
+		Kind:     "list",
+		Fields:   FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Text_AdditionalTransformationsFields,
+	},
+	"ExcludeInfoTypes": ubx.FieldSpec{WireName: "exclude_info_types"},
+	"Transformations": ubx.FieldSpec{
+		WireName: "transformations",
+		Kind:     "list",
+		Fields:   FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_Text_AdditionalTransformationsFields,
+	},
+}
 
 var FhirStore_StreamConfigs_DeidentifiedStoreDestination_ConfigFields = ubx.FieldMap{
-		"Dicom": ubx.FieldSpec{
-			WireName: "dicom",
-			Kind: "object",
-			Fields: FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_DicomFields,
-		},
-		"Fhir": ubx.FieldSpec{
-			WireName: "fhir",
-			Kind: "object",
-			Fields: FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_FhirFields,
-		},
-		"Image": ubx.FieldSpec{
-			WireName: "image",
-			Kind: "object",
-			Fields: FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_ImageFields,
-		},
-		"Text": ubx.FieldSpec{
-			WireName: "text",
-			Kind: "object",
-			Fields: FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_TextFields,
-		},
-		"UseRegionalDataProcessing": ubx.FieldSpec{WireName: "use_regional_data_processing"},
-	}
+	"Dicom": ubx.FieldSpec{
+		WireName: "dicom",
+		Kind:     "object",
+		Fields:   FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_DicomFields,
+	},
+	"Fhir": ubx.FieldSpec{
+		WireName: "fhir",
+		Kind:     "object",
+		Fields:   FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_FhirFields,
+	},
+	"Image": ubx.FieldSpec{
+		WireName: "image",
+		Kind:     "object",
+		Fields:   FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_ImageFields,
+	},
+	"Text": ubx.FieldSpec{
+		WireName: "text",
+		Kind:     "object",
+		Fields:   FhirStore_StreamConfigs_DeidentifiedStoreDestination_Config_TextFields,
+	},
+	"UseRegionalDataProcessing": ubx.FieldSpec{WireName: "use_regional_data_processing"},
+}
 
 var FhirStore_StreamConfigs_DeidentifiedStoreDestinationFields = ubx.FieldMap{
-		"Config": ubx.FieldSpec{
-			WireName: "config",
-			Kind: "object",
-			Fields: FhirStore_StreamConfigs_DeidentifiedStoreDestination_ConfigFields,
-		},
-		"Store": ubx.FieldSpec{WireName: "store"},
-	}
+	"Config": ubx.FieldSpec{
+		WireName: "config",
+		Kind:     "object",
+		Fields:   FhirStore_StreamConfigs_DeidentifiedStoreDestination_ConfigFields,
+	},
+	"Store": ubx.FieldSpec{WireName: "store"},
+}
 
 var FhirStore_StreamConfigsFields = ubx.FieldMap{
-		"BigqueryDestination": ubx.FieldSpec{
-			WireName: "bigquery_destination",
-			Kind: "object",
-			Fields: FhirStore_StreamConfigs_BigqueryDestinationFields,
-		},
-		"DeidentifiedStoreDestination": ubx.FieldSpec{
-			WireName: "deidentified_store_destination",
-			Kind: "object",
-			Fields: FhirStore_StreamConfigs_DeidentifiedStoreDestinationFields,
-		},
-		"ResourceTypes": ubx.FieldSpec{WireName: "resource_types"},
-	}
+	"BigqueryDestination": ubx.FieldSpec{
+		WireName: "bigquery_destination",
+		Kind:     "object",
+		Fields:   FhirStore_StreamConfigs_BigqueryDestinationFields,
+	},
+	"DeidentifiedStoreDestination": ubx.FieldSpec{
+		WireName: "deidentified_store_destination",
+		Kind:     "object",
+		Fields:   FhirStore_StreamConfigs_DeidentifiedStoreDestinationFields,
+	},
+	"ResourceTypes": ubx.FieldSpec{WireName: "resource_types"},
+}
 
 var FhirStore_ValidationConfigFields = ubx.FieldMap{
-		"DisableFhirpathValidation": ubx.FieldSpec{WireName: "disable_fhirpath_validation"},
-		"DisableProfileValidation": ubx.FieldSpec{WireName: "disable_profile_validation"},
-		"DisableReferenceTypeValidation": ubx.FieldSpec{WireName: "disable_reference_type_validation"},
-		"DisableRequiredFieldValidation": ubx.FieldSpec{WireName: "disable_required_field_validation"},
-		"EnableFhirpathProfileValidation": ubx.FieldSpec{WireName: "enable_fhirpath_profile_validation"},
-		"EnabledImplementationGuides": ubx.FieldSpec{WireName: "enabled_implementation_guides"},
-	}
+	"DisableFhirpathValidation":       ubx.FieldSpec{WireName: "disable_fhirpath_validation"},
+	"DisableProfileValidation":        ubx.FieldSpec{WireName: "disable_profile_validation"},
+	"DisableReferenceTypeValidation":  ubx.FieldSpec{WireName: "disable_reference_type_validation"},
+	"DisableRequiredFieldValidation":  ubx.FieldSpec{WireName: "disable_required_field_validation"},
+	"EnableFhirpathProfileValidation": ubx.FieldSpec{WireName: "enable_fhirpath_profile_validation"},
+	"EnabledImplementationGuides":     ubx.FieldSpec{WireName: "enabled_implementation_guides"},
+}
 
 type FhirStoreConfig struct {
 	// The configuration for exporting to Cloud Storage using the bulk export API.
@@ -428,40 +428,40 @@ var FhirStore = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"BulkExportGcsDestination": ubx.FieldSpec{
 			WireName: "bulk_export_gcs_destination",
-			Kind: "object",
-			Fields: FhirStore_BulkExportGcsDestinationFields,
+			Kind:     "object",
+			Fields:   FhirStore_BulkExportGcsDestinationFields,
 		},
 		"ComplexDataTypeReferenceParsing": ubx.FieldSpec{WireName: "complex_data_type_reference_parsing"},
 		"ConsentConfig": ubx.FieldSpec{
 			WireName: "consent_config",
-			Kind: "object",
-			Fields: FhirStore_ConsentConfigFields,
+			Kind:     "object",
+			Fields:   FhirStore_ConsentConfigFields,
 		},
 		"DefaultSearchHandlingStrict": ubx.FieldSpec{WireName: "default_search_handling_strict"},
 		"DisableReferentialIntegrity": ubx.FieldSpec{WireName: "disable_referential_integrity"},
-		"DisableResourceVersioning": ubx.FieldSpec{WireName: "disable_resource_versioning"},
-		"EnableUpdateCreate": ubx.FieldSpec{WireName: "enable_update_create"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"DisableResourceVersioning":   ubx.FieldSpec{WireName: "disable_resource_versioning"},
+		"EnableUpdateCreate":          ubx.FieldSpec{WireName: "enable_update_create"},
+		"Labels":                      ubx.FieldSpec{WireName: "labels"},
+		"Name":                        ubx.FieldSpec{WireName: "name"},
 		"NotificationConfig": ubx.FieldSpec{
 			WireName: "notification_config",
-			Kind: "object",
-			Fields: FhirStore_NotificationConfigFields,
+			Kind:     "object",
+			Fields:   FhirStore_NotificationConfigFields,
 		},
 		"NotificationConfigs": ubx.FieldSpec{
 			WireName: "notification_configs",
-			Kind: "list",
-			Fields: FhirStore_NotificationConfigsFields,
+			Kind:     "list",
+			Fields:   FhirStore_NotificationConfigsFields,
 		},
 		"StreamConfigs": ubx.FieldSpec{
 			WireName: "stream_configs",
-			Kind: "list",
-			Fields: FhirStore_StreamConfigsFields,
+			Kind:     "list",
+			Fields:   FhirStore_StreamConfigsFields,
 		},
 		"ValidationConfig": ubx.FieldSpec{
 			WireName: "validation_config",
-			Kind: "object",
-			Fields: FhirStore_ValidationConfigFields,
+			Kind:     "object",
+			Fields:   FhirStore_ValidationConfigFields,
 		},
 		"Version": ubx.FieldSpec{WireName: "version"},
 	},

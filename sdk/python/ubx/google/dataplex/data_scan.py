@@ -1480,8 +1480,6 @@ _DataScan_UnstructuredDataProfileSpecFields = {
 
 @dataclasses.dataclass
 class DataScanConfig:
-    # Output only. The time when the scan was created.
-    create_time: Any = None
     # The data source for DataScan.
     data: Any = None
     # The output of a data discovery scan.
@@ -1512,20 +1510,10 @@ class DataScanConfig:
     execution_status: Any = None
     # Optional. User-defined labels for the scan.
     labels: Any = None
-    # Output only. Identifier. The relative resource name of the scan, of the form: projects/{project}/locations/{location_id}/dataScans/{datascan_id}, where project refers to a project_id or project_number and location_id refers to a Google Cloud region.
-    name: Any = None
-    # Output only. Current state of the DataScan.
-    state: Any = None
-    # Output only. The type of DataScan.
-    type: Any = None
-    # Output only. System generated globally unique ID for the scan. This ID will be different if the scan is deleted and re-created with the same name.
-    uid: Any = None
     # Contains the result of an unstructured data profile scan.
     unstructured_data_profile_result: Any = None
     # Contains the specification for an unstructured data profile scan.
     unstructured_data_profile_spec: Any = None
-    # Output only. The time when the scan was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class DataScanAttrs:
@@ -1579,7 +1567,6 @@ class DataScanAttrs:
 DataScan = ubx.ResourceBinding(
     wire_type="google_dataplex_data_scan",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "data": ubx.FieldSpec(
             wire_name="data",
             kind="object",
@@ -1643,10 +1630,6 @@ DataScan = ubx.ResourceBinding(
             fields=_DataScan_ExecutionStatusFields,
         ),
         "labels": ubx.FieldSpec(wire_name="labels"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "type": ubx.FieldSpec(wire_name="type"),
-        "uid": ubx.FieldSpec(wire_name="uid"),
         "unstructured_data_profile_result": ubx.FieldSpec(
             wire_name="unstructured_data_profile_result",
             kind="object",
@@ -1657,6 +1640,5 @@ DataScan = ubx.ResourceBinding(
             kind="object",
             fields=_DataScan_UnstructuredDataProfileSpecFields,
         ),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

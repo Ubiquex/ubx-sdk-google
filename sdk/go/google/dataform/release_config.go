@@ -50,73 +50,57 @@ type ReleaseConfig_CodeCompilationConfig struct {
 }
 
 type ReleaseConfig_RecentScheduledReleaseRecords_ErrorStatus struct {
-	Code any
+	Code    any
 	Details any
 	Message any
 }
 
 type ReleaseConfig_RecentScheduledReleaseRecords struct {
 	CompilationResult any
-	ErrorStatus any
-	ReleaseTime any
+	ErrorStatus       any
+	ReleaseTime       any
 }
 
 var ReleaseConfig_CodeCompilationConfig_DefaultNotebookRuntimeOptions_GcsRepositorySnapshotDestinationFields = ubx.FieldMap{
-		"RepositorySnapshotUri": ubx.FieldSpec{WireName: "repository_snapshot_uri"},
-	}
+	"RepositorySnapshotUri": ubx.FieldSpec{WireName: "repository_snapshot_uri"},
+}
 
 var ReleaseConfig_CodeCompilationConfig_DefaultNotebookRuntimeOptionsFields = ubx.FieldMap{
-		"AiPlatformNotebookRuntimeTemplate": ubx.FieldSpec{WireName: "ai_platform_notebook_runtime_template"},
-		"GcsOutputBucket": ubx.FieldSpec{WireName: "gcs_output_bucket"},
-		"GcsRepositorySnapshotDestination": ubx.FieldSpec{
-			WireName: "gcs_repository_snapshot_destination",
-			Kind: "object",
-			Fields: ReleaseConfig_CodeCompilationConfig_DefaultNotebookRuntimeOptions_GcsRepositorySnapshotDestinationFields,
-		},
-	}
+	"AiPlatformNotebookRuntimeTemplate": ubx.FieldSpec{WireName: "ai_platform_notebook_runtime_template"},
+	"GcsOutputBucket":                   ubx.FieldSpec{WireName: "gcs_output_bucket"},
+	"GcsRepositorySnapshotDestination": ubx.FieldSpec{
+		WireName: "gcs_repository_snapshot_destination",
+		Kind:     "object",
+		Fields:   ReleaseConfig_CodeCompilationConfig_DefaultNotebookRuntimeOptions_GcsRepositorySnapshotDestinationFields,
+	},
+}
 
 var ReleaseConfig_CodeCompilationConfig_PipelineConfigFields = ubx.FieldMap{
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"PipelineType": ubx.FieldSpec{WireName: "pipeline_type"},
-	}
+	"Path":         ubx.FieldSpec{WireName: "path"},
+	"PipelineType": ubx.FieldSpec{WireName: "pipeline_type"},
+}
 
 var ReleaseConfig_CodeCompilationConfigFields = ubx.FieldMap{
-		"AssertionSchema": ubx.FieldSpec{WireName: "assertion_schema"},
-		"BuiltinAssertionNamePrefix": ubx.FieldSpec{WireName: "builtin_assertion_name_prefix"},
-		"DatabaseSuffix": ubx.FieldSpec{WireName: "database_suffix"},
-		"DefaultDatabase": ubx.FieldSpec{WireName: "default_database"},
-		"DefaultLocation": ubx.FieldSpec{WireName: "default_location"},
-		"DefaultNotebookRuntimeOptions": ubx.FieldSpec{
-			WireName: "default_notebook_runtime_options",
-			Kind: "object",
-			Fields: ReleaseConfig_CodeCompilationConfig_DefaultNotebookRuntimeOptionsFields,
-		},
-		"DefaultSchema": ubx.FieldSpec{WireName: "default_schema"},
-		"PipelineConfig": ubx.FieldSpec{
-			WireName: "pipeline_config",
-			Kind: "object",
-			Fields: ReleaseConfig_CodeCompilationConfig_PipelineConfigFields,
-		},
-		"SchemaSuffix": ubx.FieldSpec{WireName: "schema_suffix"},
-		"TablePrefix": ubx.FieldSpec{WireName: "table_prefix"},
-		"Vars": ubx.FieldSpec{WireName: "vars"},
-	}
-
-var ReleaseConfig_RecentScheduledReleaseRecords_ErrorStatusFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
-
-var ReleaseConfig_RecentScheduledReleaseRecordsFields = ubx.FieldMap{
-		"CompilationResult": ubx.FieldSpec{WireName: "compilation_result"},
-		"ErrorStatus": ubx.FieldSpec{
-			WireName: "error_status",
-			Kind: "object",
-			Fields: ReleaseConfig_RecentScheduledReleaseRecords_ErrorStatusFields,
-		},
-		"ReleaseTime": ubx.FieldSpec{WireName: "release_time"},
-	}
+	"AssertionSchema":            ubx.FieldSpec{WireName: "assertion_schema"},
+	"BuiltinAssertionNamePrefix": ubx.FieldSpec{WireName: "builtin_assertion_name_prefix"},
+	"DatabaseSuffix":             ubx.FieldSpec{WireName: "database_suffix"},
+	"DefaultDatabase":            ubx.FieldSpec{WireName: "default_database"},
+	"DefaultLocation":            ubx.FieldSpec{WireName: "default_location"},
+	"DefaultNotebookRuntimeOptions": ubx.FieldSpec{
+		WireName: "default_notebook_runtime_options",
+		Kind:     "object",
+		Fields:   ReleaseConfig_CodeCompilationConfig_DefaultNotebookRuntimeOptionsFields,
+	},
+	"DefaultSchema": ubx.FieldSpec{WireName: "default_schema"},
+	"PipelineConfig": ubx.FieldSpec{
+		WireName: "pipeline_config",
+		Kind:     "object",
+		Fields:   ReleaseConfig_CodeCompilationConfig_PipelineConfigFields,
+	},
+	"SchemaSuffix": ubx.FieldSpec{WireName: "schema_suffix"},
+	"TablePrefix":  ubx.FieldSpec{WireName: "table_prefix"},
+	"Vars":         ubx.FieldSpec{WireName: "vars"},
+}
 
 type ReleaseConfigConfig struct {
 	// Configures various aspects of Dataform code compilation.
@@ -127,12 +111,8 @@ type ReleaseConfigConfig struct {
 	Disabled any
 	// Required. Git commit/tag/branch name at which the repository should be compiled. Must exist in the remote repository. Examples: - a commit SHA: `12ade345` - a tag: `tag1` - a branch name: `branch1`
 	GitCommitish any
-	// Output only. All the metadata information that is used internally to serve the resource. For example: timestamps, flags, status fields, etc. The format of this field is a JSON string.
-	InternalMetadata any
 	// Identifier. The release config's name.
 	Name any
-	// Output only. Records of the 10 most recent scheduled release attempts, ordered in descending order of `release_time`. Updated whenever automatic creation of a compilation result is triggered by cron_schedule.
-	RecentScheduledReleaseRecords any
 	// Optional. The name of the currently released compilation result for this release config. This value is updated when a compilation result is automatically created from this release config (using cron_schedule), or when this resource is updated by API call (perhaps to roll back to an earlier release). The compilation result must have been created using this release config. Must be in the format `projects/*/locations/*/repositories/*/compilationResults/*`.
 	ReleaseCompilationResult any
 	// Optional. Specifies the time zone to be used when interpreting cron_schedule. Must be a time zone name from the [time zone database](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). If left unspecified, the default is `UTC`.
@@ -165,20 +145,14 @@ var ReleaseConfig = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"CodeCompilationConfig": ubx.FieldSpec{
 			WireName: "code_compilation_config",
-			Kind: "object",
-			Fields: ReleaseConfig_CodeCompilationConfigFields,
+			Kind:     "object",
+			Fields:   ReleaseConfig_CodeCompilationConfigFields,
 		},
-		"CronSchedule": ubx.FieldSpec{WireName: "cron_schedule"},
-		"Disabled": ubx.FieldSpec{WireName: "disabled"},
-		"GitCommitish": ubx.FieldSpec{WireName: "git_commitish"},
-		"InternalMetadata": ubx.FieldSpec{WireName: "internal_metadata"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"RecentScheduledReleaseRecords": ubx.FieldSpec{
-			WireName: "recent_scheduled_release_records",
-			Kind: "list",
-			Fields: ReleaseConfig_RecentScheduledReleaseRecordsFields,
-		},
+		"CronSchedule":             ubx.FieldSpec{WireName: "cron_schedule"},
+		"Disabled":                 ubx.FieldSpec{WireName: "disabled"},
+		"GitCommitish":             ubx.FieldSpec{WireName: "git_commitish"},
+		"Name":                     ubx.FieldSpec{WireName: "name"},
 		"ReleaseCompilationResult": ubx.FieldSpec{WireName: "release_compilation_result"},
-		"TimeZone": ubx.FieldSpec{WireName: "time_zone"},
+		"TimeZone":                 ubx.FieldSpec{WireName: "time_zone"},
 	},
 }

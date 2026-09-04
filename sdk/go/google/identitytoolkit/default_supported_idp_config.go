@@ -20,19 +20,19 @@ type DefaultSupportedIdpConfig_AppleSignInConfig struct {
 }
 
 var DefaultSupportedIdpConfig_AppleSignInConfig_CodeFlowConfigFields = ubx.FieldMap{
-		"KeyId": ubx.FieldSpec{WireName: "key_id"},
-		"PrivateKey": ubx.FieldSpec{WireName: "private_key"},
-		"TeamId": ubx.FieldSpec{WireName: "team_id"},
-	}
+	"KeyId":      ubx.FieldSpec{WireName: "key_id"},
+	"PrivateKey": ubx.FieldSpec{WireName: "private_key"},
+	"TeamId":     ubx.FieldSpec{WireName: "team_id"},
+}
 
 var DefaultSupportedIdpConfig_AppleSignInConfigFields = ubx.FieldMap{
-		"BundleIds": ubx.FieldSpec{WireName: "bundle_ids"},
-		"CodeFlowConfig": ubx.FieldSpec{
-			WireName: "code_flow_config",
-			Kind: "object",
-			Fields: DefaultSupportedIdpConfig_AppleSignInConfig_CodeFlowConfigFields,
-		},
-	}
+	"BundleIds": ubx.FieldSpec{WireName: "bundle_ids"},
+	"CodeFlowConfig": ubx.FieldSpec{
+		WireName: "code_flow_config",
+		Kind:     "object",
+		Fields:   DefaultSupportedIdpConfig_AppleSignInConfig_CodeFlowConfigFields,
+	},
+}
 
 type DefaultSupportedIdpConfigConfig struct {
 	// Additional config for SignInWithApple.
@@ -65,12 +65,12 @@ var DefaultSupportedIdpConfig = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AppleSignInConfig": ubx.FieldSpec{
 			WireName: "apple_sign_in_config",
-			Kind: "object",
-			Fields: DefaultSupportedIdpConfig_AppleSignInConfigFields,
+			Kind:     "object",
+			Fields:   DefaultSupportedIdpConfig_AppleSignInConfigFields,
 		},
-		"ClientId": ubx.FieldSpec{WireName: "client_id"},
+		"ClientId":     ubx.FieldSpec{WireName: "client_id"},
 		"ClientSecret": ubx.FieldSpec{WireName: "client_secret"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Enabled":      ubx.FieldSpec{WireName: "enabled"},
+		"Name":         ubx.FieldSpec{WireName: "name"},
 	},
 }

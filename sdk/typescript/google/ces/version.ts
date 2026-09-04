@@ -2465,16 +2465,10 @@ const Version_SnapshotFields: FieldMap = {
 };
 
 export interface VersionConfig {
-  /** Output only. Timestamp when the app version was created. */
-  createTime?: string | Computed<string>;
-  /** Output only. Email of the user who created the app version. */
-  creator?: string | Computed<string>;
   /** Optional. The description of the app version. */
   description?: string | Computed<string>;
   /** Optional. The display name of the app version. */
   displayName?: string | Computed<string>;
-  /** Output only. Etag used to ensure the object hasn't changed during a read-modify-write operation. If the etag is empty, the update will overwrite any concurrent changes. */
-  etag?: string | Computed<string>;
   /** Identifier. The unique identifier of the app version. Format: `projects/{project}/locations/{location}/apps/{app}/versions/{version}` */
   name?: string | Computed<string>;
   /** A snapshot of the app. */
@@ -2501,11 +2495,8 @@ export interface VersionAttrs {
 export const Version: ResourceBinding<VersionConfig, VersionAttrs> = {
   wireType: "google_ces_version",
   fields: {
-    createTime: "create_time",
-    creator: "creator",
     description: "description",
     displayName: "display_name",
-    etag: "etag",
     name: "name",
     snapshot: {
       wireName: "snapshot",

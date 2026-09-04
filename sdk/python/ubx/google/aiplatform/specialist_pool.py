@@ -12,12 +12,8 @@ class SpecialistPoolConfig:
     display_name: Any = None
     # Required. The resource name of the SpecialistPool.
     name: Any = None
-    # Output only. The resource name of the pending data labeling jobs.
-    pending_data_labeling_jobs: Any = None
     # The email addresses of the managers in the SpecialistPool.
     specialist_manager_emails: Any = None
-    # Output only. The number of managers in this SpecialistPool.
-    specialist_managers_count: Any = None
     # The email addresses of workers in the SpecialistPool.
     specialist_worker_emails: Any = None
 
@@ -41,9 +37,7 @@ SpecialistPool = ubx.ResourceBinding(
     fields={
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "pending_data_labeling_jobs": ubx.FieldSpec(wire_name="pending_data_labeling_jobs"),
         "specialist_manager_emails": ubx.FieldSpec(wire_name="specialist_manager_emails"),
-        "specialist_managers_count": ubx.FieldSpec(wire_name="specialist_managers_count"),
         "specialist_worker_emails": ubx.FieldSpec(wire_name="specialist_worker_emails"),
     },
 )

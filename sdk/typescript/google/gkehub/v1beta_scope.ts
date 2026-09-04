@@ -11,10 +11,6 @@ const V1betaScope_StateFields: FieldMap = {
 };
 
 export interface V1betaScopeConfig {
-  /** Output only. When the scope was created. */
-  createTime?: string | Computed<string>;
-  /** Output only. When the scope was deleted. */
-  deleteTime?: string | Computed<string>;
   /** Optional. Labels for this Scope. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** The resource name for the scope `projects/{project}/locations/{location}/scopes/{scope}` */
@@ -23,10 +19,6 @@ export interface V1betaScopeConfig {
   namespaceLabels?: Record<string, string> | Computed<Record<string, string>>;
   /** ScopeLifecycleState describes the state of a Scope resource. */
   state?: V1betaScope_State | Computed<V1betaScope_State>;
-  /** Output only. Google-generated UUID for this resource. This is unique across all scope resources. If a scope resource is deleted and another resource with the same name is created, it gets a different uid. */
-  uid?: string | Computed<string>;
-  /** Output only. When the scope was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1betaScopeAttrs {
@@ -51,8 +43,6 @@ export interface V1betaScopeAttrs {
 export const V1betaScope: ResourceBinding<V1betaScopeConfig, V1betaScopeAttrs> = {
   wireType: "google_gkehub_v1beta_scope",
   fields: {
-    createTime: "create_time",
-    deleteTime: "delete_time",
     labels: "labels",
     name: "name",
     namespaceLabels: "namespace_labels",
@@ -61,7 +51,5 @@ export const V1betaScope: ResourceBinding<V1betaScopeConfig, V1betaScopeAttrs> =
       kind: "object",
       fields: V1betaScope_StateFields,
     },
-    uid: "uid",
-    updateTime: "update_time",
   },
 };

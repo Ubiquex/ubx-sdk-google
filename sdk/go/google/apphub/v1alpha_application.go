@@ -8,9 +8,9 @@ type V1alphaApplication_Attributes_BusinessOwners_Channel struct {
 }
 
 type V1alphaApplication_Attributes_BusinessOwners struct {
-	Channel any
+	Channel     any
 	DisplayName any
-	Email any
+	Email       any
 }
 
 type V1alphaApplication_Attributes_Criticality struct {
@@ -48,67 +48,65 @@ type V1alphaApplication_Scope struct {
 }
 
 var V1alphaApplication_Attributes_BusinessOwners_ChannelFields = ubx.FieldMap{
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"Uri": ubx.FieldSpec{WireName: "uri"},
+}
 
 var V1alphaApplication_Attributes_BusinessOwnersFields = ubx.FieldMap{
-		"Channel": ubx.FieldSpec{
-			WireName: "channel",
-			Kind: "object",
-			Fields: V1alphaApplication_Attributes_BusinessOwners_ChannelFields,
-		},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Email": ubx.FieldSpec{WireName: "email"},
-	}
+	"Channel": ubx.FieldSpec{
+		WireName: "channel",
+		Kind:     "object",
+		Fields:   V1alphaApplication_Attributes_BusinessOwners_ChannelFields,
+	},
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"Email":       ubx.FieldSpec{WireName: "email"},
+}
 
 var V1alphaApplication_Attributes_CriticalityFields = ubx.FieldMap{
-		"Level": ubx.FieldSpec{WireName: "level"},
-		"MissionCritical": ubx.FieldSpec{WireName: "mission_critical"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Level":           ubx.FieldSpec{WireName: "level"},
+	"MissionCritical": ubx.FieldSpec{WireName: "mission_critical"},
+	"Type":            ubx.FieldSpec{WireName: "type"},
+}
 
 var V1alphaApplication_Attributes_EnvironmentFields = ubx.FieldMap{
-		"Environment": ubx.FieldSpec{WireName: "environment"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Environment": ubx.FieldSpec{WireName: "environment"},
+	"Type":        ubx.FieldSpec{WireName: "type"},
+}
 
 var V1alphaApplication_AttributesFields = ubx.FieldMap{
-		"BusinessOwners": ubx.FieldSpec{
-			WireName: "business_owners",
-			Kind: "list",
-			Fields: V1alphaApplication_Attributes_BusinessOwnersFields,
-		},
-		"Criticality": ubx.FieldSpec{
-			WireName: "criticality",
-			Kind: "object",
-			Fields: V1alphaApplication_Attributes_CriticalityFields,
-		},
-		"DeveloperOwners": ubx.FieldSpec{
-			WireName: "developer_owners",
-			Kind: "list",
-			Fields: V1alphaApplication_Attributes_BusinessOwnersFields,
-		},
-		"Environment": ubx.FieldSpec{
-			WireName: "environment",
-			Kind: "object",
-			Fields: V1alphaApplication_Attributes_EnvironmentFields,
-		},
-		"OperatorOwners": ubx.FieldSpec{
-			WireName: "operator_owners",
-			Kind: "list",
-			Fields: V1alphaApplication_Attributes_BusinessOwnersFields,
-		},
-	}
+	"BusinessOwners": ubx.FieldSpec{
+		WireName: "business_owners",
+		Kind:     "list",
+		Fields:   V1alphaApplication_Attributes_BusinessOwnersFields,
+	},
+	"Criticality": ubx.FieldSpec{
+		WireName: "criticality",
+		Kind:     "object",
+		Fields:   V1alphaApplication_Attributes_CriticalityFields,
+	},
+	"DeveloperOwners": ubx.FieldSpec{
+		WireName: "developer_owners",
+		Kind:     "list",
+		Fields:   V1alphaApplication_Attributes_BusinessOwnersFields,
+	},
+	"Environment": ubx.FieldSpec{
+		WireName: "environment",
+		Kind:     "object",
+		Fields:   V1alphaApplication_Attributes_EnvironmentFields,
+	},
+	"OperatorOwners": ubx.FieldSpec{
+		WireName: "operator_owners",
+		Kind:     "list",
+		Fields:   V1alphaApplication_Attributes_BusinessOwnersFields,
+	},
+}
 
 var V1alphaApplication_ScopeFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type V1alphaApplicationConfig struct {
 	// Consumer provided attributes.
 	Attributes any
-	// Output only. Create time.
-	CreateTime any
 	// Optional. User-defined description of an Application. Can have a maximum length of 2048 characters.
 	Description any
 	// Optional. User-defined name for the Application. Can have a maximum length of 63 characters.
@@ -117,12 +115,6 @@ type V1alphaApplicationConfig struct {
 	Name any
 	// Scope of an application.
 	Scope any
-	// Output only. Application state.
-	State any
-	// Output only. A universally unique identifier (in UUID4 format) for the `Application`.
-	Uid any
-	// Output only. Update time.
-	UpdateTime any
 }
 
 type V1alphaApplicationAttrs struct {
@@ -151,20 +143,16 @@ var V1alphaApplication = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Attributes": ubx.FieldSpec{
 			WireName: "attributes",
-			Kind: "object",
-			Fields: V1alphaApplication_AttributesFields,
+			Kind:     "object",
+			Fields:   V1alphaApplication_AttributesFields,
 		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"Scope": ubx.FieldSpec{
 			WireName: "scope",
-			Kind: "object",
-			Fields: V1alphaApplication_ScopeFields,
+			Kind:     "object",
+			Fields:   V1alphaApplication_ScopeFields,
 		},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

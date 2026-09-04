@@ -30,7 +30,7 @@ type CertificateProvisioningProcess_GenericProfile struct {
 }
 
 type CertificateProvisioningProcess_ScepProfile_SubjectAltNames struct {
-	Type any
+	Type  any
 	Value any
 }
 
@@ -72,7 +72,7 @@ type CertificateProvisioningProcessAttrs struct {
 	GenericProfile any
 	// Output only. The issued certificate for this `CertificateProvisioningProcess` in PEM format.
 	IssuedCertificate any
-	Name any
+	Name              any
 	// Output only. The ID of the certificate provisioning profile.
 	ProvisioningProfileId any
 	// Describes a SCEP Certificate Authority Connection.

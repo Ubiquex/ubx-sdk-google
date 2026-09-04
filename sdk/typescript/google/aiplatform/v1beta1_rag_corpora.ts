@@ -332,28 +332,16 @@ export interface V1beta1RagCorporaConfig {
   corpusStatus?: V1beta1RagCorpora_CorpusStatus | Computed<V1beta1RagCorpora_CorpusStatus>;
   /** The config for the corpus type of the RagCorpus. */
   corpusTypeConfig?: V1beta1RagCorpora_CorpusTypeConfig | Computed<V1beta1RagCorpora_CorpusTypeConfig>;
-  /** Output only. Timestamp when this RagCorpus was created. */
-  createTime?: string | Computed<string>;
   /** Optional. The description of the RagCorpus. */
   description?: string | Computed<string>;
   /** Required. The display name of the RagCorpus. The name can be up to 128 characters long and can consist of any UTF-8 characters. */
   displayName?: string | Computed<string>;
   /** Represents a customer-managed encryption key specification that can be applied to a Vertex AI resource. */
   encryptionSpec?: V1beta1RagCorpora_EncryptionSpec | Computed<V1beta1RagCorpora_EncryptionSpec>;
-  /** Output only. The resource name of the RagCorpus. */
-  name?: string | Computed<string>;
   /** Config for the embedding model to use for RAG. */
   ragEmbeddingModelConfig?: V1beta1RagCorpora_RagEmbeddingModelConfig | Computed<V1beta1RagCorpora_RagEmbeddingModelConfig>;
-  /** Output only. Number of RagFiles in the RagCorpus. NOTE: This field is not populated in the response of VertexRagDataService.ListRagCorpora. */
-  ragFilesCount?: number | Computed<number>;
   /** Config for the Vector DB to use for RAG. */
   ragVectorDbConfig?: V1beta1RagCorpora_RagVectorDbConfig | Computed<V1beta1RagCorpora_RagVectorDbConfig>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzi?: boolean | Computed<boolean>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzs?: boolean | Computed<boolean>;
-  /** Output only. Timestamp when this RagCorpus was last updated. */
-  updateTime?: string | Computed<string>;
   /** Config for the Vector DB to use for RAG. */
   vectorDbConfig?: V1beta1RagCorpora_RagVectorDbConfig | Computed<V1beta1RagCorpora_RagVectorDbConfig>;
   /** Config for the Vertex AI Search. */
@@ -406,7 +394,6 @@ export const V1beta1RagCorpora: ResourceBinding<V1beta1RagCorporaConfig, V1beta1
       kind: "object",
       fields: V1beta1RagCorpora_CorpusTypeConfigFields,
     },
-    createTime: "create_time",
     description: "description",
     displayName: "display_name",
     encryptionSpec: {
@@ -414,21 +401,16 @@ export const V1beta1RagCorpora: ResourceBinding<V1beta1RagCorporaConfig, V1beta1
       kind: "object",
       fields: V1beta1RagCorpora_EncryptionSpecFields,
     },
-    name: "name",
     ragEmbeddingModelConfig: {
       wireName: "rag_embedding_model_config",
       kind: "object",
       fields: V1beta1RagCorpora_RagEmbeddingModelConfigFields,
     },
-    ragFilesCount: "rag_files_count",
     ragVectorDbConfig: {
       wireName: "rag_vector_db_config",
       kind: "object",
       fields: V1beta1RagCorpora_RagVectorDbConfigFields,
     },
-    satisfiesPzi: "satisfies_pzi",
-    satisfiesPzs: "satisfies_pzs",
-    updateTime: "update_time",
     vectorDbConfig: {
       wireName: "vector_db_config",
       kind: "object",

@@ -88,8 +88,6 @@ const Entry_EntrySourceFields: FieldMap = {
 export interface EntryConfig {
   /** Optional. The aspects that are attached to the entry. Depending on how the aspect is attached to the entry, the format of the aspect key can be one of the following: If the aspect is attached directly to the entry: {project_id_or_number}.{location_id}.{aspect_type_id} If the aspect is attached to an entry's path: {project_id_or_number}.{location_id}.{aspect_type_id}@{path} */
   aspects?: Record<string, Entry_Aspects> | Computed<Record<string, Entry_Aspects>>;
-  /** Output only. The time when the entry was created in Dataplex Universal Catalog. */
-  createTime?: string | Computed<string>;
   /** Information related to the source system of the data resource that is represented by the entry. */
   entrySource?: Entry_EntrySource | Computed<Entry_EntrySource>;
   /** Required. Immutable. The relative resource name of the entry type that was used to create this entry, in the format projects/{project_id_or_number}/locations/{location_id}/entryTypes/{entry_type_id}. */
@@ -100,8 +98,6 @@ export interface EntryConfig {
   name?: string | Computed<string>;
   /** Optional. Immutable. The resource name of the parent entry, in the format projects/{project_id_or_number}/locations/{location_id}/entryGroups/{entry_group_id}/entries/{entry_id}. */
   parentEntry?: string | Computed<string>;
-  /** Output only. The time when the entry was last updated in Dataplex Universal Catalog. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface EntryAttrs {
@@ -131,7 +127,6 @@ export const Entry: ResourceBinding<EntryConfig, EntryAttrs> = {
       kind: "map",
       fields: Entry_AspectsFields,
     },
-    createTime: "create_time",
     entrySource: {
       wireName: "entry_source",
       kind: "object",
@@ -141,6 +136,5 @@ export const Entry: ResourceBinding<EntryConfig, EntryAttrs> = {
     fullyQualifiedName: "fully_qualified_name",
     name: "name",
     parentEntry: "parent_entry",
-    updateTime: "update_time",
   },
 };

@@ -26,9 +26,9 @@ type AlphaStoragePoolType_Deprecated struct {
 }
 
 type AlphaStoragePoolTypeConfig struct {
-	Project any
+	Project         any
 	StoragePoolType any
-	Zone any
+	Zone            any
 }
 
 type AlphaStoragePoolTypeAttrs struct {
@@ -57,23 +57,23 @@ type AlphaStoragePoolTypeAttrs struct {
 	// [Deprecated] This field is deprecated. Use minPoolProvisionedCapacityGb instead.
 	MinSizeGb any
 	// [Output Only] Name of the resource.
-	Name any
+	Name    any
 	Project any
 	// [Output Only] Server-defined URL for the resource.
 	SelfLink any
 	// Output only. [Output Only] Server-defined URL for this resource with the resource id.
-	SelfLinkWithId any
+	SelfLinkWithId  any
 	StoragePoolType any
 	// [Output Only] The list of disk types supported in this storage pool type.
 	SupportedDiskTypes any
-	Zone any
+	Zone               any
 }
 
 var AlphaStoragePoolType = ubx.DataSourceBinding{
 	WireType: "google_compute_alpha_storage_pool_type",
 	Fields: ubx.FieldMap{
-		"Project": ubx.FieldSpec{WireName: "project"},
+		"Project":         ubx.FieldSpec{WireName: "project"},
 		"StoragePoolType": ubx.FieldSpec{WireName: "storage_pool_type"},
-		"Zone": ubx.FieldSpec{WireName: "zone"},
+		"Zone":            ubx.FieldSpec{WireName: "zone"},
 	},
 }

@@ -11,9 +11,9 @@ type NotificationChannel_CreationRecord struct {
 }
 
 var NotificationChannel_CreationRecordFields = ubx.FieldMap{
-		"MutateTime": ubx.FieldSpec{WireName: "mutate_time"},
-		"MutatedBy": ubx.FieldSpec{WireName: "mutated_by"},
-	}
+	"MutateTime": ubx.FieldSpec{WireName: "mutate_time"},
+	"MutatedBy":  ubx.FieldSpec{WireName: "mutated_by"},
+}
 
 type NotificationChannelConfig struct {
 	// Describes a change made to a configuration.
@@ -66,21 +66,21 @@ var NotificationChannel = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"CreationRecord": ubx.FieldSpec{
 			WireName: "creation_record",
-			Kind: "object",
-			Fields: NotificationChannel_CreationRecordFields,
+			Kind:     "object",
+			Fields:   NotificationChannel_CreationRecordFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Enabled":     ubx.FieldSpec{WireName: "enabled"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
 		"MutationRecords": ubx.FieldSpec{
 			WireName: "mutation_records",
-			Kind: "list",
-			Fields: NotificationChannel_CreationRecordFields,
+			Kind:     "list",
+			Fields:   NotificationChannel_CreationRecordFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"UserLabels": ubx.FieldSpec{WireName: "user_labels"},
+		"Name":               ubx.FieldSpec{WireName: "name"},
+		"Type":               ubx.FieldSpec{WireName: "type"},
+		"UserLabels":         ubx.FieldSpec{WireName: "user_labels"},
 		"VerificationStatus": ubx.FieldSpec{WireName: "verification_status"},
 	},
 }

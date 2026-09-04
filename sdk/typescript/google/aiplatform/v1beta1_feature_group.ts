@@ -50,8 +50,6 @@ const V1beta1FeatureGroup_BigQueryFields: FieldMap = {
 export interface V1beta1FeatureGroupConfig {
   /** Input source type for BigQuery Tables and Views. */
   bigQuery?: V1beta1FeatureGroup_BigQuery | Computed<V1beta1FeatureGroup_BigQuery>;
-  /** Output only. Timestamp when this FeatureGroup was created. */
-  createTime?: string | Computed<string>;
   /** Optional. Description of the FeatureGroup. */
   description?: string | Computed<string>;
   /** Optional. Used to perform consistent read-modify-write updates. If not set, a blind "overwrite" update happens. */
@@ -60,12 +58,8 @@ export interface V1beta1FeatureGroupConfig {
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Identifier. Name of the FeatureGroup. Format: `projects/{project}/locations/{location}/featureGroups/{featureGroup}` */
   name?: string | Computed<string>;
-  /** Output only. A Service Account unique to this FeatureGroup. The role bigquery.dataViewer should be granted to this service account to allow Vertex AI Feature Store to access source data while running jobs under this FeatureGroup. */
-  serviceAccountEmail?: string | Computed<string>;
   /** Optional. Service agent type used during jobs under a FeatureGroup. By default, the Vertex AI Service Agent is used. When using an IAM Policy to isolate this FeatureGroup within a project, a separate service account should be provisioned by setting this field to `SERVICE_AGENT_TYPE_FEATURE_GROUP`. This will generate a separate service account to access the BigQuery source table. */
   serviceAgentType?: string | Computed<string>;
-  /** Output only. Timestamp when this FeatureGroup was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1beta1FeatureGroupAttrs {
@@ -97,13 +91,10 @@ export const V1beta1FeatureGroup: ResourceBinding<V1beta1FeatureGroupConfig, V1b
       kind: "object",
       fields: V1beta1FeatureGroup_BigQueryFields,
     },
-    createTime: "create_time",
     description: "description",
     etag: "etag",
     labels: "labels",
     name: "name",
-    serviceAccountEmail: "service_account_email",
     serviceAgentType: "service_agent_type",
-    updateTime: "update_time",
   },
 };

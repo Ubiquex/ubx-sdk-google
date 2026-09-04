@@ -26,14 +26,10 @@ _Workspace_PrivateResourceMetadataFields = {
 
 @dataclasses.dataclass
 class WorkspaceConfig:
-    # Output only. The timestamp of when the workspace was created.
-    create_time: Any = None
     # Describes encryption state of a resource.
     data_encryption_state: Any = None
     # Optional. If set to true, workspaces will not be moved if its linked Repository is moved. Instead, it will be deleted.
     disable_moves: Any = None
-    # Output only. All the metadata information that is used internally to serve the resource. For example: timestamps, flags, status fields, etc. The format of this field is a JSON string.
-    internal_metadata: Any = None
     # Identifier. The workspace's name.
     name: Any = None
     # Metadata used to identify if a resource is user scoped.
@@ -57,14 +53,12 @@ class WorkspaceAttrs:
 Workspace = ubx.ResourceBinding(
     wire_type="google_dataform_workspace",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "data_encryption_state": ubx.FieldSpec(
             wire_name="data_encryption_state",
             kind="object",
             fields=_Workspace_DataEncryptionStateFields,
         ),
         "disable_moves": ubx.FieldSpec(wire_name="disable_moves"),
-        "internal_metadata": ubx.FieldSpec(wire_name="internal_metadata"),
         "name": ubx.FieldSpec(wire_name="name"),
         "private_resource_metadata": ubx.FieldSpec(
             wire_name="private_resource_metadata",

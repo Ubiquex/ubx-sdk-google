@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BetaRouter_Bgp_AdvertisedIpRanges struct {
 	Description any
-	Range any
+	Range       any
 }
 
 type BetaRouter_Bgp struct {
@@ -24,9 +24,9 @@ type BetaRouter_Bgp struct {
 }
 
 type BetaRouter_BgpPeers_Bfd struct {
-	MinReceiveInterval any
-	MinTransmitInterval any
-	Multiplier any
+	MinReceiveInterval        any
+	MinTransmitInterval       any
+	Multiplier                any
 	SessionInitializationMode any
 }
 
@@ -35,46 +35,46 @@ type BetaRouter_BgpPeers_CustomLearnedIpRanges struct {
 }
 
 type BetaRouter_BgpPeers struct {
-	AdvertiseMode any
-	AdvertisedGroups any
-	AdvertisedIpRanges any
-	AdvertisedRoutePriority any
-	Bfd any
-	CustomLearnedIpRanges any
+	AdvertiseMode              any
+	AdvertisedGroups           any
+	AdvertisedIpRanges         any
+	AdvertisedRoutePriority    any
+	Bfd                        any
+	CustomLearnedIpRanges      any
 	CustomLearnedRoutePriority any
-	Enable any
-	EnableIpv4 any
-	EnableIpv6 any
-	ExportPolicies any
-	ImportPolicies any
-	InterfaceName any
-	IpAddress any
-	Ipv4NexthopAddress any
-	Ipv6NexthopAddress any
-	ManagementType any
-	Md5AuthenticationKeyName any
-	Name any
-	PeerAsn any
-	PeerIpAddress any
-	PeerIpv4NexthopAddress any
-	PeerIpv6NexthopAddress any
-	RouterApplianceInstance any
+	Enable                     any
+	EnableIpv4                 any
+	EnableIpv6                 any
+	ExportPolicies             any
+	ImportPolicies             any
+	InterfaceName              any
+	IpAddress                  any
+	Ipv4NexthopAddress         any
+	Ipv6NexthopAddress         any
+	ManagementType             any
+	Md5AuthenticationKeyName   any
+	Name                       any
+	PeerAsn                    any
+	PeerIpAddress              any
+	PeerIpv4NexthopAddress     any
+	PeerIpv6NexthopAddress     any
+	RouterApplianceInstance    any
 }
 
 type BetaRouter_Interfaces struct {
-	IpRange any
-	IpVersion any
+	IpRange                      any
+	IpVersion                    any
 	LinkedInterconnectAttachment any
-	LinkedVpnTunnel any
-	ManagementType any
-	Name any
-	PrivateIpAddress any
-	RedundantInterface any
-	Subnetwork any
+	LinkedVpnTunnel              any
+	ManagementType               any
+	Name                         any
+	PrivateIpAddress             any
+	RedundantInterface           any
+	Subnetwork                   any
 }
 
 type BetaRouter_Md5AuthenticationKeys struct {
-	Key any
+	Key  any
 	Name any
 }
 
@@ -88,49 +88,49 @@ type BetaRouter_Nats_Nat64Subnetworks struct {
 }
 
 type BetaRouter_Nats_Rules_Action struct {
-	SourceNatActiveIps any
+	SourceNatActiveIps    any
 	SourceNatActiveRanges any
-	SourceNatDrainIps any
-	SourceNatDrainRanges any
+	SourceNatDrainIps     any
+	SourceNatDrainRanges  any
 }
 
 type BetaRouter_Nats_Rules struct {
-	Action any
+	Action      any
 	Description any
-	Match any
-	RuleNumber any
+	Match       any
+	RuleNumber  any
 }
 
 type BetaRouter_Nats_Subnetworks struct {
-	Name any
+	Name                  any
 	SecondaryIpRangeNames any
-	SourceIpRangesToNat any
+	SourceIpRangesToNat   any
 }
 
 type BetaRouter_Nats struct {
-	AutoNetworkTier any
-	DrainNatIps any
-	EffectiveTcpTimeWaitTimeoutSec any
-	EnableDynamicPortAllocation any
+	AutoNetworkTier                  any
+	DrainNatIps                      any
+	EffectiveTcpTimeWaitTimeoutSec   any
+	EnableDynamicPortAllocation      any
 	EnableEndpointIndependentMapping any
-	EndpointTypes any
-	IcmpIdleTimeoutSec any
-	LogConfig any
-	MaxPortsPerVm any
-	MinPortsPerVm any
-	Name any
-	Nat64Subnetworks any
-	NatIpAllocateOption any
-	NatIps any
-	Rules any
-	SourceSubnetworkIpRangesToNat any
-	SourceSubnetworkIpRangesToNat64 any
-	Subnetworks any
-	TcpEstablishedIdleTimeoutSec any
-	TcpTimeWaitTimeoutSec any
-	TcpTransitoryIdleTimeoutSec any
-	Type any
-	UdpIdleTimeoutSec any
+	EndpointTypes                    any
+	IcmpIdleTimeoutSec               any
+	LogConfig                        any
+	MaxPortsPerVm                    any
+	MinPortsPerVm                    any
+	Name                             any
+	Nat64Subnetworks                 any
+	NatIpAllocateOption              any
+	NatIps                           any
+	Rules                            any
+	SourceSubnetworkIpRangesToNat    any
+	SourceSubnetworkIpRangesToNat64  any
+	Subnetworks                      any
+	TcpEstablishedIdleTimeoutSec     any
+	TcpTimeWaitTimeoutSec            any
+	TcpTransitoryIdleTimeoutSec      any
+	Type                             any
+	UdpIdleTimeoutSec                any
 }
 
 type BetaRouter_Params struct {
@@ -139,175 +139,173 @@ type BetaRouter_Params struct {
 }
 
 var BetaRouter_Bgp_AdvertisedIpRangesFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Range": ubx.FieldSpec{WireName: "range"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Range":       ubx.FieldSpec{WireName: "range"},
+}
 
 var BetaRouter_BgpFields = ubx.FieldMap{
-		"AdvertiseMode": ubx.FieldSpec{WireName: "advertise_mode"},
-		"AdvertisedGroups": ubx.FieldSpec{WireName: "advertised_groups"},
-		"AdvertisedIpRanges": ubx.FieldSpec{
-			WireName: "advertised_ip_ranges",
-			Kind: "list",
-			Fields: BetaRouter_Bgp_AdvertisedIpRangesFields,
-		},
-		"Asn": ubx.FieldSpec{WireName: "asn"},
-		"IdentifierRange": ubx.FieldSpec{WireName: "identifier_range"},
-		"KeepaliveInterval": ubx.FieldSpec{WireName: "keepalive_interval"},
-	}
+	"AdvertiseMode":    ubx.FieldSpec{WireName: "advertise_mode"},
+	"AdvertisedGroups": ubx.FieldSpec{WireName: "advertised_groups"},
+	"AdvertisedIpRanges": ubx.FieldSpec{
+		WireName: "advertised_ip_ranges",
+		Kind:     "list",
+		Fields:   BetaRouter_Bgp_AdvertisedIpRangesFields,
+	},
+	"Asn":               ubx.FieldSpec{WireName: "asn"},
+	"IdentifierRange":   ubx.FieldSpec{WireName: "identifier_range"},
+	"KeepaliveInterval": ubx.FieldSpec{WireName: "keepalive_interval"},
+}
 
 var BetaRouter_BgpPeers_BfdFields = ubx.FieldMap{
-		"MinReceiveInterval": ubx.FieldSpec{WireName: "min_receive_interval"},
-		"MinTransmitInterval": ubx.FieldSpec{WireName: "min_transmit_interval"},
-		"Multiplier": ubx.FieldSpec{WireName: "multiplier"},
-		"SessionInitializationMode": ubx.FieldSpec{WireName: "session_initialization_mode"},
-	}
+	"MinReceiveInterval":        ubx.FieldSpec{WireName: "min_receive_interval"},
+	"MinTransmitInterval":       ubx.FieldSpec{WireName: "min_transmit_interval"},
+	"Multiplier":                ubx.FieldSpec{WireName: "multiplier"},
+	"SessionInitializationMode": ubx.FieldSpec{WireName: "session_initialization_mode"},
+}
 
 var BetaRouter_BgpPeers_CustomLearnedIpRangesFields = ubx.FieldMap{
-		"Range": ubx.FieldSpec{WireName: "range"},
-	}
+	"Range": ubx.FieldSpec{WireName: "range"},
+}
 
 var BetaRouter_BgpPeersFields = ubx.FieldMap{
-		"AdvertiseMode": ubx.FieldSpec{WireName: "advertise_mode"},
-		"AdvertisedGroups": ubx.FieldSpec{WireName: "advertised_groups"},
-		"AdvertisedIpRanges": ubx.FieldSpec{
-			WireName: "advertised_ip_ranges",
-			Kind: "list",
-			Fields: BetaRouter_Bgp_AdvertisedIpRangesFields,
-		},
-		"AdvertisedRoutePriority": ubx.FieldSpec{WireName: "advertised_route_priority"},
-		"Bfd": ubx.FieldSpec{
-			WireName: "bfd",
-			Kind: "object",
-			Fields: BetaRouter_BgpPeers_BfdFields,
-		},
-		"CustomLearnedIpRanges": ubx.FieldSpec{
-			WireName: "custom_learned_ip_ranges",
-			Kind: "list",
-			Fields: BetaRouter_BgpPeers_CustomLearnedIpRangesFields,
-		},
-		"CustomLearnedRoutePriority": ubx.FieldSpec{WireName: "custom_learned_route_priority"},
-		"Enable": ubx.FieldSpec{WireName: "enable"},
-		"EnableIpv4": ubx.FieldSpec{WireName: "enable_ipv4"},
-		"EnableIpv6": ubx.FieldSpec{WireName: "enable_ipv6"},
-		"ExportPolicies": ubx.FieldSpec{WireName: "export_policies"},
-		"ImportPolicies": ubx.FieldSpec{WireName: "import_policies"},
-		"InterfaceName": ubx.FieldSpec{WireName: "interface_name"},
-		"IpAddress": ubx.FieldSpec{WireName: "ip_address"},
-		"Ipv4NexthopAddress": ubx.FieldSpec{WireName: "ipv4_nexthop_address"},
-		"Ipv6NexthopAddress": ubx.FieldSpec{WireName: "ipv6_nexthop_address"},
-		"ManagementType": ubx.FieldSpec{WireName: "management_type"},
-		"Md5AuthenticationKeyName": ubx.FieldSpec{WireName: "md5_authentication_key_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PeerAsn": ubx.FieldSpec{WireName: "peer_asn"},
-		"PeerIpAddress": ubx.FieldSpec{WireName: "peer_ip_address"},
-		"PeerIpv4NexthopAddress": ubx.FieldSpec{WireName: "peer_ipv4_nexthop_address"},
-		"PeerIpv6NexthopAddress": ubx.FieldSpec{WireName: "peer_ipv6_nexthop_address"},
-		"RouterApplianceInstance": ubx.FieldSpec{WireName: "router_appliance_instance"},
-	}
+	"AdvertiseMode":    ubx.FieldSpec{WireName: "advertise_mode"},
+	"AdvertisedGroups": ubx.FieldSpec{WireName: "advertised_groups"},
+	"AdvertisedIpRanges": ubx.FieldSpec{
+		WireName: "advertised_ip_ranges",
+		Kind:     "list",
+		Fields:   BetaRouter_Bgp_AdvertisedIpRangesFields,
+	},
+	"AdvertisedRoutePriority": ubx.FieldSpec{WireName: "advertised_route_priority"},
+	"Bfd": ubx.FieldSpec{
+		WireName: "bfd",
+		Kind:     "object",
+		Fields:   BetaRouter_BgpPeers_BfdFields,
+	},
+	"CustomLearnedIpRanges": ubx.FieldSpec{
+		WireName: "custom_learned_ip_ranges",
+		Kind:     "list",
+		Fields:   BetaRouter_BgpPeers_CustomLearnedIpRangesFields,
+	},
+	"CustomLearnedRoutePriority": ubx.FieldSpec{WireName: "custom_learned_route_priority"},
+	"Enable":                     ubx.FieldSpec{WireName: "enable"},
+	"EnableIpv4":                 ubx.FieldSpec{WireName: "enable_ipv4"},
+	"EnableIpv6":                 ubx.FieldSpec{WireName: "enable_ipv6"},
+	"ExportPolicies":             ubx.FieldSpec{WireName: "export_policies"},
+	"ImportPolicies":             ubx.FieldSpec{WireName: "import_policies"},
+	"InterfaceName":              ubx.FieldSpec{WireName: "interface_name"},
+	"IpAddress":                  ubx.FieldSpec{WireName: "ip_address"},
+	"Ipv4NexthopAddress":         ubx.FieldSpec{WireName: "ipv4_nexthop_address"},
+	"Ipv6NexthopAddress":         ubx.FieldSpec{WireName: "ipv6_nexthop_address"},
+	"ManagementType":             ubx.FieldSpec{WireName: "management_type"},
+	"Md5AuthenticationKeyName":   ubx.FieldSpec{WireName: "md5_authentication_key_name"},
+	"Name":                       ubx.FieldSpec{WireName: "name"},
+	"PeerAsn":                    ubx.FieldSpec{WireName: "peer_asn"},
+	"PeerIpAddress":              ubx.FieldSpec{WireName: "peer_ip_address"},
+	"PeerIpv4NexthopAddress":     ubx.FieldSpec{WireName: "peer_ipv4_nexthop_address"},
+	"PeerIpv6NexthopAddress":     ubx.FieldSpec{WireName: "peer_ipv6_nexthop_address"},
+	"RouterApplianceInstance":    ubx.FieldSpec{WireName: "router_appliance_instance"},
+}
 
 var BetaRouter_InterfacesFields = ubx.FieldMap{
-		"IpRange": ubx.FieldSpec{WireName: "ip_range"},
-		"IpVersion": ubx.FieldSpec{WireName: "ip_version"},
-		"LinkedInterconnectAttachment": ubx.FieldSpec{WireName: "linked_interconnect_attachment"},
-		"LinkedVpnTunnel": ubx.FieldSpec{WireName: "linked_vpn_tunnel"},
-		"ManagementType": ubx.FieldSpec{WireName: "management_type"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PrivateIpAddress": ubx.FieldSpec{WireName: "private_ip_address"},
-		"RedundantInterface": ubx.FieldSpec{WireName: "redundant_interface"},
-		"Subnetwork": ubx.FieldSpec{WireName: "subnetwork"},
-	}
+	"IpRange":                      ubx.FieldSpec{WireName: "ip_range"},
+	"IpVersion":                    ubx.FieldSpec{WireName: "ip_version"},
+	"LinkedInterconnectAttachment": ubx.FieldSpec{WireName: "linked_interconnect_attachment"},
+	"LinkedVpnTunnel":              ubx.FieldSpec{WireName: "linked_vpn_tunnel"},
+	"ManagementType":               ubx.FieldSpec{WireName: "management_type"},
+	"Name":                         ubx.FieldSpec{WireName: "name"},
+	"PrivateIpAddress":             ubx.FieldSpec{WireName: "private_ip_address"},
+	"RedundantInterface":           ubx.FieldSpec{WireName: "redundant_interface"},
+	"Subnetwork":                   ubx.FieldSpec{WireName: "subnetwork"},
+}
 
 var BetaRouter_Md5AuthenticationKeysFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Key":  ubx.FieldSpec{WireName: "key"},
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var BetaRouter_Nats_LogConfigFields = ubx.FieldMap{
-		"Enable": ubx.FieldSpec{WireName: "enable"},
-		"Filter": ubx.FieldSpec{WireName: "filter"},
-	}
+	"Enable": ubx.FieldSpec{WireName: "enable"},
+	"Filter": ubx.FieldSpec{WireName: "filter"},
+}
 
 var BetaRouter_Nats_Nat64SubnetworksFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var BetaRouter_Nats_Rules_ActionFields = ubx.FieldMap{
-		"SourceNatActiveIps": ubx.FieldSpec{WireName: "source_nat_active_ips"},
-		"SourceNatActiveRanges": ubx.FieldSpec{WireName: "source_nat_active_ranges"},
-		"SourceNatDrainIps": ubx.FieldSpec{WireName: "source_nat_drain_ips"},
-		"SourceNatDrainRanges": ubx.FieldSpec{WireName: "source_nat_drain_ranges"},
-	}
+	"SourceNatActiveIps":    ubx.FieldSpec{WireName: "source_nat_active_ips"},
+	"SourceNatActiveRanges": ubx.FieldSpec{WireName: "source_nat_active_ranges"},
+	"SourceNatDrainIps":     ubx.FieldSpec{WireName: "source_nat_drain_ips"},
+	"SourceNatDrainRanges":  ubx.FieldSpec{WireName: "source_nat_drain_ranges"},
+}
 
 var BetaRouter_Nats_RulesFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{
-			WireName: "action",
-			Kind: "object",
-			Fields: BetaRouter_Nats_Rules_ActionFields,
-		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Match": ubx.FieldSpec{WireName: "match"},
-		"RuleNumber": ubx.FieldSpec{WireName: "rule_number"},
-	}
+	"Action": ubx.FieldSpec{
+		WireName: "action",
+		Kind:     "object",
+		Fields:   BetaRouter_Nats_Rules_ActionFields,
+	},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Match":       ubx.FieldSpec{WireName: "match"},
+	"RuleNumber":  ubx.FieldSpec{WireName: "rule_number"},
+}
 
 var BetaRouter_Nats_SubnetworksFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SecondaryIpRangeNames": ubx.FieldSpec{WireName: "secondary_ip_range_names"},
-		"SourceIpRangesToNat": ubx.FieldSpec{WireName: "source_ip_ranges_to_nat"},
-	}
+	"Name":                  ubx.FieldSpec{WireName: "name"},
+	"SecondaryIpRangeNames": ubx.FieldSpec{WireName: "secondary_ip_range_names"},
+	"SourceIpRangesToNat":   ubx.FieldSpec{WireName: "source_ip_ranges_to_nat"},
+}
 
 var BetaRouter_NatsFields = ubx.FieldMap{
-		"AutoNetworkTier": ubx.FieldSpec{WireName: "auto_network_tier"},
-		"DrainNatIps": ubx.FieldSpec{WireName: "drain_nat_ips"},
-		"EffectiveTcpTimeWaitTimeoutSec": ubx.FieldSpec{WireName: "effective_tcp_time_wait_timeout_sec"},
-		"EnableDynamicPortAllocation": ubx.FieldSpec{WireName: "enable_dynamic_port_allocation"},
-		"EnableEndpointIndependentMapping": ubx.FieldSpec{WireName: "enable_endpoint_independent_mapping"},
-		"EndpointTypes": ubx.FieldSpec{WireName: "endpoint_types"},
-		"IcmpIdleTimeoutSec": ubx.FieldSpec{WireName: "icmp_idle_timeout_sec"},
-		"LogConfig": ubx.FieldSpec{
-			WireName: "log_config",
-			Kind: "object",
-			Fields: BetaRouter_Nats_LogConfigFields,
-		},
-		"MaxPortsPerVm": ubx.FieldSpec{WireName: "max_ports_per_vm"},
-		"MinPortsPerVm": ubx.FieldSpec{WireName: "min_ports_per_vm"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Nat64Subnetworks": ubx.FieldSpec{
-			WireName: "nat64_subnetworks",
-			Kind: "list",
-			Fields: BetaRouter_Nats_Nat64SubnetworksFields,
-		},
-		"NatIpAllocateOption": ubx.FieldSpec{WireName: "nat_ip_allocate_option"},
-		"NatIps": ubx.FieldSpec{WireName: "nat_ips"},
-		"Rules": ubx.FieldSpec{
-			WireName: "rules",
-			Kind: "list",
-			Fields: BetaRouter_Nats_RulesFields,
-		},
-		"SourceSubnetworkIpRangesToNat": ubx.FieldSpec{WireName: "source_subnetwork_ip_ranges_to_nat"},
-		"SourceSubnetworkIpRangesToNat64": ubx.FieldSpec{WireName: "source_subnetwork_ip_ranges_to_nat64"},
-		"Subnetworks": ubx.FieldSpec{
-			WireName: "subnetworks",
-			Kind: "list",
-			Fields: BetaRouter_Nats_SubnetworksFields,
-		},
-		"TcpEstablishedIdleTimeoutSec": ubx.FieldSpec{WireName: "tcp_established_idle_timeout_sec"},
-		"TcpTimeWaitTimeoutSec": ubx.FieldSpec{WireName: "tcp_time_wait_timeout_sec"},
-		"TcpTransitoryIdleTimeoutSec": ubx.FieldSpec{WireName: "tcp_transitory_idle_timeout_sec"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"UdpIdleTimeoutSec": ubx.FieldSpec{WireName: "udp_idle_timeout_sec"},
-	}
+	"AutoNetworkTier":                  ubx.FieldSpec{WireName: "auto_network_tier"},
+	"DrainNatIps":                      ubx.FieldSpec{WireName: "drain_nat_ips"},
+	"EffectiveTcpTimeWaitTimeoutSec":   ubx.FieldSpec{WireName: "effective_tcp_time_wait_timeout_sec"},
+	"EnableDynamicPortAllocation":      ubx.FieldSpec{WireName: "enable_dynamic_port_allocation"},
+	"EnableEndpointIndependentMapping": ubx.FieldSpec{WireName: "enable_endpoint_independent_mapping"},
+	"EndpointTypes":                    ubx.FieldSpec{WireName: "endpoint_types"},
+	"IcmpIdleTimeoutSec":               ubx.FieldSpec{WireName: "icmp_idle_timeout_sec"},
+	"LogConfig": ubx.FieldSpec{
+		WireName: "log_config",
+		Kind:     "object",
+		Fields:   BetaRouter_Nats_LogConfigFields,
+	},
+	"MaxPortsPerVm": ubx.FieldSpec{WireName: "max_ports_per_vm"},
+	"MinPortsPerVm": ubx.FieldSpec{WireName: "min_ports_per_vm"},
+	"Name":          ubx.FieldSpec{WireName: "name"},
+	"Nat64Subnetworks": ubx.FieldSpec{
+		WireName: "nat64_subnetworks",
+		Kind:     "list",
+		Fields:   BetaRouter_Nats_Nat64SubnetworksFields,
+	},
+	"NatIpAllocateOption": ubx.FieldSpec{WireName: "nat_ip_allocate_option"},
+	"NatIps":              ubx.FieldSpec{WireName: "nat_ips"},
+	"Rules": ubx.FieldSpec{
+		WireName: "rules",
+		Kind:     "list",
+		Fields:   BetaRouter_Nats_RulesFields,
+	},
+	"SourceSubnetworkIpRangesToNat":   ubx.FieldSpec{WireName: "source_subnetwork_ip_ranges_to_nat"},
+	"SourceSubnetworkIpRangesToNat64": ubx.FieldSpec{WireName: "source_subnetwork_ip_ranges_to_nat64"},
+	"Subnetworks": ubx.FieldSpec{
+		WireName: "subnetworks",
+		Kind:     "list",
+		Fields:   BetaRouter_Nats_SubnetworksFields,
+	},
+	"TcpEstablishedIdleTimeoutSec": ubx.FieldSpec{WireName: "tcp_established_idle_timeout_sec"},
+	"TcpTimeWaitTimeoutSec":        ubx.FieldSpec{WireName: "tcp_time_wait_timeout_sec"},
+	"TcpTransitoryIdleTimeoutSec":  ubx.FieldSpec{WireName: "tcp_transitory_idle_timeout_sec"},
+	"Type":                         ubx.FieldSpec{WireName: "type"},
+	"UdpIdleTimeoutSec":            ubx.FieldSpec{WireName: "udp_idle_timeout_sec"},
+}
 
 var BetaRouter_ParamsFields = ubx.FieldMap{
-		"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
-	}
+	"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
+}
 
 type BetaRouterConfig struct {
 	Bgp any
 	// BGP information that must be configured into the routing stack to establish BGP peering. This information must specify the peer ASN and either the interface name, IP address, or peer IP address. Please refer toRFC4273.
 	BgpPeers any
-	// Output only. [Output Only] Creation timestamp inRFC3339 text format.
-	CreationTimestamp any
 	// An optional description of this resource. Provide this property when you create the resource.
 	Description any
 	// Indicates if a router is dedicated for use with encrypted VLAN attachments (interconnectAttachments).
@@ -316,8 +314,6 @@ type BetaRouterConfig struct {
 	Id any
 	// Router interfaces. To create a BGP peer that uses a router interface, the interface must have one of the following fields specified: - linkedVpnTunnel - linkedInterconnectAttachment - subnetwork You can create a router interface without any of these fields specified. However, you cannot create a BGP peer that uses that interface.
 	Interfaces any
-	// Output only. [Output Only] Type of resource. Always compute#router for routers.
-	Kind any
 	// Keys used for MD5 authentication.
 	Md5AuthenticationKeys any
 	// Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
@@ -375,43 +371,41 @@ var BetaRouter = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Bgp": ubx.FieldSpec{
 			WireName: "bgp",
-			Kind: "object",
-			Fields: BetaRouter_BgpFields,
+			Kind:     "object",
+			Fields:   BetaRouter_BgpFields,
 		},
 		"BgpPeers": ubx.FieldSpec{
 			WireName: "bgp_peers",
-			Kind: "list",
-			Fields: BetaRouter_BgpPeersFields,
+			Kind:     "list",
+			Fields:   BetaRouter_BgpPeersFields,
 		},
-		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":                 ubx.FieldSpec{WireName: "description"},
 		"EncryptedInterconnectRouter": ubx.FieldSpec{WireName: "encrypted_interconnect_router"},
-		"Id": ubx.FieldSpec{WireName: "id"},
+		"Id":                          ubx.FieldSpec{WireName: "id"},
 		"Interfaces": ubx.FieldSpec{
 			WireName: "interfaces",
-			Kind: "list",
-			Fields: BetaRouter_InterfacesFields,
+			Kind:     "list",
+			Fields:   BetaRouter_InterfacesFields,
 		},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
 		"Md5AuthenticationKeys": ubx.FieldSpec{
 			WireName: "md5_authentication_keys",
-			Kind: "list",
-			Fields: BetaRouter_Md5AuthenticationKeysFields,
+			Kind:     "list",
+			Fields:   BetaRouter_Md5AuthenticationKeysFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Nats": ubx.FieldSpec{
 			WireName: "nats",
-			Kind: "list",
-			Fields: BetaRouter_NatsFields,
+			Kind:     "list",
+			Fields:   BetaRouter_NatsFields,
 		},
 		"NccGateway": ubx.FieldSpec{WireName: "ncc_gateway"},
-		"Network": ubx.FieldSpec{WireName: "network"},
+		"Network":    ubx.FieldSpec{WireName: "network"},
 		"Params": ubx.FieldSpec{
 			WireName: "params",
-			Kind: "object",
-			Fields: BetaRouter_ParamsFields,
+			Kind:     "object",
+			Fields:   BetaRouter_ParamsFields,
 		},
-		"Region": ubx.FieldSpec{WireName: "region"},
+		"Region":   ubx.FieldSpec{WireName: "region"},
 		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
 	},
 }

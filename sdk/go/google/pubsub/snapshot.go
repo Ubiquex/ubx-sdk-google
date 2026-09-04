@@ -30,8 +30,8 @@ type SnapshotAttrs struct {
 var Snapshot = ubx.ResourceBinding{
 	WireType: "google_pubsub_snapshot",
 	Fields: ubx.FieldMap{
-		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Labels":       ubx.FieldSpec{WireName: "labels"},
 		"Subscription": ubx.FieldSpec{WireName: "subscription"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"Tags":         ubx.FieldSpec{WireName: "tags"},
 	},
 }

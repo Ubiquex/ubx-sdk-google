@@ -8,8 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class V1beta1FeedbackEntryConfig:
-    # Output only. The time at which the entry was created.
-    create_time: Any = None
     # Optional. Additional key-value metadata associated with the feedback.
     custom_metadata: Any = None
     # Required. The ID of the event within the session that the feedback relates to.
@@ -25,8 +23,6 @@ class V1beta1FeedbackEntryConfig:
     session_id: Any = None
     # Optional. The surface that the feedback originated from.
     source: Any = None
-    # Output only. The time at which the entry was most recently updated.
-    update_time: Any = None
     # Optional. A caller-supplied identifier for the user who provided the feedback. The semantics of this field (for example whether it is an opaque token, a hashed value, or a user-visible identifier) are determined by the calling application.
     user_id: Any = None
 
@@ -57,7 +53,6 @@ class V1beta1FeedbackEntryAttrs:
 V1beta1FeedbackEntry = ubx.ResourceBinding(
     wire_type="google_aiplatform_v1beta1_feedback_entry",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "custom_metadata": ubx.FieldSpec(wire_name="custom_metadata"),
         "event_id": ubx.FieldSpec(wire_name="event_id"),
         "feedback_labels": ubx.FieldSpec(wire_name="feedback_labels"),
@@ -66,7 +61,6 @@ V1beta1FeedbackEntry = ubx.ResourceBinding(
         "name": ubx.FieldSpec(wire_name="name"),
         "session_id": ubx.FieldSpec(wire_name="session_id"),
         "source": ubx.FieldSpec(wire_name="source"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
         "user_id": ubx.FieldSpec(wire_name="user_id"),
     },
 )

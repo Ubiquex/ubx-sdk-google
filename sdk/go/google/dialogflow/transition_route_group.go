@@ -8,31 +8,31 @@ type TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_AdvancedSettings_A
 }
 
 type TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_AdvancedSettings_DtmfSettings struct {
-	Enabled any
+	Enabled                    any
 	EndpointingTimeoutDuration any
-	FinishDigit any
-	InterdigitTimeoutDuration any
-	MaxDigits any
+	FinishDigit                any
+	InterdigitTimeoutDuration  any
+	MaxDigits                  any
 }
 
 type TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_AdvancedSettings_LoggingSettings struct {
 	EnableConsentBasedRedaction any
-	EnableInteractionLogging any
-	EnableStackdriverLogging any
+	EnableInteractionLogging    any
+	EnableStackdriverLogging    any
 }
 
 type TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_AdvancedSettings_SpeechSettings struct {
-	EndpointerSensitivity any
-	Models any
-	NoSpeechTimeout any
+	EndpointerSensitivity      any
+	Models                     any
+	NoSpeechTimeout            any
 	UseTimeoutBasedEndpointing any
 }
 
 type TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_AdvancedSettings struct {
 	AudioExportGcsDestination any
-	DtmfSettings any
-	LoggingSettings any
-	SpeechSettings any
+	DtmfSettings              any
+	LoggingSettings           any
+	SpeechSettings            any
 }
 
 type TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_ConversationSuccess struct {
@@ -41,8 +41,8 @@ type TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_ConditionalCases_C
 
 type TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_MixedAudio_Segments struct {
 	AllowPlaybackInterruption any
-	Audio any
-	Uri any
+	Audio                     any
+	Uri                       any
 }
 
 type TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_MixedAudio struct {
@@ -51,13 +51,13 @@ type TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_ConditionalCases_C
 
 type TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_OutputAudioText struct {
 	AllowPlaybackInterruption any
-	Ssml any
-	Text any
+	Ssml                      any
+	Text                      any
 }
 
 type TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_PlayAudio struct {
 	AllowPlaybackInterruption any
-	AudioUri any
+	AudioUri                  any
 }
 
 type TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_TelephonyTransferCall struct {
@@ -66,39 +66,39 @@ type TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_ConditionalCases_C
 
 type TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_Text struct {
 	AllowPlaybackInterruption any
-	Text any
+	Text                      any
 }
 
 type TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_ToolCall struct {
-	Action any
+	Action          any
 	InputParameters any
-	Tool any
+	Tool            any
 }
 
 type TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message struct {
-	Channel any
-	ConversationSuccess any
-	EndInteraction any
-	KnowledgeInfoCard any
-	LiveAgentHandoff any
-	MixedAudio any
-	OutputAudioText any
-	Payload any
-	PlayAudio any
-	ResponseType any
+	Channel               any
+	ConversationSuccess   any
+	EndInteraction        any
+	KnowledgeInfoCard     any
+	LiveAgentHandoff      any
+	MixedAudio            any
+	OutputAudioText       any
+	Payload               any
+	PlayAudio             any
+	ResponseType          any
 	TelephonyTransferCall any
-	Text any
-	ToolCall any
+	Text                  any
+	ToolCall              any
 }
 
 type TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_ConditionalCases_Cases_CaseContent struct {
 	AdditionalCases any
-	Message any
+	Message         any
 }
 
 type TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_ConditionalCases_Cases struct {
 	CaseContent any
-	Condition any
+	Condition   any
 }
 
 type TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_ConditionalCases struct {
@@ -106,272 +106,272 @@ type TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_ConditionalCases s
 }
 
 type TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_Generators struct {
-	Generator any
+	Generator       any
 	InputParameters any
 	OutputParameter any
 }
 
 type TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_SetParameterActions struct {
 	Parameter any
-	Value any
+	Value     any
 }
 
 type TransitionRouteGroup_TransitionRoutes_TriggerFulfillment struct {
-	AdvancedSettings any
-	CodeBlockFunction any
-	ConditionalCases any
+	AdvancedSettings         any
+	CodeBlockFunction        any
+	ConditionalCases         any
 	EnableGenerativeFallback any
-	Generators any
-	Messages any
-	ReturnPartialResponses any
-	SetParameterActions any
-	Tag any
-	Webhook any
+	Generators               any
+	Messages                 any
+	ReturnPartialResponses   any
+	SetParameterActions      any
+	Tag                      any
+	Webhook                  any
 }
 
 type TransitionRouteGroup_TransitionRoutes struct {
-	Condition any
-	Description any
-	Intent any
-	Name any
-	TargetFlow any
-	TargetPage any
+	Condition          any
+	Description        any
+	Intent             any
+	Name               any
+	TargetFlow         any
+	TargetPage         any
 	TriggerFulfillment any
 }
 
 var TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_AdvancedSettings_AudioExportGcsDestinationFields = ubx.FieldMap{
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"Uri": ubx.FieldSpec{WireName: "uri"},
+}
 
 var TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_AdvancedSettings_DtmfSettingsFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"EndpointingTimeoutDuration": ubx.FieldSpec{WireName: "endpointing_timeout_duration"},
-		"FinishDigit": ubx.FieldSpec{WireName: "finish_digit"},
-		"InterdigitTimeoutDuration": ubx.FieldSpec{WireName: "interdigit_timeout_duration"},
-		"MaxDigits": ubx.FieldSpec{WireName: "max_digits"},
-	}
+	"Enabled":                    ubx.FieldSpec{WireName: "enabled"},
+	"EndpointingTimeoutDuration": ubx.FieldSpec{WireName: "endpointing_timeout_duration"},
+	"FinishDigit":                ubx.FieldSpec{WireName: "finish_digit"},
+	"InterdigitTimeoutDuration":  ubx.FieldSpec{WireName: "interdigit_timeout_duration"},
+	"MaxDigits":                  ubx.FieldSpec{WireName: "max_digits"},
+}
 
 var TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_AdvancedSettings_LoggingSettingsFields = ubx.FieldMap{
-		"EnableConsentBasedRedaction": ubx.FieldSpec{WireName: "enable_consent_based_redaction"},
-		"EnableInteractionLogging": ubx.FieldSpec{WireName: "enable_interaction_logging"},
-		"EnableStackdriverLogging": ubx.FieldSpec{WireName: "enable_stackdriver_logging"},
-	}
+	"EnableConsentBasedRedaction": ubx.FieldSpec{WireName: "enable_consent_based_redaction"},
+	"EnableInteractionLogging":    ubx.FieldSpec{WireName: "enable_interaction_logging"},
+	"EnableStackdriverLogging":    ubx.FieldSpec{WireName: "enable_stackdriver_logging"},
+}
 
 var TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_AdvancedSettings_SpeechSettingsFields = ubx.FieldMap{
-		"EndpointerSensitivity": ubx.FieldSpec{WireName: "endpointer_sensitivity"},
-		"Models": ubx.FieldSpec{WireName: "models"},
-		"NoSpeechTimeout": ubx.FieldSpec{WireName: "no_speech_timeout"},
-		"UseTimeoutBasedEndpointing": ubx.FieldSpec{WireName: "use_timeout_based_endpointing"},
-	}
+	"EndpointerSensitivity":      ubx.FieldSpec{WireName: "endpointer_sensitivity"},
+	"Models":                     ubx.FieldSpec{WireName: "models"},
+	"NoSpeechTimeout":            ubx.FieldSpec{WireName: "no_speech_timeout"},
+	"UseTimeoutBasedEndpointing": ubx.FieldSpec{WireName: "use_timeout_based_endpointing"},
+}
 
 var TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_AdvancedSettingsFields = ubx.FieldMap{
-		"AudioExportGcsDestination": ubx.FieldSpec{
-			WireName: "audio_export_gcs_destination",
-			Kind: "object",
-			Fields: TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_AdvancedSettings_AudioExportGcsDestinationFields,
-		},
-		"DtmfSettings": ubx.FieldSpec{
-			WireName: "dtmf_settings",
-			Kind: "object",
-			Fields: TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_AdvancedSettings_DtmfSettingsFields,
-		},
-		"LoggingSettings": ubx.FieldSpec{
-			WireName: "logging_settings",
-			Kind: "object",
-			Fields: TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_AdvancedSettings_LoggingSettingsFields,
-		},
-		"SpeechSettings": ubx.FieldSpec{
-			WireName: "speech_settings",
-			Kind: "object",
-			Fields: TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_AdvancedSettings_SpeechSettingsFields,
-		},
-	}
+	"AudioExportGcsDestination": ubx.FieldSpec{
+		WireName: "audio_export_gcs_destination",
+		Kind:     "object",
+		Fields:   TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_AdvancedSettings_AudioExportGcsDestinationFields,
+	},
+	"DtmfSettings": ubx.FieldSpec{
+		WireName: "dtmf_settings",
+		Kind:     "object",
+		Fields:   TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_AdvancedSettings_DtmfSettingsFields,
+	},
+	"LoggingSettings": ubx.FieldSpec{
+		WireName: "logging_settings",
+		Kind:     "object",
+		Fields:   TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_AdvancedSettings_LoggingSettingsFields,
+	},
+	"SpeechSettings": ubx.FieldSpec{
+		WireName: "speech_settings",
+		Kind:     "object",
+		Fields:   TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_AdvancedSettings_SpeechSettingsFields,
+	},
+}
 
 var TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_ConversationSuccessFields = ubx.FieldMap{
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-	}
+	"Metadata": ubx.FieldSpec{WireName: "metadata"},
+}
 
 var TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_MixedAudio_SegmentsFields = ubx.FieldMap{
-		"AllowPlaybackInterruption": ubx.FieldSpec{WireName: "allow_playback_interruption"},
-		"Audio": ubx.FieldSpec{WireName: "audio"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"AllowPlaybackInterruption": ubx.FieldSpec{WireName: "allow_playback_interruption"},
+	"Audio":                     ubx.FieldSpec{WireName: "audio"},
+	"Uri":                       ubx.FieldSpec{WireName: "uri"},
+}
 
 var TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_MixedAudioFields = ubx.FieldMap{
-		"Segments": ubx.FieldSpec{
-			WireName: "segments",
-			Kind: "list",
-			Fields: TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_MixedAudio_SegmentsFields,
-		},
-	}
+	"Segments": ubx.FieldSpec{
+		WireName: "segments",
+		Kind:     "list",
+		Fields:   TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_MixedAudio_SegmentsFields,
+	},
+}
 
 var TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_OutputAudioTextFields = ubx.FieldMap{
-		"AllowPlaybackInterruption": ubx.FieldSpec{WireName: "allow_playback_interruption"},
-		"Ssml": ubx.FieldSpec{WireName: "ssml"},
-		"Text": ubx.FieldSpec{WireName: "text"},
-	}
+	"AllowPlaybackInterruption": ubx.FieldSpec{WireName: "allow_playback_interruption"},
+	"Ssml":                      ubx.FieldSpec{WireName: "ssml"},
+	"Text":                      ubx.FieldSpec{WireName: "text"},
+}
 
 var TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_PlayAudioFields = ubx.FieldMap{
-		"AllowPlaybackInterruption": ubx.FieldSpec{WireName: "allow_playback_interruption"},
-		"AudioUri": ubx.FieldSpec{WireName: "audio_uri"},
-	}
+	"AllowPlaybackInterruption": ubx.FieldSpec{WireName: "allow_playback_interruption"},
+	"AudioUri":                  ubx.FieldSpec{WireName: "audio_uri"},
+}
 
 var TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_TelephonyTransferCallFields = ubx.FieldMap{
-		"PhoneNumber": ubx.FieldSpec{WireName: "phone_number"},
-	}
+	"PhoneNumber": ubx.FieldSpec{WireName: "phone_number"},
+}
 
 var TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_TextFields = ubx.FieldMap{
-		"AllowPlaybackInterruption": ubx.FieldSpec{WireName: "allow_playback_interruption"},
-		"Text": ubx.FieldSpec{WireName: "text"},
-	}
+	"AllowPlaybackInterruption": ubx.FieldSpec{WireName: "allow_playback_interruption"},
+	"Text":                      ubx.FieldSpec{WireName: "text"},
+}
 
 var TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_ToolCallFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
-		"InputParameters": ubx.FieldSpec{WireName: "input_parameters"},
-		"Tool": ubx.FieldSpec{WireName: "tool"},
-	}
+	"Action":          ubx.FieldSpec{WireName: "action"},
+	"InputParameters": ubx.FieldSpec{WireName: "input_parameters"},
+	"Tool":            ubx.FieldSpec{WireName: "tool"},
+}
 
 var TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_ConditionalCases_Cases_CaseContent_MessageFields = ubx.FieldMap{
-		"Channel": ubx.FieldSpec{WireName: "channel"},
-		"ConversationSuccess": ubx.FieldSpec{
-			WireName: "conversation_success",
-			Kind: "object",
-			Fields: TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_ConversationSuccessFields,
-		},
-		"EndInteraction": ubx.FieldSpec{WireName: "end_interaction"},
-		"KnowledgeInfoCard": ubx.FieldSpec{WireName: "knowledge_info_card"},
-		"LiveAgentHandoff": ubx.FieldSpec{
-			WireName: "live_agent_handoff",
-			Kind: "object",
-			Fields: TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_ConversationSuccessFields,
-		},
-		"MixedAudio": ubx.FieldSpec{
-			WireName: "mixed_audio",
-			Kind: "object",
-			Fields: TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_MixedAudioFields,
-		},
-		"OutputAudioText": ubx.FieldSpec{
-			WireName: "output_audio_text",
-			Kind: "object",
-			Fields: TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_OutputAudioTextFields,
-		},
-		"Payload": ubx.FieldSpec{WireName: "payload"},
-		"PlayAudio": ubx.FieldSpec{
-			WireName: "play_audio",
-			Kind: "object",
-			Fields: TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_PlayAudioFields,
-		},
-		"ResponseType": ubx.FieldSpec{WireName: "response_type"},
-		"TelephonyTransferCall": ubx.FieldSpec{
-			WireName: "telephony_transfer_call",
-			Kind: "object",
-			Fields: TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_TelephonyTransferCallFields,
-		},
-		"Text": ubx.FieldSpec{
-			WireName: "text",
-			Kind: "object",
-			Fields: TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_TextFields,
-		},
-		"ToolCall": ubx.FieldSpec{
-			WireName: "tool_call",
-			Kind: "object",
-			Fields: TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_ToolCallFields,
-		},
-	}
+	"Channel": ubx.FieldSpec{WireName: "channel"},
+	"ConversationSuccess": ubx.FieldSpec{
+		WireName: "conversation_success",
+		Kind:     "object",
+		Fields:   TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_ConversationSuccessFields,
+	},
+	"EndInteraction":    ubx.FieldSpec{WireName: "end_interaction"},
+	"KnowledgeInfoCard": ubx.FieldSpec{WireName: "knowledge_info_card"},
+	"LiveAgentHandoff": ubx.FieldSpec{
+		WireName: "live_agent_handoff",
+		Kind:     "object",
+		Fields:   TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_ConversationSuccessFields,
+	},
+	"MixedAudio": ubx.FieldSpec{
+		WireName: "mixed_audio",
+		Kind:     "object",
+		Fields:   TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_MixedAudioFields,
+	},
+	"OutputAudioText": ubx.FieldSpec{
+		WireName: "output_audio_text",
+		Kind:     "object",
+		Fields:   TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_OutputAudioTextFields,
+	},
+	"Payload": ubx.FieldSpec{WireName: "payload"},
+	"PlayAudio": ubx.FieldSpec{
+		WireName: "play_audio",
+		Kind:     "object",
+		Fields:   TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_PlayAudioFields,
+	},
+	"ResponseType": ubx.FieldSpec{WireName: "response_type"},
+	"TelephonyTransferCall": ubx.FieldSpec{
+		WireName: "telephony_transfer_call",
+		Kind:     "object",
+		Fields:   TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_TelephonyTransferCallFields,
+	},
+	"Text": ubx.FieldSpec{
+		WireName: "text",
+		Kind:     "object",
+		Fields:   TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_TextFields,
+	},
+	"ToolCall": ubx.FieldSpec{
+		WireName: "tool_call",
+		Kind:     "object",
+		Fields:   TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_ToolCallFields,
+	},
+}
 
 var TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_ConditionalCases_Cases_CaseContentFields = ubx.FieldMap{
-		"AdditionalCases": ubx.FieldSpec{WireName: "additional_cases"},
-		"Message": ubx.FieldSpec{
-			WireName: "message",
-			Kind: "object",
-			Fields: TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_ConditionalCases_Cases_CaseContent_MessageFields,
-		},
-	}
+	"AdditionalCases": ubx.FieldSpec{WireName: "additional_cases"},
+	"Message": ubx.FieldSpec{
+		WireName: "message",
+		Kind:     "object",
+		Fields:   TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_ConditionalCases_Cases_CaseContent_MessageFields,
+	},
+}
 
 var TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_ConditionalCases_CasesFields = ubx.FieldMap{
-		"CaseContent": ubx.FieldSpec{
-			WireName: "case_content",
-			Kind: "list",
-			Fields: TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_ConditionalCases_Cases_CaseContentFields,
-		},
-		"Condition": ubx.FieldSpec{WireName: "condition"},
-	}
+	"CaseContent": ubx.FieldSpec{
+		WireName: "case_content",
+		Kind:     "list",
+		Fields:   TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_ConditionalCases_Cases_CaseContentFields,
+	},
+	"Condition": ubx.FieldSpec{WireName: "condition"},
+}
 
 var TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_ConditionalCasesFields = ubx.FieldMap{
-		"Cases": ubx.FieldSpec{
-			WireName: "cases",
-			Kind: "list",
-			Fields: TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_ConditionalCases_CasesFields,
-		},
-	}
+	"Cases": ubx.FieldSpec{
+		WireName: "cases",
+		Kind:     "list",
+		Fields:   TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_ConditionalCases_CasesFields,
+	},
+}
 
 var TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_GeneratorsFields = ubx.FieldMap{
-		"Generator": ubx.FieldSpec{WireName: "generator"},
-		"InputParameters": ubx.FieldSpec{WireName: "input_parameters"},
-		"OutputParameter": ubx.FieldSpec{WireName: "output_parameter"},
-	}
+	"Generator":       ubx.FieldSpec{WireName: "generator"},
+	"InputParameters": ubx.FieldSpec{WireName: "input_parameters"},
+	"OutputParameter": ubx.FieldSpec{WireName: "output_parameter"},
+}
 
 var TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_SetParameterActionsFields = ubx.FieldMap{
-		"Parameter": ubx.FieldSpec{WireName: "parameter"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Parameter": ubx.FieldSpec{WireName: "parameter"},
+	"Value":     ubx.FieldSpec{WireName: "value"},
+}
 
 var TransitionRouteGroup_TransitionRoutes_TriggerFulfillmentFields = ubx.FieldMap{
-		"AdvancedSettings": ubx.FieldSpec{
-			WireName: "advanced_settings",
-			Kind: "object",
-			Fields: TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_AdvancedSettingsFields,
-		},
-		"CodeBlockFunction": ubx.FieldSpec{WireName: "code_block_function"},
-		"ConditionalCases": ubx.FieldSpec{
-			WireName: "conditional_cases",
-			Kind: "list",
-			Fields: TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_ConditionalCasesFields,
-		},
-		"EnableGenerativeFallback": ubx.FieldSpec{WireName: "enable_generative_fallback"},
-		"Generators": ubx.FieldSpec{
-			WireName: "generators",
-			Kind: "list",
-			Fields: TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_GeneratorsFields,
-		},
-		"Messages": ubx.FieldSpec{
-			WireName: "messages",
-			Kind: "list",
-			Fields: TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_ConditionalCases_Cases_CaseContent_MessageFields,
-		},
-		"ReturnPartialResponses": ubx.FieldSpec{WireName: "return_partial_responses"},
-		"SetParameterActions": ubx.FieldSpec{
-			WireName: "set_parameter_actions",
-			Kind: "list",
-			Fields: TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_SetParameterActionsFields,
-		},
-		"Tag": ubx.FieldSpec{WireName: "tag"},
-		"Webhook": ubx.FieldSpec{WireName: "webhook"},
-	}
+	"AdvancedSettings": ubx.FieldSpec{
+		WireName: "advanced_settings",
+		Kind:     "object",
+		Fields:   TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_AdvancedSettingsFields,
+	},
+	"CodeBlockFunction": ubx.FieldSpec{WireName: "code_block_function"},
+	"ConditionalCases": ubx.FieldSpec{
+		WireName: "conditional_cases",
+		Kind:     "list",
+		Fields:   TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_ConditionalCasesFields,
+	},
+	"EnableGenerativeFallback": ubx.FieldSpec{WireName: "enable_generative_fallback"},
+	"Generators": ubx.FieldSpec{
+		WireName: "generators",
+		Kind:     "list",
+		Fields:   TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_GeneratorsFields,
+	},
+	"Messages": ubx.FieldSpec{
+		WireName: "messages",
+		Kind:     "list",
+		Fields:   TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_ConditionalCases_Cases_CaseContent_MessageFields,
+	},
+	"ReturnPartialResponses": ubx.FieldSpec{WireName: "return_partial_responses"},
+	"SetParameterActions": ubx.FieldSpec{
+		WireName: "set_parameter_actions",
+		Kind:     "list",
+		Fields:   TransitionRouteGroup_TransitionRoutes_TriggerFulfillment_SetParameterActionsFields,
+	},
+	"Tag":     ubx.FieldSpec{WireName: "tag"},
+	"Webhook": ubx.FieldSpec{WireName: "webhook"},
+}
 
 var TransitionRouteGroup_TransitionRoutesFields = ubx.FieldMap{
-		"Condition": ubx.FieldSpec{WireName: "condition"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Intent": ubx.FieldSpec{WireName: "intent"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"TargetFlow": ubx.FieldSpec{WireName: "target_flow"},
-		"TargetPage": ubx.FieldSpec{WireName: "target_page"},
-		"TriggerFulfillment": ubx.FieldSpec{
-			WireName: "trigger_fulfillment",
-			Kind: "object",
-			Fields: TransitionRouteGroup_TransitionRoutes_TriggerFulfillmentFields,
-		},
-	}
+	"Condition":   ubx.FieldSpec{WireName: "condition"},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Intent":      ubx.FieldSpec{WireName: "intent"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"TargetFlow":  ubx.FieldSpec{WireName: "target_flow"},
+	"TargetPage":  ubx.FieldSpec{WireName: "target_page"},
+	"TriggerFulfillment": ubx.FieldSpec{
+		WireName: "trigger_fulfillment",
+		Kind:     "object",
+		Fields:   TransitionRouteGroup_TransitionRoutes_TriggerFulfillmentFields,
+	},
+}
 
 type TransitionRouteGroupConfig struct {
-	DisplayName any
-	Name any
+	DisplayName      any
+	Name             any
 	TransitionRoutes any
 }
 
 type TransitionRouteGroupAttrs struct {
-	DisplayName any
-	Name any
+	DisplayName      any
+	Name             any
 	TransitionRoutes any
 }
 
@@ -379,11 +379,11 @@ var TransitionRouteGroup = ubx.ResourceBinding{
 	WireType: "google_dialogflow_transition_route_group",
 	Fields: ubx.FieldMap{
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"TransitionRoutes": ubx.FieldSpec{
 			WireName: "transition_routes",
-			Kind: "list",
-			Fields: TransitionRouteGroup_TransitionRoutesFields,
+			Kind:     "list",
+			Fields:   TransitionRouteGroup_TransitionRoutesFields,
 		},
 	},
 }

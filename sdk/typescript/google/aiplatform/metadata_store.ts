@@ -29,20 +29,14 @@ const MetadataStore_StateFields: FieldMap = {
 };
 
 export interface MetadataStoreConfig {
-  /** Output only. Timestamp when this MetadataStore was created. */
-  createTime?: string | Computed<string>;
   /** Represents Dataplex integration settings. */
   dataplexConfig?: MetadataStore_DataplexConfig | Computed<MetadataStore_DataplexConfig>;
   /** Description of the MetadataStore. */
   description?: string | Computed<string>;
   /** Represents a customer-managed encryption key specification that can be applied to a Vertex AI resource. */
   encryptionSpec?: MetadataStore_EncryptionSpec | Computed<MetadataStore_EncryptionSpec>;
-  /** Output only. The resource name of the MetadataStore instance. */
-  name?: string | Computed<string>;
   /** Represents state information for a MetadataStore. */
   state?: MetadataStore_State | Computed<MetadataStore_State>;
-  /** Output only. Timestamp when this MetadataStore was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface MetadataStoreAttrs {
@@ -65,7 +59,6 @@ export interface MetadataStoreAttrs {
 export const MetadataStore: ResourceBinding<MetadataStoreConfig, MetadataStoreAttrs> = {
   wireType: "google_aiplatform_metadata_store",
   fields: {
-    createTime: "create_time",
     dataplexConfig: {
       wireName: "dataplex_config",
       kind: "object",
@@ -77,12 +70,10 @@ export const MetadataStore: ResourceBinding<MetadataStoreConfig, MetadataStoreAt
       kind: "object",
       fields: MetadataStore_EncryptionSpecFields,
     },
-    name: "name",
     state: {
       wireName: "state",
       kind: "object",
       fields: MetadataStore_StateFields,
     },
-    updateTime: "update_time",
   },
 };

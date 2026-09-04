@@ -4,15 +4,15 @@ package dlp
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Job_ActionDetails_DeidentifyDetails_DeidentifyStats struct {
-	TransformationCount any
+	TransformationCount      any
 	TransformationErrorCount any
-	TransformedBytes any
+	TransformedBytes         any
 }
 
 type Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_RedactionColor struct {
-	Blue any
+	Blue  any
 	Green any
-	Red any
+	Red   any
 }
 
 type Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypes_SensitivityScore struct {
@@ -20,9 +20,9 @@ type Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemp
 }
 
 type Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypes struct {
-	Name any
+	Name             any
 	SensitivityScore any
-	Version any
+	Version          any
 }
 
 type Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes struct {
@@ -30,9 +30,9 @@ type Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemp
 }
 
 type Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms struct {
-	AllInfoTypes any
-	AllText any
-	RedactionColor any
+	AllInfoTypes      any
+	AllText           any
+	RedactionColor    any
 	SelectedInfoTypes any
 }
 
@@ -41,32 +41,32 @@ type Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemp
 }
 
 type Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_Max_DateValue struct {
-	Day any
+	Day   any
 	Month any
-	Year any
+	Year  any
 }
 
 type Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_Max_TimeValue struct {
-	Hours any
+	Hours   any
 	Minutes any
-	Nanos any
+	Nanos   any
 	Seconds any
 }
 
 type Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_Max struct {
-	BooleanValue any
-	DateValue any
+	BooleanValue   any
+	DateValue      any
 	DayOfWeekValue any
-	FloatValue any
-	IntegerValue any
-	StringValue any
-	TimeValue any
+	FloatValue     any
+	IntegerValue   any
+	StringValue    any
+	TimeValue      any
 	TimestampValue any
 }
 
 type Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets struct {
-	Max any
-	Min any
+	Max              any
+	Min              any
 	ReplacementValue any
 }
 
@@ -75,15 +75,15 @@ type Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemp
 }
 
 type Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CharacterMaskConfig_CharactersToIgnore struct {
-	CharactersToSkip any
+	CharactersToSkip         any
 	CommonCharactersToIgnore any
 }
 
 type Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CharacterMaskConfig struct {
 	CharactersToIgnore any
-	MaskingCharacter any
-	NumberToMask any
-	ReverseOrder any
+	MaskingCharacter   any
+	NumberToMask       any
+	ReverseOrder       any
 }
 
 type Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_Context struct {
@@ -92,7 +92,7 @@ type Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemp
 
 type Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_CryptoKey_KmsWrapped struct {
 	CryptoKeyName any
-	WrappedKey any
+	WrappedKey    any
 }
 
 type Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_CryptoKey_Unwrapped struct {
@@ -101,13 +101,13 @@ type Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemp
 
 type Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_CryptoKey struct {
 	KmsWrapped any
-	Transient any
-	Unwrapped any
+	Transient  any
+	Unwrapped  any
 }
 
 type Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig struct {
-	Context any
-	CryptoKey any
+	Context           any
+	CryptoKey         any
 	SurrogateInfoType any
 }
 
@@ -116,17 +116,17 @@ type Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemp
 }
 
 type Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoReplaceFfxFpeConfig struct {
-	CommonAlphabet any
-	Context any
-	CryptoKey any
-	CustomAlphabet any
-	Radix any
+	CommonAlphabet    any
+	Context           any
+	CryptoKey         any
+	CustomAlphabet    any
+	Radix             any
 	SurrogateInfoType any
 }
 
 type Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_DateShiftConfig struct {
-	Context any
-	CryptoKey any
+	Context        any
+	CryptoKey      any
 	LowerBoundDays any
 	UpperBoundDays any
 }
@@ -154,22 +154,22 @@ type Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemp
 }
 
 type Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation struct {
-	BucketingConfig any
-	CharacterMaskConfig any
+	BucketingConfig           any
+	CharacterMaskConfig       any
 	CryptoDeterministicConfig any
-	CryptoHashConfig any
+	CryptoHashConfig          any
 	CryptoReplaceFfxFpeConfig any
-	DateShiftConfig any
-	FixedSizeBucketingConfig any
-	RedactConfig any
-	ReplaceConfig any
-	ReplaceDictionaryConfig any
+	DateShiftConfig           any
+	FixedSizeBucketingConfig  any
+	RedactConfig              any
+	ReplaceConfig             any
+	ReplaceDictionaryConfig   any
 	ReplaceWithInfoTypeConfig any
-	TimePartConfig any
+	TimePartConfig            any
 }
 
 type Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations struct {
-	InfoTypes any
+	InfoTypes               any
 	PrimitiveTransformation any
 }
 
@@ -178,9 +178,9 @@ type Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemp
 }
 
 type Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_RecordTransformations_FieldTransformations_Condition_Expressions_Conditions_Conditions struct {
-	Field any
+	Field    any
 	Operator any
-	Value any
+	Value    any
 }
 
 type Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_RecordTransformations_FieldTransformations_Condition_Expressions_Conditions struct {
@@ -188,7 +188,7 @@ type Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemp
 }
 
 type Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_RecordTransformations_FieldTransformations_Condition_Expressions struct {
-	Conditions any
+	Conditions      any
 	LogicalOperator any
 }
 
@@ -197,8 +197,8 @@ type Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemp
 }
 
 type Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_RecordTransformations_FieldTransformations struct {
-	Condition any
-	Fields any
+	Condition               any
+	Fields                  any
 	InfoTypeTransformations any
 	PrimitiveTransformation any
 }
@@ -209,38 +209,38 @@ type Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemp
 
 type Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_RecordTransformations struct {
 	FieldTransformations any
-	RecordSuppressions any
+	RecordSuppressions   any
 }
 
 type Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_TransformationErrorHandling struct {
 	LeaveUntransformed any
-	ThrowError any
+	ThrowError         any
 }
 
 type Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig struct {
-	ImageTransformations any
-	InfoTypeTransformations any
-	RecordTransformations any
+	ImageTransformations        any
+	InfoTypeTransformations     any
+	RecordTransformations       any
 	TransformationErrorHandling any
 }
 
 type Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate struct {
-	CreateTime any
+	CreateTime       any
 	DeidentifyConfig any
-	Description any
-	DisplayName any
-	Name any
-	UpdateTime any
+	Description      any
+	DisplayName      any
+	Name             any
+	UpdateTime       any
 }
 
 type Job_ActionDetails_DeidentifyDetails_RequestedOptions struct {
-	SnapshotDeidentifyTemplate any
-	SnapshotImageRedactTemplate any
+	SnapshotDeidentifyTemplate           any
+	SnapshotImageRedactTemplate          any
 	SnapshotStructuredDeidentifyTemplate any
 }
 
 type Job_ActionDetails_DeidentifyDetails struct {
-	DeidentifyStats any
+	DeidentifyStats  any
 	RequestedOptions any
 }
 
@@ -249,27 +249,27 @@ type Job_ActionDetails struct {
 }
 
 type Job_Errors_Details struct {
-	Code any
+	Code    any
 	Details any
 	Message any
 }
 
 type Job_Errors struct {
-	Details any
-	ExtraInfo any
+	Details    any
+	ExtraInfo  any
 	Timestamps any
 }
 
 type Job_InspectDetails_RequestedOptions_JobConfig_Actions_Deidentify_TransformationConfig struct {
-	DeidentifyTemplate any
-	ImageRedactTemplate any
+	DeidentifyTemplate           any
+	ImageRedactTemplate          any
 	StructuredDeidentifyTemplate any
 }
 
 type Job_InspectDetails_RequestedOptions_JobConfig_Actions_Deidentify_TransformationDetailsStorageConfig_Table struct {
 	DatasetId any
 	ProjectId any
-	TableId any
+	TableId   any
 }
 
 type Job_InspectDetails_RequestedOptions_JobConfig_Actions_Deidentify_TransformationDetailsStorageConfig struct {
@@ -277,9 +277,9 @@ type Job_InspectDetails_RequestedOptions_JobConfig_Actions_Deidentify_Transforma
 }
 
 type Job_InspectDetails_RequestedOptions_JobConfig_Actions_Deidentify struct {
-	CloudStorageOutput any
-	FileTypesToTransform any
-	TransformationConfig any
+	CloudStorageOutput                 any
+	FileTypesToTransform               any
+	TransformationConfig               any
 	TransformationDetailsStorageConfig any
 }
 
@@ -293,8 +293,8 @@ type Job_InspectDetails_RequestedOptions_JobConfig_Actions_SaveFindings_OutputCo
 
 type Job_InspectDetails_RequestedOptions_JobConfig_Actions_SaveFindings_OutputConfig struct {
 	OutputSchema any
-	StoragePath any
-	Table any
+	StoragePath  any
+	Table        any
 }
 
 type Job_InspectDetails_RequestedOptions_JobConfig_Actions_SaveFindings struct {
@@ -302,35 +302,35 @@ type Job_InspectDetails_RequestedOptions_JobConfig_Actions_SaveFindings struct {
 }
 
 type Job_InspectDetails_RequestedOptions_JobConfig_Actions struct {
-	Deidentify any
-	JobNotificationEmails any
-	PubSub any
+	Deidentify                        any
+	JobNotificationEmails             any
+	PubSub                            any
 	PublishFindingsToCloudDataCatalog any
-	PublishFindingsToDataplexCatalog any
-	PublishSummaryToCscc any
-	PublishToStackdriver any
-	SaveFindings any
+	PublishFindingsToDataplexCatalog  any
+	PublishSummaryToCscc              any
+	PublishToStackdriver              any
+	SaveFindings                      any
 }
 
 type Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_HotwordRegex struct {
 	GroupIndexes any
-	Pattern any
+	Pattern      any
 }
 
 type Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_LikelihoodAdjustment struct {
-	FixedLikelihood any
+	FixedLikelihood    any
 	RelativeLikelihood any
 }
 
 type Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_Proximity struct {
-	WindowAfter any
+	WindowAfter  any
 	WindowBefore any
 }
 
 type Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule struct {
-	HotwordRegex any
+	HotwordRegex         any
 	LikelihoodAdjustment any
-	Proximity any
+	Proximity            any
 }
 
 type Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_DetectionRules struct {
@@ -339,17 +339,17 @@ type Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes
 
 type Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_Dictionary struct {
 	CloudStoragePath any
-	WordList any
+	WordList         any
 }
 
 type Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_FileLabelInfoType_GoogleDriveLabel_LabelFieldsToMatch struct {
-	Id any
+	Id    any
 	Value any
 }
 
 type Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_FileLabelInfoType_GoogleDriveLabel struct {
 	LabelFieldsToMatch any
-	LabelId any
+	LabelId            any
 }
 
 type Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_FileLabelInfoType_SensitivityLabel struct {
@@ -362,31 +362,31 @@ type Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes
 }
 
 type Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_MetadataKeyValueExpression struct {
-	KeyRegex any
+	KeyRegex   any
 	ValueRegex any
 }
 
 type Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_StoredType struct {
 	CreateTime any
-	Name any
+	Name       any
 }
 
 type Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes struct {
-	DetectionRules any
-	Dictionary any
-	ExclusionType any
-	FileLabelInfoType any
-	InfoType any
-	Likelihood any
+	DetectionRules             any
+	Dictionary                 any
+	ExclusionType              any
+	FileLabelInfoType          any
+	InfoType                   any
+	Likelihood                 any
 	MetadataKeyValueExpression any
-	Regex any
-	SensitivityScore any
-	StoredType any
-	SurrogateType any
+	Regex                      any
+	SensitivityScore           any
+	StoredType                 any
+	SurrogateType              any
 }
 
 type Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_Limits_MaxFindingsPerInfoType struct {
-	InfoType any
+	InfoType    any
 	MaxFindings any
 }
 
@@ -400,62 +400,62 @@ type Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_Limits struct {
 }
 
 type Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_MinLikelihoodPerInfoType struct {
-	InfoType any
+	InfoType      any
 	MinLikelihood any
 }
 
 type Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet_Rules_AdjustmentRule_AdjustByImageFindings_ImageContainmentType struct {
-	Encloses any
+	Encloses    any
 	FullyInside any
-	Overlaps any
+	Overlaps    any
 }
 
 type Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet_Rules_AdjustmentRule_AdjustByImageFindings struct {
 	ImageContainmentType any
-	InfoTypes any
-	MinLikelihood any
+	InfoTypes            any
+	MinLikelihood        any
 }
 
 type Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet_Rules_AdjustmentRule_AdjustByMatchingInfoTypes struct {
-	InfoTypes any
-	MatchingType any
+	InfoTypes     any
+	MatchingType  any
 	MinLikelihood any
 }
 
 type Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet_Rules_AdjustmentRule struct {
-	AdjustByImageFindings any
+	AdjustByImageFindings     any
 	AdjustByMatchingInfoTypes any
-	LikelihoodAdjustment any
+	LikelihoodAdjustment      any
 }
 
 type Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet_Rules_ExclusionRule_ExcludeByHotword struct {
 	HotwordRegex any
-	Proximity any
+	Proximity    any
 }
 
 type Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet_Rules_ExclusionRule_ExcludeByImageFindings struct {
 	ImageContainmentType any
-	InfoTypes any
+	InfoTypes            any
 }
 
 type Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet_Rules_ExclusionRule struct {
-	Dictionary any
-	ExcludeByHotword any
+	Dictionary             any
+	ExcludeByHotword       any
 	ExcludeByImageFindings any
-	ExcludeInfoTypes any
-	MatchingType any
-	Regex any
+	ExcludeInfoTypes       any
+	MatchingType           any
+	Regex                  any
 }
 
 type Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet_Rules struct {
 	AdjustmentRule any
-	ExclusionRule any
-	HotwordRule any
+	ExclusionRule  any
+	HotwordRule    any
 }
 
 type Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet struct {
 	InfoTypes any
-	Rules any
+	Rules     any
 }
 
 type Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig struct {
@@ -626,7 +626,7 @@ type Job_InspectDetails_Result_HybridStats struct {
 }
 
 type Job_InspectDetails_Result_InfoTypeStats struct {
-	Count any
+	Count    any
 	InfoType any
 }
 
@@ -656,9 +656,9 @@ type Job_RiskDetails_CategoricalStatsResult_ValueFrequencyHistogramBuckets_Bucke
 }
 
 type Job_RiskDetails_CategoricalStatsResult_ValueFrequencyHistogramBuckets struct {
-	BucketSize any
-	BucketValueCount any
-	BucketValues any
+	BucketSize               any
+	BucketValueCount         any
+	BucketValues             any
 	ValueFrequencyLowerBound any
 	ValueFrequencyUpperBound any
 }
@@ -670,15 +670,15 @@ type Job_RiskDetails_CategoricalStatsResult struct {
 
 type Job_RiskDetails_DeltaPresenceEstimationResult_DeltaPresenceEstimationHistogram_BucketValues struct {
 	EstimatedProbability any
-	QuasiIdsValues any
+	QuasiIdsValues       any
 }
 
 type Job_RiskDetails_DeltaPresenceEstimationResult_DeltaPresenceEstimationHistogram struct {
-	BucketSize any
+	BucketSize       any
 	BucketValueCount any
-	BucketValues any
-	MaxProbability any
-	MinProbability any
+	BucketValues     any
+	MaxProbability   any
+	MinProbability   any
 }
 
 type Job_RiskDetails_DeltaPresenceEstimationResult struct {
@@ -688,13 +688,13 @@ type Job_RiskDetails_DeltaPresenceEstimationResult struct {
 
 type Job_RiskDetails_KAnonymityResult_EquivalenceClassHistogramBuckets_BucketValues struct {
 	EquivalenceClassSize any
-	QuasiIdsValues any
+	QuasiIdsValues       any
 }
 
 type Job_RiskDetails_KAnonymityResult_EquivalenceClassHistogramBuckets struct {
-	BucketSize any
-	BucketValueCount any
-	BucketValues any
+	BucketSize                     any
+	BucketValueCount               any
+	BucketValues                   any
 	EquivalenceClassSizeLowerBound any
 	EquivalenceClassSizeUpperBound any
 }
@@ -706,15 +706,15 @@ type Job_RiskDetails_KAnonymityResult struct {
 
 type Job_RiskDetails_KMapEstimationResult_KMapEstimationHistogram_BucketValues struct {
 	EstimatedAnonymity any
-	QuasiIdsValues any
+	QuasiIdsValues     any
 }
 
 type Job_RiskDetails_KMapEstimationResult_KMapEstimationHistogram struct {
-	BucketSize any
+	BucketSize       any
 	BucketValueCount any
-	BucketValues any
-	MaxAnonymity any
-	MinAnonymity any
+	BucketValues     any
+	MaxAnonymity     any
+	MinAnonymity     any
 }
 
 type Job_RiskDetails_KMapEstimationResult struct {
@@ -723,16 +723,16 @@ type Job_RiskDetails_KMapEstimationResult struct {
 }
 
 type Job_RiskDetails_LDiversityResult_SensitiveValueFrequencyHistogramBuckets_BucketValues struct {
-	EquivalenceClassSize any
+	EquivalenceClassSize       any
 	NumDistinctSensitiveValues any
-	QuasiIdsValues any
-	TopSensitiveValues any
+	QuasiIdsValues             any
+	TopSensitiveValues         any
 }
 
 type Job_RiskDetails_LDiversityResult_SensitiveValueFrequencyHistogramBuckets struct {
-	BucketSize any
-	BucketValueCount any
-	BucketValues any
+	BucketSize                        any
+	BucketValueCount                  any
+	BucketValues                      any
 	SensitiveValueFrequencyLowerBound any
 	SensitiveValueFrequencyUpperBound any
 }
@@ -758,20 +758,20 @@ type Job_RiskDetails_RequestedOptions_JobConfig_PrivacyMetric_CategoricalStatsCo
 
 type Job_RiskDetails_RequestedOptions_JobConfig_PrivacyMetric_DeltaPresenceEstimationConfig_AuxiliaryTables_QuasiIds struct {
 	CustomTag any
-	Field any
+	Field     any
 }
 
 type Job_RiskDetails_RequestedOptions_JobConfig_PrivacyMetric_DeltaPresenceEstimationConfig_AuxiliaryTables struct {
-	QuasiIds any
+	QuasiIds          any
 	RelativeFrequency any
-	Table any
+	Table             any
 }
 
 type Job_RiskDetails_RequestedOptions_JobConfig_PrivacyMetric_DeltaPresenceEstimationConfig_QuasiIds struct {
 	CustomTag any
-	Field any
-	Inferred any
-	InfoType any
+	Field     any
+	Inferred  any
+	InfoType  any
 }
 
 type Job_RiskDetails_RequestedOptions_JobConfig_PrivacyMetric_DeltaPresenceEstimationConfig struct {
@@ -848,747 +848,747 @@ type Job_RiskDetails struct {
 }
 
 var Job_InspectDetails_RequestedOptions_JobConfig_Actions_Deidentify_TransformationConfigFields = ubx.FieldMap{
-		"DeidentifyTemplate": ubx.FieldSpec{WireName: "deidentify_template"},
-		"ImageRedactTemplate": ubx.FieldSpec{WireName: "image_redact_template"},
-		"StructuredDeidentifyTemplate": ubx.FieldSpec{WireName: "structured_deidentify_template"},
-	}
+	"DeidentifyTemplate":           ubx.FieldSpec{WireName: "deidentify_template"},
+	"ImageRedactTemplate":          ubx.FieldSpec{WireName: "image_redact_template"},
+	"StructuredDeidentifyTemplate": ubx.FieldSpec{WireName: "structured_deidentify_template"},
+}
 
 var Job_InspectDetails_RequestedOptions_JobConfig_Actions_Deidentify_TransformationDetailsStorageConfig_TableFields = ubx.FieldMap{
-		"DatasetId": ubx.FieldSpec{WireName: "dataset_id"},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-		"TableId": ubx.FieldSpec{WireName: "table_id"},
-	}
+	"DatasetId": ubx.FieldSpec{WireName: "dataset_id"},
+	"ProjectId": ubx.FieldSpec{WireName: "project_id"},
+	"TableId":   ubx.FieldSpec{WireName: "table_id"},
+}
 
 var Job_InspectDetails_RequestedOptions_JobConfig_Actions_Deidentify_TransformationDetailsStorageConfigFields = ubx.FieldMap{
-		"Table": ubx.FieldSpec{
-			WireName: "table",
-			Kind: "object",
-			Fields: Job_InspectDetails_RequestedOptions_JobConfig_Actions_Deidentify_TransformationDetailsStorageConfig_TableFields,
-		},
-	}
+	"Table": ubx.FieldSpec{
+		WireName: "table",
+		Kind:     "object",
+		Fields:   Job_InspectDetails_RequestedOptions_JobConfig_Actions_Deidentify_TransformationDetailsStorageConfig_TableFields,
+	},
+}
 
 var Job_InspectDetails_RequestedOptions_JobConfig_Actions_DeidentifyFields = ubx.FieldMap{
-		"CloudStorageOutput": ubx.FieldSpec{WireName: "cloud_storage_output"},
-		"FileTypesToTransform": ubx.FieldSpec{WireName: "file_types_to_transform"},
-		"TransformationConfig": ubx.FieldSpec{
-			WireName: "transformation_config",
-			Kind: "object",
-			Fields: Job_InspectDetails_RequestedOptions_JobConfig_Actions_Deidentify_TransformationConfigFields,
-		},
-		"TransformationDetailsStorageConfig": ubx.FieldSpec{
-			WireName: "transformation_details_storage_config",
-			Kind: "object",
-			Fields: Job_InspectDetails_RequestedOptions_JobConfig_Actions_Deidentify_TransformationDetailsStorageConfigFields,
-		},
-	}
+	"CloudStorageOutput":   ubx.FieldSpec{WireName: "cloud_storage_output"},
+	"FileTypesToTransform": ubx.FieldSpec{WireName: "file_types_to_transform"},
+	"TransformationConfig": ubx.FieldSpec{
+		WireName: "transformation_config",
+		Kind:     "object",
+		Fields:   Job_InspectDetails_RequestedOptions_JobConfig_Actions_Deidentify_TransformationConfigFields,
+	},
+	"TransformationDetailsStorageConfig": ubx.FieldSpec{
+		WireName: "transformation_details_storage_config",
+		Kind:     "object",
+		Fields:   Job_InspectDetails_RequestedOptions_JobConfig_Actions_Deidentify_TransformationDetailsStorageConfigFields,
+	},
+}
 
 var Job_InspectDetails_RequestedOptions_JobConfig_Actions_PubSubFields = ubx.FieldMap{
-		"Topic": ubx.FieldSpec{WireName: "topic"},
-	}
+	"Topic": ubx.FieldSpec{WireName: "topic"},
+}
 
 var Job_InspectDetails_RequestedOptions_JobConfig_Actions_SaveFindings_OutputConfig_StoragePathFields = ubx.FieldMap{
-		"Path": ubx.FieldSpec{WireName: "path"},
-	}
+	"Path": ubx.FieldSpec{WireName: "path"},
+}
 
 var Job_InspectDetails_RequestedOptions_JobConfig_Actions_SaveFindings_OutputConfigFields = ubx.FieldMap{
-		"OutputSchema": ubx.FieldSpec{WireName: "output_schema"},
-		"StoragePath": ubx.FieldSpec{
-			WireName: "storage_path",
-			Kind: "object",
-			Fields: Job_InspectDetails_RequestedOptions_JobConfig_Actions_SaveFindings_OutputConfig_StoragePathFields,
-		},
-		"Table": ubx.FieldSpec{
-			WireName: "table",
-			Kind: "object",
-			Fields: Job_InspectDetails_RequestedOptions_JobConfig_Actions_Deidentify_TransformationDetailsStorageConfig_TableFields,
-		},
-	}
+	"OutputSchema": ubx.FieldSpec{WireName: "output_schema"},
+	"StoragePath": ubx.FieldSpec{
+		WireName: "storage_path",
+		Kind:     "object",
+		Fields:   Job_InspectDetails_RequestedOptions_JobConfig_Actions_SaveFindings_OutputConfig_StoragePathFields,
+	},
+	"Table": ubx.FieldSpec{
+		WireName: "table",
+		Kind:     "object",
+		Fields:   Job_InspectDetails_RequestedOptions_JobConfig_Actions_Deidentify_TransformationDetailsStorageConfig_TableFields,
+	},
+}
 
 var Job_InspectDetails_RequestedOptions_JobConfig_Actions_SaveFindingsFields = ubx.FieldMap{
-		"OutputConfig": ubx.FieldSpec{
-			WireName: "output_config",
-			Kind: "object",
-			Fields: Job_InspectDetails_RequestedOptions_JobConfig_Actions_SaveFindings_OutputConfigFields,
-		},
-	}
+	"OutputConfig": ubx.FieldSpec{
+		WireName: "output_config",
+		Kind:     "object",
+		Fields:   Job_InspectDetails_RequestedOptions_JobConfig_Actions_SaveFindings_OutputConfigFields,
+	},
+}
 
 var Job_InspectDetails_RequestedOptions_JobConfig_ActionsFields = ubx.FieldMap{
-		"Deidentify": ubx.FieldSpec{
-			WireName: "deidentify",
-			Kind: "object",
-			Fields: Job_InspectDetails_RequestedOptions_JobConfig_Actions_DeidentifyFields,
-		},
-		"JobNotificationEmails": ubx.FieldSpec{WireName: "job_notification_emails"},
-		"PubSub": ubx.FieldSpec{
-			WireName: "pub_sub",
-			Kind: "object",
-			Fields: Job_InspectDetails_RequestedOptions_JobConfig_Actions_PubSubFields,
-		},
-		"PublishFindingsToCloudDataCatalog": ubx.FieldSpec{WireName: "publish_findings_to_cloud_data_catalog"},
-		"PublishFindingsToDataplexCatalog": ubx.FieldSpec{WireName: "publish_findings_to_dataplex_catalog"},
-		"PublishSummaryToCscc": ubx.FieldSpec{WireName: "publish_summary_to_cscc"},
-		"PublishToStackdriver": ubx.FieldSpec{WireName: "publish_to_stackdriver"},
-		"SaveFindings": ubx.FieldSpec{
-			WireName: "save_findings",
-			Kind: "object",
-			Fields: Job_InspectDetails_RequestedOptions_JobConfig_Actions_SaveFindingsFields,
-		},
-	}
+	"Deidentify": ubx.FieldSpec{
+		WireName: "deidentify",
+		Kind:     "object",
+		Fields:   Job_InspectDetails_RequestedOptions_JobConfig_Actions_DeidentifyFields,
+	},
+	"JobNotificationEmails": ubx.FieldSpec{WireName: "job_notification_emails"},
+	"PubSub": ubx.FieldSpec{
+		WireName: "pub_sub",
+		Kind:     "object",
+		Fields:   Job_InspectDetails_RequestedOptions_JobConfig_Actions_PubSubFields,
+	},
+	"PublishFindingsToCloudDataCatalog": ubx.FieldSpec{WireName: "publish_findings_to_cloud_data_catalog"},
+	"PublishFindingsToDataplexCatalog":  ubx.FieldSpec{WireName: "publish_findings_to_dataplex_catalog"},
+	"PublishSummaryToCscc":              ubx.FieldSpec{WireName: "publish_summary_to_cscc"},
+	"PublishToStackdriver":              ubx.FieldSpec{WireName: "publish_to_stackdriver"},
+	"SaveFindings": ubx.FieldSpec{
+		WireName: "save_findings",
+		Kind:     "object",
+		Fields:   Job_InspectDetails_RequestedOptions_JobConfig_Actions_SaveFindingsFields,
+	},
+}
 
 var Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_HotwordRegexFields = ubx.FieldMap{
-		"GroupIndexes": ubx.FieldSpec{WireName: "group_indexes"},
-		"Pattern": ubx.FieldSpec{WireName: "pattern"},
-	}
+	"GroupIndexes": ubx.FieldSpec{WireName: "group_indexes"},
+	"Pattern":      ubx.FieldSpec{WireName: "pattern"},
+}
 
 var Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_LikelihoodAdjustmentFields = ubx.FieldMap{
-		"FixedLikelihood": ubx.FieldSpec{WireName: "fixed_likelihood"},
-		"RelativeLikelihood": ubx.FieldSpec{WireName: "relative_likelihood"},
-	}
+	"FixedLikelihood":    ubx.FieldSpec{WireName: "fixed_likelihood"},
+	"RelativeLikelihood": ubx.FieldSpec{WireName: "relative_likelihood"},
+}
 
 var Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_ProximityFields = ubx.FieldMap{
-		"WindowAfter": ubx.FieldSpec{WireName: "window_after"},
-		"WindowBefore": ubx.FieldSpec{WireName: "window_before"},
-	}
+	"WindowAfter":  ubx.FieldSpec{WireName: "window_after"},
+	"WindowBefore": ubx.FieldSpec{WireName: "window_before"},
+}
 
 var Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRuleFields = ubx.FieldMap{
-		"HotwordRegex": ubx.FieldSpec{
-			WireName: "hotword_regex",
-			Kind: "object",
-			Fields: Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_HotwordRegexFields,
-		},
-		"LikelihoodAdjustment": ubx.FieldSpec{
-			WireName: "likelihood_adjustment",
-			Kind: "object",
-			Fields: Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_LikelihoodAdjustmentFields,
-		},
-		"Proximity": ubx.FieldSpec{
-			WireName: "proximity",
-			Kind: "object",
-			Fields: Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_ProximityFields,
-		},
-	}
+	"HotwordRegex": ubx.FieldSpec{
+		WireName: "hotword_regex",
+		Kind:     "object",
+		Fields:   Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_HotwordRegexFields,
+	},
+	"LikelihoodAdjustment": ubx.FieldSpec{
+		WireName: "likelihood_adjustment",
+		Kind:     "object",
+		Fields:   Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_LikelihoodAdjustmentFields,
+	},
+	"Proximity": ubx.FieldSpec{
+		WireName: "proximity",
+		Kind:     "object",
+		Fields:   Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_ProximityFields,
+	},
+}
 
 var Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_DetectionRulesFields = ubx.FieldMap{
-		"HotwordRule": ubx.FieldSpec{
-			WireName: "hotword_rule",
-			Kind: "object",
-			Fields: Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRuleFields,
-		},
-	}
+	"HotwordRule": ubx.FieldSpec{
+		WireName: "hotword_rule",
+		Kind:     "object",
+		Fields:   Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRuleFields,
+	},
+}
 
 var Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_ReplaceDictionaryConfig_WordListFields = ubx.FieldMap{
-		"Words": ubx.FieldSpec{WireName: "words"},
-	}
+	"Words": ubx.FieldSpec{WireName: "words"},
+}
 
 var Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_DictionaryFields = ubx.FieldMap{
-		"CloudStoragePath": ubx.FieldSpec{
-			WireName: "cloud_storage_path",
-			Kind: "object",
-			Fields: Job_InspectDetails_RequestedOptions_JobConfig_Actions_SaveFindings_OutputConfig_StoragePathFields,
-		},
-		"WordList": ubx.FieldSpec{
-			WireName: "word_list",
-			Kind: "object",
-			Fields: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_ReplaceDictionaryConfig_WordListFields,
-		},
-	}
+	"CloudStoragePath": ubx.FieldSpec{
+		WireName: "cloud_storage_path",
+		Kind:     "object",
+		Fields:   Job_InspectDetails_RequestedOptions_JobConfig_Actions_SaveFindings_OutputConfig_StoragePathFields,
+	},
+	"WordList": ubx.FieldSpec{
+		WireName: "word_list",
+		Kind:     "object",
+		Fields:   Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_ReplaceDictionaryConfig_WordListFields,
+	},
+}
 
 var Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_FileLabelInfoType_GoogleDriveLabel_LabelFieldsToMatchFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Id":    ubx.FieldSpec{WireName: "id"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_FileLabelInfoType_GoogleDriveLabelFields = ubx.FieldMap{
-		"LabelFieldsToMatch": ubx.FieldSpec{
-			WireName: "label_fields_to_match",
-			Kind: "list",
-			Fields: Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_FileLabelInfoType_GoogleDriveLabel_LabelFieldsToMatchFields,
-		},
-		"LabelId": ubx.FieldSpec{WireName: "label_id"},
-	}
+	"LabelFieldsToMatch": ubx.FieldSpec{
+		WireName: "label_fields_to_match",
+		Kind:     "list",
+		Fields:   Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_FileLabelInfoType_GoogleDriveLabel_LabelFieldsToMatchFields,
+	},
+	"LabelId": ubx.FieldSpec{WireName: "label_id"},
+}
 
 var Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_FileLabelInfoType_SensitivityLabelFields = ubx.FieldMap{
-		"Guid": ubx.FieldSpec{WireName: "guid"},
-	}
+	"Guid": ubx.FieldSpec{WireName: "guid"},
+}
 
 var Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_FileLabelInfoTypeFields = ubx.FieldMap{
-		"GoogleDriveLabel": ubx.FieldSpec{
-			WireName: "google_drive_label",
-			Kind: "object",
-			Fields: Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_FileLabelInfoType_GoogleDriveLabelFields,
-		},
-		"SensitivityLabel": ubx.FieldSpec{
-			WireName: "sensitivity_label",
-			Kind: "object",
-			Fields: Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_FileLabelInfoType_SensitivityLabelFields,
-		},
-	}
+	"GoogleDriveLabel": ubx.FieldSpec{
+		WireName: "google_drive_label",
+		Kind:     "object",
+		Fields:   Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_FileLabelInfoType_GoogleDriveLabelFields,
+	},
+	"SensitivityLabel": ubx.FieldSpec{
+		WireName: "sensitivity_label",
+		Kind:     "object",
+		Fields:   Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_FileLabelInfoType_SensitivityLabelFields,
+	},
+}
 
 var Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypes_SensitivityScoreFields = ubx.FieldMap{
-		"Score": ubx.FieldSpec{WireName: "score"},
-	}
+	"Score": ubx.FieldSpec{WireName: "score"},
+}
 
 var Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypesFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SensitivityScore": ubx.FieldSpec{
-			WireName: "sensitivity_score",
-			Kind: "object",
-			Fields: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypes_SensitivityScoreFields,
-		},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"SensitivityScore": ubx.FieldSpec{
+		WireName: "sensitivity_score",
+		Kind:     "object",
+		Fields:   Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypes_SensitivityScoreFields,
+	},
+	"Version": ubx.FieldSpec{WireName: "version"},
+}
 
 var Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_MetadataKeyValueExpressionFields = ubx.FieldMap{
-		"KeyRegex": ubx.FieldSpec{WireName: "key_regex"},
-		"ValueRegex": ubx.FieldSpec{WireName: "value_regex"},
-	}
+	"KeyRegex":   ubx.FieldSpec{WireName: "key_regex"},
+	"ValueRegex": ubx.FieldSpec{WireName: "value_regex"},
+}
 
 var Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_StoredTypeFields = ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"CreateTime": ubx.FieldSpec{WireName: "create_time"},
+	"Name":       ubx.FieldSpec{WireName: "name"},
+}
 
 var Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypesFields = ubx.FieldMap{
-		"DetectionRules": ubx.FieldSpec{
-			WireName: "detection_rules",
-			Kind: "list",
-			Fields: Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_DetectionRulesFields,
-		},
-		"Dictionary": ubx.FieldSpec{
-			WireName: "dictionary",
-			Kind: "object",
-			Fields: Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_DictionaryFields,
-		},
-		"ExclusionType": ubx.FieldSpec{WireName: "exclusion_type"},
-		"FileLabelInfoType": ubx.FieldSpec{
-			WireName: "file_label_info_type",
-			Kind: "object",
-			Fields: Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_FileLabelInfoTypeFields,
-		},
-		"InfoType": ubx.FieldSpec{
-			WireName: "info_type",
-			Kind: "object",
-			Fields: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypesFields,
-		},
-		"Likelihood": ubx.FieldSpec{WireName: "likelihood"},
-		"MetadataKeyValueExpression": ubx.FieldSpec{
-			WireName: "metadata_key_value_expression",
-			Kind: "object",
-			Fields: Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_MetadataKeyValueExpressionFields,
-		},
-		"Regex": ubx.FieldSpec{
-			WireName: "regex",
-			Kind: "object",
-			Fields: Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_HotwordRegexFields,
-		},
-		"SensitivityScore": ubx.FieldSpec{
-			WireName: "sensitivity_score",
-			Kind: "object",
-			Fields: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypes_SensitivityScoreFields,
-		},
-		"StoredType": ubx.FieldSpec{
-			WireName: "stored_type",
-			Kind: "object",
-			Fields: Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_StoredTypeFields,
-		},
-		"SurrogateType": ubx.FieldSpec{WireName: "surrogate_type"},
-	}
+	"DetectionRules": ubx.FieldSpec{
+		WireName: "detection_rules",
+		Kind:     "list",
+		Fields:   Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_DetectionRulesFields,
+	},
+	"Dictionary": ubx.FieldSpec{
+		WireName: "dictionary",
+		Kind:     "object",
+		Fields:   Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_DictionaryFields,
+	},
+	"ExclusionType": ubx.FieldSpec{WireName: "exclusion_type"},
+	"FileLabelInfoType": ubx.FieldSpec{
+		WireName: "file_label_info_type",
+		Kind:     "object",
+		Fields:   Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_FileLabelInfoTypeFields,
+	},
+	"InfoType": ubx.FieldSpec{
+		WireName: "info_type",
+		Kind:     "object",
+		Fields:   Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypesFields,
+	},
+	"Likelihood": ubx.FieldSpec{WireName: "likelihood"},
+	"MetadataKeyValueExpression": ubx.FieldSpec{
+		WireName: "metadata_key_value_expression",
+		Kind:     "object",
+		Fields:   Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_MetadataKeyValueExpressionFields,
+	},
+	"Regex": ubx.FieldSpec{
+		WireName: "regex",
+		Kind:     "object",
+		Fields:   Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_HotwordRegexFields,
+	},
+	"SensitivityScore": ubx.FieldSpec{
+		WireName: "sensitivity_score",
+		Kind:     "object",
+		Fields:   Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypes_SensitivityScoreFields,
+	},
+	"StoredType": ubx.FieldSpec{
+		WireName: "stored_type",
+		Kind:     "object",
+		Fields:   Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_StoredTypeFields,
+	},
+	"SurrogateType": ubx.FieldSpec{WireName: "surrogate_type"},
+}
 
 var Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_Limits_MaxFindingsPerInfoTypeFields = ubx.FieldMap{
-		"InfoType": ubx.FieldSpec{
-			WireName: "info_type",
-			Kind: "object",
-			Fields: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypesFields,
-		},
-		"MaxFindings": ubx.FieldSpec{WireName: "max_findings"},
-	}
+	"InfoType": ubx.FieldSpec{
+		WireName: "info_type",
+		Kind:     "object",
+		Fields:   Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypesFields,
+	},
+	"MaxFindings": ubx.FieldSpec{WireName: "max_findings"},
+}
 
 var Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_LimitsFields = ubx.FieldMap{
-		"MaxFindingsPerInfoType": ubx.FieldSpec{
-			WireName: "max_findings_per_info_type",
-			Kind: "list",
-			Fields: Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_Limits_MaxFindingsPerInfoTypeFields,
-		},
-		"MaxFindingsPerItem": ubx.FieldSpec{WireName: "max_findings_per_item"},
-		"MaxFindingsPerRequest": ubx.FieldSpec{WireName: "max_findings_per_request"},
-	}
+	"MaxFindingsPerInfoType": ubx.FieldSpec{
+		WireName: "max_findings_per_info_type",
+		Kind:     "list",
+		Fields:   Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_Limits_MaxFindingsPerInfoTypeFields,
+	},
+	"MaxFindingsPerItem":    ubx.FieldSpec{WireName: "max_findings_per_item"},
+	"MaxFindingsPerRequest": ubx.FieldSpec{WireName: "max_findings_per_request"},
+}
 
 var Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_MinLikelihoodPerInfoTypeFields = ubx.FieldMap{
-		"InfoType": ubx.FieldSpec{
-			WireName: "info_type",
-			Kind: "object",
-			Fields: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypesFields,
-		},
-		"MinLikelihood": ubx.FieldSpec{WireName: "min_likelihood"},
-	}
+	"InfoType": ubx.FieldSpec{
+		WireName: "info_type",
+		Kind:     "object",
+		Fields:   Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypesFields,
+	},
+	"MinLikelihood": ubx.FieldSpec{WireName: "min_likelihood"},
+}
 
 var Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet_Rules_AdjustmentRule_AdjustByImageFindings_ImageContainmentTypeFields = ubx.FieldMap{
-		"Encloses": ubx.FieldSpec{WireName: "encloses"},
-		"FullyInside": ubx.FieldSpec{WireName: "fully_inside"},
-		"Overlaps": ubx.FieldSpec{WireName: "overlaps"},
-	}
+	"Encloses":    ubx.FieldSpec{WireName: "encloses"},
+	"FullyInside": ubx.FieldSpec{WireName: "fully_inside"},
+	"Overlaps":    ubx.FieldSpec{WireName: "overlaps"},
+}
 
 var Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet_Rules_AdjustmentRule_AdjustByImageFindingsFields = ubx.FieldMap{
-		"ImageContainmentType": ubx.FieldSpec{
-			WireName: "image_containment_type",
-			Kind: "object",
-			Fields: Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet_Rules_AdjustmentRule_AdjustByImageFindings_ImageContainmentTypeFields,
-		},
-		"InfoTypes": ubx.FieldSpec{
-			WireName: "info_types",
-			Kind: "list",
-			Fields: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypesFields,
-		},
-		"MinLikelihood": ubx.FieldSpec{WireName: "min_likelihood"},
-	}
+	"ImageContainmentType": ubx.FieldSpec{
+		WireName: "image_containment_type",
+		Kind:     "object",
+		Fields:   Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet_Rules_AdjustmentRule_AdjustByImageFindings_ImageContainmentTypeFields,
+	},
+	"InfoTypes": ubx.FieldSpec{
+		WireName: "info_types",
+		Kind:     "list",
+		Fields:   Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypesFields,
+	},
+	"MinLikelihood": ubx.FieldSpec{WireName: "min_likelihood"},
+}
 
 var Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet_Rules_AdjustmentRule_AdjustByMatchingInfoTypesFields = ubx.FieldMap{
-		"InfoTypes": ubx.FieldSpec{
-			WireName: "info_types",
-			Kind: "list",
-			Fields: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypesFields,
-		},
-		"MatchingType": ubx.FieldSpec{WireName: "matching_type"},
-		"MinLikelihood": ubx.FieldSpec{WireName: "min_likelihood"},
-	}
+	"InfoTypes": ubx.FieldSpec{
+		WireName: "info_types",
+		Kind:     "list",
+		Fields:   Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypesFields,
+	},
+	"MatchingType":  ubx.FieldSpec{WireName: "matching_type"},
+	"MinLikelihood": ubx.FieldSpec{WireName: "min_likelihood"},
+}
 
 var Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet_Rules_AdjustmentRuleFields = ubx.FieldMap{
-		"AdjustByImageFindings": ubx.FieldSpec{
-			WireName: "adjust_by_image_findings",
-			Kind: "object",
-			Fields: Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet_Rules_AdjustmentRule_AdjustByImageFindingsFields,
-		},
-		"AdjustByMatchingInfoTypes": ubx.FieldSpec{
-			WireName: "adjust_by_matching_info_types",
-			Kind: "object",
-			Fields: Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet_Rules_AdjustmentRule_AdjustByMatchingInfoTypesFields,
-		},
-		"LikelihoodAdjustment": ubx.FieldSpec{
-			WireName: "likelihood_adjustment",
-			Kind: "object",
-			Fields: Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_LikelihoodAdjustmentFields,
-		},
-	}
+	"AdjustByImageFindings": ubx.FieldSpec{
+		WireName: "adjust_by_image_findings",
+		Kind:     "object",
+		Fields:   Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet_Rules_AdjustmentRule_AdjustByImageFindingsFields,
+	},
+	"AdjustByMatchingInfoTypes": ubx.FieldSpec{
+		WireName: "adjust_by_matching_info_types",
+		Kind:     "object",
+		Fields:   Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet_Rules_AdjustmentRule_AdjustByMatchingInfoTypesFields,
+	},
+	"LikelihoodAdjustment": ubx.FieldSpec{
+		WireName: "likelihood_adjustment",
+		Kind:     "object",
+		Fields:   Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_LikelihoodAdjustmentFields,
+	},
+}
 
 var Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet_Rules_ExclusionRule_ExcludeByHotwordFields = ubx.FieldMap{
-		"HotwordRegex": ubx.FieldSpec{
-			WireName: "hotword_regex",
-			Kind: "object",
-			Fields: Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_HotwordRegexFields,
-		},
-		"Proximity": ubx.FieldSpec{
-			WireName: "proximity",
-			Kind: "object",
-			Fields: Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_ProximityFields,
-		},
-	}
+	"HotwordRegex": ubx.FieldSpec{
+		WireName: "hotword_regex",
+		Kind:     "object",
+		Fields:   Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_HotwordRegexFields,
+	},
+	"Proximity": ubx.FieldSpec{
+		WireName: "proximity",
+		Kind:     "object",
+		Fields:   Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_ProximityFields,
+	},
+}
 
 var Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet_Rules_ExclusionRule_ExcludeByImageFindingsFields = ubx.FieldMap{
-		"ImageContainmentType": ubx.FieldSpec{
-			WireName: "image_containment_type",
-			Kind: "object",
-			Fields: Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet_Rules_AdjustmentRule_AdjustByImageFindings_ImageContainmentTypeFields,
-		},
-		"InfoTypes": ubx.FieldSpec{
-			WireName: "info_types",
-			Kind: "list",
-			Fields: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypesFields,
-		},
-	}
+	"ImageContainmentType": ubx.FieldSpec{
+		WireName: "image_containment_type",
+		Kind:     "object",
+		Fields:   Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet_Rules_AdjustmentRule_AdjustByImageFindings_ImageContainmentTypeFields,
+	},
+	"InfoTypes": ubx.FieldSpec{
+		WireName: "info_types",
+		Kind:     "list",
+		Fields:   Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypesFields,
+	},
+}
 
 var Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypesFields = ubx.FieldMap{
-		"InfoTypes": ubx.FieldSpec{
-			WireName: "info_types",
-			Kind: "list",
-			Fields: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypesFields,
-		},
-	}
+	"InfoTypes": ubx.FieldSpec{
+		WireName: "info_types",
+		Kind:     "list",
+		Fields:   Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypesFields,
+	},
+}
 
 var Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet_Rules_ExclusionRuleFields = ubx.FieldMap{
-		"Dictionary": ubx.FieldSpec{
-			WireName: "dictionary",
-			Kind: "object",
-			Fields: Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_DictionaryFields,
-		},
-		"ExcludeByHotword": ubx.FieldSpec{
-			WireName: "exclude_by_hotword",
-			Kind: "object",
-			Fields: Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet_Rules_ExclusionRule_ExcludeByHotwordFields,
-		},
-		"ExcludeByImageFindings": ubx.FieldSpec{
-			WireName: "exclude_by_image_findings",
-			Kind: "object",
-			Fields: Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet_Rules_ExclusionRule_ExcludeByImageFindingsFields,
-		},
-		"ExcludeInfoTypes": ubx.FieldSpec{
-			WireName: "exclude_info_types",
-			Kind: "object",
-			Fields: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypesFields,
-		},
-		"MatchingType": ubx.FieldSpec{WireName: "matching_type"},
-		"Regex": ubx.FieldSpec{
-			WireName: "regex",
-			Kind: "object",
-			Fields: Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_HotwordRegexFields,
-		},
-	}
+	"Dictionary": ubx.FieldSpec{
+		WireName: "dictionary",
+		Kind:     "object",
+		Fields:   Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_DictionaryFields,
+	},
+	"ExcludeByHotword": ubx.FieldSpec{
+		WireName: "exclude_by_hotword",
+		Kind:     "object",
+		Fields:   Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet_Rules_ExclusionRule_ExcludeByHotwordFields,
+	},
+	"ExcludeByImageFindings": ubx.FieldSpec{
+		WireName: "exclude_by_image_findings",
+		Kind:     "object",
+		Fields:   Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet_Rules_ExclusionRule_ExcludeByImageFindingsFields,
+	},
+	"ExcludeInfoTypes": ubx.FieldSpec{
+		WireName: "exclude_info_types",
+		Kind:     "object",
+		Fields:   Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypesFields,
+	},
+	"MatchingType": ubx.FieldSpec{WireName: "matching_type"},
+	"Regex": ubx.FieldSpec{
+		WireName: "regex",
+		Kind:     "object",
+		Fields:   Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_HotwordRegexFields,
+	},
+}
 
 var Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet_RulesFields = ubx.FieldMap{
-		"AdjustmentRule": ubx.FieldSpec{
-			WireName: "adjustment_rule",
-			Kind: "object",
-			Fields: Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet_Rules_AdjustmentRuleFields,
-		},
-		"ExclusionRule": ubx.FieldSpec{
-			WireName: "exclusion_rule",
-			Kind: "object",
-			Fields: Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet_Rules_ExclusionRuleFields,
-		},
-		"HotwordRule": ubx.FieldSpec{
-			WireName: "hotword_rule",
-			Kind: "object",
-			Fields: Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRuleFields,
-		},
-	}
+	"AdjustmentRule": ubx.FieldSpec{
+		WireName: "adjustment_rule",
+		Kind:     "object",
+		Fields:   Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet_Rules_AdjustmentRuleFields,
+	},
+	"ExclusionRule": ubx.FieldSpec{
+		WireName: "exclusion_rule",
+		Kind:     "object",
+		Fields:   Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet_Rules_ExclusionRuleFields,
+	},
+	"HotwordRule": ubx.FieldSpec{
+		WireName: "hotword_rule",
+		Kind:     "object",
+		Fields:   Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRuleFields,
+	},
+}
 
 var Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSetFields = ubx.FieldMap{
-		"InfoTypes": ubx.FieldSpec{
-			WireName: "info_types",
-			Kind: "list",
-			Fields: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypesFields,
-		},
-		"Rules": ubx.FieldSpec{
-			WireName: "rules",
-			Kind: "list",
-			Fields: Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet_RulesFields,
-		},
-	}
+	"InfoTypes": ubx.FieldSpec{
+		WireName: "info_types",
+		Kind:     "list",
+		Fields:   Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypesFields,
+	},
+	"Rules": ubx.FieldSpec{
+		WireName: "rules",
+		Kind:     "list",
+		Fields:   Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSet_RulesFields,
+	},
+}
 
 var Job_InspectDetails_RequestedOptions_JobConfig_InspectConfigFields = ubx.FieldMap{
-		"ContentOptions": ubx.FieldSpec{WireName: "content_options"},
-		"CustomInfoTypes": ubx.FieldSpec{
-			WireName: "custom_info_types",
-			Kind: "list",
-			Fields: Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypesFields,
-		},
-		"ExcludeInfoTypes": ubx.FieldSpec{WireName: "exclude_info_types"},
-		"IncludeQuote": ubx.FieldSpec{WireName: "include_quote"},
-		"InfoTypes": ubx.FieldSpec{
-			WireName: "info_types",
-			Kind: "list",
-			Fields: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypesFields,
-		},
-		"Limits": ubx.FieldSpec{
-			WireName: "limits",
-			Kind: "object",
-			Fields: Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_LimitsFields,
-		},
-		"MinLikelihood": ubx.FieldSpec{WireName: "min_likelihood"},
-		"MinLikelihoodPerInfoType": ubx.FieldSpec{
-			WireName: "min_likelihood_per_info_type",
-			Kind: "list",
-			Fields: Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_MinLikelihoodPerInfoTypeFields,
-		},
-		"RuleSet": ubx.FieldSpec{
-			WireName: "rule_set",
-			Kind: "list",
-			Fields: Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSetFields,
-		},
-	}
+	"ContentOptions": ubx.FieldSpec{WireName: "content_options"},
+	"CustomInfoTypes": ubx.FieldSpec{
+		WireName: "custom_info_types",
+		Kind:     "list",
+		Fields:   Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_CustomInfoTypesFields,
+	},
+	"ExcludeInfoTypes": ubx.FieldSpec{WireName: "exclude_info_types"},
+	"IncludeQuote":     ubx.FieldSpec{WireName: "include_quote"},
+	"InfoTypes": ubx.FieldSpec{
+		WireName: "info_types",
+		Kind:     "list",
+		Fields:   Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypesFields,
+	},
+	"Limits": ubx.FieldSpec{
+		WireName: "limits",
+		Kind:     "object",
+		Fields:   Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_LimitsFields,
+	},
+	"MinLikelihood": ubx.FieldSpec{WireName: "min_likelihood"},
+	"MinLikelihoodPerInfoType": ubx.FieldSpec{
+		WireName: "min_likelihood_per_info_type",
+		Kind:     "list",
+		Fields:   Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_MinLikelihoodPerInfoTypeFields,
+	},
+	"RuleSet": ubx.FieldSpec{
+		WireName: "rule_set",
+		Kind:     "list",
+		Fields:   Job_InspectDetails_RequestedOptions_JobConfig_InspectConfig_RuleSetFields,
+	},
+}
 
 var Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_ContextFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var Job_InspectDetails_RequestedOptions_JobConfig_StorageConfig_BigQueryOptionsFields = ubx.FieldMap{
-		"ExcludedFields": ubx.FieldSpec{
-			WireName: "excluded_fields",
-			Kind: "list",
-			Fields: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_ContextFields,
-		},
-		"IdentifyingFields": ubx.FieldSpec{
-			WireName: "identifying_fields",
-			Kind: "list",
-			Fields: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_ContextFields,
-		},
-		"IncludedFields": ubx.FieldSpec{
-			WireName: "included_fields",
-			Kind: "list",
-			Fields: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_ContextFields,
-		},
-		"RowsLimit": ubx.FieldSpec{WireName: "rows_limit"},
-		"RowsLimitPercent": ubx.FieldSpec{WireName: "rows_limit_percent"},
-		"SampleMethod": ubx.FieldSpec{WireName: "sample_method"},
-		"TableReference": ubx.FieldSpec{
-			WireName: "table_reference",
-			Kind: "object",
-			Fields: Job_InspectDetails_RequestedOptions_JobConfig_Actions_Deidentify_TransformationDetailsStorageConfig_TableFields,
-		},
-	}
+	"ExcludedFields": ubx.FieldSpec{
+		WireName: "excluded_fields",
+		Kind:     "list",
+		Fields:   Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_ContextFields,
+	},
+	"IdentifyingFields": ubx.FieldSpec{
+		WireName: "identifying_fields",
+		Kind:     "list",
+		Fields:   Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_ContextFields,
+	},
+	"IncludedFields": ubx.FieldSpec{
+		WireName: "included_fields",
+		Kind:     "list",
+		Fields:   Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_ContextFields,
+	},
+	"RowsLimit":        ubx.FieldSpec{WireName: "rows_limit"},
+	"RowsLimitPercent": ubx.FieldSpec{WireName: "rows_limit_percent"},
+	"SampleMethod":     ubx.FieldSpec{WireName: "sample_method"},
+	"TableReference": ubx.FieldSpec{
+		WireName: "table_reference",
+		Kind:     "object",
+		Fields:   Job_InspectDetails_RequestedOptions_JobConfig_Actions_Deidentify_TransformationDetailsStorageConfig_TableFields,
+	},
+}
 
 var Job_InspectDetails_RequestedOptions_JobConfig_StorageConfig_CloudStorageOptions_FileSet_RegexFileSetFields = ubx.FieldMap{
-		"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
-		"ExcludeRegex": ubx.FieldSpec{WireName: "exclude_regex"},
-		"IncludeRegex": ubx.FieldSpec{WireName: "include_regex"},
-	}
+	"BucketName":   ubx.FieldSpec{WireName: "bucket_name"},
+	"ExcludeRegex": ubx.FieldSpec{WireName: "exclude_regex"},
+	"IncludeRegex": ubx.FieldSpec{WireName: "include_regex"},
+}
 
 var Job_InspectDetails_RequestedOptions_JobConfig_StorageConfig_CloudStorageOptions_FileSetFields = ubx.FieldMap{
-		"RegexFileSet": ubx.FieldSpec{
-			WireName: "regex_file_set",
-			Kind: "object",
-			Fields: Job_InspectDetails_RequestedOptions_JobConfig_StorageConfig_CloudStorageOptions_FileSet_RegexFileSetFields,
-		},
-		"Url": ubx.FieldSpec{WireName: "url"},
-	}
+	"RegexFileSet": ubx.FieldSpec{
+		WireName: "regex_file_set",
+		Kind:     "object",
+		Fields:   Job_InspectDetails_RequestedOptions_JobConfig_StorageConfig_CloudStorageOptions_FileSet_RegexFileSetFields,
+	},
+	"Url": ubx.FieldSpec{WireName: "url"},
+}
 
 var Job_InspectDetails_RequestedOptions_JobConfig_StorageConfig_CloudStorageOptionsFields = ubx.FieldMap{
-		"BytesLimitPerFile": ubx.FieldSpec{WireName: "bytes_limit_per_file"},
-		"BytesLimitPerFilePercent": ubx.FieldSpec{WireName: "bytes_limit_per_file_percent"},
-		"FileSet": ubx.FieldSpec{
-			WireName: "file_set",
-			Kind: "object",
-			Fields: Job_InspectDetails_RequestedOptions_JobConfig_StorageConfig_CloudStorageOptions_FileSetFields,
-		},
-		"FileTypes": ubx.FieldSpec{WireName: "file_types"},
-		"FilesLimitPercent": ubx.FieldSpec{WireName: "files_limit_percent"},
-		"SampleMethod": ubx.FieldSpec{WireName: "sample_method"},
-	}
+	"BytesLimitPerFile":        ubx.FieldSpec{WireName: "bytes_limit_per_file"},
+	"BytesLimitPerFilePercent": ubx.FieldSpec{WireName: "bytes_limit_per_file_percent"},
+	"FileSet": ubx.FieldSpec{
+		WireName: "file_set",
+		Kind:     "object",
+		Fields:   Job_InspectDetails_RequestedOptions_JobConfig_StorageConfig_CloudStorageOptions_FileSetFields,
+	},
+	"FileTypes":         ubx.FieldSpec{WireName: "file_types"},
+	"FilesLimitPercent": ubx.FieldSpec{WireName: "files_limit_percent"},
+	"SampleMethod":      ubx.FieldSpec{WireName: "sample_method"},
+}
 
 var Job_InspectDetails_RequestedOptions_JobConfig_StorageConfig_DatastoreOptions_PartitionIdFields = ubx.FieldMap{
-		"NamespaceId": ubx.FieldSpec{WireName: "namespace_id"},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-	}
+	"NamespaceId": ubx.FieldSpec{WireName: "namespace_id"},
+	"ProjectId":   ubx.FieldSpec{WireName: "project_id"},
+}
 
 var Job_InspectDetails_RequestedOptions_JobConfig_StorageConfig_DatastoreOptionsFields = ubx.FieldMap{
-		"Kind": ubx.FieldSpec{
-			WireName: "kind",
-			Kind: "object",
-			Fields: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_ContextFields,
-		},
-		"PartitionId": ubx.FieldSpec{
-			WireName: "partition_id",
-			Kind: "object",
-			Fields: Job_InspectDetails_RequestedOptions_JobConfig_StorageConfig_DatastoreOptions_PartitionIdFields,
-		},
-	}
+	"Kind": ubx.FieldSpec{
+		WireName: "kind",
+		Kind:     "object",
+		Fields:   Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_ContextFields,
+	},
+	"PartitionId": ubx.FieldSpec{
+		WireName: "partition_id",
+		Kind:     "object",
+		Fields:   Job_InspectDetails_RequestedOptions_JobConfig_StorageConfig_DatastoreOptions_PartitionIdFields,
+	},
+}
 
 var Job_InspectDetails_RequestedOptions_JobConfig_StorageConfig_HybridOptions_TableOptionsFields = ubx.FieldMap{
-		"IdentifyingFields": ubx.FieldSpec{
-			WireName: "identifying_fields",
-			Kind: "list",
-			Fields: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_ContextFields,
-		},
-	}
+	"IdentifyingFields": ubx.FieldSpec{
+		WireName: "identifying_fields",
+		Kind:     "list",
+		Fields:   Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_ContextFields,
+	},
+}
 
 var Job_InspectDetails_RequestedOptions_JobConfig_StorageConfig_HybridOptionsFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"RequiredFindingLabelKeys": ubx.FieldSpec{WireName: "required_finding_label_keys"},
-		"TableOptions": ubx.FieldSpec{
-			WireName: "table_options",
-			Kind: "object",
-			Fields: Job_InspectDetails_RequestedOptions_JobConfig_StorageConfig_HybridOptions_TableOptionsFields,
-		},
-	}
+	"Description":              ubx.FieldSpec{WireName: "description"},
+	"Labels":                   ubx.FieldSpec{WireName: "labels"},
+	"RequiredFindingLabelKeys": ubx.FieldSpec{WireName: "required_finding_label_keys"},
+	"TableOptions": ubx.FieldSpec{
+		WireName: "table_options",
+		Kind:     "object",
+		Fields:   Job_InspectDetails_RequestedOptions_JobConfig_StorageConfig_HybridOptions_TableOptionsFields,
+	},
+}
 
 var Job_InspectDetails_RequestedOptions_JobConfig_StorageConfig_TimespanConfigFields = ubx.FieldMap{
-		"EnableAutoPopulationOfTimespanConfig": ubx.FieldSpec{WireName: "enable_auto_population_of_timespan_config"},
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"TimestampField": ubx.FieldSpec{
-			WireName: "timestamp_field",
-			Kind: "object",
-			Fields: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_ContextFields,
-		},
-	}
+	"EnableAutoPopulationOfTimespanConfig": ubx.FieldSpec{WireName: "enable_auto_population_of_timespan_config"},
+	"EndTime":                              ubx.FieldSpec{WireName: "end_time"},
+	"StartTime":                            ubx.FieldSpec{WireName: "start_time"},
+	"TimestampField": ubx.FieldSpec{
+		WireName: "timestamp_field",
+		Kind:     "object",
+		Fields:   Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_ContextFields,
+	},
+}
 
 var Job_InspectDetails_RequestedOptions_JobConfig_StorageConfigFields = ubx.FieldMap{
-		"BigQueryOptions": ubx.FieldSpec{
-			WireName: "big_query_options",
-			Kind: "object",
-			Fields: Job_InspectDetails_RequestedOptions_JobConfig_StorageConfig_BigQueryOptionsFields,
-		},
-		"CloudStorageOptions": ubx.FieldSpec{
-			WireName: "cloud_storage_options",
-			Kind: "object",
-			Fields: Job_InspectDetails_RequestedOptions_JobConfig_StorageConfig_CloudStorageOptionsFields,
-		},
-		"DatastoreOptions": ubx.FieldSpec{
-			WireName: "datastore_options",
-			Kind: "object",
-			Fields: Job_InspectDetails_RequestedOptions_JobConfig_StorageConfig_DatastoreOptionsFields,
-		},
-		"HybridOptions": ubx.FieldSpec{
-			WireName: "hybrid_options",
-			Kind: "object",
-			Fields: Job_InspectDetails_RequestedOptions_JobConfig_StorageConfig_HybridOptionsFields,
-		},
-		"TimespanConfig": ubx.FieldSpec{
-			WireName: "timespan_config",
-			Kind: "object",
-			Fields: Job_InspectDetails_RequestedOptions_JobConfig_StorageConfig_TimespanConfigFields,
-		},
-	}
+	"BigQueryOptions": ubx.FieldSpec{
+		WireName: "big_query_options",
+		Kind:     "object",
+		Fields:   Job_InspectDetails_RequestedOptions_JobConfig_StorageConfig_BigQueryOptionsFields,
+	},
+	"CloudStorageOptions": ubx.FieldSpec{
+		WireName: "cloud_storage_options",
+		Kind:     "object",
+		Fields:   Job_InspectDetails_RequestedOptions_JobConfig_StorageConfig_CloudStorageOptionsFields,
+	},
+	"DatastoreOptions": ubx.FieldSpec{
+		WireName: "datastore_options",
+		Kind:     "object",
+		Fields:   Job_InspectDetails_RequestedOptions_JobConfig_StorageConfig_DatastoreOptionsFields,
+	},
+	"HybridOptions": ubx.FieldSpec{
+		WireName: "hybrid_options",
+		Kind:     "object",
+		Fields:   Job_InspectDetails_RequestedOptions_JobConfig_StorageConfig_HybridOptionsFields,
+	},
+	"TimespanConfig": ubx.FieldSpec{
+		WireName: "timespan_config",
+		Kind:     "object",
+		Fields:   Job_InspectDetails_RequestedOptions_JobConfig_StorageConfig_TimespanConfigFields,
+	},
+}
 
 var Job_InspectDetails_RequestedOptions_JobConfigFields = ubx.FieldMap{
-		"Actions": ubx.FieldSpec{
-			WireName: "actions",
-			Kind: "list",
-			Fields: Job_InspectDetails_RequestedOptions_JobConfig_ActionsFields,
-		},
-		"InspectConfig": ubx.FieldSpec{
-			WireName: "inspect_config",
-			Kind: "object",
-			Fields: Job_InspectDetails_RequestedOptions_JobConfig_InspectConfigFields,
-		},
-		"InspectTemplateName": ubx.FieldSpec{WireName: "inspect_template_name"},
-		"StorageConfig": ubx.FieldSpec{
-			WireName: "storage_config",
-			Kind: "object",
-			Fields: Job_InspectDetails_RequestedOptions_JobConfig_StorageConfigFields,
-		},
-	}
+	"Actions": ubx.FieldSpec{
+		WireName: "actions",
+		Kind:     "list",
+		Fields:   Job_InspectDetails_RequestedOptions_JobConfig_ActionsFields,
+	},
+	"InspectConfig": ubx.FieldSpec{
+		WireName: "inspect_config",
+		Kind:     "object",
+		Fields:   Job_InspectDetails_RequestedOptions_JobConfig_InspectConfigFields,
+	},
+	"InspectTemplateName": ubx.FieldSpec{WireName: "inspect_template_name"},
+	"StorageConfig": ubx.FieldSpec{
+		WireName: "storage_config",
+		Kind:     "object",
+		Fields:   Job_InspectDetails_RequestedOptions_JobConfig_StorageConfigFields,
+	},
+}
 
 var Job_RiskDetails_RequestedOptions_JobConfig_PrivacyMetric_CategoricalStatsConfigFields = ubx.FieldMap{
-		"Field": ubx.FieldSpec{
-			WireName: "field",
-			Kind: "object",
-			Fields: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_ContextFields,
-		},
-	}
+	"Field": ubx.FieldSpec{
+		WireName: "field",
+		Kind:     "object",
+		Fields:   Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_ContextFields,
+	},
+}
 
 var Job_RiskDetails_RequestedOptions_JobConfig_PrivacyMetric_DeltaPresenceEstimationConfig_AuxiliaryTables_QuasiIdsFields = ubx.FieldMap{
-		"CustomTag": ubx.FieldSpec{WireName: "custom_tag"},
-		"Field": ubx.FieldSpec{
-			WireName: "field",
-			Kind: "object",
-			Fields: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_ContextFields,
-		},
-	}
+	"CustomTag": ubx.FieldSpec{WireName: "custom_tag"},
+	"Field": ubx.FieldSpec{
+		WireName: "field",
+		Kind:     "object",
+		Fields:   Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_ContextFields,
+	},
+}
 
 var Job_RiskDetails_RequestedOptions_JobConfig_PrivacyMetric_DeltaPresenceEstimationConfig_AuxiliaryTablesFields = ubx.FieldMap{
-		"QuasiIds": ubx.FieldSpec{
-			WireName: "quasi_ids",
-			Kind: "list",
-			Fields: Job_RiskDetails_RequestedOptions_JobConfig_PrivacyMetric_DeltaPresenceEstimationConfig_AuxiliaryTables_QuasiIdsFields,
-		},
-		"RelativeFrequency": ubx.FieldSpec{
-			WireName: "relative_frequency",
-			Kind: "object",
-			Fields: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_ContextFields,
-		},
-		"Table": ubx.FieldSpec{
-			WireName: "table",
-			Kind: "object",
-			Fields: Job_InspectDetails_RequestedOptions_JobConfig_Actions_Deidentify_TransformationDetailsStorageConfig_TableFields,
-		},
-	}
+	"QuasiIds": ubx.FieldSpec{
+		WireName: "quasi_ids",
+		Kind:     "list",
+		Fields:   Job_RiskDetails_RequestedOptions_JobConfig_PrivacyMetric_DeltaPresenceEstimationConfig_AuxiliaryTables_QuasiIdsFields,
+	},
+	"RelativeFrequency": ubx.FieldSpec{
+		WireName: "relative_frequency",
+		Kind:     "object",
+		Fields:   Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_ContextFields,
+	},
+	"Table": ubx.FieldSpec{
+		WireName: "table",
+		Kind:     "object",
+		Fields:   Job_InspectDetails_RequestedOptions_JobConfig_Actions_Deidentify_TransformationDetailsStorageConfig_TableFields,
+	},
+}
 
 var Job_RiskDetails_RequestedOptions_JobConfig_PrivacyMetric_DeltaPresenceEstimationConfig_QuasiIdsFields = ubx.FieldMap{
-		"CustomTag": ubx.FieldSpec{WireName: "custom_tag"},
-		"Field": ubx.FieldSpec{
-			WireName: "field",
-			Kind: "object",
-			Fields: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_ContextFields,
-		},
-		"Inferred": ubx.FieldSpec{WireName: "inferred"},
-		"InfoType": ubx.FieldSpec{
-			WireName: "info_type",
-			Kind: "object",
-			Fields: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypesFields,
-		},
-	}
+	"CustomTag": ubx.FieldSpec{WireName: "custom_tag"},
+	"Field": ubx.FieldSpec{
+		WireName: "field",
+		Kind:     "object",
+		Fields:   Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_ContextFields,
+	},
+	"Inferred": ubx.FieldSpec{WireName: "inferred"},
+	"InfoType": ubx.FieldSpec{
+		WireName: "info_type",
+		Kind:     "object",
+		Fields:   Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypesFields,
+	},
+}
 
 var Job_RiskDetails_RequestedOptions_JobConfig_PrivacyMetric_DeltaPresenceEstimationConfigFields = ubx.FieldMap{
-		"AuxiliaryTables": ubx.FieldSpec{
-			WireName: "auxiliary_tables",
-			Kind: "list",
-			Fields: Job_RiskDetails_RequestedOptions_JobConfig_PrivacyMetric_DeltaPresenceEstimationConfig_AuxiliaryTablesFields,
-		},
-		"QuasiIds": ubx.FieldSpec{
-			WireName: "quasi_ids",
-			Kind: "list",
-			Fields: Job_RiskDetails_RequestedOptions_JobConfig_PrivacyMetric_DeltaPresenceEstimationConfig_QuasiIdsFields,
-		},
-		"RegionCode": ubx.FieldSpec{WireName: "region_code"},
-	}
+	"AuxiliaryTables": ubx.FieldSpec{
+		WireName: "auxiliary_tables",
+		Kind:     "list",
+		Fields:   Job_RiskDetails_RequestedOptions_JobConfig_PrivacyMetric_DeltaPresenceEstimationConfig_AuxiliaryTablesFields,
+	},
+	"QuasiIds": ubx.FieldSpec{
+		WireName: "quasi_ids",
+		Kind:     "list",
+		Fields:   Job_RiskDetails_RequestedOptions_JobConfig_PrivacyMetric_DeltaPresenceEstimationConfig_QuasiIdsFields,
+	},
+	"RegionCode": ubx.FieldSpec{WireName: "region_code"},
+}
 
 var Job_RiskDetails_RequestedOptions_JobConfig_PrivacyMetric_KAnonymityConfigFields = ubx.FieldMap{
-		"EntityId": ubx.FieldSpec{
-			WireName: "entity_id",
-			Kind: "object",
-			Fields: Job_RiskDetails_RequestedOptions_JobConfig_PrivacyMetric_CategoricalStatsConfigFields,
-		},
-		"QuasiIds": ubx.FieldSpec{
-			WireName: "quasi_ids",
-			Kind: "list",
-			Fields: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_ContextFields,
-		},
-	}
+	"EntityId": ubx.FieldSpec{
+		WireName: "entity_id",
+		Kind:     "object",
+		Fields:   Job_RiskDetails_RequestedOptions_JobConfig_PrivacyMetric_CategoricalStatsConfigFields,
+	},
+	"QuasiIds": ubx.FieldSpec{
+		WireName: "quasi_ids",
+		Kind:     "list",
+		Fields:   Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_ContextFields,
+	},
+}
 
 var Job_RiskDetails_RequestedOptions_JobConfig_PrivacyMetric_LDiversityConfigFields = ubx.FieldMap{
-		"QuasiIds": ubx.FieldSpec{
-			WireName: "quasi_ids",
-			Kind: "list",
-			Fields: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_ContextFields,
-		},
-		"SensitiveAttribute": ubx.FieldSpec{
-			WireName: "sensitive_attribute",
-			Kind: "object",
-			Fields: Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_ContextFields,
-		},
-	}
+	"QuasiIds": ubx.FieldSpec{
+		WireName: "quasi_ids",
+		Kind:     "list",
+		Fields:   Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_ContextFields,
+	},
+	"SensitiveAttribute": ubx.FieldSpec{
+		WireName: "sensitive_attribute",
+		Kind:     "object",
+		Fields:   Job_ActionDetails_DeidentifyDetails_RequestedOptions_SnapshotDeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_ContextFields,
+	},
+}
 
 var Job_RiskDetails_RequestedOptions_JobConfig_PrivacyMetricFields = ubx.FieldMap{
-		"CategoricalStatsConfig": ubx.FieldSpec{
-			WireName: "categorical_stats_config",
-			Kind: "object",
-			Fields: Job_RiskDetails_RequestedOptions_JobConfig_PrivacyMetric_CategoricalStatsConfigFields,
-		},
-		"DeltaPresenceEstimationConfig": ubx.FieldSpec{
-			WireName: "delta_presence_estimation_config",
-			Kind: "object",
-			Fields: Job_RiskDetails_RequestedOptions_JobConfig_PrivacyMetric_DeltaPresenceEstimationConfigFields,
-		},
-		"KAnonymityConfig": ubx.FieldSpec{
-			WireName: "k_anonymity_config",
-			Kind: "object",
-			Fields: Job_RiskDetails_RequestedOptions_JobConfig_PrivacyMetric_KAnonymityConfigFields,
-		},
-		"KMapEstimationConfig": ubx.FieldSpec{
-			WireName: "k_map_estimation_config",
-			Kind: "object",
-			Fields: Job_RiskDetails_RequestedOptions_JobConfig_PrivacyMetric_DeltaPresenceEstimationConfigFields,
-		},
-		"LDiversityConfig": ubx.FieldSpec{
-			WireName: "l_diversity_config",
-			Kind: "object",
-			Fields: Job_RiskDetails_RequestedOptions_JobConfig_PrivacyMetric_LDiversityConfigFields,
-		},
-		"NumericalStatsConfig": ubx.FieldSpec{
-			WireName: "numerical_stats_config",
-			Kind: "object",
-			Fields: Job_RiskDetails_RequestedOptions_JobConfig_PrivacyMetric_CategoricalStatsConfigFields,
-		},
-	}
+	"CategoricalStatsConfig": ubx.FieldSpec{
+		WireName: "categorical_stats_config",
+		Kind:     "object",
+		Fields:   Job_RiskDetails_RequestedOptions_JobConfig_PrivacyMetric_CategoricalStatsConfigFields,
+	},
+	"DeltaPresenceEstimationConfig": ubx.FieldSpec{
+		WireName: "delta_presence_estimation_config",
+		Kind:     "object",
+		Fields:   Job_RiskDetails_RequestedOptions_JobConfig_PrivacyMetric_DeltaPresenceEstimationConfigFields,
+	},
+	"KAnonymityConfig": ubx.FieldSpec{
+		WireName: "k_anonymity_config",
+		Kind:     "object",
+		Fields:   Job_RiskDetails_RequestedOptions_JobConfig_PrivacyMetric_KAnonymityConfigFields,
+	},
+	"KMapEstimationConfig": ubx.FieldSpec{
+		WireName: "k_map_estimation_config",
+		Kind:     "object",
+		Fields:   Job_RiskDetails_RequestedOptions_JobConfig_PrivacyMetric_DeltaPresenceEstimationConfigFields,
+	},
+	"LDiversityConfig": ubx.FieldSpec{
+		WireName: "l_diversity_config",
+		Kind:     "object",
+		Fields:   Job_RiskDetails_RequestedOptions_JobConfig_PrivacyMetric_LDiversityConfigFields,
+	},
+	"NumericalStatsConfig": ubx.FieldSpec{
+		WireName: "numerical_stats_config",
+		Kind:     "object",
+		Fields:   Job_RiskDetails_RequestedOptions_JobConfig_PrivacyMetric_CategoricalStatsConfigFields,
+	},
+}
 
 var Job_RiskDetails_RequestedOptions_JobConfigFields = ubx.FieldMap{
-		"Actions": ubx.FieldSpec{
-			WireName: "actions",
-			Kind: "list",
-			Fields: Job_InspectDetails_RequestedOptions_JobConfig_ActionsFields,
-		},
-		"PrivacyMetric": ubx.FieldSpec{
-			WireName: "privacy_metric",
-			Kind: "object",
-			Fields: Job_RiskDetails_RequestedOptions_JobConfig_PrivacyMetricFields,
-		},
-		"SourceTable": ubx.FieldSpec{
-			WireName: "source_table",
-			Kind: "object",
-			Fields: Job_InspectDetails_RequestedOptions_JobConfig_Actions_Deidentify_TransformationDetailsStorageConfig_TableFields,
-		},
-	}
+	"Actions": ubx.FieldSpec{
+		WireName: "actions",
+		Kind:     "list",
+		Fields:   Job_InspectDetails_RequestedOptions_JobConfig_ActionsFields,
+	},
+	"PrivacyMetric": ubx.FieldSpec{
+		WireName: "privacy_metric",
+		Kind:     "object",
+		Fields:   Job_RiskDetails_RequestedOptions_JobConfig_PrivacyMetricFields,
+	},
+	"SourceTable": ubx.FieldSpec{
+		WireName: "source_table",
+		Kind:     "object",
+		Fields:   Job_InspectDetails_RequestedOptions_JobConfig_Actions_Deidentify_TransformationDetailsStorageConfig_TableFields,
+	},
+}
 
 type JobConfig struct {
 	// Controls what and how to inspect for findings.
@@ -1641,15 +1641,15 @@ var Job = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"InspectJob": ubx.FieldSpec{
 			WireName: "inspect_job",
-			Kind: "object",
-			Fields: Job_InspectDetails_RequestedOptions_JobConfigFields,
+			Kind:     "object",
+			Fields:   Job_InspectDetails_RequestedOptions_JobConfigFields,
 		},
-		"JobId": ubx.FieldSpec{WireName: "job_id"},
+		"JobId":      ubx.FieldSpec{WireName: "job_id"},
 		"LocationId": ubx.FieldSpec{WireName: "location_id"},
 		"RiskJob": ubx.FieldSpec{
 			WireName: "risk_job",
-			Kind: "object",
-			Fields: Job_RiskDetails_RequestedOptions_JobConfigFields,
+			Kind:     "object",
+			Fields:   Job_RiskDetails_RequestedOptions_JobConfigFields,
 		},
 	},
 }

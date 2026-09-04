@@ -19,12 +19,6 @@ export interface V1beta1InterceptEndpointGroup_ConnectedDeploymentGroup {
   name?: string | Computed<string>;
 }
 
-const V1beta1InterceptEndpointGroup_AssociationsFields: FieldMap = {
-  name: "name",
-  network: "network",
-  state: "state",
-};
-
 const V1beta1InterceptEndpointGroup_ConnectedDeploymentGroup_LocationsFields: FieldMap = {
   location: "location",
   state: "state",
@@ -40,12 +34,8 @@ const V1beta1InterceptEndpointGroup_ConnectedDeploymentGroupFields: FieldMap = {
 };
 
 export interface V1beta1InterceptEndpointGroupConfig {
-  /** Output only. List of associations to this endpoint group. */
-  associations?: V1beta1InterceptEndpointGroup_Associations[] | Computed<V1beta1InterceptEndpointGroup_Associations[]>;
   /** The endpoint group's view of a connected deployment group. */
   connectedDeploymentGroup?: V1beta1InterceptEndpointGroup_ConnectedDeploymentGroup | Computed<V1beta1InterceptEndpointGroup_ConnectedDeploymentGroup>;
-  /** Output only. The timestamp when the resource was created. See https://google.aip.dev/148#timestamps. */
-  createTime?: string | Computed<string>;
   /** Optional. User-provided description of the endpoint group. Used as additional context for the endpoint group. */
   description?: string | Computed<string>;
   /** Required. Immutable. The deployment group that this endpoint group is connected to, for example: `projects/123456789/locations/global/interceptDeploymentGroups/my-dg`. See https://google.aip.dev/124. */
@@ -54,12 +44,6 @@ export interface V1beta1InterceptEndpointGroupConfig {
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Immutable. Identifier. The resource name of this endpoint group, for example: `projects/123456789/locations/global/interceptEndpointGroups/my-eg`. See https://google.aip.dev/122 for more details. */
   name?: string | Computed<string>;
-  /** Output only. The current state of the resource does not match the user's intended state, and the system is working to reconcile them. This is part of the normal operation (e.g. adding a new association to the group). See https://google.aip.dev/128. */
-  reconciling?: boolean | Computed<boolean>;
-  /** Output only. The current state of the endpoint group. See https://google.aip.dev/216. */
-  state?: string | Computed<string>;
-  /** Output only. The timestamp when the resource was most recently updated. See https://google.aip.dev/148#timestamps. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1beta1InterceptEndpointGroupAttrs {
@@ -88,23 +72,14 @@ export interface V1beta1InterceptEndpointGroupAttrs {
 export const V1beta1InterceptEndpointGroup: ResourceBinding<V1beta1InterceptEndpointGroupConfig, V1beta1InterceptEndpointGroupAttrs> = {
   wireType: "google_networksecurity_v1beta1_intercept_endpoint_group",
   fields: {
-    associations: {
-      wireName: "associations",
-      kind: "list",
-      fields: V1beta1InterceptEndpointGroup_AssociationsFields,
-    },
     connectedDeploymentGroup: {
       wireName: "connected_deployment_group",
       kind: "object",
       fields: V1beta1InterceptEndpointGroup_ConnectedDeploymentGroupFields,
     },
-    createTime: "create_time",
     description: "description",
     interceptDeploymentGroup: "intercept_deployment_group",
     labels: "labels",
     name: "name",
-    reconciling: "reconciling",
-    state: "state",
-    updateTime: "update_time",
   },
 };

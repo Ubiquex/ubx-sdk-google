@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Release_BuildArtifacts struct {
 	Image any
-	Tag any
+	Tag   any
 }
 
 type Release_Condition_DockerVersionSupportedCondition struct {
@@ -56,39 +56,39 @@ type Release_Condition struct {
 
 type Release_CustomTargetTypeSnapshots_CustomActions_IncludeSkaffoldModules_Git struct {
 	Path any
-	Ref any
+	Ref  any
 	Repo any
 }
 
 type Release_CustomTargetTypeSnapshots_CustomActions_IncludeSkaffoldModules_GoogleCloudBuildRepo struct {
-	Path any
-	Ref any
+	Path       any
+	Ref        any
 	Repository any
 }
 
 type Release_CustomTargetTypeSnapshots_CustomActions_IncludeSkaffoldModules_GoogleCloudStorage struct {
-	Path any
+	Path   any
 	Source any
 }
 
 type Release_CustomTargetTypeSnapshots_CustomActions_IncludeSkaffoldModules struct {
-	Configs any
-	Git any
+	Configs              any
+	Git                  any
 	GoogleCloudBuildRepo any
-	GoogleCloudStorage any
+	GoogleCloudStorage   any
 }
 
 type Release_CustomTargetTypeSnapshots_CustomActions struct {
-	DeployAction any
+	DeployAction           any
 	IncludeSkaffoldModules any
-	RenderAction any
+	RenderAction           any
 }
 
 type Release_CustomTargetTypeSnapshots_Tasks_Deploy_Container struct {
-	Args any
+	Args    any
 	Command any
-	Env any
-	Image any
+	Env     any
+	Image   any
 }
 
 type Release_CustomTargetTypeSnapshots_Tasks_Deploy struct {
@@ -101,17 +101,17 @@ type Release_CustomTargetTypeSnapshots_Tasks struct {
 }
 
 type Release_CustomTargetTypeSnapshots struct {
-	Annotations any
-	CreateTime any
-	CustomActions any
+	Annotations        any
+	CreateTime         any
+	CustomActions      any
 	CustomTargetTypeId any
-	Description any
-	Etag any
-	Labels any
-	Name any
-	Tasks any
-	Uid any
-	UpdateTime any
+	Description        any
+	Etag               any
+	Labels             any
+	Name               any
+	Tasks              any
+	Uid                any
+	UpdateTime         any
 }
 
 type Release_DeliveryPipelineSnapshot_Condition_PipelineReadyCondition struct {
@@ -148,19 +148,19 @@ type Release_DeliveryPipelineSnapshot_Condition struct {
 
 type Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_DeployParameters struct {
 	MatchTargetLabels any
-	Values any
+	Values            any
 }
 
 type Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Analysis_CustomChecks struct {
 	Frequency any
-	Id any
-	Task any
+	Id        any
+	Task      any
 }
 
 type Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Analysis_GoogleCloud_AlertPolicyChecks struct {
 	AlertPolicies any
-	Id any
-	Labels any
+	Id            any
+	Labels        any
 }
 
 type Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Analysis_GoogleCloud struct {
@@ -169,13 +169,13 @@ type Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_Cana
 
 type Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Analysis struct {
 	CustomChecks any
-	Duration any
-	GoogleCloud any
+	Duration     any
+	GoogleCloud  any
 }
 
 type Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Postdeploy struct {
 	Actions any
-	Tasks any
+	Tasks   any
 }
 
 type Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_VerifyConfig struct {
@@ -183,22 +183,22 @@ type Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_Cana
 }
 
 type Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment struct {
-	Analysis any
-	Percentages any
-	Postdeploy any
-	Predeploy any
-	Verify any
+	Analysis     any
+	Percentages  any
+	Postdeploy   any
+	Predeploy    any
+	Verify       any
 	VerifyConfig any
 }
 
 type Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CustomCanaryDeployment_PhaseConfigs struct {
-	Analysis any
-	Percentage any
-	PhaseId any
-	Postdeploy any
-	Predeploy any
-	Profiles any
-	Verify any
+	Analysis     any
+	Percentage   any
+	PhaseId      any
+	Postdeploy   any
+	Predeploy    any
+	Profiles     any
+	Verify       any
 	VerifyConfig any
 }
 
@@ -208,67 +208,67 @@ type Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_Cust
 
 type Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig_CloudRun struct {
 	AutomaticTrafficControl any
-	CanaryRevisionTags any
-	PriorRevisionTags any
-	StableRevisionTags any
+	CanaryRevisionTags      any
+	PriorRevisionTags       any
+	StableRevisionTags      any
 }
 
 type Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig_Kubernetes_GatewayServiceMesh_RouteDestinations struct {
-	DestinationIds any
+	DestinationIds   any
 	PropagateService any
 }
 
 type Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig_Kubernetes_GatewayServiceMesh struct {
-	Deployment any
-	HttpRoute any
-	PodSelectorLabel any
-	RouteDestinations any
-	RouteUpdateWaitTime any
-	Service any
+	Deployment            any
+	HttpRoute             any
+	PodSelectorLabel      any
+	RouteDestinations     any
+	RouteUpdateWaitTime   any
+	Service               any
 	StableCutbackDuration any
 }
 
 type Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig_Kubernetes_ServiceNetworking struct {
-	Deployment any
+	Deployment                 any
 	DisablePodOverprovisioning any
-	PodSelectorLabel any
-	Service any
+	PodSelectorLabel           any
+	Service                    any
 }
 
 type Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig_Kubernetes struct {
 	GatewayServiceMesh any
-	ServiceNetworking any
+	ServiceNetworking  any
 }
 
 type Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig struct {
-	CloudRun any
+	CloudRun   any
 	Kubernetes any
 }
 
 type Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary struct {
-	CanaryDeployment any
+	CanaryDeployment       any
 	CustomCanaryDeployment any
-	RuntimeConfig any
+	RuntimeConfig          any
 }
 
 type Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Standard struct {
-	Analysis any
-	Postdeploy any
-	Predeploy any
-	Verify any
+	Analysis     any
+	Postdeploy   any
+	Predeploy    any
+	Verify       any
 	VerifyConfig any
 }
 
 type Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy struct {
-	Canary any
+	Canary   any
 	Standard any
 }
 
 type Release_DeliveryPipelineSnapshot_SerialPipeline_Stages struct {
 	DeployParameters any
-	Profiles any
-	Strategy any
-	TargetId any
+	Profiles         any
+	Strategy         any
+	TargetId         any
 }
 
 type Release_DeliveryPipelineSnapshot_SerialPipeline struct {
@@ -302,22 +302,22 @@ type Release_DeliveryPipelineSnapshot struct {
 }
 
 type Release_TargetArtifacts_PhaseArtifacts struct {
-	JobManifestsPath any
-	ManifestPath any
+	JobManifestsPath   any
+	ManifestPath       any
 	SkaffoldConfigPath any
 }
 
 type Release_TargetArtifacts struct {
-	ArtifactUri any
-	ManifestPath any
-	PhaseArtifacts any
+	ArtifactUri        any
+	ManifestPath       any
+	PhaseArtifacts     any
 	SkaffoldConfigPath any
 }
 
 type Release_TargetRenders_Metadata_CloudRun struct {
-	Job any
-	Revision any
-	Service any
+	Job        any
+	Revision   any
+	Service    any
 	WorkerPool any
 }
 
@@ -326,21 +326,21 @@ type Release_TargetRenders_Metadata_Custom struct {
 }
 
 type Release_TargetRenders_Metadata_Kubernetes struct {
-	CanaryDeployment any
-	Deployment any
+	CanaryDeployment    any
+	Deployment          any
 	KubernetesNamespace any
 }
 
 type Release_TargetRenders_Metadata struct {
-	CloudRun any
-	Custom any
+	CloudRun   any
+	Custom     any
 	Kubernetes any
 }
 
 type Release_TargetRenders struct {
-	FailureCause any
+	FailureCause   any
 	FailureMessage any
-	Metadata any
+	Metadata       any
 	RenderingBuild any
 	RenderingState any
 }
@@ -350,15 +350,15 @@ type Release_TargetSnapshots_AnthosCluster struct {
 }
 
 type Release_TargetSnapshots_AssociatedEntities_GkeClusters struct {
-	Cluster any
+	Cluster     any
 	DnsEndpoint any
-	InternalIp any
-	ProxyUrl any
+	InternalIp  any
+	ProxyUrl    any
 }
 
 type Release_TargetSnapshots_AssociatedEntities struct {
 	AnthosClusters any
-	GkeClusters any
+	GkeClusters    any
 }
 
 type Release_TargetSnapshots_CustomTarget struct {
@@ -367,24 +367,24 @@ type Release_TargetSnapshots_CustomTarget struct {
 
 type Release_TargetSnapshots_ExecutionConfigs_DefaultPool struct {
 	ArtifactStorage any
-	ServiceAccount any
+	ServiceAccount  any
 }
 
 type Release_TargetSnapshots_ExecutionConfigs_PrivatePool struct {
 	ArtifactStorage any
-	ServiceAccount any
-	WorkerPool any
+	ServiceAccount  any
+	WorkerPool      any
 }
 
 type Release_TargetSnapshots_ExecutionConfigs struct {
-	ArtifactStorage any
-	DefaultPool any
+	ArtifactStorage  any
+	DefaultPool      any
 	ExecutionTimeout any
-	PrivatePool any
-	ServiceAccount any
-	Usages any
-	Verbose any
-	WorkerPool any
+	PrivatePool      any
+	ServiceAccount   any
+	Usages           any
+	Verbose          any
+	WorkerPool       any
 }
 
 type Release_TargetSnapshots_MultiTarget struct {
@@ -396,24 +396,24 @@ type Release_TargetSnapshots_Run struct {
 }
 
 type Release_TargetSnapshots struct {
-	Annotations any
-	AnthosCluster any
+	Annotations        any
+	AnthosCluster      any
 	AssociatedEntities any
-	CreateTime any
-	CustomTarget any
-	DeployParameters any
-	Description any
-	Etag any
-	ExecutionConfigs any
-	Gke any
-	Labels any
-	MultiTarget any
-	Name any
-	RequireApproval any
-	Run any
-	TargetId any
-	Uid any
-	UpdateTime any
+	CreateTime         any
+	CustomTarget       any
+	DeployParameters   any
+	Description        any
+	Etag               any
+	ExecutionConfigs   any
+	Gke                any
+	Labels             any
+	MultiTarget        any
+	Name               any
+	RequireApproval    any
+	Run                any
+	TargetId           any
+	Uid                any
+	UpdateTime         any
 }
 
 type Release_ToolVersions struct {
@@ -432,681 +432,415 @@ type Release_ToolVersions struct {
 }
 
 var Release_BuildArtifactsFields = ubx.FieldMap{
-		"Image": ubx.FieldSpec{WireName: "image"},
-		"Tag": ubx.FieldSpec{WireName: "tag"},
-	}
+	"Image": ubx.FieldSpec{WireName: "image"},
+	"Tag":   ubx.FieldSpec{WireName: "tag"},
+}
 
 var Release_Condition_DockerVersionSupportedConditionFields = ubx.FieldMap{
-		"MaintenanceModeTime": ubx.FieldSpec{WireName: "maintenance_mode_time"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"SupportExpirationTime": ubx.FieldSpec{WireName: "support_expiration_time"},
-		"ToolVersionSupportState": ubx.FieldSpec{WireName: "tool_version_support_state"},
-	}
+	"MaintenanceModeTime":     ubx.FieldSpec{WireName: "maintenance_mode_time"},
+	"Status":                  ubx.FieldSpec{WireName: "status"},
+	"SupportExpirationTime":   ubx.FieldSpec{WireName: "support_expiration_time"},
+	"ToolVersionSupportState": ubx.FieldSpec{WireName: "tool_version_support_state"},
+}
 
 var Release_Condition_ReleaseReadyConditionFields = ubx.FieldMap{
-		"Status": ubx.FieldSpec{WireName: "status"},
-	}
+	"Status": ubx.FieldSpec{WireName: "status"},
+}
 
 var Release_Condition_SkaffoldSupportedConditionFields = ubx.FieldMap{
-		"MaintenanceModeTime": ubx.FieldSpec{WireName: "maintenance_mode_time"},
-		"SkaffoldSupportState": ubx.FieldSpec{WireName: "skaffold_support_state"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"SupportExpirationTime": ubx.FieldSpec{WireName: "support_expiration_time"},
-	}
+	"MaintenanceModeTime":   ubx.FieldSpec{WireName: "maintenance_mode_time"},
+	"SkaffoldSupportState":  ubx.FieldSpec{WireName: "skaffold_support_state"},
+	"Status":                ubx.FieldSpec{WireName: "status"},
+	"SupportExpirationTime": ubx.FieldSpec{WireName: "support_expiration_time"},
+}
 
 var Release_ConditionFields = ubx.FieldMap{
-		"DockerVersionSupportedCondition": ubx.FieldSpec{
-			WireName: "docker_version_supported_condition",
-			Kind: "object",
-			Fields: Release_Condition_DockerVersionSupportedConditionFields,
-		},
-		"HelmVersionSupportedCondition": ubx.FieldSpec{
-			WireName: "helm_version_supported_condition",
-			Kind: "object",
-			Fields: Release_Condition_DockerVersionSupportedConditionFields,
-		},
-		"KptVersionSupportedCondition": ubx.FieldSpec{
-			WireName: "kpt_version_supported_condition",
-			Kind: "object",
-			Fields: Release_Condition_DockerVersionSupportedConditionFields,
-		},
-		"KubectlVersionSupportedCondition": ubx.FieldSpec{
-			WireName: "kubectl_version_supported_condition",
-			Kind: "object",
-			Fields: Release_Condition_DockerVersionSupportedConditionFields,
-		},
-		"KustomizeVersionSupportedCondition": ubx.FieldSpec{
-			WireName: "kustomize_version_supported_condition",
-			Kind: "object",
-			Fields: Release_Condition_DockerVersionSupportedConditionFields,
-		},
-		"ReleaseReadyCondition": ubx.FieldSpec{
-			WireName: "release_ready_condition",
-			Kind: "object",
-			Fields: Release_Condition_ReleaseReadyConditionFields,
-		},
-		"SkaffoldSupportedCondition": ubx.FieldSpec{
-			WireName: "skaffold_supported_condition",
-			Kind: "object",
-			Fields: Release_Condition_SkaffoldSupportedConditionFields,
-		},
-		"SkaffoldVersionSupportedCondition": ubx.FieldSpec{
-			WireName: "skaffold_version_supported_condition",
-			Kind: "object",
-			Fields: Release_Condition_DockerVersionSupportedConditionFields,
-		},
-	}
-
-var Release_CustomTargetTypeSnapshots_CustomActions_IncludeSkaffoldModules_GitFields = ubx.FieldMap{
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"Ref": ubx.FieldSpec{WireName: "ref"},
-		"Repo": ubx.FieldSpec{WireName: "repo"},
-	}
-
-var Release_CustomTargetTypeSnapshots_CustomActions_IncludeSkaffoldModules_GoogleCloudBuildRepoFields = ubx.FieldMap{
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"Ref": ubx.FieldSpec{WireName: "ref"},
-		"Repository": ubx.FieldSpec{WireName: "repository"},
-	}
-
-var Release_CustomTargetTypeSnapshots_CustomActions_IncludeSkaffoldModules_GoogleCloudStorageFields = ubx.FieldMap{
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"Source": ubx.FieldSpec{WireName: "source"},
-	}
-
-var Release_CustomTargetTypeSnapshots_CustomActions_IncludeSkaffoldModulesFields = ubx.FieldMap{
-		"Configs": ubx.FieldSpec{WireName: "configs"},
-		"Git": ubx.FieldSpec{
-			WireName: "git",
-			Kind: "object",
-			Fields: Release_CustomTargetTypeSnapshots_CustomActions_IncludeSkaffoldModules_GitFields,
-		},
-		"GoogleCloudBuildRepo": ubx.FieldSpec{
-			WireName: "google_cloud_build_repo",
-			Kind: "object",
-			Fields: Release_CustomTargetTypeSnapshots_CustomActions_IncludeSkaffoldModules_GoogleCloudBuildRepoFields,
-		},
-		"GoogleCloudStorage": ubx.FieldSpec{
-			WireName: "google_cloud_storage",
-			Kind: "object",
-			Fields: Release_CustomTargetTypeSnapshots_CustomActions_IncludeSkaffoldModules_GoogleCloudStorageFields,
-		},
-	}
-
-var Release_CustomTargetTypeSnapshots_CustomActionsFields = ubx.FieldMap{
-		"DeployAction": ubx.FieldSpec{WireName: "deploy_action"},
-		"IncludeSkaffoldModules": ubx.FieldSpec{
-			WireName: "include_skaffold_modules",
-			Kind: "list",
-			Fields: Release_CustomTargetTypeSnapshots_CustomActions_IncludeSkaffoldModulesFields,
-		},
-		"RenderAction": ubx.FieldSpec{WireName: "render_action"},
-	}
-
-var Release_CustomTargetTypeSnapshots_Tasks_Deploy_ContainerFields = ubx.FieldMap{
-		"Args": ubx.FieldSpec{WireName: "args"},
-		"Command": ubx.FieldSpec{WireName: "command"},
-		"Env": ubx.FieldSpec{WireName: "env"},
-		"Image": ubx.FieldSpec{WireName: "image"},
-	}
-
-var Release_CustomTargetTypeSnapshots_Tasks_DeployFields = ubx.FieldMap{
-		"Container": ubx.FieldSpec{
-			WireName: "container",
-			Kind: "object",
-			Fields: Release_CustomTargetTypeSnapshots_Tasks_Deploy_ContainerFields,
-		},
-	}
-
-var Release_CustomTargetTypeSnapshots_TasksFields = ubx.FieldMap{
-		"Deploy": ubx.FieldSpec{
-			WireName: "deploy",
-			Kind: "object",
-			Fields: Release_CustomTargetTypeSnapshots_Tasks_DeployFields,
-		},
-		"Render": ubx.FieldSpec{
-			WireName: "render",
-			Kind: "object",
-			Fields: Release_CustomTargetTypeSnapshots_Tasks_DeployFields,
-		},
-	}
-
-var Release_CustomTargetTypeSnapshotsFields = ubx.FieldMap{
-		"Annotations": ubx.FieldSpec{WireName: "annotations"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"CustomActions": ubx.FieldSpec{
-			WireName: "custom_actions",
-			Kind: "object",
-			Fields: Release_CustomTargetTypeSnapshots_CustomActionsFields,
-		},
-		"CustomTargetTypeId": ubx.FieldSpec{WireName: "custom_target_type_id"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Tasks": ubx.FieldSpec{
-			WireName: "tasks",
-			Kind: "object",
-			Fields: Release_CustomTargetTypeSnapshots_TasksFields,
-		},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-	}
+	"DockerVersionSupportedCondition": ubx.FieldSpec{
+		WireName: "docker_version_supported_condition",
+		Kind:     "object",
+		Fields:   Release_Condition_DockerVersionSupportedConditionFields,
+	},
+	"HelmVersionSupportedCondition": ubx.FieldSpec{
+		WireName: "helm_version_supported_condition",
+		Kind:     "object",
+		Fields:   Release_Condition_DockerVersionSupportedConditionFields,
+	},
+	"KptVersionSupportedCondition": ubx.FieldSpec{
+		WireName: "kpt_version_supported_condition",
+		Kind:     "object",
+		Fields:   Release_Condition_DockerVersionSupportedConditionFields,
+	},
+	"KubectlVersionSupportedCondition": ubx.FieldSpec{
+		WireName: "kubectl_version_supported_condition",
+		Kind:     "object",
+		Fields:   Release_Condition_DockerVersionSupportedConditionFields,
+	},
+	"KustomizeVersionSupportedCondition": ubx.FieldSpec{
+		WireName: "kustomize_version_supported_condition",
+		Kind:     "object",
+		Fields:   Release_Condition_DockerVersionSupportedConditionFields,
+	},
+	"ReleaseReadyCondition": ubx.FieldSpec{
+		WireName: "release_ready_condition",
+		Kind:     "object",
+		Fields:   Release_Condition_ReleaseReadyConditionFields,
+	},
+	"SkaffoldSupportedCondition": ubx.FieldSpec{
+		WireName: "skaffold_supported_condition",
+		Kind:     "object",
+		Fields:   Release_Condition_SkaffoldSupportedConditionFields,
+	},
+	"SkaffoldVersionSupportedCondition": ubx.FieldSpec{
+		WireName: "skaffold_version_supported_condition",
+		Kind:     "object",
+		Fields:   Release_Condition_DockerVersionSupportedConditionFields,
+	},
+}
 
 var Release_DeliveryPipelineSnapshot_Condition_PipelineReadyConditionFields = ubx.FieldMap{
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-	}
+	"Status":     ubx.FieldSpec{WireName: "status"},
+	"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+}
 
 var Release_DeliveryPipelineSnapshot_Condition_TargetsPresentConditionFields = ubx.FieldMap{
-		"MissingTargets": ubx.FieldSpec{WireName: "missing_targets"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-	}
+	"MissingTargets": ubx.FieldSpec{WireName: "missing_targets"},
+	"Status":         ubx.FieldSpec{WireName: "status"},
+	"UpdateTime":     ubx.FieldSpec{WireName: "update_time"},
+}
 
 var Release_DeliveryPipelineSnapshot_Condition_TargetsTypeConditionFields = ubx.FieldMap{
-		"ErrorDetails": ubx.FieldSpec{WireName: "error_details"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-	}
+	"ErrorDetails": ubx.FieldSpec{WireName: "error_details"},
+	"Status":       ubx.FieldSpec{WireName: "status"},
+}
 
 var Release_DeliveryPipelineSnapshot_ConditionFields = ubx.FieldMap{
-		"PipelineReadyCondition": ubx.FieldSpec{
-			WireName: "pipeline_ready_condition",
-			Kind: "object",
-			Fields: Release_DeliveryPipelineSnapshot_Condition_PipelineReadyConditionFields,
-		},
-		"TargetsPresentCondition": ubx.FieldSpec{
-			WireName: "targets_present_condition",
-			Kind: "object",
-			Fields: Release_DeliveryPipelineSnapshot_Condition_TargetsPresentConditionFields,
-		},
-		"TargetsTypeCondition": ubx.FieldSpec{
-			WireName: "targets_type_condition",
-			Kind: "object",
-			Fields: Release_DeliveryPipelineSnapshot_Condition_TargetsTypeConditionFields,
-		},
-	}
+	"PipelineReadyCondition": ubx.FieldSpec{
+		WireName: "pipeline_ready_condition",
+		Kind:     "object",
+		Fields:   Release_DeliveryPipelineSnapshot_Condition_PipelineReadyConditionFields,
+	},
+	"TargetsPresentCondition": ubx.FieldSpec{
+		WireName: "targets_present_condition",
+		Kind:     "object",
+		Fields:   Release_DeliveryPipelineSnapshot_Condition_TargetsPresentConditionFields,
+	},
+	"TargetsTypeCondition": ubx.FieldSpec{
+		WireName: "targets_type_condition",
+		Kind:     "object",
+		Fields:   Release_DeliveryPipelineSnapshot_Condition_TargetsTypeConditionFields,
+	},
+}
 
 var Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_DeployParametersFields = ubx.FieldMap{
-		"MatchTargetLabels": ubx.FieldSpec{WireName: "match_target_labels"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"MatchTargetLabels": ubx.FieldSpec{WireName: "match_target_labels"},
+	"Values":            ubx.FieldSpec{WireName: "values"},
+}
+
+var Release_CustomTargetTypeSnapshots_Tasks_Deploy_ContainerFields = ubx.FieldMap{
+	"Args":    ubx.FieldSpec{WireName: "args"},
+	"Command": ubx.FieldSpec{WireName: "command"},
+	"Env":     ubx.FieldSpec{WireName: "env"},
+	"Image":   ubx.FieldSpec{WireName: "image"},
+}
+
+var Release_CustomTargetTypeSnapshots_Tasks_DeployFields = ubx.FieldMap{
+	"Container": ubx.FieldSpec{
+		WireName: "container",
+		Kind:     "object",
+		Fields:   Release_CustomTargetTypeSnapshots_Tasks_Deploy_ContainerFields,
+	},
+}
 
 var Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Analysis_CustomChecksFields = ubx.FieldMap{
-		"Frequency": ubx.FieldSpec{WireName: "frequency"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Task": ubx.FieldSpec{
-			WireName: "task",
-			Kind: "object",
-			Fields: Release_CustomTargetTypeSnapshots_Tasks_DeployFields,
-		},
-	}
+	"Frequency": ubx.FieldSpec{WireName: "frequency"},
+	"Id":        ubx.FieldSpec{WireName: "id"},
+	"Task": ubx.FieldSpec{
+		WireName: "task",
+		Kind:     "object",
+		Fields:   Release_CustomTargetTypeSnapshots_Tasks_DeployFields,
+	},
+}
 
 var Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Analysis_GoogleCloud_AlertPolicyChecksFields = ubx.FieldMap{
-		"AlertPolicies": ubx.FieldSpec{WireName: "alert_policies"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-	}
+	"AlertPolicies": ubx.FieldSpec{WireName: "alert_policies"},
+	"Id":            ubx.FieldSpec{WireName: "id"},
+	"Labels":        ubx.FieldSpec{WireName: "labels"},
+}
 
 var Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Analysis_GoogleCloudFields = ubx.FieldMap{
-		"AlertPolicyChecks": ubx.FieldSpec{
-			WireName: "alert_policy_checks",
-			Kind: "list",
-			Fields: Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Analysis_GoogleCloud_AlertPolicyChecksFields,
-		},
-	}
+	"AlertPolicyChecks": ubx.FieldSpec{
+		WireName: "alert_policy_checks",
+		Kind:     "list",
+		Fields:   Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Analysis_GoogleCloud_AlertPolicyChecksFields,
+	},
+}
 
 var Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_AnalysisFields = ubx.FieldMap{
-		"CustomChecks": ubx.FieldSpec{
-			WireName: "custom_checks",
-			Kind: "list",
-			Fields: Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Analysis_CustomChecksFields,
-		},
-		"Duration": ubx.FieldSpec{WireName: "duration"},
-		"GoogleCloud": ubx.FieldSpec{
-			WireName: "google_cloud",
-			Kind: "object",
-			Fields: Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Analysis_GoogleCloudFields,
-		},
-	}
+	"CustomChecks": ubx.FieldSpec{
+		WireName: "custom_checks",
+		Kind:     "list",
+		Fields:   Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Analysis_CustomChecksFields,
+	},
+	"Duration": ubx.FieldSpec{WireName: "duration"},
+	"GoogleCloud": ubx.FieldSpec{
+		WireName: "google_cloud",
+		Kind:     "object",
+		Fields:   Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_Analysis_GoogleCloudFields,
+	},
+}
 
 var Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_PostdeployFields = ubx.FieldMap{
-		"Actions": ubx.FieldSpec{WireName: "actions"},
-		"Tasks": ubx.FieldSpec{
-			WireName: "tasks",
-			Kind: "list",
-			Fields: Release_CustomTargetTypeSnapshots_Tasks_DeployFields,
-		},
-	}
+	"Actions": ubx.FieldSpec{WireName: "actions"},
+	"Tasks": ubx.FieldSpec{
+		WireName: "tasks",
+		Kind:     "list",
+		Fields:   Release_CustomTargetTypeSnapshots_Tasks_DeployFields,
+	},
+}
 
 var Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_VerifyConfigFields = ubx.FieldMap{
-		"Tasks": ubx.FieldSpec{
-			WireName: "tasks",
-			Kind: "list",
-			Fields: Release_CustomTargetTypeSnapshots_Tasks_DeployFields,
-		},
-	}
+	"Tasks": ubx.FieldSpec{
+		WireName: "tasks",
+		Kind:     "list",
+		Fields:   Release_CustomTargetTypeSnapshots_Tasks_DeployFields,
+	},
+}
 
 var Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeploymentFields = ubx.FieldMap{
-		"Analysis": ubx.FieldSpec{
-			WireName: "analysis",
-			Kind: "object",
-			Fields: Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_AnalysisFields,
-		},
-		"Percentages": ubx.FieldSpec{WireName: "percentages"},
-		"Postdeploy": ubx.FieldSpec{
-			WireName: "postdeploy",
-			Kind: "object",
-			Fields: Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_PostdeployFields,
-		},
-		"Predeploy": ubx.FieldSpec{
-			WireName: "predeploy",
-			Kind: "object",
-			Fields: Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_PostdeployFields,
-		},
-		"Verify": ubx.FieldSpec{WireName: "verify"},
-		"VerifyConfig": ubx.FieldSpec{
-			WireName: "verify_config",
-			Kind: "object",
-			Fields: Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_VerifyConfigFields,
-		},
-	}
+	"Analysis": ubx.FieldSpec{
+		WireName: "analysis",
+		Kind:     "object",
+		Fields:   Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_AnalysisFields,
+	},
+	"Percentages": ubx.FieldSpec{WireName: "percentages"},
+	"Postdeploy": ubx.FieldSpec{
+		WireName: "postdeploy",
+		Kind:     "object",
+		Fields:   Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_PostdeployFields,
+	},
+	"Predeploy": ubx.FieldSpec{
+		WireName: "predeploy",
+		Kind:     "object",
+		Fields:   Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_PostdeployFields,
+	},
+	"Verify": ubx.FieldSpec{WireName: "verify"},
+	"VerifyConfig": ubx.FieldSpec{
+		WireName: "verify_config",
+		Kind:     "object",
+		Fields:   Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_VerifyConfigFields,
+	},
+}
 
 var Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CustomCanaryDeployment_PhaseConfigsFields = ubx.FieldMap{
-		"Analysis": ubx.FieldSpec{
-			WireName: "analysis",
-			Kind: "object",
-			Fields: Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_AnalysisFields,
-		},
-		"Percentage": ubx.FieldSpec{WireName: "percentage"},
-		"PhaseId": ubx.FieldSpec{WireName: "phase_id"},
-		"Postdeploy": ubx.FieldSpec{
-			WireName: "postdeploy",
-			Kind: "object",
-			Fields: Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_PostdeployFields,
-		},
-		"Predeploy": ubx.FieldSpec{
-			WireName: "predeploy",
-			Kind: "object",
-			Fields: Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_PostdeployFields,
-		},
-		"Profiles": ubx.FieldSpec{WireName: "profiles"},
-		"Verify": ubx.FieldSpec{WireName: "verify"},
-		"VerifyConfig": ubx.FieldSpec{
-			WireName: "verify_config",
-			Kind: "object",
-			Fields: Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_VerifyConfigFields,
-		},
-	}
+	"Analysis": ubx.FieldSpec{
+		WireName: "analysis",
+		Kind:     "object",
+		Fields:   Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_AnalysisFields,
+	},
+	"Percentage": ubx.FieldSpec{WireName: "percentage"},
+	"PhaseId":    ubx.FieldSpec{WireName: "phase_id"},
+	"Postdeploy": ubx.FieldSpec{
+		WireName: "postdeploy",
+		Kind:     "object",
+		Fields:   Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_PostdeployFields,
+	},
+	"Predeploy": ubx.FieldSpec{
+		WireName: "predeploy",
+		Kind:     "object",
+		Fields:   Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_PostdeployFields,
+	},
+	"Profiles": ubx.FieldSpec{WireName: "profiles"},
+	"Verify":   ubx.FieldSpec{WireName: "verify"},
+	"VerifyConfig": ubx.FieldSpec{
+		WireName: "verify_config",
+		Kind:     "object",
+		Fields:   Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_VerifyConfigFields,
+	},
+}
 
 var Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CustomCanaryDeploymentFields = ubx.FieldMap{
-		"PhaseConfigs": ubx.FieldSpec{
-			WireName: "phase_configs",
-			Kind: "list",
-			Fields: Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CustomCanaryDeployment_PhaseConfigsFields,
-		},
-	}
+	"PhaseConfigs": ubx.FieldSpec{
+		WireName: "phase_configs",
+		Kind:     "list",
+		Fields:   Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CustomCanaryDeployment_PhaseConfigsFields,
+	},
+}
 
 var Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig_CloudRunFields = ubx.FieldMap{
-		"AutomaticTrafficControl": ubx.FieldSpec{WireName: "automatic_traffic_control"},
-		"CanaryRevisionTags": ubx.FieldSpec{WireName: "canary_revision_tags"},
-		"PriorRevisionTags": ubx.FieldSpec{WireName: "prior_revision_tags"},
-		"StableRevisionTags": ubx.FieldSpec{WireName: "stable_revision_tags"},
-	}
+	"AutomaticTrafficControl": ubx.FieldSpec{WireName: "automatic_traffic_control"},
+	"CanaryRevisionTags":      ubx.FieldSpec{WireName: "canary_revision_tags"},
+	"PriorRevisionTags":       ubx.FieldSpec{WireName: "prior_revision_tags"},
+	"StableRevisionTags":      ubx.FieldSpec{WireName: "stable_revision_tags"},
+}
 
 var Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig_Kubernetes_GatewayServiceMesh_RouteDestinationsFields = ubx.FieldMap{
-		"DestinationIds": ubx.FieldSpec{WireName: "destination_ids"},
-		"PropagateService": ubx.FieldSpec{WireName: "propagate_service"},
-	}
+	"DestinationIds":   ubx.FieldSpec{WireName: "destination_ids"},
+	"PropagateService": ubx.FieldSpec{WireName: "propagate_service"},
+}
 
 var Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig_Kubernetes_GatewayServiceMeshFields = ubx.FieldMap{
-		"Deployment": ubx.FieldSpec{WireName: "deployment"},
-		"HttpRoute": ubx.FieldSpec{WireName: "http_route"},
-		"PodSelectorLabel": ubx.FieldSpec{WireName: "pod_selector_label"},
-		"RouteDestinations": ubx.FieldSpec{
-			WireName: "route_destinations",
-			Kind: "object",
-			Fields: Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig_Kubernetes_GatewayServiceMesh_RouteDestinationsFields,
-		},
-		"RouteUpdateWaitTime": ubx.FieldSpec{WireName: "route_update_wait_time"},
-		"Service": ubx.FieldSpec{WireName: "service"},
-		"StableCutbackDuration": ubx.FieldSpec{WireName: "stable_cutback_duration"},
-	}
+	"Deployment":       ubx.FieldSpec{WireName: "deployment"},
+	"HttpRoute":        ubx.FieldSpec{WireName: "http_route"},
+	"PodSelectorLabel": ubx.FieldSpec{WireName: "pod_selector_label"},
+	"RouteDestinations": ubx.FieldSpec{
+		WireName: "route_destinations",
+		Kind:     "object",
+		Fields:   Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig_Kubernetes_GatewayServiceMesh_RouteDestinationsFields,
+	},
+	"RouteUpdateWaitTime":   ubx.FieldSpec{WireName: "route_update_wait_time"},
+	"Service":               ubx.FieldSpec{WireName: "service"},
+	"StableCutbackDuration": ubx.FieldSpec{WireName: "stable_cutback_duration"},
+}
 
 var Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig_Kubernetes_ServiceNetworkingFields = ubx.FieldMap{
-		"Deployment": ubx.FieldSpec{WireName: "deployment"},
-		"DisablePodOverprovisioning": ubx.FieldSpec{WireName: "disable_pod_overprovisioning"},
-		"PodSelectorLabel": ubx.FieldSpec{WireName: "pod_selector_label"},
-		"Service": ubx.FieldSpec{WireName: "service"},
-	}
+	"Deployment":                 ubx.FieldSpec{WireName: "deployment"},
+	"DisablePodOverprovisioning": ubx.FieldSpec{WireName: "disable_pod_overprovisioning"},
+	"PodSelectorLabel":           ubx.FieldSpec{WireName: "pod_selector_label"},
+	"Service":                    ubx.FieldSpec{WireName: "service"},
+}
 
 var Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig_KubernetesFields = ubx.FieldMap{
-		"GatewayServiceMesh": ubx.FieldSpec{
-			WireName: "gateway_service_mesh",
-			Kind: "object",
-			Fields: Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig_Kubernetes_GatewayServiceMeshFields,
-		},
-		"ServiceNetworking": ubx.FieldSpec{
-			WireName: "service_networking",
-			Kind: "object",
-			Fields: Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig_Kubernetes_ServiceNetworkingFields,
-		},
-	}
+	"GatewayServiceMesh": ubx.FieldSpec{
+		WireName: "gateway_service_mesh",
+		Kind:     "object",
+		Fields:   Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig_Kubernetes_GatewayServiceMeshFields,
+	},
+	"ServiceNetworking": ubx.FieldSpec{
+		WireName: "service_networking",
+		Kind:     "object",
+		Fields:   Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig_Kubernetes_ServiceNetworkingFields,
+	},
+}
 
 var Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_RuntimeConfigFields = ubx.FieldMap{
-		"CloudRun": ubx.FieldSpec{
-			WireName: "cloud_run",
-			Kind: "object",
-			Fields: Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig_CloudRunFields,
-		},
-		"Kubernetes": ubx.FieldSpec{
-			WireName: "kubernetes",
-			Kind: "object",
-			Fields: Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig_KubernetesFields,
-		},
-	}
+	"CloudRun": ubx.FieldSpec{
+		WireName: "cloud_run",
+		Kind:     "object",
+		Fields:   Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig_CloudRunFields,
+	},
+	"Kubernetes": ubx.FieldSpec{
+		WireName: "kubernetes",
+		Kind:     "object",
+		Fields:   Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_RuntimeConfig_KubernetesFields,
+	},
+}
 
 var Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_CanaryFields = ubx.FieldMap{
-		"CanaryDeployment": ubx.FieldSpec{
-			WireName: "canary_deployment",
-			Kind: "object",
-			Fields: Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeploymentFields,
-		},
-		"CustomCanaryDeployment": ubx.FieldSpec{
-			WireName: "custom_canary_deployment",
-			Kind: "object",
-			Fields: Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CustomCanaryDeploymentFields,
-		},
-		"RuntimeConfig": ubx.FieldSpec{
-			WireName: "runtime_config",
-			Kind: "object",
-			Fields: Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_RuntimeConfigFields,
-		},
-	}
+	"CanaryDeployment": ubx.FieldSpec{
+		WireName: "canary_deployment",
+		Kind:     "object",
+		Fields:   Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeploymentFields,
+	},
+	"CustomCanaryDeployment": ubx.FieldSpec{
+		WireName: "custom_canary_deployment",
+		Kind:     "object",
+		Fields:   Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CustomCanaryDeploymentFields,
+	},
+	"RuntimeConfig": ubx.FieldSpec{
+		WireName: "runtime_config",
+		Kind:     "object",
+		Fields:   Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_RuntimeConfigFields,
+	},
+}
 
 var Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_StandardFields = ubx.FieldMap{
-		"Analysis": ubx.FieldSpec{
-			WireName: "analysis",
-			Kind: "object",
-			Fields: Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_AnalysisFields,
-		},
-		"Postdeploy": ubx.FieldSpec{
-			WireName: "postdeploy",
-			Kind: "object",
-			Fields: Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_PostdeployFields,
-		},
-		"Predeploy": ubx.FieldSpec{
-			WireName: "predeploy",
-			Kind: "object",
-			Fields: Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_PostdeployFields,
-		},
-		"Verify": ubx.FieldSpec{WireName: "verify"},
-		"VerifyConfig": ubx.FieldSpec{
-			WireName: "verify_config",
-			Kind: "object",
-			Fields: Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_VerifyConfigFields,
-		},
-	}
+	"Analysis": ubx.FieldSpec{
+		WireName: "analysis",
+		Kind:     "object",
+		Fields:   Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_AnalysisFields,
+	},
+	"Postdeploy": ubx.FieldSpec{
+		WireName: "postdeploy",
+		Kind:     "object",
+		Fields:   Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_PostdeployFields,
+	},
+	"Predeploy": ubx.FieldSpec{
+		WireName: "predeploy",
+		Kind:     "object",
+		Fields:   Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_PostdeployFields,
+	},
+	"Verify": ubx.FieldSpec{WireName: "verify"},
+	"VerifyConfig": ubx.FieldSpec{
+		WireName: "verify_config",
+		Kind:     "object",
+		Fields:   Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_Canary_CanaryDeployment_VerifyConfigFields,
+	},
+}
 
 var Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_StrategyFields = ubx.FieldMap{
-		"Canary": ubx.FieldSpec{
-			WireName: "canary",
-			Kind: "object",
-			Fields: Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_CanaryFields,
-		},
-		"Standard": ubx.FieldSpec{
-			WireName: "standard",
-			Kind: "object",
-			Fields: Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_StandardFields,
-		},
-	}
+	"Canary": ubx.FieldSpec{
+		WireName: "canary",
+		Kind:     "object",
+		Fields:   Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_CanaryFields,
+	},
+	"Standard": ubx.FieldSpec{
+		WireName: "standard",
+		Kind:     "object",
+		Fields:   Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_Strategy_StandardFields,
+	},
+}
 
 var Release_DeliveryPipelineSnapshot_SerialPipeline_StagesFields = ubx.FieldMap{
-		"DeployParameters": ubx.FieldSpec{
-			WireName: "deploy_parameters",
-			Kind: "list",
-			Fields: Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_DeployParametersFields,
-		},
-		"Profiles": ubx.FieldSpec{WireName: "profiles"},
-		"Strategy": ubx.FieldSpec{
-			WireName: "strategy",
-			Kind: "object",
-			Fields: Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_StrategyFields,
-		},
-		"TargetId": ubx.FieldSpec{WireName: "target_id"},
-	}
+	"DeployParameters": ubx.FieldSpec{
+		WireName: "deploy_parameters",
+		Kind:     "list",
+		Fields:   Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_DeployParametersFields,
+	},
+	"Profiles": ubx.FieldSpec{WireName: "profiles"},
+	"Strategy": ubx.FieldSpec{
+		WireName: "strategy",
+		Kind:     "object",
+		Fields:   Release_DeliveryPipelineSnapshot_SerialPipeline_Stages_StrategyFields,
+	},
+	"TargetId": ubx.FieldSpec{WireName: "target_id"},
+}
 
 var Release_DeliveryPipelineSnapshot_SerialPipelineFields = ubx.FieldMap{
-		"Stages": ubx.FieldSpec{
-			WireName: "stages",
-			Kind: "list",
-			Fields: Release_DeliveryPipelineSnapshot_SerialPipeline_StagesFields,
-		},
-	}
+	"Stages": ubx.FieldSpec{
+		WireName: "stages",
+		Kind:     "list",
+		Fields:   Release_DeliveryPipelineSnapshot_SerialPipeline_StagesFields,
+	},
+}
 
 var Release_DeliveryPipelineSnapshotFields = ubx.FieldMap{
-		"Annotations": ubx.FieldSpec{WireName: "annotations"},
-		"Condition": ubx.FieldSpec{
-			WireName: "condition",
-			Kind: "object",
-			Fields: Release_DeliveryPipelineSnapshot_ConditionFields,
-		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SerialPipeline": ubx.FieldSpec{
-			WireName: "serial_pipeline",
-			Kind: "object",
-			Fields: Release_DeliveryPipelineSnapshot_SerialPipelineFields,
-		},
-		"Suspended": ubx.FieldSpec{WireName: "suspended"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-	}
-
-var Release_TargetArtifacts_PhaseArtifactsFields = ubx.FieldMap{
-		"JobManifestsPath": ubx.FieldSpec{WireName: "job_manifests_path"},
-		"ManifestPath": ubx.FieldSpec{WireName: "manifest_path"},
-		"SkaffoldConfigPath": ubx.FieldSpec{WireName: "skaffold_config_path"},
-	}
-
-var Release_TargetArtifactsFields = ubx.FieldMap{
-		"ArtifactUri": ubx.FieldSpec{WireName: "artifact_uri"},
-		"ManifestPath": ubx.FieldSpec{WireName: "manifest_path"},
-		"PhaseArtifacts": ubx.FieldSpec{
-			WireName: "phase_artifacts",
-			Kind: "map",
-			Fields: Release_TargetArtifacts_PhaseArtifactsFields,
-		},
-		"SkaffoldConfigPath": ubx.FieldSpec{WireName: "skaffold_config_path"},
-	}
-
-var Release_TargetRenders_Metadata_CloudRunFields = ubx.FieldMap{
-		"Job": ubx.FieldSpec{WireName: "job"},
-		"Revision": ubx.FieldSpec{WireName: "revision"},
-		"Service": ubx.FieldSpec{WireName: "service"},
-		"WorkerPool": ubx.FieldSpec{WireName: "worker_pool"},
-	}
-
-var Release_TargetRenders_Metadata_CustomFields = ubx.FieldMap{
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
-
-var Release_TargetRenders_Metadata_KubernetesFields = ubx.FieldMap{
-		"CanaryDeployment": ubx.FieldSpec{WireName: "canary_deployment"},
-		"Deployment": ubx.FieldSpec{WireName: "deployment"},
-		"KubernetesNamespace": ubx.FieldSpec{WireName: "kubernetes_namespace"},
-	}
-
-var Release_TargetRenders_MetadataFields = ubx.FieldMap{
-		"CloudRun": ubx.FieldSpec{
-			WireName: "cloud_run",
-			Kind: "object",
-			Fields: Release_TargetRenders_Metadata_CloudRunFields,
-		},
-		"Custom": ubx.FieldSpec{
-			WireName: "custom",
-			Kind: "object",
-			Fields: Release_TargetRenders_Metadata_CustomFields,
-		},
-		"Kubernetes": ubx.FieldSpec{
-			WireName: "kubernetes",
-			Kind: "object",
-			Fields: Release_TargetRenders_Metadata_KubernetesFields,
-		},
-	}
-
-var Release_TargetRendersFields = ubx.FieldMap{
-		"FailureCause": ubx.FieldSpec{WireName: "failure_cause"},
-		"FailureMessage": ubx.FieldSpec{WireName: "failure_message"},
-		"Metadata": ubx.FieldSpec{
-			WireName: "metadata",
-			Kind: "object",
-			Fields: Release_TargetRenders_MetadataFields,
-		},
-		"RenderingBuild": ubx.FieldSpec{WireName: "rendering_build"},
-		"RenderingState": ubx.FieldSpec{WireName: "rendering_state"},
-	}
-
-var Release_TargetSnapshots_AnthosClusterFields = ubx.FieldMap{
-		"Membership": ubx.FieldSpec{WireName: "membership"},
-	}
-
-var Release_TargetSnapshots_AssociatedEntities_GkeClustersFields = ubx.FieldMap{
-		"Cluster": ubx.FieldSpec{WireName: "cluster"},
-		"DnsEndpoint": ubx.FieldSpec{WireName: "dns_endpoint"},
-		"InternalIp": ubx.FieldSpec{WireName: "internal_ip"},
-		"ProxyUrl": ubx.FieldSpec{WireName: "proxy_url"},
-	}
-
-var Release_TargetSnapshots_AssociatedEntitiesFields = ubx.FieldMap{
-		"AnthosClusters": ubx.FieldSpec{
-			WireName: "anthos_clusters",
-			Kind: "list",
-			Fields: Release_TargetSnapshots_AnthosClusterFields,
-		},
-		"GkeClusters": ubx.FieldSpec{
-			WireName: "gke_clusters",
-			Kind: "list",
-			Fields: Release_TargetSnapshots_AssociatedEntities_GkeClustersFields,
-		},
-	}
-
-var Release_TargetSnapshots_CustomTargetFields = ubx.FieldMap{
-		"CustomTargetType": ubx.FieldSpec{WireName: "custom_target_type"},
-	}
-
-var Release_TargetSnapshots_ExecutionConfigs_DefaultPoolFields = ubx.FieldMap{
-		"ArtifactStorage": ubx.FieldSpec{WireName: "artifact_storage"},
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-	}
-
-var Release_TargetSnapshots_ExecutionConfigs_PrivatePoolFields = ubx.FieldMap{
-		"ArtifactStorage": ubx.FieldSpec{WireName: "artifact_storage"},
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-		"WorkerPool": ubx.FieldSpec{WireName: "worker_pool"},
-	}
-
-var Release_TargetSnapshots_ExecutionConfigsFields = ubx.FieldMap{
-		"ArtifactStorage": ubx.FieldSpec{WireName: "artifact_storage"},
-		"DefaultPool": ubx.FieldSpec{
-			WireName: "default_pool",
-			Kind: "object",
-			Fields: Release_TargetSnapshots_ExecutionConfigs_DefaultPoolFields,
-		},
-		"ExecutionTimeout": ubx.FieldSpec{WireName: "execution_timeout"},
-		"PrivatePool": ubx.FieldSpec{
-			WireName: "private_pool",
-			Kind: "object",
-			Fields: Release_TargetSnapshots_ExecutionConfigs_PrivatePoolFields,
-		},
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-		"Usages": ubx.FieldSpec{WireName: "usages"},
-		"Verbose": ubx.FieldSpec{WireName: "verbose"},
-		"WorkerPool": ubx.FieldSpec{WireName: "worker_pool"},
-	}
-
-var Release_TargetSnapshots_MultiTargetFields = ubx.FieldMap{
-		"TargetIds": ubx.FieldSpec{WireName: "target_ids"},
-	}
-
-var Release_TargetSnapshots_RunFields = ubx.FieldMap{
-		"Location": ubx.FieldSpec{WireName: "location"},
-	}
-
-var Release_TargetSnapshotsFields = ubx.FieldMap{
-		"Annotations": ubx.FieldSpec{WireName: "annotations"},
-		"AnthosCluster": ubx.FieldSpec{
-			WireName: "anthos_cluster",
-			Kind: "object",
-			Fields: Release_TargetSnapshots_AnthosClusterFields,
-		},
-		"AssociatedEntities": ubx.FieldSpec{
-			WireName: "associated_entities",
-			Kind: "map",
-			Fields: Release_TargetSnapshots_AssociatedEntitiesFields,
-		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"CustomTarget": ubx.FieldSpec{
-			WireName: "custom_target",
-			Kind: "object",
-			Fields: Release_TargetSnapshots_CustomTargetFields,
-		},
-		"DeployParameters": ubx.FieldSpec{WireName: "deploy_parameters"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"ExecutionConfigs": ubx.FieldSpec{
-			WireName: "execution_configs",
-			Kind: "list",
-			Fields: Release_TargetSnapshots_ExecutionConfigsFields,
-		},
-		"Gke": ubx.FieldSpec{
-			WireName: "gke",
-			Kind: "object",
-			Fields: Release_TargetSnapshots_AssociatedEntities_GkeClustersFields,
-		},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"MultiTarget": ubx.FieldSpec{
-			WireName: "multi_target",
-			Kind: "object",
-			Fields: Release_TargetSnapshots_MultiTargetFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"RequireApproval": ubx.FieldSpec{WireName: "require_approval"},
-		"Run": ubx.FieldSpec{
-			WireName: "run",
-			Kind: "object",
-			Fields: Release_TargetSnapshots_RunFields,
-		},
-		"TargetId": ubx.FieldSpec{WireName: "target_id"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-	}
+	"Annotations": ubx.FieldSpec{WireName: "annotations"},
+	"Condition": ubx.FieldSpec{
+		WireName: "condition",
+		Kind:     "object",
+		Fields:   Release_DeliveryPipelineSnapshot_ConditionFields,
+	},
+	"CreateTime":  ubx.FieldSpec{WireName: "create_time"},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Etag":        ubx.FieldSpec{WireName: "etag"},
+	"Labels":      ubx.FieldSpec{WireName: "labels"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"SerialPipeline": ubx.FieldSpec{
+		WireName: "serial_pipeline",
+		Kind:     "object",
+		Fields:   Release_DeliveryPipelineSnapshot_SerialPipelineFields,
+	},
+	"Suspended":  ubx.FieldSpec{WireName: "suspended"},
+	"Uid":        ubx.FieldSpec{WireName: "uid"},
+	"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+}
 
 var Release_ToolVersionsFields = ubx.FieldMap{
-		"Docker": ubx.FieldSpec{WireName: "docker"},
-		"Helm": ubx.FieldSpec{WireName: "helm"},
-		"Kpt": ubx.FieldSpec{WireName: "kpt"},
-		"Kubectl": ubx.FieldSpec{WireName: "kubectl"},
-		"Kustomize": ubx.FieldSpec{WireName: "kustomize"},
-		"Skaffold": ubx.FieldSpec{WireName: "skaffold"},
-	}
+	"Docker":    ubx.FieldSpec{WireName: "docker"},
+	"Helm":      ubx.FieldSpec{WireName: "helm"},
+	"Kpt":       ubx.FieldSpec{WireName: "kpt"},
+	"Kubectl":   ubx.FieldSpec{WireName: "kubectl"},
+	"Kustomize": ubx.FieldSpec{WireName: "kustomize"},
+	"Skaffold":  ubx.FieldSpec{WireName: "skaffold"},
+}
 
 type ReleaseConfig struct {
-	// Output only. Indicates whether this is an abandoned release.
-	Abandoned any
 	// Optional. User annotations. These attributes can only be set and used by the user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations for more details such as format and size limitations.
 	Annotations any
 	// Optional. List of artifacts to pass through to Skaffold command.
 	BuildArtifacts any
 	// ReleaseCondition contains all conditions relevant to a Release.
 	Condition any
-	// Output only. Time at which the `Release` was created.
-	CreateTime any
-	// Output only. Snapshot of the custom target types referenced by the targets taken at release creation time.
-	CustomTargetTypeSnapshots any
 	// A `DeliveryPipeline` resource in the Cloud Deploy API. A `DeliveryPipeline` defines a pipeline through which a Skaffold configuration can progress.
 	DeliveryPipelineSnapshot any
 	// Optional. The deploy parameters to use for all targets in this release.
@@ -1119,28 +853,14 @@ type ReleaseConfig struct {
 	Labels any
 	// Identifier. Name of the `Release`. Format is `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}`. The `release` component must match `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`
 	Name any
-	// Output only. Time at which the render completed.
-	RenderEndTime any
-	// Output only. Time at which the render began.
-	RenderStartTime any
-	// Output only. Current state of the render operation.
-	RenderState any
 	// Optional. Filepath of the Skaffold config inside of the config URI.
 	SkaffoldConfigPath any
 	// Optional. Cloud Storage URI of tar.gz archive containing Skaffold configuration.
 	SkaffoldConfigUri any
 	// Optional. The Skaffold version to use when operating on this release, such as "1.20.0". Not all versions are valid; Cloud Deploy supports a specific set of versions. If unset, the most recent supported Skaffold version will be used.
 	SkaffoldVersion any
-	// Output only. Map from target ID to the target artifacts created during the render operation.
-	TargetArtifacts any
-	// Output only. Map from target ID to details of the render operation for that target.
-	TargetRenders any
-	// Output only. Snapshot of the targets taken at release creation time.
-	TargetSnapshots any
 	// Details of ToolVersions for the release.
 	ToolVersions any
-	// Output only. Unique identifier of the `Release`.
-	Uid any
 }
 
 type ReleaseAttrs struct {
@@ -1195,60 +915,34 @@ type ReleaseAttrs struct {
 var Release = ubx.ResourceBinding{
 	WireType: "google_clouddeploy_release",
 	Fields: ubx.FieldMap{
-		"Abandoned": ubx.FieldSpec{WireName: "abandoned"},
 		"Annotations": ubx.FieldSpec{WireName: "annotations"},
 		"BuildArtifacts": ubx.FieldSpec{
 			WireName: "build_artifacts",
-			Kind: "list",
-			Fields: Release_BuildArtifactsFields,
+			Kind:     "list",
+			Fields:   Release_BuildArtifactsFields,
 		},
 		"Condition": ubx.FieldSpec{
 			WireName: "condition",
-			Kind: "object",
-			Fields: Release_ConditionFields,
-		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"CustomTargetTypeSnapshots": ubx.FieldSpec{
-			WireName: "custom_target_type_snapshots",
-			Kind: "list",
-			Fields: Release_CustomTargetTypeSnapshotsFields,
+			Kind:     "object",
+			Fields:   Release_ConditionFields,
 		},
 		"DeliveryPipelineSnapshot": ubx.FieldSpec{
 			WireName: "delivery_pipeline_snapshot",
-			Kind: "object",
-			Fields: Release_DeliveryPipelineSnapshotFields,
+			Kind:     "object",
+			Fields:   Release_DeliveryPipelineSnapshotFields,
 		},
-		"DeployParameters": ubx.FieldSpec{WireName: "deploy_parameters"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"RenderEndTime": ubx.FieldSpec{WireName: "render_end_time"},
-		"RenderStartTime": ubx.FieldSpec{WireName: "render_start_time"},
-		"RenderState": ubx.FieldSpec{WireName: "render_state"},
+		"DeployParameters":   ubx.FieldSpec{WireName: "deploy_parameters"},
+		"Description":        ubx.FieldSpec{WireName: "description"},
+		"Etag":               ubx.FieldSpec{WireName: "etag"},
+		"Labels":             ubx.FieldSpec{WireName: "labels"},
+		"Name":               ubx.FieldSpec{WireName: "name"},
 		"SkaffoldConfigPath": ubx.FieldSpec{WireName: "skaffold_config_path"},
-		"SkaffoldConfigUri": ubx.FieldSpec{WireName: "skaffold_config_uri"},
-		"SkaffoldVersion": ubx.FieldSpec{WireName: "skaffold_version"},
-		"TargetArtifacts": ubx.FieldSpec{
-			WireName: "target_artifacts",
-			Kind: "map",
-			Fields: Release_TargetArtifactsFields,
-		},
-		"TargetRenders": ubx.FieldSpec{
-			WireName: "target_renders",
-			Kind: "map",
-			Fields: Release_TargetRendersFields,
-		},
-		"TargetSnapshots": ubx.FieldSpec{
-			WireName: "target_snapshots",
-			Kind: "list",
-			Fields: Release_TargetSnapshotsFields,
-		},
+		"SkaffoldConfigUri":  ubx.FieldSpec{WireName: "skaffold_config_uri"},
+		"SkaffoldVersion":    ubx.FieldSpec{WireName: "skaffold_version"},
 		"ToolVersions": ubx.FieldSpec{
 			WireName: "tool_versions",
-			Kind: "object",
-			Fields: Release_ToolVersionsFields,
+			Kind:     "object",
+			Fields:   Release_ToolVersionsFields,
 		},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
 	},
 }

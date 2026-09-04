@@ -25,18 +25,12 @@ _Command_CommandResultFields = {
 class CommandConfig:
     # Result of the execution of a command.
     command_result: Any = None
-    # Output only. State of the remote command.
-    command_state: Any = None
     # Required. Type of the remote command. The only supported command_type is "clearBrowsingData".
     command_type: Any = None
-    # Output only. Timestamp of the issurance of the remote command.
-    issue_time: Any = None
     # Identifier. Format: customers/{customer_id}/profiles/{profile_permanent_id}/commands/{command_id}
     name: Any = None
     # Required. Payload of the remote command. The payload for "clearBrowsingData" command supports: - fields "clearCache" and "clearCookies" - values of boolean type.
     payload: Any = None
-    # Output only. Valid duration of the remote command.
-    valid_duration: Any = None
 
 @dataclasses.dataclass
 class CommandAttrs:
@@ -63,11 +57,8 @@ Command = ubx.ResourceBinding(
             kind="object",
             fields=_Command_CommandResultFields,
         ),
-        "command_state": ubx.FieldSpec(wire_name="command_state"),
         "command_type": ubx.FieldSpec(wire_name="command_type"),
-        "issue_time": ubx.FieldSpec(wire_name="issue_time"),
         "name": ubx.FieldSpec(wire_name="name"),
         "payload": ubx.FieldSpec(wire_name="payload"),
-        "valid_duration": ubx.FieldSpec(wire_name="valid_duration"),
     },
 )

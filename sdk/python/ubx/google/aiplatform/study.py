@@ -297,16 +297,8 @@ _Study_StudySpecFields = {
 
 @dataclasses.dataclass
 class StudyConfig:
-    # Output only. Time at which the study was created.
-    create_time: Any = None
     # Required. Describes the Study, default value is empty string.
     display_name: Any = None
-    # Output only. A human readable reason why the Study is inactive. This should be empty if a study is ACTIVE or COMPLETED.
-    inactive_reason: Any = None
-    # Output only. The name of a study. The study's globally unique identifier. Format: `projects/{project}/locations/{location}/studies/{study}`
-    name: Any = None
-    # Output only. The detailed state of a Study.
-    state: Any = None
     # Represents specification of a Study.
     study_spec: Any = None
 
@@ -328,11 +320,7 @@ class StudyAttrs:
 Study = ubx.ResourceBinding(
     wire_type="google_aiplatform_study",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
-        "inactive_reason": ubx.FieldSpec(wire_name="inactive_reason"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "state": ubx.FieldSpec(wire_name="state"),
         "study_spec": ubx.FieldSpec(
             wire_name="study_spec",
             kind="object",

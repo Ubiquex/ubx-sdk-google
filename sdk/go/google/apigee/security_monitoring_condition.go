@@ -14,23 +14,21 @@ type SecurityMonitoringCondition_Include struct {
 }
 
 var SecurityMonitoringCondition_Include_ResourcesFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var SecurityMonitoringCondition_IncludeFields = ubx.FieldMap{
-		"Resources": ubx.FieldSpec{
-			WireName: "resources",
-			Kind: "list",
-			Fields: SecurityMonitoringCondition_Include_ResourcesFields,
-		},
-	}
+	"Resources": ubx.FieldSpec{
+		WireName: "resources",
+		Kind:     "list",
+		Fields:   SecurityMonitoringCondition_Include_ResourcesFields,
+	},
+}
 
 type SecurityMonitoringConditionConfig struct {
 	// Optional. The API Hub gateway monitored by the security monitoring condition. This should only be set if risk_assessment_type is API_HUB. Format: `projects/{project}/locations/{location}/plugins/{plugin}/instances/{instance}`
 	ApiHubGateway any
-	// Output only. The time of the security monitoring condition creation.
-	CreateTime any
 	// Message for the array of resources. For Apigee, the proxies are resources.
 	Include any
 	// Message for include_all_resources option.
@@ -43,12 +41,6 @@ type SecurityMonitoringConditionConfig struct {
 	RiskAssessmentType any
 	// Optional. Scope of the security monitoring condition. When RiskAssessmentType is APIGEE, the scope should be set to the environment of the resources. When RiskAssessmentType is API_HUB, the scope should not be set.
 	Scope any
-	// Output only. Total number of deployed resources within scope.
-	TotalDeployedResources any
-	// Output only. Total number of monitored resources within this condition.
-	TotalMonitoredResources any
-	// Output only. The time of the security monitoring condition update.
-	UpdateTime any
 }
 
 type SecurityMonitoringConditionAttrs struct {
@@ -80,19 +72,15 @@ var SecurityMonitoringCondition = ubx.ResourceBinding{
 	WireType: "google_apigee_security_monitoring_condition",
 	Fields: ubx.FieldMap{
 		"ApiHubGateway": ubx.FieldSpec{WireName: "api_hub_gateway"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Include": ubx.FieldSpec{
 			WireName: "include",
-			Kind: "object",
-			Fields: SecurityMonitoringCondition_IncludeFields,
+			Kind:     "object",
+			Fields:   SecurityMonitoringCondition_IncludeFields,
 		},
 		"IncludeAllResources": ubx.FieldSpec{WireName: "include_all_resources"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Profile": ubx.FieldSpec{WireName: "profile"},
-		"RiskAssessmentType": ubx.FieldSpec{WireName: "risk_assessment_type"},
-		"Scope": ubx.FieldSpec{WireName: "scope"},
-		"TotalDeployedResources": ubx.FieldSpec{WireName: "total_deployed_resources"},
-		"TotalMonitoredResources": ubx.FieldSpec{WireName: "total_monitored_resources"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"Name":                ubx.FieldSpec{WireName: "name"},
+		"Profile":             ubx.FieldSpec{WireName: "profile"},
+		"RiskAssessmentType":  ubx.FieldSpec{WireName: "risk_assessment_type"},
+		"Scope":               ubx.FieldSpec{WireName: "scope"},
 	},
 }

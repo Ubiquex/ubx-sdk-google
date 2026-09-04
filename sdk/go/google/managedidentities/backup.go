@@ -4,20 +4,8 @@ package managedidentities
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BackupConfig struct {
-	// Output only. The time the backups was created.
-	CreateTime any
 	// Optional. Resource labels to represent user provided metadata.
 	Labels any
-	// Output only. The unique name of the Backup in the form of `projects/{project_id}/locations/global/domains/{domain_name}/backups/{name}`
-	Name any
-	// Output only. The current state of the backup.
-	State any
-	// Output only. Additional information about the current status of this backup, if available.
-	StatusMessage any
-	// Output only. Indicates whether it’s an on-demand backup or scheduled.
-	Type any
-	// Output only. Last update time.
-	UpdateTime any
 }
 
 type BackupAttrs struct {
@@ -40,12 +28,6 @@ type BackupAttrs struct {
 var Backup = ubx.ResourceBinding{
 	WireType: "google_managedidentities_backup",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"StatusMessage": ubx.FieldSpec{WireName: "status_message"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

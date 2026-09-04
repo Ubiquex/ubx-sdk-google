@@ -11,15 +11,15 @@ type Database_EncryptionConfig struct {
 }
 
 type Database_EncryptionInfo_EncryptionStatus struct {
-	Code any
+	Code    any
 	Details any
 	Message any
 }
 
 type Database_EncryptionInfo struct {
 	EncryptionStatus any
-	EncryptionType any
-	KmsKeyVersion any
+	EncryptionType   any
+	KmsKeyVersion    any
 }
 
 type Database_QuorumInfo_QuorumType_SingleRegion struct {
@@ -64,15 +64,13 @@ type Database_RestoreInfo struct {
 }
 
 var Database_EncryptionConfigFields = ubx.FieldMap{
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-		"KmsKeyNames": ubx.FieldSpec{WireName: "kms_key_names"},
-	}
+	"KmsKeyName":  ubx.FieldSpec{WireName: "kms_key_name"},
+	"KmsKeyNames": ubx.FieldSpec{WireName: "kms_key_names"},
+}
 
 type DatabaseConfig struct {
 	// Required. A `CREATE DATABASE` statement, which specifies the ID of the new database. The database ID must conform to the regular expression `a-z*[a-z0-9]` and be between 2 and 30 characters in length. If the database ID is a reserved word or if it contains a hyphen, the database ID must be enclosed in backticks (`` ` ``).
 	CreateStatement any
-	// Optional. The dialect of the Cloud Spanner Database.
-	DatabaseDialect any
 	// Encryption configuration for a Cloud Spanner database.
 	EncryptionConfig any
 	// Optional. A list of DDL statements to run inside the newly created database. Statements can create tables, indexes, etc. These statements execute atomically with the creation of the database: if there is an error in any statement, the database is not created.
@@ -120,13 +118,12 @@ var Database = ubx.ResourceBinding{
 	WireType: "google_spanner_database",
 	Fields: ubx.FieldMap{
 		"CreateStatement": ubx.FieldSpec{WireName: "create_statement"},
-		"DatabaseDialect": ubx.FieldSpec{WireName: "database_dialect"},
 		"EncryptionConfig": ubx.FieldSpec{
 			WireName: "encryption_config",
-			Kind: "object",
-			Fields: Database_EncryptionConfigFields,
+			Kind:     "object",
+			Fields:   Database_EncryptionConfigFields,
 		},
-		"ExtraStatements": ubx.FieldSpec{WireName: "extra_statements"},
+		"ExtraStatements":  ubx.FieldSpec{WireName: "extra_statements"},
 		"ProtoDescriptors": ubx.FieldSpec{WireName: "proto_descriptors"},
 	},
 }

@@ -4,18 +4,18 @@ package spanner
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InstancePartition_AutoscalingConfig_AsymmetricAutoscalingOptions_Overrides_AutoscalingLimits struct {
-	MaxNodes any
+	MaxNodes           any
 	MaxProcessingUnits any
-	MinNodes any
+	MinNodes           any
 	MinProcessingUnits any
 }
 
 type InstancePartition_AutoscalingConfig_AsymmetricAutoscalingOptions_Overrides struct {
-	AutoscalingLimits any
+	AutoscalingLimits                                  any
 	AutoscalingTargetHighPriorityCpuUtilizationPercent any
-	AutoscalingTargetTotalCpuUtilizationPercent any
-	DisableHighPriorityCpuAutoscaling any
-	DisableTotalCpuAutoscaling any
+	AutoscalingTargetTotalCpuUtilizationPercent        any
+	DisableHighPriorityCpuAutoscaling                  any
+	DisableTotalCpuAutoscaling                         any
 }
 
 type InstancePartition_AutoscalingConfig_AsymmetricAutoscalingOptions_ReplicaSelection struct {
@@ -23,7 +23,7 @@ type InstancePartition_AutoscalingConfig_AsymmetricAutoscalingOptions_ReplicaSel
 }
 
 type InstancePartition_AutoscalingConfig_AsymmetricAutoscalingOptions struct {
-	Overrides any
+	Overrides        any
 	ReplicaSelection any
 }
 
@@ -73,83 +73,83 @@ type InstancePartition_InstancePartition struct {
 }
 
 var InstancePartition_AutoscalingConfig_AsymmetricAutoscalingOptions_Overrides_AutoscalingLimitsFields = ubx.FieldMap{
-		"MaxNodes": ubx.FieldSpec{WireName: "max_nodes"},
-		"MaxProcessingUnits": ubx.FieldSpec{WireName: "max_processing_units"},
-		"MinNodes": ubx.FieldSpec{WireName: "min_nodes"},
-		"MinProcessingUnits": ubx.FieldSpec{WireName: "min_processing_units"},
-	}
+	"MaxNodes":           ubx.FieldSpec{WireName: "max_nodes"},
+	"MaxProcessingUnits": ubx.FieldSpec{WireName: "max_processing_units"},
+	"MinNodes":           ubx.FieldSpec{WireName: "min_nodes"},
+	"MinProcessingUnits": ubx.FieldSpec{WireName: "min_processing_units"},
+}
 
 var InstancePartition_AutoscalingConfig_AsymmetricAutoscalingOptions_OverridesFields = ubx.FieldMap{
-		"AutoscalingLimits": ubx.FieldSpec{
-			WireName: "autoscaling_limits",
-			Kind: "object",
-			Fields: InstancePartition_AutoscalingConfig_AsymmetricAutoscalingOptions_Overrides_AutoscalingLimitsFields,
-		},
-		"AutoscalingTargetHighPriorityCpuUtilizationPercent": ubx.FieldSpec{WireName: "autoscaling_target_high_priority_cpu_utilization_percent"},
-		"AutoscalingTargetTotalCpuUtilizationPercent": ubx.FieldSpec{WireName: "autoscaling_target_total_cpu_utilization_percent"},
-		"DisableHighPriorityCpuAutoscaling": ubx.FieldSpec{WireName: "disable_high_priority_cpu_autoscaling"},
-		"DisableTotalCpuAutoscaling": ubx.FieldSpec{WireName: "disable_total_cpu_autoscaling"},
-	}
+	"AutoscalingLimits": ubx.FieldSpec{
+		WireName: "autoscaling_limits",
+		Kind:     "object",
+		Fields:   InstancePartition_AutoscalingConfig_AsymmetricAutoscalingOptions_Overrides_AutoscalingLimitsFields,
+	},
+	"AutoscalingTargetHighPriorityCpuUtilizationPercent": ubx.FieldSpec{WireName: "autoscaling_target_high_priority_cpu_utilization_percent"},
+	"AutoscalingTargetTotalCpuUtilizationPercent":        ubx.FieldSpec{WireName: "autoscaling_target_total_cpu_utilization_percent"},
+	"DisableHighPriorityCpuAutoscaling":                  ubx.FieldSpec{WireName: "disable_high_priority_cpu_autoscaling"},
+	"DisableTotalCpuAutoscaling":                         ubx.FieldSpec{WireName: "disable_total_cpu_autoscaling"},
+}
 
 var InstancePartition_AutoscalingConfig_AsymmetricAutoscalingOptions_ReplicaSelectionFields = ubx.FieldMap{
-		"Location": ubx.FieldSpec{WireName: "location"},
-	}
+	"Location": ubx.FieldSpec{WireName: "location"},
+}
 
 var InstancePartition_AutoscalingConfig_AsymmetricAutoscalingOptionsFields = ubx.FieldMap{
-		"Overrides": ubx.FieldSpec{
-			WireName: "overrides",
-			Kind: "object",
-			Fields: InstancePartition_AutoscalingConfig_AsymmetricAutoscalingOptions_OverridesFields,
-		},
-		"ReplicaSelection": ubx.FieldSpec{
-			WireName: "replica_selection",
-			Kind: "object",
-			Fields: InstancePartition_AutoscalingConfig_AsymmetricAutoscalingOptions_ReplicaSelectionFields,
-		},
-	}
+	"Overrides": ubx.FieldSpec{
+		WireName: "overrides",
+		Kind:     "object",
+		Fields:   InstancePartition_AutoscalingConfig_AsymmetricAutoscalingOptions_OverridesFields,
+	},
+	"ReplicaSelection": ubx.FieldSpec{
+		WireName: "replica_selection",
+		Kind:     "object",
+		Fields:   InstancePartition_AutoscalingConfig_AsymmetricAutoscalingOptions_ReplicaSelectionFields,
+	},
+}
 
 var InstancePartition_AutoscalingConfig_AutoscalingTargetsFields = ubx.FieldMap{
-		"HighPriorityCpuUtilizationPercent": ubx.FieldSpec{WireName: "high_priority_cpu_utilization_percent"},
-		"StorageUtilizationPercent": ubx.FieldSpec{WireName: "storage_utilization_percent"},
-		"TotalCpuUtilizationPercent": ubx.FieldSpec{WireName: "total_cpu_utilization_percent"},
-	}
+	"HighPriorityCpuUtilizationPercent": ubx.FieldSpec{WireName: "high_priority_cpu_utilization_percent"},
+	"StorageUtilizationPercent":         ubx.FieldSpec{WireName: "storage_utilization_percent"},
+	"TotalCpuUtilizationPercent":        ubx.FieldSpec{WireName: "total_cpu_utilization_percent"},
+}
 
 var InstancePartition_AutoscalingConfigFields = ubx.FieldMap{
-		"AsymmetricAutoscalingOptions": ubx.FieldSpec{
-			WireName: "asymmetric_autoscaling_options",
-			Kind: "list",
-			Fields: InstancePartition_AutoscalingConfig_AsymmetricAutoscalingOptionsFields,
-		},
-		"AutoscalingLimits": ubx.FieldSpec{
-			WireName: "autoscaling_limits",
-			Kind: "object",
-			Fields: InstancePartition_AutoscalingConfig_AsymmetricAutoscalingOptions_Overrides_AutoscalingLimitsFields,
-		},
-		"AutoscalingTargets": ubx.FieldSpec{
-			WireName: "autoscaling_targets",
-			Kind: "object",
-			Fields: InstancePartition_AutoscalingConfig_AutoscalingTargetsFields,
-		},
-	}
+	"AsymmetricAutoscalingOptions": ubx.FieldSpec{
+		WireName: "asymmetric_autoscaling_options",
+		Kind:     "list",
+		Fields:   InstancePartition_AutoscalingConfig_AsymmetricAutoscalingOptionsFields,
+	},
+	"AutoscalingLimits": ubx.FieldSpec{
+		WireName: "autoscaling_limits",
+		Kind:     "object",
+		Fields:   InstancePartition_AutoscalingConfig_AsymmetricAutoscalingOptions_Overrides_AutoscalingLimitsFields,
+	},
+	"AutoscalingTargets": ubx.FieldSpec{
+		WireName: "autoscaling_targets",
+		Kind:     "object",
+		Fields:   InstancePartition_AutoscalingConfig_AutoscalingTargetsFields,
+	},
+}
 
 var InstancePartition_InstancePartitionFields = ubx.FieldMap{
-		"AutoscalingConfig": ubx.FieldSpec{
-			WireName: "autoscaling_config",
-			Kind: "object",
-			Fields: InstancePartition_AutoscalingConfigFields,
-		},
-		"Config": ubx.FieldSpec{WireName: "config"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NodeCount": ubx.FieldSpec{WireName: "node_count"},
-		"ProcessingUnits": ubx.FieldSpec{WireName: "processing_units"},
-		"ReferencingBackups": ubx.FieldSpec{WireName: "referencing_backups"},
-		"ReferencingDatabases": ubx.FieldSpec{WireName: "referencing_databases"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-	}
+	"AutoscalingConfig": ubx.FieldSpec{
+		WireName: "autoscaling_config",
+		Kind:     "object",
+		Fields:   InstancePartition_AutoscalingConfigFields,
+	},
+	"Config":               ubx.FieldSpec{WireName: "config"},
+	"CreateTime":           ubx.FieldSpec{WireName: "create_time"},
+	"DisplayName":          ubx.FieldSpec{WireName: "display_name"},
+	"Etag":                 ubx.FieldSpec{WireName: "etag"},
+	"Name":                 ubx.FieldSpec{WireName: "name"},
+	"NodeCount":            ubx.FieldSpec{WireName: "node_count"},
+	"ProcessingUnits":      ubx.FieldSpec{WireName: "processing_units"},
+	"ReferencingBackups":   ubx.FieldSpec{WireName: "referencing_backups"},
+	"ReferencingDatabases": ubx.FieldSpec{WireName: "referencing_databases"},
+	"State":                ubx.FieldSpec{WireName: "state"},
+	"UpdateTime":           ubx.FieldSpec{WireName: "update_time"},
+}
 
 type InstancePartitionConfig struct {
 	// An isolated set of Cloud Spanner resources that databases can define placements on.
@@ -194,8 +194,8 @@ var InstancePartition = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"InstancePartition": ubx.FieldSpec{
 			WireName: "instance_partition",
-			Kind: "object",
-			Fields: InstancePartition_InstancePartitionFields,
+			Kind:     "object",
+			Fields:   InstancePartition_InstancePartitionFields,
 		},
 		"InstancePartitionId": ubx.FieldSpec{WireName: "instance_partition_id"},
 	},

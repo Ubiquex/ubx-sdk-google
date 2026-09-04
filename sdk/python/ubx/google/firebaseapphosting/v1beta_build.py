@@ -167,16 +167,6 @@ _V1betaBuild_ErrorFields = {
     "message": ubx.FieldSpec(wire_name="message"),
 }
 
-_V1betaBuild_ErrorsFields = {
-    "cloud_resource": ubx.FieldSpec(wire_name="cloud_resource"),
-    "error": ubx.FieldSpec(
-        wire_name="error",
-        kind="object",
-        fields=_V1betaBuild_ErrorFields,
-    ),
-    "error_source": ubx.FieldSpec(wire_name="error_source"),
-}
-
 _V1betaBuild_Source_Archive_AuthorFields = {
     "display_name": ubx.FieldSpec(wire_name="display_name"),
     "email": ubx.FieldSpec(wire_name="email"),
@@ -259,42 +249,18 @@ _V1betaBuild_SourceFields = {
 class V1betaBuildConfig:
     # Optional. Unstructured key value map that may be set by external tools to store and arbitrary metadata. They are not queryable and should be preserved when modifying objects.
     annotations: Any = None
-    # Output only. The location of the [Cloud Build logs](https://cloud.google.com/build/docs/view-build-results) for the build process.
-    build_logs_uri: Any = None
     # Additional configuration of the backend for this build.
     config: Any = None
-    # Output only. Time at which the build was created.
-    create_time: Any = None
-    # Output only. Time at which the build was deleted.
-    delete_time: Any = None
     # Optional. Human-readable name. 63 character limit.
     display_name: Any = None
-    # Output only. The environment name of the backend when this build was created.
-    environment: Any = None
     # The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
     error: Any = None
-    # Output only. Deprecated: Use `errors` instead. The source of the error for the build, if in a `FAILED` state.
-    error_source: Any = None
-    # Output only. A list of all errors that occurred during an App Hosting build.
-    errors: Any = None
-    # Output only. Server-computed checksum based on other values; may be sent on update or delete to ensure operation is done on expected resource.
-    etag: Any = None
-    # Output only. The Artifact Registry [container image](https://cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories.dockerImages) URI, used by the Cloud Run [`revision`](https://cloud.google.com/run/docs/reference/rest/v2/projects.locations.services.revisions) for this build.
-    image: Any = None
     # Optional. Unstructured key value map that can be used to organize and categorize objects.
     labels: Any = None
     # Identifier. The resource name of the build. Format: `projects/{project}/locations/{locationId}/backends/{backendId}/builds/{buildId}`.
     name: Any = None
-    # Output only. A field that, if true, indicates that the build has an ongoing LRO.
-    reconciling: Any = None
     # The source for the build.
     source: Any = None
-    # Output only. The state of the build.
-    state: Any = None
-    # Output only. System-assigned, unique identifier.
-    uid: Any = None
-    # Output only. Time at which the build was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V1betaBuildAttrs:
@@ -341,39 +307,23 @@ V1betaBuild = ubx.ResourceBinding(
     wire_type="google_firebaseapphosting_v1beta_build",
     fields={
         "annotations": ubx.FieldSpec(wire_name="annotations"),
-        "build_logs_uri": ubx.FieldSpec(wire_name="build_logs_uri"),
         "config": ubx.FieldSpec(
             wire_name="config",
             kind="object",
             fields=_V1betaBuild_ConfigFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
-        "delete_time": ubx.FieldSpec(wire_name="delete_time"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
-        "environment": ubx.FieldSpec(wire_name="environment"),
         "error": ubx.FieldSpec(
             wire_name="error",
             kind="object",
             fields=_V1betaBuild_ErrorFields,
         ),
-        "error_source": ubx.FieldSpec(wire_name="error_source"),
-        "errors": ubx.FieldSpec(
-            wire_name="errors",
-            kind="list",
-            fields=_V1betaBuild_ErrorsFields,
-        ),
-        "etag": ubx.FieldSpec(wire_name="etag"),
-        "image": ubx.FieldSpec(wire_name="image"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "reconciling": ubx.FieldSpec(wire_name="reconciling"),
         "source": ubx.FieldSpec(
             wire_name="source",
             kind="object",
             fields=_V1betaBuild_SourceFields,
         ),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "uid": ubx.FieldSpec(wire_name="uid"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

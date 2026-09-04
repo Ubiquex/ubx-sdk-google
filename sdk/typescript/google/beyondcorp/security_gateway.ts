@@ -128,14 +128,8 @@ const SecurityGateway_ServiceDiscoveryFields: FieldMap = {
 };
 
 export interface SecurityGatewayConfig {
-  /** Output only. Timestamp when the resource was created. */
-  createTime?: string | Computed<string>;
-  /** Output only. Service account used for operations that involve resources in consumer projects. */
-  delegatingServiceAccount?: string | Computed<string>;
   /** Optional. An arbitrary user-provided name for the SecurityGateway. Cannot exceed 64 characters. */
   displayName?: string | Computed<string>;
-  /** Output only. IP addresses that will be used for establishing connection to the endpoints. */
-  externalIps?: string[] | Computed<string[]>;
   /** Optional. Map of Hubs that represents regional data path deployment with GCP region as a key. */
   hubs?: Record<string, SecurityGateway_Hubs> | Computed<Record<string, SecurityGateway_Hubs>>;
   /** Configuration for Cloud Logging. */
@@ -146,10 +140,6 @@ export interface SecurityGatewayConfig {
   proxyProtocolConfig?: SecurityGateway_ProxyProtocolConfig | Computed<SecurityGateway_ProxyProtocolConfig>;
   /** Settings related to the Service Discovery. */
   serviceDiscovery?: SecurityGateway_ServiceDiscovery | Computed<SecurityGateway_ServiceDiscovery>;
-  /** Output only. The operational state of the SecurityGateway. */
-  state?: string | Computed<string>;
-  /** Output only. Timestamp when the resource was last modified. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface SecurityGatewayAttrs {
@@ -180,10 +170,7 @@ export interface SecurityGatewayAttrs {
 export const SecurityGateway: ResourceBinding<SecurityGatewayConfig, SecurityGatewayAttrs> = {
   wireType: "google_beyondcorp_security_gateway",
   fields: {
-    createTime: "create_time",
-    delegatingServiceAccount: "delegating_service_account",
     displayName: "display_name",
-    externalIps: "external_ips",
     hubs: {
       wireName: "hubs",
       kind: "map",
@@ -201,7 +188,5 @@ export const SecurityGateway: ResourceBinding<SecurityGatewayConfig, SecurityGat
       kind: "object",
       fields: SecurityGateway_ServiceDiscoveryFields,
     },
-    state: "state",
-    updateTime: "update_time",
   },
 };

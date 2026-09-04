@@ -166,14 +166,6 @@ const Instance_NetworkConfigFields: FieldMap = {
   network: "network",
 };
 
-const Instance_NodesFields: FieldMap = {
-  id: "id",
-  ip: "ip",
-  isHotStandby: "is_hot_standby",
-  state: "state",
-  zoneId: "zone_id",
-};
-
 const Instance_ObservabilityConfigFields: FieldMap = {
   enabled: "enabled",
   maxQueryStringLength: "max_query_string_length",
@@ -224,6 +216,14 @@ const Instance_ReadPoolConfigFields: FieldMap = {
   nodeCount: "node_count",
 };
 
+const Instance_NodesFields: FieldMap = {
+  id: "id",
+  ip: "ip",
+  isHotStandby: "is_hot_standby",
+  state: "state",
+  zoneId: "zone_id",
+};
+
 export interface InstanceConfig {
   /** Optional. Specifies whether an instance needs to spin up. Once the instance is active, the activation policy can be updated to the `NEVER` to stop the instance. Likewise, the activation policy can be updated to `ALWAYS` to start the instance. There are restrictions around when an instance can/cannot be activated (for example, a read pool instance should be stopped before stopping primary etc.). Please refer to the API documentation for more details. */
   activationPolicy?: string | Computed<string>;
@@ -235,14 +235,10 @@ export interface InstanceConfig {
   clientConnectionConfig?: Instance_ClientConnectionConfig | Computed<Instance_ClientConnectionConfig>;
   /** Configuration for Managed Connection Pool (MCP). */
   connectionPoolConfig?: Instance_ConnectionPoolConfig | Computed<Instance_ConnectionPoolConfig>;
-  /** Output only. Create time stamp */
-  createTime?: string | Computed<string>;
   /** Optional. Controls whether the Data API is enabled for this instance. When enabled, this allows authorized users to connect to the instance from the public internet using the `executeSql` API, even for private IP instances. If this is not specified, the data API is enabled by default for Google internal services like AlloyDB Studio. Disable it explicitly to disallow Google internal services as well. */
   dataApiAccess?: string | Computed<string>;
   /** Database flags. Set at the instance level. They are copied from the primary instance on secondary instance creation. Flags that have restrictions default to the value at primary instance on read instances during creation. Read instances can set new flags or override existing flags that are relevant for reads, for example, for enabling columnar cache on a read instance. Flags set on read instance might or might not be present on the primary instance. This is a list of "key": "value" pairs. "key": The name of the flag. These flags are passed at instance setup time, so include both server options and system variables for Postgres. Flags are specified with underscores, not hyphens. "value": The value of the flag. Booleans are set to **on** for true and **off** for false. This field must be omitted if the flag doesn't take a value. */
   databaseFlags?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. Delete time stamp */
-  deleteTime?: string | Computed<string>;
   /** User-settable and human-readable display name for the Instance. */
   displayName?: string | Computed<string>;
   /** For Resource freshness validation (https://google.aip.dev/154) */
@@ -251,42 +247,20 @@ export interface InstanceConfig {
   gceZone?: string | Computed<string>;
   /** Required. The type of the instance. Specified at creation time. */
   instanceType?: string | Computed<string>;
-  /** Output only. The IP address for the Instance. This is the connection endpoint for an end-user application. */
-  ipAddress?: string | Computed<string>;
   /** Labels as key value pairs */
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** MachineConfig describes the configuration of a machine. */
   machineConfig?: Instance_MachineConfig | Computed<Instance_MachineConfig>;
-  /** Output only. Maintenance version of the instance, for example: POSTGRES_15.2025_07_15.04_00. Output only. Update this field via the parent cluster's maintenance_version field(s). */
-  maintenanceVersionName?: string | Computed<string>;
-  /** Output only. The name of the instance resource with the format: * projects/{project}/locations/{region}/clusters/{cluster_id}/instances/{instance_id} where the cluster and instance ID segments should satisfy the regex expression `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`, e.g. 1-63 characters of lowercase letters, numbers, and dashes, starting with a letter, and ending with a letter or number. For more details see https://google.aip.dev/122. The prefix of the instance resource name is the name of the parent resource: * projects/{project}/locations/{region}/clusters/{cluster_id} */
-  name?: string | Computed<string>;
   /** Metadata related to instance-level network configuration. */
   networkConfig?: Instance_NetworkConfig | Computed<Instance_NetworkConfig>;
-  /** Output only. List of available read-only VMs in this instance, including the standby for a PRIMARY instance. */
-  nodes?: Instance_Nodes[] | Computed<Instance_Nodes[]>;
   /** Observability Instance specific configuration. */
   observabilityConfig?: Instance_ObservabilityConfig | Computed<Instance_ObservabilityConfig>;
-  /** Output only. All outbound public IP addresses configured for the instance. */
-  outboundPublicIpAddresses?: string[] | Computed<string[]>;
   /** PscInstanceConfig contains PSC related configuration at an instance level. */
   pscInstanceConfig?: Instance_PscInstanceConfig | Computed<Instance_PscInstanceConfig>;
-  /** Output only. The public IP addresses for the Instance. This is available ONLY when enable_public_ip is set. This is the connection endpoint for an end-user application. */
-  publicIpAddress?: string | Computed<string>;
   /** QueryInsights Instance specific configuration. */
   queryInsightsConfig?: Instance_QueryInsightsConfig | Computed<Instance_QueryInsightsConfig>;
   /** Configuration for a read pool instance. */
   readPoolConfig?: Instance_ReadPoolConfig | Computed<Instance_ReadPoolConfig>;
-  /** Output only. Reconciling (https://google.aip.dev/128#reconciliation). Set to true if the current state of Instance does not match the user's intended state, and the service is actively updating the resource to reconcile them. This can happen due to user-triggered updates or system actions like failover or maintenance. */
-  reconciling?: boolean | Computed<boolean>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzs?: boolean | Computed<boolean>;
-  /** Output only. The current serving state of the instance. */
-  state?: string | Computed<string>;
-  /** Output only. The system-generated UID of the resource. The UID is assigned when the resource is created, and it is retained until it is deleted. */
-  uid?: string | Computed<string>;
-  /** Output only. Update time stamp */
-  updateTime?: string | Computed<string>;
   /** Details of a single node in the instance. Nodes in an AlloyDB instance are ephemeral, they can change during update, failover, autohealing and resize operations. */
   writableNode?: Instance_Nodes | Computed<Instance_Nodes>;
 }
@@ -374,45 +348,33 @@ export const Instance: ResourceBinding<InstanceConfig, InstanceAttrs> = {
       kind: "object",
       fields: Instance_ConnectionPoolConfigFields,
     },
-    createTime: "create_time",
     dataApiAccess: "data_api_access",
     databaseFlags: "database_flags",
-    deleteTime: "delete_time",
     displayName: "display_name",
     etag: "etag",
     gceZone: "gce_zone",
     instanceType: "instance_type",
-    ipAddress: "ip_address",
     labels: "labels",
     machineConfig: {
       wireName: "machine_config",
       kind: "object",
       fields: Instance_MachineConfigFields,
     },
-    maintenanceVersionName: "maintenance_version_name",
-    name: "name",
     networkConfig: {
       wireName: "network_config",
       kind: "object",
       fields: Instance_NetworkConfigFields,
-    },
-    nodes: {
-      wireName: "nodes",
-      kind: "list",
-      fields: Instance_NodesFields,
     },
     observabilityConfig: {
       wireName: "observability_config",
       kind: "object",
       fields: Instance_ObservabilityConfigFields,
     },
-    outboundPublicIpAddresses: "outbound_public_ip_addresses",
     pscInstanceConfig: {
       wireName: "psc_instance_config",
       kind: "object",
       fields: Instance_PscInstanceConfigFields,
     },
-    publicIpAddress: "public_ip_address",
     queryInsightsConfig: {
       wireName: "query_insights_config",
       kind: "object",
@@ -423,11 +385,6 @@ export const Instance: ResourceBinding<InstanceConfig, InstanceAttrs> = {
       kind: "object",
       fields: Instance_ReadPoolConfigFields,
     },
-    reconciling: "reconciling",
-    satisfiesPzs: "satisfies_pzs",
-    state: "state",
-    uid: "uid",
-    updateTime: "update_time",
     writableNode: {
       wireName: "writable_node",
       kind: "object",

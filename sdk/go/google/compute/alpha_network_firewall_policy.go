@@ -5,63 +5,63 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AlphaNetworkFirewallPolicy_Associations struct {
 	AttachmentTarget any
-	DisplayName any
+	DisplayName      any
 	FirewallPolicyId any
-	Name any
-	Priority any
-	ShortName any
+	Name             any
+	Priority         any
+	ShortName        any
 }
 
 type AlphaNetworkFirewallPolicy_PacketMirroringRules_Match_Layer4Configs struct {
 	IpProtocol any
-	Ports any
+	Ports      any
 }
 
 type AlphaNetworkFirewallPolicy_PacketMirroringRules_Match_SrcSecureTags struct {
-	Name any
+	Name  any
 	State any
 }
 
 type AlphaNetworkFirewallPolicy_PacketMirroringRules_Match struct {
-	DestAddressGroups any
-	DestFqdns any
-	DestIpRanges any
-	DestNetworkContext any
-	DestNetworkScope any
-	DestNetworkType any
-	DestRegionCodes any
+	DestAddressGroups       any
+	DestFqdns               any
+	DestIpRanges            any
+	DestNetworkContext      any
+	DestNetworkScope        any
+	DestNetworkType         any
+	DestRegionCodes         any
 	DestThreatIntelligences any
-	Layer4Configs any
-	SrcAddressGroups any
-	SrcFqdns any
-	SrcIpRanges any
-	SrcNetworkContext any
-	SrcNetworkScope any
-	SrcNetworkType any
-	SrcNetworks any
-	SrcRegionCodes any
-	SrcSecureTags any
-	SrcThreatIntelligences any
+	Layer4Configs           any
+	SrcAddressGroups        any
+	SrcFqdns                any
+	SrcIpRanges             any
+	SrcNetworkContext       any
+	SrcNetworkScope         any
+	SrcNetworkType          any
+	SrcNetworks             any
+	SrcRegionCodes          any
+	SrcSecureTags           any
+	SrcThreatIntelligences  any
 }
 
 type AlphaNetworkFirewallPolicy_PacketMirroringRules struct {
-	Action any
-	Description any
-	Direction any
-	Disabled any
-	EnableLogging any
-	Kind any
-	Match any
-	Priority any
-	RuleName any
-	RuleTupleCount any
-	SecurityProfileGroup any
+	Action                any
+	Description           any
+	Direction             any
+	Disabled              any
+	EnableLogging         any
+	Kind                  any
+	Match                 any
+	Priority              any
+	RuleName              any
+	RuleTupleCount        any
+	SecurityProfileGroup  any
 	TargetForwardingRules any
-	TargetResources any
-	TargetSecureTags any
+	TargetResources       any
+	TargetSecureTags      any
 	TargetServiceAccounts any
-	TargetType any
-	TlsInspect any
+	TargetType            any
+	TlsInspect            any
 }
 
 type AlphaNetworkFirewallPolicy_RolloutOperation_RolloutInput struct {
@@ -81,9 +81,9 @@ type AlphaNetworkFirewallPolicy_RolloutOperation_RolloutStatus_NextRollout struc
 }
 
 type AlphaNetworkFirewallPolicy_RolloutOperation_RolloutStatus_OngoingRollouts struct {
-	Rollout any
+	Rollout     any
 	RolloutPlan any
-	State any
+	State       any
 }
 
 type AlphaNetworkFirewallPolicy_RolloutOperation_RolloutStatus struct {
@@ -102,137 +102,135 @@ type AlphaNetworkFirewallPolicy_RolloutOperation struct {
 }
 
 var AlphaNetworkFirewallPolicy_AssociationsFields = ubx.FieldMap{
-		"AttachmentTarget": ubx.FieldSpec{WireName: "attachment_target"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"FirewallPolicyId": ubx.FieldSpec{WireName: "firewall_policy_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Priority": ubx.FieldSpec{WireName: "priority"},
-		"ShortName": ubx.FieldSpec{WireName: "short_name"},
-	}
+	"AttachmentTarget": ubx.FieldSpec{WireName: "attachment_target"},
+	"DisplayName":      ubx.FieldSpec{WireName: "display_name"},
+	"FirewallPolicyId": ubx.FieldSpec{WireName: "firewall_policy_id"},
+	"Name":             ubx.FieldSpec{WireName: "name"},
+	"Priority":         ubx.FieldSpec{WireName: "priority"},
+	"ShortName":        ubx.FieldSpec{WireName: "short_name"},
+}
 
 var AlphaNetworkFirewallPolicy_PacketMirroringRules_Match_Layer4ConfigsFields = ubx.FieldMap{
-		"IpProtocol": ubx.FieldSpec{WireName: "ip_protocol"},
-		"Ports": ubx.FieldSpec{WireName: "ports"},
-	}
+	"IpProtocol": ubx.FieldSpec{WireName: "ip_protocol"},
+	"Ports":      ubx.FieldSpec{WireName: "ports"},
+}
 
 var AlphaNetworkFirewallPolicy_PacketMirroringRules_Match_SrcSecureTagsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"State": ubx.FieldSpec{WireName: "state"},
+}
 
 var AlphaNetworkFirewallPolicy_PacketMirroringRules_MatchFields = ubx.FieldMap{
-		"DestAddressGroups": ubx.FieldSpec{WireName: "dest_address_groups"},
-		"DestFqdns": ubx.FieldSpec{WireName: "dest_fqdns"},
-		"DestIpRanges": ubx.FieldSpec{WireName: "dest_ip_ranges"},
-		"DestNetworkContext": ubx.FieldSpec{WireName: "dest_network_context"},
-		"DestNetworkScope": ubx.FieldSpec{WireName: "dest_network_scope"},
-		"DestNetworkType": ubx.FieldSpec{WireName: "dest_network_type"},
-		"DestRegionCodes": ubx.FieldSpec{WireName: "dest_region_codes"},
-		"DestThreatIntelligences": ubx.FieldSpec{WireName: "dest_threat_intelligences"},
-		"Layer4Configs": ubx.FieldSpec{
-			WireName: "layer4_configs",
-			Kind: "list",
-			Fields: AlphaNetworkFirewallPolicy_PacketMirroringRules_Match_Layer4ConfigsFields,
-		},
-		"SrcAddressGroups": ubx.FieldSpec{WireName: "src_address_groups"},
-		"SrcFqdns": ubx.FieldSpec{WireName: "src_fqdns"},
-		"SrcIpRanges": ubx.FieldSpec{WireName: "src_ip_ranges"},
-		"SrcNetworkContext": ubx.FieldSpec{WireName: "src_network_context"},
-		"SrcNetworkScope": ubx.FieldSpec{WireName: "src_network_scope"},
-		"SrcNetworkType": ubx.FieldSpec{WireName: "src_network_type"},
-		"SrcNetworks": ubx.FieldSpec{WireName: "src_networks"},
-		"SrcRegionCodes": ubx.FieldSpec{WireName: "src_region_codes"},
-		"SrcSecureTags": ubx.FieldSpec{
-			WireName: "src_secure_tags",
-			Kind: "list",
-			Fields: AlphaNetworkFirewallPolicy_PacketMirroringRules_Match_SrcSecureTagsFields,
-		},
-		"SrcThreatIntelligences": ubx.FieldSpec{WireName: "src_threat_intelligences"},
-	}
+	"DestAddressGroups":       ubx.FieldSpec{WireName: "dest_address_groups"},
+	"DestFqdns":               ubx.FieldSpec{WireName: "dest_fqdns"},
+	"DestIpRanges":            ubx.FieldSpec{WireName: "dest_ip_ranges"},
+	"DestNetworkContext":      ubx.FieldSpec{WireName: "dest_network_context"},
+	"DestNetworkScope":        ubx.FieldSpec{WireName: "dest_network_scope"},
+	"DestNetworkType":         ubx.FieldSpec{WireName: "dest_network_type"},
+	"DestRegionCodes":         ubx.FieldSpec{WireName: "dest_region_codes"},
+	"DestThreatIntelligences": ubx.FieldSpec{WireName: "dest_threat_intelligences"},
+	"Layer4Configs": ubx.FieldSpec{
+		WireName: "layer4_configs",
+		Kind:     "list",
+		Fields:   AlphaNetworkFirewallPolicy_PacketMirroringRules_Match_Layer4ConfigsFields,
+	},
+	"SrcAddressGroups":  ubx.FieldSpec{WireName: "src_address_groups"},
+	"SrcFqdns":          ubx.FieldSpec{WireName: "src_fqdns"},
+	"SrcIpRanges":       ubx.FieldSpec{WireName: "src_ip_ranges"},
+	"SrcNetworkContext": ubx.FieldSpec{WireName: "src_network_context"},
+	"SrcNetworkScope":   ubx.FieldSpec{WireName: "src_network_scope"},
+	"SrcNetworkType":    ubx.FieldSpec{WireName: "src_network_type"},
+	"SrcNetworks":       ubx.FieldSpec{WireName: "src_networks"},
+	"SrcRegionCodes":    ubx.FieldSpec{WireName: "src_region_codes"},
+	"SrcSecureTags": ubx.FieldSpec{
+		WireName: "src_secure_tags",
+		Kind:     "list",
+		Fields:   AlphaNetworkFirewallPolicy_PacketMirroringRules_Match_SrcSecureTagsFields,
+	},
+	"SrcThreatIntelligences": ubx.FieldSpec{WireName: "src_threat_intelligences"},
+}
 
 var AlphaNetworkFirewallPolicy_PacketMirroringRulesFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Direction": ubx.FieldSpec{WireName: "direction"},
-		"Disabled": ubx.FieldSpec{WireName: "disabled"},
-		"EnableLogging": ubx.FieldSpec{WireName: "enable_logging"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Match": ubx.FieldSpec{
-			WireName: "match",
-			Kind: "object",
-			Fields: AlphaNetworkFirewallPolicy_PacketMirroringRules_MatchFields,
-		},
-		"Priority": ubx.FieldSpec{WireName: "priority"},
-		"RuleName": ubx.FieldSpec{WireName: "rule_name"},
-		"RuleTupleCount": ubx.FieldSpec{WireName: "rule_tuple_count"},
-		"SecurityProfileGroup": ubx.FieldSpec{WireName: "security_profile_group"},
-		"TargetForwardingRules": ubx.FieldSpec{WireName: "target_forwarding_rules"},
-		"TargetResources": ubx.FieldSpec{WireName: "target_resources"},
-		"TargetSecureTags": ubx.FieldSpec{
-			WireName: "target_secure_tags",
-			Kind: "list",
-			Fields: AlphaNetworkFirewallPolicy_PacketMirroringRules_Match_SrcSecureTagsFields,
-		},
-		"TargetServiceAccounts": ubx.FieldSpec{WireName: "target_service_accounts"},
-		"TargetType": ubx.FieldSpec{WireName: "target_type"},
-		"TlsInspect": ubx.FieldSpec{WireName: "tls_inspect"},
-	}
+	"Action":        ubx.FieldSpec{WireName: "action"},
+	"Description":   ubx.FieldSpec{WireName: "description"},
+	"Direction":     ubx.FieldSpec{WireName: "direction"},
+	"Disabled":      ubx.FieldSpec{WireName: "disabled"},
+	"EnableLogging": ubx.FieldSpec{WireName: "enable_logging"},
+	"Kind":          ubx.FieldSpec{WireName: "kind"},
+	"Match": ubx.FieldSpec{
+		WireName: "match",
+		Kind:     "object",
+		Fields:   AlphaNetworkFirewallPolicy_PacketMirroringRules_MatchFields,
+	},
+	"Priority":              ubx.FieldSpec{WireName: "priority"},
+	"RuleName":              ubx.FieldSpec{WireName: "rule_name"},
+	"RuleTupleCount":        ubx.FieldSpec{WireName: "rule_tuple_count"},
+	"SecurityProfileGroup":  ubx.FieldSpec{WireName: "security_profile_group"},
+	"TargetForwardingRules": ubx.FieldSpec{WireName: "target_forwarding_rules"},
+	"TargetResources":       ubx.FieldSpec{WireName: "target_resources"},
+	"TargetSecureTags": ubx.FieldSpec{
+		WireName: "target_secure_tags",
+		Kind:     "list",
+		Fields:   AlphaNetworkFirewallPolicy_PacketMirroringRules_Match_SrcSecureTagsFields,
+	},
+	"TargetServiceAccounts": ubx.FieldSpec{WireName: "target_service_accounts"},
+	"TargetType":            ubx.FieldSpec{WireName: "target_type"},
+	"TlsInspect":            ubx.FieldSpec{WireName: "tls_inspect"},
+}
 
 var AlphaNetworkFirewallPolicy_RolloutOperation_RolloutInputFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PredefinedRolloutPlan": ubx.FieldSpec{WireName: "predefined_rollout_plan"},
-		"RetryUuid": ubx.FieldSpec{WireName: "retry_uuid"},
-	}
+	"Name":                  ubx.FieldSpec{WireName: "name"},
+	"PredefinedRolloutPlan": ubx.FieldSpec{WireName: "predefined_rollout_plan"},
+	"RetryUuid":             ubx.FieldSpec{WireName: "retry_uuid"},
+}
 
 var AlphaNetworkFirewallPolicy_RolloutOperation_RolloutStatus_NextRolloutFields = ubx.FieldMap{
-		"RolloutId": ubx.FieldSpec{WireName: "rollout_id"},
-		"RolloutPlan": ubx.FieldSpec{WireName: "rollout_plan"},
-	}
+	"RolloutId":   ubx.FieldSpec{WireName: "rollout_id"},
+	"RolloutPlan": ubx.FieldSpec{WireName: "rollout_plan"},
+}
 
 var AlphaNetworkFirewallPolicy_RolloutOperation_RolloutStatus_OngoingRolloutsFields = ubx.FieldMap{
-		"Rollout": ubx.FieldSpec{WireName: "rollout"},
-		"RolloutPlan": ubx.FieldSpec{WireName: "rollout_plan"},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"Rollout":     ubx.FieldSpec{WireName: "rollout"},
+	"RolloutPlan": ubx.FieldSpec{WireName: "rollout_plan"},
+	"State":       ubx.FieldSpec{WireName: "state"},
+}
 
 var AlphaNetworkFirewallPolicy_RolloutOperation_RolloutStatusFields = ubx.FieldMap{
-		"NextRollout": ubx.FieldSpec{
-			WireName: "next_rollout",
-			Kind: "object",
-			Fields: AlphaNetworkFirewallPolicy_RolloutOperation_RolloutStatus_NextRolloutFields,
-		},
-		"OngoingRollouts": ubx.FieldSpec{
-			WireName: "ongoing_rollouts",
-			Kind: "list",
-			Fields: AlphaNetworkFirewallPolicy_RolloutOperation_RolloutStatus_OngoingRolloutsFields,
-		},
-		"PreviousRollout": ubx.FieldSpec{
-			WireName: "previous_rollout",
-			Kind: "object",
-			Fields: AlphaNetworkFirewallPolicy_RolloutOperation_RolloutStatus_OngoingRolloutsFields,
-		},
-	}
+	"NextRollout": ubx.FieldSpec{
+		WireName: "next_rollout",
+		Kind:     "object",
+		Fields:   AlphaNetworkFirewallPolicy_RolloutOperation_RolloutStatus_NextRolloutFields,
+	},
+	"OngoingRollouts": ubx.FieldSpec{
+		WireName: "ongoing_rollouts",
+		Kind:     "list",
+		Fields:   AlphaNetworkFirewallPolicy_RolloutOperation_RolloutStatus_OngoingRolloutsFields,
+	},
+	"PreviousRollout": ubx.FieldSpec{
+		WireName: "previous_rollout",
+		Kind:     "object",
+		Fields:   AlphaNetworkFirewallPolicy_RolloutOperation_RolloutStatus_OngoingRolloutsFields,
+	},
+}
 
 var AlphaNetworkFirewallPolicy_RolloutOperationFields = ubx.FieldMap{
-		"RolloutInput": ubx.FieldSpec{
-			WireName: "rollout_input",
-			Kind: "object",
-			Fields: AlphaNetworkFirewallPolicy_RolloutOperation_RolloutInputFields,
-		},
-		"RolloutStatus": ubx.FieldSpec{
-			WireName: "rollout_status",
-			Kind: "object",
-			Fields: AlphaNetworkFirewallPolicy_RolloutOperation_RolloutStatusFields,
-		},
-	}
+	"RolloutInput": ubx.FieldSpec{
+		WireName: "rollout_input",
+		Kind:     "object",
+		Fields:   AlphaNetworkFirewallPolicy_RolloutOperation_RolloutInputFields,
+	},
+	"RolloutStatus": ubx.FieldSpec{
+		WireName: "rollout_status",
+		Kind:     "object",
+		Fields:   AlphaNetworkFirewallPolicy_RolloutOperation_RolloutStatusFields,
+	},
+}
 
 type AlphaNetworkFirewallPolicyConfig struct {
 	// Optional. If specified, it defines what should happen in case of backend issues for rules with apply_security_profile_group action. Allowed values: ALLOW, DENY. If not specified, the default behavior is ALLOW.
 	ApplySecurityProfileFallbackAction any
 	// A list of associations that belong to this firewall policy.
 	Associations any
-	// Output only. [Output Only] Creation timestamp inRFC3339 text format.
-	CreationTimestamp any
 	// An optional description of this resource. Provide this property when you create the resource.
 	Description any
 	// Deprecated, please use short name instead. User-provided name of the Organization firewall policy. The name should be unique in the organization in which the firewall policy is created. This field is not applicable to network firewall policies. This name must be set on creation and cannot be changed. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
@@ -241,30 +239,20 @@ type AlphaNetworkFirewallPolicyConfig struct {
 	Fingerprint any
 	// [Output Only] The unique identifier for the resource. This identifier is defined by the server.
 	Id any
-	// Output only. [Output only] Type of the resource. Alwayscompute#firewallPolicyfor firewall policies
-	Kind any
 	// Name of the resource. For Organization Firewall Policies it's a [Output Only] numeric ID allocated by Google Cloud which uniquely identifies the Organization Firewall Policy.
 	Name any
 	// A list of packet mirroring rules that belong to this policy.
 	PacketMirroringRules any
-	// Output only. [Output Only] The parent of the firewall policy. This field is not applicable to network firewall policies.
-	Parent any
 	// Indicates the source of this Firewall Policy. This field is optional on creation and defaults to USER_DEFINED. The USER_DEFINED value indicates a regular firewall policy. The SYSTEM value indicates a system-level policy managed by an internal service like GKE. This SYSTEM value is reserved for internal services and cannot be set by users during policy creation. Policies with a SYSTEM source cannot be modified or deleted by users.
 	PolicySource any
 	// The type of the firewall policy. This field can be one of VPC_POLICY, RDMA_ROCE_POLICY or ULL_POLICY. Note: if not specified then VPC_POLICY will be used.
 	PolicyType any
-	// Output only. [Output Only] URL of the region where the regional firewall policy resides. This field is not applicable to global firewall policies. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
-	Region any
 	// Represents progressive rollout input parameters and current status.
 	RolloutOperation any
-	// Output only. [Output Only] Total count of all firewall policy rule tuples. A firewall policy can not exceed a set number of tuples.
-	RuleTupleCount any
 	// A list of rules that belong to this policy. There must always be a default rule (rule with priority 2147483647 and match "*"). If no rules are provided when creating a firewall policy, a default rule with action "allow" will be added.
 	Rules any
 	// [Output Only] Server-defined URL for the resource.
 	SelfLink any
-	// Output only. [Output Only] Server-defined URL for this resource with the resource id.
-	SelfLinkWithId any
 	// User-provided name of the Organization firewall policy. The name should be unique in the organization in which the firewall policy is created. This field is not applicable to network firewall policies. This name must be set on creation and cannot be changed. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
 	ShortName any
 	// The scope of networks allowed to be associated with the firewall policy. This field can be either GLOBAL_VPC_NETWORK orREGIONAL_VPC_NETWORK. A firewall policy with the VPC scope set to GLOBAL_VPC_NETWORK is allowed to be attached only to global networks. When the VPC scope is set to REGIONAL_VPC_NETWORK the firewall policy is allowed to be attached only to regional networks in the same scope as the firewall policy. Note: if not specified then GLOBAL_VPC_NETWORK will be used.
@@ -322,39 +310,33 @@ var AlphaNetworkFirewallPolicy = ubx.ResourceBinding{
 		"ApplySecurityProfileFallbackAction": ubx.FieldSpec{WireName: "apply_security_profile_fallback_action"},
 		"Associations": ubx.FieldSpec{
 			WireName: "associations",
-			Kind: "list",
-			Fields: AlphaNetworkFirewallPolicy_AssociationsFields,
+			Kind:     "list",
+			Fields:   AlphaNetworkFirewallPolicy_AssociationsFields,
 		},
-		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"Fingerprint": ubx.FieldSpec{WireName: "fingerprint"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Id":          ubx.FieldSpec{WireName: "id"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"PacketMirroringRules": ubx.FieldSpec{
 			WireName: "packet_mirroring_rules",
-			Kind: "list",
-			Fields: AlphaNetworkFirewallPolicy_PacketMirroringRulesFields,
+			Kind:     "list",
+			Fields:   AlphaNetworkFirewallPolicy_PacketMirroringRulesFields,
 		},
-		"Parent": ubx.FieldSpec{WireName: "parent"},
 		"PolicySource": ubx.FieldSpec{WireName: "policy_source"},
-		"PolicyType": ubx.FieldSpec{WireName: "policy_type"},
-		"Region": ubx.FieldSpec{WireName: "region"},
+		"PolicyType":   ubx.FieldSpec{WireName: "policy_type"},
 		"RolloutOperation": ubx.FieldSpec{
 			WireName: "rollout_operation",
-			Kind: "object",
-			Fields: AlphaNetworkFirewallPolicy_RolloutOperationFields,
+			Kind:     "object",
+			Fields:   AlphaNetworkFirewallPolicy_RolloutOperationFields,
 		},
-		"RuleTupleCount": ubx.FieldSpec{WireName: "rule_tuple_count"},
 		"Rules": ubx.FieldSpec{
 			WireName: "rules",
-			Kind: "list",
-			Fields: AlphaNetworkFirewallPolicy_PacketMirroringRulesFields,
+			Kind:     "list",
+			Fields:   AlphaNetworkFirewallPolicy_PacketMirroringRulesFields,
 		},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"SelfLinkWithId": ubx.FieldSpec{WireName: "self_link_with_id"},
-		"ShortName": ubx.FieldSpec{WireName: "short_name"},
+		"SelfLink":        ubx.FieldSpec{WireName: "self_link"},
+		"ShortName":       ubx.FieldSpec{WireName: "short_name"},
 		"VpcNetworkScope": ubx.FieldSpec{WireName: "vpc_network_scope"},
 	},
 }

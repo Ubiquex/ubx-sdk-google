@@ -2,8 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface LinkConfig {
-  /** Output only. Create timestamp. */
-  createTime?: string | Computed<string>;
   /** Optional. Description of the link. */
   description?: string | Computed<string>;
   /** Optional. A user friendly display name. */
@@ -26,7 +24,6 @@ export interface LinkAttrs {
 export const Link: ResourceBinding<LinkConfig, LinkAttrs> = {
   wireType: "google_observability_link",
   fields: {
-    createTime: "create_time",
     description: "description",
     displayName: "display_name",
     name: "name",

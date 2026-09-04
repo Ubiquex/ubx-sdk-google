@@ -95,26 +95,6 @@ const Cluster_AutoscalingSettingsFields: FieldMap = {
   minClusterNodeCount: "min_cluster_node_count",
 };
 
-const Cluster_DatastoreMountConfig_DatastoreNetworkFields: FieldMap = {
-  connectionCount: "connection_count",
-  mtu: "mtu",
-  networkPeering: "network_peering",
-  subnet: "subnet",
-};
-
-const Cluster_DatastoreMountConfigFields: FieldMap = {
-  accessMode: "access_mode",
-  datastore: "datastore",
-  datastoreNetwork: {
-    wireName: "datastore_network",
-    kind: "object",
-    fields: Cluster_DatastoreMountConfig_DatastoreNetworkFields,
-  },
-  fileShare: "file_share",
-  nfsVersion: "nfs_version",
-  servers: "servers",
-};
-
 const Cluster_NodeTypeConfigsFields: FieldMap = {
   customCoreCount: "custom_core_count",
   nodeCount: "node_count",
@@ -128,24 +108,10 @@ const Cluster_StretchedClusterConfigFields: FieldMap = {
 export interface ClusterConfig {
   /** Autoscaling settings define the rules used by VMware Engine to automatically scale-out and scale-in the clusters in a private cloud. */
   autoscalingSettings?: Cluster_AutoscalingSettings | Computed<Cluster_AutoscalingSettings>;
-  /** Output only. Creation time of this resource. */
-  createTime?: string | Computed<string>;
-  /** Output only. Configuration of a mounted datastore. */
-  datastoreMountConfig?: Cluster_DatastoreMountConfig[] | Computed<Cluster_DatastoreMountConfig[]>;
-  /** Output only. True if the cluster is a management cluster; false otherwise. There can only be one management cluster in a private cloud and it has to be the first one. */
-  management?: boolean | Computed<boolean>;
-  /** Output only. Identifier. The resource name of this cluster. Resource names are schemeless URIs that follow the conventions in https://cloud.google.com/apis/design/resource_names. For example: `projects/my-project/locations/us-central1-a/privateClouds/my-cloud/clusters/my-cluster` */
-  name?: string | Computed<string>;
   /** Required. The map of cluster node types in this cluster, where the key is canonical identifier of the node type (corresponds to the `NodeType`). */
   nodeTypeConfigs?: Record<string, Cluster_NodeTypeConfigs> | Computed<Record<string, Cluster_NodeTypeConfigs>>;
-  /** Output only. State of the resource. */
-  state?: string | Computed<string>;
   /** Configuration of a stretched cluster. */
   stretchedClusterConfig?: Cluster_StretchedClusterConfig | Computed<Cluster_StretchedClusterConfig>;
-  /** Output only. System-generated unique identifier for the resource. */
-  uid?: string | Computed<string>;
-  /** Output only. Last update time of this resource. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface ClusterAttrs {
@@ -179,26 +145,15 @@ export const Cluster: ResourceBinding<ClusterConfig, ClusterAttrs> = {
       kind: "object",
       fields: Cluster_AutoscalingSettingsFields,
     },
-    createTime: "create_time",
-    datastoreMountConfig: {
-      wireName: "datastore_mount_config",
-      kind: "list",
-      fields: Cluster_DatastoreMountConfigFields,
-    },
-    management: "management",
-    name: "name",
     nodeTypeConfigs: {
       wireName: "node_type_configs",
       kind: "map",
       fields: Cluster_NodeTypeConfigsFields,
     },
-    state: "state",
     stretchedClusterConfig: {
       wireName: "stretched_cluster_config",
       kind: "object",
       fields: Cluster_StretchedClusterConfigFields,
     },
-    uid: "uid",
-    updateTime: "update_time",
   },
 };

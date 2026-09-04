@@ -4,12 +4,9 @@ package compute
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RegionUrlMap_DefaultCustomErrorResponsePolicy_ErrorResponseRules struct {
-	// A list of HTTP status codes that this error response rule matches. When a backend returns one of these response codes, the custom error response is used. For example, "404" or "500". (AI-inferred)
-	MatchResponseCodes any
-	// The HTTP status code that the URL Map should return to the client when the error occurs. The value must be between 100 and 599. If not specified, the original error code is returned. (AI-inferred)
+	MatchResponseCodes   any
 	OverrideResponseCode any
-	// The path to the custom error page for this error response rule. This is typically a relative URL path (e.g., '/custom-error.html') that serves the error response from the backend or a static content bucket. (AI-inferred)
-	Path any
+	Path                 any
 }
 
 type RegionUrlMap_DefaultCustomErrorResponsePolicy struct {
@@ -44,10 +41,8 @@ type RegionUrlMap_DefaultRouteAction_CachePolicy_ClientTtl struct {
 }
 
 type RegionUrlMap_DefaultRouteAction_CachePolicy_NegativeCachingPolicy struct {
-	// HTTP status code for which the negative caching policy applies. (AI-inferred)
 	Code any
-	// The duration for which a negative cache entry is retained. This is a Duration object containing 'seconds' and 'nanos' fields. (AI-inferred)
-	Ttl any
+	Ttl  any
 }
 
 type RegionUrlMap_DefaultRouteAction_CachePolicy struct {
@@ -148,32 +143,22 @@ type RegionUrlMap_DefaultRouteAction_UrlRewrite struct {
 }
 
 type RegionUrlMap_DefaultRouteAction_WeightedBackendServices_HeaderAction_RequestHeadersToAdd struct {
-	// The name of the HTTP header to add to the request. Must be a valid header name, typically containing only letters, digits, and hyphens (e.g., 'X-Forwarded-For'). (AI-inferred)
-	HeaderName any
-	// The value of the request header to add. This value is sent to the backend service along with the header name. (AI-inferred)
+	HeaderName  any
 	HeaderValue any
-	// If true, the header value replaces an existing header with the same name. If false, the header is added as an additional header. (AI-inferred)
-	Replace any
+	Replace     any
 }
 
 type RegionUrlMap_DefaultRouteAction_WeightedBackendServices_HeaderAction struct {
-	// The list of headers to be added to the request before it is forwarded to the backend service for this weighted backend service configuration. (AI-inferred)
-	RequestHeadersToAdd any
-	// A list of HTTP request header names to remove from the request before forwarding to the backend service. (AI-inferred)
-	RequestHeadersToRemove any
-	// A list of response headers to add, with each item specifying a header name and value. These headers are added to HTTP responses sent to the client when the request is served by this weighted backend service. (AI-inferred)
-	ResponseHeadersToAdd any
-	// Specifies a list of response header names to remove before sending the response back to the client. (AI-inferred)
+	RequestHeadersToAdd     any
+	RequestHeadersToRemove  any
+	ResponseHeadersToAdd    any
 	ResponseHeadersToRemove any
 }
 
 type RegionUrlMap_DefaultRouteAction_WeightedBackendServices struct {
-	// The name of the backend service that receives traffic for this weighted backend service entry. (AI-inferred)
 	BackendService any
-	// Defines the header modifications to apply to requests and responses for the corresponding weighted backend service in the region URL map. (AI-inferred)
-	HeaderAction any
-	// Specifies the relative weight for this backend service. Traffic is distributed proportionally to the weights of all backend services in the weighted_backend_services list. (AI-inferred)
-	Weight any
+	HeaderAction   any
+	Weight         any
 }
 
 type RegionUrlMap_DefaultRouteAction struct {
@@ -214,561 +199,503 @@ type RegionUrlMap_DefaultUrlRedirect struct {
 
 type RegionUrlMap_HostRules struct {
 	Description any
-	// The list of host patterns to match. The request's Host header must match one of these patterns (e.g., 'example.com' or '*.example.com') for this host rule to apply. (AI-inferred)
-	Hosts any
-	// The name of the path matcher to use for this host rule. This must match the name of a path matcher defined in the region URL map's path_matchers list. (AI-inferred)
+	Hosts       any
 	PathMatcher any
 }
 
 type RegionUrlMap_PathMatchers_PathRules struct {
-	// The custom error response policy for this path rule. It defines how to customize responses for specific HTTP error codes, such as the error page content and response code to serve. (AI-inferred)
 	CustomErrorResponsePolicy any
-	// List of path patterns to match against the incoming request path. Each path can contain a single trailing * wildcard. If the request path matches any of these patterns, the specified route action is applied. (AI-inferred)
-	Paths any
-	// Specifies the route action to take for requests that match this path rule, such as forwarding to a backend service, configuring weighted backend services, URL rewrite, or setting timeouts. (AI-inferred)
-	RouteAction any
-	// The backend service or backend bucket to use when the path matches this rule. Specify the self_link or name of a regional backend service or backend bucket. (AI-inferred)
-	Service any
-	// Specifies a redirect for requests that match this path rule. When set, matched requests are redirected according to the configured redirect behavior instead of being forwarded to a backend service. (AI-inferred)
-	UrlRedirect any
+	Paths                     any
+	RouteAction               any
+	Service                   any
+	UrlRedirect               any
 }
 
 type RegionUrlMap_PathMatchers_RouteRules_MatchRules_HeaderMatches_RangeMatch struct {
-	// The inclusive end of the integer range used to match a header value. The header value must be less than or equal to this number to match. (AI-inferred)
-	RangeEnd any
-	// The start of the range (inclusive) to match for the header value. (AI-inferred)
+	RangeEnd   any
 	RangeStart any
 }
 
 type RegionUrlMap_PathMatchers_RouteRules_MatchRules_HeaderMatches struct {
-	// Specifies the exact header value that must match for the request to satisfy the match condition. (AI-inferred)
-	ExactMatch any
-	// The name of the HTTP header to match. (AI-inferred)
-	HeaderName any
-	// If set to true, the match condition is inverted, meaning the request matches when the header value does NOT equal the specified value. For example, with invert_match true and a specified value of 'foo', the match succeeds only if the header value is not 'foo'. (AI-inferred)
-	InvertMatch any
-	// Specifies a prefix match for the header value. The header value must start with this prefix. (AI-inferred)
-	PrefixMatch any
-	// When set to true, the match is successful only if the header is present. This is an alternative to using exact_match, prefix_match, suffix_match, and regex_match. (AI-inferred)
+	ExactMatch   any
+	HeaderName   any
+	InvertMatch  any
+	PrefixMatch  any
 	PresentMatch any
-	// Defines an inclusive numeric range that the header value must fall within to match. The object contains integer fields rangeStart and rangeEnd. (AI-inferred)
-	RangeMatch any
-	// The regular expression pattern that the value of the header must match for the match rule to apply. It is used to match the header value against a regular expression, as an alternative to exact matching. (AI-inferred)
-	RegexMatch any
-	// The suffix that the header value must end with for the match to be considered successful. The match is case-sensitive. (AI-inferred)
-	SuffixMatch any
+	RangeMatch   any
+	RegexMatch   any
+	SuffixMatch  any
 }
 
 type RegionUrlMap_PathMatchers_RouteRules_MatchRules_MetadataFilters_FilterLabels struct {
-	// The key of the metadata filter label. This specifies the label name to match against when filtering requests. For example, in a filter label 'env=prod', the name is 'env'. (AI-inferred)
-	Name any
-	// The value of the metadata filter label. This value is matched against the corresponding metadata header value (e.g., x-goog-meta- prefixed header) for the request, and the request is considered matched when the header value equals this value. (AI-inferred)
+	Name  any
 	Value any
 }
 
 type RegionUrlMap_PathMatchers_RouteRules_MatchRules_MetadataFilters struct {
-	// Specifies a list of metadata label filters, each containing a key (name) and value (value), used to match incoming request metadata for this routing rule. (AI-inferred)
-	FilterLabels any
-	// Specifies how the filter labels are combined: MATCH_ALL requires all specified labels to match, MATCH_ANY requires at least one to match, and NOT_SET indicates the field is not configured. (AI-inferred)
+	FilterLabels        any
 	FilterMatchCriteria any
 }
 
 type RegionUrlMap_PathMatchers_RouteRules_MatchRules_QueryParameterMatches struct {
-	// The exact value to match against the query parameter's value. The match rule is satisfied only when the query parameter value equals this string exactly. (AI-inferred)
-	ExactMatch any
-	// The name of the query parameter to match. (AI-inferred)
-	Name any
-	// When set to true, the match requires the query parameter to be present in the request, regardless of its value. (AI-inferred)
+	ExactMatch   any
+	Name         any
 	PresentMatch any
-	// The regular expression (RE2 syntax) that the query parameter value must match. This is mutually exclusive with exact_match. (AI-inferred)
-	RegexMatch any
+	RegexMatch   any
 }
 
 type RegionUrlMap_PathMatchers_RouteRules_MatchRules struct {
-	// Specifies the full request path that must exactly match for this match rule to apply. This is an exact match on the entire path, as opposed to prefix or regex matching. (AI-inferred)
-	FullPathMatch any
-	// Defines a list of HTTP header match conditions. The request must satisfy all specified header conditions for the match rule to be considered a match. (AI-inferred)
-	HeaderMatches any
-	// Indicates whether to ignore case when matching the request path. When set to true, the match is case-insensitive. (AI-inferred)
-	IgnoreCase any
-	// A list of metadata filters that requests must match. Each filter specifies a list of labels and a match criterion (MATCH_ALL or MATCH_ANY) to determine whether all or any labels must match. (AI-inferred)
-	MetadataFilters any
-	// Specifies a path template to match against the request path. The template can include variables in curly braces (e.g., /users/{id}) that match any value in that segment, enabling flexible path-based routing. (AI-inferred)
-	PathTemplateMatch any
-	// Specifies the prefix of the request path to match. The path must begin with this prefix, and the match is case-sensitive. (AI-inferred)
-	PrefixMatch any
-	// A list of query parameter match criteria for this match rule. Each entry specifies a query parameter name and value to match, with an optional exactMatch flag to control whether the match is exact or uses regular expressions. (AI-inferred)
+	FullPathMatch         any
+	HeaderMatches         any
+	IgnoreCase            any
+	MetadataFilters       any
+	PathTemplateMatch     any
+	PrefixMatch           any
 	QueryParameterMatches any
-	// A regular expression that the entire request path must match. This is used to determine if the route rule applies. (AI-inferred)
-	RegexMatch any
+	RegexMatch            any
 }
 
 type RegionUrlMap_PathMatchers_RouteRules struct {
-	// The custom_error_response_policy block configures custom error responses for this route rule, allowing you to define custom error pages or redirects for specific HTTP error codes returned by the load balancer. (AI-inferred)
 	CustomErrorResponsePolicy any
-	// An optional, human-readable description of this route rule. (AI-inferred)
-	Description any
-	// Defines the header actions for this route rule, including adding and removing request and response headers. (AI-inferred)
-	HeaderAction any
-	// List of match rules that define the conditions under which incoming requests are matched to this route rule. Each match rule can specify path matching criteria (such as full path, prefix, or regex), header and query parameter matches, and case sensitivity. (AI-inferred)
-	MatchRules any
-	// The priority for this route rule, as an integer from 0 to 2147483647. Lower values are evaluated first, and priorities must be unique within the path matcher. (AI-inferred)
-	Priority any
-	// The action to be performed when a request matches this route rule, which may include URL rewriting, routing to weighted backend services, or other routing policies. (AI-inferred)
-	RouteAction any
-	// The full or partial URL (or name) of the backend service to which traffic matching this rule is routed. (AI-inferred)
-	Service any
-	// A block that defines a URL redirect action for this route rule. When specified, requests matching this rule are redirected to the URL specified by the redirect parameters. If url_redirect is set, neither the service nor the urlRewrite action may be set for the same rule. (AI-inferred)
-	UrlRedirect any
+	Description               any
+	HeaderAction              any
+	MatchRules                any
+	Priority                  any
+	RouteAction               any
+	Service                   any
+	UrlRedirect               any
 }
 
 type RegionUrlMap_PathMatchers struct {
-	// Defines the default custom error response policy for this path matcher, controlling how errors from backend services are customized, such as serving a custom error page or redirecting. If this policy is not set, the URL map's default custom error response policy is used. (AI-inferred)
 	DefaultCustomErrorResponsePolicy any
-	// The default route action for the path matcher, applied when no path rule matches the request. (AI-inferred)
-	DefaultRouteAction any
-	// The default BackendService that receives traffic for this path matcher when the request path does not match any pathRule. Specify the full or partial URL to a BackendService resource. (AI-inferred)
-	DefaultService any
-	// Default redirect configuration for requests that don't match any path rules in this path matcher. When set, unmatched requests are redirected according to this object instead of being forwarded to a default service. (AI-inferred)
-	DefaultUrlRedirect any
-	// An optional description of the path matcher. (AI-inferred)
-	Description any
-	// Configures the request header modifications (additions or removals) applied to requests that match this path matcher, before they are forwarded to the backend service. (AI-inferred)
-	HeaderAction any
-	// The name of the path matcher. (AI-inferred)
-	Name any
-	// Path rules within a path matcher. Each rule contains a list of paths and the corresponding service (backend) to which traffic matching those paths should be routed. (AI-inferred)
-	PathRules any
-	// List of route rules that define how requests are matched and routed to backend services within the path matcher. Each route rule specifies match criteria and a corresponding service. (AI-inferred)
-	RouteRules any
+	DefaultRouteAction               any
+	DefaultService                   any
+	DefaultUrlRedirect               any
+	Description                      any
+	HeaderAction                     any
+	Name                             any
+	PathRules                        any
+	RouteRules                       any
 }
 
 type RegionUrlMap_Tests struct {
-	// An optional description for a test case in the URL map, used to provide additional context or document the test's purpose. (AI-inferred)
-	Description any
-	ExpectedOutputUrl any
+	Description                  any
+	ExpectedOutputUrl            any
 	ExpectedRedirectResponseCode any
-	// A list of HTTP request headers that must be present for the URL map test to match. Each item in the list is an object with a header name and value. (AI-inferred)
-	Headers any
-	// The hostname or host pattern to match in the test request for validating URL map routing rules. (AI-inferred)
-	Host any
-	// The URL path to be used in the test request. For example, '/path'. (AI-inferred)
-	Path any
-	// A reference to the backend service that the test expects to handle requests for the specified host and path. (AI-inferred)
-	Service any
+	Headers                      any
+	Host                         any
+	Path                         any
+	Service                      any
 }
 
 var RegionUrlMap_DefaultCustomErrorResponsePolicy_ErrorResponseRulesFields = ubx.FieldMap{
-		"MatchResponseCodes": ubx.FieldSpec{WireName: "match_response_codes"},
-		"OverrideResponseCode": ubx.FieldSpec{WireName: "override_response_code"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-	}
+	"MatchResponseCodes":   ubx.FieldSpec{WireName: "match_response_codes"},
+	"OverrideResponseCode": ubx.FieldSpec{WireName: "override_response_code"},
+	"Path":                 ubx.FieldSpec{WireName: "path"},
+}
 
 var RegionUrlMap_DefaultCustomErrorResponsePolicyFields = ubx.FieldMap{
-		"ErrorResponseRules": ubx.FieldSpec{
-			WireName: "error_response_rules",
-			Kind: "list",
-			Fields: RegionUrlMap_DefaultCustomErrorResponsePolicy_ErrorResponseRulesFields,
-		},
-		"ErrorService": ubx.FieldSpec{WireName: "error_service"},
-	}
+	"ErrorResponseRules": ubx.FieldSpec{
+		WireName: "error_response_rules",
+		Kind:     "list",
+		Fields:   RegionUrlMap_DefaultCustomErrorResponsePolicy_ErrorResponseRulesFields,
+	},
+	"ErrorService": ubx.FieldSpec{WireName: "error_service"},
+}
 
 var RegionUrlMap_DefaultRouteAction_CachePolicy_CacheKeyPolicyFields = ubx.FieldMap{
-		"ExcludedQueryParameters": ubx.FieldSpec{WireName: "excluded_query_parameters"},
-		"IncludeHost": ubx.FieldSpec{WireName: "include_host"},
-		"IncludeProtocol": ubx.FieldSpec{WireName: "include_protocol"},
-		"IncludeQueryString": ubx.FieldSpec{WireName: "include_query_string"},
-		"IncludedCookieNames": ubx.FieldSpec{WireName: "included_cookie_names"},
-		"IncludedHeaderNames": ubx.FieldSpec{WireName: "included_header_names"},
-		"IncludedQueryParameters": ubx.FieldSpec{WireName: "included_query_parameters"},
-	}
+	"ExcludedQueryParameters": ubx.FieldSpec{WireName: "excluded_query_parameters"},
+	"IncludeHost":             ubx.FieldSpec{WireName: "include_host"},
+	"IncludeProtocol":         ubx.FieldSpec{WireName: "include_protocol"},
+	"IncludeQueryString":      ubx.FieldSpec{WireName: "include_query_string"},
+	"IncludedCookieNames":     ubx.FieldSpec{WireName: "included_cookie_names"},
+	"IncludedHeaderNames":     ubx.FieldSpec{WireName: "included_header_names"},
+	"IncludedQueryParameters": ubx.FieldSpec{WireName: "included_query_parameters"},
+}
 
 var RegionUrlMap_DefaultRouteAction_CachePolicy_ClientTtlFields = ubx.FieldMap{
-		"Nanos": ubx.FieldSpec{WireName: "nanos"},
-		"Seconds": ubx.FieldSpec{WireName: "seconds"},
-	}
+	"Nanos":   ubx.FieldSpec{WireName: "nanos"},
+	"Seconds": ubx.FieldSpec{WireName: "seconds"},
+}
 
 var RegionUrlMap_DefaultRouteAction_CachePolicy_NegativeCachingPolicyFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Ttl": ubx.FieldSpec{
-			WireName: "ttl",
-			Kind: "object",
-			Fields: RegionUrlMap_DefaultRouteAction_CachePolicy_ClientTtlFields,
-		},
-	}
+	"Code": ubx.FieldSpec{WireName: "code"},
+	"Ttl": ubx.FieldSpec{
+		WireName: "ttl",
+		Kind:     "object",
+		Fields:   RegionUrlMap_DefaultRouteAction_CachePolicy_ClientTtlFields,
+	},
+}
 
 var RegionUrlMap_DefaultRouteAction_CachePolicyFields = ubx.FieldMap{
-		"CacheBypassRequestHeaderNames": ubx.FieldSpec{WireName: "cache_bypass_request_header_names"},
-		"CacheKeyPolicy": ubx.FieldSpec{
-			WireName: "cache_key_policy",
-			Kind: "object",
-			Fields: RegionUrlMap_DefaultRouteAction_CachePolicy_CacheKeyPolicyFields,
-		},
-		"CacheMode": ubx.FieldSpec{WireName: "cache_mode"},
-		"ClientTtl": ubx.FieldSpec{
-			WireName: "client_ttl",
-			Kind: "object",
-			Fields: RegionUrlMap_DefaultRouteAction_CachePolicy_ClientTtlFields,
-		},
-		"DefaultTtl": ubx.FieldSpec{
-			WireName: "default_ttl",
-			Kind: "object",
-			Fields: RegionUrlMap_DefaultRouteAction_CachePolicy_ClientTtlFields,
-		},
-		"MaxTtl": ubx.FieldSpec{
-			WireName: "max_ttl",
-			Kind: "object",
-			Fields: RegionUrlMap_DefaultRouteAction_CachePolicy_ClientTtlFields,
-		},
-		"NegativeCaching": ubx.FieldSpec{WireName: "negative_caching"},
-		"NegativeCachingPolicy": ubx.FieldSpec{
-			WireName: "negative_caching_policy",
-			Kind: "list",
-			Fields: RegionUrlMap_DefaultRouteAction_CachePolicy_NegativeCachingPolicyFields,
-		},
-		"RequestCoalescing": ubx.FieldSpec{WireName: "request_coalescing"},
-		"ServeWhileStale": ubx.FieldSpec{
-			WireName: "serve_while_stale",
-			Kind: "object",
-			Fields: RegionUrlMap_DefaultRouteAction_CachePolicy_ClientTtlFields,
-		},
-	}
+	"CacheBypassRequestHeaderNames": ubx.FieldSpec{WireName: "cache_bypass_request_header_names"},
+	"CacheKeyPolicy": ubx.FieldSpec{
+		WireName: "cache_key_policy",
+		Kind:     "object",
+		Fields:   RegionUrlMap_DefaultRouteAction_CachePolicy_CacheKeyPolicyFields,
+	},
+	"CacheMode": ubx.FieldSpec{WireName: "cache_mode"},
+	"ClientTtl": ubx.FieldSpec{
+		WireName: "client_ttl",
+		Kind:     "object",
+		Fields:   RegionUrlMap_DefaultRouteAction_CachePolicy_ClientTtlFields,
+	},
+	"DefaultTtl": ubx.FieldSpec{
+		WireName: "default_ttl",
+		Kind:     "object",
+		Fields:   RegionUrlMap_DefaultRouteAction_CachePolicy_ClientTtlFields,
+	},
+	"MaxTtl": ubx.FieldSpec{
+		WireName: "max_ttl",
+		Kind:     "object",
+		Fields:   RegionUrlMap_DefaultRouteAction_CachePolicy_ClientTtlFields,
+	},
+	"NegativeCaching": ubx.FieldSpec{WireName: "negative_caching"},
+	"NegativeCachingPolicy": ubx.FieldSpec{
+		WireName: "negative_caching_policy",
+		Kind:     "list",
+		Fields:   RegionUrlMap_DefaultRouteAction_CachePolicy_NegativeCachingPolicyFields,
+	},
+	"RequestCoalescing": ubx.FieldSpec{WireName: "request_coalescing"},
+	"ServeWhileStale": ubx.FieldSpec{
+		WireName: "serve_while_stale",
+		Kind:     "object",
+		Fields:   RegionUrlMap_DefaultRouteAction_CachePolicy_ClientTtlFields,
+	},
+}
 
 var RegionUrlMap_DefaultRouteAction_CorsPolicyFields = ubx.FieldMap{
-		"AllowCredentials": ubx.FieldSpec{WireName: "allow_credentials"},
-		"AllowHeaders": ubx.FieldSpec{WireName: "allow_headers"},
-		"AllowMethods": ubx.FieldSpec{WireName: "allow_methods"},
-		"AllowOriginRegexes": ubx.FieldSpec{WireName: "allow_origin_regexes"},
-		"AllowOrigins": ubx.FieldSpec{WireName: "allow_origins"},
-		"Disabled": ubx.FieldSpec{WireName: "disabled"},
-		"ExposeHeaders": ubx.FieldSpec{WireName: "expose_headers"},
-		"MaxAge": ubx.FieldSpec{WireName: "max_age"},
-	}
+	"AllowCredentials":   ubx.FieldSpec{WireName: "allow_credentials"},
+	"AllowHeaders":       ubx.FieldSpec{WireName: "allow_headers"},
+	"AllowMethods":       ubx.FieldSpec{WireName: "allow_methods"},
+	"AllowOriginRegexes": ubx.FieldSpec{WireName: "allow_origin_regexes"},
+	"AllowOrigins":       ubx.FieldSpec{WireName: "allow_origins"},
+	"Disabled":           ubx.FieldSpec{WireName: "disabled"},
+	"ExposeHeaders":      ubx.FieldSpec{WireName: "expose_headers"},
+	"MaxAge":             ubx.FieldSpec{WireName: "max_age"},
+}
 
 var RegionUrlMap_DefaultRouteAction_FaultInjectionPolicy_AbortFields = ubx.FieldMap{
-		"HttpStatus": ubx.FieldSpec{WireName: "http_status"},
-		"Percentage": ubx.FieldSpec{WireName: "percentage"},
-	}
+	"HttpStatus": ubx.FieldSpec{WireName: "http_status"},
+	"Percentage": ubx.FieldSpec{WireName: "percentage"},
+}
 
 var RegionUrlMap_DefaultRouteAction_FaultInjectionPolicy_DelayFields = ubx.FieldMap{
-		"FixedDelay": ubx.FieldSpec{
-			WireName: "fixed_delay",
-			Kind: "object",
-			Fields: RegionUrlMap_DefaultRouteAction_CachePolicy_ClientTtlFields,
-		},
-		"Percentage": ubx.FieldSpec{WireName: "percentage"},
-	}
+	"FixedDelay": ubx.FieldSpec{
+		WireName: "fixed_delay",
+		Kind:     "object",
+		Fields:   RegionUrlMap_DefaultRouteAction_CachePolicy_ClientTtlFields,
+	},
+	"Percentage": ubx.FieldSpec{WireName: "percentage"},
+}
 
 var RegionUrlMap_DefaultRouteAction_FaultInjectionPolicyFields = ubx.FieldMap{
-		"Abort": ubx.FieldSpec{
-			WireName: "abort",
-			Kind: "object",
-			Fields: RegionUrlMap_DefaultRouteAction_FaultInjectionPolicy_AbortFields,
-		},
-		"Delay": ubx.FieldSpec{
-			WireName: "delay",
-			Kind: "object",
-			Fields: RegionUrlMap_DefaultRouteAction_FaultInjectionPolicy_DelayFields,
-		},
-	}
+	"Abort": ubx.FieldSpec{
+		WireName: "abort",
+		Kind:     "object",
+		Fields:   RegionUrlMap_DefaultRouteAction_FaultInjectionPolicy_AbortFields,
+	},
+	"Delay": ubx.FieldSpec{
+		WireName: "delay",
+		Kind:     "object",
+		Fields:   RegionUrlMap_DefaultRouteAction_FaultInjectionPolicy_DelayFields,
+	},
+}
 
 var RegionUrlMap_DefaultRouteAction_RequestMirrorPolicyFields = ubx.FieldMap{
-		"BackendService": ubx.FieldSpec{WireName: "backend_service"},
-		"MirrorPercent": ubx.FieldSpec{WireName: "mirror_percent"},
-	}
+	"BackendService": ubx.FieldSpec{WireName: "backend_service"},
+	"MirrorPercent":  ubx.FieldSpec{WireName: "mirror_percent"},
+}
 
 var RegionUrlMap_DefaultRouteAction_RetryPolicyFields = ubx.FieldMap{
-		"NumRetries": ubx.FieldSpec{WireName: "num_retries"},
-		"PerTryTimeout": ubx.FieldSpec{
-			WireName: "per_try_timeout",
-			Kind: "object",
-			Fields: RegionUrlMap_DefaultRouteAction_CachePolicy_ClientTtlFields,
-		},
-		"RetryConditions": ubx.FieldSpec{WireName: "retry_conditions"},
-	}
+	"NumRetries": ubx.FieldSpec{WireName: "num_retries"},
+	"PerTryTimeout": ubx.FieldSpec{
+		WireName: "per_try_timeout",
+		Kind:     "object",
+		Fields:   RegionUrlMap_DefaultRouteAction_CachePolicy_ClientTtlFields,
+	},
+	"RetryConditions": ubx.FieldSpec{WireName: "retry_conditions"},
+}
 
 var RegionUrlMap_DefaultRouteAction_UrlRewrite_RegexRewriteFields = ubx.FieldMap{
-		"PathPattern": ubx.FieldSpec{WireName: "path_pattern"},
-		"PathSubstitution": ubx.FieldSpec{WireName: "path_substitution"},
-	}
+	"PathPattern":      ubx.FieldSpec{WireName: "path_pattern"},
+	"PathSubstitution": ubx.FieldSpec{WireName: "path_substitution"},
+}
 
 var RegionUrlMap_DefaultRouteAction_UrlRewriteFields = ubx.FieldMap{
-		"HostRewrite": ubx.FieldSpec{WireName: "host_rewrite"},
-		"PathPrefixRewrite": ubx.FieldSpec{WireName: "path_prefix_rewrite"},
-		"PathTemplateRewrite": ubx.FieldSpec{WireName: "path_template_rewrite"},
-		"RegexRewrite": ubx.FieldSpec{
-			WireName: "regex_rewrite",
-			Kind: "object",
-			Fields: RegionUrlMap_DefaultRouteAction_UrlRewrite_RegexRewriteFields,
-		},
-	}
+	"HostRewrite":         ubx.FieldSpec{WireName: "host_rewrite"},
+	"PathPrefixRewrite":   ubx.FieldSpec{WireName: "path_prefix_rewrite"},
+	"PathTemplateRewrite": ubx.FieldSpec{WireName: "path_template_rewrite"},
+	"RegexRewrite": ubx.FieldSpec{
+		WireName: "regex_rewrite",
+		Kind:     "object",
+		Fields:   RegionUrlMap_DefaultRouteAction_UrlRewrite_RegexRewriteFields,
+	},
+}
 
 var RegionUrlMap_DefaultRouteAction_WeightedBackendServices_HeaderAction_RequestHeadersToAddFields = ubx.FieldMap{
-		"HeaderName": ubx.FieldSpec{WireName: "header_name"},
-		"HeaderValue": ubx.FieldSpec{WireName: "header_value"},
-		"Replace": ubx.FieldSpec{WireName: "replace"},
-	}
+	"HeaderName":  ubx.FieldSpec{WireName: "header_name"},
+	"HeaderValue": ubx.FieldSpec{WireName: "header_value"},
+	"Replace":     ubx.FieldSpec{WireName: "replace"},
+}
 
 var RegionUrlMap_DefaultRouteAction_WeightedBackendServices_HeaderActionFields = ubx.FieldMap{
-		"RequestHeadersToAdd": ubx.FieldSpec{
-			WireName: "request_headers_to_add",
-			Kind: "list",
-			Fields: RegionUrlMap_DefaultRouteAction_WeightedBackendServices_HeaderAction_RequestHeadersToAddFields,
-		},
-		"RequestHeadersToRemove": ubx.FieldSpec{WireName: "request_headers_to_remove"},
-		"ResponseHeadersToAdd": ubx.FieldSpec{
-			WireName: "response_headers_to_add",
-			Kind: "list",
-			Fields: RegionUrlMap_DefaultRouteAction_WeightedBackendServices_HeaderAction_RequestHeadersToAddFields,
-		},
-		"ResponseHeadersToRemove": ubx.FieldSpec{WireName: "response_headers_to_remove"},
-	}
+	"RequestHeadersToAdd": ubx.FieldSpec{
+		WireName: "request_headers_to_add",
+		Kind:     "list",
+		Fields:   RegionUrlMap_DefaultRouteAction_WeightedBackendServices_HeaderAction_RequestHeadersToAddFields,
+	},
+	"RequestHeadersToRemove": ubx.FieldSpec{WireName: "request_headers_to_remove"},
+	"ResponseHeadersToAdd": ubx.FieldSpec{
+		WireName: "response_headers_to_add",
+		Kind:     "list",
+		Fields:   RegionUrlMap_DefaultRouteAction_WeightedBackendServices_HeaderAction_RequestHeadersToAddFields,
+	},
+	"ResponseHeadersToRemove": ubx.FieldSpec{WireName: "response_headers_to_remove"},
+}
 
 var RegionUrlMap_DefaultRouteAction_WeightedBackendServicesFields = ubx.FieldMap{
-		"BackendService": ubx.FieldSpec{WireName: "backend_service"},
-		"HeaderAction": ubx.FieldSpec{
-			WireName: "header_action",
-			Kind: "object",
-			Fields: RegionUrlMap_DefaultRouteAction_WeightedBackendServices_HeaderActionFields,
-		},
-		"Weight": ubx.FieldSpec{WireName: "weight"},
-	}
+	"BackendService": ubx.FieldSpec{WireName: "backend_service"},
+	"HeaderAction": ubx.FieldSpec{
+		WireName: "header_action",
+		Kind:     "object",
+		Fields:   RegionUrlMap_DefaultRouteAction_WeightedBackendServices_HeaderActionFields,
+	},
+	"Weight": ubx.FieldSpec{WireName: "weight"},
+}
 
 var RegionUrlMap_DefaultRouteActionFields = ubx.FieldMap{
-		"CachePolicy": ubx.FieldSpec{
-			WireName: "cache_policy",
-			Kind: "object",
-			Fields: RegionUrlMap_DefaultRouteAction_CachePolicyFields,
-		},
-		"CorsPolicy": ubx.FieldSpec{
-			WireName: "cors_policy",
-			Kind: "object",
-			Fields: RegionUrlMap_DefaultRouteAction_CorsPolicyFields,
-		},
-		"FaultInjectionPolicy": ubx.FieldSpec{
-			WireName: "fault_injection_policy",
-			Kind: "object",
-			Fields: RegionUrlMap_DefaultRouteAction_FaultInjectionPolicyFields,
-		},
-		"MaxStreamDuration": ubx.FieldSpec{
-			WireName: "max_stream_duration",
-			Kind: "object",
-			Fields: RegionUrlMap_DefaultRouteAction_CachePolicy_ClientTtlFields,
-		},
-		"RequestMirrorPolicy": ubx.FieldSpec{
-			WireName: "request_mirror_policy",
-			Kind: "object",
-			Fields: RegionUrlMap_DefaultRouteAction_RequestMirrorPolicyFields,
-		},
-		"RetryPolicy": ubx.FieldSpec{
-			WireName: "retry_policy",
-			Kind: "object",
-			Fields: RegionUrlMap_DefaultRouteAction_RetryPolicyFields,
-		},
-		"Timeout": ubx.FieldSpec{
-			WireName: "timeout",
-			Kind: "object",
-			Fields: RegionUrlMap_DefaultRouteAction_CachePolicy_ClientTtlFields,
-		},
-		"UrlRewrite": ubx.FieldSpec{
-			WireName: "url_rewrite",
-			Kind: "object",
-			Fields: RegionUrlMap_DefaultRouteAction_UrlRewriteFields,
-		},
-		"WeightedBackendServices": ubx.FieldSpec{
-			WireName: "weighted_backend_services",
-			Kind: "list",
-			Fields: RegionUrlMap_DefaultRouteAction_WeightedBackendServicesFields,
-		},
-	}
+	"CachePolicy": ubx.FieldSpec{
+		WireName: "cache_policy",
+		Kind:     "object",
+		Fields:   RegionUrlMap_DefaultRouteAction_CachePolicyFields,
+	},
+	"CorsPolicy": ubx.FieldSpec{
+		WireName: "cors_policy",
+		Kind:     "object",
+		Fields:   RegionUrlMap_DefaultRouteAction_CorsPolicyFields,
+	},
+	"FaultInjectionPolicy": ubx.FieldSpec{
+		WireName: "fault_injection_policy",
+		Kind:     "object",
+		Fields:   RegionUrlMap_DefaultRouteAction_FaultInjectionPolicyFields,
+	},
+	"MaxStreamDuration": ubx.FieldSpec{
+		WireName: "max_stream_duration",
+		Kind:     "object",
+		Fields:   RegionUrlMap_DefaultRouteAction_CachePolicy_ClientTtlFields,
+	},
+	"RequestMirrorPolicy": ubx.FieldSpec{
+		WireName: "request_mirror_policy",
+		Kind:     "object",
+		Fields:   RegionUrlMap_DefaultRouteAction_RequestMirrorPolicyFields,
+	},
+	"RetryPolicy": ubx.FieldSpec{
+		WireName: "retry_policy",
+		Kind:     "object",
+		Fields:   RegionUrlMap_DefaultRouteAction_RetryPolicyFields,
+	},
+	"Timeout": ubx.FieldSpec{
+		WireName: "timeout",
+		Kind:     "object",
+		Fields:   RegionUrlMap_DefaultRouteAction_CachePolicy_ClientTtlFields,
+	},
+	"UrlRewrite": ubx.FieldSpec{
+		WireName: "url_rewrite",
+		Kind:     "object",
+		Fields:   RegionUrlMap_DefaultRouteAction_UrlRewriteFields,
+	},
+	"WeightedBackendServices": ubx.FieldSpec{
+		WireName: "weighted_backend_services",
+		Kind:     "list",
+		Fields:   RegionUrlMap_DefaultRouteAction_WeightedBackendServicesFields,
+	},
+}
 
 var RegionUrlMap_DefaultUrlRedirectFields = ubx.FieldMap{
-		"HostRedirect": ubx.FieldSpec{WireName: "host_redirect"},
-		"HttpsRedirect": ubx.FieldSpec{WireName: "https_redirect"},
-		"PathRedirect": ubx.FieldSpec{WireName: "path_redirect"},
-		"PrefixRedirect": ubx.FieldSpec{WireName: "prefix_redirect"},
-		"RedirectResponseCode": ubx.FieldSpec{WireName: "redirect_response_code"},
-		"StripQuery": ubx.FieldSpec{WireName: "strip_query"},
-	}
+	"HostRedirect":         ubx.FieldSpec{WireName: "host_redirect"},
+	"HttpsRedirect":        ubx.FieldSpec{WireName: "https_redirect"},
+	"PathRedirect":         ubx.FieldSpec{WireName: "path_redirect"},
+	"PrefixRedirect":       ubx.FieldSpec{WireName: "prefix_redirect"},
+	"RedirectResponseCode": ubx.FieldSpec{WireName: "redirect_response_code"},
+	"StripQuery":           ubx.FieldSpec{WireName: "strip_query"},
+}
 
 var RegionUrlMap_HostRulesFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Hosts": ubx.FieldSpec{WireName: "hosts"},
-		"PathMatcher": ubx.FieldSpec{WireName: "path_matcher"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Hosts":       ubx.FieldSpec{WireName: "hosts"},
+	"PathMatcher": ubx.FieldSpec{WireName: "path_matcher"},
+}
 
 var RegionUrlMap_PathMatchers_PathRulesFields = ubx.FieldMap{
-		"CustomErrorResponsePolicy": ubx.FieldSpec{
-			WireName: "custom_error_response_policy",
-			Kind: "object",
-			Fields: RegionUrlMap_DefaultCustomErrorResponsePolicyFields,
-		},
-		"Paths": ubx.FieldSpec{WireName: "paths"},
-		"RouteAction": ubx.FieldSpec{
-			WireName: "route_action",
-			Kind: "object",
-			Fields: RegionUrlMap_DefaultRouteActionFields,
-		},
-		"Service": ubx.FieldSpec{WireName: "service"},
-		"UrlRedirect": ubx.FieldSpec{
-			WireName: "url_redirect",
-			Kind: "object",
-			Fields: RegionUrlMap_DefaultUrlRedirectFields,
-		},
-	}
+	"CustomErrorResponsePolicy": ubx.FieldSpec{
+		WireName: "custom_error_response_policy",
+		Kind:     "object",
+		Fields:   RegionUrlMap_DefaultCustomErrorResponsePolicyFields,
+	},
+	"Paths": ubx.FieldSpec{WireName: "paths"},
+	"RouteAction": ubx.FieldSpec{
+		WireName: "route_action",
+		Kind:     "object",
+		Fields:   RegionUrlMap_DefaultRouteActionFields,
+	},
+	"Service": ubx.FieldSpec{WireName: "service"},
+	"UrlRedirect": ubx.FieldSpec{
+		WireName: "url_redirect",
+		Kind:     "object",
+		Fields:   RegionUrlMap_DefaultUrlRedirectFields,
+	},
+}
 
 var RegionUrlMap_PathMatchers_RouteRules_MatchRules_HeaderMatches_RangeMatchFields = ubx.FieldMap{
-		"RangeEnd": ubx.FieldSpec{WireName: "range_end"},
-		"RangeStart": ubx.FieldSpec{WireName: "range_start"},
-	}
+	"RangeEnd":   ubx.FieldSpec{WireName: "range_end"},
+	"RangeStart": ubx.FieldSpec{WireName: "range_start"},
+}
 
 var RegionUrlMap_PathMatchers_RouteRules_MatchRules_HeaderMatchesFields = ubx.FieldMap{
-		"ExactMatch": ubx.FieldSpec{WireName: "exact_match"},
-		"HeaderName": ubx.FieldSpec{WireName: "header_name"},
-		"InvertMatch": ubx.FieldSpec{WireName: "invert_match"},
-		"PrefixMatch": ubx.FieldSpec{WireName: "prefix_match"},
-		"PresentMatch": ubx.FieldSpec{WireName: "present_match"},
-		"RangeMatch": ubx.FieldSpec{
-			WireName: "range_match",
-			Kind: "object",
-			Fields: RegionUrlMap_PathMatchers_RouteRules_MatchRules_HeaderMatches_RangeMatchFields,
-		},
-		"RegexMatch": ubx.FieldSpec{WireName: "regex_match"},
-		"SuffixMatch": ubx.FieldSpec{WireName: "suffix_match"},
-	}
+	"ExactMatch":   ubx.FieldSpec{WireName: "exact_match"},
+	"HeaderName":   ubx.FieldSpec{WireName: "header_name"},
+	"InvertMatch":  ubx.FieldSpec{WireName: "invert_match"},
+	"PrefixMatch":  ubx.FieldSpec{WireName: "prefix_match"},
+	"PresentMatch": ubx.FieldSpec{WireName: "present_match"},
+	"RangeMatch": ubx.FieldSpec{
+		WireName: "range_match",
+		Kind:     "object",
+		Fields:   RegionUrlMap_PathMatchers_RouteRules_MatchRules_HeaderMatches_RangeMatchFields,
+	},
+	"RegexMatch":  ubx.FieldSpec{WireName: "regex_match"},
+	"SuffixMatch": ubx.FieldSpec{WireName: "suffix_match"},
+}
 
 var RegionUrlMap_PathMatchers_RouteRules_MatchRules_MetadataFilters_FilterLabelsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var RegionUrlMap_PathMatchers_RouteRules_MatchRules_MetadataFiltersFields = ubx.FieldMap{
-		"FilterLabels": ubx.FieldSpec{
-			WireName: "filter_labels",
-			Kind: "list",
-			Fields: RegionUrlMap_PathMatchers_RouteRules_MatchRules_MetadataFilters_FilterLabelsFields,
-		},
-		"FilterMatchCriteria": ubx.FieldSpec{WireName: "filter_match_criteria"},
-	}
+	"FilterLabels": ubx.FieldSpec{
+		WireName: "filter_labels",
+		Kind:     "list",
+		Fields:   RegionUrlMap_PathMatchers_RouteRules_MatchRules_MetadataFilters_FilterLabelsFields,
+	},
+	"FilterMatchCriteria": ubx.FieldSpec{WireName: "filter_match_criteria"},
+}
 
 var RegionUrlMap_PathMatchers_RouteRules_MatchRules_QueryParameterMatchesFields = ubx.FieldMap{
-		"ExactMatch": ubx.FieldSpec{WireName: "exact_match"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PresentMatch": ubx.FieldSpec{WireName: "present_match"},
-		"RegexMatch": ubx.FieldSpec{WireName: "regex_match"},
-	}
+	"ExactMatch":   ubx.FieldSpec{WireName: "exact_match"},
+	"Name":         ubx.FieldSpec{WireName: "name"},
+	"PresentMatch": ubx.FieldSpec{WireName: "present_match"},
+	"RegexMatch":   ubx.FieldSpec{WireName: "regex_match"},
+}
 
 var RegionUrlMap_PathMatchers_RouteRules_MatchRulesFields = ubx.FieldMap{
-		"FullPathMatch": ubx.FieldSpec{WireName: "full_path_match"},
-		"HeaderMatches": ubx.FieldSpec{
-			WireName: "header_matches",
-			Kind: "list",
-			Fields: RegionUrlMap_PathMatchers_RouteRules_MatchRules_HeaderMatchesFields,
-		},
-		"IgnoreCase": ubx.FieldSpec{WireName: "ignore_case"},
-		"MetadataFilters": ubx.FieldSpec{
-			WireName: "metadata_filters",
-			Kind: "list",
-			Fields: RegionUrlMap_PathMatchers_RouteRules_MatchRules_MetadataFiltersFields,
-		},
-		"PathTemplateMatch": ubx.FieldSpec{WireName: "path_template_match"},
-		"PrefixMatch": ubx.FieldSpec{WireName: "prefix_match"},
-		"QueryParameterMatches": ubx.FieldSpec{
-			WireName: "query_parameter_matches",
-			Kind: "list",
-			Fields: RegionUrlMap_PathMatchers_RouteRules_MatchRules_QueryParameterMatchesFields,
-		},
-		"RegexMatch": ubx.FieldSpec{WireName: "regex_match"},
-	}
+	"FullPathMatch": ubx.FieldSpec{WireName: "full_path_match"},
+	"HeaderMatches": ubx.FieldSpec{
+		WireName: "header_matches",
+		Kind:     "list",
+		Fields:   RegionUrlMap_PathMatchers_RouteRules_MatchRules_HeaderMatchesFields,
+	},
+	"IgnoreCase": ubx.FieldSpec{WireName: "ignore_case"},
+	"MetadataFilters": ubx.FieldSpec{
+		WireName: "metadata_filters",
+		Kind:     "list",
+		Fields:   RegionUrlMap_PathMatchers_RouteRules_MatchRules_MetadataFiltersFields,
+	},
+	"PathTemplateMatch": ubx.FieldSpec{WireName: "path_template_match"},
+	"PrefixMatch":       ubx.FieldSpec{WireName: "prefix_match"},
+	"QueryParameterMatches": ubx.FieldSpec{
+		WireName: "query_parameter_matches",
+		Kind:     "list",
+		Fields:   RegionUrlMap_PathMatchers_RouteRules_MatchRules_QueryParameterMatchesFields,
+	},
+	"RegexMatch": ubx.FieldSpec{WireName: "regex_match"},
+}
 
 var RegionUrlMap_PathMatchers_RouteRulesFields = ubx.FieldMap{
-		"CustomErrorResponsePolicy": ubx.FieldSpec{
-			WireName: "custom_error_response_policy",
-			Kind: "object",
-			Fields: RegionUrlMap_DefaultCustomErrorResponsePolicyFields,
-		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"HeaderAction": ubx.FieldSpec{
-			WireName: "header_action",
-			Kind: "object",
-			Fields: RegionUrlMap_DefaultRouteAction_WeightedBackendServices_HeaderActionFields,
-		},
-		"MatchRules": ubx.FieldSpec{
-			WireName: "match_rules",
-			Kind: "list",
-			Fields: RegionUrlMap_PathMatchers_RouteRules_MatchRulesFields,
-		},
-		"Priority": ubx.FieldSpec{WireName: "priority"},
-		"RouteAction": ubx.FieldSpec{
-			WireName: "route_action",
-			Kind: "object",
-			Fields: RegionUrlMap_DefaultRouteActionFields,
-		},
-		"Service": ubx.FieldSpec{WireName: "service"},
-		"UrlRedirect": ubx.FieldSpec{
-			WireName: "url_redirect",
-			Kind: "object",
-			Fields: RegionUrlMap_DefaultUrlRedirectFields,
-		},
-	}
+	"CustomErrorResponsePolicy": ubx.FieldSpec{
+		WireName: "custom_error_response_policy",
+		Kind:     "object",
+		Fields:   RegionUrlMap_DefaultCustomErrorResponsePolicyFields,
+	},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"HeaderAction": ubx.FieldSpec{
+		WireName: "header_action",
+		Kind:     "object",
+		Fields:   RegionUrlMap_DefaultRouteAction_WeightedBackendServices_HeaderActionFields,
+	},
+	"MatchRules": ubx.FieldSpec{
+		WireName: "match_rules",
+		Kind:     "list",
+		Fields:   RegionUrlMap_PathMatchers_RouteRules_MatchRulesFields,
+	},
+	"Priority": ubx.FieldSpec{WireName: "priority"},
+	"RouteAction": ubx.FieldSpec{
+		WireName: "route_action",
+		Kind:     "object",
+		Fields:   RegionUrlMap_DefaultRouteActionFields,
+	},
+	"Service": ubx.FieldSpec{WireName: "service"},
+	"UrlRedirect": ubx.FieldSpec{
+		WireName: "url_redirect",
+		Kind:     "object",
+		Fields:   RegionUrlMap_DefaultUrlRedirectFields,
+	},
+}
 
 var RegionUrlMap_PathMatchersFields = ubx.FieldMap{
-		"DefaultCustomErrorResponsePolicy": ubx.FieldSpec{
-			WireName: "default_custom_error_response_policy",
-			Kind: "object",
-			Fields: RegionUrlMap_DefaultCustomErrorResponsePolicyFields,
-		},
-		"DefaultRouteAction": ubx.FieldSpec{
-			WireName: "default_route_action",
-			Kind: "object",
-			Fields: RegionUrlMap_DefaultRouteActionFields,
-		},
-		"DefaultService": ubx.FieldSpec{WireName: "default_service"},
-		"DefaultUrlRedirect": ubx.FieldSpec{
-			WireName: "default_url_redirect",
-			Kind: "object",
-			Fields: RegionUrlMap_DefaultUrlRedirectFields,
-		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"HeaderAction": ubx.FieldSpec{
-			WireName: "header_action",
-			Kind: "object",
-			Fields: RegionUrlMap_DefaultRouteAction_WeightedBackendServices_HeaderActionFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PathRules": ubx.FieldSpec{
-			WireName: "path_rules",
-			Kind: "list",
-			Fields: RegionUrlMap_PathMatchers_PathRulesFields,
-		},
-		"RouteRules": ubx.FieldSpec{
-			WireName: "route_rules",
-			Kind: "list",
-			Fields: RegionUrlMap_PathMatchers_RouteRulesFields,
-		},
-	}
+	"DefaultCustomErrorResponsePolicy": ubx.FieldSpec{
+		WireName: "default_custom_error_response_policy",
+		Kind:     "object",
+		Fields:   RegionUrlMap_DefaultCustomErrorResponsePolicyFields,
+	},
+	"DefaultRouteAction": ubx.FieldSpec{
+		WireName: "default_route_action",
+		Kind:     "object",
+		Fields:   RegionUrlMap_DefaultRouteActionFields,
+	},
+	"DefaultService": ubx.FieldSpec{WireName: "default_service"},
+	"DefaultUrlRedirect": ubx.FieldSpec{
+		WireName: "default_url_redirect",
+		Kind:     "object",
+		Fields:   RegionUrlMap_DefaultUrlRedirectFields,
+	},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"HeaderAction": ubx.FieldSpec{
+		WireName: "header_action",
+		Kind:     "object",
+		Fields:   RegionUrlMap_DefaultRouteAction_WeightedBackendServices_HeaderActionFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"PathRules": ubx.FieldSpec{
+		WireName: "path_rules",
+		Kind:     "list",
+		Fields:   RegionUrlMap_PathMatchers_PathRulesFields,
+	},
+	"RouteRules": ubx.FieldSpec{
+		WireName: "route_rules",
+		Kind:     "list",
+		Fields:   RegionUrlMap_PathMatchers_RouteRulesFields,
+	},
+}
 
 var RegionUrlMap_TestsFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"ExpectedOutputUrl": ubx.FieldSpec{WireName: "expected_output_url"},
-		"ExpectedRedirectResponseCode": ubx.FieldSpec{WireName: "expected_redirect_response_code"},
-		"Headers": ubx.FieldSpec{
-			WireName: "headers",
-			Kind: "list",
-			Fields: RegionUrlMap_PathMatchers_RouteRules_MatchRules_MetadataFilters_FilterLabelsFields,
-		},
-		"Host": ubx.FieldSpec{WireName: "host"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"Service": ubx.FieldSpec{WireName: "service"},
-	}
+	"Description":                  ubx.FieldSpec{WireName: "description"},
+	"ExpectedOutputUrl":            ubx.FieldSpec{WireName: "expected_output_url"},
+	"ExpectedRedirectResponseCode": ubx.FieldSpec{WireName: "expected_redirect_response_code"},
+	"Headers": ubx.FieldSpec{
+		WireName: "headers",
+		Kind:     "list",
+		Fields:   RegionUrlMap_PathMatchers_RouteRules_MatchRules_MetadataFilters_FilterLabelsFields,
+	},
+	"Host":    ubx.FieldSpec{WireName: "host"},
+	"Path":    ubx.FieldSpec{WireName: "path"},
+	"Service": ubx.FieldSpec{WireName: "service"},
+}
 
 type RegionUrlMapConfig struct {
-	// Output only. [Output Only] Creation timestamp inRFC3339 text format.
-	CreationTimestamp any
 	// Specifies the custom error response policy that must be applied when the backend service or backend bucket responds with an error.
 	DefaultCustomErrorResponsePolicy any
-	// Specifies the default route action for the region URL map, applied to requests that do not match any other route rule. This is an output-only field, populated by the API with the computed default action configuration. (AI-inferred)
-	DefaultRouteAction any
+	DefaultRouteAction               any
 	// The full or partial URL of the defaultService resource to which traffic is directed if none of the hostRules match. If defaultRouteAction is also specified, advanced routing actions, such as URL rewrites, take effect before sending the request to the backend. Only one of defaultUrlRedirect, defaultService or defaultRouteAction.weightedBackendService can be set. defaultService has no effect when the URL map is bound to a target gRPC proxy that has the validateForProxyless field set to true.
 	DefaultService any
 	// Specifies settings for an HTTP redirect.
@@ -783,14 +710,10 @@ type RegionUrlMapConfig struct {
 	HostRules any
 	// [Output Only] The unique identifier for the resource. This identifier is defined by the server.
 	Id any
-	// Output only. [Output Only] Type of the resource. Always compute#urlMaps for url maps.
-	Kind any
 	// Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
 	Name any
 	// The list of named PathMatchers to use against the URL.
 	PathMatchers any
-	// Output only. [Output Only] URL of the region where the regional URL map resides. This field is not applicable to global URL maps. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
-	Region any
 	// [Output Only] Server-defined URL for the resource.
 	SelfLink any
 	// The list of expected URL mapping tests. Request to update theUrlMap succeeds only if all test cases pass. You can specify a maximum of 100 tests per UrlMap. Not supported when the URL map is bound to a target gRPC proxy that has validateForProxyless field set to true.
@@ -802,8 +725,7 @@ type RegionUrlMapAttrs struct {
 	CreationTimestamp any
 	// Specifies the custom error response policy that must be applied when the backend service or backend bucket responds with an error.
 	DefaultCustomErrorResponsePolicy any
-	// Specifies the default route action for the region URL map, applied to requests that do not match any other route rule. This is an output-only field, populated by the API with the computed default action configuration. (AI-inferred)
-	DefaultRouteAction any
+	DefaultRouteAction               any
 	// The full or partial URL of the defaultService resource to which traffic is directed if none of the hostRules match. If defaultRouteAction is also specified, advanced routing actions, such as URL rewrites, take effect before sending the request to the backend. Only one of defaultUrlRedirect, defaultService or defaultRouteAction.weightedBackendService can be set. defaultService has no effect when the URL map is bound to a target gRPC proxy that has the validateForProxyless field set to true.
 	DefaultService any
 	// Specifies settings for an HTTP redirect.
@@ -835,49 +757,46 @@ type RegionUrlMapAttrs struct {
 var RegionUrlMap = ubx.ResourceBinding{
 	WireType: "google_compute_region_url_map",
 	Fields: ubx.FieldMap{
-		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
 		"DefaultCustomErrorResponsePolicy": ubx.FieldSpec{
 			WireName: "default_custom_error_response_policy",
-			Kind: "object",
-			Fields: RegionUrlMap_DefaultCustomErrorResponsePolicyFields,
+			Kind:     "object",
+			Fields:   RegionUrlMap_DefaultCustomErrorResponsePolicyFields,
 		},
 		"DefaultRouteAction": ubx.FieldSpec{
 			WireName: "default_route_action",
-			Kind: "object",
-			Fields: RegionUrlMap_DefaultRouteActionFields,
+			Kind:     "object",
+			Fields:   RegionUrlMap_DefaultRouteActionFields,
 		},
 		"DefaultService": ubx.FieldSpec{WireName: "default_service"},
 		"DefaultUrlRedirect": ubx.FieldSpec{
 			WireName: "default_url_redirect",
-			Kind: "object",
-			Fields: RegionUrlMap_DefaultUrlRedirectFields,
+			Kind:     "object",
+			Fields:   RegionUrlMap_DefaultUrlRedirectFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"Fingerprint": ubx.FieldSpec{WireName: "fingerprint"},
 		"HeaderAction": ubx.FieldSpec{
 			WireName: "header_action",
-			Kind: "object",
-			Fields: RegionUrlMap_DefaultRouteAction_WeightedBackendServices_HeaderActionFields,
+			Kind:     "object",
+			Fields:   RegionUrlMap_DefaultRouteAction_WeightedBackendServices_HeaderActionFields,
 		},
 		"HostRules": ubx.FieldSpec{
 			WireName: "host_rules",
-			Kind: "list",
-			Fields: RegionUrlMap_HostRulesFields,
+			Kind:     "list",
+			Fields:   RegionUrlMap_HostRulesFields,
 		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
+		"Id":   ubx.FieldSpec{WireName: "id"},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"PathMatchers": ubx.FieldSpec{
 			WireName: "path_matchers",
-			Kind: "list",
-			Fields: RegionUrlMap_PathMatchersFields,
+			Kind:     "list",
+			Fields:   RegionUrlMap_PathMatchersFields,
 		},
-		"Region": ubx.FieldSpec{WireName: "region"},
 		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
 		"Tests": ubx.FieldSpec{
 			WireName: "tests",
-			Kind: "list",
-			Fields: RegionUrlMap_TestsFields,
+			Kind:     "list",
+			Fields:   RegionUrlMap_TestsFields,
 		},
 	},
 }

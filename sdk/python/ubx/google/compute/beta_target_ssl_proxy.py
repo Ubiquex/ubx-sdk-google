@@ -10,14 +10,10 @@ import ubx_sdk as ubx
 class BetaTargetSslProxyConfig:
     # URL of a certificate map that identifies a certificate map associated with the given target proxy. This field can only be set for global target proxies. If set, sslCertificates will be ignored. Accepted format is//certificatemanager.googleapis.com/projects/{project}/locations/{location}/certificateMaps/{resourceName}.
     certificate_map: Any = None
-    # Output only. [Output Only] Creation timestamp inRFC3339 text format.
-    creation_timestamp: Any = None
     # An optional description of this resource. Provide this property when you create the resource.
     description: Any = None
     # [Output Only] The unique identifier for the resource. This identifier is defined by the server.
     id: Any = None
-    # Output only. [Output Only] Type of the resource. Alwayscompute#targetSslProxy for target SSL proxies.
-    kind: Any = None
     # Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
     name: Any = None
     # Specifies the type of proxy header to append before sending data to the backend, either NONE or PROXY_V1. The default is NONE.
@@ -60,10 +56,8 @@ BetaTargetSslProxy = ubx.ResourceBinding(
     wire_type="google_compute_beta_target_ssl_proxy",
     fields={
         "certificate_map": ubx.FieldSpec(wire_name="certificate_map"),
-        "creation_timestamp": ubx.FieldSpec(wire_name="creation_timestamp"),
         "description": ubx.FieldSpec(wire_name="description"),
         "id": ubx.FieldSpec(wire_name="id"),
-        "kind": ubx.FieldSpec(wire_name="kind"),
         "name": ubx.FieldSpec(wire_name="name"),
         "proxy_header": ubx.FieldSpec(wire_name="proxy_header"),
         "self_link": ubx.FieldSpec(wire_name="self_link"),

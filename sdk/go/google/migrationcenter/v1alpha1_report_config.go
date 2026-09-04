@@ -4,28 +4,22 @@ package migrationcenter
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1alpha1ReportConfig_GroupPreferencesetAssignments struct {
-	Group any
+	Group         any
 	PreferenceSet any
 }
 
 var V1alpha1ReportConfig_GroupPreferencesetAssignmentsFields = ubx.FieldMap{
-		"Group": ubx.FieldSpec{WireName: "group"},
-		"PreferenceSet": ubx.FieldSpec{WireName: "preference_set"},
-	}
+	"Group":         ubx.FieldSpec{WireName: "group"},
+	"PreferenceSet": ubx.FieldSpec{WireName: "preference_set"},
+}
 
 type V1alpha1ReportConfigConfig struct {
-	// Output only. The timestamp when the resource was created.
-	CreateTime any
 	// Free-text description.
 	Description any
 	// User-friendly display name. Maximum length is 63 characters.
 	DisplayName any
 	// Required. Collection of combinations of groups and preference sets.
 	GroupPreferencesetAssignments any
-	// Output only. Name of resource.
-	Name any
-	// Output only. The timestamp when the resource was last updated.
-	UpdateTime any
 }
 
 type V1alpha1ReportConfigAttrs struct {
@@ -46,15 +40,12 @@ type V1alpha1ReportConfigAttrs struct {
 var V1alpha1ReportConfig = ubx.ResourceBinding{
 	WireType: "google_migrationcenter_v1alpha1_report_config",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"GroupPreferencesetAssignments": ubx.FieldSpec{
 			WireName: "group_preferenceset_assignments",
-			Kind: "list",
-			Fields: V1alpha1ReportConfig_GroupPreferencesetAssignmentsFields,
+			Kind:     "list",
+			Fields:   V1alpha1ReportConfig_GroupPreferencesetAssignmentsFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

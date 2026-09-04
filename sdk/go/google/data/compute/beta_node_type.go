@@ -27,8 +27,7 @@ type BetaNodeType_Deprecated struct {
 
 type BetaNodeTypeConfig struct {
 	NodeType any
-	Project any
-	Zone any
+	Project  any
 }
 
 type BetaNodeTypeAttrs struct {
@@ -53,19 +52,18 @@ type BetaNodeTypeAttrs struct {
 	// [Output Only] The amount of physical memory available to the node type, defined in MB.
 	MemoryMb any
 	// [Output Only] Name of the resource.
-	Name any
+	Name     any
 	NodeType any
-	Project any
+	Project  any
 	// Output only. [Output Only] Server-defined URL for the resource.
 	SelfLink any
-	Zone any
+	Zone     any
 }
 
 var BetaNodeType = ubx.DataSourceBinding{
 	WireType: "google_compute_beta_node_type",
 	Fields: ubx.FieldMap{
 		"NodeType": ubx.FieldSpec{WireName: "node_type"},
-		"Project": ubx.FieldSpec{WireName: "project"},
-		"Zone": ubx.FieldSpec{WireName: "zone"},
+		"Project":  ubx.FieldSpec{WireName: "project"},
 	},
 }

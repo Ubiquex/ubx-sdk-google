@@ -13,30 +13,22 @@ type Canaryevaluation_MetricLabels struct {
 }
 
 var Canaryevaluation_MetricLabelsFields = ubx.FieldMap{
-		"Env": ubx.FieldSpec{WireName: "env"},
-		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
-		"Location": ubx.FieldSpec{WireName: "location"},
-	}
+	"Env":        ubx.FieldSpec{WireName: "env"},
+	"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
+	"Location":   ubx.FieldSpec{WireName: "location"},
+}
 
 type CanaryevaluationConfig struct {
 	// Required. The stable version that is serving requests.
 	Control any
-	// Output only. Create time of the canary evaluation.
-	CreateTime any
 	// Required. End time for the evaluation's analysis.
 	EndTime any
 	// Labels that can be used to filter Apigee metrics.
 	MetricLabels any
-	// Output only. Name of the canary evalution.
-	Name any
 	// Required. Start time for the canary evaluation's analysis.
 	StartTime any
-	// Output only. The current state of the canary evaluation.
-	State any
 	// Required. The newer version that is serving requests.
 	Treatment any
-	// Output only. The resulting verdict of the canary evaluations: NONE, PASS, or FAIL.
-	Verdict any
 }
 
 type CanaryevaluationAttrs struct {
@@ -64,17 +56,13 @@ var Canaryevaluation = ubx.ResourceBinding{
 	WireType: "google_apigee_canaryevaluation",
 	Fields: ubx.FieldMap{
 		"Control": ubx.FieldSpec{WireName: "control"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"EndTime": ubx.FieldSpec{WireName: "end_time"},
 		"MetricLabels": ubx.FieldSpec{
 			WireName: "metric_labels",
-			Kind: "object",
-			Fields: Canaryevaluation_MetricLabelsFields,
+			Kind:     "object",
+			Fields:   Canaryevaluation_MetricLabelsFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
 		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"State": ubx.FieldSpec{WireName: "state"},
 		"Treatment": ubx.FieldSpec{WireName: "treatment"},
-		"Verdict": ubx.FieldSpec{WireName: "verdict"},
 	},
 }

@@ -4,17 +4,17 @@ package apigee
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Aliase_CertsInfo_CertInfo struct {
-	BasicConstraints any
-	ExpiryDate any
-	IsValid any
-	Issuer any
-	PublicKey any
-	SerialNumber any
-	SigAlgName any
-	Subject any
+	BasicConstraints        any
+	ExpiryDate              any
+	IsValid                 any
+	Issuer                  any
+	PublicKey               any
+	SerialNumber            any
+	SigAlgName              any
+	Subject                 any
 	SubjectAlternativeNames any
-	ValidFrom any
-	Version any
+	ValidFrom               any
+	Version                 any
 }
 
 type Aliase_CertsInfo struct {
@@ -33,7 +33,7 @@ type AliaseConfig struct {
 
 type AliaseAttrs struct {
 	// Resource ID for this alias. Values must match the regular expression `[^/]{1,255}`.
-	Alias any
+	Alias     any
 	CertsInfo any
 	// The HTTP Content-Type header value specifying the content type of the body.
 	ContentType any
@@ -49,7 +49,7 @@ var Aliase = ubx.ResourceBinding{
 	WireType: "google_apigee_aliase",
 	Fields: ubx.FieldMap{
 		"ContentType": ubx.FieldSpec{WireName: "content_type"},
-		"Data": ubx.FieldSpec{WireName: "data"},
-		"Extensions": ubx.FieldSpec{WireName: "extensions"},
+		"Data":        ubx.FieldSpec{WireName: "data"},
+		"Extensions":  ubx.FieldSpec{WireName: "extensions"},
 	},
 }

@@ -10,8 +10,6 @@ type OauthClientConfig struct {
 	AllowedRedirectUris any
 	// Required. The list of scopes that the OauthClient is allowed to request during OAuth flows. The following scopes are supported: * `https://www.googleapis.com/auth/cloud-platform`: See, edit, configure, and delete your Google Cloud data and see the email address for your Google Account.
 	AllowedScopes any
-	// Output only. The system-generated OauthClient id.
-	ClientId any
 	// Immutable. The type of OauthClient. Either public or private. For private clients, the client secret can be managed using the dedicated OauthClientCredential resource.
 	ClientType any
 	// Optional. A user-specified description of the OauthClient. Cannot exceed 256 characters.
@@ -20,12 +18,8 @@ type OauthClientConfig struct {
 	Disabled any
 	// Optional. A user-specified display name of the OauthClient. Cannot exceed 32 characters.
 	DisplayName any
-	// Output only. Time after which the OauthClient will be permanently purged and cannot be recovered.
-	ExpireTime any
 	// Immutable. Identifier. The resource name of the OauthClient. Format:`projects/{project}/locations/{location}/oauthClients/{oauth_client}`.
 	Name any
-	// Output only. The state of the OauthClient.
-	State any
 }
 
 type OauthClientAttrs struct {
@@ -56,16 +50,13 @@ type OauthClientAttrs struct {
 var OauthClient = ubx.ResourceBinding{
 	WireType: "google_iam_oauth_client",
 	Fields: ubx.FieldMap{
-		"AllowedGrantTypes": ubx.FieldSpec{WireName: "allowed_grant_types"},
+		"AllowedGrantTypes":   ubx.FieldSpec{WireName: "allowed_grant_types"},
 		"AllowedRedirectUris": ubx.FieldSpec{WireName: "allowed_redirect_uris"},
-		"AllowedScopes": ubx.FieldSpec{WireName: "allowed_scopes"},
-		"ClientId": ubx.FieldSpec{WireName: "client_id"},
-		"ClientType": ubx.FieldSpec{WireName: "client_type"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Disabled": ubx.FieldSpec{WireName: "disabled"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"ExpireTime": ubx.FieldSpec{WireName: "expire_time"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"State": ubx.FieldSpec{WireName: "state"},
+		"AllowedScopes":       ubx.FieldSpec{WireName: "allowed_scopes"},
+		"ClientType":          ubx.FieldSpec{WireName: "client_type"},
+		"Description":         ubx.FieldSpec{WireName: "description"},
+		"Disabled":            ubx.FieldSpec{WireName: "disabled"},
+		"DisplayName":         ubx.FieldSpec{WireName: "display_name"},
+		"Name":                ubx.FieldSpec{WireName: "name"},
 	},
 }

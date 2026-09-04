@@ -4,26 +4,26 @@ package dialogflow
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V3beta1Generator_LlmModelSettings_Parameters struct {
-	InputTokenLimit any
+	InputTokenLimit  any
 	OutputTokenLimit any
-	Temperature any
+	Temperature      any
 }
 
 type V3beta1Generator_LlmModelSettings struct {
-	Model any
+	Model      any
 	Parameters any
 	PromptText any
 }
 
 type V3beta1Generator_ModelParameter struct {
 	MaxDecodeSteps any
-	Temperature any
-	TopK any
-	TopP any
+	Temperature    any
+	TopK           any
+	TopP           any
 }
 
 type V3beta1Generator_Placeholders struct {
-	Id any
+	Id   any
 	Name any
 }
 
@@ -32,53 +32,53 @@ type V3beta1Generator_PromptText struct {
 }
 
 var V3beta1Generator_LlmModelSettings_ParametersFields = ubx.FieldMap{
-		"InputTokenLimit": ubx.FieldSpec{WireName: "input_token_limit"},
-		"OutputTokenLimit": ubx.FieldSpec{WireName: "output_token_limit"},
-		"Temperature": ubx.FieldSpec{WireName: "temperature"},
-	}
+	"InputTokenLimit":  ubx.FieldSpec{WireName: "input_token_limit"},
+	"OutputTokenLimit": ubx.FieldSpec{WireName: "output_token_limit"},
+	"Temperature":      ubx.FieldSpec{WireName: "temperature"},
+}
 
 var V3beta1Generator_LlmModelSettingsFields = ubx.FieldMap{
-		"Model": ubx.FieldSpec{WireName: "model"},
-		"Parameters": ubx.FieldSpec{
-			WireName: "parameters",
-			Kind: "object",
-			Fields: V3beta1Generator_LlmModelSettings_ParametersFields,
-		},
-		"PromptText": ubx.FieldSpec{WireName: "prompt_text"},
-	}
+	"Model": ubx.FieldSpec{WireName: "model"},
+	"Parameters": ubx.FieldSpec{
+		WireName: "parameters",
+		Kind:     "object",
+		Fields:   V3beta1Generator_LlmModelSettings_ParametersFields,
+	},
+	"PromptText": ubx.FieldSpec{WireName: "prompt_text"},
+}
 
 var V3beta1Generator_ModelParameterFields = ubx.FieldMap{
-		"MaxDecodeSteps": ubx.FieldSpec{WireName: "max_decode_steps"},
-		"Temperature": ubx.FieldSpec{WireName: "temperature"},
-		"TopK": ubx.FieldSpec{WireName: "top_k"},
-		"TopP": ubx.FieldSpec{WireName: "top_p"},
-	}
+	"MaxDecodeSteps": ubx.FieldSpec{WireName: "max_decode_steps"},
+	"Temperature":    ubx.FieldSpec{WireName: "temperature"},
+	"TopK":           ubx.FieldSpec{WireName: "top_k"},
+	"TopP":           ubx.FieldSpec{WireName: "top_p"},
+}
 
 var V3beta1Generator_PlaceholdersFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var V3beta1Generator_PromptTextFields = ubx.FieldMap{
-		"Text": ubx.FieldSpec{WireName: "text"},
-	}
+	"Text": ubx.FieldSpec{WireName: "text"},
+}
 
 type V3beta1GeneratorConfig struct {
-	DisplayName any
+	DisplayName      any
 	LlmModelSettings any
-	ModelParameter any
-	Name any
-	Placeholders any
-	PromptText any
+	ModelParameter   any
+	Name             any
+	Placeholders     any
+	PromptText       any
 }
 
 type V3beta1GeneratorAttrs struct {
-	DisplayName any
+	DisplayName      any
 	LlmModelSettings any
-	ModelParameter any
-	Name any
-	Placeholders any
-	PromptText any
+	ModelParameter   any
+	Name             any
+	Placeholders     any
+	PromptText       any
 }
 
 var V3beta1Generator = ubx.ResourceBinding{
@@ -87,24 +87,24 @@ var V3beta1Generator = ubx.ResourceBinding{
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"LlmModelSettings": ubx.FieldSpec{
 			WireName: "llm_model_settings",
-			Kind: "object",
-			Fields: V3beta1Generator_LlmModelSettingsFields,
+			Kind:     "object",
+			Fields:   V3beta1Generator_LlmModelSettingsFields,
 		},
 		"ModelParameter": ubx.FieldSpec{
 			WireName: "model_parameter",
-			Kind: "object",
-			Fields: V3beta1Generator_ModelParameterFields,
+			Kind:     "object",
+			Fields:   V3beta1Generator_ModelParameterFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Placeholders": ubx.FieldSpec{
 			WireName: "placeholders",
-			Kind: "list",
-			Fields: V3beta1Generator_PlaceholdersFields,
+			Kind:     "list",
+			Fields:   V3beta1Generator_PlaceholdersFields,
 		},
 		"PromptText": ubx.FieldSpec{
 			WireName: "prompt_text",
-			Kind: "object",
-			Fields: V3beta1Generator_PromptTextFields,
+			Kind:     "object",
+			Fields:   V3beta1Generator_PromptTextFields,
 		},
 	},
 }

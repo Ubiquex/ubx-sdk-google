@@ -10,14 +10,8 @@ import ubx_sdk as ubx
 class GroupConfig:
     # Required. The display name of the group.
     display_name: Any = None
-    # Output only. The number of invite links for this group.
-    invite_link_count: Any = None
     # The name of the group resource. Format: `projects/{project_number}/groups/{group_alias}`
     name: Any = None
-    # Output only. The number of releases this group is permitted to access.
-    release_count: Any = None
-    # Output only. The number of testers who are members of this group.
-    tester_count: Any = None
 
 @dataclasses.dataclass
 class GroupAttrs:
@@ -36,9 +30,6 @@ Group = ubx.ResourceBinding(
     wire_type="google_firebaseappdistribution_group",
     fields={
         "display_name": ubx.FieldSpec(wire_name="display_name"),
-        "invite_link_count": ubx.FieldSpec(wire_name="invite_link_count"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "release_count": ubx.FieldSpec(wire_name="release_count"),
-        "tester_count": ubx.FieldSpec(wire_name="tester_count"),
     },
 )

@@ -47,15 +47,9 @@ export interface AlphaNodeTemplateConfig {
   accelerators?: AlphaNodeTemplate_Accelerators[] | Computed<AlphaNodeTemplate_Accelerators[]>;
   /** CPU overcommit. */
   cpuOvercommitType?: string | Computed<string>;
-  /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
-  creationTimestamp?: string | Computed<string>;
   /** An optional description of this resource. Provide this property when you create the resource. */
   description?: string | Computed<string>;
   disks?: AlphaNodeTemplate_Disks[] | Computed<AlphaNodeTemplate_Disks[]>;
-  /** Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server. */
-  id?: string | Computed<string>;
-  /** Output only. [Output Only] The type of the resource. Alwayscompute#nodeTemplate for node templates. */
-  kind?: string | Computed<string>;
   /** The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
   name?: string | Computed<string>;
   /** Labels to use for node affinity, which will be used in instance scheduling. */
@@ -63,17 +57,7 @@ export interface AlphaNodeTemplateConfig {
   /** The node type to use for nodes group that are created from this template. */
   nodeType?: string | Computed<string>;
   nodeTypeFlexibility?: AlphaNodeTemplate_NodeTypeFlexibility | Computed<AlphaNodeTemplate_NodeTypeFlexibility>;
-  /** Output only. [Output Only] The name of the region where the node template resides, such as us-central1. */
-  region?: string | Computed<string>;
-  /** Output only. [Output Only] Server-defined URL for the resource. */
-  selfLink?: string | Computed<string>;
-  /** Output only. [Output Only] Server-defined URL for this resource with the resource id. */
-  selfLinkWithId?: string | Computed<string>;
   serverBinding?: AlphaNodeTemplate_ServerBinding | Computed<AlphaNodeTemplate_ServerBinding>;
-  /** Output only. [Output Only] The status of the node template. One of the following values:CREATING, READY, and DELETING. */
-  status?: string | Computed<string>;
-  /** Output only. [Output Only] An optional, human-readable explanation of the status. */
-  statusMessage?: string | Computed<string>;
 }
 
 export interface AlphaNodeTemplateAttrs {
@@ -118,15 +102,12 @@ export const AlphaNodeTemplate: ResourceBinding<AlphaNodeTemplateConfig, AlphaNo
       fields: AlphaNodeTemplate_AcceleratorsFields,
     },
     cpuOvercommitType: "cpu_overcommit_type",
-    creationTimestamp: "creation_timestamp",
     description: "description",
     disks: {
       wireName: "disks",
       kind: "list",
       fields: AlphaNodeTemplate_DisksFields,
     },
-    id: "id",
-    kind: "kind",
     name: "name",
     nodeAffinityLabels: "node_affinity_labels",
     nodeType: "node_type",
@@ -135,15 +116,10 @@ export const AlphaNodeTemplate: ResourceBinding<AlphaNodeTemplateConfig, AlphaNo
       kind: "object",
       fields: AlphaNodeTemplate_NodeTypeFlexibilityFields,
     },
-    region: "region",
-    selfLink: "self_link",
-    selfLinkWithId: "self_link_with_id",
     serverBinding: {
       wireName: "server_binding",
       kind: "object",
       fields: AlphaNodeTemplate_ServerBindingFields,
     },
-    status: "status",
-    statusMessage: "status_message",
   },
 };

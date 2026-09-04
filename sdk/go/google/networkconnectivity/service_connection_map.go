@@ -4,158 +4,99 @@ package networkconnectivity
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ServiceConnectionMap_ConsumerPscConfigs struct {
-	ConsumerInstanceProject any
-	DisableGlobalAccess any
-	IpVersion any
-	Network any
-	ProducerInstanceId any
-	ProducerInstanceMetadata any
-	Project any
+	ConsumerInstanceProject       any
+	DisableGlobalAccess           any
+	IpVersion                     any
+	Network                       any
+	ProducerInstanceId            any
+	ProducerInstanceMetadata      any
+	Project                       any
 	ServiceAttachmentIpAddressMap any
-	State any
+	State                         any
 }
 
 type ServiceConnectionMap_ConsumerPscConnections_DnsAutomationStatus_Error struct {
-	Code any
+	Code    any
 	Details any
 	Message any
 }
 
 type ServiceConnectionMap_ConsumerPscConnections_DnsAutomationStatus struct {
 	Error any
-	Fqdn any
+	Fqdn  any
 	State any
 }
 
 type ServiceConnectionMap_ConsumerPscConnections_ErrorInfo struct {
-	Domain any
+	Domain   any
 	Metadata any
-	Reason any
+	Reason   any
 }
 
 type ServiceConnectionMap_ConsumerPscConnections struct {
-	DnsAutomationStatus any
-	Error any
-	ErrorInfo any
-	ErrorType any
-	ForwardingRule any
-	GceOperation any
-	Ip any
-	IpVersion any
-	Network any
-	ProducerInstanceId any
+	DnsAutomationStatus      any
+	Error                    any
+	ErrorInfo                any
+	ErrorType                any
+	ForwardingRule           any
+	GceOperation             any
+	Ip                       any
+	IpVersion                any
+	Network                  any
+	ProducerInstanceId       any
 	ProducerInstanceMetadata any
-	Project any
-	PscConnectionId any
-	SelectedSubnetwork any
-	ServiceAttachmentUri any
-	State any
+	Project                  any
+	PscConnectionId          any
+	SelectedSubnetwork       any
+	ServiceAttachmentUri     any
+	State                    any
 }
 
 type ServiceConnectionMap_ProducerPscConfigs_AutomatedDnsCreationSpec struct {
 	DnsSuffix any
-	Hostname any
-	Ttl any
+	Hostname  any
+	Ttl       any
 }
 
 type ServiceConnectionMap_ProducerPscConfigs struct {
 	AutomatedDnsCreationSpec any
-	ServiceAttachmentUri any
+	ServiceAttachmentUri     any
 }
 
 var ServiceConnectionMap_ConsumerPscConfigsFields = ubx.FieldMap{
-		"ConsumerInstanceProject": ubx.FieldSpec{WireName: "consumer_instance_project"},
-		"DisableGlobalAccess": ubx.FieldSpec{WireName: "disable_global_access"},
-		"IpVersion": ubx.FieldSpec{WireName: "ip_version"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"ProducerInstanceId": ubx.FieldSpec{WireName: "producer_instance_id"},
-		"ProducerInstanceMetadata": ubx.FieldSpec{WireName: "producer_instance_metadata"},
-		"Project": ubx.FieldSpec{WireName: "project"},
-		"ServiceAttachmentIpAddressMap": ubx.FieldSpec{WireName: "service_attachment_ip_address_map"},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
-
-var ServiceConnectionMap_ConsumerPscConnections_DnsAutomationStatus_ErrorFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
-
-var ServiceConnectionMap_ConsumerPscConnections_DnsAutomationStatusFields = ubx.FieldMap{
-		"Error": ubx.FieldSpec{
-			WireName: "error",
-			Kind: "object",
-			Fields: ServiceConnectionMap_ConsumerPscConnections_DnsAutomationStatus_ErrorFields,
-		},
-		"Fqdn": ubx.FieldSpec{WireName: "fqdn"},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
-
-var ServiceConnectionMap_ConsumerPscConnections_ErrorInfoFields = ubx.FieldMap{
-		"Domain": ubx.FieldSpec{WireName: "domain"},
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-		"Reason": ubx.FieldSpec{WireName: "reason"},
-	}
-
-var ServiceConnectionMap_ConsumerPscConnectionsFields = ubx.FieldMap{
-		"DnsAutomationStatus": ubx.FieldSpec{
-			WireName: "dns_automation_status",
-			Kind: "object",
-			Fields: ServiceConnectionMap_ConsumerPscConnections_DnsAutomationStatusFields,
-		},
-		"Error": ubx.FieldSpec{
-			WireName: "error",
-			Kind: "object",
-			Fields: ServiceConnectionMap_ConsumerPscConnections_DnsAutomationStatus_ErrorFields,
-		},
-		"ErrorInfo": ubx.FieldSpec{
-			WireName: "error_info",
-			Kind: "object",
-			Fields: ServiceConnectionMap_ConsumerPscConnections_ErrorInfoFields,
-		},
-		"ErrorType": ubx.FieldSpec{WireName: "error_type"},
-		"ForwardingRule": ubx.FieldSpec{WireName: "forwarding_rule"},
-		"GceOperation": ubx.FieldSpec{WireName: "gce_operation"},
-		"Ip": ubx.FieldSpec{WireName: "ip"},
-		"IpVersion": ubx.FieldSpec{WireName: "ip_version"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"ProducerInstanceId": ubx.FieldSpec{WireName: "producer_instance_id"},
-		"ProducerInstanceMetadata": ubx.FieldSpec{WireName: "producer_instance_metadata"},
-		"Project": ubx.FieldSpec{WireName: "project"},
-		"PscConnectionId": ubx.FieldSpec{WireName: "psc_connection_id"},
-		"SelectedSubnetwork": ubx.FieldSpec{WireName: "selected_subnetwork"},
-		"ServiceAttachmentUri": ubx.FieldSpec{WireName: "service_attachment_uri"},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"ConsumerInstanceProject":       ubx.FieldSpec{WireName: "consumer_instance_project"},
+	"DisableGlobalAccess":           ubx.FieldSpec{WireName: "disable_global_access"},
+	"IpVersion":                     ubx.FieldSpec{WireName: "ip_version"},
+	"Network":                       ubx.FieldSpec{WireName: "network"},
+	"ProducerInstanceId":            ubx.FieldSpec{WireName: "producer_instance_id"},
+	"ProducerInstanceMetadata":      ubx.FieldSpec{WireName: "producer_instance_metadata"},
+	"Project":                       ubx.FieldSpec{WireName: "project"},
+	"ServiceAttachmentIpAddressMap": ubx.FieldSpec{WireName: "service_attachment_ip_address_map"},
+	"State":                         ubx.FieldSpec{WireName: "state"},
+}
 
 var ServiceConnectionMap_ProducerPscConfigs_AutomatedDnsCreationSpecFields = ubx.FieldMap{
-		"DnsSuffix": ubx.FieldSpec{WireName: "dns_suffix"},
-		"Hostname": ubx.FieldSpec{WireName: "hostname"},
-		"Ttl": ubx.FieldSpec{WireName: "ttl"},
-	}
+	"DnsSuffix": ubx.FieldSpec{WireName: "dns_suffix"},
+	"Hostname":  ubx.FieldSpec{WireName: "hostname"},
+	"Ttl":       ubx.FieldSpec{WireName: "ttl"},
+}
 
 var ServiceConnectionMap_ProducerPscConfigsFields = ubx.FieldMap{
-		"AutomatedDnsCreationSpec": ubx.FieldSpec{
-			WireName: "automated_dns_creation_spec",
-			Kind: "object",
-			Fields: ServiceConnectionMap_ProducerPscConfigs_AutomatedDnsCreationSpecFields,
-		},
-		"ServiceAttachmentUri": ubx.FieldSpec{WireName: "service_attachment_uri"},
-	}
+	"AutomatedDnsCreationSpec": ubx.FieldSpec{
+		WireName: "automated_dns_creation_spec",
+		Kind:     "object",
+		Fields:   ServiceConnectionMap_ProducerPscConfigs_AutomatedDnsCreationSpecFields,
+	},
+	"ServiceAttachmentUri": ubx.FieldSpec{WireName: "service_attachment_uri"},
+}
 
 type ServiceConnectionMapConfig struct {
 	// The PSC configurations on consumer side.
 	ConsumerPscConfigs any
-	// Output only. PSC connection details on consumer side.
-	ConsumerPscConnections any
-	// Output only. Time when the ServiceConnectionMap was created.
-	CreateTime any
 	// A description of this resource.
 	Description any
 	// Optional. The etag is computed by the server, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding.
 	Etag any
-	// Output only. The infrastructure used for connections between consumers/producers.
-	Infrastructure any
 	// User-defined labels.
 	Labels any
 	// Immutable. The name of a ServiceConnectionMap. Format: projects/{project}/locations/{location}/serviceConnectionMaps/{service_connection_map} See: https://google.aip.dev/122#fields-representing-resource-names
@@ -164,12 +105,8 @@ type ServiceConnectionMapConfig struct {
 	ProducerPscConfigs any
 	// The service class identifier this ServiceConnectionMap is for. The user of ServiceConnectionMap create API needs to have networkconnectivity.serviceClasses.use IAM permission for the service class.
 	ServiceClass any
-	// Output only. The service class uri this ServiceConnectionMap is for.
-	ServiceClassUri any
 	// The token provided by the consumer. This token authenticates that the consumer can create a connection within the specified project and network.
 	Token any
-	// Output only. Time when the ServiceConnectionMap was updated.
-	UpdateTime any
 }
 
 type ServiceConnectionMapAttrs struct {
@@ -206,28 +143,19 @@ var ServiceConnectionMap = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ConsumerPscConfigs": ubx.FieldSpec{
 			WireName: "consumer_psc_configs",
-			Kind: "list",
-			Fields: ServiceConnectionMap_ConsumerPscConfigsFields,
+			Kind:     "list",
+			Fields:   ServiceConnectionMap_ConsumerPscConfigsFields,
 		},
-		"ConsumerPscConnections": ubx.FieldSpec{
-			WireName: "consumer_psc_connections",
-			Kind: "list",
-			Fields: ServiceConnectionMap_ConsumerPscConnectionsFields,
-		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Infrastructure": ubx.FieldSpec{WireName: "infrastructure"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Etag":        ubx.FieldSpec{WireName: "etag"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"ProducerPscConfigs": ubx.FieldSpec{
 			WireName: "producer_psc_configs",
-			Kind: "list",
-			Fields: ServiceConnectionMap_ProducerPscConfigsFields,
+			Kind:     "list",
+			Fields:   ServiceConnectionMap_ProducerPscConfigsFields,
 		},
 		"ServiceClass": ubx.FieldSpec{WireName: "service_class"},
-		"ServiceClassUri": ubx.FieldSpec{WireName: "service_class_uri"},
-		"Token": ubx.FieldSpec{WireName: "token"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"Token":        ubx.FieldSpec{WireName: "token"},
 	},
 }

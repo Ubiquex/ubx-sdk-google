@@ -37,10 +37,10 @@ var User = ubx.ResourceBinding{
 	WireType: "google_androidenterprise_user",
 	Fields: ubx.FieldMap{
 		"AccountIdentifier": ubx.FieldSpec{WireName: "account_identifier"},
-		"AccountType": ubx.FieldSpec{WireName: "account_type"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"ManagementType": ubx.FieldSpec{WireName: "management_type"},
-		"PrimaryEmail": ubx.FieldSpec{WireName: "primary_email"},
+		"AccountType":       ubx.FieldSpec{WireName: "account_type"},
+		"DisplayName":       ubx.FieldSpec{WireName: "display_name"},
+		"Id":                ubx.FieldSpec{WireName: "id"},
+		"ManagementType":    ubx.FieldSpec{WireName: "management_type"},
+		"PrimaryEmail":      ubx.FieldSpec{WireName: "primary_email"},
 	},
 }

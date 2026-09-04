@@ -4,8 +4,6 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 export interface V1beta1SkillConfig {
   /** Optional. Specifies the compatibility of the Skill. Indicates environment requirements (intended product, system packages, network access, etc.). This should align with `compatibility` in the `SKILL.md` file. */
   compatibility?: string | Computed<string>;
-  /** Output only. Timestamp when this Skill was created. */
-  createTime?: string | Computed<string>;
   /** Required. Describes the Skill. Should describe both what the skill does and when to use it. Should include specific keywords that help agents identify relevant tasks. This should align with `description` in the `SKILL.md` file. */
   description?: string | Computed<string>;
   /** Required. Provides the display name of the Skill. This should align with `name` in the `SKILL.md` file. */
@@ -16,14 +14,6 @@ export interface V1beta1SkillConfig {
   license?: string | Computed<string>;
   /** Identifier. The resource name of the Skill. Format: `projects/{project}/locations/{location}/skills/{skill}` */
   name?: string | Computed<string>;
-  /** Output only. The SHA256 checksum of the zipped filesystem. */
-  sha256?: string | Computed<string>;
-  /** Output only. The source of the Skill. */
-  skillSource?: string | Computed<string>;
-  /** Output only. The state of the Skill. */
-  state?: string | Computed<string>;
-  /** Output only. Timestamp when this Skill was most recently updated. */
-  updateTime?: string | Computed<string>;
   /** Required. Provides the zipped filesystem of the Skill. This should contain the `SKILL.md` file at the root of the zip and optional directories for scripts, references, and assets. Directory should align with the directory structure specified at https://agentskills.io/specification#directory-structure. */
   zippedFilesystem?: string | Computed<string>;
 }
@@ -59,16 +49,11 @@ export const V1beta1Skill: ResourceBinding<V1beta1SkillConfig, V1beta1SkillAttrs
   wireType: "google_aiplatform_v1beta1_skill",
   fields: {
     compatibility: "compatibility",
-    createTime: "create_time",
     description: "description",
     displayName: "display_name",
     labels: "labels",
     license: "license",
     name: "name",
-    sha256: "sha256",
-    skillSource: "skill_source",
-    state: "state",
-    updateTime: "update_time",
     zippedFilesystem: "zipped_filesystem",
   },
 };

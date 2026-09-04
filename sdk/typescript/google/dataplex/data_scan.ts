@@ -1474,8 +1474,6 @@ const DataScan_UnstructuredDataProfileSpecFields: FieldMap = {
 };
 
 export interface DataScanConfig {
-  /** Output only. The time when the scan was created. */
-  createTime?: string | Computed<string>;
   /** The data source for DataScan. */
   data?: DataScan_Data | Computed<DataScan_Data>;
   /** The output of a data discovery scan. */
@@ -1506,20 +1504,10 @@ export interface DataScanConfig {
   executionStatus?: DataScan_ExecutionStatus | Computed<DataScan_ExecutionStatus>;
   /** Optional. User-defined labels for the scan. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. Identifier. The relative resource name of the scan, of the form: projects/{project}/locations/{location_id}/dataScans/{datascan_id}, where project refers to a project_id or project_number and location_id refers to a Google Cloud region. */
-  name?: string | Computed<string>;
-  /** Output only. Current state of the DataScan. */
-  state?: string | Computed<string>;
-  /** Output only. The type of DataScan. */
-  type?: string | Computed<string>;
-  /** Output only. System generated globally unique ID for the scan. This ID will be different if the scan is deleted and re-created with the same name. */
-  uid?: string | Computed<string>;
   /** Contains the result of an unstructured data profile scan. */
   unstructuredDataProfileResult?: DataScan_UnstructuredDataProfileResult | Computed<DataScan_UnstructuredDataProfileResult>;
   /** Contains the specification for an unstructured data profile scan. */
   unstructuredDataProfileSpec?: DataScan_UnstructuredDataProfileSpec | Computed<DataScan_UnstructuredDataProfileSpec>;
-  /** Output only. The time when the scan was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface DataScanAttrs {
@@ -1574,7 +1562,6 @@ export interface DataScanAttrs {
 export const DataScan: ResourceBinding<DataScanConfig, DataScanAttrs> = {
   wireType: "google_dataplex_data_scan",
   fields: {
-    createTime: "create_time",
     data: {
       wireName: "data",
       kind: "object",
@@ -1638,10 +1625,6 @@ export const DataScan: ResourceBinding<DataScanConfig, DataScanAttrs> = {
       fields: DataScan_ExecutionStatusFields,
     },
     labels: "labels",
-    name: "name",
-    state: "state",
-    type: "type",
-    uid: "uid",
     unstructuredDataProfileResult: {
       wireName: "unstructured_data_profile_result",
       kind: "object",
@@ -1652,6 +1635,5 @@ export const DataScan: ResourceBinding<DataScanConfig, DataScanAttrs> = {
       kind: "object",
       fields: DataScan_UnstructuredDataProfileSpecFields,
     },
-    updateTime: "update_time",
   },
 };

@@ -5,65 +5,65 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Intent_Parameters struct {
 	EntityType any
-	Id any
-	IsList any
-	Redact any
+	Id         any
+	IsList     any
+	Redact     any
 }
 
 type Intent_TrainingPhrases_Parts struct {
 	ParameterId any
-	Text any
+	Text        any
 }
 
 type Intent_TrainingPhrases struct {
-	Id any
-	Parts any
+	Id          any
+	Parts       any
 	RepeatCount any
 }
 
 var Intent_ParametersFields = ubx.FieldMap{
-		"EntityType": ubx.FieldSpec{WireName: "entity_type"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"IsList": ubx.FieldSpec{WireName: "is_list"},
-		"Redact": ubx.FieldSpec{WireName: "redact"},
-	}
+	"EntityType": ubx.FieldSpec{WireName: "entity_type"},
+	"Id":         ubx.FieldSpec{WireName: "id"},
+	"IsList":     ubx.FieldSpec{WireName: "is_list"},
+	"Redact":     ubx.FieldSpec{WireName: "redact"},
+}
 
 var Intent_TrainingPhrases_PartsFields = ubx.FieldMap{
-		"ParameterId": ubx.FieldSpec{WireName: "parameter_id"},
-		"Text": ubx.FieldSpec{WireName: "text"},
-	}
+	"ParameterId": ubx.FieldSpec{WireName: "parameter_id"},
+	"Text":        ubx.FieldSpec{WireName: "text"},
+}
 
 var Intent_TrainingPhrasesFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Parts": ubx.FieldSpec{
-			WireName: "parts",
-			Kind: "list",
-			Fields: Intent_TrainingPhrases_PartsFields,
-		},
-		"RepeatCount": ubx.FieldSpec{WireName: "repeat_count"},
-	}
+	"Id": ubx.FieldSpec{WireName: "id"},
+	"Parts": ubx.FieldSpec{
+		WireName: "parts",
+		Kind:     "list",
+		Fields:   Intent_TrainingPhrases_PartsFields,
+	},
+	"RepeatCount": ubx.FieldSpec{WireName: "repeat_count"},
+}
 
 type IntentConfig struct {
-	Description any
-	DisplayName any
-	DtmfPattern any
-	IsFallback any
-	Labels any
-	Name any
-	Parameters any
-	Priority any
+	Description     any
+	DisplayName     any
+	DtmfPattern     any
+	IsFallback      any
+	Labels          any
+	Name            any
+	Parameters      any
+	Priority        any
 	TrainingPhrases any
 }
 
 type IntentAttrs struct {
-	Description any
-	DisplayName any
-	DtmfPattern any
-	IsFallback any
-	Labels any
-	Name any
-	Parameters any
-	Priority any
+	Description     any
+	DisplayName     any
+	DtmfPattern     any
+	IsFallback      any
+	Labels          any
+	Name            any
+	Parameters      any
+	Priority        any
 	TrainingPhrases any
 }
 
@@ -73,19 +73,19 @@ var Intent = ubx.ResourceBinding{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"DtmfPattern": ubx.FieldSpec{WireName: "dtmf_pattern"},
-		"IsFallback": ubx.FieldSpec{WireName: "is_fallback"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"IsFallback":  ubx.FieldSpec{WireName: "is_fallback"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"Parameters": ubx.FieldSpec{
 			WireName: "parameters",
-			Kind: "list",
-			Fields: Intent_ParametersFields,
+			Kind:     "list",
+			Fields:   Intent_ParametersFields,
 		},
 		"Priority": ubx.FieldSpec{WireName: "priority"},
 		"TrainingPhrases": ubx.FieldSpec{
 			WireName: "training_phrases",
-			Kind: "list",
-			Fields: Intent_TrainingPhrasesFields,
+			Kind:     "list",
+			Fields:   Intent_TrainingPhrasesFields,
 		},
 	},
 }

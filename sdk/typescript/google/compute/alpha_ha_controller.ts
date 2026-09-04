@@ -291,30 +291,16 @@ const AlphaHaController_ZoneConfigurationsFields: FieldMap = {
 export interface AlphaHaControllerConfig {
   /** Advanced configuration option. If specified, these Backend Services need to be pre-created. Currently, only one backend service can be specified, and it must be L4 Internal Load Balancer (ILB). */
   backendServices?: string[] | Computed<string[]>;
-  /** Output only. [Output Only] Creation timestamp in RFC3339 text format. */
-  creationTimestamp?: string | Computed<string>;
   /** An optional description of this resource. Provide this property when you create the resource. */
   description?: string | Computed<string>;
   /** Indicates how failover should be initiated. */
   failoverInitiation?: string | Computed<string>;
-  /** Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server. */
-  id?: string | Computed<string>;
   /** Name of the instance that HaController is in charge of. If not specified the HaController's resource name will be used instead. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
   instanceName?: string | Computed<string>;
-  /** Output only. [Output Only] Type of the resource. Alwayscompute#haController for HaControllers. */
-  kind?: string | Computed<string>;
   /** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
   name?: string | Computed<string>;
   /** Basic networking configuration. Required backend services and forwarding rules will be automatically created with default parameters. */
   networkingAutoConfiguration?: AlphaHaController_NetworkingAutoConfiguration | Computed<AlphaHaController_NetworkingAutoConfiguration>;
-  /** Output only. [Output Only] URL of the region where the resource resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body. */
-  region?: string | Computed<string>;
-  /** Output only. [Output only] Server-defined URL for the resource. */
-  selfLink?: string | Computed<string>;
-  /** Output only. [Output Only] Server-defined URL for this resource with the resource id. */
-  selfLinkWithId?: string | Computed<string>;
-  /** Output only. The current state of the HA Controller. */
-  state?: string | Computed<string>;
   /** Contains information about current status of the HaController. */
   status?: AlphaHaController_Status | Computed<AlphaHaController_Status>;
   /** Map of zone configurations Key: name of the zone Value: ZoneConfiguration */
@@ -358,22 +344,15 @@ export const AlphaHaController: ResourceBinding<AlphaHaControllerConfig, AlphaHa
   wireType: "google_compute_alpha_ha_controller",
   fields: {
     backendServices: "backend_services",
-    creationTimestamp: "creation_timestamp",
     description: "description",
     failoverInitiation: "failover_initiation",
-    id: "id",
     instanceName: "instance_name",
-    kind: "kind",
     name: "name",
     networkingAutoConfiguration: {
       wireName: "networking_auto_configuration",
       kind: "object",
       fields: AlphaHaController_NetworkingAutoConfigurationFields,
     },
-    region: "region",
-    selfLink: "self_link",
-    selfLinkWithId: "self_link_with_id",
-    state: "state",
     status: {
       wireName: "status",
       kind: "object",

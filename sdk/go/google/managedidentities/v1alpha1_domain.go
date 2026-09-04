@@ -4,32 +4,32 @@ package managedidentities
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1alpha1Domain_Trusts struct {
-	CreateTime any
+	CreateTime                           any
 	LastKnownTrustConnectedHeartbeatTime any
-	SelectiveAuthentication any
-	State any
-	StateDescription any
-	TargetDnsIpAddresses any
-	TargetDomainName any
-	TrustDirection any
-	TrustHandshakeSecret any
-	TrustType any
-	UpdateTime any
+	SelectiveAuthentication              any
+	State                                any
+	StateDescription                     any
+	TargetDnsIpAddresses                 any
+	TargetDomainName                     any
+	TrustDirection                       any
+	TrustHandshakeSecret                 any
+	TrustType                            any
+	UpdateTime                           any
 }
 
 var V1alpha1Domain_TrustsFields = ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"LastKnownTrustConnectedHeartbeatTime": ubx.FieldSpec{WireName: "last_known_trust_connected_heartbeat_time"},
-		"SelectiveAuthentication": ubx.FieldSpec{WireName: "selective_authentication"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"StateDescription": ubx.FieldSpec{WireName: "state_description"},
-		"TargetDnsIpAddresses": ubx.FieldSpec{WireName: "target_dns_ip_addresses"},
-		"TargetDomainName": ubx.FieldSpec{WireName: "target_domain_name"},
-		"TrustDirection": ubx.FieldSpec{WireName: "trust_direction"},
-		"TrustHandshakeSecret": ubx.FieldSpec{WireName: "trust_handshake_secret"},
-		"TrustType": ubx.FieldSpec{WireName: "trust_type"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-	}
+	"CreateTime":                           ubx.FieldSpec{WireName: "create_time"},
+	"LastKnownTrustConnectedHeartbeatTime": ubx.FieldSpec{WireName: "last_known_trust_connected_heartbeat_time"},
+	"SelectiveAuthentication":              ubx.FieldSpec{WireName: "selective_authentication"},
+	"State":                                ubx.FieldSpec{WireName: "state"},
+	"StateDescription":                     ubx.FieldSpec{WireName: "state_description"},
+	"TargetDnsIpAddresses":                 ubx.FieldSpec{WireName: "target_dns_ip_addresses"},
+	"TargetDomainName":                     ubx.FieldSpec{WireName: "target_domain_name"},
+	"TrustDirection":                       ubx.FieldSpec{WireName: "trust_direction"},
+	"TrustHandshakeSecret":                 ubx.FieldSpec{WireName: "trust_handshake_secret"},
+	"TrustType":                            ubx.FieldSpec{WireName: "trust_type"},
+	"UpdateTime":                           ubx.FieldSpec{WireName: "update_time"},
+}
 
 type V1alpha1DomainConfig struct {
 	// Optional. Configuration for audit logs. True if audit logs are enabled, else false. Default is audit logs disabled.
@@ -92,21 +92,21 @@ type V1alpha1DomainAttrs struct {
 var V1alpha1Domain = ubx.ResourceBinding{
 	WireType: "google_managedidentities_v1alpha1_domain",
 	Fields: ubx.FieldMap{
-		"AuditLogsEnabled": ubx.FieldSpec{WireName: "audit_logs_enabled"},
-		"AuthorizedNetworks": ubx.FieldSpec{WireName: "authorized_networks"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Fqdn": ubx.FieldSpec{WireName: "fqdn"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Locations": ubx.FieldSpec{WireName: "locations"},
+		"AuditLogsEnabled":           ubx.FieldSpec{WireName: "audit_logs_enabled"},
+		"AuthorizedNetworks":         ubx.FieldSpec{WireName: "authorized_networks"},
+		"CreateTime":                 ubx.FieldSpec{WireName: "create_time"},
+		"Fqdn":                       ubx.FieldSpec{WireName: "fqdn"},
+		"Labels":                     ubx.FieldSpec{WireName: "labels"},
+		"Locations":                  ubx.FieldSpec{WireName: "locations"},
 		"ManagedIdentitiesAdminName": ubx.FieldSpec{WireName: "managed_identities_admin_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ReservedIpRange": ubx.FieldSpec{WireName: "reserved_ip_range"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"StatusMessage": ubx.FieldSpec{WireName: "status_message"},
+		"Name":                       ubx.FieldSpec{WireName: "name"},
+		"ReservedIpRange":            ubx.FieldSpec{WireName: "reserved_ip_range"},
+		"State":                      ubx.FieldSpec{WireName: "state"},
+		"StatusMessage":              ubx.FieldSpec{WireName: "status_message"},
 		"Trusts": ubx.FieldSpec{
 			WireName: "trusts",
-			Kind: "list",
-			Fields: V1alpha1Domain_TrustsFields,
+			Kind:     "list",
+			Fields:   V1alpha1Domain_TrustsFields,
 		},
 		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},

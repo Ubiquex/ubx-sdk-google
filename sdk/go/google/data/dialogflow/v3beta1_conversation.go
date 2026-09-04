@@ -4,9 +4,9 @@ package dialogflow
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V3beta1Conversation_Environment_TestCasesConfig struct {
-	EnableContinuousRun any
+	EnableContinuousRun    any
 	EnablePredeploymentRun any
-	TestCases any
+	TestCases              any
 }
 
 type V3beta1Conversation_Environment_VersionConfigs struct {
@@ -14,11 +14,11 @@ type V3beta1Conversation_Environment_VersionConfigs struct {
 }
 
 type V3beta1Conversation_Environment_WebhookConfig_WebhookOverrides_GenericWebService_OauthConfig struct {
-	ClientId any
-	ClientSecret any
-	Scopes any
+	ClientId                     any
+	ClientSecret                 any
+	Scopes                       any
 	SecretVersionForClientSecret any
-	TokenEndpoint any
+	TokenEndpoint                any
 }
 
 type V3beta1Conversation_Environment_WebhookConfig_WebhookOverrides_GenericWebService_SecretVersionsForRequestHeaders struct {
@@ -30,34 +30,34 @@ type V3beta1Conversation_Environment_WebhookConfig_WebhookOverrides_GenericWebSe
 }
 
 type V3beta1Conversation_Environment_WebhookConfig_WebhookOverrides_GenericWebService struct {
-	AllowedCaCerts any
-	HttpMethod any
-	OauthConfig any
-	ParameterMapping any
-	Password any
-	RequestBody any
-	RequestHeaders any
+	AllowedCaCerts                   any
+	HttpMethod                       any
+	OauthConfig                      any
+	ParameterMapping                 any
+	Password                         any
+	RequestBody                      any
+	RequestHeaders                   any
 	SecretVersionForUsernamePassword any
-	SecretVersionsForRequestHeaders any
-	ServiceAccountAuthConfig any
-	ServiceAgentAuth any
-	Uri any
-	Username any
-	WebhookType any
+	SecretVersionsForRequestHeaders  any
+	ServiceAccountAuthConfig         any
+	ServiceAgentAuth                 any
+	Uri                              any
+	Username                         any
+	WebhookType                      any
 }
 
 type V3beta1Conversation_Environment_WebhookConfig_WebhookOverrides_ServiceDirectory struct {
 	GenericWebService any
-	Service any
+	Service           any
 }
 
 type V3beta1Conversation_Environment_WebhookConfig_WebhookOverrides struct {
-	Disabled any
-	DisplayName any
+	Disabled          any
+	DisplayName       any
 	GenericWebService any
-	Name any
-	ServiceDirectory any
-	Timeout any
+	Name              any
+	ServiceDirectory  any
+	Timeout           any
 }
 
 type V3beta1Conversation_Environment_WebhookConfig struct {
@@ -65,13 +65,13 @@ type V3beta1Conversation_Environment_WebhookConfig struct {
 }
 
 type V3beta1Conversation_Environment struct {
-	Description any
-	DisplayName any
-	Name any
+	Description     any
+	DisplayName     any
+	Name            any
 	TestCasesConfig any
-	UpdateTime any
-	VersionConfigs any
-	WebhookConfig any
+	UpdateTime      any
+	VersionConfigs  any
+	WebhookConfig   any
 }
 
 type V3beta1Conversation_Flows_AdvancedSettings_AudioExportGcsDestination struct {
@@ -79,31 +79,31 @@ type V3beta1Conversation_Flows_AdvancedSettings_AudioExportGcsDestination struct
 }
 
 type V3beta1Conversation_Flows_AdvancedSettings_DtmfSettings struct {
-	Enabled any
+	Enabled                    any
 	EndpointingTimeoutDuration any
-	FinishDigit any
-	InterdigitTimeoutDuration any
-	MaxDigits any
+	FinishDigit                any
+	InterdigitTimeoutDuration  any
+	MaxDigits                  any
 }
 
 type V3beta1Conversation_Flows_AdvancedSettings_LoggingSettings struct {
 	EnableConsentBasedRedaction any
-	EnableInteractionLogging any
-	EnableStackdriverLogging any
+	EnableInteractionLogging    any
+	EnableStackdriverLogging    any
 }
 
 type V3beta1Conversation_Flows_AdvancedSettings_SpeechSettings struct {
-	EndpointerSensitivity any
-	Models any
-	NoSpeechTimeout any
+	EndpointerSensitivity      any
+	Models                     any
+	NoSpeechTimeout            any
 	UseTimeoutBasedEndpointing any
 }
 
 type V3beta1Conversation_Flows_AdvancedSettings struct {
 	AudioExportGcsDestination any
-	DtmfSettings any
-	LoggingSettings any
-	SpeechSettings any
+	DtmfSettings              any
+	LoggingSettings           any
+	SpeechSettings            any
 }
 
 type V3beta1Conversation_Flows_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_ConversationSuccess struct {
@@ -112,8 +112,8 @@ type V3beta1Conversation_Flows_EventHandlers_TriggerFulfillment_ConditionalCases
 
 type V3beta1Conversation_Flows_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_MixedAudio_Segments struct {
 	AllowPlaybackInterruption any
-	Audio any
-	Uri any
+	Audio                     any
+	Uri                       any
 }
 
 type V3beta1Conversation_Flows_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_MixedAudio struct {
@@ -122,13 +122,13 @@ type V3beta1Conversation_Flows_EventHandlers_TriggerFulfillment_ConditionalCases
 
 type V3beta1Conversation_Flows_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_OutputAudioText struct {
 	AllowPlaybackInterruption any
-	Ssml any
-	Text any
+	Ssml                      any
+	Text                      any
 }
 
 type V3beta1Conversation_Flows_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_PlayAudio struct {
 	AllowPlaybackInterruption any
-	AudioUri any
+	AudioUri                  any
 }
 
 type V3beta1Conversation_Flows_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_TelephonyTransferCall struct {
@@ -137,38 +137,38 @@ type V3beta1Conversation_Flows_EventHandlers_TriggerFulfillment_ConditionalCases
 
 type V3beta1Conversation_Flows_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_Text struct {
 	AllowPlaybackInterruption any
-	Text any
+	Text                      any
 }
 
 type V3beta1Conversation_Flows_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message_ToolCall struct {
-	Action any
+	Action          any
 	InputParameters any
-	Tool any
+	Tool            any
 }
 
 type V3beta1Conversation_Flows_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent_Message struct {
-	Channel any
-	ConversationSuccess any
-	EndInteraction any
-	KnowledgeInfoCard any
-	LiveAgentHandoff any
-	MixedAudio any
-	OutputAudioText any
-	Payload any
-	PlayAudio any
+	Channel               any
+	ConversationSuccess   any
+	EndInteraction        any
+	KnowledgeInfoCard     any
+	LiveAgentHandoff      any
+	MixedAudio            any
+	OutputAudioText       any
+	Payload               any
+	PlayAudio             any
 	TelephonyTransferCall any
-	Text any
-	ToolCall any
+	Text                  any
+	ToolCall              any
 }
 
 type V3beta1Conversation_Flows_EventHandlers_TriggerFulfillment_ConditionalCases_Cases_CaseContent struct {
 	AdditionalCases any
-	Message any
+	Message         any
 }
 
 type V3beta1Conversation_Flows_EventHandlers_TriggerFulfillment_ConditionalCases_Cases struct {
 	CaseContent any
-	Condition any
+	Condition   any
 }
 
 type V3beta1Conversation_Flows_EventHandlers_TriggerFulfillment_ConditionalCases struct {
@@ -176,190 +176,190 @@ type V3beta1Conversation_Flows_EventHandlers_TriggerFulfillment_ConditionalCases
 }
 
 type V3beta1Conversation_Flows_EventHandlers_TriggerFulfillment_Generators struct {
-	Generator any
+	Generator       any
 	InputParameters any
 	OutputParameter any
 }
 
 type V3beta1Conversation_Flows_EventHandlers_TriggerFulfillment_SetParameterActions struct {
 	Parameter any
-	Value any
+	Value     any
 }
 
 type V3beta1Conversation_Flows_EventHandlers_TriggerFulfillment struct {
-	AdvancedSettings any
-	CodeBlockFunction any
-	ConditionalCases any
+	AdvancedSettings         any
+	CodeBlockFunction        any
+	ConditionalCases         any
 	EnableGenerativeFallback any
-	Generators any
-	Messages any
-	ReturnPartialResponses any
-	SetParameterActions any
-	Tag any
-	Webhook any
+	Generators               any
+	Messages                 any
+	ReturnPartialResponses   any
+	SetParameterActions      any
+	Tag                      any
+	Webhook                  any
 }
 
 type V3beta1Conversation_Flows_EventHandlers struct {
-	Event any
-	Name any
-	TargetFlow any
-	TargetPage any
-	TargetPlaybook any
+	Event              any
+	Name               any
+	TargetFlow         any
+	TargetPage         any
+	TargetPlaybook     any
 	TriggerFulfillment any
 }
 
 type V3beta1Conversation_Flows_InputParameterDefinitions_TypeSchema_InlineSchema struct {
 	Items any
-	Type any
+	Type  any
 }
 
 type V3beta1Conversation_Flows_InputParameterDefinitions_TypeSchema_SchemaReference struct {
 	Schema any
-	Tool any
+	Tool   any
 }
 
 type V3beta1Conversation_Flows_InputParameterDefinitions_TypeSchema struct {
-	InlineSchema any
+	InlineSchema    any
 	SchemaReference any
 }
 
 type V3beta1Conversation_Flows_InputParameterDefinitions struct {
 	Description any
-	Name any
-	Type any
-	TypeSchema any
+	Name        any
+	Type        any
+	TypeSchema  any
 }
 
 type V3beta1Conversation_Flows_KnowledgeConnectorSettings_DataStoreConnections struct {
-	DataStore any
-	DataStoreType any
+	DataStore              any
+	DataStoreType          any
 	DocumentProcessingMode any
 }
 
 type V3beta1Conversation_Flows_KnowledgeConnectorSettings struct {
 	DataStoreConnections any
-	Enabled any
-	TargetFlow any
-	TargetPage any
-	TriggerFulfillment any
+	Enabled              any
+	TargetFlow           any
+	TargetPage           any
+	TriggerFulfillment   any
 }
 
 type V3beta1Conversation_Flows_MultiLanguageSettings struct {
-	EnableMultiLanguageDetection any
+	EnableMultiLanguageDetection   any
 	SupportedResponseLanguageCodes any
 }
 
 type V3beta1Conversation_Flows_NluSettings struct {
 	ClassificationThreshold any
-	ModelTrainingMode any
-	ModelType any
+	ModelTrainingMode       any
+	ModelType               any
 }
 
 type V3beta1Conversation_Flows_TransitionRoutes struct {
-	Condition any
-	Description any
-	Intent any
-	Name any
-	TargetFlow any
-	TargetPage any
+	Condition          any
+	Description        any
+	Intent             any
+	Name               any
+	TargetFlow         any
+	TargetPage         any
 	TriggerFulfillment any
 }
 
 type V3beta1Conversation_Flows struct {
-	AdvancedSettings any
-	Description any
-	DisplayName any
-	EventHandlers any
-	InputParameterDefinitions any
+	AdvancedSettings           any
+	Description                any
+	DisplayName                any
+	EventHandlers              any
+	InputParameterDefinitions  any
 	KnowledgeConnectorSettings any
-	Locked any
-	MultiLanguageSettings any
-	Name any
-	NluSettings any
+	Locked                     any
+	MultiLanguageSettings      any
+	Name                       any
+	NluSettings                any
 	OutputParameterDefinitions any
-	TransitionRouteGroups any
-	TransitionRoutes any
+	TransitionRouteGroups      any
+	TransitionRoutes           any
 }
 
 type V3beta1Conversation_Intents_Parameters struct {
 	EntityType any
-	Id any
-	IsList any
-	Redact any
+	Id         any
+	IsList     any
+	Redact     any
 }
 
 type V3beta1Conversation_Intents_TrainingPhrases_Parts struct {
 	ParameterId any
-	Text any
+	Text        any
 }
 
 type V3beta1Conversation_Intents_TrainingPhrases struct {
-	Id any
-	Parts any
+	Id          any
+	Parts       any
 	RepeatCount any
 }
 
 type V3beta1Conversation_Intents struct {
-	Description any
-	DisplayName any
-	DtmfPattern any
-	IsFallback any
-	Labels any
-	Name any
-	Parameters any
-	Priority any
+	Description     any
+	DisplayName     any
+	DtmfPattern     any
+	IsFallback      any
+	Labels          any
+	Name            any
+	Parameters      any
+	Priority        any
 	TrainingPhrases any
 }
 
 type V3beta1Conversation_Interactions_AnswerFeedback_RatingReason struct {
-	Feedback any
+	Feedback     any
 	ReasonLabels any
 }
 
 type V3beta1Conversation_Interactions_AnswerFeedback struct {
 	CustomRating any
-	Rating any
+	Rating       any
 	RatingReason any
 }
 
 type V3beta1Conversation_Interactions_MissingTransition struct {
 	IntentDisplayName any
-	Score any
+	Score             any
 }
 
 type V3beta1Conversation_Interactions_PartialResponses_OutputAudioConfig_SynthesizeSpeechConfig_Voice struct {
-	Name any
+	Name       any
 	SsmlGender any
 }
 
 type V3beta1Conversation_Interactions_PartialResponses_OutputAudioConfig_SynthesizeSpeechConfig struct {
 	EffectsProfileId any
-	Pitch any
-	SpeakingRate any
-	Voice any
-	VolumeGainDb any
+	Pitch            any
+	SpeakingRate     any
+	Voice            any
+	VolumeGainDb     any
 }
 
 type V3beta1Conversation_Interactions_PartialResponses_OutputAudioConfig struct {
-	AudioEncoding any
-	SampleRateHertz any
+	AudioEncoding          any
+	SampleRateHertz        any
 	SynthesizeSpeechConfig any
 }
 
 type V3beta1Conversation_Interactions_PartialResponses_QueryResult_CurrentPage_Form_Parameters_FillBehavior struct {
 	InitialPromptFulfillment any
-	RepromptEventHandlers any
+	RepromptEventHandlers    any
 }
 
 type V3beta1Conversation_Interactions_PartialResponses_QueryResult_CurrentPage_Form_Parameters struct {
 	AdvancedSettings any
-	DefaultValue any
-	DisplayName any
-	EntityType any
-	FillBehavior any
-	IsList any
-	Redact any
-	Required any
+	DefaultValue     any
+	DisplayName      any
+	EntityType       any
+	FillBehavior     any
+	IsList           any
+	Redact           any
+	Required         any
 }
 
 type V3beta1Conversation_Interactions_PartialResponses_QueryResult_CurrentPage_Form struct {
@@ -367,84 +367,84 @@ type V3beta1Conversation_Interactions_PartialResponses_QueryResult_CurrentPage_F
 }
 
 type V3beta1Conversation_Interactions_PartialResponses_QueryResult_CurrentPage struct {
-	AdvancedSettings any
-	Description any
-	DisplayName any
-	EntryFulfillment any
-	EventHandlers any
-	Form any
+	AdvancedSettings           any
+	Description                any
+	DisplayName                any
+	EntryFulfillment           any
+	EventHandlers              any
+	Form                       any
 	KnowledgeConnectorSettings any
-	Name any
-	TransitionRouteGroups any
-	TransitionRoutes any
+	Name                       any
+	TransitionRouteGroups      any
+	TransitionRoutes           any
 }
 
 type V3beta1Conversation_Interactions_PartialResponses_QueryResult_DataStoreConnectionSignals_AnswerGenerationModelCallSignals struct {
-	Model any
-	ModelOutput any
+	Model          any
+	ModelOutput    any
 	RenderedPrompt any
 }
 
 type V3beta1Conversation_Interactions_PartialResponses_QueryResult_DataStoreConnectionSignals_AnswerParts struct {
 	SupportingIndices any
-	Text any
+	Text              any
 }
 
 type V3beta1Conversation_Interactions_PartialResponses_QueryResult_DataStoreConnectionSignals_CitedSnippets_SearchSnippet struct {
 	DocumentTitle any
-	DocumentUri any
-	Metadata any
-	Text any
+	DocumentUri   any
+	Metadata      any
+	Text          any
 }
 
 type V3beta1Conversation_Interactions_PartialResponses_QueryResult_DataStoreConnectionSignals_CitedSnippets struct {
 	SearchSnippet any
-	SnippetIndex any
+	SnippetIndex  any
 }
 
 type V3beta1Conversation_Interactions_PartialResponses_QueryResult_DataStoreConnectionSignals_GroundingSignals struct {
 	Decision any
-	Score any
+	Score    any
 }
 
 type V3beta1Conversation_Interactions_PartialResponses_QueryResult_DataStoreConnectionSignals_SafetySignals struct {
-	BannedPhraseMatch any
-	Decision any
+	BannedPhraseMatch   any
+	Decision            any
 	MatchedBannedPhrase any
 }
 
 type V3beta1Conversation_Interactions_PartialResponses_QueryResult_DataStoreConnectionSignals struct {
-	Answer any
+	Answer                           any
 	AnswerGenerationModelCallSignals any
-	AnswerParts any
-	CitedSnippets any
-	GroundingSignals any
-	RewriterModelCallSignals any
-	RewrittenQuery any
-	SafetySignals any
-	SearchSnippets any
+	AnswerParts                      any
+	CitedSnippets                    any
+	GroundingSignals                 any
+	RewriterModelCallSignals         any
+	RewrittenQuery                   any
+	SafetySignals                    any
+	SearchSnippets                   any
 }
 
 type V3beta1Conversation_Interactions_PartialResponses_QueryResult_Dtmf struct {
-	Digits any
+	Digits      any
 	FinishDigit any
 }
 
 type V3beta1Conversation_Interactions_PartialResponses_QueryResult_GenerativeInfo_ActionTracingInfo_Actions_AgentUtterance struct {
 	RequireGeneration any
-	Text any
+	Text              any
 }
 
 type V3beta1Conversation_Interactions_PartialResponses_QueryResult_GenerativeInfo_ActionTracingInfo_Actions_Event struct {
 	Event any
-	Text any
+	Text  any
 }
 
 type V3beta1Conversation_Interactions_PartialResponses_QueryResult_GenerativeInfo_ActionTracingInfo_Actions_FlowInvocation struct {
-	DisplayName any
-	Flow any
-	FlowState any
-	InputActionParameters any
+	DisplayName            any
+	Flow                   any
+	FlowState              any
+	InputActionParameters  any
 	OutputActionParameters any
 }
 
@@ -454,29 +454,29 @@ type V3beta1Conversation_Interactions_PartialResponses_QueryResult_GenerativeInf
 
 type V3beta1Conversation_Interactions_PartialResponses_QueryResult_GenerativeInfo_ActionTracingInfo_Actions_FlowStateUpdate_PageState struct {
 	DisplayName any
-	Page any
-	Status any
+	Page        any
+	Status      any
 }
 
 type V3beta1Conversation_Interactions_PartialResponses_QueryResult_GenerativeInfo_ActionTracingInfo_Actions_FlowStateUpdate struct {
-	Destination any
-	EventType any
-	FunctionCall any
-	PageState any
+	Destination       any
+	EventType         any
+	FunctionCall      any
+	PageState         any
 	UpdatedParameters any
 }
 
 type V3beta1Conversation_Interactions_PartialResponses_QueryResult_GenerativeInfo_ActionTracingInfo_Actions_FlowTransition struct {
-	DisplayName any
-	Flow any
+	DisplayName           any
+	Flow                  any
 	InputActionParameters any
 }
 
 type V3beta1Conversation_Interactions_PartialResponses_QueryResult_GenerativeInfo_ActionTracingInfo_Actions_IntentMatch_MatchedIntents struct {
-	DisplayName any
+	DisplayName        any
 	GenerativeFallback any
-	IntentId any
-	Score any
+	IntentId           any
+	Score              any
 }
 
 type V3beta1Conversation_Interactions_PartialResponses_QueryResult_GenerativeInfo_ActionTracingInfo_Actions_IntentMatch struct {
@@ -484,49 +484,49 @@ type V3beta1Conversation_Interactions_PartialResponses_QueryResult_GenerativeInf
 }
 
 type V3beta1Conversation_Interactions_PartialResponses_QueryResult_GenerativeInfo_ActionTracingInfo_Actions_LlmCall_RetrievedExamples struct {
-	ExampleDisplayName any
-	ExampleId any
+	ExampleDisplayName    any
+	ExampleId             any
 	MatchedRetrievalLabel any
-	RetrievalStrategy any
+	RetrievalStrategy     any
 }
 
 type V3beta1Conversation_Interactions_PartialResponses_QueryResult_GenerativeInfo_ActionTracingInfo_Actions_LlmCall_TokenCount struct {
 	ConversationContextTokenCount any
-	ExampleTokenCount any
-	TotalInputTokenCount any
-	TotalOutputTokenCount any
+	ExampleTokenCount             any
+	TotalInputTokenCount          any
+	TotalOutputTokenCount         any
 }
 
 type V3beta1Conversation_Interactions_PartialResponses_QueryResult_GenerativeInfo_ActionTracingInfo_Actions_LlmCall struct {
-	Model any
+	Model             any
 	RetrievedExamples any
-	Temperature any
-	TokenCount any
+	Temperature       any
+	TokenCount        any
 }
 
 type V3beta1Conversation_Interactions_PartialResponses_QueryResult_GenerativeInfo_ActionTracingInfo_Actions_PlaybookInvocation_PlaybookInput struct {
-	ActionParameters any
+	ActionParameters             any
 	PrecedingConversationSummary any
 }
 
 type V3beta1Conversation_Interactions_PartialResponses_QueryResult_GenerativeInfo_ActionTracingInfo_Actions_PlaybookInvocation_PlaybookOutput struct {
 	ActionParameters any
 	ExecutionSummary any
-	State any
+	State            any
 }
 
 type V3beta1Conversation_Interactions_PartialResponses_QueryResult_GenerativeInfo_ActionTracingInfo_Actions_PlaybookInvocation struct {
-	DisplayName any
-	Playbook any
-	PlaybookInput any
+	DisplayName    any
+	Playbook       any
+	PlaybookInput  any
 	PlaybookOutput any
-	PlaybookState any
+	PlaybookState  any
 }
 
 type V3beta1Conversation_Interactions_PartialResponses_QueryResult_GenerativeInfo_ActionTracingInfo_Actions_PlaybookTransition struct {
-	DisplayName any
+	DisplayName           any
 	InputActionParameters any
-	Playbook any
+	Playbook              any
 }
 
 type V3beta1Conversation_Interactions_PartialResponses_QueryResult_GenerativeInfo_ActionTracingInfo_Actions_Status_Exception struct {
@@ -538,17 +538,17 @@ type V3beta1Conversation_Interactions_PartialResponses_QueryResult_GenerativeInf
 }
 
 type V3beta1Conversation_Interactions_PartialResponses_QueryResult_GenerativeInfo_ActionTracingInfo_Actions_SubExecutionSteps_Metrics struct {
-	Name any
-	Unit any
+	Name  any
+	Unit  any
 	Value any
 }
 
 type V3beta1Conversation_Interactions_PartialResponses_QueryResult_GenerativeInfo_ActionTracingInfo_Actions_SubExecutionSteps struct {
 	CompleteTime any
-	Metrics any
-	Name any
-	StartTime any
-	Tags any
+	Metrics      any
+	Name         any
+	StartTime    any
+	Tags         any
 }
 
 type V3beta1Conversation_Interactions_PartialResponses_QueryResult_GenerativeInfo_ActionTracingInfo_Actions_ToolUse_DataStoreToolTrace struct {
@@ -561,83 +561,83 @@ type V3beta1Conversation_Interactions_PartialResponses_QueryResult_GenerativeInf
 }
 
 type V3beta1Conversation_Interactions_PartialResponses_QueryResult_GenerativeInfo_ActionTracingInfo_Actions_ToolUse struct {
-	Action any
-	DataStoreToolTrace any
-	DisplayName any
-	InputActionParameters any
+	Action                 any
+	DataStoreToolTrace     any
+	DisplayName            any
+	InputActionParameters  any
 	OutputActionParameters any
-	Tool any
-	WebhookToolTrace any
+	Tool                   any
+	WebhookToolTrace       any
 }
 
 type V3beta1Conversation_Interactions_PartialResponses_QueryResult_GenerativeInfo_ActionTracingInfo_Actions_UserUtterance struct {
-	Audio any
+	Audio       any
 	AudioTokens any
-	Text any
+	Text        any
 }
 
 type V3beta1Conversation_Interactions_PartialResponses_QueryResult_GenerativeInfo_ActionTracingInfo_Actions struct {
-	AgentUtterance any
-	CompleteTime any
-	DisplayName any
-	Event any
-	FlowInvocation any
-	FlowStateUpdate any
-	FlowTransition any
-	IntentMatch any
-	LlmCall any
+	AgentUtterance     any
+	CompleteTime       any
+	DisplayName        any
+	Event              any
+	FlowInvocation     any
+	FlowStateUpdate    any
+	FlowTransition     any
+	IntentMatch        any
+	LlmCall            any
 	PlaybookInvocation any
 	PlaybookTransition any
-	StartTime any
-	Status any
-	Stt any
-	SubExecutionSteps any
-	ToolUse any
-	Tts any
-	UserUtterance any
+	StartTime          any
+	Status             any
+	Stt                any
+	SubExecutionSteps  any
+	ToolUse            any
+	Tts                any
+	UserUtterance      any
 }
 
 type V3beta1Conversation_Interactions_PartialResponses_QueryResult_GenerativeInfo_ActionTracingInfo struct {
-	Actions any
+	Actions           any
 	ConversationState any
-	CreateTime any
-	Description any
-	DisplayName any
-	LanguageCode any
-	Name any
-	PlaybookInput any
-	PlaybookOutput any
-	TokenCount any
-	UpdateTime any
+	CreateTime        any
+	Description       any
+	DisplayName       any
+	LanguageCode      any
+	Name              any
+	PlaybookInput     any
+	PlaybookOutput    any
+	TokenCount        any
+	UpdateTime        any
 }
 
 type V3beta1Conversation_Interactions_PartialResponses_QueryResult_GenerativeInfo struct {
 	ActionTracingInfo any
-	CurrentPlaybooks any
+	CurrentPlaybooks  any
 }
 
 type V3beta1Conversation_Interactions_PartialResponses_QueryResult_Match struct {
-	Confidence any
-	Event any
-	Intent any
-	MatchType any
-	Parameters any
+	Confidence    any
+	Event         any
+	Intent        any
+	MatchType     any
+	Parameters    any
 	ResolvedInput any
 }
 
 type V3beta1Conversation_Interactions_PartialResponses_QueryResult_SentimentAnalysisResult struct {
 	Magnitude any
-	Score any
+	Score     any
 }
 
 type V3beta1Conversation_Interactions_PartialResponses_QueryResult_TraceBlocks_FlowTraceMetadata struct {
 	DisplayName any
-	Flow any
+	Flow        any
 }
 
 type V3beta1Conversation_Interactions_PartialResponses_QueryResult_TraceBlocks_PlaybookTraceMetadata struct {
 	DisplayName any
-	Playbook any
+	Playbook    any
 }
 
 type V3beta1Conversation_Interactions_PartialResponses_QueryResult_TraceBlocks_SpeechProcessingMetadata struct {
@@ -645,80 +645,80 @@ type V3beta1Conversation_Interactions_PartialResponses_QueryResult_TraceBlocks_S
 }
 
 type V3beta1Conversation_Interactions_PartialResponses_QueryResult_TraceBlocks struct {
-	Actions any
-	CompleteTime any
-	EndState any
-	FlowTraceMetadata any
-	InputParameters any
-	OutputParameters any
-	PlaybookTraceMetadata any
+	Actions                  any
+	CompleteTime             any
+	EndState                 any
+	FlowTraceMetadata        any
+	InputParameters          any
+	OutputParameters         any
+	PlaybookTraceMetadata    any
 	SpeechProcessingMetadata any
-	StartTime any
+	StartTime                any
 }
 
 type V3beta1Conversation_Interactions_PartialResponses_QueryResult_WebhookStatuses struct {
-	Code any
+	Code    any
 	Details any
 	Message any
 }
 
 type V3beta1Conversation_Interactions_PartialResponses_QueryResult struct {
-	AdvancedSettings any
-	AllowAnswerFeedback any
-	CurrentFlow any
-	CurrentPage any
+	AdvancedSettings           any
+	AllowAnswerFeedback        any
+	CurrentFlow                any
+	CurrentPage                any
 	DataStoreConnectionSignals any
-	DiagnosticInfo any
-	Dtmf any
-	GenerativeInfo any
-	Intent any
-	IntentDetectionConfidence any
-	LanguageCode any
-	Match any
-	Parameters any
-	ResponseMessages any
-	SentimentAnalysisResult any
-	Text any
-	TraceBlocks any
-	Transcript any
-	TriggerEvent any
-	TriggerIntent any
-	WebhookDisplayNames any
-	WebhookIds any
-	WebhookLatencies any
-	WebhookPayloads any
-	WebhookStatuses any
-	WebhookTags any
+	DiagnosticInfo             any
+	Dtmf                       any
+	GenerativeInfo             any
+	Intent                     any
+	IntentDetectionConfidence  any
+	LanguageCode               any
+	Match                      any
+	Parameters                 any
+	ResponseMessages           any
+	SentimentAnalysisResult    any
+	Text                       any
+	TraceBlocks                any
+	Transcript                 any
+	TriggerEvent               any
+	TriggerIntent              any
+	WebhookDisplayNames        any
+	WebhookIds                 any
+	WebhookLatencies           any
+	WebhookPayloads            any
+	WebhookStatuses            any
+	WebhookTags                any
 }
 
 type V3beta1Conversation_Interactions_PartialResponses struct {
 	AllowCancellation any
-	OutputAudio any
+	OutputAudio       any
 	OutputAudioConfig any
-	QueryResult any
-	ResponseId any
-	ResponseType any
+	QueryResult       any
+	ResponseId        any
+	ResponseType      any
 }
 
 type V3beta1Conversation_Interactions_Request_QueryInput_Audio_Config_BargeInConfig struct {
 	NoBargeInDuration any
-	TotalDuration any
+	TotalDuration     any
 }
 
 type V3beta1Conversation_Interactions_Request_QueryInput_Audio_Config struct {
-	AudioEncoding any
-	BargeInConfig any
-	EnableWordInfo any
-	Model any
-	ModelVariant any
+	AudioEncoding                 any
+	BargeInConfig                 any
+	EnableWordInfo                any
+	Model                         any
+	ModelVariant                  any
 	OptOutConformerModelMigration any
-	PhraseHints any
-	SampleRateHertz any
-	SingleUtterance any
+	PhraseHints                   any
+	SampleRateHertz               any
+	SingleUtterance               any
 }
 
 type V3beta1Conversation_Interactions_Request_QueryInput_Audio struct {
-	Audio any
+	Audio  any
 	Config any
 }
 
@@ -739,55 +739,55 @@ type V3beta1Conversation_Interactions_Request_QueryInput_ToolCallResult_Error st
 }
 
 type V3beta1Conversation_Interactions_Request_QueryInput_ToolCallResult struct {
-	Action any
-	Error any
+	Action           any
+	Error            any
 	OutputParameters any
-	Tool any
+	Tool             any
 }
 
 type V3beta1Conversation_Interactions_Request_QueryInput struct {
-	Audio any
-	Dtmf any
-	Event any
-	Intent any
-	LanguageCode any
-	Text any
+	Audio          any
+	Dtmf           any
+	Event          any
+	Intent         any
+	LanguageCode   any
+	Text           any
 	ToolCallResult any
 }
 
 type V3beta1Conversation_Interactions_Request_QueryParams_GeoLocation struct {
-	Latitude any
+	Latitude  any
 	Longitude any
 }
 
 type V3beta1Conversation_Interactions_Request_QueryParams_LlmModelSettings_Parameters struct {
-	InputTokenLimit any
+	InputTokenLimit  any
 	OutputTokenLimit any
-	Temperature any
+	Temperature      any
 }
 
 type V3beta1Conversation_Interactions_Request_QueryParams_LlmModelSettings struct {
-	Model any
+	Model      any
 	Parameters any
 	PromptText any
 }
 
 type V3beta1Conversation_Interactions_Request_QueryParams_SearchConfig_BoostSpecs_Spec_ConditionBoostSpecs_BoostControlSpec_ControlPoints struct {
 	AttributeValue any
-	BoostAmount any
+	BoostAmount    any
 }
 
 type V3beta1Conversation_Interactions_Request_QueryParams_SearchConfig_BoostSpecs_Spec_ConditionBoostSpecs_BoostControlSpec struct {
-	AttributeType any
-	ControlPoints any
-	FieldName any
+	AttributeType     any
+	ControlPoints     any
+	FieldName         any
 	InterpolationType any
 }
 
 type V3beta1Conversation_Interactions_Request_QueryParams_SearchConfig_BoostSpecs_Spec_ConditionBoostSpecs struct {
-	Boost any
+	Boost            any
 	BoostControlSpec any
-	Condition any
+	Condition        any
 }
 
 type V3beta1Conversation_Interactions_Request_QueryParams_SearchConfig_BoostSpecs_Spec struct {
@@ -796,104 +796,104 @@ type V3beta1Conversation_Interactions_Request_QueryParams_SearchConfig_BoostSpec
 
 type V3beta1Conversation_Interactions_Request_QueryParams_SearchConfig_BoostSpecs struct {
 	DataStores any
-	Spec any
+	Spec       any
 }
 
 type V3beta1Conversation_Interactions_Request_QueryParams_SearchConfig_FilterSpecs struct {
 	DataStores any
-	Filter any
+	Filter     any
 }
 
 type V3beta1Conversation_Interactions_Request_QueryParams_SearchConfig struct {
-	BoostSpecs any
+	BoostSpecs  any
 	FilterSpecs any
 }
 
 type V3beta1Conversation_Interactions_Request_QueryParams_SessionEntityTypes_Entities struct {
 	Synonyms any
-	Value any
+	Value    any
 }
 
 type V3beta1Conversation_Interactions_Request_QueryParams_SessionEntityTypes struct {
-	Entities any
+	Entities           any
 	EntityOverrideMode any
-	Name any
+	Name               any
 }
 
 type V3beta1Conversation_Interactions_Request_QueryParams struct {
-	AnalyzeQueryTextSentiment any
-	Channel any
-	CurrentPage any
-	CurrentPlaybook any
-	DisableWebhook any
-	EndUserMetadata any
-	FlowVersions any
-	GeoLocation any
-	LlmModelSettings any
-	ParameterScope any
-	Parameters any
-	Payload any
+	AnalyzeQueryTextSentiment          any
+	Channel                            any
+	CurrentPage                        any
+	CurrentPlaybook                    any
+	DisableWebhook                     any
+	EndUserMetadata                    any
+	FlowVersions                       any
+	GeoLocation                        any
+	LlmModelSettings                   any
+	ParameterScope                     any
+	Parameters                         any
+	Payload                            any
 	PopulateDataStoreConnectionSignals any
-	SearchConfig any
-	SessionEntityTypes any
-	SessionTtl any
-	TimeZone any
-	WebhookHeaders any
+	SearchConfig                       any
+	SessionEntityTypes                 any
+	SessionTtl                         any
+	TimeZone                           any
+	WebhookHeaders                     any
 }
 
 type V3beta1Conversation_Interactions_Request struct {
 	OutputAudioConfig any
-	QueryInput any
-	QueryParams any
-	ResponseView any
-	Session any
+	QueryInput        any
+	QueryParams       any
+	ResponseView      any
+	Session           any
 }
 
 type V3beta1Conversation_Interactions_StepMetrics struct {
 	Latency any
-	Name any
+	Name    any
 }
 
 type V3beta1Conversation_Interactions struct {
-	AnswerFeedback any
-	CreateTime any
-	MissingTransition any
-	PartialResponses any
-	Request any
-	RequestUtterances any
-	Response any
+	AnswerFeedback     any
+	CreateTime         any
+	MissingTransition  any
+	PartialResponses   any
+	Request            any
+	RequestUtterances  any
+	Response           any
 	ResponseUtterances any
-	StepMetrics any
+	StepMetrics        any
 }
 
 type V3beta1Conversation_Metrics_MatchTypeCount struct {
-	DirectIntentCount any
-	EventCount any
-	IntentCount any
-	NoInputCount any
-	NoMatchCount any
+	DirectIntentCount     any
+	EventCount            any
+	IntentCount           any
+	NoInputCount          any
+	NoMatchCount          any
 	ParameterFillingCount any
-	UnspecifiedCount any
+	UnspecifiedCount      any
 }
 
 type V3beta1Conversation_Metrics_QueryInputCount struct {
-	AudioCount any
-	DtmfCount any
-	EventCount any
+	AudioCount  any
+	DtmfCount   any
+	EventCount  any
 	IntentCount any
-	TextCount any
+	TextCount   any
 }
 
 type V3beta1Conversation_Metrics struct {
 	AverageMatchConfidence any
-	HasEndInteraction any
-	HasLiveAgentHandoff any
-	InputAudioDuration any
-	InteractionCount any
-	MatchTypeCount any
-	MaxWebhookLatency any
-	OutputAudioDuration any
-	QueryInputCount any
+	HasEndInteraction      any
+	HasLiveAgentHandoff    any
+	InputAudioDuration     any
+	InteractionCount       any
+	MatchTypeCount         any
+	MaxWebhookLatency      any
+	OutputAudioDuration    any
+	QueryInputCount        any
 }
 
 type V3beta1ConversationConfig struct {
@@ -901,18 +901,18 @@ type V3beta1ConversationConfig struct {
 }
 
 type V3beta1ConversationAttrs struct {
-	Duration any
-	Environment any
+	Duration     any
+	Environment  any
 	FlowVersions any
-	Flows any
-	Intents any
+	Flows        any
+	Intents      any
 	Interactions any
 	LanguageCode any
-	Metrics any
-	Name any
-	Pages any
-	StartTime any
-	Type any
+	Metrics      any
+	Name         any
+	Pages        any
+	StartTime    any
+	Type         any
 }
 
 var V3beta1Conversation = ubx.DataSourceBinding{

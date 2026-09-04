@@ -16,7 +16,7 @@ type AlphaBackendBucket_CdnPolicy_CacheKeyPolicy struct {
 
 type AlphaBackendBucket_CdnPolicy_NegativeCachingPolicy struct {
 	Code any
-	Ttl any
+	Ttl  any
 }
 
 type AlphaBackendBucket_CdnPolicy struct {
@@ -56,53 +56,49 @@ type AlphaBackendBucket_UsedBy struct {
 }
 
 var AlphaBackendBucket_CdnPolicy_BypassCacheOnRequestHeadersFields = ubx.FieldMap{
-		"HeaderName": ubx.FieldSpec{WireName: "header_name"},
-	}
+	"HeaderName": ubx.FieldSpec{WireName: "header_name"},
+}
 
 var AlphaBackendBucket_CdnPolicy_CacheKeyPolicyFields = ubx.FieldMap{
-		"IncludeHttpHeaders": ubx.FieldSpec{WireName: "include_http_headers"},
-		"QueryStringWhitelist": ubx.FieldSpec{WireName: "query_string_whitelist"},
-	}
+	"IncludeHttpHeaders":   ubx.FieldSpec{WireName: "include_http_headers"},
+	"QueryStringWhitelist": ubx.FieldSpec{WireName: "query_string_whitelist"},
+}
 
 var AlphaBackendBucket_CdnPolicy_NegativeCachingPolicyFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Ttl": ubx.FieldSpec{WireName: "ttl"},
-	}
+	"Code": ubx.FieldSpec{WireName: "code"},
+	"Ttl":  ubx.FieldSpec{WireName: "ttl"},
+}
 
 var AlphaBackendBucket_CdnPolicyFields = ubx.FieldMap{
-		"BypassCacheOnRequestHeaders": ubx.FieldSpec{
-			WireName: "bypass_cache_on_request_headers",
-			Kind: "list",
-			Fields: AlphaBackendBucket_CdnPolicy_BypassCacheOnRequestHeadersFields,
-		},
-		"CacheKeyPolicy": ubx.FieldSpec{
-			WireName: "cache_key_policy",
-			Kind: "object",
-			Fields: AlphaBackendBucket_CdnPolicy_CacheKeyPolicyFields,
-		},
-		"CacheMode": ubx.FieldSpec{WireName: "cache_mode"},
-		"ClientTtl": ubx.FieldSpec{WireName: "client_ttl"},
-		"DefaultTtl": ubx.FieldSpec{WireName: "default_ttl"},
-		"MaxTtl": ubx.FieldSpec{WireName: "max_ttl"},
-		"NegativeCaching": ubx.FieldSpec{WireName: "negative_caching"},
-		"NegativeCachingPolicy": ubx.FieldSpec{
-			WireName: "negative_caching_policy",
-			Kind: "list",
-			Fields: AlphaBackendBucket_CdnPolicy_NegativeCachingPolicyFields,
-		},
-		"RequestCoalescing": ubx.FieldSpec{WireName: "request_coalescing"},
-		"ServeWhileStale": ubx.FieldSpec{WireName: "serve_while_stale"},
-		"SignedUrlCacheMaxAgeSec": ubx.FieldSpec{WireName: "signed_url_cache_max_age_sec"},
-		"SignedUrlKeyNames": ubx.FieldSpec{WireName: "signed_url_key_names"},
-	}
+	"BypassCacheOnRequestHeaders": ubx.FieldSpec{
+		WireName: "bypass_cache_on_request_headers",
+		Kind:     "list",
+		Fields:   AlphaBackendBucket_CdnPolicy_BypassCacheOnRequestHeadersFields,
+	},
+	"CacheKeyPolicy": ubx.FieldSpec{
+		WireName: "cache_key_policy",
+		Kind:     "object",
+		Fields:   AlphaBackendBucket_CdnPolicy_CacheKeyPolicyFields,
+	},
+	"CacheMode":       ubx.FieldSpec{WireName: "cache_mode"},
+	"ClientTtl":       ubx.FieldSpec{WireName: "client_ttl"},
+	"DefaultTtl":      ubx.FieldSpec{WireName: "default_ttl"},
+	"MaxTtl":          ubx.FieldSpec{WireName: "max_ttl"},
+	"NegativeCaching": ubx.FieldSpec{WireName: "negative_caching"},
+	"NegativeCachingPolicy": ubx.FieldSpec{
+		WireName: "negative_caching_policy",
+		Kind:     "list",
+		Fields:   AlphaBackendBucket_CdnPolicy_NegativeCachingPolicyFields,
+	},
+	"RequestCoalescing":       ubx.FieldSpec{WireName: "request_coalescing"},
+	"ServeWhileStale":         ubx.FieldSpec{WireName: "serve_while_stale"},
+	"SignedUrlCacheMaxAgeSec": ubx.FieldSpec{WireName: "signed_url_cache_max_age_sec"},
+	"SignedUrlKeyNames":       ubx.FieldSpec{WireName: "signed_url_key_names"},
+}
 
 var AlphaBackendBucket_ParamsFields = ubx.FieldMap{
-		"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
-	}
-
-var AlphaBackendBucket_UsedByFields = ubx.FieldMap{
-		"Reference": ubx.FieldSpec{WireName: "reference"},
-	}
+	"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
+}
 
 type AlphaBackendBucketConfig struct {
 	// Cloud Storage bucket name.
@@ -123,22 +119,14 @@ type AlphaBackendBucketConfig struct {
 	EnableCdn any
 	// [Output Only] Unique identifier for the resource; defined by the server.
 	Id any
-	// Output only. Type of the resource.
-	Kind any
 	// The value can only be INTERNAL_MANAGED for cross-region internal layer 7 load balancer. If loadBalancingScheme is not specified, the backend bucket can be used by classic global external load balancers, or global application external load balancers, or both.
 	LoadBalancingScheme any
 	// Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
 	Name any
 	// Additional Backend Bucket parameters.
 	Params any
-	// Output only. [Output Only] URL of the region where the regional backend bucket resides. This field is not applicable to global backend buckets. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
-	Region any
 	// [Output Only] Server-defined URL for the resource.
 	SelfLink any
-	// Output only. [Output Only] Server-defined URL for this resource with the resource id.
-	SelfLinkWithId any
-	// Output only. [Output Only] List of resources referencing that backend bucket.
-	UsedBy any
 }
 
 type AlphaBackendBucketAttrs struct {
@@ -184,31 +172,23 @@ var AlphaBackendBucket = ubx.ResourceBinding{
 		"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
 		"CdnPolicy": ubx.FieldSpec{
 			WireName: "cdn_policy",
-			Kind: "object",
-			Fields: AlphaBackendBucket_CdnPolicyFields,
+			Kind:     "object",
+			Fields:   AlphaBackendBucket_CdnPolicyFields,
 		},
-		"CompressionMode": ubx.FieldSpec{WireName: "compression_mode"},
-		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
+		"CompressionMode":       ubx.FieldSpec{WireName: "compression_mode"},
+		"CreationTimestamp":     ubx.FieldSpec{WireName: "creation_timestamp"},
 		"CustomResponseHeaders": ubx.FieldSpec{WireName: "custom_response_headers"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"EdgeSecurityPolicy": ubx.FieldSpec{WireName: "edge_security_policy"},
-		"EnableCdn": ubx.FieldSpec{WireName: "enable_cdn"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"LoadBalancingScheme": ubx.FieldSpec{WireName: "load_balancing_scheme"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Description":           ubx.FieldSpec{WireName: "description"},
+		"EdgeSecurityPolicy":    ubx.FieldSpec{WireName: "edge_security_policy"},
+		"EnableCdn":             ubx.FieldSpec{WireName: "enable_cdn"},
+		"Id":                    ubx.FieldSpec{WireName: "id"},
+		"LoadBalancingScheme":   ubx.FieldSpec{WireName: "load_balancing_scheme"},
+		"Name":                  ubx.FieldSpec{WireName: "name"},
 		"Params": ubx.FieldSpec{
 			WireName: "params",
-			Kind: "object",
-			Fields: AlphaBackendBucket_ParamsFields,
+			Kind:     "object",
+			Fields:   AlphaBackendBucket_ParamsFields,
 		},
-		"Region": ubx.FieldSpec{WireName: "region"},
 		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"SelfLinkWithId": ubx.FieldSpec{WireName: "self_link_with_id"},
-		"UsedBy": ubx.FieldSpec{
-			WireName: "used_by",
-			Kind: "list",
-			Fields: AlphaBackendBucket_UsedByFields,
-		},
 	},
 }

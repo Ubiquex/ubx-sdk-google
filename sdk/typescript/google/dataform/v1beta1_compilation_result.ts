@@ -120,23 +120,6 @@ const V1beta1CompilationResult_CodeCompilationConfigFields: FieldMap = {
   vars: "vars",
 };
 
-const V1beta1CompilationResult_CompilationErrors_ActionTargetFields: FieldMap = {
-  database: "database",
-  name: "name",
-  schema: "schema",
-};
-
-const V1beta1CompilationResult_CompilationErrorsFields: FieldMap = {
-  actionTarget: {
-    wireName: "action_target",
-    kind: "object",
-    fields: V1beta1CompilationResult_CompilationErrors_ActionTargetFields,
-  },
-  message: "message",
-  path: "path",
-  stack: "stack",
-};
-
 const V1beta1CompilationResult_DataEncryptionStateFields: FieldMap = {
   kmsKeyVersionName: "kms_key_version_name",
 };
@@ -154,28 +137,16 @@ const V1beta1CompilationResult_PrivateResourceMetadataFields: FieldMap = {
 export interface V1beta1CompilationResultConfig {
   /** Configures various aspects of Dataform code compilation. */
   codeCompilationConfig?: V1beta1CompilationResult_CodeCompilationConfig | Computed<V1beta1CompilationResult_CodeCompilationConfig>;
-  /** Output only. Errors encountered during project compilation. */
-  compilationErrors?: V1beta1CompilationResult_CompilationErrors[] | Computed<V1beta1CompilationResult_CompilationErrors[]>;
-  /** Output only. The timestamp of when the compilation result was created. */
-  createTime?: string | Computed<string>;
   /** Describes encryption state of a resource. */
   dataEncryptionState?: V1beta1CompilationResult_DataEncryptionState | Computed<V1beta1CompilationResult_DataEncryptionState>;
-  /** Output only. The version of `@dataform/core` that was used for compilation. */
-  dataformCoreVersion?: string | Computed<string>;
   /** Metadata about a repository snapshot stored in Google Cloud Storage. */
   gcsRepositorySnapshotMetadata?: V1beta1CompilationResult_GcsRepositorySnapshotMetadata | Computed<V1beta1CompilationResult_GcsRepositorySnapshotMetadata>;
   /** Immutable. Git commit/tag/branch name at which the repository should be compiled. Must exist in the remote repository. Examples: - a commit SHA: `12ade345` - a tag: `tag1` - a branch name: `branch1` */
   gitCommitish?: string | Computed<string>;
-  /** Output only. All the metadata information that is used internally to serve the resource. For example: timestamps, flags, status fields, etc. The format of this field is a JSON string. */
-  internalMetadata?: string | Computed<string>;
-  /** Output only. The compilation result's name. */
-  name?: string | Computed<string>;
   /** Metadata used to identify if a resource is user scoped. */
   privateResourceMetadata?: V1beta1CompilationResult_PrivateResourceMetadata | Computed<V1beta1CompilationResult_PrivateResourceMetadata>;
   /** Immutable. The name of the release config to compile. Must be in the format `projects/* /locations/* /repositories/* /releaseConfigs/*`. */
   releaseConfig?: string | Computed<string>;
-  /** Output only. The fully resolved Git commit SHA of the code that was compiled. Not set for compilation results whose source is a workspace. */
-  resolvedGitCommitSha?: string | Computed<string>;
   /** Immutable. The name of the workspace to compile. Must be in the format `projects/* /locations/* /repositories/* /workspaces/*`. */
   workspace?: string | Computed<string>;
 }
@@ -217,33 +188,23 @@ export const V1beta1CompilationResult: ResourceBinding<V1beta1CompilationResultC
       kind: "object",
       fields: V1beta1CompilationResult_CodeCompilationConfigFields,
     },
-    compilationErrors: {
-      wireName: "compilation_errors",
-      kind: "list",
-      fields: V1beta1CompilationResult_CompilationErrorsFields,
-    },
-    createTime: "create_time",
     dataEncryptionState: {
       wireName: "data_encryption_state",
       kind: "object",
       fields: V1beta1CompilationResult_DataEncryptionStateFields,
     },
-    dataformCoreVersion: "dataform_core_version",
     gcsRepositorySnapshotMetadata: {
       wireName: "gcs_repository_snapshot_metadata",
       kind: "object",
       fields: V1beta1CompilationResult_GcsRepositorySnapshotMetadataFields,
     },
     gitCommitish: "git_commitish",
-    internalMetadata: "internal_metadata",
-    name: "name",
     privateResourceMetadata: {
       wireName: "private_resource_metadata",
       kind: "object",
       fields: V1beta1CompilationResult_PrivateResourceMetadataFields,
     },
     releaseConfig: "release_config",
-    resolvedGitCommitSha: "resolved_git_commit_sha",
     workspace: "workspace",
   },
 };

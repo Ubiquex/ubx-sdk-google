@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta1FeatureMonitorJob_FeatureSelectionConfig_FeatureConfigs struct {
 	DriftThreshold any
-	FeatureId any
+	FeatureId      any
 }
 
 type V1beta1FeatureMonitorJob_FeatureSelectionConfig struct {
@@ -23,14 +23,14 @@ type V1beta1FeatureMonitorJob_FinalStatus struct {
 }
 
 type V1beta1FeatureMonitorJob_JobSummary_FeatureStatsAndAnomalies struct {
-	DistributionDeviation any
-	DriftDetected any
+	DistributionDeviation   any
+	DriftDetected           any
 	DriftDetectionThreshold any
-	FeatureId any
-	FeatureMonitorId any
-	FeatureMonitorJobId any
-	FeatureStats any
-	StatsTime any
+	FeatureId               any
+	FeatureMonitorId        any
+	FeatureMonitorJobId     any
+	FeatureStats            any
+	StatsTime               any
 }
 
 type V1beta1FeatureMonitorJob_JobSummary struct {
@@ -41,53 +41,47 @@ type V1beta1FeatureMonitorJob_JobSummary struct {
 }
 
 var V1beta1FeatureMonitorJob_FeatureSelectionConfig_FeatureConfigsFields = ubx.FieldMap{
-		"DriftThreshold": ubx.FieldSpec{WireName: "drift_threshold"},
-		"FeatureId": ubx.FieldSpec{WireName: "feature_id"},
-	}
+	"DriftThreshold": ubx.FieldSpec{WireName: "drift_threshold"},
+	"FeatureId":      ubx.FieldSpec{WireName: "feature_id"},
+}
 
 var V1beta1FeatureMonitorJob_FeatureSelectionConfigFields = ubx.FieldMap{
-		"FeatureConfigs": ubx.FieldSpec{
-			WireName: "feature_configs",
-			Kind: "list",
-			Fields: V1beta1FeatureMonitorJob_FeatureSelectionConfig_FeatureConfigsFields,
-		},
-	}
+	"FeatureConfigs": ubx.FieldSpec{
+		WireName: "feature_configs",
+		Kind:     "list",
+		Fields:   V1beta1FeatureMonitorJob_FeatureSelectionConfig_FeatureConfigsFields,
+	},
+}
 
 var V1beta1FeatureMonitorJob_FinalStatusFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"Code":    ubx.FieldSpec{WireName: "code"},
+	"Details": ubx.FieldSpec{WireName: "details"},
+	"Message": ubx.FieldSpec{WireName: "message"},
+}
 
 var V1beta1FeatureMonitorJob_JobSummary_FeatureStatsAndAnomaliesFields = ubx.FieldMap{
-		"DistributionDeviation": ubx.FieldSpec{WireName: "distribution_deviation"},
-		"DriftDetected": ubx.FieldSpec{WireName: "drift_detected"},
-		"DriftDetectionThreshold": ubx.FieldSpec{WireName: "drift_detection_threshold"},
-		"FeatureId": ubx.FieldSpec{WireName: "feature_id"},
-		"FeatureMonitorId": ubx.FieldSpec{WireName: "feature_monitor_id"},
-		"FeatureMonitorJobId": ubx.FieldSpec{WireName: "feature_monitor_job_id"},
-		"FeatureStats": ubx.FieldSpec{WireName: "feature_stats"},
-		"StatsTime": ubx.FieldSpec{WireName: "stats_time"},
-	}
+	"DistributionDeviation":   ubx.FieldSpec{WireName: "distribution_deviation"},
+	"DriftDetected":           ubx.FieldSpec{WireName: "drift_detected"},
+	"DriftDetectionThreshold": ubx.FieldSpec{WireName: "drift_detection_threshold"},
+	"FeatureId":               ubx.FieldSpec{WireName: "feature_id"},
+	"FeatureMonitorId":        ubx.FieldSpec{WireName: "feature_monitor_id"},
+	"FeatureMonitorJobId":     ubx.FieldSpec{WireName: "feature_monitor_job_id"},
+	"FeatureStats":            ubx.FieldSpec{WireName: "feature_stats"},
+	"StatsTime":               ubx.FieldSpec{WireName: "stats_time"},
+}
 
 var V1beta1FeatureMonitorJob_JobSummaryFields = ubx.FieldMap{
-		"FeatureStatsAndAnomalies": ubx.FieldSpec{
-			WireName: "feature_stats_and_anomalies",
-			Kind: "list",
-			Fields: V1beta1FeatureMonitorJob_JobSummary_FeatureStatsAndAnomaliesFields,
-		},
-		"TotalSlotMs": ubx.FieldSpec{WireName: "total_slot_ms"},
-	}
+	"FeatureStatsAndAnomalies": ubx.FieldSpec{
+		WireName: "feature_stats_and_anomalies",
+		Kind:     "list",
+		Fields:   V1beta1FeatureMonitorJob_JobSummary_FeatureStatsAndAnomaliesFields,
+	},
+	"TotalSlotMs": ubx.FieldSpec{WireName: "total_slot_ms"},
+}
 
 type V1beta1FeatureMonitorJobConfig struct {
-	// Output only. Timestamp when this FeatureMonitorJob was created. Creation of a FeatureMonitorJob means that the job is pending / waiting for sufficient resources but may not have started running yet.
-	CreateTime any
 	// Optional. Description of the FeatureMonitor.
 	Description any
-	// Output only. FeatureMonitorJob ID comparing to which the drift is calculated.
-	DriftBaseFeatureMonitorJobId any
-	// Output only. Data snapshot time comparing to which the drift is calculated.
-	DriftBaseSnapshotTime any
 	// Feature selection configuration for the FeatureMonitor.
 	FeatureSelectionConfig any
 	// The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
@@ -98,8 +92,6 @@ type V1beta1FeatureMonitorJobConfig struct {
 	Labels any
 	// Identifier. Name of the FeatureMonitorJob. Format: `projects/{project}/locations/{location}/featureGroups/{feature_group}/featureMonitors/{feature_monitor}/featureMonitorJobs/{feature_monitor_job}`.
 	Name any
-	// Output only. Trigger type of the Feature Monitor Job.
-	TriggerType any
 }
 
 type V1beta1FeatureMonitorJobAttrs struct {
@@ -128,27 +120,23 @@ type V1beta1FeatureMonitorJobAttrs struct {
 var V1beta1FeatureMonitorJob = ubx.ResourceBinding{
 	WireType: "google_aiplatform_v1beta1_feature_monitor_job",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"DriftBaseFeatureMonitorJobId": ubx.FieldSpec{WireName: "drift_base_feature_monitor_job_id"},
-		"DriftBaseSnapshotTime": ubx.FieldSpec{WireName: "drift_base_snapshot_time"},
 		"FeatureSelectionConfig": ubx.FieldSpec{
 			WireName: "feature_selection_config",
-			Kind: "object",
-			Fields: V1beta1FeatureMonitorJob_FeatureSelectionConfigFields,
+			Kind:     "object",
+			Fields:   V1beta1FeatureMonitorJob_FeatureSelectionConfigFields,
 		},
 		"FinalStatus": ubx.FieldSpec{
 			WireName: "final_status",
-			Kind: "object",
-			Fields: V1beta1FeatureMonitorJob_FinalStatusFields,
+			Kind:     "object",
+			Fields:   V1beta1FeatureMonitorJob_FinalStatusFields,
 		},
 		"JobSummary": ubx.FieldSpec{
 			WireName: "job_summary",
-			Kind: "object",
-			Fields: V1beta1FeatureMonitorJob_JobSummaryFields,
+			Kind:     "object",
+			Fields:   V1beta1FeatureMonitorJob_JobSummaryFields,
 		},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"TriggerType": ubx.FieldSpec{WireName: "trigger_type"},
+		"Name":   ubx.FieldSpec{WireName: "name"},
 	},
 }

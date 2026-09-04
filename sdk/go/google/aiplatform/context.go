@@ -4,8 +4,6 @@ package aiplatform
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ContextConfig struct {
-	// Output only. Timestamp when this Context was created.
-	CreateTime any
 	// Description of the Context
 	Description any
 	// User provided display name of the Context. May be up to 128 Unicode characters.
@@ -18,14 +16,10 @@ type ContextConfig struct {
 	Metadata any
 	// Immutable. The resource name of the Context.
 	Name any
-	// Output only. A list of resource names of Contexts that are parents of this Context. A Context may have at most 10 parent_contexts.
-	ParentContexts any
 	// The title of the schema describing the metadata. Schema title and version is expected to be registered in earlier Create Schema calls. And both are used together as unique identifiers to identify schemas within the local metadata store.
 	SchemaTitle any
 	// The version of the schema in schema_name to use. Schema title and version is expected to be registered in earlier Create Schema calls. And both are used together as unique identifiers to identify schemas within the local metadata store.
 	SchemaVersion any
-	// Output only. Timestamp when this Context was last updated.
-	UpdateTime any
 }
 
 type ContextAttrs struct {
@@ -56,16 +50,13 @@ type ContextAttrs struct {
 var Context = ubx.ResourceBinding{
 	WireType: "google_aiplatform_context",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ParentContexts": ubx.FieldSpec{WireName: "parent_contexts"},
-		"SchemaTitle": ubx.FieldSpec{WireName: "schema_title"},
+		"Description":   ubx.FieldSpec{WireName: "description"},
+		"DisplayName":   ubx.FieldSpec{WireName: "display_name"},
+		"Etag":          ubx.FieldSpec{WireName: "etag"},
+		"Labels":        ubx.FieldSpec{WireName: "labels"},
+		"Metadata":      ubx.FieldSpec{WireName: "metadata"},
+		"Name":          ubx.FieldSpec{WireName: "name"},
+		"SchemaTitle":   ubx.FieldSpec{WireName: "schema_title"},
 		"SchemaVersion": ubx.FieldSpec{WireName: "schema_version"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

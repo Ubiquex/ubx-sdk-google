@@ -71,22 +71,14 @@ export interface InstanceConfig {
   accessLoggingConfig?: Instance_AccessLoggingConfig | Computed<Instance_AccessLoggingConfig>;
   /** Optional. Customer accept list represents the list of projects (id/number) on customer side that can privately connect to the service attachment. It is an optional field which the customers can provide during the instance creation. By default, the customer project associated with the Apigee organization will be included to the list. */
   consumerAcceptList?: string[] | Computed<string[]>;
-  /** Output only. Time the instance was created in milliseconds since epoch. */
-  createdAt?: string | Computed<string>;
   /** Optional. Description of the instance. */
   description?: string | Computed<string>;
   /** Optional. Customer Managed Encryption Key (CMEK) used for disk and volume encryption. If not specified, a Google-Managed encryption key will be used. Use the following format: `projects/([^/]+)/locations/([^/]+)/keyRings/([^/]+)/cryptoKeys/([^/]+)` */
   diskEncryptionKeyName?: string | Computed<string>;
   /** Optional. Display name for the instance. */
   displayName?: string | Computed<string>;
-  /** Output only. Internal hostname or IP address of the Apigee endpoint used by clients to connect to the service. */
-  host?: string | Computed<string>;
   /** Optional. Comma-separated list of CIDR blocks of length 22 and/or 28 used to create the Apigee instance. Providing CIDR ranges is optional. You can provide just /22 or /28 or both (or neither). Ranges you provide should be freely available as part of a larger named range you have allocated to the Service Networking peering. If this parameter is not provided, Apigee automatically requests an available /22 and /28 CIDR block from Service Networking. Use the /22 CIDR block for configuring your firewall needs to allow traffic from Apigee. Input formats: `a.b.c.d/22` or `e.f.g.h/28` or `a.b.c.d/22,e.f.g.h/28` */
   ipRange?: string | Computed<string>;
-  /** Output only. Indicates whether the instance is version locked. If true, the instance will not be updated by automated runtime rollouts. This is only supported for Apigee X instances. */
-  isVersionLocked?: boolean | Computed<boolean>;
-  /** Output only. Time the instance was last modified in milliseconds since epoch. */
-  lastModifiedAt?: string | Computed<string>;
   /** Required. Compute Engine location where the instance resides. */
   location?: string | Computed<string>;
   /** MaintenanceUpdatePolicy specifies the preferred window to perform maintenance on the instance (day of the week and time of day). */
@@ -95,16 +87,8 @@ export interface InstanceConfig {
   name?: string | Computed<string>;
   /** Optional. Size of the CIDR block range that will be reserved by the instance. PAID organizations support `SLASH_16` to `SLASH_20` and defaults to `SLASH_16`. Evaluation organizations support only `SLASH_23`. */
   peeringCidrRange?: string | Computed<string>;
-  /** Output only. Port number of the exposed Apigee endpoint. */
-  port?: string | Computed<string>;
-  /** Output only. Version of the runtime system running in the instance. The runtime system is the set of components that serve the API Proxy traffic in your Environments. */
-  runtimeVersion?: string | Computed<string>;
   /** Scheduled maintenance information for an instance. */
   scheduledMaintenance?: Instance_ScheduledMaintenance | Computed<Instance_ScheduledMaintenance>;
-  /** Output only. Resource name of the service attachment created for the instance in the format: `projects/* /regions/* /serviceAttachments/*` Apigee customers can privately forward traffic to this service attachment using the PSC endpoints. */
-  serviceAttachment?: string | Computed<string>;
-  /** Output only. State of the instance. Values other than `ACTIVE` means the resource is not ready to use. */
-  state?: string | Computed<string>;
 }
 
 export interface InstanceAttrs {
@@ -157,14 +141,10 @@ export const Instance: ResourceBinding<InstanceConfig, InstanceAttrs> = {
       fields: Instance_AccessLoggingConfigFields,
     },
     consumerAcceptList: "consumer_accept_list",
-    createdAt: "created_at",
     description: "description",
     diskEncryptionKeyName: "disk_encryption_key_name",
     displayName: "display_name",
-    host: "host",
     ipRange: "ip_range",
-    isVersionLocked: "is_version_locked",
-    lastModifiedAt: "last_modified_at",
     location: "location",
     maintenanceUpdatePolicy: {
       wireName: "maintenance_update_policy",
@@ -173,14 +153,10 @@ export const Instance: ResourceBinding<InstanceConfig, InstanceAttrs> = {
     },
     name: "name",
     peeringCidrRange: "peering_cidr_range",
-    port: "port",
-    runtimeVersion: "runtime_version",
     scheduledMaintenance: {
       wireName: "scheduled_maintenance",
       kind: "object",
       fields: Instance_ScheduledMaintenanceFields,
     },
-    serviceAttachment: "service_attachment",
-    state: "state",
   },
 };

@@ -4,8 +4,6 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 export interface V1beta1AddressGroupConfig {
   /** Required. Capacity of the Address Group */
   capacity?: number | Computed<number>;
-  /** Output only. The timestamp when the resource was created. */
-  createTime?: string | Computed<string>;
   /** Optional. Free-text description of the resource. */
   description?: string | Computed<string>;
   /** Optional. List of items. */
@@ -16,12 +14,8 @@ export interface V1beta1AddressGroupConfig {
   name?: string | Computed<string>;
   /** Optional. List of supported purposes of the Address Group. */
   purpose?: string[] | Computed<string[]>;
-  /** Output only. Server-defined fully-qualified URL for this resource. */
-  selfLink?: string | Computed<string>;
   /** Required. The type of the Address Group. Possible values are "IPv4" or "IPV6". */
   type?: string | Computed<string>;
-  /** Output only. The timestamp when the resource was updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1beta1AddressGroupAttrs {
@@ -51,14 +45,11 @@ export const V1beta1AddressGroup: ResourceBinding<V1beta1AddressGroupConfig, V1b
   wireType: "google_networksecurity_v1beta1_address_group",
   fields: {
     capacity: "capacity",
-    createTime: "create_time",
     description: "description",
     items: "items",
     labels: "labels",
     name: "name",
     purpose: "purpose",
-    selfLink: "self_link",
     type: "type",
-    updateTime: "update_time",
   },
 };

@@ -137,9 +137,9 @@ type Session_RuntimeInfo_CurrentUsage struct {
 }
 
 type Session_RuntimeInfo_PropertiesInfo_AutotuningProperties struct {
-	Annotation any
+	Annotation      any
 	OverriddenValue any
-	Value any
+	Value           any
 }
 
 type Session_RuntimeInfo_PropertiesInfo struct {
@@ -165,176 +165,166 @@ type Session_RuntimeInfo struct {
 }
 
 type Session_StateHistory struct {
-	State any
-	StateMessage any
+	State          any
+	StateMessage   any
 	StateStartTime any
 }
 
 var Session_EnvironmentConfig_ExecutionConfig_AuthenticationConfigFields = ubx.FieldMap{
-		"UserWorkloadAuthenticationType": ubx.FieldSpec{WireName: "user_workload_authentication_type"},
-	}
+	"UserWorkloadAuthenticationType": ubx.FieldSpec{WireName: "user_workload_authentication_type"},
+}
 
 var Session_EnvironmentConfig_ExecutionConfigFields = ubx.FieldMap{
-		"AuthenticationConfig": ubx.FieldSpec{
-			WireName: "authentication_config",
-			Kind: "object",
-			Fields: Session_EnvironmentConfig_ExecutionConfig_AuthenticationConfigFields,
-		},
-		"IdleTtl": ubx.FieldSpec{WireName: "idle_ttl"},
-		"KmsKey": ubx.FieldSpec{WireName: "kms_key"},
-		"NetworkTags": ubx.FieldSpec{WireName: "network_tags"},
-		"NetworkUri": ubx.FieldSpec{WireName: "network_uri"},
-		"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-		"StagingBucket": ubx.FieldSpec{WireName: "staging_bucket"},
-		"SubnetworkUri": ubx.FieldSpec{WireName: "subnetwork_uri"},
-		"Ttl": ubx.FieldSpec{WireName: "ttl"},
-	}
+	"AuthenticationConfig": ubx.FieldSpec{
+		WireName: "authentication_config",
+		Kind:     "object",
+		Fields:   Session_EnvironmentConfig_ExecutionConfig_AuthenticationConfigFields,
+	},
+	"IdleTtl":             ubx.FieldSpec{WireName: "idle_ttl"},
+	"KmsKey":              ubx.FieldSpec{WireName: "kms_key"},
+	"NetworkTags":         ubx.FieldSpec{WireName: "network_tags"},
+	"NetworkUri":          ubx.FieldSpec{WireName: "network_uri"},
+	"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
+	"ServiceAccount":      ubx.FieldSpec{WireName: "service_account"},
+	"StagingBucket":       ubx.FieldSpec{WireName: "staging_bucket"},
+	"SubnetworkUri":       ubx.FieldSpec{WireName: "subnetwork_uri"},
+	"Ttl":                 ubx.FieldSpec{WireName: "ttl"},
+}
 
 var Session_EnvironmentConfig_PeripheralsConfig_SparkHistoryServerConfigFields = ubx.FieldMap{
-		"DataprocCluster": ubx.FieldSpec{WireName: "dataproc_cluster"},
-	}
+	"DataprocCluster": ubx.FieldSpec{WireName: "dataproc_cluster"},
+}
 
 var Session_EnvironmentConfig_PeripheralsConfigFields = ubx.FieldMap{
-		"MetastoreService": ubx.FieldSpec{WireName: "metastore_service"},
-		"SparkHistoryServerConfig": ubx.FieldSpec{
-			WireName: "spark_history_server_config",
-			Kind: "object",
-			Fields: Session_EnvironmentConfig_PeripheralsConfig_SparkHistoryServerConfigFields,
-		},
-	}
+	"MetastoreService": ubx.FieldSpec{WireName: "metastore_service"},
+	"SparkHistoryServerConfig": ubx.FieldSpec{
+		WireName: "spark_history_server_config",
+		Kind:     "object",
+		Fields:   Session_EnvironmentConfig_PeripheralsConfig_SparkHistoryServerConfigFields,
+	},
+}
 
 var Session_EnvironmentConfigFields = ubx.FieldMap{
-		"ExecutionConfig": ubx.FieldSpec{
-			WireName: "execution_config",
-			Kind: "object",
-			Fields: Session_EnvironmentConfig_ExecutionConfigFields,
-		},
-		"PeripheralsConfig": ubx.FieldSpec{
-			WireName: "peripherals_config",
-			Kind: "object",
-			Fields: Session_EnvironmentConfig_PeripheralsConfigFields,
-		},
-	}
+	"ExecutionConfig": ubx.FieldSpec{
+		WireName: "execution_config",
+		Kind:     "object",
+		Fields:   Session_EnvironmentConfig_ExecutionConfigFields,
+	},
+	"PeripheralsConfig": ubx.FieldSpec{
+		WireName: "peripherals_config",
+		Kind:     "object",
+		Fields:   Session_EnvironmentConfig_PeripheralsConfigFields,
+	},
+}
 
 var Session_JupyterSessionFields = ubx.FieldMap{
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Kernel": ubx.FieldSpec{WireName: "kernel"},
-	}
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"Kernel":      ubx.FieldSpec{WireName: "kernel"},
+}
 
 var Session_RuntimeConfig_AutotuningConfigFields = ubx.FieldMap{
-		"Scenarios": ubx.FieldSpec{WireName: "scenarios"},
-	}
+	"Scenarios": ubx.FieldSpec{WireName: "scenarios"},
+}
 
 var Session_RuntimeConfig_RepositoryConfig_PypiRepositoryConfigFields = ubx.FieldMap{
-		"PypiRepository": ubx.FieldSpec{WireName: "pypi_repository"},
-	}
+	"PypiRepository": ubx.FieldSpec{WireName: "pypi_repository"},
+}
 
 var Session_RuntimeConfig_RepositoryConfigFields = ubx.FieldMap{
-		"PypiRepositoryConfig": ubx.FieldSpec{
-			WireName: "pypi_repository_config",
-			Kind: "object",
-			Fields: Session_RuntimeConfig_RepositoryConfig_PypiRepositoryConfigFields,
-		},
-	}
+	"PypiRepositoryConfig": ubx.FieldSpec{
+		WireName: "pypi_repository_config",
+		Kind:     "object",
+		Fields:   Session_RuntimeConfig_RepositoryConfig_PypiRepositoryConfigFields,
+	},
+}
 
 var Session_RuntimeConfigFields = ubx.FieldMap{
-		"AutotuningConfig": ubx.FieldSpec{
-			WireName: "autotuning_config",
-			Kind: "object",
-			Fields: Session_RuntimeConfig_AutotuningConfigFields,
-		},
-		"Cohort": ubx.FieldSpec{WireName: "cohort"},
-		"ContainerImage": ubx.FieldSpec{WireName: "container_image"},
-		"Properties": ubx.FieldSpec{WireName: "properties"},
-		"RepositoryConfig": ubx.FieldSpec{
-			WireName: "repository_config",
-			Kind: "object",
-			Fields: Session_RuntimeConfig_RepositoryConfigFields,
-		},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"AutotuningConfig": ubx.FieldSpec{
+		WireName: "autotuning_config",
+		Kind:     "object",
+		Fields:   Session_RuntimeConfig_AutotuningConfigFields,
+	},
+	"Cohort":         ubx.FieldSpec{WireName: "cohort"},
+	"ContainerImage": ubx.FieldSpec{WireName: "container_image"},
+	"Properties":     ubx.FieldSpec{WireName: "properties"},
+	"RepositoryConfig": ubx.FieldSpec{
+		WireName: "repository_config",
+		Kind:     "object",
+		Fields:   Session_RuntimeConfig_RepositoryConfigFields,
+	},
+	"Version": ubx.FieldSpec{WireName: "version"},
+}
 
 var Session_RuntimeInfo_ApproximateUsageFields = ubx.FieldMap{
-		"AcceleratorType": ubx.FieldSpec{WireName: "accelerator_type"},
-		"MilliAcceleratorSeconds": ubx.FieldSpec{WireName: "milli_accelerator_seconds"},
-		"MilliAcceleratorSecondsA10040": ubx.FieldSpec{WireName: "milli_accelerator_seconds_a10040"},
-		"MilliAcceleratorSecondsA10080": ubx.FieldSpec{WireName: "milli_accelerator_seconds_a10080"},
-		"MilliAcceleratorSecondsL4": ubx.FieldSpec{WireName: "milli_accelerator_seconds_l4"},
-		"MilliDcuSeconds": ubx.FieldSpec{WireName: "milli_dcu_seconds"},
-		"ShuffleStorageGbSeconds": ubx.FieldSpec{WireName: "shuffle_storage_gb_seconds"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-	}
+	"AcceleratorType":               ubx.FieldSpec{WireName: "accelerator_type"},
+	"MilliAcceleratorSeconds":       ubx.FieldSpec{WireName: "milli_accelerator_seconds"},
+	"MilliAcceleratorSecondsA10040": ubx.FieldSpec{WireName: "milli_accelerator_seconds_a10040"},
+	"MilliAcceleratorSecondsA10080": ubx.FieldSpec{WireName: "milli_accelerator_seconds_a10080"},
+	"MilliAcceleratorSecondsL4":     ubx.FieldSpec{WireName: "milli_accelerator_seconds_l4"},
+	"MilliDcuSeconds":               ubx.FieldSpec{WireName: "milli_dcu_seconds"},
+	"ShuffleStorageGbSeconds":       ubx.FieldSpec{WireName: "shuffle_storage_gb_seconds"},
+	"UpdateTime":                    ubx.FieldSpec{WireName: "update_time"},
+}
 
 var Session_RuntimeInfo_CohortInfoFields = ubx.FieldMap{
-		"Cohort": ubx.FieldSpec{WireName: "cohort"},
-		"CohortSource": ubx.FieldSpec{WireName: "cohort_source"},
-	}
+	"Cohort":       ubx.FieldSpec{WireName: "cohort"},
+	"CohortSource": ubx.FieldSpec{WireName: "cohort_source"},
+}
 
 var Session_RuntimeInfo_CurrentUsageFields = ubx.FieldMap{
-		"AcceleratorType": ubx.FieldSpec{WireName: "accelerator_type"},
-		"MilliAccelerator": ubx.FieldSpec{WireName: "milli_accelerator"},
-		"MilliAcceleratorA10040": ubx.FieldSpec{WireName: "milli_accelerator_a10040"},
-		"MilliAcceleratorA10080": ubx.FieldSpec{WireName: "milli_accelerator_a10080"},
-		"MilliAcceleratorL4": ubx.FieldSpec{WireName: "milli_accelerator_l4"},
-		"MilliDcu": ubx.FieldSpec{WireName: "milli_dcu"},
-		"MilliDcuPremium": ubx.FieldSpec{WireName: "milli_dcu_premium"},
-		"ShuffleStorageGb": ubx.FieldSpec{WireName: "shuffle_storage_gb"},
-		"ShuffleStorageGbPremium": ubx.FieldSpec{WireName: "shuffle_storage_gb_premium"},
-		"SnapshotTime": ubx.FieldSpec{WireName: "snapshot_time"},
-	}
+	"AcceleratorType":         ubx.FieldSpec{WireName: "accelerator_type"},
+	"MilliAccelerator":        ubx.FieldSpec{WireName: "milli_accelerator"},
+	"MilliAcceleratorA10040":  ubx.FieldSpec{WireName: "milli_accelerator_a10040"},
+	"MilliAcceleratorA10080":  ubx.FieldSpec{WireName: "milli_accelerator_a10080"},
+	"MilliAcceleratorL4":      ubx.FieldSpec{WireName: "milli_accelerator_l4"},
+	"MilliDcu":                ubx.FieldSpec{WireName: "milli_dcu"},
+	"MilliDcuPremium":         ubx.FieldSpec{WireName: "milli_dcu_premium"},
+	"ShuffleStorageGb":        ubx.FieldSpec{WireName: "shuffle_storage_gb"},
+	"ShuffleStorageGbPremium": ubx.FieldSpec{WireName: "shuffle_storage_gb_premium"},
+	"SnapshotTime":            ubx.FieldSpec{WireName: "snapshot_time"},
+}
 
 var Session_RuntimeInfo_PropertiesInfo_AutotuningPropertiesFields = ubx.FieldMap{
-		"Annotation": ubx.FieldSpec{WireName: "annotation"},
-		"OverriddenValue": ubx.FieldSpec{WireName: "overridden_value"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Annotation":      ubx.FieldSpec{WireName: "annotation"},
+	"OverriddenValue": ubx.FieldSpec{WireName: "overridden_value"},
+	"Value":           ubx.FieldSpec{WireName: "value"},
+}
 
 var Session_RuntimeInfo_PropertiesInfoFields = ubx.FieldMap{
-		"AutotuningProperties": ubx.FieldSpec{
-			WireName: "autotuning_properties",
-			Kind: "map",
-			Fields: Session_RuntimeInfo_PropertiesInfo_AutotuningPropertiesFields,
-		},
-	}
+	"AutotuningProperties": ubx.FieldSpec{
+		WireName: "autotuning_properties",
+		Kind:     "map",
+		Fields:   Session_RuntimeInfo_PropertiesInfo_AutotuningPropertiesFields,
+	},
+}
 
 var Session_RuntimeInfoFields = ubx.FieldMap{
-		"ApproximateUsage": ubx.FieldSpec{
-			WireName: "approximate_usage",
-			Kind: "object",
-			Fields: Session_RuntimeInfo_ApproximateUsageFields,
-		},
-		"CohortInfo": ubx.FieldSpec{
-			WireName: "cohort_info",
-			Kind: "object",
-			Fields: Session_RuntimeInfo_CohortInfoFields,
-		},
-		"CurrentUsage": ubx.FieldSpec{
-			WireName: "current_usage",
-			Kind: "object",
-			Fields: Session_RuntimeInfo_CurrentUsageFields,
-		},
-		"DiagnosticOutputUri": ubx.FieldSpec{WireName: "diagnostic_output_uri"},
-		"Endpoints": ubx.FieldSpec{WireName: "endpoints"},
-		"OutputUri": ubx.FieldSpec{WireName: "output_uri"},
-		"PropertiesInfo": ubx.FieldSpec{
-			WireName: "properties_info",
-			Kind: "object",
-			Fields: Session_RuntimeInfo_PropertiesInfoFields,
-		},
-	}
-
-var Session_StateHistoryFields = ubx.FieldMap{
-		"State": ubx.FieldSpec{WireName: "state"},
-		"StateMessage": ubx.FieldSpec{WireName: "state_message"},
-		"StateStartTime": ubx.FieldSpec{WireName: "state_start_time"},
-	}
+	"ApproximateUsage": ubx.FieldSpec{
+		WireName: "approximate_usage",
+		Kind:     "object",
+		Fields:   Session_RuntimeInfo_ApproximateUsageFields,
+	},
+	"CohortInfo": ubx.FieldSpec{
+		WireName: "cohort_info",
+		Kind:     "object",
+		Fields:   Session_RuntimeInfo_CohortInfoFields,
+	},
+	"CurrentUsage": ubx.FieldSpec{
+		WireName: "current_usage",
+		Kind:     "object",
+		Fields:   Session_RuntimeInfo_CurrentUsageFields,
+	},
+	"DiagnosticOutputUri": ubx.FieldSpec{WireName: "diagnostic_output_uri"},
+	"Endpoints":           ubx.FieldSpec{WireName: "endpoints"},
+	"OutputUri":           ubx.FieldSpec{WireName: "output_uri"},
+	"PropertiesInfo": ubx.FieldSpec{
+		WireName: "properties_info",
+		Kind:     "object",
+		Fields:   Session_RuntimeInfo_PropertiesInfoFields,
+	},
+}
 
 type SessionConfig struct {
-	// Output only. The time when the session was created.
-	CreateTime any
-	// Output only. The email address of the user who created the session.
-	Creator any
 	// Environment configuration for a workload.
 	EnvironmentConfig any
 	// Jupyter configuration for an interactive session.
@@ -351,18 +341,8 @@ type SessionConfig struct {
 	SessionTemplate any
 	// Spark connect configuration for an interactive session.
 	SparkConnectSession any
-	// Output only. A state of the session.
-	State any
-	// Output only. Historical state information for the session.
-	StateHistory any
-	// Output only. Session state details, such as the failure description if the state is FAILED.
-	StateMessage any
-	// Output only. The time when the session entered the current state.
-	StateTime any
 	// Optional. The email address of the user who owns the session.
 	User any
-	// Output only. A session UUID (Unique Universal Identifier). The service generates this value when it creates the session.
-	Uuid any
 }
 
 type SessionAttrs struct {
@@ -403,41 +383,30 @@ type SessionAttrs struct {
 var Session = ubx.ResourceBinding{
 	WireType: "google_dataproc_session",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Creator": ubx.FieldSpec{WireName: "creator"},
 		"EnvironmentConfig": ubx.FieldSpec{
 			WireName: "environment_config",
-			Kind: "object",
-			Fields: Session_EnvironmentConfigFields,
+			Kind:     "object",
+			Fields:   Session_EnvironmentConfigFields,
 		},
 		"JupyterSession": ubx.FieldSpec{
 			WireName: "jupyter_session",
-			Kind: "object",
-			Fields: Session_JupyterSessionFields,
+			Kind:     "object",
+			Fields:   Session_JupyterSessionFields,
 		},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":   ubx.FieldSpec{WireName: "name"},
 		"RuntimeConfig": ubx.FieldSpec{
 			WireName: "runtime_config",
-			Kind: "object",
-			Fields: Session_RuntimeConfigFields,
+			Kind:     "object",
+			Fields:   Session_RuntimeConfigFields,
 		},
 		"RuntimeInfo": ubx.FieldSpec{
 			WireName: "runtime_info",
-			Kind: "object",
-			Fields: Session_RuntimeInfoFields,
+			Kind:     "object",
+			Fields:   Session_RuntimeInfoFields,
 		},
-		"SessionTemplate": ubx.FieldSpec{WireName: "session_template"},
+		"SessionTemplate":     ubx.FieldSpec{WireName: "session_template"},
 		"SparkConnectSession": ubx.FieldSpec{WireName: "spark_connect_session"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"StateHistory": ubx.FieldSpec{
-			WireName: "state_history",
-			Kind: "list",
-			Fields: Session_StateHistoryFields,
-		},
-		"StateMessage": ubx.FieldSpec{WireName: "state_message"},
-		"StateTime": ubx.FieldSpec{WireName: "state_time"},
-		"User": ubx.FieldSpec{WireName: "user"},
-		"Uuid": ubx.FieldSpec{WireName: "uuid"},
+		"User":                ubx.FieldSpec{WireName: "user"},
 	},
 }

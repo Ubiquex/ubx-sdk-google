@@ -39,13 +39,13 @@ type RouteAttrs struct {
 	Labels any
 	// Output only. The origin location of the route. Uses the following form: "projects/{project}/locations/{location}" Example: projects/1234/locations/us-central1
 	Location any
-	Name any
+	Name     any
 	// A route next hop that leads to an interconnect attachment resource.
 	NextHopInterconnectAttachment any
 	// A route next hop that leads to a Router appliance instance.
 	NextHopRouterApplianceInstance any
 	// A route next hop that leads to a spoke resource.
-	NextHopSpoke any
+	NextHopSpoke      any
 	NextHopVpcNetwork any
 	// A route next hop that leads to a VPN tunnel resource.
 	NextHopVpnTunnel any

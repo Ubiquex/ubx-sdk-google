@@ -11,16 +11,16 @@ type Device_Policy_MaintenanceWindow struct {
 }
 
 type Device_Policy_ProductPolicy_AutoInstallPolicy_AutoInstallConstraint struct {
-	ChargingStateConstraint any
+	ChargingStateConstraint   any
 	DeviceIdleStateConstraint any
-	NetworkTypeConstraint any
+	NetworkTypeConstraint     any
 }
 
 type Device_Policy_ProductPolicy_AutoInstallPolicy struct {
 	AutoInstallConstraint any
-	AutoInstallMode any
-	AutoInstallPriority any
-	MinimumVersionCode any
+	AutoInstallMode       any
+	AutoInstallPriority   any
+	MinimumVersionCode    any
 }
 
 type Device_Policy_ProductPolicy_EnterpriseAuthenticationAppLinkConfigs struct {
@@ -29,11 +29,11 @@ type Device_Policy_ProductPolicy_EnterpriseAuthenticationAppLinkConfigs struct {
 
 type Device_Policy_ProductPolicy_ManagedConfiguration_ConfigurationVariables_VariableSet struct {
 	Placeholder any
-	UserValue any
+	UserValue   any
 }
 
 type Device_Policy_ProductPolicy_ManagedConfiguration_ConfigurationVariables struct {
-	McmId any
+	McmId       any
 	VariableSet any
 }
 
@@ -42,30 +42,30 @@ type Device_Policy_ProductPolicy_ManagedConfiguration_ManagedProperty_ValueBundl
 }
 
 type Device_Policy_ProductPolicy_ManagedConfiguration_ManagedProperty struct {
-	Key any
-	ValueBool any
-	ValueBundle any
+	Key              any
+	ValueBool        any
+	ValueBundle      any
 	ValueBundleArray any
-	ValueInteger any
-	ValueString any
+	ValueInteger     any
+	ValueString      any
 	ValueStringArray any
 }
 
 type Device_Policy_ProductPolicy_ManagedConfiguration struct {
 	ConfigurationVariables any
-	Kind any
-	ManagedProperty any
-	ProductId any
+	Kind                   any
+	ManagedProperty        any
+	ProductId              any
 }
 
 type Device_Policy_ProductPolicy struct {
-	AutoInstallPolicy any
-	AutoUpdateMode any
+	AutoInstallPolicy                      any
+	AutoUpdateMode                         any
 	EnterpriseAuthenticationAppLinkConfigs any
-	ManagedConfiguration any
-	ProductId any
-	TrackIds any
-	Tracks any
+	ManagedConfiguration                   any
+	ProductId                              any
+	TrackIds                               any
+	Tracks                                 any
 }
 
 type Device_Policy struct {
@@ -84,16 +84,16 @@ type Device_Policy struct {
 }
 
 type Device_Report_AppState_KeyedAppState struct {
-	Data any
-	Key any
-	Message any
-	Severity any
+	Data                 any
+	Key                  any
+	Message              any
+	Severity             any
 	StateTimestampMillis any
 }
 
 type Device_Report_AppState struct {
 	KeyedAppState any
-	PackageName any
+	PackageName   any
 }
 
 type Device_Report struct {
@@ -104,17 +104,17 @@ type Device_Report struct {
 }
 
 type DeviceConfig struct {
-	DeviceId any
+	DeviceId     any
 	EnterpriseId any
-	UserId any
+	UserId       any
 }
 
 type DeviceAttrs struct {
 	// The Google Play Services Android ID for the device encoded as a lowercase hex string. For example, "123456789abcdef0".
 	AndroidId any
 	// The internal hardware codename of the device. This comes from android.os.Build.DEVICE. (field named "device" per logs/wireless/android/android_checkin.proto)
-	Device any
-	DeviceId any
+	Device       any
+	DeviceId     any
 	EnterpriseId any
 	// The build fingerprint of the device if known.
 	LatestBuildFingerprint any
@@ -134,14 +134,14 @@ type DeviceAttrs struct {
 	RetailBrand any
 	// API compatibility version.
 	SdkVersion any
-	UserId any
+	UserId     any
 }
 
 var Device = ubx.DataSourceBinding{
 	WireType: "google_androidenterprise_device",
 	Fields: ubx.FieldMap{
-		"DeviceId": ubx.FieldSpec{WireName: "device_id"},
+		"DeviceId":     ubx.FieldSpec{WireName: "device_id"},
 		"EnterpriseId": ubx.FieldSpec{WireName: "enterprise_id"},
-		"UserId": ubx.FieldSpec{WireName: "user_id"},
+		"UserId":       ubx.FieldSpec{WireName: "user_id"},
 	},
 }

@@ -11,16 +11,16 @@ type ContactCenter_AdminUser struct {
 }
 
 type ContactCenter_Critical_PeakHours_EndTime struct {
-	Hours any
+	Hours   any
 	Minutes any
-	Nanos any
+	Nanos   any
 	Seconds any
 }
 
 type ContactCenter_Critical_PeakHours struct {
-	Days any
-	Duration any
-	EndTime any
+	Days      any
+	Duration  any
+	EndTime   any
 	StartTime any
 }
 
@@ -40,7 +40,7 @@ type ContactCenter_InstanceConfig struct {
 }
 
 type ContactCenter_PrivateAccess_EgressSettings struct {
-	Name any
+	Name                   any
 	ServiceAttachmentNames any
 }
 
@@ -87,91 +87,91 @@ type ContactCenter_Uris struct {
 }
 
 var ContactCenter_AdminUserFields = ubx.FieldMap{
-		"FamilyName": ubx.FieldSpec{WireName: "family_name"},
-		"GivenName": ubx.FieldSpec{WireName: "given_name"},
-	}
+	"FamilyName": ubx.FieldSpec{WireName: "family_name"},
+	"GivenName":  ubx.FieldSpec{WireName: "given_name"},
+}
 
 var ContactCenter_Critical_PeakHours_EndTimeFields = ubx.FieldMap{
-		"Hours": ubx.FieldSpec{WireName: "hours"},
-		"Minutes": ubx.FieldSpec{WireName: "minutes"},
-		"Nanos": ubx.FieldSpec{WireName: "nanos"},
-		"Seconds": ubx.FieldSpec{WireName: "seconds"},
-	}
+	"Hours":   ubx.FieldSpec{WireName: "hours"},
+	"Minutes": ubx.FieldSpec{WireName: "minutes"},
+	"Nanos":   ubx.FieldSpec{WireName: "nanos"},
+	"Seconds": ubx.FieldSpec{WireName: "seconds"},
+}
 
 var ContactCenter_Critical_PeakHoursFields = ubx.FieldMap{
-		"Days": ubx.FieldSpec{WireName: "days"},
-		"Duration": ubx.FieldSpec{WireName: "duration"},
-		"EndTime": ubx.FieldSpec{
-			WireName: "end_time",
-			Kind: "object",
-			Fields: ContactCenter_Critical_PeakHours_EndTimeFields,
-		},
-		"StartTime": ubx.FieldSpec{
-			WireName: "start_time",
-			Kind: "object",
-			Fields: ContactCenter_Critical_PeakHours_EndTimeFields,
-		},
-	}
+	"Days":     ubx.FieldSpec{WireName: "days"},
+	"Duration": ubx.FieldSpec{WireName: "duration"},
+	"EndTime": ubx.FieldSpec{
+		WireName: "end_time",
+		Kind:     "object",
+		Fields:   ContactCenter_Critical_PeakHours_EndTimeFields,
+	},
+	"StartTime": ubx.FieldSpec{
+		WireName: "start_time",
+		Kind:     "object",
+		Fields:   ContactCenter_Critical_PeakHours_EndTimeFields,
+	},
+}
 
 var ContactCenter_CriticalFields = ubx.FieldMap{
-		"PeakHours": ubx.FieldSpec{
-			WireName: "peak_hours",
-			Kind: "list",
-			Fields: ContactCenter_Critical_PeakHoursFields,
-		},
-	}
+	"PeakHours": ubx.FieldSpec{
+		WireName: "peak_hours",
+		Kind:     "list",
+		Fields:   ContactCenter_Critical_PeakHoursFields,
+	},
+}
 
 var ContactCenter_FeatureConfigFields = ubx.FieldMap{
-		"AgentDesktopEnabled": ubx.FieldSpec{WireName: "agent_desktop_enabled"},
-	}
+	"AgentDesktopEnabled": ubx.FieldSpec{WireName: "agent_desktop_enabled"},
+}
 
 var ContactCenter_InstanceConfigFields = ubx.FieldMap{
-		"InstanceSize": ubx.FieldSpec{WireName: "instance_size"},
-	}
+	"InstanceSize": ubx.FieldSpec{WireName: "instance_size"},
+}
 
 var ContactCenter_PrivateAccess_EgressSettingsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ServiceAttachmentNames": ubx.FieldSpec{WireName: "service_attachment_names"},
-	}
+	"Name":                   ubx.FieldSpec{WireName: "name"},
+	"ServiceAttachmentNames": ubx.FieldSpec{WireName: "service_attachment_names"},
+}
 
 var ContactCenter_PrivateAccess_PscSettingFields = ubx.FieldMap{
-		"AllowedConsumerProjectIds": ubx.FieldSpec{WireName: "allowed_consumer_project_ids"},
-		"ProducerProjectIds": ubx.FieldSpec{WireName: "producer_project_ids"},
-	}
+	"AllowedConsumerProjectIds": ubx.FieldSpec{WireName: "allowed_consumer_project_ids"},
+	"ProducerProjectIds":        ubx.FieldSpec{WireName: "producer_project_ids"},
+}
 
 var ContactCenter_PrivateAccessFields = ubx.FieldMap{
-		"EgressSettings": ubx.FieldSpec{
-			WireName: "egress_settings",
-			Kind: "list",
-			Fields: ContactCenter_PrivateAccess_EgressSettingsFields,
-		},
-		"IngressSettings": ubx.FieldSpec{
-			WireName: "ingress_settings",
-			Kind: "list",
-			Fields: ContactCenter_PrivateAccess_EgressSettingsFields,
-		},
-		"PscSetting": ubx.FieldSpec{
-			WireName: "psc_setting",
-			Kind: "object",
-			Fields: ContactCenter_PrivateAccess_PscSettingFields,
-		},
-	}
+	"EgressSettings": ubx.FieldSpec{
+		WireName: "egress_settings",
+		Kind:     "list",
+		Fields:   ContactCenter_PrivateAccess_EgressSettingsFields,
+	},
+	"IngressSettings": ubx.FieldSpec{
+		WireName: "ingress_settings",
+		Kind:     "list",
+		Fields:   ContactCenter_PrivateAccess_EgressSettingsFields,
+	},
+	"PscSetting": ubx.FieldSpec{
+		WireName: "psc_setting",
+		Kind:     "object",
+		Fields:   ContactCenter_PrivateAccess_PscSettingFields,
+	},
+}
 
 var ContactCenter_SamlParamsFields = ubx.FieldMap{
-		"AuthenticationContexts": ubx.FieldSpec{WireName: "authentication_contexts"},
-		"Certificate": ubx.FieldSpec{WireName: "certificate"},
-		"EmailMapping": ubx.FieldSpec{WireName: "email_mapping"},
-		"EntityId": ubx.FieldSpec{WireName: "entity_id"},
-		"SsoUri": ubx.FieldSpec{WireName: "sso_uri"},
-		"UserEmail": ubx.FieldSpec{WireName: "user_email"},
-	}
+	"AuthenticationContexts": ubx.FieldSpec{WireName: "authentication_contexts"},
+	"Certificate":            ubx.FieldSpec{WireName: "certificate"},
+	"EmailMapping":           ubx.FieldSpec{WireName: "email_mapping"},
+	"EntityId":               ubx.FieldSpec{WireName: "entity_id"},
+	"SsoUri":                 ubx.FieldSpec{WireName: "sso_uri"},
+	"UserEmail":              ubx.FieldSpec{WireName: "user_email"},
+}
 
 var ContactCenter_UrisFields = ubx.FieldMap{
-		"ChatBotUri": ubx.FieldSpec{WireName: "chat_bot_uri"},
-		"MediaUri": ubx.FieldSpec{WireName: "media_uri"},
-		"RootUri": ubx.FieldSpec{WireName: "root_uri"},
-		"VirtualAgentStreamingServiceUri": ubx.FieldSpec{WireName: "virtual_agent_streaming_service_uri"},
-	}
+	"ChatBotUri":                      ubx.FieldSpec{WireName: "chat_bot_uri"},
+	"MediaUri":                        ubx.FieldSpec{WireName: "media_uri"},
+	"RootUri":                         ubx.FieldSpec{WireName: "root_uri"},
+	"VirtualAgentStreamingServiceUri": ubx.FieldSpec{WireName: "virtual_agent_streaming_service_uri"},
+}
 
 type ContactCenterConfig struct {
 	// Message storing info about the first admin user. Next ID: 3
@@ -180,20 +180,14 @@ type ContactCenterConfig struct {
 	AdvancedReportingEnabled any
 	// Optional. Whether to enable users to be created in the CCAIP-instance concurrently to having users in Cloud identity
 	CcaipManagedUsers any
-	// Output only. [Output only] Create time stamp
-	CreateTime any
 	// Instances in this Channel will receive updates after all instances in `Normal` were updated. They also will only be updated outside of their peak hours.
 	Critical any
 	// Required. Immutable. At least 2 and max 16 char long, must conform to [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt).
 	CustomerDomainPrefix any
-	// Output only. Timestamp in UTC of when this resource was soft-deleted.
-	DeleteTime any
 	// Required. A user friendly name for the ContactCenter.
 	DisplayName any
 	// LINT.IfChange First Channel to receive the updates. Meant to dev/test instances
-	Early any
-	// Output only. Timestamp in UTC of when this resource is considered expired.
-	ExpireTime any
+	Early         any
 	FeatureConfig any
 	// Message storing the instance configuration.
 	InstanceConfig any
@@ -207,18 +201,8 @@ type ContactCenterConfig struct {
 	Normal any
 	// Defines ingress and egress private traffic settings for CCAIP instances.
 	PrivateAccess any
-	// Output only. TODO(b/283407860) Deprecate this field.
-	PrivateComponents any
-	// Output only. Timestamp in UTC of when this resource is going to be hard-deleted.
-	PurgeTime any
-	// Output only. UJET release version, unique for each new release.
-	ReleaseVersion any
 	// Message storing SAML params to enable Google as IDP.
 	SamlParams any
-	// Output only. The state of this contact center.
-	State any
-	// Output only. [Output only] Update time stamp
-	UpdateTime any
 	// Message storing the URIs of the ContactCenter.
 	Uris any
 	// Optional. Email address of the first admin user.
@@ -245,7 +229,7 @@ type ContactCenterAttrs struct {
 	// LINT.IfChange First Channel to receive the updates. Meant to dev/test instances
 	Early any
 	// Output only. Timestamp in UTC of when this resource is considered expired.
-	ExpireTime any
+	ExpireTime    any
 	FeatureConfig any
 	// Message storing the instance configuration.
 	InstanceConfig any
@@ -282,55 +266,47 @@ var ContactCenter = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AdminUser": ubx.FieldSpec{
 			WireName: "admin_user",
-			Kind: "object",
-			Fields: ContactCenter_AdminUserFields,
+			Kind:     "object",
+			Fields:   ContactCenter_AdminUserFields,
 		},
 		"AdvancedReportingEnabled": ubx.FieldSpec{WireName: "advanced_reporting_enabled"},
-		"CcaipManagedUsers": ubx.FieldSpec{WireName: "ccaip_managed_users"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
+		"CcaipManagedUsers":        ubx.FieldSpec{WireName: "ccaip_managed_users"},
 		"Critical": ubx.FieldSpec{
 			WireName: "critical",
-			Kind: "object",
-			Fields: ContactCenter_CriticalFields,
+			Kind:     "object",
+			Fields:   ContactCenter_CriticalFields,
 		},
 		"CustomerDomainPrefix": ubx.FieldSpec{WireName: "customer_domain_prefix"},
-		"DeleteTime": ubx.FieldSpec{WireName: "delete_time"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Early": ubx.FieldSpec{WireName: "early"},
-		"ExpireTime": ubx.FieldSpec{WireName: "expire_time"},
+		"DisplayName":          ubx.FieldSpec{WireName: "display_name"},
+		"Early":                ubx.FieldSpec{WireName: "early"},
 		"FeatureConfig": ubx.FieldSpec{
 			WireName: "feature_config",
-			Kind: "object",
-			Fields: ContactCenter_FeatureConfigFields,
+			Kind:     "object",
+			Fields:   ContactCenter_FeatureConfigFields,
 		},
 		"InstanceConfig": ubx.FieldSpec{
 			WireName: "instance_config",
-			Kind: "object",
-			Fields: ContactCenter_InstanceConfigFields,
+			Kind:     "object",
+			Fields:   ContactCenter_InstanceConfigFields,
 		},
 		"KmsKey": ubx.FieldSpec{WireName: "kms_key"},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":   ubx.FieldSpec{WireName: "name"},
 		"Normal": ubx.FieldSpec{WireName: "normal"},
 		"PrivateAccess": ubx.FieldSpec{
 			WireName: "private_access",
-			Kind: "object",
-			Fields: ContactCenter_PrivateAccessFields,
+			Kind:     "object",
+			Fields:   ContactCenter_PrivateAccessFields,
 		},
-		"PrivateComponents": ubx.FieldSpec{WireName: "private_components"},
-		"PurgeTime": ubx.FieldSpec{WireName: "purge_time"},
-		"ReleaseVersion": ubx.FieldSpec{WireName: "release_version"},
 		"SamlParams": ubx.FieldSpec{
 			WireName: "saml_params",
-			Kind: "object",
-			Fields: ContactCenter_SamlParamsFields,
+			Kind:     "object",
+			Fields:   ContactCenter_SamlParamsFields,
 		},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 		"Uris": ubx.FieldSpec{
 			WireName: "uris",
-			Kind: "object",
-			Fields: ContactCenter_UrisFields,
+			Kind:     "object",
+			Fields:   ContactCenter_UrisFields,
 		},
 		"UserEmail": ubx.FieldSpec{WireName: "user_email"},
 	},

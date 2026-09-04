@@ -1134,143 +1134,6 @@ const V1beta1TuningJob_ErrorFields: FieldMap = {
   message: "message",
 };
 
-const V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults_BleuMetricValueFields: FieldMap = {
-  score: "score",
-};
-
-const V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults_PairwiseMetricResult_CustomOutput_RawOutputsFields: FieldMap = {
-  rawOutput: "raw_output",
-};
-
-const V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults_PairwiseMetricResult_CustomOutputFields: FieldMap = {
-  rawOutputs: {
-    wireName: "raw_outputs",
-    kind: "object",
-    fields: V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults_PairwiseMetricResult_CustomOutput_RawOutputsFields,
-  },
-};
-
-const V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults_PairwiseMetricResultFields: FieldMap = {
-  customOutput: {
-    wireName: "custom_output",
-    kind: "object",
-    fields: V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults_PairwiseMetricResult_CustomOutputFields,
-  },
-  explanation: "explanation",
-  pairwiseChoice: "pairwise_choice",
-};
-
-const V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults_PointwiseMetricResultFields: FieldMap = {
-  customOutput: {
-    wireName: "custom_output",
-    kind: "object",
-    fields: V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults_PairwiseMetricResult_CustomOutputFields,
-  },
-  explanation: "explanation",
-  score: "score",
-};
-
-const V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResultsFields: FieldMap = {
-  aggregationMetric: "aggregation_metric",
-  bleuMetricValue: {
-    wireName: "bleu_metric_value",
-    kind: "object",
-    fields: V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults_BleuMetricValueFields,
-  },
-  customCodeExecutionResult: {
-    wireName: "custom_code_execution_result",
-    kind: "object",
-    fields: V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults_BleuMetricValueFields,
-  },
-  exactMatchMetricValue: {
-    wireName: "exact_match_metric_value",
-    kind: "object",
-    fields: V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults_BleuMetricValueFields,
-  },
-  pairwiseMetricResult: {
-    wireName: "pairwise_metric_result",
-    kind: "object",
-    fields: V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults_PairwiseMetricResultFields,
-  },
-  pointwiseMetricResult: {
-    wireName: "pointwise_metric_result",
-    kind: "object",
-    fields: V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults_PointwiseMetricResultFields,
-  },
-  rougeMetricValue: {
-    wireName: "rouge_metric_value",
-    kind: "object",
-    fields: V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults_BleuMetricValueFields,
-  },
-};
-
-const V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_Dataset_BigquerySourceFields: FieldMap = {
-  inputUri: "input_uri",
-};
-
-const V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_Dataset_GcsSourceFields: FieldMap = {
-  uris: "uris",
-};
-
-const V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_DatasetFields: FieldMap = {
-  bigquerySource: {
-    wireName: "bigquery_source",
-    kind: "object",
-    fields: V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_Dataset_BigquerySourceFields,
-  },
-  gcsSource: {
-    wireName: "gcs_source",
-    kind: "object",
-    fields: V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_Dataset_GcsSourceFields,
-  },
-};
-
-const V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutputFields: FieldMap = {
-  aggregationResults: {
-    wireName: "aggregation_results",
-    kind: "list",
-    fields: V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResultsFields,
-  },
-  dataset: {
-    wireName: "dataset",
-    kind: "object",
-    fields: V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_DatasetFields,
-  },
-};
-
-const V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_OutputInfoFields: FieldMap = {
-  gcsOutputDirectory: "gcs_output_directory",
-};
-
-const V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponseFields: FieldMap = {
-  aggregationOutput: {
-    wireName: "aggregation_output",
-    kind: "object",
-    fields: V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutputFields,
-  },
-  outputInfo: {
-    wireName: "output_info",
-    kind: "object",
-    fields: V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_OutputInfoFields,
-  },
-};
-
-const V1beta1TuningJob_EvaluateDatasetRunsFields: FieldMap = {
-  checkpointId: "checkpoint_id",
-  error: {
-    wireName: "error",
-    kind: "object",
-    fields: V1beta1TuningJob_ErrorFields,
-  },
-  evaluateDatasetResponse: {
-    wireName: "evaluate_dataset_response",
-    kind: "object",
-    fields: V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponseFields,
-  },
-  evaluationRun: "evaluation_run",
-  operationName: "operation_name",
-};
-
 const V1beta1TuningJob_FullFineTuningSpecFields: FieldMap = {
   hyperParameters: {
     wireName: "hyper_parameters",
@@ -2725,8 +2588,6 @@ const V1beta1TuningJob_VeoTuningSpecFields: FieldMap = {
 export interface V1beta1TuningJobConfig {
   /** The base model that is being tuned. See [Supported models](https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/tuning#supported_models). */
   baseModel?: string | Computed<string>;
-  /** Output only. Time when the TuningJob was created. */
-  createTime?: string | Computed<string>;
   /** Optional. The user-provided path to custom model weights. Set this field to tune a custom model. The path must be a Cloud Storage directory that contains the model weights in .safetensors format along with associated model metadata files. If this field is set, the base_model field must still be set to indicate which base model the custom model is derived from. This feature is only available for open source models. */
   customBaseModel?: string | Computed<string>;
   /** Optional. The description of the TuningJob. */
@@ -2735,42 +2596,24 @@ export interface V1beta1TuningJobConfig {
   distillationSpec?: V1beta1TuningJob_DistillationSpec | Computed<V1beta1TuningJob_DistillationSpec>;
   /** Represents a customer-managed encryption key specification that can be applied to a Vertex AI resource. */
   encryptionSpec?: V1beta1TuningJob_EncryptionSpec | Computed<V1beta1TuningJob_EncryptionSpec>;
-  /** Output only. Time when the TuningJob entered any of the following JobStates: `JOB_STATE_SUCCEEDED`, `JOB_STATE_FAILED`, `JOB_STATE_CANCELLED`, `JOB_STATE_EXPIRED`. */
-  endTime?: string | Computed<string>;
   /** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
   error?: V1beta1TuningJob_Error | Computed<V1beta1TuningJob_Error>;
-  /** Output only. Evaluation runs for the Tuning Job. */
-  evaluateDatasetRuns?: V1beta1TuningJob_EvaluateDatasetRuns[] | Computed<V1beta1TuningJob_EvaluateDatasetRuns[]>;
-  /** Output only. The Experiment associated with this TuningJob. */
-  experiment?: string | Computed<string>;
   /** Tuning Spec for Full Fine Tuning. */
   fullFineTuningSpec?: V1beta1TuningJob_FullFineTuningSpec | Computed<V1beta1TuningJob_FullFineTuningSpec>;
   /** Optional. The labels with user-defined metadata to organize TuningJob and generated resources such as Model and Endpoint. Label keys and values can be no longer than 64 characters (Unicode codepoints), can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. See https://goo.gl/xmQnxf for more information and examples of labels. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. Identifier. Resource name of a TuningJob. Format: `projects/{project}/locations/{location}/tuningJobs/{tuning_job}` */
-  name?: string | Computed<string>;
   /** Optional. Cloud Storage path to the directory where tuning job outputs are written to. This field is only available and required for open source models. */
   outputUri?: string | Computed<string>;
   /** Tuning spec for Partner models. */
   partnerModelTuningSpec?: V1beta1TuningJob_PartnerModelTuningSpec | Computed<V1beta1TuningJob_PartnerModelTuningSpec>;
-  /** Output only. The resource name of the PipelineJob associated with the TuningJob. Format: `projects/{project}/locations/{location}/pipelineJobs/{pipeline_job}`. */
-  pipelineJob?: string | Computed<string>;
   /** A pre-tuned model for continuous tuning. */
   preTunedModel?: V1beta1TuningJob_PreTunedModel | Computed<V1beta1TuningJob_PreTunedModel>;
   /** Tuning Spec for Preference Optimization. */
   preferenceOptimizationSpec?: V1beta1TuningJob_PreferenceOptimizationSpec | Computed<V1beta1TuningJob_PreferenceOptimizationSpec>;
   /** Tuning spec for Reinforcement Tuning. */
   reinforcementTuningSpec?: V1beta1TuningJob_ReinforcementTuningSpec | Computed<V1beta1TuningJob_ReinforcementTuningSpec>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzi?: boolean | Computed<boolean>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzs?: boolean | Computed<boolean>;
   /** The service account that the tuningJob workload runs as. If not specified, the Vertex AI Secure Fine-Tuned Service Agent in the project will be used. See https://cloud.google.com/iam/docs/service-agents#vertex-ai-secure-fine-tuning-service-agent Users starting the pipeline must have the `iam.serviceAccounts.actAs` permission on this service account. */
   serviceAccount?: string | Computed<string>;
-  /** Output only. Time when the TuningJob for the first time entered the `JOB_STATE_RUNNING` state. */
-  startTime?: string | Computed<string>;
-  /** Output only. The detailed state of the job. */
-  state?: string | Computed<string>;
   /** Tuning Spec for Supervised Tuning for first party models. */
   supervisedTuningSpec?: V1beta1TuningJob_SupervisedTuningSpec | Computed<V1beta1TuningJob_SupervisedTuningSpec>;
   /** The Model Registry Model and Online Prediction Endpoint associated with this TuningJob. */
@@ -2781,10 +2624,6 @@ export interface V1beta1TuningJobConfig {
   tuningDataStats?: V1beta1TuningJob_TuningDataStats | Computed<V1beta1TuningJob_TuningDataStats>;
   /** Tuning job metadata. */
   tuningJobMetadata?: V1beta1TuningJob_TuningJobMetadata | Computed<V1beta1TuningJob_TuningJobMetadata>;
-  /** Output only. The detail state of the tuning job (while the overall `JobState` is running). */
-  tuningJobState?: string | Computed<string>;
-  /** Output only. Time when the TuningJob was most recently updated. */
-  updateTime?: string | Computed<string>;
   /** Tuning Spec for Veo LoRA Model Tuning. */
   veoLoraTuningSpec?: V1beta1TuningJob_VeoLoraTuningSpec | Computed<V1beta1TuningJob_VeoLoraTuningSpec>;
   /** Tuning Spec for Veo Model Tuning. */
@@ -2864,7 +2703,6 @@ export const V1beta1TuningJob: ResourceBinding<V1beta1TuningJobConfig, V1beta1Tu
   wireType: "google_aiplatform_v1beta1_tuning_job",
   fields: {
     baseModel: "base_model",
-    createTime: "create_time",
     customBaseModel: "custom_base_model",
     description: "description",
     distillationSpec: {
@@ -2877,32 +2715,23 @@ export const V1beta1TuningJob: ResourceBinding<V1beta1TuningJobConfig, V1beta1Tu
       kind: "object",
       fields: V1beta1TuningJob_EncryptionSpecFields,
     },
-    endTime: "end_time",
     error: {
       wireName: "error",
       kind: "object",
       fields: V1beta1TuningJob_ErrorFields,
     },
-    evaluateDatasetRuns: {
-      wireName: "evaluate_dataset_runs",
-      kind: "list",
-      fields: V1beta1TuningJob_EvaluateDatasetRunsFields,
-    },
-    experiment: "experiment",
     fullFineTuningSpec: {
       wireName: "full_fine_tuning_spec",
       kind: "object",
       fields: V1beta1TuningJob_FullFineTuningSpecFields,
     },
     labels: "labels",
-    name: "name",
     outputUri: "output_uri",
     partnerModelTuningSpec: {
       wireName: "partner_model_tuning_spec",
       kind: "object",
       fields: V1beta1TuningJob_PartnerModelTuningSpecFields,
     },
-    pipelineJob: "pipeline_job",
     preTunedModel: {
       wireName: "pre_tuned_model",
       kind: "object",
@@ -2918,11 +2747,7 @@ export const V1beta1TuningJob: ResourceBinding<V1beta1TuningJobConfig, V1beta1Tu
       kind: "object",
       fields: V1beta1TuningJob_ReinforcementTuningSpecFields,
     },
-    satisfiesPzi: "satisfies_pzi",
-    satisfiesPzs: "satisfies_pzs",
     serviceAccount: "service_account",
-    startTime: "start_time",
-    state: "state",
     supervisedTuningSpec: {
       wireName: "supervised_tuning_spec",
       kind: "object",
@@ -2944,8 +2769,6 @@ export const V1beta1TuningJob: ResourceBinding<V1beta1TuningJobConfig, V1beta1Tu
       kind: "object",
       fields: V1beta1TuningJob_TuningJobMetadataFields,
     },
-    tuningJobState: "tuning_job_state",
-    updateTime: "update_time",
     veoLoraTuningSpec: {
       wireName: "veo_lora_tuning_spec",
       kind: "object",

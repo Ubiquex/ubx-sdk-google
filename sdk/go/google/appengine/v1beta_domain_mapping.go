@@ -4,9 +4,9 @@ package appengine
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1betaDomainMapping_ResourceRecords struct {
-	Name any
+	Name   any
 	Rrdata any
-	Type any
+	Type   any
 }
 
 type V1betaDomainMapping_SslSettings struct {
@@ -18,25 +18,15 @@ type V1betaDomainMapping_SslSettings struct {
 	SslManagementType any
 }
 
-var V1betaDomainMapping_ResourceRecordsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Rrdata": ubx.FieldSpec{WireName: "rrdata"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
-
 var V1betaDomainMapping_SslSettingsFields = ubx.FieldMap{
-		"CertificateId": ubx.FieldSpec{WireName: "certificate_id"},
-		"PendingManagedCertificateId": ubx.FieldSpec{WireName: "pending_managed_certificate_id"},
-		"SslManagementType": ubx.FieldSpec{WireName: "ssl_management_type"},
-	}
+	"CertificateId":               ubx.FieldSpec{WireName: "certificate_id"},
+	"PendingManagedCertificateId": ubx.FieldSpec{WireName: "pending_managed_certificate_id"},
+	"SslManagementType":           ubx.FieldSpec{WireName: "ssl_management_type"},
+}
 
 type V1betaDomainMappingConfig struct {
 	// Relative name of the domain serving the application. Example: example.com.
 	Id any
-	// Output only. Full path to the DomainMapping resource in the API. Example: apps/myapp/domainMapping/example.com.@OutputOnly
-	Name any
-	// Output only. The resource records required to configure this domain mapping. These records must be added to the domain's DNS configuration in order to serve the application via this domain mapping.@OutputOnly
-	ResourceRecords any
 	// SSL configuration for a DomainMapping resource.
 	SslSettings any
 }
@@ -56,16 +46,10 @@ var V1betaDomainMapping = ubx.ResourceBinding{
 	WireType: "google_appengine_v1beta_domain_mapping",
 	Fields: ubx.FieldMap{
 		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ResourceRecords": ubx.FieldSpec{
-			WireName: "resource_records",
-			Kind: "list",
-			Fields: V1betaDomainMapping_ResourceRecordsFields,
-		},
 		"SslSettings": ubx.FieldSpec{
 			WireName: "ssl_settings",
-			Kind: "object",
-			Fields: V1betaDomainMapping_SslSettingsFields,
+			Kind:     "object",
+			Fields:   V1betaDomainMapping_SslSettingsFields,
 		},
 	},
 }

@@ -34,16 +34,12 @@ export interface WorkforcePoolConfig {
   disabled?: boolean | Computed<boolean>;
   /** Optional. A display name for the pool. Cannot exceed 32 characters. */
   displayName?: string | Computed<string>;
-  /** Output only. Time after which the workforce pool will be permanently purged and cannot be recovered. */
-  expireTime?: string | Computed<string>;
   /** Identifier. The resource name of the pool. Format: `locations/{location}/workforcePools/{workforce_pool_id}` */
   name?: string | Computed<string>;
   /** Immutable. The resource name of the parent. Format: `organizations/{org-id}`. */
   parent?: string | Computed<string>;
   /** Optional. Duration that the Google Cloud access tokens, console sign-in sessions, and `gcloud` sign-in sessions from this pool are valid. Must be greater than 15 minutes (900s) and less than 12 hours (43200s). If `session_duration` is not configured, minted credentials have a default duration of one hour (3600s). For SAML providers, the lifetime of the token is the minimum of the `session_duration` and the `SessionNotOnOrAfter` claim in the SAML assertion. */
   sessionDuration?: string | Computed<string>;
-  /** Output only. The state of the pool. */
-  state?: string | Computed<string>;
 }
 
 export interface WorkforcePoolAttrs {
@@ -78,10 +74,8 @@ export const WorkforcePool: ResourceBinding<WorkforcePoolConfig, WorkforcePoolAt
     description: "description",
     disabled: "disabled",
     displayName: "display_name",
-    expireTime: "expire_time",
     name: "name",
     parent: "parent",
     sessionDuration: "session_duration",
-    state: "state",
   },
 };

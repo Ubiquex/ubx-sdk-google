@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AlphaMachineType_Accelerators struct {
 	GuestAcceleratorCount any
-	GuestAcceleratorType any
+	GuestAcceleratorType  any
 }
 
 type AlphaMachineType_BundledLocalSsds struct {
@@ -39,15 +39,15 @@ type AlphaMachineType_Deprecated struct {
 
 type AlphaMachineTypeConfig struct {
 	MachineType any
-	Project any
-	Zone any
+	Project     any
+	Zone        any
 }
 
 type AlphaMachineTypeAttrs struct {
 	// [Output Only] A list of accelerator configurations assigned to this machine type.
 	Accelerators any
 	// [Output Only] The architecture of the machine type.
-	Architecture any
+	Architecture     any
 	BundledLocalSsds any
 	// [Output Only] Creation timestamp inRFC3339 text format.
 	CreationTimestamp any
@@ -62,7 +62,7 @@ type AlphaMachineTypeAttrs struct {
 	// [Output Only] Whether this machine type has a shared CPU. SeeShared-core machine types for more information.
 	IsSharedCpu any
 	// Output only. [Output Only] The type of the resource. Alwayscompute#machineType for machine types.
-	Kind any
+	Kind        any
 	MachineType any
 	// [Output Only] Maximum persistent disks allowed.
 	MaximumPersistentDisks any
@@ -71,20 +71,20 @@ type AlphaMachineTypeAttrs struct {
 	// [Output Only] The amount of physical memory available to the instance, defined in MB.
 	MemoryMb any
 	// [Output Only] Name of the resource.
-	Name any
+	Name    any
 	Project any
 	// [Output Only] Server-defined URL for the resource.
 	SelfLink any
 	// Output only. [Output Only] Server-defined URL for this resource with the resource id.
 	SelfLinkWithId any
-	Zone any
+	Zone           any
 }
 
 var AlphaMachineType = ubx.DataSourceBinding{
 	WireType: "google_compute_alpha_machine_type",
 	Fields: ubx.FieldMap{
 		"MachineType": ubx.FieldSpec{WireName: "machine_type"},
-		"Project": ubx.FieldSpec{WireName: "project"},
-		"Zone": ubx.FieldSpec{WireName: "zone"},
+		"Project":     ubx.FieldSpec{WireName: "project"},
+		"Zone":        ubx.FieldSpec{WireName: "zone"},
 	},
 }

@@ -239,12 +239,6 @@ class V1beta1InstanceConfig:
     backend_type: Any = None
     # The storage capacity of the instance in gigabytes (GB = 1024^3 bytes). This capacity can be increased up to `max_capacity_gb` GB in multipliers of `capacity_step_size_gb` GB.
     capacity_gb: Any = None
-    # Output only. The incremental increase or decrease in capacity, designated in some number of GB.
-    capacity_step_size_gb: Any = None
-    # Output only. The time when the instance was created.
-    create_time: Any = None
-    # Output only. Indicates whether this instance supports configuring its performance. If true, the user can configure the instance's performance by using the 'performance_config' field.
-    custom_performance_supported: Any = None
     # Optional. Indicates whether the instance is protected against deletion.
     deletion_protection_enabled: Any = None
     # Optional. The reason for enabling deletion protection.
@@ -261,16 +255,10 @@ class V1beta1InstanceConfig:
     kms_key_name: Any = None
     # Resource labels to represent user provided metadata.
     labels: Any = None
-    # Output only. The maximum capacity of the instance.
-    max_capacity_gb: Any = None
     # The maximum number of shares allowed.
     max_share_count: Any = None
-    # Output only. The minimum capacity of the instance.
-    min_capacity_gb: Any = None
     # Indicates whether this instance uses a multi-share configuration with which it can have more than one file-share or none at all. File-shares are added, updated and removed through the separate file-share APIs.
     multi_share_enabled: Any = None
-    # Output only. The resource name of the instance, in the format `projects/{project_id}/locations/{location_id}/instances/{instance_id}`.
-    name: Any = None
     # VPC networks to which the instance is connected. For this version, only a single network is supported.
     networks: Any = None
     # Used for setting the performance configuration. If the user doesn't specify PerformanceConfig, automatically provision the default performance settings as described in https://cloud.google.com/filestore/docs/performance. Larger instances will be linearly set to more IOPS. If the instance's capacity is increased or decreased, its performance will be automatically adjusted upwards or downwards accordingly (respectively).
@@ -281,16 +269,6 @@ class V1beta1InstanceConfig:
     protocol: Any = None
     # Optional. The configuration used to replicate an instance.
     replication: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzi: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzs: Any = None
-    # Output only. The instance state.
-    state: Any = None
-    # Output only. Additional information about the instance state, if available.
-    status_message: Any = None
-    # Output only. Field indicates all the reasons the instance is in "SUSPENDED" state.
-    suspension_reasons: Any = None
     # Optional. Input only. Immutable. Tag key-value pairs bound to this resource. Each key must be a namespaced name and each value a short name. Example: "123456789012/environment" : "production", "123456789013/costCenter" : "marketing" See the documentation for more information: - Namespaced name: https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_key - Short name: https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_value
     tags: Any = None
     # The service tier of the instance.
@@ -364,9 +342,6 @@ V1beta1Instance = ubx.ResourceBinding(
     fields={
         "backend_type": ubx.FieldSpec(wire_name="backend_type"),
         "capacity_gb": ubx.FieldSpec(wire_name="capacity_gb"),
-        "capacity_step_size_gb": ubx.FieldSpec(wire_name="capacity_step_size_gb"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
-        "custom_performance_supported": ubx.FieldSpec(wire_name="custom_performance_supported"),
         "deletion_protection_enabled": ubx.FieldSpec(wire_name="deletion_protection_enabled"),
         "deletion_protection_reason": ubx.FieldSpec(wire_name="deletion_protection_reason"),
         "description": ubx.FieldSpec(wire_name="description"),
@@ -383,11 +358,8 @@ V1beta1Instance = ubx.ResourceBinding(
         ),
         "kms_key_name": ubx.FieldSpec(wire_name="kms_key_name"),
         "labels": ubx.FieldSpec(wire_name="labels"),
-        "max_capacity_gb": ubx.FieldSpec(wire_name="max_capacity_gb"),
         "max_share_count": ubx.FieldSpec(wire_name="max_share_count"),
-        "min_capacity_gb": ubx.FieldSpec(wire_name="min_capacity_gb"),
         "multi_share_enabled": ubx.FieldSpec(wire_name="multi_share_enabled"),
-        "name": ubx.FieldSpec(wire_name="name"),
         "networks": ubx.FieldSpec(
             wire_name="networks",
             kind="list",
@@ -409,11 +381,6 @@ V1beta1Instance = ubx.ResourceBinding(
             kind="object",
             fields=_V1beta1Instance_ReplicationFields,
         ),
-        "satisfies_pzi": ubx.FieldSpec(wire_name="satisfies_pzi"),
-        "satisfies_pzs": ubx.FieldSpec(wire_name="satisfies_pzs"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "status_message": ubx.FieldSpec(wire_name="status_message"),
-        "suspension_reasons": ubx.FieldSpec(wire_name="suspension_reasons"),
         "tags": ubx.FieldSpec(wire_name="tags"),
         "tier": ubx.FieldSpec(wire_name="tier"),
     },

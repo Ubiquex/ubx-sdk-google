@@ -128,14 +128,8 @@ const V1alphaSecurityGateway_ServiceDiscoveryFields: FieldMap = {
 };
 
 export interface V1alphaSecurityGatewayConfig {
-  /** Output only. Timestamp when the resource was created. */
-  createTime?: string | Computed<string>;
-  /** Output only. Service account used for operations that involve resources in consumer projects. */
-  delegatingServiceAccount?: string | Computed<string>;
   /** Optional. An arbitrary user-provided name for the SecurityGateway. Cannot exceed 64 characters. */
   displayName?: string | Computed<string>;
-  /** Output only. IP addresses that will be used for establishing connection to the endpoints. */
-  externalIps?: string[] | Computed<string[]>;
   /** Optional. Map of Hubs that represents regional data path deployment with GCP region as a key. */
   hubs?: Record<string, V1alphaSecurityGateway_Hubs> | Computed<Record<string, V1alphaSecurityGateway_Hubs>>;
   /** Configuration for Cloud Logging. */
@@ -146,10 +140,6 @@ export interface V1alphaSecurityGatewayConfig {
   proxyProtocolConfig?: V1alphaSecurityGateway_ProxyProtocolConfig | Computed<V1alphaSecurityGateway_ProxyProtocolConfig>;
   /** Settings related to the Service Discovery. */
   serviceDiscovery?: V1alphaSecurityGateway_ServiceDiscovery | Computed<V1alphaSecurityGateway_ServiceDiscovery>;
-  /** Output only. The operational state of the SecurityGateway. */
-  state?: string | Computed<string>;
-  /** Output only. Timestamp when the resource was last modified. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1alphaSecurityGatewayAttrs {
@@ -180,10 +170,7 @@ export interface V1alphaSecurityGatewayAttrs {
 export const V1alphaSecurityGateway: ResourceBinding<V1alphaSecurityGatewayConfig, V1alphaSecurityGatewayAttrs> = {
   wireType: "google_beyondcorp_v1alpha_security_gateway",
   fields: {
-    createTime: "create_time",
-    delegatingServiceAccount: "delegating_service_account",
     displayName: "display_name",
-    externalIps: "external_ips",
     hubs: {
       wireName: "hubs",
       kind: "map",
@@ -201,7 +188,5 @@ export const V1alphaSecurityGateway: ResourceBinding<V1alphaSecurityGatewayConfi
       kind: "object",
       fields: V1alphaSecurityGateway_ServiceDiscoveryFields,
     },
-    state: "state",
-    updateTime: "update_time",
   },
 };

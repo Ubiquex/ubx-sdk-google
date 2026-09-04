@@ -19,19 +19,17 @@ type QuotaPreference_QuotaConfig struct {
 }
 
 var QuotaPreference_QuotaConfigFields = ubx.FieldMap{
-		"Annotations": ubx.FieldSpec{WireName: "annotations"},
-		"GrantedValue": ubx.FieldSpec{WireName: "granted_value"},
-		"PreferredValue": ubx.FieldSpec{WireName: "preferred_value"},
-		"RequestOrigin": ubx.FieldSpec{WireName: "request_origin"},
-		"StateDetail": ubx.FieldSpec{WireName: "state_detail"},
-		"TraceId": ubx.FieldSpec{WireName: "trace_id"},
-	}
+	"Annotations":    ubx.FieldSpec{WireName: "annotations"},
+	"GrantedValue":   ubx.FieldSpec{WireName: "granted_value"},
+	"PreferredValue": ubx.FieldSpec{WireName: "preferred_value"},
+	"RequestOrigin":  ubx.FieldSpec{WireName: "request_origin"},
+	"StateDetail":    ubx.FieldSpec{WireName: "state_detail"},
+	"TraceId":        ubx.FieldSpec{WireName: "trace_id"},
+}
 
 type QuotaPreferenceConfig struct {
 	// Input only. An email address that can be used to contact the user, in case Google Cloud needs more information to make a decision before additional quota can be granted. When requesting a quota increase, the email address is required. When requesting a quota decrease, the email address is optional. For example, the email address is optional when the `QuotaConfig.preferred_value` is smaller than the `QuotaDetails.reset_value`.
 	ContactEmail any
-	// Output only. Create time stamp
-	CreateTime any
 	// Immutable. The dimensions that this quota preference applies to. The key of the map entry is the name of a dimension, such as `region`, `zone`, `network_id`, and the value of the map entry is the dimension value. If a dimension is missing from the map of dimensions, the quota preference applies to all the dimension values except for those that have other quota preferences configured for the specific value. Note: QuotaPreferences can only be applied across all values of `user` and `resource` dimension. Do not set values for `user` or `resource` in the dimension map. For example: `{"provider" : "Example Organization"}` where `provider` is a service-specific quota dimension and `Example Organization` is the provider name.
 	Dimensions any
 	// Optional. The current etag of the quota preference. If an etag is provided on update and does not match the current server's etag of the quota preference, the request will be blocked and an ABORTED error will be returned. See https://google.aip.dev/134#etags for more details on etags.
@@ -44,12 +42,8 @@ type QuotaPreferenceConfig struct {
 	QuotaConfig any
 	// Required. The id of the quota to which the quota preference is applied. A quota name is unique in the service. For example, `CpusPerProjectPerRegion`
 	QuotaId any
-	// Output only. Is the quota preference pending Google Cloud approval and fulfillment.
-	Reconciling any
 	// Required. The name of the service to which the quota preference is applied.
 	Service any
-	// Output only. Update time stamp
-	UpdateTime any
 }
 
 type QuotaPreferenceAttrs struct {
@@ -80,20 +74,17 @@ type QuotaPreferenceAttrs struct {
 var QuotaPreference = ubx.ResourceBinding{
 	WireType: "google_cloudquotas_quota_preference",
 	Fields: ubx.FieldMap{
-		"ContactEmail": ubx.FieldSpec{WireName: "contact_email"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Dimensions": ubx.FieldSpec{WireName: "dimensions"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
+		"ContactEmail":  ubx.FieldSpec{WireName: "contact_email"},
+		"Dimensions":    ubx.FieldSpec{WireName: "dimensions"},
+		"Etag":          ubx.FieldSpec{WireName: "etag"},
 		"Justification": ubx.FieldSpec{WireName: "justification"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":          ubx.FieldSpec{WireName: "name"},
 		"QuotaConfig": ubx.FieldSpec{
 			WireName: "quota_config",
-			Kind: "object",
-			Fields: QuotaPreference_QuotaConfigFields,
+			Kind:     "object",
+			Fields:   QuotaPreference_QuotaConfigFields,
 		},
 		"QuotaId": ubx.FieldSpec{WireName: "quota_id"},
-		"Reconciling": ubx.FieldSpec{WireName: "reconciling"},
 		"Service": ubx.FieldSpec{WireName: "service"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

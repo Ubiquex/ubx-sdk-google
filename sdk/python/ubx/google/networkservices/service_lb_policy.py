@@ -40,8 +40,6 @@ _ServiceLbPolicy_IsolationConfigFields = {
 class ServiceLbPolicyConfig:
     # Option to specify if an unhealthy IG/NEG should be considered for global load balancing and traffic routing.
     auto_capacity_drain: Any = None
-    # Output only. The timestamp when this resource was created.
-    create_time: Any = None
     # Optional. A free-text description of the resource. Max length 1024 characters.
     description: Any = None
     # Option to specify health based failover behavior. This is not related to Network load balancer FailoverPolicy.
@@ -54,8 +52,6 @@ class ServiceLbPolicyConfig:
     load_balancing_algorithm: Any = None
     # Identifier. Name of the ServiceLbPolicy resource. It matches pattern `projects/{project}/locations/{location}/serviceLbPolicies/{service_lb_policy_name}`.
     name: Any = None
-    # Output only. The timestamp when this resource was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class ServiceLbPolicyAttrs:
@@ -86,7 +82,6 @@ ServiceLbPolicy = ubx.ResourceBinding(
             kind="object",
             fields=_ServiceLbPolicy_AutoCapacityDrainFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "failover_config": ubx.FieldSpec(
             wire_name="failover_config",
@@ -101,6 +96,5 @@ ServiceLbPolicy = ubx.ResourceBinding(
         "labels": ubx.FieldSpec(wire_name="labels"),
         "load_balancing_algorithm": ubx.FieldSpec(wire_name="load_balancing_algorithm"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

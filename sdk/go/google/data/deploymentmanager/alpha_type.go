@@ -4,11 +4,11 @@ package deploymentmanager
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AlphaType_Base_CollectionOverrides_MethodMap struct {
-	Create any
-	Delete any
-	Get any
+	Create       any
+	Delete       any
+	Get          any
 	SetIamPolicy any
-	Update any
+	Update       any
 }
 
 type AlphaType_Base_CollectionOverrides_Options_AsyncOptions_PollingOptions_Diagnostics struct {
@@ -17,46 +17,46 @@ type AlphaType_Base_CollectionOverrides_Options_AsyncOptions_PollingOptions_Diag
 }
 
 type AlphaType_Base_CollectionOverrides_Options_AsyncOptions_PollingOptions struct {
-	Diagnostics any
-	FailCondition any
+	Diagnostics     any
+	FailCondition   any
 	FinishCondition any
-	PollingLink any
-	TargetLink any
+	PollingLink     any
+	TargetLink      any
 }
 
 type AlphaType_Base_CollectionOverrides_Options_AsyncOptions struct {
-	MethodMatch any
+	MethodMatch    any
 	PollingOptions any
 }
 
 type AlphaType_Base_CollectionOverrides_Options_InputMappings struct {
-	FieldName any
-	Location any
+	FieldName   any
+	Location    any
 	MethodMatch any
-	Value any
+	Value       any
 }
 
 type AlphaType_Base_CollectionOverrides_Options_ValidationOptions struct {
-	SchemaValidation any
+	SchemaValidation     any
 	UndeclaredProperties any
 }
 
 type AlphaType_Base_CollectionOverrides_Options struct {
-	AsyncOptions any
-	InputMappings any
-	NameProperty any
+	AsyncOptions      any
+	InputMappings     any
+	NameProperty      any
 	ValidationOptions any
 }
 
 type AlphaType_Base_CollectionOverrides struct {
 	Collection any
-	MethodMap any
-	Options any
+	MethodMap  any
+	Options    any
 }
 
 type AlphaType_Base_Credential_BasicAuth struct {
 	Password any
-	User any
+	User     any
 }
 
 type AlphaType_Base_Credential_ServiceAccount struct {
@@ -85,24 +85,24 @@ type AlphaType_Base struct {
 }
 
 type AlphaType_Labels struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type AlphaType_Operation_Error_Errors_DebugInfo struct {
-	Detail any
+	Detail       any
 	StackEntries any
 }
 
 type AlphaType_Operation_Error_Errors_ErrorDetails_ErrorInfo struct {
-	Domain any
+	Domain    any
 	Metadatas any
-	Reason any
+	Reason    any
 }
 
 type AlphaType_Operation_Error_Errors_ErrorDetails_Help_Links struct {
 	Description any
-	Url any
+	Url         any
 }
 
 type AlphaType_Operation_Error_Errors_ErrorDetails_Help struct {
@@ -110,33 +110,33 @@ type AlphaType_Operation_Error_Errors_ErrorDetails_Help struct {
 }
 
 type AlphaType_Operation_Error_Errors_ErrorDetails_LocalizedMessage struct {
-	Locale any
+	Locale  any
 	Message any
 }
 
 type AlphaType_Operation_Error_Errors_ErrorDetails_QuotaInfo struct {
-	Dimensions any
-	FutureLimit any
-	Limit any
-	LimitName any
-	MetricName any
+	Dimensions    any
+	FutureLimit   any
+	Limit         any
+	LimitName     any
+	MetricName    any
 	RolloutStatus any
 }
 
 type AlphaType_Operation_Error_Errors_ErrorDetails struct {
-	ErrorInfo any
-	Help any
+	ErrorInfo        any
+	Help             any
 	LocalizedMessage any
-	QuotaInfo any
+	QuotaInfo        any
 }
 
 type AlphaType_Operation_Error_Errors struct {
-	Arguments any
-	Code any
-	DebugInfo any
+	Arguments    any
+	Code         any
+	DebugInfo    any
 	ErrorDetails any
-	Location any
-	Message any
+	Location     any
+	Message      any
 }
 
 type AlphaType_Operation_Error struct {
@@ -161,11 +161,11 @@ type AlphaType_Operation_GetVersionOperationMetadata struct {
 }
 
 type AlphaType_Operation_InstancesBulkInsertOperationMetadata_PerLocationStatus struct {
-	CreatedVmCount any
-	DeletedVmCount any
+	CreatedVmCount        any
+	DeletedVmCount        any
 	FailedToCreateVmCount any
-	Status any
-	TargetVmCount any
+	Status                any
+	TargetVmCount         any
 }
 
 type AlphaType_Operation_InstancesBulkInsertOperationMetadata struct {
@@ -183,7 +183,7 @@ type AlphaType_Operation_SetAutoscalerLinkOperationMetadata struct {
 }
 
 type AlphaType_Operation_SetCommonInstanceMetadataOperationMetadata_PerLocationOperations_Error struct {
-	Code any
+	Code    any
 	Details any
 	Message any
 }
@@ -201,8 +201,8 @@ type AlphaType_Operation_SetCommonInstanceMetadataOperationMetadata struct {
 }
 
 type AlphaType_Operation_Warnings struct {
-	Code any
-	Data any
+	Code    any
+	Data    any
 	Message any
 }
 
@@ -216,9 +216,9 @@ type AlphaType_Operation struct {
 	// [Output Only] The time that this operation was completed. This value is in RFC3339 text format.
 	EndTime any
 	// [Output Only] If errors are generated during processing of the operation, this field will be populated.
-	Error any
+	Error                               any
 	FirewallPolicyRuleOperationMetadata any
-	GetVersionOperationMetadata any
+	GetVersionOperationMetadata         any
 	// [Output Only] If the operation fails, this field contains the HTTP error message that was returned, such as `NOT FOUND`.
 	HttpErrorMessage any
 	// [Output Only] If the operation fails, this field contains the HTTP error status code that was returned. For example, a `404` means the resource was not found.
@@ -226,7 +226,7 @@ type AlphaType_Operation struct {
 	// [Output Only] The unique identifier for the operation. This identifier is defined by the server.
 	Id any
 	// [Output Only] The time that this operation was requested. This value is in RFC3339 text format.
-	InsertTime any
+	InsertTime                           any
 	InstancesBulkInsertOperationMetadata any
 	// Output only. [Output Only] Type of the resource. Always `compute#operation` for Operation resources.
 	Kind any
@@ -243,8 +243,8 @@ type AlphaType_Operation struct {
 	// [Output Only] Server-defined URL for the resource.
 	SelfLink any
 	// Output only. [Output Only] Server-defined URL for this resource with the resource id.
-	SelfLinkWithId any
-	SetAutoscalerLinkOperationMetadata any
+	SelfLinkWithId                             any
+	SetAutoscalerLinkOperationMetadata         any
 	SetCommonInstanceMetadataOperationMetadata any
 	// [Output Only] The time that this operation was started by the server. This value is in RFC3339 text format.
 	StartTime any
@@ -266,17 +266,17 @@ type AlphaType_Operation struct {
 
 type AlphaTypeConfig struct {
 	HeaderBypassBillingFilter any
-	Project any
-	Type any
+	Project                   any
+	Type                      any
 }
 
 type AlphaTypeAttrs struct {
 	// BaseType that describes a service-backed Type.
 	Base any
 	// An optional textual description of the resource; provided by the client when the resource is created.
-	Description any
+	Description               any
 	HeaderBypassBillingFilter any
-	Id any
+	Id                        any
 	// Output only. Creation timestamp in RFC3339 text format.
 	InsertTime any
 	// Map of One Platform labels; provided by the client when the resource is created or updated. Specifically: Label keys must be between 1 and 63 characters long and must conform to the following regular expression: `[a-z]([-a-z0-9]*[a-z0-9])?` Label values must be between 0 and 63 characters long and must conform to the regular expression `([a-z]([-a-z0-9]*[a-z0-9])?)?`.
@@ -285,17 +285,17 @@ type AlphaTypeAttrs struct {
 	Name any
 	// Represents an Operation resource. Google Compute Engine has three Operation resources: * [Global](/compute/docs/reference/rest/{$api_version}/globalOperations) * [Regional](/compute/docs/reference/rest/{$api_version}/regionOperations) * [Zonal](/compute/docs/reference/rest/{$api_version}/zoneOperations) You can use an operation resource to manage asynchronous API requests. For more information, read Handling API responses. Operations can be global, regional or zonal. - For global operations, use the `globalOperations` resource. - For regional operations, use the `regionOperations` resource. - For zonal operations, use the `zoneOperations` resource. For more information, read Global, Regional, and Zonal Resources. Note that completed Operation resources have a limited retention period.
 	Operation any
-	Project any
+	Project   any
 	// Output only. Server defined URL for the resource.
 	SelfLink any
-	Type any
+	Type     any
 }
 
 var AlphaType = ubx.DataSourceBinding{
 	WireType: "google_deploymentmanager_alpha_type",
 	Fields: ubx.FieldMap{
 		"HeaderBypassBillingFilter": ubx.FieldSpec{WireName: "header_bypass_billing_filter"},
-		"Project": ubx.FieldSpec{WireName: "project"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"Project":                   ubx.FieldSpec{WireName: "project"},
+		"Type":                      ubx.FieldSpec{WireName: "type"},
 	},
 }

@@ -4,34 +4,34 @@ package backupdr
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Revision_BackupPlanSnapshot_BackupRules_StandardSchedule_BackupWindow struct {
-	EndHourOfDay any
+	EndHourOfDay   any
 	StartHourOfDay any
 }
 
 type Revision_BackupPlanSnapshot_BackupRules_StandardSchedule_WeekDayOfMonth struct {
-	DayOfWeek any
+	DayOfWeek   any
 	WeekOfMonth any
 }
 
 type Revision_BackupPlanSnapshot_BackupRules_StandardSchedule struct {
-	BackupWindow any
-	DaysOfMonth any
-	DaysOfWeek any
+	BackupWindow    any
+	DaysOfMonth     any
+	DaysOfWeek      any
 	HourlyFrequency any
-	Months any
-	RecurrenceType any
-	TimeZone any
-	WeekDayOfMonth any
+	Months          any
+	RecurrenceType  any
+	TimeZone        any
+	WeekDayOfMonth  any
 }
 
 type Revision_BackupPlanSnapshot_BackupRules struct {
 	BackupRetentionDays any
-	RuleId any
-	StandardSchedule any
+	RuleId              any
+	StandardSchedule    any
 }
 
 type Revision_BackupPlanSnapshot_ComputeInstanceBackupPlanProperties_DiskExclusionLabels_Labels struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -94,7 +94,6 @@ type Revision_BackupPlanSnapshot struct {
 }
 
 type RevisionConfig struct {
-	Name any
 }
 
 type RevisionAttrs struct {
@@ -102,7 +101,7 @@ type RevisionAttrs struct {
 	BackupPlanSnapshot any
 	// Output only. The timestamp that the revision was created.
 	CreateTime any
-	Name any
+	Name       any
 	// Output only. The user friendly revision ID of the `BackupPlanRevision`. Example: v0, v1, v2, etc.
 	RevisionId any
 	// Output only. Resource State
@@ -111,7 +110,5 @@ type RevisionAttrs struct {
 
 var Revision = ubx.DataSourceBinding{
 	WireType: "google_backupdr_revision",
-	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	},
+	Fields:   ubx.FieldMap{},
 }

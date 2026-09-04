@@ -132,8 +132,6 @@ _Workload_WorkloadReferenceFields = {
 class WorkloadConfig:
     # Consumer provided attributes.
     attributes: Any = None
-    # Output only. Create time.
-    create_time: Any = None
     # Optional. User-defined description of a Workload. Can have a maximum length of 2048 characters.
     description: Any = None
     # Required. Immutable. The resource name of the original discovered workload.
@@ -142,12 +140,6 @@ class WorkloadConfig:
     display_name: Any = None
     # Identifier. The resource name of the Workload. Format: `"projects/{host-project-id}/locations/{location}/applications/{application-id}/workloads/{workload-id}"`
     name: Any = None
-    # Output only. Workload state.
-    state: Any = None
-    # Output only. A universally unique identifier (UUID) for the `Workload` in the UUID4 format.
-    uid: Any = None
-    # Output only. Update time.
-    update_time: Any = None
     # Properties of an underlying compute resource represented by the Workload.
     workload_properties: Any = None
     # Reference of an underlying compute resource represented by the Workload.
@@ -186,14 +178,10 @@ Workload = ubx.ResourceBinding(
             kind="object",
             fields=_Workload_AttributesFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "discovered_workload": ubx.FieldSpec(wire_name="discovered_workload"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "uid": ubx.FieldSpec(wire_name="uid"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
         "workload_properties": ubx.FieldSpec(
             wire_name="workload_properties",
             kind="object",

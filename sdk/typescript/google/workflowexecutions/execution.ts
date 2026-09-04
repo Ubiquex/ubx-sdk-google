@@ -101,34 +101,18 @@ export interface ExecutionConfig {
   argument?: string | Computed<string>;
   /** The call logging level associated to this execution. */
   callLogLevel?: string | Computed<string>;
-  /** Output only. Marks the creation of the execution. */
-  createTime?: string | Computed<string>;
   /** Optional. If set to true, the execution will not be backlogged when the concurrency quota is exhausted. The backlog execution starts when the concurrency quota becomes available. */
   disableConcurrencyQuotaOverflowBuffering?: boolean | Computed<boolean>;
-  /** Output only. Measures the duration of the execution. */
-  duration?: string | Computed<string>;
-  /** Output only. Marks the end of execution, successful or not. */
-  endTime?: string | Computed<string>;
   /** Error describes why the execution was abnormally terminated. */
   error?: Execution_Error | Computed<Execution_Error>;
   /** Optional. Describes the execution history level to apply to this execution. If not specified, the execution history level is determined by its workflow's execution history level. If the levels are different, the executionHistoryLevel overrides the workflow's execution history level for this execution. */
   executionHistoryLevel?: string | Computed<string>;
   /** Labels associated with this execution. Labels can contain at most 64 entries. Keys and values can be no longer than 63 characters and can only contain lowercase letters, numeric characters, underscores, and dashes. Label keys must start with a letter. International characters are allowed. By default, labels are inherited from the workflow but are overridden by any labels associated with the execution. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. The resource name of the execution. Format: projects/{project}/locations/{location}/workflows/{workflow}/executions/{execution} */
-  name?: string | Computed<string>;
-  /** Output only. Output of the execution represented as a JSON string. The value can only be present if the execution's state is `SUCCEEDED`. */
-  result?: string | Computed<string>;
-  /** Output only. Marks the beginning of execution. Note that this will be the same as `createTime` for executions that start immediately. */
-  startTime?: string | Computed<string>;
-  /** Output only. Current state of the execution. */
-  state?: string | Computed<string>;
   /** Describes an error related to the current state of the Execution resource. */
   stateError?: Execution_StateError | Computed<Execution_StateError>;
   /** Represents the current status of this execution. */
   status?: Execution_Status | Computed<Execution_Status>;
-  /** Output only. Revision of the workflow this execution is using. */
-  workflowRevisionId?: string | Computed<string>;
 }
 
 export interface ExecutionAttrs {
@@ -171,10 +155,7 @@ export const Execution: ResourceBinding<ExecutionConfig, ExecutionAttrs> = {
   fields: {
     argument: "argument",
     callLogLevel: "call_log_level",
-    createTime: "create_time",
     disableConcurrencyQuotaOverflowBuffering: "disable_concurrency_quota_overflow_buffering",
-    duration: "duration",
-    endTime: "end_time",
     error: {
       wireName: "error",
       kind: "object",
@@ -182,10 +163,6 @@ export const Execution: ResourceBinding<ExecutionConfig, ExecutionAttrs> = {
     },
     executionHistoryLevel: "execution_history_level",
     labels: "labels",
-    name: "name",
-    result: "result",
-    startTime: "start_time",
-    state: "state",
     stateError: {
       wireName: "state_error",
       kind: "object",
@@ -196,6 +173,5 @@ export const Execution: ResourceBinding<ExecutionConfig, ExecutionAttrs> = {
       kind: "object",
       fields: Execution_StatusFields,
     },
-    workflowRevisionId: "workflow_revision_id",
   },
 };

@@ -16,8 +16,6 @@ const AutomatedDnsRecord_CurrentConfigFields: FieldMap = {
 export interface AutomatedDnsRecordConfig {
   /** Required. Immutable. The full resource path of the consumer network this AutomatedDnsRecord is visible to. Example: "projects/{projectNumOrId}/global/networks/{networkName}". */
   consumerNetwork?: string | Computed<string>;
-  /** Output only. The timestamp of when the record was created. */
-  createTime?: string | Computed<string>;
   /** Required. Immutable. The creation mode of the AutomatedDnsRecord. This field is immutable. */
   creationMode?: string | Computed<string>;
   /** Defines the configuration of a DNS record. */
@@ -26,12 +24,8 @@ export interface AutomatedDnsRecordConfig {
   description?: string | Computed<string>;
   /** Required. Immutable. The dns suffix for this record to use in longest-suffix matching. Requires a trailing dot. Example: "example.com." */
   dnsSuffix?: string | Computed<string>;
-  /** Output only. DnsZone is the DNS zone managed by automation. Format: projects/{project}/managedZones/{managedZone} */
-  dnsZone?: string | Computed<string>;
   /** Optional. The etag is computed by the server, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding. */
   etag?: string | Computed<string>;
-  /** Output only. The FQDN created by combining the hostname and dns suffix. Should include a trailing dot. */
-  fqdn?: string | Computed<string>;
   /** Required. Immutable. The hostname for the DNS record. This value will be prepended to the `dns_suffix` to create the full domain name (FQDN) for the record. For example, if `hostname` is "corp.db" and `dns_suffix` is "example.com.", the resulting record will be "corp.db.example.com.". Should not include a trailing dot. */
   hostname?: string | Computed<string>;
   /** Optional. User-defined labels. */
@@ -44,12 +38,6 @@ export interface AutomatedDnsRecordConfig {
   recordType?: string | Computed<string>;
   /** Required. Immutable. The service class identifier which authorizes this AutomatedDnsRecord. Any API calls targeting this AutomatedDnsRecord must have `networkconnectivity.serviceClasses.use` IAM permission for the provided service class. */
   serviceClass?: string | Computed<string>;
-  /** Output only. The current operational state of this AutomatedDnsRecord as managed by Service Connectivity Automation. */
-  state?: string | Computed<string>;
-  /** Output only. A human-readable message providing more context about the current state, such as an error description if the state is `FAILED_DEPROGRAMMING`. */
-  stateDetails?: string | Computed<string>;
-  /** Output only. The timestamp of when the record was updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface AutomatedDnsRecordAttrs {
@@ -95,7 +83,6 @@ export const AutomatedDnsRecord: ResourceBinding<AutomatedDnsRecordConfig, Autom
   wireType: "google_networkconnectivity_automated_dns_record",
   fields: {
     consumerNetwork: "consumer_network",
-    createTime: "create_time",
     creationMode: "creation_mode",
     currentConfig: {
       wireName: "current_config",
@@ -104,9 +91,7 @@ export const AutomatedDnsRecord: ResourceBinding<AutomatedDnsRecordConfig, Autom
     },
     description: "description",
     dnsSuffix: "dns_suffix",
-    dnsZone: "dns_zone",
     etag: "etag",
-    fqdn: "fqdn",
     hostname: "hostname",
     labels: "labels",
     name: "name",
@@ -117,8 +102,5 @@ export const AutomatedDnsRecord: ResourceBinding<AutomatedDnsRecordConfig, Autom
     },
     recordType: "record_type",
     serviceClass: "service_class",
-    state: "state",
-    stateDetails: "state_details",
-    updateTime: "update_time",
   },
 };

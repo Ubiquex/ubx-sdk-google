@@ -8,10 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class KeyRingConfig:
-    # Output only. The time at which this KeyRing was created.
-    create_time: Any = None
-    # Output only. The resource name for the KeyRing in the format `projects/*/locations/*/keyRings/*`.
-    name: Any = None
+    pass
 
 @dataclasses.dataclass
 class KeyRingAttrs:
@@ -23,7 +20,5 @@ class KeyRingAttrs:
 KeyRing = ubx.ResourceBinding(
     wire_type="google_cloudkms_key_ring",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
-        "name": ubx.FieldSpec(wire_name="name"),
     },
 )

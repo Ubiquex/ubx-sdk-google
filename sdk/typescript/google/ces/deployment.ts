@@ -235,12 +235,8 @@ export interface DeploymentConfig {
   appVersion?: string | Computed<string>;
   /** A ChannelProfile configures the agent's behavior for a specific communication channel, such as web UI or telephony. */
   channelProfile?: Deployment_ChannelProfile | Computed<Deployment_ChannelProfile>;
-  /** Output only. Timestamp when this deployment was created. */
-  createTime?: string | Computed<string>;
   /** Required. Display name of the deployment. */
   displayName?: string | Computed<string>;
-  /** Output only. Etag used to ensure the object hasn't changed during a read-modify-write operation. If the etag is empty, the update will overwrite any concurrent changes. */
-  etag?: string | Computed<string>;
   /** Experiment for the deployment. */
   experimentConfig?: Deployment_ExperimentConfig | Computed<Deployment_ExperimentConfig>;
   /** Ephemeral Meta credentials for Instagram native integration. */
@@ -251,8 +247,6 @@ export interface DeploymentConfig {
   modelSettings?: Deployment_ModelSettings | Computed<Deployment_ModelSettings>;
   /** Identifier. The resource name of the deployment. Format: `projects/{project}/locations/{location}/apps/{app}/deployments/{deployment}` */
   name?: string | Computed<string>;
-  /** Output only. Timestamp when this deployment was last updated. */
-  updateTime?: string | Computed<string>;
   /** Ephemeral Meta credentials for WhatsApp native integration. */
   whatsappCredentials?: Deployment_WhatsappCredentials | Computed<Deployment_WhatsappCredentials>;
 }
@@ -293,9 +287,7 @@ export const Deployment: ResourceBinding<DeploymentConfig, DeploymentAttrs> = {
       kind: "object",
       fields: Deployment_ChannelProfileFields,
     },
-    createTime: "create_time",
     displayName: "display_name",
-    etag: "etag",
     experimentConfig: {
       wireName: "experiment_config",
       kind: "object",
@@ -313,7 +305,6 @@ export const Deployment: ResourceBinding<DeploymentConfig, DeploymentAttrs> = {
       fields: Deployment_ModelSettingsFields,
     },
     name: "name",
-    updateTime: "update_time",
     whatsappCredentials: {
       wireName: "whatsapp_credentials",
       kind: "object",

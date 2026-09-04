@@ -14,14 +14,8 @@ const V1beta1Connector_SubnetFields: FieldMap = {
 };
 
 export interface V1beta1ConnectorConfig {
-  /** Output only. List of projects using the connector. */
-  connectedProjects?: string[] | Computed<string[]>;
-  /** Output only. The creation time of the connector. */
-  createTime?: string | Computed<string>;
   /** Optional. The range of internal addresses that follows RFC 4632 notation. Example: `10.132.0.0/28`. */
   ipCidrRange?: string | Computed<string>;
-  /** Output only. The last restart time of the connector. */
-  lastRestartTime?: string | Computed<string>;
   /** Machine type of VM Instance underlying connector. Default is e2-micro */
   machineType?: string | Computed<string>;
   /** Maximum value of instances in autoscaling group underlying the connector. */
@@ -36,8 +30,6 @@ export interface V1beta1ConnectorConfig {
   name?: string | Computed<string>;
   /** Optional. Name of a VPC network. */
   network?: string | Computed<string>;
-  /** Output only. State of the VPC access connector. */
-  state?: string | Computed<string>;
   /** The subnet in which to house the connector */
   subnet?: V1beta1Connector_Subnet | Computed<V1beta1Connector_Subnet>;
 }
@@ -74,10 +66,7 @@ export interface V1beta1ConnectorAttrs {
 export const V1beta1Connector: ResourceBinding<V1beta1ConnectorConfig, V1beta1ConnectorAttrs> = {
   wireType: "google_vpcaccess_v1beta1_connector",
   fields: {
-    connectedProjects: "connected_projects",
-    createTime: "create_time",
     ipCidrRange: "ip_cidr_range",
-    lastRestartTime: "last_restart_time",
     machineType: "machine_type",
     maxInstances: "max_instances",
     maxThroughput: "max_throughput",
@@ -85,7 +74,6 @@ export const V1beta1Connector: ResourceBinding<V1beta1ConnectorConfig, V1beta1Co
     minThroughput: "min_throughput",
     name: "name",
     network: "network",
-    state: "state",
     subnet: {
       wireName: "subnet",
       kind: "object",

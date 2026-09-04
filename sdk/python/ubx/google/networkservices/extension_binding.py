@@ -138,8 +138,6 @@ _ExtensionBinding_TargetFields = {
 
 @dataclasses.dataclass
 class ExtensionBindingConfig:
-    # Output only. The timestamp when the resource was created.
-    create_time: Any = None
     # Optional. A human-readable description of the resource.
     description: Any = None
     # Optional. Etag of the resource. If provided, it must match the server's etag. If the provided etag does not match the server's etag, the request will fail with a 409 ABORTED error.
@@ -160,8 +158,6 @@ class ExtensionBindingConfig:
     producer_metadata: Any = None
     # Specifies a list of targets to which this `ExtensionBinding` should attach.
     target: Any = None
-    # Output only. The timestamp when the resource was updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class ExtensionBindingAttrs:
@@ -193,7 +189,6 @@ class ExtensionBindingAttrs:
 ExtensionBinding = ubx.ResourceBinding(
     wire_type="google_networkservices_extension_binding",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "etag": ubx.FieldSpec(wire_name="etag"),
         "fail_open": ubx.FieldSpec(wire_name="fail_open"),
@@ -212,6 +207,5 @@ ExtensionBinding = ubx.ResourceBinding(
             kind="object",
             fields=_ExtensionBinding_TargetFields,
         ),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

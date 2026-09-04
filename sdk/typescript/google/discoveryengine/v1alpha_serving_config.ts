@@ -288,8 +288,6 @@ export interface V1alphaServingConfigConfig {
   answerGenerationSpec?: V1alphaServingConfig_AnswerGenerationSpec | Computed<V1alphaServingConfig_AnswerGenerationSpec>;
   /** Boost controls to use in serving path. All triggered boost controls will be applied. Boost controls must be in the same data store as the serving config. Maximum of 20 boost controls. */
   boostControlIds?: string[] | Computed<string[]>;
-  /** Output only. ServingConfig created timestamp. */
-  createTime?: string | Computed<string>;
   /** Defines custom fine tuning spec. */
   customFineTuningSpec?: V1alphaServingConfig_CustomFineTuningSpec | Computed<V1alphaServingConfig_CustomFineTuningSpec>;
   /** Required. The human readable serving config display name. Used in Discovery UI. This field must be a UTF-8 encoded string with a length limit of 128 characters. Otherwise, an INVALID_ARGUMENT error is returned. */
@@ -330,8 +328,6 @@ export interface V1alphaServingConfigConfig {
   solutionType?: string | Computed<string>;
   /** Condition synonyms specifications. If multiple synonyms conditions match, all matching synonyms controls in the list will execute. Maximum number of specifications is 100. Can only be set if SolutionType is SOLUTION_TYPE_SEARCH. */
   synonymsControlIds?: string[] | Computed<string[]>;
-  /** Output only. ServingConfig updated timestamp. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1alphaServingConfigAttrs {
@@ -394,7 +390,6 @@ export const V1alphaServingConfig: ResourceBinding<V1alphaServingConfigConfig, V
       fields: V1alphaServingConfig_AnswerGenerationSpecFields,
     },
     boostControlIds: "boost_control_ids",
-    createTime: "create_time",
     customFineTuningSpec: {
       wireName: "custom_fine_tuning_spec",
       kind: "object",
@@ -439,6 +434,5 @@ export const V1alphaServingConfig: ResourceBinding<V1alphaServingConfigConfig, V
     replacementControlIds: "replacement_control_ids",
     solutionType: "solution_type",
     synonymsControlIds: "synonyms_control_ids",
-    updateTime: "update_time",
   },
 };

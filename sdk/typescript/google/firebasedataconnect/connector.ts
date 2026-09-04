@@ -41,24 +41,14 @@ export interface ConnectorConfig {
   annotations?: Record<string, string> | Computed<Record<string, string>>;
   /** Client caching settings of a connector. */
   clientCache?: Connector_ClientCache | Computed<Connector_ClientCache>;
-  /** Output only. [Output only] Create time stamp. */
-  createTime?: string | Computed<string>;
   /** Optional. Mutable human-readable name. 63 character limit. */
   displayName?: string | Computed<string>;
-  /** Output only. This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding. [AIP-154](https://google.aip.dev/154) */
-  etag?: string | Computed<string>;
   /** Optional. Labels as key value pairs. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Identifier. The relative resource name of the connector, in the format: ``` projects/{project}/locations/{location}/services/{service}/connectors/{connector} ``` */
   name?: string | Computed<string>;
-  /** Output only. A field that if true, indicates that the system is working to compile and deploy the connector. */
-  reconciling?: boolean | Computed<boolean>;
   /** Used to represent a set of source files. */
   source?: Connector_Source | Computed<Connector_Source>;
-  /** Output only. System-assigned, unique identifier. */
-  uid?: string | Computed<string>;
-  /** Output only. [Output only] Update time stamp. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface ConnectorAttrs {
@@ -95,18 +85,13 @@ export const Connector: ResourceBinding<ConnectorConfig, ConnectorAttrs> = {
       kind: "object",
       fields: Connector_ClientCacheFields,
     },
-    createTime: "create_time",
     displayName: "display_name",
-    etag: "etag",
     labels: "labels",
     name: "name",
-    reconciling: "reconciling",
     source: {
       wireName: "source",
       kind: "object",
       fields: Connector_SourceFields,
     },
-    uid: "uid",
-    updateTime: "update_time",
   },
 };

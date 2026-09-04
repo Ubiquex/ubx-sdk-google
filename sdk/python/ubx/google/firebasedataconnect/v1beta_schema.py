@@ -95,26 +95,16 @@ _V1betaSchema_SourceFields = {
 class V1betaSchemaConfig:
     # Optional. Stores small amounts of arbitrary data.
     annotations: Any = None
-    # Output only. [Output only] Create time stamp.
-    create_time: Any = None
     # Required. The data sources linked in the schema.
     datasources: Any = None
     # Optional. Mutable human-readable name. 63 character limit.
     display_name: Any = None
-    # Output only. This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding. [AIP-154](https://google.aip.dev/154)
-    etag: Any = None
     # Optional. Labels as key value pairs.
     labels: Any = None
     # Identifier. The relative resource name of the schema, in the format: ``` projects/{project}/locations/{location}/services/{service}/schemas/{schema} ``` Right now, the only supported schema is "main".
     name: Any = None
-    # Output only. A field that if true, indicates that the system is working to compile and deploy the schema.
-    reconciling: Any = None
     # Used to represent a set of source files.
     source: Any = None
-    # Output only. System-assigned, unique identifier.
-    uid: Any = None
-    # Output only. [Output only] Update time stamp.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V1betaSchemaAttrs:
@@ -145,23 +135,18 @@ V1betaSchema = ubx.ResourceBinding(
     wire_type="google_firebasedataconnect_v1beta_schema",
     fields={
         "annotations": ubx.FieldSpec(wire_name="annotations"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "datasources": ubx.FieldSpec(
             wire_name="datasources",
             kind="list",
             fields=_V1betaSchema_DatasourcesFields,
         ),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
-        "etag": ubx.FieldSpec(wire_name="etag"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "reconciling": ubx.FieldSpec(wire_name="reconciling"),
         "source": ubx.FieldSpec(
             wire_name="source",
             kind="object",
             fields=_V1betaSchema_SourceFields,
         ),
-        "uid": ubx.FieldSpec(wire_name="uid"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

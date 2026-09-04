@@ -119,20 +119,6 @@ const Node_NetworkConfigFields: FieldMap = {
   subnetwork: "subnetwork",
 };
 
-const Node_NetworkEndpoints_AccessConfigFields: FieldMap = {
-  externalIp: "external_ip",
-};
-
-const Node_NetworkEndpointsFields: FieldMap = {
-  accessConfig: {
-    wireName: "access_config",
-    kind: "object",
-    fields: Node_NetworkEndpoints_AccessConfigFields,
-  },
-  ipAddress: "ip_address",
-  port: "port",
-};
-
 const Node_SchedulingConfigFields: FieldMap = {
   preemptible: "preemptible",
   reserved: "reserved",
@@ -146,13 +132,6 @@ const Node_ServiceAccountFields: FieldMap = {
 
 const Node_ShieldedInstanceConfigFields: FieldMap = {
   enableSecureBoot: "enable_secure_boot",
-};
-
-const Node_SymptomsFields: FieldMap = {
-  createTime: "create_time",
-  details: "details",
-  symptomType: "symptom_type",
-  workerId: "worker_id",
 };
 
 const Node_UpcomingMaintenanceFields: FieldMap = {
@@ -169,40 +148,24 @@ export interface NodeConfig {
   acceleratorConfig?: Node_AcceleratorConfig | Computed<Node_AcceleratorConfig>;
   /** Optional. The type of hardware accelerators associated with this node. */
   acceleratorType?: string | Computed<string>;
-  /** Output only. The API version that created this Node. */
-  apiVersion?: string | Computed<string>;
   /** Sets the boot disk configuration for the TPU node. */
   bootDiskConfig?: Node_BootDiskConfig | Computed<Node_BootDiskConfig>;
   /** The CIDR block that the TPU node will use when selecting an IP address. This CIDR block must be a /29 block; the Compute Engine networks API forbids a smaller block, and using a larger block would be wasteful (a node can only consume one IP address). Errors will occur if the CIDR block has already been used for a currently existing TPU node, the CIDR block conflicts with any subnetworks in the user's provided network, or the provided network is peered with another network that is using that CIDR block. */
   cidrBlock?: string | Computed<string>;
-  /** Output only. The time when the node was created. */
-  createTime?: string | Computed<string>;
   /** The additional data disks for the Node. */
   dataDisks?: Node_DataDisks[] | Computed<Node_DataDisks[]>;
   /** The user-supplied description of the TPU. Maximum of 512 characters. */
   description?: string | Computed<string>;
   /** The health status of the TPU node. */
   health?: string | Computed<string>;
-  /** Output only. If this field is populated, it contains a description of why the TPU Node is unhealthy. */
-  healthDescription?: string | Computed<string>;
-  /** Output only. The unique identifier for the TPU Node. */
-  id?: string | Computed<string>;
   /** Resource labels to represent user-provided metadata. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Custom metadata to apply to the TPU Node. Can set startup-script and shutdown-script */
   metadata?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. Whether the Node belongs to a Multislice group. */
-  multisliceNode?: boolean | Computed<boolean>;
-  /** Output only. Immutable. The name of the TPU. */
-  name?: string | Computed<string>;
   /** Network related configurations. */
   networkConfig?: Node_NetworkConfig | Computed<Node_NetworkConfig>;
   /** Optional. Repeated network configurations for the TPU node. This field is used to specify multiple networks configs for the TPU node. network_config and network_configs are mutually exclusive, you can only specify one of them. If both are specified, an error will be returned. */
   networkConfigs?: Node_NetworkConfig[] | Computed<Node_NetworkConfig[]>;
-  /** Output only. The network endpoints where TPU workers can be accessed and sent work. It is recommended that runtime clients of the node reach out to the 0th entry in this map first. */
-  networkEndpoints?: Node_NetworkEndpoints[] | Computed<Node_NetworkEndpoints[]>;
-  /** Output only. The qualified name of the QueuedResource that requested this Node. */
-  queuedResource?: string | Computed<string>;
   /** Required. The runtime version running in the Node. */
   runtimeVersion?: string | Computed<string>;
   /** Sets the scheduling options for this node. */
@@ -211,10 +174,6 @@ export interface NodeConfig {
   serviceAccount?: Node_ServiceAccount | Computed<Node_ServiceAccount>;
   /** A set of Shielded Instance options. */
   shieldedInstanceConfig?: Node_ShieldedInstanceConfig | Computed<Node_ShieldedInstanceConfig>;
-  /** Output only. The current state for the TPU Node. */
-  state?: string | Computed<string>;
-  /** Output only. The Symptoms that have occurred to the TPU Node. */
-  symptoms?: Node_Symptoms[] | Computed<Node_Symptoms[]>;
   /** Tags to apply to the TPU Node. Tags are used to identify valid sources or targets for network firewalls. */
   tags?: string[] | Computed<string[]>;
   /** Upcoming Maintenance notification information. */
@@ -287,14 +246,12 @@ export const Node: ResourceBinding<NodeConfig, NodeAttrs> = {
       fields: Node_AcceleratorConfigFields,
     },
     acceleratorType: "accelerator_type",
-    apiVersion: "api_version",
     bootDiskConfig: {
       wireName: "boot_disk_config",
       kind: "object",
       fields: Node_BootDiskConfigFields,
     },
     cidrBlock: "cidr_block",
-    createTime: "create_time",
     dataDisks: {
       wireName: "data_disks",
       kind: "list",
@@ -302,12 +259,8 @@ export const Node: ResourceBinding<NodeConfig, NodeAttrs> = {
     },
     description: "description",
     health: "health",
-    healthDescription: "health_description",
-    id: "id",
     labels: "labels",
     metadata: "metadata",
-    multisliceNode: "multislice_node",
-    name: "name",
     networkConfig: {
       wireName: "network_config",
       kind: "object",
@@ -318,12 +271,6 @@ export const Node: ResourceBinding<NodeConfig, NodeAttrs> = {
       kind: "list",
       fields: Node_NetworkConfigFields,
     },
-    networkEndpoints: {
-      wireName: "network_endpoints",
-      kind: "list",
-      fields: Node_NetworkEndpointsFields,
-    },
-    queuedResource: "queued_resource",
     runtimeVersion: "runtime_version",
     schedulingConfig: {
       wireName: "scheduling_config",
@@ -339,12 +286,6 @@ export const Node: ResourceBinding<NodeConfig, NodeAttrs> = {
       wireName: "shielded_instance_config",
       kind: "object",
       fields: Node_ShieldedInstanceConfigFields,
-    },
-    state: "state",
-    symptoms: {
-      wireName: "symptoms",
-      kind: "list",
-      fields: Node_SymptomsFields,
     },
     tags: "tags",
     upcomingMaintenance: {

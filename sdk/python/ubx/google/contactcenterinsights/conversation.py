@@ -651,10 +651,6 @@ _Conversation_DataSourceFields = {
     ),
 }
 
-_Conversation_DialogflowIntentsFields = {
-    "display_name": ubx.FieldSpec(wire_name="display_name"),
-}
-
 _Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Annotations_AnnotationEndBoundaryFields = {
     "transcript_index": ubx.FieldSpec(wire_name="transcript_index"),
     "word_index": ubx.FieldSpec(wire_name="word_index"),
@@ -1029,240 +1025,6 @@ _Conversation_QualityMetadataFields = {
     "wait_duration": ubx.FieldSpec(wire_name="wait_duration"),
 }
 
-_Conversation_RuntimeAnnotations_AnswerFeedbackFields = {
-    "clicked": ubx.FieldSpec(wire_name="clicked"),
-    "correctness_level": ubx.FieldSpec(wire_name="correctness_level"),
-    "displayed": ubx.FieldSpec(wire_name="displayed"),
-}
-
-_Conversation_RuntimeAnnotations_ArticleSuggestionFields = {
-    "confidence_score": ubx.FieldSpec(wire_name="confidence_score"),
-    "metadata": ubx.FieldSpec(wire_name="metadata"),
-    "query_record": ubx.FieldSpec(wire_name="query_record"),
-    "source": ubx.FieldSpec(wire_name="source"),
-    "title": ubx.FieldSpec(wire_name="title"),
-    "uri": ubx.FieldSpec(wire_name="uri"),
-}
-
-_Conversation_RuntimeAnnotations_CesEndSessionAnnotation_EndSessionFields = {
-    "metadata": ubx.FieldSpec(wire_name="metadata"),
-}
-
-_Conversation_RuntimeAnnotations_CesEndSessionAnnotationFields = {
-    "end_session": ubx.FieldSpec(
-        wire_name="end_session",
-        kind="object",
-        fields=_Conversation_RuntimeAnnotations_CesEndSessionAnnotation_EndSessionFields,
-    ),
-}
-
-_Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks_AgentTransferFields = {
-    "display_name": ubx.FieldSpec(wire_name="display_name"),
-    "target_agent": ubx.FieldSpec(wire_name="target_agent"),
-}
-
-_Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks_BlobFields = {
-    "data": ubx.FieldSpec(wire_name="data"),
-    "mime_type": ubx.FieldSpec(wire_name="mime_type"),
-}
-
-_Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks_ToolCall_ToolsetToolFields = {
-    "tool_id": ubx.FieldSpec(wire_name="tool_id"),
-    "toolset": ubx.FieldSpec(wire_name="toolset"),
-}
-
-_Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks_ToolCallFields = {
-    "agent_name": ubx.FieldSpec(wire_name="agent_name"),
-    "args": ubx.FieldSpec(wire_name="args"),
-    "display_name": ubx.FieldSpec(wire_name="display_name"),
-    "id": ubx.FieldSpec(wire_name="id"),
-    "parent_tool_call_id": ubx.FieldSpec(wire_name="parent_tool_call_id"),
-    "tool": ubx.FieldSpec(wire_name="tool"),
-    "toolset_tool": ubx.FieldSpec(
-        wire_name="toolset_tool",
-        kind="object",
-        fields=_Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks_ToolCall_ToolsetToolFields,
-    ),
-}
-
-_Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks_ToolResponseFields = {
-    "agent_name": ubx.FieldSpec(wire_name="agent_name"),
-    "display_name": ubx.FieldSpec(wire_name="display_name"),
-    "id": ubx.FieldSpec(wire_name="id"),
-    "parent_tool_call_id": ubx.FieldSpec(wire_name="parent_tool_call_id"),
-    "response": ubx.FieldSpec(wire_name="response"),
-    "tool": ubx.FieldSpec(wire_name="tool"),
-    "toolset_tool": ubx.FieldSpec(
-        wire_name="toolset_tool",
-        kind="object",
-        fields=_Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks_ToolCall_ToolsetToolFields,
-    ),
-}
-
-_Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_ChunksFields = {
-    "agent_transfer": ubx.FieldSpec(
-        wire_name="agent_transfer",
-        kind="object",
-        fields=_Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks_AgentTransferFields,
-    ),
-    "blob": ubx.FieldSpec(
-        wire_name="blob",
-        kind="object",
-        fields=_Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks_BlobFields,
-    ),
-    "default_variables": ubx.FieldSpec(wire_name="default_variables"),
-    "image": ubx.FieldSpec(
-        wire_name="image",
-        kind="object",
-        fields=_Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks_BlobFields,
-    ),
-    "payload": ubx.FieldSpec(wire_name="payload"),
-    "text": ubx.FieldSpec(wire_name="text"),
-    "tool_call": ubx.FieldSpec(
-        wire_name="tool_call",
-        kind="object",
-        fields=_Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks_ToolCallFields,
-    ),
-    "tool_response": ubx.FieldSpec(
-        wire_name="tool_response",
-        kind="object",
-        fields=_Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks_ToolResponseFields,
-    ),
-    "transcript": ubx.FieldSpec(wire_name="transcript"),
-    "updated_variables": ubx.FieldSpec(wire_name="updated_variables"),
-}
-
-_Conversation_RuntimeAnnotations_CesTurnAnnotation_MessagesFields = {
-    "chunks": ubx.FieldSpec(
-        wire_name="chunks",
-        kind="list",
-        fields=_Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_ChunksFields,
-    ),
-    "event_time": ubx.FieldSpec(wire_name="event_time"),
-    "role": ubx.FieldSpec(wire_name="role"),
-}
-
-_Conversation_RuntimeAnnotations_CesTurnAnnotation_RootSpanFields = {
-    "attributes": ubx.FieldSpec(wire_name="attributes"),
-    "child_spans": ubx.FieldSpec(wire_name="child_spans"),
-    "duration": ubx.FieldSpec(wire_name="duration"),
-    "end_time": ubx.FieldSpec(wire_name="end_time"),
-    "name": ubx.FieldSpec(wire_name="name"),
-    "start_time": ubx.FieldSpec(wire_name="start_time"),
-}
-
-_Conversation_RuntimeAnnotations_CesTurnAnnotationFields = {
-    "messages": ubx.FieldSpec(
-        wire_name="messages",
-        kind="list",
-        fields=_Conversation_RuntimeAnnotations_CesTurnAnnotation_MessagesFields,
-    ),
-    "root_span": ubx.FieldSpec(
-        wire_name="root_span",
-        kind="object",
-        fields=_Conversation_RuntimeAnnotations_CesTurnAnnotation_RootSpanFields,
-    ),
-}
-
-_Conversation_RuntimeAnnotations_DialogflowInteractionFields = {
-    "confidence": ubx.FieldSpec(wire_name="confidence"),
-    "dialogflow_intent_id": ubx.FieldSpec(wire_name="dialogflow_intent_id"),
-}
-
-_Conversation_RuntimeAnnotations_FaqAnswerFields = {
-    "answer": ubx.FieldSpec(wire_name="answer"),
-    "confidence_score": ubx.FieldSpec(wire_name="confidence_score"),
-    "metadata": ubx.FieldSpec(wire_name="metadata"),
-    "query_record": ubx.FieldSpec(wire_name="query_record"),
-    "question": ubx.FieldSpec(wire_name="question"),
-    "source": ubx.FieldSpec(wire_name="source"),
-}
-
-_Conversation_RuntimeAnnotations_SmartComposeSuggestionFields = {
-    "confidence_score": ubx.FieldSpec(wire_name="confidence_score"),
-    "metadata": ubx.FieldSpec(wire_name="metadata"),
-    "query_record": ubx.FieldSpec(wire_name="query_record"),
-    "suggestion": ubx.FieldSpec(wire_name="suggestion"),
-}
-
-_Conversation_RuntimeAnnotations_SmartReplyFields = {
-    "confidence_score": ubx.FieldSpec(wire_name="confidence_score"),
-    "metadata": ubx.FieldSpec(wire_name="metadata"),
-    "query_record": ubx.FieldSpec(wire_name="query_record"),
-    "reply": ubx.FieldSpec(wire_name="reply"),
-}
-
-_Conversation_RuntimeAnnotations_UserInputFields = {
-    "generator_name": ubx.FieldSpec(wire_name="generator_name"),
-    "query": ubx.FieldSpec(wire_name="query"),
-    "query_source": ubx.FieldSpec(wire_name="query_source"),
-}
-
-_Conversation_RuntimeAnnotationsFields = {
-    "annotation_id": ubx.FieldSpec(wire_name="annotation_id"),
-    "answer_feedback": ubx.FieldSpec(
-        wire_name="answer_feedback",
-        kind="object",
-        fields=_Conversation_RuntimeAnnotations_AnswerFeedbackFields,
-    ),
-    "article_suggestion": ubx.FieldSpec(
-        wire_name="article_suggestion",
-        kind="object",
-        fields=_Conversation_RuntimeAnnotations_ArticleSuggestionFields,
-    ),
-    "ces_end_session_annotation": ubx.FieldSpec(
-        wire_name="ces_end_session_annotation",
-        kind="object",
-        fields=_Conversation_RuntimeAnnotations_CesEndSessionAnnotationFields,
-    ),
-    "ces_turn_annotation": ubx.FieldSpec(
-        wire_name="ces_turn_annotation",
-        kind="object",
-        fields=_Conversation_RuntimeAnnotations_CesTurnAnnotationFields,
-    ),
-    "conversation_summarization_suggestion": ubx.FieldSpec(
-        wire_name="conversation_summarization_suggestion",
-        kind="object",
-        fields=_Conversation_LatestSummaryFields,
-    ),
-    "create_time": ubx.FieldSpec(wire_name="create_time"),
-    "dialogflow_interaction": ubx.FieldSpec(
-        wire_name="dialogflow_interaction",
-        kind="object",
-        fields=_Conversation_RuntimeAnnotations_DialogflowInteractionFields,
-    ),
-    "end_boundary": ubx.FieldSpec(
-        wire_name="end_boundary",
-        kind="object",
-        fields=_Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Annotations_AnnotationEndBoundaryFields,
-    ),
-    "faq_answer": ubx.FieldSpec(
-        wire_name="faq_answer",
-        kind="object",
-        fields=_Conversation_RuntimeAnnotations_FaqAnswerFields,
-    ),
-    "smart_compose_suggestion": ubx.FieldSpec(
-        wire_name="smart_compose_suggestion",
-        kind="object",
-        fields=_Conversation_RuntimeAnnotations_SmartComposeSuggestionFields,
-    ),
-    "smart_reply": ubx.FieldSpec(
-        wire_name="smart_reply",
-        kind="object",
-        fields=_Conversation_RuntimeAnnotations_SmartReplyFields,
-    ),
-    "start_boundary": ubx.FieldSpec(
-        wire_name="start_boundary",
-        kind="object",
-        fields=_Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Annotations_AnnotationEndBoundaryFields,
-    ),
-    "user_input": ubx.FieldSpec(
-        wire_name="user_input",
-        kind="object",
-        fields=_Conversation_RuntimeAnnotations_UserInputFields,
-    ),
-}
-
 _Conversation_Transcript_TranscriptSegments_DialogflowSegmentMetadataFields = {
     "smart_reply_allowlist_covered": ubx.FieldSpec(wire_name="smart_reply_allowlist_covered"),
 }
@@ -1487,14 +1249,8 @@ class ConversationConfig:
     call_metadata: Any = None
     # Info for correlating across conversations.
     correlation_info: Any = None
-    # Output only. The time at which the conversation was created.
-    create_time: Any = None
     # The conversation source, which is a combination of transcript and audio.
     data_source: Any = None
-    # Output only. All the matched Dialogflow intents in the call. The key corresponds to a Dialogflow intent, format: projects/{project}/agent/{agent}/intents/{intent}
-    dialogflow_intents: Any = None
-    # Output only. The duration of the conversation.
-    duration: Any = None
     # The time at which this conversation should expire. After this time, the conversation data and any associated analyses will be deleted.
     expire_time: Any = None
     # A map for the user to specify any custom fields. A maximum of 100 labels per conversation is allowed, with a maximum of 256 characters per entry.
@@ -1515,18 +1271,12 @@ class ConversationConfig:
     obfuscated_user_id: Any = None
     # Conversation metadata related to quality management.
     quality_metadata: Any = None
-    # Output only. The annotations that were generated during the customer and agent interaction.
-    runtime_annotations: Any = None
     # The time at which the conversation started.
     start_time: Any = None
     # A message representing the transcript of a conversation.
     transcript: Any = None
     # Input only. The TTL for this resource. If specified, then this TTL will be used to calculate the expire time.
     ttl: Any = None
-    # Output only. The number of turns in the conversation.
-    turn_count: Any = None
-    # Output only. The most recent time at which the conversation was updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class ConversationAttrs:
@@ -1591,18 +1341,11 @@ Conversation = ubx.ResourceBinding(
             kind="object",
             fields=_Conversation_CorrelationInfoFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "data_source": ubx.FieldSpec(
             wire_name="data_source",
             kind="object",
             fields=_Conversation_DataSourceFields,
         ),
-        "dialogflow_intents": ubx.FieldSpec(
-            wire_name="dialogflow_intents",
-            kind="map",
-            fields=_Conversation_DialogflowIntentsFields,
-        ),
-        "duration": ubx.FieldSpec(wire_name="duration"),
         "expire_time": ubx.FieldSpec(wire_name="expire_time"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "language_code": ubx.FieldSpec(wire_name="language_code"),
@@ -1625,11 +1368,6 @@ Conversation = ubx.ResourceBinding(
             kind="object",
             fields=_Conversation_QualityMetadataFields,
         ),
-        "runtime_annotations": ubx.FieldSpec(
-            wire_name="runtime_annotations",
-            kind="list",
-            fields=_Conversation_RuntimeAnnotationsFields,
-        ),
         "start_time": ubx.FieldSpec(wire_name="start_time"),
         "transcript": ubx.FieldSpec(
             wire_name="transcript",
@@ -1637,7 +1375,5 @@ Conversation = ubx.ResourceBinding(
             fields=_Conversation_TranscriptFields,
         ),
         "ttl": ubx.FieldSpec(wire_name="ttl"),
-        "turn_count": ubx.FieldSpec(wire_name="turn_count"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

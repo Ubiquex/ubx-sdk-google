@@ -34,14 +34,10 @@ const Policy_SettingFields: FieldMap = {
 export interface PolicyConfig {
   /** Immutable. Customer that the Policy belongs to. The value is in the format 'customers/{customerId}'. The `customerId` must begin with "C" To find your customer ID in Admin Console see https://support.google.com/a/answer/10070793. */
   customer?: string | Computed<string>;
-  /** Output only. Identifier. The [resource name](https://cloud.google.com/apis/design/resource_names) of the Policy. Format: policies/{policy}. */
-  name?: string | Computed<string>;
   /** PolicyQuery */
   policyQuery?: Policy_PolicyQuery | Computed<Policy_PolicyQuery>;
   /** Setting */
   setting?: Policy_Setting | Computed<Policy_Setting>;
-  /** Output only. The type of the policy. */
-  type?: string | Computed<string>;
 }
 
 export interface PolicyAttrs {
@@ -61,7 +57,6 @@ export const Policy: ResourceBinding<PolicyConfig, PolicyAttrs> = {
   wireType: "google_cloudidentity_policy",
   fields: {
     customer: "customer",
-    name: "name",
     policyQuery: {
       wireName: "policy_query",
       kind: "object",
@@ -72,6 +67,5 @@ export const Policy: ResourceBinding<PolicyConfig, PolicyAttrs> = {
       kind: "object",
       fields: Policy_SettingFields,
     },
-    type: "type",
   },
 };

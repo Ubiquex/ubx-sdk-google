@@ -19,18 +19,12 @@ const Command_CommandResultFields: FieldMap = {
 export interface CommandConfig {
   /** Result of the execution of a command. */
   commandResult?: Command_CommandResult | Computed<Command_CommandResult>;
-  /** Output only. State of the remote command. */
-  commandState?: string | Computed<string>;
   /** Required. Type of the remote command. The only supported command_type is "clearBrowsingData". */
   commandType?: string | Computed<string>;
-  /** Output only. Timestamp of the issurance of the remote command. */
-  issueTime?: string | Computed<string>;
   /** Identifier. Format: customers/{customer_id}/profiles/{profile_permanent_id}/commands/{command_id} */
   name?: string | Computed<string>;
   /** Required. Payload of the remote command. The payload for "clearBrowsingData" command supports: - fields "clearCache" and "clearCookies" - values of boolean type. */
   payload?: Record<string, unknown> | Computed<Record<string, unknown>>;
-  /** Output only. Valid duration of the remote command. */
-  validDuration?: string | Computed<string>;
 }
 
 export interface CommandAttrs {
@@ -58,11 +52,8 @@ export const Command: ResourceBinding<CommandConfig, CommandAttrs> = {
       kind: "object",
       fields: Command_CommandResultFields,
     },
-    commandState: "command_state",
     commandType: "command_type",
-    issueTime: "issue_time",
     name: "name",
     payload: "payload",
-    validDuration: "valid_duration",
   },
 };

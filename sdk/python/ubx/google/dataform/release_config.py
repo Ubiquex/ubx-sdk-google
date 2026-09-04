@@ -105,22 +105,6 @@ _ReleaseConfig_CodeCompilationConfigFields = {
     "vars": ubx.FieldSpec(wire_name="vars"),
 }
 
-_ReleaseConfig_RecentScheduledReleaseRecords_ErrorStatusFields = {
-    "code": ubx.FieldSpec(wire_name="code"),
-    "details": ubx.FieldSpec(wire_name="details"),
-    "message": ubx.FieldSpec(wire_name="message"),
-}
-
-_ReleaseConfig_RecentScheduledReleaseRecordsFields = {
-    "compilation_result": ubx.FieldSpec(wire_name="compilation_result"),
-    "error_status": ubx.FieldSpec(
-        wire_name="error_status",
-        kind="object",
-        fields=_ReleaseConfig_RecentScheduledReleaseRecords_ErrorStatusFields,
-    ),
-    "release_time": ubx.FieldSpec(wire_name="release_time"),
-}
-
 @dataclasses.dataclass
 class ReleaseConfigConfig:
     # Configures various aspects of Dataform code compilation.
@@ -131,12 +115,8 @@ class ReleaseConfigConfig:
     disabled: Any = None
     # Required. Git commit/tag/branch name at which the repository should be compiled. Must exist in the remote repository. Examples: - a commit SHA: `12ade345` - a tag: `tag1` - a branch name: `branch1`
     git_commitish: Any = None
-    # Output only. All the metadata information that is used internally to serve the resource. For example: timestamps, flags, status fields, etc. The format of this field is a JSON string.
-    internal_metadata: Any = None
     # Identifier. The release config's name.
     name: Any = None
-    # Output only. Records of the 10 most recent scheduled release attempts, ordered in descending order of `release_time`. Updated whenever automatic creation of a compilation result is triggered by cron_schedule.
-    recent_scheduled_release_records: Any = None
     # Optional. The name of the currently released compilation result for this release config. This value is updated when a compilation result is automatically created from this release config (using cron_schedule), or when this resource is updated by API call (perhaps to roll back to an earlier release). The compilation result must have been created using this release config. Must be in the format `projects/*/locations/*/repositories/*/compilationResults/*`.
     release_compilation_result: Any = None
     # Optional. Specifies the time zone to be used when interpreting cron_schedule. Must be a time zone name from the [time zone database](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). If left unspecified, the default is `UTC`.
@@ -174,13 +154,7 @@ ReleaseConfig = ubx.ResourceBinding(
         "cron_schedule": ubx.FieldSpec(wire_name="cron_schedule"),
         "disabled": ubx.FieldSpec(wire_name="disabled"),
         "git_commitish": ubx.FieldSpec(wire_name="git_commitish"),
-        "internal_metadata": ubx.FieldSpec(wire_name="internal_metadata"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "recent_scheduled_release_records": ubx.FieldSpec(
-            wire_name="recent_scheduled_release_records",
-            kind="list",
-            fields=_ReleaseConfig_RecentScheduledReleaseRecordsFields,
-        ),
         "release_compilation_result": ubx.FieldSpec(wire_name="release_compilation_result"),
         "time_zone": ubx.FieldSpec(wire_name="time_zone"),
     },

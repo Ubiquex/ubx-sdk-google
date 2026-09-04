@@ -63,8 +63,6 @@ _Instance_WorkforceIdentityFederationConfigFields = {
 
 @dataclasses.dataclass
 class InstanceConfig:
-    # Output only. Create timestamp.
-    create_time: Any = None
     # HostConfig has different instance endpoints.
     host_config: Any = None
     # Optional. Immutable. Customer-managed encryption key name, in the format projects/*/locations/*/keyRings/*/cryptoKeys/*.
@@ -75,16 +73,6 @@ class InstanceConfig:
     name: Any = None
     # PrivateConfig includes settings for private instance.
     private_config: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzi: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzs: Any = None
-    # Output only. Current state of the instance.
-    state: Any = None
-    # Output only. An optional field providing information about the current instance state.
-    state_note: Any = None
-    # Output only. Update timestamp.
-    update_time: Any = None
     # WorkforceIdentityFederationConfig allows this instance to support users from external identity providers.
     workforce_identity_federation_config: Any = None
 
@@ -118,7 +106,6 @@ class InstanceAttrs:
 Instance = ubx.ResourceBinding(
     wire_type="google_securesourcemanager_instance",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "host_config": ubx.FieldSpec(
             wire_name="host_config",
             kind="object",
@@ -132,11 +119,6 @@ Instance = ubx.ResourceBinding(
             kind="object",
             fields=_Instance_PrivateConfigFields,
         ),
-        "satisfies_pzi": ubx.FieldSpec(wire_name="satisfies_pzi"),
-        "satisfies_pzs": ubx.FieldSpec(wire_name="satisfies_pzs"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "state_note": ubx.FieldSpec(wire_name="state_note"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
         "workforce_identity_federation_config": ubx.FieldSpec(
             wire_name="workforce_identity_federation_config",
             kind="object",

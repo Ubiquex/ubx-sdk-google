@@ -715,22 +715,14 @@ class ConnectionConfig:
     billing_config: Any = None
     # Optional. Configuration for configuring the connection with an external system.
     config_variables: Any = None
-    # Output only. Connection revision. This field is only updated when the connection is created or updated by User.
-    connection_revision: Any = None
     # Required. Connector version on which the connection is created. The format is: projects/*/locations/*/providers/*/connectors/*/versions/* Only global location is supported for ConnectorVersion resource.
     connector_version: Any = None
     # This configuration provides infra configs like rate limit threshold which need to be configurable for every connector version
     connector_version_infra_config: Any = None
-    # Output only. Flag to mark the version indicating the launch stage.
-    connector_version_launch_stage: Any = None
-    # Output only. Created time.
-    create_time: Any = None
     # Optional. Description of the resource.
     description: Any = None
     # Optional. Configuration of the Connector's destination. Only accepted for Connectors that accepts user defined destination(s).
     destination_configs: Any = None
-    # Output only. GCR location where the envoy image is stored. formatted like: gcr.io/{bucketName}/{imageName}
-    envoy_image_location: Any = None
     # AuthConfig defines details of a authentication type.
     eua_oauth_auth_config: Any = None
     # Eventing Configuration of a connection next: 21
@@ -741,40 +733,24 @@ class ConnectionConfig:
     eventing_runtime_data: Any = None
     # Optional. Fallback on admin credentials for the connection. If this both auth_override_enabled and fallback_on_admin_credentials are set to true, the connection will use the admin credentials if the dynamic auth header is not present during auth override.
     fallback_on_admin_credentials: Any = None
-    # Output only. The name of the Hostname of the Service Directory service with TLS.
-    host: Any = None
-    # Output only. GCR location where the runtime image is stored. formatted like: gcr.io/{bucketName}/{imageName}
-    image_location: Any = None
-    # Output only. Is trusted tester program enabled for the project.
-    is_trusted_tester: Any = None
     # Optional. Resource labels to represent user-provided metadata. Refer to cloud documentation on labels for more details. https://cloud.google.com/compute/docs/labeling-resources
     labels: Any = None
     # Determines whether or no a connection is locked. If locked, a reason must be specified.
     lock_config: Any = None
     # Log configuration for the connection.
     log_config: Any = None
-    # Output only. Resource name of the Connection. Format: projects/{project}/locations/{location}/connections/{connection}
-    name: Any = None
     # Node configuration for the connection.
     node_config: Any = None
     # Optional. Service account needed for runtime plane to access Google Cloud resources.
     service_account: Any = None
-    # Output only. The name of the Service Directory service name. Used for Private Harpoon to resolve the ILB address. e.g. "projects/cloud-connectors-e2e-testing/locations/us-central1/namespaces/istio-system/services/istio-ingressgateway-connectors"
-    service_directory: Any = None
     # SSL Configuration of a connection
     ssl_config: Any = None
     # ConnectionStatus indicates the state of the connection.
     status: Any = None
-    # Output only. This subscription type enum states the subscription type of the project.
-    subscription_type: Any = None
     # Optional. Suspended indicates if a user has suspended a connection or not.
     suspended: Any = None
-    # Output only. The name of the Service Directory service with TLS.
-    tls_service_directory: Any = None
     # Optional. Traffic shaping configuration for the connection.
     traffic_shaping_configs: Any = None
-    # Output only. Updated time.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class ConnectionAttrs:
@@ -876,22 +852,18 @@ Connection = ubx.ResourceBinding(
             kind="list",
             fields=_Connection_AuthConfig_AdditionalVariablesFields,
         ),
-        "connection_revision": ubx.FieldSpec(wire_name="connection_revision"),
         "connector_version": ubx.FieldSpec(wire_name="connector_version"),
         "connector_version_infra_config": ubx.FieldSpec(
             wire_name="connector_version_infra_config",
             kind="object",
             fields=_Connection_ConnectorVersionInfraConfigFields,
         ),
-        "connector_version_launch_stage": ubx.FieldSpec(wire_name="connector_version_launch_stage"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "destination_configs": ubx.FieldSpec(
             wire_name="destination_configs",
             kind="list",
             fields=_Connection_DestinationConfigsFields,
         ),
-        "envoy_image_location": ubx.FieldSpec(wire_name="envoy_image_location"),
         "eua_oauth_auth_config": ubx.FieldSpec(
             wire_name="eua_oauth_auth_config",
             kind="object",
@@ -909,9 +881,6 @@ Connection = ubx.ResourceBinding(
             fields=_Connection_EventingRuntimeDataFields,
         ),
         "fallback_on_admin_credentials": ubx.FieldSpec(wire_name="fallback_on_admin_credentials"),
-        "host": ubx.FieldSpec(wire_name="host"),
-        "image_location": ubx.FieldSpec(wire_name="image_location"),
-        "is_trusted_tester": ubx.FieldSpec(wire_name="is_trusted_tester"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "lock_config": ubx.FieldSpec(
             wire_name="lock_config",
@@ -923,14 +892,12 @@ Connection = ubx.ResourceBinding(
             kind="object",
             fields=_Connection_LogConfigFields,
         ),
-        "name": ubx.FieldSpec(wire_name="name"),
         "node_config": ubx.FieldSpec(
             wire_name="node_config",
             kind="object",
             fields=_Connection_NodeConfigFields,
         ),
         "service_account": ubx.FieldSpec(wire_name="service_account"),
-        "service_directory": ubx.FieldSpec(wire_name="service_directory"),
         "ssl_config": ubx.FieldSpec(
             wire_name="ssl_config",
             kind="object",
@@ -941,14 +908,11 @@ Connection = ubx.ResourceBinding(
             kind="object",
             fields=_Connection_StatusFields,
         ),
-        "subscription_type": ubx.FieldSpec(wire_name="subscription_type"),
         "suspended": ubx.FieldSpec(wire_name="suspended"),
-        "tls_service_directory": ubx.FieldSpec(wire_name="tls_service_directory"),
         "traffic_shaping_configs": ubx.FieldSpec(
             wire_name="traffic_shaping_configs",
             kind="list",
             fields=_Connection_TrafficShapingConfigsFields,
         ),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

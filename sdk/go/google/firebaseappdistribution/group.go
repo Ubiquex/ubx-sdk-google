@@ -6,14 +6,8 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type GroupConfig struct {
 	// Required. The display name of the group.
 	DisplayName any
-	// Output only. The number of invite links for this group.
-	InviteLinkCount any
 	// The name of the group resource. Format: `projects/{project_number}/groups/{group_alias}`
 	Name any
-	// Output only. The number of releases this group is permitted to access.
-	ReleaseCount any
-	// Output only. The number of testers who are members of this group.
-	TesterCount any
 }
 
 type GroupAttrs struct {
@@ -33,9 +27,6 @@ var Group = ubx.ResourceBinding{
 	WireType: "google_firebaseappdistribution_group",
 	Fields: ubx.FieldMap{
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"InviteLinkCount": ubx.FieldSpec{WireName: "invite_link_count"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ReleaseCount": ubx.FieldSpec{WireName: "release_count"},
-		"TesterCount": ubx.FieldSpec{WireName: "tester_count"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 	},
 }

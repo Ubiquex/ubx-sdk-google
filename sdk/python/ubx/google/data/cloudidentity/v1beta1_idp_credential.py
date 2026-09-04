@@ -13,7 +13,7 @@ class V1beta1IdpCredential_DsaKeyInfo:
 
 @dataclasses.dataclass
 class V1beta1IdpCredentialConfig:
-    name: Any = None
+    pass
 
 @dataclasses.dataclass
 class V1beta1IdpCredentialAttrs:
@@ -28,6 +28,5 @@ class V1beta1IdpCredentialAttrs:
 V1beta1IdpCredential = ubx.DataSourceBinding(
     wire_type="google_cloudidentity_v1beta1_idp_credential",
     fields={
-        "name": ubx.FieldSpec(wire_name="name"),
     },
 )

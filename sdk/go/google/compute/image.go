@@ -17,7 +17,6 @@ type Image_Deprecated struct {
 }
 
 type Image_GuestOsFeatures struct {
-	// Specifies the guest OS feature type for the image. Allowed values are: BARE_METAL_LINUX_COMPATIBLE, CCA_CAPABLE, FEATURE_TYPE_UNSPECIFIED, GVNIC, IDPF, MULTI_IP_SUBNET, SECURE_BOOT, SEV_CAPABLE, SEV_LIVE_MIGRATABLE, SEV_LIVE_MIGRATABLE_V2, SEV_SNP_CAPABLE, SNP_SVSM_CAPABLE, TDX_CAPABLE, UEFI_COMPATIBLE, VIRTIO_SCSI_MULTIQUEUE, WINDOWS. (AI-inferred)
 	Type any
 }
 
@@ -49,9 +48,7 @@ type Image_RawDisk struct {
 }
 
 type Image_ShieldedInstanceInitialState_Dbs struct {
-	// The base64-encoded content of the database file (e.g., a UEFI secure boot database) to be stored in the shielded instance initial state. (AI-inferred)
-	Content any
-	// The file type of the database entry. Must be one of BIN, UNDEFINED, or X509. (AI-inferred)
+	Content  any
 	FileType any
 }
 
@@ -62,93 +59,83 @@ type Image_ShieldedInstanceInitialState struct {
 	Dbxs any
 	// The Key Exchange Key (KEK).
 	Keks any
-	// The Platform Key (PK) for the shielded instance's secure boot, represented as an object containing the base64-encoded key content and its file type. (AI-inferred)
-	Pk any
+	Pk   any
 }
 
 var Image_DeprecatedFields = ubx.FieldMap{
-		"Deleted": ubx.FieldSpec{WireName: "deleted"},
-		"Deprecated": ubx.FieldSpec{WireName: "deprecated"},
-		"Obsolete": ubx.FieldSpec{WireName: "obsolete"},
-		"Replacement": ubx.FieldSpec{WireName: "replacement"},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"Deleted":     ubx.FieldSpec{WireName: "deleted"},
+	"Deprecated":  ubx.FieldSpec{WireName: "deprecated"},
+	"Obsolete":    ubx.FieldSpec{WireName: "obsolete"},
+	"Replacement": ubx.FieldSpec{WireName: "replacement"},
+	"State":       ubx.FieldSpec{WireName: "state"},
+}
 
 var Image_GuestOsFeaturesFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var Image_ImageEncryptionKeyFields = ubx.FieldMap{
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-		"KmsKeyServiceAccount": ubx.FieldSpec{WireName: "kms_key_service_account"},
-		"RawKey": ubx.FieldSpec{WireName: "raw_key"},
-		"RsaEncryptedKey": ubx.FieldSpec{WireName: "rsa_encrypted_key"},
-		"Sha256": ubx.FieldSpec{WireName: "sha256"},
-	}
+	"KmsKeyName":           ubx.FieldSpec{WireName: "kms_key_name"},
+	"KmsKeyServiceAccount": ubx.FieldSpec{WireName: "kms_key_service_account"},
+	"RawKey":               ubx.FieldSpec{WireName: "raw_key"},
+	"RsaEncryptedKey":      ubx.FieldSpec{WireName: "rsa_encrypted_key"},
+	"Sha256":               ubx.FieldSpec{WireName: "sha256"},
+}
 
 var Image_ParamsFields = ubx.FieldMap{
-		"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
-	}
+	"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
+}
 
 var Image_RawDiskFields = ubx.FieldMap{
-		"ContainerType": ubx.FieldSpec{WireName: "container_type"},
-		"Sha1Checksum": ubx.FieldSpec{WireName: "sha1_checksum"},
-		"Source": ubx.FieldSpec{WireName: "source"},
-	}
+	"ContainerType": ubx.FieldSpec{WireName: "container_type"},
+	"Sha1Checksum":  ubx.FieldSpec{WireName: "sha1_checksum"},
+	"Source":        ubx.FieldSpec{WireName: "source"},
+}
 
 var Image_ShieldedInstanceInitialState_DbsFields = ubx.FieldMap{
-		"Content": ubx.FieldSpec{WireName: "content"},
-		"FileType": ubx.FieldSpec{WireName: "file_type"},
-	}
+	"Content":  ubx.FieldSpec{WireName: "content"},
+	"FileType": ubx.FieldSpec{WireName: "file_type"},
+}
 
 var Image_ShieldedInstanceInitialStateFields = ubx.FieldMap{
-		"Dbs": ubx.FieldSpec{
-			WireName: "dbs",
-			Kind: "list",
-			Fields: Image_ShieldedInstanceInitialState_DbsFields,
-		},
-		"Dbxs": ubx.FieldSpec{
-			WireName: "dbxs",
-			Kind: "list",
-			Fields: Image_ShieldedInstanceInitialState_DbsFields,
-		},
-		"Keks": ubx.FieldSpec{
-			WireName: "keks",
-			Kind: "list",
-			Fields: Image_ShieldedInstanceInitialState_DbsFields,
-		},
-		"Pk": ubx.FieldSpec{
-			WireName: "pk",
-			Kind: "object",
-			Fields: Image_ShieldedInstanceInitialState_DbsFields,
-		},
-	}
+	"Dbs": ubx.FieldSpec{
+		WireName: "dbs",
+		Kind:     "list",
+		Fields:   Image_ShieldedInstanceInitialState_DbsFields,
+	},
+	"Dbxs": ubx.FieldSpec{
+		WireName: "dbxs",
+		Kind:     "list",
+		Fields:   Image_ShieldedInstanceInitialState_DbsFields,
+	},
+	"Keks": ubx.FieldSpec{
+		WireName: "keks",
+		Kind:     "list",
+		Fields:   Image_ShieldedInstanceInitialState_DbsFields,
+	},
+	"Pk": ubx.FieldSpec{
+		WireName: "pk",
+		Kind:     "object",
+		Fields:   Image_ShieldedInstanceInitialState_DbsFields,
+	},
+}
 
 type ImageConfig struct {
 	// The architecture of the image. Valid values are ARM64 or X86_64.
 	Architecture any
 	// Size of the image tar.gz archive stored in Google Cloud Storage (in bytes).
 	ArchiveSizeBytes any
-	// Output only. [Output Only] Creation timestamp inRFC3339 text format.
-	CreationTimestamp any
 	// Deprecation status for a public resource.
 	Deprecated any
 	// An optional description of this resource. Provide this property when you create the resource.
 	Description any
 	// Size of the image when restored onto a persistent disk (in GB).
 	DiskSizeGb any
-	// Output only. Whether this image is created from a confidential compute mode disk. [Output Only]: This field is not set by user, but from source disk.
-	EnableConfidentialCompute any
 	// The name of the image family to which this image belongs. The image family name can be from a publicly managed image family provided by Compute Engine, or from a custom image family you create. For example,centos-stream-9 is a publicly available image family. For more information, see Image family best practices. When creating disks, you can specify an image family instead of a specific image name. The image family always returns its latest image that is not deprecated. The name of the image family must comply with RFC1035.
 	Family any
 	// A list of features to enable on the guest operating system. Applicable only for bootable images. To see a list of available options, see theguestOSfeatures[].type parameter.
-	GuestOsFeatures any
-	// Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-	Id any
-	// The customer-supplied encryption key that protects the image. This is optional when creating an image and becomes computed (populated by the provider) when the image is sourced from an encrypted disk or image. (AI-inferred)
+	GuestOsFeatures    any
 	ImageEncryptionKey any
-	// Output only. [Output Only] Type of the resource. Always compute#image for images.
-	Kind any
 	// A fingerprint for the labels being applied to this image, which is essentially a hash of the labels used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an image.
 	LabelFingerprint any
 	// Labels to apply to this image. These can be later modified by the setLabels method.
@@ -163,36 +150,19 @@ type ImageConfig struct {
 	Params any
 	// The parameters of the raw disk image.
 	RawDisk any
-	// Output only. Reserved for future use.
-	SatisfiesPzi any
-	// Output only. [Output Only] Reserved for future use.
-	SatisfiesPzs any
-	// Output only. [Output Only] Server-defined URL for the resource.
-	SelfLink any
 	// Initial State for shielded instance, these are public keys which are safe to store in public
 	ShieldedInstanceInitialState any
 	// URL of the source disk used to create this image. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone/disks/disk - projects/project/zones/zone/disks/disk - zones/zone/disks/disk In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
-	SourceDisk any
-	// The customer-supplied encryption key used to encrypt the source disk when the image was created. This field is computed and output-only, providing the key's metadata after the image is created. (AI-inferred)
+	SourceDisk              any
 	SourceDiskEncryptionKey any
-	// Output only. [Output Only] The ID value of the disk used to create this image. This value may be used to determine whether the image was taken from the current or a previous instance of a given disk name.
-	SourceDiskId any
 	// URL of the source image used to create this image. The following are valid formats for the URL: - https://www.googleapis.com/compute/v1/projects/project_id/global/ images/image_name - projects/project_id/global/images/image_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
-	SourceImage any
-	// The customer-supplied encryption key of the source image, used when creating an image from an encrypted source image. This field is output only and is populated when the source image uses a customer-supplied encryption key. (AI-inferred)
+	SourceImage              any
 	SourceImageEncryptionKey any
-	// Output only. [Output Only] The ID value of the image used to create this image. This value may be used to determine whether the image was taken from the current or a previous instance of a given image name.
-	SourceImageId any
 	// URL of the source snapshot used to create this image. The following are valid formats for the URL: - https://www.googleapis.com/compute/v1/projects/project_id/global/ snapshots/snapshot_name - projects/project_id/global/snapshots/snapshot_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
-	SourceSnapshot any
-	// The encryption key used to decrypt the source snapshot when creating the image. This is an output-only field computed by the API. (AI-inferred)
+	SourceSnapshot              any
 	SourceSnapshotEncryptionKey any
-	// Output only. [Output Only] The ID value of the snapshot used to create this image. This value may be used to determine whether the snapshot was taken from the current or a previous instance of a given snapshot name.
-	SourceSnapshotId any
 	// The type of the image used to create this disk. The default and only valid value is RAW.
 	SourceType any
-	// Output only. [Output Only] The status of the image. An image can be used to create other resources, such as instances, only after the image has been successfully created and the status is set to READY. Possible values are FAILED, PENDING, orREADY.
-	Status any
 	// Cloud Storage bucket storage location of the image (regional or multi-regional).
 	StorageLocations any
 }
@@ -217,8 +187,7 @@ type ImageAttrs struct {
 	// A list of features to enable on the guest operating system. Applicable only for bootable images. To see a list of available options, see theguestOSfeatures[].type parameter.
 	GuestOsFeatures any
 	// Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-	Id any
-	// The customer-supplied encryption key that protects the image. This is optional when creating an image and becomes computed (populated by the provider) when the image is sourced from an encrypted disk or image. (AI-inferred)
+	Id                 any
 	ImageEncryptionKey any
 	// Output only. [Output Only] Type of the resource. Always compute#image for images.
 	Kind any
@@ -245,20 +214,17 @@ type ImageAttrs struct {
 	// Initial State for shielded instance, these are public keys which are safe to store in public
 	ShieldedInstanceInitialState any
 	// URL of the source disk used to create this image. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone/disks/disk - projects/project/zones/zone/disks/disk - zones/zone/disks/disk In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
-	SourceDisk any
-	// The customer-supplied encryption key used to encrypt the source disk when the image was created. This field is computed and output-only, providing the key's metadata after the image is created. (AI-inferred)
+	SourceDisk              any
 	SourceDiskEncryptionKey any
 	// Output only. [Output Only] The ID value of the disk used to create this image. This value may be used to determine whether the image was taken from the current or a previous instance of a given disk name.
 	SourceDiskId any
 	// URL of the source image used to create this image. The following are valid formats for the URL: - https://www.googleapis.com/compute/v1/projects/project_id/global/ images/image_name - projects/project_id/global/images/image_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
-	SourceImage any
-	// The customer-supplied encryption key of the source image, used when creating an image from an encrypted source image. This field is output only and is populated when the source image uses a customer-supplied encryption key. (AI-inferred)
+	SourceImage              any
 	SourceImageEncryptionKey any
 	// Output only. [Output Only] The ID value of the image used to create this image. This value may be used to determine whether the image was taken from the current or a previous instance of a given image name.
 	SourceImageId any
 	// URL of the source snapshot used to create this image. The following are valid formats for the URL: - https://www.googleapis.com/compute/v1/projects/project_id/global/ snapshots/snapshot_name - projects/project_id/global/snapshots/snapshot_name In order to create an image, you must provide the full or partial URL of one of the following: - The rawDisk.source URL - The sourceDisk URL - The sourceImage URL - The sourceSnapshot URL
-	SourceSnapshot any
-	// The encryption key used to decrypt the source snapshot when creating the image. This is an output-only field computed by the API. (AI-inferred)
+	SourceSnapshot              any
 	SourceSnapshotEncryptionKey any
 	// Output only. [Output Only] The ID value of the snapshot used to create this image. This value may be used to determine whether the snapshot was taken from the current or a previous instance of a given snapshot name.
 	SourceSnapshotId any
@@ -273,76 +239,65 @@ type ImageAttrs struct {
 var Image = ubx.ResourceBinding{
 	WireType: "google_compute_image",
 	Fields: ubx.FieldMap{
-		"Architecture": ubx.FieldSpec{WireName: "architecture"},
+		"Architecture":     ubx.FieldSpec{WireName: "architecture"},
 		"ArchiveSizeBytes": ubx.FieldSpec{WireName: "archive_size_bytes"},
-		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
 		"Deprecated": ubx.FieldSpec{
 			WireName: "deprecated",
-			Kind: "object",
-			Fields: Image_DeprecatedFields,
+			Kind:     "object",
+			Fields:   Image_DeprecatedFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"DiskSizeGb": ubx.FieldSpec{WireName: "disk_size_gb"},
-		"EnableConfidentialCompute": ubx.FieldSpec{WireName: "enable_confidential_compute"},
-		"Family": ubx.FieldSpec{WireName: "family"},
+		"DiskSizeGb":  ubx.FieldSpec{WireName: "disk_size_gb"},
+		"Family":      ubx.FieldSpec{WireName: "family"},
 		"GuestOsFeatures": ubx.FieldSpec{
 			WireName: "guest_os_features",
-			Kind: "list",
-			Fields: Image_GuestOsFeaturesFields,
+			Kind:     "list",
+			Fields:   Image_GuestOsFeaturesFields,
 		},
-		"Id": ubx.FieldSpec{WireName: "id"},
 		"ImageEncryptionKey": ubx.FieldSpec{
 			WireName: "image_encryption_key",
-			Kind: "object",
-			Fields: Image_ImageEncryptionKeyFields,
+			Kind:     "object",
+			Fields:   Image_ImageEncryptionKeyFields,
 		},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
 		"LabelFingerprint": ubx.FieldSpec{WireName: "label_fingerprint"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"LicenseCodes": ubx.FieldSpec{WireName: "license_codes"},
-		"Licenses": ubx.FieldSpec{WireName: "licenses"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Labels":           ubx.FieldSpec{WireName: "labels"},
+		"LicenseCodes":     ubx.FieldSpec{WireName: "license_codes"},
+		"Licenses":         ubx.FieldSpec{WireName: "licenses"},
+		"Name":             ubx.FieldSpec{WireName: "name"},
 		"Params": ubx.FieldSpec{
 			WireName: "params",
-			Kind: "object",
-			Fields: Image_ParamsFields,
+			Kind:     "object",
+			Fields:   Image_ParamsFields,
 		},
 		"RawDisk": ubx.FieldSpec{
 			WireName: "raw_disk",
-			Kind: "object",
-			Fields: Image_RawDiskFields,
+			Kind:     "object",
+			Fields:   Image_RawDiskFields,
 		},
-		"SatisfiesPzi": ubx.FieldSpec{WireName: "satisfies_pzi"},
-		"SatisfiesPzs": ubx.FieldSpec{WireName: "satisfies_pzs"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
 		"ShieldedInstanceInitialState": ubx.FieldSpec{
 			WireName: "shielded_instance_initial_state",
-			Kind: "object",
-			Fields: Image_ShieldedInstanceInitialStateFields,
+			Kind:     "object",
+			Fields:   Image_ShieldedInstanceInitialStateFields,
 		},
 		"SourceDisk": ubx.FieldSpec{WireName: "source_disk"},
 		"SourceDiskEncryptionKey": ubx.FieldSpec{
 			WireName: "source_disk_encryption_key",
-			Kind: "object",
-			Fields: Image_ImageEncryptionKeyFields,
+			Kind:     "object",
+			Fields:   Image_ImageEncryptionKeyFields,
 		},
-		"SourceDiskId": ubx.FieldSpec{WireName: "source_disk_id"},
 		"SourceImage": ubx.FieldSpec{WireName: "source_image"},
 		"SourceImageEncryptionKey": ubx.FieldSpec{
 			WireName: "source_image_encryption_key",
-			Kind: "object",
-			Fields: Image_ImageEncryptionKeyFields,
+			Kind:     "object",
+			Fields:   Image_ImageEncryptionKeyFields,
 		},
-		"SourceImageId": ubx.FieldSpec{WireName: "source_image_id"},
 		"SourceSnapshot": ubx.FieldSpec{WireName: "source_snapshot"},
 		"SourceSnapshotEncryptionKey": ubx.FieldSpec{
 			WireName: "source_snapshot_encryption_key",
-			Kind: "object",
-			Fields: Image_ImageEncryptionKeyFields,
+			Kind:     "object",
+			Fields:   Image_ImageEncryptionKeyFields,
 		},
-		"SourceSnapshotId": ubx.FieldSpec{WireName: "source_snapshot_id"},
-		"SourceType": ubx.FieldSpec{WireName: "source_type"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"SourceType":       ubx.FieldSpec{WireName: "source_type"},
 		"StorageLocations": ubx.FieldSpec{WireName: "storage_locations"},
 	},
 }

@@ -35,7 +35,7 @@ class V1beta1NasTrialDetail_SearchTrial:
 
 @dataclasses.dataclass
 class V1beta1NasTrialDetailConfig:
-    name: Any = None
+    pass
 
 @dataclasses.dataclass
 class V1beta1NasTrialDetailAttrs:
@@ -50,6 +50,5 @@ class V1beta1NasTrialDetailAttrs:
 V1beta1NasTrialDetail = ubx.DataSourceBinding(
     wire_type="google_aiplatform_v1beta1_nas_trial_detail",
     fields={
-        "name": ubx.FieldSpec(wire_name="name"),
     },
 )

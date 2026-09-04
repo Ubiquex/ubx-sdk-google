@@ -144,8 +144,6 @@ export interface BudgetConfig {
   displayName?: string | Computed<string>;
   /** Optional. Etag to validate that the object is unchanged for a read-modify-write operation. An empty etag causes an update to overwrite other changes. */
   etag?: string | Computed<string>;
-  /** Output only. Resource name of the budget. The resource name implies the scope of a budget. Values are of the form `billingAccounts/{billingAccountId}/budgets/{budgetId}`. */
-  name?: string | Computed<string>;
   /** NotificationsRule defines notifications that are sent based on budget spend and thresholds. */
   notificationsRule?: Budget_NotificationsRule | Computed<Budget_NotificationsRule>;
   ownershipScope?: string | Computed<string>;
@@ -186,7 +184,6 @@ export const Budget: ResourceBinding<BudgetConfig, BudgetAttrs> = {
     },
     displayName: "display_name",
     etag: "etag",
-    name: "name",
     notificationsRule: {
       wireName: "notifications_rule",
       kind: "object",

@@ -4,12 +4,8 @@ package apigee
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DatacollectorConfig struct {
-	// Output only. The time at which the data collector was created in milliseconds since the epoch.
-	CreatedAt any
 	// A description of the data collector.
 	Description any
-	// Output only. The time at which the Data Collector was last updated in milliseconds since the epoch.
-	LastModifiedAt any
 	// ID of the data collector. Must begin with `dc_`.
 	Name any
 	// Immutable. The type of data this data collector will collect.
@@ -32,10 +28,8 @@ type DatacollectorAttrs struct {
 var Datacollector = ubx.ResourceBinding{
 	WireType: "google_apigee_datacollector",
 	Fields: ubx.FieldMap{
-		"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"LastModifiedAt": ubx.FieldSpec{WireName: "last_modified_at"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Type":        ubx.FieldSpec{WireName: "type"},
 	},
 }

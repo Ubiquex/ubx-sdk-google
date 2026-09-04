@@ -10,14 +10,10 @@ import ubx_sdk as ubx
 class AuthorizedViewConfig:
     # A filter to reduce conversation results to a specific subset. The AuthorizedView's assigned permission (read/write) could be applied to the subset of conversations. If conversation_filter is empty, there is no restriction on the conversations that the AuthorizedView can access. Having *authorizedViews.get* access to the AuthorizedView means having the same read/write access to the Conversations (as well as metadata/annotations linked to the conversation) that this AuthorizedView has.
     conversation_filter: Any = None
-    # Output only. The time at which the authorized view was created.
-    create_time: Any = None
     # Display Name. Limit 64 characters.
     display_name: Any = None
     # Identifier. The resource name of the AuthorizedView. Format: projects/{project}/locations/{location}/authorizedViewSets/{authorized_view_set}/authorizedViews/{authorized_view}
     name: Any = None
-    # Output only. The most recent time at which the authorized view was updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class AuthorizedViewAttrs:
@@ -36,9 +32,7 @@ AuthorizedView = ubx.ResourceBinding(
     wire_type="google_contactcenterinsights_authorized_view",
     fields={
         "conversation_filter": ubx.FieldSpec(wire_name="conversation_filter"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

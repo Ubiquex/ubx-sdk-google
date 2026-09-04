@@ -916,10 +916,6 @@ const V1beta1OnlineEvaluator_MetricSourcesFields: FieldMap = {
   metricResourceName: "metric_resource_name",
 };
 
-const V1beta1OnlineEvaluator_StateDetailsFields: FieldMap = {
-  message: "message",
-};
-
 export interface V1beta1OnlineEvaluatorConfig {
   /** Required. Immutable. The name of the agent that the OnlineEvaluator evaluates periodically. This value is used to filter the traces with a matching cloud.resource_id and link the evaluation results with relevant dashboards/UIs. This field is immutable. Once set, it cannot be changed. */
   agentResource?: string | Computed<string>;
@@ -927,20 +923,12 @@ export interface V1beta1OnlineEvaluatorConfig {
   cloudObservability?: V1beta1OnlineEvaluator_CloudObservability | Computed<V1beta1OnlineEvaluator_CloudObservability>;
   /** Configuration for sampling behavior of the OnlineEvaluator. The OnlineEvaluator runs at a fixed interval of 10 minutes. */
   config?: V1beta1OnlineEvaluator_Config | Computed<V1beta1OnlineEvaluator_Config>;
-  /** Output only. Timestamp when the OnlineEvaluator was created. */
-  createTime?: string | Computed<string>;
   /** Optional. Human-readable name for the OnlineEvaluator. The name doesn't have to be unique. The name can consist of any UTF-8 characters. The maximum length is `63` characters. If the display name exceeds max characters, an `INVALID_ARGUMENT` error is returned. */
   displayName?: string | Computed<string>;
   /** Required. A list of metric sources to be used for evaluating samples. At least one MetricSource must be provided. Right now, only predefined metrics and registered metrics are supported. Every registered metric must have `display_name` (or `title`) and `score_range` defined. Otherwise, the evaluations will fail. The maximum number of `metric_sources` is 25. */
   metricSources?: V1beta1OnlineEvaluator_MetricSources[] | Computed<V1beta1OnlineEvaluator_MetricSources[]>;
   /** Identifier. The resource name of the OnlineEvaluator. Format: projects/{project}/locations/{location}/onlineEvaluators/{id}. */
   name?: string | Computed<string>;
-  /** Output only. The state of the OnlineEvaluator. */
-  state?: string | Computed<string>;
-  /** Output only. Contains additional information about the state of the OnlineEvaluator. This is used to provide more details in the event of a failure. */
-  stateDetails?: V1beta1OnlineEvaluator_StateDetails[] | Computed<V1beta1OnlineEvaluator_StateDetails[]>;
-  /** Output only. Timestamp when the OnlineEvaluator was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1beta1OnlineEvaluatorAttrs {
@@ -980,7 +968,6 @@ export const V1beta1OnlineEvaluator: ResourceBinding<V1beta1OnlineEvaluatorConfi
       kind: "object",
       fields: V1beta1OnlineEvaluator_ConfigFields,
     },
-    createTime: "create_time",
     displayName: "display_name",
     metricSources: {
       wireName: "metric_sources",
@@ -988,12 +975,5 @@ export const V1beta1OnlineEvaluator: ResourceBinding<V1beta1OnlineEvaluatorConfi
       fields: V1beta1OnlineEvaluator_MetricSourcesFields,
     },
     name: "name",
-    state: "state",
-    stateDetails: {
-      wireName: "state_details",
-      kind: "list",
-      fields: V1beta1OnlineEvaluator_StateDetailsFields,
-    },
-    updateTime: "update_time",
   },
 };

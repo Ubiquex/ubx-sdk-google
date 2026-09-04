@@ -19,32 +19,26 @@ type MetadataStore_State struct {
 }
 
 var MetadataStore_DataplexConfigFields = ubx.FieldMap{
-		"EnabledPipelinesLineage": ubx.FieldSpec{WireName: "enabled_pipelines_lineage"},
-	}
+	"EnabledPipelinesLineage": ubx.FieldSpec{WireName: "enabled_pipelines_lineage"},
+}
 
 var MetadataStore_EncryptionSpecFields = ubx.FieldMap{
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-	}
+	"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
+}
 
 var MetadataStore_StateFields = ubx.FieldMap{
-		"DiskUtilizationBytes": ubx.FieldSpec{WireName: "disk_utilization_bytes"},
-	}
+	"DiskUtilizationBytes": ubx.FieldSpec{WireName: "disk_utilization_bytes"},
+}
 
 type MetadataStoreConfig struct {
-	// Output only. Timestamp when this MetadataStore was created.
-	CreateTime any
 	// Represents Dataplex integration settings.
 	DataplexConfig any
 	// Description of the MetadataStore.
 	Description any
 	// Represents a customer-managed encryption key specification that can be applied to a Vertex AI resource.
 	EncryptionSpec any
-	// Output only. The resource name of the MetadataStore instance.
-	Name any
 	// Represents state information for a MetadataStore.
 	State any
-	// Output only. Timestamp when this MetadataStore was last updated.
-	UpdateTime any
 }
 
 type MetadataStoreAttrs struct {
@@ -67,24 +61,21 @@ type MetadataStoreAttrs struct {
 var MetadataStore = ubx.ResourceBinding{
 	WireType: "google_aiplatform_metadata_store",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"DataplexConfig": ubx.FieldSpec{
 			WireName: "dataplex_config",
-			Kind: "object",
-			Fields: MetadataStore_DataplexConfigFields,
+			Kind:     "object",
+			Fields:   MetadataStore_DataplexConfigFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"EncryptionSpec": ubx.FieldSpec{
 			WireName: "encryption_spec",
-			Kind: "object",
-			Fields: MetadataStore_EncryptionSpecFields,
+			Kind:     "object",
+			Fields:   MetadataStore_EncryptionSpecFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
 		"State": ubx.FieldSpec{
 			WireName: "state",
-			Kind: "object",
-			Fields: MetadataStore_StateFields,
+			Kind:     "object",
+			Fields:   MetadataStore_StateFields,
 		},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

@@ -40,16 +40,12 @@ class WorkforcePoolConfig:
     disabled: Any = None
     # Optional. A display name for the pool. Cannot exceed 32 characters.
     display_name: Any = None
-    # Output only. Time after which the workforce pool will be permanently purged and cannot be recovered.
-    expire_time: Any = None
     # Identifier. The resource name of the pool. Format: `locations/{location}/workforcePools/{workforce_pool_id}`
     name: Any = None
     # Immutable. The resource name of the parent. Format: `organizations/{org-id}`.
     parent: Any = None
     # Optional. Duration that the Google Cloud access tokens, console sign-in sessions, and `gcloud` sign-in sessions from this pool are valid. Must be greater than 15 minutes (900s) and less than 12 hours (43200s). If `session_duration` is not configured, minted credentials have a default duration of one hour (3600s). For SAML providers, the lifetime of the token is the minimum of the `session_duration` and the `SessionNotOnOrAfter` claim in the SAML assertion.
     session_duration: Any = None
-    # Output only. The state of the pool.
-    state: Any = None
 
 @dataclasses.dataclass
 class WorkforcePoolAttrs:
@@ -83,10 +79,8 @@ WorkforcePool = ubx.ResourceBinding(
         "description": ubx.FieldSpec(wire_name="description"),
         "disabled": ubx.FieldSpec(wire_name="disabled"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
-        "expire_time": ubx.FieldSpec(wire_name="expire_time"),
         "name": ubx.FieldSpec(wire_name="name"),
         "parent": ubx.FieldSpec(wire_name="parent"),
         "session_duration": ubx.FieldSpec(wire_name="session_duration"),
-        "state": ubx.FieldSpec(wire_name="state"),
     },
 )

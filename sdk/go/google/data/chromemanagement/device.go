@@ -4,89 +4,89 @@ package chromemanagement
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Device_AppReport_UsageData struct {
-	AppId any
-	AppInstanceId any
-	AppType any
+	AppId           any
+	AppInstanceId   any
+	AppType         any
 	RunningDuration any
 }
 
 type Device_AppReport struct {
 	ReportTime any
-	UsageData any
+	UsageData  any
 }
 
 type Device_AudioStatusReport struct {
-	InputDevice any
-	InputGain any
-	InputMute any
+	InputDevice  any
+	InputGain    any
+	InputMute    any
 	OutputDevice any
-	OutputMute any
+	OutputMute   any
 	OutputVolume any
-	ReportTime any
+	ReportTime   any
 }
 
 type Device_BatteryInfo_ManufactureDate struct {
-	Day any
+	Day   any
 	Month any
-	Year any
+	Year  any
 }
 
 type Device_BatteryInfo struct {
-	DesignCapacity any
+	DesignCapacity   any
 	DesignMinVoltage any
-	ManufactureDate any
-	Manufacturer any
-	SerialNumber any
-	Technology any
+	ManufactureDate  any
+	Manufacturer     any
+	SerialNumber     any
+	Technology       any
 }
 
 type Device_BatteryStatusReport_Sample struct {
-	ChargeRate any
-	Current any
-	DischargeRate any
+	ChargeRate        any
+	Current           any
+	DischargeRate     any
 	RemainingCapacity any
-	ReportTime any
-	Status any
-	Temperature any
-	Voltage any
+	ReportTime        any
+	Status            any
+	Temperature       any
+	Voltage           any
 }
 
 type Device_BatteryStatusReport struct {
-	BatteryHealth any
-	CycleCount any
+	BatteryHealth      any
+	CycleCount         any
 	FullChargeCapacity any
-	ReportTime any
-	Sample any
-	SerialNumber any
+	ReportTime         any
+	Sample             any
+	SerialNumber       any
 }
 
 type Device_BootPerformanceReport struct {
-	BootUpDuration any
-	BootUpTime any
-	ReportTime any
+	BootUpDuration   any
+	BootUpTime       any
+	ReportTime       any
 	ShutdownDuration any
-	ShutdownReason any
-	ShutdownTime any
+	ShutdownReason   any
+	ShutdownTime     any
 }
 
 type Device_CpuInfo struct {
-	Architecture any
+	Architecture        any
 	KeylockerConfigured any
-	KeylockerSupported any
-	MaxClockSpeed any
-	Model any
+	KeylockerSupported  any
+	MaxClockSpeed       any
+	Model               any
 }
 
 type Device_CpuStatusReport_CpuTemperatureInfo struct {
-	Label any
+	Label              any
 	TemperatureCelsius any
 }
 
 type Device_CpuStatusReport struct {
 	CpuTemperatureInfo any
-	CpuUtilizationPct any
-	ReportTime any
-	SampleFrequency any
+	CpuUtilizationPct  any
+	ReportTime         any
+	SampleFrequency    any
 }
 
 type Device_GraphicsInfo_AdapterInfo struct {
@@ -100,19 +100,19 @@ type Device_GraphicsInfo_AdapterInfo struct {
 
 type Device_GraphicsInfo_DisplayDevices struct {
 	DisplayHeightMm any
-	DisplayName any
-	DisplayWidthMm any
-	EdidVersion any
-	Internal any
+	DisplayName     any
+	DisplayWidthMm  any
+	EdidVersion     any
+	Internal        any
 	ManufactureYear any
-	ManufacturerId any
-	ModelId any
-	SerialNumber any
+	ManufacturerId  any
+	ModelId         any
+	SerialNumber    any
 }
 
 type Device_GraphicsInfo_TouchScreenInfo_Devices struct {
-	DisplayName any
-	StylusCapable any
+	DisplayName     any
+	StylusCapable   any
 	TouchPointCount any
 }
 
@@ -135,28 +135,28 @@ type Device_GraphicsInfo struct {
 }
 
 type Device_GraphicsStatusReport_Displays struct {
-	DeviceId any
-	DisplayName any
-	EdidVersion any
-	IsInternal any
-	RefreshRate any
+	DeviceId         any
+	DisplayName      any
+	EdidVersion      any
+	IsInternal       any
+	RefreshRate      any
 	ResolutionHeight any
-	ResolutionWidth any
-	SerialNumber any
+	ResolutionWidth  any
+	SerialNumber     any
 }
 
 type Device_GraphicsStatusReport struct {
-	Displays any
+	Displays   any
 	ReportTime any
 }
 
 type Device_HeartbeatStatusReport struct {
 	ReportTime any
-	State any
+	State      any
 }
 
 type Device_KioskAppStatusReport struct {
-	AppId any
+	AppId      any
 	AppVersion any
 	ReportTime any
 }
@@ -182,15 +182,15 @@ type Device_MemoryInfo struct {
 }
 
 type Device_MemoryStatusReport struct {
-	PageFaults any
-	ReportTime any
-	SampleFrequency any
+	PageFaults         any
+	ReportTime         any
+	SampleFrequency    any
 	SystemRamFreeBytes any
 }
 
 type Device_NetworkBandwidthReport struct {
 	DownloadSpeedKbps any
-	ReportTime any
+	ReportTime        any
 }
 
 type Device_NetworkDiagnosticsReport_HttpsLatencyData struct {
@@ -200,16 +200,16 @@ type Device_NetworkDiagnosticsReport_HttpsLatencyData struct {
 
 type Device_NetworkDiagnosticsReport struct {
 	HttpsLatencyData any
-	ReportTime any
+	ReportTime       any
 }
 
 type Device_NetworkInfo_NetworkDevices struct {
-	Iccid any
-	Imei any
+	Iccid      any
+	Imei       any
 	MacAddress any
-	Mdn any
-	Meid any
-	Type any
+	Mdn        any
+	Meid       any
+	Type       any
 }
 
 type Device_NetworkInfo struct {
@@ -218,63 +218,63 @@ type Device_NetworkInfo struct {
 }
 
 type Device_NetworkStatusReport struct {
-	ConnectionState any
-	ConnectionType any
-	EncryptionOn any
-	GatewayIpAddress any
-	GatewayIpv6Address any
-	Guid any
-	Ipv6Address any
-	LanIpAddress any
-	LinkDownSpeedKbps any
-	Metered any
-	ReceivingBitRateMbps any
-	ReportTime any
-	SampleFrequency any
-	SignalStrengthDbm any
-	TransmissionBitRateMbps any
-	TransmissionPowerDbm any
-	WifiLinkQuality any
+	ConnectionState            any
+	ConnectionType             any
+	EncryptionOn               any
+	GatewayIpAddress           any
+	GatewayIpv6Address         any
+	Guid                       any
+	Ipv6Address                any
+	LanIpAddress               any
+	LinkDownSpeedKbps          any
+	Metered                    any
+	ReceivingBitRateMbps       any
+	ReportTime                 any
+	SampleFrequency            any
+	SignalStrengthDbm          any
+	TransmissionBitRateMbps    any
+	TransmissionPowerDbm       any
+	WifiLinkQuality            any
 	WifiPowerManagementEnabled any
 }
 
 type Device_OsUpdateStatus struct {
-	LastRebootTime any
-	LastUpdateCheckTime any
-	LastUpdateTime any
-	NewPlatformVersion any
+	LastRebootTime              any
+	LastUpdateCheckTime         any
+	LastUpdateTime              any
+	NewPlatformVersion          any
 	NewRequestedPlatformVersion any
-	UpdateState any
+	UpdateState                 any
 }
 
 type Device_PeripheralsReport_UsbPeripheralReport struct {
-	Categories any
-	ClassId any
+	Categories      any
+	ClassId         any
 	FirmwareVersion any
-	Name any
-	Pid any
-	SubclassId any
-	Vendor any
-	Vid any
+	Name            any
+	Pid             any
+	SubclassId      any
+	Vendor          any
+	Vid             any
 }
 
 type Device_PeripheralsReport struct {
-	ReportTime any
+	ReportTime          any
 	UsbPeripheralReport any
 }
 
 type Device_RuntimeCountersReport struct {
 	EnterHibernationCount any
-	EnterPoweroffCount any
-	EnterSleepCount any
-	ReportTime any
+	EnterPoweroffCount    any
+	EnterSleepCount       any
+	ReportTime            any
 	UptimeRuntimeDuration any
 }
 
 type Device_StorageInfo_Volume struct {
-	StorageFreeBytes any
+	StorageFreeBytes  any
 	StorageTotalBytes any
-	VolumeId any
+	VolumeId          any
 }
 
 type Device_StorageInfo struct {
@@ -287,23 +287,23 @@ type Device_StorageInfo struct {
 }
 
 type Device_StorageStatusReport_Disk struct {
-	BytesReadThisSession any
+	BytesReadThisSession    any
 	BytesWrittenThisSession any
-	DiscardTimeThisSession any
-	Health any
-	IoTimeThisSession any
-	Manufacturer any
-	Model any
-	ReadTimeThisSession any
-	SerialNumber any
-	SizeBytes any
-	Type any
-	VolumeIds any
-	WriteTimeThisSession any
+	DiscardTimeThisSession  any
+	Health                  any
+	IoTimeThisSession       any
+	Manufacturer            any
+	Model                   any
+	ReadTimeThisSession     any
+	SerialNumber            any
+	SizeBytes               any
+	Type                    any
+	VolumeIds               any
+	WriteTimeThisSession    any
 }
 
 type Device_StorageStatusReport struct {
-	Disk any
+	Disk       any
 	ReportTime any
 }
 
@@ -312,7 +312,6 @@ type Device_ThunderboltInfo struct {
 }
 
 type DeviceConfig struct {
-	Name any
 	ReadMask any
 }
 
@@ -347,7 +346,7 @@ type DeviceAttrs struct {
 	MemoryInfo any
 	// Output only. Memory status reports collected periodically sorted decreasing by report_time.
 	MemoryStatusReport any
-	Name any
+	Name               any
 	// Output only. Network bandwidth reports collected periodically sorted in a decreasing order of report_time.
 	NetworkBandwidthReport any
 	// Output only. Network diagnostics collected periodically.
@@ -362,7 +361,7 @@ type DeviceAttrs struct {
 	OsUpdateStatus any
 	// Output only. Peripherals reports collected periodically sorted in a decreasing order of report_time.
 	PeripheralsReport any
-	ReadMask any
+	ReadMask          any
 	// Output only. Runtime counters reports collected device lifetime runtime, as well as the counts of S0->S3, S0->S4, and S0->S5 transitions, meaning entering into sleep, hibernation, and power-off states
 	RuntimeCountersReport any
 	// Output only. Device serial number. This value is the same as the Admin Console's Serial Number in the ChromeOS Devices tab.
@@ -378,7 +377,6 @@ type DeviceAttrs struct {
 var Device = ubx.DataSourceBinding{
 	WireType: "google_chromemanagement_device",
 	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
 		"ReadMask": ubx.FieldSpec{WireName: "read_mask"},
 	},
 }

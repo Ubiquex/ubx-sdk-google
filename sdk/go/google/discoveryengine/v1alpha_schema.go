@@ -5,39 +5,21 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1alphaSchema_FieldConfigs struct {
 	AdvancedSiteSearchDataSources any
-	CompletableOption any
-	DynamicFacetableOption any
-	FieldPath any
-	FieldType any
-	IndexableOption any
-	KeyPropertyType any
-	MetatagName any
-	RecsFilterableOption any
-	RetrievableOption any
-	SchemaOrgPaths any
-	SearchableFieldImportance any
-	SearchableOption any
+	CompletableOption             any
+	DynamicFacetableOption        any
+	FieldPath                     any
+	FieldType                     any
+	IndexableOption               any
+	KeyPropertyType               any
+	MetatagName                   any
+	RecsFilterableOption          any
+	RetrievableOption             any
+	SchemaOrgPaths                any
+	SearchableFieldImportance     any
+	SearchableOption              any
 }
 
-var V1alphaSchema_FieldConfigsFields = ubx.FieldMap{
-		"AdvancedSiteSearchDataSources": ubx.FieldSpec{WireName: "advanced_site_search_data_sources"},
-		"CompletableOption": ubx.FieldSpec{WireName: "completable_option"},
-		"DynamicFacetableOption": ubx.FieldSpec{WireName: "dynamic_facetable_option"},
-		"FieldPath": ubx.FieldSpec{WireName: "field_path"},
-		"FieldType": ubx.FieldSpec{WireName: "field_type"},
-		"IndexableOption": ubx.FieldSpec{WireName: "indexable_option"},
-		"KeyPropertyType": ubx.FieldSpec{WireName: "key_property_type"},
-		"MetatagName": ubx.FieldSpec{WireName: "metatag_name"},
-		"RecsFilterableOption": ubx.FieldSpec{WireName: "recs_filterable_option"},
-		"RetrievableOption": ubx.FieldSpec{WireName: "retrievable_option"},
-		"SchemaOrgPaths": ubx.FieldSpec{WireName: "schema_org_paths"},
-		"SearchableFieldImportance": ubx.FieldSpec{WireName: "searchable_field_importance"},
-		"SearchableOption": ubx.FieldSpec{WireName: "searchable_option"},
-	}
-
 type V1alphaSchemaConfig struct {
-	// Output only. Configurations for fields of the schema.
-	FieldConfigs any
 	// The JSON representation of the schema.
 	JsonSchema any
 	// Immutable. The full resource name of the schema, in the format of `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/schemas/{schema}`. This field must be a UTF-8 encoded string with a length limit of 1024 characters.
@@ -60,13 +42,8 @@ type V1alphaSchemaAttrs struct {
 var V1alphaSchema = ubx.ResourceBinding{
 	WireType: "google_discoveryengine_v1alpha_schema",
 	Fields: ubx.FieldMap{
-		"FieldConfigs": ubx.FieldSpec{
-			WireName: "field_configs",
-			Kind: "list",
-			Fields: V1alphaSchema_FieldConfigsFields,
-		},
-		"JsonSchema": ubx.FieldSpec{WireName: "json_schema"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"JsonSchema":   ubx.FieldSpec{WireName: "json_schema"},
+		"Name":         ubx.FieldSpec{WireName: "name"},
 		"StructSchema": ubx.FieldSpec{WireName: "struct_schema"},
 	},
 }

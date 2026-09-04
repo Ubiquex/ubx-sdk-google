@@ -5,39 +5,28 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Key_ApiProducts struct {
 	Apiproduct any
-	Status any
+	Status     any
 }
 
 type Key_Attributes struct {
-	Name any
+	Name  any
 	Value any
 }
 
-var Key_ApiProductsFields = ubx.FieldMap{
-		"Apiproduct": ubx.FieldSpec{WireName: "apiproduct"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-	}
-
 var Key_AttributesFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type KeyConfig struct {
-	// Output only. List of API products and its status for which the credential can be used. **Note**: Use UpdateAppGroupAppKeyApiProductRequest API to make the association after the consumer key and secret are created.
-	ApiProducts any
 	// List of attributes associated with the credential.
 	Attributes any
 	// Immutable. Consumer key.
 	ConsumerKey any
 	// Secret key.
 	ConsumerSecret any
-	// Output only. Time the AppGroup app expires in milliseconds since epoch.
-	ExpiresAt any
 	// Immutable. Expiration time, in seconds, for the consumer key. If not set or left to the default value of `-1`, the API key never expires. The expiration time can't be updated after it is set.
 	ExpiresInSeconds any
-	// Output only. Time the AppGroup app was created in milliseconds since epoch.
-	IssuedAt any
 	// Scopes to apply to the app. The specified scope names must already be defined for the API product that you associate with the app.
 	Scopes any
 	// Status of the credential. Valid values include `approved` or `revoked`.
@@ -68,22 +57,15 @@ type KeyAttrs struct {
 var Key = ubx.ResourceBinding{
 	WireType: "google_apigee_key",
 	Fields: ubx.FieldMap{
-		"ApiProducts": ubx.FieldSpec{
-			WireName: "api_products",
-			Kind: "list",
-			Fields: Key_ApiProductsFields,
-		},
 		"Attributes": ubx.FieldSpec{
 			WireName: "attributes",
-			Kind: "list",
-			Fields: Key_AttributesFields,
+			Kind:     "list",
+			Fields:   Key_AttributesFields,
 		},
-		"ConsumerKey": ubx.FieldSpec{WireName: "consumer_key"},
-		"ConsumerSecret": ubx.FieldSpec{WireName: "consumer_secret"},
-		"ExpiresAt": ubx.FieldSpec{WireName: "expires_at"},
+		"ConsumerKey":      ubx.FieldSpec{WireName: "consumer_key"},
+		"ConsumerSecret":   ubx.FieldSpec{WireName: "consumer_secret"},
 		"ExpiresInSeconds": ubx.FieldSpec{WireName: "expires_in_seconds"},
-		"IssuedAt": ubx.FieldSpec{WireName: "issued_at"},
-		"Scopes": ubx.FieldSpec{WireName: "scopes"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"Scopes":           ubx.FieldSpec{WireName: "scopes"},
+		"Status":           ubx.FieldSpec{WireName: "status"},
 	},
 }

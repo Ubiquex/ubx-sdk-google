@@ -183,20 +183,6 @@ const Device_ActiveConfigFields: FieldMap = {
   userId: "user_id",
 };
 
-const Device_CurrentChannels_FrequencyRangeFields: FieldMap = {
-  highFrequencyMhz: "high_frequency_mhz",
-  lowFrequencyMhz: "low_frequency_mhz",
-};
-
-const Device_CurrentChannelsFields: FieldMap = {
-  frequencyRange: {
-    wireName: "frequency_range",
-    kind: "object",
-    fields: Device_CurrentChannels_FrequencyRangeFields,
-  },
-  score: "score",
-};
-
 const Device_DeviceMetadata_NrqzValidationFields: FieldMap = {
   caseId: "case_id",
   cpiId: "cpi_id",
@@ -215,6 +201,11 @@ const Device_DeviceMetadataFields: FieldMap = {
     kind: "object",
     fields: Device_DeviceMetadata_NrqzValidationFields,
   },
+};
+
+const Device_CurrentChannels_FrequencyRangeFields: FieldMap = {
+  highFrequencyMhz: "high_frequency_mhz",
+  lowFrequencyMhz: "low_frequency_mhz",
 };
 
 const Device_Grants_MoveListFields: FieldMap = {
@@ -249,8 +240,6 @@ const Device_GrantsFields: FieldMap = {
 export interface DeviceConfig {
   /** Information about the device configuration. */
   activeConfig?: Device_ActiveConfig | Computed<Device_ActiveConfig>;
-  /** Output only. Current channels with scores. */
-  currentChannels?: Device_CurrentChannels[] | Computed<Device_CurrentChannels[]>;
   /** Device data overridable by both SAS Portal and registration requests. */
   deviceMetadata?: Device_DeviceMetadata | Computed<Device_DeviceMetadata>;
   /** Device display name. */
@@ -303,11 +292,6 @@ export const Device: ResourceBinding<DeviceConfig, DeviceAttrs> = {
       wireName: "active_config",
       kind: "object",
       fields: Device_ActiveConfigFields,
-    },
-    currentChannels: {
-      wireName: "current_channels",
-      kind: "list",
-      fields: Device_CurrentChannelsFields,
     },
     deviceMetadata: {
       wireName: "device_metadata",

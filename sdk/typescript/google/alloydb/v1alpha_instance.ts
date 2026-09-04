@@ -245,14 +245,6 @@ const V1alphaInstance_NetworkConfigFields: FieldMap = {
   network: "network",
 };
 
-const V1alphaInstance_NodesFields: FieldMap = {
-  id: "id",
-  ip: "ip",
-  isHotStandby: "is_hot_standby",
-  state: "state",
-  zoneId: "zone_id",
-};
-
 const V1alphaInstance_ObservabilityConfigFields: FieldMap = {
   assistiveExperiencesEnabled: "assistive_experiences_enabled",
   enabled: "enabled",
@@ -362,6 +354,14 @@ const V1alphaInstance_UpdatePolicyFields: FieldMap = {
   mode: "mode",
 };
 
+const V1alphaInstance_NodesFields: FieldMap = {
+  id: "id",
+  ip: "ip",
+  isHotStandby: "is_hot_standby",
+  state: "state",
+  zoneId: "zone_id",
+};
+
 export interface V1alphaInstanceConfig {
   /** Optional. Specifies whether an instance needs to spin up. Once the instance is active, the activation policy can be updated to the `NEVER` to stop the instance. Likewise, the activation policy can be updated to `ALWAYS` to start the instance. There are restrictions around when an instance can/cannot be activated (for example, a read pool instance should be stopped before stopping primary etc.). Please refer to the API documentation for more details. */
   activationPolicy?: string | Computed<string>;
@@ -373,14 +373,10 @@ export interface V1alphaInstanceConfig {
   clientConnectionConfig?: V1alphaInstance_ClientConnectionConfig | Computed<V1alphaInstance_ClientConnectionConfig>;
   /** Configuration for Managed Connection Pool (MCP). */
   connectionPoolConfig?: V1alphaInstance_ConnectionPoolConfig | Computed<V1alphaInstance_ConnectionPoolConfig>;
-  /** Output only. Create time stamp */
-  createTime?: string | Computed<string>;
   /** Optional. Controls whether the Data API is enabled for this instance. When enabled, this allows authorized users to connect to the instance from the public internet using the `executeSql` API, even for private IP instances. If this is not specified, the data API is enabled by default for Google internal services like AlloyDB Studio. Disable it explicitly to disallow Google internal services as well. */
   dataApiAccess?: string | Computed<string>;
   /** Database flags. Set at the instance level. They are copied from the primary instance on secondary instance creation. Flags that have restrictions default to the value at primary instance on read instances during creation. Read instances can set new flags or override existing flags that are relevant for reads, for example, for enabling columnar cache on a read instance. Flags set on read instance might or might not be present on the primary instance. This is a list of "key": "value" pairs. "key": The name of the flag. These flags are passed at instance setup time, so include both server options and system variables for Postgres. Flags are specified with underscores, not hyphens. "value": The value of the flag. Booleans are set to **on** for true and **off** for false. This field must be omitted if the flag doesn't take a value. */
   databaseFlags?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. Delete time stamp */
-  deleteTime?: string | Computed<string>;
   /** User-settable and human-readable display name for the Instance. */
   displayName?: string | Computed<string>;
   /** For Resource freshness validation (https://google.aip.dev/154) */
@@ -393,48 +389,24 @@ export interface V1alphaInstanceConfig {
   geminiConfig?: V1alphaInstance_GeminiConfig | Computed<V1alphaInstance_GeminiConfig>;
   /** Required. The type of the instance. Specified at creation time. */
   instanceType?: string | Computed<string>;
-  /** Output only. The IP address for the Instance. This is the connection endpoint for an end-user application. */
-  ipAddress?: string | Computed<string>;
   /** Labels as key value pairs */
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** MachineConfig describes the configuration of a machine. */
   machineConfig?: V1alphaInstance_MachineConfig | Computed<V1alphaInstance_MachineConfig>;
-  /** Output only. Maintenance version of the instance, for example: POSTGRES_15.2025_07_15.04_00. Output only. Update this field via the parent cluster's maintenance_version field(s). */
-  maintenanceVersionName?: string | Computed<string>;
-  /** Output only. The name of the instance resource with the format: * projects/{project}/locations/{region}/clusters/{cluster_id}/instances/{instance_id} where the cluster and instance ID segments should satisfy the regex expression `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`, e.g. 1-63 characters of lowercase letters, numbers, and dashes, starting with a letter, and ending with a letter or number. For more details see https://google.aip.dev/122. The prefix of the instance resource name is the name of the parent resource: * projects/{project}/locations/{region}/clusters/{cluster_id} */
-  name?: string | Computed<string>;
   /** Metadata related to instance-level network configuration. */
   networkConfig?: V1alphaInstance_NetworkConfig | Computed<V1alphaInstance_NetworkConfig>;
-  /** Output only. List of available read-only VMs in this instance, including the standby for a PRIMARY instance. */
-  nodes?: V1alphaInstance_Nodes[] | Computed<V1alphaInstance_Nodes[]>;
   /** Observability Instance specific configuration. */
   observabilityConfig?: V1alphaInstance_ObservabilityConfig | Computed<V1alphaInstance_ObservabilityConfig>;
-  /** Output only. All outbound public IP addresses configured for the instance. */
-  outboundPublicIpAddresses?: string[] | Computed<string[]>;
   /** PscInstanceConfig contains PSC related configuration at an instance level. */
   pscInstanceConfig?: V1alphaInstance_PscInstanceConfig | Computed<V1alphaInstance_PscInstanceConfig>;
   /** Information about the Private Service Connect (PSC) for the instance. */
   pscInstanceInfo?: V1alphaInstance_PscInstanceInfo | Computed<V1alphaInstance_PscInstanceInfo>;
-  /** Output only. The public IP addresses for the Instance. This is available ONLY when enable_public_ip is set. This is the connection endpoint for an end-user application. */
-  publicIpAddress?: string | Computed<string>;
   /** QueryInsights Instance specific configuration. */
   queryInsightsConfig?: V1alphaInstance_QueryInsightsConfig | Computed<V1alphaInstance_QueryInsightsConfig>;
   /** Configuration for a read pool instance. */
   readPoolConfig?: V1alphaInstance_ReadPoolConfig | Computed<V1alphaInstance_ReadPoolConfig>;
-  /** Output only. Reconciling (https://google.aip.dev/128#reconciliation). Set to true if the current state of Instance does not match the user's intended state, and the service is actively updating the resource to reconcile them. This can happen due to user-triggered updates or system actions like failover or maintenance. */
-  reconciling?: boolean | Computed<boolean>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzi?: boolean | Computed<boolean>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzs?: boolean | Computed<boolean>;
-  /** Output only. The current serving state of the instance. */
-  state?: string | Computed<string>;
-  /** Output only. The system-generated UID of the resource. The UID is assigned when the resource is created, and it is retained until it is deleted. */
-  uid?: string | Computed<string>;
   /** Policy to be used while updating the instance. */
   updatePolicy?: V1alphaInstance_UpdatePolicy | Computed<V1alphaInstance_UpdatePolicy>;
-  /** Output only. Update time stamp */
-  updateTime?: string | Computed<string>;
   /** Details of a single node in the instance. Nodes in an AlloyDB instance are ephemeral, they can change during update, failover, autohealing and resize operations. */
   writableNode?: V1alphaInstance_Nodes | Computed<V1alphaInstance_Nodes>;
 }
@@ -532,10 +504,8 @@ export const V1alphaInstance: ResourceBinding<V1alphaInstanceConfig, V1alphaInst
       kind: "object",
       fields: V1alphaInstance_ConnectionPoolConfigFields,
     },
-    createTime: "create_time",
     dataApiAccess: "data_api_access",
     databaseFlags: "database_flags",
-    deleteTime: "delete_time",
     displayName: "display_name",
     etag: "etag",
     gcaConfig: {
@@ -550,31 +520,22 @@ export const V1alphaInstance: ResourceBinding<V1alphaInstanceConfig, V1alphaInst
       fields: V1alphaInstance_GeminiConfigFields,
     },
     instanceType: "instance_type",
-    ipAddress: "ip_address",
     labels: "labels",
     machineConfig: {
       wireName: "machine_config",
       kind: "object",
       fields: V1alphaInstance_MachineConfigFields,
     },
-    maintenanceVersionName: "maintenance_version_name",
-    name: "name",
     networkConfig: {
       wireName: "network_config",
       kind: "object",
       fields: V1alphaInstance_NetworkConfigFields,
-    },
-    nodes: {
-      wireName: "nodes",
-      kind: "list",
-      fields: V1alphaInstance_NodesFields,
     },
     observabilityConfig: {
       wireName: "observability_config",
       kind: "object",
       fields: V1alphaInstance_ObservabilityConfigFields,
     },
-    outboundPublicIpAddresses: "outbound_public_ip_addresses",
     pscInstanceConfig: {
       wireName: "psc_instance_config",
       kind: "object",
@@ -585,7 +546,6 @@ export const V1alphaInstance: ResourceBinding<V1alphaInstanceConfig, V1alphaInst
       kind: "object",
       fields: V1alphaInstance_PscInstanceInfoFields,
     },
-    publicIpAddress: "public_ip_address",
     queryInsightsConfig: {
       wireName: "query_insights_config",
       kind: "object",
@@ -596,17 +556,11 @@ export const V1alphaInstance: ResourceBinding<V1alphaInstanceConfig, V1alphaInst
       kind: "object",
       fields: V1alphaInstance_ReadPoolConfigFields,
     },
-    reconciling: "reconciling",
-    satisfiesPzi: "satisfies_pzi",
-    satisfiesPzs: "satisfies_pzs",
-    state: "state",
-    uid: "uid",
     updatePolicy: {
       wireName: "update_policy",
       kind: "object",
       fields: V1alphaInstance_UpdatePolicyFields,
     },
-    updateTime: "update_time",
     writableNode: {
       wireName: "writable_node",
       kind: "object",

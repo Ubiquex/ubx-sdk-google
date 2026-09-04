@@ -148,16 +148,10 @@ _PreferenceSet_VirtualMachinePreferencesFields = {
 
 @dataclasses.dataclass
 class PreferenceSetConfig:
-    # Output only. The timestamp when the preference set was created.
-    create_time: Any = None
     # A description of the preference set.
     description: Any = None
     # User-friendly display name. Maximum length is 63 characters.
     display_name: Any = None
-    # Output only. Name of the preference set.
-    name: Any = None
-    # Output only. The timestamp when the preference set was last updated.
-    update_time: Any = None
     # VirtualMachinePreferences enables you to create sets of assumptions, for example, a geographical location and pricing track, for your migrated virtual machines. The set of preferences influence recommendations for migrating virtual machine assets.
     virtual_machine_preferences: Any = None
 
@@ -179,11 +173,8 @@ class PreferenceSetAttrs:
 PreferenceSet = ubx.ResourceBinding(
     wire_type="google_migrationcenter_preference_set",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
         "virtual_machine_preferences": ubx.FieldSpec(
             wire_name="virtual_machine_preferences",
             kind="object",

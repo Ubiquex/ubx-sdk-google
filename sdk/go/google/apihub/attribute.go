@@ -6,40 +6,32 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type Attribute_AllowedValues struct {
 	Description any
 	DisplayName any
-	Id any
-	Immutable any
+	Id          any
+	Immutable   any
 }
 
 var Attribute_AllowedValuesFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Immutable": ubx.FieldSpec{WireName: "immutable"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"Id":          ubx.FieldSpec{WireName: "id"},
+	"Immutable":   ubx.FieldSpec{WireName: "immutable"},
+}
 
 type AttributeConfig struct {
 	// Optional. The list of allowed values when the attribute value is of type enum. This is required when the data_type of the attribute is ENUM. The maximum number of allowed values of an attribute will be 1000.
 	AllowedValues any
 	// Optional. The maximum number of values that the attribute can have when associated with an API Hub resource. Cardinality 1 would represent a single-valued attribute. It must not be less than 1 or greater than 20. If not specified, the cardinality would be set to 1 by default and represent a single-valued attribute.
 	Cardinality any
-	// Output only. The time at which the attribute was created.
-	CreateTime any
 	// Required. The type of the data of the attribute.
 	DataType any
-	// Output only. The definition type of the attribute.
-	DefinitionType any
 	// Optional. The description of the attribute.
 	Description any
 	// Required. The display name of the attribute.
 	DisplayName any
-	// Output only. When mandatory is true, the attribute is mandatory for the resource specified in the scope. Only System defined attributes can be mandatory.
-	Mandatory any
 	// Identifier. The name of the attribute in the API Hub. Format: `projects/{project}/locations/{location}/attributes/{attribute}`
 	Name any
 	// Required. The scope of the attribute. It represents the resource in the API Hub to which the attribute can be linked.
 	Scope any
-	// Output only. The time at which the attribute was last updated.
-	UpdateTime any
 }
 
 type AttributeAttrs struct {
@@ -72,18 +64,14 @@ var Attribute = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AllowedValues": ubx.FieldSpec{
 			WireName: "allowed_values",
-			Kind: "list",
-			Fields: Attribute_AllowedValuesFields,
+			Kind:     "list",
+			Fields:   Attribute_AllowedValuesFields,
 		},
 		"Cardinality": ubx.FieldSpec{WireName: "cardinality"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DataType": ubx.FieldSpec{WireName: "data_type"},
-		"DefinitionType": ubx.FieldSpec{WireName: "definition_type"},
+		"DataType":    ubx.FieldSpec{WireName: "data_type"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Mandatory": ubx.FieldSpec{WireName: "mandatory"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Scope": ubx.FieldSpec{WireName: "scope"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Scope":       ubx.FieldSpec{WireName: "scope"},
 	},
 }

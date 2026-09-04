@@ -175,8 +175,6 @@ _Control_SynonymsActionFields = {
 
 @dataclasses.dataclass
 class ControlConfig:
-    # Output only. List of all ServingConfig IDs this control is attached to. May take up to 10 minutes to update after changes.
-    associated_serving_config_ids: Any = None
     # Adjusts order of products in returned list.
     boost_action: Any = None
     # Determines when the associated action will trigger. Omit to always apply the action. Currently only a single condition may be specified. Otherwise an INVALID ARGUMENT error is thrown.
@@ -226,7 +224,6 @@ class ControlAttrs:
 Control = ubx.ResourceBinding(
     wire_type="google_discoveryengine_control",
     fields={
-        "associated_serving_config_ids": ubx.FieldSpec(wire_name="associated_serving_config_ids"),
         "boost_action": ubx.FieldSpec(
             wire_name="boost_action",
             kind="object",

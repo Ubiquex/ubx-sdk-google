@@ -642,8 +642,6 @@ const BareMetalCluster_ValidationCheckFields: FieldMap = {
 export interface BareMetalClusterConfig {
   /** Required. The admin cluster this bare metal user cluster belongs to. This is the full resource name of the admin cluster's fleet membership. */
   adminClusterMembership?: string | Computed<string>;
-  /** Output only. The resource name of the bare metal admin cluster managing this user cluster. */
-  adminClusterName?: string | Computed<string>;
   /** Annotations on the bare metal user cluster. This field has the same restrictions as Kubernetes annotations. The total size of all keys and values combined is limited to 256k. Key can have 2 segments: prefix (optional) and name (required), separated by a slash (/). Prefix must be a DNS subdomain. Name must be 63 characters or less, begin and end with alphanumerics, with dashes (-), underscores (_), dots (.), and alphanumerics between. */
   annotations?: Record<string, string> | Computed<Record<string, string>>;
   /** Required. The Anthos clusters on bare metal version for your user cluster. */
@@ -654,24 +652,12 @@ export interface BareMetalClusterConfig {
   clusterOperations?: BareMetalCluster_ClusterOperations | Computed<BareMetalCluster_ClusterOperations>;
   /** Specifies the control plane configuration. */
   controlPlane?: BareMetalCluster_ControlPlane | Computed<BareMetalCluster_ControlPlane>;
-  /** Output only. The time when the bare metal user cluster was created. */
-  createTime?: string | Computed<string>;
-  /** Output only. The time when the bare metal user cluster was deleted. If the resource is not deleted, this must be empty */
-  deleteTime?: string | Computed<string>;
   /** A human readable description of this bare metal user cluster. */
   description?: string | Computed<string>;
-  /** Output only. The IP address of the bare metal user cluster's API server. */
-  endpoint?: string | Computed<string>;
-  /** Output only. This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding. Allows clients to perform consistent read-modify-writes through optimistic concurrency control. */
-  etag?: string | Computed<string>;
   /** Fleet related configuration. Fleets are a Google Cloud concept for logically organizing clusters, letting you use and manage multi-cluster capabilities and apply consistent policies across your systems. See [Anthos Fleets](`https://cloud.google.com/anthos/multicluster-management/fleets`) for more details on Anthos multi-cluster capabilities using Fleets. ## */
   fleet?: BareMetalCluster_Fleet | Computed<BareMetalCluster_Fleet>;
   /** Specifies the load balancer configuration. */
   loadBalancer?: BareMetalCluster_LoadBalancer | Computed<BareMetalCluster_LoadBalancer>;
-  /** Output only. The object name of the bare metal user cluster custom resource on the associated admin cluster. This field is used to support conflicting names when enrolling existing clusters to the API. When used as a part of cluster enrollment, this field will differ from the name in the resource name. For new clusters, this field will match the user provided cluster name and be visible in the last component of the resource name. It is not modifiable. When the local name and cluster name differ, the local name is used in the admin cluster controller logs. You use the cluster name when accessing the cluster using bmctl and kubectl. */
-  localName?: string | Computed<string>;
-  /** Output only. The namespace of the cluster. */
-  localNamespace?: string | Computed<string>;
   /** Specifies configurations to put bare metal nodes in and out of maintenance. */
   maintenanceConfig?: BareMetalCluster_MaintenanceConfig | Computed<BareMetalCluster_MaintenanceConfig>;
   /** Represents the maintenance status of the bare metal user cluster. */
@@ -688,20 +674,12 @@ export interface BareMetalClusterConfig {
   osEnvironmentConfig?: BareMetalCluster_OsEnvironmentConfig | Computed<BareMetalCluster_OsEnvironmentConfig>;
   /** Specifies the cluster proxy configuration. */
   proxy?: BareMetalCluster_Proxy | Computed<BareMetalCluster_Proxy>;
-  /** Output only. If set, there are currently changes in flight to the bare metal user cluster. */
-  reconciling?: boolean | Computed<boolean>;
   /** Specifies the security related settings for the bare metal user cluster. */
   securityConfig?: BareMetalCluster_SecurityConfig | Computed<BareMetalCluster_SecurityConfig>;
-  /** Output only. The current state of the bare metal user cluster. */
-  state?: string | Computed<string>;
   /** ResourceStatus describes why a cluster or node pool has a certain status. (e.g., ERROR or DEGRADED). */
   status?: BareMetalCluster_Status | Computed<BareMetalCluster_Status>;
   /** BareMetalStorageConfig specifies the cluster storage configuration. */
   storage?: BareMetalCluster_Storage | Computed<BareMetalCluster_Storage>;
-  /** Output only. The unique identifier of the bare metal user cluster. */
-  uid?: string | Computed<string>;
-  /** Output only. The time when the bare metal user cluster was last updated. */
-  updateTime?: string | Computed<string>;
   /** BareMetalClusterUpgradePolicy defines the cluster upgrade policy. */
   upgradePolicy?: BareMetalCluster_UpgradePolicy | Computed<BareMetalCluster_UpgradePolicy>;
   /** ValidationCheck represents the result of preflight check. */
@@ -781,7 +759,6 @@ export const BareMetalCluster: ResourceBinding<BareMetalClusterConfig, BareMetal
   wireType: "google_gkeonprem_bare_metal_cluster",
   fields: {
     adminClusterMembership: "admin_cluster_membership",
-    adminClusterName: "admin_cluster_name",
     annotations: "annotations",
     bareMetalVersion: "bare_metal_version",
     binaryAuthorization: {
@@ -799,11 +776,7 @@ export const BareMetalCluster: ResourceBinding<BareMetalClusterConfig, BareMetal
       kind: "object",
       fields: BareMetalCluster_ControlPlaneFields,
     },
-    createTime: "create_time",
-    deleteTime: "delete_time",
     description: "description",
-    endpoint: "endpoint",
-    etag: "etag",
     fleet: {
       wireName: "fleet",
       kind: "object",
@@ -814,8 +787,6 @@ export const BareMetalCluster: ResourceBinding<BareMetalClusterConfig, BareMetal
       kind: "object",
       fields: BareMetalCluster_LoadBalancerFields,
     },
-    localName: "local_name",
-    localNamespace: "local_namespace",
     maintenanceConfig: {
       wireName: "maintenance_config",
       kind: "object",
@@ -852,13 +823,11 @@ export const BareMetalCluster: ResourceBinding<BareMetalClusterConfig, BareMetal
       kind: "object",
       fields: BareMetalCluster_ProxyFields,
     },
-    reconciling: "reconciling",
     securityConfig: {
       wireName: "security_config",
       kind: "object",
       fields: BareMetalCluster_SecurityConfigFields,
     },
-    state: "state",
     status: {
       wireName: "status",
       kind: "object",
@@ -869,8 +838,6 @@ export const BareMetalCluster: ResourceBinding<BareMetalClusterConfig, BareMetal
       kind: "object",
       fields: BareMetalCluster_StorageFields,
     },
-    uid: "uid",
-    updateTime: "update_time",
     upgradePolicy: {
       wireName: "upgrade_policy",
       kind: "object",

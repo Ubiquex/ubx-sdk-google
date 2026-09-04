@@ -7,14 +7,11 @@ export interface Reservation_AdvancedDeploymentControl {
 }
 
 export interface Reservation_AggregateReservation_InUseResources_Accelerator {
-  /** The number of accelerators of the specified type that are currently in use by the reservation. (AI-inferred) */
   acceleratorCount?: number | Computed<number>;
-  /** The type of accelerator (GPU) used by this in-use resource within the aggregate reservation, such as 'nvidia-tesla-t4' or 'nvidia-tesla-a100'. (AI-inferred) */
   acceleratorType?: string | Computed<string>;
 }
 
 export interface Reservation_AggregateReservation_InUseResources {
-  /** Configuration for the accelerator attached to this in-use resource, specifying the accelerator type and the number of accelerators. (AI-inferred) */
   accelerator?: Reservation_AggregateReservation_InUseResources_Accelerator | Computed<Reservation_AggregateReservation_InUseResources_Accelerator>;
 }
 
@@ -71,7 +68,6 @@ export interface Reservation_ResourceStatus_ReservationMaintenance_UpcomingGroup
   maintenanceOnShutdown?: boolean | Computed<boolean>;
   /** The reasons for the maintenance. Only valid for vms. */
   maintenanceReasons?: string[] | Computed<string[]>;
-  /** The current maintenance status for the upcoming group maintenance, with possible values ONGOING, PENDING, or UNKNOWN. (AI-inferred) */
   maintenanceStatus?: string | Computed<string>;
   /** Defines the type of maintenance. */
   type?: string | Computed<string>;
@@ -119,7 +115,6 @@ export interface Reservation_ResourceStatus {
 }
 
 export interface Reservation_ShareSettings_ProjectMap {
-  /** The ID of the project with which the reservation is shared, used in the project_map for specific project sharing. (AI-inferred) */
   projectId?: string | Computed<string>;
 }
 
@@ -131,9 +126,7 @@ export interface Reservation_ShareSettings {
 }
 
 export interface Reservation_SpecificReservation_InstanceProperties_LocalSsds {
-  /** The size of the local SSD in GB. Valid values are multiples of 375, from 375 to 3000 inclusive. Defaults to 375. (AI-inferred) */
   diskSizeGb?: string | Computed<string>;
-  /** The interface type for the local SSD, either `NVME` or `SCSI`. This determines the storage protocol used for the local SSD devices. (AI-inferred) */
   interface?: string | Computed<string>;
 }
 
@@ -320,12 +313,7 @@ export interface ReservationConfig {
   advancedDeploymentControl?: Reservation_AdvancedDeploymentControl | Computed<Reservation_AdvancedDeploymentControl>;
   /** This reservation type is specified by total resource amounts (e.g. total count of CPUs) and can account for multiple instance SKUs. In other words, one can create instances of varying shapes against this reservation. */
   aggregateReservation?: Reservation_AggregateReservation | Computed<Reservation_AggregateReservation>;
-  /** Output only. [Output Only] Full or partial URL to a parent commitment. This field displays for reservations that are tied to a commitment. */
-  commitment?: string | Computed<string>;
-  /** The type of confidential compute technology used for the reservation. Possible values are CONFIDENTIAL_COMPUTE_TYPE_TDX (Intel TDX) and CONFIDENTIAL_COMPUTE_TYPE_UNSPECIFIED. (AI-inferred) */
   confidentialComputeType?: string | Computed<string>;
-  /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
-  creationTimestamp?: string | Computed<string>;
   /** A Duration represents a fixed-length span of time represented as a count of seconds and fractions of seconds at nanosecond resolution. It is independent of any calendar and concepts like "day" or "month". Range is approximately 10,000 years. */
   deleteAfterDuration?: Reservation_DeleteAfterDuration | Computed<Reservation_DeleteAfterDuration>;
   /** Absolute time in future when the reservation will be auto-deleted by Compute Engine. Timestamp is represented inRFC3339 text format. */
@@ -338,19 +326,12 @@ export interface ReservationConfig {
   earlyAccessMaintenance?: string | Computed<string>;
   /** Indicates whether Compute Engine allows unplanned maintenance for your VMs; for example, to fix hardware errors. */
   enableEmergentMaintenance?: boolean | Computed<boolean>;
-  /** Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server. */
-  id?: string | Computed<string>;
-  /** Output only. [Output Only] Type of the resource. Alwayscompute#reservations for reservations. */
-  kind?: string | Computed<string>;
-  /** Output only. [Output Only] Full or partial URL to parent commitments. This field displays for reservations that are tied to multiple commitments. */
-  linkedCommitments?: string[] | Computed<string[]>;
   /** The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
   name?: string | Computed<string>;
   /** Additional reservation params. */
   params?: Reservation_Params | Computed<Reservation_Params>;
   /** Protection tier for the workload which specifies the workload expectations in the event of infrastructure failures at data center (e.g. power and/or cooling failures). */
   protectionTier?: string | Computed<string>;
-  /** An output-only object that describes the sharing policy of the Compute Engine reservation, including whether it is shared with specific projects or the entire organization, and which projects can use the reserved capacity. (AI-inferred) */
   reservationSharingPolicy?: Reservation_ReservationSharingPolicy | Computed<Reservation_ReservationSharingPolicy>;
   /** Standardized resource metadata common to all compute resources. */
   resourceMetadata?: Reservation_ResourceMetadata | Computed<Reservation_ResourceMetadata>;
@@ -358,20 +339,14 @@ export interface ReservationConfig {
   resourcePolicies?: Record<string, string> | Computed<Record<string, string>>;
   /** [Output Only] Contains output only fields. */
   resourceStatus?: Reservation_ResourceStatus | Computed<Reservation_ResourceStatus>;
-  /** Output only. [Output Only] Reserved for future use. */
-  satisfiesPzs?: boolean | Computed<boolean>;
   /** The type of maintenance for the reservation. */
   schedulingType?: string | Computed<string>;
-  /** Output only. [Output Only] Server-defined fully-qualified URL for this resource. */
-  selfLink?: string | Computed<string>;
   /** The share setting for reservations and sole tenancy node groups. */
   shareSettings?: Reservation_ShareSettings | Computed<Reservation_ShareSettings>;
   /** This reservation type allows to pre allocate specific instance configuration. */
   specificReservation?: Reservation_SpecificReservation | Computed<Reservation_SpecificReservation>;
   /** Indicates whether the reservation can be consumed by VMs with affinity for "any" reservation. If the field is set, then only VMs that target the reservation by name can consume from this reservation. */
   specificReservationRequired?: boolean | Computed<boolean>;
-  /** Output only. [Output Only] The status of the reservation. - CREATING: Reservation resources are being allocated. - READY: Reservation resources have been allocated, and the reservation is ready for use. - DELETING: Reservation deletion is in progress. - UPDATING: Reservation update is in progress. */
-  status?: string | Computed<string>;
   /** Zone in which the reservation resides. A zone must be provided if the reservation is created within a commitment. */
   zone?: string | Computed<string>;
 }
@@ -383,7 +358,6 @@ export interface ReservationAttrs {
   aggregateReservation: Reservation_AggregateReservation;
   /** Output only. [Output Only] Full or partial URL to a parent commitment. This field displays for reservations that are tied to a commitment. */
   commitment: string;
-  /** The type of confidential compute technology used for the reservation. Possible values are CONFIDENTIAL_COMPUTE_TYPE_TDX (Intel TDX) and CONFIDENTIAL_COMPUTE_TYPE_UNSPECIFIED. (AI-inferred) */
   confidentialComputeType: string;
   /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
   creationTimestamp: string;
@@ -411,7 +385,6 @@ export interface ReservationAttrs {
   params: Reservation_Params;
   /** Protection tier for the workload which specifies the workload expectations in the event of infrastructure failures at data center (e.g. power and/or cooling failures). */
   protectionTier: string;
-  /** An output-only object that describes the sharing policy of the Compute Engine reservation, including whether it is shared with specific projects or the entire organization, and which projects can use the reserved capacity. (AI-inferred) */
   reservationSharingPolicy: Reservation_ReservationSharingPolicy;
   /** Standardized resource metadata common to all compute resources. */
   resourceMetadata: Reservation_ResourceMetadata;
@@ -450,9 +423,7 @@ export const Reservation: ResourceBinding<ReservationConfig, ReservationAttrs> =
       kind: "object",
       fields: Reservation_AggregateReservationFields,
     },
-    commitment: "commitment",
     confidentialComputeType: "confidential_compute_type",
-    creationTimestamp: "creation_timestamp",
     deleteAfterDuration: {
       wireName: "delete_after_duration",
       kind: "object",
@@ -463,9 +434,6 @@ export const Reservation: ResourceBinding<ReservationConfig, ReservationAttrs> =
     description: "description",
     earlyAccessMaintenance: "early_access_maintenance",
     enableEmergentMaintenance: "enable_emergent_maintenance",
-    id: "id",
-    kind: "kind",
-    linkedCommitments: "linked_commitments",
     name: "name",
     params: {
       wireName: "params",
@@ -489,9 +457,7 @@ export const Reservation: ResourceBinding<ReservationConfig, ReservationAttrs> =
       kind: "object",
       fields: Reservation_ResourceStatusFields,
     },
-    satisfiesPzs: "satisfies_pzs",
     schedulingType: "scheduling_type",
-    selfLink: "self_link",
     shareSettings: {
       wireName: "share_settings",
       kind: "object",
@@ -503,7 +469,6 @@ export const Reservation: ResourceBinding<ReservationConfig, ReservationAttrs> =
       fields: Reservation_SpecificReservationFields,
     },
     specificReservationRequired: "specific_reservation_required",
-    status: "status",
     zone: "zone",
   },
 };

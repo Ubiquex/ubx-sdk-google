@@ -21,8 +21,6 @@ const EntryType_RequiredAspectsFields: FieldMap = {
 export interface EntryTypeConfig {
   /** Authorization for an Entry Type. */
   authorization?: EntryType_Authorization | Computed<EntryType_Authorization>;
-  /** Output only. The time when the EntryType was created. */
-  createTime?: string | Computed<string>;
   /** Optional. Description of the EntryType. */
   description?: string | Computed<string>;
   /** Optional. User friendly display name. */
@@ -31,8 +29,6 @@ export interface EntryTypeConfig {
   etag?: string | Computed<string>;
   /** Optional. User-defined labels for the EntryType. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. The relative resource name of the EntryType, of the form: projects/{project_number}/locations/{location_id}/entryTypes/{entry_type_id}. */
-  name?: string | Computed<string>;
   /** Optional. The platform that Entries of this type belongs to. */
   platform?: string | Computed<string>;
   /** AspectInfo for the entry type. */
@@ -41,10 +37,6 @@ export interface EntryTypeConfig {
   system?: string | Computed<string>;
   /** Optional. Indicates the classes this Entry Type belongs to, for example, TABLE, DATABASE, MODEL. */
   typeAliases?: string[] | Computed<string[]>;
-  /** Output only. System generated globally unique ID for the EntryType. This ID will be different if the EntryType is deleted and re-created with the same name. */
-  uid?: string | Computed<string>;
-  /** Output only. The time when the EntryType was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface EntryTypeAttrs {
@@ -84,12 +76,10 @@ export const EntryType: ResourceBinding<EntryTypeConfig, EntryTypeAttrs> = {
       kind: "object",
       fields: EntryType_AuthorizationFields,
     },
-    createTime: "create_time",
     description: "description",
     displayName: "display_name",
     etag: "etag",
     labels: "labels",
-    name: "name",
     platform: "platform",
     requiredAspects: {
       wireName: "required_aspects",
@@ -98,7 +88,5 @@ export const EntryType: ResourceBinding<EntryTypeConfig, EntryTypeAttrs> = {
     },
     system: "system",
     typeAliases: "type_aliases",
-    uid: "uid",
-    updateTime: "update_time",
   },
 };

@@ -20,15 +20,15 @@ type V1beta1InboundOidcSsoProfile_RpConfig struct {
 }
 
 var V1beta1InboundOidcSsoProfile_IdpConfigFields = ubx.FieldMap{
-		"ChangePasswordUri": ubx.FieldSpec{WireName: "change_password_uri"},
-		"IssuerUri": ubx.FieldSpec{WireName: "issuer_uri"},
-	}
+	"ChangePasswordUri": ubx.FieldSpec{WireName: "change_password_uri"},
+	"IssuerUri":         ubx.FieldSpec{WireName: "issuer_uri"},
+}
 
 var V1beta1InboundOidcSsoProfile_RpConfigFields = ubx.FieldMap{
-		"ClientId": ubx.FieldSpec{WireName: "client_id"},
-		"ClientSecret": ubx.FieldSpec{WireName: "client_secret"},
-		"RedirectUris": ubx.FieldSpec{WireName: "redirect_uris"},
-	}
+	"ClientId":     ubx.FieldSpec{WireName: "client_id"},
+	"ClientSecret": ubx.FieldSpec{WireName: "client_secret"},
+	"RedirectUris": ubx.FieldSpec{WireName: "redirect_uris"},
+}
 
 type V1beta1InboundOidcSsoProfileConfig struct {
 	// Immutable. The customer. For example: `customers/C0123abc`.
@@ -37,8 +37,6 @@ type V1beta1InboundOidcSsoProfileConfig struct {
 	DisplayName any
 	// OIDC IDP (identity provider) configuration.
 	IdpConfig any
-	// Output only. [Resource name](https://cloud.google.com/apis/design/resource_names) of the OIDC SSO profile.
-	Name any
 	// OIDC RP (relying party) configuration.
 	RpConfig any
 }
@@ -59,18 +57,17 @@ type V1beta1InboundOidcSsoProfileAttrs struct {
 var V1beta1InboundOidcSsoProfile = ubx.ResourceBinding{
 	WireType: "google_cloudidentity_v1beta1_inbound_oidc_sso_profile",
 	Fields: ubx.FieldMap{
-		"Customer": ubx.FieldSpec{WireName: "customer"},
+		"Customer":    ubx.FieldSpec{WireName: "customer"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"IdpConfig": ubx.FieldSpec{
 			WireName: "idp_config",
-			Kind: "object",
-			Fields: V1beta1InboundOidcSsoProfile_IdpConfigFields,
+			Kind:     "object",
+			Fields:   V1beta1InboundOidcSsoProfile_IdpConfigFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
 		"RpConfig": ubx.FieldSpec{
 			WireName: "rp_config",
-			Kind: "object",
-			Fields: V1beta1InboundOidcSsoProfile_RpConfigFields,
+			Kind:     "object",
+			Fields:   V1beta1InboundOidcSsoProfile_RpConfigFields,
 		},
 	},
 }

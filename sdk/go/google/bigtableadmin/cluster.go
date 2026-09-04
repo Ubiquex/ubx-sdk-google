@@ -35,39 +35,39 @@ type Cluster_EncryptionConfig struct {
 }
 
 var Cluster_ClusterConfig_ClusterAutoscalingConfig_AutoscalingLimitsFields = ubx.FieldMap{
-		"MaxServeNodes": ubx.FieldSpec{WireName: "max_serve_nodes"},
-		"MinServeNodes": ubx.FieldSpec{WireName: "min_serve_nodes"},
-	}
+	"MaxServeNodes": ubx.FieldSpec{WireName: "max_serve_nodes"},
+	"MinServeNodes": ubx.FieldSpec{WireName: "min_serve_nodes"},
+}
 
 var Cluster_ClusterConfig_ClusterAutoscalingConfig_AutoscalingTargetsFields = ubx.FieldMap{
-		"CpuUtilizationPercent": ubx.FieldSpec{WireName: "cpu_utilization_percent"},
-		"StorageUtilizationGibPerNode": ubx.FieldSpec{WireName: "storage_utilization_gib_per_node"},
-	}
+	"CpuUtilizationPercent":        ubx.FieldSpec{WireName: "cpu_utilization_percent"},
+	"StorageUtilizationGibPerNode": ubx.FieldSpec{WireName: "storage_utilization_gib_per_node"},
+}
 
 var Cluster_ClusterConfig_ClusterAutoscalingConfigFields = ubx.FieldMap{
-		"AutoscalingLimits": ubx.FieldSpec{
-			WireName: "autoscaling_limits",
-			Kind: "object",
-			Fields: Cluster_ClusterConfig_ClusterAutoscalingConfig_AutoscalingLimitsFields,
-		},
-		"AutoscalingTargets": ubx.FieldSpec{
-			WireName: "autoscaling_targets",
-			Kind: "object",
-			Fields: Cluster_ClusterConfig_ClusterAutoscalingConfig_AutoscalingTargetsFields,
-		},
-	}
+	"AutoscalingLimits": ubx.FieldSpec{
+		WireName: "autoscaling_limits",
+		Kind:     "object",
+		Fields:   Cluster_ClusterConfig_ClusterAutoscalingConfig_AutoscalingLimitsFields,
+	},
+	"AutoscalingTargets": ubx.FieldSpec{
+		WireName: "autoscaling_targets",
+		Kind:     "object",
+		Fields:   Cluster_ClusterConfig_ClusterAutoscalingConfig_AutoscalingTargetsFields,
+	},
+}
 
 var Cluster_ClusterConfigFields = ubx.FieldMap{
-		"ClusterAutoscalingConfig": ubx.FieldSpec{
-			WireName: "cluster_autoscaling_config",
-			Kind: "object",
-			Fields: Cluster_ClusterConfig_ClusterAutoscalingConfigFields,
-		},
-	}
+	"ClusterAutoscalingConfig": ubx.FieldSpec{
+		WireName: "cluster_autoscaling_config",
+		Kind:     "object",
+		Fields:   Cluster_ClusterConfig_ClusterAutoscalingConfigFields,
+	},
+}
 
 var Cluster_EncryptionConfigFields = ubx.FieldMap{
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-	}
+	"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
+}
 
 type ClusterConfig struct {
 	// Configuration for a cluster.
@@ -84,8 +84,6 @@ type ClusterConfig struct {
 	NodeScalingFactor any
 	// The number of nodes in the cluster. If no value is set, Cloud Bigtable automatically allocates nodes based on your data footprint and optimized for 50% storage utilization.
 	ServeNodes any
-	// Output only. The current state of the cluster.
-	State any
 }
 
 type ClusterAttrs struct {
@@ -112,19 +110,18 @@ var Cluster = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ClusterConfig": ubx.FieldSpec{
 			WireName: "cluster_config",
-			Kind: "object",
-			Fields: Cluster_ClusterConfigFields,
+			Kind:     "object",
+			Fields:   Cluster_ClusterConfigFields,
 		},
 		"DefaultStorageType": ubx.FieldSpec{WireName: "default_storage_type"},
 		"EncryptionConfig": ubx.FieldSpec{
 			WireName: "encryption_config",
-			Kind: "object",
-			Fields: Cluster_EncryptionConfigFields,
+			Kind:     "object",
+			Fields:   Cluster_EncryptionConfigFields,
 		},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Location":          ubx.FieldSpec{WireName: "location"},
+		"Name":              ubx.FieldSpec{WireName: "name"},
 		"NodeScalingFactor": ubx.FieldSpec{WireName: "node_scaling_factor"},
-		"ServeNodes": ubx.FieldSpec{WireName: "serve_nodes"},
-		"State": ubx.FieldSpec{WireName: "state"},
+		"ServeNodes":        ubx.FieldSpec{WireName: "serve_nodes"},
 	},
 }

@@ -64,8 +64,6 @@ const V1betaConfig_OpenapiDocumentsFields: FieldMap = {
 };
 
 export interface V1betaConfigConfig {
-  /** Output only. Created time. */
-  createTime?: string | Computed<string>;
   /** Optional. Display name. */
   displayName?: string | Computed<string>;
   /** Configuration settings for Gateways. */
@@ -78,16 +76,8 @@ export interface V1betaConfigConfig {
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Optional. Service Configuration files. At least one must be included when using gRPC service definitions. See https://cloud.google.com/endpoints/docs/grpc/grpc-service-config#service_configuration_overview for the expected file contents. If multiple files are specified, the files are merged with the following rules: * All singular scalar fields are merged using "last one wins" semantics in the order of the files uploaded. * Repeated fields are concatenated. * Singular embedded messages are merged using these rules for nested fields. */
   managedServiceConfigs?: V1betaConfig_GrpcServices_FileDescriptorSet[] | Computed<V1betaConfig_GrpcServices_FileDescriptorSet[]>;
-  /** Output only. Resource name of the API Config. Format: projects/{project}/locations/global/apis/{api}/configs/{api_config} */
-  name?: string | Computed<string>;
   /** Optional. OpenAPI specification documents. If specified, grpc_services and managed_service_configs must not be included. */
   openapiDocuments?: V1betaConfig_OpenapiDocuments[] | Computed<V1betaConfig_OpenapiDocuments[]>;
-  /** Output only. The ID of the associated Service Config ( https://cloud.google.com/service-infrastructure/docs/glossary#config). */
-  serviceConfigId?: string | Computed<string>;
-  /** Output only. State of the API Config. */
-  state?: string | Computed<string>;
-  /** Output only. Updated time. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1betaConfigAttrs {
@@ -120,7 +110,6 @@ export interface V1betaConfigAttrs {
 export const V1betaConfig: ResourceBinding<V1betaConfigConfig, V1betaConfigAttrs> = {
   wireType: "google_apigateway_v1beta_config",
   fields: {
-    createTime: "create_time",
     displayName: "display_name",
     gatewayConfig: {
       wireName: "gateway_config",
@@ -139,14 +128,10 @@ export const V1betaConfig: ResourceBinding<V1betaConfigConfig, V1betaConfigAttrs
       kind: "list",
       fields: V1betaConfig_GrpcServices_FileDescriptorSetFields,
     },
-    name: "name",
     openapiDocuments: {
       wireName: "openapi_documents",
       kind: "list",
       fields: V1betaConfig_OpenapiDocumentsFields,
     },
-    serviceConfigId: "service_config_id",
-    state: "state",
-    updateTime: "update_time",
   },
 };

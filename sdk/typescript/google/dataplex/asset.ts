@@ -158,8 +158,6 @@ const Asset_SecurityStatusFields: FieldMap = {
 };
 
 export interface AssetConfig {
-  /** Output only. The time when the asset was created. */
-  createTime?: string | Computed<string>;
   /** Optional. Description of the asset. */
   description?: string | Computed<string>;
   /** Settings to manage the metadata discovery and publishing for an asset. */
@@ -170,20 +168,12 @@ export interface AssetConfig {
   displayName?: string | Computed<string>;
   /** Optional. User defined labels for the asset. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. The relative resource name of the asset, of the form: projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}/assets/{asset_id}. */
-  name?: string | Computed<string>;
   /** Identifies the cloud resource that is referenced by this asset. */
   resourceSpec?: Asset_ResourceSpec | Computed<Asset_ResourceSpec>;
   /** Status of the resource referenced by an asset. */
   resourceStatus?: Asset_ResourceStatus | Computed<Asset_ResourceStatus>;
   /** Security policy status of the asset. Data security policy, i.e., readers, writers & owners, should be specified in the lake/zone/asset IAM policy. */
   securityStatus?: Asset_SecurityStatus | Computed<Asset_SecurityStatus>;
-  /** Output only. Current state of the asset. */
-  state?: string | Computed<string>;
-  /** Output only. System generated globally unique ID for the asset. This ID will be different if the asset is deleted and re-created with the same name. */
-  uid?: string | Computed<string>;
-  /** Output only. The time when the asset was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface AssetAttrs {
@@ -218,7 +208,6 @@ export interface AssetAttrs {
 export const Asset: ResourceBinding<AssetConfig, AssetAttrs> = {
   wireType: "google_dataplex_asset",
   fields: {
-    createTime: "create_time",
     description: "description",
     discoverySpec: {
       wireName: "discovery_spec",
@@ -232,7 +221,6 @@ export const Asset: ResourceBinding<AssetConfig, AssetAttrs> = {
     },
     displayName: "display_name",
     labels: "labels",
-    name: "name",
     resourceSpec: {
       wireName: "resource_spec",
       kind: "object",
@@ -248,8 +236,5 @@ export const Asset: ResourceBinding<AssetConfig, AssetAttrs> = {
       kind: "object",
       fields: Asset_SecurityStatusFields,
     },
-    state: "state",
-    uid: "uid",
-    updateTime: "update_time",
   },
 };

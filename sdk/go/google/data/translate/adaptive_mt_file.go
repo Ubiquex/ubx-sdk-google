@@ -14,7 +14,7 @@ type AdaptiveMtFileAttrs struct {
 	DisplayName any
 	// The number of entries that the file contains.
 	EntryCount any
-	Name any
+	Name       any
 	// Output only. Timestamp when this file was last updated.
 	UpdateTime any
 }

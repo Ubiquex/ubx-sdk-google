@@ -14,8 +14,6 @@ const ConversionWorkspace_DestinationFields: FieldMap = {
 };
 
 export interface ConversionWorkspaceConfig {
-  /** Output only. The timestamp when the workspace resource was created. */
-  createTime?: string | Computed<string>;
   /** The type and version of a source or destination database. */
   destination?: ConversionWorkspace_Destination | Computed<ConversionWorkspace_Destination>;
   /** Optional. The provider for the destination database. */
@@ -24,20 +22,12 @@ export interface ConversionWorkspaceConfig {
   displayName?: string | Computed<string>;
   /** Optional. A generic list of settings for the workspace. The settings are database pair dependant and can indicate default behavior for the mapping rules engine or turn on or off specific features. Such examples can be: convert_foreign_key_to_interleave=true, skip_triggers=false, ignore_non_table_synonyms=true */
   globalSettings?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. Whether the workspace has uncommitted changes (changes which were made after the workspace was committed). */
-  hasUncommittedChanges?: boolean | Computed<boolean>;
-  /** Output only. The latest commit ID. */
-  latestCommitId?: string | Computed<string>;
-  /** Output only. The timestamp when the workspace was committed. */
-  latestCommitTime?: string | Computed<string>;
   /** Full name of the workspace resource, in the form of: projects/{project}/locations/{location}/conversionWorkspaces/{conversion_workspace}. */
   name?: string | Computed<string>;
   /** The type and version of a source or destination database. */
   source?: ConversionWorkspace_Destination | Computed<ConversionWorkspace_Destination>;
   /** Optional. The provider for the source database. */
   sourceProvider?: string | Computed<string>;
-  /** Output only. The timestamp when the workspace resource was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface ConversionWorkspaceAttrs {
@@ -70,7 +60,6 @@ export interface ConversionWorkspaceAttrs {
 export const ConversionWorkspace: ResourceBinding<ConversionWorkspaceConfig, ConversionWorkspaceAttrs> = {
   wireType: "google_datamigration_conversion_workspace",
   fields: {
-    createTime: "create_time",
     destination: {
       wireName: "destination",
       kind: "object",
@@ -79,9 +68,6 @@ export const ConversionWorkspace: ResourceBinding<ConversionWorkspaceConfig, Con
     destinationProvider: "destination_provider",
     displayName: "display_name",
     globalSettings: "global_settings",
-    hasUncommittedChanges: "has_uncommitted_changes",
-    latestCommitId: "latest_commit_id",
-    latestCommitTime: "latest_commit_time",
     name: "name",
     source: {
       wireName: "source",
@@ -89,6 +75,5 @@ export const ConversionWorkspace: ResourceBinding<ConversionWorkspaceConfig, Con
       fields: ConversionWorkspace_DestinationFields,
     },
     sourceProvider: "source_provider",
-    updateTime: "update_time",
   },
 };

@@ -61,63 +61,63 @@ type Provider_Saml struct {
 }
 
 var Provider_ExtendedAttributesOauth2Client_ClientSecret_ValueFields = ubx.FieldMap{
-		"PlainText": ubx.FieldSpec{WireName: "plain_text"},
-		"Thumbprint": ubx.FieldSpec{WireName: "thumbprint"},
-	}
+	"PlainText":  ubx.FieldSpec{WireName: "plain_text"},
+	"Thumbprint": ubx.FieldSpec{WireName: "thumbprint"},
+}
 
 var Provider_ExtendedAttributesOauth2Client_ClientSecretFields = ubx.FieldMap{
-		"Value": ubx.FieldSpec{
-			WireName: "value",
-			Kind: "object",
-			Fields: Provider_ExtendedAttributesOauth2Client_ClientSecret_ValueFields,
-		},
-	}
+	"Value": ubx.FieldSpec{
+		WireName: "value",
+		Kind:     "object",
+		Fields:   Provider_ExtendedAttributesOauth2Client_ClientSecret_ValueFields,
+	},
+}
 
 var Provider_ExtendedAttributesOauth2Client_QueryParametersFields = ubx.FieldMap{
-		"Filter": ubx.FieldSpec{WireName: "filter"},
-	}
+	"Filter": ubx.FieldSpec{WireName: "filter"},
+}
 
 var Provider_ExtendedAttributesOauth2ClientFields = ubx.FieldMap{
-		"AttributesType": ubx.FieldSpec{WireName: "attributes_type"},
-		"ClientId": ubx.FieldSpec{WireName: "client_id"},
-		"ClientSecret": ubx.FieldSpec{
-			WireName: "client_secret",
-			Kind: "object",
-			Fields: Provider_ExtendedAttributesOauth2Client_ClientSecretFields,
-		},
-		"IssuerUri": ubx.FieldSpec{WireName: "issuer_uri"},
-		"QueryParameters": ubx.FieldSpec{
-			WireName: "query_parameters",
-			Kind: "object",
-			Fields: Provider_ExtendedAttributesOauth2Client_QueryParametersFields,
-		},
-	}
+	"AttributesType": ubx.FieldSpec{WireName: "attributes_type"},
+	"ClientId":       ubx.FieldSpec{WireName: "client_id"},
+	"ClientSecret": ubx.FieldSpec{
+		WireName: "client_secret",
+		Kind:     "object",
+		Fields:   Provider_ExtendedAttributesOauth2Client_ClientSecretFields,
+	},
+	"IssuerUri": ubx.FieldSpec{WireName: "issuer_uri"},
+	"QueryParameters": ubx.FieldSpec{
+		WireName: "query_parameters",
+		Kind:     "object",
+		Fields:   Provider_ExtendedAttributesOauth2Client_QueryParametersFields,
+	},
+}
 
 var Provider_Oidc_WebSsoConfigFields = ubx.FieldMap{
-		"AdditionalScopes": ubx.FieldSpec{WireName: "additional_scopes"},
-		"AssertionClaimsBehavior": ubx.FieldSpec{WireName: "assertion_claims_behavior"},
-		"ResponseType": ubx.FieldSpec{WireName: "response_type"},
-	}
+	"AdditionalScopes":        ubx.FieldSpec{WireName: "additional_scopes"},
+	"AssertionClaimsBehavior": ubx.FieldSpec{WireName: "assertion_claims_behavior"},
+	"ResponseType":            ubx.FieldSpec{WireName: "response_type"},
+}
 
 var Provider_OidcFields = ubx.FieldMap{
-		"ClientId": ubx.FieldSpec{WireName: "client_id"},
-		"ClientSecret": ubx.FieldSpec{
-			WireName: "client_secret",
-			Kind: "object",
-			Fields: Provider_ExtendedAttributesOauth2Client_ClientSecretFields,
-		},
-		"IssuerUri": ubx.FieldSpec{WireName: "issuer_uri"},
-		"JwksJson": ubx.FieldSpec{WireName: "jwks_json"},
-		"WebSsoConfig": ubx.FieldSpec{
-			WireName: "web_sso_config",
-			Kind: "object",
-			Fields: Provider_Oidc_WebSsoConfigFields,
-		},
-	}
+	"ClientId": ubx.FieldSpec{WireName: "client_id"},
+	"ClientSecret": ubx.FieldSpec{
+		WireName: "client_secret",
+		Kind:     "object",
+		Fields:   Provider_ExtendedAttributesOauth2Client_ClientSecretFields,
+	},
+	"IssuerUri": ubx.FieldSpec{WireName: "issuer_uri"},
+	"JwksJson":  ubx.FieldSpec{WireName: "jwks_json"},
+	"WebSsoConfig": ubx.FieldSpec{
+		WireName: "web_sso_config",
+		Kind:     "object",
+		Fields:   Provider_Oidc_WebSsoConfigFields,
+	},
+}
 
 var Provider_SamlFields = ubx.FieldMap{
-		"IdpMetadataXml": ubx.FieldSpec{WireName: "idp_metadata_xml"},
-	}
+	"IdpMetadataXml": ubx.FieldSpec{WireName: "idp_metadata_xml"},
+}
 
 type ProviderConfig struct {
 	// Optional. A [Common Expression Language](https://opensource.google/projects/cel) expression, in plain text, to restrict what otherwise valid authentication credentials issued by the provider should not be accepted. The expression must output a boolean representing whether to allow the federation. The following keywords may be referenced in the expressions: * `assertion`: JSON representing the authentication credential issued by the provider. * `google`: The Google attributes mapped from the assertion in the `attribute_mappings`. `google.profile_photo`, `google.display_name` and `google.posix_username` are not supported. * `attribute`: The custom attributes mapped from the assertion in the `attribute_mappings`. The maximum length of the attribute condition expression is 4096 characters. If unspecified, all valid authentication credentials will be accepted. The following example shows how to only allow credentials with a mapped `google.groups` value of `admins`: ``` "'admins' in google.groups" ```
@@ -132,8 +132,6 @@ type ProviderConfig struct {
 	Disabled any
 	// Optional. A display name for the provider. Cannot exceed 32 characters.
 	DisplayName any
-	// Output only. Time after which the workforce identity pool provider will be permanently purged and cannot be recovered.
-	ExpireTime any
 	// Represents the OAuth 2.0 client credential configuration for retrieving additional user attributes that are not present in the initial authentication credentials from the identity provider, for example, groups. See https://datatracker.ietf.org/doc/html/rfc6749#section-4.4 for more details on client credentials grant flow.
 	ExtendedAttributesOauth2Client any
 	// Represents the OAuth 2.0 client credential configuration for retrieving additional user attributes that are not present in the initial authentication credentials from the identity provider, for example, groups. See https://datatracker.ietf.org/doc/html/rfc6749#section-4.4 for more details on client credentials grant flow.
@@ -146,8 +144,6 @@ type ProviderConfig struct {
 	Saml any
 	// Optional. Gemini Enterprise only. Specifies whether the workforce identity pool provider uses SCIM-managed groups instead of the `google.groups` attribute mapping for authorization checks. The `scim_usage` and `extended_attributes_oauth2_client` fields are mutually exclusive. A request that enables both fields on the same workforce identity pool provider will produce an error.
 	ScimUsage any
-	// Output only. The state of the provider.
-	State any
 }
 
 type ProviderAttrs struct {
@@ -184,35 +180,33 @@ type ProviderAttrs struct {
 var Provider = ubx.ResourceBinding{
 	WireType: "google_iam_provider",
 	Fields: ubx.FieldMap{
-		"AttributeCondition": ubx.FieldSpec{WireName: "attribute_condition"},
-		"AttributeMapping": ubx.FieldSpec{WireName: "attribute_mapping"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"AttributeCondition":   ubx.FieldSpec{WireName: "attribute_condition"},
+		"AttributeMapping":     ubx.FieldSpec{WireName: "attribute_mapping"},
+		"Description":          ubx.FieldSpec{WireName: "description"},
 		"DetailedAuditLogging": ubx.FieldSpec{WireName: "detailed_audit_logging"},
-		"Disabled": ubx.FieldSpec{WireName: "disabled"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"ExpireTime": ubx.FieldSpec{WireName: "expire_time"},
+		"Disabled":             ubx.FieldSpec{WireName: "disabled"},
+		"DisplayName":          ubx.FieldSpec{WireName: "display_name"},
 		"ExtendedAttributesOauth2Client": ubx.FieldSpec{
 			WireName: "extended_attributes_oauth2_client",
-			Kind: "object",
-			Fields: Provider_ExtendedAttributesOauth2ClientFields,
+			Kind:     "object",
+			Fields:   Provider_ExtendedAttributesOauth2ClientFields,
 		},
 		"ExtraAttributesOauth2Client": ubx.FieldSpec{
 			WireName: "extra_attributes_oauth2_client",
-			Kind: "object",
-			Fields: Provider_ExtendedAttributesOauth2ClientFields,
+			Kind:     "object",
+			Fields:   Provider_ExtendedAttributesOauth2ClientFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Oidc": ubx.FieldSpec{
 			WireName: "oidc",
-			Kind: "object",
-			Fields: Provider_OidcFields,
+			Kind:     "object",
+			Fields:   Provider_OidcFields,
 		},
 		"Saml": ubx.FieldSpec{
 			WireName: "saml",
-			Kind: "object",
-			Fields: Provider_SamlFields,
+			Kind:     "object",
+			Fields:   Provider_SamlFields,
 		},
 		"ScimUsage": ubx.FieldSpec{WireName: "scim_usage"},
-		"State": ubx.FieldSpec{WireName: "state"},
 	},
 }

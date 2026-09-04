@@ -25,13 +25,13 @@ type V1alphaCollection_DataConnector_ActionConfig struct {
 }
 
 type V1alphaCollection_DataConnector_AlertPolicyConfigs_AlertEnrollments struct {
-	AlertId any
+	AlertId     any
 	EnrollState any
 }
 
 type V1alphaCollection_DataConnector_AlertPolicyConfigs struct {
 	AlertEnrollments any
-	AlertPolicyName any
+	AlertPolicyName  any
 }
 
 type V1alphaCollection_DataConnector_BapConfig_ToolspecOverride struct {
@@ -72,16 +72,16 @@ type V1alphaCollection_DataConnector_DestinationConfigs_Destinations struct {
 
 type V1alphaCollection_DataConnector_DestinationConfigs struct {
 	Destinations any
-	JsonParams any
-	Key any
-	Params any
+	JsonParams   any
+	Key          any
+	Params       any
 }
 
 type V1alphaCollection_DataConnector_DynamicTools struct {
 	Description any
 	DisplayName any
-	Enabled any
-	Name any
+	Enabled     any
+	Name        any
 }
 
 type V1alphaCollection_DataConnector_EndUserConfig_Tenant struct {
@@ -105,46 +105,46 @@ type V1alphaCollection_DataConnector_EndUserConfig struct {
 }
 
 type V1alphaCollection_DataConnector_Entities_HealthcareFhirConfig struct {
-	EnableConfigurableSchema any
+	EnableConfigurableSchema              any
 	EnableStaticIndexingForBatchIngestion any
-	InitialFilterGroups any
+	InitialFilterGroups                   any
 }
 
 type V1alphaCollection_DataConnector_Entities_StartingSchema_FieldConfigs struct {
 	AdvancedSiteSearchDataSources any
-	CompletableOption any
-	DynamicFacetableOption any
-	FieldPath any
-	FieldType any
-	IndexableOption any
-	KeyPropertyType any
-	MetatagName any
-	RecsFilterableOption any
-	RetrievableOption any
-	SchemaOrgPaths any
-	SearchableFieldImportance any
-	SearchableOption any
+	CompletableOption             any
+	DynamicFacetableOption        any
+	FieldPath                     any
+	FieldType                     any
+	IndexableOption               any
+	KeyPropertyType               any
+	MetatagName                   any
+	RecsFilterableOption          any
+	RetrievableOption             any
+	SchemaOrgPaths                any
+	SearchableFieldImportance     any
+	SearchableOption              any
 }
 
 type V1alphaCollection_DataConnector_Entities_StartingSchema struct {
 	FieldConfigs any
-	JsonSchema any
-	Name any
+	JsonSchema   any
+	Name         any
 	StructSchema any
 }
 
 type V1alphaCollection_DataConnector_Entities struct {
-	DataStore any
-	EntityName any
+	DataStore            any
+	EntityName           any
 	HealthcareFhirConfig any
-	JsonParams any
-	KeyPropertyMappings any
-	Params any
-	StartingSchema any
+	JsonParams           any
+	KeyPropertyMappings  any
+	Params               any
+	StartingSchema       any
 }
 
 type V1alphaCollection_DataConnector_Errors struct {
-	Code any
+	Code    any
 	Details any
 	Message any
 }
@@ -332,7 +332,7 @@ type V1alphaCollectionAttrs struct {
 	DataConnector any
 	// Required. The Collection display name. This field must be a UTF-8 encoded string with a length limit of 128 characters. Otherwise, an INVALID_ARGUMENT error is returned.
 	DisplayName any
-	Name any
+	Name        any
 }
 
 var V1alphaCollection = ubx.DataSourceBinding{

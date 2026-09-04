@@ -6,34 +6,15 @@ export interface V1beta1MirroringEndpointGroupAssociation_Locations {
   state?: string | Computed<string>;
 }
 
-const V1beta1MirroringEndpointGroupAssociation_LocationsFields: FieldMap = {
-  location: "location",
-  state: "state",
-};
-
 export interface V1beta1MirroringEndpointGroupAssociationConfig {
-  /** Output only. The timestamp when the resource was created. See https://google.aip.dev/148#timestamps. */
-  createTime?: string | Computed<string>;
   /** Optional. Labels are key/value pairs that help to organize and filter resources. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. The list of locations where the association is configured. This information is retrieved from the linked endpoint group. */
-  locations?: V1beta1MirroringEndpointGroupAssociation_Locations[] | Computed<V1beta1MirroringEndpointGroupAssociation_Locations[]>;
-  /** Output only. The list of locations where the association is present. This information is retrieved from the linked endpoint group, and not configured as part of the association itself. */
-  locationsDetails?: V1beta1MirroringEndpointGroupAssociation_Locations[] | Computed<V1beta1MirroringEndpointGroupAssociation_Locations[]>;
   /** Immutable. The endpoint group that this association is connected to, for example: `projects/123456789/locations/global/mirroringEndpointGroups/my-eg`. See https://google.aip.dev/124. */
   mirroringEndpointGroup?: string | Computed<string>;
   /** Immutable. Identifier. The resource name of this endpoint group association, for example: `projects/123456789/locations/global/mirroringEndpointGroupAssociations/my-eg-association`. See https://google.aip.dev/122 for more details. */
   name?: string | Computed<string>;
   /** Immutable. The VPC network that is associated. for example: `projects/123456789/global/networks/my-network`. See https://google.aip.dev/124. */
   network?: string | Computed<string>;
-  /** Output only. Identifier used by the data-path. See the NSI GENEVE format for more details: https://docs.cloud.google.com/network-security-integration/docs/understand-geneve#network_id */
-  networkCookie?: number | Computed<number>;
-  /** Output only. The current state of the resource does not match the user's intended state, and the system is working to reconcile them. This part of the normal operation (e.g. adding a new location to the target deployment group). See https://google.aip.dev/128. */
-  reconciling?: boolean | Computed<boolean>;
-  /** Output only. Current state of the endpoint group association. */
-  state?: string | Computed<string>;
-  /** Output only. The timestamp when the resource was most recently updated. See https://google.aip.dev/148#timestamps. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1beta1MirroringEndpointGroupAssociationAttrs {
@@ -64,24 +45,9 @@ export interface V1beta1MirroringEndpointGroupAssociationAttrs {
 export const V1beta1MirroringEndpointGroupAssociation: ResourceBinding<V1beta1MirroringEndpointGroupAssociationConfig, V1beta1MirroringEndpointGroupAssociationAttrs> = {
   wireType: "google_networksecurity_v1beta1_mirroring_endpoint_group_association",
   fields: {
-    createTime: "create_time",
     labels: "labels",
-    locations: {
-      wireName: "locations",
-      kind: "list",
-      fields: V1beta1MirroringEndpointGroupAssociation_LocationsFields,
-    },
-    locationsDetails: {
-      wireName: "locations_details",
-      kind: "list",
-      fields: V1beta1MirroringEndpointGroupAssociation_LocationsFields,
-    },
     mirroringEndpointGroup: "mirroring_endpoint_group",
     name: "name",
     network: "network",
-    networkCookie: "network_cookie",
-    reconciling: "reconciling",
-    state: "state",
-    updateTime: "update_time",
   },
 };

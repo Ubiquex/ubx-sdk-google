@@ -16,7 +16,6 @@ export interface Provider_EventTypes {
 }
 
 export interface ProviderConfig {
-  name: string | Computed<string>;
 }
 
 export interface ProviderAttrs {
@@ -30,6 +29,5 @@ export interface ProviderAttrs {
 export const Provider: DataSourceBinding<ProviderConfig, ProviderAttrs> = {
   wireType: "google_eventarc_provider",
   fields: {
-    name: "name",
   },
 };

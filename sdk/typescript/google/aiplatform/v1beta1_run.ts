@@ -2,8 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface V1beta1RunConfig {
-  /** Output only. Timestamp when this TensorboardRun was created. */
-  createTime?: string | Computed<string>;
   /** Description of this TensorboardRun. */
   description?: string | Computed<string>;
   /** Required. User provided name of this TensorboardRun. This value must be unique among all TensorboardRuns belonging to the same parent TensorboardExperiment. */
@@ -12,10 +10,6 @@ export interface V1beta1RunConfig {
   etag?: string | Computed<string>;
   /** The labels with user-defined metadata to organize your TensorboardRuns. This field will be used to filter and visualize Runs in the Tensorboard UI. For example, a Vertex AI training job can set a label aiplatform.googleapis.com/training_job_id=xxxxx to all the runs created within that job. An end user can set a label experiment_id=xxxxx for all the runs produced in a Jupyter notebook. These runs can be grouped by a label value and visualized together in the Tensorboard UI. Label keys and values can be no longer than 64 characters (Unicode codepoints), can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. No more than 64 user labels can be associated with one TensorboardRun (System labels are excluded). See https://goo.gl/xmQnxf for more information and examples of labels. System reserved label keys are prefixed with "aiplatform.googleapis.com/" and are immutable. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. Name of the TensorboardRun. Format: `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}` */
-  name?: string | Computed<string>;
-  /** Output only. Timestamp when this TensorboardRun was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1beta1RunAttrs {
@@ -38,12 +32,9 @@ export interface V1beta1RunAttrs {
 export const V1beta1Run: ResourceBinding<V1beta1RunConfig, V1beta1RunAttrs> = {
   wireType: "google_aiplatform_v1beta1_run",
   fields: {
-    createTime: "create_time",
     description: "description",
     displayName: "display_name",
     etag: "etag",
     labels: "labels",
-    name: "name",
-    updateTime: "update_time",
   },
 };

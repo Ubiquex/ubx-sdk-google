@@ -4,8 +4,6 @@ package compute
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AlphaRegionHealthCheckServiceConfig struct {
-	// Output only. [Output Only] Creation timestamp inRFC3339 text format.
-	CreationTimestamp any
 	// An optional description of this resource. Provide this property when you create the resource.
 	Description any
 	// Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a HealthCheckService. An up-to-date fingerprint must be provided in order to patch/update the HealthCheckService; Otherwise, the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve the HealthCheckService.
@@ -16,22 +14,12 @@ type AlphaRegionHealthCheckServiceConfig struct {
 	HealthStatusAggregationPolicy any
 	// This field is deprecated. Use health_status_aggregation_policy instead. Policy for how the results from multiple health checks for the same endpoint are aggregated. - NO_AGGREGATION. An EndpointHealth message is returned for each backend in the health check service. - AND. If any backend's health check reportsUNHEALTHY, then UNHEALTHY is theHealthState of the entire health check service. If all backend's are healthy, the HealthState of the health check service is HEALTHY. .
 	HealthStatusAggregationStrategy any
-	// Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-	Id any
-	// Output only. [Output only] Type of the resource. Alwayscompute#healthCheckServicefor health check services.
-	Kind any
 	// Name of the resource. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
 	Name any
 	// A list of URLs to the NetworkEndpointGroup resources. Must not have more than 100. For regionalHealthCheckService, NEGs must be in zones in the region of the HealthCheckService. For globalHealthCheckServices, the NetworkEndpointGroups must be global INTERNET_IP_PORT.
 	NetworkEndpointGroups any
 	// A list of URLs to the NotificationEndpoint resources. Must not have more than 10. A list of endpoints for receiving notifications of change in health status. For regionalHealthCheckService,NotificationEndpoint must be regional and in the same region. For global HealthCheckService,NotificationEndpoint must be global.
 	NotificationEndpoints any
-	// Output only. [Output Only] URL of the region where the health check service resides. This field is not applicable to global health check services. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
-	Region any
-	// Output only. [Output Only] Server-defined URL for the resource.
-	SelfLink any
-	// Output only. [Output Only] Server-defined URL with id for the resource.
-	SelfLinkWithId any
 }
 
 type AlphaRegionHealthCheckServiceAttrs struct {
@@ -68,19 +56,13 @@ type AlphaRegionHealthCheckServiceAttrs struct {
 var AlphaRegionHealthCheckService = ubx.ResourceBinding{
 	WireType: "google_compute_alpha_region_health_check_service",
 	Fields: ubx.FieldMap{
-		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Fingerprint": ubx.FieldSpec{WireName: "fingerprint"},
-		"HealthChecks": ubx.FieldSpec{WireName: "health_checks"},
-		"HealthStatusAggregationPolicy": ubx.FieldSpec{WireName: "health_status_aggregation_policy"},
+		"Description":                     ubx.FieldSpec{WireName: "description"},
+		"Fingerprint":                     ubx.FieldSpec{WireName: "fingerprint"},
+		"HealthChecks":                    ubx.FieldSpec{WireName: "health_checks"},
+		"HealthStatusAggregationPolicy":   ubx.FieldSpec{WireName: "health_status_aggregation_policy"},
 		"HealthStatusAggregationStrategy": ubx.FieldSpec{WireName: "health_status_aggregation_strategy"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NetworkEndpointGroups": ubx.FieldSpec{WireName: "network_endpoint_groups"},
-		"NotificationEndpoints": ubx.FieldSpec{WireName: "notification_endpoints"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"SelfLinkWithId": ubx.FieldSpec{WireName: "self_link_with_id"},
+		"Name":                            ubx.FieldSpec{WireName: "name"},
+		"NetworkEndpointGroups":           ubx.FieldSpec{WireName: "network_endpoint_groups"},
+		"NotificationEndpoints":           ubx.FieldSpec{WireName: "notification_endpoints"},
 	},
 }

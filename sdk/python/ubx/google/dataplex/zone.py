@@ -96,8 +96,6 @@ _Zone_ResourceSpecFields = {
 class ZoneConfig:
     # Aggregated status of the underlying assets of a lake or zone.
     asset_status: Any = None
-    # Output only. The time when the zone was created.
-    create_time: Any = None
     # Optional. Description of the zone.
     description: Any = None
     # Settings to manage the metadata discovery and publishing in a zone.
@@ -106,18 +104,10 @@ class ZoneConfig:
     display_name: Any = None
     # Optional. User defined labels for the zone.
     labels: Any = None
-    # Output only. The relative resource name of the zone, of the form: projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}.
-    name: Any = None
     # Settings for resources attached as assets within a zone.
     resource_spec: Any = None
-    # Output only. Current state of the zone.
-    state: Any = None
     # Required. Immutable. The type of the zone.
     type: Any = None
-    # Output only. System generated globally unique ID for the zone. This ID will be different if the zone is deleted and re-created with the same name.
-    uid: Any = None
-    # Output only. The time when the zone was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class ZoneAttrs:
@@ -154,7 +144,6 @@ Zone = ubx.ResourceBinding(
             kind="object",
             fields=_Zone_AssetStatusFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "discovery_spec": ubx.FieldSpec(
             wire_name="discovery_spec",
@@ -163,15 +152,11 @@ Zone = ubx.ResourceBinding(
         ),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "labels": ubx.FieldSpec(wire_name="labels"),
-        "name": ubx.FieldSpec(wire_name="name"),
         "resource_spec": ubx.FieldSpec(
             wire_name="resource_spec",
             kind="object",
             fields=_Zone_ResourceSpecFields,
         ),
-        "state": ubx.FieldSpec(wire_name="state"),
         "type": ubx.FieldSpec(wire_name="type"),
-        "uid": ubx.FieldSpec(wire_name="uid"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

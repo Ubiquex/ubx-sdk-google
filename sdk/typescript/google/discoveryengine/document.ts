@@ -91,14 +91,10 @@ export interface DocumentConfig {
   aclInfo?: Document_AclInfo | Computed<Document_AclInfo>;
   /** Unstructured data linked to this document. */
   content?: Document_Content | Computed<Document_Content>;
-  /** Output only. This field is OUTPUT_ONLY. It contains derived data that are not in the original input document. */
-  derivedStructData?: Record<string, unknown> | Computed<Record<string, unknown>>;
   /** Immutable. The identifier of the document. Id should conform to [RFC-1034](https://tools.ietf.org/html/rfc1034) standard with a length limit of 128 characters. */
   id?: string | Computed<string>;
   /** Index status of the document. */
   indexStatus?: Document_IndexStatus | Computed<Document_IndexStatus>;
-  /** Output only. The time when the document was last indexed. If this field is populated, it means the document has been indexed. While documents typically become searchable within seconds of indexing, it can sometimes take up to a few hours. If this field is not populated, it means the document has never been indexed. */
-  indexTime?: string | Computed<string>;
   /** The JSON string representation of the document. It should conform to the registered Schema or an `INVALID_ARGUMENT` error is thrown. */
   jsonData?: string | Computed<string>;
   /** Immutable. The full resource name of the document. Format: `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/branches/{branch}/documents/{document_id}`. This field must be a UTF-8 encoded string with a length limit of 1024 characters. */
@@ -149,14 +145,12 @@ export const Document: ResourceBinding<DocumentConfig, DocumentAttrs> = {
       kind: "object",
       fields: Document_ContentFields,
     },
-    derivedStructData: "derived_struct_data",
     id: "id",
     indexStatus: {
       wireName: "index_status",
       kind: "object",
       fields: Document_IndexStatusFields,
     },
-    indexTime: "index_time",
     jsonData: "json_data",
     name: "name",
     parentDocumentId: "parent_document_id",

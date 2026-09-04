@@ -2,24 +2,14 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface KmsConfigConfig {
-  /** Output only. Create time of the KmsConfig. */
-  createTime?: string | Computed<string>;
   /** Required. Customer-managed crypto key resource full name. Format: `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}` */
   cryptoKeyName?: string | Computed<string>;
   /** Description of the KmsConfig. */
   description?: string | Computed<string>;
-  /** Output only. Instructions to provide the access to the customer provided encryption key. */
-  instructions?: string | Computed<string>;
   /** Labels as key value pairs */
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Identifier. Name of the `KmsConfig`. Format: `projects/{project}/locations/{location}/kmsConfigs/{kms_config}` */
   name?: string | Computed<string>;
-  /** Output only. The Service account which will have access to the customer provided encryption key. */
-  serviceAccount?: string | Computed<string>;
-  /** Output only. State of the KmsConfig. */
-  state?: string | Computed<string>;
-  /** Output only. State details of the KmsConfig. */
-  stateDetails?: string | Computed<string>;
 }
 
 export interface KmsConfigAttrs {
@@ -46,14 +36,9 @@ export interface KmsConfigAttrs {
 export const KmsConfig: ResourceBinding<KmsConfigConfig, KmsConfigAttrs> = {
   wireType: "google_netapp_kms_config",
   fields: {
-    createTime: "create_time",
     cryptoKeyName: "crypto_key_name",
     description: "description",
-    instructions: "instructions",
     labels: "labels",
     name: "name",
-    serviceAccount: "service_account",
-    state: "state",
-    stateDetails: "state_details",
   },
 };

@@ -90,8 +90,6 @@ const Zone_ResourceSpecFields: FieldMap = {
 export interface ZoneConfig {
   /** Aggregated status of the underlying assets of a lake or zone. */
   assetStatus?: Zone_AssetStatus | Computed<Zone_AssetStatus>;
-  /** Output only. The time when the zone was created. */
-  createTime?: string | Computed<string>;
   /** Optional. Description of the zone. */
   description?: string | Computed<string>;
   /** Settings to manage the metadata discovery and publishing in a zone. */
@@ -100,18 +98,10 @@ export interface ZoneConfig {
   displayName?: string | Computed<string>;
   /** Optional. User defined labels for the zone. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. The relative resource name of the zone, of the form: projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}. */
-  name?: string | Computed<string>;
   /** Settings for resources attached as assets within a zone. */
   resourceSpec?: Zone_ResourceSpec | Computed<Zone_ResourceSpec>;
-  /** Output only. Current state of the zone. */
-  state?: string | Computed<string>;
   /** Required. Immutable. The type of the zone. */
   type?: string | Computed<string>;
-  /** Output only. System generated globally unique ID for the zone. This ID will be different if the zone is deleted and re-created with the same name. */
-  uid?: string | Computed<string>;
-  /** Output only. The time when the zone was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface ZoneAttrs {
@@ -149,7 +139,6 @@ export const Zone: ResourceBinding<ZoneConfig, ZoneAttrs> = {
       kind: "object",
       fields: Zone_AssetStatusFields,
     },
-    createTime: "create_time",
     description: "description",
     discoverySpec: {
       wireName: "discovery_spec",
@@ -158,15 +147,11 @@ export const Zone: ResourceBinding<ZoneConfig, ZoneAttrs> = {
     },
     displayName: "display_name",
     labels: "labels",
-    name: "name",
     resourceSpec: {
       wireName: "resource_spec",
       kind: "object",
       fields: Zone_ResourceSpecFields,
     },
-    state: "state",
     type: "type",
-    uid: "uid",
-    updateTime: "update_time",
   },
 };

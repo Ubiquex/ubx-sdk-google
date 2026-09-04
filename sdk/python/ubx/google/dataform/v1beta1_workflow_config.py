@@ -96,16 +96,6 @@ _V1beta1WorkflowConfig_RecentScheduledExecutionRecords_ErrorStatusFields = {
     "message": ubx.FieldSpec(wire_name="message"),
 }
 
-_V1beta1WorkflowConfig_RecentScheduledExecutionRecordsFields = {
-    "error_status": ubx.FieldSpec(
-        wire_name="error_status",
-        kind="object",
-        fields=_V1beta1WorkflowConfig_RecentScheduledExecutionRecords_ErrorStatusFields,
-    ),
-    "execution_time": ubx.FieldSpec(wire_name="execution_time"),
-    "workflow_invocation": ubx.FieldSpec(wire_name="workflow_invocation"),
-}
-
 _V1beta1WorkflowConfig_WorkflowTriggerConfig_RecentTriggerEvaluationRecordsFields = {
     "evaluation_time": ubx.FieldSpec(wire_name="evaluation_time"),
     "status": ubx.FieldSpec(
@@ -151,26 +141,18 @@ _V1beta1WorkflowConfig_WorkflowTriggerConfigFields = {
 
 @dataclasses.dataclass
 class V1beta1WorkflowConfigConfig:
-    # Output only. The timestamp of when the WorkflowConfig was created.
-    create_time: Any = None
     # Optional. Optional schedule (in cron format) for automatic execution of this workflow config.
     cron_schedule: Any = None
     # Optional. Disables automatic creation of workflow invocations.
     disabled: Any = None
-    # Output only. All the metadata information that is used internally to serve the resource. For example: timestamps, flags, status fields, etc. The format of this field is a JSON string.
-    internal_metadata: Any = None
     # Includes various configuration options for a workflow invocation. If both `included_targets` and `included_tags` are unset, all actions will be included.
     invocation_config: Any = None
     # Identifier. The workflow config's name.
     name: Any = None
-    # Output only. Records of the 10 most recent scheduled execution attempts, ordered in descending order of `execution_time`. Updated whenever automatic creation of a workflow invocation is triggered by cron_schedule.
-    recent_scheduled_execution_records: Any = None
     # Required. The name of the release config whose release_compilation_result should be executed. Must be in the format `projects/*/locations/*/repositories/*/releaseConfigs/*`.
     release_config: Any = None
     # Optional. Specifies the time zone to be used when interpreting cron_schedule. Must be a time zone name from the [time zone database](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). If left unspecified, the default is `UTC`.
     time_zone: Any = None
-    # Output only. The timestamp of when the WorkflowConfig was last updated.
-    update_time: Any = None
     # Represents a trigger configuration for a workflow.
     workflow_trigger_config: Any = None
 
@@ -202,24 +184,16 @@ class V1beta1WorkflowConfigAttrs:
 V1beta1WorkflowConfig = ubx.ResourceBinding(
     wire_type="google_dataform_v1beta1_workflow_config",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "cron_schedule": ubx.FieldSpec(wire_name="cron_schedule"),
         "disabled": ubx.FieldSpec(wire_name="disabled"),
-        "internal_metadata": ubx.FieldSpec(wire_name="internal_metadata"),
         "invocation_config": ubx.FieldSpec(
             wire_name="invocation_config",
             kind="object",
             fields=_V1beta1WorkflowConfig_InvocationConfigFields,
         ),
         "name": ubx.FieldSpec(wire_name="name"),
-        "recent_scheduled_execution_records": ubx.FieldSpec(
-            wire_name="recent_scheduled_execution_records",
-            kind="list",
-            fields=_V1beta1WorkflowConfig_RecentScheduledExecutionRecordsFields,
-        ),
         "release_config": ubx.FieldSpec(wire_name="release_config"),
         "time_zone": ubx.FieldSpec(wire_name="time_zone"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
         "workflow_trigger_config": ubx.FieldSpec(
             wire_name="workflow_trigger_config",
             kind="object",

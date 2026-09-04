@@ -2,8 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface IpamAdminScopeConfig {
-  /** Output only. The time at which the IpamAdminScope was created. */
-  createTime?: string | Computed<string>;
   /** Required. Add-on platforms that are enabled for this IpamAdminScope. Cloud Number Registry only discovers the IP addresses from the enabled platforms. */
   enabledAddonPlatforms?: string[] | Computed<string[]>;
   /** Optional. User-defined labels. */
@@ -12,10 +10,6 @@ export interface IpamAdminScopeConfig {
   name?: string | Computed<string>;
   /** Required. Administrative scopes enabled for IP address discovery and management. For example, "organizations/1234567890". Minimum of 1 scope is required. In preview, only one organization scope is allowed. */
   scopes?: string[] | Computed<string[]>;
-  /** Output only. State of resource discovery pipeline. */
-  state?: string | Computed<string>;
-  /** Output only. The time at which the IpamAdminScope was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface IpamAdminScopeAttrs {
@@ -38,12 +32,9 @@ export interface IpamAdminScopeAttrs {
 export const IpamAdminScope: ResourceBinding<IpamAdminScopeConfig, IpamAdminScopeAttrs> = {
   wireType: "google_cloudnumberregistry_ipam_admin_scope",
   fields: {
-    createTime: "create_time",
     enabledAddonPlatforms: "enabled_addon_platforms",
     labels: "labels",
     name: "name",
     scopes: "scopes",
-    state: "state",
-    updateTime: "update_time",
   },
 };

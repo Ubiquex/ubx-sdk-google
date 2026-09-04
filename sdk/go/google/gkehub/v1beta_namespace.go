@@ -9,14 +9,10 @@ type V1betaNamespace_State struct {
 }
 
 var V1betaNamespace_StateFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-	}
+	"Code": ubx.FieldSpec{WireName: "code"},
+}
 
 type V1betaNamespaceConfig struct {
-	// Output only. When the namespace was created.
-	CreateTime any
-	// Output only. When the namespace was deleted.
-	DeleteTime any
 	// Optional. Labels for this Namespace.
 	Labels any
 	// The resource name for the namespace `projects/{project}/locations/{location}/namespaces/{namespace}`
@@ -27,10 +23,6 @@ type V1betaNamespaceConfig struct {
 	Scope any
 	// NamespaceLifecycleState describes the state of a Namespace resource.
 	State any
-	// Output only. Google-generated UUID for this resource. This is unique across all namespace resources. If a namespace resource is deleted and another resource with the same name is created, it gets a different uid.
-	Uid any
-	// Output only. When the namespace was last updated.
-	UpdateTime any
 }
 
 type V1betaNamespaceAttrs struct {
@@ -57,18 +49,14 @@ type V1betaNamespaceAttrs struct {
 var V1betaNamespace = ubx.ResourceBinding{
 	WireType: "google_gkehub_v1beta_namespace",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DeleteTime": ubx.FieldSpec{WireName: "delete_time"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Labels":          ubx.FieldSpec{WireName: "labels"},
+		"Name":            ubx.FieldSpec{WireName: "name"},
 		"NamespaceLabels": ubx.FieldSpec{WireName: "namespace_labels"},
-		"Scope": ubx.FieldSpec{WireName: "scope"},
+		"Scope":           ubx.FieldSpec{WireName: "scope"},
 		"State": ubx.FieldSpec{
 			WireName: "state",
-			Kind: "object",
-			Fields: V1betaNamespace_StateFields,
+			Kind:     "object",
+			Fields:   V1betaNamespace_StateFields,
 		},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

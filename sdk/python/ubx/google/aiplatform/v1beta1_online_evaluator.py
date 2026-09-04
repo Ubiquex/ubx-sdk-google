@@ -921,10 +921,6 @@ _V1beta1OnlineEvaluator_MetricSourcesFields = {
     "metric_resource_name": ubx.FieldSpec(wire_name="metric_resource_name"),
 }
 
-_V1beta1OnlineEvaluator_StateDetailsFields = {
-    "message": ubx.FieldSpec(wire_name="message"),
-}
-
 @dataclasses.dataclass
 class V1beta1OnlineEvaluatorConfig:
     # Required. Immutable. The name of the agent that the OnlineEvaluator evaluates periodically. This value is used to filter the traces with a matching cloud.resource_id and link the evaluation results with relevant dashboards/UIs. This field is immutable. Once set, it cannot be changed.
@@ -933,20 +929,12 @@ class V1beta1OnlineEvaluatorConfig:
     cloud_observability: Any = None
     # Configuration for sampling behavior of the OnlineEvaluator. The OnlineEvaluator runs at a fixed interval of 10 minutes.
     config: Any = None
-    # Output only. Timestamp when the OnlineEvaluator was created.
-    create_time: Any = None
     # Optional. Human-readable name for the OnlineEvaluator. The name doesn't have to be unique. The name can consist of any UTF-8 characters. The maximum length is `63` characters. If the display name exceeds max characters, an `INVALID_ARGUMENT` error is returned.
     display_name: Any = None
     # Required. A list of metric sources to be used for evaluating samples. At least one MetricSource must be provided. Right now, only predefined metrics and registered metrics are supported. Every registered metric must have `display_name` (or `title`) and `score_range` defined. Otherwise, the evaluations will fail. The maximum number of `metric_sources` is 25.
     metric_sources: Any = None
     # Identifier. The resource name of the OnlineEvaluator. Format: projects/{project}/locations/{location}/onlineEvaluators/{id}.
     name: Any = None
-    # Output only. The state of the OnlineEvaluator.
-    state: Any = None
-    # Output only. Contains additional information about the state of the OnlineEvaluator. This is used to provide more details in the event of a failure.
-    state_details: Any = None
-    # Output only. Timestamp when the OnlineEvaluator was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V1beta1OnlineEvaluatorAttrs:
@@ -985,7 +973,6 @@ V1beta1OnlineEvaluator = ubx.ResourceBinding(
             kind="object",
             fields=_V1beta1OnlineEvaluator_ConfigFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "metric_sources": ubx.FieldSpec(
             wire_name="metric_sources",
@@ -993,12 +980,5 @@ V1beta1OnlineEvaluator = ubx.ResourceBinding(
             fields=_V1beta1OnlineEvaluator_MetricSourcesFields,
         ),
         "name": ubx.FieldSpec(wire_name="name"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "state_details": ubx.FieldSpec(
-            wire_name="state_details",
-            kind="list",
-            fields=_V1beta1OnlineEvaluator_StateDetailsFields,
-        ),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

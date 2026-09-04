@@ -236,14 +236,6 @@ const V1alpha1Stream_DestinationConfigFields: FieldMap = {
   },
 };
 
-const V1alpha1Stream_ErrorsFields: FieldMap = {
-  details: "details",
-  errorTime: "error_time",
-  errorUuid: "error_uuid",
-  message: "message",
-  reason: "reason",
-};
-
 const V1alpha1Stream_SourceConfig_MysqlSourceConfigFields: FieldMap = {
   allowlist: {
     wireName: "allowlist",
@@ -290,26 +282,18 @@ export interface V1alpha1StreamConfig {
   backfillAll?: V1alpha1Stream_BackfillAll | Computed<V1alpha1Stream_BackfillAll>;
   /** Backfill strategy to disable automatic backfill for the Stream's objects. */
   backfillNone?: unknown | Computed<unknown>;
-  /** Output only. The creation time of the stream. */
-  createTime?: string | Computed<string>;
   /** Immutable. A reference to a KMS encryption key. If provided, it will be used to encrypt the data. If left blank, data will be encrypted using an internal Stream-specific encryption key provisioned through KMS. */
   customerManagedEncryptionKey?: string | Computed<string>;
   /** The configuration of the stream destination. */
   destinationConfig?: V1alpha1Stream_DestinationConfig | Computed<V1alpha1Stream_DestinationConfig>;
   /** Required. Display name. */
   displayName?: string | Computed<string>;
-  /** Output only. Errors on the Stream. */
-  errors?: V1alpha1Stream_Errors[] | Computed<V1alpha1Stream_Errors[]>;
   /** Labels. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. The stream's name. */
-  name?: string | Computed<string>;
   /** The configuration of the stream source. */
   sourceConfig?: V1alpha1Stream_SourceConfig | Computed<V1alpha1Stream_SourceConfig>;
   /** The state of the stream. */
   state?: string | Computed<string>;
-  /** Output only. The last update time of the stream. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1alpha1StreamAttrs {
@@ -348,7 +332,6 @@ export const V1alpha1Stream: ResourceBinding<V1alpha1StreamConfig, V1alpha1Strea
       fields: V1alpha1Stream_BackfillAllFields,
     },
     backfillNone: "backfill_none",
-    createTime: "create_time",
     customerManagedEncryptionKey: "customer_managed_encryption_key",
     destinationConfig: {
       wireName: "destination_config",
@@ -356,19 +339,12 @@ export const V1alpha1Stream: ResourceBinding<V1alpha1StreamConfig, V1alpha1Strea
       fields: V1alpha1Stream_DestinationConfigFields,
     },
     displayName: "display_name",
-    errors: {
-      wireName: "errors",
-      kind: "list",
-      fields: V1alpha1Stream_ErrorsFields,
-    },
     labels: "labels",
-    name: "name",
     sourceConfig: {
       wireName: "source_config",
       kind: "object",
       fields: V1alpha1Stream_SourceConfigFields,
     },
     state: "state",
-    updateTime: "update_time",
   },
 };

@@ -5,14 +5,14 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta1Instance_Accelerators struct {
 	AcceleratorType any
-	State any
+	State           any
 }
 
 type V1beta1Instance_AvailableVersion struct {
 	AvailableFeatures any
-	DefaultVersion any
-	Type any
-	VersionNumber any
+	DefaultVersion    any
+	Type              any
+	VersionNumber     any
 }
 
 type V1beta1Instance_CryptoKeyConfig struct {
@@ -35,9 +35,9 @@ type V1beta1Instance_LoggingConfig struct {
 }
 
 type V1beta1Instance_MaintenanceEvents struct {
-	EndTime any
+	EndTime   any
 	StartTime any
-	State any
+	State     any
 }
 
 type V1beta1Instance_MaintenancePolicy_MaintenanceExclusionWindow struct {
@@ -91,103 +91,77 @@ type V1beta1Instance_NetworkConfig struct {
 	PrivateServiceConnectConfig any
 }
 
-var V1beta1Instance_AcceleratorsFields = ubx.FieldMap{
-		"AcceleratorType": ubx.FieldSpec{WireName: "accelerator_type"},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
-
-var V1beta1Instance_AvailableVersionFields = ubx.FieldMap{
-		"AvailableFeatures": ubx.FieldSpec{WireName: "available_features"},
-		"DefaultVersion": ubx.FieldSpec{WireName: "default_version"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"VersionNumber": ubx.FieldSpec{WireName: "version_number"},
-	}
-
 var V1beta1Instance_CryptoKeyConfigFields = ubx.FieldMap{
-		"KeyReference": ubx.FieldSpec{WireName: "key_reference"},
-	}
+	"KeyReference": ubx.FieldSpec{WireName: "key_reference"},
+}
 
 var V1beta1Instance_EventPublishConfigFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Topic": ubx.FieldSpec{WireName: "topic"},
-	}
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+	"Topic":   ubx.FieldSpec{WireName: "topic"},
+}
 
 var V1beta1Instance_LoggingConfigFields = ubx.FieldMap{
-		"EnableInstanceV2Logs": ubx.FieldSpec{WireName: "enable_instance_v2_logs"},
-		"InstanceCloudLoggingDisabled": ubx.FieldSpec{WireName: "instance_cloud_logging_disabled"},
-	}
-
-var V1beta1Instance_MaintenanceEventsFields = ubx.FieldMap{
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"EnableInstanceV2Logs":         ubx.FieldSpec{WireName: "enable_instance_v2_logs"},
+	"InstanceCloudLoggingDisabled": ubx.FieldSpec{WireName: "instance_cloud_logging_disabled"},
+}
 
 var V1beta1Instance_MaintenancePolicy_MaintenanceExclusionWindowFields = ubx.FieldMap{
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-	}
+	"EndTime":   ubx.FieldSpec{WireName: "end_time"},
+	"StartTime": ubx.FieldSpec{WireName: "start_time"},
+}
 
 var V1beta1Instance_MaintenancePolicy_MaintenanceWindow_RecurringTimeWindowFields = ubx.FieldMap{
-		"Recurrence": ubx.FieldSpec{WireName: "recurrence"},
-		"Window": ubx.FieldSpec{
-			WireName: "window",
-			Kind: "object",
-			Fields: V1beta1Instance_MaintenancePolicy_MaintenanceExclusionWindowFields,
-		},
-	}
+	"Recurrence": ubx.FieldSpec{WireName: "recurrence"},
+	"Window": ubx.FieldSpec{
+		WireName: "window",
+		Kind:     "object",
+		Fields:   V1beta1Instance_MaintenancePolicy_MaintenanceExclusionWindowFields,
+	},
+}
 
 var V1beta1Instance_MaintenancePolicy_MaintenanceWindowFields = ubx.FieldMap{
-		"RecurringTimeWindow": ubx.FieldSpec{
-			WireName: "recurring_time_window",
-			Kind: "object",
-			Fields: V1beta1Instance_MaintenancePolicy_MaintenanceWindow_RecurringTimeWindowFields,
-		},
-	}
+	"RecurringTimeWindow": ubx.FieldSpec{
+		WireName: "recurring_time_window",
+		Kind:     "object",
+		Fields:   V1beta1Instance_MaintenancePolicy_MaintenanceWindow_RecurringTimeWindowFields,
+	},
+}
 
 var V1beta1Instance_MaintenancePolicyFields = ubx.FieldMap{
-		"MaintenanceExclusionWindow": ubx.FieldSpec{
-			WireName: "maintenance_exclusion_window",
-			Kind: "object",
-			Fields: V1beta1Instance_MaintenancePolicy_MaintenanceExclusionWindowFields,
-		},
-		"MaintenanceWindow": ubx.FieldSpec{
-			WireName: "maintenance_window",
-			Kind: "object",
-			Fields: V1beta1Instance_MaintenancePolicy_MaintenanceWindowFields,
-		},
-	}
+	"MaintenanceExclusionWindow": ubx.FieldSpec{
+		WireName: "maintenance_exclusion_window",
+		Kind:     "object",
+		Fields:   V1beta1Instance_MaintenancePolicy_MaintenanceExclusionWindowFields,
+	},
+	"MaintenanceWindow": ubx.FieldSpec{
+		WireName: "maintenance_window",
+		Kind:     "object",
+		Fields:   V1beta1Instance_MaintenancePolicy_MaintenanceWindowFields,
+	},
+}
 
 var V1beta1Instance_MonitoringConfigFields = ubx.FieldMap{
-		"EnableInstanceV2Metrics": ubx.FieldSpec{WireName: "enable_instance_v2_metrics"},
-	}
+	"EnableInstanceV2Metrics": ubx.FieldSpec{WireName: "enable_instance_v2_metrics"},
+}
 
 var V1beta1Instance_NetworkConfig_PrivateServiceConnectConfigFields = ubx.FieldMap{
-		"EffectiveUnreachableCidrBlock": ubx.FieldSpec{WireName: "effective_unreachable_cidr_block"},
-		"NetworkAttachment": ubx.FieldSpec{WireName: "network_attachment"},
-		"UnreachableCidrBlock": ubx.FieldSpec{WireName: "unreachable_cidr_block"},
-	}
+	"EffectiveUnreachableCidrBlock": ubx.FieldSpec{WireName: "effective_unreachable_cidr_block"},
+	"NetworkAttachment":             ubx.FieldSpec{WireName: "network_attachment"},
+	"UnreachableCidrBlock":          ubx.FieldSpec{WireName: "unreachable_cidr_block"},
+}
 
 var V1beta1Instance_NetworkConfigFields = ubx.FieldMap{
-		"ConnectionType": ubx.FieldSpec{WireName: "connection_type"},
-		"IpAllocation": ubx.FieldSpec{WireName: "ip_allocation"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"PrivateServiceConnectConfig": ubx.FieldSpec{
-			WireName: "private_service_connect_config",
-			Kind: "object",
-			Fields: V1beta1Instance_NetworkConfig_PrivateServiceConnectConfigFields,
-		},
-	}
+	"ConnectionType": ubx.FieldSpec{WireName: "connection_type"},
+	"IpAllocation":   ubx.FieldSpec{WireName: "ip_allocation"},
+	"Network":        ubx.FieldSpec{WireName: "network"},
+	"PrivateServiceConnectConfig": ubx.FieldSpec{
+		WireName: "private_service_connect_config",
+		Kind:     "object",
+		Fields:   V1beta1Instance_NetworkConfig_PrivateServiceConnectConfigFields,
+	},
+}
 
 type V1beta1InstanceConfig struct {
-	// Output only. List of accelerators enabled for this CDF instance.
-	Accelerators any
-	// Output only. Endpoint on which the REST APIs is accessible.
-	ApiEndpoint any
-	// Output only. Available versions that the instance can be upgraded to using UpdateInstanceRequest.
-	AvailableVersion any
-	// Output only. The time the instance was created.
-	CreateTime any
 	// The crypto key configuration. This field is used by the Customer-managed encryption keys (CMEK) feature.
 	CryptoKeyConfig any
 	// Optional. Option to enable the Dataplex Lineage Integration feature.
@@ -196,8 +170,6 @@ type V1beta1InstanceConfig struct {
 	DataprocServiceAccount any
 	// Optional. A description of this instance.
 	Description any
-	// Output only. If the instance state is DISABLED, the reason for disabling the instance.
-	DisabledReason any
 	// Optional. Display name for an instance.
 	DisplayName any
 	// Optional. Option to enable granular role-based access control.
@@ -206,58 +178,30 @@ type V1beta1InstanceConfig struct {
 	EnableStackdriverLogging any
 	// Optional. Option to enable Stackdriver Monitoring.
 	EnableStackdriverMonitoring any
-	// Output only. Option to enable zone separation.
-	EnableZoneSeparation any
 	// Confirguration of PubSubEventWriter.
 	EventPublishConfig any
-	// Output only. Cloud Storage bucket generated by Data Fusion in the customer project.
-	GcsBucket any
 	// The resource labels for instance to use to annotate any related underlying resources such as Compute Engine VMs. The character '=' is not allowed to be used within the labels.
 	Labels any
 	// Logging configuration for a Data Fusion instance.
 	LoggingConfig any
-	// Output only. The maintenance events for this instance.
-	MaintenanceEvents any
 	// Maintenance policy of the instance.
 	MaintenancePolicy any
 	// Monitoring configuration for a Data Fusion instance.
 	MonitoringConfig any
-	// Output only. The name of this instance is in the form of projects/{project}/locations/{location}/instances/{instance}.
-	Name any
 	// Network configuration for a Data Fusion instance. These configurations are used for peering with the customer network. Configurations are optional when a public Data Fusion instance is to be created. However, providing these configurations allows several benefits, such as reduced network latency while accessing the customer resources from managed Data Fusion instance nodes, as well as access to the customer on-prem resources.
 	NetworkConfig any
 	// Optional. Map of additional options used to configure the behavior of Data Fusion instance.
 	Options any
-	// Output only. Service agent for the customer project.
-	P4ServiceAccount any
 	// Optional. Current patch revision of the Data Fusion.
 	PatchRevision any
 	// Optional. Specifies whether the Data Fusion instance should be private. If set to true, all Data Fusion nodes will have private IP addresses and will not be able to access the public internet.
 	PrivateInstance any
-	// Output only. Reserved for future use.
-	SatisfiesPzi any
-	// Output only. Reserved for future use.
-	SatisfiesPzs any
-	// Output only. Deprecated. Use tenant_project_id instead to extract the tenant project ID.
-	ServiceAccount any
-	// Output only. Endpoint on which the Data Fusion UI is accessible.
-	ServiceEndpoint any
-	// Output only. The current state of this Data Fusion instance.
-	State any
-	// Output only. Additional information about the current state of this Data Fusion instance if available.
-	StateMessage any
 	// Optional. Input only. Immutable. Tag keys/values directly bound to this resource. For example: "123/environment": "production", "123/costCenter": "marketing"
 	Tags any
-	// Output only. The name of the tenant project.
-	TenantProjectId any
 	// Required. Instance type.
 	Type any
-	// Output only. The time the instance was last updated.
-	UpdateTime any
 	// Optional. Current version of Data Fusion.
 	Version any
-	// Output only. Endpoint on which the Data Fusion UI is accessible to third-party users.
-	WorkforceIdentityServiceEndpoint any
 	// Optional. Name of the zone in which the Data Fusion instance will be created. Only DEVELOPER instances use this field.
 	Zone any
 }
@@ -348,81 +292,50 @@ type V1beta1InstanceAttrs struct {
 var V1beta1Instance = ubx.ResourceBinding{
 	WireType: "google_datafusion_v1beta1_instance",
 	Fields: ubx.FieldMap{
-		"Accelerators": ubx.FieldSpec{
-			WireName: "accelerators",
-			Kind: "list",
-			Fields: V1beta1Instance_AcceleratorsFields,
-		},
-		"ApiEndpoint": ubx.FieldSpec{WireName: "api_endpoint"},
-		"AvailableVersion": ubx.FieldSpec{
-			WireName: "available_version",
-			Kind: "list",
-			Fields: V1beta1Instance_AvailableVersionFields,
-		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"CryptoKeyConfig": ubx.FieldSpec{
 			WireName: "crypto_key_config",
-			Kind: "object",
-			Fields: V1beta1Instance_CryptoKeyConfigFields,
+			Kind:     "object",
+			Fields:   V1beta1Instance_CryptoKeyConfigFields,
 		},
 		"DataplexDataLineageIntegrationEnabled": ubx.FieldSpec{WireName: "dataplex_data_lineage_integration_enabled"},
-		"DataprocServiceAccount": ubx.FieldSpec{WireName: "dataproc_service_account"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisabledReason": ubx.FieldSpec{WireName: "disabled_reason"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"EnableRbac": ubx.FieldSpec{WireName: "enable_rbac"},
-		"EnableStackdriverLogging": ubx.FieldSpec{WireName: "enable_stackdriver_logging"},
-		"EnableStackdriverMonitoring": ubx.FieldSpec{WireName: "enable_stackdriver_monitoring"},
-		"EnableZoneSeparation": ubx.FieldSpec{WireName: "enable_zone_separation"},
+		"DataprocServiceAccount":                ubx.FieldSpec{WireName: "dataproc_service_account"},
+		"Description":                           ubx.FieldSpec{WireName: "description"},
+		"DisplayName":                           ubx.FieldSpec{WireName: "display_name"},
+		"EnableRbac":                            ubx.FieldSpec{WireName: "enable_rbac"},
+		"EnableStackdriverLogging":              ubx.FieldSpec{WireName: "enable_stackdriver_logging"},
+		"EnableStackdriverMonitoring":           ubx.FieldSpec{WireName: "enable_stackdriver_monitoring"},
 		"EventPublishConfig": ubx.FieldSpec{
 			WireName: "event_publish_config",
-			Kind: "object",
-			Fields: V1beta1Instance_EventPublishConfigFields,
+			Kind:     "object",
+			Fields:   V1beta1Instance_EventPublishConfigFields,
 		},
-		"GcsBucket": ubx.FieldSpec{WireName: "gcs_bucket"},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
 		"LoggingConfig": ubx.FieldSpec{
 			WireName: "logging_config",
-			Kind: "object",
-			Fields: V1beta1Instance_LoggingConfigFields,
-		},
-		"MaintenanceEvents": ubx.FieldSpec{
-			WireName: "maintenance_events",
-			Kind: "list",
-			Fields: V1beta1Instance_MaintenanceEventsFields,
+			Kind:     "object",
+			Fields:   V1beta1Instance_LoggingConfigFields,
 		},
 		"MaintenancePolicy": ubx.FieldSpec{
 			WireName: "maintenance_policy",
-			Kind: "object",
-			Fields: V1beta1Instance_MaintenancePolicyFields,
+			Kind:     "object",
+			Fields:   V1beta1Instance_MaintenancePolicyFields,
 		},
 		"MonitoringConfig": ubx.FieldSpec{
 			WireName: "monitoring_config",
-			Kind: "object",
-			Fields: V1beta1Instance_MonitoringConfigFields,
+			Kind:     "object",
+			Fields:   V1beta1Instance_MonitoringConfigFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
 		"NetworkConfig": ubx.FieldSpec{
 			WireName: "network_config",
-			Kind: "object",
-			Fields: V1beta1Instance_NetworkConfigFields,
+			Kind:     "object",
+			Fields:   V1beta1Instance_NetworkConfigFields,
 		},
-		"Options": ubx.FieldSpec{WireName: "options"},
-		"P4ServiceAccount": ubx.FieldSpec{WireName: "p4_service_account"},
-		"PatchRevision": ubx.FieldSpec{WireName: "patch_revision"},
+		"Options":         ubx.FieldSpec{WireName: "options"},
+		"PatchRevision":   ubx.FieldSpec{WireName: "patch_revision"},
 		"PrivateInstance": ubx.FieldSpec{WireName: "private_instance"},
-		"SatisfiesPzi": ubx.FieldSpec{WireName: "satisfies_pzi"},
-		"SatisfiesPzs": ubx.FieldSpec{WireName: "satisfies_pzs"},
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-		"ServiceEndpoint": ubx.FieldSpec{WireName: "service_endpoint"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"StateMessage": ubx.FieldSpec{WireName: "state_message"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TenantProjectId": ubx.FieldSpec{WireName: "tenant_project_id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-		"WorkforceIdentityServiceEndpoint": ubx.FieldSpec{WireName: "workforce_identity_service_endpoint"},
-		"Zone": ubx.FieldSpec{WireName: "zone"},
+		"Tags":            ubx.FieldSpec{WireName: "tags"},
+		"Type":            ubx.FieldSpec{WireName: "type"},
+		"Version":         ubx.FieldSpec{WireName: "version"},
+		"Zone":            ubx.FieldSpec{WireName: "zone"},
 	},
 }

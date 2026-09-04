@@ -4,22 +4,22 @@ package documentai
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta3Evaluation_AllEntitiesMetrics_ConfidenceLevelMetrics_Metrics struct {
-	F1Score any
-	FalseNegativesCount any
-	FalsePositivesCount any
-	GroundTruthDocumentCount any
+	F1Score                     any
+	FalseNegativesCount         any
+	FalsePositivesCount         any
+	GroundTruthDocumentCount    any
 	GroundTruthOccurrencesCount any
-	Precision any
-	PredictedDocumentCount any
-	PredictedOccurrencesCount any
-	Recall any
-	TotalDocumentsCount any
-	TruePositivesCount any
+	Precision                   any
+	PredictedDocumentCount      any
+	PredictedOccurrencesCount   any
+	Recall                      any
+	TotalDocumentsCount         any
+	TruePositivesCount          any
 }
 
 type V1beta3Evaluation_AllEntitiesMetrics_ConfidenceLevelMetrics struct {
 	ConfidenceLevel any
-	Metrics any
+	Metrics         any
 }
 
 type V1beta3Evaluation_AllEntitiesMetrics struct {
@@ -52,9 +52,9 @@ type V1beta3Evaluation_DocumentCounters struct {
 
 type V1beta3Evaluation_Revisions struct {
 	AllEntitiesMetrics any
-	DocumentCounters any
-	EntityMetrics any
-	RevisionId any
+	DocumentCounters   any
+	EntityMetrics      any
+	RevisionId         any
 }
 
 type V1beta3EvaluationConfig struct {
@@ -74,7 +74,7 @@ type V1beta3EvaluationAttrs struct {
 	KmsKeyName any
 	// The KMS key version with which data is encrypted.
 	KmsKeyVersionName any
-	Name any
+	Name              any
 	// Contains all revisions of the evaluation, excluding the latest one.
 	Revisions any
 }

@@ -9,24 +9,18 @@ type V1betaEvaluationExpectation_LlmCriteria struct {
 }
 
 var V1betaEvaluationExpectation_LlmCriteriaFields = ubx.FieldMap{
-		"Prompt": ubx.FieldSpec{WireName: "prompt"},
-	}
+	"Prompt": ubx.FieldSpec{WireName: "prompt"},
+}
 
 type V1betaEvaluationExpectationConfig struct {
-	// Output only. Timestamp when the evaluation expectation was created.
-	CreateTime any
 	// Required. User-defined display name. Must be unique within the app.
 	DisplayName any
-	// Output only. Etag used to ensure the object hasn't changed during a read-modify-write operation. If the etag is empty, the update will overwrite any concurrent changes.
-	Etag any
 	// Configuration for LLM-based evaluation criteria.
 	LlmCriteria any
 	// Identifier. The unique identifier of this evaluation expectation. Format: `projects/{project}/locations/{location}/apps/{app}/evaluationExpectations/{evaluation_expectation}`
 	Name any
 	// Optional. User-defined tags for expectations. Can be used to filter expectations.
 	Tags any
-	// Output only. Timestamp when the evaluation expectation was last updated.
-	UpdateTime any
 }
 
 type V1betaEvaluationExpectationAttrs struct {
@@ -49,16 +43,13 @@ type V1betaEvaluationExpectationAttrs struct {
 var V1betaEvaluationExpectation = ubx.ResourceBinding{
 	WireType: "google_ces_v1beta_evaluation_expectation",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
 		"LlmCriteria": ubx.FieldSpec{
 			WireName: "llm_criteria",
-			Kind: "object",
-			Fields: V1betaEvaluationExpectation_LlmCriteriaFields,
+			Kind:     "object",
+			Fields:   V1betaEvaluationExpectation_LlmCriteriaFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

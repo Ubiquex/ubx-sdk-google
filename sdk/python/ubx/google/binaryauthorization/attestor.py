@@ -63,8 +63,6 @@ class AttestorConfig:
     etag: Any = None
     # Required. The resource name, in the format: `projects/*/attestors/*`. This field may not be updated.
     name: Any = None
-    # Output only. Time when the attestor was last updated.
-    update_time: Any = None
     # An user owned Grafeas note references a Grafeas Attestation.Authority Note created by the user.
     user_owned_grafeas_note: Any = None
 
@@ -87,7 +85,6 @@ Attestor = ubx.ResourceBinding(
         "description": ubx.FieldSpec(wire_name="description"),
         "etag": ubx.FieldSpec(wire_name="etag"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
         "user_owned_grafeas_note": ubx.FieldSpec(
             wire_name="user_owned_grafeas_note",
             kind="object",

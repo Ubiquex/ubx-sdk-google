@@ -8,8 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ExclusionConfig:
-    # Output only. The creation timestamp of the exclusion.This field may not be present for older exclusions.
-    create_time: Any = None
     # Optional. A description of this exclusion.
     description: Any = None
     # Optional. If set to True, then this exclusion is disabled and it does not exclude any log entries. You can update an exclusion to change the value of this field.
@@ -18,8 +16,6 @@ class ExclusionConfig:
     filter: Any = None
     # Optional. A client-assigned identifier, such as "load-balancer-exclusion". Identifiers are limited to 100 characters and can include only letters, digits, underscores, hyphens, and periods. First character has to be alphanumeric.
     name: Any = None
-    # Output only. The last update timestamp of the exclusion.This field may not be present for older exclusions.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class ExclusionAttrs:
@@ -39,11 +35,9 @@ class ExclusionAttrs:
 Exclusion = ubx.ResourceBinding(
     wire_type="google_logging_exclusion",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "disabled": ubx.FieldSpec(wire_name="disabled"),
         "filter": ubx.FieldSpec(wire_name="filter"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

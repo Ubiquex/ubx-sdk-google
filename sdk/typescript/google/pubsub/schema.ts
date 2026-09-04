@@ -6,10 +6,6 @@ export interface SchemaConfig {
   definition?: string | Computed<string>;
   /** Required. Name of the schema. Format is `projects/{project}/schemas/{schema}`. */
   name?: string | Computed<string>;
-  /** Output only. The timestamp that the revision was created. */
-  revisionCreateTime?: string | Computed<string>;
-  /** Output only. Immutable. The revision ID of the schema. */
-  revisionId?: string | Computed<string>;
   /** The type of the schema definition. */
   type?: string | Computed<string>;
 }
@@ -32,8 +28,6 @@ export const Schema: ResourceBinding<SchemaConfig, SchemaAttrs> = {
   fields: {
     definition: "definition",
     name: "name",
-    revisionCreateTime: "revision_create_time",
-    revisionId: "revision_id",
     type: "type",
   },
 };

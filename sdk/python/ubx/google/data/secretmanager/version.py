@@ -35,7 +35,7 @@ class Version_ReplicationStatus:
 
 @dataclasses.dataclass
 class VersionConfig:
-    name: Any = None
+    pass
 
 @dataclasses.dataclass
 class VersionAttrs:
@@ -60,6 +60,5 @@ class VersionAttrs:
 Version = ubx.DataSourceBinding(
     wire_type="google_secretmanager_version",
     fields={
-        "name": ubx.FieldSpec(wire_name="name"),
     },
 )

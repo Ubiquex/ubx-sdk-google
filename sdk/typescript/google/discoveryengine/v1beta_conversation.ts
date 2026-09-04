@@ -228,14 +228,10 @@ const V1betaConversation_MessagesFields: FieldMap = {
 };
 
 export interface V1betaConversationConfig {
-  /** Output only. The time the conversation finished. */
-  endTime?: string | Computed<string>;
   /** Conversation messages. */
   messages?: V1betaConversation_Messages[] | Computed<V1betaConversation_Messages[]>;
   /** Immutable. Fully qualified name `projects/{project}/locations/global/collections/{collection}/dataStore/* /conversations/*` or `projects/{project}/locations/global/collections/{collection}/engines/* /conversations/*`. */
   name?: string | Computed<string>;
-  /** Output only. The time the conversation started. */
-  startTime?: string | Computed<string>;
   /** The state of the Conversation. */
   state?: string | Computed<string>;
   /** A unique identifier for tracking users. */
@@ -260,14 +256,12 @@ export interface V1betaConversationAttrs {
 export const V1betaConversation: ResourceBinding<V1betaConversationConfig, V1betaConversationAttrs> = {
   wireType: "google_discoveryengine_v1beta_conversation",
   fields: {
-    endTime: "end_time",
     messages: {
       wireName: "messages",
       kind: "list",
       fields: V1betaConversation_MessagesFields,
     },
     name: "name",
-    startTime: "start_time",
     state: "state",
     userPseudoId: "user_pseudo_id",
   },

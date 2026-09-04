@@ -8,7 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class EffectiveCustomModuleConfig:
-    name: Any = None
+    pass
 
 @dataclasses.dataclass
 class EffectiveCustomModuleAttrs:
@@ -23,6 +23,5 @@ class EffectiveCustomModuleAttrs:
 EffectiveCustomModule = ubx.DataSourceBinding(
     wire_type="google_securitycenter_effective_custom_module",
     fields={
-        "name": ubx.FieldSpec(wire_name="name"),
     },
 )

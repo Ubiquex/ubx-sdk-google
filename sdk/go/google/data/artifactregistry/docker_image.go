@@ -5,12 +5,12 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DockerImage_ImageManifests struct {
 	Architecture any
-	Digest any
-	MediaType any
-	Os any
-	OsFeatures any
-	OsVersion any
-	Variant any
+	Digest       any
+	MediaType    any
+	Os           any
+	OsFeatures   any
+	OsVersion    any
+	Variant      any
 }
 
 type DockerImageConfig struct {
@@ -28,7 +28,7 @@ type DockerImageAttrs struct {
 	ImageSizeBytes any
 	// Media type of this image, e.g. "application/vnd.docker.distribution.manifest.v2+json". This field is returned as the 'metadata.mediaType' field in the Version resource.
 	MediaType any
-	Name any
+	Name      any
 	// Tags attached to this image.
 	Tags any
 	// Output only. The time when the docker image was last updated.

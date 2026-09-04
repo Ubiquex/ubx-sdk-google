@@ -32,10 +32,6 @@ const WasmPlugin_LogConfigFields: FieldMap = {
   sampleRate: "sample_rate",
 };
 
-const WasmPlugin_UsedByFields: FieldMap = {
-  name: "name",
-};
-
 const WasmPlugin_VersionsFields: FieldMap = {
   createTime: "create_time",
   description: "description",
@@ -49,8 +45,6 @@ const WasmPlugin_VersionsFields: FieldMap = {
 };
 
 export interface WasmPluginConfig {
-  /** Output only. The timestamp when the resource was created. */
-  createTime?: string | Computed<string>;
   /** Optional. A human-readable description of the resource. */
   description?: string | Computed<string>;
   /** Optional. Set of labels associated with the `WasmPlugin` resource. The format must comply with [the following requirements](/compute/docs/labeling-resources#requirements). */
@@ -61,10 +55,6 @@ export interface WasmPluginConfig {
   mainVersionId?: string | Computed<string>;
   /** Identifier. Name of the `WasmPlugin` resource in the following format: `projects/{project}/locations/{location}/wasmPlugins/{wasm_plugin}`. */
   name?: string | Computed<string>;
-  /** Output only. The timestamp when the resource was updated. */
-  updateTime?: string | Computed<string>;
-  /** Output only. List of all [extensions](https://cloud.google.com/service-extensions/docs/overview) that use this `WasmPlugin` resource. */
-  usedBy?: WasmPlugin_UsedBy[] | Computed<WasmPlugin_UsedBy[]>;
   /** Optional. All versions of this `WasmPlugin` resource in the key-value format. The key is the resource ID, and the value is the `VersionDetails` object. Lets you create or update a `WasmPlugin` resource and its versions in a single request. When the `main_version_id` field is not empty, it must point to one of the `VersionDetails` objects in the map. If provided in a `PATCH` request, the new versions replace the previous set. Any version omitted from the `versions` field is removed. Because the `WasmPluginVersion` resource is immutable, if a `WasmPluginVersion` resource with the same name already exists and differs, the request fails. Note: In a `GET` request, this field is populated only if the field `GetWasmPluginRequest.view` is set to `WASM_PLUGIN_VIEW_FULL`. */
   versions?: Record<string, WasmPlugin_Versions> | Computed<Record<string, WasmPlugin_Versions>>;
 }
@@ -93,7 +83,6 @@ export interface WasmPluginAttrs {
 export const WasmPlugin: ResourceBinding<WasmPluginConfig, WasmPluginAttrs> = {
   wireType: "google_networkservices_wasm_plugin",
   fields: {
-    createTime: "create_time",
     description: "description",
     labels: "labels",
     logConfig: {
@@ -103,12 +92,6 @@ export const WasmPlugin: ResourceBinding<WasmPluginConfig, WasmPluginAttrs> = {
     },
     mainVersionId: "main_version_id",
     name: "name",
-    updateTime: "update_time",
-    usedBy: {
-      wireName: "used_by",
-      kind: "list",
-      fields: WasmPlugin_UsedByFields,
-    },
     versions: {
       wireName: "versions",
       kind: "map",

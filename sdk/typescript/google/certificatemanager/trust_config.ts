@@ -30,8 +30,6 @@ const TrustConfig_SpiffeTrustStoresFields: FieldMap = {
 export interface TrustConfigConfig {
   /** Optional. A certificate matching an allowlisted certificate is always considered valid as long as the certificate is parseable, proof of private key possession is established, and constraints on the certificate's SAN field are met. */
   allowlistedCertificates?: TrustConfig_AllowlistedCertificates[] | Computed<TrustConfig_AllowlistedCertificates[]>;
-  /** Output only. The creation timestamp of a TrustConfig. */
-  createTime?: string | Computed<string>;
   /** Optional. One or more paragraphs of text description of a TrustConfig. */
   description?: string | Computed<string>;
   /** This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding. */
@@ -46,8 +44,6 @@ export interface TrustConfigConfig {
   tags?: Record<string, string> | Computed<Record<string, string>>;
   /** Optional. Set of trust stores to perform validation against. This field is supported when TrustConfig is configured with Load Balancers, currently not supported for SPIFFE certificate validation. Only one TrustStore specified is currently allowed. */
   trustStores?: TrustConfig_SpiffeTrustStores[] | Computed<TrustConfig_SpiffeTrustStores[]>;
-  /** Output only. The last update timestamp of a TrustConfig. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface TrustConfigAttrs {
@@ -81,7 +77,6 @@ export const TrustConfig: ResourceBinding<TrustConfigConfig, TrustConfigAttrs> =
       kind: "list",
       fields: TrustConfig_AllowlistedCertificatesFields,
     },
-    createTime: "create_time",
     description: "description",
     etag: "etag",
     labels: "labels",
@@ -97,6 +92,5 @@ export const TrustConfig: ResourceBinding<TrustConfigConfig, TrustConfigAttrs> =
       kind: "list",
       fields: TrustConfig_SpiffeTrustStoresFields,
     },
-    updateTime: "update_time",
   },
 };

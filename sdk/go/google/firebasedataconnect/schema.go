@@ -5,32 +5,32 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Schema_Datasources_HttpGraphql struct {
 	Timeout any
-	Uri any
+	Uri     any
 }
 
 type Schema_Datasources_Postgresql_CloudSql struct {
-	Edition any
+	Edition  any
 	Instance any
 }
 
 type Schema_Datasources_Postgresql struct {
-	CloudSql any
-	Database any
-	Ephemeral any
-	Schema any
-	SchemaMigration any
+	CloudSql         any
+	Database         any
+	Ephemeral        any
+	Schema           any
+	SchemaMigration  any
 	SchemaValidation any
-	Unlinked any
+	Unlinked         any
 }
 
 type Schema_Datasources struct {
 	HttpGraphql any
-	Postgresql any
+	Postgresql  any
 }
 
 type Schema_Source_Files struct {
 	Content any
-	Path any
+	Path    any
 }
 
 type Schema_Source struct {
@@ -39,78 +39,68 @@ type Schema_Source struct {
 }
 
 var Schema_Datasources_HttpGraphqlFields = ubx.FieldMap{
-		"Timeout": ubx.FieldSpec{WireName: "timeout"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"Timeout": ubx.FieldSpec{WireName: "timeout"},
+	"Uri":     ubx.FieldSpec{WireName: "uri"},
+}
 
 var Schema_Datasources_Postgresql_CloudSqlFields = ubx.FieldMap{
-		"Edition": ubx.FieldSpec{WireName: "edition"},
-		"Instance": ubx.FieldSpec{WireName: "instance"},
-	}
+	"Edition":  ubx.FieldSpec{WireName: "edition"},
+	"Instance": ubx.FieldSpec{WireName: "instance"},
+}
 
 var Schema_Datasources_PostgresqlFields = ubx.FieldMap{
-		"CloudSql": ubx.FieldSpec{
-			WireName: "cloud_sql",
-			Kind: "object",
-			Fields: Schema_Datasources_Postgresql_CloudSqlFields,
-		},
-		"Database": ubx.FieldSpec{WireName: "database"},
-		"Ephemeral": ubx.FieldSpec{WireName: "ephemeral"},
-		"Schema": ubx.FieldSpec{WireName: "schema"},
-		"SchemaMigration": ubx.FieldSpec{WireName: "schema_migration"},
-		"SchemaValidation": ubx.FieldSpec{WireName: "schema_validation"},
-		"Unlinked": ubx.FieldSpec{WireName: "unlinked"},
-	}
+	"CloudSql": ubx.FieldSpec{
+		WireName: "cloud_sql",
+		Kind:     "object",
+		Fields:   Schema_Datasources_Postgresql_CloudSqlFields,
+	},
+	"Database":         ubx.FieldSpec{WireName: "database"},
+	"Ephemeral":        ubx.FieldSpec{WireName: "ephemeral"},
+	"Schema":           ubx.FieldSpec{WireName: "schema"},
+	"SchemaMigration":  ubx.FieldSpec{WireName: "schema_migration"},
+	"SchemaValidation": ubx.FieldSpec{WireName: "schema_validation"},
+	"Unlinked":         ubx.FieldSpec{WireName: "unlinked"},
+}
 
 var Schema_DatasourcesFields = ubx.FieldMap{
-		"HttpGraphql": ubx.FieldSpec{
-			WireName: "http_graphql",
-			Kind: "object",
-			Fields: Schema_Datasources_HttpGraphqlFields,
-		},
-		"Postgresql": ubx.FieldSpec{
-			WireName: "postgresql",
-			Kind: "object",
-			Fields: Schema_Datasources_PostgresqlFields,
-		},
-	}
+	"HttpGraphql": ubx.FieldSpec{
+		WireName: "http_graphql",
+		Kind:     "object",
+		Fields:   Schema_Datasources_HttpGraphqlFields,
+	},
+	"Postgresql": ubx.FieldSpec{
+		WireName: "postgresql",
+		Kind:     "object",
+		Fields:   Schema_Datasources_PostgresqlFields,
+	},
+}
 
 var Schema_Source_FilesFields = ubx.FieldMap{
-		"Content": ubx.FieldSpec{WireName: "content"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-	}
+	"Content": ubx.FieldSpec{WireName: "content"},
+	"Path":    ubx.FieldSpec{WireName: "path"},
+}
 
 var Schema_SourceFields = ubx.FieldMap{
-		"Files": ubx.FieldSpec{
-			WireName: "files",
-			Kind: "list",
-			Fields: Schema_Source_FilesFields,
-		},
-	}
+	"Files": ubx.FieldSpec{
+		WireName: "files",
+		Kind:     "list",
+		Fields:   Schema_Source_FilesFields,
+	},
+}
 
 type SchemaConfig struct {
 	// Optional. Stores small amounts of arbitrary data.
 	Annotations any
-	// Output only. [Output only] Create time stamp.
-	CreateTime any
 	// Required. The data sources linked in the schema.
 	Datasources any
 	// Optional. Mutable human-readable name. 63 character limit.
 	DisplayName any
-	// Output only. This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding. [AIP-154](https://google.aip.dev/154)
-	Etag any
 	// Optional. Labels as key value pairs.
 	Labels any
 	// Identifier. The relative resource name of the schema, in the format: ``` projects/{project}/locations/{location}/services/{service}/schemas/{schema} ``` Right now, the only supported schema is "main".
 	Name any
-	// Output only. A field that if true, indicates that the system is working to compile and deploy the schema.
-	Reconciling any
 	// Used to represent a set of source files.
 	Source any
-	// Output only. System-assigned, unique identifier.
-	Uid any
-	// Output only. [Output only] Update time stamp.
-	UpdateTime any
 }
 
 type SchemaAttrs struct {
@@ -142,23 +132,18 @@ var Schema = ubx.ResourceBinding{
 	WireType: "google_firebasedataconnect_schema",
 	Fields: ubx.FieldMap{
 		"Annotations": ubx.FieldSpec{WireName: "annotations"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Datasources": ubx.FieldSpec{
 			WireName: "datasources",
-			Kind: "list",
-			Fields: Schema_DatasourcesFields,
+			Kind:     "list",
+			Fields:   Schema_DatasourcesFields,
 		},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Reconciling": ubx.FieldSpec{WireName: "reconciling"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"Source": ubx.FieldSpec{
 			WireName: "source",
-			Kind: "object",
-			Fields: Schema_SourceFields,
+			Kind:     "object",
+			Fields:   Schema_SourceFields,
 		},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

@@ -2,8 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface SacAttachmentConfig {
-  /** Output only. Timestamp when the attachment was created. */
-  createTime?: string | Computed<string>;
   /** Optional. Optional list of labels applied to the resource. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Identifier. Resource name, in the form `projects/{project}/locations/{location}/sacAttachments/{sac_attachment}`. */
@@ -12,10 +10,6 @@ export interface SacAttachmentConfig {
   nccGateway?: string | Computed<string>;
   /** Required. SAC Realm which owns the attachment. This can be input as an ID or a full resource name. The output always has the form `projects/{project_number}/locations/{location}/sacRealms/{sac_realm}`. */
   sacRealm?: string | Computed<string>;
-  /** Output only. State of the attachment. */
-  state?: string | Computed<string>;
-  /** Output only. Timestamp when the attachment was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface SacAttachmentAttrs {
@@ -38,12 +32,9 @@ export interface SacAttachmentAttrs {
 export const SacAttachment: ResourceBinding<SacAttachmentConfig, SacAttachmentAttrs> = {
   wireType: "google_networksecurity_sac_attachment",
   fields: {
-    createTime: "create_time",
     labels: "labels",
     name: "name",
     nccGateway: "ncc_gateway",
     sacRealm: "sac_realm",
-    state: "state",
-    updateTime: "update_time",
   },
 };

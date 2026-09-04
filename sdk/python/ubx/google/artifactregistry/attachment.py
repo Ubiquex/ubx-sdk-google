@@ -12,20 +12,14 @@ class AttachmentConfig:
     annotations: Any = None
     # The namespace this attachment belongs to. E.g. If an attachment is created by artifact analysis, namespace is set to `artifactanalysis.googleapis.com`.
     attachment_namespace: Any = None
-    # Output only. The time when the attachment was created.
-    create_time: Any = None
     # Required. The files that belong to this attachment. If the file ID part contains slashes, they are escaped. E.g. `projects/p1/locations/us-central1/repositories/repo1/files/sha:`.
     files: Any = None
     # The name of the attachment. E.g. `projects/p1/locations/us/repositories/repo/attachments/sbom`.
     name: Any = None
-    # Output only. The name of the OCI version that this attachment created. Only populated for Docker attachments. E.g. `projects/p1/locations/us-central1/repositories/repo1/packages/p1/versions/v1`.
-    oci_version_name: Any = None
     # Required. The target the attachment is for, can be a Version, Package or Repository. E.g. `projects/p1/locations/us-central1/repositories/repo1/packages/p1/versions/v1`.
     target: Any = None
     # Type of attachment. E.g. `application/vnd.spdx+json`
     type: Any = None
-    # Output only. The time when the attachment was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class AttachmentAttrs:
@@ -53,12 +47,9 @@ Attachment = ubx.ResourceBinding(
     fields={
         "annotations": ubx.FieldSpec(wire_name="annotations"),
         "attachment_namespace": ubx.FieldSpec(wire_name="attachment_namespace"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "files": ubx.FieldSpec(wire_name="files"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "oci_version_name": ubx.FieldSpec(wire_name="oci_version_name"),
         "target": ubx.FieldSpec(wire_name="target"),
         "type": ubx.FieldSpec(wire_name="type"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

@@ -42,7 +42,7 @@ type Organization_AddonsConfig struct {
 }
 
 type Organization_Properties_Property struct {
-	Name any
+	Name  any
 	Value any
 }
 
@@ -52,66 +52,66 @@ type Organization_Properties struct {
 }
 
 var Organization_AddonsConfig_AdvancedApiOpsConfigFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+}
 
 var Organization_AddonsConfig_AnalyticsConfigFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"ExpireTimeMillis": ubx.FieldSpec{WireName: "expire_time_millis"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-	}
+	"Enabled":          ubx.FieldSpec{WireName: "enabled"},
+	"ExpireTimeMillis": ubx.FieldSpec{WireName: "expire_time_millis"},
+	"State":            ubx.FieldSpec{WireName: "state"},
+	"UpdateTime":       ubx.FieldSpec{WireName: "update_time"},
+}
 
 var Organization_AddonsConfig_ApiSecurityConfigFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"ExpiresAt": ubx.FieldSpec{WireName: "expires_at"},
-	}
+	"Enabled":   ubx.FieldSpec{WireName: "enabled"},
+	"ExpiresAt": ubx.FieldSpec{WireName: "expires_at"},
+}
 
 var Organization_AddonsConfigFields = ubx.FieldMap{
-		"AdvancedApiOpsConfig": ubx.FieldSpec{
-			WireName: "advanced_api_ops_config",
-			Kind: "object",
-			Fields: Organization_AddonsConfig_AdvancedApiOpsConfigFields,
-		},
-		"AnalyticsConfig": ubx.FieldSpec{
-			WireName: "analytics_config",
-			Kind: "object",
-			Fields: Organization_AddonsConfig_AnalyticsConfigFields,
-		},
-		"ApiSecurityConfig": ubx.FieldSpec{
-			WireName: "api_security_config",
-			Kind: "object",
-			Fields: Organization_AddonsConfig_ApiSecurityConfigFields,
-		},
-		"ConnectorsPlatformConfig": ubx.FieldSpec{
-			WireName: "connectors_platform_config",
-			Kind: "object",
-			Fields: Organization_AddonsConfig_ApiSecurityConfigFields,
-		},
-		"IntegrationConfig": ubx.FieldSpec{
-			WireName: "integration_config",
-			Kind: "object",
-			Fields: Organization_AddonsConfig_AdvancedApiOpsConfigFields,
-		},
-		"MonetizationConfig": ubx.FieldSpec{
-			WireName: "monetization_config",
-			Kind: "object",
-			Fields: Organization_AddonsConfig_AdvancedApiOpsConfigFields,
-		},
-	}
+	"AdvancedApiOpsConfig": ubx.FieldSpec{
+		WireName: "advanced_api_ops_config",
+		Kind:     "object",
+		Fields:   Organization_AddonsConfig_AdvancedApiOpsConfigFields,
+	},
+	"AnalyticsConfig": ubx.FieldSpec{
+		WireName: "analytics_config",
+		Kind:     "object",
+		Fields:   Organization_AddonsConfig_AnalyticsConfigFields,
+	},
+	"ApiSecurityConfig": ubx.FieldSpec{
+		WireName: "api_security_config",
+		Kind:     "object",
+		Fields:   Organization_AddonsConfig_ApiSecurityConfigFields,
+	},
+	"ConnectorsPlatformConfig": ubx.FieldSpec{
+		WireName: "connectors_platform_config",
+		Kind:     "object",
+		Fields:   Organization_AddonsConfig_ApiSecurityConfigFields,
+	},
+	"IntegrationConfig": ubx.FieldSpec{
+		WireName: "integration_config",
+		Kind:     "object",
+		Fields:   Organization_AddonsConfig_AdvancedApiOpsConfigFields,
+	},
+	"MonetizationConfig": ubx.FieldSpec{
+		WireName: "monetization_config",
+		Kind:     "object",
+		Fields:   Organization_AddonsConfig_AdvancedApiOpsConfigFields,
+	},
+}
 
 var Organization_Properties_PropertyFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Organization_PropertiesFields = ubx.FieldMap{
-		"Property": ubx.FieldSpec{
-			WireName: "property",
-			Kind: "list",
-			Fields: Organization_Properties_PropertyFields,
-		},
-	}
+	"Property": ubx.FieldSpec{
+		WireName: "property",
+		Kind:     "list",
+		Fields:   Organization_Properties_PropertyFields,
+	},
+}
 
 type OrganizationConfig struct {
 	// Add-on configurations for the Apigee organization.
@@ -122,22 +122,14 @@ type OrganizationConfig struct {
 	ApiConsumerDataEncryptionKeyName any
 	// Optional. This field is needed only for customers using non-default data residency regions. Apigee stores some control plane data only in single region. This field determines which single region Apigee should use. For example: "us-west1" when control plane is in US or "europe-west2" when control plane is in EU.
 	ApiConsumerDataLocation any
-	// Output only. Apigee Project ID associated with the organization. Use this project to allowlist Apigee in the Service Attachment when using private service connect with Apigee.
-	ApigeeProjectId any
 	// Not used by Apigee.
 	Attributes any
 	// Optional. Compute Engine network used for Service Networking to be peered with Apigee runtime instances. See [Getting started with the Service Networking API](https://cloud.google.com/service-infrastructure/docs/service-networking/getting-started). Valid only when [RuntimeType](#RuntimeType) is set to `CLOUD`. The value must be set before the creation of a runtime instance and can be updated only when there are no runtime instances. For example: `default`. When changing authorizedNetwork, you must reconfigure VPC peering. After VPC peering with previous network is deleted, [run the following command](https://cloud.google.com/sdk/gcloud/reference/services/vpc-peerings/delete): `gcloud services vpc-peerings delete --network=NETWORK`, where `NETWORK` is the name of the previous network. This will delete the previous Service Networking. Otherwise, you will get the following error: `The resource 'projects/...-tp' is already linked to another shared VPC host 'projects/...-tp`. Apigee also supports shared VPC (that is, the host network project is not the same as the one that is peering with Apigee). See [Shared VPC overview](https://cloud.google.com/vpc/docs/shared-vpc). To use a shared VPC network, use the following format: `projects/{host-project-id}/{region}/networks/{network-name}`. For example: `projects/my-sharedvpc-host/global/networks/mynetwork` **Note:** Not supported for Apigee hybrid.
 	AuthorizedNetwork any
 	// Optional. Billing type of the Apigee organization. See [Apigee pricing](https://cloud.google.com/apigee/pricing).
 	BillingType any
-	// Output only. Deprecated: Use `ca_certificates` instead. Base64-encoded public certificate for the root CA of the Apigee organization. Valid only when [RuntimeType](#RuntimeType) is `CLOUD`.
-	CaCertificate any
-	// Output only. Base64-encoded public certificates for the root CA of the Apigee organization. Valid only when [RuntimeType](#RuntimeType) is `CLOUD`. Multiple certificates are used to support certificate rotation.
-	CaCertificates any
 	// Optional. Cloud KMS key name used for encrypting control plane data that is stored in a multi region. Only used for the data residency region "US" or "EU". If not specified or [BillingType](#BillingType) is `EVALUATION`, a Google-Managed encryption key will be used. Format: `projects/*/locations/*/keyRings/*/cryptoKeys/*`
 	ControlPlaneEncryptionKeyName any
-	// Output only. Time that the Apigee organization was created in milliseconds since epoch.
-	CreatedAt any
 	// Not used by Apigee.
 	CustomerName any
 	// Optional. Description of the Apigee organization.
@@ -146,32 +138,16 @@ type OrganizationConfig struct {
 	DisableVpcPeering any
 	// Optional. Display name for the Apigee organization. Unused, but reserved for future use.
 	DisplayName any
-	// Output only. List of environments in the Apigee organization.
-	Environments any
-	// Output only. Time that the Apigee organization is scheduled for deletion.
-	ExpiresAt any
-	// Output only. Time that the Apigee organization was last modified in milliseconds since epoch.
-	LastModifiedAt any
-	// Output only. Name of the Apigee organization.
-	Name any
 	// Optional. Flag that specifies if internet egress is restricted for VPC Service Controls. Valid only when runtime_type is `CLOUD` and disable_vpc_peering is `true`.
 	NetworkEgressRestricted any
 	// Optional. Configuration for the Portals settings.
 	PortalDisabled any
-	// Output only. Project ID associated with the Apigee organization.
-	ProjectId any
 	// Message for compatibility with legacy Edge specification for Java Properties object in JSON.
 	Properties any
 	// Optional. Cloud KMS key name used for encrypting the data that is stored and replicated across runtime instances. Update is not allowed after the organization is created. If not specified or [RuntimeType](#RuntimeType) is `TRIAL`, a Google-Managed encryption key will be used. For example: "projects/foo/locations/us/keyRings/bar/cryptoKeys/baz". **Note:** Not supported for Apigee hybrid.
 	RuntimeDatabaseEncryptionKeyName any
 	// Required. Runtime type of the Apigee organization based on the Apigee subscription purchased.
 	RuntimeType any
-	// Output only. State of the organization. Values other than ACTIVE means the resource is not ready to use.
-	State any
-	// Output only. Subscription plan that the customer has purchased. Output only.
-	SubscriptionPlan any
-	// Output only. DEPRECATED: This will eventually be replaced by BillingType. Subscription type of the Apigee organization. Valid values include trial (free, limited, and for evaluation purposes only) or paid (full subscription has been purchased). See [Apigee pricing](https://cloud.google.com/apigee/pricing/).
-	SubscriptionType any
 	// Not used by Apigee.
 	Type any
 }
@@ -244,41 +220,29 @@ var Organization = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AddonsConfig": ubx.FieldSpec{
 			WireName: "addons_config",
-			Kind: "object",
-			Fields: Organization_AddonsConfigFields,
+			Kind:     "object",
+			Fields:   Organization_AddonsConfigFields,
 		},
-		"AnalyticsRegion": ubx.FieldSpec{WireName: "analytics_region"},
+		"AnalyticsRegion":                  ubx.FieldSpec{WireName: "analytics_region"},
 		"ApiConsumerDataEncryptionKeyName": ubx.FieldSpec{WireName: "api_consumer_data_encryption_key_name"},
-		"ApiConsumerDataLocation": ubx.FieldSpec{WireName: "api_consumer_data_location"},
-		"ApigeeProjectId": ubx.FieldSpec{WireName: "apigee_project_id"},
-		"Attributes": ubx.FieldSpec{WireName: "attributes"},
-		"AuthorizedNetwork": ubx.FieldSpec{WireName: "authorized_network"},
-		"BillingType": ubx.FieldSpec{WireName: "billing_type"},
-		"CaCertificate": ubx.FieldSpec{WireName: "ca_certificate"},
-		"CaCertificates": ubx.FieldSpec{WireName: "ca_certificates"},
-		"ControlPlaneEncryptionKeyName": ubx.FieldSpec{WireName: "control_plane_encryption_key_name"},
-		"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
-		"CustomerName": ubx.FieldSpec{WireName: "customer_name"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisableVpcPeering": ubx.FieldSpec{WireName: "disable_vpc_peering"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Environments": ubx.FieldSpec{WireName: "environments"},
-		"ExpiresAt": ubx.FieldSpec{WireName: "expires_at"},
-		"LastModifiedAt": ubx.FieldSpec{WireName: "last_modified_at"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NetworkEgressRestricted": ubx.FieldSpec{WireName: "network_egress_restricted"},
-		"PortalDisabled": ubx.FieldSpec{WireName: "portal_disabled"},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
+		"ApiConsumerDataLocation":          ubx.FieldSpec{WireName: "api_consumer_data_location"},
+		"Attributes":                       ubx.FieldSpec{WireName: "attributes"},
+		"AuthorizedNetwork":                ubx.FieldSpec{WireName: "authorized_network"},
+		"BillingType":                      ubx.FieldSpec{WireName: "billing_type"},
+		"ControlPlaneEncryptionKeyName":    ubx.FieldSpec{WireName: "control_plane_encryption_key_name"},
+		"CustomerName":                     ubx.FieldSpec{WireName: "customer_name"},
+		"Description":                      ubx.FieldSpec{WireName: "description"},
+		"DisableVpcPeering":                ubx.FieldSpec{WireName: "disable_vpc_peering"},
+		"DisplayName":                      ubx.FieldSpec{WireName: "display_name"},
+		"NetworkEgressRestricted":          ubx.FieldSpec{WireName: "network_egress_restricted"},
+		"PortalDisabled":                   ubx.FieldSpec{WireName: "portal_disabled"},
 		"Properties": ubx.FieldSpec{
 			WireName: "properties",
-			Kind: "object",
-			Fields: Organization_PropertiesFields,
+			Kind:     "object",
+			Fields:   Organization_PropertiesFields,
 		},
 		"RuntimeDatabaseEncryptionKeyName": ubx.FieldSpec{WireName: "runtime_database_encryption_key_name"},
-		"RuntimeType": ubx.FieldSpec{WireName: "runtime_type"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"SubscriptionPlan": ubx.FieldSpec{WireName: "subscription_plan"},
-		"SubscriptionType": ubx.FieldSpec{WireName: "subscription_type"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"RuntimeType":                      ubx.FieldSpec{WireName: "runtime_type"},
+		"Type":                             ubx.FieldSpec{WireName: "type"},
 	},
 }

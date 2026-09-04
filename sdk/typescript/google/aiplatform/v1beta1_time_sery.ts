@@ -17,8 +17,6 @@ const V1beta1TimeSery_MetadataFields: FieldMap = {
 };
 
 export interface V1beta1TimeSeryConfig {
-  /** Output only. Timestamp when this TensorboardTimeSeries was created. */
-  createTime?: string | Computed<string>;
   /** Description of this TensorboardTimeSeries. */
   description?: string | Computed<string>;
   /** Required. User provided name of this TensorboardTimeSeries. This value should be unique among all TensorboardTimeSeries resources belonging to the same TensorboardRun resource (parent resource). */
@@ -27,14 +25,10 @@ export interface V1beta1TimeSeryConfig {
   etag?: string | Computed<string>;
   /** Describes metadata for a TensorboardTimeSeries. */
   metadata?: V1beta1TimeSery_Metadata | Computed<V1beta1TimeSery_Metadata>;
-  /** Output only. Name of the TensorboardTimeSeries. */
-  name?: string | Computed<string>;
   /** Data of the current plugin, with the size limited to 65KB. */
   pluginData?: string | Computed<string>;
   /** Immutable. Name of the plugin this time series pertain to. Such as Scalar, Tensor, Blob */
   pluginName?: string | Computed<string>;
-  /** Output only. Timestamp when this TensorboardTimeSeries was last updated. */
-  updateTime?: string | Computed<string>;
   /** Required. Immutable. Type of TensorboardTimeSeries value. */
   valueType?: string | Computed<string>;
 }
@@ -65,7 +59,6 @@ export interface V1beta1TimeSeryAttrs {
 export const V1beta1TimeSery: ResourceBinding<V1beta1TimeSeryConfig, V1beta1TimeSeryAttrs> = {
   wireType: "google_aiplatform_v1beta1_time_sery",
   fields: {
-    createTime: "create_time",
     description: "description",
     displayName: "display_name",
     etag: "etag",
@@ -74,10 +67,8 @@ export const V1beta1TimeSery: ResourceBinding<V1beta1TimeSeryConfig, V1beta1Time
       kind: "object",
       fields: V1beta1TimeSery_MetadataFields,
     },
-    name: "name",
     pluginData: "plugin_data",
     pluginName: "plugin_name",
-    updateTime: "update_time",
     valueType: "value_type",
   },
 };

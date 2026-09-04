@@ -24,35 +24,29 @@ type V1beta1Connection_CloudSql struct {
 }
 
 var V1beta1Connection_CloudSql_CredentialFields = ubx.FieldMap{
-		"Password": ubx.FieldSpec{WireName: "password"},
-		"Username": ubx.FieldSpec{WireName: "username"},
-	}
+	"Password": ubx.FieldSpec{WireName: "password"},
+	"Username": ubx.FieldSpec{WireName: "username"},
+}
 
 var V1beta1Connection_CloudSqlFields = ubx.FieldMap{
-		"Credential": ubx.FieldSpec{
-			WireName: "credential",
-			Kind: "object",
-			Fields: V1beta1Connection_CloudSql_CredentialFields,
-		},
-		"Database": ubx.FieldSpec{WireName: "database"},
-		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
-		"ServiceAccountId": ubx.FieldSpec{WireName: "service_account_id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Credential": ubx.FieldSpec{
+		WireName: "credential",
+		Kind:     "object",
+		Fields:   V1beta1Connection_CloudSql_CredentialFields,
+	},
+	"Database":         ubx.FieldSpec{WireName: "database"},
+	"InstanceId":       ubx.FieldSpec{WireName: "instance_id"},
+	"ServiceAccountId": ubx.FieldSpec{WireName: "service_account_id"},
+	"Type":             ubx.FieldSpec{WireName: "type"},
+}
 
 type V1beta1ConnectionConfig struct {
 	// Connection properties specific to the Cloud SQL.
 	CloudSql any
-	// Output only. The creation timestamp of the connection.
-	CreationTime any
 	// User provided description.
 	Description any
 	// User provided display name for the connection.
 	FriendlyName any
-	// Output only. True, if credential is configured for this connection.
-	HasCredential any
-	// Output only. The last update timestamp of the connection.
-	LastModifiedTime any
 	// The resource name of the connection in the form of: `projects/{project_id}/locations/{location_id}/connections/{connection_id}`
 	Name any
 }
@@ -79,14 +73,11 @@ var V1beta1Connection = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"CloudSql": ubx.FieldSpec{
 			WireName: "cloud_sql",
-			Kind: "object",
-			Fields: V1beta1Connection_CloudSqlFields,
+			Kind:     "object",
+			Fields:   V1beta1Connection_CloudSqlFields,
 		},
-		"CreationTime": ubx.FieldSpec{WireName: "creation_time"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":  ubx.FieldSpec{WireName: "description"},
 		"FriendlyName": ubx.FieldSpec{WireName: "friendly_name"},
-		"HasCredential": ubx.FieldSpec{WireName: "has_credential"},
-		"LastModifiedTime": ubx.FieldSpec{WireName: "last_modified_time"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":         ubx.FieldSpec{WireName: "name"},
 	},
 }

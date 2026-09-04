@@ -4,10 +4,6 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 export interface BrandConfig {
   /** Application name displayed on OAuth consent screen. */
   applicationTitle?: string | Computed<string>;
-  /** Output only. Identifier of the brand. NOTE: GCP project number achieves the same brand identification purpose as only one brand per project can be created. */
-  name?: string | Computed<string>;
-  /** Output only. Whether the brand is only intended for usage inside the G Suite organization only. */
-  orgInternalOnly?: boolean | Computed<boolean>;
   /** Support email displayed on the OAuth consent screen. */
   supportEmail?: string | Computed<string>;
 }
@@ -27,8 +23,6 @@ export const Brand: ResourceBinding<BrandConfig, BrandAttrs> = {
   wireType: "google_iap_brand",
   fields: {
     applicationTitle: "application_title",
-    name: "name",
-    orgInternalOnly: "org_internal_only",
     supportEmail: "support_email",
   },
 };

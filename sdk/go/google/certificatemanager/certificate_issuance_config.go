@@ -14,22 +14,20 @@ type CertificateIssuanceConfig_CertificateAuthorityConfig struct {
 }
 
 var CertificateIssuanceConfig_CertificateAuthorityConfig_CertificateAuthorityServiceConfigFields = ubx.FieldMap{
-		"CaPool": ubx.FieldSpec{WireName: "ca_pool"},
-	}
+	"CaPool": ubx.FieldSpec{WireName: "ca_pool"},
+}
 
 var CertificateIssuanceConfig_CertificateAuthorityConfigFields = ubx.FieldMap{
-		"CertificateAuthorityServiceConfig": ubx.FieldSpec{
-			WireName: "certificate_authority_service_config",
-			Kind: "object",
-			Fields: CertificateIssuanceConfig_CertificateAuthorityConfig_CertificateAuthorityServiceConfigFields,
-		},
-	}
+	"CertificateAuthorityServiceConfig": ubx.FieldSpec{
+		WireName: "certificate_authority_service_config",
+		Kind:     "object",
+		Fields:   CertificateIssuanceConfig_CertificateAuthorityConfig_CertificateAuthorityServiceConfigFields,
+	},
+}
 
 type CertificateIssuanceConfigConfig struct {
 	// The CA that issues the workload certificate. It includes CA address, type, authentication to CA service, etc.
 	CertificateAuthorityConfig any
-	// Output only. The creation timestamp of a CertificateIssuanceConfig.
-	CreateTime any
 	// Optional. One or more paragraphs of text description of a CertificateIssuanceConfig.
 	Description any
 	// Required. The key algorithm to use when generating the private key.
@@ -44,8 +42,6 @@ type CertificateIssuanceConfigConfig struct {
 	RotationWindowPercentage any
 	// Optional. Input only. Immutable. Tag keys/values directly bound to this resource. For example: "123/environment": "production", "123/costCenter": "marketing"
 	Tags any
-	// Output only. The last update timestamp of a CertificateIssuanceConfig.
-	UpdateTime any
 }
 
 type CertificateIssuanceConfigAttrs struct {
@@ -76,17 +72,15 @@ var CertificateIssuanceConfig = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"CertificateAuthorityConfig": ubx.FieldSpec{
 			WireName: "certificate_authority_config",
-			Kind: "object",
-			Fields: CertificateIssuanceConfig_CertificateAuthorityConfigFields,
+			Kind:     "object",
+			Fields:   CertificateIssuanceConfig_CertificateAuthorityConfigFields,
 		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"KeyAlgorithm": ubx.FieldSpec{WireName: "key_algorithm"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Lifetime": ubx.FieldSpec{WireName: "lifetime"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Description":              ubx.FieldSpec{WireName: "description"},
+		"KeyAlgorithm":             ubx.FieldSpec{WireName: "key_algorithm"},
+		"Labels":                   ubx.FieldSpec{WireName: "labels"},
+		"Lifetime":                 ubx.FieldSpec{WireName: "lifetime"},
+		"Name":                     ubx.FieldSpec{WireName: "name"},
 		"RotationWindowPercentage": ubx.FieldSpec{WireName: "rotation_window_percentage"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"Tags":                     ubx.FieldSpec{WireName: "tags"},
 	},
 }

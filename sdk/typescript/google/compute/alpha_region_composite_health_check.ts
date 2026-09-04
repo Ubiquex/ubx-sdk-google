@@ -2,8 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface AlphaRegionCompositeHealthCheckConfig {
-  /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
-  creationTimestamp?: string | Computed<string>;
   /** An optional description of this resource. Provide this property when you create the resource. */
   description?: string | Computed<string>;
   /** Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a CompositeHealthCheck. An up-to-date fingerprint must be provided in order to patch the CompositeHealthCheck; Otherwise, the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve the CompositeHealthCheck. */
@@ -12,18 +10,8 @@ export interface AlphaRegionCompositeHealthCheckConfig {
   healthDestination?: string | Computed<string>;
   /** URLs to the HealthSource resources whose results are AND'ed. I.e. he aggregated result is is HEALTHY only if all sources are HEALTHY. Must have at least 1. Must not have more than 10. Must be regional and in the same region as theCompositeHealthCheck. Can be mutated. */
   healthSources?: string[] | Computed<string[]>;
-  /** Output only. [Output Only] A unique identifier for this resource type. The server generates this identifier. */
-  id?: string | Computed<string>;
-  /** Output only. [Output Only] Type of the resource. Alwayscompute#compositeHealthCheck for composite health checks. */
-  kind?: string | Computed<string>;
   /** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
   name?: string | Computed<string>;
-  /** Output only. [Output Only] URL of the region where the composite health check resides. This field applies only to the regional resource. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body. */
-  region?: string | Computed<string>;
-  /** Output only. [Output Only] Server-defined URL for the resource. */
-  selfLink?: string | Computed<string>;
-  /** Output only. [Output Only] Server-defined URL with id for the resource. */
-  selfLinkWithId?: string | Computed<string>;
 }
 
 export interface AlphaRegionCompositeHealthCheckAttrs {
@@ -54,16 +42,10 @@ export interface AlphaRegionCompositeHealthCheckAttrs {
 export const AlphaRegionCompositeHealthCheck: ResourceBinding<AlphaRegionCompositeHealthCheckConfig, AlphaRegionCompositeHealthCheckAttrs> = {
   wireType: "google_compute_alpha_region_composite_health_check",
   fields: {
-    creationTimestamp: "creation_timestamp",
     description: "description",
     fingerprint: "fingerprint",
     healthDestination: "health_destination",
     healthSources: "health_sources",
-    id: "id",
-    kind: "kind",
     name: "name",
-    region: "region",
-    selfLink: "self_link",
-    selfLinkWithId: "self_link_with_id",
   },
 };

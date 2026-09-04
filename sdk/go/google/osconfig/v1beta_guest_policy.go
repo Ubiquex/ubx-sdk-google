@@ -9,8 +9,8 @@ type V1betaGuestPolicy_Assignment_GroupLabels struct {
 
 type V1betaGuestPolicy_Assignment_OsTypes struct {
 	OsArchitecture any
-	OsShortName any
-	OsVersion any
+	OsShortName    any
+	OsVersion      any
 }
 
 type V1betaGuestPolicy_Assignment struct {
@@ -27,60 +27,60 @@ type V1betaGuestPolicy_Assignment struct {
 }
 
 type V1betaGuestPolicy_PackageRepositories_Apt struct {
-	ArchiveType any
-	Components any
+	ArchiveType  any
+	Components   any
 	Distribution any
-	GpgKey any
-	Uri any
+	GpgKey       any
+	Uri          any
 }
 
 type V1betaGuestPolicy_PackageRepositories_Goo struct {
 	Name any
-	Url any
+	Url  any
 }
 
 type V1betaGuestPolicy_PackageRepositories_Yum struct {
-	BaseUrl any
+	BaseUrl     any
 	DisplayName any
-	GpgKeys any
-	Id any
+	GpgKeys     any
+	Id          any
 }
 
 type V1betaGuestPolicy_PackageRepositories struct {
-	Apt any
-	Goo any
-	Yum any
+	Apt    any
+	Goo    any
+	Yum    any
 	Zypper any
 }
 
 type V1betaGuestPolicy_Packages struct {
 	DesiredState any
-	Manager any
-	Name any
+	Manager      any
+	Name         any
 }
 
 type V1betaGuestPolicy_Recipes_Artifacts_Gcs struct {
-	Bucket any
+	Bucket     any
 	Generation any
-	Object any
+	Object     any
 }
 
 type V1betaGuestPolicy_Recipes_Artifacts_Remote struct {
 	Checksum any
-	Uri any
+	Uri      any
 }
 
 type V1betaGuestPolicy_Recipes_Artifacts struct {
 	AllowInsecure any
-	Gcs any
-	Id any
-	Remote any
+	Gcs           any
+	Id            any
+	Remote        any
 }
 
 type V1betaGuestPolicy_Recipes_InstallSteps_ArchiveExtraction struct {
-	ArtifactId any
+	ArtifactId  any
 	Destination any
-	Type any
+	Type        any
 }
 
 type V1betaGuestPolicy_Recipes_InstallSteps_DpkgInstallation struct {
@@ -88,251 +88,249 @@ type V1betaGuestPolicy_Recipes_InstallSteps_DpkgInstallation struct {
 }
 
 type V1betaGuestPolicy_Recipes_InstallSteps_FileCopy struct {
-	ArtifactId any
+	ArtifactId  any
 	Destination any
-	Overwrite any
+	Overwrite   any
 	Permissions any
 }
 
 type V1betaGuestPolicy_Recipes_InstallSteps_FileExec struct {
 	AllowedExitCodes any
-	Args any
-	ArtifactId any
-	LocalPath any
+	Args             any
+	ArtifactId       any
+	LocalPath        any
 }
 
 type V1betaGuestPolicy_Recipes_InstallSteps_MsiInstallation struct {
 	AllowedExitCodes any
-	ArtifactId any
-	Flags any
+	ArtifactId       any
+	Flags            any
 }
 
 type V1betaGuestPolicy_Recipes_InstallSteps_ScriptRun struct {
 	AllowedExitCodes any
-	Interpreter any
-	Script any
+	Interpreter      any
+	Script           any
 }
 
 type V1betaGuestPolicy_Recipes_InstallSteps struct {
 	ArchiveExtraction any
-	DpkgInstallation any
-	FileCopy any
-	FileExec any
-	MsiInstallation any
-	RpmInstallation any
-	ScriptRun any
+	DpkgInstallation  any
+	FileCopy          any
+	FileExec          any
+	MsiInstallation   any
+	RpmInstallation   any
+	ScriptRun         any
 }
 
 type V1betaGuestPolicy_Recipes struct {
-	Artifacts any
+	Artifacts    any
 	DesiredState any
 	InstallSteps any
-	Name any
-	UpdateSteps any
-	Version any
+	Name         any
+	UpdateSteps  any
+	Version      any
 }
 
 var V1betaGuestPolicy_Assignment_GroupLabelsFields = ubx.FieldMap{
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-	}
+	"Labels": ubx.FieldSpec{WireName: "labels"},
+}
 
 var V1betaGuestPolicy_Assignment_OsTypesFields = ubx.FieldMap{
-		"OsArchitecture": ubx.FieldSpec{WireName: "os_architecture"},
-		"OsShortName": ubx.FieldSpec{WireName: "os_short_name"},
-		"OsVersion": ubx.FieldSpec{WireName: "os_version"},
-	}
+	"OsArchitecture": ubx.FieldSpec{WireName: "os_architecture"},
+	"OsShortName":    ubx.FieldSpec{WireName: "os_short_name"},
+	"OsVersion":      ubx.FieldSpec{WireName: "os_version"},
+}
 
 var V1betaGuestPolicy_AssignmentFields = ubx.FieldMap{
-		"GroupLabels": ubx.FieldSpec{
-			WireName: "group_labels",
-			Kind: "list",
-			Fields: V1betaGuestPolicy_Assignment_GroupLabelsFields,
-		},
-		"InstanceNamePrefixes": ubx.FieldSpec{WireName: "instance_name_prefixes"},
-		"Instances": ubx.FieldSpec{WireName: "instances"},
-		"OsTypes": ubx.FieldSpec{
-			WireName: "os_types",
-			Kind: "list",
-			Fields: V1betaGuestPolicy_Assignment_OsTypesFields,
-		},
-		"Zones": ubx.FieldSpec{WireName: "zones"},
-	}
+	"GroupLabels": ubx.FieldSpec{
+		WireName: "group_labels",
+		Kind:     "list",
+		Fields:   V1betaGuestPolicy_Assignment_GroupLabelsFields,
+	},
+	"InstanceNamePrefixes": ubx.FieldSpec{WireName: "instance_name_prefixes"},
+	"Instances":            ubx.FieldSpec{WireName: "instances"},
+	"OsTypes": ubx.FieldSpec{
+		WireName: "os_types",
+		Kind:     "list",
+		Fields:   V1betaGuestPolicy_Assignment_OsTypesFields,
+	},
+	"Zones": ubx.FieldSpec{WireName: "zones"},
+}
 
 var V1betaGuestPolicy_PackageRepositories_AptFields = ubx.FieldMap{
-		"ArchiveType": ubx.FieldSpec{WireName: "archive_type"},
-		"Components": ubx.FieldSpec{WireName: "components"},
-		"Distribution": ubx.FieldSpec{WireName: "distribution"},
-		"GpgKey": ubx.FieldSpec{WireName: "gpg_key"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"ArchiveType":  ubx.FieldSpec{WireName: "archive_type"},
+	"Components":   ubx.FieldSpec{WireName: "components"},
+	"Distribution": ubx.FieldSpec{WireName: "distribution"},
+	"GpgKey":       ubx.FieldSpec{WireName: "gpg_key"},
+	"Uri":          ubx.FieldSpec{WireName: "uri"},
+}
 
 var V1betaGuestPolicy_PackageRepositories_GooFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Url": ubx.FieldSpec{WireName: "url"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Url":  ubx.FieldSpec{WireName: "url"},
+}
 
 var V1betaGuestPolicy_PackageRepositories_YumFields = ubx.FieldMap{
-		"BaseUrl": ubx.FieldSpec{WireName: "base_url"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"GpgKeys": ubx.FieldSpec{WireName: "gpg_keys"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-	}
+	"BaseUrl":     ubx.FieldSpec{WireName: "base_url"},
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"GpgKeys":     ubx.FieldSpec{WireName: "gpg_keys"},
+	"Id":          ubx.FieldSpec{WireName: "id"},
+}
 
 var V1betaGuestPolicy_PackageRepositoriesFields = ubx.FieldMap{
-		"Apt": ubx.FieldSpec{
-			WireName: "apt",
-			Kind: "object",
-			Fields: V1betaGuestPolicy_PackageRepositories_AptFields,
-		},
-		"Goo": ubx.FieldSpec{
-			WireName: "goo",
-			Kind: "object",
-			Fields: V1betaGuestPolicy_PackageRepositories_GooFields,
-		},
-		"Yum": ubx.FieldSpec{
-			WireName: "yum",
-			Kind: "object",
-			Fields: V1betaGuestPolicy_PackageRepositories_YumFields,
-		},
-		"Zypper": ubx.FieldSpec{
-			WireName: "zypper",
-			Kind: "object",
-			Fields: V1betaGuestPolicy_PackageRepositories_YumFields,
-		},
-	}
+	"Apt": ubx.FieldSpec{
+		WireName: "apt",
+		Kind:     "object",
+		Fields:   V1betaGuestPolicy_PackageRepositories_AptFields,
+	},
+	"Goo": ubx.FieldSpec{
+		WireName: "goo",
+		Kind:     "object",
+		Fields:   V1betaGuestPolicy_PackageRepositories_GooFields,
+	},
+	"Yum": ubx.FieldSpec{
+		WireName: "yum",
+		Kind:     "object",
+		Fields:   V1betaGuestPolicy_PackageRepositories_YumFields,
+	},
+	"Zypper": ubx.FieldSpec{
+		WireName: "zypper",
+		Kind:     "object",
+		Fields:   V1betaGuestPolicy_PackageRepositories_YumFields,
+	},
+}
 
 var V1betaGuestPolicy_PackagesFields = ubx.FieldMap{
-		"DesiredState": ubx.FieldSpec{WireName: "desired_state"},
-		"Manager": ubx.FieldSpec{WireName: "manager"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"DesiredState": ubx.FieldSpec{WireName: "desired_state"},
+	"Manager":      ubx.FieldSpec{WireName: "manager"},
+	"Name":         ubx.FieldSpec{WireName: "name"},
+}
 
 var V1betaGuestPolicy_Recipes_Artifacts_GcsFields = ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"Generation": ubx.FieldSpec{WireName: "generation"},
-		"Object": ubx.FieldSpec{WireName: "object"},
-	}
+	"Bucket":     ubx.FieldSpec{WireName: "bucket"},
+	"Generation": ubx.FieldSpec{WireName: "generation"},
+	"Object":     ubx.FieldSpec{WireName: "object"},
+}
 
 var V1betaGuestPolicy_Recipes_Artifacts_RemoteFields = ubx.FieldMap{
-		"Checksum": ubx.FieldSpec{WireName: "checksum"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"Checksum": ubx.FieldSpec{WireName: "checksum"},
+	"Uri":      ubx.FieldSpec{WireName: "uri"},
+}
 
 var V1betaGuestPolicy_Recipes_ArtifactsFields = ubx.FieldMap{
-		"AllowInsecure": ubx.FieldSpec{WireName: "allow_insecure"},
-		"Gcs": ubx.FieldSpec{
-			WireName: "gcs",
-			Kind: "object",
-			Fields: V1betaGuestPolicy_Recipes_Artifacts_GcsFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Remote": ubx.FieldSpec{
-			WireName: "remote",
-			Kind: "object",
-			Fields: V1betaGuestPolicy_Recipes_Artifacts_RemoteFields,
-		},
-	}
+	"AllowInsecure": ubx.FieldSpec{WireName: "allow_insecure"},
+	"Gcs": ubx.FieldSpec{
+		WireName: "gcs",
+		Kind:     "object",
+		Fields:   V1betaGuestPolicy_Recipes_Artifacts_GcsFields,
+	},
+	"Id": ubx.FieldSpec{WireName: "id"},
+	"Remote": ubx.FieldSpec{
+		WireName: "remote",
+		Kind:     "object",
+		Fields:   V1betaGuestPolicy_Recipes_Artifacts_RemoteFields,
+	},
+}
 
 var V1betaGuestPolicy_Recipes_InstallSteps_ArchiveExtractionFields = ubx.FieldMap{
-		"ArtifactId": ubx.FieldSpec{WireName: "artifact_id"},
-		"Destination": ubx.FieldSpec{WireName: "destination"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"ArtifactId":  ubx.FieldSpec{WireName: "artifact_id"},
+	"Destination": ubx.FieldSpec{WireName: "destination"},
+	"Type":        ubx.FieldSpec{WireName: "type"},
+}
 
 var V1betaGuestPolicy_Recipes_InstallSteps_DpkgInstallationFields = ubx.FieldMap{
-		"ArtifactId": ubx.FieldSpec{WireName: "artifact_id"},
-	}
+	"ArtifactId": ubx.FieldSpec{WireName: "artifact_id"},
+}
 
 var V1betaGuestPolicy_Recipes_InstallSteps_FileCopyFields = ubx.FieldMap{
-		"ArtifactId": ubx.FieldSpec{WireName: "artifact_id"},
-		"Destination": ubx.FieldSpec{WireName: "destination"},
-		"Overwrite": ubx.FieldSpec{WireName: "overwrite"},
-		"Permissions": ubx.FieldSpec{WireName: "permissions"},
-	}
+	"ArtifactId":  ubx.FieldSpec{WireName: "artifact_id"},
+	"Destination": ubx.FieldSpec{WireName: "destination"},
+	"Overwrite":   ubx.FieldSpec{WireName: "overwrite"},
+	"Permissions": ubx.FieldSpec{WireName: "permissions"},
+}
 
 var V1betaGuestPolicy_Recipes_InstallSteps_FileExecFields = ubx.FieldMap{
-		"AllowedExitCodes": ubx.FieldSpec{WireName: "allowed_exit_codes"},
-		"Args": ubx.FieldSpec{WireName: "args"},
-		"ArtifactId": ubx.FieldSpec{WireName: "artifact_id"},
-		"LocalPath": ubx.FieldSpec{WireName: "local_path"},
-	}
+	"AllowedExitCodes": ubx.FieldSpec{WireName: "allowed_exit_codes"},
+	"Args":             ubx.FieldSpec{WireName: "args"},
+	"ArtifactId":       ubx.FieldSpec{WireName: "artifact_id"},
+	"LocalPath":        ubx.FieldSpec{WireName: "local_path"},
+}
 
 var V1betaGuestPolicy_Recipes_InstallSteps_MsiInstallationFields = ubx.FieldMap{
-		"AllowedExitCodes": ubx.FieldSpec{WireName: "allowed_exit_codes"},
-		"ArtifactId": ubx.FieldSpec{WireName: "artifact_id"},
-		"Flags": ubx.FieldSpec{WireName: "flags"},
-	}
+	"AllowedExitCodes": ubx.FieldSpec{WireName: "allowed_exit_codes"},
+	"ArtifactId":       ubx.FieldSpec{WireName: "artifact_id"},
+	"Flags":            ubx.FieldSpec{WireName: "flags"},
+}
 
 var V1betaGuestPolicy_Recipes_InstallSteps_ScriptRunFields = ubx.FieldMap{
-		"AllowedExitCodes": ubx.FieldSpec{WireName: "allowed_exit_codes"},
-		"Interpreter": ubx.FieldSpec{WireName: "interpreter"},
-		"Script": ubx.FieldSpec{WireName: "script"},
-	}
+	"AllowedExitCodes": ubx.FieldSpec{WireName: "allowed_exit_codes"},
+	"Interpreter":      ubx.FieldSpec{WireName: "interpreter"},
+	"Script":           ubx.FieldSpec{WireName: "script"},
+}
 
 var V1betaGuestPolicy_Recipes_InstallStepsFields = ubx.FieldMap{
-		"ArchiveExtraction": ubx.FieldSpec{
-			WireName: "archive_extraction",
-			Kind: "object",
-			Fields: V1betaGuestPolicy_Recipes_InstallSteps_ArchiveExtractionFields,
-		},
-		"DpkgInstallation": ubx.FieldSpec{
-			WireName: "dpkg_installation",
-			Kind: "object",
-			Fields: V1betaGuestPolicy_Recipes_InstallSteps_DpkgInstallationFields,
-		},
-		"FileCopy": ubx.FieldSpec{
-			WireName: "file_copy",
-			Kind: "object",
-			Fields: V1betaGuestPolicy_Recipes_InstallSteps_FileCopyFields,
-		},
-		"FileExec": ubx.FieldSpec{
-			WireName: "file_exec",
-			Kind: "object",
-			Fields: V1betaGuestPolicy_Recipes_InstallSteps_FileExecFields,
-		},
-		"MsiInstallation": ubx.FieldSpec{
-			WireName: "msi_installation",
-			Kind: "object",
-			Fields: V1betaGuestPolicy_Recipes_InstallSteps_MsiInstallationFields,
-		},
-		"RpmInstallation": ubx.FieldSpec{
-			WireName: "rpm_installation",
-			Kind: "object",
-			Fields: V1betaGuestPolicy_Recipes_InstallSteps_DpkgInstallationFields,
-		},
-		"ScriptRun": ubx.FieldSpec{
-			WireName: "script_run",
-			Kind: "object",
-			Fields: V1betaGuestPolicy_Recipes_InstallSteps_ScriptRunFields,
-		},
-	}
+	"ArchiveExtraction": ubx.FieldSpec{
+		WireName: "archive_extraction",
+		Kind:     "object",
+		Fields:   V1betaGuestPolicy_Recipes_InstallSteps_ArchiveExtractionFields,
+	},
+	"DpkgInstallation": ubx.FieldSpec{
+		WireName: "dpkg_installation",
+		Kind:     "object",
+		Fields:   V1betaGuestPolicy_Recipes_InstallSteps_DpkgInstallationFields,
+	},
+	"FileCopy": ubx.FieldSpec{
+		WireName: "file_copy",
+		Kind:     "object",
+		Fields:   V1betaGuestPolicy_Recipes_InstallSteps_FileCopyFields,
+	},
+	"FileExec": ubx.FieldSpec{
+		WireName: "file_exec",
+		Kind:     "object",
+		Fields:   V1betaGuestPolicy_Recipes_InstallSteps_FileExecFields,
+	},
+	"MsiInstallation": ubx.FieldSpec{
+		WireName: "msi_installation",
+		Kind:     "object",
+		Fields:   V1betaGuestPolicy_Recipes_InstallSteps_MsiInstallationFields,
+	},
+	"RpmInstallation": ubx.FieldSpec{
+		WireName: "rpm_installation",
+		Kind:     "object",
+		Fields:   V1betaGuestPolicy_Recipes_InstallSteps_DpkgInstallationFields,
+	},
+	"ScriptRun": ubx.FieldSpec{
+		WireName: "script_run",
+		Kind:     "object",
+		Fields:   V1betaGuestPolicy_Recipes_InstallSteps_ScriptRunFields,
+	},
+}
 
 var V1betaGuestPolicy_RecipesFields = ubx.FieldMap{
-		"Artifacts": ubx.FieldSpec{
-			WireName: "artifacts",
-			Kind: "list",
-			Fields: V1betaGuestPolicy_Recipes_ArtifactsFields,
-		},
-		"DesiredState": ubx.FieldSpec{WireName: "desired_state"},
-		"InstallSteps": ubx.FieldSpec{
-			WireName: "install_steps",
-			Kind: "list",
-			Fields: V1betaGuestPolicy_Recipes_InstallStepsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"UpdateSteps": ubx.FieldSpec{
-			WireName: "update_steps",
-			Kind: "list",
-			Fields: V1betaGuestPolicy_Recipes_InstallStepsFields,
-		},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"Artifacts": ubx.FieldSpec{
+		WireName: "artifacts",
+		Kind:     "list",
+		Fields:   V1betaGuestPolicy_Recipes_ArtifactsFields,
+	},
+	"DesiredState": ubx.FieldSpec{WireName: "desired_state"},
+	"InstallSteps": ubx.FieldSpec{
+		WireName: "install_steps",
+		Kind:     "list",
+		Fields:   V1betaGuestPolicy_Recipes_InstallStepsFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"UpdateSteps": ubx.FieldSpec{
+		WireName: "update_steps",
+		Kind:     "list",
+		Fields:   V1betaGuestPolicy_Recipes_InstallStepsFields,
+	},
+	"Version": ubx.FieldSpec{WireName: "version"},
+}
 
 type V1betaGuestPolicyConfig struct {
 	// An assignment represents the group or groups of VM instances that the policy applies to. If an assignment is empty, it applies to all VM instances. Otherwise, the targeted VM instances must meet all the criteria specified. So if both labels and zones are specified, the policy applies to VM instances with those labels and in those zones.
 	Assignment any
-	// Output only. Time this guest policy was created.
-	CreateTime any
 	// Description of the guest policy. Length of the description is limited to 1024 characters.
 	Description any
 	// The etag for this guest policy. If this is provided on update, it must match the server's etag.
@@ -345,8 +343,6 @@ type V1betaGuestPolicyConfig struct {
 	Packages any
 	// A list of Recipes to install on the VM instance.
 	Recipes any
-	// Output only. Last time this guest policy was updated.
-	UpdateTime any
 }
 
 type V1betaGuestPolicyAttrs struct {
@@ -375,28 +371,26 @@ var V1betaGuestPolicy = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Assignment": ubx.FieldSpec{
 			WireName: "assignment",
-			Kind: "object",
-			Fields: V1betaGuestPolicy_AssignmentFields,
+			Kind:     "object",
+			Fields:   V1betaGuestPolicy_AssignmentFields,
 		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Etag":        ubx.FieldSpec{WireName: "etag"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"PackageRepositories": ubx.FieldSpec{
 			WireName: "package_repositories",
-			Kind: "list",
-			Fields: V1betaGuestPolicy_PackageRepositoriesFields,
+			Kind:     "list",
+			Fields:   V1betaGuestPolicy_PackageRepositoriesFields,
 		},
 		"Packages": ubx.FieldSpec{
 			WireName: "packages",
-			Kind: "list",
-			Fields: V1betaGuestPolicy_PackagesFields,
+			Kind:     "list",
+			Fields:   V1betaGuestPolicy_PackagesFields,
 		},
 		"Recipes": ubx.FieldSpec{
 			WireName: "recipes",
-			Kind: "list",
-			Fields: V1betaGuestPolicy_RecipesFields,
+			Kind:     "list",
+			Fields:   V1betaGuestPolicy_RecipesFields,
 		},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

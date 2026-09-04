@@ -330,44 +330,18 @@ _Restore_VolumeDataRestorePolicyOverridesFields = {
 class RestoreConfig:
     # Required. Immutable. A reference to the Backup used as the source from which this Restore will restore. Note that this Backup must be a sub-resource of the RestorePlan's backup_plan. Format: `projects/*/locations/*/backupPlans/*/backups/*`.
     backup: Any = None
-    # Output only. The target cluster into which this Restore will restore data. Valid formats: - `projects/*/locations/*/clusters/*` - `projects/*/zones/*/clusters/*` Inherited from parent RestorePlan's cluster value.
-    cluster: Any = None
-    # Output only. Timestamp of when the restore operation completed.
-    complete_time: Any = None
-    # Output only. The timestamp when this Restore resource was created.
-    create_time: Any = None
     # Optional. User specified descriptive string for this Restore.
     description: Any = None
-    # Output only. `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a restore from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform restore updates in order to avoid race conditions: An `etag` is returned in the response to `GetRestore`, and systems are expected to put that etag in the request to `UpdateRestore` or `DeleteRestore` to ensure that their change will be applied to the same version of the resource.
-    etag: Any = None
     # Defines the filter for `Restore`. This filter can be used to further refine the resource selection of the `Restore` beyond the coarse-grained scope defined in the `RestorePlan`. `exclusion_filters` take precedence over `inclusion_filters`. If a resource matches both `inclusion_filters` and `exclusion_filters`, it will not be restored.
     filter: Any = None
     # A set of custom labels supplied by user.
     labels: Any = None
-    # Output only. Identifier. The full name of the Restore resource. Format: `projects/*/locations/*/restorePlans/*/restores/*`
-    name: Any = None
-    # Output only. Number of resources excluded during the restore execution.
-    resources_excluded_count: Any = None
-    # Output only. Number of resources that failed to be restored during the restore execution.
-    resources_failed_count: Any = None
-    # Output only. Number of resources restored during the restore execution.
-    resources_restored_count: Any = None
     # Configuration of a restore.
     restore_config: Any = None
-    # Output only. The current state of the Restore.
-    state: Any = None
-    # Output only. Human-readable description of why the Restore is in its current state. This field is only meant for human readability and should not be used programmatically as this field is not guaranteed to be consistent.
-    state_reason: Any = None
     # Stores information about troubleshooting doc for debugging a particular state of an operation (eg - backup/restore). This will be used by the end user to debug their operation failure scenario easily.
     troubleshooting_info: Any = None
-    # Output only. Server generated global unique identifier of [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier) format.
-    uid: Any = None
-    # Output only. The timestamp when this Restore resource was last updated.
-    update_time: Any = None
     # Optional. Immutable. Overrides the volume data restore policies selected in the Restore Config for override-scoped resources.
     volume_data_restore_policy_overrides: Any = None
-    # Output only. Number of volumes restored during the restore execution.
-    volumes_restored_count: Any = None
 
 @dataclasses.dataclass
 class RestoreAttrs:
@@ -416,40 +390,27 @@ Restore = ubx.ResourceBinding(
     wire_type="google_gkebackup_restore",
     fields={
         "backup": ubx.FieldSpec(wire_name="backup"),
-        "cluster": ubx.FieldSpec(wire_name="cluster"),
-        "complete_time": ubx.FieldSpec(wire_name="complete_time"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
-        "etag": ubx.FieldSpec(wire_name="etag"),
         "filter": ubx.FieldSpec(
             wire_name="filter",
             kind="object",
             fields=_Restore_FilterFields,
         ),
         "labels": ubx.FieldSpec(wire_name="labels"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "resources_excluded_count": ubx.FieldSpec(wire_name="resources_excluded_count"),
-        "resources_failed_count": ubx.FieldSpec(wire_name="resources_failed_count"),
-        "resources_restored_count": ubx.FieldSpec(wire_name="resources_restored_count"),
         "restore_config": ubx.FieldSpec(
             wire_name="restore_config",
             kind="object",
             fields=_Restore_RestoreConfigFields,
         ),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "state_reason": ubx.FieldSpec(wire_name="state_reason"),
         "troubleshooting_info": ubx.FieldSpec(
             wire_name="troubleshooting_info",
             kind="object",
             fields=_Restore_TroubleshootingInfoFields,
         ),
-        "uid": ubx.FieldSpec(wire_name="uid"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
         "volume_data_restore_policy_overrides": ubx.FieldSpec(
             wire_name="volume_data_restore_policy_overrides",
             kind="list",
             fields=_Restore_VolumeDataRestorePolicyOverridesFields,
         ),
-        "volumes_restored_count": ubx.FieldSpec(wire_name="volumes_restored_count"),
     },
 )

@@ -32,8 +32,6 @@ _V1alphaService_InterfacesFields = {
 class V1alphaServiceConfig:
     # The spec of the agent.
     agent_spec: Any = None
-    # Output only. Create time.
-    create_time: Any = None
     # Optional. User-defined description of an Service. Can have a maximum length of `2048` characters.
     description: Any = None
     # Optional. User-defined display name for the Service. Can have a maximum length of `63` characters.
@@ -46,10 +44,6 @@ class V1alphaServiceConfig:
     mcp_server_spec: Any = None
     # Identifier. The resource name of the Service. Format: `projects/{project}/locations/{location}/services/{service}`.
     name: Any = None
-    # Output only. The resource name of the resulting Agent, MCP Server, or Endpoint. Format: * `projects/{project}/locations/{location}/mcpServers/{mcp_server}` * `projects/{project}/locations/{location}/agents/{agent}` * `projects/{project}/locations/{location}/endpoints/{endpoint}`
-    registry_resource: Any = None
-    # Output only. Update time.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V1alphaServiceAttrs:
@@ -82,7 +76,6 @@ V1alphaService = ubx.ResourceBinding(
             kind="object",
             fields=_V1alphaService_AgentSpecFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "endpoint_spec": ubx.FieldSpec(
@@ -101,7 +94,5 @@ V1alphaService = ubx.ResourceBinding(
             fields=_V1alphaService_AgentSpecFields,
         ),
         "name": ubx.FieldSpec(wire_name="name"),
-        "registry_resource": ubx.FieldSpec(wire_name="registry_resource"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

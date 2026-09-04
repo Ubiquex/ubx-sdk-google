@@ -105,26 +105,16 @@ const Key_RestrictionsFields: FieldMap = {
 export interface KeyConfig {
   /** Annotations is an unstructured key-value map stored with a policy that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects. */
   annotations?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. A timestamp identifying the time this key was originally created. */
-  createTime?: string | Computed<string>;
-  /** Output only. A timestamp when this key was deleted. If the resource is not deleted, this must be empty. */
-  deleteTime?: string | Computed<string>;
   /** Human-readable display name of this key that you can modify. The maximum length is 63 characters. */
   displayName?: string | Computed<string>;
   /** A checksum computed by the server based on the current value of the Key resource. This may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding. See https://google.aip.dev/154. */
   etag?: string | Computed<string>;
-  /** Output only. An encrypted and signed value held by this key. This field can be accessed only through the `GetKeyString` method. */
-  keyString?: string | Computed<string>;
   /** Identifier. The resource name of the key. The `name` has the form: `projects//locations/global/keys/`. For example: `projects/123456867718/locations/global/keys/b7ff1f9f-8275-410a-94dd-3855ee9b5dd2` NOTE: Key is a global resource; hence the only supported value for location is `global`. */
   name?: string | Computed<string>;
   /** Describes the restrictions on the key. */
   restrictions?: Key_Restrictions | Computed<Key_Restrictions>;
   /** Optional. The email address of [the service account](https://cloud.google.com/iam/docs/service-accounts) the key is bound to. */
   serviceAccountEmail?: string | Computed<string>;
-  /** Output only. Unique id in UUID4 format. */
-  uid?: string | Computed<string>;
-  /** Output only. A timestamp identifying the time this key was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface KeyAttrs {
@@ -156,11 +146,8 @@ export const Key: ResourceBinding<KeyConfig, KeyAttrs> = {
   wireType: "google_apikeys_key",
   fields: {
     annotations: "annotations",
-    createTime: "create_time",
-    deleteTime: "delete_time",
     displayName: "display_name",
     etag: "etag",
-    keyString: "key_string",
     name: "name",
     restrictions: {
       wireName: "restrictions",
@@ -168,7 +155,5 @@ export const Key: ResourceBinding<KeyConfig, KeyAttrs> = {
       fields: Key_RestrictionsFields,
     },
     serviceAccountEmail: "service_account_email",
-    uid: "uid",
-    updateTime: "update_time",
   },
 };

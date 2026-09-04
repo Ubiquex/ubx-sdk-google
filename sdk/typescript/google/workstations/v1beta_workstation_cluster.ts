@@ -28,12 +28,6 @@ export interface V1betaWorkstationCluster_PrivateClusterConfig {
   serviceAttachmentUri?: string | Computed<string>;
 }
 
-const V1betaWorkstationCluster_ConditionsFields: FieldMap = {
-  code: "code",
-  details: "details",
-  message: "message",
-};
-
 const V1betaWorkstationCluster_DomainConfigFields: FieldMap = {
   domain: "domain",
 };
@@ -52,16 +46,6 @@ const V1betaWorkstationCluster_PrivateClusterConfigFields: FieldMap = {
 export interface V1betaWorkstationClusterConfig {
   /** Optional. Client-specified annotations. */
   annotations?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. Status conditions describing the workstation cluster's current state. */
-  conditions?: V1betaWorkstationCluster_Conditions[] | Computed<V1betaWorkstationCluster_Conditions[]>;
-  /** Output only. The private IP address of the control plane for this workstation cluster. Workstation VMs need access to this IP address to work with the service, so make sure that your firewall rules allow egress from the workstation VMs to this address. */
-  controlPlaneIp?: string | Computed<string>;
-  /** Output only. Time when this workstation cluster was created. */
-  createTime?: string | Computed<string>;
-  /** Output only. Whether this workstation cluster is in degraded mode, in which case it may require user action to restore full functionality. The conditions field contains detailed information about the status of the cluster. */
-  degraded?: boolean | Computed<boolean>;
-  /** Output only. Time when this workstation cluster was soft-deleted. */
-  deleteTime?: string | Computed<string>;
   /** Optional. Human-readable name for this workstation cluster. */
   displayName?: string | Computed<string>;
   /** Configuration options for a custom domain. */
@@ -78,20 +62,10 @@ export interface V1betaWorkstationClusterConfig {
   network?: string | Computed<string>;
   /** Configuration options for private workstation clusters. */
   privateClusterConfig?: V1betaWorkstationCluster_PrivateClusterConfig | Computed<V1betaWorkstationCluster_PrivateClusterConfig>;
-  /** Output only. Indicates whether this workstation cluster is currently being updated to match its intended state. */
-  reconciling?: boolean | Computed<boolean>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzi?: boolean | Computed<boolean>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzs?: boolean | Computed<boolean>;
   /** Immutable. Name of the Compute Engine subnetwork in which instances associated with this workstation cluster will be created. Must be part of the subnetwork specified for this workstation cluster. */
   subnetwork?: string | Computed<string>;
   /** Optional. Input only. Immutable. Tag keys/values directly bound to this resource. For example: "123/environment": "production", "123/costCenter": "marketing" */
   tags?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. A system-assigned unique identifier for this workstation cluster. */
-  uid?: string | Computed<string>;
-  /** Output only. Time when this workstation cluster was most recently updated. */
-  updateTime?: string | Computed<string>;
   /** Optional. Specifies the redirect URL for unauthorized requests received by workstation VMs in this cluster. Redirects to this endpoint will send a base64 encoded `state` query param containing the target workstation name and original request hostname. The endpoint is responsible for retrieving a token using `GenerateAccessToken` and redirecting back to the original hostname with the token. */
   workstationAuthorizationUrl?: string | Computed<string>;
   /** Optional. Specifies the launch URL for workstations in this cluster. Requests sent to unstarted workstations will be redirected to this URL. Requests redirected to the launch endpoint will be sent with a `workstation` and `project` query parameter containing the full workstation resource name and project ID, respectively. The launch endpoint is responsible for starting the workstation, polling it until it reaches `STATE_RUNNING`, and then issuing a redirect to the workstation's host URL. */
@@ -151,15 +125,6 @@ export const V1betaWorkstationCluster: ResourceBinding<V1betaWorkstationClusterC
   wireType: "google_workstations_v1beta_workstation_cluster",
   fields: {
     annotations: "annotations",
-    conditions: {
-      wireName: "conditions",
-      kind: "list",
-      fields: V1betaWorkstationCluster_ConditionsFields,
-    },
-    controlPlaneIp: "control_plane_ip",
-    createTime: "create_time",
-    degraded: "degraded",
-    deleteTime: "delete_time",
     displayName: "display_name",
     domainConfig: {
       wireName: "domain_config",
@@ -180,13 +145,8 @@ export const V1betaWorkstationCluster: ResourceBinding<V1betaWorkstationClusterC
       kind: "object",
       fields: V1betaWorkstationCluster_PrivateClusterConfigFields,
     },
-    reconciling: "reconciling",
-    satisfiesPzi: "satisfies_pzi",
-    satisfiesPzs: "satisfies_pzs",
     subnetwork: "subnetwork",
     tags: "tags",
-    uid: "uid",
-    updateTime: "update_time",
     workstationAuthorizationUrl: "workstation_authorization_url",
     workstationLaunchUrl: "workstation_launch_url",
   },

@@ -45,8 +45,6 @@ _Destination_StateTimelineFields = {
 
 @dataclasses.dataclass
 class DestinationConfig:
-    # Output only. Time when the `Destination` resource was created.
-    create_time: Any = None
     # Optional. A description of this resource.
     description: Any = None
     # Required. Unordered list. The list of `DestinationEndpoint` resources configured for the IP prefix.
@@ -61,10 +59,6 @@ class DestinationConfig:
     name: Any = None
     # The timeline of the pending states for a resource.
     state_timeline: Any = None
-    # Output only. The Google-generated unique ID for the `Destination` resource. This value is unique across all `Destination` resources. If a resource is deleted and another with the same name is created, the new resource is assigned a different and unique ID.
-    uid: Any = None
-    # Output only. Time when the `Destination` resource was updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class DestinationAttrs:
@@ -92,7 +86,6 @@ class DestinationAttrs:
 Destination = ubx.ResourceBinding(
     wire_type="google_networkconnectivity_destination",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "endpoints": ubx.FieldSpec(
             wire_name="endpoints",
@@ -108,7 +101,5 @@ Destination = ubx.ResourceBinding(
             kind="object",
             fields=_Destination_StateTimelineFields,
         ),
-        "uid": ubx.FieldSpec(wire_name="uid"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

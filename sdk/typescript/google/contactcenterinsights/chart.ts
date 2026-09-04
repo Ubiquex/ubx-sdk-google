@@ -221,12 +221,8 @@ const Chart_DateRangeConfigFields: FieldMap = {
 export interface ChartConfig {
   /** The action to be taken when the chart is clicked. */
   action?: Chart_Action | Computed<Chart_Action>;
-  /** Output only. Chart type. */
-  chartType?: string | Computed<string>;
   /** Chart visualization type. */
   chartVisualizationType?: string | Computed<string>;
-  /** Output only. Chart create time. */
-  createTime?: string | Computed<string>;
   /** The request data for visualizing the dataset in the chart. */
   dataSource?: Chart_DataSource | Computed<Chart_DataSource>;
   /** Date range configuration for dashboard charts. */
@@ -241,8 +237,6 @@ export interface ChartConfig {
   height?: number | Computed<number>;
   /** Identifier. Chart resource name. Format: projects/{project}/locations/{location}/dashboards/{dashboard}/charts/{chart} */
   name?: string | Computed<string>;
-  /** Output only. Chart last update time. */
-  updateTime?: string | Computed<string>;
   /** The width of the chart in grid units. */
   width?: number | Computed<number>;
 }
@@ -284,9 +278,7 @@ export const Chart: ResourceBinding<ChartConfig, ChartAttrs> = {
       kind: "object",
       fields: Chart_ActionFields,
     },
-    chartType: "chart_type",
     chartVisualizationType: "chart_visualization_type",
-    createTime: "create_time",
     dataSource: {
       wireName: "data_source",
       kind: "object",
@@ -302,7 +294,6 @@ export const Chart: ResourceBinding<ChartConfig, ChartAttrs> = {
     filter: "filter",
     height: "height",
     name: "name",
-    updateTime: "update_time",
     width: "width",
   },
 };

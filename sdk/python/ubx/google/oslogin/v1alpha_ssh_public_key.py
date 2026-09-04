@@ -10,12 +10,8 @@ import ubx_sdk as ubx
 class V1alphaSshPublicKeyConfig:
     # An expiration time in microseconds since epoch.
     expiration_time_usec: Any = None
-    # Output only. The SHA-256 fingerprint of the SSH public key.
-    fingerprint: Any = None
     # Required. Public key text in SSH format, defined by [RFC4253](https://www.ietf.org/rfc/rfc4253.txt) section 6.6.
     key: Any = None
-    # Output only. The canonical resource name.
-    name: Any = None
 
 @dataclasses.dataclass
 class V1alphaSshPublicKeyAttrs:
@@ -32,8 +28,6 @@ V1alphaSshPublicKey = ubx.ResourceBinding(
     wire_type="google_oslogin_v1alpha_ssh_public_key",
     fields={
         "expiration_time_usec": ubx.FieldSpec(wire_name="expiration_time_usec"),
-        "fingerprint": ubx.FieldSpec(wire_name="fingerprint"),
         "key": ubx.FieldSpec(wire_name="key"),
-        "name": ubx.FieldSpec(wire_name="name"),
     },
 )

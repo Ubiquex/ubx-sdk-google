@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AlphaDeployment_Credential_BasicAuth struct {
 	Password any
-	User any
+	User     any
 }
 
 type AlphaDeployment_Credential_ServiceAccount struct {
@@ -23,24 +23,24 @@ type AlphaDeployment_Credential struct {
 }
 
 type AlphaDeployment_Labels struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type AlphaDeployment_Operation_Error_Errors_DebugInfo struct {
-	Detail any
+	Detail       any
 	StackEntries any
 }
 
 type AlphaDeployment_Operation_Error_Errors_ErrorDetails_ErrorInfo struct {
-	Domain any
+	Domain    any
 	Metadatas any
-	Reason any
+	Reason    any
 }
 
 type AlphaDeployment_Operation_Error_Errors_ErrorDetails_Help_Links struct {
 	Description any
-	Url any
+	Url         any
 }
 
 type AlphaDeployment_Operation_Error_Errors_ErrorDetails_Help struct {
@@ -48,33 +48,33 @@ type AlphaDeployment_Operation_Error_Errors_ErrorDetails_Help struct {
 }
 
 type AlphaDeployment_Operation_Error_Errors_ErrorDetails_LocalizedMessage struct {
-	Locale any
+	Locale  any
 	Message any
 }
 
 type AlphaDeployment_Operation_Error_Errors_ErrorDetails_QuotaInfo struct {
-	Dimensions any
-	FutureLimit any
-	Limit any
-	LimitName any
-	MetricName any
+	Dimensions    any
+	FutureLimit   any
+	Limit         any
+	LimitName     any
+	MetricName    any
 	RolloutStatus any
 }
 
 type AlphaDeployment_Operation_Error_Errors_ErrorDetails struct {
-	ErrorInfo any
-	Help any
+	ErrorInfo        any
+	Help             any
 	LocalizedMessage any
-	QuotaInfo any
+	QuotaInfo        any
 }
 
 type AlphaDeployment_Operation_Error_Errors struct {
-	Arguments any
-	Code any
-	DebugInfo any
+	Arguments    any
+	Code         any
+	DebugInfo    any
 	ErrorDetails any
-	Location any
-	Message any
+	Location     any
+	Message      any
 }
 
 type AlphaDeployment_Operation_Error struct {
@@ -99,11 +99,11 @@ type AlphaDeployment_Operation_GetVersionOperationMetadata struct {
 }
 
 type AlphaDeployment_Operation_InstancesBulkInsertOperationMetadata_PerLocationStatus struct {
-	CreatedVmCount any
-	DeletedVmCount any
+	CreatedVmCount        any
+	DeletedVmCount        any
 	FailedToCreateVmCount any
-	Status any
-	TargetVmCount any
+	Status                any
+	TargetVmCount         any
 }
 
 type AlphaDeployment_Operation_InstancesBulkInsertOperationMetadata struct {
@@ -121,7 +121,7 @@ type AlphaDeployment_Operation_SetAutoscalerLinkOperationMetadata struct {
 }
 
 type AlphaDeployment_Operation_SetCommonInstanceMetadataOperationMetadata_PerLocationOperations_Error struct {
-	Code any
+	Code    any
 	Details any
 	Message any
 }
@@ -139,8 +139,8 @@ type AlphaDeployment_Operation_SetCommonInstanceMetadataOperationMetadata struct
 }
 
 type AlphaDeployment_Operation_Warnings struct {
-	Code any
-	Data any
+	Code    any
+	Data    any
 	Message any
 }
 
@@ -154,9 +154,9 @@ type AlphaDeployment_Operation struct {
 	// [Output Only] The time that this operation was completed. This value is in RFC3339 text format.
 	EndTime any
 	// [Output Only] If errors are generated during processing of the operation, this field will be populated.
-	Error any
+	Error                               any
 	FirewallPolicyRuleOperationMetadata any
-	GetVersionOperationMetadata any
+	GetVersionOperationMetadata         any
 	// [Output Only] If the operation fails, this field contains the HTTP error message that was returned, such as `NOT FOUND`.
 	HttpErrorMessage any
 	// [Output Only] If the operation fails, this field contains the HTTP error status code that was returned. For example, a `404` means the resource was not found.
@@ -164,7 +164,7 @@ type AlphaDeployment_Operation struct {
 	// [Output Only] The unique identifier for the operation. This identifier is defined by the server.
 	Id any
 	// [Output Only] The time that this operation was requested. This value is in RFC3339 text format.
-	InsertTime any
+	InsertTime                           any
 	InstancesBulkInsertOperationMetadata any
 	// Output only. [Output Only] Type of the resource. Always `compute#operation` for Operation resources.
 	Kind any
@@ -181,8 +181,8 @@ type AlphaDeployment_Operation struct {
 	// [Output Only] Server-defined URL for the resource.
 	SelfLink any
 	// Output only. [Output Only] Server-defined URL for this resource with the resource id.
-	SelfLinkWithId any
-	SetAutoscalerLinkOperationMetadata any
+	SelfLinkWithId                             any
+	SetAutoscalerLinkOperationMetadata         any
 	SetCommonInstanceMetadataOperationMetadata any
 	// [Output Only] The time that this operation was started by the server. This value is in RFC3339 text format.
 	StartTime any
@@ -209,7 +209,7 @@ type AlphaDeployment_Target_Config struct {
 
 type AlphaDeployment_Target_Imports struct {
 	Content any
-	Name any
+	Name    any
 }
 
 type AlphaDeployment_Target struct {
@@ -230,289 +230,289 @@ type AlphaDeployment_Update struct {
 }
 
 var AlphaDeployment_Credential_BasicAuthFields = ubx.FieldMap{
-		"Password": ubx.FieldSpec{WireName: "password"},
-		"User": ubx.FieldSpec{WireName: "user"},
-	}
+	"Password": ubx.FieldSpec{WireName: "password"},
+	"User":     ubx.FieldSpec{WireName: "user"},
+}
 
 var AlphaDeployment_Credential_ServiceAccountFields = ubx.FieldMap{
-		"Email": ubx.FieldSpec{WireName: "email"},
-	}
+	"Email": ubx.FieldSpec{WireName: "email"},
+}
 
 var AlphaDeployment_CredentialFields = ubx.FieldMap{
-		"BasicAuth": ubx.FieldSpec{
-			WireName: "basic_auth",
-			Kind: "object",
-			Fields: AlphaDeployment_Credential_BasicAuthFields,
-		},
-		"ServiceAccount": ubx.FieldSpec{
-			WireName: "service_account",
-			Kind: "object",
-			Fields: AlphaDeployment_Credential_ServiceAccountFields,
-		},
-		"UseProjectDefault": ubx.FieldSpec{WireName: "use_project_default"},
-	}
+	"BasicAuth": ubx.FieldSpec{
+		WireName: "basic_auth",
+		Kind:     "object",
+		Fields:   AlphaDeployment_Credential_BasicAuthFields,
+	},
+	"ServiceAccount": ubx.FieldSpec{
+		WireName: "service_account",
+		Kind:     "object",
+		Fields:   AlphaDeployment_Credential_ServiceAccountFields,
+	},
+	"UseProjectDefault": ubx.FieldSpec{WireName: "use_project_default"},
+}
 
 var AlphaDeployment_LabelsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var AlphaDeployment_Operation_Error_Errors_DebugInfoFields = ubx.FieldMap{
-		"Detail": ubx.FieldSpec{WireName: "detail"},
-		"StackEntries": ubx.FieldSpec{WireName: "stack_entries"},
-	}
+	"Detail":       ubx.FieldSpec{WireName: "detail"},
+	"StackEntries": ubx.FieldSpec{WireName: "stack_entries"},
+}
 
 var AlphaDeployment_Operation_Error_Errors_ErrorDetails_ErrorInfoFields = ubx.FieldMap{
-		"Domain": ubx.FieldSpec{WireName: "domain"},
-		"Metadatas": ubx.FieldSpec{WireName: "metadatas"},
-		"Reason": ubx.FieldSpec{WireName: "reason"},
-	}
+	"Domain":    ubx.FieldSpec{WireName: "domain"},
+	"Metadatas": ubx.FieldSpec{WireName: "metadatas"},
+	"Reason":    ubx.FieldSpec{WireName: "reason"},
+}
 
 var AlphaDeployment_Operation_Error_Errors_ErrorDetails_Help_LinksFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Url": ubx.FieldSpec{WireName: "url"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Url":         ubx.FieldSpec{WireName: "url"},
+}
 
 var AlphaDeployment_Operation_Error_Errors_ErrorDetails_HelpFields = ubx.FieldMap{
-		"Links": ubx.FieldSpec{
-			WireName: "links",
-			Kind: "list",
-			Fields: AlphaDeployment_Operation_Error_Errors_ErrorDetails_Help_LinksFields,
-		},
-	}
+	"Links": ubx.FieldSpec{
+		WireName: "links",
+		Kind:     "list",
+		Fields:   AlphaDeployment_Operation_Error_Errors_ErrorDetails_Help_LinksFields,
+	},
+}
 
 var AlphaDeployment_Operation_Error_Errors_ErrorDetails_LocalizedMessageFields = ubx.FieldMap{
-		"Locale": ubx.FieldSpec{WireName: "locale"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"Locale":  ubx.FieldSpec{WireName: "locale"},
+	"Message": ubx.FieldSpec{WireName: "message"},
+}
 
 var AlphaDeployment_Operation_Error_Errors_ErrorDetails_QuotaInfoFields = ubx.FieldMap{
-		"Dimensions": ubx.FieldSpec{WireName: "dimensions"},
-		"FutureLimit": ubx.FieldSpec{WireName: "future_limit"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"LimitName": ubx.FieldSpec{WireName: "limit_name"},
-		"MetricName": ubx.FieldSpec{WireName: "metric_name"},
-		"RolloutStatus": ubx.FieldSpec{WireName: "rollout_status"},
-	}
+	"Dimensions":    ubx.FieldSpec{WireName: "dimensions"},
+	"FutureLimit":   ubx.FieldSpec{WireName: "future_limit"},
+	"Limit":         ubx.FieldSpec{WireName: "limit"},
+	"LimitName":     ubx.FieldSpec{WireName: "limit_name"},
+	"MetricName":    ubx.FieldSpec{WireName: "metric_name"},
+	"RolloutStatus": ubx.FieldSpec{WireName: "rollout_status"},
+}
 
 var AlphaDeployment_Operation_Error_Errors_ErrorDetailsFields = ubx.FieldMap{
-		"ErrorInfo": ubx.FieldSpec{
-			WireName: "error_info",
-			Kind: "object",
-			Fields: AlphaDeployment_Operation_Error_Errors_ErrorDetails_ErrorInfoFields,
-		},
-		"Help": ubx.FieldSpec{
-			WireName: "help",
-			Kind: "object",
-			Fields: AlphaDeployment_Operation_Error_Errors_ErrorDetails_HelpFields,
-		},
-		"LocalizedMessage": ubx.FieldSpec{
-			WireName: "localized_message",
-			Kind: "object",
-			Fields: AlphaDeployment_Operation_Error_Errors_ErrorDetails_LocalizedMessageFields,
-		},
-		"QuotaInfo": ubx.FieldSpec{
-			WireName: "quota_info",
-			Kind: "object",
-			Fields: AlphaDeployment_Operation_Error_Errors_ErrorDetails_QuotaInfoFields,
-		},
-	}
+	"ErrorInfo": ubx.FieldSpec{
+		WireName: "error_info",
+		Kind:     "object",
+		Fields:   AlphaDeployment_Operation_Error_Errors_ErrorDetails_ErrorInfoFields,
+	},
+	"Help": ubx.FieldSpec{
+		WireName: "help",
+		Kind:     "object",
+		Fields:   AlphaDeployment_Operation_Error_Errors_ErrorDetails_HelpFields,
+	},
+	"LocalizedMessage": ubx.FieldSpec{
+		WireName: "localized_message",
+		Kind:     "object",
+		Fields:   AlphaDeployment_Operation_Error_Errors_ErrorDetails_LocalizedMessageFields,
+	},
+	"QuotaInfo": ubx.FieldSpec{
+		WireName: "quota_info",
+		Kind:     "object",
+		Fields:   AlphaDeployment_Operation_Error_Errors_ErrorDetails_QuotaInfoFields,
+	},
+}
 
 var AlphaDeployment_Operation_Error_ErrorsFields = ubx.FieldMap{
-		"Arguments": ubx.FieldSpec{WireName: "arguments"},
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"DebugInfo": ubx.FieldSpec{
-			WireName: "debug_info",
-			Kind: "object",
-			Fields: AlphaDeployment_Operation_Error_Errors_DebugInfoFields,
-		},
-		"ErrorDetails": ubx.FieldSpec{
-			WireName: "error_details",
-			Kind: "list",
-			Fields: AlphaDeployment_Operation_Error_Errors_ErrorDetailsFields,
-		},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"Arguments": ubx.FieldSpec{WireName: "arguments"},
+	"Code":      ubx.FieldSpec{WireName: "code"},
+	"DebugInfo": ubx.FieldSpec{
+		WireName: "debug_info",
+		Kind:     "object",
+		Fields:   AlphaDeployment_Operation_Error_Errors_DebugInfoFields,
+	},
+	"ErrorDetails": ubx.FieldSpec{
+		WireName: "error_details",
+		Kind:     "list",
+		Fields:   AlphaDeployment_Operation_Error_Errors_ErrorDetailsFields,
+	},
+	"Location": ubx.FieldSpec{WireName: "location"},
+	"Message":  ubx.FieldSpec{WireName: "message"},
+}
 
 var AlphaDeployment_Operation_ErrorFields = ubx.FieldMap{
-		"Errors": ubx.FieldSpec{
-			WireName: "errors",
-			Kind: "list",
-			Fields: AlphaDeployment_Operation_Error_ErrorsFields,
-		},
-	}
+	"Errors": ubx.FieldSpec{
+		WireName: "errors",
+		Kind:     "list",
+		Fields:   AlphaDeployment_Operation_Error_ErrorsFields,
+	},
+}
 
 var AlphaDeployment_Operation_FirewallPolicyRuleOperationMetadataFields = ubx.FieldMap{
-		"AllocatedPriority": ubx.FieldSpec{WireName: "allocated_priority"},
-	}
+	"AllocatedPriority": ubx.FieldSpec{WireName: "allocated_priority"},
+}
 
 var AlphaDeployment_Operation_GetVersionOperationMetadata_InlineSbomInfoFields = ubx.FieldMap{
-		"CurrentComponentVersions": ubx.FieldSpec{WireName: "current_component_versions"},
-		"TargetComponentVersions": ubx.FieldSpec{WireName: "target_component_versions"},
-	}
+	"CurrentComponentVersions": ubx.FieldSpec{WireName: "current_component_versions"},
+	"TargetComponentVersions":  ubx.FieldSpec{WireName: "target_component_versions"},
+}
 
 var AlphaDeployment_Operation_GetVersionOperationMetadataFields = ubx.FieldMap{
-		"InlineSbomInfo": ubx.FieldSpec{
-			WireName: "inline_sbom_info",
-			Kind: "object",
-			Fields: AlphaDeployment_Operation_GetVersionOperationMetadata_InlineSbomInfoFields,
-		},
-	}
+	"InlineSbomInfo": ubx.FieldSpec{
+		WireName: "inline_sbom_info",
+		Kind:     "object",
+		Fields:   AlphaDeployment_Operation_GetVersionOperationMetadata_InlineSbomInfoFields,
+	},
+}
 
 var AlphaDeployment_Operation_InstancesBulkInsertOperationMetadata_PerLocationStatusFields = ubx.FieldMap{
-		"CreatedVmCount": ubx.FieldSpec{WireName: "created_vm_count"},
-		"DeletedVmCount": ubx.FieldSpec{WireName: "deleted_vm_count"},
-		"FailedToCreateVmCount": ubx.FieldSpec{WireName: "failed_to_create_vm_count"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"TargetVmCount": ubx.FieldSpec{WireName: "target_vm_count"},
-	}
+	"CreatedVmCount":        ubx.FieldSpec{WireName: "created_vm_count"},
+	"DeletedVmCount":        ubx.FieldSpec{WireName: "deleted_vm_count"},
+	"FailedToCreateVmCount": ubx.FieldSpec{WireName: "failed_to_create_vm_count"},
+	"Status":                ubx.FieldSpec{WireName: "status"},
+	"TargetVmCount":         ubx.FieldSpec{WireName: "target_vm_count"},
+}
 
 var AlphaDeployment_Operation_InstancesBulkInsertOperationMetadataFields = ubx.FieldMap{
-		"MachineType": ubx.FieldSpec{WireName: "machine_type"},
-		"PerLocationStatus": ubx.FieldSpec{
-			WireName: "per_location_status",
-			Kind: "map",
-			Fields: AlphaDeployment_Operation_InstancesBulkInsertOperationMetadata_PerLocationStatusFields,
-		},
-	}
+	"MachineType": ubx.FieldSpec{WireName: "machine_type"},
+	"PerLocationStatus": ubx.FieldSpec{
+		WireName: "per_location_status",
+		Kind:     "map",
+		Fields:   AlphaDeployment_Operation_InstancesBulkInsertOperationMetadata_PerLocationStatusFields,
+	},
+}
 
 var AlphaDeployment_Operation_SetAutoscalerLinkOperationMetadataFields = ubx.FieldMap{
-		"ZonalIgmIds": ubx.FieldSpec{WireName: "zonal_igm_ids"},
-		"ZoneToIgmIds": ubx.FieldSpec{WireName: "zone_to_igm_ids"},
-	}
+	"ZonalIgmIds":  ubx.FieldSpec{WireName: "zonal_igm_ids"},
+	"ZoneToIgmIds": ubx.FieldSpec{WireName: "zone_to_igm_ids"},
+}
 
 var AlphaDeployment_Operation_SetCommonInstanceMetadataOperationMetadata_PerLocationOperations_ErrorFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"Code":    ubx.FieldSpec{WireName: "code"},
+	"Details": ubx.FieldSpec{WireName: "details"},
+	"Message": ubx.FieldSpec{WireName: "message"},
+}
 
 var AlphaDeployment_Operation_SetCommonInstanceMetadataOperationMetadata_PerLocationOperationsFields = ubx.FieldMap{
-		"Error": ubx.FieldSpec{
-			WireName: "error",
-			Kind: "object",
-			Fields: AlphaDeployment_Operation_SetCommonInstanceMetadataOperationMetadata_PerLocationOperations_ErrorFields,
-		},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"Error": ubx.FieldSpec{
+		WireName: "error",
+		Kind:     "object",
+		Fields:   AlphaDeployment_Operation_SetCommonInstanceMetadataOperationMetadata_PerLocationOperations_ErrorFields,
+	},
+	"State": ubx.FieldSpec{WireName: "state"},
+}
 
 var AlphaDeployment_Operation_SetCommonInstanceMetadataOperationMetadataFields = ubx.FieldMap{
-		"ClientOperationId": ubx.FieldSpec{WireName: "client_operation_id"},
-		"PerLocationOperations": ubx.FieldSpec{
-			WireName: "per_location_operations",
-			Kind: "map",
-			Fields: AlphaDeployment_Operation_SetCommonInstanceMetadataOperationMetadata_PerLocationOperationsFields,
-		},
-	}
+	"ClientOperationId": ubx.FieldSpec{WireName: "client_operation_id"},
+	"PerLocationOperations": ubx.FieldSpec{
+		WireName: "per_location_operations",
+		Kind:     "map",
+		Fields:   AlphaDeployment_Operation_SetCommonInstanceMetadataOperationMetadata_PerLocationOperationsFields,
+	},
+}
 
 var AlphaDeployment_Operation_WarningsFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Data": ubx.FieldSpec{
-			WireName: "data",
-			Kind: "list",
-			Fields: AlphaDeployment_LabelsFields,
-		},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"Code": ubx.FieldSpec{WireName: "code"},
+	"Data": ubx.FieldSpec{
+		WireName: "data",
+		Kind:     "list",
+		Fields:   AlphaDeployment_LabelsFields,
+	},
+	"Message": ubx.FieldSpec{WireName: "message"},
+}
 
 var AlphaDeployment_OperationFields = ubx.FieldMap{
-		"ClientOperationId": ubx.FieldSpec{WireName: "client_operation_id"},
-		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"Error": ubx.FieldSpec{
-			WireName: "error",
-			Kind: "object",
-			Fields: AlphaDeployment_Operation_ErrorFields,
-		},
-		"FirewallPolicyRuleOperationMetadata": ubx.FieldSpec{
-			WireName: "firewall_policy_rule_operation_metadata",
-			Kind: "object",
-			Fields: AlphaDeployment_Operation_FirewallPolicyRuleOperationMetadataFields,
-		},
-		"GetVersionOperationMetadata": ubx.FieldSpec{
-			WireName: "get_version_operation_metadata",
-			Kind: "object",
-			Fields: AlphaDeployment_Operation_GetVersionOperationMetadataFields,
-		},
-		"HttpErrorMessage": ubx.FieldSpec{WireName: "http_error_message"},
-		"HttpErrorStatusCode": ubx.FieldSpec{WireName: "http_error_status_code"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"InsertTime": ubx.FieldSpec{WireName: "insert_time"},
-		"InstancesBulkInsertOperationMetadata": ubx.FieldSpec{
-			WireName: "instances_bulk_insert_operation_metadata",
-			Kind: "object",
-			Fields: AlphaDeployment_Operation_InstancesBulkInsertOperationMetadataFields,
-		},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"OperationGroupId": ubx.FieldSpec{WireName: "operation_group_id"},
-		"OperationType": ubx.FieldSpec{WireName: "operation_type"},
-		"Progress": ubx.FieldSpec{WireName: "progress"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"SelfLinkWithId": ubx.FieldSpec{WireName: "self_link_with_id"},
-		"SetAutoscalerLinkOperationMetadata": ubx.FieldSpec{
-			WireName: "set_autoscaler_link_operation_metadata",
-			Kind: "object",
-			Fields: AlphaDeployment_Operation_SetAutoscalerLinkOperationMetadataFields,
-		},
-		"SetCommonInstanceMetadataOperationMetadata": ubx.FieldSpec{
-			WireName: "set_common_instance_metadata_operation_metadata",
-			Kind: "object",
-			Fields: AlphaDeployment_Operation_SetCommonInstanceMetadataOperationMetadataFields,
-		},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"StatusMessage": ubx.FieldSpec{WireName: "status_message"},
-		"TargetId": ubx.FieldSpec{WireName: "target_id"},
-		"TargetLink": ubx.FieldSpec{WireName: "target_link"},
-		"User": ubx.FieldSpec{WireName: "user"},
-		"Warnings": ubx.FieldSpec{
-			WireName: "warnings",
-			Kind: "list",
-			Fields: AlphaDeployment_Operation_WarningsFields,
-		},
-		"Zone": ubx.FieldSpec{WireName: "zone"},
-	}
+	"ClientOperationId": ubx.FieldSpec{WireName: "client_operation_id"},
+	"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
+	"Description":       ubx.FieldSpec{WireName: "description"},
+	"EndTime":           ubx.FieldSpec{WireName: "end_time"},
+	"Error": ubx.FieldSpec{
+		WireName: "error",
+		Kind:     "object",
+		Fields:   AlphaDeployment_Operation_ErrorFields,
+	},
+	"FirewallPolicyRuleOperationMetadata": ubx.FieldSpec{
+		WireName: "firewall_policy_rule_operation_metadata",
+		Kind:     "object",
+		Fields:   AlphaDeployment_Operation_FirewallPolicyRuleOperationMetadataFields,
+	},
+	"GetVersionOperationMetadata": ubx.FieldSpec{
+		WireName: "get_version_operation_metadata",
+		Kind:     "object",
+		Fields:   AlphaDeployment_Operation_GetVersionOperationMetadataFields,
+	},
+	"HttpErrorMessage":    ubx.FieldSpec{WireName: "http_error_message"},
+	"HttpErrorStatusCode": ubx.FieldSpec{WireName: "http_error_status_code"},
+	"Id":                  ubx.FieldSpec{WireName: "id"},
+	"InsertTime":          ubx.FieldSpec{WireName: "insert_time"},
+	"InstancesBulkInsertOperationMetadata": ubx.FieldSpec{
+		WireName: "instances_bulk_insert_operation_metadata",
+		Kind:     "object",
+		Fields:   AlphaDeployment_Operation_InstancesBulkInsertOperationMetadataFields,
+	},
+	"Kind":             ubx.FieldSpec{WireName: "kind"},
+	"Name":             ubx.FieldSpec{WireName: "name"},
+	"OperationGroupId": ubx.FieldSpec{WireName: "operation_group_id"},
+	"OperationType":    ubx.FieldSpec{WireName: "operation_type"},
+	"Progress":         ubx.FieldSpec{WireName: "progress"},
+	"Region":           ubx.FieldSpec{WireName: "region"},
+	"SelfLink":         ubx.FieldSpec{WireName: "self_link"},
+	"SelfLinkWithId":   ubx.FieldSpec{WireName: "self_link_with_id"},
+	"SetAutoscalerLinkOperationMetadata": ubx.FieldSpec{
+		WireName: "set_autoscaler_link_operation_metadata",
+		Kind:     "object",
+		Fields:   AlphaDeployment_Operation_SetAutoscalerLinkOperationMetadataFields,
+	},
+	"SetCommonInstanceMetadataOperationMetadata": ubx.FieldSpec{
+		WireName: "set_common_instance_metadata_operation_metadata",
+		Kind:     "object",
+		Fields:   AlphaDeployment_Operation_SetCommonInstanceMetadataOperationMetadataFields,
+	},
+	"StartTime":     ubx.FieldSpec{WireName: "start_time"},
+	"Status":        ubx.FieldSpec{WireName: "status"},
+	"StatusMessage": ubx.FieldSpec{WireName: "status_message"},
+	"TargetId":      ubx.FieldSpec{WireName: "target_id"},
+	"TargetLink":    ubx.FieldSpec{WireName: "target_link"},
+	"User":          ubx.FieldSpec{WireName: "user"},
+	"Warnings": ubx.FieldSpec{
+		WireName: "warnings",
+		Kind:     "list",
+		Fields:   AlphaDeployment_Operation_WarningsFields,
+	},
+	"Zone": ubx.FieldSpec{WireName: "zone"},
+}
 
 var AlphaDeployment_Target_ConfigFields = ubx.FieldMap{
-		"Content": ubx.FieldSpec{WireName: "content"},
-	}
+	"Content": ubx.FieldSpec{WireName: "content"},
+}
 
 var AlphaDeployment_Target_ImportsFields = ubx.FieldMap{
-		"Content": ubx.FieldSpec{WireName: "content"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Content": ubx.FieldSpec{WireName: "content"},
+	"Name":    ubx.FieldSpec{WireName: "name"},
+}
 
 var AlphaDeployment_TargetFields = ubx.FieldMap{
-		"Config": ubx.FieldSpec{
-			WireName: "config",
-			Kind: "object",
-			Fields: AlphaDeployment_Target_ConfigFields,
-		},
-		"Imports": ubx.FieldSpec{
-			WireName: "imports",
-			Kind: "list",
-			Fields: AlphaDeployment_Target_ImportsFields,
-		},
-	}
+	"Config": ubx.FieldSpec{
+		WireName: "config",
+		Kind:     "object",
+		Fields:   AlphaDeployment_Target_ConfigFields,
+	},
+	"Imports": ubx.FieldSpec{
+		WireName: "imports",
+		Kind:     "list",
+		Fields:   AlphaDeployment_Target_ImportsFields,
+	},
+}
 
 var AlphaDeployment_UpdateFields = ubx.FieldMap{
-		"Credential": ubx.FieldSpec{
-			WireName: "credential",
-			Kind: "object",
-			Fields: AlphaDeployment_CredentialFields,
-		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Labels": ubx.FieldSpec{
-			WireName: "labels",
-			Kind: "list",
-			Fields: AlphaDeployment_LabelsFields,
-		},
-		"Manifest": ubx.FieldSpec{WireName: "manifest"},
-	}
+	"Credential": ubx.FieldSpec{
+		WireName: "credential",
+		Kind:     "object",
+		Fields:   AlphaDeployment_CredentialFields,
+	},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Labels": ubx.FieldSpec{
+		WireName: "labels",
+		Kind:     "list",
+		Fields:   AlphaDeployment_LabelsFields,
+	},
+	"Manifest": ubx.FieldSpec{WireName: "manifest"},
+}
 
 type AlphaDeploymentConfig struct {
 	// The credential used by Deployment Manager and TypeProvider. Only one of the options is permitted.
@@ -521,7 +521,7 @@ type AlphaDeploymentConfig struct {
 	Description any
 	// Provides a fingerprint to use in requests to modify a deployment, such as `update()`, `stop()`, and `cancelPreview()` requests. A fingerprint is a randomly generated value that must be provided with `update()`, `stop()`, and `cancelPreview()` requests to perform optimistic locking. This ensures optimistic concurrency so that only one request happens at a time. The fingerprint is initially generated by Deployment Manager and changes after every request to modify data. To get the latest fingerprint value, perform a `get()` request to a deployment.
 	Fingerprint any
-	Id any
+	Id          any
 	// Output only. Creation timestamp in RFC3339 text format.
 	InsertTime any
 	// Map of One Platform labels; provided by the client when the resource is created or updated. Specifically: Label keys must be between 1 and 63 characters long and must conform to the following regular expression: `[a-z]([-a-z0-9]*[a-z0-9])?` Label values must be between 0 and 63 characters long and must conform to the regular expression `([a-z]([-a-z0-9]*[a-z0-9])?)?`.
@@ -536,8 +536,8 @@ type AlphaDeploymentConfig struct {
 	Outputs any
 	// Output only. Server defined URL for the resource.
 	SelfLink any
-	Target any
-	Update any
+	Target   any
+	Update   any
 	// Output only. Update timestamp in RFC3339 text format.
 	UpdateTime any
 }
@@ -549,7 +549,7 @@ type AlphaDeploymentAttrs struct {
 	Description any
 	// Provides a fingerprint to use in requests to modify a deployment, such as `update()`, `stop()`, and `cancelPreview()` requests. A fingerprint is a randomly generated value that must be provided with `update()`, `stop()`, and `cancelPreview()` requests to perform optimistic locking. This ensures optimistic concurrency so that only one request happens at a time. The fingerprint is initially generated by Deployment Manager and changes after every request to modify data. To get the latest fingerprint value, perform a `get()` request to a deployment.
 	Fingerprint any
-	Id any
+	Id          any
 	// Output only. Creation timestamp in RFC3339 text format.
 	InsertTime any
 	// Map of One Platform labels; provided by the client when the resource is created or updated. Specifically: Label keys must be between 1 and 63 characters long and must conform to the following regular expression: `[a-z]([-a-z0-9]*[a-z0-9])?` Label values must be between 0 and 63 characters long and must conform to the regular expression `([a-z]([-a-z0-9]*[a-z0-9])?)?`.
@@ -564,8 +564,8 @@ type AlphaDeploymentAttrs struct {
 	Outputs any
 	// Output only. Server defined URL for the resource.
 	SelfLink any
-	Target any
-	Update any
+	Target   any
+	Update   any
 	// Output only. Update timestamp in RFC3339 text format.
 	UpdateTime any
 }
@@ -575,40 +575,40 @@ var AlphaDeployment = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Credential": ubx.FieldSpec{
 			WireName: "credential",
-			Kind: "object",
-			Fields: AlphaDeployment_CredentialFields,
+			Kind:     "object",
+			Fields:   AlphaDeployment_CredentialFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"Fingerprint": ubx.FieldSpec{WireName: "fingerprint"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"InsertTime": ubx.FieldSpec{WireName: "insert_time"},
+		"Id":          ubx.FieldSpec{WireName: "id"},
+		"InsertTime":  ubx.FieldSpec{WireName: "insert_time"},
 		"Labels": ubx.FieldSpec{
 			WireName: "labels",
-			Kind: "list",
-			Fields: AlphaDeployment_LabelsFields,
+			Kind:     "list",
+			Fields:   AlphaDeployment_LabelsFields,
 		},
 		"Manifest": ubx.FieldSpec{WireName: "manifest"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":     ubx.FieldSpec{WireName: "name"},
 		"Operation": ubx.FieldSpec{
 			WireName: "operation",
-			Kind: "object",
-			Fields: AlphaDeployment_OperationFields,
+			Kind:     "object",
+			Fields:   AlphaDeployment_OperationFields,
 		},
 		"Outputs": ubx.FieldSpec{
 			WireName: "outputs",
-			Kind: "list",
-			Fields: AlphaDeployment_LabelsFields,
+			Kind:     "list",
+			Fields:   AlphaDeployment_LabelsFields,
 		},
 		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
 		"Target": ubx.FieldSpec{
 			WireName: "target",
-			Kind: "object",
-			Fields: AlphaDeployment_TargetFields,
+			Kind:     "object",
+			Fields:   AlphaDeployment_TargetFields,
 		},
 		"Update": ubx.FieldSpec{
 			WireName: "update",
-			Kind: "object",
-			Fields: AlphaDeployment_UpdateFields,
+			Kind:     "object",
+			Fields:   AlphaDeployment_UpdateFields,
 		},
 		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},

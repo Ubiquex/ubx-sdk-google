@@ -175,16 +175,12 @@ class CloudVmClusterConfig:
     backup_subnet_cidr: Any = None
     # Optional. Network settings. CIDR to use for cluster IP allocation.
     cidr: Any = None
-    # Output only. The date and time that the VM cluster was created.
-    create_time: Any = None
     # Optional. User friendly name for this resource.
     display_name: Any = None
     # Required. The name of the Exadata Infrastructure resource on which VM cluster resource is created, in the following format: projects/{project}/locations/{region}/cloudExadataInfrastuctures/{cloud_extradata_infrastructure}
     exadata_infrastructure: Any = None
     # Optional. The name of ExascaleDbStorageVault associated with the VM Cluster. Format: projects/{project}/locations/{location}/exascaleDbStorageVaults/{exascale_db_storage_vault}
     exascale_db_storage_vault: Any = None
-    # Output only. The GCP Oracle zone where Oracle CloudVmCluster is hosted. This will be the same as the gcp_oracle_zone of the CloudExadataInfrastructure. Example: us-east4-b-r2.
-    gcp_oracle_zone: Any = None
     # The identity connector details which will allow OCI to securely access the resources in the customer project.
     identity_connector: Any = None
     # Optional. Labels or tags associated with the VM Cluster.
@@ -239,11 +235,9 @@ CloudVmCluster = ubx.ResourceBinding(
         "backup_odb_subnet": ubx.FieldSpec(wire_name="backup_odb_subnet"),
         "backup_subnet_cidr": ubx.FieldSpec(wire_name="backup_subnet_cidr"),
         "cidr": ubx.FieldSpec(wire_name="cidr"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "exadata_infrastructure": ubx.FieldSpec(wire_name="exadata_infrastructure"),
         "exascale_db_storage_vault": ubx.FieldSpec(wire_name="exascale_db_storage_vault"),
-        "gcp_oracle_zone": ubx.FieldSpec(wire_name="gcp_oracle_zone"),
         "identity_connector": ubx.FieldSpec(
             wire_name="identity_connector",
             kind="object",

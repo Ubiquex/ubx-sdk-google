@@ -22,7 +22,6 @@ export interface DataSource_Parameters {
 }
 
 export interface DataSourceConfig {
-  name: string | Computed<string>;
 }
 
 export interface DataSourceAttrs {
@@ -66,6 +65,5 @@ export interface DataSourceAttrs {
 export const DataSource: DataSourceBinding<DataSourceConfig, DataSourceAttrs> = {
   wireType: "google_bigquerydatatransfer_data_source",
   fields: {
-    name: "name",
   },
 };

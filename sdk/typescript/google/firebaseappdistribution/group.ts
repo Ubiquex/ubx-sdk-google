@@ -4,14 +4,8 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 export interface GroupConfig {
   /** Required. The display name of the group. */
   displayName?: string | Computed<string>;
-  /** Output only. The number of invite links for this group. */
-  inviteLinkCount?: number | Computed<number>;
   /** The name of the group resource. Format: `projects/{project_number}/groups/{group_alias}` */
   name?: string | Computed<string>;
-  /** Output only. The number of releases this group is permitted to access. */
-  releaseCount?: number | Computed<number>;
-  /** Output only. The number of testers who are members of this group. */
-  testerCount?: number | Computed<number>;
 }
 
 export interface GroupAttrs {
@@ -31,9 +25,6 @@ export const Group: ResourceBinding<GroupConfig, GroupAttrs> = {
   wireType: "google_firebaseappdistribution_group",
   fields: {
     displayName: "display_name",
-    inviteLinkCount: "invite_link_count",
     name: "name",
-    releaseCount: "release_count",
-    testerCount: "tester_count",
   },
 };

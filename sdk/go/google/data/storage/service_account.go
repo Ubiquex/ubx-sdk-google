@@ -4,7 +4,7 @@ package storage
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ServiceAccountConfig struct {
-	ProjectId any
+	ProjectId   any
 	UserProject any
 }
 
@@ -12,15 +12,15 @@ type ServiceAccountAttrs struct {
 	// The ID of the notification.
 	EmailAddress any
 	// The kind of item this is. For notifications, this is always storage#notification.
-	Kind any
-	ProjectId any
+	Kind        any
+	ProjectId   any
 	UserProject any
 }
 
 var ServiceAccount = ubx.DataSourceBinding{
 	WireType: "google_storage_service_account",
 	Fields: ubx.FieldMap{
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
+		"ProjectId":   ubx.FieldSpec{WireName: "project_id"},
 		"UserProject": ubx.FieldSpec{WireName: "user_project"},
 	},
 }

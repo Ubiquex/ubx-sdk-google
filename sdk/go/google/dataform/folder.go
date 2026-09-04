@@ -6,20 +6,10 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type FolderConfig struct {
 	// Optional. The containing Folder resource name. This should take the format: projects/{project}/locations/{location}/folders/{folder}, projects/{project}/locations/{location}/teamFolders/{teamFolder}, or just "" if this is a root Folder. This field can only be updated through MoveFolder.
 	ContainingFolder any
-	// Output only. The timestamp of when the Folder was created.
-	CreateTime any
-	// Output only. The IAM principal identifier of the creator of the Folder.
-	CreatorIamPrincipal any
 	// Required. The Folder's user-friendly name.
 	DisplayName any
-	// Output only. All the metadata information that is used internally to serve the resource. For example: timestamps, flags, status fields, etc. The format of this field is a JSON string.
-	InternalMetadata any
 	// Identifier. The Folder's name.
 	Name any
-	// Output only. The resource name of the TeamFolder that this Folder is associated with. This should take the format: projects/{project}/locations/{location}/teamFolders/{teamFolder}. If this is not set, the Folder is not associated with a TeamFolder and is a UserFolder.
-	TeamFolderName any
-	// Output only. The timestamp of when the Folder was last updated.
-	UpdateTime any
 }
 
 type FolderAttrs struct {
@@ -45,12 +35,7 @@ var Folder = ubx.ResourceBinding{
 	WireType: "google_dataform_folder",
 	Fields: ubx.FieldMap{
 		"ContainingFolder": ubx.FieldSpec{WireName: "containing_folder"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"CreatorIamPrincipal": ubx.FieldSpec{WireName: "creator_iam_principal"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"InternalMetadata": ubx.FieldSpec{WireName: "internal_metadata"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"TeamFolderName": ubx.FieldSpec{WireName: "team_folder_name"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"DisplayName":      ubx.FieldSpec{WireName: "display_name"},
+		"Name":             ubx.FieldSpec{WireName: "name"},
 	},
 }

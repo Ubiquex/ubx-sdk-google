@@ -68,11 +68,6 @@ export interface Service_Schemas {
   updateTime?: string | Computed<string>;
 }
 
-const Service_Connectors_ClientCacheFields: FieldMap = {
-  entityIdIncluded: "entity_id_included",
-  strictValidationEnabled: "strict_validation_enabled",
-};
-
 const Service_Connectors_Source_FilesFields: FieldMap = {
   content: "content",
   path: "path",
@@ -86,112 +81,17 @@ const Service_Connectors_SourceFields: FieldMap = {
   },
 };
 
-const Service_ConnectorsFields: FieldMap = {
-  annotations: "annotations",
-  clientCache: {
-    wireName: "client_cache",
-    kind: "object",
-    fields: Service_Connectors_ClientCacheFields,
-  },
-  createTime: "create_time",
-  displayName: "display_name",
-  etag: "etag",
-  labels: "labels",
-  name: "name",
-  reconciling: "reconciling",
-  source: {
-    wireName: "source",
-    kind: "object",
-    fields: Service_Connectors_SourceFields,
-  },
-  uid: "uid",
-  updateTime: "update_time",
-};
-
-const Service_Schemas_Datasources_HttpGraphqlFields: FieldMap = {
-  timeout: "timeout",
-  uri: "uri",
-};
-
-const Service_Schemas_Datasources_Postgresql_CloudSqlFields: FieldMap = {
-  edition: "edition",
-  instance: "instance",
-};
-
-const Service_Schemas_Datasources_PostgresqlFields: FieldMap = {
-  cloudSql: {
-    wireName: "cloud_sql",
-    kind: "object",
-    fields: Service_Schemas_Datasources_Postgresql_CloudSqlFields,
-  },
-  database: "database",
-  ephemeral: "ephemeral",
-  schema: "schema",
-  schemaMigration: "schema_migration",
-  schemaValidation: "schema_validation",
-  unlinked: "unlinked",
-};
-
-const Service_Schemas_DatasourcesFields: FieldMap = {
-  httpGraphql: {
-    wireName: "http_graphql",
-    kind: "object",
-    fields: Service_Schemas_Datasources_HttpGraphqlFields,
-  },
-  postgresql: {
-    wireName: "postgresql",
-    kind: "object",
-    fields: Service_Schemas_Datasources_PostgresqlFields,
-  },
-};
-
-const Service_SchemasFields: FieldMap = {
-  annotations: "annotations",
-  createTime: "create_time",
-  datasources: {
-    wireName: "datasources",
-    kind: "list",
-    fields: Service_Schemas_DatasourcesFields,
-  },
-  displayName: "display_name",
-  etag: "etag",
-  labels: "labels",
-  name: "name",
-  reconciling: "reconciling",
-  source: {
-    wireName: "source",
-    kind: "object",
-    fields: Service_Connectors_SourceFields,
-  },
-  uid: "uid",
-  updateTime: "update_time",
-};
-
 export interface ServiceConfig {
   /** Optional. Stores small amounts of arbitrary data. */
   annotations?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. The list of connectors in this service. */
-  connectors?: Service_Connectors[] | Computed<Service_Connectors[]>;
-  /** Output only. [Output only] Create time stamp. */
-  createTime?: string | Computed<string>;
   /** Optional. Mutable human-readable name. 63 character limit. */
   displayName?: string | Computed<string>;
-  /** Output only. This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding. [AIP-154](https://google.aip.dev/154) */
-  etag?: string | Computed<string>;
   /** Optional. Labels as key value pairs. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Identifier. The relative resource name of the Firebase SQL Connect service, in the format: ``` projects/{project}/locations/{location}/services/{service} ``` Note that the service ID is specific to Firebase SQL Connect and does not correspond to any of the instance IDs of the underlying data source connections. */
   name?: string | Computed<string>;
-  /** Output only. A field that if true, indicates that the system is working update the service. */
-  reconciling?: boolean | Computed<boolean>;
-  /** Output only. The list of schemas in this service. */
-  schemas?: Service_Schemas[] | Computed<Service_Schemas[]>;
   /** Used to represent a set of source files. */
   source?: Service_Connectors_Source | Computed<Service_Connectors_Source>;
-  /** Output only. System-assigned, unique identifier. */
-  uid?: string | Computed<string>;
-  /** Output only. [Output only] Update time stamp. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface ServiceAttrs {
@@ -225,28 +125,13 @@ export const Service: ResourceBinding<ServiceConfig, ServiceAttrs> = {
   wireType: "google_firebasedataconnect_service",
   fields: {
     annotations: "annotations",
-    connectors: {
-      wireName: "connectors",
-      kind: "list",
-      fields: Service_ConnectorsFields,
-    },
-    createTime: "create_time",
     displayName: "display_name",
-    etag: "etag",
     labels: "labels",
     name: "name",
-    reconciling: "reconciling",
-    schemas: {
-      wireName: "schemas",
-      kind: "list",
-      fields: Service_SchemasFields,
-    },
     source: {
       wireName: "source",
       kind: "object",
       fields: Service_Connectors_SourceFields,
     },
-    uid: "uid",
-    updateTime: "update_time",
   },
 };

@@ -320,8 +320,6 @@ class AlphaRouterConfig:
     bgp: Any = None
     # BGP information that must be configured into the routing stack to establish BGP peering. This information must specify the peer ASN and either the interface name, IP address, or peer IP address. Please refer toRFC4273.
     bgp_peers: Any = None
-    # Output only. [Output Only] Creation timestamp inRFC3339 text format.
-    creation_timestamp: Any = None
     # An optional description of this resource. Provide this property when you create the resource.
     description: Any = None
     # Indicates if a router is dedicated for use with encrypted VLAN attachments (interconnectAttachments).
@@ -332,8 +330,6 @@ class AlphaRouterConfig:
     id: Any = None
     # Router interfaces. To create a BGP peer that uses a router interface, the interface must have one of the following fields specified: - linkedVpnTunnel - linkedInterconnectAttachment - subnetwork You can create a router interface without any of these fields specified. However, you cannot create a BGP peer that uses that interface.
     interfaces: Any = None
-    # Output only. [Output Only] Type of resource. Always compute#router for routers.
-    kind: Any = None
     # Keys used for MD5 authentication.
     md5_authentication_keys: Any = None
     # Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
@@ -350,8 +346,6 @@ class AlphaRouterConfig:
     region: Any = None
     # [Output Only] Server-defined URL for the resource.
     self_link: Any = None
-    # Output only. [Output Only] Server-defined URL for this resource with the resource id.
-    self_link_with_id: Any = None
 
 @dataclasses.dataclass
 class AlphaRouterAttrs:
@@ -404,7 +398,6 @@ AlphaRouter = ubx.ResourceBinding(
             kind="list",
             fields=_AlphaRouter_BgpPeersFields,
         ),
-        "creation_timestamp": ubx.FieldSpec(wire_name="creation_timestamp"),
         "description": ubx.FieldSpec(wire_name="description"),
         "encrypted_interconnect_router": ubx.FieldSpec(wire_name="encrypted_interconnect_router"),
         "etag": ubx.FieldSpec(wire_name="etag"),
@@ -414,7 +407,6 @@ AlphaRouter = ubx.ResourceBinding(
             kind="list",
             fields=_AlphaRouter_InterfacesFields,
         ),
-        "kind": ubx.FieldSpec(wire_name="kind"),
         "md5_authentication_keys": ubx.FieldSpec(
             wire_name="md5_authentication_keys",
             kind="list",
@@ -435,6 +427,5 @@ AlphaRouter = ubx.ResourceBinding(
         ),
         "region": ubx.FieldSpec(wire_name="region"),
         "self_link": ubx.FieldSpec(wire_name="self_link"),
-        "self_link_with_id": ubx.FieldSpec(wire_name="self_link_with_id"),
     },
 )

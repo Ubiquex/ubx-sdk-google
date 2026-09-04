@@ -33,16 +33,10 @@ class RegistryBookConfig:
     aggregated_data: Any = None
     # Optional. List of scopes claimed by the RegistryBook. In Preview, Only project scope is supported. Each scope is in the format of projects/{project}. Each scope can only be claimed once.
     claimed_scopes: Any = None
-    # Output only. The time at which the RegistryBook was created.
-    create_time: Any = None
-    # Output only. Whether the RegistryBook is the default one.
-    is_default: Any = None
     # Optional. User-defined labels.
     labels: Any = None
     # Required. Identifier. The resource name of the RegistryBook.
     name: Any = None
-    # Output only. The time at which the RegistryBook was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class RegistryBookAttrs:
@@ -70,10 +64,7 @@ RegistryBook = ubx.ResourceBinding(
             fields=_RegistryBook_AggregatedDataFields,
         ),
         "claimed_scopes": ubx.FieldSpec(wire_name="claimed_scopes"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
-        "is_default": ubx.FieldSpec(wire_name="is_default"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

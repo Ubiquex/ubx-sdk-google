@@ -121,23 +121,6 @@ class Spec_SourceMetadata:
     plugin_instance_action_source: Any = None
     source_type: Any = None
 
-_Spec_AdditionalSpecContents_SpecContentsFields = {
-    "contents": ubx.FieldSpec(wire_name="contents"),
-    "mime_type": ubx.FieldSpec(wire_name="mime_type"),
-}
-
-_Spec_AdditionalSpecContentsFields = {
-    "create_time": ubx.FieldSpec(wire_name="create_time"),
-    "labels": ubx.FieldSpec(wire_name="labels"),
-    "spec_content_type": ubx.FieldSpec(wire_name="spec_content_type"),
-    "spec_contents": ubx.FieldSpec(
-        wire_name="spec_contents",
-        kind="object",
-        fields=_Spec_AdditionalSpecContents_SpecContentsFields,
-    ),
-    "update_time": ubx.FieldSpec(wire_name="update_time"),
-}
-
 _Spec_Attributes_EnumValues_ValuesFields = {
     "description": ubx.FieldSpec(wire_name="description"),
     "display_name": ubx.FieldSpec(wire_name="display_name"),
@@ -179,6 +162,11 @@ _Spec_AttributesFields = {
         kind="object",
         fields=_Spec_Attributes_JsonValuesFields,
     ),
+}
+
+_Spec_AdditionalSpecContents_SpecContentsFields = {
+    "contents": ubx.FieldSpec(wire_name="contents"),
+    "mime_type": ubx.FieldSpec(wire_name="mime_type"),
 }
 
 _Spec_Details_OpenApiSpecDetails_OwnerFields = {
@@ -261,33 +249,12 @@ _Spec_LintResponseFields = {
     ),
 }
 
-_Spec_SourceMetadata_PluginInstanceActionSourceFields = {
-    "action_id": ubx.FieldSpec(wire_name="action_id"),
-    "plugin_instance": ubx.FieldSpec(wire_name="plugin_instance"),
-}
-
-_Spec_SourceMetadataFields = {
-    "original_resource_create_time": ubx.FieldSpec(wire_name="original_resource_create_time"),
-    "original_resource_id": ubx.FieldSpec(wire_name="original_resource_id"),
-    "original_resource_update_time": ubx.FieldSpec(wire_name="original_resource_update_time"),
-    "plugin_instance_action_source": ubx.FieldSpec(
-        wire_name="plugin_instance_action_source",
-        kind="object",
-        fields=_Spec_SourceMetadata_PluginInstanceActionSourceFields,
-    ),
-    "source_type": ubx.FieldSpec(wire_name="source_type"),
-}
-
 @dataclasses.dataclass
 class SpecConfig:
-    # Output only. The additional spec contents for the spec.
-    additional_spec_contents: Any = None
     # Optional. The list of user defined attributes associated with the spec. The key is the attribute name. It will be of the format: `projects/{project}/locations/{location}/attributes/{attribute}`. The value is the attribute values associated with the resource.
     attributes: Any = None
     # The spec contents.
     contents: Any = None
-    # Output only. The time at which the spec was created.
-    create_time: Any = None
     # SpecDetails contains the details parsed from supported spec types.
     details: Any = None
     # Required. The display name of the spec. This can contain the file name of the spec.
@@ -300,14 +267,10 @@ class SpecConfig:
     name: Any = None
     # Optional. Input only. Enum specifying the parsing mode for OpenAPI Specification (OAS) parsing.
     parsing_mode: Any = None
-    # Output only. The list of sources and metadata from the sources of the spec.
-    source_metadata: Any = None
     # Optional. The URI of the spec source in case file is uploaded from an external version control system.
     source_uri: Any = None
     # The attribute values associated with resource.
     spec_type: Any = None
-    # Output only. The time at which the spec was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class SpecAttrs:
@@ -343,11 +306,6 @@ class SpecAttrs:
 Spec = ubx.ResourceBinding(
     wire_type="google_apihub_spec",
     fields={
-        "additional_spec_contents": ubx.FieldSpec(
-            wire_name="additional_spec_contents",
-            kind="list",
-            fields=_Spec_AdditionalSpecContentsFields,
-        ),
         "attributes": ubx.FieldSpec(
             wire_name="attributes",
             kind="map",
@@ -358,7 +316,6 @@ Spec = ubx.ResourceBinding(
             kind="object",
             fields=_Spec_AdditionalSpecContents_SpecContentsFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "details": ubx.FieldSpec(
             wire_name="details",
             kind="object",
@@ -377,17 +334,11 @@ Spec = ubx.ResourceBinding(
         ),
         "name": ubx.FieldSpec(wire_name="name"),
         "parsing_mode": ubx.FieldSpec(wire_name="parsing_mode"),
-        "source_metadata": ubx.FieldSpec(
-            wire_name="source_metadata",
-            kind="list",
-            fields=_Spec_SourceMetadataFields,
-        ),
         "source_uri": ubx.FieldSpec(wire_name="source_uri"),
         "spec_type": ubx.FieldSpec(
             wire_name="spec_type",
             kind="object",
             fields=_Spec_AttributesFields,
         ),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

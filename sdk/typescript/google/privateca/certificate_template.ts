@@ -252,8 +252,6 @@ const CertificateTemplate_PredefinedValuesFields: FieldMap = {
 };
 
 export interface CertificateTemplateConfig {
-  /** Output only. The time at which this CertificateTemplate was created. */
-  createTime?: string | Computed<string>;
   /** Optional. A human-readable description of scenarios this template is intended for. */
   description?: string | Computed<string>;
   /** Describes constraints on a Certificate's Subject and SubjectAltNames. */
@@ -268,8 +266,6 @@ export interface CertificateTemplateConfig {
   passthroughExtensions?: CertificateTemplate_PassthroughExtensions | Computed<CertificateTemplate_PassthroughExtensions>;
   /** An X509Parameters is used to describe certain fields of an X.509 certificate, such as the key usage fields, fields specific to CA certificates, certificate policy extensions and custom extensions. */
   predefinedValues?: CertificateTemplate_PredefinedValues | Computed<CertificateTemplate_PredefinedValues>;
-  /** Output only. The time at which this CertificateTemplate was updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface CertificateTemplateAttrs {
@@ -296,7 +292,6 @@ export interface CertificateTemplateAttrs {
 export const CertificateTemplate: ResourceBinding<CertificateTemplateConfig, CertificateTemplateAttrs> = {
   wireType: "google_privateca_certificate_template",
   fields: {
-    createTime: "create_time",
     description: "description",
     identityConstraints: {
       wireName: "identity_constraints",
@@ -316,6 +311,5 @@ export const CertificateTemplate: ResourceBinding<CertificateTemplateConfig, Cer
       kind: "object",
       fields: CertificateTemplate_PredefinedValuesFields,
     },
-    updateTime: "update_time",
   },
 };

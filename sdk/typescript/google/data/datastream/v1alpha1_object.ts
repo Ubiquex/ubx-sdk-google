@@ -44,7 +44,6 @@ export interface V1alpha1Object_SourceObject {
 }
 
 export interface V1alpha1ObjectConfig {
-  name: string | Computed<string>;
 }
 
 export interface V1alpha1ObjectAttrs {
@@ -66,6 +65,5 @@ export interface V1alpha1ObjectAttrs {
 export const V1alpha1Object: DataSourceBinding<V1alpha1ObjectConfig, V1alpha1ObjectAttrs> = {
   wireType: "google_datastream_v1alpha1_object",
   fields: {
-    name: "name",
   },
 };

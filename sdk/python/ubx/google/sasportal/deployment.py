@@ -10,10 +10,6 @@ import ubx_sdk as ubx
 class DeploymentConfig:
     # The deployment's display name.
     display_name: Any = None
-    # Output only. The FCC Registration Numbers (FRNs) copied from its direct parent.
-    frns: Any = None
-    # Output only. Resource name.
-    name: Any = None
     # User ID used by the devices belonging to this deployment. Each deployment should be associated with one unique user ID.
     sas_user_ids: Any = None
 
@@ -32,8 +28,6 @@ Deployment = ubx.ResourceBinding(
     wire_type="google_sasportal_deployment",
     fields={
         "display_name": ubx.FieldSpec(wire_name="display_name"),
-        "frns": ubx.FieldSpec(wire_name="frns"),
-        "name": ubx.FieldSpec(wire_name="name"),
         "sas_user_ids": ubx.FieldSpec(wire_name="sas_user_ids"),
     },
 )

@@ -30,13 +30,13 @@ type V1alphaReleaseByHash_Release struct {
 
 type V1alphaReleaseByHashConfig struct {
 	MobilesdkAppId any
-	UploadHash any
+	UploadHash     any
 }
 
 type V1alphaReleaseByHashAttrs struct {
 	MobilesdkAppId any
 	// Proto defining a release object
-	Release any
+	Release    any
 	UploadHash any
 }
 
@@ -44,6 +44,6 @@ var V1alphaReleaseByHash = ubx.DataSourceBinding{
 	WireType: "google_firebaseappdistribution_v1alpha_release_by_hash",
 	Fields: ubx.FieldMap{
 		"MobilesdkAppId": ubx.FieldSpec{WireName: "mobilesdk_app_id"},
-		"UploadHash": ubx.FieldSpec{WireName: "upload_hash"},
+		"UploadHash":     ubx.FieldSpec{WireName: "upload_hash"},
 	},
 }

@@ -4,17 +4,17 @@ package gkehub
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1betaRollout_MembershipStates_Targets struct {
-	Cluster any
-	NodePool any
+	Cluster   any
+	NodePool  any
 	Operation any
-	Reason any
-	State any
+	Reason    any
+	State     any
 }
 
 type V1betaRollout_MembershipStates struct {
-	LastUpdateTime any
+	LastUpdateTime  any
 	StageAssignment any
-	Targets any
+	Targets         any
 }
 
 type V1betaRollout_Stages_ClusterSelector struct {
@@ -23,12 +23,12 @@ type V1betaRollout_Stages_ClusterSelector struct {
 
 type V1betaRollout_Stages struct {
 	ClusterSelector any
-	EndTime any
-	FleetProjects any
-	SoakDuration any
-	StageNumber any
-	StartTime any
-	State any
+	EndTime         any
+	FleetProjects   any
+	SoakDuration    any
+	StageNumber     any
+	StartTime       any
+	State           any
 }
 
 type V1betaRollout_VersionUpgrade struct {
@@ -63,7 +63,7 @@ type V1betaRolloutAttrs struct {
 	Labels any
 	// Output only. States of upgrading control plane or node pool targets of a single cluster (GKE Hub membership) that's part of this Rollout. The key is the membership name of the cluster. The value is the state of the cluster.
 	MembershipStates any
-	Name any
+	Name             any
 	// Optional. Immutable. The full, unique resource name of the rollout sequence that initiatied this Rollout. In the format of `projects/{project}/locations/global/rolloutSequences/{rollout_sequence}`.
 	RolloutSequence any
 	// Optional. Overrides the soak durations for specific stages of the rollout. Key is the stage number, value is the desired soak duration. Stages omitted from the map will receive the standard soak duration configured on the sequence for that stage.

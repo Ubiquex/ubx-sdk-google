@@ -8,10 +8,6 @@ type SchemaConfig struct {
 	Definition any
 	// Required. Name of the schema. Format is `projects/{project}/schemas/{schema}`.
 	Name any
-	// Output only. The timestamp that the revision was created.
-	RevisionCreateTime any
-	// Output only. Immutable. The revision ID of the schema.
-	RevisionId any
 	// The type of the schema definition.
 	Type any
 }
@@ -33,9 +29,7 @@ var Schema = ubx.ResourceBinding{
 	WireType: "google_pubsub_schema",
 	Fields: ubx.FieldMap{
 		"Definition": ubx.FieldSpec{WireName: "definition"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"RevisionCreateTime": ubx.FieldSpec{WireName: "revision_create_time"},
-		"RevisionId": ubx.FieldSpec{WireName: "revision_id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"Name":       ubx.FieldSpec{WireName: "name"},
+		"Type":       ubx.FieldSpec{WireName: "type"},
 	},
 }

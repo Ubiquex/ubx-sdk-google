@@ -139,8 +139,6 @@ _Key_WebSettingsFields = {
 class KeyConfig:
     # Settings specific to keys that can be used by Android apps.
     android_settings: Any = None
-    # Output only. The timestamp corresponding to the creation of this key.
-    create_time: Any = None
     # Required. Human-readable display name of this key. Modifiable by user.
     display_name: Any = None
     # Settings specific to keys that can be used for reCAPTCHA Express.
@@ -193,7 +191,6 @@ Key = ubx.ResourceBinding(
             kind="object",
             fields=_Key_AndroidSettingsFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "express_settings": ubx.FieldSpec(wire_name="express_settings"),
         "ios_settings": ubx.FieldSpec(

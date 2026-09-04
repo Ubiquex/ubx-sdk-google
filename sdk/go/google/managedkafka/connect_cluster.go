@@ -12,8 +12,8 @@ type ConnectCluster_CapacityConfig struct {
 
 type ConnectCluster_GcpConfig_AccessConfig_NetworkConfigs struct {
 	AdditionalSubnets any
-	DnsDomainNames any
-	PrimarySubnet any
+	DnsDomainNames    any
+	PrimarySubnet     any
 }
 
 type ConnectCluster_GcpConfig_AccessConfig struct {
@@ -29,40 +29,38 @@ type ConnectCluster_GcpConfig struct {
 }
 
 var ConnectCluster_CapacityConfigFields = ubx.FieldMap{
-		"MemoryBytes": ubx.FieldSpec{WireName: "memory_bytes"},
-		"VcpuCount": ubx.FieldSpec{WireName: "vcpu_count"},
-	}
+	"MemoryBytes": ubx.FieldSpec{WireName: "memory_bytes"},
+	"VcpuCount":   ubx.FieldSpec{WireName: "vcpu_count"},
+}
 
 var ConnectCluster_GcpConfig_AccessConfig_NetworkConfigsFields = ubx.FieldMap{
-		"AdditionalSubnets": ubx.FieldSpec{WireName: "additional_subnets"},
-		"DnsDomainNames": ubx.FieldSpec{WireName: "dns_domain_names"},
-		"PrimarySubnet": ubx.FieldSpec{WireName: "primary_subnet"},
-	}
+	"AdditionalSubnets": ubx.FieldSpec{WireName: "additional_subnets"},
+	"DnsDomainNames":    ubx.FieldSpec{WireName: "dns_domain_names"},
+	"PrimarySubnet":     ubx.FieldSpec{WireName: "primary_subnet"},
+}
 
 var ConnectCluster_GcpConfig_AccessConfigFields = ubx.FieldMap{
-		"NetworkConfigs": ubx.FieldSpec{
-			WireName: "network_configs",
-			Kind: "list",
-			Fields: ConnectCluster_GcpConfig_AccessConfig_NetworkConfigsFields,
-		},
-	}
+	"NetworkConfigs": ubx.FieldSpec{
+		WireName: "network_configs",
+		Kind:     "list",
+		Fields:   ConnectCluster_GcpConfig_AccessConfig_NetworkConfigsFields,
+	},
+}
 
 var ConnectCluster_GcpConfigFields = ubx.FieldMap{
-		"AccessConfig": ubx.FieldSpec{
-			WireName: "access_config",
-			Kind: "object",
-			Fields: ConnectCluster_GcpConfig_AccessConfigFields,
-		},
-		"SecretPaths": ubx.FieldSpec{WireName: "secret_paths"},
-	}
+	"AccessConfig": ubx.FieldSpec{
+		WireName: "access_config",
+		Kind:     "object",
+		Fields:   ConnectCluster_GcpConfig_AccessConfigFields,
+	},
+	"SecretPaths": ubx.FieldSpec{WireName: "secret_paths"},
+}
 
 type ConnectClusterConfig struct {
 	// A capacity configuration of a Kafka cluster.
 	CapacityConfig any
 	// Optional. Reserved for future use. This field is meant for worker config overrides, but is unsupported for now.
 	Config any
-	// Output only. The time when the cluster was created.
-	CreateTime any
 	// Configuration properties for a Kafka Connect cluster deployed to Google Cloud Platform.
 	GcpConfig any
 	// Required. Immutable. The name of the Kafka cluster this Kafka Connect cluster is attached to. Structured like: projects/{project}/locations/{location}/clusters/{cluster}
@@ -71,14 +69,6 @@ type ConnectClusterConfig struct {
 	Labels any
 	// Identifier. The name of the Kafka Connect cluster. Structured like: projects/{project_number}/locations/{location}/connectClusters/{connect_cluster_id}
 	Name any
-	// Output only. Reserved for future use.
-	SatisfiesPzi any
-	// Output only. Reserved for future use.
-	SatisfiesPzs any
-	// Output only. The current state of the Kafka Connect cluster.
-	State any
-	// Output only. The time when the cluster was last updated.
-	UpdateTime any
 }
 
 type ConnectClusterAttrs struct {
@@ -111,22 +101,17 @@ var ConnectCluster = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"CapacityConfig": ubx.FieldSpec{
 			WireName: "capacity_config",
-			Kind: "object",
-			Fields: ConnectCluster_CapacityConfigFields,
+			Kind:     "object",
+			Fields:   ConnectCluster_CapacityConfigFields,
 		},
 		"Config": ubx.FieldSpec{WireName: "config"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"GcpConfig": ubx.FieldSpec{
 			WireName: "gcp_config",
-			Kind: "object",
-			Fields: ConnectCluster_GcpConfigFields,
+			Kind:     "object",
+			Fields:   ConnectCluster_GcpConfigFields,
 		},
 		"KafkaCluster": ubx.FieldSpec{WireName: "kafka_cluster"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SatisfiesPzi": ubx.FieldSpec{WireName: "satisfies_pzi"},
-		"SatisfiesPzs": ubx.FieldSpec{WireName: "satisfies_pzs"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"Labels":       ubx.FieldSpec{WireName: "labels"},
+		"Name":         ubx.FieldSpec{WireName: "name"},
 	},
 }

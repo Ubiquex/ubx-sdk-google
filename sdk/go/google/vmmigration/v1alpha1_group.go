@@ -4,18 +4,12 @@ package vmmigration
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1alpha1GroupConfig struct {
-	// Output only. The create time timestamp.
-	CreateTime any
 	// User-provided description of the group.
 	Description any
 	// Display name is a user defined name for this group which can be updated.
 	DisplayName any
 	// Immutable. The target type of this group.
 	MigrationTargetType any
-	// Output only. The Group name.
-	Name any
-	// Output only. The update time timestamp.
-	UpdateTime any
 }
 
 type V1alpha1GroupAttrs struct {
@@ -36,11 +30,8 @@ type V1alpha1GroupAttrs struct {
 var V1alpha1Group = ubx.ResourceBinding{
 	WireType: "google_vmmigration_v1alpha1_group",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"Description":         ubx.FieldSpec{WireName: "description"},
+		"DisplayName":         ubx.FieldSpec{WireName: "display_name"},
 		"MigrationTargetType": ubx.FieldSpec{WireName: "migration_target_type"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

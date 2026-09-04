@@ -4,11 +4,11 @@ package firebaseappdistribution
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1alphaTestCase_AiInstructions_Steps struct {
-	Assertion any
-	Goal any
-	Hint any
+	Assertion       any
+	Goal            any
+	Hint            any
 	SuccessCriteria any
-	TestCase any
+	TestCase        any
 }
 
 type V1alphaTestCase_AiInstructions struct {
@@ -17,27 +17,23 @@ type V1alphaTestCase_AiInstructions struct {
 }
 
 var V1alphaTestCase_AiInstructions_StepsFields = ubx.FieldMap{
-		"Assertion": ubx.FieldSpec{WireName: "assertion"},
-		"Goal": ubx.FieldSpec{WireName: "goal"},
-		"Hint": ubx.FieldSpec{WireName: "hint"},
-		"SuccessCriteria": ubx.FieldSpec{WireName: "success_criteria"},
-		"TestCase": ubx.FieldSpec{WireName: "test_case"},
-	}
+	"Assertion":       ubx.FieldSpec{WireName: "assertion"},
+	"Goal":            ubx.FieldSpec{WireName: "goal"},
+	"Hint":            ubx.FieldSpec{WireName: "hint"},
+	"SuccessCriteria": ubx.FieldSpec{WireName: "success_criteria"},
+	"TestCase":        ubx.FieldSpec{WireName: "test_case"},
+}
 
 var V1alphaTestCase_AiInstructionsFields = ubx.FieldMap{
-		"Steps": ubx.FieldSpec{
-			WireName: "steps",
-			Kind: "list",
-			Fields: V1alphaTestCase_AiInstructions_StepsFields,
-		},
-	}
+	"Steps": ubx.FieldSpec{
+		WireName: "steps",
+		Kind:     "list",
+		Fields:   V1alphaTestCase_AiInstructions_StepsFields,
+	},
+}
 
 type V1alphaTestCaseConfig struct {
 	AiInstructions any
-	// Output only. Timestamp when the test case was created
-	CreateTime any
-	// Output only. Other test cases that depend on this test case as a prerequisite.
-	DependentTestCases any
 	// Required. Display name of the test case.
 	DisplayName any
 	// Identifier. The name of the test case resource. Format: `projects/{project_number}/apps/{app}/testCases/{test_case}`
@@ -65,13 +61,11 @@ var V1alphaTestCase = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AiInstructions": ubx.FieldSpec{
 			WireName: "ai_instructions",
-			Kind: "object",
-			Fields: V1alphaTestCase_AiInstructionsFields,
+			Kind:     "object",
+			Fields:   V1alphaTestCase_AiInstructionsFields,
 		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DependentTestCases": ubx.FieldSpec{WireName: "dependent_test_cases"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"DisplayName":          ubx.FieldSpec{WireName: "display_name"},
+		"Name":                 ubx.FieldSpec{WireName: "name"},
 		"PrerequisiteTestCase": ubx.FieldSpec{WireName: "prerequisite_test_case"},
 	},
 }

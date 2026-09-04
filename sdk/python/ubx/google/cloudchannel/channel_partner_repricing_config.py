@@ -147,12 +147,8 @@ _ChannelPartnerRepricingConfig_RepricingConfigFields = {
 
 @dataclasses.dataclass
 class ChannelPartnerRepricingConfigConfig:
-    # Output only. Resource name of the ChannelPartnerRepricingConfig. Format: accounts/{account_id}/channelPartnerLinks/{channel_partner_id}/channelPartnerRepricingConfigs/{id}.
-    name: Any = None
     # Configuration for repricing a Google bill over a period of time.
     repricing_config: Any = None
-    # Output only. Timestamp of an update to the repricing rule. If `update_time` is after RepricingConfig.effective_invoice_month then it indicates this was set mid-month.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class ChannelPartnerRepricingConfigAttrs:
@@ -166,12 +162,10 @@ class ChannelPartnerRepricingConfigAttrs:
 ChannelPartnerRepricingConfig = ubx.ResourceBinding(
     wire_type="google_cloudchannel_channel_partner_repricing_config",
     fields={
-        "name": ubx.FieldSpec(wire_name="name"),
         "repricing_config": ubx.FieldSpec(
             wire_name="repricing_config",
             kind="object",
             fields=_ChannelPartnerRepricingConfig_RepricingConfigFields,
         ),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

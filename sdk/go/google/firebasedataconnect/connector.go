@@ -12,7 +12,7 @@ type Connector_ClientCache struct {
 
 type Connector_Source_Files struct {
 	Content any
-	Path any
+	Path    any
 }
 
 type Connector_Source struct {
@@ -21,46 +21,36 @@ type Connector_Source struct {
 }
 
 var Connector_ClientCacheFields = ubx.FieldMap{
-		"EntityIdIncluded": ubx.FieldSpec{WireName: "entity_id_included"},
-		"StrictValidationEnabled": ubx.FieldSpec{WireName: "strict_validation_enabled"},
-	}
+	"EntityIdIncluded":        ubx.FieldSpec{WireName: "entity_id_included"},
+	"StrictValidationEnabled": ubx.FieldSpec{WireName: "strict_validation_enabled"},
+}
 
 var Connector_Source_FilesFields = ubx.FieldMap{
-		"Content": ubx.FieldSpec{WireName: "content"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-	}
+	"Content": ubx.FieldSpec{WireName: "content"},
+	"Path":    ubx.FieldSpec{WireName: "path"},
+}
 
 var Connector_SourceFields = ubx.FieldMap{
-		"Files": ubx.FieldSpec{
-			WireName: "files",
-			Kind: "list",
-			Fields: Connector_Source_FilesFields,
-		},
-	}
+	"Files": ubx.FieldSpec{
+		WireName: "files",
+		Kind:     "list",
+		Fields:   Connector_Source_FilesFields,
+	},
+}
 
 type ConnectorConfig struct {
 	// Optional. Stores small amounts of arbitrary data.
 	Annotations any
 	// Client caching settings of a connector.
 	ClientCache any
-	// Output only. [Output only] Create time stamp.
-	CreateTime any
 	// Optional. Mutable human-readable name. 63 character limit.
 	DisplayName any
-	// Output only. This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding. [AIP-154](https://google.aip.dev/154)
-	Etag any
 	// Optional. Labels as key value pairs.
 	Labels any
 	// Identifier. The relative resource name of the connector, in the format: ``` projects/{project}/locations/{location}/services/{service}/connectors/{connector} ```
 	Name any
-	// Output only. A field that if true, indicates that the system is working to compile and deploy the connector.
-	Reconciling any
 	// Used to represent a set of source files.
 	Source any
-	// Output only. System-assigned, unique identifier.
-	Uid any
-	// Output only. [Output only] Update time stamp.
-	UpdateTime any
 }
 
 type ConnectorAttrs struct {
@@ -94,21 +84,16 @@ var Connector = ubx.ResourceBinding{
 		"Annotations": ubx.FieldSpec{WireName: "annotations"},
 		"ClientCache": ubx.FieldSpec{
 			WireName: "client_cache",
-			Kind: "object",
-			Fields: Connector_ClientCacheFields,
+			Kind:     "object",
+			Fields:   Connector_ClientCacheFields,
 		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Reconciling": ubx.FieldSpec{WireName: "reconciling"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"Source": ubx.FieldSpec{
 			WireName: "source",
-			Kind: "object",
-			Fields: Connector_SourceFields,
+			Kind:     "object",
+			Fields:   Connector_SourceFields,
 		},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

@@ -14,7 +14,7 @@ type ViewAttrs struct {
 	Description any
 	// Optional. User friendly display name.
 	DisplayName any
-	Name any
+	Name        any
 	// Output only. Update timestamp.
 	UpdateTime any
 }

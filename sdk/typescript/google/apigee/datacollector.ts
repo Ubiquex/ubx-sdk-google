@@ -2,12 +2,8 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface DatacollectorConfig {
-  /** Output only. The time at which the data collector was created in milliseconds since the epoch. */
-  createdAt?: string | Computed<string>;
   /** A description of the data collector. */
   description?: string | Computed<string>;
-  /** Output only. The time at which the Data Collector was last updated in milliseconds since the epoch. */
-  lastModifiedAt?: string | Computed<string>;
   /** ID of the data collector. Must begin with `dc_`. */
   name?: string | Computed<string>;
   /** Immutable. The type of data this data collector will collect. */
@@ -30,9 +26,7 @@ export interface DatacollectorAttrs {
 export const Datacollector: ResourceBinding<DatacollectorConfig, DatacollectorAttrs> = {
   wireType: "google_apigee_datacollector",
   fields: {
-    createdAt: "created_at",
     description: "description",
-    lastModifiedAt: "last_modified_at",
     name: "name",
     type: "type",
   },

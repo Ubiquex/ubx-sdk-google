@@ -23,8 +23,6 @@ _DnsAuthorization_DnsResourceRecordFields = {
 
 @dataclasses.dataclass
 class DnsAuthorizationConfig:
-    # Output only. The creation timestamp of a DnsAuthorization.
-    create_time: Any = None
     # Optional. One or more paragraphs of text description of a DnsAuthorization.
     description: Any = None
     # The structure describing the DNS Resource Record that needs to be added to DNS configuration for the authorization to be usable by certificate.
@@ -39,8 +37,6 @@ class DnsAuthorizationConfig:
     tags: Any = None
     # Optional. Immutable. Type of DnsAuthorization. If unset during resource creation the following default will be used: - in location `global`: FIXED_RECORD, - in other locations: PER_PROJECT_RECORD.
     type: Any = None
-    # Output only. The last update timestamp of a DnsAuthorization.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class DnsAuthorizationAttrs:
@@ -66,7 +62,6 @@ class DnsAuthorizationAttrs:
 DnsAuthorization = ubx.ResourceBinding(
     wire_type="google_certificatemanager_dns_authorization",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "dns_resource_record": ubx.FieldSpec(
             wire_name="dns_resource_record",
@@ -78,6 +73,5 @@ DnsAuthorization = ubx.ResourceBinding(
         "name": ubx.FieldSpec(wire_name="name"),
         "tags": ubx.FieldSpec(wire_name="tags"),
         "type": ubx.FieldSpec(wire_name="type"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

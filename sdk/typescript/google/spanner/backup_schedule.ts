@@ -57,8 +57,6 @@ export interface BackupScheduleConfig {
   retentionDuration?: string | Computed<string>;
   /** Defines specifications of the backup schedule. */
   spec?: BackupSchedule_Spec | Computed<BackupSchedule_Spec>;
-  /** Output only. The timestamp at which the schedule was last updated. If the schedule has never been updated, this field contains the timestamp when the schedule was first created. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface BackupScheduleAttrs {
@@ -95,6 +93,5 @@ export const BackupSchedule: ResourceBinding<BackupScheduleConfig, BackupSchedul
       kind: "object",
       fields: BackupSchedule_SpecFields,
     },
-    updateTime: "update_time",
   },
 };

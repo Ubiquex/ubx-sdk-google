@@ -44,8 +44,6 @@ class InboundSamlSsoProfileConfig:
     display_name: Any = None
     # SAML IDP (identity provider) configuration.
     idp_config: Any = None
-    # Output only. [Resource name](https://cloud.google.com/apis/design/resource_names) of the SAML SSO profile.
-    name: Any = None
     # SAML SP (service provider) configuration.
     sp_config: Any = None
 
@@ -72,7 +70,6 @@ InboundSamlSsoProfile = ubx.ResourceBinding(
             kind="object",
             fields=_InboundSamlSsoProfile_IdpConfigFields,
         ),
-        "name": ubx.FieldSpec(wire_name="name"),
         "sp_config": ubx.FieldSpec(
             wire_name="sp_config",
             kind="object",

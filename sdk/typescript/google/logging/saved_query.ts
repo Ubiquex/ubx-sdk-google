@@ -218,20 +218,14 @@ const SavedQuery_OpsAnalyticsQueryFields: FieldMap = {
 };
 
 export interface SavedQueryConfig {
-  /** Output only. The timestamp when the saved query was created. */
-  createTime?: string | Computed<string>;
   /** Optional. A human readable description of the saved query. */
   description?: string | Computed<string>;
   /** Required. The user specified title for the SavedQuery. */
   displayName?: string | Computed<string>;
   /** Describes a Cloud Logging query that can be run in Logs Explorer UI or via the logging API.In addition to the query itself, additional information may be stored to capture the display configuration and other UI state used in association with analysis of query results. */
   loggingQuery?: SavedQuery_LoggingQuery | Computed<SavedQuery_LoggingQuery>;
-  /** Output only. Resource name of the saved query.In the format: "projects/[PROJECT_ID]/locations/[LOCATION_ID]/savedQueries/[QUERY_ID]" For a list of supported locations, see Supported Regions (https://docs.cloud.google.com/logging/docs/region-support#bucket-regions)After the saved query is created, the location cannot be changed.If the user doesn't provide a QUERY_ID, the system will generate an alphanumeric ID. */
-  name?: string | Computed<string>;
   /** Describes a query that can be run in Log Analytics. */
   opsAnalyticsQuery?: SavedQuery_OpsAnalyticsQuery | Computed<SavedQuery_OpsAnalyticsQuery>;
-  /** Output only. The timestamp when the saved query was last updated. */
-  updateTime?: string | Computed<string>;
   /** Required. The visibility status of this query, which determines its ownership. */
   visibility?: string | Computed<string>;
 }
@@ -258,7 +252,6 @@ export interface SavedQueryAttrs {
 export const SavedQuery: ResourceBinding<SavedQueryConfig, SavedQueryAttrs> = {
   wireType: "google_logging_saved_query",
   fields: {
-    createTime: "create_time",
     description: "description",
     displayName: "display_name",
     loggingQuery: {
@@ -266,13 +259,11 @@ export const SavedQuery: ResourceBinding<SavedQueryConfig, SavedQueryAttrs> = {
       kind: "object",
       fields: SavedQuery_LoggingQueryFields,
     },
-    name: "name",
     opsAnalyticsQuery: {
       wireName: "ops_analytics_query",
       kind: "object",
       fields: SavedQuery_OpsAnalyticsQueryFields,
     },
-    updateTime: "update_time",
     visibility: "visibility",
   },
 };

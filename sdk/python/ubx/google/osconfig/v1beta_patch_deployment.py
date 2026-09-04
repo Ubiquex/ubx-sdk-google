@@ -386,16 +386,12 @@ _V1betaPatchDeployment_RolloutFields = {
 
 @dataclasses.dataclass
 class V1betaPatchDeploymentConfig:
-    # Output only. Time the patch deployment was created. Timestamp is in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
-    create_time: Any = None
     # Optional. Description of the patch deployment. Length of the description is limited to 1024 characters.
     description: Any = None
     # Optional. Duration of the patch. After the duration ends, the patch times out.
     duration: Any = None
     # A filter to target VM instances for patching. The targeted VMs must meet all criteria specified. So if both labels and zones are specified, the patch job targets only VMs with those labels and in those zones.
     instance_filter: Any = None
-    # Output only. The last time a patch job was started by this deployment. Timestamp is in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
-    last_execute_time: Any = None
     # Unique name for the patch deployment resource in a project. The patch deployment name is in the form: `projects/{project_id}/patchDeployments/{patch_deployment_id}`. This field is ignored when you create a new patch deployment.
     name: Any = None
     # Sets the time for a one time patch deployment. Timestamp is in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
@@ -406,10 +402,6 @@ class V1betaPatchDeploymentConfig:
     recurring_schedule: Any = None
     # Patch rollout configuration specifications. Contains details on the concurrency control when applying patch(es) to all targeted VMs.
     rollout: Any = None
-    # Output only. Current state of the patch deployment.
-    state: Any = None
-    # Output only. Time the patch deployment was last updated. Timestamp is in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V1betaPatchDeploymentAttrs:
@@ -441,7 +433,6 @@ class V1betaPatchDeploymentAttrs:
 V1betaPatchDeployment = ubx.ResourceBinding(
     wire_type="google_osconfig_v1beta_patch_deployment",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "duration": ubx.FieldSpec(wire_name="duration"),
         "instance_filter": ubx.FieldSpec(
@@ -449,7 +440,6 @@ V1betaPatchDeployment = ubx.ResourceBinding(
             kind="object",
             fields=_V1betaPatchDeployment_InstanceFilterFields,
         ),
-        "last_execute_time": ubx.FieldSpec(wire_name="last_execute_time"),
         "name": ubx.FieldSpec(wire_name="name"),
         "one_time_schedule": ubx.FieldSpec(
             wire_name="one_time_schedule",
@@ -471,7 +461,5 @@ V1betaPatchDeployment = ubx.ResourceBinding(
             kind="object",
             fields=_V1betaPatchDeployment_RolloutFields,
         ),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

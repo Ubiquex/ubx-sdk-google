@@ -211,183 +211,183 @@ type MappingRule_SourceSqlChange struct {
 }
 
 var MappingRule_ConditionalColumnSetValue_SourceNumericFilterFields = ubx.FieldMap{
-		"NumericFilterOption": ubx.FieldSpec{WireName: "numeric_filter_option"},
-		"SourceMaxPrecisionFilter": ubx.FieldSpec{WireName: "source_max_precision_filter"},
-		"SourceMaxScaleFilter": ubx.FieldSpec{WireName: "source_max_scale_filter"},
-		"SourceMinPrecisionFilter": ubx.FieldSpec{WireName: "source_min_precision_filter"},
-		"SourceMinScaleFilter": ubx.FieldSpec{WireName: "source_min_scale_filter"},
-	}
+	"NumericFilterOption":      ubx.FieldSpec{WireName: "numeric_filter_option"},
+	"SourceMaxPrecisionFilter": ubx.FieldSpec{WireName: "source_max_precision_filter"},
+	"SourceMaxScaleFilter":     ubx.FieldSpec{WireName: "source_max_scale_filter"},
+	"SourceMinPrecisionFilter": ubx.FieldSpec{WireName: "source_min_precision_filter"},
+	"SourceMinScaleFilter":     ubx.FieldSpec{WireName: "source_min_scale_filter"},
+}
 
 var MappingRule_ConditionalColumnSetValue_SourceTextFilterFields = ubx.FieldMap{
-		"SourceMaxLengthFilter": ubx.FieldSpec{WireName: "source_max_length_filter"},
-		"SourceMinLengthFilter": ubx.FieldSpec{WireName: "source_min_length_filter"},
-	}
+	"SourceMaxLengthFilter": ubx.FieldSpec{WireName: "source_max_length_filter"},
+	"SourceMinLengthFilter": ubx.FieldSpec{WireName: "source_min_length_filter"},
+}
 
 var MappingRule_ConditionalColumnSetValue_ValueTransformation_ApplyHashFields = ubx.FieldMap{
-		"UuidFromBytes": ubx.FieldSpec{WireName: "uuid_from_bytes"},
-	}
+	"UuidFromBytes": ubx.FieldSpec{WireName: "uuid_from_bytes"},
+}
 
 var MappingRule_ConditionalColumnSetValue_ValueTransformation_AssignSpecificValueFields = ubx.FieldMap{
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var MappingRule_ConditionalColumnSetValue_ValueTransformation_DoubleComparisonFields = ubx.FieldMap{
-		"Value": ubx.FieldSpec{WireName: "value"},
-		"ValueComparison": ubx.FieldSpec{WireName: "value_comparison"},
-	}
+	"Value":           ubx.FieldSpec{WireName: "value"},
+	"ValueComparison": ubx.FieldSpec{WireName: "value_comparison"},
+}
 
 var MappingRule_ConditionalColumnSetValue_ValueTransformation_IntComparisonFields = ubx.FieldMap{
-		"Value": ubx.FieldSpec{WireName: "value"},
-		"ValueComparison": ubx.FieldSpec{WireName: "value_comparison"},
-	}
+	"Value":           ubx.FieldSpec{WireName: "value"},
+	"ValueComparison": ubx.FieldSpec{WireName: "value_comparison"},
+}
 
 var MappingRule_ConditionalColumnSetValue_ValueTransformation_RoundScaleFields = ubx.FieldMap{
-		"Scale": ubx.FieldSpec{WireName: "scale"},
-	}
+	"Scale": ubx.FieldSpec{WireName: "scale"},
+}
 
 var MappingRule_ConditionalColumnSetValue_ValueTransformation_ValueListFields = ubx.FieldMap{
-		"IgnoreCase": ubx.FieldSpec{WireName: "ignore_case"},
-		"ValuePresentList": ubx.FieldSpec{WireName: "value_present_list"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"IgnoreCase":       ubx.FieldSpec{WireName: "ignore_case"},
+	"ValuePresentList": ubx.FieldSpec{WireName: "value_present_list"},
+	"Values":           ubx.FieldSpec{WireName: "values"},
+}
 
 var MappingRule_ConditionalColumnSetValue_ValueTransformationFields = ubx.FieldMap{
-		"ApplyHash": ubx.FieldSpec{
-			WireName: "apply_hash",
-			Kind: "object",
-			Fields: MappingRule_ConditionalColumnSetValue_ValueTransformation_ApplyHashFields,
-		},
-		"AssignMaxValue": ubx.FieldSpec{WireName: "assign_max_value"},
-		"AssignMinValue": ubx.FieldSpec{WireName: "assign_min_value"},
-		"AssignNull": ubx.FieldSpec{WireName: "assign_null"},
-		"AssignSpecificValue": ubx.FieldSpec{
-			WireName: "assign_specific_value",
-			Kind: "object",
-			Fields: MappingRule_ConditionalColumnSetValue_ValueTransformation_AssignSpecificValueFields,
-		},
-		"DoubleComparison": ubx.FieldSpec{
-			WireName: "double_comparison",
-			Kind: "object",
-			Fields: MappingRule_ConditionalColumnSetValue_ValueTransformation_DoubleComparisonFields,
-		},
-		"IntComparison": ubx.FieldSpec{
-			WireName: "int_comparison",
-			Kind: "object",
-			Fields: MappingRule_ConditionalColumnSetValue_ValueTransformation_IntComparisonFields,
-		},
-		"IsNull": ubx.FieldSpec{WireName: "is_null"},
-		"RoundScale": ubx.FieldSpec{
-			WireName: "round_scale",
-			Kind: "object",
-			Fields: MappingRule_ConditionalColumnSetValue_ValueTransformation_RoundScaleFields,
-		},
-		"ValueList": ubx.FieldSpec{
-			WireName: "value_list",
-			Kind: "object",
-			Fields: MappingRule_ConditionalColumnSetValue_ValueTransformation_ValueListFields,
-		},
-	}
+	"ApplyHash": ubx.FieldSpec{
+		WireName: "apply_hash",
+		Kind:     "object",
+		Fields:   MappingRule_ConditionalColumnSetValue_ValueTransformation_ApplyHashFields,
+	},
+	"AssignMaxValue": ubx.FieldSpec{WireName: "assign_max_value"},
+	"AssignMinValue": ubx.FieldSpec{WireName: "assign_min_value"},
+	"AssignNull":     ubx.FieldSpec{WireName: "assign_null"},
+	"AssignSpecificValue": ubx.FieldSpec{
+		WireName: "assign_specific_value",
+		Kind:     "object",
+		Fields:   MappingRule_ConditionalColumnSetValue_ValueTransformation_AssignSpecificValueFields,
+	},
+	"DoubleComparison": ubx.FieldSpec{
+		WireName: "double_comparison",
+		Kind:     "object",
+		Fields:   MappingRule_ConditionalColumnSetValue_ValueTransformation_DoubleComparisonFields,
+	},
+	"IntComparison": ubx.FieldSpec{
+		WireName: "int_comparison",
+		Kind:     "object",
+		Fields:   MappingRule_ConditionalColumnSetValue_ValueTransformation_IntComparisonFields,
+	},
+	"IsNull": ubx.FieldSpec{WireName: "is_null"},
+	"RoundScale": ubx.FieldSpec{
+		WireName: "round_scale",
+		Kind:     "object",
+		Fields:   MappingRule_ConditionalColumnSetValue_ValueTransformation_RoundScaleFields,
+	},
+	"ValueList": ubx.FieldSpec{
+		WireName: "value_list",
+		Kind:     "object",
+		Fields:   MappingRule_ConditionalColumnSetValue_ValueTransformation_ValueListFields,
+	},
+}
 
 var MappingRule_ConditionalColumnSetValueFields = ubx.FieldMap{
-		"CustomFeatures": ubx.FieldSpec{WireName: "custom_features"},
-		"SourceNumericFilter": ubx.FieldSpec{
-			WireName: "source_numeric_filter",
-			Kind: "object",
-			Fields: MappingRule_ConditionalColumnSetValue_SourceNumericFilterFields,
-		},
-		"SourceTextFilter": ubx.FieldSpec{
-			WireName: "source_text_filter",
-			Kind: "object",
-			Fields: MappingRule_ConditionalColumnSetValue_SourceTextFilterFields,
-		},
-		"ValueTransformation": ubx.FieldSpec{
-			WireName: "value_transformation",
-			Kind: "object",
-			Fields: MappingRule_ConditionalColumnSetValue_ValueTransformationFields,
-		},
-	}
+	"CustomFeatures": ubx.FieldSpec{WireName: "custom_features"},
+	"SourceNumericFilter": ubx.FieldSpec{
+		WireName: "source_numeric_filter",
+		Kind:     "object",
+		Fields:   MappingRule_ConditionalColumnSetValue_SourceNumericFilterFields,
+	},
+	"SourceTextFilter": ubx.FieldSpec{
+		WireName: "source_text_filter",
+		Kind:     "object",
+		Fields:   MappingRule_ConditionalColumnSetValue_SourceTextFilterFields,
+	},
+	"ValueTransformation": ubx.FieldSpec{
+		WireName: "value_transformation",
+		Kind:     "object",
+		Fields:   MappingRule_ConditionalColumnSetValue_ValueTransformationFields,
+	},
+}
 
 var MappingRule_ConvertRowidColumnFields = ubx.FieldMap{
-		"OnlyIfNoPrimaryKey": ubx.FieldSpec{WireName: "only_if_no_primary_key"},
-	}
+	"OnlyIfNoPrimaryKey": ubx.FieldSpec{WireName: "only_if_no_primary_key"},
+}
 
 var MappingRule_EntityMoveFields = ubx.FieldMap{
-		"NewSchema": ubx.FieldSpec{WireName: "new_schema"},
-	}
+	"NewSchema": ubx.FieldSpec{WireName: "new_schema"},
+}
 
 var MappingRule_FilterFields = ubx.FieldMap{
-		"Entities": ubx.FieldSpec{WireName: "entities"},
-		"EntityNameContains": ubx.FieldSpec{WireName: "entity_name_contains"},
-		"EntityNamePrefix": ubx.FieldSpec{WireName: "entity_name_prefix"},
-		"EntityNameSuffix": ubx.FieldSpec{WireName: "entity_name_suffix"},
-		"ParentEntity": ubx.FieldSpec{WireName: "parent_entity"},
-	}
+	"Entities":           ubx.FieldSpec{WireName: "entities"},
+	"EntityNameContains": ubx.FieldSpec{WireName: "entity_name_contains"},
+	"EntityNamePrefix":   ubx.FieldSpec{WireName: "entity_name_prefix"},
+	"EntityNameSuffix":   ubx.FieldSpec{WireName: "entity_name_suffix"},
+	"ParentEntity":       ubx.FieldSpec{WireName: "parent_entity"},
+}
 
 var MappingRule_FilterTableColumnsFields = ubx.FieldMap{
-		"ExcludeColumns": ubx.FieldSpec{WireName: "exclude_columns"},
-		"IncludeColumns": ubx.FieldSpec{WireName: "include_columns"},
-	}
+	"ExcludeColumns": ubx.FieldSpec{WireName: "exclude_columns"},
+	"IncludeColumns": ubx.FieldSpec{WireName: "include_columns"},
+}
 
 var MappingRule_MultiColumnDataTypeChangeFields = ubx.FieldMap{
-		"CustomFeatures": ubx.FieldSpec{WireName: "custom_features"},
-		"NewDataType": ubx.FieldSpec{WireName: "new_data_type"},
-		"OverrideFractionalSecondsPrecision": ubx.FieldSpec{WireName: "override_fractional_seconds_precision"},
-		"OverrideLength": ubx.FieldSpec{WireName: "override_length"},
-		"OverridePrecision": ubx.FieldSpec{WireName: "override_precision"},
-		"OverrideScale": ubx.FieldSpec{WireName: "override_scale"},
-		"SourceDataTypeFilter": ubx.FieldSpec{WireName: "source_data_type_filter"},
-		"SourceNumericFilter": ubx.FieldSpec{
-			WireName: "source_numeric_filter",
-			Kind: "object",
-			Fields: MappingRule_ConditionalColumnSetValue_SourceNumericFilterFields,
-		},
-		"SourceTextFilter": ubx.FieldSpec{
-			WireName: "source_text_filter",
-			Kind: "object",
-			Fields: MappingRule_ConditionalColumnSetValue_SourceTextFilterFields,
-		},
-	}
+	"CustomFeatures":                     ubx.FieldSpec{WireName: "custom_features"},
+	"NewDataType":                        ubx.FieldSpec{WireName: "new_data_type"},
+	"OverrideFractionalSecondsPrecision": ubx.FieldSpec{WireName: "override_fractional_seconds_precision"},
+	"OverrideLength":                     ubx.FieldSpec{WireName: "override_length"},
+	"OverridePrecision":                  ubx.FieldSpec{WireName: "override_precision"},
+	"OverrideScale":                      ubx.FieldSpec{WireName: "override_scale"},
+	"SourceDataTypeFilter":               ubx.FieldSpec{WireName: "source_data_type_filter"},
+	"SourceNumericFilter": ubx.FieldSpec{
+		WireName: "source_numeric_filter",
+		Kind:     "object",
+		Fields:   MappingRule_ConditionalColumnSetValue_SourceNumericFilterFields,
+	},
+	"SourceTextFilter": ubx.FieldSpec{
+		WireName: "source_text_filter",
+		Kind:     "object",
+		Fields:   MappingRule_ConditionalColumnSetValue_SourceTextFilterFields,
+	},
+}
 
 var MappingRule_MultiEntityRenameFields = ubx.FieldMap{
-		"NewNamePattern": ubx.FieldSpec{WireName: "new_name_pattern"},
-		"SourceNameTransformation": ubx.FieldSpec{WireName: "source_name_transformation"},
-	}
+	"NewNamePattern":           ubx.FieldSpec{WireName: "new_name_pattern"},
+	"SourceNameTransformation": ubx.FieldSpec{WireName: "source_name_transformation"},
+}
 
 var MappingRule_SetTablePrimaryKeyFields = ubx.FieldMap{
-		"PrimaryKey": ubx.FieldSpec{WireName: "primary_key"},
-		"PrimaryKeyColumns": ubx.FieldSpec{WireName: "primary_key_columns"},
-	}
+	"PrimaryKey":        ubx.FieldSpec{WireName: "primary_key"},
+	"PrimaryKeyColumns": ubx.FieldSpec{WireName: "primary_key_columns"},
+}
 
 var MappingRule_SingleColumnChangeFields = ubx.FieldMap{
-		"Array": ubx.FieldSpec{WireName: "array"},
-		"ArrayLength": ubx.FieldSpec{WireName: "array_length"},
-		"AutoGenerated": ubx.FieldSpec{WireName: "auto_generated"},
-		"Charset": ubx.FieldSpec{WireName: "charset"},
-		"Collation": ubx.FieldSpec{WireName: "collation"},
-		"Comment": ubx.FieldSpec{WireName: "comment"},
-		"CustomFeatures": ubx.FieldSpec{WireName: "custom_features"},
-		"DataType": ubx.FieldSpec{WireName: "data_type"},
-		"FractionalSecondsPrecision": ubx.FieldSpec{WireName: "fractional_seconds_precision"},
-		"Length": ubx.FieldSpec{WireName: "length"},
-		"Nullable": ubx.FieldSpec{WireName: "nullable"},
-		"Precision": ubx.FieldSpec{WireName: "precision"},
-		"Scale": ubx.FieldSpec{WireName: "scale"},
-		"SetValues": ubx.FieldSpec{WireName: "set_values"},
-		"Udt": ubx.FieldSpec{WireName: "udt"},
-	}
+	"Array":                      ubx.FieldSpec{WireName: "array"},
+	"ArrayLength":                ubx.FieldSpec{WireName: "array_length"},
+	"AutoGenerated":              ubx.FieldSpec{WireName: "auto_generated"},
+	"Charset":                    ubx.FieldSpec{WireName: "charset"},
+	"Collation":                  ubx.FieldSpec{WireName: "collation"},
+	"Comment":                    ubx.FieldSpec{WireName: "comment"},
+	"CustomFeatures":             ubx.FieldSpec{WireName: "custom_features"},
+	"DataType":                   ubx.FieldSpec{WireName: "data_type"},
+	"FractionalSecondsPrecision": ubx.FieldSpec{WireName: "fractional_seconds_precision"},
+	"Length":                     ubx.FieldSpec{WireName: "length"},
+	"Nullable":                   ubx.FieldSpec{WireName: "nullable"},
+	"Precision":                  ubx.FieldSpec{WireName: "precision"},
+	"Scale":                      ubx.FieldSpec{WireName: "scale"},
+	"SetValues":                  ubx.FieldSpec{WireName: "set_values"},
+	"Udt":                        ubx.FieldSpec{WireName: "udt"},
+}
 
 var MappingRule_SingleEntityRenameFields = ubx.FieldMap{
-		"NewName": ubx.FieldSpec{WireName: "new_name"},
-	}
+	"NewName": ubx.FieldSpec{WireName: "new_name"},
+}
 
 var MappingRule_SinglePackageChangeFields = ubx.FieldMap{
-		"PackageBody": ubx.FieldSpec{WireName: "package_body"},
-		"PackageDescription": ubx.FieldSpec{WireName: "package_description"},
-	}
+	"PackageBody":        ubx.FieldSpec{WireName: "package_body"},
+	"PackageDescription": ubx.FieldSpec{WireName: "package_description"},
+}
 
 var MappingRule_SourceSqlChangeFields = ubx.FieldMap{
-		"SqlCode": ubx.FieldSpec{WireName: "sql_code"},
-	}
+	"SqlCode": ubx.FieldSpec{WireName: "sql_code"},
+}
 
 type MappingRuleConfig struct {
 	// Options to configure rule type ConditionalColumnSetValue. The rule is used to transform the data which is being replicated/migrated. The rule filter field can refer to one or more entities. The rule scope can be one of: Column.
@@ -408,10 +408,6 @@ type MappingRuleConfig struct {
 	MultiEntityRename any
 	// Full name of the mapping rule resource, in the form of: projects/{project}/locations/{location}/conversionWorkspaces/{set}/mappingRule/{rule}.
 	Name any
-	// Output only. The timestamp that the revision was created.
-	RevisionCreateTime any
-	// Output only. The revision ID of the mapping rule. A new revision is committed whenever the mapping rule is changed in any way. The format is an 8-character hexadecimal string.
-	RevisionId any
 	// Required. The order in which the rule is applied. Lower order rules are applied before higher value rules so they may end up being overridden.
 	RuleOrder any
 	// Required. The rule scope
@@ -476,69 +472,67 @@ var MappingRule = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ConditionalColumnSetValue": ubx.FieldSpec{
 			WireName: "conditional_column_set_value",
-			Kind: "object",
-			Fields: MappingRule_ConditionalColumnSetValueFields,
+			Kind:     "object",
+			Fields:   MappingRule_ConditionalColumnSetValueFields,
 		},
 		"ConvertRowidColumn": ubx.FieldSpec{
 			WireName: "convert_rowid_column",
-			Kind: "object",
-			Fields: MappingRule_ConvertRowidColumnFields,
+			Kind:     "object",
+			Fields:   MappingRule_ConvertRowidColumnFields,
 		},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"EntityMove": ubx.FieldSpec{
 			WireName: "entity_move",
-			Kind: "object",
-			Fields: MappingRule_EntityMoveFields,
+			Kind:     "object",
+			Fields:   MappingRule_EntityMoveFields,
 		},
 		"Filter": ubx.FieldSpec{
 			WireName: "filter",
-			Kind: "object",
-			Fields: MappingRule_FilterFields,
+			Kind:     "object",
+			Fields:   MappingRule_FilterFields,
 		},
 		"FilterTableColumns": ubx.FieldSpec{
 			WireName: "filter_table_columns",
-			Kind: "object",
-			Fields: MappingRule_FilterTableColumnsFields,
+			Kind:     "object",
+			Fields:   MappingRule_FilterTableColumnsFields,
 		},
 		"MultiColumnDataTypeChange": ubx.FieldSpec{
 			WireName: "multi_column_data_type_change",
-			Kind: "object",
-			Fields: MappingRule_MultiColumnDataTypeChangeFields,
+			Kind:     "object",
+			Fields:   MappingRule_MultiColumnDataTypeChangeFields,
 		},
 		"MultiEntityRename": ubx.FieldSpec{
 			WireName: "multi_entity_rename",
-			Kind: "object",
-			Fields: MappingRule_MultiEntityRenameFields,
+			Kind:     "object",
+			Fields:   MappingRule_MultiEntityRenameFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"RevisionCreateTime": ubx.FieldSpec{WireName: "revision_create_time"},
-		"RevisionId": ubx.FieldSpec{WireName: "revision_id"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
 		"RuleOrder": ubx.FieldSpec{WireName: "rule_order"},
 		"RuleScope": ubx.FieldSpec{WireName: "rule_scope"},
 		"SetTablePrimaryKey": ubx.FieldSpec{
 			WireName: "set_table_primary_key",
-			Kind: "object",
-			Fields: MappingRule_SetTablePrimaryKeyFields,
+			Kind:     "object",
+			Fields:   MappingRule_SetTablePrimaryKeyFields,
 		},
 		"SingleColumnChange": ubx.FieldSpec{
 			WireName: "single_column_change",
-			Kind: "object",
-			Fields: MappingRule_SingleColumnChangeFields,
+			Kind:     "object",
+			Fields:   MappingRule_SingleColumnChangeFields,
 		},
 		"SingleEntityRename": ubx.FieldSpec{
 			WireName: "single_entity_rename",
-			Kind: "object",
-			Fields: MappingRule_SingleEntityRenameFields,
+			Kind:     "object",
+			Fields:   MappingRule_SingleEntityRenameFields,
 		},
 		"SinglePackageChange": ubx.FieldSpec{
 			WireName: "single_package_change",
-			Kind: "object",
-			Fields: MappingRule_SinglePackageChangeFields,
+			Kind:     "object",
+			Fields:   MappingRule_SinglePackageChangeFields,
 		},
 		"SourceSqlChange": ubx.FieldSpec{
 			WireName: "source_sql_change",
-			Kind: "object",
-			Fields: MappingRule_SourceSqlChangeFields,
+			Kind:     "object",
+			Fields:   MappingRule_SourceSqlChangeFields,
 		},
 		"State": ubx.FieldSpec{WireName: "state"},
 	},

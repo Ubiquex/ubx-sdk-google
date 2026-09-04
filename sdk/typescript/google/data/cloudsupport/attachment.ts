@@ -13,7 +13,6 @@ export interface Attachment_Creator {
 }
 
 export interface AttachmentConfig {
-  name: string | Computed<string>;
 }
 
 export interface AttachmentAttrs {
@@ -33,6 +32,5 @@ export interface AttachmentAttrs {
 export const Attachment: DataSourceBinding<AttachmentConfig, AttachmentAttrs> = {
   wireType: "google_cloudsupport_attachment",
   fields: {
-    name: "name",
   },
 };

@@ -6,8 +6,6 @@ export interface NamespaceConfig {
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Immutable. The resource name for the namespace in the format `projects/* /locations/* /namespaces/*`. */
   name?: string | Computed<string>;
-  /** Output only. The globally unique identifier of the namespace in the UUID4 format. */
-  uid?: string | Computed<string>;
 }
 
 export interface NamespaceAttrs {
@@ -24,6 +22,5 @@ export const Namespace: ResourceBinding<NamespaceConfig, NamespaceAttrs> = {
   fields: {
     labels: "labels",
     name: "name",
-    uid: "uid",
   },
 };

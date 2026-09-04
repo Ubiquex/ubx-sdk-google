@@ -429,18 +429,12 @@ export interface AlphaFutureReservationConfig {
   colocationResource?: string | Computed<string>;
   commitmentInfo?: AlphaFutureReservation_CommitmentInfo | Computed<AlphaFutureReservation_CommitmentInfo>;
   confidentialComputeType?: string | Computed<string>;
-  /** Output only. [Output Only] The creation timestamp for this future reservation inRFC3339 text format. */
-  creationTimestamp?: string | Computed<string>;
   /** Type of the deployment requested as part of future reservation. */
   deploymentType?: string | Computed<string>;
   /** An optional description of this resource. Provide this property when you create the future reservation. */
   description?: string | Computed<string>;
   /** Indicates if this group of VMs have emergent maintenance enabled. */
   enableEmergentMaintenance?: boolean | Computed<boolean>;
-  /** Output only. [Output Only] A unique identifier for this future reservation. The server defines this identifier. */
-  id?: string | Computed<string>;
-  /** Output only. [Output Only] Type of the resource. Alwayscompute#futureReservation for future reservations. */
-  kind?: string | Computed<string>;
   /** The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
   name?: string | Computed<string>;
   /** Name prefix for the reservations to be created at the time of delivery. The name prefix must comply with RFC1035. Maximum allowed length for name prefix is 20. Automatically created reservations name format will be -date-####. */
@@ -459,10 +453,6 @@ export interface AlphaFutureReservationConfig {
   resourceName?: string | Computed<string>;
   /** Maintenance information for this reservation */
   schedulingType?: string | Computed<string>;
-  /** Output only. [Output Only] Server-defined fully-qualified URL for this resource. */
-  selfLink?: string | Computed<string>;
-  /** Output only. [Output Only] Server-defined URL for this resource with the resource id. */
-  selfLinkWithId?: string | Computed<string>;
   /** The share setting for reservations and sole tenancy node groups. */
   shareSettings?: AlphaFutureReservation_ShareSettings | Computed<AlphaFutureReservation_ShareSettings>;
   /** Indicates whether the auto-created reservation can be consumed by VMs with affinity for "any" reservation. If the field is set, then only VMs that target the reservation by name can consume from the delivered reservation. */
@@ -473,8 +463,6 @@ export interface AlphaFutureReservationConfig {
   /** Storage pool properties for the future reservation. */
   storagePoolProperties?: AlphaFutureReservation_StoragePoolProperties | Computed<AlphaFutureReservation_StoragePoolProperties>;
   timeWindow?: AlphaFutureReservation_Status_LastKnownGoodState_FutureReservationSpecs_TimeWindow | Computed<AlphaFutureReservation_Status_LastKnownGoodState_FutureReservationSpecs_TimeWindow>;
-  /** Output only. [Output Only] URL of the Zone where this future reservation resides. */
-  zone?: string | Computed<string>;
 }
 
 export interface AlphaFutureReservationAttrs {
@@ -567,12 +555,9 @@ export const AlphaFutureReservation: ResourceBinding<AlphaFutureReservationConfi
       fields: AlphaFutureReservation_CommitmentInfoFields,
     },
     confidentialComputeType: "confidential_compute_type",
-    creationTimestamp: "creation_timestamp",
     deploymentType: "deployment_type",
     description: "description",
     enableEmergentMaintenance: "enable_emergent_maintenance",
-    id: "id",
-    kind: "kind",
     name: "name",
     namePrefix: "name_prefix",
     params: {
@@ -586,8 +571,6 @@ export const AlphaFutureReservation: ResourceBinding<AlphaFutureReservationConfi
     reservationName: "reservation_name",
     resourceName: "resource_name",
     schedulingType: "scheduling_type",
-    selfLink: "self_link",
-    selfLinkWithId: "self_link_with_id",
     shareSettings: {
       wireName: "share_settings",
       kind: "object",
@@ -614,6 +597,5 @@ export const AlphaFutureReservation: ResourceBinding<AlphaFutureReservationConfi
       kind: "object",
       fields: AlphaFutureReservation_Status_LastKnownGoodState_FutureReservationSpecs_TimeWindowFields,
     },
-    zone: "zone",
   },
 };

@@ -53,10 +53,6 @@ _Glossary_LanguagePairFields = {
 class GlossaryConfig:
     # Optional. The display name of the glossary.
     display_name: Any = None
-    # Output only. When the glossary creation was finished.
-    end_time: Any = None
-    # Output only. The number of entries defined in the glossary.
-    entry_count: Any = None
     # Input configuration for glossaries.
     input_config: Any = None
     # Used with equivalent term set glossaries.
@@ -65,8 +61,6 @@ class GlossaryConfig:
     language_pair: Any = None
     # Identifier. The resource name of the glossary. Glossary names have the form `projects/{project-number-or-id}/locations/{location-id}/glossaries/{glossary-id}`.
     name: Any = None
-    # Output only. When CreateGlossary was called.
-    submit_time: Any = None
 
 @dataclasses.dataclass
 class GlossaryAttrs:
@@ -91,8 +85,6 @@ Glossary = ubx.ResourceBinding(
     wire_type="google_translate_glossary",
     fields={
         "display_name": ubx.FieldSpec(wire_name="display_name"),
-        "end_time": ubx.FieldSpec(wire_name="end_time"),
-        "entry_count": ubx.FieldSpec(wire_name="entry_count"),
         "input_config": ubx.FieldSpec(
             wire_name="input_config",
             kind="object",
@@ -109,6 +101,5 @@ Glossary = ubx.ResourceBinding(
             fields=_Glossary_LanguagePairFields,
         ),
         "name": ubx.FieldSpec(wire_name="name"),
-        "submit_time": ubx.FieldSpec(wire_name="submit_time"),
     },
 )

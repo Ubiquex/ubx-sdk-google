@@ -1091,8 +1091,6 @@ const V1beta1ReasoningEngine_TrafficConfigFields: FieldMap = {
 export interface V1beta1ReasoningEngineConfig {
   /** Configuration for how Agent Engine sub-resources should manage context. */
   contextSpec?: V1beta1ReasoningEngine_ContextSpec | Computed<V1beta1ReasoningEngine_ContextSpec>;
-  /** Output only. Timestamp when this ReasoningEngine was created. */
-  createTime?: string | Computed<string>;
   /** Optional. The description of the ReasoningEngine. */
   description?: string | Computed<string>;
   /** Required. The display name of the ReasoningEngine. */
@@ -1109,8 +1107,6 @@ export interface V1beta1ReasoningEngineConfig {
   spec?: V1beta1ReasoningEngine_Spec | Computed<V1beta1ReasoningEngine_Spec>;
   /** Traffic distribution configuration. */
   trafficConfig?: V1beta1ReasoningEngine_TrafficConfig | Computed<V1beta1ReasoningEngine_TrafficConfig>;
-  /** Output only. Timestamp when this ReasoningEngine was most recently updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1beta1ReasoningEngineAttrs {
@@ -1146,7 +1142,6 @@ export const V1beta1ReasoningEngine: ResourceBinding<V1beta1ReasoningEngineConfi
       kind: "object",
       fields: V1beta1ReasoningEngine_ContextSpecFields,
     },
-    createTime: "create_time",
     description: "description",
     displayName: "display_name",
     encryptionSpec: {
@@ -1167,6 +1162,5 @@ export const V1beta1ReasoningEngine: ResourceBinding<V1beta1ReasoningEngineConfi
       kind: "object",
       fields: V1beta1ReasoningEngine_TrafficConfigFields,
     },
-    updateTime: "update_time",
   },
 };

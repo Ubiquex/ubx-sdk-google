@@ -431,8 +431,6 @@ class JobConfig:
     etag: Any = None
     # Required. The user-specified id of the job.
     job_id: Any = None
-    # Output only. It's only effect when the job is in QUEUED state. If it's positive, it indicates the job's position in the job scheduler. It's 0 when the job is already scheduled.
-    job_position: Any = None
     # Optional. One or more labels that you can add, to organize your jobs. Each label is a key-value pair, where both the key and the value are arbitrary strings that you supply. For more information, see the documentation on using labels.
     labels: Any = None
     # Represents input parameters for a prediction job.
@@ -485,7 +483,6 @@ Job = ubx.ResourceBinding(
         "error_message": ubx.FieldSpec(wire_name="error_message"),
         "etag": ubx.FieldSpec(wire_name="etag"),
         "job_id": ubx.FieldSpec(wire_name="job_id"),
-        "job_position": ubx.FieldSpec(wire_name="job_position"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "prediction_input": ubx.FieldSpec(
             wire_name="prediction_input",

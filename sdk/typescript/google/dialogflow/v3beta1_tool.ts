@@ -290,7 +290,6 @@ export interface V3beta1ToolConfig {
   functionSpec?: V3beta1Tool_FunctionSpec | Computed<V3beta1Tool_FunctionSpec>;
   name?: string | Computed<string>;
   openApiSpec?: V3beta1Tool_OpenApiSpec | Computed<V3beta1Tool_OpenApiSpec>;
-  toolType?: string | Computed<string>;
 }
 
 export interface V3beta1ToolAttrs {
@@ -336,6 +335,5 @@ export const V3beta1Tool: ResourceBinding<V3beta1ToolConfig, V3beta1ToolAttrs> =
       kind: "object",
       fields: V3beta1Tool_OpenApiSpecFields,
     },
-    toolType: "tool_type",
   },
 };

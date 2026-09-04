@@ -27,30 +27,6 @@ const App_AttributesFields: FieldMap = {
   value: "value",
 };
 
-const App_Credentials_ApiProductsFields: FieldMap = {
-  apiproduct: "apiproduct",
-  status: "status",
-};
-
-const App_CredentialsFields: FieldMap = {
-  apiProducts: {
-    wireName: "api_products",
-    kind: "list",
-    fields: App_Credentials_ApiProductsFields,
-  },
-  attributes: {
-    wireName: "attributes",
-    kind: "list",
-    fields: App_AttributesFields,
-  },
-  consumerKey: "consumer_key",
-  consumerSecret: "consumer_secret",
-  expiresAt: "expires_at",
-  issuedAt: "issued_at",
-  scopes: "scopes",
-  status: "status",
-};
-
 export interface AppConfig {
   /** List of API products associated with the AppGroup app. */
   apiProducts?: string[] | Computed<string[]>;
@@ -62,14 +38,8 @@ export interface AppConfig {
   attributes?: App_Attributes[] | Computed<App_Attributes[]>;
   /** Callback URL used by OAuth 2.0 authorization servers to communicate authorization codes back to AppGroup apps. */
   callbackUrl?: string | Computed<string>;
-  /** Output only. Time the AppGroup app was created in milliseconds since epoch. */
-  createdAt?: string | Computed<string>;
-  /** Output only. Set of credentials for the AppGroup app consisting of the consumer key/secret pairs associated with the API products. */
-  credentials?: App_Credentials[] | Computed<App_Credentials[]>;
   /** Immutable. Expiration time, in seconds, for the consumer key that is generated for the AppGroup app. If not set or left to the default value of `-1`, the API key never expires. The expiration time can't be updated after it is set. */
   keyExpiresIn?: string | Computed<string>;
-  /** Output only. Time the AppGroup app was modified in milliseconds since epoch. */
-  lastModifiedAt?: string | Computed<string>;
   /** Immutable. Name of the AppGroup app whose resource name format is of syntax (organizations/* /appgroups/* /apps/*). */
   name?: string | Computed<string>;
   /** Scopes to apply to the AppGroup app. The specified scopes must already exist for the API product that you associate with the AppGroup app. */
@@ -117,14 +87,7 @@ export const App: ResourceBinding<AppConfig, AppAttrs> = {
       fields: App_AttributesFields,
     },
     callbackUrl: "callback_url",
-    createdAt: "created_at",
-    credentials: {
-      wireName: "credentials",
-      kind: "list",
-      fields: App_CredentialsFields,
-    },
     keyExpiresIn: "key_expires_in",
-    lastModifiedAt: "last_modified_at",
     name: "name",
     scopes: "scopes",
     status: "status",

@@ -2,16 +2,10 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface V1beta1NamespaceConfig {
-  /** Output only. The timestamp when the namespace was created. */
-  createTime?: string | Computed<string>;
   /** Optional. Resource labels associated with this namespace. No more than 64 user labels can be associated with a given resource. Label keys and values can be no longer than 63 characters. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Immutable. The resource name for the namespace in the format `projects/* /locations/* /namespaces/*`. */
   name?: string | Computed<string>;
-  /** Output only. A globally unique identifier (in UUID4 format) for this namespace. */
-  uid?: string | Computed<string>;
-  /** Output only. The timestamp when the namespace was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1beta1NamespaceAttrs {
@@ -30,10 +24,7 @@ export interface V1beta1NamespaceAttrs {
 export const V1beta1Namespace: ResourceBinding<V1beta1NamespaceConfig, V1beta1NamespaceAttrs> = {
   wireType: "google_servicedirectory_v1beta1_namespace",
   fields: {
-    createTime: "create_time",
     labels: "labels",
     name: "name",
-    uid: "uid",
-    updateTime: "update_time",
   },
 };

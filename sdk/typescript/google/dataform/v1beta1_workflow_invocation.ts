@@ -91,22 +91,14 @@ export interface V1beta1WorkflowInvocationConfig {
   compilationResult?: string | Computed<string>;
   /** Describes encryption state of a resource. */
   dataEncryptionState?: V1beta1WorkflowInvocation_DataEncryptionState | Computed<V1beta1WorkflowInvocation_DataEncryptionState>;
-  /** Output only. All the metadata information that is used internally to serve the resource. For example: timestamps, flags, status fields, etc. The format of this field is a JSON string. */
-  internalMetadata?: string | Computed<string>;
   /** Includes various configuration options for a workflow invocation. If both `included_targets` and `included_tags` are unset, all actions will be included. */
   invocationConfig?: V1beta1WorkflowInvocation_InvocationConfig | Computed<V1beta1WorkflowInvocation_InvocationConfig>;
   /** Represents a time interval, encoded as a Timestamp start (inclusive) and a Timestamp end (exclusive). The start must be less than or equal to the end. When the start equals the end, the interval is empty (matches no time). When both start and end are unspecified, the interval matches any time. */
   invocationTiming?: V1beta1WorkflowInvocation_InvocationTiming | Computed<V1beta1WorkflowInvocation_InvocationTiming>;
-  /** Output only. The workflow invocation's name. */
-  name?: string | Computed<string>;
   /** Defines the pipeline type and path within the Git repository. */
   pipelineConfig?: V1beta1WorkflowInvocation_PipelineConfig | Computed<V1beta1WorkflowInvocation_PipelineConfig>;
   /** Metadata used to identify if a resource is user scoped. */
   privateResourceMetadata?: V1beta1WorkflowInvocation_PrivateResourceMetadata | Computed<V1beta1WorkflowInvocation_PrivateResourceMetadata>;
-  /** Output only. The resolved compilation result that was used to create this invocation. Will be in the format `projects/* /locations/* /repositories/* /compilationResults/*`. */
-  resolvedCompilationResult?: string | Computed<string>;
-  /** Output only. This workflow invocation's current state. */
-  state?: string | Computed<string>;
   /** Immutable. The name of the workflow config to invoke. Must be in the format `projects/* /locations/* /repositories/* /workflowConfigs/*`. */
   workflowConfig?: string | Computed<string>;
 }
@@ -145,7 +137,6 @@ export const V1beta1WorkflowInvocation: ResourceBinding<V1beta1WorkflowInvocatio
       kind: "object",
       fields: V1beta1WorkflowInvocation_DataEncryptionStateFields,
     },
-    internalMetadata: "internal_metadata",
     invocationConfig: {
       wireName: "invocation_config",
       kind: "object",
@@ -156,7 +147,6 @@ export const V1beta1WorkflowInvocation: ResourceBinding<V1beta1WorkflowInvocatio
       kind: "object",
       fields: V1beta1WorkflowInvocation_InvocationTimingFields,
     },
-    name: "name",
     pipelineConfig: {
       wireName: "pipeline_config",
       kind: "object",
@@ -167,8 +157,6 @@ export const V1beta1WorkflowInvocation: ResourceBinding<V1beta1WorkflowInvocatio
       kind: "object",
       fields: V1beta1WorkflowInvocation_PrivateResourceMetadataFields,
     },
-    resolvedCompilationResult: "resolved_compilation_result",
-    state: "state",
     workflowConfig: "workflow_config",
   },
 };

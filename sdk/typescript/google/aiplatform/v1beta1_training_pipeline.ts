@@ -948,14 +948,10 @@ const V1beta1TrainingPipeline_ModelToUploadFields: FieldMap = {
 };
 
 export interface V1beta1TrainingPipelineConfig {
-  /** Output only. Time when the TrainingPipeline was created. */
-  createTime?: string | Computed<string>;
   /** Required. The user-defined name of this TrainingPipeline. */
   displayName?: string | Computed<string>;
   /** Represents a customer-managed encryption key specification that can be applied to a Vertex AI resource. */
   encryptionSpec?: V1beta1TrainingPipeline_EncryptionSpec | Computed<V1beta1TrainingPipeline_EncryptionSpec>;
-  /** Output only. Time when the TrainingPipeline entered any of the following states: `PIPELINE_STATE_SUCCEEDED`, `PIPELINE_STATE_FAILED`, `PIPELINE_STATE_CANCELLED`. */
-  endTime?: string | Computed<string>;
   /** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
   error?: V1beta1TrainingPipeline_Error | Computed<V1beta1TrainingPipeline_Error>;
   /** Specifies Vertex AI owned input data to be used for training, and possibly evaluating, the Model. */
@@ -966,22 +962,12 @@ export interface V1beta1TrainingPipelineConfig {
   modelId?: string | Computed<string>;
   /** A trained machine learning Model. */
   modelToUpload?: V1beta1TrainingPipeline_ModelToUpload | Computed<V1beta1TrainingPipeline_ModelToUpload>;
-  /** Output only. Resource name of the TrainingPipeline. */
-  name?: string | Computed<string>;
   /** Optional. When specify this field, the `model_to_upload` will not be uploaded as a new model, instead, it will become a new version of this `parent_model`. */
   parentModel?: string | Computed<string>;
-  /** Output only. Time when the TrainingPipeline for the first time entered the `PIPELINE_STATE_RUNNING` state. */
-  startTime?: string | Computed<string>;
-  /** Output only. The detailed state of the pipeline. */
-  state?: string | Computed<string>;
   /** Required. A Google Cloud Storage path to the YAML file that defines the training task which is responsible for producing the model artifact, and may also include additional auxiliary work. The definition files that can be used here are found in gs://google-cloud-aiplatform/schema/trainingjob/definition/. Note: The URI given on output will be immutable and probably different, including the URI scheme, than the one given on input. The output URI will point to a location where the user only has a read access. */
   trainingTaskDefinition?: string | Computed<string>;
   /** Required. The training task's parameter(s), as specified in the training_task_definition's `inputs`. */
   trainingTaskInputs?: unknown | Computed<unknown>;
-  /** Output only. The metadata information as specified in the training_task_definition's `metadata`. This metadata is an auxiliary runtime and final information about the training task. While the pipeline is running this information is populated only at a best effort basis. Only present if the pipeline's training_task_definition contains `metadata` object. */
-  trainingTaskMetadata?: unknown | Computed<unknown>;
-  /** Output only. Time when the TrainingPipeline was most recently updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1beta1TrainingPipelineAttrs {
@@ -1024,14 +1010,12 @@ export interface V1beta1TrainingPipelineAttrs {
 export const V1beta1TrainingPipeline: ResourceBinding<V1beta1TrainingPipelineConfig, V1beta1TrainingPipelineAttrs> = {
   wireType: "google_aiplatform_v1beta1_training_pipeline",
   fields: {
-    createTime: "create_time",
     displayName: "display_name",
     encryptionSpec: {
       wireName: "encryption_spec",
       kind: "object",
       fields: V1beta1TrainingPipeline_EncryptionSpecFields,
     },
-    endTime: "end_time",
     error: {
       wireName: "error",
       kind: "object",
@@ -1049,13 +1033,8 @@ export const V1beta1TrainingPipeline: ResourceBinding<V1beta1TrainingPipelineCon
       kind: "object",
       fields: V1beta1TrainingPipeline_ModelToUploadFields,
     },
-    name: "name",
     parentModel: "parent_model",
-    startTime: "start_time",
-    state: "state",
     trainingTaskDefinition: "training_task_definition",
     trainingTaskInputs: "training_task_inputs",
-    trainingTaskMetadata: "training_task_metadata",
-    updateTime: "update_time",
   },
 };

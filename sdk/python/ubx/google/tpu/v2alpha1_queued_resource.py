@@ -454,12 +454,8 @@ _V2alpha1QueuedResource_TpuFields = {
 class V2alpha1QueuedResourceConfig:
     # BestEffort tier definition.
     best_effort: Any = None
-    # Output only. The time when the QueuedResource was created.
-    create_time: Any = None
     # Guaranteed tier definition.
     guaranteed: Any = None
-    # Output only. Immutable. The name of the QueuedResource.
-    name: Any = None
     # Optional. The provisioning model for the resource.
     provisioning_model: Any = None
     # Defines the policy of the QueuedRequest.
@@ -504,13 +500,11 @@ V2alpha1QueuedResource = ubx.ResourceBinding(
     wire_type="google_tpu_v2alpha1_queued_resource",
     fields={
         "best_effort": ubx.FieldSpec(wire_name="best_effort"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "guaranteed": ubx.FieldSpec(
             wire_name="guaranteed",
             kind="object",
             fields=_V2alpha1QueuedResource_GuaranteedFields,
         ),
-        "name": ubx.FieldSpec(wire_name="name"),
         "provisioning_model": ubx.FieldSpec(wire_name="provisioning_model"),
         "queueing_policy": ubx.FieldSpec(
             wire_name="queueing_policy",

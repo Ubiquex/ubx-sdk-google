@@ -1230,14 +1230,10 @@ const ConnectivityTest_ReachabilityDetailsFields: FieldMap = {
 export interface ConnectivityTestConfig {
   /** Whether the analysis should skip firewall checking. Default value is false. */
   bypassFirewallChecks?: boolean | Computed<boolean>;
-  /** Output only. The time the test was created. */
-  createTime?: string | Computed<string>;
   /** The user-supplied description of the Connectivity Test. Maximum of 512 characters. */
   description?: string | Computed<string>;
   /** Source or destination of the Connectivity Test. */
   destination?: ConnectivityTest_Destination | Computed<ConnectivityTest_Destination>;
-  /** Output only. The display name of a Connectivity Test. */
-  displayName?: string | Computed<string>;
   /** Resource labels to represent user-provided metadata. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Identifier. Unique name of the resource using the form: `projects/{project_id}/locations/global/connectivityTests/{test_id}` */
@@ -1256,8 +1252,6 @@ export interface ConnectivityTestConfig {
   roundTrip?: boolean | Computed<boolean>;
   /** Source or destination of the Connectivity Test. */
   source?: ConnectivityTest_Destination | Computed<ConnectivityTest_Destination>;
-  /** Output only. The time the test's configuration was updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface ConnectivityTestAttrs {
@@ -1297,14 +1291,12 @@ export const ConnectivityTest: ResourceBinding<ConnectivityTestConfig, Connectiv
   wireType: "google_networkmanagement_connectivity_test",
   fields: {
     bypassFirewallChecks: "bypass_firewall_checks",
-    createTime: "create_time",
     description: "description",
     destination: {
       wireName: "destination",
       kind: "object",
       fields: ConnectivityTest_DestinationFields,
     },
-    displayName: "display_name",
     labels: "labels",
     name: "name",
     probingDetails: {
@@ -1330,6 +1322,5 @@ export const ConnectivityTest: ResourceBinding<ConnectivityTestConfig, Connectiv
       kind: "object",
       fields: ConnectivityTest_DestinationFields,
     },
-    updateTime: "update_time",
   },
 };

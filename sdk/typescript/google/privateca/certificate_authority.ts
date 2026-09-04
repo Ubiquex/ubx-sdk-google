@@ -184,14 +184,6 @@ const CertificateAuthority_AccessUrlsFields: FieldMap = {
   crlAccessUrls: "crl_access_urls",
 };
 
-const CertificateAuthority_CaCertificateDescriptions_AuthorityKeyIdFields: FieldMap = {
-  keyId: "key_id",
-};
-
-const CertificateAuthority_CaCertificateDescriptions_CertFingerprintFields: FieldMap = {
-  sha256Hash: "sha256_hash",
-};
-
 const CertificateAuthority_CaCertificateDescriptions_PublicKeyFields: FieldMap = {
   format: "format",
   key: "key",
@@ -257,11 +249,7 @@ const CertificateAuthority_CaCertificateDescriptions_SubjectDescription_SubjectA
   uris: "uris",
 };
 
-const CertificateAuthority_CaCertificateDescriptions_SubjectDescriptionFields: FieldMap = {
-  hexSerialNumber: "hex_serial_number",
-  lifetime: "lifetime",
-  notAfterTime: "not_after_time",
-  notBeforeTime: "not_before_time",
+const CertificateAuthority_Config_SubjectConfigFields: FieldMap = {
   subject: {
     wireName: "subject",
     kind: "object",
@@ -272,6 +260,10 @@ const CertificateAuthority_CaCertificateDescriptions_SubjectDescriptionFields: F
     kind: "object",
     fields: CertificateAuthority_CaCertificateDescriptions_SubjectDescription_SubjectAltNameFields,
   },
+};
+
+const CertificateAuthority_CaCertificateDescriptions_AuthorityKeyIdFields: FieldMap = {
+  keyId: "key_id",
 };
 
 const CertificateAuthority_CaCertificateDescriptions_X509Description_CaOptionsFields: FieldMap = {
@@ -359,55 +351,6 @@ const CertificateAuthority_CaCertificateDescriptions_X509DescriptionFields: Fiel
   },
 };
 
-const CertificateAuthority_CaCertificateDescriptionsFields: FieldMap = {
-  aiaIssuingCertificateUrls: "aia_issuing_certificate_urls",
-  authorityKeyId: {
-    wireName: "authority_key_id",
-    kind: "object",
-    fields: CertificateAuthority_CaCertificateDescriptions_AuthorityKeyIdFields,
-  },
-  certFingerprint: {
-    wireName: "cert_fingerprint",
-    kind: "object",
-    fields: CertificateAuthority_CaCertificateDescriptions_CertFingerprintFields,
-  },
-  crlDistributionPoints: "crl_distribution_points",
-  publicKey: {
-    wireName: "public_key",
-    kind: "object",
-    fields: CertificateAuthority_CaCertificateDescriptions_PublicKeyFields,
-  },
-  subjectDescription: {
-    wireName: "subject_description",
-    kind: "object",
-    fields: CertificateAuthority_CaCertificateDescriptions_SubjectDescriptionFields,
-  },
-  subjectKeyId: {
-    wireName: "subject_key_id",
-    kind: "object",
-    fields: CertificateAuthority_CaCertificateDescriptions_AuthorityKeyIdFields,
-  },
-  tbsCertificateDigest: "tbs_certificate_digest",
-  x509Description: {
-    wireName: "x509_description",
-    kind: "object",
-    fields: CertificateAuthority_CaCertificateDescriptions_X509DescriptionFields,
-  },
-};
-
-const CertificateAuthority_Config_SubjectConfigFields: FieldMap = {
-  subject: {
-    wireName: "subject",
-    kind: "object",
-    fields: CertificateAuthority_CaCertificateDescriptions_SubjectDescription_SubjectFields,
-  },
-  subjectAltName: {
-    wireName: "subject_alt_name",
-    kind: "object",
-    fields: CertificateAuthority_CaCertificateDescriptions_SubjectDescription_SubjectAltNameFields,
-  },
-};
-
 const CertificateAuthority_ConfigFields: FieldMap = {
   publicKey: {
     wireName: "public_key",
@@ -457,16 +400,8 @@ const CertificateAuthority_UserDefinedAccessUrlsFields: FieldMap = {
 export interface CertificateAuthorityConfig {
   /** URLs where a CertificateAuthority will publish content. */
   accessUrls?: CertificateAuthority_AccessUrls | Computed<CertificateAuthority_AccessUrls>;
-  /** Output only. A structured description of this CertificateAuthority's CA certificate and its issuers. Ordered as self-to-root. */
-  caCertificateDescriptions?: CertificateAuthority_CaCertificateDescriptions[] | Computed<CertificateAuthority_CaCertificateDescriptions[]>;
   /** A CertificateConfig describes an X.509 certificate or CSR that is to be created, as an alternative to using ASN.1. */
   config?: CertificateAuthority_Config | Computed<CertificateAuthority_Config>;
-  /** Output only. The time at which this CertificateAuthority was created. */
-  createTime?: string | Computed<string>;
-  /** Output only. The time at which this CertificateAuthority was soft deleted, if it is in the DELETED state. */
-  deleteTime?: string | Computed<string>;
-  /** Output only. The time at which this CertificateAuthority will be permanently purged, if it is in the DELETED state. */
-  expireTime?: string | Computed<string>;
   /** Immutable. The name of a Cloud Storage bucket where this CertificateAuthority will publish content, such as the CA certificate and CRLs. This must be a bucket name, without any prefixes (such as `gs://`) or suffixes (such as `.googleapis.com`). For example, to use a bucket named `my-bucket`, you would simply specify `my-bucket`. If not specified, a managed bucket will be created. */
   gcsBucket?: string | Computed<string>;
   /** A Cloud KMS key configuration that a CertificateAuthority will use. */
@@ -477,22 +412,10 @@ export interface CertificateAuthorityConfig {
   lifetime?: string | Computed<string>;
   /** Identifier. The resource name for this CertificateAuthority in the format `projects/* /locations/* /caPools/* /certificateAuthorities/*`. */
   name?: string | Computed<string>;
-  /** Output only. This CertificateAuthority's certificate chain, including the current CertificateAuthority's certificate. Ordered such that the root issuer is the final element (consistent with RFC 5246). For a self-signed CA, this will only list the current CertificateAuthority's certificate. */
-  pemCaCertificates?: string[] | Computed<string[]>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzi?: boolean | Computed<boolean>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzs?: boolean | Computed<boolean>;
-  /** Output only. The State for this CertificateAuthority. */
-  state?: string | Computed<string>;
   /** Describes a subordinate CA's issuers. This is either a resource name to a known issuing CertificateAuthority, or a PEM issuer certificate chain. */
   subordinateConfig?: CertificateAuthority_SubordinateConfig | Computed<CertificateAuthority_SubordinateConfig>;
-  /** Output only. The CaPool.Tier of the CaPool that includes this CertificateAuthority. */
-  tier?: string | Computed<string>;
   /** Required. Immutable. The Type of this CertificateAuthority. */
   type?: string | Computed<string>;
-  /** Output only. The time at which this CertificateAuthority was last updated. */
-  updateTime?: string | Computed<string>;
   /** User-defined URLs for accessing content published by this CertificateAuthority. */
   userDefinedAccessUrls?: CertificateAuthority_UserDefinedAccessUrls | Computed<CertificateAuthority_UserDefinedAccessUrls>;
 }
@@ -548,19 +471,11 @@ export const CertificateAuthority: ResourceBinding<CertificateAuthorityConfig, C
       kind: "object",
       fields: CertificateAuthority_AccessUrlsFields,
     },
-    caCertificateDescriptions: {
-      wireName: "ca_certificate_descriptions",
-      kind: "list",
-      fields: CertificateAuthority_CaCertificateDescriptionsFields,
-    },
     config: {
       wireName: "config",
       kind: "object",
       fields: CertificateAuthority_ConfigFields,
     },
-    createTime: "create_time",
-    deleteTime: "delete_time",
-    expireTime: "expire_time",
     gcsBucket: "gcs_bucket",
     keySpec: {
       wireName: "key_spec",
@@ -570,18 +485,12 @@ export const CertificateAuthority: ResourceBinding<CertificateAuthorityConfig, C
     labels: "labels",
     lifetime: "lifetime",
     name: "name",
-    pemCaCertificates: "pem_ca_certificates",
-    satisfiesPzi: "satisfies_pzi",
-    satisfiesPzs: "satisfies_pzs",
-    state: "state",
     subordinateConfig: {
       wireName: "subordinate_config",
       kind: "object",
       fields: CertificateAuthority_SubordinateConfigFields,
     },
-    tier: "tier",
     type: "type",
-    updateTime: "update_time",
     userDefinedAccessUrls: {
       wireName: "user_defined_access_urls",
       kind: "object",

@@ -43,23 +43,13 @@ const PolicyBasedRoute_VirtualMachineFields: FieldMap = {
   tags: "tags",
 };
 
-const PolicyBasedRoute_WarningsFields: FieldMap = {
-  code: "code",
-  data: "data",
-  warningMessage: "warning_message",
-};
-
 export interface PolicyBasedRouteConfig {
-  /** Output only. Time when the policy-based route was created. */
-  createTime?: string | Computed<string>;
   /** Optional. An optional description of this resource. Provide this field when you create the resource. */
   description?: string | Computed<string>;
   /** Filter matches L4 traffic. */
   filter?: PolicyBasedRoute_Filter | Computed<PolicyBasedRoute_Filter>;
   /** InterconnectAttachment that this route applies to. */
   interconnectAttachment?: PolicyBasedRoute_InterconnectAttachment | Computed<PolicyBasedRoute_InterconnectAttachment>;
-  /** Output only. Type of this resource. Always networkconnectivity#policyBasedRoute for policy-based Route resources. */
-  kind?: string | Computed<string>;
   /** User-defined labels. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Immutable. Identifier. A unique name of the resource in the form of `projects/{project_number}/locations/global/PolicyBasedRoutes/{policy_based_route_id}` */
@@ -72,14 +62,8 @@ export interface PolicyBasedRouteConfig {
   nextHopOtherRoutes?: string | Computed<string>;
   /** Optional. The priority of this policy-based route. Priority is used to break ties in cases where there are more than one matching policy-based routes found. In cases where multiple policy-based routes are matched, the one with the lowest-numbered priority value wins. The default value is 1000. The priority value must be from 1 to 65535, inclusive. */
   priority?: number | Computed<number>;
-  /** Output only. Server-defined fully-qualified URL for this resource. */
-  selfLink?: string | Computed<string>;
-  /** Output only. Time when the policy-based route was updated. */
-  updateTime?: string | Computed<string>;
   /** VM instances that this policy-based route applies to. */
   virtualMachine?: PolicyBasedRoute_VirtualMachine | Computed<PolicyBasedRoute_VirtualMachine>;
-  /** Output only. If potential misconfigurations are detected for this route, this field will be populated with warning messages. */
-  warnings?: PolicyBasedRoute_Warnings[] | Computed<PolicyBasedRoute_Warnings[]>;
 }
 
 export interface PolicyBasedRouteAttrs {
@@ -118,7 +102,6 @@ export interface PolicyBasedRouteAttrs {
 export const PolicyBasedRoute: ResourceBinding<PolicyBasedRouteConfig, PolicyBasedRouteAttrs> = {
   wireType: "google_networkconnectivity_policy_based_route",
   fields: {
-    createTime: "create_time",
     description: "description",
     filter: {
       wireName: "filter",
@@ -130,24 +113,16 @@ export const PolicyBasedRoute: ResourceBinding<PolicyBasedRouteConfig, PolicyBas
       kind: "object",
       fields: PolicyBasedRoute_InterconnectAttachmentFields,
     },
-    kind: "kind",
     labels: "labels",
     name: "name",
     network: "network",
     nextHopIlbIp: "next_hop_ilb_ip",
     nextHopOtherRoutes: "next_hop_other_routes",
     priority: "priority",
-    selfLink: "self_link",
-    updateTime: "update_time",
     virtualMachine: {
       wireName: "virtual_machine",
       kind: "object",
       fields: PolicyBasedRoute_VirtualMachineFields,
-    },
-    warnings: {
-      wireName: "warnings",
-      kind: "list",
-      fields: PolicyBasedRoute_WarningsFields,
     },
   },
 };

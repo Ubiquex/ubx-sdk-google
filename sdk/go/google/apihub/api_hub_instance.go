@@ -22,38 +22,30 @@ type ApiHubInstance_Config struct {
 }
 
 var ApiHubInstance_Config_AgentRegistrySyncConfigFields = ubx.FieldMap{
-		"Disabled": ubx.FieldSpec{WireName: "disabled"},
-	}
+	"Disabled": ubx.FieldSpec{WireName: "disabled"},
+}
 
 var ApiHubInstance_ConfigFields = ubx.FieldMap{
-		"AgentRegistrySyncConfig": ubx.FieldSpec{
-			WireName: "agent_registry_sync_config",
-			Kind: "object",
-			Fields: ApiHubInstance_Config_AgentRegistrySyncConfigFields,
-		},
-		"CmekKeyName": ubx.FieldSpec{WireName: "cmek_key_name"},
-		"DisableSearch": ubx.FieldSpec{WireName: "disable_search"},
-		"EncryptionType": ubx.FieldSpec{WireName: "encryption_type"},
-		"VertexLocation": ubx.FieldSpec{WireName: "vertex_location"},
-	}
+	"AgentRegistrySyncConfig": ubx.FieldSpec{
+		WireName: "agent_registry_sync_config",
+		Kind:     "object",
+		Fields:   ApiHubInstance_Config_AgentRegistrySyncConfigFields,
+	},
+	"CmekKeyName":    ubx.FieldSpec{WireName: "cmek_key_name"},
+	"DisableSearch":  ubx.FieldSpec{WireName: "disable_search"},
+	"EncryptionType": ubx.FieldSpec{WireName: "encryption_type"},
+	"VertexLocation": ubx.FieldSpec{WireName: "vertex_location"},
+}
 
 type ApiHubInstanceConfig struct {
 	// Available configurations to provision an ApiHub Instance.
 	Config any
-	// Output only. Creation timestamp.
-	CreateTime any
 	// Optional. Description of the ApiHub instance.
 	Description any
 	// Optional. Instance labels to represent user-provided metadata. Refer to cloud documentation on labels for more details. https://cloud.google.com/compute/docs/labeling-resources
 	Labels any
 	// Identifier. Format: `projects/{project}/locations/{location}/apiHubInstances/{apiHubInstance}`.
 	Name any
-	// Output only. The current state of the ApiHub instance.
-	State any
-	// Output only. Extra information about ApiHub instance state. Currently the message would be populated when state is `FAILED`.
-	StateMessage any
-	// Output only. Last update timestamp.
-	UpdateTime any
 }
 
 type ApiHubInstanceAttrs struct {
@@ -80,15 +72,11 @@ var ApiHubInstance = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Config": ubx.FieldSpec{
 			WireName: "config",
-			Kind: "object",
-			Fields: ApiHubInstance_ConfigFields,
+			Kind:     "object",
+			Fields:   ApiHubInstance_ConfigFields,
 		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"StateMessage": ubx.FieldSpec{WireName: "state_message"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 	},
 }

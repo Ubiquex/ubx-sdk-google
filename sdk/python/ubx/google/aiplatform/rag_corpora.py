@@ -183,22 +183,12 @@ _RagCorpora_VertexAiSearchConfigFields = {
 class RagCorporaConfig:
     # RagCorpus status.
     corpus_status: Any = None
-    # Output only. Timestamp when this RagCorpus was created.
-    create_time: Any = None
     # Optional. The description of the RagCorpus.
     description: Any = None
     # Required. The display name of the RagCorpus. The name can be up to 128 characters long and can consist of any UTF-8 characters.
     display_name: Any = None
     # Represents a customer-managed encryption key specification that can be applied to a Vertex AI resource.
     encryption_spec: Any = None
-    # Output only. The resource name of the RagCorpus.
-    name: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzi: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzs: Any = None
-    # Output only. Timestamp when this RagCorpus was last updated.
-    update_time: Any = None
     # Config for the Vector DB to use for RAG.
     vector_db_config: Any = None
     # Config for the Vertex AI Search.
@@ -237,7 +227,6 @@ RagCorpora = ubx.ResourceBinding(
             kind="object",
             fields=_RagCorpora_CorpusStatusFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "encryption_spec": ubx.FieldSpec(
@@ -245,10 +234,6 @@ RagCorpora = ubx.ResourceBinding(
             kind="object",
             fields=_RagCorpora_EncryptionSpecFields,
         ),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "satisfies_pzi": ubx.FieldSpec(wire_name="satisfies_pzi"),
-        "satisfies_pzs": ubx.FieldSpec(wire_name="satisfies_pzs"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
         "vector_db_config": ubx.FieldSpec(
             wire_name="vector_db_config",
             kind="object",

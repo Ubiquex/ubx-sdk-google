@@ -53,15 +53,9 @@ class AlphaNodeTemplateConfig:
     accelerators: Any = None
     # CPU overcommit.
     cpu_overcommit_type: Any = None
-    # Output only. [Output Only] Creation timestamp inRFC3339 text format.
-    creation_timestamp: Any = None
     # An optional description of this resource. Provide this property when you create the resource.
     description: Any = None
     disks: Any = None
-    # Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-    id: Any = None
-    # Output only. [Output Only] The type of the resource. Alwayscompute#nodeTemplate for node templates.
-    kind: Any = None
     # The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
     name: Any = None
     # Labels to use for node affinity, which will be used in instance scheduling.
@@ -69,17 +63,7 @@ class AlphaNodeTemplateConfig:
     # The node type to use for nodes group that are created from this template.
     node_type: Any = None
     node_type_flexibility: Any = None
-    # Output only. [Output Only] The name of the region where the node template resides, such as us-central1.
-    region: Any = None
-    # Output only. [Output Only] Server-defined URL for the resource.
-    self_link: Any = None
-    # Output only. [Output Only] Server-defined URL for this resource with the resource id.
-    self_link_with_id: Any = None
     server_binding: Any = None
-    # Output only. [Output Only] The status of the node template. One of the following values:CREATING, READY, and DELETING.
-    status: Any = None
-    # Output only. [Output Only] An optional, human-readable explanation of the status.
-    status_message: Any = None
 
 @dataclasses.dataclass
 class AlphaNodeTemplateAttrs:
@@ -123,15 +107,12 @@ AlphaNodeTemplate = ubx.ResourceBinding(
             fields=_AlphaNodeTemplate_AcceleratorsFields,
         ),
         "cpu_overcommit_type": ubx.FieldSpec(wire_name="cpu_overcommit_type"),
-        "creation_timestamp": ubx.FieldSpec(wire_name="creation_timestamp"),
         "description": ubx.FieldSpec(wire_name="description"),
         "disks": ubx.FieldSpec(
             wire_name="disks",
             kind="list",
             fields=_AlphaNodeTemplate_DisksFields,
         ),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "kind": ubx.FieldSpec(wire_name="kind"),
         "name": ubx.FieldSpec(wire_name="name"),
         "node_affinity_labels": ubx.FieldSpec(wire_name="node_affinity_labels"),
         "node_type": ubx.FieldSpec(wire_name="node_type"),
@@ -140,15 +121,10 @@ AlphaNodeTemplate = ubx.ResourceBinding(
             kind="object",
             fields=_AlphaNodeTemplate_NodeTypeFlexibilityFields,
         ),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "self_link": ubx.FieldSpec(wire_name="self_link"),
-        "self_link_with_id": ubx.FieldSpec(wire_name="self_link_with_id"),
         "server_binding": ubx.FieldSpec(
             wire_name="server_binding",
             kind="object",
             fields=_AlphaNodeTemplate_ServerBindingFields,
         ),
-        "status": ubx.FieldSpec(wire_name="status"),
-        "status_message": ubx.FieldSpec(wire_name="status_message"),
     },
 )

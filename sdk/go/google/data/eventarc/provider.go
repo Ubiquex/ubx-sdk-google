@@ -4,21 +4,20 @@ package eventarc
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Provider_EventTypes_FilteringAttributes struct {
-	Attribute any
-	Description any
+	Attribute            any
+	Description          any
 	PathPatternSupported any
-	Required any
+	Required             any
 }
 
 type Provider_EventTypes struct {
-	Description any
-	EventSchemaUri any
+	Description         any
+	EventSchemaUri      any
 	FilteringAttributes any
-	Type any
+	Type                any
 }
 
 type ProviderConfig struct {
-	Name any
 }
 
 type ProviderAttrs struct {
@@ -26,12 +25,10 @@ type ProviderAttrs struct {
 	DisplayName any
 	// Output only. Event types for this provider.
 	EventTypes any
-	Name any
+	Name       any
 }
 
 var Provider = ubx.DataSourceBinding{
 	WireType: "google_eventarc_provider",
-	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	},
+	Fields:   ubx.FieldMap{},
 }

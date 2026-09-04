@@ -9,7 +9,7 @@ type V1alphaOsPolicyAssignment_InstanceFilter_ExclusionLabels struct {
 
 type V1alphaOsPolicyAssignment_InstanceFilter_Inventories struct {
 	OsShortName any
-	OsVersion any
+	OsVersion   any
 }
 
 type V1alphaOsPolicyAssignment_InstanceFilter struct {
@@ -26,42 +26,42 @@ type V1alphaOsPolicyAssignment_InstanceFilter struct {
 }
 
 type V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups_Resources_Exec_Enforce_File_Gcs struct {
-	Bucket any
+	Bucket     any
 	Generation any
-	Object any
+	Object     any
 }
 
 type V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups_Resources_Exec_Enforce_File_Remote struct {
 	Sha256Checksum any
-	Uri any
+	Uri            any
 }
 
 type V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups_Resources_Exec_Enforce_File struct {
 	AllowInsecure any
-	Gcs any
-	LocalPath any
-	Remote any
+	Gcs           any
+	LocalPath     any
+	Remote        any
 }
 
 type V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups_Resources_Exec_Enforce struct {
-	Args any
-	File any
-	Interpreter any
+	Args           any
+	File           any
+	Interpreter    any
 	OutputFilePath any
-	Script any
+	Script         any
 }
 
 type V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups_Resources_Exec struct {
-	Enforce any
+	Enforce  any
 	Validate any
 }
 
 type V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups_Resources_File struct {
-	Content any
-	File any
-	Path any
+	Content     any
+	File        any
+	Path        any
 	Permissions any
-	State any
+	State       any
 }
 
 type V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups_Resources_Pkg_Apt struct {
@@ -70,72 +70,72 @@ type V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups_Resources_Pkg_Apt struc
 
 type V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups_Resources_Pkg_Deb struct {
 	PullDeps any
-	Source any
+	Source   any
 }
 
 type V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups_Resources_Pkg_Msi struct {
 	Properties any
-	Source any
+	Source     any
 }
 
 type V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups_Resources_Pkg struct {
-	Apt any
-	Deb any
+	Apt          any
+	Deb          any
 	DesiredState any
-	Googet any
-	Msi any
-	Rpm any
-	Yum any
-	Zypper any
+	Googet       any
+	Msi          any
+	Rpm          any
+	Yum          any
+	Zypper       any
 }
 
 type V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups_Resources_Repository_Apt struct {
-	ArchiveType any
-	Components any
+	ArchiveType  any
+	Components   any
 	Distribution any
-	GpgKey any
-	Uri any
+	GpgKey       any
+	Uri          any
 }
 
 type V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups_Resources_Repository_Goo struct {
 	Name any
-	Url any
+	Url  any
 }
 
 type V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups_Resources_Repository_Yum struct {
-	BaseUrl any
+	BaseUrl     any
 	DisplayName any
-	GpgKeys any
-	Id any
+	GpgKeys     any
+	Id          any
 }
 
 type V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups_Resources_Repository struct {
-	Apt any
-	Goo any
-	Yum any
+	Apt    any
+	Goo    any
+	Yum    any
 	Zypper any
 }
 
 type V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups_Resources struct {
-	Exec any
-	File any
-	Id any
-	Pkg any
+	Exec       any
+	File       any
+	Id         any
+	Pkg        any
 	Repository any
 }
 
 type V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups struct {
 	InventoryFilters any
-	OsFilter any
-	Resources any
+	OsFilter         any
+	Resources        any
 }
 
 type V1alphaOsPolicyAssignment_OsPolicies struct {
 	AllowNoResourceGroupMatch any
-	Description any
-	Id any
-	Mode any
-	ResourceGroups any
+	Description               any
+	Id                        any
+	Mode                      any
+	ResourceGroups            any
 }
 
 type V1alphaOsPolicyAssignment_Rollout_DisruptionBudget struct {
@@ -153,274 +153,270 @@ type V1alphaOsPolicyAssignment_Rollout struct {
 }
 
 var V1alphaOsPolicyAssignment_InstanceFilter_ExclusionLabelsFields = ubx.FieldMap{
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-	}
+	"Labels": ubx.FieldSpec{WireName: "labels"},
+}
 
 var V1alphaOsPolicyAssignment_InstanceFilter_InventoriesFields = ubx.FieldMap{
-		"OsShortName": ubx.FieldSpec{WireName: "os_short_name"},
-		"OsVersion": ubx.FieldSpec{WireName: "os_version"},
-	}
+	"OsShortName": ubx.FieldSpec{WireName: "os_short_name"},
+	"OsVersion":   ubx.FieldSpec{WireName: "os_version"},
+}
 
 var V1alphaOsPolicyAssignment_InstanceFilterFields = ubx.FieldMap{
-		"All": ubx.FieldSpec{WireName: "all"},
-		"ExclusionLabels": ubx.FieldSpec{
-			WireName: "exclusion_labels",
-			Kind: "list",
-			Fields: V1alphaOsPolicyAssignment_InstanceFilter_ExclusionLabelsFields,
-		},
-		"InclusionLabels": ubx.FieldSpec{
-			WireName: "inclusion_labels",
-			Kind: "list",
-			Fields: V1alphaOsPolicyAssignment_InstanceFilter_ExclusionLabelsFields,
-		},
-		"Inventories": ubx.FieldSpec{
-			WireName: "inventories",
-			Kind: "list",
-			Fields: V1alphaOsPolicyAssignment_InstanceFilter_InventoriesFields,
-		},
-		"OsShortNames": ubx.FieldSpec{WireName: "os_short_names"},
-	}
+	"All": ubx.FieldSpec{WireName: "all"},
+	"ExclusionLabels": ubx.FieldSpec{
+		WireName: "exclusion_labels",
+		Kind:     "list",
+		Fields:   V1alphaOsPolicyAssignment_InstanceFilter_ExclusionLabelsFields,
+	},
+	"InclusionLabels": ubx.FieldSpec{
+		WireName: "inclusion_labels",
+		Kind:     "list",
+		Fields:   V1alphaOsPolicyAssignment_InstanceFilter_ExclusionLabelsFields,
+	},
+	"Inventories": ubx.FieldSpec{
+		WireName: "inventories",
+		Kind:     "list",
+		Fields:   V1alphaOsPolicyAssignment_InstanceFilter_InventoriesFields,
+	},
+	"OsShortNames": ubx.FieldSpec{WireName: "os_short_names"},
+}
 
 var V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups_Resources_Exec_Enforce_File_GcsFields = ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"Generation": ubx.FieldSpec{WireName: "generation"},
-		"Object": ubx.FieldSpec{WireName: "object"},
-	}
+	"Bucket":     ubx.FieldSpec{WireName: "bucket"},
+	"Generation": ubx.FieldSpec{WireName: "generation"},
+	"Object":     ubx.FieldSpec{WireName: "object"},
+}
 
 var V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups_Resources_Exec_Enforce_File_RemoteFields = ubx.FieldMap{
-		"Sha256Checksum": ubx.FieldSpec{WireName: "sha256_checksum"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"Sha256Checksum": ubx.FieldSpec{WireName: "sha256_checksum"},
+	"Uri":            ubx.FieldSpec{WireName: "uri"},
+}
 
 var V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups_Resources_Exec_Enforce_FileFields = ubx.FieldMap{
-		"AllowInsecure": ubx.FieldSpec{WireName: "allow_insecure"},
-		"Gcs": ubx.FieldSpec{
-			WireName: "gcs",
-			Kind: "object",
-			Fields: V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups_Resources_Exec_Enforce_File_GcsFields,
-		},
-		"LocalPath": ubx.FieldSpec{WireName: "local_path"},
-		"Remote": ubx.FieldSpec{
-			WireName: "remote",
-			Kind: "object",
-			Fields: V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups_Resources_Exec_Enforce_File_RemoteFields,
-		},
-	}
+	"AllowInsecure": ubx.FieldSpec{WireName: "allow_insecure"},
+	"Gcs": ubx.FieldSpec{
+		WireName: "gcs",
+		Kind:     "object",
+		Fields:   V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups_Resources_Exec_Enforce_File_GcsFields,
+	},
+	"LocalPath": ubx.FieldSpec{WireName: "local_path"},
+	"Remote": ubx.FieldSpec{
+		WireName: "remote",
+		Kind:     "object",
+		Fields:   V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups_Resources_Exec_Enforce_File_RemoteFields,
+	},
+}
 
 var V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups_Resources_Exec_EnforceFields = ubx.FieldMap{
-		"Args": ubx.FieldSpec{WireName: "args"},
-		"File": ubx.FieldSpec{
-			WireName: "file",
-			Kind: "object",
-			Fields: V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups_Resources_Exec_Enforce_FileFields,
-		},
-		"Interpreter": ubx.FieldSpec{WireName: "interpreter"},
-		"OutputFilePath": ubx.FieldSpec{WireName: "output_file_path"},
-		"Script": ubx.FieldSpec{WireName: "script"},
-	}
+	"Args": ubx.FieldSpec{WireName: "args"},
+	"File": ubx.FieldSpec{
+		WireName: "file",
+		Kind:     "object",
+		Fields:   V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups_Resources_Exec_Enforce_FileFields,
+	},
+	"Interpreter":    ubx.FieldSpec{WireName: "interpreter"},
+	"OutputFilePath": ubx.FieldSpec{WireName: "output_file_path"},
+	"Script":         ubx.FieldSpec{WireName: "script"},
+}
 
 var V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups_Resources_ExecFields = ubx.FieldMap{
-		"Enforce": ubx.FieldSpec{
-			WireName: "enforce",
-			Kind: "object",
-			Fields: V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups_Resources_Exec_EnforceFields,
-		},
-		"Validate": ubx.FieldSpec{
-			WireName: "validate",
-			Kind: "object",
-			Fields: V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups_Resources_Exec_EnforceFields,
-		},
-	}
+	"Enforce": ubx.FieldSpec{
+		WireName: "enforce",
+		Kind:     "object",
+		Fields:   V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups_Resources_Exec_EnforceFields,
+	},
+	"Validate": ubx.FieldSpec{
+		WireName: "validate",
+		Kind:     "object",
+		Fields:   V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups_Resources_Exec_EnforceFields,
+	},
+}
 
 var V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups_Resources_FileFields = ubx.FieldMap{
-		"Content": ubx.FieldSpec{WireName: "content"},
-		"File": ubx.FieldSpec{
-			WireName: "file",
-			Kind: "object",
-			Fields: V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups_Resources_Exec_Enforce_FileFields,
-		},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"Permissions": ubx.FieldSpec{WireName: "permissions"},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"Content": ubx.FieldSpec{WireName: "content"},
+	"File": ubx.FieldSpec{
+		WireName: "file",
+		Kind:     "object",
+		Fields:   V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups_Resources_Exec_Enforce_FileFields,
+	},
+	"Path":        ubx.FieldSpec{WireName: "path"},
+	"Permissions": ubx.FieldSpec{WireName: "permissions"},
+	"State":       ubx.FieldSpec{WireName: "state"},
+}
 
 var V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups_Resources_Pkg_AptFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups_Resources_Pkg_DebFields = ubx.FieldMap{
-		"PullDeps": ubx.FieldSpec{WireName: "pull_deps"},
-		"Source": ubx.FieldSpec{
-			WireName: "source",
-			Kind: "object",
-			Fields: V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups_Resources_Exec_Enforce_FileFields,
-		},
-	}
+	"PullDeps": ubx.FieldSpec{WireName: "pull_deps"},
+	"Source": ubx.FieldSpec{
+		WireName: "source",
+		Kind:     "object",
+		Fields:   V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups_Resources_Exec_Enforce_FileFields,
+	},
+}
 
 var V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups_Resources_Pkg_MsiFields = ubx.FieldMap{
-		"Properties": ubx.FieldSpec{WireName: "properties"},
-		"Source": ubx.FieldSpec{
-			WireName: "source",
-			Kind: "object",
-			Fields: V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups_Resources_Exec_Enforce_FileFields,
-		},
-	}
+	"Properties": ubx.FieldSpec{WireName: "properties"},
+	"Source": ubx.FieldSpec{
+		WireName: "source",
+		Kind:     "object",
+		Fields:   V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups_Resources_Exec_Enforce_FileFields,
+	},
+}
 
 var V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups_Resources_PkgFields = ubx.FieldMap{
-		"Apt": ubx.FieldSpec{
-			WireName: "apt",
-			Kind: "object",
-			Fields: V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups_Resources_Pkg_AptFields,
-		},
-		"Deb": ubx.FieldSpec{
-			WireName: "deb",
-			Kind: "object",
-			Fields: V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups_Resources_Pkg_DebFields,
-		},
-		"DesiredState": ubx.FieldSpec{WireName: "desired_state"},
-		"Googet": ubx.FieldSpec{
-			WireName: "googet",
-			Kind: "object",
-			Fields: V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups_Resources_Pkg_AptFields,
-		},
-		"Msi": ubx.FieldSpec{
-			WireName: "msi",
-			Kind: "object",
-			Fields: V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups_Resources_Pkg_MsiFields,
-		},
-		"Rpm": ubx.FieldSpec{
-			WireName: "rpm",
-			Kind: "object",
-			Fields: V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups_Resources_Pkg_DebFields,
-		},
-		"Yum": ubx.FieldSpec{
-			WireName: "yum",
-			Kind: "object",
-			Fields: V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups_Resources_Pkg_AptFields,
-		},
-		"Zypper": ubx.FieldSpec{
-			WireName: "zypper",
-			Kind: "object",
-			Fields: V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups_Resources_Pkg_AptFields,
-		},
-	}
+	"Apt": ubx.FieldSpec{
+		WireName: "apt",
+		Kind:     "object",
+		Fields:   V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups_Resources_Pkg_AptFields,
+	},
+	"Deb": ubx.FieldSpec{
+		WireName: "deb",
+		Kind:     "object",
+		Fields:   V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups_Resources_Pkg_DebFields,
+	},
+	"DesiredState": ubx.FieldSpec{WireName: "desired_state"},
+	"Googet": ubx.FieldSpec{
+		WireName: "googet",
+		Kind:     "object",
+		Fields:   V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups_Resources_Pkg_AptFields,
+	},
+	"Msi": ubx.FieldSpec{
+		WireName: "msi",
+		Kind:     "object",
+		Fields:   V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups_Resources_Pkg_MsiFields,
+	},
+	"Rpm": ubx.FieldSpec{
+		WireName: "rpm",
+		Kind:     "object",
+		Fields:   V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups_Resources_Pkg_DebFields,
+	},
+	"Yum": ubx.FieldSpec{
+		WireName: "yum",
+		Kind:     "object",
+		Fields:   V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups_Resources_Pkg_AptFields,
+	},
+	"Zypper": ubx.FieldSpec{
+		WireName: "zypper",
+		Kind:     "object",
+		Fields:   V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups_Resources_Pkg_AptFields,
+	},
+}
 
 var V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups_Resources_Repository_AptFields = ubx.FieldMap{
-		"ArchiveType": ubx.FieldSpec{WireName: "archive_type"},
-		"Components": ubx.FieldSpec{WireName: "components"},
-		"Distribution": ubx.FieldSpec{WireName: "distribution"},
-		"GpgKey": ubx.FieldSpec{WireName: "gpg_key"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"ArchiveType":  ubx.FieldSpec{WireName: "archive_type"},
+	"Components":   ubx.FieldSpec{WireName: "components"},
+	"Distribution": ubx.FieldSpec{WireName: "distribution"},
+	"GpgKey":       ubx.FieldSpec{WireName: "gpg_key"},
+	"Uri":          ubx.FieldSpec{WireName: "uri"},
+}
 
 var V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups_Resources_Repository_GooFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Url": ubx.FieldSpec{WireName: "url"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Url":  ubx.FieldSpec{WireName: "url"},
+}
 
 var V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups_Resources_Repository_YumFields = ubx.FieldMap{
-		"BaseUrl": ubx.FieldSpec{WireName: "base_url"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"GpgKeys": ubx.FieldSpec{WireName: "gpg_keys"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-	}
+	"BaseUrl":     ubx.FieldSpec{WireName: "base_url"},
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"GpgKeys":     ubx.FieldSpec{WireName: "gpg_keys"},
+	"Id":          ubx.FieldSpec{WireName: "id"},
+}
 
 var V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups_Resources_RepositoryFields = ubx.FieldMap{
-		"Apt": ubx.FieldSpec{
-			WireName: "apt",
-			Kind: "object",
-			Fields: V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups_Resources_Repository_AptFields,
-		},
-		"Goo": ubx.FieldSpec{
-			WireName: "goo",
-			Kind: "object",
-			Fields: V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups_Resources_Repository_GooFields,
-		},
-		"Yum": ubx.FieldSpec{
-			WireName: "yum",
-			Kind: "object",
-			Fields: V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups_Resources_Repository_YumFields,
-		},
-		"Zypper": ubx.FieldSpec{
-			WireName: "zypper",
-			Kind: "object",
-			Fields: V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups_Resources_Repository_YumFields,
-		},
-	}
+	"Apt": ubx.FieldSpec{
+		WireName: "apt",
+		Kind:     "object",
+		Fields:   V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups_Resources_Repository_AptFields,
+	},
+	"Goo": ubx.FieldSpec{
+		WireName: "goo",
+		Kind:     "object",
+		Fields:   V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups_Resources_Repository_GooFields,
+	},
+	"Yum": ubx.FieldSpec{
+		WireName: "yum",
+		Kind:     "object",
+		Fields:   V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups_Resources_Repository_YumFields,
+	},
+	"Zypper": ubx.FieldSpec{
+		WireName: "zypper",
+		Kind:     "object",
+		Fields:   V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups_Resources_Repository_YumFields,
+	},
+}
 
 var V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups_ResourcesFields = ubx.FieldMap{
-		"Exec": ubx.FieldSpec{
-			WireName: "exec",
-			Kind: "object",
-			Fields: V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups_Resources_ExecFields,
-		},
-		"File": ubx.FieldSpec{
-			WireName: "file",
-			Kind: "object",
-			Fields: V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups_Resources_FileFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Pkg": ubx.FieldSpec{
-			WireName: "pkg",
-			Kind: "object",
-			Fields: V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups_Resources_PkgFields,
-		},
-		"Repository": ubx.FieldSpec{
-			WireName: "repository",
-			Kind: "object",
-			Fields: V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups_Resources_RepositoryFields,
-		},
-	}
+	"Exec": ubx.FieldSpec{
+		WireName: "exec",
+		Kind:     "object",
+		Fields:   V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups_Resources_ExecFields,
+	},
+	"File": ubx.FieldSpec{
+		WireName: "file",
+		Kind:     "object",
+		Fields:   V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups_Resources_FileFields,
+	},
+	"Id": ubx.FieldSpec{WireName: "id"},
+	"Pkg": ubx.FieldSpec{
+		WireName: "pkg",
+		Kind:     "object",
+		Fields:   V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups_Resources_PkgFields,
+	},
+	"Repository": ubx.FieldSpec{
+		WireName: "repository",
+		Kind:     "object",
+		Fields:   V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups_Resources_RepositoryFields,
+	},
+}
 
 var V1alphaOsPolicyAssignment_OsPolicies_ResourceGroupsFields = ubx.FieldMap{
-		"InventoryFilters": ubx.FieldSpec{
-			WireName: "inventory_filters",
-			Kind: "list",
-			Fields: V1alphaOsPolicyAssignment_InstanceFilter_InventoriesFields,
-		},
-		"OsFilter": ubx.FieldSpec{
-			WireName: "os_filter",
-			Kind: "object",
-			Fields: V1alphaOsPolicyAssignment_InstanceFilter_InventoriesFields,
-		},
-		"Resources": ubx.FieldSpec{
-			WireName: "resources",
-			Kind: "list",
-			Fields: V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups_ResourcesFields,
-		},
-	}
+	"InventoryFilters": ubx.FieldSpec{
+		WireName: "inventory_filters",
+		Kind:     "list",
+		Fields:   V1alphaOsPolicyAssignment_InstanceFilter_InventoriesFields,
+	},
+	"OsFilter": ubx.FieldSpec{
+		WireName: "os_filter",
+		Kind:     "object",
+		Fields:   V1alphaOsPolicyAssignment_InstanceFilter_InventoriesFields,
+	},
+	"Resources": ubx.FieldSpec{
+		WireName: "resources",
+		Kind:     "list",
+		Fields:   V1alphaOsPolicyAssignment_OsPolicies_ResourceGroups_ResourcesFields,
+	},
+}
 
 var V1alphaOsPolicyAssignment_OsPoliciesFields = ubx.FieldMap{
-		"AllowNoResourceGroupMatch": ubx.FieldSpec{WireName: "allow_no_resource_group_match"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"ResourceGroups": ubx.FieldSpec{
-			WireName: "resource_groups",
-			Kind: "list",
-			Fields: V1alphaOsPolicyAssignment_OsPolicies_ResourceGroupsFields,
-		},
-	}
+	"AllowNoResourceGroupMatch": ubx.FieldSpec{WireName: "allow_no_resource_group_match"},
+	"Description":               ubx.FieldSpec{WireName: "description"},
+	"Id":                        ubx.FieldSpec{WireName: "id"},
+	"Mode":                      ubx.FieldSpec{WireName: "mode"},
+	"ResourceGroups": ubx.FieldSpec{
+		WireName: "resource_groups",
+		Kind:     "list",
+		Fields:   V1alphaOsPolicyAssignment_OsPolicies_ResourceGroupsFields,
+	},
+}
 
 var V1alphaOsPolicyAssignment_Rollout_DisruptionBudgetFields = ubx.FieldMap{
-		"Fixed": ubx.FieldSpec{WireName: "fixed"},
-		"Percent": ubx.FieldSpec{WireName: "percent"},
-	}
+	"Fixed":   ubx.FieldSpec{WireName: "fixed"},
+	"Percent": ubx.FieldSpec{WireName: "percent"},
+}
 
 var V1alphaOsPolicyAssignment_RolloutFields = ubx.FieldMap{
-		"DisruptionBudget": ubx.FieldSpec{
-			WireName: "disruption_budget",
-			Kind: "object",
-			Fields: V1alphaOsPolicyAssignment_Rollout_DisruptionBudgetFields,
-		},
-		"MinWaitDuration": ubx.FieldSpec{WireName: "min_wait_duration"},
-	}
+	"DisruptionBudget": ubx.FieldSpec{
+		WireName: "disruption_budget",
+		Kind:     "object",
+		Fields:   V1alphaOsPolicyAssignment_Rollout_DisruptionBudgetFields,
+	},
+	"MinWaitDuration": ubx.FieldSpec{WireName: "min_wait_duration"},
+}
 
 type V1alphaOsPolicyAssignmentConfig struct {
-	// Output only. Indicates that this revision has been successfully rolled out in this zone and new VMs will be assigned OS policies from this revision. For a given OS policy assignment, there is only one revision with a value of `true` for this field.
-	Baseline any
-	// Output only. Indicates that this revision deletes the OS policy assignment.
-	Deleted any
 	// OS policy assignment description. Length of the description is limited to 1024 characters.
 	Description any
 	// The etag for this OS policy assignment. If this is provided on update, it must match the server's etag.
@@ -431,18 +427,8 @@ type V1alphaOsPolicyAssignmentConfig struct {
 	Name any
 	// Required. List of OS policies to be applied to the VMs.
 	OsPolicies any
-	// Output only. Indicates that reconciliation is in progress for the revision. This value is `true` when the `rollout_state` is one of: * IN_PROGRESS * CANCELLING
-	Reconciling any
-	// Output only. The timestamp that the revision was created.
-	RevisionCreateTime any
-	// Output only. The assignment revision ID A new revision is committed whenever a rollout is triggered for a OS policy assignment
-	RevisionId any
 	// Message to configure the rollout at the zonal level for the OS policy assignment.
 	Rollout any
-	// Output only. OS policy assignment rollout state
-	RolloutState any
-	// Output only. Server generated unique id for the OS policy assignment resource.
-	Uid any
 }
 
 type V1alphaOsPolicyAssignmentAttrs struct {
@@ -477,30 +463,23 @@ type V1alphaOsPolicyAssignmentAttrs struct {
 var V1alphaOsPolicyAssignment = ubx.ResourceBinding{
 	WireType: "google_osconfig_v1alpha_os_policy_assignment",
 	Fields: ubx.FieldMap{
-		"Baseline": ubx.FieldSpec{WireName: "baseline"},
-		"Deleted": ubx.FieldSpec{WireName: "deleted"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
+		"Etag":        ubx.FieldSpec{WireName: "etag"},
 		"InstanceFilter": ubx.FieldSpec{
 			WireName: "instance_filter",
-			Kind: "object",
-			Fields: V1alphaOsPolicyAssignment_InstanceFilterFields,
+			Kind:     "object",
+			Fields:   V1alphaOsPolicyAssignment_InstanceFilterFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"OsPolicies": ubx.FieldSpec{
 			WireName: "os_policies",
-			Kind: "list",
-			Fields: V1alphaOsPolicyAssignment_OsPoliciesFields,
+			Kind:     "list",
+			Fields:   V1alphaOsPolicyAssignment_OsPoliciesFields,
 		},
-		"Reconciling": ubx.FieldSpec{WireName: "reconciling"},
-		"RevisionCreateTime": ubx.FieldSpec{WireName: "revision_create_time"},
-		"RevisionId": ubx.FieldSpec{WireName: "revision_id"},
 		"Rollout": ubx.FieldSpec{
 			WireName: "rollout",
-			Kind: "object",
-			Fields: V1alphaOsPolicyAssignment_RolloutFields,
+			Kind:     "object",
+			Fields:   V1alphaOsPolicyAssignment_RolloutFields,
 		},
-		"RolloutState": ubx.FieldSpec{WireName: "rollout_state"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
 	},
 }

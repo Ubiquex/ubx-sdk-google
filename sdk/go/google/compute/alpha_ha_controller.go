@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AlphaHaController_NetworkingAutoConfiguration_Internal struct {
 	// Optional. IP addresses will be automatically allocated according to StackType if not provided.
-	IpAddress any
+	IpAddress   any
 	Ipv6Address any
 	// Determine which IP addresses to automatically create. Field and option naming consistent with NetworkInterface configuration on Instances.
 	StackType any
@@ -17,14 +17,14 @@ type AlphaHaController_NetworkingAutoConfiguration struct {
 }
 
 type AlphaHaController_Status_FailoverProgress_LastFailoverAttempt_Errors_Errors_ErrorDetails_ErrorInfo struct {
-	Domain any
+	Domain    any
 	Metadatas any
-	Reason any
+	Reason    any
 }
 
 type AlphaHaController_Status_FailoverProgress_LastFailoverAttempt_Errors_Errors_ErrorDetails_Help_Links struct {
 	Description any
-	Url any
+	Url         any
 }
 
 type AlphaHaController_Status_FailoverProgress_LastFailoverAttempt_Errors_Errors_ErrorDetails_Help struct {
@@ -32,31 +32,31 @@ type AlphaHaController_Status_FailoverProgress_LastFailoverAttempt_Errors_Errors
 }
 
 type AlphaHaController_Status_FailoverProgress_LastFailoverAttempt_Errors_Errors_ErrorDetails_LocalizedMessage struct {
-	Locale any
+	Locale  any
 	Message any
 }
 
 type AlphaHaController_Status_FailoverProgress_LastFailoverAttempt_Errors_Errors_ErrorDetails_QuotaInfo struct {
-	Dimensions any
-	FutureLimit any
-	Limit any
-	LimitName any
-	MetricName any
+	Dimensions    any
+	FutureLimit   any
+	Limit         any
+	LimitName     any
+	MetricName    any
 	RolloutStatus any
 }
 
 type AlphaHaController_Status_FailoverProgress_LastFailoverAttempt_Errors_Errors_ErrorDetails struct {
-	ErrorInfo any
-	Help any
+	ErrorInfo        any
+	Help             any
 	LocalizedMessage any
-	QuotaInfo any
+	QuotaInfo        any
 }
 
 type AlphaHaController_Status_FailoverProgress_LastFailoverAttempt_Errors_Errors struct {
-	Code any
+	Code         any
 	ErrorDetails any
-	Location any
-	Message any
+	Location     any
+	Message      any
 }
 
 type AlphaHaController_Status_FailoverProgress_LastFailoverAttempt_Errors struct {
@@ -80,13 +80,13 @@ type AlphaHaController_Status_FailoverProgress struct {
 	FailoverTrigger any
 	// Output only. [Output Only] Timestamp of the last failover trigger.
 	FailoverTriggerTimestamp any
-	LastFailoverAttempt any
+	LastFailoverAttempt      any
 }
 
 type AlphaHaController_Status_ZoneStatus struct {
-	IsPrimary any
+	IsPrimary   any
 	IsZoneReady any
-	LastError any
+	LastError   any
 }
 
 type AlphaHaController_Status struct {
@@ -107,216 +107,202 @@ type AlphaHaController_Status struct {
 }
 
 type AlphaHaController_ZoneConfigurations_NodeAffinities struct {
-	Key any
+	Key      any
 	Operator any
-	Values any
+	Values   any
 }
 
 type AlphaHaController_ZoneConfigurations_ReservationAffinity struct {
 	ConsumeReservationType any
-	Key any
-	Values any
+	Key                    any
+	Values                 any
 }
 
 type AlphaHaController_ZoneConfigurations struct {
-	NodeAffinities any
+	NodeAffinities      any
 	ReservationAffinity any
 }
 
 var AlphaHaController_NetworkingAutoConfiguration_InternalFields = ubx.FieldMap{
-		"IpAddress": ubx.FieldSpec{WireName: "ip_address"},
-		"Ipv6Address": ubx.FieldSpec{WireName: "ipv6_address"},
-		"StackType": ubx.FieldSpec{WireName: "stack_type"},
-	}
+	"IpAddress":   ubx.FieldSpec{WireName: "ip_address"},
+	"Ipv6Address": ubx.FieldSpec{WireName: "ipv6_address"},
+	"StackType":   ubx.FieldSpec{WireName: "stack_type"},
+}
 
 var AlphaHaController_NetworkingAutoConfigurationFields = ubx.FieldMap{
-		"Internal": ubx.FieldSpec{
-			WireName: "internal",
-			Kind: "object",
-			Fields: AlphaHaController_NetworkingAutoConfiguration_InternalFields,
-		},
-	}
+	"Internal": ubx.FieldSpec{
+		WireName: "internal",
+		Kind:     "object",
+		Fields:   AlphaHaController_NetworkingAutoConfiguration_InternalFields,
+	},
+}
 
 var AlphaHaController_Status_FailoverProgress_LastFailoverAttempt_Errors_Errors_ErrorDetails_ErrorInfoFields = ubx.FieldMap{
-		"Domain": ubx.FieldSpec{WireName: "domain"},
-		"Metadatas": ubx.FieldSpec{WireName: "metadatas"},
-		"Reason": ubx.FieldSpec{WireName: "reason"},
-	}
+	"Domain":    ubx.FieldSpec{WireName: "domain"},
+	"Metadatas": ubx.FieldSpec{WireName: "metadatas"},
+	"Reason":    ubx.FieldSpec{WireName: "reason"},
+}
 
 var AlphaHaController_Status_FailoverProgress_LastFailoverAttempt_Errors_Errors_ErrorDetails_Help_LinksFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Url": ubx.FieldSpec{WireName: "url"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Url":         ubx.FieldSpec{WireName: "url"},
+}
 
 var AlphaHaController_Status_FailoverProgress_LastFailoverAttempt_Errors_Errors_ErrorDetails_HelpFields = ubx.FieldMap{
-		"Links": ubx.FieldSpec{
-			WireName: "links",
-			Kind: "list",
-			Fields: AlphaHaController_Status_FailoverProgress_LastFailoverAttempt_Errors_Errors_ErrorDetails_Help_LinksFields,
-		},
-	}
+	"Links": ubx.FieldSpec{
+		WireName: "links",
+		Kind:     "list",
+		Fields:   AlphaHaController_Status_FailoverProgress_LastFailoverAttempt_Errors_Errors_ErrorDetails_Help_LinksFields,
+	},
+}
 
 var AlphaHaController_Status_FailoverProgress_LastFailoverAttempt_Errors_Errors_ErrorDetails_LocalizedMessageFields = ubx.FieldMap{
-		"Locale": ubx.FieldSpec{WireName: "locale"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"Locale":  ubx.FieldSpec{WireName: "locale"},
+	"Message": ubx.FieldSpec{WireName: "message"},
+}
 
 var AlphaHaController_Status_FailoverProgress_LastFailoverAttempt_Errors_Errors_ErrorDetails_QuotaInfoFields = ubx.FieldMap{
-		"Dimensions": ubx.FieldSpec{WireName: "dimensions"},
-		"FutureLimit": ubx.FieldSpec{WireName: "future_limit"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"LimitName": ubx.FieldSpec{WireName: "limit_name"},
-		"MetricName": ubx.FieldSpec{WireName: "metric_name"},
-		"RolloutStatus": ubx.FieldSpec{WireName: "rollout_status"},
-	}
+	"Dimensions":    ubx.FieldSpec{WireName: "dimensions"},
+	"FutureLimit":   ubx.FieldSpec{WireName: "future_limit"},
+	"Limit":         ubx.FieldSpec{WireName: "limit"},
+	"LimitName":     ubx.FieldSpec{WireName: "limit_name"},
+	"MetricName":    ubx.FieldSpec{WireName: "metric_name"},
+	"RolloutStatus": ubx.FieldSpec{WireName: "rollout_status"},
+}
 
 var AlphaHaController_Status_FailoverProgress_LastFailoverAttempt_Errors_Errors_ErrorDetailsFields = ubx.FieldMap{
-		"ErrorInfo": ubx.FieldSpec{
-			WireName: "error_info",
-			Kind: "object",
-			Fields: AlphaHaController_Status_FailoverProgress_LastFailoverAttempt_Errors_Errors_ErrorDetails_ErrorInfoFields,
-		},
-		"Help": ubx.FieldSpec{
-			WireName: "help",
-			Kind: "object",
-			Fields: AlphaHaController_Status_FailoverProgress_LastFailoverAttempt_Errors_Errors_ErrorDetails_HelpFields,
-		},
-		"LocalizedMessage": ubx.FieldSpec{
-			WireName: "localized_message",
-			Kind: "object",
-			Fields: AlphaHaController_Status_FailoverProgress_LastFailoverAttempt_Errors_Errors_ErrorDetails_LocalizedMessageFields,
-		},
-		"QuotaInfo": ubx.FieldSpec{
-			WireName: "quota_info",
-			Kind: "object",
-			Fields: AlphaHaController_Status_FailoverProgress_LastFailoverAttempt_Errors_Errors_ErrorDetails_QuotaInfoFields,
-		},
-	}
+	"ErrorInfo": ubx.FieldSpec{
+		WireName: "error_info",
+		Kind:     "object",
+		Fields:   AlphaHaController_Status_FailoverProgress_LastFailoverAttempt_Errors_Errors_ErrorDetails_ErrorInfoFields,
+	},
+	"Help": ubx.FieldSpec{
+		WireName: "help",
+		Kind:     "object",
+		Fields:   AlphaHaController_Status_FailoverProgress_LastFailoverAttempt_Errors_Errors_ErrorDetails_HelpFields,
+	},
+	"LocalizedMessage": ubx.FieldSpec{
+		WireName: "localized_message",
+		Kind:     "object",
+		Fields:   AlphaHaController_Status_FailoverProgress_LastFailoverAttempt_Errors_Errors_ErrorDetails_LocalizedMessageFields,
+	},
+	"QuotaInfo": ubx.FieldSpec{
+		WireName: "quota_info",
+		Kind:     "object",
+		Fields:   AlphaHaController_Status_FailoverProgress_LastFailoverAttempt_Errors_Errors_ErrorDetails_QuotaInfoFields,
+	},
+}
 
 var AlphaHaController_Status_FailoverProgress_LastFailoverAttempt_Errors_ErrorsFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"ErrorDetails": ubx.FieldSpec{
-			WireName: "error_details",
-			Kind: "list",
-			Fields: AlphaHaController_Status_FailoverProgress_LastFailoverAttempt_Errors_Errors_ErrorDetailsFields,
-		},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"Code": ubx.FieldSpec{WireName: "code"},
+	"ErrorDetails": ubx.FieldSpec{
+		WireName: "error_details",
+		Kind:     "list",
+		Fields:   AlphaHaController_Status_FailoverProgress_LastFailoverAttempt_Errors_Errors_ErrorDetailsFields,
+	},
+	"Location": ubx.FieldSpec{WireName: "location"},
+	"Message":  ubx.FieldSpec{WireName: "message"},
+}
 
 var AlphaHaController_Status_FailoverProgress_LastFailoverAttempt_ErrorsFields = ubx.FieldMap{
-		"Errors": ubx.FieldSpec{
-			WireName: "errors",
-			Kind: "list",
-			Fields: AlphaHaController_Status_FailoverProgress_LastFailoverAttempt_Errors_ErrorsFields,
-		},
-	}
+	"Errors": ubx.FieldSpec{
+		WireName: "errors",
+		Kind:     "list",
+		Fields:   AlphaHaController_Status_FailoverProgress_LastFailoverAttempt_Errors_ErrorsFields,
+	},
+}
 
 var AlphaHaController_Status_FailoverProgress_LastFailoverAttemptFields = ubx.FieldMap{
-		"Errors": ubx.FieldSpec{
-			WireName: "errors",
-			Kind: "object",
-			Fields: AlphaHaController_Status_FailoverProgress_LastFailoverAttempt_ErrorsFields,
-		},
-		"Timestamp": ubx.FieldSpec{WireName: "timestamp"},
-	}
+	"Errors": ubx.FieldSpec{
+		WireName: "errors",
+		Kind:     "object",
+		Fields:   AlphaHaController_Status_FailoverProgress_LastFailoverAttempt_ErrorsFields,
+	},
+	"Timestamp": ubx.FieldSpec{WireName: "timestamp"},
+}
 
 var AlphaHaController_Status_FailoverProgressFields = ubx.FieldMap{
-		"FailoverCompleteTimestamp": ubx.FieldSpec{WireName: "failover_complete_timestamp"},
-		"FailoverDuration": ubx.FieldSpec{WireName: "failover_duration"},
-		"FailoverTrigger": ubx.FieldSpec{WireName: "failover_trigger"},
-		"FailoverTriggerTimestamp": ubx.FieldSpec{WireName: "failover_trigger_timestamp"},
-		"LastFailoverAttempt": ubx.FieldSpec{
-			WireName: "last_failover_attempt",
-			Kind: "object",
-			Fields: AlphaHaController_Status_FailoverProgress_LastFailoverAttemptFields,
-		},
-	}
+	"FailoverCompleteTimestamp": ubx.FieldSpec{WireName: "failover_complete_timestamp"},
+	"FailoverDuration":          ubx.FieldSpec{WireName: "failover_duration"},
+	"FailoverTrigger":           ubx.FieldSpec{WireName: "failover_trigger"},
+	"FailoverTriggerTimestamp":  ubx.FieldSpec{WireName: "failover_trigger_timestamp"},
+	"LastFailoverAttempt": ubx.FieldSpec{
+		WireName: "last_failover_attempt",
+		Kind:     "object",
+		Fields:   AlphaHaController_Status_FailoverProgress_LastFailoverAttemptFields,
+	},
+}
 
 var AlphaHaController_Status_ZoneStatusFields = ubx.FieldMap{
-		"IsPrimary": ubx.FieldSpec{WireName: "is_primary"},
-		"IsZoneReady": ubx.FieldSpec{WireName: "is_zone_ready"},
-		"LastError": ubx.FieldSpec{
-			WireName: "last_error",
-			Kind: "object",
-			Fields: AlphaHaController_Status_FailoverProgress_LastFailoverAttemptFields,
-		},
-	}
+	"IsPrimary":   ubx.FieldSpec{WireName: "is_primary"},
+	"IsZoneReady": ubx.FieldSpec{WireName: "is_zone_ready"},
+	"LastError": ubx.FieldSpec{
+		WireName: "last_error",
+		Kind:     "object",
+		Fields:   AlphaHaController_Status_FailoverProgress_LastFailoverAttemptFields,
+	},
+}
 
 var AlphaHaController_StatusFields = ubx.FieldMap{
-		"FailoverProgress": ubx.FieldSpec{
-			WireName: "failover_progress",
-			Kind: "object",
-			Fields: AlphaHaController_Status_FailoverProgressFields,
-		},
-		"LastFailoverInfo": ubx.FieldSpec{
-			WireName: "last_failover_info",
-			Kind: "object",
-			Fields: AlphaHaController_Status_FailoverProgressFields,
-		},
-		"OngoingFailover": ubx.FieldSpec{WireName: "ongoing_failover"},
-		"PrimaryInstance": ubx.FieldSpec{WireName: "primary_instance"},
-		"PrimaryZone": ubx.FieldSpec{WireName: "primary_zone"},
-		"ReadyForFailover": ubx.FieldSpec{WireName: "ready_for_failover"},
-		"ZoneStatus": ubx.FieldSpec{
-			WireName: "zone_status",
-			Kind: "map",
-			Fields: AlphaHaController_Status_ZoneStatusFields,
-		},
-	}
+	"FailoverProgress": ubx.FieldSpec{
+		WireName: "failover_progress",
+		Kind:     "object",
+		Fields:   AlphaHaController_Status_FailoverProgressFields,
+	},
+	"LastFailoverInfo": ubx.FieldSpec{
+		WireName: "last_failover_info",
+		Kind:     "object",
+		Fields:   AlphaHaController_Status_FailoverProgressFields,
+	},
+	"OngoingFailover":  ubx.FieldSpec{WireName: "ongoing_failover"},
+	"PrimaryInstance":  ubx.FieldSpec{WireName: "primary_instance"},
+	"PrimaryZone":      ubx.FieldSpec{WireName: "primary_zone"},
+	"ReadyForFailover": ubx.FieldSpec{WireName: "ready_for_failover"},
+	"ZoneStatus": ubx.FieldSpec{
+		WireName: "zone_status",
+		Kind:     "map",
+		Fields:   AlphaHaController_Status_ZoneStatusFields,
+	},
+}
 
 var AlphaHaController_ZoneConfigurations_NodeAffinitiesFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Key":      ubx.FieldSpec{WireName: "key"},
+	"Operator": ubx.FieldSpec{WireName: "operator"},
+	"Values":   ubx.FieldSpec{WireName: "values"},
+}
 
 var AlphaHaController_ZoneConfigurations_ReservationAffinityFields = ubx.FieldMap{
-		"ConsumeReservationType": ubx.FieldSpec{WireName: "consume_reservation_type"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"ConsumeReservationType": ubx.FieldSpec{WireName: "consume_reservation_type"},
+	"Key":                    ubx.FieldSpec{WireName: "key"},
+	"Values":                 ubx.FieldSpec{WireName: "values"},
+}
 
 var AlphaHaController_ZoneConfigurationsFields = ubx.FieldMap{
-		"NodeAffinities": ubx.FieldSpec{
-			WireName: "node_affinities",
-			Kind: "list",
-			Fields: AlphaHaController_ZoneConfigurations_NodeAffinitiesFields,
-		},
-		"ReservationAffinity": ubx.FieldSpec{
-			WireName: "reservation_affinity",
-			Kind: "object",
-			Fields: AlphaHaController_ZoneConfigurations_ReservationAffinityFields,
-		},
-	}
+	"NodeAffinities": ubx.FieldSpec{
+		WireName: "node_affinities",
+		Kind:     "list",
+		Fields:   AlphaHaController_ZoneConfigurations_NodeAffinitiesFields,
+	},
+	"ReservationAffinity": ubx.FieldSpec{
+		WireName: "reservation_affinity",
+		Kind:     "object",
+		Fields:   AlphaHaController_ZoneConfigurations_ReservationAffinityFields,
+	},
+}
 
 type AlphaHaControllerConfig struct {
 	// Advanced configuration option. If specified, these Backend Services need to be pre-created. Currently, only one backend service can be specified, and it must be L4 Internal Load Balancer (ILB).
 	BackendServices any
-	// Output only. [Output Only] Creation timestamp in RFC3339 text format.
-	CreationTimestamp any
 	// An optional description of this resource. Provide this property when you create the resource.
 	Description any
 	// Indicates how failover should be initiated.
 	FailoverInitiation any
-	// Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-	Id any
 	// Name of the instance that HaController is in charge of. If not specified the HaController's resource name will be used instead. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
 	InstanceName any
-	// Output only. [Output Only] Type of the resource. Alwayscompute#haController for HaControllers.
-	Kind any
 	// Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
 	Name any
 	// Basic networking configuration. Required backend services and forwarding rules will be automatically created with default parameters.
 	NetworkingAutoConfiguration any
-	// Output only. [Output Only] URL of the region where the resource resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
-	Region any
-	// Output only. [Output only] Server-defined URL for the resource.
-	SelfLink any
-	// Output only. [Output Only] Server-defined URL for this resource with the resource id.
-	SelfLinkWithId any
-	// Output only. The current state of the HA Controller.
-	State any
 	// Contains information about current status of the HaController.
 	Status any
 	// Map of zone configurations Key: name of the zone Value: ZoneConfiguration
@@ -359,32 +345,25 @@ type AlphaHaControllerAttrs struct {
 var AlphaHaController = ubx.ResourceBinding{
 	WireType: "google_compute_alpha_ha_controller",
 	Fields: ubx.FieldMap{
-		"BackendServices": ubx.FieldSpec{WireName: "backend_services"},
-		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"BackendServices":    ubx.FieldSpec{WireName: "backend_services"},
+		"Description":        ubx.FieldSpec{WireName: "description"},
 		"FailoverInitiation": ubx.FieldSpec{WireName: "failover_initiation"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"InstanceName": ubx.FieldSpec{WireName: "instance_name"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"InstanceName":       ubx.FieldSpec{WireName: "instance_name"},
+		"Name":               ubx.FieldSpec{WireName: "name"},
 		"NetworkingAutoConfiguration": ubx.FieldSpec{
 			WireName: "networking_auto_configuration",
-			Kind: "object",
-			Fields: AlphaHaController_NetworkingAutoConfigurationFields,
+			Kind:     "object",
+			Fields:   AlphaHaController_NetworkingAutoConfigurationFields,
 		},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"SelfLinkWithId": ubx.FieldSpec{WireName: "self_link_with_id"},
-		"State": ubx.FieldSpec{WireName: "state"},
 		"Status": ubx.FieldSpec{
 			WireName: "status",
-			Kind: "object",
-			Fields: AlphaHaController_StatusFields,
+			Kind:     "object",
+			Fields:   AlphaHaController_StatusFields,
 		},
 		"ZoneConfigurations": ubx.FieldSpec{
 			WireName: "zone_configurations",
-			Kind: "map",
-			Fields: AlphaHaController_ZoneConfigurationsFields,
+			Kind:     "map",
+			Fields:   AlphaHaController_ZoneConfigurationsFields,
 		},
 	},
 }

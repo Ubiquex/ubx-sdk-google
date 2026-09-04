@@ -98,24 +98,14 @@ const V1alphaFleet_StateFields: FieldMap = {
 };
 
 export interface V1alphaFleetConfig {
-  /** Output only. When the Fleet was created. */
-  createTime?: string | Computed<string>;
   /** DefaultClusterConfig describes the default cluster configurations to be applied to all clusters born-in-fleet. */
   defaultClusterConfig?: V1alphaFleet_DefaultClusterConfig | Computed<V1alphaFleet_DefaultClusterConfig>;
-  /** Output only. When the Fleet was deleted. */
-  deleteTime?: string | Computed<string>;
   /** Optional. A user-assigned display name of the Fleet. When present, it must be between 4 to 30 characters. Allowed characters are: lowercase and uppercase letters, numbers, hyphen, single-quote, double-quote, space, and exclamation point. Example: `Production Fleet` */
   displayName?: string | Computed<string>;
   /** Optional. Labels for this Fleet. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. The full, unique resource name of this fleet in the format of `projects/{project}/locations/{location}/fleets/{fleet}`. Each Google Cloud project can have at most one fleet resource, named "default". */
-  name?: string | Computed<string>;
   /** FleetLifecycleState describes the state of a Fleet resource. */
   state?: V1alphaFleet_State | Computed<V1alphaFleet_State>;
-  /** Output only. Google-generated UUID for this resource. This is unique across all Fleet resources. If a Fleet resource is deleted and another resource with the same name is created, it gets a different uid. */
-  uid?: string | Computed<string>;
-  /** Output only. When the Fleet was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1alphaFleetAttrs {
@@ -142,22 +132,17 @@ export interface V1alphaFleetAttrs {
 export const V1alphaFleet: ResourceBinding<V1alphaFleetConfig, V1alphaFleetAttrs> = {
   wireType: "google_gkehub_v1alpha_fleet",
   fields: {
-    createTime: "create_time",
     defaultClusterConfig: {
       wireName: "default_cluster_config",
       kind: "object",
       fields: V1alphaFleet_DefaultClusterConfigFields,
     },
-    deleteTime: "delete_time",
     displayName: "display_name",
     labels: "labels",
-    name: "name",
     state: {
       wireName: "state",
       kind: "object",
       fields: V1alphaFleet_StateFields,
     },
-    uid: "uid",
-    updateTime: "update_time",
   },
 };

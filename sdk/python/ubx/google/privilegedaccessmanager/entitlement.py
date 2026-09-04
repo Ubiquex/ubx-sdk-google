@@ -131,8 +131,6 @@ class EntitlementConfig:
     additional_notification_targets: Any = None
     # Different types of approval workflows that can be used to gate privileged access granting.
     approval_workflow: Any = None
-    # Output only. Create time stamp.
-    create_time: Any = None
     # Optional. Who can create grants using this entitlement. This list should contain at most one entry.
     eligible_users: Any = None
     # An `etag` is used for optimistic concurrency control as a way to prevent simultaneous updates to the same entitlement. An `etag` is returned in the response to `GetEntitlement` and the caller should put the `etag` in the request to `UpdateEntitlement` so that their change is applied on the same version. If this field is omitted or if there is a mismatch while updating an entitlement, then the server rejects the request.
@@ -145,10 +143,6 @@ class EntitlementConfig:
     privileged_access: Any = None
     # Defines how a requester must provide a justification when requesting access.
     requester_justification_config: Any = None
-    # Output only. Current state of this entitlement.
-    state: Any = None
-    # Output only. Update time stamp.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class EntitlementAttrs:
@@ -188,7 +182,6 @@ Entitlement = ubx.ResourceBinding(
             kind="object",
             fields=_Entitlement_ApprovalWorkflowFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "eligible_users": ubx.FieldSpec(
             wire_name="eligible_users",
             kind="list",
@@ -207,7 +200,5 @@ Entitlement = ubx.ResourceBinding(
             kind="object",
             fields=_Entitlement_RequesterJustificationConfigFields,
         ),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

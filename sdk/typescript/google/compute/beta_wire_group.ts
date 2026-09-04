@@ -82,53 +82,21 @@ const BetaWireGroup_WirePropertiesFields: FieldMap = {
   faultResponse: "fault_response",
 };
 
-const BetaWireGroup_Wires_EndpointsFields: FieldMap = {
-  interconnect: "interconnect",
-  vlanTag: "vlan_tag",
-};
-
-const BetaWireGroup_WiresFields: FieldMap = {
-  adminEnabled: "admin_enabled",
-  endpoints: {
-    wireName: "endpoints",
-    kind: "list",
-    fields: BetaWireGroup_Wires_EndpointsFields,
-  },
-  label: "label",
-  wireProperties: {
-    wireName: "wire_properties",
-    kind: "object",
-    fields: BetaWireGroup_WirePropertiesFields,
-  },
-};
-
 export interface BetaWireGroupConfig {
   /** Indicates whether the wires in the wire group are enabled. When false, the wires in the wire group are disabled. When true and when there is simultaneously no wire-specific override of `adminEnabled` to false, a given wire is enabled. Defaults to true. */
   adminEnabled?: boolean | Computed<boolean>;
-  /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
-  creationTimestamp?: string | Computed<string>;
   /** An optional description of the wire group. */
   description?: string | Computed<string>;
   /** A map that contains the logical endpoints of the wire group. Specify key-value pairs for the map as follows: - Key: an RFC1035 user-specified label. - Value: an Endpoint object. */
   endpoints?: Record<string, BetaWireGroup_Endpoints> | Computed<Record<string, BetaWireGroup_Endpoints>>;
-  /** Output only. [Output Only] The unique identifier for the resource type. The server generates this identifier. */
-  id?: string | Computed<string>;
-  /** Output only. [Output Only] Type of the resource. Alwayscompute#wireGroups for wire groups. */
-  kind?: string | Computed<string>;
   /** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
   name?: string | Computed<string>;
-  /** Output only. [Output Only] Indicates whether there are wire changes yet to be processed. */
-  reconciling?: boolean | Computed<boolean>;
-  /** Output only. [Output Only] Server-defined URL for the resource. */
-  selfLink?: string | Computed<string>;
   /** Topology details for the wire group. */
   topology?: BetaWireGroup_Topology | Computed<BetaWireGroup_Topology>;
   /** The properties of a wire group. These properties determine how a group of redundant wires are created and managed. */
   wireGroupProperties?: BetaWireGroup_WireGroupProperties | Computed<BetaWireGroup_WireGroupProperties>;
   /** The properties of a wire. */
   wireProperties?: BetaWireGroup_WireProperties | Computed<BetaWireGroup_WireProperties>;
-  /** Output only. The single/redundant wire(s) managed by the wire group. */
-  wires?: BetaWireGroup_Wires[] | Computed<BetaWireGroup_Wires[]>;
 }
 
 export interface BetaWireGroupAttrs {
@@ -164,18 +132,13 @@ export const BetaWireGroup: ResourceBinding<BetaWireGroupConfig, BetaWireGroupAt
   wireType: "google_compute_beta_wire_group",
   fields: {
     adminEnabled: "admin_enabled",
-    creationTimestamp: "creation_timestamp",
     description: "description",
     endpoints: {
       wireName: "endpoints",
       kind: "map",
       fields: BetaWireGroup_EndpointsFields,
     },
-    id: "id",
-    kind: "kind",
     name: "name",
-    reconciling: "reconciling",
-    selfLink: "self_link",
     topology: {
       wireName: "topology",
       kind: "object",
@@ -190,11 +153,6 @@ export const BetaWireGroup: ResourceBinding<BetaWireGroupConfig, BetaWireGroupAt
       wireName: "wire_properties",
       kind: "object",
       fields: BetaWireGroup_WirePropertiesFields,
-    },
-    wires: {
-      wireName: "wires",
-      kind: "list",
-      fields: BetaWireGroup_WiresFields,
     },
   },
 };

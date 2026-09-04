@@ -106,16 +106,10 @@ export interface BetaGlobalNetworkEndpointGroupConfig {
   cloudFunction?: BetaGlobalNetworkEndpointGroup_CloudFunction | Computed<BetaGlobalNetworkEndpointGroup_CloudFunction>;
   /** Configuration for a Cloud Run network endpoint group (NEG). The service must be provided explicitly or in the URL mask. The tag is optional, may be provided explicitly or in the URL mask. Note: Cloud Run service must be in the same project and located in the same region as the Serverless NEG. */
   cloudRun?: BetaGlobalNetworkEndpointGroup_CloudRun | Computed<BetaGlobalNetworkEndpointGroup_CloudRun>;
-  /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
-  creationTimestamp?: string | Computed<string>;
   /** The default port used if the port number is not specified in the network endpoint. Optional. If the network endpoint type is either GCE_VM_IP,SERVERLESS or PRIVATE_SERVICE_CONNECT, this field must not be specified. */
   defaultPort?: number | Computed<number>;
   /** An optional description of this resource. Provide this property when you create the resource. */
   description?: string | Computed<string>;
-  /** Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server. */
-  id?: string | Computed<string>;
-  /** Output only. [Output Only] Type of the resource. Alwayscompute#networkEndpointGroup for network endpoint group. */
-  kind?: string | Computed<string>;
   /** Load balancing specific fields for network endpoint group. */
   loadBalancer?: BetaGlobalNetworkEndpointGroup_LoadBalancer | Computed<BetaGlobalNetworkEndpointGroup_LoadBalancer>;
   /** Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
@@ -128,18 +122,10 @@ export interface BetaGlobalNetworkEndpointGroupConfig {
   pscData?: BetaGlobalNetworkEndpointGroup_PscData | Computed<BetaGlobalNetworkEndpointGroup_PscData>;
   /** The target service url used to set up private service connection to a Google API or a PSC Producer Service Attachment. An example value is: asia-northeast3-cloudkms.googleapis.com. Optional. Only valid when networkEndpointType isPRIVATE_SERVICE_CONNECT. */
   pscTargetService?: string | Computed<string>;
-  /** Output only. [Output Only] The URL of theregion where the network endpoint group is located. */
-  region?: string | Computed<string>;
-  /** Output only. [Output Only] Server-defined URL for the resource. */
-  selfLink?: string | Computed<string>;
   /** Configuration for a serverless network endpoint group (NEG). Theplatform must be provided. Note: The target backend service must be in the same project and located in the same region as the Serverless NEG. */
   serverlessDeployment?: BetaGlobalNetworkEndpointGroup_ServerlessDeployment | Computed<BetaGlobalNetworkEndpointGroup_ServerlessDeployment>;
-  /** Output only. [Output only] Number of network endpoints in the network endpoint group. */
-  size?: number | Computed<number>;
   /** Optional URL of the subnetwork to which all network endpoints in the NEG belong. */
   subnetwork?: string | Computed<string>;
-  /** Output only. [Output Only] The URL of thezone where the network endpoint group is located. */
-  zone?: string | Computed<string>;
 }
 
 export interface BetaGlobalNetworkEndpointGroupAttrs {
@@ -206,11 +192,8 @@ export const BetaGlobalNetworkEndpointGroup: ResourceBinding<BetaGlobalNetworkEn
       kind: "object",
       fields: BetaGlobalNetworkEndpointGroup_CloudRunFields,
     },
-    creationTimestamp: "creation_timestamp",
     defaultPort: "default_port",
     description: "description",
-    id: "id",
-    kind: "kind",
     loadBalancer: {
       wireName: "load_balancer",
       kind: "object",
@@ -225,15 +208,11 @@ export const BetaGlobalNetworkEndpointGroup: ResourceBinding<BetaGlobalNetworkEn
       fields: BetaGlobalNetworkEndpointGroup_PscDataFields,
     },
     pscTargetService: "psc_target_service",
-    region: "region",
-    selfLink: "self_link",
     serverlessDeployment: {
       wireName: "serverless_deployment",
       kind: "object",
       fields: BetaGlobalNetworkEndpointGroup_ServerlessDeploymentFields,
     },
-    size: "size",
     subnetwork: "subnetwork",
-    zone: "zone",
   },
 };

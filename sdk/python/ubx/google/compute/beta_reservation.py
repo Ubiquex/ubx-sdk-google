@@ -340,11 +340,7 @@ class BetaReservationConfig:
     advanced_deployment_control: Any = None
     # This reservation type is specified by total resource amounts (e.g. total count of CPUs) and can account for multiple instance SKUs. In other words, one can create instances of varying shapes against this reservation.
     aggregate_reservation: Any = None
-    # Output only. [Output Only] Full or partial URL to a parent commitment. This field displays for reservations that are tied to a commitment.
-    commitment: Any = None
     confidential_compute_type: Any = None
-    # Output only. [Output Only] Creation timestamp inRFC3339 text format.
-    creation_timestamp: Any = None
     # A Duration represents a fixed-length span of time represented as a count of seconds and fractions of seconds at nanosecond resolution. It is independent of any calendar and concepts like "day" or "month". Range is approximately 10,000 years.
     delete_after_duration: Any = None
     # Absolute time in future when the reservation will be auto-deleted by Compute Engine. Timestamp is represented inRFC3339 text format.
@@ -357,39 +353,25 @@ class BetaReservationConfig:
     early_access_maintenance: Any = None
     # Indicates whether Compute Engine allows unplanned maintenance for your VMs; for example, to fix hardware errors.
     enable_emergent_maintenance: Any = None
-    # Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-    id: Any = None
-    # Output only. [Output Only] Type of the resource. Alwayscompute#reservations for reservations.
-    kind: Any = None
-    # Output only. [Output Only] Full or partial URL to parent commitments. This field displays for reservations that are tied to multiple commitments.
-    linked_commitments: Any = None
     # The name of the resource, provided by the client when initially creating the resource. The resource name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
     name: Any = None
     # Additional reservation params.
     params: Any = None
     # Protection tier for the workload which specifies the workload expectations in the event of infrastructure failures at data center (e.g. power and/or cooling failures).
     protection_tier: Any = None
-    # Output only. [Output only] Indicates the reservation mode of the reservation.
-    reservation_mode: Any = None
     reservation_sharing_policy: Any = None
     # Resource policies to be added to this reservation. The key is defined by user, and the value is resource policy url. This is to define placement policy with reservation.
     resource_policies: Any = None
     # [Output Only] Contains output only fields.
     resource_status: Any = None
-    # Output only. [Output Only] Reserved for future use.
-    satisfies_pzs: Any = None
     # The type of maintenance for the reservation.
     scheduling_type: Any = None
-    # Output only. [Output Only] Server-defined fully-qualified URL for this resource.
-    self_link: Any = None
     # The share setting for reservations and sole tenancy node groups.
     share_settings: Any = None
     # This reservation type allows to pre allocate specific instance configuration.
     specific_reservation: Any = None
     # Indicates whether the reservation can be consumed by VMs with affinity for "any" reservation. If the field is set, then only VMs that target the reservation by name can consume from this reservation.
     specific_reservation_required: Any = None
-    # Output only. [Output Only] The status of the reservation. - CREATING: Reservation resources are being allocated. - READY: Reservation resources have been allocated, and the reservation is ready for use. - DELETING: Reservation deletion is in progress. - UPDATING: Reservation update is in progress.
-    status: Any = None
     # Zone in which the reservation resides. A zone must be provided if the reservation is created within a commitment.
     zone: Any = None
 
@@ -465,9 +447,7 @@ BetaReservation = ubx.ResourceBinding(
             kind="object",
             fields=_BetaReservation_AggregateReservationFields,
         ),
-        "commitment": ubx.FieldSpec(wire_name="commitment"),
         "confidential_compute_type": ubx.FieldSpec(wire_name="confidential_compute_type"),
-        "creation_timestamp": ubx.FieldSpec(wire_name="creation_timestamp"),
         "delete_after_duration": ubx.FieldSpec(
             wire_name="delete_after_duration",
             kind="object",
@@ -478,9 +458,6 @@ BetaReservation = ubx.ResourceBinding(
         "description": ubx.FieldSpec(wire_name="description"),
         "early_access_maintenance": ubx.FieldSpec(wire_name="early_access_maintenance"),
         "enable_emergent_maintenance": ubx.FieldSpec(wire_name="enable_emergent_maintenance"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "kind": ubx.FieldSpec(wire_name="kind"),
-        "linked_commitments": ubx.FieldSpec(wire_name="linked_commitments"),
         "name": ubx.FieldSpec(wire_name="name"),
         "params": ubx.FieldSpec(
             wire_name="params",
@@ -488,7 +465,6 @@ BetaReservation = ubx.ResourceBinding(
             fields=_BetaReservation_ParamsFields,
         ),
         "protection_tier": ubx.FieldSpec(wire_name="protection_tier"),
-        "reservation_mode": ubx.FieldSpec(wire_name="reservation_mode"),
         "reservation_sharing_policy": ubx.FieldSpec(
             wire_name="reservation_sharing_policy",
             kind="object",
@@ -500,9 +476,7 @@ BetaReservation = ubx.ResourceBinding(
             kind="object",
             fields=_BetaReservation_ResourceStatusFields,
         ),
-        "satisfies_pzs": ubx.FieldSpec(wire_name="satisfies_pzs"),
         "scheduling_type": ubx.FieldSpec(wire_name="scheduling_type"),
-        "self_link": ubx.FieldSpec(wire_name="self_link"),
         "share_settings": ubx.FieldSpec(
             wire_name="share_settings",
             kind="object",
@@ -514,7 +488,6 @@ BetaReservation = ubx.ResourceBinding(
             fields=_BetaReservation_SpecificReservationFields,
         ),
         "specific_reservation_required": ubx.FieldSpec(wire_name="specific_reservation_required"),
-        "status": ubx.FieldSpec(wire_name="status"),
         "zone": ubx.FieldSpec(wire_name="zone"),
     },
 )

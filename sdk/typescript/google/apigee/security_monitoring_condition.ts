@@ -27,8 +27,6 @@ const SecurityMonitoringCondition_IncludeFields: FieldMap = {
 export interface SecurityMonitoringConditionConfig {
   /** Optional. The API Hub gateway monitored by the security monitoring condition. This should only be set if risk_assessment_type is API_HUB. Format: `projects/{project}/locations/{location}/plugins/{plugin}/instances/{instance}` */
   apiHubGateway?: string | Computed<string>;
-  /** Output only. The time of the security monitoring condition creation. */
-  createTime?: string | Computed<string>;
   /** Message for the array of resources. For Apigee, the proxies are resources. */
   include?: SecurityMonitoringCondition_Include | Computed<SecurityMonitoringCondition_Include>;
   /** Message for include_all_resources option. */
@@ -41,12 +39,6 @@ export interface SecurityMonitoringConditionConfig {
   riskAssessmentType?: string | Computed<string>;
   /** Optional. Scope of the security monitoring condition. When RiskAssessmentType is APIGEE, the scope should be set to the environment of the resources. When RiskAssessmentType is API_HUB, the scope should not be set. */
   scope?: string | Computed<string>;
-  /** Output only. Total number of deployed resources within scope. */
-  totalDeployedResources?: number | Computed<number>;
-  /** Output only. Total number of monitored resources within this condition. */
-  totalMonitoredResources?: number | Computed<number>;
-  /** Output only. The time of the security monitoring condition update. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface SecurityMonitoringConditionAttrs {
@@ -78,7 +70,6 @@ export const SecurityMonitoringCondition: ResourceBinding<SecurityMonitoringCond
   wireType: "google_apigee_security_monitoring_condition",
   fields: {
     apiHubGateway: "api_hub_gateway",
-    createTime: "create_time",
     include: {
       wireName: "include",
       kind: "object",
@@ -89,8 +80,5 @@ export const SecurityMonitoringCondition: ResourceBinding<SecurityMonitoringCond
     profile: "profile",
     riskAssessmentType: "risk_assessment_type",
     scope: "scope",
-    totalDeployedResources: "total_deployed_resources",
-    totalMonitoredResources: "total_monitored_resources",
-    updateTime: "update_time",
   },
 };

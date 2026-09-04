@@ -162,16 +162,6 @@ const V1betaBuild_ErrorFields: FieldMap = {
   message: "message",
 };
 
-const V1betaBuild_ErrorsFields: FieldMap = {
-  cloudResource: "cloud_resource",
-  error: {
-    wireName: "error",
-    kind: "object",
-    fields: V1betaBuild_ErrorFields,
-  },
-  errorSource: "error_source",
-};
-
 const V1betaBuild_Source_Archive_AuthorFields: FieldMap = {
   displayName: "display_name",
   email: "email",
@@ -253,42 +243,18 @@ const V1betaBuild_SourceFields: FieldMap = {
 export interface V1betaBuildConfig {
   /** Optional. Unstructured key value map that may be set by external tools to store and arbitrary metadata. They are not queryable and should be preserved when modifying objects. */
   annotations?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. The location of the [Cloud Build logs](https://cloud.google.com/build/docs/view-build-results) for the build process. */
-  buildLogsUri?: string | Computed<string>;
   /** Additional configuration of the backend for this build. */
   config?: V1betaBuild_Config | Computed<V1betaBuild_Config>;
-  /** Output only. Time at which the build was created. */
-  createTime?: string | Computed<string>;
-  /** Output only. Time at which the build was deleted. */
-  deleteTime?: string | Computed<string>;
   /** Optional. Human-readable name. 63 character limit. */
   displayName?: string | Computed<string>;
-  /** Output only. The environment name of the backend when this build was created. */
-  environment?: string | Computed<string>;
   /** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
   error?: V1betaBuild_Error | Computed<V1betaBuild_Error>;
-  /** Output only. Deprecated: Use `errors` instead. The source of the error for the build, if in a `FAILED` state. */
-  errorSource?: string | Computed<string>;
-  /** Output only. A list of all errors that occurred during an App Hosting build. */
-  errors?: V1betaBuild_Errors[] | Computed<V1betaBuild_Errors[]>;
-  /** Output only. Server-computed checksum based on other values; may be sent on update or delete to ensure operation is done on expected resource. */
-  etag?: string | Computed<string>;
-  /** Output only. The Artifact Registry [container image](https://cloud.google.com/artifact-registry/docs/reference/rest/v1/projects.locations.repositories.dockerImages) URI, used by the Cloud Run [`revision`](https://cloud.google.com/run/docs/reference/rest/v2/projects.locations.services.revisions) for this build. */
-  image?: string | Computed<string>;
   /** Optional. Unstructured key value map that can be used to organize and categorize objects. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Identifier. The resource name of the build. Format: `projects/{project}/locations/{locationId}/backends/{backendId}/builds/{buildId}`. */
   name?: string | Computed<string>;
-  /** Output only. A field that, if true, indicates that the build has an ongoing LRO. */
-  reconciling?: boolean | Computed<boolean>;
   /** The source for the build. */
   source?: V1betaBuild_Source | Computed<V1betaBuild_Source>;
-  /** Output only. The state of the build. */
-  state?: string | Computed<string>;
-  /** Output only. System-assigned, unique identifier. */
-  uid?: string | Computed<string>;
-  /** Output only. Time at which the build was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1betaBuildAttrs {
@@ -336,39 +302,23 @@ export const V1betaBuild: ResourceBinding<V1betaBuildConfig, V1betaBuildAttrs> =
   wireType: "google_firebaseapphosting_v1beta_build",
   fields: {
     annotations: "annotations",
-    buildLogsUri: "build_logs_uri",
     config: {
       wireName: "config",
       kind: "object",
       fields: V1betaBuild_ConfigFields,
     },
-    createTime: "create_time",
-    deleteTime: "delete_time",
     displayName: "display_name",
-    environment: "environment",
     error: {
       wireName: "error",
       kind: "object",
       fields: V1betaBuild_ErrorFields,
     },
-    errorSource: "error_source",
-    errors: {
-      wireName: "errors",
-      kind: "list",
-      fields: V1betaBuild_ErrorsFields,
-    },
-    etag: "etag",
-    image: "image",
     labels: "labels",
     name: "name",
-    reconciling: "reconciling",
     source: {
       wireName: "source",
       kind: "object",
       fields: V1betaBuild_SourceFields,
     },
-    state: "state",
-    uid: "uid",
-    updateTime: "update_time",
   },
 };

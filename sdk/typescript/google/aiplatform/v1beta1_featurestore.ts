@@ -42,28 +42,16 @@ const V1beta1Featurestore_OnlineServingConfigFields: FieldMap = {
 };
 
 export interface V1beta1FeaturestoreConfig {
-  /** Output only. Timestamp when this Featurestore was created. */
-  createTime?: string | Computed<string>;
   /** Represents a customer-managed encryption key specification that can be applied to a Vertex AI resource. */
   encryptionSpec?: V1beta1Featurestore_EncryptionSpec | Computed<V1beta1Featurestore_EncryptionSpec>;
   /** Optional. Used to perform consistent read-modify-write updates. If not set, a blind "overwrite" update happens. */
   etag?: string | Computed<string>;
   /** Optional. The labels with user-defined metadata to organize your Featurestore. Label keys and values can be no longer than 64 characters (Unicode codepoints), can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. See https://goo.gl/xmQnxf for more information on and examples of labels. No more than 64 user labels can be associated with one Featurestore(System labels are excluded)." System reserved label keys are prefixed with "aiplatform.googleapis.com/" and are immutable. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. Name of the Featurestore. Format: `projects/{project}/locations/{location}/featurestores/{featurestore}` */
-  name?: string | Computed<string>;
   /** OnlineServingConfig specifies the details for provisioning online serving resources. */
   onlineServingConfig?: V1beta1Featurestore_OnlineServingConfig | Computed<V1beta1Featurestore_OnlineServingConfig>;
   /** Optional. TTL in days for feature values that will be stored in online serving storage. The Feature Store online storage periodically removes obsolete feature values older than `online_storage_ttl_days` since the feature generation time. Note that `online_storage_ttl_days` should be less than or equal to `offline_storage_ttl_days` for each EntityType under a featurestore. If not set, default to 4000 days */
   onlineStorageTtlDays?: number | Computed<number>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzi?: boolean | Computed<boolean>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzs?: boolean | Computed<boolean>;
-  /** Output only. State of the featurestore. */
-  state?: string | Computed<string>;
-  /** Output only. Timestamp when this Featurestore was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1beta1FeaturestoreAttrs {
@@ -94,7 +82,6 @@ export interface V1beta1FeaturestoreAttrs {
 export const V1beta1Featurestore: ResourceBinding<V1beta1FeaturestoreConfig, V1beta1FeaturestoreAttrs> = {
   wireType: "google_aiplatform_v1beta1_featurestore",
   fields: {
-    createTime: "create_time",
     encryptionSpec: {
       wireName: "encryption_spec",
       kind: "object",
@@ -102,16 +89,11 @@ export const V1beta1Featurestore: ResourceBinding<V1beta1FeaturestoreConfig, V1b
     },
     etag: "etag",
     labels: "labels",
-    name: "name",
     onlineServingConfig: {
       wireName: "online_serving_config",
       kind: "object",
       fields: V1beta1Featurestore_OnlineServingConfigFields,
     },
     onlineStorageTtlDays: "online_storage_ttl_days",
-    satisfiesPzi: "satisfies_pzi",
-    satisfiesPzs: "satisfies_pzs",
-    state: "state",
-    updateTime: "update_time",
   },
 };

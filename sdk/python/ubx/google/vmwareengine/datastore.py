@@ -58,24 +58,12 @@ _Datastore_NfsDatastoreFields = {
 
 @dataclasses.dataclass
 class DatastoreConfig:
-    # Output only. Clusters to which the datastore is attached.
-    clusters: Any = None
-    # Output only. Creation time of this resource.
-    create_time: Any = None
     # Optional. User-provided description for this datastore
     description: Any = None
     # Optional. Checksum that may be sent on update and delete requests to ensure that the user-provided value is up to date before the server processes a request. The server computes checksums based on the value of other fields in the request.
     etag: Any = None
-    # Output only. Identifier. The resource name of this datastore. Resource names are schemeless URIs that follow the conventions in https://cloud.google.com/apis/design/resource_names. For example: `projects/my-project/locations/us-central1/datastores/datastore`
-    name: Any = None
     # The NFS datastore configuration.
     nfs_datastore: Any = None
-    # Output only. The state of the Datastore.
-    state: Any = None
-    # Output only. System-generated unique identifier for the resource.
-    uid: Any = None
-    # Output only. Last update time of this resource.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class DatastoreAttrs:
@@ -101,18 +89,12 @@ class DatastoreAttrs:
 Datastore = ubx.ResourceBinding(
     wire_type="google_vmwareengine_datastore",
     fields={
-        "clusters": ubx.FieldSpec(wire_name="clusters"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "etag": ubx.FieldSpec(wire_name="etag"),
-        "name": ubx.FieldSpec(wire_name="name"),
         "nfs_datastore": ubx.FieldSpec(
             wire_name="nfs_datastore",
             kind="object",
             fields=_Datastore_NfsDatastoreFields,
         ),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "uid": ubx.FieldSpec(wire_name="uid"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

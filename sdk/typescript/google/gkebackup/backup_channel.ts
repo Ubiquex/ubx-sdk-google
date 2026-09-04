@@ -2,24 +2,14 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface BackupChannelConfig {
-  /** Output only. The timestamp when this BackupChannel resource was created. */
-  createTime?: string | Computed<string>;
   /** Optional. User specified descriptive string for this BackupChannel. */
   description?: string | Computed<string>;
   /** Required. Immutable. The project where Backups are allowed to be stored. The format is `projects/{projectId}` or `projects/{projectNumber}`. */
   destinationProject?: string | Computed<string>;
-  /** Output only. The project_id where Backups are allowed to be stored. Example Project ID: "my-project-id". This will be an OUTPUT_ONLY field to return the project_id of the destination project. */
-  destinationProjectId?: string | Computed<string>;
-  /** Output only. `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a BackupChannel from overwriting each other. It is strongly suggested that systems make use of the 'etag' in the read-modify-write cycle to perform BackupChannel updates in order to avoid race conditions: An `etag` is returned in the response to `GetBackupChannel`, and systems are expected to put that etag in the request to `UpdateBackupChannel` or `DeleteBackupChannel` to ensure that their change will be applied to the same version of the resource. */
-  etag?: string | Computed<string>;
   /** Optional. A set of custom labels supplied by user. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Identifier. The fully qualified name of the BackupChannel. `projects/* /locations/* /backupChannels/*` */
   name?: string | Computed<string>;
-  /** Output only. Server generated global unique identifier of [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier) format. */
-  uid?: string | Computed<string>;
-  /** Output only. The timestamp when this BackupChannel resource was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface BackupChannelAttrs {
@@ -46,14 +36,9 @@ export interface BackupChannelAttrs {
 export const BackupChannel: ResourceBinding<BackupChannelConfig, BackupChannelAttrs> = {
   wireType: "google_gkebackup_backup_channel",
   fields: {
-    createTime: "create_time",
     description: "description",
     destinationProject: "destination_project",
-    destinationProjectId: "destination_project_id",
-    etag: "etag",
     labels: "labels",
     name: "name",
-    uid: "uid",
-    updateTime: "update_time",
   },
 };

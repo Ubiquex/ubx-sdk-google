@@ -5,11 +5,11 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type QaQuestion_AnswerChoices struct {
 	BoolValue any
-	Key any
-	NaValue any
-	NumValue any
-	Score any
-	StrValue any
+	Key       any
+	NaValue   any
+	NumValue  any
+	Score     any
+	StrValue  any
 }
 
 type QaQuestion_Metrics struct {
@@ -42,39 +42,39 @@ type QaQuestion_TuningMetadata struct {
 }
 
 var QaQuestion_AnswerChoicesFields = ubx.FieldMap{
-		"BoolValue": ubx.FieldSpec{WireName: "bool_value"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"NaValue": ubx.FieldSpec{WireName: "na_value"},
-		"NumValue": ubx.FieldSpec{WireName: "num_value"},
-		"Score": ubx.FieldSpec{WireName: "score"},
-		"StrValue": ubx.FieldSpec{WireName: "str_value"},
-	}
+	"BoolValue": ubx.FieldSpec{WireName: "bool_value"},
+	"Key":       ubx.FieldSpec{WireName: "key"},
+	"NaValue":   ubx.FieldSpec{WireName: "na_value"},
+	"NumValue":  ubx.FieldSpec{WireName: "num_value"},
+	"Score":     ubx.FieldSpec{WireName: "score"},
+	"StrValue":  ubx.FieldSpec{WireName: "str_value"},
+}
 
 var QaQuestion_MetricsFields = ubx.FieldMap{
-		"Accuracy": ubx.FieldSpec{WireName: "accuracy"},
-	}
+	"Accuracy": ubx.FieldSpec{WireName: "accuracy"},
+}
 
 var QaQuestion_PredefinedQuestionConfigFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var QaQuestion_QaQuestionDataOptions_ConversationDataOptionsFields = ubx.FieldMap{
-		"IncludeDialogflowInteractionData": ubx.FieldSpec{WireName: "include_dialogflow_interaction_data"},
-	}
+	"IncludeDialogflowInteractionData": ubx.FieldSpec{WireName: "include_dialogflow_interaction_data"},
+}
 
 var QaQuestion_QaQuestionDataOptionsFields = ubx.FieldMap{
-		"ConversationDataOptions": ubx.FieldSpec{
-			WireName: "conversation_data_options",
-			Kind: "object",
-			Fields: QaQuestion_QaQuestionDataOptions_ConversationDataOptionsFields,
-		},
-	}
+	"ConversationDataOptions": ubx.FieldSpec{
+		WireName: "conversation_data_options",
+		Kind:     "object",
+		Fields:   QaQuestion_QaQuestionDataOptions_ConversationDataOptionsFields,
+	},
+}
 
 var QaQuestion_TuningMetadataFields = ubx.FieldMap{
-		"DatasetValidationWarnings": ubx.FieldSpec{WireName: "dataset_validation_warnings"},
-		"TotalValidLabelCount": ubx.FieldSpec{WireName: "total_valid_label_count"},
-		"TuningError": ubx.FieldSpec{WireName: "tuning_error"},
-	}
+	"DatasetValidationWarnings": ubx.FieldSpec{WireName: "dataset_validation_warnings"},
+	"TotalValidLabelCount":      ubx.FieldSpec{WireName: "total_valid_label_count"},
+	"TuningError":               ubx.FieldSpec{WireName: "tuning_error"},
+}
 
 type QaQuestionConfig struct {
 	// Short, descriptive string, used in the UI where it's not practical to display the full question body. E.g., "Greeting".
@@ -83,8 +83,6 @@ type QaQuestionConfig struct {
 	AnswerChoices any
 	// Instructions describing how to determine the answer.
 	AnswerInstructions any
-	// Output only. The time at which this question was created.
-	CreateTime any
 	// A wrapper representing metrics calculated against a test-set on a LLM that was fine tuned for this question.
 	Metrics any
 	// Identifier. The resource name of the question. Format: projects/{project}/locations/{location}/qaScorecards/{qa_scorecard}/revisions/{revision}/qaQuestions/{qa_question}
@@ -103,8 +101,6 @@ type QaQuestionConfig struct {
 	Tags any
 	// Metadata about the tuning operation for the question. Will only be set if a scorecard containing this question has been tuned.
 	TuningMetadata any
-	// Output only. The most recent time at which the question was updated.
-	UpdateTime any
 }
 
 type QaQuestionAttrs struct {
@@ -144,36 +140,34 @@ var QaQuestion = ubx.ResourceBinding{
 		"Abbreviation": ubx.FieldSpec{WireName: "abbreviation"},
 		"AnswerChoices": ubx.FieldSpec{
 			WireName: "answer_choices",
-			Kind: "list",
-			Fields: QaQuestion_AnswerChoicesFields,
+			Kind:     "list",
+			Fields:   QaQuestion_AnswerChoicesFields,
 		},
 		"AnswerInstructions": ubx.FieldSpec{WireName: "answer_instructions"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Metrics": ubx.FieldSpec{
 			WireName: "metrics",
-			Kind: "object",
-			Fields: QaQuestion_MetricsFields,
+			Kind:     "object",
+			Fields:   QaQuestion_MetricsFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":  ubx.FieldSpec{WireName: "name"},
 		"Order": ubx.FieldSpec{WireName: "order"},
 		"PredefinedQuestionConfig": ubx.FieldSpec{
 			WireName: "predefined_question_config",
-			Kind: "object",
-			Fields: QaQuestion_PredefinedQuestionConfigFields,
+			Kind:     "object",
+			Fields:   QaQuestion_PredefinedQuestionConfigFields,
 		},
 		"QaQuestionDataOptions": ubx.FieldSpec{
 			WireName: "qa_question_data_options",
-			Kind: "object",
-			Fields: QaQuestion_QaQuestionDataOptionsFields,
+			Kind:     "object",
+			Fields:   QaQuestion_QaQuestionDataOptionsFields,
 		},
 		"QuestionBody": ubx.FieldSpec{WireName: "question_body"},
 		"QuestionType": ubx.FieldSpec{WireName: "question_type"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
+		"Tags":         ubx.FieldSpec{WireName: "tags"},
 		"TuningMetadata": ubx.FieldSpec{
 			WireName: "tuning_metadata",
-			Kind: "object",
-			Fields: QaQuestion_TuningMetadataFields,
+			Kind:     "object",
+			Fields:   QaQuestion_TuningMetadataFields,
 		},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

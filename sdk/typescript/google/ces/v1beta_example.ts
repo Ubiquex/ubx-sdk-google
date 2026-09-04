@@ -134,8 +134,6 @@ const V1betaExample_MessagesFields: FieldMap = {
 };
 
 export interface V1betaExampleConfig {
-  /** Output only. Timestamp when the example was created. */
-  createTime?: string | Computed<string>;
   /** Optional. Human-readable description of the example. */
   description?: string | Computed<string>;
   /** Required. Display name of the example. */
@@ -144,14 +142,10 @@ export interface V1betaExampleConfig {
   entryAgent?: string | Computed<string>;
   /** Etag used to ensure the object hasn't changed during a read-modify-write operation. If the etag is empty, the update will overwrite any concurrent changes. */
   etag?: string | Computed<string>;
-  /** Output only. The example may become invalid if referencing resources are deleted. Invalid examples will not be used as few-shot examples. */
-  invalid?: boolean | Computed<boolean>;
   /** Optional. The collection of messages that make up the conversation. */
   messages?: V1betaExample_Messages[] | Computed<V1betaExample_Messages[]>;
   /** Identifier. The unique identifier of the example. Format: `projects/{project}/locations/{location}/apps/{app}/examples/{example}` */
   name?: string | Computed<string>;
-  /** Output only. Timestamp when the example was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1betaExampleAttrs {
@@ -178,18 +172,15 @@ export interface V1betaExampleAttrs {
 export const V1betaExample: ResourceBinding<V1betaExampleConfig, V1betaExampleAttrs> = {
   wireType: "google_ces_v1beta_example",
   fields: {
-    createTime: "create_time",
     description: "description",
     displayName: "display_name",
     entryAgent: "entry_agent",
     etag: "etag",
-    invalid: "invalid",
     messages: {
       wireName: "messages",
       kind: "list",
       fields: V1betaExample_MessagesFields,
     },
     name: "name",
-    updateTime: "update_time",
   },
 };

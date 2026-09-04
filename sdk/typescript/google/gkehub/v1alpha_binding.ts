@@ -11,10 +11,6 @@ const V1alphaBinding_StateFields: FieldMap = {
 };
 
 export interface V1alphaBindingConfig {
-  /** Output only. When the membership binding was created. */
-  createTime?: string | Computed<string>;
-  /** Output only. When the membership binding was deleted. */
-  deleteTime?: string | Computed<string>;
   /** Optional. Labels for this MembershipBinding. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** The resource name for the membershipbinding itself `projects/{project}/locations/{location}/memberships/{membership}/bindings/{membershipbinding}` */
@@ -23,10 +19,6 @@ export interface V1alphaBindingConfig {
   scope?: string | Computed<string>;
   /** MembershipBindingLifecycleState describes the state of a Binding resource. */
   state?: V1alphaBinding_State | Computed<V1alphaBinding_State>;
-  /** Output only. Google-generated UUID for this resource. This is unique across all membershipbinding resources. If a membershipbinding resource is deleted and another resource with the same name is created, it gets a different uid. */
-  uid?: string | Computed<string>;
-  /** Output only. When the membership binding was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1alphaBindingAttrs {
@@ -51,8 +43,6 @@ export interface V1alphaBindingAttrs {
 export const V1alphaBinding: ResourceBinding<V1alphaBindingConfig, V1alphaBindingAttrs> = {
   wireType: "google_gkehub_v1alpha_binding",
   fields: {
-    createTime: "create_time",
-    deleteTime: "delete_time",
     labels: "labels",
     name: "name",
     scope: "scope",
@@ -61,7 +51,5 @@ export const V1alphaBinding: ResourceBinding<V1alphaBindingConfig, V1alphaBindin
       kind: "object",
       fields: V1alphaBinding_StateFields,
     },
-    uid: "uid",
-    updateTime: "update_time",
   },
 };

@@ -452,20 +452,14 @@ class ClusterConfig:
     backupdr_info: Any = None
     # The source CloudSQL backup resource.
     cloudsql_backup_run_source: Any = None
-    # Output only. The type of the cluster. This is an output-only field and it's populated at the Cluster creation time or the Cluster promotion time. The cluster type is determined by which RPC was used to create the cluster (i.e. `CreateCluster` vs. `CreateSecondaryCluster`
-    cluster_type: Any = None
     # ContinuousBackupConfig describes the continuous backups recovery configurations of a cluster.
     continuous_backup_config: Any = None
     # ContinuousBackupInfo describes the continuous backup properties of a cluster.
     continuous_backup_info: Any = None
-    # Output only. Create time stamp
-    create_time: Any = None
     # Optional. The database engine major version. This is an optional field and it is populated at the Cluster creation time. If a database version is not supplied at cluster creation time, then a default database version will be used.
     database_version: Any = None
     # Configuration for Dataplex integration.
     dataplex_config: Any = None
-    # Output only. Delete time stamp
-    delete_time: Any = None
     # User-settable and human-readable display name for the Cluster.
     display_name: Any = None
     # EncryptionConfig describes the encryption config of a cluster or a backup that is encrypted with a CMEK (customer-managed encryption key).
@@ -486,8 +480,6 @@ class ClusterConfig:
     maintenance_version_selection_policy: Any = None
     # Subset of the source instance configuration that is available when reading the cluster resource.
     migration_source: Any = None
-    # Output only. The name of the cluster resource with the format: * projects/{project}/locations/{region}/clusters/{cluster_id} where the cluster ID segment should satisfy the regex expression `[a-z0-9-]+`. For more details see https://google.aip.dev/122. The prefix of the cluster resource name is the name of the parent resource: * projects/{project}/locations/{region}
-    name: Any = None
     # Required. The resource link for the VPC network in which cluster resources are created and from which they are accessible via Private IP. The network must belong to the same project as the cluster. It is specified in the form: `projects/{project}/global/networks/{network_id}`. This is required to create a cluster. Deprecated, use network_config.network instead.
     network: Any = None
     # Metadata related to network configuration.
@@ -496,26 +488,16 @@ class ClusterConfig:
     primary_config: Any = None
     # PscConfig contains PSC related configuration at a cluster level.
     psc_config: Any = None
-    # Output only. Reconciling (https://google.aip.dev/128#reconciliation). Set to true if the current state of Cluster does not match the user's intended state, and the service is actively updating the resource to reconcile them. This can happen due to user-triggered updates or system actions like failover or maintenance.
-    reconciling: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzs: Any = None
     # Configuration information for the secondary cluster. This should be set if and only if the cluster is of type SECONDARY.
     secondary_config: Any = None
     # SSL configuration.
     ssl_config: Any = None
-    # Output only. The current serving state of the cluster.
-    state: Any = None
     # Optional. Subscription type of the cluster.
     subscription_type: Any = None
     # Optional. Input only. Immutable. Tag keys/values directly bound to this resource. For example: ``` "123/environment": "production", "123/costCenter": "marketing" ```
     tags: Any = None
     # Contains information and all metadata related to TRIAL clusters.
     trial_metadata: Any = None
-    # Output only. The system-generated UID of the resource. The UID is assigned when the resource is created, and it is retained until it is deleted.
-    uid: Any = None
-    # Output only. Update time stamp
-    update_time: Any = None
 
 @dataclasses.dataclass
 class ClusterAttrs:
@@ -625,7 +607,6 @@ Cluster = ubx.ResourceBinding(
             kind="object",
             fields=_Cluster_CloudsqlBackupRunSourceFields,
         ),
-        "cluster_type": ubx.FieldSpec(wire_name="cluster_type"),
         "continuous_backup_config": ubx.FieldSpec(
             wire_name="continuous_backup_config",
             kind="object",
@@ -636,14 +617,12 @@ Cluster = ubx.ResourceBinding(
             kind="object",
             fields=_Cluster_ContinuousBackupInfoFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "database_version": ubx.FieldSpec(wire_name="database_version"),
         "dataplex_config": ubx.FieldSpec(
             wire_name="dataplex_config",
             kind="object",
             fields=_Cluster_DataplexConfigFields,
         ),
-        "delete_time": ubx.FieldSpec(wire_name="delete_time"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "encryption_config": ubx.FieldSpec(
             wire_name="encryption_config",
@@ -678,7 +657,6 @@ Cluster = ubx.ResourceBinding(
             kind="object",
             fields=_Cluster_MigrationSourceFields,
         ),
-        "name": ubx.FieldSpec(wire_name="name"),
         "network": ubx.FieldSpec(wire_name="network"),
         "network_config": ubx.FieldSpec(
             wire_name="network_config",
@@ -695,8 +673,6 @@ Cluster = ubx.ResourceBinding(
             kind="object",
             fields=_Cluster_PscConfigFields,
         ),
-        "reconciling": ubx.FieldSpec(wire_name="reconciling"),
-        "satisfies_pzs": ubx.FieldSpec(wire_name="satisfies_pzs"),
         "secondary_config": ubx.FieldSpec(
             wire_name="secondary_config",
             kind="object",
@@ -707,7 +683,6 @@ Cluster = ubx.ResourceBinding(
             kind="object",
             fields=_Cluster_SslConfigFields,
         ),
-        "state": ubx.FieldSpec(wire_name="state"),
         "subscription_type": ubx.FieldSpec(wire_name="subscription_type"),
         "tags": ubx.FieldSpec(wire_name="tags"),
         "trial_metadata": ubx.FieldSpec(
@@ -715,7 +690,5 @@ Cluster = ubx.ResourceBinding(
             kind="object",
             fields=_Cluster_TrialMetadataFields,
         ),
-        "uid": ubx.FieldSpec(wire_name="uid"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

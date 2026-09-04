@@ -8,8 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class LinkConfig:
-    # Output only. Create timestamp.
-    create_time: Any = None
     # Optional. Description of the link.
     description: Any = None
     # Optional. A user friendly display name.
@@ -31,7 +29,6 @@ class LinkAttrs:
 Link = ubx.ResourceBinding(
     wire_type="google_observability_link",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "name": ubx.FieldSpec(wire_name="name"),

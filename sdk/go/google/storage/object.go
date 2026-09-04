@@ -5,29 +5,29 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Object_Acl_ProjectTeam struct {
 	ProjectNumber any
-	Team any
+	Team          any
 }
 
 type Object_Acl struct {
-	Bucket any
-	Domain any
-	Email any
-	Entity any
-	EntityId any
-	Etag any
-	Generation any
-	Id any
-	Kind any
-	Object any
+	Bucket      any
+	Domain      any
+	Email       any
+	Entity      any
+	EntityId    any
+	Etag        any
+	Generation  any
+	Id          any
+	Kind        any
+	Object      any
 	ProjectTeam any
-	Role any
-	SelfLink any
+	Role        any
+	SelfLink    any
 }
 
 type Object_Contexts_Custom struct {
 	CreateTime any
 	UpdateTime any
-	Value any
+	Value      any
 }
 
 type Object_Contexts struct {
@@ -57,58 +57,58 @@ type Object_Retention struct {
 }
 
 var Object_Acl_ProjectTeamFields = ubx.FieldMap{
-		"ProjectNumber": ubx.FieldSpec{WireName: "project_number"},
-		"Team": ubx.FieldSpec{WireName: "team"},
-	}
+	"ProjectNumber": ubx.FieldSpec{WireName: "project_number"},
+	"Team":          ubx.FieldSpec{WireName: "team"},
+}
 
 var Object_AclFields = ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"Domain": ubx.FieldSpec{WireName: "domain"},
-		"Email": ubx.FieldSpec{WireName: "email"},
-		"Entity": ubx.FieldSpec{WireName: "entity"},
-		"EntityId": ubx.FieldSpec{WireName: "entity_id"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Generation": ubx.FieldSpec{WireName: "generation"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Object": ubx.FieldSpec{WireName: "object"},
-		"ProjectTeam": ubx.FieldSpec{
-			WireName: "project_team",
-			Kind: "object",
-			Fields: Object_Acl_ProjectTeamFields,
-		},
-		"Role": ubx.FieldSpec{WireName: "role"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-	}
+	"Bucket":     ubx.FieldSpec{WireName: "bucket"},
+	"Domain":     ubx.FieldSpec{WireName: "domain"},
+	"Email":      ubx.FieldSpec{WireName: "email"},
+	"Entity":     ubx.FieldSpec{WireName: "entity"},
+	"EntityId":   ubx.FieldSpec{WireName: "entity_id"},
+	"Etag":       ubx.FieldSpec{WireName: "etag"},
+	"Generation": ubx.FieldSpec{WireName: "generation"},
+	"Id":         ubx.FieldSpec{WireName: "id"},
+	"Kind":       ubx.FieldSpec{WireName: "kind"},
+	"Object":     ubx.FieldSpec{WireName: "object"},
+	"ProjectTeam": ubx.FieldSpec{
+		WireName: "project_team",
+		Kind:     "object",
+		Fields:   Object_Acl_ProjectTeamFields,
+	},
+	"Role":     ubx.FieldSpec{WireName: "role"},
+	"SelfLink": ubx.FieldSpec{WireName: "self_link"},
+}
 
 var Object_Contexts_CustomFields = ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"CreateTime": ubx.FieldSpec{WireName: "create_time"},
+	"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+	"Value":      ubx.FieldSpec{WireName: "value"},
+}
 
 var Object_ContextsFields = ubx.FieldMap{
-		"Custom": ubx.FieldSpec{
-			WireName: "custom",
-			Kind: "map",
-			Fields: Object_Contexts_CustomFields,
-		},
-	}
+	"Custom": ubx.FieldSpec{
+		WireName: "custom",
+		Kind:     "map",
+		Fields:   Object_Contexts_CustomFields,
+	},
+}
 
 var Object_CustomerEncryptionFields = ubx.FieldMap{
-		"EncryptionAlgorithm": ubx.FieldSpec{WireName: "encryption_algorithm"},
-		"KeySha256": ubx.FieldSpec{WireName: "key_sha256"},
-	}
+	"EncryptionAlgorithm": ubx.FieldSpec{WireName: "encryption_algorithm"},
+	"KeySha256":           ubx.FieldSpec{WireName: "key_sha256"},
+}
 
 var Object_OwnerFields = ubx.FieldMap{
-		"Entity": ubx.FieldSpec{WireName: "entity"},
-		"EntityId": ubx.FieldSpec{WireName: "entity_id"},
-	}
+	"Entity":   ubx.FieldSpec{WireName: "entity"},
+	"EntityId": ubx.FieldSpec{WireName: "entity_id"},
+}
 
 var Object_RetentionFields = ubx.FieldMap{
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"RetainUntilTime": ubx.FieldSpec{WireName: "retain_until_time"},
-	}
+	"Mode":            ubx.FieldSpec{WireName: "mode"},
+	"RetainUntilTime": ubx.FieldSpec{WireName: "retain_until_time"},
+}
 
 type ObjectConfig struct {
 	// Access controls on the object.
@@ -273,61 +273,61 @@ var Object = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Acl": ubx.FieldSpec{
 			WireName: "acl",
-			Kind: "list",
-			Fields: Object_AclFields,
+			Kind:     "list",
+			Fields:   Object_AclFields,
 		},
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"CacheControl": ubx.FieldSpec{WireName: "cache_control"},
-		"ComponentCount": ubx.FieldSpec{WireName: "component_count"},
+		"Bucket":             ubx.FieldSpec{WireName: "bucket"},
+		"CacheControl":       ubx.FieldSpec{WireName: "cache_control"},
+		"ComponentCount":     ubx.FieldSpec{WireName: "component_count"},
 		"ContentDisposition": ubx.FieldSpec{WireName: "content_disposition"},
-		"ContentEncoding": ubx.FieldSpec{WireName: "content_encoding"},
-		"ContentLanguage": ubx.FieldSpec{WireName: "content_language"},
-		"ContentType": ubx.FieldSpec{WireName: "content_type"},
+		"ContentEncoding":    ubx.FieldSpec{WireName: "content_encoding"},
+		"ContentLanguage":    ubx.FieldSpec{WireName: "content_language"},
+		"ContentType":        ubx.FieldSpec{WireName: "content_type"},
 		"Contexts": ubx.FieldSpec{
 			WireName: "contexts",
-			Kind: "object",
-			Fields: Object_ContextsFields,
+			Kind:     "object",
+			Fields:   Object_ContextsFields,
 		},
-		"Crc32c": ubx.FieldSpec{WireName: "crc32c"},
+		"Crc32c":     ubx.FieldSpec{WireName: "crc32c"},
 		"CustomTime": ubx.FieldSpec{WireName: "custom_time"},
 		"CustomerEncryption": ubx.FieldSpec{
 			WireName: "customer_encryption",
-			Kind: "object",
-			Fields: Object_CustomerEncryptionFields,
+			Kind:     "object",
+			Fields:   Object_CustomerEncryptionFields,
 		},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
+		"Etag":           ubx.FieldSpec{WireName: "etag"},
 		"EventBasedHold": ubx.FieldSpec{WireName: "event_based_hold"},
-		"Generation": ubx.FieldSpec{WireName: "generation"},
+		"Generation":     ubx.FieldSpec{WireName: "generation"},
 		"HardDeleteTime": ubx.FieldSpec{WireName: "hard_delete_time"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-		"Md5Hash": ubx.FieldSpec{WireName: "md5_hash"},
-		"MediaLink": ubx.FieldSpec{WireName: "media_link"},
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
+		"Id":             ubx.FieldSpec{WireName: "id"},
+		"Kind":           ubx.FieldSpec{WireName: "kind"},
+		"KmsKeyName":     ubx.FieldSpec{WireName: "kms_key_name"},
+		"Md5Hash":        ubx.FieldSpec{WireName: "md5_hash"},
+		"MediaLink":      ubx.FieldSpec{WireName: "media_link"},
+		"Metadata":       ubx.FieldSpec{WireName: "metadata"},
 		"Metageneration": ubx.FieldSpec{WireName: "metageneration"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":           ubx.FieldSpec{WireName: "name"},
 		"Owner": ubx.FieldSpec{
 			WireName: "owner",
-			Kind: "object",
-			Fields: Object_OwnerFields,
+			Kind:     "object",
+			Fields:   Object_OwnerFields,
 		},
 		"RestoreToken": ubx.FieldSpec{WireName: "restore_token"},
 		"Retention": ubx.FieldSpec{
 			WireName: "retention",
-			Kind: "object",
-			Fields: Object_RetentionFields,
+			Kind:     "object",
+			Fields:   Object_RetentionFields,
 		},
 		"RetentionExpirationTime": ubx.FieldSpec{WireName: "retention_expiration_time"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"Size": ubx.FieldSpec{WireName: "size"},
-		"SoftDeleteTime": ubx.FieldSpec{WireName: "soft_delete_time"},
-		"StorageClass": ubx.FieldSpec{WireName: "storage_class"},
-		"TemporaryHold": ubx.FieldSpec{WireName: "temporary_hold"},
-		"TimeCreated": ubx.FieldSpec{WireName: "time_created"},
-		"TimeDeleted": ubx.FieldSpec{WireName: "time_deleted"},
-		"TimeFinalized": ubx.FieldSpec{WireName: "time_finalized"},
+		"SelfLink":                ubx.FieldSpec{WireName: "self_link"},
+		"Size":                    ubx.FieldSpec{WireName: "size"},
+		"SoftDeleteTime":          ubx.FieldSpec{WireName: "soft_delete_time"},
+		"StorageClass":            ubx.FieldSpec{WireName: "storage_class"},
+		"TemporaryHold":           ubx.FieldSpec{WireName: "temporary_hold"},
+		"TimeCreated":             ubx.FieldSpec{WireName: "time_created"},
+		"TimeDeleted":             ubx.FieldSpec{WireName: "time_deleted"},
+		"TimeFinalized":           ubx.FieldSpec{WireName: "time_finalized"},
 		"TimeStorageClassUpdated": ubx.FieldSpec{WireName: "time_storage_class_updated"},
-		"Updated": ubx.FieldSpec{WireName: "updated"},
+		"Updated":                 ubx.FieldSpec{WireName: "updated"},
 	},
 }

@@ -4,12 +4,12 @@ package aiplatform
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta1AnalyzedSession_Assessment_DetectorFindings struct {
-	DetectorId any
-	DisplayName any
-	Explanation any
-	Probability any
+	DetectorId      any
+	DisplayName     any
+	Explanation     any
+	Probability     any
 	Recommendations any
-	Severity any
+	Severity        any
 }
 
 type V1beta1AnalyzedSession_Assessment struct {
@@ -18,7 +18,7 @@ type V1beta1AnalyzedSession_Assessment struct {
 }
 
 type V1beta1AnalyzedSession_Severities struct {
-	DetectorIds any
+	DetectorIds   any
 	SessionsCount any
 	SeverityLevel any
 }
@@ -45,7 +45,7 @@ type V1beta1AnalyzedSessionAttrs struct {
 	LatestAnalyzedTime any
 	// Output only. The Google Cloud location (region) of the agent that ran this session (for example, `us-central1`). Empty when the agent is not enrolled or its location is unknown.
 	Location any
-	Name any
+	Name     any
 	// Output only. The session ID.
 	SessionId any
 	// Output only. The state of the session.
@@ -54,7 +54,7 @@ type V1beta1AnalyzedSessionAttrs struct {
 	Severities any
 	// Output only. The user ID.
 	UserId any
-	View any
+	View   any
 }
 
 var V1beta1AnalyzedSession = ubx.DataSourceBinding{

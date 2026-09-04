@@ -23,28 +23,18 @@ _CapacityCommitment_FailureStatusFields = {
 
 @dataclasses.dataclass
 class CapacityCommitmentConfig:
-    # Output only. The end of the current commitment period. It is applicable only for ACTIVE capacity commitments. Note after renewal, commitment_end_time is the time the renewed commitment expires. So itwould be at a time after commitment_start_time + committed period, because we don't change commitment_start_time ,
-    commitment_end_time: Any = None
-    # Output only. The start of the current commitment period. It is applicable only for ACTIVE capacity commitments. Note after the commitment is renewed, commitment_start_time won't be changed. It refers to the start time of the original commitment.
-    commitment_start_time: Any = None
     # Optional. Edition of the capacity commitment.
     edition: Any = None
     # The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
     failure_status: Any = None
-    # Output only. If true, the commitment is a flat-rate commitment, otherwise, it's an edition commitment.
-    is_flat_rate: Any = None
     # Applicable only for commitments located within one of the BigQuery multi-regions (US or EU). If set to true, this commitment is placed in the organization's secondary region which is designated for disaster recovery purposes. If false, this commitment is placed in the organization's default region. NOTE: this is a preview feature. Project must be allow-listed in order to set this field.
     multi_region_auxiliary: Any = None
-    # Output only. The resource name of the capacity commitment, e.g., `projects/myproject/locations/US/capacityCommitments/123` The commitment_id must only contain lower case alphanumeric characters or dashes. It must start with a letter and must not end with a dash. Its maximum length is 64 characters.
-    name: Any = None
     # Optional. Capacity commitment commitment plan.
     plan: Any = None
     # Optional. The plan this capacity commitment is converted to after commitment_end_time passes. Once the plan is changed, committed period is extended according to commitment plan. Only applicable for ANNUAL and TRIAL commitments.
     renewal_plan: Any = None
     # Optional. Number of slots in this commitment.
     slot_count: Any = None
-    # Output only. State of the commitment.
-    state: Any = None
 
 @dataclasses.dataclass
 class CapacityCommitmentAttrs:
@@ -74,20 +64,15 @@ class CapacityCommitmentAttrs:
 CapacityCommitment = ubx.ResourceBinding(
     wire_type="google_bigqueryreservation_capacity_commitment",
     fields={
-        "commitment_end_time": ubx.FieldSpec(wire_name="commitment_end_time"),
-        "commitment_start_time": ubx.FieldSpec(wire_name="commitment_start_time"),
         "edition": ubx.FieldSpec(wire_name="edition"),
         "failure_status": ubx.FieldSpec(
             wire_name="failure_status",
             kind="object",
             fields=_CapacityCommitment_FailureStatusFields,
         ),
-        "is_flat_rate": ubx.FieldSpec(wire_name="is_flat_rate"),
         "multi_region_auxiliary": ubx.FieldSpec(wire_name="multi_region_auxiliary"),
-        "name": ubx.FieldSpec(wire_name="name"),
         "plan": ubx.FieldSpec(wire_name="plan"),
         "renewal_plan": ubx.FieldSpec(wire_name="renewal_plan"),
         "slot_count": ubx.FieldSpec(wire_name="slot_count"),
-        "state": ubx.FieldSpec(wire_name="state"),
     },
 )

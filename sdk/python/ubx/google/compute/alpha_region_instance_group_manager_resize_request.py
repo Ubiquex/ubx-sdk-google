@@ -280,35 +280,19 @@ _AlphaRegionInstanceGroupManagerResizeRequest_StatusFields = {
 class AlphaRegionInstanceGroupManagerResizeRequestConfig:
     # This field is deprecated, please use resize_by instead. The count of instances to create as part of this resize request.
     count: Any = None
-    # Output only. The creation timestamp for this resize request inRFC3339 text format.
-    creation_timestamp: Any = None
     # An optional description of this resource.
     description: Any = None
-    # Output only. A unique identifier for this resource type. The server generates this identifier.
-    id: Any = None
     # The names of instances to be created by this resize request. The number of names specified determines the number of instances to create. The group's target size will be increased by this number. This field cannot be used together with 'resize_by'.
     instances: Any = None
-    # Output only. The resource type, which is alwayscompute#instanceGroupManagerResizeRequest for resize requests.
-    kind: Any = None
     # The name of this resize request. The name must be 1-63 characters long, and comply withRFC1035.
     name: Any = None
     # Queuing parameters for the requested deferred capacity.
     queuing_policy: Any = None
-    # Output only. The URL of a region where the resize request is located. Populated only for regional resize requests.
-    region: Any = None
     # A Duration represents a fixed-length span of time represented as a count of seconds and fractions of seconds at nanosecond resolution. It is independent of any calendar and concepts like "day" or "month". Range is approximately 10,000 years.
     requested_run_duration: Any = None
     # The number of instances to be created by this resize request. The group's target size will be increased by this number. This field cannot be used together with 'instances'.
     resize_by: Any = None
-    # Output only. The URL for this resize request. The server defines this URL.
-    self_link: Any = None
-    # Output only. Server-defined URL for this resource with the resource id.
-    self_link_with_id: Any = None
-    # Output only. Current state of the request.
-    state: Any = None
     status: Any = None
-    # Output only. The URL of a zone where the resize request is located. Populated only for zonal resize requests.
-    zone: Any = None
 
 @dataclasses.dataclass
 class AlphaRegionInstanceGroupManagerResizeRequestAttrs:
@@ -348,36 +332,28 @@ AlphaRegionInstanceGroupManagerResizeRequest = ubx.ResourceBinding(
     wire_type="google_compute_alpha_region_instance_group_manager_resize_request",
     fields={
         "count": ubx.FieldSpec(wire_name="count"),
-        "creation_timestamp": ubx.FieldSpec(wire_name="creation_timestamp"),
         "description": ubx.FieldSpec(wire_name="description"),
-        "id": ubx.FieldSpec(wire_name="id"),
         "instances": ubx.FieldSpec(
             wire_name="instances",
             kind="list",
             fields=_AlphaRegionInstanceGroupManagerResizeRequest_InstancesFields,
         ),
-        "kind": ubx.FieldSpec(wire_name="kind"),
         "name": ubx.FieldSpec(wire_name="name"),
         "queuing_policy": ubx.FieldSpec(
             wire_name="queuing_policy",
             kind="object",
             fields=_AlphaRegionInstanceGroupManagerResizeRequest_QueuingPolicyFields,
         ),
-        "region": ubx.FieldSpec(wire_name="region"),
         "requested_run_duration": ubx.FieldSpec(
             wire_name="requested_run_duration",
             kind="object",
             fields=_AlphaRegionInstanceGroupManagerResizeRequest_QueuingPolicy_ValidUntilDurationFields,
         ),
         "resize_by": ubx.FieldSpec(wire_name="resize_by"),
-        "self_link": ubx.FieldSpec(wire_name="self_link"),
-        "self_link_with_id": ubx.FieldSpec(wire_name="self_link_with_id"),
-        "state": ubx.FieldSpec(wire_name="state"),
         "status": ubx.FieldSpec(
             wire_name="status",
             kind="object",
             fields=_AlphaRegionInstanceGroupManagerResizeRequest_StatusFields,
         ),
-        "zone": ubx.FieldSpec(wire_name="zone"),
     },
 )

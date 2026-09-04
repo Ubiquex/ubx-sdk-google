@@ -56,8 +56,6 @@ _V1beta1FeatureGroup_BigQueryFields = {
 class V1beta1FeatureGroupConfig:
     # Input source type for BigQuery Tables and Views.
     big_query: Any = None
-    # Output only. Timestamp when this FeatureGroup was created.
-    create_time: Any = None
     # Optional. Description of the FeatureGroup.
     description: Any = None
     # Optional. Used to perform consistent read-modify-write updates. If not set, a blind "overwrite" update happens.
@@ -66,12 +64,8 @@ class V1beta1FeatureGroupConfig:
     labels: Any = None
     # Identifier. Name of the FeatureGroup. Format: `projects/{project}/locations/{location}/featureGroups/{featureGroup}`
     name: Any = None
-    # Output only. A Service Account unique to this FeatureGroup. The role bigquery.dataViewer should be granted to this service account to allow Vertex AI Feature Store to access source data while running jobs under this FeatureGroup.
-    service_account_email: Any = None
     # Optional. Service agent type used during jobs under a FeatureGroup. By default, the Vertex AI Service Agent is used. When using an IAM Policy to isolate this FeatureGroup within a project, a separate service account should be provisioned by setting this field to `SERVICE_AGENT_TYPE_FEATURE_GROUP`. This will generate a separate service account to access the BigQuery source table.
     service_agent_type: Any = None
-    # Output only. Timestamp when this FeatureGroup was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V1beta1FeatureGroupAttrs:
@@ -102,13 +96,10 @@ V1beta1FeatureGroup = ubx.ResourceBinding(
             kind="object",
             fields=_V1beta1FeatureGroup_BigQueryFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "etag": ubx.FieldSpec(wire_name="etag"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "service_account_email": ubx.FieldSpec(wire_name="service_account_email"),
         "service_agent_type": ubx.FieldSpec(wire_name="service_agent_type"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

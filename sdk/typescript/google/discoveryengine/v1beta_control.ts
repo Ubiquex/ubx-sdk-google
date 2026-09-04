@@ -169,8 +169,6 @@ const V1betaControl_SynonymsActionFields: FieldMap = {
 };
 
 export interface V1betaControlConfig {
-  /** Output only. List of all ServingConfig IDs this control is attached to. May take up to 10 minutes to update after changes. */
-  associatedServingConfigIds?: string[] | Computed<string[]>;
   /** Adjusts order of products in returned list. */
   boostAction?: V1betaControl_BoostAction | Computed<V1betaControl_BoostAction>;
   /** Determines when the associated action will trigger. Omit to always apply the action. Currently only a single condition may be specified. Otherwise an INVALID ARGUMENT error is thrown. */
@@ -221,7 +219,6 @@ export interface V1betaControlAttrs {
 export const V1betaControl: ResourceBinding<V1betaControlConfig, V1betaControlAttrs> = {
   wireType: "google_discoveryengine_v1beta_control",
   fields: {
-    associatedServingConfigIds: "associated_serving_config_ids",
     boostAction: {
       wireName: "boost_action",
       kind: "object",

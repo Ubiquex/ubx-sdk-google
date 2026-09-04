@@ -43,8 +43,6 @@ export interface V1alphaCannedQueryConfig {
   displayName?: string | Computed<string>;
   /** Whether this canned query is enabled. */
   enabled?: boolean | Computed<boolean>;
-  /** Output only. Whether this is a Google-defined, read-only canned query. */
-  googleDefined?: boolean | Computed<boolean>;
   /** Optional. The translations of the text attributes. The keys should be BCP-47 language codes. */
   localizedTexts?: Record<string, V1alphaCannedQuery_DefaultTexts> | Computed<Record<string, V1alphaCannedQuery_DefaultTexts>>;
   /** Immutable. Resource name of the canned query. Format: `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}/assistants/{assistant}/cannedQueries/{canned_query}` It must be a UTF-8 encoded string with a length limit of 1024 characters. */
@@ -80,7 +78,6 @@ export const V1alphaCannedQuery: ResourceBinding<V1alphaCannedQueryConfig, V1alp
     },
     displayName: "display_name",
     enabled: "enabled",
-    googleDefined: "google_defined",
     localizedTexts: {
       wireName: "localized_texts",
       kind: "map",

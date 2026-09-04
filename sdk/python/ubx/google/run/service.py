@@ -329,18 +329,6 @@ _Service_BuildConfigFields = {
     "worker_pool": ubx.FieldSpec(wire_name="worker_pool"),
 }
 
-_Service_ConditionsFields = {
-    "execution_reason": ubx.FieldSpec(wire_name="execution_reason"),
-    "instance_reason": ubx.FieldSpec(wire_name="instance_reason"),
-    "last_transition_time": ubx.FieldSpec(wire_name="last_transition_time"),
-    "message": ubx.FieldSpec(wire_name="message"),
-    "reason": ubx.FieldSpec(wire_name="reason"),
-    "revision_reason": ubx.FieldSpec(wire_name="revision_reason"),
-    "severity": ubx.FieldSpec(wire_name="severity"),
-    "state": ubx.FieldSpec(wire_name="state"),
-    "type": ubx.FieldSpec(wire_name="type"),
-}
-
 _Service_MultiRegionSettingsFields = {
     "multi_region_id": ubx.FieldSpec(wire_name="multi_region_id"),
     "regions": ubx.FieldSpec(wire_name="regions"),
@@ -677,19 +665,23 @@ _Service_TemplateFields = {
     ),
 }
 
+_Service_ConditionsFields = {
+    "execution_reason": ubx.FieldSpec(wire_name="execution_reason"),
+    "instance_reason": ubx.FieldSpec(wire_name="instance_reason"),
+    "last_transition_time": ubx.FieldSpec(wire_name="last_transition_time"),
+    "message": ubx.FieldSpec(wire_name="message"),
+    "reason": ubx.FieldSpec(wire_name="reason"),
+    "revision_reason": ubx.FieldSpec(wire_name="revision_reason"),
+    "severity": ubx.FieldSpec(wire_name="severity"),
+    "state": ubx.FieldSpec(wire_name="state"),
+    "type": ubx.FieldSpec(wire_name="type"),
+}
+
 _Service_TrafficFields = {
     "percent": ubx.FieldSpec(wire_name="percent"),
     "revision": ubx.FieldSpec(wire_name="revision"),
     "tag": ubx.FieldSpec(wire_name="tag"),
     "type": ubx.FieldSpec(wire_name="type"),
-}
-
-_Service_TrafficStatusesFields = {
-    "percent": ubx.FieldSpec(wire_name="percent"),
-    "revision": ubx.FieldSpec(wire_name="revision"),
-    "tag": ubx.FieldSpec(wire_name="tag"),
-    "type": ubx.FieldSpec(wire_name="type"),
-    "uri": ubx.FieldSpec(wire_name="uri"),
 }
 
 @dataclasses.dataclass
@@ -704,28 +696,16 @@ class ServiceConfig:
     client: Any = None
     # Arbitrary version identifier for the API client.
     client_version: Any = None
-    # Output only. The Conditions of all other associated sub-resources. They contain additional diagnostics information in case the Service does not reach its Serving state. See comments in `reconciling` for additional information on reconciliation process in Cloud Run.
-    conditions: Any = None
-    # Output only. The creation time.
-    create_time: Any = None
-    # Output only. Email address of the authenticated creator.
-    creator: Any = None
     # One or more custom audiences that you want this service to support. Specify each custom audience as the full URL in a string. The custom audiences are encoded in the token and used to authenticate requests. For more information, see https://cloud.google.com/run/docs/configuring/custom-audiences.
     custom_audiences: Any = None
     # Optional. Disables public resolution of the default URI of this service.
     default_uri_disabled: Any = None
-    # Output only. The deletion time. It is only populated as a response to a Delete request.
-    delete_time: Any = None
     # User-provided description of the Service. This field currently has a 512-character limit.
     description: Any = None
     # Optional. Immutable. Indicates whether the Service has durable execution enabled. This field is immutable once the Service is created.
     durable_execution: Any = None
     # Optional. A system-generated fingerprint for this version of the resource. May be used to detect modification conflict during updates.
     etag: Any = None
-    # Output only. For a deleted resource, the time after which it will be permanently deleted.
-    expire_time: Any = None
-    # Output only. A number that monotonically increases every time the user modifies the desired state. Please note that unlike v1, this is an int64 value. As with most Google APIs, its JSON representation will be a `string` instead of an `integer`.
-    generation: Any = None
     # Optional. IAP settings on the Service.
     iap_enabled: Any = None
     # Optional. Provides the ingress settings for this Service. On output, returns the currently observed ingress settings, or INGRESS_TRAFFIC_UNSPECIFIED if no revision is active.
@@ -734,24 +714,12 @@ class ServiceConfig:
     invoker_iam_disabled: Any = None
     # Optional. Unstructured key value map that can be used to organize and categorize objects. User-provided labels are shared with Google's billing system, so they can be used to filter, or break down billing charges by team, component, environment, state, etc. For more information, visit https://cloud.google.com/resource-manager/docs/creating-managing-labels or https://cloud.google.com/run/docs/configuring/labels. Cloud Run API v2 does not support labels with `run.googleapis.com`, `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev` namespaces, and they will be rejected. All system labels in v1 now have a corresponding field in v2 Service.
     labels: Any = None
-    # Output only. Email address of the last authenticated modifier.
-    last_modifier: Any = None
-    # Output only. Name of the last created revision. See comments in `reconciling` for additional information on reconciliation process in Cloud Run.
-    latest_created_revision: Any = None
-    # Output only. Name of the latest revision that is serving traffic. See comments in `reconciling` for additional information on reconciliation process in Cloud Run.
-    latest_ready_revision: Any = None
     # Optional. The launch stage as defined by [Google Cloud Platform Launch Stages](https://cloud.google.com/terms/launch-stages). Cloud Run supports `ALPHA`, `BETA`, and `GA`. If no value is specified, GA is assumed. Set the launch stage to a preview stage on input to allow use of preview features in that stage. On read (or output), describes whether the resource uses preview features. For example, if ALPHA is provided as input, but only BETA and GA-level features are used, this field will be BETA on output.
     launch_stage: Any = None
     # Settings for multi-region deployment.
     multi_region_settings: Any = None
     # Identifier. The fully qualified name of this Service. In CreateServiceRequest, this field is ignored, and instead composed from CreateServiceRequest.parent and CreateServiceRequest.service_id. Format: projects/{project}/locations/{location}/services/{service_id}
     name: Any = None
-    # Output only. The generation of this Service currently serving traffic. See comments in `reconciling` for additional information on reconciliation process in Cloud Run. Please note that unlike v1, this is an int64 value. As with most Google APIs, its JSON representation will be a `string` instead of an `integer`.
-    observed_generation: Any = None
-    # Output only. Returns true if the Service is currently being acted upon by the system to bring it into the desired state. When a new Service is created, or an existing one is updated, Cloud Run will asynchronously perform all necessary steps to bring the Service to the desired serving state. This process is called reconciliation. While reconciliation is in process, `observed_generation`, `latest_ready_revision`, `traffic_statuses`, and `uri` will have transient values that might mismatch the intended state: Once reconciliation is over (and this field is false), there are two possible outcomes: reconciliation succeeded and the serving state matches the Service, or there was an error, and reconciliation failed. This state can be found in `terminal_condition.state`. If reconciliation succeeded, the following fields will match: `traffic` and `traffic_statuses`, `observed_generation` and `generation`, `latest_ready_revision` and `latest_created_revision`. If reconciliation failed, `traffic_statuses`, `observed_generation`, and `latest_ready_revision` will have the state of the last serving revision, or empty for newly created Services. Additional information on the failure can be found in `terminal_condition` and `conditions`.
-    reconciling: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzs: Any = None
     # Scaling settings applied at the service level rather than at the revision level.
     scaling: Any = None
     # Optional. Enables SSH access to the Service.
@@ -760,20 +728,8 @@ class ServiceConfig:
     template: Any = None
     # Defines a status condition for a resource.
     terminal_condition: Any = None
-    # Output only. True if Cloud Run Threat Detection monitoring is enabled for the parent project of this Service.
-    threat_detection_enabled: Any = None
     # Optional. Specifies how to distribute traffic over a collection of Revisions belonging to the Service. If traffic is empty or not provided, defaults to 100% traffic to the latest `Ready` Revision.
     traffic: Any = None
-    # Output only. Detailed status information for corresponding traffic targets. See comments in `reconciling` for additional information on reconciliation process in Cloud Run.
-    traffic_statuses: Any = None
-    # Output only. Server assigned unique identifier for the trigger. The value is a UUID4 string and guaranteed to remain unchanged until the resource is deleted.
-    uid: Any = None
-    # Output only. The last-modified time.
-    update_time: Any = None
-    # Output only. The main URI in which this Service is serving traffic.
-    uri: Any = None
-    # Output only. All URLs serving traffic for this Service.
-    urls: Any = None
 
 @dataclasses.dataclass
 class ServiceAttrs:
@@ -874,28 +830,15 @@ Service = ubx.ResourceBinding(
         ),
         "client": ubx.FieldSpec(wire_name="client"),
         "client_version": ubx.FieldSpec(wire_name="client_version"),
-        "conditions": ubx.FieldSpec(
-            wire_name="conditions",
-            kind="list",
-            fields=_Service_ConditionsFields,
-        ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
-        "creator": ubx.FieldSpec(wire_name="creator"),
         "custom_audiences": ubx.FieldSpec(wire_name="custom_audiences"),
         "default_uri_disabled": ubx.FieldSpec(wire_name="default_uri_disabled"),
-        "delete_time": ubx.FieldSpec(wire_name="delete_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "durable_execution": ubx.FieldSpec(wire_name="durable_execution"),
         "etag": ubx.FieldSpec(wire_name="etag"),
-        "expire_time": ubx.FieldSpec(wire_name="expire_time"),
-        "generation": ubx.FieldSpec(wire_name="generation"),
         "iap_enabled": ubx.FieldSpec(wire_name="iap_enabled"),
         "ingress": ubx.FieldSpec(wire_name="ingress"),
         "invoker_iam_disabled": ubx.FieldSpec(wire_name="invoker_iam_disabled"),
         "labels": ubx.FieldSpec(wire_name="labels"),
-        "last_modifier": ubx.FieldSpec(wire_name="last_modifier"),
-        "latest_created_revision": ubx.FieldSpec(wire_name="latest_created_revision"),
-        "latest_ready_revision": ubx.FieldSpec(wire_name="latest_ready_revision"),
         "launch_stage": ubx.FieldSpec(wire_name="launch_stage"),
         "multi_region_settings": ubx.FieldSpec(
             wire_name="multi_region_settings",
@@ -903,9 +846,6 @@ Service = ubx.ResourceBinding(
             fields=_Service_MultiRegionSettingsFields,
         ),
         "name": ubx.FieldSpec(wire_name="name"),
-        "observed_generation": ubx.FieldSpec(wire_name="observed_generation"),
-        "reconciling": ubx.FieldSpec(wire_name="reconciling"),
-        "satisfies_pzs": ubx.FieldSpec(wire_name="satisfies_pzs"),
         "scaling": ubx.FieldSpec(
             wire_name="scaling",
             kind="object",
@@ -922,20 +862,10 @@ Service = ubx.ResourceBinding(
             kind="object",
             fields=_Service_ConditionsFields,
         ),
-        "threat_detection_enabled": ubx.FieldSpec(wire_name="threat_detection_enabled"),
         "traffic": ubx.FieldSpec(
             wire_name="traffic",
             kind="list",
             fields=_Service_TrafficFields,
         ),
-        "traffic_statuses": ubx.FieldSpec(
-            wire_name="traffic_statuses",
-            kind="list",
-            fields=_Service_TrafficStatusesFields,
-        ),
-        "uid": ubx.FieldSpec(wire_name="uid"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
-        "uri": ubx.FieldSpec(wire_name="uri"),
-        "urls": ubx.FieldSpec(wire_name="urls"),
     },
 )

@@ -10,7 +10,7 @@ type ScopeConfig struct {
 type ScopeAttrs struct {
 	// Required. The full resource name of the `LogScope`. For example: //logging.googleapis.com/projects/myproject/locations/global/logScopes/my-log-scope
 	LogScope any
-	Name any
+	Name     any
 	// Required. The resource name of the `TraceScope`. For example: projects/myproject/locations/global/traceScopes/my-trace-scope
 	TraceScope any
 	// Output only. Update timestamp. Note: The Update timestamp for the default scope is initially unset.

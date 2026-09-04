@@ -10,8 +10,6 @@ import ubx_sdk as ubx
 class VpcFlowLogsConfigConfig:
     # Optional. The aggregation interval for the logs. Default value is INTERVAL_5_SEC.
     aggregation_interval: Any = None
-    # Output only. The time the config was created.
-    create_time: Any = None
     # Optional. Determines whether to include cross project annotations in the logs. This field is available only for organization configurations. If not specified in org configs will be set to CROSS_PROJECT_METADATA_ENABLED.
     cross_project_metadata: Any = None
     # Optional. The user-supplied description of the VPC Flow Logs configuration. Maximum of 512 characters.
@@ -36,10 +34,6 @@ class VpcFlowLogsConfigConfig:
     state: Any = None
     # Traffic will be logged from VMs within the subnetwork. Format: projects/{project_id}/regions/{region}/subnetworks/{name}
     subnet: Any = None
-    # Output only. Describes the state of the configured target resource for diagnostic purposes.
-    target_resource_state: Any = None
-    # Output only. The time the config was updated.
-    update_time: Any = None
     # Traffic will be logged from the VPN Tunnel. Format: projects/{project_id}/regions/{region}/vpnTunnels/{name}
     vpn_tunnel: Any = None
 
@@ -84,7 +78,6 @@ VpcFlowLogsConfig = ubx.ResourceBinding(
     wire_type="google_networkmanagement_vpc_flow_logs_config",
     fields={
         "aggregation_interval": ubx.FieldSpec(wire_name="aggregation_interval"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "cross_project_metadata": ubx.FieldSpec(wire_name="cross_project_metadata"),
         "description": ubx.FieldSpec(wire_name="description"),
         "filter_expr": ubx.FieldSpec(wire_name="filter_expr"),
@@ -97,8 +90,6 @@ VpcFlowLogsConfig = ubx.ResourceBinding(
         "network": ubx.FieldSpec(wire_name="network"),
         "state": ubx.FieldSpec(wire_name="state"),
         "subnet": ubx.FieldSpec(wire_name="subnet"),
-        "target_resource_state": ubx.FieldSpec(wire_name="target_resource_state"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
         "vpn_tunnel": ubx.FieldSpec(wire_name="vpn_tunnel"),
     },
 )

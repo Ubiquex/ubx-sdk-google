@@ -933,8 +933,6 @@ const V1beta1CachedContent_UsageMetadataFields: FieldMap = {
 export interface V1beta1CachedContentConfig {
   /** Optional. Input only. Immutable. The content to cache */
   contents?: V1beta1CachedContent_Contents[] | Computed<V1beta1CachedContent_Contents[]>;
-  /** Output only. Creation time of the cache entry. */
-  createTime?: string | Computed<string>;
   /** Optional. Immutable. The user-generated meaningful display name of the cached content. */
   displayName?: string | Computed<string>;
   /** Represents a customer-managed encryption key specification that can be applied to a Vertex AI resource. */
@@ -953,8 +951,6 @@ export interface V1beta1CachedContentConfig {
   tools?: V1beta1CachedContent_Tools[] | Computed<V1beta1CachedContent_Tools[]>;
   /** Input only. The TTL for this resource. The expiration time is computed: now + TTL. */
   ttl?: string | Computed<string>;
-  /** Output only. When the cache entry was last updated in UTC time. */
-  updateTime?: string | Computed<string>;
   /** Metadata on the usage of the cached content. */
   usageMetadata?: V1beta1CachedContent_UsageMetadata | Computed<V1beta1CachedContent_UsageMetadata>;
 }
@@ -996,7 +992,6 @@ export const V1beta1CachedContent: ResourceBinding<V1beta1CachedContentConfig, V
       kind: "list",
       fields: V1beta1CachedContent_ContentsFields,
     },
-    createTime: "create_time",
     displayName: "display_name",
     encryptionSpec: {
       wireName: "encryption_spec",
@@ -1022,7 +1017,6 @@ export const V1beta1CachedContent: ResourceBinding<V1beta1CachedContentConfig, V
       fields: V1beta1CachedContent_ToolsFields,
     },
     ttl: "ttl",
-    updateTime: "update_time",
     usageMetadata: {
       wireName: "usage_metadata",
       kind: "object",

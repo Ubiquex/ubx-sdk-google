@@ -8,14 +8,10 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ViewConfig:
-    # Output only. The time at which this view was created.
-    create_time: Any = None
     # The human-readable display name of the view.
     display_name: Any = None
     # Immutable. The resource name of the view. Format: projects/{project}/locations/{location}/views/{view}
     name: Any = None
-    # Output only. The most recent time at which the view was updated.
-    update_time: Any = None
     # A filter to reduce conversation results to a specific subset. Refer to https://cloud.google.com/contact-center/insights/docs/filtering for details.
     value: Any = None
 
@@ -35,10 +31,8 @@ class ViewAttrs:
 View = ubx.ResourceBinding(
     wire_type="google_contactcenterinsights_view",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
         "value": ubx.FieldSpec(wire_name="value"),
     },
 )

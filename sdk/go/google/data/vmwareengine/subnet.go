@@ -4,7 +4,6 @@ package vmwareengine
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SubnetConfig struct {
-	Name any
 }
 
 type SubnetAttrs struct {
@@ -12,7 +11,7 @@ type SubnetAttrs struct {
 	GatewayIp any
 	// The IP address range of the subnet in CIDR format '10.0.0.0/24'.
 	IpCidrRange any
-	Name any
+	Name        any
 	// Output only. The state of the resource.
 	State any
 	// Output only. The type of the subnet. For example "management" or "userDefined".
@@ -23,7 +22,5 @@ type SubnetAttrs struct {
 
 var Subnet = ubx.DataSourceBinding{
 	WireType: "google_vmwareengine_subnet",
-	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	},
+	Fields:   ubx.FieldMap{},
 }

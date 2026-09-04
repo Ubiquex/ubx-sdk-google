@@ -323,34 +323,16 @@ _V1beta1CustomJob_JobSpecFields = {
 
 @dataclasses.dataclass
 class V1beta1CustomJobConfig:
-    # Output only. Time when the CustomJob was created.
-    create_time: Any = None
     # Required. The display name of the CustomJob. The name can be up to 128 characters long and can consist of any UTF-8 characters.
     display_name: Any = None
     # Represents a customer-managed encryption key specification that can be applied to a Vertex AI resource.
     encryption_spec: Any = None
-    # Output only. Time when the CustomJob entered any of the following states: `JOB_STATE_SUCCEEDED`, `JOB_STATE_FAILED`, `JOB_STATE_CANCELLED`.
-    end_time: Any = None
     # The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
     error: Any = None
     # Represents the spec of a CustomJob.
     job_spec: Any = None
     # The labels with user-defined metadata to organize CustomJobs. Label keys and values can be no longer than 64 characters (Unicode codepoints), can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. See https://goo.gl/xmQnxf for more information and examples of labels.
     labels: Any = None
-    # Output only. Resource name of a CustomJob.
-    name: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzi: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzs: Any = None
-    # Output only. Time when the CustomJob for the first time entered the `JOB_STATE_RUNNING` state.
-    start_time: Any = None
-    # Output only. The detailed state of the job.
-    state: Any = None
-    # Output only. Time when the CustomJob was most recently updated.
-    update_time: Any = None
-    # Output only. URIs for accessing [interactive shells](https://cloud.google.com/vertex-ai/docs/training/monitor-debug-interactive-shell) (one URI for each training node). Only available if job_spec.enable_web_access is `true`. The keys are names of each node in the training job; for example, `workerpool0-0` for the primary node, `workerpool1-0` for the first node in the second worker pool, and `workerpool1-1` for the second node in the second worker pool. The values are the URIs for each node's interactive shell.
-    web_access_uris: Any = None
 
 @dataclasses.dataclass
 class V1beta1CustomJobAttrs:
@@ -386,14 +368,12 @@ class V1beta1CustomJobAttrs:
 V1beta1CustomJob = ubx.ResourceBinding(
     wire_type="google_aiplatform_v1beta1_custom_job",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "encryption_spec": ubx.FieldSpec(
             wire_name="encryption_spec",
             kind="object",
             fields=_V1beta1CustomJob_EncryptionSpecFields,
         ),
-        "end_time": ubx.FieldSpec(wire_name="end_time"),
         "error": ubx.FieldSpec(
             wire_name="error",
             kind="object",
@@ -405,12 +385,5 @@ V1beta1CustomJob = ubx.ResourceBinding(
             fields=_V1beta1CustomJob_JobSpecFields,
         ),
         "labels": ubx.FieldSpec(wire_name="labels"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "satisfies_pzi": ubx.FieldSpec(wire_name="satisfies_pzi"),
-        "satisfies_pzs": ubx.FieldSpec(wire_name="satisfies_pzs"),
-        "start_time": ubx.FieldSpec(wire_name="start_time"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
-        "web_access_uris": ubx.FieldSpec(wire_name="web_access_uris"),
     },
 )

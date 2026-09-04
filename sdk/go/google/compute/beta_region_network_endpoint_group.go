@@ -62,42 +62,42 @@ type BetaRegionNetworkEndpointGroup_ServerlessDeployment struct {
 }
 
 var BetaRegionNetworkEndpointGroup_AppEngineFields = ubx.FieldMap{
-		"Service": ubx.FieldSpec{WireName: "service"},
-		"UrlMask": ubx.FieldSpec{WireName: "url_mask"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"Service": ubx.FieldSpec{WireName: "service"},
+	"UrlMask": ubx.FieldSpec{WireName: "url_mask"},
+	"Version": ubx.FieldSpec{WireName: "version"},
+}
 
 var BetaRegionNetworkEndpointGroup_CloudFunctionFields = ubx.FieldMap{
-		"Function": ubx.FieldSpec{WireName: "function"},
-		"UrlMask": ubx.FieldSpec{WireName: "url_mask"},
-	}
+	"Function": ubx.FieldSpec{WireName: "function"},
+	"UrlMask":  ubx.FieldSpec{WireName: "url_mask"},
+}
 
 var BetaRegionNetworkEndpointGroup_CloudRunFields = ubx.FieldMap{
-		"Service": ubx.FieldSpec{WireName: "service"},
-		"Tag": ubx.FieldSpec{WireName: "tag"},
-		"UrlMask": ubx.FieldSpec{WireName: "url_mask"},
-	}
+	"Service": ubx.FieldSpec{WireName: "service"},
+	"Tag":     ubx.FieldSpec{WireName: "tag"},
+	"UrlMask": ubx.FieldSpec{WireName: "url_mask"},
+}
 
 var BetaRegionNetworkEndpointGroup_LoadBalancerFields = ubx.FieldMap{
-		"DefaultPort": ubx.FieldSpec{WireName: "default_port"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"Subnetwork": ubx.FieldSpec{WireName: "subnetwork"},
-		"Zone": ubx.FieldSpec{WireName: "zone"},
-	}
+	"DefaultPort": ubx.FieldSpec{WireName: "default_port"},
+	"Network":     ubx.FieldSpec{WireName: "network"},
+	"Subnetwork":  ubx.FieldSpec{WireName: "subnetwork"},
+	"Zone":        ubx.FieldSpec{WireName: "zone"},
+}
 
 var BetaRegionNetworkEndpointGroup_PscDataFields = ubx.FieldMap{
-		"ConsumerPscAddress": ubx.FieldSpec{WireName: "consumer_psc_address"},
-		"ProducerPort": ubx.FieldSpec{WireName: "producer_port"},
-		"PscConnectionId": ubx.FieldSpec{WireName: "psc_connection_id"},
-		"PscConnectionStatus": ubx.FieldSpec{WireName: "psc_connection_status"},
-	}
+	"ConsumerPscAddress":  ubx.FieldSpec{WireName: "consumer_psc_address"},
+	"ProducerPort":        ubx.FieldSpec{WireName: "producer_port"},
+	"PscConnectionId":     ubx.FieldSpec{WireName: "psc_connection_id"},
+	"PscConnectionStatus": ubx.FieldSpec{WireName: "psc_connection_status"},
+}
 
 var BetaRegionNetworkEndpointGroup_ServerlessDeploymentFields = ubx.FieldMap{
-		"Platform": ubx.FieldSpec{WireName: "platform"},
-		"Resource": ubx.FieldSpec{WireName: "resource"},
-		"UrlMask": ubx.FieldSpec{WireName: "url_mask"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"Platform": ubx.FieldSpec{WireName: "platform"},
+	"Resource": ubx.FieldSpec{WireName: "resource"},
+	"UrlMask":  ubx.FieldSpec{WireName: "url_mask"},
+	"Version":  ubx.FieldSpec{WireName: "version"},
+}
 
 type BetaRegionNetworkEndpointGroupConfig struct {
 	// Optional. Metadata defined as annotations on the network endpoint group.
@@ -108,16 +108,10 @@ type BetaRegionNetworkEndpointGroupConfig struct {
 	CloudFunction any
 	// Configuration for a Cloud Run network endpoint group (NEG). The service must be provided explicitly or in the URL mask. The tag is optional, may be provided explicitly or in the URL mask. Note: Cloud Run service must be in the same project and located in the same region as the Serverless NEG.
 	CloudRun any
-	// Output only. [Output Only] Creation timestamp inRFC3339 text format.
-	CreationTimestamp any
 	// The default port used if the port number is not specified in the network endpoint. Optional. If the network endpoint type is either GCE_VM_IP,SERVERLESS or PRIVATE_SERVICE_CONNECT, this field must not be specified.
 	DefaultPort any
 	// An optional description of this resource. Provide this property when you create the resource.
 	Description any
-	// Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-	Id any
-	// Output only. [Output Only] Type of the resource. Alwayscompute#networkEndpointGroup for network endpoint group.
-	Kind any
 	// Load balancing specific fields for network endpoint group.
 	LoadBalancer any
 	// Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
@@ -130,18 +124,10 @@ type BetaRegionNetworkEndpointGroupConfig struct {
 	PscData any
 	// The target service url used to set up private service connection to a Google API or a PSC Producer Service Attachment. An example value is: asia-northeast3-cloudkms.googleapis.com. Optional. Only valid when networkEndpointType isPRIVATE_SERVICE_CONNECT.
 	PscTargetService any
-	// Output only. [Output Only] The URL of theregion where the network endpoint group is located.
-	Region any
-	// Output only. [Output Only] Server-defined URL for the resource.
-	SelfLink any
 	// Configuration for a serverless network endpoint group (NEG). Theplatform must be provided. Note: The target backend service must be in the same project and located in the same region as the Serverless NEG.
 	ServerlessDeployment any
-	// Output only. [Output only] Number of network endpoints in the network endpoint group.
-	Size any
 	// Optional URL of the subnetwork to which all network endpoints in the NEG belong.
 	Subnetwork any
-	// Output only. [Output Only] The URL of thezone where the network endpoint group is located.
-	Zone any
 }
 
 type BetaRegionNetworkEndpointGroupAttrs struct {
@@ -195,47 +181,40 @@ var BetaRegionNetworkEndpointGroup = ubx.ResourceBinding{
 		"Annotations": ubx.FieldSpec{WireName: "annotations"},
 		"AppEngine": ubx.FieldSpec{
 			WireName: "app_engine",
-			Kind: "object",
-			Fields: BetaRegionNetworkEndpointGroup_AppEngineFields,
+			Kind:     "object",
+			Fields:   BetaRegionNetworkEndpointGroup_AppEngineFields,
 		},
 		"CloudFunction": ubx.FieldSpec{
 			WireName: "cloud_function",
-			Kind: "object",
-			Fields: BetaRegionNetworkEndpointGroup_CloudFunctionFields,
+			Kind:     "object",
+			Fields:   BetaRegionNetworkEndpointGroup_CloudFunctionFields,
 		},
 		"CloudRun": ubx.FieldSpec{
 			WireName: "cloud_run",
-			Kind: "object",
-			Fields: BetaRegionNetworkEndpointGroup_CloudRunFields,
+			Kind:     "object",
+			Fields:   BetaRegionNetworkEndpointGroup_CloudRunFields,
 		},
-		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
 		"DefaultPort": ubx.FieldSpec{WireName: "default_port"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
 		"LoadBalancer": ubx.FieldSpec{
 			WireName: "load_balancer",
-			Kind: "object",
-			Fields: BetaRegionNetworkEndpointGroup_LoadBalancerFields,
+			Kind:     "object",
+			Fields:   BetaRegionNetworkEndpointGroup_LoadBalancerFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Network": ubx.FieldSpec{WireName: "network"},
+		"Name":                ubx.FieldSpec{WireName: "name"},
+		"Network":             ubx.FieldSpec{WireName: "network"},
 		"NetworkEndpointType": ubx.FieldSpec{WireName: "network_endpoint_type"},
 		"PscData": ubx.FieldSpec{
 			WireName: "psc_data",
-			Kind: "object",
-			Fields: BetaRegionNetworkEndpointGroup_PscDataFields,
+			Kind:     "object",
+			Fields:   BetaRegionNetworkEndpointGroup_PscDataFields,
 		},
 		"PscTargetService": ubx.FieldSpec{WireName: "psc_target_service"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
 		"ServerlessDeployment": ubx.FieldSpec{
 			WireName: "serverless_deployment",
-			Kind: "object",
-			Fields: BetaRegionNetworkEndpointGroup_ServerlessDeploymentFields,
+			Kind:     "object",
+			Fields:   BetaRegionNetworkEndpointGroup_ServerlessDeploymentFields,
 		},
-		"Size": ubx.FieldSpec{WireName: "size"},
 		"Subnetwork": ubx.FieldSpec{WireName: "subnetwork"},
-		"Zone": ubx.FieldSpec{WireName: "zone"},
 	},
 }

@@ -310,8 +310,6 @@ class BetaRouterConfig:
     bgp: Any = None
     # BGP information that must be configured into the routing stack to establish BGP peering. This information must specify the peer ASN and either the interface name, IP address, or peer IP address. Please refer toRFC4273.
     bgp_peers: Any = None
-    # Output only. [Output Only] Creation timestamp inRFC3339 text format.
-    creation_timestamp: Any = None
     # An optional description of this resource. Provide this property when you create the resource.
     description: Any = None
     # Indicates if a router is dedicated for use with encrypted VLAN attachments (interconnectAttachments).
@@ -320,8 +318,6 @@ class BetaRouterConfig:
     id: Any = None
     # Router interfaces. To create a BGP peer that uses a router interface, the interface must have one of the following fields specified: - linkedVpnTunnel - linkedInterconnectAttachment - subnetwork You can create a router interface without any of these fields specified. However, you cannot create a BGP peer that uses that interface.
     interfaces: Any = None
-    # Output only. [Output Only] Type of resource. Always compute#router for routers.
-    kind: Any = None
     # Keys used for MD5 authentication.
     md5_authentication_keys: Any = None
     # Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
@@ -386,7 +382,6 @@ BetaRouter = ubx.ResourceBinding(
             kind="list",
             fields=_BetaRouter_BgpPeersFields,
         ),
-        "creation_timestamp": ubx.FieldSpec(wire_name="creation_timestamp"),
         "description": ubx.FieldSpec(wire_name="description"),
         "encrypted_interconnect_router": ubx.FieldSpec(wire_name="encrypted_interconnect_router"),
         "id": ubx.FieldSpec(wire_name="id"),
@@ -395,7 +390,6 @@ BetaRouter = ubx.ResourceBinding(
             kind="list",
             fields=_BetaRouter_InterfacesFields,
         ),
-        "kind": ubx.FieldSpec(wire_name="kind"),
         "md5_authentication_keys": ubx.FieldSpec(
             wire_name="md5_authentication_keys",
             kind="list",

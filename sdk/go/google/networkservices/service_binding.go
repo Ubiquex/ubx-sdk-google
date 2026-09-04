@@ -4,8 +4,6 @@ package networkservices
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ServiceBindingConfig struct {
-	// Output only. The timestamp when the resource was created.
-	CreateTime any
 	// Optional. A free-text description of the resource. Max length 1024 characters.
 	Description any
 	// Optional. Set of label tags associated with the ServiceBinding resource.
@@ -14,10 +12,6 @@ type ServiceBindingConfig struct {
 	Name any
 	// Optional. The full Service Directory Service name of the format `projects/*/locations/*/namespaces/*/services/*`. This field is for Service Directory integration which will be deprecated soon.
 	Service any
-	// Output only. The unique identifier of the Service Directory Service against which the ServiceBinding resource is validated. This is populated when the Service Binding resource is used in another resource (like Backend Service). This is of the UUID4 format. This field is for Service Directory integration which will be deprecated soon.
-	ServiceId any
-	// Output only. The timestamp when the resource was updated.
-	UpdateTime any
 }
 
 type ServiceBindingAttrs struct {
@@ -40,12 +34,9 @@ type ServiceBindingAttrs struct {
 var ServiceBinding = ubx.ResourceBinding{
 	WireType: "google_networkservices_service_binding",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Service": ubx.FieldSpec{WireName: "service"},
-		"ServiceId": ubx.FieldSpec{WireName: "service_id"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Service":     ubx.FieldSpec{WireName: "service"},
 	},
 }

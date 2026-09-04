@@ -21,23 +21,21 @@ type ServiceLbPolicy_IsolationConfig struct {
 }
 
 var ServiceLbPolicy_AutoCapacityDrainFields = ubx.FieldMap{
-		"Enable": ubx.FieldSpec{WireName: "enable"},
-	}
+	"Enable": ubx.FieldSpec{WireName: "enable"},
+}
 
 var ServiceLbPolicy_FailoverConfigFields = ubx.FieldMap{
-		"FailoverHealthThreshold": ubx.FieldSpec{WireName: "failover_health_threshold"},
-	}
+	"FailoverHealthThreshold": ubx.FieldSpec{WireName: "failover_health_threshold"},
+}
 
 var ServiceLbPolicy_IsolationConfigFields = ubx.FieldMap{
-		"IsolationGranularity": ubx.FieldSpec{WireName: "isolation_granularity"},
-		"IsolationMode": ubx.FieldSpec{WireName: "isolation_mode"},
-	}
+	"IsolationGranularity": ubx.FieldSpec{WireName: "isolation_granularity"},
+	"IsolationMode":        ubx.FieldSpec{WireName: "isolation_mode"},
+}
 
 type ServiceLbPolicyConfig struct {
 	// Option to specify if an unhealthy IG/NEG should be considered for global load balancing and traffic routing.
 	AutoCapacityDrain any
-	// Output only. The timestamp when this resource was created.
-	CreateTime any
 	// Optional. A free-text description of the resource. Max length 1024 characters.
 	Description any
 	// Option to specify health based failover behavior. This is not related to Network load balancer FailoverPolicy.
@@ -50,8 +48,6 @@ type ServiceLbPolicyConfig struct {
 	LoadBalancingAlgorithm any
 	// Identifier. Name of the ServiceLbPolicy resource. It matches pattern `projects/{project}/locations/{location}/serviceLbPolicies/{service_lb_policy_name}`.
 	Name any
-	// Output only. The timestamp when this resource was last updated.
-	UpdateTime any
 }
 
 type ServiceLbPolicyAttrs struct {
@@ -80,24 +76,22 @@ var ServiceLbPolicy = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AutoCapacityDrain": ubx.FieldSpec{
 			WireName: "auto_capacity_drain",
-			Kind: "object",
-			Fields: ServiceLbPolicy_AutoCapacityDrainFields,
+			Kind:     "object",
+			Fields:   ServiceLbPolicy_AutoCapacityDrainFields,
 		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"FailoverConfig": ubx.FieldSpec{
 			WireName: "failover_config",
-			Kind: "object",
-			Fields: ServiceLbPolicy_FailoverConfigFields,
+			Kind:     "object",
+			Fields:   ServiceLbPolicy_FailoverConfigFields,
 		},
 		"IsolationConfig": ubx.FieldSpec{
 			WireName: "isolation_config",
-			Kind: "object",
-			Fields: ServiceLbPolicy_IsolationConfigFields,
+			Kind:     "object",
+			Fields:   ServiceLbPolicy_IsolationConfigFields,
 		},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Labels":                 ubx.FieldSpec{WireName: "labels"},
 		"LoadBalancingAlgorithm": ubx.FieldSpec{WireName: "load_balancing_algorithm"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"Name":                   ubx.FieldSpec{WireName: "name"},
 	},
 }

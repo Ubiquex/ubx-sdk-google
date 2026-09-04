@@ -28,79 +28,53 @@ type Rollout_Stats struct {
 }
 
 var Rollout_Control_RunParamsFields = ubx.FieldMap{
-		"RetryFailedOperations": ubx.FieldSpec{WireName: "retry_failed_operations"},
-	}
+	"RetryFailedOperations": ubx.FieldSpec{WireName: "retry_failed_operations"},
+}
 
 var Rollout_ControlFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
-		"RunParams": ubx.FieldSpec{
-			WireName: "run_params",
-			Kind: "object",
-			Fields: Rollout_Control_RunParamsFields,
-		},
-	}
+	"Action": ubx.FieldSpec{WireName: "action"},
+	"RunParams": ubx.FieldSpec{
+		WireName: "run_params",
+		Kind:     "object",
+		Fields:   Rollout_Control_RunParamsFields,
+	},
+}
 
 var Rollout_Stats_OperationsByStateFields = ubx.FieldMap{
-		"Count": ubx.FieldSpec{WireName: "count"},
-		"Group": ubx.FieldSpec{WireName: "group"},
-	}
+	"Count": ubx.FieldSpec{WireName: "count"},
+	"Group": ubx.FieldSpec{WireName: "group"},
+}
 
 var Rollout_StatsFields = ubx.FieldMap{
-		"EstimatedTotalUnitCount": ubx.FieldSpec{WireName: "estimated_total_unit_count"},
-		"OperationsByState": ubx.FieldSpec{
-			WireName: "operations_by_state",
-			Kind: "list",
-			Fields: Rollout_Stats_OperationsByStateFields,
-		},
-	}
+	"EstimatedTotalUnitCount": ubx.FieldSpec{WireName: "estimated_total_unit_count"},
+	"OperationsByState": ubx.FieldSpec{
+		WireName: "operations_by_state",
+		Kind:     "list",
+		Fields:   Rollout_Stats_OperationsByStateFields,
+	},
+}
 
 type RolloutConfig struct {
 	// Optional. Annotations is an unstructured key-value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects. More info: https://kubernetes.io/docs/user-guide/annotations
 	Annotations any
 	// RolloutControl provides a way to request a change to the execution of a Rollout by pausing or canceling it.
 	Control any
-	// Output only. The timestamp when the resource was created.
-	CreateTime any
-	// Output only. The timestamp when the resource was marked for deletion (deletion is an asynchronous operation).
-	DeleteTime any
-	// Optional. Output only. Output only snapshot of the effective unit filter at Rollout start time. Contains a CEL(https://github.com/google/cel-spec) expression consisting of a conjunction of Rollout.unit_filter and RolloutKind.unit_filter. This field captures the filter applied by the Rollout to determine the Unit population. If the associated RolloutKind's unit_filter is modified after the rollout is started, it will not be updated here.
-	EffectiveUnitFilter any
-	// Optional. Output only. The time when the rollout finished execution (regardless of success, failure, or cancellation). Will be empty if the rollout hasn't finished yet. Once set, the rollout is in terminal state and all the results are final.
-	EndTime any
-	// Output only. An opaque value that uniquely identifies a version or generation of a resource. It can be used to confirm that the client and server agree on the ordering of a resource being written.
-	Etag any
 	// Optional. Immutable. Name of the FlagRelease to be rolled out to the target Units. Release and FlagRelease are mutually exclusive. Note: `release` comment needs to be adjusted to mention that "Release and FlagRelease are mutually exclusive" when visibility restriction will be lifted.
 	FlagRelease any
 	// Optional. The labels on the resource, which can be used for categorization. similar to Kubernetes resource labels.
 	Labels any
 	// Identifier. The resource name (full URI of the resource) following the standard naming scheme: "projects/{project}/locations/{location}/rollout/{rollout_id}"
 	Name any
-	// Optional. Output only. The direct parent rollout that this rollout is stemming from. The resource name (full URI of the resource) following the standard naming scheme: "projects/{project}/locations/{location}/rollouts/{rollout_id}"
-	ParentRollout any
 	// Optional. Immutable. Name of the Release that gets rolled out to target Units. Required if no other type of release is specified.
 	Release any
 	// Required. Immutable. Name of the RolloutKind this rollout is stemming from and adhering to.
 	RolloutKind any
 	// Optional. The strategy used for executing this Rollout. This strategy will override whatever strategy is specified in the RolloutKind. If not specified on creation, the strategy from RolloutKind will be used. There are two supported values strategies which are used to control - "Google.Cloud.Simple.AllAtOnce" - "Google.Cloud.Simple.OneLocationAtATime" A rollout with one of these simple strategies will rollout across all locations defined in the targeted UnitKind's Saas Locations.
 	RolloutOrchestrationStrategy any
-	// Optional. Output only. The root rollout that this rollout is stemming from. The resource name (full URI of the resource) following the standard naming scheme: "projects/{project}/locations/{location}/rollouts/{rollout_id}"
-	RootRollout any
-	// Optional. Output only. The time when the rollout started executing. Will be empty if the rollout hasn't started yet.
-	StartTime any
-	// Output only. Current state of the rollout.
-	State any
-	// Output only. Human readable message indicating details about the last state transition.
-	StateMessage any
-	// Optional. Output only. The time when the rollout transitioned into its current state.
-	StateTransitionTime any
 	// RolloutStats contains information about the progress of a rollout.
 	Stats any
-	// Output only. The unique identifier of the resource. UID is unique in the time and space for this resource within the scope of the service. It is typically generated by the server on successful creation of a resource and must not be changed. UID is used to uniquely identify resources with resource name reuses. This should be a UUID4.
-	Uid any
 	// Optional. CEL(https://github.com/google/cel-spec) formatted filter string against Unit. The filter will be applied to determine the eligible unit population. This filter can only reduce, but not expand the scope of the rollout. If not provided, the unit_filter from the RolloutKind will be used.
 	UnitFilter any
-	// Output only. The timestamp when the resource was last updated. Any change to the resource made by users must refresh this value. Changes to a resource made by the service should refresh this value.
-	UpdateTime any
 }
 
 type RolloutAttrs struct {
@@ -158,33 +132,20 @@ var Rollout = ubx.ResourceBinding{
 		"Annotations": ubx.FieldSpec{WireName: "annotations"},
 		"Control": ubx.FieldSpec{
 			WireName: "control",
-			Kind: "object",
-			Fields: Rollout_ControlFields,
+			Kind:     "object",
+			Fields:   Rollout_ControlFields,
 		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DeleteTime": ubx.FieldSpec{WireName: "delete_time"},
-		"EffectiveUnitFilter": ubx.FieldSpec{WireName: "effective_unit_filter"},
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"FlagRelease": ubx.FieldSpec{WireName: "flag_release"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ParentRollout": ubx.FieldSpec{WireName: "parent_rollout"},
-		"Release": ubx.FieldSpec{WireName: "release"},
-		"RolloutKind": ubx.FieldSpec{WireName: "rollout_kind"},
+		"FlagRelease":                  ubx.FieldSpec{WireName: "flag_release"},
+		"Labels":                       ubx.FieldSpec{WireName: "labels"},
+		"Name":                         ubx.FieldSpec{WireName: "name"},
+		"Release":                      ubx.FieldSpec{WireName: "release"},
+		"RolloutKind":                  ubx.FieldSpec{WireName: "rollout_kind"},
 		"RolloutOrchestrationStrategy": ubx.FieldSpec{WireName: "rollout_orchestration_strategy"},
-		"RootRollout": ubx.FieldSpec{WireName: "root_rollout"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"StateMessage": ubx.FieldSpec{WireName: "state_message"},
-		"StateTransitionTime": ubx.FieldSpec{WireName: "state_transition_time"},
 		"Stats": ubx.FieldSpec{
 			WireName: "stats",
-			Kind: "object",
-			Fields: Rollout_StatsFields,
+			Kind:     "object",
+			Fields:   Rollout_StatsFields,
 		},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
 		"UnitFilter": ubx.FieldSpec{WireName: "unit_filter"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

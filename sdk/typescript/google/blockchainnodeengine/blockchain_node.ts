@@ -118,20 +118,12 @@ export interface BlockchainNodeConfig {
   blockchainType?: string | Computed<string>;
   /** The connection information through which to interact with a blockchain node. */
   connectionInfo?: BlockchainNode_ConnectionInfo | Computed<BlockchainNode_ConnectionInfo>;
-  /** Output only. The timestamp at which the blockchain node was first created. */
-  createTime?: string | Computed<string>;
   /** Ethereum-specific blockchain node details. */
   ethereumDetails?: BlockchainNode_EthereumDetails | Computed<BlockchainNode_EthereumDetails>;
   /** User-provided key-value pairs. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. The fully qualified name of the blockchain node. e.g. `projects/my-project/locations/us-central1/blockchainNodes/my-node`. */
-  name?: string | Computed<string>;
   /** Optional. When true, the node is only accessible via Private Service Connect; no public endpoints are exposed. Otherwise, the node is only accessible via public endpoints. Warning: These nodes are deprecated, please use public endpoints instead. */
   privateServiceConnectEnabled?: boolean | Computed<boolean>;
-  /** Output only. A status representing the state of the node. */
-  state?: string | Computed<string>;
-  /** Output only. The timestamp at which the blockchain node was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface BlockchainNodeAttrs {
@@ -164,16 +156,12 @@ export const BlockchainNode: ResourceBinding<BlockchainNodeConfig, BlockchainNod
       kind: "object",
       fields: BlockchainNode_ConnectionInfoFields,
     },
-    createTime: "create_time",
     ethereumDetails: {
       wireName: "ethereum_details",
       kind: "object",
       fields: BlockchainNode_EthereumDetailsFields,
     },
     labels: "labels",
-    name: "name",
     privateServiceConnectEnabled: "private_service_connect_enabled",
-    state: "state",
-    updateTime: "update_time",
   },
 };

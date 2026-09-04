@@ -17,8 +17,6 @@ _Hook_PushOptionFields = {
 
 @dataclasses.dataclass
 class HookConfig:
-    # Output only. Create timestamp.
-    create_time: Any = None
     # Optional. Determines if the hook disabled or not. Set to true to stop sending traffic.
     disabled: Any = None
     # Optional. The events that trigger hook on.
@@ -30,10 +28,6 @@ class HookConfig:
     sensitive_query_string: Any = None
     # Required. The target URI to which the payloads will be delivered.
     target_uri: Any = None
-    # Output only. Unique identifier of the hook.
-    uid: Any = None
-    # Output only. Update timestamp.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class HookAttrs:
@@ -58,7 +52,6 @@ class HookAttrs:
 Hook = ubx.ResourceBinding(
     wire_type="google_securesourcemanager_hook",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "disabled": ubx.FieldSpec(wire_name="disabled"),
         "events": ubx.FieldSpec(wire_name="events"),
         "name": ubx.FieldSpec(wire_name="name"),
@@ -69,7 +62,5 @@ Hook = ubx.ResourceBinding(
         ),
         "sensitive_query_string": ubx.FieldSpec(wire_name="sensitive_query_string"),
         "target_uri": ubx.FieldSpec(wire_name="target_uri"),
-        "uid": ubx.FieldSpec(wire_name="uid"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

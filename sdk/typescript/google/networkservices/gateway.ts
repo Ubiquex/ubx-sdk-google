@@ -10,8 +10,6 @@ export interface GatewayConfig {
   allowGlobalAccess?: boolean | Computed<boolean>;
   /** Optional. A fully-qualified Certificates URL reference. The proxy presents a Certificate (selected based on SNI) when establishing a TLS connection. This feature only applies to gateways of type 'SECURE_WEB_GATEWAY'. */
   certificateUrls?: string[] | Computed<string[]>;
-  /** Output only. The timestamp when the resource was created. */
-  createTime?: string | Computed<string>;
   /** Optional. A free-text description of the resource. Max length 1024 characters. */
   description?: string | Computed<string>;
   /** Optional. Determines if envoy will insert internal debug headers into upstream requests. Other Envoy headers may still be injected. By default, envoy will not insert any debug headers. */
@@ -32,16 +30,12 @@ export interface GatewayConfig {
   routingMode?: string | Computed<string>;
   /** Optional. Scope determines how configuration across multiple Gateway instances are merged. The configuration for multiple Gateway instances with the same scope will be merged as presented as a single configuration to the proxy/load balancer. Max length 64 characters. Scope should start with a letter and can only have letters, numbers, hyphens. */
   scope?: string | Computed<string>;
-  /** Output only. Server-defined URL of this resource */
-  selfLink?: string | Computed<string>;
   /** Optional. A fully-qualified ServerTLSPolicy URL reference. Specifies how TLS traffic is terminated. If empty, TLS termination is disabled. */
   serverTlsPolicy?: string | Computed<string>;
   /** Optional. The relative resource name identifying the subnetwork in which this SWG is allocated. For example: `projects/* /regions/us-central1/subnetworks/network-1` Currently, this field is specific to gateways of type 'SECURE_WEB_GATEWAY". */
   subnetwork?: string | Computed<string>;
   /** Immutable. The type of the customer managed gateway. This field is required. If unspecified, an error is returned. */
   type?: string | Computed<string>;
-  /** Output only. The timestamp when the resource was updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface GatewayAttrs {
@@ -94,7 +88,6 @@ export const Gateway: ResourceBinding<GatewayConfig, GatewayAttrs> = {
     allPorts: "all_ports",
     allowGlobalAccess: "allow_global_access",
     certificateUrls: "certificate_urls",
-    createTime: "create_time",
     description: "description",
     envoyHeaders: "envoy_headers",
     gatewaySecurityPolicy: "gateway_security_policy",
@@ -105,10 +98,8 @@ export const Gateway: ResourceBinding<GatewayConfig, GatewayAttrs> = {
     ports: "ports",
     routingMode: "routing_mode",
     scope: "scope",
-    selfLink: "self_link",
     serverTlsPolicy: "server_tls_policy",
     subnetwork: "subnetwork",
     type: "type",
-    updateTime: "update_time",
   },
 };

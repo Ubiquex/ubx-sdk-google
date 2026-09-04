@@ -10,7 +10,7 @@ type V1betaGuardrail_Action_GenerativeAnswer struct {
 
 type V1betaGuardrail_Action_RespondImmediately_Responses struct {
 	Disabled any
-	Text any
+	Text     any
 }
 
 type V1betaGuardrail_Action_RespondImmediately struct {
@@ -104,7 +104,7 @@ type V1betaGuardrail_LlmPromptSecurity struct {
 }
 
 type V1betaGuardrail_ModelSafety_SafetySettings struct {
-	Category any
+	Category  any
 	Threshold any
 }
 
@@ -114,130 +114,130 @@ type V1betaGuardrail_ModelSafety struct {
 }
 
 var V1betaGuardrail_Action_GenerativeAnswerFields = ubx.FieldMap{
-		"Prompt": ubx.FieldSpec{WireName: "prompt"},
-	}
+	"Prompt": ubx.FieldSpec{WireName: "prompt"},
+}
 
 var V1betaGuardrail_Action_RespondImmediately_ResponsesFields = ubx.FieldMap{
-		"Disabled": ubx.FieldSpec{WireName: "disabled"},
-		"Text": ubx.FieldSpec{WireName: "text"},
-	}
+	"Disabled": ubx.FieldSpec{WireName: "disabled"},
+	"Text":     ubx.FieldSpec{WireName: "text"},
+}
 
 var V1betaGuardrail_Action_RespondImmediatelyFields = ubx.FieldMap{
-		"Responses": ubx.FieldSpec{
-			WireName: "responses",
-			Kind: "list",
-			Fields: V1betaGuardrail_Action_RespondImmediately_ResponsesFields,
-		},
-	}
+	"Responses": ubx.FieldSpec{
+		WireName: "responses",
+		Kind:     "list",
+		Fields:   V1betaGuardrail_Action_RespondImmediately_ResponsesFields,
+	},
+}
 
 var V1betaGuardrail_Action_TransferAgentFields = ubx.FieldMap{
-		"Agent": ubx.FieldSpec{WireName: "agent"},
-	}
+	"Agent": ubx.FieldSpec{WireName: "agent"},
+}
 
 var V1betaGuardrail_ActionFields = ubx.FieldMap{
-		"GenerativeAnswer": ubx.FieldSpec{
-			WireName: "generative_answer",
-			Kind: "object",
-			Fields: V1betaGuardrail_Action_GenerativeAnswerFields,
-		},
-		"RespondImmediately": ubx.FieldSpec{
-			WireName: "respond_immediately",
-			Kind: "object",
-			Fields: V1betaGuardrail_Action_RespondImmediatelyFields,
-		},
-		"TransferAgent": ubx.FieldSpec{
-			WireName: "transfer_agent",
-			Kind: "object",
-			Fields: V1betaGuardrail_Action_TransferAgentFields,
-		},
-	}
+	"GenerativeAnswer": ubx.FieldSpec{
+		WireName: "generative_answer",
+		Kind:     "object",
+		Fields:   V1betaGuardrail_Action_GenerativeAnswerFields,
+	},
+	"RespondImmediately": ubx.FieldSpec{
+		WireName: "respond_immediately",
+		Kind:     "object",
+		Fields:   V1betaGuardrail_Action_RespondImmediatelyFields,
+	},
+	"TransferAgent": ubx.FieldSpec{
+		WireName: "transfer_agent",
+		Kind:     "object",
+		Fields:   V1betaGuardrail_Action_TransferAgentFields,
+	},
+}
 
 var V1betaGuardrail_CodeCallback_AfterAgentCallbackFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Disabled": ubx.FieldSpec{WireName: "disabled"},
-		"ProactiveExecutionEnabled": ubx.FieldSpec{WireName: "proactive_execution_enabled"},
-		"PythonCode": ubx.FieldSpec{WireName: "python_code"},
-	}
+	"Description":               ubx.FieldSpec{WireName: "description"},
+	"Disabled":                  ubx.FieldSpec{WireName: "disabled"},
+	"ProactiveExecutionEnabled": ubx.FieldSpec{WireName: "proactive_execution_enabled"},
+	"PythonCode":                ubx.FieldSpec{WireName: "python_code"},
+}
 
 var V1betaGuardrail_CodeCallbackFields = ubx.FieldMap{
-		"AfterAgentCallback": ubx.FieldSpec{
-			WireName: "after_agent_callback",
-			Kind: "object",
-			Fields: V1betaGuardrail_CodeCallback_AfterAgentCallbackFields,
-		},
-		"AfterModelCallback": ubx.FieldSpec{
-			WireName: "after_model_callback",
-			Kind: "object",
-			Fields: V1betaGuardrail_CodeCallback_AfterAgentCallbackFields,
-		},
-		"BeforeAgentCallback": ubx.FieldSpec{
-			WireName: "before_agent_callback",
-			Kind: "object",
-			Fields: V1betaGuardrail_CodeCallback_AfterAgentCallbackFields,
-		},
-		"BeforeModelCallback": ubx.FieldSpec{
-			WireName: "before_model_callback",
-			Kind: "object",
-			Fields: V1betaGuardrail_CodeCallback_AfterAgentCallbackFields,
-		},
-	}
+	"AfterAgentCallback": ubx.FieldSpec{
+		WireName: "after_agent_callback",
+		Kind:     "object",
+		Fields:   V1betaGuardrail_CodeCallback_AfterAgentCallbackFields,
+	},
+	"AfterModelCallback": ubx.FieldSpec{
+		WireName: "after_model_callback",
+		Kind:     "object",
+		Fields:   V1betaGuardrail_CodeCallback_AfterAgentCallbackFields,
+	},
+	"BeforeAgentCallback": ubx.FieldSpec{
+		WireName: "before_agent_callback",
+		Kind:     "object",
+		Fields:   V1betaGuardrail_CodeCallback_AfterAgentCallbackFields,
+	},
+	"BeforeModelCallback": ubx.FieldSpec{
+		WireName: "before_model_callback",
+		Kind:     "object",
+		Fields:   V1betaGuardrail_CodeCallback_AfterAgentCallbackFields,
+	},
+}
 
 var V1betaGuardrail_ContentFilterFields = ubx.FieldMap{
-		"BannedContents": ubx.FieldSpec{WireName: "banned_contents"},
-		"BannedContentsInAgentResponse": ubx.FieldSpec{WireName: "banned_contents_in_agent_response"},
-		"BannedContentsInUserInput": ubx.FieldSpec{WireName: "banned_contents_in_user_input"},
-		"DisregardDiacritics": ubx.FieldSpec{WireName: "disregard_diacritics"},
-		"MatchType": ubx.FieldSpec{WireName: "match_type"},
-	}
+	"BannedContents":                ubx.FieldSpec{WireName: "banned_contents"},
+	"BannedContentsInAgentResponse": ubx.FieldSpec{WireName: "banned_contents_in_agent_response"},
+	"BannedContentsInUserInput":     ubx.FieldSpec{WireName: "banned_contents_in_user_input"},
+	"DisregardDiacritics":           ubx.FieldSpec{WireName: "disregard_diacritics"},
+	"MatchType":                     ubx.FieldSpec{WireName: "match_type"},
+}
 
 var V1betaGuardrail_LlmPolicy_ModelSettingsFields = ubx.FieldMap{
-		"Model": ubx.FieldSpec{WireName: "model"},
-		"Temperature": ubx.FieldSpec{WireName: "temperature"},
-	}
+	"Model":       ubx.FieldSpec{WireName: "model"},
+	"Temperature": ubx.FieldSpec{WireName: "temperature"},
+}
 
 var V1betaGuardrail_LlmPolicyFields = ubx.FieldMap{
-		"AllowShortUtterance": ubx.FieldSpec{WireName: "allow_short_utterance"},
-		"FailOpen": ubx.FieldSpec{WireName: "fail_open"},
-		"MaxConversationMessages": ubx.FieldSpec{WireName: "max_conversation_messages"},
-		"ModelSettings": ubx.FieldSpec{
-			WireName: "model_settings",
-			Kind: "object",
-			Fields: V1betaGuardrail_LlmPolicy_ModelSettingsFields,
-		},
-		"PolicyScope": ubx.FieldSpec{WireName: "policy_scope"},
-		"Prompt": ubx.FieldSpec{WireName: "prompt"},
-	}
+	"AllowShortUtterance":     ubx.FieldSpec{WireName: "allow_short_utterance"},
+	"FailOpen":                ubx.FieldSpec{WireName: "fail_open"},
+	"MaxConversationMessages": ubx.FieldSpec{WireName: "max_conversation_messages"},
+	"ModelSettings": ubx.FieldSpec{
+		WireName: "model_settings",
+		Kind:     "object",
+		Fields:   V1betaGuardrail_LlmPolicy_ModelSettingsFields,
+	},
+	"PolicyScope": ubx.FieldSpec{WireName: "policy_scope"},
+	"Prompt":      ubx.FieldSpec{WireName: "prompt"},
+}
 
 var V1betaGuardrail_LlmPromptSecurity_DefaultSettingsFields = ubx.FieldMap{
-		"DefaultPromptTemplate": ubx.FieldSpec{WireName: "default_prompt_template"},
-	}
+	"DefaultPromptTemplate": ubx.FieldSpec{WireName: "default_prompt_template"},
+}
 
 var V1betaGuardrail_LlmPromptSecurityFields = ubx.FieldMap{
-		"CustomPolicy": ubx.FieldSpec{
-			WireName: "custom_policy",
-			Kind: "object",
-			Fields: V1betaGuardrail_LlmPolicyFields,
-		},
-		"DefaultSettings": ubx.FieldSpec{
-			WireName: "default_settings",
-			Kind: "object",
-			Fields: V1betaGuardrail_LlmPromptSecurity_DefaultSettingsFields,
-		},
-		"FailOpen": ubx.FieldSpec{WireName: "fail_open"},
-	}
+	"CustomPolicy": ubx.FieldSpec{
+		WireName: "custom_policy",
+		Kind:     "object",
+		Fields:   V1betaGuardrail_LlmPolicyFields,
+	},
+	"DefaultSettings": ubx.FieldSpec{
+		WireName: "default_settings",
+		Kind:     "object",
+		Fields:   V1betaGuardrail_LlmPromptSecurity_DefaultSettingsFields,
+	},
+	"FailOpen": ubx.FieldSpec{WireName: "fail_open"},
+}
 
 var V1betaGuardrail_ModelSafety_SafetySettingsFields = ubx.FieldMap{
-		"Category": ubx.FieldSpec{WireName: "category"},
-		"Threshold": ubx.FieldSpec{WireName: "threshold"},
-	}
+	"Category":  ubx.FieldSpec{WireName: "category"},
+	"Threshold": ubx.FieldSpec{WireName: "threshold"},
+}
 
 var V1betaGuardrail_ModelSafetyFields = ubx.FieldMap{
-		"SafetySettings": ubx.FieldSpec{
-			WireName: "safety_settings",
-			Kind: "list",
-			Fields: V1betaGuardrail_ModelSafety_SafetySettingsFields,
-		},
-	}
+	"SafetySettings": ubx.FieldSpec{
+		WireName: "safety_settings",
+		Kind:     "list",
+		Fields:   V1betaGuardrail_ModelSafety_SafetySettingsFields,
+	},
+}
 
 type V1betaGuardrailConfig struct {
 	// Action that is taken when a certain precondition is met.
@@ -246,8 +246,6 @@ type V1betaGuardrailConfig struct {
 	CodeCallback any
 	// Guardrail that bans certain content from being used in the conversation.
 	ContentFilter any
-	// Output only. Timestamp when the guardrail was created.
-	CreateTime any
 	// Optional. Description of the guardrail.
 	Description any
 	// Required. Display name of the guardrail.
@@ -264,8 +262,6 @@ type V1betaGuardrailConfig struct {
 	ModelSafety any
 	// Identifier. The unique identifier of the guardrail. Format: `projects/{project}/locations/{location}/apps/{app}/guardrails/{guardrail}`
 	Name any
-	// Output only. Timestamp when the guardrail was last updated.
-	UpdateTime any
 }
 
 type V1betaGuardrailAttrs struct {
@@ -302,40 +298,38 @@ var V1betaGuardrail = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Action": ubx.FieldSpec{
 			WireName: "action",
-			Kind: "object",
-			Fields: V1betaGuardrail_ActionFields,
+			Kind:     "object",
+			Fields:   V1betaGuardrail_ActionFields,
 		},
 		"CodeCallback": ubx.FieldSpec{
 			WireName: "code_callback",
-			Kind: "object",
-			Fields: V1betaGuardrail_CodeCallbackFields,
+			Kind:     "object",
+			Fields:   V1betaGuardrail_CodeCallbackFields,
 		},
 		"ContentFilter": ubx.FieldSpec{
 			WireName: "content_filter",
-			Kind: "object",
-			Fields: V1betaGuardrail_ContentFilterFields,
+			Kind:     "object",
+			Fields:   V1betaGuardrail_ContentFilterFields,
 		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
+		"Enabled":     ubx.FieldSpec{WireName: "enabled"},
+		"Etag":        ubx.FieldSpec{WireName: "etag"},
 		"LlmPolicy": ubx.FieldSpec{
 			WireName: "llm_policy",
-			Kind: "object",
-			Fields: V1betaGuardrail_LlmPolicyFields,
+			Kind:     "object",
+			Fields:   V1betaGuardrail_LlmPolicyFields,
 		},
 		"LlmPromptSecurity": ubx.FieldSpec{
 			WireName: "llm_prompt_security",
-			Kind: "object",
-			Fields: V1betaGuardrail_LlmPromptSecurityFields,
+			Kind:     "object",
+			Fields:   V1betaGuardrail_LlmPromptSecurityFields,
 		},
 		"ModelSafety": ubx.FieldSpec{
 			WireName: "model_safety",
-			Kind: "object",
-			Fields: V1betaGuardrail_ModelSafetyFields,
+			Kind:     "object",
+			Fields:   V1betaGuardrail_ModelSafetyFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

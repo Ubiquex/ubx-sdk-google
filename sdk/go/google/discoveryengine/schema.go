@@ -24,8 +24,8 @@ type SchemaAttrs struct {
 var Schema = ubx.ResourceBinding{
 	WireType: "google_discoveryengine_schema",
 	Fields: ubx.FieldMap{
-		"JsonSchema": ubx.FieldSpec{WireName: "json_schema"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"JsonSchema":   ubx.FieldSpec{WireName: "json_schema"},
+		"Name":         ubx.FieldSpec{WireName: "name"},
 		"StructSchema": ubx.FieldSpec{WireName: "struct_schema"},
 	},
 }

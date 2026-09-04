@@ -4,78 +4,78 @@ package securitycenter
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResourceValueConfig_Requests_ResourceValueConfig_SensitiveDataProtectionMapping struct {
-	HighSensitivityMapping any
+	HighSensitivityMapping   any
 	MediumSensitivityMapping any
 }
 
 type ResourceValueConfig_Requests_ResourceValueConfig struct {
-	CloudProvider any
-	CreateTime any
-	Description any
-	Name any
-	ResourceLabelsSelector any
-	ResourceType any
-	ResourceValue any
-	Scope any
+	CloudProvider                  any
+	CreateTime                     any
+	Description                    any
+	Name                           any
+	ResourceLabelsSelector         any
+	ResourceType                   any
+	ResourceValue                  any
+	Scope                          any
 	SensitiveDataProtectionMapping any
-	TagValues any
-	UpdateTime any
+	TagValues                      any
+	UpdateTime                     any
 }
 
 type ResourceValueConfig_Requests struct {
-	Parent any
+	Parent              any
 	ResourceValueConfig any
 }
 
 var ResourceValueConfig_Requests_ResourceValueConfig_SensitiveDataProtectionMappingFields = ubx.FieldMap{
-		"HighSensitivityMapping": ubx.FieldSpec{WireName: "high_sensitivity_mapping"},
-		"MediumSensitivityMapping": ubx.FieldSpec{WireName: "medium_sensitivity_mapping"},
-	}
+	"HighSensitivityMapping":   ubx.FieldSpec{WireName: "high_sensitivity_mapping"},
+	"MediumSensitivityMapping": ubx.FieldSpec{WireName: "medium_sensitivity_mapping"},
+}
 
 var ResourceValueConfig_Requests_ResourceValueConfigFields = ubx.FieldMap{
-		"CloudProvider": ubx.FieldSpec{WireName: "cloud_provider"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ResourceLabelsSelector": ubx.FieldSpec{WireName: "resource_labels_selector"},
-		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
-		"ResourceValue": ubx.FieldSpec{WireName: "resource_value"},
-		"Scope": ubx.FieldSpec{WireName: "scope"},
-		"SensitiveDataProtectionMapping": ubx.FieldSpec{
-			WireName: "sensitive_data_protection_mapping",
-			Kind: "object",
-			Fields: ResourceValueConfig_Requests_ResourceValueConfig_SensitiveDataProtectionMappingFields,
-		},
-		"TagValues": ubx.FieldSpec{WireName: "tag_values"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-	}
+	"CloudProvider":          ubx.FieldSpec{WireName: "cloud_provider"},
+	"CreateTime":             ubx.FieldSpec{WireName: "create_time"},
+	"Description":            ubx.FieldSpec{WireName: "description"},
+	"Name":                   ubx.FieldSpec{WireName: "name"},
+	"ResourceLabelsSelector": ubx.FieldSpec{WireName: "resource_labels_selector"},
+	"ResourceType":           ubx.FieldSpec{WireName: "resource_type"},
+	"ResourceValue":          ubx.FieldSpec{WireName: "resource_value"},
+	"Scope":                  ubx.FieldSpec{WireName: "scope"},
+	"SensitiveDataProtectionMapping": ubx.FieldSpec{
+		WireName: "sensitive_data_protection_mapping",
+		Kind:     "object",
+		Fields:   ResourceValueConfig_Requests_ResourceValueConfig_SensitiveDataProtectionMappingFields,
+	},
+	"TagValues":  ubx.FieldSpec{WireName: "tag_values"},
+	"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+}
 
 var ResourceValueConfig_RequestsFields = ubx.FieldMap{
-		"Parent": ubx.FieldSpec{WireName: "parent"},
-		"ResourceValueConfig": ubx.FieldSpec{
-			WireName: "resource_value_config",
-			Kind: "object",
-			Fields: ResourceValueConfig_Requests_ResourceValueConfigFields,
-		},
-	}
+	"Parent": ubx.FieldSpec{WireName: "parent"},
+	"ResourceValueConfig": ubx.FieldSpec{
+		WireName: "resource_value_config",
+		Kind:     "object",
+		Fields:   ResourceValueConfig_Requests_ResourceValueConfigFields,
+	},
+}
 
 type ResourceValueConfigConfig struct {
 	Requests any
 }
 
 type ResourceValueConfigAttrs struct {
-	CloudProvider any
-	CreateTime any
-	Description any
-	Name any
-	Requests any
-	ResourceLabelsSelector any
-	ResourceType any
-	ResourceValue any
-	Scope any
+	CloudProvider                  any
+	CreateTime                     any
+	Description                    any
+	Name                           any
+	Requests                       any
+	ResourceLabelsSelector         any
+	ResourceType                   any
+	ResourceValue                  any
+	Scope                          any
 	SensitiveDataProtectionMapping any
-	TagValues any
-	UpdateTime any
+	TagValues                      any
+	UpdateTime                     any
 }
 
 var ResourceValueConfig = ubx.ResourceBinding{
@@ -83,8 +83,8 @@ var ResourceValueConfig = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Requests": ubx.FieldSpec{
 			WireName: "requests",
-			Kind: "list",
-			Fields: ResourceValueConfig_RequestsFields,
+			Kind:     "list",
+			Fields:   ResourceValueConfig_RequestsFields,
 		},
 	},
 }

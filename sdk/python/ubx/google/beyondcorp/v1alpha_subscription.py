@@ -8,12 +8,8 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class V1alphaSubscriptionConfig:
-    # Output only. Represents that, if subscription will renew or end when the term ends.
-    auto_renew_enabled: Any = None
     # Optional. Name of the billing account in the format. e.g. billingAccounts/123456-123456-123456 Required if Subscription is of Paid type.
     billing_account: Any = None
-    # Output only. Create time of the subscription.
-    create_time: Any = None
     # Optional. Whether the subscription is being created as part of the Citrix flow. If this field is set to true, the subscription should have both the start_time and end_time set in the request and the billing account used will be the Citrix master billing account regardless of what its set to in the request. This field can only be set to true in create requests.
     csg_customer: Any = None
     # Optional. End time of the subscription.
@@ -28,10 +24,6 @@ class V1alphaSubscriptionConfig:
     sku: Any = None
     # Optional. Start time of the subscription.
     start_time: Any = None
-    # Output only. The current state of the subscription.
-    state: Any = None
-    # Output only. Type of subscriber.
-    subscriber_type: Any = None
     # Required. Type of subscription.
     type: Any = None
 
@@ -67,9 +59,7 @@ class V1alphaSubscriptionAttrs:
 V1alphaSubscription = ubx.ResourceBinding(
     wire_type="google_beyondcorp_v1alpha_subscription",
     fields={
-        "auto_renew_enabled": ubx.FieldSpec(wire_name="auto_renew_enabled"),
         "billing_account": ubx.FieldSpec(wire_name="billing_account"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "csg_customer": ubx.FieldSpec(wire_name="csg_customer"),
         "end_time": ubx.FieldSpec(wire_name="end_time"),
         "name": ubx.FieldSpec(wire_name="name"),
@@ -77,8 +67,6 @@ V1alphaSubscription = ubx.ResourceBinding(
         "signup_source": ubx.FieldSpec(wire_name="signup_source"),
         "sku": ubx.FieldSpec(wire_name="sku"),
         "start_time": ubx.FieldSpec(wire_name="start_time"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "subscriber_type": ubx.FieldSpec(wire_name="subscriber_type"),
         "type": ubx.FieldSpec(wire_name="type"),
     },
 )

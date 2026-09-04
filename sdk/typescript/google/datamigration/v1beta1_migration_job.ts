@@ -56,8 +56,6 @@ const V1beta1MigrationJob_VpcPeeringConnectivityFields: FieldMap = {
 };
 
 export interface V1beta1MigrationJobConfig {
-  /** Output only. The timestamp when the migration job resource was created. A timestamp in RFC3339 UTC "Zulu" format, accurate to nanoseconds. Example: "2014-10-02T15:01:23.045123456Z". */
-  createTime?: string | Computed<string>;
   /** Required. The resource name (URI) of the destination connection profile. */
   destination?: string | Computed<string>;
   /** A message defining the database engine and provider. */
@@ -66,18 +64,12 @@ export interface V1beta1MigrationJobConfig {
   displayName?: string | Computed<string>;
   /** The path to the dump file in Google Cloud Storage, in the format: (gs://[BUCKET_NAME]/[OBJECT_NAME]). */
   dumpPath?: string | Computed<string>;
-  /** Output only. The duration of the migration job (in seconds). A duration in seconds with up to nine fractional digits, terminated by 's'. Example: "3.5s". */
-  duration?: string | Computed<string>;
-  /** Output only. If the migration job is completed, the time when it was completed. */
-  endTime?: string | Computed<string>;
   /** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
   error?: V1beta1MigrationJob_Error | Computed<V1beta1MigrationJob_Error>;
   /** The resource labels for migration job to use to annotate any related underlying resources such as Compute Engine VMs. An object containing a list of "key": "value" pairs. Example: `{ "name": "wrench", "mass": "1.3kg", "count": "3" }`. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** The name (URI) of this migration job resource, in the form of: projects/{project}/locations/{location}/migrationJobs/{migrationJob}. */
   name?: string | Computed<string>;
-  /** Output only. The current migration job phase. */
-  phase?: string | Computed<string>;
   /** The details needed to configure a reverse SSH tunnel between the source and destination databases. These details will be used when calling the generateSshScript method (see https://cloud.google.com/database-migration/docs/reference/rest/v1beta1/projects.locations.migrationJobs/generateSshScript) to produce the script that will help set up the reverse SSH tunnel, and to set up the VPC peering between the Cloud SQL private network and the VPC. */
   reverseSshConnectivity?: V1beta1MigrationJob_ReverseSshConnectivity | Computed<V1beta1MigrationJob_ReverseSshConnectivity>;
   /** Required. The resource name (URI) of the source connection profile. */
@@ -90,8 +82,6 @@ export interface V1beta1MigrationJobConfig {
   staticIpConnectivity?: unknown | Computed<unknown>;
   /** Required. The migration job type. */
   type?: string | Computed<string>;
-  /** Output only. The timestamp when the migration job resource was last updated. A timestamp in RFC3339 UTC "Zulu" format, accurate to nanoseconds. Example: "2014-10-02T15:01:23.045123456Z". */
-  updateTime?: string | Computed<string>;
   /** The details of the VPC where the source database is located in Google Cloud. We will use this information to set up the VPC peering connection between Cloud SQL and this VPC. */
   vpcPeeringConnectivity?: V1beta1MigrationJob_VpcPeeringConnectivity | Computed<V1beta1MigrationJob_VpcPeeringConnectivity>;
 }
@@ -140,7 +130,6 @@ export interface V1beta1MigrationJobAttrs {
 export const V1beta1MigrationJob: ResourceBinding<V1beta1MigrationJobConfig, V1beta1MigrationJobAttrs> = {
   wireType: "google_datamigration_v1beta1_migration_job",
   fields: {
-    createTime: "create_time",
     destination: "destination",
     destinationDatabase: {
       wireName: "destination_database",
@@ -149,8 +138,6 @@ export const V1beta1MigrationJob: ResourceBinding<V1beta1MigrationJobConfig, V1b
     },
     displayName: "display_name",
     dumpPath: "dump_path",
-    duration: "duration",
-    endTime: "end_time",
     error: {
       wireName: "error",
       kind: "object",
@@ -158,7 +145,6 @@ export const V1beta1MigrationJob: ResourceBinding<V1beta1MigrationJobConfig, V1b
     },
     labels: "labels",
     name: "name",
-    phase: "phase",
     reverseSshConnectivity: {
       wireName: "reverse_ssh_connectivity",
       kind: "object",
@@ -173,7 +159,6 @@ export const V1beta1MigrationJob: ResourceBinding<V1beta1MigrationJobConfig, V1b
     state: "state",
     staticIpConnectivity: "static_ip_connectivity",
     type: "type",
-    updateTime: "update_time",
     vpcPeeringConnectivity: {
       wireName: "vpc_peering_connectivity",
       kind: "object",

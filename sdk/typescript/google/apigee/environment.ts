@@ -69,8 +69,6 @@ export interface EnvironmentConfig {
   apiProxyType?: string | Computed<string>;
   /** Configuration for resolving the client ip. */
   clientIpResolutionConfig?: Environment_ClientIpResolutionConfig | Computed<Environment_ClientIpResolutionConfig>;
-  /** Output only. Creation time of this environment as milliseconds since epoch. */
-  createdAt?: string | Computed<string>;
   /** Optional. Deployment type supported by the environment. The deployment type can be set when creating the environment and cannot be changed. When you enable archive deployment, you will be **prevented from performing** a [subset of actions](/apigee/docs/api-platform/local-development/overview#prevented-actions) within the environment, including: * Managing the deployment of API proxy or shared flow revisions * Creating, updating, or deleting resource files * Creating, updating, or deleting target servers */
   deploymentType?: string | Computed<string>;
   /** Optional. Description of the environment. */
@@ -80,16 +78,12 @@ export interface EnvironmentConfig {
   /** Optional. URI of the forward proxy to be applied to the runtime instances in this environment. Must be in the format of {scheme}://{hostname}:{port}. Note that the only supported scheme is "http". The port must be supplied. To remove a forward proxy setting, update the field to an empty value. Note: At this time, PUT operations to add forwardProxyUri to an existing environment fail if the environment has nodeConfig set up. To successfully add the forwardProxyUri setting in this case, include the NodeConfig details with the request. */
   forwardProxyUri?: string | Computed<string>;
   hasAttachedFlowHooks?: boolean | Computed<boolean>;
-  /** Output only. Last modification time of this environment as milliseconds since epoch. */
-  lastModifiedAt?: string | Computed<string>;
   /** Required. Name of the environment. Values must match the regular expression `^[.\\p{Alnum}-_]{1,255}$` */
   name?: string | Computed<string>;
   /** NodeConfig for setting the min/max number of nodes associated with the environment. */
   nodeConfig?: Environment_NodeConfig | Computed<Environment_NodeConfig>;
   /** Message for compatibility with legacy Edge specification for Java Properties object in JSON. */
   properties?: Environment_Properties | Computed<Environment_Properties>;
-  /** Output only. State of the environment. Values other than ACTIVE means the resource is not ready to use. */
-  state?: string | Computed<string>;
   /** Optional. EnvironmentType selected for the environment. */
   type?: string | Computed<string>;
 }
@@ -133,13 +127,11 @@ export const Environment: ResourceBinding<EnvironmentConfig, EnvironmentAttrs> =
       kind: "object",
       fields: Environment_ClientIpResolutionConfigFields,
     },
-    createdAt: "created_at",
     deploymentType: "deployment_type",
     description: "description",
     displayName: "display_name",
     forwardProxyUri: "forward_proxy_uri",
     hasAttachedFlowHooks: "has_attached_flow_hooks",
-    lastModifiedAt: "last_modified_at",
     name: "name",
     nodeConfig: {
       wireName: "node_config",
@@ -151,7 +143,6 @@ export const Environment: ResourceBinding<EnvironmentConfig, EnvironmentAttrs> =
       kind: "object",
       fields: Environment_PropertiesFields,
     },
-    state: "state",
     type: "type",
   },
 };

@@ -30,8 +30,8 @@ type SnapshotSettingConfig struct {
 }
 
 type SnapshotSettingAttrs struct {
-	AccessLocation any
-	Project any
+	AccessLocation  any
+	Project         any
 	StorageLocation any
 }
 

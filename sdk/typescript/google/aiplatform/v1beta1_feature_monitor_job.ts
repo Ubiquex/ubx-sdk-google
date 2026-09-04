@@ -78,14 +78,8 @@ const V1beta1FeatureMonitorJob_JobSummaryFields: FieldMap = {
 };
 
 export interface V1beta1FeatureMonitorJobConfig {
-  /** Output only. Timestamp when this FeatureMonitorJob was created. Creation of a FeatureMonitorJob means that the job is pending / waiting for sufficient resources but may not have started running yet. */
-  createTime?: string | Computed<string>;
   /** Optional. Description of the FeatureMonitor. */
   description?: string | Computed<string>;
-  /** Output only. FeatureMonitorJob ID comparing to which the drift is calculated. */
-  driftBaseFeatureMonitorJobId?: string | Computed<string>;
-  /** Output only. Data snapshot time comparing to which the drift is calculated. */
-  driftBaseSnapshotTime?: string | Computed<string>;
   /** Feature selection configuration for the FeatureMonitor. */
   featureSelectionConfig?: V1beta1FeatureMonitorJob_FeatureSelectionConfig | Computed<V1beta1FeatureMonitorJob_FeatureSelectionConfig>;
   /** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
@@ -96,8 +90,6 @@ export interface V1beta1FeatureMonitorJobConfig {
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Identifier. Name of the FeatureMonitorJob. Format: `projects/{project}/locations/{location}/featureGroups/{feature_group}/featureMonitors/{feature_monitor}/featureMonitorJobs/{feature_monitor_job}`. */
   name?: string | Computed<string>;
-  /** Output only. Trigger type of the Feature Monitor Job. */
-  triggerType?: string | Computed<string>;
 }
 
 export interface V1beta1FeatureMonitorJobAttrs {
@@ -126,10 +118,7 @@ export interface V1beta1FeatureMonitorJobAttrs {
 export const V1beta1FeatureMonitorJob: ResourceBinding<V1beta1FeatureMonitorJobConfig, V1beta1FeatureMonitorJobAttrs> = {
   wireType: "google_aiplatform_v1beta1_feature_monitor_job",
   fields: {
-    createTime: "create_time",
     description: "description",
-    driftBaseFeatureMonitorJobId: "drift_base_feature_monitor_job_id",
-    driftBaseSnapshotTime: "drift_base_snapshot_time",
     featureSelectionConfig: {
       wireName: "feature_selection_config",
       kind: "object",
@@ -147,6 +136,5 @@ export const V1beta1FeatureMonitorJob: ResourceBinding<V1beta1FeatureMonitorJobC
     },
     labels: "labels",
     name: "name",
-    triggerType: "trigger_type",
   },
 };

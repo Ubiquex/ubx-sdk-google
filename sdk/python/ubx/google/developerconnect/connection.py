@@ -299,12 +299,8 @@ class ConnectionConfig:
     bitbucket_cloud_config: Any = None
     # Configuration for connections to an instance of Bitbucket Data Center.
     bitbucket_data_center_config: Any = None
-    # Output only. [Output only] Create timestamp
-    create_time: Any = None
     # The crypto key configuration. This field is used by the Customer-managed encryption keys (CMEK) feature.
     crypto_key_config: Any = None
-    # Output only. [Output only] Delete timestamp
-    delete_time: Any = None
     # Optional. If disabled is set to true, functionality is disabled for this connection. Repository based API methods and webhooks processing for repositories in this connection will be disabled.
     disabled: Any = None
     # Optional. This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding.
@@ -327,14 +323,8 @@ class ConnectionConfig:
     labels: Any = None
     # Identifier. The resource name of the connection, in the format `projects/{project}/locations/{location}/connections/{connection_id}`.
     name: Any = None
-    # Output only. Set to true when the connection is being set up or updated in the background.
-    reconciling: Any = None
     # Configuration for connections to Secure Source Manager instance
     secure_source_manager_instance_config: Any = None
-    # Output only. A system-assigned unique identifier for the Connection.
-    uid: Any = None
-    # Output only. [Output only] Update timestamp
-    update_time: Any = None
 
 @dataclasses.dataclass
 class ConnectionAttrs:
@@ -395,13 +385,11 @@ Connection = ubx.ResourceBinding(
             kind="object",
             fields=_Connection_BitbucketDataCenterConfigFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "crypto_key_config": ubx.FieldSpec(
             wire_name="crypto_key_config",
             kind="object",
             fields=_Connection_CryptoKeyConfigFields,
         ),
-        "delete_time": ubx.FieldSpec(wire_name="delete_time"),
         "disabled": ubx.FieldSpec(wire_name="disabled"),
         "etag": ubx.FieldSpec(wire_name="etag"),
         "git_proxy_config": ubx.FieldSpec(
@@ -441,13 +429,10 @@ Connection = ubx.ResourceBinding(
         ),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "reconciling": ubx.FieldSpec(wire_name="reconciling"),
         "secure_source_manager_instance_config": ubx.FieldSpec(
             wire_name="secure_source_manager_instance_config",
             kind="object",
             fields=_Connection_SecureSourceManagerInstanceConfigFields,
         ),
-        "uid": ubx.FieldSpec(wire_name="uid"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

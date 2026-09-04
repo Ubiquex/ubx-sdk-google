@@ -94,8 +94,6 @@ _Entry_EntrySourceFields = {
 class EntryConfig:
     # Optional. The aspects that are attached to the entry. Depending on how the aspect is attached to the entry, the format of the aspect key can be one of the following: If the aspect is attached directly to the entry: {project_id_or_number}.{location_id}.{aspect_type_id} If the aspect is attached to an entry's path: {project_id_or_number}.{location_id}.{aspect_type_id}@{path}
     aspects: Any = None
-    # Output only. The time when the entry was created in Dataplex Universal Catalog.
-    create_time: Any = None
     # Information related to the source system of the data resource that is represented by the entry.
     entry_source: Any = None
     # Required. Immutable. The relative resource name of the entry type that was used to create this entry, in the format projects/{project_id_or_number}/locations/{location_id}/entryTypes/{entry_type_id}.
@@ -106,8 +104,6 @@ class EntryConfig:
     name: Any = None
     # Optional. Immutable. The resource name of the parent entry, in the format projects/{project_id_or_number}/locations/{location_id}/entryGroups/{entry_group_id}/entries/{entry_id}.
     parent_entry: Any = None
-    # Output only. The time when the entry was last updated in Dataplex Universal Catalog.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class EntryAttrs:
@@ -136,7 +132,6 @@ Entry = ubx.ResourceBinding(
             kind="map",
             fields=_Entry_AspectsFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "entry_source": ubx.FieldSpec(
             wire_name="entry_source",
             kind="object",
@@ -146,6 +141,5 @@ Entry = ubx.ResourceBinding(
         "fully_qualified_name": ubx.FieldSpec(wire_name="fully_qualified_name"),
         "name": ubx.FieldSpec(wire_name="name"),
         "parent_entry": ubx.FieldSpec(wire_name="parent_entry"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

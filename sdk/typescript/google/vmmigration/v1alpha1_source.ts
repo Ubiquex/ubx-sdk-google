@@ -168,8 +168,6 @@ export interface V1alpha1SourceConfig {
   aws?: V1alpha1Source_Aws | Computed<V1alpha1Source_Aws>;
   /** AzureSourceDetails message describes a specific source details for the Azure source type. */
   azure?: V1alpha1Source_Azure | Computed<V1alpha1Source_Azure>;
-  /** Output only. The create time timestamp. */
-  createTime?: string | Computed<string>;
   /** User-provided description of the source. */
   description?: string | Computed<string>;
   /** Encryption message describes the details of the applied encryption. */
@@ -178,10 +176,6 @@ export interface V1alpha1SourceConfig {
   error?: V1alpha1Source_Aws_Error | Computed<V1alpha1Source_Aws_Error>;
   /** The labels of the source. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. The Source name. */
-  name?: string | Computed<string>;
-  /** Output only. The update time timestamp. */
-  updateTime?: string | Computed<string>;
   /** VmwareSourceDetails message describes a specific source details for the vmware source type. */
   vmware?: V1alpha1Source_Vmware | Computed<V1alpha1Source_Vmware>;
 }
@@ -222,7 +216,6 @@ export const V1alpha1Source: ResourceBinding<V1alpha1SourceConfig, V1alpha1Sourc
       kind: "object",
       fields: V1alpha1Source_AzureFields,
     },
-    createTime: "create_time",
     description: "description",
     encryption: {
       wireName: "encryption",
@@ -235,8 +228,6 @@ export const V1alpha1Source: ResourceBinding<V1alpha1SourceConfig, V1alpha1Sourc
       fields: V1alpha1Source_Aws_ErrorFields,
     },
     labels: "labels",
-    name: "name",
-    updateTime: "update_time",
     vmware: {
       wireName: "vmware",
       kind: "object",

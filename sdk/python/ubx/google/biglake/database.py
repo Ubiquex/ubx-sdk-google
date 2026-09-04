@@ -20,20 +20,10 @@ _Database_HiveOptionsFields = {
 
 @dataclasses.dataclass
 class DatabaseConfig:
-    # Output only. The creation time of the database.
-    create_time: Any = None
-    # Output only. The deletion time of the database. Only set after the database is deleted.
-    delete_time: Any = None
-    # Output only. The time when this database is considered expired. Only set after the database is deleted.
-    expire_time: Any = None
     # Options of a Hive database.
     hive_options: Any = None
-    # Output only. The resource name. Format: projects/{project_id_or_number}/locations/{location_id}/catalogs/{catalog_id}/databases/{database_id}
-    name: Any = None
     # The database type.
     type: Any = None
-    # Output only. The last modification time of the database.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class DatabaseAttrs:
@@ -55,16 +45,11 @@ class DatabaseAttrs:
 Database = ubx.ResourceBinding(
     wire_type="google_biglake_database",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
-        "delete_time": ubx.FieldSpec(wire_name="delete_time"),
-        "expire_time": ubx.FieldSpec(wire_name="expire_time"),
         "hive_options": ubx.FieldSpec(
             wire_name="hive_options",
             kind="object",
             fields=_Database_HiveOptionsFields,
         ),
-        "name": ubx.FieldSpec(wire_name="name"),
         "type": ubx.FieldSpec(wire_name="type"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

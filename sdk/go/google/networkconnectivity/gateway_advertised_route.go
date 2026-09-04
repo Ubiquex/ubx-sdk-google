@@ -4,8 +4,6 @@ package networkconnectivity
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type GatewayAdvertisedRouteConfig struct {
-	// Output only. The time the gateway advertised route was created.
-	CreateTime any
 	// An optional description of the gateway advertised route.
 	Description any
 	// Immutable. This route's advertised IP address range. Must be a valid CIDR-formatted prefix. If an IP address is provided without a subnet mask, it is interpreted as, for IPv4, a `/32` singular IP address range, and, for IPv6, `/128`.
@@ -18,12 +16,6 @@ type GatewayAdvertisedRouteConfig struct {
 	Priority any
 	// Optional. The recipient of this advertised route.
 	Recipient any
-	// Output only. The current lifecycle state of this gateway advertised route.
-	State any
-	// Output only. The Google-generated UUID for the gateway advertised route. This value is unique across all gateway advertised route resources. If a gateway advertised route is deleted and another with the same name is created, the new route is assigned a different `unique_id`.
-	UniqueId any
-	// Output only. The time the gateway advertised route was last updated.
-	UpdateTime any
 }
 
 type GatewayAdvertisedRouteAttrs struct {
@@ -52,15 +44,11 @@ type GatewayAdvertisedRouteAttrs struct {
 var GatewayAdvertisedRoute = ubx.ResourceBinding{
 	WireType: "google_networkconnectivity_gateway_advertised_route",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"IpRange": ubx.FieldSpec{WireName: "ip_range"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Priority": ubx.FieldSpec{WireName: "priority"},
-		"Recipient": ubx.FieldSpec{WireName: "recipient"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"UniqueId": ubx.FieldSpec{WireName: "unique_id"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"IpRange":     ubx.FieldSpec{WireName: "ip_range"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Priority":    ubx.FieldSpec{WireName: "priority"},
+		"Recipient":   ubx.FieldSpec{WireName: "recipient"},
 	},
 }

@@ -21,10 +21,6 @@ export interface AlphaForwardingRule_ServiceDirectoryRegistrations {
   serviceDirectoryRegion?: string | Computed<string>;
 }
 
-const AlphaForwardingRule_AttachedExtensionsFields: FieldMap = {
-  reference: "reference",
-};
-
 const AlphaForwardingRule_MetadataFilters_FilterLabelsFields: FieldMap = {
   name: "name",
   value: "value",
@@ -52,18 +48,8 @@ export interface AlphaForwardingRuleConfig {
   allowGlobalAccess?: boolean | Computed<boolean>;
   /** This is used in PSC consumer ForwardingRule to control whether the PSC endpoint can be accessed from another region. */
   allowPscGlobalAccess?: boolean | Computed<boolean>;
-  /** Output only. [Output Only]. The extensions that are attached to this ForwardingRule. */
-  attachedExtensions?: AlphaForwardingRule_AttachedExtensions[] | Computed<AlphaForwardingRule_AttachedExtensions[]>;
-  /** Output only. [Output Only] Specifies the load balancing availability group, one of the two that collectively provide high availability. Specifies the availability group of the forwarding rule. This field is for use by global external passthrough load balancers (load balancing scheme EXTERNAL_PASSTHROUGH) and is set for the child forwarding rules only. The possible values are: - AVAILABILITY_GROUP0: Set for the child forwarding rule that is programmed on the AVAILABILITY_GROUP0 load balancing stack. The child forwarding rule has the same IP protocol, port, and backend service settings as the parent forwarding rule, but has only one of the two IP addresses of the parent forwarding rule, the one with the purpose PASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP0. - AVAILABILITY_GROUP1: Set for the child forwarding rule that is programmed on the AVAILABILITY_GROUP1 load balancing stack. The child forwarding rule has the same IP protocol, port and backend service settings as the parent forwarding rule, but has only one of the two IP addresses of the parent forwarding rule, the one with the purposePASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP1. For each global external Passthrough Network Load Balancer forwarding rule (a parent forwarding rule) that you create, Google Cloud generates two output-only child forwarding rules, one forAVAILABILITY_GROUP0 and one forAVAILABILITY_GROUP1. */
-  availabilityGroup?: string | Computed<string>;
   /** Identifies the backend service to which the forwarding rule sends traffic. It is a required field for the following load balancers: - Internal passthrough Network Load Balancers - Backend service-based regional external passthrough Network Load Balancers - Global external passthrough Network Load Balancers It cannot be set by other load balancer types and protocol forwarding rules. */
   backendService?: string | Computed<string>;
-  /** Output only. [Output Only] The URL for the corresponding base forwarding rule. By base forwarding rule, we mean the forwarding rule that has the same IP address, protocol, and port settings with the current forwarding rule, but without sourceIPRanges specified. Always empty if the current forwarding rule does not have sourceIPRanges specified. */
-  baseForwardingRule?: string | Computed<string>;
-  /** Output only. [Output Only] The resource URLs for the child forwarding rules. Applicable only to the parent forwarding rule of global external passthrough load balancers. This field contains the list of child forwarding rule URLs associated with the parent forwarding rule: one for each availability group. AVAILABILITY_GROUP0 will be the first element, and AVAILABILITY_GROUP1 will be the second element. Refer to theavailabilityGroup field for further details. It cannot be set by any other forwarding rules. */
-  childForwardingRules?: string[] | Computed<string[]>;
-  /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
-  creationTimestamp?: string | Computed<string>;
   /** An optional description of this resource. Provide this property when you create the resource. */
   description?: string | Computed<string>;
   /** Specifies the canary migration state for the backend buckets attached to this forwarding rule. Possible values are PREPARE, TEST_BY_PERCENTAGE, and TEST_ALL_TRAFFIC. To begin the migration from EXTERNAL to EXTERNAL_MANAGED, the state must be changed to PREPARE. The state must be changed to TEST_ALL_TRAFFIC before the loadBalancingScheme can be changed to EXTERNAL_MANAGED. Optionally, the TEST_BY_PERCENTAGE state can be used to migrate traffic to backend buckets attached to this forwarding rule by percentage using externalManagedBackendBucketMigrationTestingPercentage. Rolling back a migration requires the states to be set in reverse order. So changing the scheme from EXTERNAL_MANAGED to EXTERNAL requires the state to be set to TEST_ALL_TRAFFIC at the same time. Optionally, the TEST_BY_PERCENTAGE state can be used to migrate some traffic back to EXTERNAL or PREPARE can be used to migrate all traffic back to EXTERNAL. */
@@ -86,8 +72,6 @@ export interface AlphaForwardingRuleConfig {
   ipprotocol?: string | Computed<string>;
   /** Indicates whether or not this load balancer can be used as a collector for packet mirroring. To prevent mirroring loops, instances behind this load balancer will not have their traffic mirrored even if aPacketMirroring rule applies to them. This can only be set to true for load balancers that have theirloadBalancingScheme set to INTERNAL. */
   isMirroringCollector?: boolean | Computed<boolean>;
-  /** Output only. [Output Only] Type of the resource. Alwayscompute#forwardingRule for forwarding rule resources. */
-  kind?: string | Computed<string>;
   /** A fingerprint for the labels being applied to this resource, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a ForwardingRule. */
   labelFingerprint?: string | Computed<string>;
   /** Labels for this resource. These can only be added or modified by thesetLabels method. Each label key/value pair must comply withRFC1035. Label values may be empty. */
@@ -104,21 +88,14 @@ export interface AlphaForwardingRuleConfig {
   networkTier?: string | Computed<string>;
   /** This is used in PSC consumer ForwardingRule to control whether it should try to auto-generate a DNS zone or not. Non-PSC forwarding rules do not use this field. Once set, this field is not mutable. */
   noAutomateDnsZone?: boolean | Computed<boolean>;
-  /** Output only. [Output Only] The resource URL for the parent forwarding rule. Applicable only to the child forwarding rules of global external passthrough load balancers. This field contains the URL of the parent forwarding rule. */
-  parentForwardingRule?: string | Computed<string>;
   /** The ports, portRange, and allPorts fields are mutually exclusive. Only packets addressed to ports in the specified range will be forwarded to the backends configured with this forwarding rule. The portRange field has the following limitations: - It requires that the forwarding rule IPProtocol be TCP, UDP, or SCTP, and - It's applicable only to the following products: external passthrough Network Load Balancers, internal and external proxy Network Load Balancers, internal and external Application Load Balancers, external protocol forwarding, and Classic VPN. - Some products have restrictions on what ports can be used. See port specifications for details. For external forwarding rules, two or more forwarding rules cannot use the same [IPAddress, IPProtocol] pair (specified inIPAddress, IPAddresses, IPProtocol fields) if they have overlapping portRanges. For internal forwarding rules within the same VPC network, two or more forwarding rules cannot use the same [IPAddress, IPProtocol] pair, and cannot have overlapping portRanges. @pattern: \\d+(?:-\\d+)? */
   portRange?: string | Computed<string>;
   /** The ports, portRange, and allPorts fields are mutually exclusive. Only packets addressed to ports in the specified range will be forwarded to the backends configured with this forwarding rule. The ports field has the following limitations: - It requires that the forwarding rule IPProtocol be TCP, UDP, or SCTP, and - It's applicable only to the following products: internal passthrough Network Load Balancers, backend service-based external passthrough Network Load Balancers, and internal protocol forwarding. - You can specify a list of up to five ports by number, separated by commas. The ports can be contiguous or discontiguous. For external forwarding rules, two or more forwarding rules cannot use the same [IPAddress, IPProtocol] pair (specified inIPAddress, IPAddresses, IPProtocol fields) if they share at least one port number. For internal forwarding rules within the same VPC network, two or more forwarding rules cannot use the same [IPAddress, IPProtocol] pair if they share at least one port number. @pattern: \\d+(?:-\\d+)? */
   ports?: string[] | Computed<string[]>;
   /** [Output Only] The PSC connection id of the PSC forwarding rule. */
   pscConnectionId?: string | Computed<string>;
-  pscConnectionStatus?: string | Computed<string>;
-  /** Output only. [Output Only] URL of the region where the regional forwarding rule resides. This field is not applicable to global forwarding rules. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body. */
-  region?: string | Computed<string>;
   /** [Output Only] Server-defined URL for the resource. */
   selfLink?: string | Computed<string>;
-  /** Output only. [Output Only] Server-defined URL for this resource with the resource id. */
-  selfLinkWithId?: string | Computed<string>;
   /** Service Directory resources to register this forwarding rule with. Currently, only supports a single Service Directory resource. */
   serviceDirectoryRegistrations?: AlphaForwardingRule_ServiceDirectoryRegistrations[] | Computed<AlphaForwardingRule_ServiceDirectoryRegistrations[]>;
   /** An optional prefix to the service name for this forwarding rule. If specified, the prefix is the first label of the fully qualified service name. The label must be 1-63 characters long, and comply withRFC1035. Specifically, the label must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. This field is only used for internal load balancing. */
@@ -227,16 +204,7 @@ export const AlphaForwardingRule: ResourceBinding<AlphaForwardingRuleConfig, Alp
     allPorts: "all_ports",
     allowGlobalAccess: "allow_global_access",
     allowPscGlobalAccess: "allow_psc_global_access",
-    attachedExtensions: {
-      wireName: "attached_extensions",
-      kind: "list",
-      fields: AlphaForwardingRule_AttachedExtensionsFields,
-    },
-    availabilityGroup: "availability_group",
     backendService: "backend_service",
-    baseForwardingRule: "base_forwarding_rule",
-    childForwardingRules: "child_forwarding_rules",
-    creationTimestamp: "creation_timestamp",
     description: "description",
     externalManagedBackendBucketMigrationState: "external_managed_backend_bucket_migration_state",
     externalManagedBackendBucketMigrationTestingPercentage: "external_managed_backend_bucket_migration_testing_percentage",
@@ -248,7 +216,6 @@ export const AlphaForwardingRule: ResourceBinding<AlphaForwardingRuleConfig, Alp
     ipaddresses: "ipaddresses",
     ipprotocol: "ipprotocol",
     isMirroringCollector: "is_mirroring_collector",
-    kind: "kind",
     labelFingerprint: "label_fingerprint",
     labels: "labels",
     loadBalancingScheme: "load_balancing_scheme",
@@ -261,14 +228,10 @@ export const AlphaForwardingRule: ResourceBinding<AlphaForwardingRuleConfig, Alp
     network: "network",
     networkTier: "network_tier",
     noAutomateDnsZone: "no_automate_dns_zone",
-    parentForwardingRule: "parent_forwarding_rule",
     portRange: "port_range",
     ports: "ports",
     pscConnectionId: "psc_connection_id",
-    pscConnectionStatus: "psc_connection_status",
-    region: "region",
     selfLink: "self_link",
-    selfLinkWithId: "self_link_with_id",
     serviceDirectoryRegistrations: {
       wireName: "service_directory_registrations",
       kind: "list",

@@ -9,7 +9,6 @@ export interface VolumeRestore_TargetPvc {
 }
 
 export interface VolumeRestoreConfig {
-  name: string | Computed<string>;
 }
 
 export interface VolumeRestoreAttrs {
@@ -41,6 +40,5 @@ export interface VolumeRestoreAttrs {
 export const VolumeRestore: DataSourceBinding<VolumeRestoreConfig, VolumeRestoreAttrs> = {
   wireType: "google_gkebackup_volume_restore",
   fields: {
-    name: "name",
   },
 };

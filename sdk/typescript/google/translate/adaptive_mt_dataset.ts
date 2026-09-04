@@ -2,8 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface AdaptiveMtDatasetConfig {
-  /** Output only. Timestamp when this dataset was created. */
-  createTime?: string | Computed<string>;
   /** The name of the dataset to show in the interface. The name can be up to 32 characters long and can consist only of ASCII Latin letters A-Z and a-z, underscores (_), and ASCII digits 0-9. */
   displayName?: string | Computed<string>;
   /** The number of examples in the dataset. */
@@ -14,8 +12,6 @@ export interface AdaptiveMtDatasetConfig {
   sourceLanguageCode?: string | Computed<string>;
   /** The BCP-47 language code of the target language. */
   targetLanguageCode?: string | Computed<string>;
-  /** Output only. Timestamp when this dataset was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface AdaptiveMtDatasetAttrs {
@@ -38,12 +34,10 @@ export interface AdaptiveMtDatasetAttrs {
 export const AdaptiveMtDataset: ResourceBinding<AdaptiveMtDatasetConfig, AdaptiveMtDatasetAttrs> = {
   wireType: "google_translate_adaptive_mt_dataset",
   fields: {
-    createTime: "create_time",
     displayName: "display_name",
     exampleCount: "example_count",
     name: "name",
     sourceLanguageCode: "source_language_code",
     targetLanguageCode: "target_language_code",
-    updateTime: "update_time",
   },
 };

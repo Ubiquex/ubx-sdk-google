@@ -38,11 +38,11 @@ type GoldengateDeployment_Properties_IngressIps struct {
 }
 
 type GoldengateDeployment_Properties_Locks struct {
-	CompartmentId any
-	CreateTime any
-	Message any
+	CompartmentId     any
+	CreateTime        any
+	Message           any
 	RelatedResourceId any
-	Type any
+	Type              any
 }
 
 type GoldengateDeployment_Properties_MaintenanceConfig struct {
@@ -101,7 +101,7 @@ type GoldengateDeployment_Properties_OggData struct {
 
 type GoldengateDeployment_Properties_Placements struct {
 	AvailabilityDomain any
-	FaultDomain any
+	FaultDomain        any
 }
 
 type GoldengateDeployment_Properties struct {
@@ -192,169 +192,163 @@ type GoldengateDeployment_Properties struct {
 }
 
 var GoldengateDeployment_Properties_BackupScheduleFields = ubx.FieldMap{
-		"BackupScheduledTime": ubx.FieldSpec{WireName: "backup_scheduled_time"},
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"CompartmentId": ubx.FieldSpec{WireName: "compartment_id"},
-		"FrequencyBackupScheduled": ubx.FieldSpec{WireName: "frequency_backup_scheduled"},
-		"MetadataOnly": ubx.FieldSpec{WireName: "metadata_only"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-	}
+	"BackupScheduledTime":      ubx.FieldSpec{WireName: "backup_scheduled_time"},
+	"Bucket":                   ubx.FieldSpec{WireName: "bucket"},
+	"CompartmentId":            ubx.FieldSpec{WireName: "compartment_id"},
+	"FrequencyBackupScheduled": ubx.FieldSpec{WireName: "frequency_backup_scheduled"},
+	"MetadataOnly":             ubx.FieldSpec{WireName: "metadata_only"},
+	"Namespace":                ubx.FieldSpec{WireName: "namespace"},
+}
 
 var GoldengateDeployment_Properties_DeploymentDiagnosticDataFields = ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"DiagnosticEndTime": ubx.FieldSpec{WireName: "diagnostic_end_time"},
-		"DiagnosticStartTime": ubx.FieldSpec{WireName: "diagnostic_start_time"},
-		"DiagnosticState": ubx.FieldSpec{WireName: "diagnostic_state"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"Object": ubx.FieldSpec{WireName: "object"},
-	}
+	"Bucket":              ubx.FieldSpec{WireName: "bucket"},
+	"DiagnosticEndTime":   ubx.FieldSpec{WireName: "diagnostic_end_time"},
+	"DiagnosticStartTime": ubx.FieldSpec{WireName: "diagnostic_start_time"},
+	"DiagnosticState":     ubx.FieldSpec{WireName: "diagnostic_state"},
+	"Namespace":           ubx.FieldSpec{WireName: "namespace"},
+	"Object":              ubx.FieldSpec{WireName: "object"},
+}
 
 var GoldengateDeployment_Properties_IngressIpsFields = ubx.FieldMap{
-		"IngressIpAddress": ubx.FieldSpec{WireName: "ingress_ip_address"},
-	}
+	"IngressIpAddress": ubx.FieldSpec{WireName: "ingress_ip_address"},
+}
 
 var GoldengateDeployment_Properties_LocksFields = ubx.FieldMap{
-		"CompartmentId": ubx.FieldSpec{WireName: "compartment_id"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-		"RelatedResourceId": ubx.FieldSpec{WireName: "related_resource_id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"CompartmentId":     ubx.FieldSpec{WireName: "compartment_id"},
+	"CreateTime":        ubx.FieldSpec{WireName: "create_time"},
+	"Message":           ubx.FieldSpec{WireName: "message"},
+	"RelatedResourceId": ubx.FieldSpec{WireName: "related_resource_id"},
+	"Type":              ubx.FieldSpec{WireName: "type"},
+}
 
 var GoldengateDeployment_Properties_MaintenanceConfigFields = ubx.FieldMap{
-		"BundleReleaseUpgradePeriodDays": ubx.FieldSpec{WireName: "bundle_release_upgrade_period_days"},
-		"InterimReleaseUpgradePeriodDays": ubx.FieldSpec{WireName: "interim_release_upgrade_period_days"},
-		"IsInterimReleaseAutoUpgradeEnabled": ubx.FieldSpec{WireName: "is_interim_release_auto_upgrade_enabled"},
-		"MajorReleaseUpgradePeriodDays": ubx.FieldSpec{WireName: "major_release_upgrade_period_days"},
-		"SecurityPatchUpgradePeriodDays": ubx.FieldSpec{WireName: "security_patch_upgrade_period_days"},
-	}
+	"BundleReleaseUpgradePeriodDays":     ubx.FieldSpec{WireName: "bundle_release_upgrade_period_days"},
+	"InterimReleaseUpgradePeriodDays":    ubx.FieldSpec{WireName: "interim_release_upgrade_period_days"},
+	"IsInterimReleaseAutoUpgradeEnabled": ubx.FieldSpec{WireName: "is_interim_release_auto_upgrade_enabled"},
+	"MajorReleaseUpgradePeriodDays":      ubx.FieldSpec{WireName: "major_release_upgrade_period_days"},
+	"SecurityPatchUpgradePeriodDays":     ubx.FieldSpec{WireName: "security_patch_upgrade_period_days"},
+}
 
 var GoldengateDeployment_Properties_MaintenanceWindowFields = ubx.FieldMap{
-		"Day": ubx.FieldSpec{WireName: "day"},
-		"StartHour": ubx.FieldSpec{WireName: "start_hour"},
-	}
+	"Day":       ubx.FieldSpec{WireName: "day"},
+	"StartHour": ubx.FieldSpec{WireName: "start_hour"},
+}
 
 var GoldengateDeployment_Properties_OggData_GroupRolesMappingFields = ubx.FieldMap{
-		"AdministratorGroupId": ubx.FieldSpec{WireName: "administrator_group_id"},
-		"OperatorGroupId": ubx.FieldSpec{WireName: "operator_group_id"},
-		"SecurityGroupId": ubx.FieldSpec{WireName: "security_group_id"},
-		"UserGroupId": ubx.FieldSpec{WireName: "user_group_id"},
-	}
+	"AdministratorGroupId": ubx.FieldSpec{WireName: "administrator_group_id"},
+	"OperatorGroupId":      ubx.FieldSpec{WireName: "operator_group_id"},
+	"SecurityGroupId":      ubx.FieldSpec{WireName: "security_group_id"},
+	"UserGroupId":          ubx.FieldSpec{WireName: "user_group_id"},
+}
 
 var GoldengateDeployment_Properties_OggDataFields = ubx.FieldMap{
-		"AdminPassword": ubx.FieldSpec{WireName: "admin_password"},
-		"AdminPasswordSecretVersion": ubx.FieldSpec{WireName: "admin_password_secret_version"},
-		"AdminUsername": ubx.FieldSpec{WireName: "admin_username"},
-		"Certificate": ubx.FieldSpec{WireName: "certificate"},
-		"CredentialStore": ubx.FieldSpec{WireName: "credential_store"},
-		"Deployment": ubx.FieldSpec{WireName: "deployment"},
-		"GroupRolesMapping": ubx.FieldSpec{
-			WireName: "group_roles_mapping",
-			Kind: "object",
-			Fields: GoldengateDeployment_Properties_OggData_GroupRolesMappingFields,
-		},
-		"IdentityDomainId": ubx.FieldSpec{WireName: "identity_domain_id"},
-		"OggVersion": ubx.FieldSpec{WireName: "ogg_version"},
-		"PasswordSecretId": ubx.FieldSpec{WireName: "password_secret_id"},
-	}
+	"AdminPassword":              ubx.FieldSpec{WireName: "admin_password"},
+	"AdminPasswordSecretVersion": ubx.FieldSpec{WireName: "admin_password_secret_version"},
+	"AdminUsername":              ubx.FieldSpec{WireName: "admin_username"},
+	"Certificate":                ubx.FieldSpec{WireName: "certificate"},
+	"CredentialStore":            ubx.FieldSpec{WireName: "credential_store"},
+	"Deployment":                 ubx.FieldSpec{WireName: "deployment"},
+	"GroupRolesMapping": ubx.FieldSpec{
+		WireName: "group_roles_mapping",
+		Kind:     "object",
+		Fields:   GoldengateDeployment_Properties_OggData_GroupRolesMappingFields,
+	},
+	"IdentityDomainId": ubx.FieldSpec{WireName: "identity_domain_id"},
+	"OggVersion":       ubx.FieldSpec{WireName: "ogg_version"},
+	"PasswordSecretId": ubx.FieldSpec{WireName: "password_secret_id"},
+}
 
 var GoldengateDeployment_Properties_PlacementsFields = ubx.FieldMap{
-		"AvailabilityDomain": ubx.FieldSpec{WireName: "availability_domain"},
-		"FaultDomain": ubx.FieldSpec{WireName: "fault_domain"},
-	}
+	"AvailabilityDomain": ubx.FieldSpec{WireName: "availability_domain"},
+	"FaultDomain":        ubx.FieldSpec{WireName: "fault_domain"},
+}
 
 var GoldengateDeployment_PropertiesFields = ubx.FieldMap{
-		"BackupSchedule": ubx.FieldSpec{
-			WireName: "backup_schedule",
-			Kind: "object",
-			Fields: GoldengateDeployment_Properties_BackupScheduleFields,
-		},
-		"Category": ubx.FieldSpec{WireName: "category"},
-		"CpuCoreCount": ubx.FieldSpec{WireName: "cpu_core_count"},
-		"DeploymentBackupId": ubx.FieldSpec{WireName: "deployment_backup_id"},
-		"DeploymentDiagnosticData": ubx.FieldSpec{
-			WireName: "deployment_diagnostic_data",
-			Kind: "object",
-			Fields: GoldengateDeployment_Properties_DeploymentDiagnosticDataFields,
-		},
-		"DeploymentRole": ubx.FieldSpec{WireName: "deployment_role"},
-		"DeploymentType": ubx.FieldSpec{WireName: "deployment_type"},
-		"DeploymentUrl": ubx.FieldSpec{WireName: "deployment_url"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"EnvironmentType": ubx.FieldSpec{WireName: "environment_type"},
-		"Fqdn": ubx.FieldSpec{WireName: "fqdn"},
-		"Healthy": ubx.FieldSpec{WireName: "healthy"},
-		"IngressIps": ubx.FieldSpec{
-			WireName: "ingress_ips",
-			Kind: "list",
-			Fields: GoldengateDeployment_Properties_IngressIpsFields,
-		},
-		"IsAutoScalingEnabled": ubx.FieldSpec{WireName: "is_auto_scaling_enabled"},
-		"IsLatestVersion": ubx.FieldSpec{WireName: "is_latest_version"},
-		"IsPublic": ubx.FieldSpec{WireName: "is_public"},
-		"IsStorageUtilizationLimitExceeded": ubx.FieldSpec{WireName: "is_storage_utilization_limit_exceeded"},
-		"LastBackupScheduleTime": ubx.FieldSpec{WireName: "last_backup_schedule_time"},
-		"LicenseModel": ubx.FieldSpec{WireName: "license_model"},
-		"LifecycleDetails": ubx.FieldSpec{WireName: "lifecycle_details"},
-		"LifecycleState": ubx.FieldSpec{WireName: "lifecycle_state"},
-		"LifecycleSubState": ubx.FieldSpec{WireName: "lifecycle_sub_state"},
-		"LoadBalancerId": ubx.FieldSpec{WireName: "load_balancer_id"},
-		"LoadBalancerSubnetId": ubx.FieldSpec{WireName: "load_balancer_subnet_id"},
-		"Locks": ubx.FieldSpec{
-			WireName: "locks",
-			Kind: "list",
-			Fields: GoldengateDeployment_Properties_LocksFields,
-		},
-		"MaintenanceConfig": ubx.FieldSpec{
-			WireName: "maintenance_config",
-			Kind: "object",
-			Fields: GoldengateDeployment_Properties_MaintenanceConfigFields,
-		},
-		"MaintenanceWindow": ubx.FieldSpec{
-			WireName: "maintenance_window",
-			Kind: "object",
-			Fields: GoldengateDeployment_Properties_MaintenanceWindowFields,
-		},
-		"NextBackupScheduleTime": ubx.FieldSpec{WireName: "next_backup_schedule_time"},
-		"NextMaintenanceActionType": ubx.FieldSpec{WireName: "next_maintenance_action_type"},
-		"NextMaintenanceDescription": ubx.FieldSpec{WireName: "next_maintenance_description"},
-		"NextMaintenanceTime": ubx.FieldSpec{WireName: "next_maintenance_time"},
-		"NsgIds": ubx.FieldSpec{WireName: "nsg_ids"},
-		"Ocid": ubx.FieldSpec{WireName: "ocid"},
-		"OggData": ubx.FieldSpec{
-			WireName: "ogg_data",
-			Kind: "object",
-			Fields: GoldengateDeployment_Properties_OggDataFields,
-		},
-		"OggVersionSupportEndTime": ubx.FieldSpec{WireName: "ogg_version_support_end_time"},
-		"Placements": ubx.FieldSpec{
-			WireName: "placements",
-			Kind: "list",
-			Fields: GoldengateDeployment_Properties_PlacementsFields,
-		},
-		"PrivateIpAddress": ubx.FieldSpec{WireName: "private_ip_address"},
-		"PublicIpAddress": ubx.FieldSpec{WireName: "public_ip_address"},
-		"RoleChangeTime": ubx.FieldSpec{WireName: "role_change_time"},
-		"StorageUtilizationBytes": ubx.FieldSpec{WireName: "storage_utilization_bytes"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-		"UpgradeRequiredTime": ubx.FieldSpec{WireName: "upgrade_required_time"},
-	}
+	"BackupSchedule": ubx.FieldSpec{
+		WireName: "backup_schedule",
+		Kind:     "object",
+		Fields:   GoldengateDeployment_Properties_BackupScheduleFields,
+	},
+	"Category":           ubx.FieldSpec{WireName: "category"},
+	"CpuCoreCount":       ubx.FieldSpec{WireName: "cpu_core_count"},
+	"DeploymentBackupId": ubx.FieldSpec{WireName: "deployment_backup_id"},
+	"DeploymentDiagnosticData": ubx.FieldSpec{
+		WireName: "deployment_diagnostic_data",
+		Kind:     "object",
+		Fields:   GoldengateDeployment_Properties_DeploymentDiagnosticDataFields,
+	},
+	"DeploymentRole":  ubx.FieldSpec{WireName: "deployment_role"},
+	"DeploymentType":  ubx.FieldSpec{WireName: "deployment_type"},
+	"DeploymentUrl":   ubx.FieldSpec{WireName: "deployment_url"},
+	"Description":     ubx.FieldSpec{WireName: "description"},
+	"EnvironmentType": ubx.FieldSpec{WireName: "environment_type"},
+	"Fqdn":            ubx.FieldSpec{WireName: "fqdn"},
+	"Healthy":         ubx.FieldSpec{WireName: "healthy"},
+	"IngressIps": ubx.FieldSpec{
+		WireName: "ingress_ips",
+		Kind:     "list",
+		Fields:   GoldengateDeployment_Properties_IngressIpsFields,
+	},
+	"IsAutoScalingEnabled":              ubx.FieldSpec{WireName: "is_auto_scaling_enabled"},
+	"IsLatestVersion":                   ubx.FieldSpec{WireName: "is_latest_version"},
+	"IsPublic":                          ubx.FieldSpec{WireName: "is_public"},
+	"IsStorageUtilizationLimitExceeded": ubx.FieldSpec{WireName: "is_storage_utilization_limit_exceeded"},
+	"LastBackupScheduleTime":            ubx.FieldSpec{WireName: "last_backup_schedule_time"},
+	"LicenseModel":                      ubx.FieldSpec{WireName: "license_model"},
+	"LifecycleDetails":                  ubx.FieldSpec{WireName: "lifecycle_details"},
+	"LifecycleState":                    ubx.FieldSpec{WireName: "lifecycle_state"},
+	"LifecycleSubState":                 ubx.FieldSpec{WireName: "lifecycle_sub_state"},
+	"LoadBalancerId":                    ubx.FieldSpec{WireName: "load_balancer_id"},
+	"LoadBalancerSubnetId":              ubx.FieldSpec{WireName: "load_balancer_subnet_id"},
+	"Locks": ubx.FieldSpec{
+		WireName: "locks",
+		Kind:     "list",
+		Fields:   GoldengateDeployment_Properties_LocksFields,
+	},
+	"MaintenanceConfig": ubx.FieldSpec{
+		WireName: "maintenance_config",
+		Kind:     "object",
+		Fields:   GoldengateDeployment_Properties_MaintenanceConfigFields,
+	},
+	"MaintenanceWindow": ubx.FieldSpec{
+		WireName: "maintenance_window",
+		Kind:     "object",
+		Fields:   GoldengateDeployment_Properties_MaintenanceWindowFields,
+	},
+	"NextBackupScheduleTime":     ubx.FieldSpec{WireName: "next_backup_schedule_time"},
+	"NextMaintenanceActionType":  ubx.FieldSpec{WireName: "next_maintenance_action_type"},
+	"NextMaintenanceDescription": ubx.FieldSpec{WireName: "next_maintenance_description"},
+	"NextMaintenanceTime":        ubx.FieldSpec{WireName: "next_maintenance_time"},
+	"NsgIds":                     ubx.FieldSpec{WireName: "nsg_ids"},
+	"Ocid":                       ubx.FieldSpec{WireName: "ocid"},
+	"OggData": ubx.FieldSpec{
+		WireName: "ogg_data",
+		Kind:     "object",
+		Fields:   GoldengateDeployment_Properties_OggDataFields,
+	},
+	"OggVersionSupportEndTime": ubx.FieldSpec{WireName: "ogg_version_support_end_time"},
+	"Placements": ubx.FieldSpec{
+		WireName: "placements",
+		Kind:     "list",
+		Fields:   GoldengateDeployment_Properties_PlacementsFields,
+	},
+	"PrivateIpAddress":        ubx.FieldSpec{WireName: "private_ip_address"},
+	"PublicIpAddress":         ubx.FieldSpec{WireName: "public_ip_address"},
+	"RoleChangeTime":          ubx.FieldSpec{WireName: "role_change_time"},
+	"StorageUtilizationBytes": ubx.FieldSpec{WireName: "storage_utilization_bytes"},
+	"UpdateTime":              ubx.FieldSpec{WireName: "update_time"},
+	"UpgradeRequiredTime":     ubx.FieldSpec{WireName: "upgrade_required_time"},
+}
 
 type GoldengateDeploymentConfig struct {
-	// Output only. The date and time that the GoldengateDeployment was created.
-	CreateTime any
 	// Required. The display name for the GoldengateDeployment.
 	DisplayName any
-	// Output only. The ID of the subscription entitlement associated with the GoldengateDeployment
-	EntitlementId any
 	// Optional. The GCP Oracle zone where Oracle GoldengateDeployment is hosted. Example: us-east4-b-r2. If not specified, the system will pick a zone based on availability.
 	GcpOracleZone any
 	// Optional. The labels or tags associated with the GoldengateDeployment.
 	Labels any
 	// Identifier. The name of the GoldengateDeployment resource in the following format: projects/{project}/locations/{region}/goldengateDeployments/{goldengate_deployment}
 	Name any
-	// Output only. HTTPS link to OCI resources exposed to Customer via UI Interface.
-	OciUrl any
 	// Optional. The name of the OdbNetwork associated with the GoldengateDeployment.
 	OdbNetwork any
 	// Required. The name of the OdbSubnet associated with the GoldengateDeployment for IP allocation.
@@ -389,19 +383,16 @@ type GoldengateDeploymentAttrs struct {
 var GoldengateDeployment = ubx.ResourceBinding{
 	WireType: "google_oracledatabase_goldengate_deployment",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"EntitlementId": ubx.FieldSpec{WireName: "entitlement_id"},
+		"DisplayName":   ubx.FieldSpec{WireName: "display_name"},
 		"GcpOracleZone": ubx.FieldSpec{WireName: "gcp_oracle_zone"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"OciUrl": ubx.FieldSpec{WireName: "oci_url"},
-		"OdbNetwork": ubx.FieldSpec{WireName: "odb_network"},
-		"OdbSubnet": ubx.FieldSpec{WireName: "odb_subnet"},
+		"Labels":        ubx.FieldSpec{WireName: "labels"},
+		"Name":          ubx.FieldSpec{WireName: "name"},
+		"OdbNetwork":    ubx.FieldSpec{WireName: "odb_network"},
+		"OdbSubnet":     ubx.FieldSpec{WireName: "odb_subnet"},
 		"Properties": ubx.FieldSpec{
 			WireName: "properties",
-			Kind: "object",
-			Fields: GoldengateDeployment_PropertiesFields,
+			Kind:     "object",
+			Fields:   GoldengateDeployment_PropertiesFields,
 		},
 	},
 }

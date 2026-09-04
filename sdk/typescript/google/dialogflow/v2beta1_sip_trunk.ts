@@ -34,17 +34,6 @@ const V2beta1SipTrunk_Connections_ErrorDetailsFields: FieldMap = {
   errorMessage: "error_message",
 };
 
-const V2beta1SipTrunk_ConnectionsFields: FieldMap = {
-  connectionId: "connection_id",
-  errorDetails: {
-    wireName: "error_details",
-    kind: "object",
-    fields: V2beta1SipTrunk_Connections_ErrorDetailsFields,
-  },
-  state: "state",
-  updateTime: "update_time",
-};
-
 const V2beta1SipTrunk_PeerHostnames_ProbeDetailsFields: FieldMap = {
   initTime: "init_time",
   optionsLatency: "options_latency",
@@ -70,7 +59,6 @@ const V2beta1SipTrunk_PeerHostnamesFields: FieldMap = {
 };
 
 export interface V2beta1SipTrunkConfig {
-  connections?: V2beta1SipTrunk_Connections[] | Computed<V2beta1SipTrunk_Connections[]>;
   displayName?: string | Computed<string>;
   expectedHostname?: string[] | Computed<string[]>;
   googleRootCertFile?: string | Computed<string>;
@@ -90,11 +78,6 @@ export interface V2beta1SipTrunkAttrs {
 export const V2beta1SipTrunk: ResourceBinding<V2beta1SipTrunkConfig, V2beta1SipTrunkAttrs> = {
   wireType: "google_dialogflow_v2beta1_sip_trunk",
   fields: {
-    connections: {
-      wireName: "connections",
-      kind: "list",
-      fields: V2beta1SipTrunk_ConnectionsFields,
-    },
     displayName: "display_name",
     expectedHostname: "expected_hostname",
     googleRootCertFile: "google_root_cert_file",

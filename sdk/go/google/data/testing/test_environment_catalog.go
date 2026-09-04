@@ -4,52 +4,52 @@ package testing
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TestEnvironmentCatalog_AndroidDeviceCatalog_Models_LabInfo struct {
-	Name any
+	Name       any
 	RegionCode any
 }
 
 type TestEnvironmentCatalog_AndroidDeviceCatalog_Models_PerVersionInfo_DirectAccessVersionInfo struct {
-	DirectAccessSupported any
+	DirectAccessSupported       any
 	MinimumAndroidStudioVersion any
 }
 
 type TestEnvironmentCatalog_AndroidDeviceCatalog_Models_PerVersionInfo struct {
-	DeviceCapacity any
-	DirectAccessVersionInfo any
+	DeviceCapacity                        any
+	DirectAccessVersionInfo               any
 	InteractiveDeviceAvailabilityEstimate any
-	VersionId any
+	VersionId                             any
 }
 
 type TestEnvironmentCatalog_AndroidDeviceCatalog_Models struct {
-	AccessDeniedReasons any
-	Brand any
-	Codename any
-	Form any
-	FormFactor any
-	Id any
-	LabInfo any
+	AccessDeniedReasons  any
+	Brand                any
+	Codename             any
+	Form                 any
+	FormFactor           any
+	Id                   any
+	LabInfo              any
 	LowFpsVideoRecording any
-	Manufacturer any
-	Name any
-	PerVersionInfo any
-	ScreenDensity any
-	ScreenX any
-	ScreenY any
-	SupportedAbis any
-	SupportedVersionIds any
-	Tags any
-	ThumbnailUrl any
+	Manufacturer         any
+	Name                 any
+	PerVersionInfo       any
+	ScreenDensity        any
+	ScreenX              any
+	ScreenY              any
+	SupportedAbis        any
+	SupportedVersionIds  any
+	Tags                 any
+	ThumbnailUrl         any
 }
 
 type TestEnvironmentCatalog_AndroidDeviceCatalog_RuntimeConfiguration_Locales struct {
-	Id any
-	Name any
+	Id     any
+	Name   any
 	Region any
-	Tags any
+	Tags   any
 }
 
 type TestEnvironmentCatalog_AndroidDeviceCatalog_RuntimeConfiguration_Orientations struct {
-	Id any
+	Id   any
 	Name any
 	Tags any
 }
@@ -62,23 +62,23 @@ type TestEnvironmentCatalog_AndroidDeviceCatalog_RuntimeConfiguration struct {
 }
 
 type TestEnvironmentCatalog_AndroidDeviceCatalog_Versions_Distribution struct {
-	MarketShare any
+	MarketShare     any
 	MeasurementTime any
 }
 
 type TestEnvironmentCatalog_AndroidDeviceCatalog_Versions_ReleaseDate struct {
-	Day any
+	Day   any
 	Month any
-	Year any
+	Year  any
 }
 
 type TestEnvironmentCatalog_AndroidDeviceCatalog_Versions struct {
-	ApiLevel any
-	CodeName any
-	Distribution any
-	Id any
-	ReleaseDate any
-	Tags any
+	ApiLevel      any
+	CodeName      any
+	Distribution  any
+	Id            any
+	ReleaseDate   any
+	Tags          any
 	VersionString any
 }
 
@@ -93,8 +93,8 @@ type TestEnvironmentCatalog_AndroidDeviceCatalog struct {
 
 type TestEnvironmentCatalog_DeviceIpBlockCatalog_IpBlocks struct {
 	AddedDate any
-	Block any
-	Form any
+	Block     any
+	Form      any
 }
 
 type TestEnvironmentCatalog_DeviceIpBlockCatalog struct {
@@ -104,32 +104,32 @@ type TestEnvironmentCatalog_DeviceIpBlockCatalog struct {
 
 type TestEnvironmentCatalog_IosDeviceCatalog_Models_PerVersionInfo struct {
 	DeviceCapacity any
-	VersionId any
+	VersionId      any
 }
 
 type TestEnvironmentCatalog_IosDeviceCatalog_Models struct {
-	DeviceCapabilities any
-	FormFactor any
-	Id any
-	Name any
-	PerVersionInfo any
-	ScreenDensity any
-	ScreenX any
-	ScreenY any
+	DeviceCapabilities  any
+	FormFactor          any
+	Id                  any
+	Name                any
+	PerVersionInfo      any
+	ScreenDensity       any
+	ScreenX             any
+	ScreenY             any
 	SupportedVersionIds any
-	Tags any
+	Tags                any
 }
 
 type TestEnvironmentCatalog_IosDeviceCatalog_Versions struct {
-	Id any
-	MajorVersion any
-	MinorVersion any
+	Id                       any
+	MajorVersion             any
+	MinorVersion             any
 	SupportedXcodeVersionIds any
-	Tags any
+	Tags                     any
 }
 
 type TestEnvironmentCatalog_IosDeviceCatalog_XcodeVersions struct {
-	Tags any
+	Tags    any
 	Version any
 }
 
@@ -145,17 +145,17 @@ type TestEnvironmentCatalog_IosDeviceCatalog struct {
 }
 
 type TestEnvironmentCatalog_NetworkConfigurationCatalog_Configurations_DownRule struct {
-	Bandwidth any
-	Burst any
-	Delay any
+	Bandwidth              any
+	Burst                  any
+	Delay                  any
 	PacketDuplicationRatio any
-	PacketLossRatio any
+	PacketLossRatio        any
 }
 
 type TestEnvironmentCatalog_NetworkConfigurationCatalog_Configurations struct {
 	DownRule any
-	Id any
-	UpRule any
+	Id       any
+	UpRule   any
 }
 
 type TestEnvironmentCatalog_NetworkConfigurationCatalog struct {
@@ -170,22 +170,22 @@ type TestEnvironmentCatalog_SoftwareCatalog struct {
 }
 
 type TestEnvironmentCatalogConfig struct {
-	EnvironmentType any
+	EnvironmentType       any
 	IncludeViewableModels any
-	ProjectId any
+	ProjectId             any
 }
 
 type TestEnvironmentCatalogAttrs struct {
 	// The currently supported Android devices.
 	AndroidDeviceCatalog any
 	// List of IP blocks used by the Firebase Test Lab
-	DeviceIpBlockCatalog any
-	EnvironmentType any
+	DeviceIpBlockCatalog  any
+	EnvironmentType       any
 	IncludeViewableModels any
 	// The currently supported iOS devices.
-	IosDeviceCatalog any
+	IosDeviceCatalog            any
 	NetworkConfigurationCatalog any
-	ProjectId any
+	ProjectId                   any
 	// The currently provided software environment on the devices under test.
 	SoftwareCatalog any
 }
@@ -193,8 +193,8 @@ type TestEnvironmentCatalogAttrs struct {
 var TestEnvironmentCatalog = ubx.DataSourceBinding{
 	WireType: "google_testing_test_environment_catalog",
 	Fields: ubx.FieldMap{
-		"EnvironmentType": ubx.FieldSpec{WireName: "environment_type"},
+		"EnvironmentType":       ubx.FieldSpec{WireName: "environment_type"},
 		"IncludeViewableModels": ubx.FieldSpec{WireName: "include_viewable_models"},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
+		"ProjectId":             ubx.FieldSpec{WireName: "project_id"},
 	},
 }

@@ -50,28 +50,14 @@ const ImportJob_PublicKeyFields: FieldMap = {
 export interface ImportJobConfig {
   /** Contains an HSM-generated attestation about a key operation. For more information, see [Verifying attestations] (https://cloud.google.com/kms/docs/attest-key). */
   attestation?: ImportJob_Attestation | Computed<ImportJob_Attestation>;
-  /** Output only. The time at which this ImportJob was created. */
-  createTime?: string | Computed<string>;
   /** Immutable. The resource name of the backend environment where the key material for the wrapping key resides and where all related cryptographic operations are performed. Currently, this field is only populated for keys stored in HSM_SINGLE_TENANT. Note, this list is non-exhaustive and may apply to additional ProtectionLevels in the future. Supported resources: * `"projects/* /locations/* /singleTenantHsmInstances/*"` */
   cryptoKeyBackend?: string | Computed<string>;
-  /** Output only. The time this ImportJob expired. Only present if state is EXPIRED. */
-  expireEventTime?: string | Computed<string>;
-  /** Output only. The time at which this ImportJob is scheduled for expiration and can no longer be used to import key material. */
-  expireTime?: string | Computed<string>;
-  /** Output only. The time this ImportJob's key material was generated. */
-  generateTime?: string | Computed<string>;
   /** Required. Immutable. The wrapping method to be used for incoming key material. */
   importMethod?: string | Computed<string>;
-  /** Output only. The resource name for this ImportJob in the format `projects/* /locations/* /keyRings/* /importJobs/*`. */
-  name?: string | Computed<string>;
   /** Required. Immutable. The protection level of the ImportJob. This must match the protection_level of the version_template on the CryptoKey you attempt to import into. */
   protectionLevel?: string | Computed<string>;
   /** The public key component of the wrapping key. For details of the type of key this public key corresponds to, see the ImportMethod. */
   publicKey?: ImportJob_PublicKey | Computed<ImportJob_PublicKey>;
-  /** Output only. Specifies the WrappingPublicKey format provided by the customer in the KeyManagementService.GetImportJob request. */
-  publicKeyFormat?: string | Computed<string>;
-  /** Output only. The current state of the ImportJob, indicating if it can be used. */
-  state?: string | Computed<string>;
 }
 
 export interface ImportJobAttrs {
@@ -109,20 +95,13 @@ export const ImportJob: ResourceBinding<ImportJobConfig, ImportJobAttrs> = {
       kind: "object",
       fields: ImportJob_AttestationFields,
     },
-    createTime: "create_time",
     cryptoKeyBackend: "crypto_key_backend",
-    expireEventTime: "expire_event_time",
-    expireTime: "expire_time",
-    generateTime: "generate_time",
     importMethod: "import_method",
-    name: "name",
     protectionLevel: "protection_level",
     publicKey: {
       wireName: "public_key",
       kind: "object",
       fields: ImportJob_PublicKeyFields,
     },
-    publicKeyFormat: "public_key_format",
-    state: "state",
   },
 };

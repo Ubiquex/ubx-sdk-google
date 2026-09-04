@@ -117,26 +117,18 @@ const BetaInterconnectGroup_PhysicalStructureFields: FieldMap = {
 export interface BetaInterconnectGroupConfig {
   /** [Output Only] The status of the group as configured. This has the same structure as the operational field reported by the OperationalStatus method, but does not take into account the operational status of each resource. */
   configured?: BetaInterconnectGroup_Configured | Computed<BetaInterconnectGroup_Configured>;
-  /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
-  creationTimestamp?: string | Computed<string>;
   /** An optional description of this resource. Provide this property when you create the resource. */
   description?: string | Computed<string>;
   /** Opaque system-generated token that uniquely identifies the configuration. If provided when patching a configuration in update mode, the provided token must match the current token or the update is rejected. This provides a reliable means of doing read-modify-write (optimistic locking) as described by AIP 154. */
   etag?: string | Computed<string>;
-  /** Output only. [Output Only] The unique identifier for the resource type. The server generates this identifier. */
-  id?: string | Computed<string>;
   /** The user's intent for this group. This is the only required field besides the name that must be specified on group creation. */
   intent?: BetaInterconnectGroup_Intent | Computed<BetaInterconnectGroup_Intent>;
   /** Interconnects in the InterconnectGroup. Keys are arbitrary user-specified strings. Users are encouraged, but not required, to use their preferred format for resource links as keys. Note that there are add-members and remove-members methods in gcloud. The size of this map is limited by an "Interconnects per group" quota. */
   interconnects?: Record<string, BetaInterconnectGroup_Interconnects> | Computed<Record<string, BetaInterconnectGroup_Interconnects>>;
-  /** Output only. [Output Only] Type of the resource. Always compute#InterconnectGroup */
-  kind?: string | Computed<string>;
   /** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
   name?: string | Computed<string>;
   /** [Output Only] An analysis of the physical layout of Interconnects in this group. Every Interconnect in the group is shown once in this structure. */
   physicalStructure?: BetaInterconnectGroup_PhysicalStructure | Computed<BetaInterconnectGroup_PhysicalStructure>;
-  /** Output only. [Output Only] Server-defined URL for the resource. */
-  selfLink?: string | Computed<string>;
 }
 
 export interface BetaInterconnectGroupAttrs {
@@ -172,10 +164,8 @@ export const BetaInterconnectGroup: ResourceBinding<BetaInterconnectGroupConfig,
       kind: "object",
       fields: BetaInterconnectGroup_ConfiguredFields,
     },
-    creationTimestamp: "creation_timestamp",
     description: "description",
     etag: "etag",
-    id: "id",
     intent: {
       wireName: "intent",
       kind: "object",
@@ -186,13 +176,11 @@ export const BetaInterconnectGroup: ResourceBinding<BetaInterconnectGroupConfig,
       kind: "map",
       fields: BetaInterconnectGroup_InterconnectsFields,
     },
-    kind: "kind",
     name: "name",
     physicalStructure: {
       wireName: "physical_structure",
       kind: "object",
       fields: BetaInterconnectGroup_PhysicalStructureFields,
     },
-    selfLink: "self_link",
   },
 };

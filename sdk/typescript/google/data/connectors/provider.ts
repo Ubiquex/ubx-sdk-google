@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, DataSourceBinding } from "@ubx/sdk";
 
 export interface ProviderConfig {
-  name: string | Computed<string>;
 }
 
 export interface ProviderAttrs {
@@ -30,6 +29,5 @@ export interface ProviderAttrs {
 export const Provider: DataSourceBinding<ProviderConfig, ProviderAttrs> = {
   wireType: "google_connectors_provider",
   fields: {
-    name: "name",
   },
 };

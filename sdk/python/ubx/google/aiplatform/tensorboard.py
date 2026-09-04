@@ -17,10 +17,6 @@ _Tensorboard_EncryptionSpecFields = {
 
 @dataclasses.dataclass
 class TensorboardConfig:
-    # Output only. Consumer project Cloud Storage path prefix used to store blob data, which can either be a bucket or directory. Does not end with a '/'.
-    blob_storage_path_prefix: Any = None
-    # Output only. Timestamp when this Tensorboard was created.
-    create_time: Any = None
     # Description of this Tensorboard.
     description: Any = None
     # Required. User provided name of this Tensorboard.
@@ -33,16 +29,6 @@ class TensorboardConfig:
     is_default: Any = None
     # The labels with user-defined metadata to organize your Tensorboards. Label keys and values can be no longer than 64 characters (Unicode codepoints), can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. No more than 64 user labels can be associated with one Tensorboard (System labels are excluded). See https://goo.gl/xmQnxf for more information and examples of labels. System reserved label keys are prefixed with "aiplatform.googleapis.com/" and are immutable.
     labels: Any = None
-    # Output only. Name of the Tensorboard. Format: `projects/{project}/locations/{location}/tensorboards/{tensorboard}`
-    name: Any = None
-    # Output only. The number of Runs stored in this Tensorboard.
-    run_count: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzi: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzs: Any = None
-    # Output only. Timestamp when this Tensorboard was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class TensorboardAttrs:
@@ -76,8 +62,6 @@ class TensorboardAttrs:
 Tensorboard = ubx.ResourceBinding(
     wire_type="google_aiplatform_tensorboard",
     fields={
-        "blob_storage_path_prefix": ubx.FieldSpec(wire_name="blob_storage_path_prefix"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "encryption_spec": ubx.FieldSpec(
@@ -88,10 +72,5 @@ Tensorboard = ubx.ResourceBinding(
         "etag": ubx.FieldSpec(wire_name="etag"),
         "is_default": ubx.FieldSpec(wire_name="is_default"),
         "labels": ubx.FieldSpec(wire_name="labels"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "run_count": ubx.FieldSpec(wire_name="run_count"),
-        "satisfies_pzi": ubx.FieldSpec(wire_name="satisfies_pzi"),
-        "satisfies_pzs": ubx.FieldSpec(wire_name="satisfies_pzs"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

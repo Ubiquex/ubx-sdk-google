@@ -29,7 +29,6 @@ export interface Version_ReplicationStatus {
 }
 
 export interface VersionConfig {
-  name: string | Computed<string>;
 }
 
 export interface VersionAttrs {
@@ -55,6 +54,5 @@ export interface VersionAttrs {
 export const Version: DataSourceBinding<VersionConfig, VersionAttrs> = {
   wireType: "google_secretmanager_version",
   fields: {
-    name: "name",
   },
 };

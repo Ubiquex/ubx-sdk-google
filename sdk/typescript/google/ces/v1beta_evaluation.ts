@@ -1362,42 +1362,24 @@ const V1betaEvaluation_ScenarioFields: FieldMap = {
 export interface V1betaEvaluationConfig {
   /** Aggregated metrics for an evaluation or evaluation dataset. */
   aggregatedMetrics?: V1betaEvaluation_AggregatedMetrics | Computed<V1betaEvaluation_AggregatedMetrics>;
-  /** Output only. Timestamp when the evaluation was created. */
-  createTime?: string | Computed<string>;
-  /** Output only. The user who created the evaluation. */
-  createdBy?: string | Computed<string>;
   /** Optional. User-defined description of the evaluation. */
   description?: string | Computed<string>;
   /** Required. User-defined display name of the evaluation. Unique within an App. */
   displayName?: string | Computed<string>;
-  /** Output only. Etag used to ensure the object hasn't changed during a read-modify-write operation. If the etag is empty, the update will overwrite any concurrent changes. */
-  etag?: string | Computed<string>;
-  /** Output only. List of evaluation datasets the evaluation belongs to. Format: `projects/{project}/locations/{location}/apps/{app}/evaluationDatasets/{evaluationDataset}` */
-  evaluationDatasets?: string[] | Computed<string[]>;
   /** Configures the metrics for an evaluation. */
   evaluationMetricsConfigOverride?: V1betaEvaluation_EvaluationMetricsConfigOverride | Computed<V1betaEvaluation_EvaluationMetricsConfigOverride>;
   /** Threshold settings for metrics in an Evaluation. */
   evaluationMetricsThresholdOverride?: V1betaEvaluation_EvaluationMetricsThresholdOverride | Computed<V1betaEvaluation_EvaluationMetricsThresholdOverride>;
-  /** Output only. The EvaluationRuns that this Evaluation is associated with. */
-  evaluationRuns?: string[] | Computed<string[]>;
   /** The steps required to replay a golden conversation. */
   golden?: V1betaEvaluation_Golden | Computed<V1betaEvaluation_Golden>;
-  /** Output only. Whether the evaluation is invalid. This can happen if an evaluation is referencing a tool, toolset, or agent that has since been deleted. */
-  invalid?: boolean | Computed<boolean>;
   /** An evaluation result represents the output of running an Evaluation. */
   lastCompletedResult?: V1betaEvaluation_LastCompletedResult | Computed<V1betaEvaluation_LastCompletedResult>;
-  /** Output only. The last 10 evaluation results for this evaluation. This is only populated if include_last_ten_results is set to true in the ListEvaluationsRequest or GetEvaluationRequest. */
-  lastTenResults?: V1betaEvaluation_LastCompletedResult[] | Computed<V1betaEvaluation_LastCompletedResult[]>;
-  /** Output only. The user who last updated the evaluation. */
-  lastUpdatedBy?: string | Computed<string>;
   /** Identifier. The unique identifier of this evaluation. Format: `projects/{project}/locations/{location}/apps/{app}/evaluations/{evaluation}` */
   name?: string | Computed<string>;
   /** The config for a scenario */
   scenario?: V1betaEvaluation_Scenario | Computed<V1betaEvaluation_Scenario>;
   /** Optional. User defined tags to categorize the evaluation. */
   tags?: string[] | Computed<string[]>;
-  /** Output only. Timestamp when the evaluation was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1betaEvaluationAttrs {
@@ -1449,12 +1431,8 @@ export const V1betaEvaluation: ResourceBinding<V1betaEvaluationConfig, V1betaEva
       kind: "object",
       fields: V1betaEvaluation_AggregatedMetricsFields,
     },
-    createTime: "create_time",
-    createdBy: "created_by",
     description: "description",
     displayName: "display_name",
-    etag: "etag",
-    evaluationDatasets: "evaluation_datasets",
     evaluationMetricsConfigOverride: {
       wireName: "evaluation_metrics_config_override",
       kind: "object",
@@ -1465,24 +1443,16 @@ export const V1betaEvaluation: ResourceBinding<V1betaEvaluationConfig, V1betaEva
       kind: "object",
       fields: V1betaEvaluation_EvaluationMetricsThresholdOverrideFields,
     },
-    evaluationRuns: "evaluation_runs",
     golden: {
       wireName: "golden",
       kind: "object",
       fields: V1betaEvaluation_GoldenFields,
     },
-    invalid: "invalid",
     lastCompletedResult: {
       wireName: "last_completed_result",
       kind: "object",
       fields: V1betaEvaluation_LastCompletedResultFields,
     },
-    lastTenResults: {
-      wireName: "last_ten_results",
-      kind: "list",
-      fields: V1betaEvaluation_LastCompletedResultFields,
-    },
-    lastUpdatedBy: "last_updated_by",
     name: "name",
     scenario: {
       wireName: "scenario",
@@ -1490,6 +1460,5 @@ export const V1betaEvaluation: ResourceBinding<V1betaEvaluationConfig, V1betaEva
       fields: V1betaEvaluation_ScenarioFields,
     },
     tags: "tags",
-    updateTime: "update_time",
   },
 };

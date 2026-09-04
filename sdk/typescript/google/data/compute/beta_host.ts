@@ -22,7 +22,6 @@ export interface BetaHostConfig {
   association: string | Computed<string>;
   host: string | Computed<string>;
   project: string | Computed<string>;
-  zone: string | Computed<string>;
 }
 
 export interface BetaHostAttrs {
@@ -57,6 +56,5 @@ export const BetaHost: DataSourceBinding<BetaHostConfig, BetaHostAttrs> = {
     association: "association",
     host: "host",
     project: "project",
-    zone: "zone",
   },
 };

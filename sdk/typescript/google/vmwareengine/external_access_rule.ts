@@ -16,8 +16,6 @@ const ExternalAccessRule_DestinationIpRangesFields: FieldMap = {
 export interface ExternalAccessRuleConfig {
   /** The action that the external access rule performs. */
   action?: string | Computed<string>;
-  /** Output only. Creation time of this resource. */
-  createTime?: string | Computed<string>;
   /** User-provided description for this external access rule. */
   description?: string | Computed<string>;
   /** If destination ranges are specified, the external access rule applies only to the traffic that has a destination IP address in these ranges. The specified IP addresses must have reserved external IP addresses in the scope of the parent network policy. To match all external IP addresses in the scope of the parent network policy, specify `0.0.0.0/0`. To match a specific external IP address, specify it using the `IpRange.external_address` property. */
@@ -26,20 +24,12 @@ export interface ExternalAccessRuleConfig {
   destinationPorts?: string[] | Computed<string[]>;
   /** The IP protocol to which the external access rule applies. This value can be one of the following three protocol strings (not case-sensitive): `tcp`, `udp`, or `icmp`. */
   ipProtocol?: string | Computed<string>;
-  /** Output only. The resource name of this external access rule. Resource names are schemeless URIs that follow the conventions in https://cloud.google.com/apis/design/resource_names. For example: `projects/my-project/locations/us-central1/networkPolicies/my-policy/externalAccessRules/my-rule` */
-  name?: string | Computed<string>;
   /** External access rule priority, which determines the external access rule to use when multiple rules apply. If multiple rules have the same priority, their ordering is non-deterministic. If specific ordering is required, assign unique priorities to enforce such ordering. The external access rule priority is an integer from 100 to 4096, both inclusive. Lower integers indicate higher precedence. For example, a rule with priority `100` has higher precedence than a rule with priority `101`. */
   priority?: number | Computed<number>;
   /** If source ranges are specified, the external access rule applies only to traffic that has a source IP address in these ranges. These ranges can either be expressed in the CIDR format or as an IP address. As only inbound rules are supported, `ExternalAddress` resources cannot be the source IP addresses of an external access rule. To match all source addresses, specify `0.0.0.0/0`. */
   sourceIpRanges?: ExternalAccessRule_DestinationIpRanges[] | Computed<ExternalAccessRule_DestinationIpRanges[]>;
   /** A list of source ports to which the external access rule applies. This field is only applicable for the UDP or TCP protocol. Each entry must be either an integer or a range. For example: `["22"]`, `["80","443"]`, or `["12345-12349"]`. To match all source ports, specify `["0-65535"]`. */
   sourcePorts?: string[] | Computed<string[]>;
-  /** Output only. The state of the resource. */
-  state?: string | Computed<string>;
-  /** Output only. System-generated unique identifier for the resource. */
-  uid?: string | Computed<string>;
-  /** Output only. Last update time of this resource. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface ExternalAccessRuleAttrs {
@@ -75,7 +65,6 @@ export const ExternalAccessRule: ResourceBinding<ExternalAccessRuleConfig, Exter
   wireType: "google_vmwareengine_external_access_rule",
   fields: {
     action: "action",
-    createTime: "create_time",
     description: "description",
     destinationIpRanges: {
       wireName: "destination_ip_ranges",
@@ -84,7 +73,6 @@ export const ExternalAccessRule: ResourceBinding<ExternalAccessRuleConfig, Exter
     },
     destinationPorts: "destination_ports",
     ipProtocol: "ip_protocol",
-    name: "name",
     priority: "priority",
     sourceIpRanges: {
       wireName: "source_ip_ranges",
@@ -92,8 +80,5 @@ export const ExternalAccessRule: ResourceBinding<ExternalAccessRuleConfig, Exter
       fields: ExternalAccessRule_DestinationIpRangesFields,
     },
     sourcePorts: "source_ports",
-    state: "state",
-    uid: "uid",
-    updateTime: "update_time",
   },
 };

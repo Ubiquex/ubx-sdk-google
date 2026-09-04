@@ -147,22 +147,12 @@ _V1betaEvaluationDataset_AggregatedMetricsFields = {
 class V1betaEvaluationDatasetConfig:
     # Aggregated metrics for an evaluation or evaluation dataset.
     aggregated_metrics: Any = None
-    # Output only. Timestamp when the evaluation dataset was created.
-    create_time: Any = None
-    # Output only. The user who created the evaluation dataset.
-    created_by: Any = None
     # Required. User-defined display name of the evaluation dataset. Unique within an App.
     display_name: Any = None
-    # Output only. Etag used to ensure the object hasn't changed during a read-modify-write operation. If the etag is empty, the update will overwrite any concurrent changes.
-    etag: Any = None
     # Optional. Evaluations that are included in this dataset.
     evaluations: Any = None
-    # Output only. The user who last updated the evaluation dataset.
-    last_updated_by: Any = None
     # Identifier. The unique identifier of this evaluation dataset. Format: `projects/{project}/locations/{location}/apps/{app}/evaluationDatasets/{evaluationDataset}`
     name: Any = None
-    # Output only. Timestamp when the evaluation dataset was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V1betaEvaluationDatasetAttrs:
@@ -193,13 +183,8 @@ V1betaEvaluationDataset = ubx.ResourceBinding(
             kind="object",
             fields=_V1betaEvaluationDataset_AggregatedMetricsFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
-        "created_by": ubx.FieldSpec(wire_name="created_by"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
-        "etag": ubx.FieldSpec(wire_name="etag"),
         "evaluations": ubx.FieldSpec(wire_name="evaluations"),
-        "last_updated_by": ubx.FieldSpec(wire_name="last_updated_by"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

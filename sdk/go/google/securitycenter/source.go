@@ -5,24 +5,24 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SourceConfig struct {
 	CanonicalName any
-	Description any
-	DisplayName any
-	Name any
+	Description   any
+	DisplayName   any
+	Name          any
 }
 
 type SourceAttrs struct {
 	CanonicalName any
-	Description any
-	DisplayName any
-	Name any
+	Description   any
+	DisplayName   any
+	Name          any
 }
 
 var Source = ubx.ResourceBinding{
 	WireType: "google_securitycenter_source",
 	Fields: ubx.FieldMap{
 		"CanonicalName": ubx.FieldSpec{WireName: "canonical_name"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Description":   ubx.FieldSpec{WireName: "description"},
+		"DisplayName":   ubx.FieldSpec{WireName: "display_name"},
+		"Name":          ubx.FieldSpec{WireName: "name"},
 	},
 }

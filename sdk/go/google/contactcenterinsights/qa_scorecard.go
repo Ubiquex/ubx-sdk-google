@@ -4,8 +4,6 @@ package contactcenterinsights
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type QaScorecardConfig struct {
-	// Output only. The time at which this scorecard was created.
-	CreateTime any
 	// A text description explaining the intent of the scorecard.
 	Description any
 	// The user-specified display name of the scorecard.
@@ -14,10 +12,6 @@ type QaScorecardConfig struct {
 	IsDefault any
 	// Identifier. The scorecard name. Format: projects/{project}/locations/{location}/qaScorecards/{qa_scorecard}
 	Name any
-	// Output only. The source of the scorecard.
-	Source any
-	// Output only. The most recent time at which the scorecard was updated.
-	UpdateTime any
 }
 
 type QaScorecardAttrs struct {
@@ -40,12 +34,9 @@ type QaScorecardAttrs struct {
 var QaScorecard = ubx.ResourceBinding{
 	WireType: "google_contactcenterinsights_qa_scorecard",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"IsDefault": ubx.FieldSpec{WireName: "is_default"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Source": ubx.FieldSpec{WireName: "source"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"IsDefault":   ubx.FieldSpec{WireName: "is_default"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 	},
 }

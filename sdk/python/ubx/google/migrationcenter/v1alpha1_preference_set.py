@@ -402,20 +402,14 @@ _V1alpha1PreferenceSet_VirtualMachinePreferencesFields = {
 
 @dataclasses.dataclass
 class V1alpha1PreferenceSetConfig:
-    # Output only. The timestamp when the preference set was created.
-    create_time: Any = None
     # DatabasePreferences enables you to create sets of preferences for your migrated databases.
     database_preferences: Any = None
     # A description of the preference set.
     description: Any = None
     # User-friendly display name. Maximum length is 63 characters.
     display_name: Any = None
-    # Output only. Name of the PreferenceSet.
-    name: Any = None
     # The user preferences relating to target regions.
     region_preferences: Any = None
-    # Output only. The timestamp when the preference set was last updated.
-    update_time: Any = None
     # VirtualMachinePreferences enables you to create sets of preferences, for example, a geographical location and pricing track, for your migrated virtual machines. The set of preferences influence recommendations for migrating virtual machine assets.
     virtual_machine_preferences: Any = None
 
@@ -441,7 +435,6 @@ class V1alpha1PreferenceSetAttrs:
 V1alpha1PreferenceSet = ubx.ResourceBinding(
     wire_type="google_migrationcenter_v1alpha1_preference_set",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "database_preferences": ubx.FieldSpec(
             wire_name="database_preferences",
             kind="object",
@@ -449,13 +442,11 @@ V1alpha1PreferenceSet = ubx.ResourceBinding(
         ),
         "description": ubx.FieldSpec(wire_name="description"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
-        "name": ubx.FieldSpec(wire_name="name"),
         "region_preferences": ubx.FieldSpec(
             wire_name="region_preferences",
             kind="object",
             fields=_V1alpha1PreferenceSet_RegionPreferencesFields,
         ),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
         "virtual_machine_preferences": ubx.FieldSpec(
             wire_name="virtual_machine_preferences",
             kind="object",

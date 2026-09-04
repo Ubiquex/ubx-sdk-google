@@ -15,11 +15,11 @@ type Rule_Condition struct {
 }
 
 var Rule_ConditionFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Expression": ubx.FieldSpec{WireName: "expression"},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Expression":  ubx.FieldSpec{WireName: "expression"},
+	"Location":    ubx.FieldSpec{WireName: "location"},
+	"Title":       ubx.FieldSpec{WireName: "title"},
+}
 
 type RuleConfig struct {
 	// The action this rule takes.
@@ -27,7 +27,7 @@ type RuleConfig struct {
 	// Represents a textual expression in the Common Expression Language (CEL) syntax. CEL is a C-like expression language. The syntax and semantics of CEL are documented at https://github.com/google/cel-spec. Example (Comparison): title: "Summary size limit" description: "Determines if a summary is less than 100 chars" expression: "document.summary.size() < 100" Example (Equality): title: "Requestor is owner" description: "Determines if requestor is the document owner" expression: "document.owner == request.auth.claims.email" Example (Logic): title: "Public documents" description: "Determine whether the document should be publicly visible" expression: "document.type != 'private' && document.type != 'internal'" Example (Data Manipulation): title: "Notification string" description: "Create a notification string with a timestamp." expression: "'New message received at ' + string(document.create_time)" The exact variables and functions that may be referenced within an expression are determined by the service that evaluates it. See the service documentation for additional information.
 	Condition any
 	// The name of the rule, for example: `projects/p1/locations/us-central1/repositories/repo1/rules/rule1`.
-	Name any
+	Name      any
 	Operation any
 	// The package ID the rule applies to. If empty, this rule applies to all packages inside the repository.
 	PackageId any
@@ -39,7 +39,7 @@ type RuleAttrs struct {
 	// Represents a textual expression in the Common Expression Language (CEL) syntax. CEL is a C-like expression language. The syntax and semantics of CEL are documented at https://github.com/google/cel-spec. Example (Comparison): title: "Summary size limit" description: "Determines if a summary is less than 100 chars" expression: "document.summary.size() < 100" Example (Equality): title: "Requestor is owner" description: "Determines if requestor is the document owner" expression: "document.owner == request.auth.claims.email" Example (Logic): title: "Public documents" description: "Determine whether the document should be publicly visible" expression: "document.type != 'private' && document.type != 'internal'" Example (Data Manipulation): title: "Notification string" description: "Create a notification string with a timestamp." expression: "'New message received at ' + string(document.create_time)" The exact variables and functions that may be referenced within an expression are determined by the service that evaluates it. See the service documentation for additional information.
 	Condition any
 	// The name of the rule, for example: `projects/p1/locations/us-central1/repositories/repo1/rules/rule1`.
-	Name any
+	Name      any
 	Operation any
 	// The package ID the rule applies to. If empty, this rule applies to all packages inside the repository.
 	PackageId any
@@ -51,10 +51,10 @@ var Rule = ubx.ResourceBinding{
 		"Action": ubx.FieldSpec{WireName: "action"},
 		"Condition": ubx.FieldSpec{
 			WireName: "condition",
-			Kind: "object",
-			Fields: Rule_ConditionFields,
+			Kind:     "object",
+			Fields:   Rule_ConditionFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
 		"Operation": ubx.FieldSpec{WireName: "operation"},
 		"PackageId": ubx.FieldSpec{WireName: "package_id"},
 	},

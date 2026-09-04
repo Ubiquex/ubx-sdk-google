@@ -4,18 +4,10 @@ package dataform
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TeamFolderConfig struct {
-	// Output only. The timestamp of when the TeamFolder was created.
-	CreateTime any
-	// Output only. The IAM principal identifier of the creator of the TeamFolder.
-	CreatorIamPrincipal any
 	// Required. The TeamFolder's user-friendly name.
 	DisplayName any
-	// Output only. All the metadata information that is used internally to serve the resource. For example: timestamps, flags, status fields, etc. The format of this field is a JSON string.
-	InternalMetadata any
 	// Identifier. The TeamFolder's name.
 	Name any
-	// Output only. The timestamp of when the TeamFolder was last updated.
-	UpdateTime any
 }
 
 type TeamFolderAttrs struct {
@@ -36,11 +28,7 @@ type TeamFolderAttrs struct {
 var TeamFolder = ubx.ResourceBinding{
 	WireType: "google_dataform_team_folder",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"CreatorIamPrincipal": ubx.FieldSpec{WireName: "creator_iam_principal"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"InternalMetadata": ubx.FieldSpec{WireName: "internal_metadata"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 	},
 }

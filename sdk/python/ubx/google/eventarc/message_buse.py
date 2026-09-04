@@ -19,24 +19,16 @@ _MessageBuse_LoggingConfigFields = {
 class MessageBuseConfig:
     # Optional. Resource annotations.
     annotations: Any = None
-    # Output only. The creation time.
-    create_time: Any = None
     # Optional. Resource name of a KMS crypto key (managed by the user) used to encrypt/decrypt their event data. It must match the pattern `projects/*/locations/*/keyRings/*/cryptoKeys/*`.
     crypto_key_name: Any = None
     # Optional. Resource display name.
     display_name: Any = None
-    # Output only. This checksum is computed by the server based on the value of other fields, and might be sent only on update and delete requests to ensure that the client has an up-to-date value before proceeding.
-    etag: Any = None
     # Optional. Resource labels.
     labels: Any = None
     # The configuration for Platform Telemetry logging for Eventarc Advanced resources.
     logging_config: Any = None
     # Identifier. Resource name of the form projects/{project}/locations/{location}/messageBuses/{message_bus}
     name: Any = None
-    # Output only. Server assigned unique identifier for the channel. The value is a UUID4 string and guaranteed to remain unchanged until the resource is deleted.
-    uid: Any = None
-    # Output only. The last-modified time.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class MessageBuseAttrs:
@@ -65,10 +57,8 @@ MessageBuse = ubx.ResourceBinding(
     wire_type="google_eventarc_message_buse",
     fields={
         "annotations": ubx.FieldSpec(wire_name="annotations"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "crypto_key_name": ubx.FieldSpec(wire_name="crypto_key_name"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
-        "etag": ubx.FieldSpec(wire_name="etag"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "logging_config": ubx.FieldSpec(
             wire_name="logging_config",
@@ -76,7 +66,5 @@ MessageBuse = ubx.ResourceBinding(
             fields=_MessageBuse_LoggingConfigFields,
         ),
         "name": ubx.FieldSpec(wire_name="name"),
-        "uid": ubx.FieldSpec(wire_name="uid"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

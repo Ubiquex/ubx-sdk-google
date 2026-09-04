@@ -9,18 +9,14 @@ type V1beta1Dataset_EncryptionSpec struct {
 }
 
 var V1beta1Dataset_EncryptionSpecFields = ubx.FieldMap{
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-	}
+	"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
+}
 
 type V1beta1DatasetConfig struct {
 	// Represents a customer-managed encryption key spec that can be applied to a resource.
 	EncryptionSpec any
 	// Identifier. Resource name of the dataset, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}`.
 	Name any
-	// Output only. Whether the dataset satisfies zone isolation.
-	SatisfiesPzi any
-	// Output only. Whether the dataset satisfies zone separation.
-	SatisfiesPzs any
 	// The default timezone used by this dataset. Must be a either a valid IANA time zone name such as "America/New_York" or empty, which defaults to UTC. This is used for parsing times in resources, such as HL7 messages, where no explicit timezone is specified.
 	TimeZone any
 }
@@ -43,12 +39,10 @@ var V1beta1Dataset = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"EncryptionSpec": ubx.FieldSpec{
 			WireName: "encryption_spec",
-			Kind: "object",
-			Fields: V1beta1Dataset_EncryptionSpecFields,
+			Kind:     "object",
+			Fields:   V1beta1Dataset_EncryptionSpecFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SatisfiesPzi": ubx.FieldSpec{WireName: "satisfies_pzi"},
-		"SatisfiesPzs": ubx.FieldSpec{WireName: "satisfies_pzs"},
+		"Name":     ubx.FieldSpec{WireName: "name"},
 		"TimeZone": ubx.FieldSpec{WireName: "time_zone"},
 	},
 }

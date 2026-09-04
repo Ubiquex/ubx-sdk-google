@@ -8,26 +8,12 @@ type GitRepositoryLinkConfig struct {
 	Annotations any
 	// Required. Git Clone URI.
 	CloneUri any
-	// Output only. [Output only] Create timestamp
-	CreateTime any
-	// Output only. [Output only] Delete timestamp
-	DeleteTime any
 	// Optional. This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding.
 	Etag any
-	// Output only. URI to access the linked repository through the Git Proxy. This field is only populated if the git proxy is enabled for the connection.
-	GitProxyUri any
 	// Optional. Labels as key value pairs
 	Labels any
 	// Identifier. Resource name of the repository, in the format `projects/*/locations/*/connections/*/gitRepositoryLinks/*`.
 	Name any
-	// Output only. Set to true when the connection is being set up or updated in the background.
-	Reconciling any
-	// Output only. A system-assigned unique identifier for the GitRepositoryLink.
-	Uid any
-	// Output only. [Output only] Update timestamp
-	UpdateTime any
-	// Output only. External ID of the webhook created for the repository.
-	WebhookId any
 }
 
 type GitRepositoryLinkAttrs struct {
@@ -61,16 +47,9 @@ var GitRepositoryLink = ubx.ResourceBinding{
 	WireType: "google_developerconnect_git_repository_link",
 	Fields: ubx.FieldMap{
 		"Annotations": ubx.FieldSpec{WireName: "annotations"},
-		"CloneUri": ubx.FieldSpec{WireName: "clone_uri"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DeleteTime": ubx.FieldSpec{WireName: "delete_time"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"GitProxyUri": ubx.FieldSpec{WireName: "git_proxy_uri"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Reconciling": ubx.FieldSpec{WireName: "reconciling"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-		"WebhookId": ubx.FieldSpec{WireName: "webhook_id"},
+		"CloneUri":    ubx.FieldSpec{WireName: "clone_uri"},
+		"Etag":        ubx.FieldSpec{WireName: "etag"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 	},
 }

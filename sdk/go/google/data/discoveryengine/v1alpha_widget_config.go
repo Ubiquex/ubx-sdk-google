@@ -28,48 +28,48 @@ type V1alphaWidgetConfig_AssistantSettings struct {
 }
 
 type V1alphaWidgetConfig_BatchAuthStatuses_ConnectorAuthState struct {
-	AuthState any
+	AuthState        any
 	AuthorizationUri any
-	UpdateTime any
+	UpdateTime       any
 }
 
 type V1alphaWidgetConfig_BatchAuthStatuses struct {
 	BatchAuthorizationGroup any
-	ConnectorAuthState any
-	Placeholder any
+	ConnectorAuthState      any
+	Placeholder             any
 }
 
 type V1alphaWidgetConfig_CollectionComponents_DataStoreComponents struct {
-	ContentConfig any
+	ContentConfig       any
 	DataStoreConfigType any
-	DisplayName any
-	EntityName any
-	Id any
-	Name any
-	WorkspaceType any
+	DisplayName         any
+	EntityName          any
+	Id                  any
+	Name                any
+	WorkspaceType       any
 }
 
 type V1alphaWidgetConfig_CollectionComponents_Metadata struct {
-	Author any
-	Description any
-	Note any
+	Author           any
+	Description      any
+	Note             any
 	ShortDescription any
-	Title any
+	Title            any
 }
 
 type V1alphaWidgetConfig_CollectionComponents struct {
-	ConnectorAuthState any
-	ConnectorIconLink any
-	DataSource any
-	DataSourceDisplayName any
+	ConnectorAuthState           any
+	ConnectorIconLink            any
+	DataSource                   any
+	DataSourceDisplayName        any
 	DataSourceEndUserDisplayName any
-	DataSourceVersion any
-	DataStoreComponents any
-	DisplayName any
-	Id any
-	IsFirstParty any
-	Metadata any
-	Name any
+	DataSourceVersion            any
+	DataStoreComponents          any
+	DisplayName                  any
+	Id                           any
+	IsFirstParty                 any
+	Metadata                     any
+	Name                         any
 }
 
 type V1alphaWidgetConfig_ContentSearchSpec_ChunkSpec struct {
@@ -161,20 +161,20 @@ type V1alphaWidgetConfig_CustomerProvidedConfig struct {
 
 type V1alphaWidgetConfig_DataStoreUiConfigs_FacetField struct {
 	DisplayName any
-	Field any
+	Field       any
 }
 
 type V1alphaWidgetConfig_DataStoreUiConfigs_FieldsUiComponentsMap struct {
 	DeviceVisibility any
-	DisplayTemplate any
-	Field any
+	DisplayTemplate  any
+	Field            any
 }
 
 type V1alphaWidgetConfig_DataStoreUiConfigs struct {
-	FacetField any
+	FacetField            any
 	FieldsUiComponentsMap any
-	Id any
-	Name any
+	Id                    any
+	Name                  any
 }
 
 type V1alphaWidgetConfig_HomepageSetting_Shortcuts_Icon struct {
@@ -183,8 +183,8 @@ type V1alphaWidgetConfig_HomepageSetting_Shortcuts_Icon struct {
 
 type V1alphaWidgetConfig_HomepageSetting_Shortcuts struct {
 	DestinationUri any
-	Icon any
-	Title any
+	Icon           any
+	Title          any
 }
 
 type V1alphaWidgetConfig_HomepageSetting struct {
@@ -193,12 +193,12 @@ type V1alphaWidgetConfig_HomepageSetting struct {
 }
 
 type V1alphaWidgetConfig_Nodes struct {
-	Description any
-	DisplayName any
-	IconUrl any
-	OutputSchema any
+	Description     any
+	DisplayName     any
+	IconUrl         any
+	OutputSchema    any
 	ParameterSchema any
-	Type any
+	Type            any
 }
 
 type V1alphaWidgetConfig_UiBranding struct {
@@ -232,18 +232,18 @@ type V1alphaWidgetConfig_UiSettings_GenerativeAnswerConfig struct {
 type V1alphaWidgetConfig_UiSettings_ModelConfigInfo_ResolvedModels_AdminView struct {
 	AdminOverridable any
 	EnabledByDefault any
-	Regions any
+	Regions          any
 }
 
 type V1alphaWidgetConfig_UiSettings_ModelConfigInfo_ResolvedModels struct {
-	AdminView any
+	AdminView   any
 	Description any
 	DisplayName any
-	Icon any
-	IsPreview any
-	Label any
-	ModelId any
-	Promoted any
+	Icon        any
+	IsPreview   any
+	Label       any
+	ModelId     any
+	Promoted    any
 }
 
 type V1alphaWidgetConfig_UiSettings_ModelConfigInfo struct {
@@ -306,11 +306,11 @@ type V1alphaWidgetConfig_UiSettings struct {
 }
 
 type V1alphaWidgetConfigConfig struct {
-	AcceptCache any
+	AcceptCache                                             any
 	GetWidgetConfigRequestOptionTurnOffCollectionComponents any
-	LanguageCode any
-	ModelInfoView any
-	Name any
+	LanguageCode                                            any
+	ModelInfoView                                           any
+	Name                                                    any
 }
 
 type V1alphaWidgetConfigAttrs struct {
@@ -368,19 +368,19 @@ type V1alphaWidgetConfigAttrs struct {
 	// The key is the UI component. Mock. Currently supported `title`, `thumbnail`, `url`, `custom1`, `custom2`, `custom3`. The value is the name of the field along with its device visibility. The 3 custom fields are optional and can be added or removed. `title`, `thumbnail`, `url` are required UI components that cannot be removed.
 	FieldsUiComponentsMap any
 	// Output only. Whether the subscription is gemini bundle or not.
-	GeminiBundle any
+	GeminiBundle                                            any
 	GetWidgetConfigRequestOptionTurnOffCollectionComponents any
 	// Describes the homepage setting of the widget. It includes all homepage related settings and configurations, such as shortcuts.
 	HomepageSetting any
 	// Output only. The industry vertical that the WidgetConfig registers. The WidgetConfig industry vertical is based on the associated Engine.
 	IndustryVertical any
-	LanguageCode any
+	LanguageCode     any
 	// Output only. Whether LLM is enabled in the corresponding data store.
 	LlmEnabled any
 	// Output only. Whether the customer accepted data use terms.
 	MinimumDataTermAccepted any
-	ModelInfoView any
-	Name any
+	ModelInfoView           any
+	Name                    any
 	// Output only. The nodes associated with the Widget Config.
 	Nodes any
 	// The type of snippet to display in UCS widget. - RESULT_DISPLAY_TYPE_UNSPECIFIED for existing users. - SNIPPET for new non-enterprise search users. - EXTRACTIVE_ANSWER for new enterprise search users.
@@ -400,8 +400,8 @@ var V1alphaWidgetConfig = ubx.DataSourceBinding{
 	Fields: ubx.FieldMap{
 		"AcceptCache": ubx.FieldSpec{WireName: "accept_cache"},
 		"GetWidgetConfigRequestOptionTurnOffCollectionComponents": ubx.FieldSpec{WireName: "get_widget_config_request_option_turn_off_collection_components"},
-		"LanguageCode": ubx.FieldSpec{WireName: "language_code"},
+		"LanguageCode":  ubx.FieldSpec{WireName: "language_code"},
 		"ModelInfoView": ubx.FieldSpec{WireName: "model_info_view"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":          ubx.FieldSpec{WireName: "name"},
 	},
 }

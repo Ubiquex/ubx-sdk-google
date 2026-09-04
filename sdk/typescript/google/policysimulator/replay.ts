@@ -143,12 +143,8 @@ const Replay_ResultsSummaryFields: FieldMap = {
 export interface ReplayConfig {
   /** The configuration used for a Replay. */
   config?: Replay_Config | Computed<Replay_Config>;
-  /** Output only. The resource name of the `Replay`, which has the following format: `{projects|folders|organizations}/{resource-id}/locations/global/replays/{replay-id}`, where `{resource-id}` is the ID of the project, folder, or organization that owns the Replay. Example: `projects/my-example-project/locations/global/replays/506a5f7f-38ce-4d7d-8e03-479ce1833c36` */
-  name?: string | Computed<string>;
   /** Summary statistics about the replayed log entries. */
   resultsSummary?: Replay_ResultsSummary | Computed<Replay_ResultsSummary>;
-  /** Output only. The current state of the `Replay`. */
-  state?: string | Computed<string>;
 }
 
 export interface ReplayAttrs {
@@ -170,12 +166,10 @@ export const Replay: ResourceBinding<ReplayConfig, ReplayAttrs> = {
       kind: "object",
       fields: Replay_ConfigFields,
     },
-    name: "name",
     resultsSummary: {
       wireName: "results_summary",
       kind: "object",
       fields: Replay_ResultsSummaryFields,
     },
-    state: "state",
   },
 };

@@ -50,49 +50,47 @@ type V1alphaSkill_InitialRevision struct {
 }
 
 var V1alphaSkill_FrontmatterFields = ubx.FieldMap{
-		"Compatibility": ubx.FieldSpec{WireName: "compatibility"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"License": ubx.FieldSpec{WireName: "license"},
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Compatibility": ubx.FieldSpec{WireName: "compatibility"},
+	"Description":   ubx.FieldSpec{WireName: "description"},
+	"License":       ubx.FieldSpec{WireName: "license"},
+	"Metadata":      ubx.FieldSpec{WireName: "metadata"},
+	"Name":          ubx.FieldSpec{WireName: "name"},
+}
 
 var V1alphaSkill_InitialRevision_ArchiveUploadSourceFields = ubx.FieldMap{
-		"ArchiveContent": ubx.FieldSpec{WireName: "archive_content"},
-	}
+	"ArchiveContent": ubx.FieldSpec{WireName: "archive_content"},
+}
 
 var V1alphaSkill_InitialRevision_GcsSourceFields = ubx.FieldMap{
-		"Generation": ubx.FieldSpec{WireName: "generation"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"Generation": ubx.FieldSpec{WireName: "generation"},
+	"Uri":        ubx.FieldSpec{WireName: "uri"},
+}
 
 var V1alphaSkill_InitialRevisionFields = ubx.FieldMap{
-		"ArchiveUploadSource": ubx.FieldSpec{
-			WireName: "archive_upload_source",
-			Kind: "object",
-			Fields: V1alphaSkill_InitialRevision_ArchiveUploadSourceFields,
-		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Frontmatter": ubx.FieldSpec{
-			WireName: "frontmatter",
-			Kind: "object",
-			Fields: V1alphaSkill_FrontmatterFields,
-		},
-		"GcsSource": ubx.FieldSpec{
-			WireName: "gcs_source",
-			Kind: "object",
-			Fields: V1alphaSkill_InitialRevision_GcsSourceFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Sha256Hash": ubx.FieldSpec{WireName: "sha256_hash"},
-		"SizeBytes": ubx.FieldSpec{WireName: "size_bytes"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"ArchiveUploadSource": ubx.FieldSpec{
+		WireName: "archive_upload_source",
+		Kind:     "object",
+		Fields:   V1alphaSkill_InitialRevision_ArchiveUploadSourceFields,
+	},
+	"CreateTime": ubx.FieldSpec{WireName: "create_time"},
+	"Frontmatter": ubx.FieldSpec{
+		WireName: "frontmatter",
+		Kind:     "object",
+		Fields:   V1alphaSkill_FrontmatterFields,
+	},
+	"GcsSource": ubx.FieldSpec{
+		WireName: "gcs_source",
+		Kind:     "object",
+		Fields:   V1alphaSkill_InitialRevision_GcsSourceFields,
+	},
+	"Name":       ubx.FieldSpec{WireName: "name"},
+	"Sha256Hash": ubx.FieldSpec{WireName: "sha256_hash"},
+	"SizeBytes":  ubx.FieldSpec{WireName: "size_bytes"},
+	"State":      ubx.FieldSpec{WireName: "state"},
+	"Uid":        ubx.FieldSpec{WireName: "uid"},
+}
 
 type V1alphaSkillConfig struct {
-	// Output only. Create time.
-	CreateTime any
 	// Optional. The full resource name of the revision currently served by default (floating track). Format: `projects/{project}/locations/{location}/skills/{skill}/revisions/{revision}`
 	DefaultRevision any
 	// Optional. Brief summary describing the capabilities of the skill. Maximum length is 2048 characters.
@@ -107,18 +105,10 @@ type V1alphaSkillConfig struct {
 	Name any
 	// Optional. The publisher resource associated with this skill. Format: `projects/{project}/locations/{location}/publishers/{publisher}` The publisher dictates the allowed namespace prefixes for the skill's name and logical `skill_id` (e.g., Publisher `google` authorizes the `google-*` prefix).
 	Publisher any
-	// Output only. A stable, globally unique logical identifier for the skill. It is securely constructed by the backend by combining the associated `publisher`'s verified namespace and the skill's resource ID to enforce strict ownership. For example, the prefix `google-` is reserved exclusively for first-party Google publishers to prevent namespace squatting. Example: `urn:skill:google-workspace:create-docs`
-	SkillId any
-	// Output only. The system-managed state of the skill.
-	State any
 	// Required. User-managed target state of the skill.
 	TargetState any
 	// Required. Structural deployment type (SIMPLE leaf vs COMPOSITE bundle).
 	Type any
-	// Output only. Universally unique identifier (UUID4) for the logical container.
-	Uid any
-	// Output only. Update time.
-	UpdateTime any
 }
 
 type V1alphaSkillAttrs struct {
@@ -155,27 +145,22 @@ type V1alphaSkillAttrs struct {
 var V1alphaSkill = ubx.ResourceBinding{
 	WireType: "google_agentregistry_v1alpha_skill",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"DefaultRevision": ubx.FieldSpec{WireName: "default_revision"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"Description":     ubx.FieldSpec{WireName: "description"},
+		"DisplayName":     ubx.FieldSpec{WireName: "display_name"},
 		"Frontmatter": ubx.FieldSpec{
 			WireName: "frontmatter",
-			Kind: "object",
-			Fields: V1alphaSkill_FrontmatterFields,
+			Kind:     "object",
+			Fields:   V1alphaSkill_FrontmatterFields,
 		},
 		"InitialRevision": ubx.FieldSpec{
 			WireName: "initial_revision",
-			Kind: "object",
-			Fields: V1alphaSkill_InitialRevisionFields,
+			Kind:     "object",
+			Fields:   V1alphaSkill_InitialRevisionFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Publisher": ubx.FieldSpec{WireName: "publisher"},
-		"SkillId": ubx.FieldSpec{WireName: "skill_id"},
-		"State": ubx.FieldSpec{WireName: "state"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Publisher":   ubx.FieldSpec{WireName: "publisher"},
 		"TargetState": ubx.FieldSpec{WireName: "target_state"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"Type":        ubx.FieldSpec{WireName: "type"},
 	},
 }

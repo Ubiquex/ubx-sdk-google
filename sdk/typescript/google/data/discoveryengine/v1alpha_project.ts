@@ -78,7 +78,6 @@ export interface V1alphaProject_ServiceTermsMap {
 }
 
 export interface V1alphaProjectConfig {
-  name: string | Computed<string>;
 }
 
 export interface V1alphaProjectAttrs {
@@ -98,6 +97,5 @@ export interface V1alphaProjectAttrs {
 export const V1alphaProject: DataSourceBinding<V1alphaProjectConfig, V1alphaProjectAttrs> = {
   wireType: "google_discoveryengine_v1alpha_project",
   fields: {
-    name: "name",
   },
 };

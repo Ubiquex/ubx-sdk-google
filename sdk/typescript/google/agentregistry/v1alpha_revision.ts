@@ -46,22 +46,12 @@ const V1alphaRevision_GcsSourceFields: FieldMap = {
 export interface V1alphaRevisionConfig {
   /** Direct write-only raw archive payload upload. */
   archiveUploadSource?: V1alphaRevision_ArchiveUploadSource | Computed<V1alphaRevision_ArchiveUploadSource>;
-  /** Output only. Revision creation timestamp. */
-  createTime?: string | Computed<string>;
   /** Structured metadata attributes extracted from the package's local SKILL.md frontmatter. */
   frontmatter?: V1alphaRevision_Frontmatter | Computed<V1alphaRevision_Frontmatter>;
   /** Specifications for Cloud Storage objects. */
   gcsSource?: V1alphaRevision_GcsSource | Computed<V1alphaRevision_GcsSource>;
   /** Identifier. Resource name of the SkillRevision. Format: `projects/{project}/locations/{location}/skills/{skill}/revisions/{revision}` */
   name?: string | Computed<string>;
-  /** Output only. Cryptographic SHA-256 integrity and deduplication digest of the payload zip. */
-  sha256Hash?: string | Computed<string>;
-  /** Output only. Size of the compiled zip payload in bytes (assists client download progress). */
-  sizeBytes?: string | Computed<string>;
-  /** Output only. The system-managed lifecycle state of this revision. */
-  state?: string | Computed<string>;
-  /** Output only. Universally unique identifier (UUID4) for the skill revision. */
-  uid?: string | Computed<string>;
 }
 
 export interface V1alphaRevisionAttrs {
@@ -93,7 +83,6 @@ export const V1alphaRevision: ResourceBinding<V1alphaRevisionConfig, V1alphaRevi
       kind: "object",
       fields: V1alphaRevision_ArchiveUploadSourceFields,
     },
-    createTime: "create_time",
     frontmatter: {
       wireName: "frontmatter",
       kind: "object",
@@ -105,9 +94,5 @@ export const V1alphaRevision: ResourceBinding<V1alphaRevisionConfig, V1alphaRevi
       fields: V1alphaRevision_GcsSourceFields,
     },
     name: "name",
-    sha256Hash: "sha256_hash",
-    sizeBytes: "size_bytes",
-    state: "state",
-    uid: "uid",
   },
 };

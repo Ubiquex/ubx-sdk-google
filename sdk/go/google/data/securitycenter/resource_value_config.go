@@ -4,7 +4,7 @@ package securitycenter
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResourceValueConfig_SensitiveDataProtectionMapping struct {
-	HighSensitivityMapping any
+	HighSensitivityMapping   any
 	MediumSensitivityMapping any
 }
 
@@ -13,17 +13,17 @@ type ResourceValueConfigConfig struct {
 }
 
 type ResourceValueConfigAttrs struct {
-	CloudProvider any
-	CreateTime any
-	Description any
-	Name any
-	ResourceLabelsSelector any
-	ResourceType any
-	ResourceValue any
-	Scope any
+	CloudProvider                  any
+	CreateTime                     any
+	Description                    any
+	Name                           any
+	ResourceLabelsSelector         any
+	ResourceType                   any
+	ResourceValue                  any
+	Scope                          any
 	SensitiveDataProtectionMapping any
-	TagValues any
-	UpdateTime any
+	TagValues                      any
+	UpdateTime                     any
 }
 
 var ResourceValueConfig = ubx.DataSourceBinding{

@@ -54,8 +54,6 @@ const TlsRoute_RulesFields: FieldMap = {
 };
 
 export interface TlsRouteConfig {
-  /** Output only. The timestamp when the resource was created. */
-  createTime?: string | Computed<string>;
   /** Optional. A free-text description of the resource. Max length 1024 characters. */
   description?: string | Computed<string>;
   /** Optional. Gateways defines a list of gateways this TlsRoute is attached to, as one of the routing rules to route the requests served by the gateway. Each gateway reference should match the pattern: `projects/* /locations/* /gateways/` */
@@ -68,12 +66,8 @@ export interface TlsRouteConfig {
   name?: string | Computed<string>;
   /** Required. Rules that define how traffic is routed and handled. At least one RouteRule must be supplied. If there are multiple rules then the action taken will be the first rule to match. */
   rules?: TlsRoute_Rules[] | Computed<TlsRoute_Rules[]>;
-  /** Output only. Server-defined URL of this resource */
-  selfLink?: string | Computed<string>;
   /** Optional. TargetProxies defines a list of TargetTcpProxies this TlsRoute is attached to, as one of the routing rules to route the requests served by the TargetTcpProxy. Each TargetTcpProxy reference should match the pattern: `projects/* /locations/* /targetTcpProxies/` */
   targetProxies?: string[] | Computed<string[]>;
-  /** Output only. The timestamp when the resource was updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface TlsRouteAttrs {
@@ -102,7 +96,6 @@ export interface TlsRouteAttrs {
 export const TlsRoute: ResourceBinding<TlsRouteConfig, TlsRouteAttrs> = {
   wireType: "google_networkservices_tls_route",
   fields: {
-    createTime: "create_time",
     description: "description",
     gateways: "gateways",
     labels: "labels",
@@ -113,8 +106,6 @@ export const TlsRoute: ResourceBinding<TlsRouteConfig, TlsRouteAttrs> = {
       kind: "list",
       fields: TlsRoute_RulesFields,
     },
-    selfLink: "self_link",
     targetProxies: "target_proxies",
-    updateTime: "update_time",
   },
 };

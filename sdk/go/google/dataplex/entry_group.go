@@ -4,8 +4,6 @@ package dataplex
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EntryGroupConfig struct {
-	// Output only. The time when the EntryGroup was created.
-	CreateTime any
 	// Optional. Description of the EntryGroup.
 	Description any
 	// Optional. User friendly display name.
@@ -14,14 +12,6 @@ type EntryGroupConfig struct {
 	Etag any
 	// Optional. User-defined labels for the EntryGroup.
 	Labels any
-	// Output only. The relative resource name of the EntryGroup, in the format projects/{project_id_or_number}/locations/{location_id}/entryGroups/{entry_group_id}.
-	Name any
-	// Output only. Denotes the transfer status of the Entry Group. It is unspecified for Entry Group created from Dataplex API.
-	TransferStatus any
-	// Output only. System generated globally unique ID for the EntryGroup. If you delete and recreate the EntryGroup with the same name, this ID will be different.
-	Uid any
-	// Output only. The time when the EntryGroup was last updated.
-	UpdateTime any
 }
 
 type EntryGroupAttrs struct {
@@ -48,14 +38,9 @@ type EntryGroupAttrs struct {
 var EntryGroup = ubx.ResourceBinding{
 	WireType: "google_dataplex_entry_group",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"TransferStatus": ubx.FieldSpec{WireName: "transfer_status"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"Etag":        ubx.FieldSpec{WireName: "etag"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
 	},
 }

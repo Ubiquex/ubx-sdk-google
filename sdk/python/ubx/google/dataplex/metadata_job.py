@@ -160,8 +160,6 @@ _MetadataJob_StatusFields = {
 
 @dataclasses.dataclass
 class MetadataJobConfig:
-    # Output only. The time when the metadata job was created.
-    create_time: Any = None
     # Summary results from a metadata export job. The results are a snapshot of the metadata at the time when the job was created. The exported entries are saved to a Cloud Storage bucket.
     export_result: Any = None
     # Job specification for a metadata export job.
@@ -172,16 +170,10 @@ class MetadataJobConfig:
     import_spec: Any = None
     # Optional. User-defined labels.
     labels: Any = None
-    # Output only. Identifier. The name of the resource that the configuration is applied to, in the format projects/{project_number}/locations/{location_id}/metadataJobs/{metadata_job_id}.
-    name: Any = None
     # Metadata job status.
     status: Any = None
     # Required. Metadata job type.
     type: Any = None
-    # Output only. A system-generated, globally unique ID for the metadata job. If the metadata job is deleted and then re-created with the same name, this ID is different.
-    uid: Any = None
-    # Output only. The time when the metadata job was updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class MetadataJobAttrs:
@@ -211,7 +203,6 @@ class MetadataJobAttrs:
 MetadataJob = ubx.ResourceBinding(
     wire_type="google_dataplex_metadata_job",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "export_result": ubx.FieldSpec(
             wire_name="export_result",
             kind="object",
@@ -233,14 +224,11 @@ MetadataJob = ubx.ResourceBinding(
             fields=_MetadataJob_ImportSpecFields,
         ),
         "labels": ubx.FieldSpec(wire_name="labels"),
-        "name": ubx.FieldSpec(wire_name="name"),
         "status": ubx.FieldSpec(
             wire_name="status",
             kind="object",
             fields=_MetadataJob_StatusFields,
         ),
         "type": ubx.FieldSpec(wire_name="type"),
-        "uid": ubx.FieldSpec(wire_name="uid"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

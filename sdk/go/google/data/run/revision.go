@@ -4,15 +4,15 @@ package run
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Revision_Conditions struct {
-	ExecutionReason any
-	InstanceReason any
+	ExecutionReason    any
+	InstanceReason     any
 	LastTransitionTime any
-	Message any
-	Reason any
-	RevisionReason any
-	Severity any
-	State any
-	Type any
+	Message            any
+	Reason             any
+	RevisionReason     any
+	Severity           any
+	State              any
+	Type               any
 }
 
 type Revision_Containers_BuildInfo struct {
@@ -21,7 +21,7 @@ type Revision_Containers_BuildInfo struct {
 }
 
 type Revision_Containers_Env_ValueSource_SecretKeyRef struct {
-	Secret any
+	Secret  any
 	Version any
 }
 
@@ -30,25 +30,25 @@ type Revision_Containers_Env_ValueSource struct {
 }
 
 type Revision_Containers_Env struct {
-	Name any
-	Value any
+	Name        any
+	Value       any
 	ValueSource any
 }
 
 type Revision_Containers_LivenessProbe_Grpc struct {
-	Port any
+	Port    any
 	Service any
 }
 
 type Revision_Containers_LivenessProbe_HttpGet_HttpHeaders struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type Revision_Containers_LivenessProbe_HttpGet struct {
 	HttpHeaders any
-	Path any
-	Port any
+	Path        any
+	Port        any
 }
 
 type Revision_Containers_LivenessProbe_TcpSocket struct {
@@ -56,34 +56,34 @@ type Revision_Containers_LivenessProbe_TcpSocket struct {
 }
 
 type Revision_Containers_LivenessProbe struct {
-	FailureThreshold any
-	Grpc any
-	HttpGet any
+	FailureThreshold    any
+	Grpc                any
+	HttpGet             any
 	InitialDelaySeconds any
-	PeriodSeconds any
-	TcpSocket any
-	TimeoutSeconds any
+	PeriodSeconds       any
+	TcpSocket           any
+	TimeoutSeconds      any
 }
 
 type Revision_Containers_Ports struct {
 	ContainerPort any
-	Name any
+	Name          any
 }
 
 type Revision_Containers_Resources struct {
-	CpuIdle any
-	Limits any
+	CpuIdle         any
+	Limits          any
 	StartupCpuBoost any
 }
 
 type Revision_Containers_SourceCode_CloudStorageSource struct {
-	Bucket any
+	Bucket     any
 	Generation any
-	Object any
+	Object     any
 }
 
 type Revision_Containers_SourceCode_InlinedSource_Sources struct {
-	Content any
+	Content  any
 	Filename any
 }
 
@@ -93,33 +93,33 @@ type Revision_Containers_SourceCode_InlinedSource struct {
 
 type Revision_Containers_SourceCode struct {
 	CloudStorageSource any
-	InlinedSource any
+	InlinedSource      any
 }
 
 type Revision_Containers_VolumeMounts struct {
 	MountPath any
-	Name any
-	SubPath any
+	Name      any
+	SubPath   any
 }
 
 type Revision_Containers struct {
-	Args any
-	BaseImageUri any
-	BuildInfo any
-	Command any
-	DependsOn any
-	Env any
-	Image any
-	LivenessProbe any
-	Name any
-	Ports any
-	ReadinessProbe any
-	Resources any
+	Args            any
+	BaseImageUri    any
+	BuildInfo       any
+	Command         any
+	DependsOn       any
+	Env             any
+	Image           any
+	LivenessProbe   any
+	Name            any
+	Ports           any
+	ReadinessProbe  any
+	Resources       any
 	SandboxLauncher any
-	SourceCode any
-	StartupProbe any
-	VolumeMounts any
-	WorkingDir any
+	SourceCode      any
+	StartupProbe    any
+	VolumeMounts    any
+	WorkingDir      any
 }
 
 type Revision_NodeSelector struct {
@@ -153,47 +153,47 @@ type Revision_Volumes_CloudSqlInstance struct {
 }
 
 type Revision_Volumes_EmptyDir struct {
-	Medium any
+	Medium    any
 	SizeLimit any
 }
 
 type Revision_Volumes_Gcs struct {
-	Bucket any
+	Bucket       any
 	MountOptions any
-	ReadOnly any
+	ReadOnly     any
 }
 
 type Revision_Volumes_Nfs struct {
-	Path any
+	Path     any
 	ReadOnly any
-	Server any
+	Server   any
 }
 
 type Revision_Volumes_Secret_Items struct {
-	Mode any
-	Path any
+	Mode    any
+	Path    any
 	Version any
 }
 
 type Revision_Volumes_Secret struct {
 	DefaultMode any
-	Items any
-	Secret any
+	Items       any
+	Secret      any
 }
 
 type Revision_Volumes struct {
 	CloudSqlInstance any
-	EmptyDir any
-	Gcs any
-	Name any
-	Nfs any
-	Secret any
+	EmptyDir         any
+	Gcs              any
+	Name             any
+	Nfs              any
+	Secret           any
 }
 
 type Revision_VpcAccess_NetworkInterfaces struct {
-	Network any
+	Network    any
 	Subnetwork any
-	Tags any
+	Tags       any
 }
 
 type Revision_VpcAccess struct {
@@ -206,7 +206,6 @@ type Revision_VpcAccess struct {
 }
 
 type RevisionConfig struct {
-	Name any
 }
 
 type RevisionAttrs struct {
@@ -250,7 +249,7 @@ type RevisionAttrs struct {
 	LogUri any
 	// Sets the maximum number of requests that each serving instance can receive.
 	MaxInstanceRequestConcurrency any
-	Name any
+	Name                          any
 	// Hardware constraints configuration.
 	NodeSelector any
 	// Output only. The generation of this Revision currently serving traffic. See comments in `reconciling` for additional information on reconciliation process in Cloud Run.
@@ -285,7 +284,5 @@ type RevisionAttrs struct {
 
 var Revision = ubx.DataSourceBinding{
 	WireType: "google_run_revision",
-	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	},
+	Fields:   ubx.FieldMap{},
 }

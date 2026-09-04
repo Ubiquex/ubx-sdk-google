@@ -133,14 +133,8 @@ _ExadbVmCluster_PropertiesFields = {
 class ExadbVmClusterConfig:
     # Required. Immutable. The name of the backup OdbSubnet associated with the ExadbVmCluster. Format: projects/{project}/locations/{location}/odbNetworks/{odb_network}/odbSubnets/{odb_subnet}
     backup_odb_subnet: Any = None
-    # Output only. The date and time that the ExadbVmCluster was created.
-    create_time: Any = None
     # Required. Immutable. The display name for the ExadbVmCluster. The name does not have to be unique within your project. The name must be 1-255 characters long and can only contain alphanumeric characters.
     display_name: Any = None
-    # Output only. The ID of the subscription entitlement associated with the ExadbVmCluster.
-    entitlement_id: Any = None
-    # Output only. Immutable. The GCP Oracle zone where Oracle ExadbVmCluster is hosted. Example: us-east4-b-r2. During creation, the system will pick the zone assigned to the ExascaleDbStorageVault.
-    gcp_oracle_zone: Any = None
     # The identity connector details which will allow OCI to securely access the resources in the customer project.
     identity_connector: Any = None
     # Optional. The labels or tags associated with the ExadbVmCluster.
@@ -183,10 +177,7 @@ ExadbVmCluster = ubx.ResourceBinding(
     wire_type="google_oracledatabase_exadb_vm_cluster",
     fields={
         "backup_odb_subnet": ubx.FieldSpec(wire_name="backup_odb_subnet"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
-        "entitlement_id": ubx.FieldSpec(wire_name="entitlement_id"),
-        "gcp_oracle_zone": ubx.FieldSpec(wire_name="gcp_oracle_zone"),
         "identity_connector": ubx.FieldSpec(
             wire_name="identity_connector",
             kind="object",

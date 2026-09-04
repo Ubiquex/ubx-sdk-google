@@ -4,71 +4,71 @@ package dns
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ResponsePolicyRule_LocalData_LocalDatas_RoutingPolicy_Geo_Items_HealthCheckedTargets_InternalLoadBalancers struct {
-	IpAddress any
-	IpProtocol any
-	Kind any
+	IpAddress        any
+	IpProtocol       any
+	Kind             any
 	LoadBalancerType any
-	NetworkUrl any
-	Port any
-	Project any
-	Region any
+	NetworkUrl       any
+	Port             any
+	Project          any
+	Region           any
 }
 
 type ResponsePolicyRule_LocalData_LocalDatas_RoutingPolicy_Geo_Items_HealthCheckedTargets struct {
-	ExternalEndpoints any
+	ExternalEndpoints     any
 	InternalLoadBalancers any
 }
 
 type ResponsePolicyRule_LocalData_LocalDatas_RoutingPolicy_Geo_Items struct {
 	HealthCheckedTargets any
-	Kind any
-	Location any
-	Rrdatas any
-	SignatureRrdatas any
+	Kind                 any
+	Location             any
+	Rrdatas              any
+	SignatureRrdatas     any
 }
 
 type ResponsePolicyRule_LocalData_LocalDatas_RoutingPolicy_Geo struct {
 	EnableFencing any
-	Items any
-	Kind any
+	Items         any
+	Kind          any
 }
 
 type ResponsePolicyRule_LocalData_LocalDatas_RoutingPolicy_PrimaryBackup struct {
 	BackupGeoTargets any
-	Kind any
-	PrimaryTargets any
-	TrickleTraffic any
+	Kind             any
+	PrimaryTargets   any
+	TrickleTraffic   any
 }
 
 type ResponsePolicyRule_LocalData_LocalDatas_RoutingPolicy_Wrr_Items struct {
 	HealthCheckedTargets any
-	Kind any
-	Rrdatas any
-	SignatureRrdatas any
-	Weight any
+	Kind                 any
+	Rrdatas              any
+	SignatureRrdatas     any
+	Weight               any
 }
 
 type ResponsePolicyRule_LocalData_LocalDatas_RoutingPolicy_Wrr struct {
 	Items any
-	Kind any
+	Kind  any
 }
 
 type ResponsePolicyRule_LocalData_LocalDatas_RoutingPolicy struct {
-	Geo any
-	HealthCheck any
-	Kind any
+	Geo           any
+	HealthCheck   any
+	Kind          any
 	PrimaryBackup any
-	Wrr any
+	Wrr           any
 }
 
 type ResponsePolicyRule_LocalData_LocalDatas struct {
-	Kind any
-	Name any
-	RoutingPolicy any
-	Rrdatas any
+	Kind             any
+	Name             any
+	RoutingPolicy    any
+	Rrdatas          any
 	SignatureRrdatas any
-	Ttl any
-	Type any
+	Ttl              any
+	Type             any
 }
 
 type ResponsePolicyRule_LocalData struct {
@@ -77,131 +77,131 @@ type ResponsePolicyRule_LocalData struct {
 }
 
 var ResponsePolicyRule_LocalData_LocalDatas_RoutingPolicy_Geo_Items_HealthCheckedTargets_InternalLoadBalancersFields = ubx.FieldMap{
-		"IpAddress": ubx.FieldSpec{WireName: "ip_address"},
-		"IpProtocol": ubx.FieldSpec{WireName: "ip_protocol"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"LoadBalancerType": ubx.FieldSpec{WireName: "load_balancer_type"},
-		"NetworkUrl": ubx.FieldSpec{WireName: "network_url"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"Project": ubx.FieldSpec{WireName: "project"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-	}
+	"IpAddress":        ubx.FieldSpec{WireName: "ip_address"},
+	"IpProtocol":       ubx.FieldSpec{WireName: "ip_protocol"},
+	"Kind":             ubx.FieldSpec{WireName: "kind"},
+	"LoadBalancerType": ubx.FieldSpec{WireName: "load_balancer_type"},
+	"NetworkUrl":       ubx.FieldSpec{WireName: "network_url"},
+	"Port":             ubx.FieldSpec{WireName: "port"},
+	"Project":          ubx.FieldSpec{WireName: "project"},
+	"Region":           ubx.FieldSpec{WireName: "region"},
+}
 
 var ResponsePolicyRule_LocalData_LocalDatas_RoutingPolicy_Geo_Items_HealthCheckedTargetsFields = ubx.FieldMap{
-		"ExternalEndpoints": ubx.FieldSpec{WireName: "external_endpoints"},
-		"InternalLoadBalancers": ubx.FieldSpec{
-			WireName: "internal_load_balancers",
-			Kind: "list",
-			Fields: ResponsePolicyRule_LocalData_LocalDatas_RoutingPolicy_Geo_Items_HealthCheckedTargets_InternalLoadBalancersFields,
-		},
-	}
+	"ExternalEndpoints": ubx.FieldSpec{WireName: "external_endpoints"},
+	"InternalLoadBalancers": ubx.FieldSpec{
+		WireName: "internal_load_balancers",
+		Kind:     "list",
+		Fields:   ResponsePolicyRule_LocalData_LocalDatas_RoutingPolicy_Geo_Items_HealthCheckedTargets_InternalLoadBalancersFields,
+	},
+}
 
 var ResponsePolicyRule_LocalData_LocalDatas_RoutingPolicy_Geo_ItemsFields = ubx.FieldMap{
-		"HealthCheckedTargets": ubx.FieldSpec{
-			WireName: "health_checked_targets",
-			Kind: "object",
-			Fields: ResponsePolicyRule_LocalData_LocalDatas_RoutingPolicy_Geo_Items_HealthCheckedTargetsFields,
-		},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"Rrdatas": ubx.FieldSpec{WireName: "rrdatas"},
-		"SignatureRrdatas": ubx.FieldSpec{WireName: "signature_rrdatas"},
-	}
+	"HealthCheckedTargets": ubx.FieldSpec{
+		WireName: "health_checked_targets",
+		Kind:     "object",
+		Fields:   ResponsePolicyRule_LocalData_LocalDatas_RoutingPolicy_Geo_Items_HealthCheckedTargetsFields,
+	},
+	"Kind":             ubx.FieldSpec{WireName: "kind"},
+	"Location":         ubx.FieldSpec{WireName: "location"},
+	"Rrdatas":          ubx.FieldSpec{WireName: "rrdatas"},
+	"SignatureRrdatas": ubx.FieldSpec{WireName: "signature_rrdatas"},
+}
 
 var ResponsePolicyRule_LocalData_LocalDatas_RoutingPolicy_GeoFields = ubx.FieldMap{
-		"EnableFencing": ubx.FieldSpec{WireName: "enable_fencing"},
-		"Items": ubx.FieldSpec{
-			WireName: "items",
-			Kind: "list",
-			Fields: ResponsePolicyRule_LocalData_LocalDatas_RoutingPolicy_Geo_ItemsFields,
-		},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-	}
+	"EnableFencing": ubx.FieldSpec{WireName: "enable_fencing"},
+	"Items": ubx.FieldSpec{
+		WireName: "items",
+		Kind:     "list",
+		Fields:   ResponsePolicyRule_LocalData_LocalDatas_RoutingPolicy_Geo_ItemsFields,
+	},
+	"Kind": ubx.FieldSpec{WireName: "kind"},
+}
 
 var ResponsePolicyRule_LocalData_LocalDatas_RoutingPolicy_PrimaryBackupFields = ubx.FieldMap{
-		"BackupGeoTargets": ubx.FieldSpec{
-			WireName: "backup_geo_targets",
-			Kind: "object",
-			Fields: ResponsePolicyRule_LocalData_LocalDatas_RoutingPolicy_GeoFields,
-		},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"PrimaryTargets": ubx.FieldSpec{
-			WireName: "primary_targets",
-			Kind: "object",
-			Fields: ResponsePolicyRule_LocalData_LocalDatas_RoutingPolicy_Geo_Items_HealthCheckedTargetsFields,
-		},
-		"TrickleTraffic": ubx.FieldSpec{WireName: "trickle_traffic"},
-	}
+	"BackupGeoTargets": ubx.FieldSpec{
+		WireName: "backup_geo_targets",
+		Kind:     "object",
+		Fields:   ResponsePolicyRule_LocalData_LocalDatas_RoutingPolicy_GeoFields,
+	},
+	"Kind": ubx.FieldSpec{WireName: "kind"},
+	"PrimaryTargets": ubx.FieldSpec{
+		WireName: "primary_targets",
+		Kind:     "object",
+		Fields:   ResponsePolicyRule_LocalData_LocalDatas_RoutingPolicy_Geo_Items_HealthCheckedTargetsFields,
+	},
+	"TrickleTraffic": ubx.FieldSpec{WireName: "trickle_traffic"},
+}
 
 var ResponsePolicyRule_LocalData_LocalDatas_RoutingPolicy_Wrr_ItemsFields = ubx.FieldMap{
-		"HealthCheckedTargets": ubx.FieldSpec{
-			WireName: "health_checked_targets",
-			Kind: "object",
-			Fields: ResponsePolicyRule_LocalData_LocalDatas_RoutingPolicy_Geo_Items_HealthCheckedTargetsFields,
-		},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Rrdatas": ubx.FieldSpec{WireName: "rrdatas"},
-		"SignatureRrdatas": ubx.FieldSpec{WireName: "signature_rrdatas"},
-		"Weight": ubx.FieldSpec{WireName: "weight"},
-	}
+	"HealthCheckedTargets": ubx.FieldSpec{
+		WireName: "health_checked_targets",
+		Kind:     "object",
+		Fields:   ResponsePolicyRule_LocalData_LocalDatas_RoutingPolicy_Geo_Items_HealthCheckedTargetsFields,
+	},
+	"Kind":             ubx.FieldSpec{WireName: "kind"},
+	"Rrdatas":          ubx.FieldSpec{WireName: "rrdatas"},
+	"SignatureRrdatas": ubx.FieldSpec{WireName: "signature_rrdatas"},
+	"Weight":           ubx.FieldSpec{WireName: "weight"},
+}
 
 var ResponsePolicyRule_LocalData_LocalDatas_RoutingPolicy_WrrFields = ubx.FieldMap{
-		"Items": ubx.FieldSpec{
-			WireName: "items",
-			Kind: "list",
-			Fields: ResponsePolicyRule_LocalData_LocalDatas_RoutingPolicy_Wrr_ItemsFields,
-		},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-	}
+	"Items": ubx.FieldSpec{
+		WireName: "items",
+		Kind:     "list",
+		Fields:   ResponsePolicyRule_LocalData_LocalDatas_RoutingPolicy_Wrr_ItemsFields,
+	},
+	"Kind": ubx.FieldSpec{WireName: "kind"},
+}
 
 var ResponsePolicyRule_LocalData_LocalDatas_RoutingPolicyFields = ubx.FieldMap{
-		"Geo": ubx.FieldSpec{
-			WireName: "geo",
-			Kind: "object",
-			Fields: ResponsePolicyRule_LocalData_LocalDatas_RoutingPolicy_GeoFields,
-		},
-		"HealthCheck": ubx.FieldSpec{WireName: "health_check"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"PrimaryBackup": ubx.FieldSpec{
-			WireName: "primary_backup",
-			Kind: "object",
-			Fields: ResponsePolicyRule_LocalData_LocalDatas_RoutingPolicy_PrimaryBackupFields,
-		},
-		"Wrr": ubx.FieldSpec{
-			WireName: "wrr",
-			Kind: "object",
-			Fields: ResponsePolicyRule_LocalData_LocalDatas_RoutingPolicy_WrrFields,
-		},
-	}
+	"Geo": ubx.FieldSpec{
+		WireName: "geo",
+		Kind:     "object",
+		Fields:   ResponsePolicyRule_LocalData_LocalDatas_RoutingPolicy_GeoFields,
+	},
+	"HealthCheck": ubx.FieldSpec{WireName: "health_check"},
+	"Kind":        ubx.FieldSpec{WireName: "kind"},
+	"PrimaryBackup": ubx.FieldSpec{
+		WireName: "primary_backup",
+		Kind:     "object",
+		Fields:   ResponsePolicyRule_LocalData_LocalDatas_RoutingPolicy_PrimaryBackupFields,
+	},
+	"Wrr": ubx.FieldSpec{
+		WireName: "wrr",
+		Kind:     "object",
+		Fields:   ResponsePolicyRule_LocalData_LocalDatas_RoutingPolicy_WrrFields,
+	},
+}
 
 var ResponsePolicyRule_LocalData_LocalDatasFields = ubx.FieldMap{
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"RoutingPolicy": ubx.FieldSpec{
-			WireName: "routing_policy",
-			Kind: "object",
-			Fields: ResponsePolicyRule_LocalData_LocalDatas_RoutingPolicyFields,
-		},
-		"Rrdatas": ubx.FieldSpec{WireName: "rrdatas"},
-		"SignatureRrdatas": ubx.FieldSpec{WireName: "signature_rrdatas"},
-		"Ttl": ubx.FieldSpec{WireName: "ttl"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Kind": ubx.FieldSpec{WireName: "kind"},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"RoutingPolicy": ubx.FieldSpec{
+		WireName: "routing_policy",
+		Kind:     "object",
+		Fields:   ResponsePolicyRule_LocalData_LocalDatas_RoutingPolicyFields,
+	},
+	"Rrdatas":          ubx.FieldSpec{WireName: "rrdatas"},
+	"SignatureRrdatas": ubx.FieldSpec{WireName: "signature_rrdatas"},
+	"Ttl":              ubx.FieldSpec{WireName: "ttl"},
+	"Type":             ubx.FieldSpec{WireName: "type"},
+}
 
 var ResponsePolicyRule_LocalDataFields = ubx.FieldMap{
-		"LocalDatas": ubx.FieldSpec{
-			WireName: "local_datas",
-			Kind: "list",
-			Fields: ResponsePolicyRule_LocalData_LocalDatasFields,
-		},
-	}
+	"LocalDatas": ubx.FieldSpec{
+		WireName: "local_datas",
+		Kind:     "list",
+		Fields:   ResponsePolicyRule_LocalData_LocalDatasFields,
+	},
+}
 
 type ResponsePolicyRuleConfig struct {
 	// Answer this query with a behavior rather than DNS data.
 	Behavior any
 	// The DNS name (wildcard or exact) to apply this rule to. Must be unique within the Response Policy Rule.
-	DnsName any
-	Kind any
+	DnsName   any
+	Kind      any
 	LocalData any
 	// An identifier for this rule. Must be unique with the ResponsePolicy.
 	RuleName any
@@ -211,8 +211,8 @@ type ResponsePolicyRuleAttrs struct {
 	// Answer this query with a behavior rather than DNS data.
 	Behavior any
 	// The DNS name (wildcard or exact) to apply this rule to. Must be unique within the Response Policy Rule.
-	DnsName any
-	Kind any
+	DnsName   any
+	Kind      any
 	LocalData any
 	// An identifier for this rule. Must be unique with the ResponsePolicy.
 	RuleName any
@@ -222,12 +222,12 @@ var ResponsePolicyRule = ubx.ResourceBinding{
 	WireType: "google_dns_response_policy_rule",
 	Fields: ubx.FieldMap{
 		"Behavior": ubx.FieldSpec{WireName: "behavior"},
-		"DnsName": ubx.FieldSpec{WireName: "dns_name"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
+		"DnsName":  ubx.FieldSpec{WireName: "dns_name"},
+		"Kind":     ubx.FieldSpec{WireName: "kind"},
 		"LocalData": ubx.FieldSpec{
 			WireName: "local_data",
-			Kind: "object",
-			Fields: ResponsePolicyRule_LocalDataFields,
+			Kind:     "object",
+			Fields:   ResponsePolicyRule_LocalDataFields,
 		},
 		"RuleName": ubx.FieldSpec{WireName: "rule_name"},
 	},

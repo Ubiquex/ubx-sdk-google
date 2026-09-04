@@ -157,148 +157,142 @@ type DbSystem_Properties struct {
 }
 
 var DbSystem_Properties_DataCollectionOptionsFields = ubx.FieldMap{
-		"IsDiagnosticsEventsEnabled": ubx.FieldSpec{WireName: "is_diagnostics_events_enabled"},
-		"IsIncidentLogsEnabled": ubx.FieldSpec{WireName: "is_incident_logs_enabled"},
-	}
+	"IsDiagnosticsEventsEnabled": ubx.FieldSpec{WireName: "is_diagnostics_events_enabled"},
+	"IsIncidentLogsEnabled":      ubx.FieldSpec{WireName: "is_incident_logs_enabled"},
+}
 
 var DbSystem_Properties_DbHome_Database_Properties_DatabaseManagementConfigFields = ubx.FieldMap{
-		"ManagementState": ubx.FieldSpec{WireName: "management_state"},
-		"ManagementType": ubx.FieldSpec{WireName: "management_type"},
-	}
+	"ManagementState": ubx.FieldSpec{WireName: "management_state"},
+	"ManagementType":  ubx.FieldSpec{WireName: "management_type"},
+}
 
 var DbSystem_Properties_DbHome_Database_Properties_DbBackupConfig_BackupDestinationDetailsFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var DbSystem_Properties_DbHome_Database_Properties_DbBackupConfigFields = ubx.FieldMap{
-		"AutoBackupEnabled": ubx.FieldSpec{WireName: "auto_backup_enabled"},
-		"AutoFullBackupDay": ubx.FieldSpec{WireName: "auto_full_backup_day"},
-		"AutoFullBackupWindow": ubx.FieldSpec{WireName: "auto_full_backup_window"},
-		"AutoIncrementalBackupWindow": ubx.FieldSpec{WireName: "auto_incremental_backup_window"},
-		"BackupDeletionPolicy": ubx.FieldSpec{WireName: "backup_deletion_policy"},
-		"BackupDestinationDetails": ubx.FieldSpec{
-			WireName: "backup_destination_details",
-			Kind: "list",
-			Fields: DbSystem_Properties_DbHome_Database_Properties_DbBackupConfig_BackupDestinationDetailsFields,
-		},
-		"RetentionPeriodDays": ubx.FieldSpec{WireName: "retention_period_days"},
-	}
+	"AutoBackupEnabled":           ubx.FieldSpec{WireName: "auto_backup_enabled"},
+	"AutoFullBackupDay":           ubx.FieldSpec{WireName: "auto_full_backup_day"},
+	"AutoFullBackupWindow":        ubx.FieldSpec{WireName: "auto_full_backup_window"},
+	"AutoIncrementalBackupWindow": ubx.FieldSpec{WireName: "auto_incremental_backup_window"},
+	"BackupDeletionPolicy":        ubx.FieldSpec{WireName: "backup_deletion_policy"},
+	"BackupDestinationDetails": ubx.FieldSpec{
+		WireName: "backup_destination_details",
+		Kind:     "list",
+		Fields:   DbSystem_Properties_DbHome_Database_Properties_DbBackupConfig_BackupDestinationDetailsFields,
+	},
+	"RetentionPeriodDays": ubx.FieldSpec{WireName: "retention_period_days"},
+}
 
 var DbSystem_Properties_DbHome_Database_PropertiesFields = ubx.FieldMap{
-		"DatabaseManagementConfig": ubx.FieldSpec{
-			WireName: "database_management_config",
-			Kind: "object",
-			Fields: DbSystem_Properties_DbHome_Database_Properties_DatabaseManagementConfigFields,
-		},
-		"DbBackupConfig": ubx.FieldSpec{
-			WireName: "db_backup_config",
-			Kind: "object",
-			Fields: DbSystem_Properties_DbHome_Database_Properties_DbBackupConfigFields,
-		},
-		"DbVersion": ubx.FieldSpec{WireName: "db_version"},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"DatabaseManagementConfig": ubx.FieldSpec{
+		WireName: "database_management_config",
+		Kind:     "object",
+		Fields:   DbSystem_Properties_DbHome_Database_Properties_DatabaseManagementConfigFields,
+	},
+	"DbBackupConfig": ubx.FieldSpec{
+		WireName: "db_backup_config",
+		Kind:     "object",
+		Fields:   DbSystem_Properties_DbHome_Database_Properties_DbBackupConfigFields,
+	},
+	"DbVersion": ubx.FieldSpec{WireName: "db_version"},
+	"State":     ubx.FieldSpec{WireName: "state"},
+}
 
 var DbSystem_Properties_DbHome_DatabaseFields = ubx.FieldMap{
-		"AdminPassword": ubx.FieldSpec{WireName: "admin_password"},
-		"AdminPasswordSecretVersion": ubx.FieldSpec{WireName: "admin_password_secret_version"},
-		"CharacterSet": ubx.FieldSpec{WireName: "character_set"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DatabaseId": ubx.FieldSpec{WireName: "database_id"},
-		"DbHomeName": ubx.FieldSpec{WireName: "db_home_name"},
-		"DbName": ubx.FieldSpec{WireName: "db_name"},
-		"DbUniqueName": ubx.FieldSpec{WireName: "db_unique_name"},
-		"GcpOracleZone": ubx.FieldSpec{WireName: "gcp_oracle_zone"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NcharacterSet": ubx.FieldSpec{WireName: "ncharacter_set"},
-		"OciUrl": ubx.FieldSpec{WireName: "oci_url"},
-		"OpsInsightsStatus": ubx.FieldSpec{WireName: "ops_insights_status"},
-		"PluggableDatabaseId": ubx.FieldSpec{WireName: "pluggable_database_id"},
-		"PluggableDatabaseName": ubx.FieldSpec{WireName: "pluggable_database_name"},
-		"Properties": ubx.FieldSpec{
-			WireName: "properties",
-			Kind: "object",
-			Fields: DbSystem_Properties_DbHome_Database_PropertiesFields,
-		},
-		"TdeWalletPassword": ubx.FieldSpec{WireName: "tde_wallet_password"},
-		"TdeWalletPasswordSecretVersion": ubx.FieldSpec{WireName: "tde_wallet_password_secret_version"},
-	}
+	"AdminPassword":              ubx.FieldSpec{WireName: "admin_password"},
+	"AdminPasswordSecretVersion": ubx.FieldSpec{WireName: "admin_password_secret_version"},
+	"CharacterSet":               ubx.FieldSpec{WireName: "character_set"},
+	"CreateTime":                 ubx.FieldSpec{WireName: "create_time"},
+	"DatabaseId":                 ubx.FieldSpec{WireName: "database_id"},
+	"DbHomeName":                 ubx.FieldSpec{WireName: "db_home_name"},
+	"DbName":                     ubx.FieldSpec{WireName: "db_name"},
+	"DbUniqueName":               ubx.FieldSpec{WireName: "db_unique_name"},
+	"GcpOracleZone":              ubx.FieldSpec{WireName: "gcp_oracle_zone"},
+	"Name":                       ubx.FieldSpec{WireName: "name"},
+	"NcharacterSet":              ubx.FieldSpec{WireName: "ncharacter_set"},
+	"OciUrl":                     ubx.FieldSpec{WireName: "oci_url"},
+	"OpsInsightsStatus":          ubx.FieldSpec{WireName: "ops_insights_status"},
+	"PluggableDatabaseId":        ubx.FieldSpec{WireName: "pluggable_database_id"},
+	"PluggableDatabaseName":      ubx.FieldSpec{WireName: "pluggable_database_name"},
+	"Properties": ubx.FieldSpec{
+		WireName: "properties",
+		Kind:     "object",
+		Fields:   DbSystem_Properties_DbHome_Database_PropertiesFields,
+	},
+	"TdeWalletPassword":              ubx.FieldSpec{WireName: "tde_wallet_password"},
+	"TdeWalletPasswordSecretVersion": ubx.FieldSpec{WireName: "tde_wallet_password_secret_version"},
+}
 
 var DbSystem_Properties_DbHomeFields = ubx.FieldMap{
-		"Database": ubx.FieldSpec{
-			WireName: "database",
-			Kind: "object",
-			Fields: DbSystem_Properties_DbHome_DatabaseFields,
-		},
-		"DbVersion": ubx.FieldSpec{WireName: "db_version"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"IsUnifiedAuditingEnabled": ubx.FieldSpec{WireName: "is_unified_auditing_enabled"},
-	}
+	"Database": ubx.FieldSpec{
+		WireName: "database",
+		Kind:     "object",
+		Fields:   DbSystem_Properties_DbHome_DatabaseFields,
+	},
+	"DbVersion":                ubx.FieldSpec{WireName: "db_version"},
+	"DisplayName":              ubx.FieldSpec{WireName: "display_name"},
+	"IsUnifiedAuditingEnabled": ubx.FieldSpec{WireName: "is_unified_auditing_enabled"},
+}
 
 var DbSystem_Properties_DbSystemOptionsFields = ubx.FieldMap{
-		"StorageManagement": ubx.FieldSpec{WireName: "storage_management"},
-	}
+	"StorageManagement": ubx.FieldSpec{WireName: "storage_management"},
+}
 
 var DbSystem_Properties_TimeZoneFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"Id":      ubx.FieldSpec{WireName: "id"},
+	"Version": ubx.FieldSpec{WireName: "version"},
+}
 
 var DbSystem_PropertiesFields = ubx.FieldMap{
-		"ComputeCount": ubx.FieldSpec{WireName: "compute_count"},
-		"ComputeModel": ubx.FieldSpec{WireName: "compute_model"},
-		"DataCollectionOptions": ubx.FieldSpec{
-			WireName: "data_collection_options",
-			Kind: "object",
-			Fields: DbSystem_Properties_DataCollectionOptionsFields,
-		},
-		"DataStorageSizeGb": ubx.FieldSpec{WireName: "data_storage_size_gb"},
-		"DatabaseEdition": ubx.FieldSpec{WireName: "database_edition"},
-		"DbHome": ubx.FieldSpec{
-			WireName: "db_home",
-			Kind: "object",
-			Fields: DbSystem_Properties_DbHomeFields,
-		},
-		"DbSystemOptions": ubx.FieldSpec{
-			WireName: "db_system_options",
-			Kind: "object",
-			Fields: DbSystem_Properties_DbSystemOptionsFields,
-		},
-		"Domain": ubx.FieldSpec{WireName: "domain"},
-		"Hostname": ubx.FieldSpec{WireName: "hostname"},
-		"HostnamePrefix": ubx.FieldSpec{WireName: "hostname_prefix"},
-		"InitialDataStorageSizeGb": ubx.FieldSpec{WireName: "initial_data_storage_size_gb"},
-		"LicenseModel": ubx.FieldSpec{WireName: "license_model"},
-		"LifecycleState": ubx.FieldSpec{WireName: "lifecycle_state"},
-		"MemorySizeGb": ubx.FieldSpec{WireName: "memory_size_gb"},
-		"NodeCount": ubx.FieldSpec{WireName: "node_count"},
-		"Ocid": ubx.FieldSpec{WireName: "ocid"},
-		"PrivateIp": ubx.FieldSpec{WireName: "private_ip"},
-		"RecoStorageSizeGb": ubx.FieldSpec{WireName: "reco_storage_size_gb"},
-		"Shape": ubx.FieldSpec{WireName: "shape"},
-		"SshPublicKeys": ubx.FieldSpec{WireName: "ssh_public_keys"},
-		"TimeZone": ubx.FieldSpec{
-			WireName: "time_zone",
-			Kind: "object",
-			Fields: DbSystem_Properties_TimeZoneFields,
-		},
-	}
+	"ComputeCount": ubx.FieldSpec{WireName: "compute_count"},
+	"ComputeModel": ubx.FieldSpec{WireName: "compute_model"},
+	"DataCollectionOptions": ubx.FieldSpec{
+		WireName: "data_collection_options",
+		Kind:     "object",
+		Fields:   DbSystem_Properties_DataCollectionOptionsFields,
+	},
+	"DataStorageSizeGb": ubx.FieldSpec{WireName: "data_storage_size_gb"},
+	"DatabaseEdition":   ubx.FieldSpec{WireName: "database_edition"},
+	"DbHome": ubx.FieldSpec{
+		WireName: "db_home",
+		Kind:     "object",
+		Fields:   DbSystem_Properties_DbHomeFields,
+	},
+	"DbSystemOptions": ubx.FieldSpec{
+		WireName: "db_system_options",
+		Kind:     "object",
+		Fields:   DbSystem_Properties_DbSystemOptionsFields,
+	},
+	"Domain":                   ubx.FieldSpec{WireName: "domain"},
+	"Hostname":                 ubx.FieldSpec{WireName: "hostname"},
+	"HostnamePrefix":           ubx.FieldSpec{WireName: "hostname_prefix"},
+	"InitialDataStorageSizeGb": ubx.FieldSpec{WireName: "initial_data_storage_size_gb"},
+	"LicenseModel":             ubx.FieldSpec{WireName: "license_model"},
+	"LifecycleState":           ubx.FieldSpec{WireName: "lifecycle_state"},
+	"MemorySizeGb":             ubx.FieldSpec{WireName: "memory_size_gb"},
+	"NodeCount":                ubx.FieldSpec{WireName: "node_count"},
+	"Ocid":                     ubx.FieldSpec{WireName: "ocid"},
+	"PrivateIp":                ubx.FieldSpec{WireName: "private_ip"},
+	"RecoStorageSizeGb":        ubx.FieldSpec{WireName: "reco_storage_size_gb"},
+	"Shape":                    ubx.FieldSpec{WireName: "shape"},
+	"SshPublicKeys":            ubx.FieldSpec{WireName: "ssh_public_keys"},
+	"TimeZone": ubx.FieldSpec{
+		WireName: "time_zone",
+		Kind:     "object",
+		Fields:   DbSystem_Properties_TimeZoneFields,
+	},
+}
 
 type DbSystemConfig struct {
-	// Output only. The date and time that the DbSystem was created.
-	CreateTime any
 	// Required. The display name for the System db. The name does not have to be unique within your project.
 	DisplayName any
-	// Output only. The ID of the subscription entitlement associated with the DbSystem
-	EntitlementId any
 	// Optional. The GCP Oracle zone where Oracle DbSystem is hosted. Example: us-east4-b-r2. If not specified, the system will pick a zone based on availability.
 	GcpOracleZone any
 	// Optional. The labels or tags associated with the DbSystem.
 	Labels any
 	// Identifier. The name of the DbSystem resource in the following format: projects/{project}/locations/{region}/dbSystems/{db_system}
 	Name any
-	// Output only. HTTPS link to OCI resources exposed to Customer via UI Interface.
-	OciUrl any
 	// Optional. The name of the OdbNetwork associated with the DbSystem. Format: projects/{project}/locations/{location}/odbNetworks/{odb_network} It is optional but if specified, this should match the parent ODBNetwork of the OdbSubnet.
 	OdbNetwork any
 	// Required. The name of the OdbSubnet associated with the DbSystem for IP allocation. Format: projects/{project}/locations/{location}/odbNetworks/{odb_network}/odbSubnets/{odb_subnet}
@@ -333,19 +327,16 @@ type DbSystemAttrs struct {
 var DbSystem = ubx.ResourceBinding{
 	WireType: "google_oracledatabase_db_system",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"EntitlementId": ubx.FieldSpec{WireName: "entitlement_id"},
+		"DisplayName":   ubx.FieldSpec{WireName: "display_name"},
 		"GcpOracleZone": ubx.FieldSpec{WireName: "gcp_oracle_zone"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"OciUrl": ubx.FieldSpec{WireName: "oci_url"},
-		"OdbNetwork": ubx.FieldSpec{WireName: "odb_network"},
-		"OdbSubnet": ubx.FieldSpec{WireName: "odb_subnet"},
+		"Labels":        ubx.FieldSpec{WireName: "labels"},
+		"Name":          ubx.FieldSpec{WireName: "name"},
+		"OdbNetwork":    ubx.FieldSpec{WireName: "odb_network"},
+		"OdbSubnet":     ubx.FieldSpec{WireName: "odb_subnet"},
 		"Properties": ubx.FieldSpec{
 			WireName: "properties",
-			Kind: "object",
-			Fields: DbSystem_PropertiesFields,
+			Kind:     "object",
+			Fields:   DbSystem_PropertiesFields,
 		},
 	},
 }

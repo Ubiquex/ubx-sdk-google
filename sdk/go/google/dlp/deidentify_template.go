@@ -4,9 +4,9 @@ package dlp
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_RedactionColor struct {
-	Blue any
+	Blue  any
 	Green any
-	Red any
+	Red   any
 }
 
 type DeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypes_SensitivityScore struct {
@@ -14,9 +14,9 @@ type DeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_Selecte
 }
 
 type DeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypes struct {
-	Name any
+	Name             any
 	SensitivityScore any
-	Version any
+	Version          any
 }
 
 type DeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes struct {
@@ -24,9 +24,9 @@ type DeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_Selecte
 }
 
 type DeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms struct {
-	AllInfoTypes any
-	AllText any
-	RedactionColor any
+	AllInfoTypes      any
+	AllText           any
+	RedactionColor    any
 	SelectedInfoTypes any
 }
 
@@ -36,32 +36,32 @@ type DeidentifyTemplate_DeidentifyConfig_ImageTransformations struct {
 }
 
 type DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_Max_DateValue struct {
-	Day any
+	Day   any
 	Month any
-	Year any
+	Year  any
 }
 
 type DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_Max_TimeValue struct {
-	Hours any
+	Hours   any
 	Minutes any
-	Nanos any
+	Nanos   any
 	Seconds any
 }
 
 type DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_Max struct {
-	BooleanValue any
-	DateValue any
+	BooleanValue   any
+	DateValue      any
 	DayOfWeekValue any
-	FloatValue any
-	IntegerValue any
-	StringValue any
-	TimeValue any
+	FloatValue     any
+	IntegerValue   any
+	StringValue    any
+	TimeValue      any
 	TimestampValue any
 }
 
 type DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets struct {
-	Max any
-	Min any
+	Max              any
+	Min              any
 	ReplacementValue any
 }
 
@@ -70,15 +70,15 @@ type DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations
 }
 
 type DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CharacterMaskConfig_CharactersToIgnore struct {
-	CharactersToSkip any
+	CharactersToSkip         any
 	CommonCharactersToIgnore any
 }
 
 type DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CharacterMaskConfig struct {
 	CharactersToIgnore any
-	MaskingCharacter any
-	NumberToMask any
-	ReverseOrder any
+	MaskingCharacter   any
+	NumberToMask       any
+	ReverseOrder       any
 }
 
 type DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_Context struct {
@@ -87,7 +87,7 @@ type DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations
 
 type DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_CryptoKey_KmsWrapped struct {
 	CryptoKeyName any
-	WrappedKey any
+	WrappedKey    any
 }
 
 type DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_CryptoKey_Unwrapped struct {
@@ -96,13 +96,13 @@ type DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations
 
 type DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_CryptoKey struct {
 	KmsWrapped any
-	Transient any
-	Unwrapped any
+	Transient  any
+	Unwrapped  any
 }
 
 type DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig struct {
-	Context any
-	CryptoKey any
+	Context           any
+	CryptoKey         any
 	SurrogateInfoType any
 }
 
@@ -111,17 +111,17 @@ type DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations
 }
 
 type DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoReplaceFfxFpeConfig struct {
-	CommonAlphabet any
-	Context any
-	CryptoKey any
-	CustomAlphabet any
-	Radix any
+	CommonAlphabet    any
+	Context           any
+	CryptoKey         any
+	CustomAlphabet    any
+	Radix             any
 	SurrogateInfoType any
 }
 
 type DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_DateShiftConfig struct {
-	Context any
-	CryptoKey any
+	Context        any
+	CryptoKey      any
 	LowerBoundDays any
 	UpperBoundDays any
 }
@@ -149,22 +149,22 @@ type DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations
 }
 
 type DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation struct {
-	BucketingConfig any
-	CharacterMaskConfig any
+	BucketingConfig           any
+	CharacterMaskConfig       any
 	CryptoDeterministicConfig any
-	CryptoHashConfig any
+	CryptoHashConfig          any
 	CryptoReplaceFfxFpeConfig any
-	DateShiftConfig any
-	FixedSizeBucketingConfig any
-	RedactConfig any
-	ReplaceConfig any
-	ReplaceDictionaryConfig any
+	DateShiftConfig           any
+	FixedSizeBucketingConfig  any
+	RedactConfig              any
+	ReplaceConfig             any
+	ReplaceDictionaryConfig   any
 	ReplaceWithInfoTypeConfig any
-	TimePartConfig any
+	TimePartConfig            any
 }
 
 type DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations struct {
-	InfoTypes any
+	InfoTypes               any
 	PrimitiveTransformation any
 }
 
@@ -174,9 +174,9 @@ type DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations struct {
 }
 
 type DeidentifyTemplate_DeidentifyConfig_RecordTransformations_FieldTransformations_Condition_Expressions_Conditions_Conditions struct {
-	Field any
+	Field    any
 	Operator any
-	Value any
+	Value    any
 }
 
 type DeidentifyTemplate_DeidentifyConfig_RecordTransformations_FieldTransformations_Condition_Expressions_Conditions struct {
@@ -184,7 +184,7 @@ type DeidentifyTemplate_DeidentifyConfig_RecordTransformations_FieldTransformati
 }
 
 type DeidentifyTemplate_DeidentifyConfig_RecordTransformations_FieldTransformations_Condition_Expressions struct {
-	Conditions any
+	Conditions      any
 	LogicalOperator any
 }
 
@@ -193,8 +193,8 @@ type DeidentifyTemplate_DeidentifyConfig_RecordTransformations_FieldTransformati
 }
 
 type DeidentifyTemplate_DeidentifyConfig_RecordTransformations_FieldTransformations struct {
-	Condition any
-	Fields any
+	Condition               any
+	Fields                  any
 	InfoTypeTransformations any
 	PrimitiveTransformation any
 }
@@ -244,460 +244,460 @@ type DeidentifyTemplate_DeidentifyTemplate struct {
 }
 
 var DeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_RedactionColorFields = ubx.FieldMap{
-		"Blue": ubx.FieldSpec{WireName: "blue"},
-		"Green": ubx.FieldSpec{WireName: "green"},
-		"Red": ubx.FieldSpec{WireName: "red"},
-	}
+	"Blue":  ubx.FieldSpec{WireName: "blue"},
+	"Green": ubx.FieldSpec{WireName: "green"},
+	"Red":   ubx.FieldSpec{WireName: "red"},
+}
 
 var DeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypes_SensitivityScoreFields = ubx.FieldMap{
-		"Score": ubx.FieldSpec{WireName: "score"},
-	}
+	"Score": ubx.FieldSpec{WireName: "score"},
+}
 
 var DeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypesFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SensitivityScore": ubx.FieldSpec{
-			WireName: "sensitivity_score",
-			Kind: "object",
-			Fields: DeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypes_SensitivityScoreFields,
-		},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"SensitivityScore": ubx.FieldSpec{
+		WireName: "sensitivity_score",
+		Kind:     "object",
+		Fields:   DeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypes_SensitivityScoreFields,
+	},
+	"Version": ubx.FieldSpec{WireName: "version"},
+}
 
 var DeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypesFields = ubx.FieldMap{
-		"InfoTypes": ubx.FieldSpec{
-			WireName: "info_types",
-			Kind: "list",
-			Fields: DeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypesFields,
-		},
-	}
+	"InfoTypes": ubx.FieldSpec{
+		WireName: "info_types",
+		Kind:     "list",
+		Fields:   DeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypesFields,
+	},
+}
 
 var DeidentifyTemplate_DeidentifyConfig_ImageTransformations_TransformsFields = ubx.FieldMap{
-		"AllInfoTypes": ubx.FieldSpec{WireName: "all_info_types"},
-		"AllText": ubx.FieldSpec{WireName: "all_text"},
-		"RedactionColor": ubx.FieldSpec{
-			WireName: "redaction_color",
-			Kind: "object",
-			Fields: DeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_RedactionColorFields,
-		},
-		"SelectedInfoTypes": ubx.FieldSpec{
-			WireName: "selected_info_types",
-			Kind: "object",
-			Fields: DeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypesFields,
-		},
-	}
+	"AllInfoTypes": ubx.FieldSpec{WireName: "all_info_types"},
+	"AllText":      ubx.FieldSpec{WireName: "all_text"},
+	"RedactionColor": ubx.FieldSpec{
+		WireName: "redaction_color",
+		Kind:     "object",
+		Fields:   DeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_RedactionColorFields,
+	},
+	"SelectedInfoTypes": ubx.FieldSpec{
+		WireName: "selected_info_types",
+		Kind:     "object",
+		Fields:   DeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypesFields,
+	},
+}
 
 var DeidentifyTemplate_DeidentifyConfig_ImageTransformationsFields = ubx.FieldMap{
-		"Transforms": ubx.FieldSpec{
-			WireName: "transforms",
-			Kind: "list",
-			Fields: DeidentifyTemplate_DeidentifyConfig_ImageTransformations_TransformsFields,
-		},
-	}
+	"Transforms": ubx.FieldSpec{
+		WireName: "transforms",
+		Kind:     "list",
+		Fields:   DeidentifyTemplate_DeidentifyConfig_ImageTransformations_TransformsFields,
+	},
+}
 
 var DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_Max_DateValueFields = ubx.FieldMap{
-		"Day": ubx.FieldSpec{WireName: "day"},
-		"Month": ubx.FieldSpec{WireName: "month"},
-		"Year": ubx.FieldSpec{WireName: "year"},
-	}
+	"Day":   ubx.FieldSpec{WireName: "day"},
+	"Month": ubx.FieldSpec{WireName: "month"},
+	"Year":  ubx.FieldSpec{WireName: "year"},
+}
 
 var DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_Max_TimeValueFields = ubx.FieldMap{
-		"Hours": ubx.FieldSpec{WireName: "hours"},
-		"Minutes": ubx.FieldSpec{WireName: "minutes"},
-		"Nanos": ubx.FieldSpec{WireName: "nanos"},
-		"Seconds": ubx.FieldSpec{WireName: "seconds"},
-	}
+	"Hours":   ubx.FieldSpec{WireName: "hours"},
+	"Minutes": ubx.FieldSpec{WireName: "minutes"},
+	"Nanos":   ubx.FieldSpec{WireName: "nanos"},
+	"Seconds": ubx.FieldSpec{WireName: "seconds"},
+}
 
 var DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_MaxFields = ubx.FieldMap{
-		"BooleanValue": ubx.FieldSpec{WireName: "boolean_value"},
-		"DateValue": ubx.FieldSpec{
-			WireName: "date_value",
-			Kind: "object",
-			Fields: DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_Max_DateValueFields,
-		},
-		"DayOfWeekValue": ubx.FieldSpec{WireName: "day_of_week_value"},
-		"FloatValue": ubx.FieldSpec{WireName: "float_value"},
-		"IntegerValue": ubx.FieldSpec{WireName: "integer_value"},
-		"StringValue": ubx.FieldSpec{WireName: "string_value"},
-		"TimeValue": ubx.FieldSpec{
-			WireName: "time_value",
-			Kind: "object",
-			Fields: DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_Max_TimeValueFields,
-		},
-		"TimestampValue": ubx.FieldSpec{WireName: "timestamp_value"},
-	}
+	"BooleanValue": ubx.FieldSpec{WireName: "boolean_value"},
+	"DateValue": ubx.FieldSpec{
+		WireName: "date_value",
+		Kind:     "object",
+		Fields:   DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_Max_DateValueFields,
+	},
+	"DayOfWeekValue": ubx.FieldSpec{WireName: "day_of_week_value"},
+	"FloatValue":     ubx.FieldSpec{WireName: "float_value"},
+	"IntegerValue":   ubx.FieldSpec{WireName: "integer_value"},
+	"StringValue":    ubx.FieldSpec{WireName: "string_value"},
+	"TimeValue": ubx.FieldSpec{
+		WireName: "time_value",
+		Kind:     "object",
+		Fields:   DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_Max_TimeValueFields,
+	},
+	"TimestampValue": ubx.FieldSpec{WireName: "timestamp_value"},
+}
 
 var DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_BucketsFields = ubx.FieldMap{
-		"Max": ubx.FieldSpec{
-			WireName: "max",
-			Kind: "object",
-			Fields: DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_MaxFields,
-		},
-		"Min": ubx.FieldSpec{
-			WireName: "min",
-			Kind: "object",
-			Fields: DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_MaxFields,
-		},
-		"ReplacementValue": ubx.FieldSpec{
-			WireName: "replacement_value",
-			Kind: "object",
-			Fields: DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_MaxFields,
-		},
-	}
+	"Max": ubx.FieldSpec{
+		WireName: "max",
+		Kind:     "object",
+		Fields:   DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_MaxFields,
+	},
+	"Min": ubx.FieldSpec{
+		WireName: "min",
+		Kind:     "object",
+		Fields:   DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_MaxFields,
+	},
+	"ReplacementValue": ubx.FieldSpec{
+		WireName: "replacement_value",
+		Kind:     "object",
+		Fields:   DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_MaxFields,
+	},
+}
 
 var DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfigFields = ubx.FieldMap{
-		"Buckets": ubx.FieldSpec{
-			WireName: "buckets",
-			Kind: "list",
-			Fields: DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_BucketsFields,
-		},
-	}
+	"Buckets": ubx.FieldSpec{
+		WireName: "buckets",
+		Kind:     "list",
+		Fields:   DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_BucketsFields,
+	},
+}
 
 var DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CharacterMaskConfig_CharactersToIgnoreFields = ubx.FieldMap{
-		"CharactersToSkip": ubx.FieldSpec{WireName: "characters_to_skip"},
-		"CommonCharactersToIgnore": ubx.FieldSpec{WireName: "common_characters_to_ignore"},
-	}
+	"CharactersToSkip":         ubx.FieldSpec{WireName: "characters_to_skip"},
+	"CommonCharactersToIgnore": ubx.FieldSpec{WireName: "common_characters_to_ignore"},
+}
 
 var DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CharacterMaskConfigFields = ubx.FieldMap{
-		"CharactersToIgnore": ubx.FieldSpec{
-			WireName: "characters_to_ignore",
-			Kind: "list",
-			Fields: DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CharacterMaskConfig_CharactersToIgnoreFields,
-		},
-		"MaskingCharacter": ubx.FieldSpec{WireName: "masking_character"},
-		"NumberToMask": ubx.FieldSpec{WireName: "number_to_mask"},
-		"ReverseOrder": ubx.FieldSpec{WireName: "reverse_order"},
-	}
+	"CharactersToIgnore": ubx.FieldSpec{
+		WireName: "characters_to_ignore",
+		Kind:     "list",
+		Fields:   DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CharacterMaskConfig_CharactersToIgnoreFields,
+	},
+	"MaskingCharacter": ubx.FieldSpec{WireName: "masking_character"},
+	"NumberToMask":     ubx.FieldSpec{WireName: "number_to_mask"},
+	"ReverseOrder":     ubx.FieldSpec{WireName: "reverse_order"},
+}
 
 var DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_ContextFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_CryptoKey_KmsWrappedFields = ubx.FieldMap{
-		"CryptoKeyName": ubx.FieldSpec{WireName: "crypto_key_name"},
-		"WrappedKey": ubx.FieldSpec{WireName: "wrapped_key"},
-	}
+	"CryptoKeyName": ubx.FieldSpec{WireName: "crypto_key_name"},
+	"WrappedKey":    ubx.FieldSpec{WireName: "wrapped_key"},
+}
 
 var DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_CryptoKey_UnwrappedFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-	}
+	"Key": ubx.FieldSpec{WireName: "key"},
+}
 
 var DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_CryptoKeyFields = ubx.FieldMap{
-		"KmsWrapped": ubx.FieldSpec{
-			WireName: "kms_wrapped",
-			Kind: "object",
-			Fields: DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_CryptoKey_KmsWrappedFields,
-		},
-		"Transient": ubx.FieldSpec{
-			WireName: "transient",
-			Kind: "object",
-			Fields: DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_ContextFields,
-		},
-		"Unwrapped": ubx.FieldSpec{
-			WireName: "unwrapped",
-			Kind: "object",
-			Fields: DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_CryptoKey_UnwrappedFields,
-		},
-	}
+	"KmsWrapped": ubx.FieldSpec{
+		WireName: "kms_wrapped",
+		Kind:     "object",
+		Fields:   DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_CryptoKey_KmsWrappedFields,
+	},
+	"Transient": ubx.FieldSpec{
+		WireName: "transient",
+		Kind:     "object",
+		Fields:   DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_ContextFields,
+	},
+	"Unwrapped": ubx.FieldSpec{
+		WireName: "unwrapped",
+		Kind:     "object",
+		Fields:   DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_CryptoKey_UnwrappedFields,
+	},
+}
 
 var DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfigFields = ubx.FieldMap{
-		"Context": ubx.FieldSpec{
-			WireName: "context",
-			Kind: "object",
-			Fields: DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_ContextFields,
-		},
-		"CryptoKey": ubx.FieldSpec{
-			WireName: "crypto_key",
-			Kind: "object",
-			Fields: DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_CryptoKeyFields,
-		},
-		"SurrogateInfoType": ubx.FieldSpec{
-			WireName: "surrogate_info_type",
-			Kind: "object",
-			Fields: DeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypesFields,
-		},
-	}
+	"Context": ubx.FieldSpec{
+		WireName: "context",
+		Kind:     "object",
+		Fields:   DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_ContextFields,
+	},
+	"CryptoKey": ubx.FieldSpec{
+		WireName: "crypto_key",
+		Kind:     "object",
+		Fields:   DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_CryptoKeyFields,
+	},
+	"SurrogateInfoType": ubx.FieldSpec{
+		WireName: "surrogate_info_type",
+		Kind:     "object",
+		Fields:   DeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypesFields,
+	},
+}
 
 var DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoHashConfigFields = ubx.FieldMap{
-		"CryptoKey": ubx.FieldSpec{
-			WireName: "crypto_key",
-			Kind: "object",
-			Fields: DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_CryptoKeyFields,
-		},
-	}
+	"CryptoKey": ubx.FieldSpec{
+		WireName: "crypto_key",
+		Kind:     "object",
+		Fields:   DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_CryptoKeyFields,
+	},
+}
 
 var DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoReplaceFfxFpeConfigFields = ubx.FieldMap{
-		"CommonAlphabet": ubx.FieldSpec{WireName: "common_alphabet"},
-		"Context": ubx.FieldSpec{
-			WireName: "context",
-			Kind: "object",
-			Fields: DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_ContextFields,
-		},
-		"CryptoKey": ubx.FieldSpec{
-			WireName: "crypto_key",
-			Kind: "object",
-			Fields: DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_CryptoKeyFields,
-		},
-		"CustomAlphabet": ubx.FieldSpec{WireName: "custom_alphabet"},
-		"Radix": ubx.FieldSpec{WireName: "radix"},
-		"SurrogateInfoType": ubx.FieldSpec{
-			WireName: "surrogate_info_type",
-			Kind: "object",
-			Fields: DeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypesFields,
-		},
-	}
+	"CommonAlphabet": ubx.FieldSpec{WireName: "common_alphabet"},
+	"Context": ubx.FieldSpec{
+		WireName: "context",
+		Kind:     "object",
+		Fields:   DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_ContextFields,
+	},
+	"CryptoKey": ubx.FieldSpec{
+		WireName: "crypto_key",
+		Kind:     "object",
+		Fields:   DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_CryptoKeyFields,
+	},
+	"CustomAlphabet": ubx.FieldSpec{WireName: "custom_alphabet"},
+	"Radix":          ubx.FieldSpec{WireName: "radix"},
+	"SurrogateInfoType": ubx.FieldSpec{
+		WireName: "surrogate_info_type",
+		Kind:     "object",
+		Fields:   DeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypesFields,
+	},
+}
 
 var DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_DateShiftConfigFields = ubx.FieldMap{
-		"Context": ubx.FieldSpec{
-			WireName: "context",
-			Kind: "object",
-			Fields: DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_ContextFields,
-		},
-		"CryptoKey": ubx.FieldSpec{
-			WireName: "crypto_key",
-			Kind: "object",
-			Fields: DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_CryptoKeyFields,
-		},
-		"LowerBoundDays": ubx.FieldSpec{WireName: "lower_bound_days"},
-		"UpperBoundDays": ubx.FieldSpec{WireName: "upper_bound_days"},
-	}
+	"Context": ubx.FieldSpec{
+		WireName: "context",
+		Kind:     "object",
+		Fields:   DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_ContextFields,
+	},
+	"CryptoKey": ubx.FieldSpec{
+		WireName: "crypto_key",
+		Kind:     "object",
+		Fields:   DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_CryptoKeyFields,
+	},
+	"LowerBoundDays": ubx.FieldSpec{WireName: "lower_bound_days"},
+	"UpperBoundDays": ubx.FieldSpec{WireName: "upper_bound_days"},
+}
 
 var DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_FixedSizeBucketingConfigFields = ubx.FieldMap{
-		"BucketSize": ubx.FieldSpec{WireName: "bucket_size"},
-		"LowerBound": ubx.FieldSpec{
-			WireName: "lower_bound",
-			Kind: "object",
-			Fields: DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_MaxFields,
-		},
-		"UpperBound": ubx.FieldSpec{
-			WireName: "upper_bound",
-			Kind: "object",
-			Fields: DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_MaxFields,
-		},
-	}
+	"BucketSize": ubx.FieldSpec{WireName: "bucket_size"},
+	"LowerBound": ubx.FieldSpec{
+		WireName: "lower_bound",
+		Kind:     "object",
+		Fields:   DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_MaxFields,
+	},
+	"UpperBound": ubx.FieldSpec{
+		WireName: "upper_bound",
+		Kind:     "object",
+		Fields:   DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_MaxFields,
+	},
+}
 
 var DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_ReplaceConfigFields = ubx.FieldMap{
-		"NewValue": ubx.FieldSpec{
-			WireName: "new_value",
-			Kind: "object",
-			Fields: DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_MaxFields,
-		},
-	}
+	"NewValue": ubx.FieldSpec{
+		WireName: "new_value",
+		Kind:     "object",
+		Fields:   DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_MaxFields,
+	},
+}
 
 var DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_ReplaceDictionaryConfig_WordListFields = ubx.FieldMap{
-		"Words": ubx.FieldSpec{WireName: "words"},
-	}
+	"Words": ubx.FieldSpec{WireName: "words"},
+}
 
 var DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_ReplaceDictionaryConfigFields = ubx.FieldMap{
-		"WordList": ubx.FieldSpec{
-			WireName: "word_list",
-			Kind: "object",
-			Fields: DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_ReplaceDictionaryConfig_WordListFields,
-		},
-	}
+	"WordList": ubx.FieldSpec{
+		WireName: "word_list",
+		Kind:     "object",
+		Fields:   DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_ReplaceDictionaryConfig_WordListFields,
+	},
+}
 
 var DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_TimePartConfigFields = ubx.FieldMap{
-		"PartToExtract": ubx.FieldSpec{WireName: "part_to_extract"},
-	}
+	"PartToExtract": ubx.FieldSpec{WireName: "part_to_extract"},
+}
 
 var DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformationFields = ubx.FieldMap{
-		"BucketingConfig": ubx.FieldSpec{
-			WireName: "bucketing_config",
-			Kind: "object",
-			Fields: DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfigFields,
-		},
-		"CharacterMaskConfig": ubx.FieldSpec{
-			WireName: "character_mask_config",
-			Kind: "object",
-			Fields: DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CharacterMaskConfigFields,
-		},
-		"CryptoDeterministicConfig": ubx.FieldSpec{
-			WireName: "crypto_deterministic_config",
-			Kind: "object",
-			Fields: DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfigFields,
-		},
-		"CryptoHashConfig": ubx.FieldSpec{
-			WireName: "crypto_hash_config",
-			Kind: "object",
-			Fields: DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoHashConfigFields,
-		},
-		"CryptoReplaceFfxFpeConfig": ubx.FieldSpec{
-			WireName: "crypto_replace_ffx_fpe_config",
-			Kind: "object",
-			Fields: DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoReplaceFfxFpeConfigFields,
-		},
-		"DateShiftConfig": ubx.FieldSpec{
-			WireName: "date_shift_config",
-			Kind: "object",
-			Fields: DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_DateShiftConfigFields,
-		},
-		"FixedSizeBucketingConfig": ubx.FieldSpec{
-			WireName: "fixed_size_bucketing_config",
-			Kind: "object",
-			Fields: DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_FixedSizeBucketingConfigFields,
-		},
-		"RedactConfig": ubx.FieldSpec{WireName: "redact_config"},
-		"ReplaceConfig": ubx.FieldSpec{
-			WireName: "replace_config",
-			Kind: "object",
-			Fields: DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_ReplaceConfigFields,
-		},
-		"ReplaceDictionaryConfig": ubx.FieldSpec{
-			WireName: "replace_dictionary_config",
-			Kind: "object",
-			Fields: DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_ReplaceDictionaryConfigFields,
-		},
-		"ReplaceWithInfoTypeConfig": ubx.FieldSpec{WireName: "replace_with_info_type_config"},
-		"TimePartConfig": ubx.FieldSpec{
-			WireName: "time_part_config",
-			Kind: "object",
-			Fields: DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_TimePartConfigFields,
-		},
-	}
+	"BucketingConfig": ubx.FieldSpec{
+		WireName: "bucketing_config",
+		Kind:     "object",
+		Fields:   DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfigFields,
+	},
+	"CharacterMaskConfig": ubx.FieldSpec{
+		WireName: "character_mask_config",
+		Kind:     "object",
+		Fields:   DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CharacterMaskConfigFields,
+	},
+	"CryptoDeterministicConfig": ubx.FieldSpec{
+		WireName: "crypto_deterministic_config",
+		Kind:     "object",
+		Fields:   DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfigFields,
+	},
+	"CryptoHashConfig": ubx.FieldSpec{
+		WireName: "crypto_hash_config",
+		Kind:     "object",
+		Fields:   DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoHashConfigFields,
+	},
+	"CryptoReplaceFfxFpeConfig": ubx.FieldSpec{
+		WireName: "crypto_replace_ffx_fpe_config",
+		Kind:     "object",
+		Fields:   DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoReplaceFfxFpeConfigFields,
+	},
+	"DateShiftConfig": ubx.FieldSpec{
+		WireName: "date_shift_config",
+		Kind:     "object",
+		Fields:   DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_DateShiftConfigFields,
+	},
+	"FixedSizeBucketingConfig": ubx.FieldSpec{
+		WireName: "fixed_size_bucketing_config",
+		Kind:     "object",
+		Fields:   DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_FixedSizeBucketingConfigFields,
+	},
+	"RedactConfig": ubx.FieldSpec{WireName: "redact_config"},
+	"ReplaceConfig": ubx.FieldSpec{
+		WireName: "replace_config",
+		Kind:     "object",
+		Fields:   DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_ReplaceConfigFields,
+	},
+	"ReplaceDictionaryConfig": ubx.FieldSpec{
+		WireName: "replace_dictionary_config",
+		Kind:     "object",
+		Fields:   DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_ReplaceDictionaryConfigFields,
+	},
+	"ReplaceWithInfoTypeConfig": ubx.FieldSpec{WireName: "replace_with_info_type_config"},
+	"TimePartConfig": ubx.FieldSpec{
+		WireName: "time_part_config",
+		Kind:     "object",
+		Fields:   DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_TimePartConfigFields,
+	},
+}
 
 var DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_TransformationsFields = ubx.FieldMap{
-		"InfoTypes": ubx.FieldSpec{
-			WireName: "info_types",
-			Kind: "list",
-			Fields: DeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypesFields,
-		},
-		"PrimitiveTransformation": ubx.FieldSpec{
-			WireName: "primitive_transformation",
-			Kind: "object",
-			Fields: DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformationFields,
-		},
-	}
+	"InfoTypes": ubx.FieldSpec{
+		WireName: "info_types",
+		Kind:     "list",
+		Fields:   DeidentifyTemplate_DeidentifyConfig_ImageTransformations_Transforms_SelectedInfoTypes_InfoTypesFields,
+	},
+	"PrimitiveTransformation": ubx.FieldSpec{
+		WireName: "primitive_transformation",
+		Kind:     "object",
+		Fields:   DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformationFields,
+	},
+}
 
 var DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformationsFields = ubx.FieldMap{
-		"Transformations": ubx.FieldSpec{
-			WireName: "transformations",
-			Kind: "list",
-			Fields: DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_TransformationsFields,
-		},
-	}
+	"Transformations": ubx.FieldSpec{
+		WireName: "transformations",
+		Kind:     "list",
+		Fields:   DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_TransformationsFields,
+	},
+}
 
 var DeidentifyTemplate_DeidentifyConfig_RecordTransformations_FieldTransformations_Condition_Expressions_Conditions_ConditionsFields = ubx.FieldMap{
-		"Field": ubx.FieldSpec{
-			WireName: "field",
-			Kind: "object",
-			Fields: DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_ContextFields,
-		},
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-		"Value": ubx.FieldSpec{
-			WireName: "value",
-			Kind: "object",
-			Fields: DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_MaxFields,
-		},
-	}
+	"Field": ubx.FieldSpec{
+		WireName: "field",
+		Kind:     "object",
+		Fields:   DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_ContextFields,
+	},
+	"Operator": ubx.FieldSpec{WireName: "operator"},
+	"Value": ubx.FieldSpec{
+		WireName: "value",
+		Kind:     "object",
+		Fields:   DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_BucketingConfig_Buckets_MaxFields,
+	},
+}
 
 var DeidentifyTemplate_DeidentifyConfig_RecordTransformations_FieldTransformations_Condition_Expressions_ConditionsFields = ubx.FieldMap{
-		"Conditions": ubx.FieldSpec{
-			WireName: "conditions",
-			Kind: "list",
-			Fields: DeidentifyTemplate_DeidentifyConfig_RecordTransformations_FieldTransformations_Condition_Expressions_Conditions_ConditionsFields,
-		},
-	}
+	"Conditions": ubx.FieldSpec{
+		WireName: "conditions",
+		Kind:     "list",
+		Fields:   DeidentifyTemplate_DeidentifyConfig_RecordTransformations_FieldTransformations_Condition_Expressions_Conditions_ConditionsFields,
+	},
+}
 
 var DeidentifyTemplate_DeidentifyConfig_RecordTransformations_FieldTransformations_Condition_ExpressionsFields = ubx.FieldMap{
-		"Conditions": ubx.FieldSpec{
-			WireName: "conditions",
-			Kind: "object",
-			Fields: DeidentifyTemplate_DeidentifyConfig_RecordTransformations_FieldTransformations_Condition_Expressions_ConditionsFields,
-		},
-		"LogicalOperator": ubx.FieldSpec{WireName: "logical_operator"},
-	}
+	"Conditions": ubx.FieldSpec{
+		WireName: "conditions",
+		Kind:     "object",
+		Fields:   DeidentifyTemplate_DeidentifyConfig_RecordTransformations_FieldTransformations_Condition_Expressions_ConditionsFields,
+	},
+	"LogicalOperator": ubx.FieldSpec{WireName: "logical_operator"},
+}
 
 var DeidentifyTemplate_DeidentifyConfig_RecordTransformations_FieldTransformations_ConditionFields = ubx.FieldMap{
-		"Expressions": ubx.FieldSpec{
-			WireName: "expressions",
-			Kind: "object",
-			Fields: DeidentifyTemplate_DeidentifyConfig_RecordTransformations_FieldTransformations_Condition_ExpressionsFields,
-		},
-	}
+	"Expressions": ubx.FieldSpec{
+		WireName: "expressions",
+		Kind:     "object",
+		Fields:   DeidentifyTemplate_DeidentifyConfig_RecordTransformations_FieldTransformations_Condition_ExpressionsFields,
+	},
+}
 
 var DeidentifyTemplate_DeidentifyConfig_RecordTransformations_FieldTransformationsFields = ubx.FieldMap{
-		"Condition": ubx.FieldSpec{
-			WireName: "condition",
-			Kind: "object",
-			Fields: DeidentifyTemplate_DeidentifyConfig_RecordTransformations_FieldTransformations_ConditionFields,
-		},
-		"Fields": ubx.FieldSpec{
-			WireName: "fields",
-			Kind: "list",
-			Fields: DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_ContextFields,
-		},
-		"InfoTypeTransformations": ubx.FieldSpec{
-			WireName: "info_type_transformations",
-			Kind: "object",
-			Fields: DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformationsFields,
-		},
-		"PrimitiveTransformation": ubx.FieldSpec{
-			WireName: "primitive_transformation",
-			Kind: "object",
-			Fields: DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformationFields,
-		},
-	}
+	"Condition": ubx.FieldSpec{
+		WireName: "condition",
+		Kind:     "object",
+		Fields:   DeidentifyTemplate_DeidentifyConfig_RecordTransformations_FieldTransformations_ConditionFields,
+	},
+	"Fields": ubx.FieldSpec{
+		WireName: "fields",
+		Kind:     "list",
+		Fields:   DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformation_CryptoDeterministicConfig_ContextFields,
+	},
+	"InfoTypeTransformations": ubx.FieldSpec{
+		WireName: "info_type_transformations",
+		Kind:     "object",
+		Fields:   DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformationsFields,
+	},
+	"PrimitiveTransformation": ubx.FieldSpec{
+		WireName: "primitive_transformation",
+		Kind:     "object",
+		Fields:   DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformations_Transformations_PrimitiveTransformationFields,
+	},
+}
 
 var DeidentifyTemplate_DeidentifyConfig_RecordTransformations_RecordSuppressionsFields = ubx.FieldMap{
-		"Condition": ubx.FieldSpec{
-			WireName: "condition",
-			Kind: "object",
-			Fields: DeidentifyTemplate_DeidentifyConfig_RecordTransformations_FieldTransformations_ConditionFields,
-		},
-	}
+	"Condition": ubx.FieldSpec{
+		WireName: "condition",
+		Kind:     "object",
+		Fields:   DeidentifyTemplate_DeidentifyConfig_RecordTransformations_FieldTransformations_ConditionFields,
+	},
+}
 
 var DeidentifyTemplate_DeidentifyConfig_RecordTransformationsFields = ubx.FieldMap{
-		"FieldTransformations": ubx.FieldSpec{
-			WireName: "field_transformations",
-			Kind: "list",
-			Fields: DeidentifyTemplate_DeidentifyConfig_RecordTransformations_FieldTransformationsFields,
-		},
-		"RecordSuppressions": ubx.FieldSpec{
-			WireName: "record_suppressions",
-			Kind: "list",
-			Fields: DeidentifyTemplate_DeidentifyConfig_RecordTransformations_RecordSuppressionsFields,
-		},
-	}
+	"FieldTransformations": ubx.FieldSpec{
+		WireName: "field_transformations",
+		Kind:     "list",
+		Fields:   DeidentifyTemplate_DeidentifyConfig_RecordTransformations_FieldTransformationsFields,
+	},
+	"RecordSuppressions": ubx.FieldSpec{
+		WireName: "record_suppressions",
+		Kind:     "list",
+		Fields:   DeidentifyTemplate_DeidentifyConfig_RecordTransformations_RecordSuppressionsFields,
+	},
+}
 
 var DeidentifyTemplate_DeidentifyConfig_TransformationErrorHandlingFields = ubx.FieldMap{
-		"LeaveUntransformed": ubx.FieldSpec{WireName: "leave_untransformed"},
-		"ThrowError": ubx.FieldSpec{WireName: "throw_error"},
-	}
+	"LeaveUntransformed": ubx.FieldSpec{WireName: "leave_untransformed"},
+	"ThrowError":         ubx.FieldSpec{WireName: "throw_error"},
+}
 
 var DeidentifyTemplate_DeidentifyConfigFields = ubx.FieldMap{
-		"ImageTransformations": ubx.FieldSpec{
-			WireName: "image_transformations",
-			Kind: "object",
-			Fields: DeidentifyTemplate_DeidentifyConfig_ImageTransformationsFields,
-		},
-		"InfoTypeTransformations": ubx.FieldSpec{
-			WireName: "info_type_transformations",
-			Kind: "object",
-			Fields: DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformationsFields,
-		},
-		"RecordTransformations": ubx.FieldSpec{
-			WireName: "record_transformations",
-			Kind: "object",
-			Fields: DeidentifyTemplate_DeidentifyConfig_RecordTransformationsFields,
-		},
-		"TransformationErrorHandling": ubx.FieldSpec{
-			WireName: "transformation_error_handling",
-			Kind: "object",
-			Fields: DeidentifyTemplate_DeidentifyConfig_TransformationErrorHandlingFields,
-		},
-	}
+	"ImageTransformations": ubx.FieldSpec{
+		WireName: "image_transformations",
+		Kind:     "object",
+		Fields:   DeidentifyTemplate_DeidentifyConfig_ImageTransformationsFields,
+	},
+	"InfoTypeTransformations": ubx.FieldSpec{
+		WireName: "info_type_transformations",
+		Kind:     "object",
+		Fields:   DeidentifyTemplate_DeidentifyConfig_InfoTypeTransformationsFields,
+	},
+	"RecordTransformations": ubx.FieldSpec{
+		WireName: "record_transformations",
+		Kind:     "object",
+		Fields:   DeidentifyTemplate_DeidentifyConfig_RecordTransformationsFields,
+	},
+	"TransformationErrorHandling": ubx.FieldSpec{
+		WireName: "transformation_error_handling",
+		Kind:     "object",
+		Fields:   DeidentifyTemplate_DeidentifyConfig_TransformationErrorHandlingFields,
+	},
+}
 
 var DeidentifyTemplate_DeidentifyTemplateFields = ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DeidentifyConfig": ubx.FieldSpec{
-			WireName: "deidentify_config",
-			Kind: "object",
-			Fields: DeidentifyTemplate_DeidentifyConfigFields,
-		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-	}
+	"CreateTime": ubx.FieldSpec{WireName: "create_time"},
+	"DeidentifyConfig": ubx.FieldSpec{
+		WireName: "deidentify_config",
+		Kind:     "object",
+		Fields:   DeidentifyTemplate_DeidentifyConfigFields,
+	},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"UpdateTime":  ubx.FieldSpec{WireName: "update_time"},
+}
 
 type DeidentifyTemplateConfig struct {
 	// DeidentifyTemplates contains instructions on how to de-identify content. See https://docs.cloud.google.com/sensitive-data-protection/docs/concepts-templates to learn more.
@@ -734,8 +734,8 @@ var DeidentifyTemplate = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"DeidentifyTemplate": ubx.FieldSpec{
 			WireName: "deidentify_template",
-			Kind: "object",
-			Fields: DeidentifyTemplate_DeidentifyTemplateFields,
+			Kind:     "object",
+			Fields:   DeidentifyTemplate_DeidentifyTemplateFields,
 		},
 		"LocationId": ubx.FieldSpec{WireName: "location_id"},
 		"TemplateId": ubx.FieldSpec{WireName: "template_id"},

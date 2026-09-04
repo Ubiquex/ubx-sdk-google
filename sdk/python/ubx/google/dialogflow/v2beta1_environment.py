@@ -125,10 +125,7 @@ class V2beta1EnvironmentConfig:
     agent_version: Any = None
     description: Any = None
     fulfillment: Any = None
-    name: Any = None
-    state: Any = None
     text_to_speech_settings: Any = None
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V2beta1EnvironmentAttrs:
@@ -150,13 +147,10 @@ V2beta1Environment = ubx.ResourceBinding(
             kind="object",
             fields=_V2beta1Environment_FulfillmentFields,
         ),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "state": ubx.FieldSpec(wire_name="state"),
         "text_to_speech_settings": ubx.FieldSpec(
             wire_name="text_to_speech_settings",
             kind="object",
             fields=_V2beta1Environment_TextToSpeechSettingsFields,
         ),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

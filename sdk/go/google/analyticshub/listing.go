@@ -4,7 +4,7 @@ package analyticshub
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Listing_BigqueryDataset_EffectiveReplicas struct {
-	Location any
+	Location     any
 	PrimaryState any
 	ReplicaState any
 }
@@ -20,7 +20,7 @@ type Listing_BigqueryDataset_RestrictedExportPolicy struct {
 
 type Listing_BigqueryDataset_SelectedResources struct {
 	Routine any
-	Table any
+	Table   any
 }
 
 type Listing_BigqueryDataset struct {
@@ -70,69 +70,69 @@ type Listing_StoredProcedureConfig struct {
 }
 
 var Listing_BigqueryDataset_EffectiveReplicasFields = ubx.FieldMap{
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"PrimaryState": ubx.FieldSpec{WireName: "primary_state"},
-		"ReplicaState": ubx.FieldSpec{WireName: "replica_state"},
-	}
+	"Location":     ubx.FieldSpec{WireName: "location"},
+	"PrimaryState": ubx.FieldSpec{WireName: "primary_state"},
+	"ReplicaState": ubx.FieldSpec{WireName: "replica_state"},
+}
 
 var Listing_BigqueryDataset_RestrictedExportPolicyFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"RestrictDirectTableAccess": ubx.FieldSpec{WireName: "restrict_direct_table_access"},
-		"RestrictQueryResult": ubx.FieldSpec{WireName: "restrict_query_result"},
-	}
+	"Enabled":                   ubx.FieldSpec{WireName: "enabled"},
+	"RestrictDirectTableAccess": ubx.FieldSpec{WireName: "restrict_direct_table_access"},
+	"RestrictQueryResult":       ubx.FieldSpec{WireName: "restrict_query_result"},
+}
 
 var Listing_BigqueryDataset_SelectedResourcesFields = ubx.FieldMap{
-		"Routine": ubx.FieldSpec{WireName: "routine"},
-		"Table": ubx.FieldSpec{WireName: "table"},
-	}
+	"Routine": ubx.FieldSpec{WireName: "routine"},
+	"Table":   ubx.FieldSpec{WireName: "table"},
+}
 
 var Listing_BigqueryDatasetFields = ubx.FieldMap{
-		"Dataset": ubx.FieldSpec{WireName: "dataset"},
-		"EffectiveReplicas": ubx.FieldSpec{
-			WireName: "effective_replicas",
-			Kind: "list",
-			Fields: Listing_BigqueryDataset_EffectiveReplicasFields,
-		},
-		"ReplicaLocations": ubx.FieldSpec{WireName: "replica_locations"},
-		"RestrictedExportPolicy": ubx.FieldSpec{
-			WireName: "restricted_export_policy",
-			Kind: "object",
-			Fields: Listing_BigqueryDataset_RestrictedExportPolicyFields,
-		},
-		"SelectedResources": ubx.FieldSpec{
-			WireName: "selected_resources",
-			Kind: "list",
-			Fields: Listing_BigqueryDataset_SelectedResourcesFields,
-		},
-	}
+	"Dataset": ubx.FieldSpec{WireName: "dataset"},
+	"EffectiveReplicas": ubx.FieldSpec{
+		WireName: "effective_replicas",
+		Kind:     "list",
+		Fields:   Listing_BigqueryDataset_EffectiveReplicasFields,
+	},
+	"ReplicaLocations": ubx.FieldSpec{WireName: "replica_locations"},
+	"RestrictedExportPolicy": ubx.FieldSpec{
+		WireName: "restricted_export_policy",
+		Kind:     "object",
+		Fields:   Listing_BigqueryDataset_RestrictedExportPolicyFields,
+	},
+	"SelectedResources": ubx.FieldSpec{
+		WireName: "selected_resources",
+		Kind:     "list",
+		Fields:   Listing_BigqueryDataset_SelectedResourcesFields,
+	},
+}
 
 var Listing_CommercialInfo_CloudMarketplaceFields = ubx.FieldMap{
-		"CommercialState": ubx.FieldSpec{WireName: "commercial_state"},
-		"Service": ubx.FieldSpec{WireName: "service"},
-	}
+	"CommercialState": ubx.FieldSpec{WireName: "commercial_state"},
+	"Service":         ubx.FieldSpec{WireName: "service"},
+}
 
 var Listing_CommercialInfoFields = ubx.FieldMap{
-		"CloudMarketplace": ubx.FieldSpec{
-			WireName: "cloud_marketplace",
-			Kind: "object",
-			Fields: Listing_CommercialInfo_CloudMarketplaceFields,
-		},
-	}
+	"CloudMarketplace": ubx.FieldSpec{
+		WireName: "cloud_marketplace",
+		Kind:     "object",
+		Fields:   Listing_CommercialInfo_CloudMarketplaceFields,
+	},
+}
 
 var Listing_DataProviderFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PrimaryContact": ubx.FieldSpec{WireName: "primary_contact"},
-	}
+	"Name":           ubx.FieldSpec{WireName: "name"},
+	"PrimaryContact": ubx.FieldSpec{WireName: "primary_contact"},
+}
 
 var Listing_PubsubTopicFields = ubx.FieldMap{
-		"DataAffinityRegions": ubx.FieldSpec{WireName: "data_affinity_regions"},
-		"Topic": ubx.FieldSpec{WireName: "topic"},
-	}
+	"DataAffinityRegions": ubx.FieldSpec{WireName: "data_affinity_regions"},
+	"Topic":               ubx.FieldSpec{WireName: "topic"},
+}
 
 var Listing_StoredProcedureConfigFields = ubx.FieldMap{
-		"AllowedStoredProcedureTypes": ubx.FieldSpec{WireName: "allowed_stored_procedure_types"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"AllowedStoredProcedureTypes": ubx.FieldSpec{WireName: "allowed_stored_procedure_types"},
+	"Enabled":                     ubx.FieldSpec{WireName: "enabled"},
+}
 
 type ListingConfig struct {
 	// Optional. If true, the listing is only available to get the resource metadata. Listing is non subscribable.
@@ -157,8 +157,6 @@ type ListingConfig struct {
 	Icon any
 	// Optional. By default, false. If true, the Listing has an email sharing mandate enabled.
 	LogLinkedDatasetQueryUserEmail any
-	// Output only. The resource name of the listing. e.g. `projects/myproject/locations/us/dataExchanges/123/listings/456`
-	Name any
 	// Optional. Email or URL of the primary point of contact of the listing. Max Length: 1000 bytes.
 	PrimaryContact any
 	// Contains details of the listing publisher.
@@ -167,12 +165,8 @@ type ListingConfig struct {
 	PubsubTopic any
 	// Optional. Email or URL of the request access of the listing. Subscribers can use this reference to request access. Max Length: 1000 bytes.
 	RequestAccess any
-	// Output only. Listing shared asset type.
-	ResourceType any
 	// Restricted export config, used to configure restricted export on linked dataset.
 	RestrictedExportConfig any
-	// Output only. Current state of the listing.
-	State any
 	// Stored procedure configuration, used to configure stored procedure sharing on linked dataset.
 	StoredProcedureConfig any
 }
@@ -226,50 +220,47 @@ var Listing = ubx.ResourceBinding{
 		"AllowOnlyMetadataSharing": ubx.FieldSpec{WireName: "allow_only_metadata_sharing"},
 		"BigqueryDataset": ubx.FieldSpec{
 			WireName: "bigquery_dataset",
-			Kind: "object",
-			Fields: Listing_BigqueryDatasetFields,
+			Kind:     "object",
+			Fields:   Listing_BigqueryDatasetFields,
 		},
 		"Categories": ubx.FieldSpec{WireName: "categories"},
 		"CommercialInfo": ubx.FieldSpec{
 			WireName: "commercial_info",
-			Kind: "object",
-			Fields: Listing_CommercialInfoFields,
+			Kind:     "object",
+			Fields:   Listing_CommercialInfoFields,
 		},
 		"DataProvider": ubx.FieldSpec{
 			WireName: "data_provider",
-			Kind: "object",
-			Fields: Listing_DataProviderFields,
+			Kind:     "object",
+			Fields:   Listing_DataProviderFields,
 		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DiscoveryType": ubx.FieldSpec{WireName: "discovery_type"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Documentation": ubx.FieldSpec{WireName: "documentation"},
-		"Icon": ubx.FieldSpec{WireName: "icon"},
+		"Description":                    ubx.FieldSpec{WireName: "description"},
+		"DiscoveryType":                  ubx.FieldSpec{WireName: "discovery_type"},
+		"DisplayName":                    ubx.FieldSpec{WireName: "display_name"},
+		"Documentation":                  ubx.FieldSpec{WireName: "documentation"},
+		"Icon":                           ubx.FieldSpec{WireName: "icon"},
 		"LogLinkedDatasetQueryUserEmail": ubx.FieldSpec{WireName: "log_linked_dataset_query_user_email"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PrimaryContact": ubx.FieldSpec{WireName: "primary_contact"},
+		"PrimaryContact":                 ubx.FieldSpec{WireName: "primary_contact"},
 		"Publisher": ubx.FieldSpec{
 			WireName: "publisher",
-			Kind: "object",
-			Fields: Listing_DataProviderFields,
+			Kind:     "object",
+			Fields:   Listing_DataProviderFields,
 		},
 		"PubsubTopic": ubx.FieldSpec{
 			WireName: "pubsub_topic",
-			Kind: "object",
-			Fields: Listing_PubsubTopicFields,
+			Kind:     "object",
+			Fields:   Listing_PubsubTopicFields,
 		},
 		"RequestAccess": ubx.FieldSpec{WireName: "request_access"},
-		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
 		"RestrictedExportConfig": ubx.FieldSpec{
 			WireName: "restricted_export_config",
-			Kind: "object",
-			Fields: Listing_BigqueryDataset_RestrictedExportPolicyFields,
+			Kind:     "object",
+			Fields:   Listing_BigqueryDataset_RestrictedExportPolicyFields,
 		},
-		"State": ubx.FieldSpec{WireName: "state"},
 		"StoredProcedureConfig": ubx.FieldSpec{
 			WireName: "stored_procedure_config",
-			Kind: "object",
-			Fields: Listing_StoredProcedureConfigFields,
+			Kind:     "object",
+			Fields:   Listing_StoredProcedureConfigFields,
 		},
 	},
 }

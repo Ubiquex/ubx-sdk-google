@@ -3359,25 +3359,13 @@ const Job_StatusFields: FieldMap = {
 
 export interface JobConfig {
   configuration?: Job_Configuration | Computed<Job_Configuration>;
-  /** Output only. A hash of this resource. */
-  etag?: string | Computed<string>;
-  /** Output only. Opaque ID field of the job. */
-  id?: string | Computed<string>;
   /** Reason about why a Job was created from a [`jobs.query`](https://cloud.google.com/bigquery/docs/reference/rest/v2/jobs/query) method when used with `JOB_CREATION_OPTIONAL` Job creation mode. For [`jobs.insert`](https://cloud.google.com/bigquery/docs/reference/rest/v2/jobs/insert) method calls it will always be `REQUESTED`. */
   jobCreationReason?: Job_JobCreationReason | Computed<Job_JobCreationReason>;
   /** A job reference is a fully qualified identifier for referring to a job. */
   jobReference?: Job_JobReference | Computed<Job_JobReference>;
-  /** Output only. The type of the resource. */
-  kind?: string | Computed<string>;
-  /** Output only. [Full-projection-only] String representation of identity of requesting party. Populated for both first- and third-party identities. Only present for APIs that support third-party identities. */
-  principalSubject?: string | Computed<string>;
-  /** Output only. A URL that can be used to access the resource again. */
-  selfLink?: string | Computed<string>;
   /** Statistics for a single job execution. */
   statistics?: Job_Statistics | Computed<Job_Statistics>;
   status?: Job_Status | Computed<Job_Status>;
-  /** Output only. Email address of the user who ran the job. */
-  userEmail?: string | Computed<string>;
 }
 
 export interface JobAttrs {
@@ -3411,8 +3399,6 @@ export const Job: ResourceBinding<JobConfig, JobAttrs> = {
       kind: "object",
       fields: Job_ConfigurationFields,
     },
-    etag: "etag",
-    id: "id",
     jobCreationReason: {
       wireName: "job_creation_reason",
       kind: "object",
@@ -3423,9 +3409,6 @@ export const Job: ResourceBinding<JobConfig, JobAttrs> = {
       kind: "object",
       fields: Job_JobReferenceFields,
     },
-    kind: "kind",
-    principalSubject: "principal_subject",
-    selfLink: "self_link",
     statistics: {
       wireName: "statistics",
       kind: "object",
@@ -3436,6 +3419,5 @@ export const Job: ResourceBinding<JobConfig, JobAttrs> = {
       kind: "object",
       fields: Job_StatusFields,
     },
-    userEmail: "user_email",
   },
 };

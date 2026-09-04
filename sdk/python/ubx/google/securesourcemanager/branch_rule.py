@@ -20,8 +20,6 @@ class BranchRuleConfig:
     allow_stale_reviews: Any = None
     # Optional. User annotations. These attributes can only be set and used by the user. See https://google.aip.dev/128#annotations for more details such as format and size limitations.
     annotations: Any = None
-    # Output only. Create timestamp.
-    create_time: Any = None
     # Optional. Determines if the branch rule is disabled or not.
     disabled: Any = None
     # Optional. This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding.
@@ -44,10 +42,6 @@ class BranchRuleConfig:
     require_pull_request: Any = None
     # Optional. List of required status checks before merging to the branch.
     required_status_checks: Any = None
-    # Output only. Unique identifier of the repository.
-    uid: Any = None
-    # Output only. Update timestamp.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class BranchRuleAttrs:
@@ -89,7 +83,6 @@ BranchRule = ubx.ResourceBinding(
     fields={
         "allow_stale_reviews": ubx.FieldSpec(wire_name="allow_stale_reviews"),
         "annotations": ubx.FieldSpec(wire_name="annotations"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "disabled": ubx.FieldSpec(wire_name="disabled"),
         "etag": ubx.FieldSpec(wire_name="etag"),
         "include_pattern": ubx.FieldSpec(wire_name="include_pattern"),
@@ -105,7 +98,5 @@ BranchRule = ubx.ResourceBinding(
             kind="list",
             fields=_BranchRule_RequiredStatusChecksFields,
         ),
-        "uid": ubx.FieldSpec(wire_name="uid"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

@@ -8,8 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class DatasetConfig:
-    # Output only. Dataset create time.
-    create_time: Any = None
     # Dataset description.
     description: Any = None
     # Display name for the dataaset
@@ -20,8 +18,6 @@ class DatasetConfig:
     ttl: Any = None
     # Dataset usage type.
     type: Any = None
-    # Output only. Dataset update time.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class DatasetAttrs:
@@ -43,12 +39,10 @@ class DatasetAttrs:
 Dataset = ubx.ResourceBinding(
     wire_type="google_contactcenterinsights_dataset",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "name": ubx.FieldSpec(wire_name="name"),
         "ttl": ubx.FieldSpec(wire_name="ttl"),
         "type": ubx.FieldSpec(wire_name="type"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

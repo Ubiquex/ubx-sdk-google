@@ -8,68 +8,68 @@ type ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_Consolida
 }
 
 type ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_AudioTranscription_Words struct {
-	EndOffset any
+	EndOffset   any
 	StartOffset any
-	Word any
+	Word        any
 }
 
 type ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_AudioTranscription struct {
 	SpeakerLabel any
-	Text any
-	Words any
+	Text         any
+	Words        any
 }
 
 type ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_CodeExecutionResult struct {
-	Id any
+	Id      any
 	Outcome any
-	Output any
+	Output  any
 }
 
 type ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_ExecutableCode struct {
-	Code any
-	Id any
+	Code     any
+	Id       any
 	Language any
 }
 
 type ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FileData struct {
 	DisplayName any
-	FileUri any
-	MimeType any
+	FileUri     any
+	MimeType    any
 }
 
 type ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FunctionCall_PartialArgs struct {
-	BoolValue any
-	JsonPath any
-	NullValue any
-	NumberValue any
-	StringValue any
+	BoolValue    any
+	JsonPath     any
+	NullValue    any
+	NumberValue  any
+	StringValue  any
 	WillContinue any
 }
 
 type ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FunctionCall struct {
-	Args any
-	Id any
-	Name any
-	PartialArgs any
+	Args         any
+	Id           any
+	Name         any
+	PartialArgs  any
 	WillContinue any
 }
 
 type ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FunctionResponse_Parts_InlineData struct {
-	Data any
+	Data        any
 	DisplayName any
-	MimeType any
+	MimeType    any
 }
 
 type ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FunctionResponse_Parts struct {
-	FileData any
+	FileData   any
 	InlineData any
 }
 
 type ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FunctionResponse struct {
-	Id any
-	Name any
-	Parts any
-	Response any
+	Id         any
+	Name       any
+	Parts      any
+	Response   any
 	Scheduling any
 }
 
@@ -78,29 +78,29 @@ type ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateM
 }
 
 type ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_VideoMetadata struct {
-	EndOffset any
-	Fps any
+	EndOffset   any
+	Fps         any
 	StartOffset any
 }
 
 type ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts struct {
-	AudioTranscription any
+	AudioTranscription  any
 	CodeExecutionResult any
-	ExecutableCode any
-	FileData any
-	FunctionCall any
-	FunctionResponse any
-	InlineData any
-	MediaResolution any
-	Text any
-	Thought any
-	ThoughtSignature any
-	VideoMetadata any
+	ExecutableCode      any
+	FileData            any
+	FunctionCall        any
+	FunctionResponse    any
+	InlineData          any
+	MediaResolution     any
+	Text                any
+	Thought             any
+	ThoughtSignature    any
+	VideoMetadata       any
 }
 
 type ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content struct {
 	Parts any
-	Role any
+	Role  any
 }
 
 type ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events struct {
@@ -113,22 +113,22 @@ type ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateM
 
 type ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_GeneratedMemories_Topics struct {
 	CustomMemoryTopicLabel any
-	ManagedMemoryTopic any
+	ManagedMemoryTopic     any
 }
 
 type ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_GeneratedMemories struct {
-	Fact any
+	Fact   any
 	Topics any
 }
 
 type ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples struct {
 	ConversationSource any
-	GeneratedMemories any
+	GeneratedMemories  any
 }
 
 type ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_MemoryTopics_CustomMemoryTopic struct {
 	Description any
-	Label any
+	Label       any
 }
 
 type ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_MemoryTopics_ManagedMemoryTopic struct {
@@ -136,17 +136,17 @@ type ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_MemoryTop
 }
 
 type ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_MemoryTopics struct {
-	CustomMemoryTopic any
+	CustomMemoryTopic  any
 	ManagedMemoryTopic any
 }
 
 type ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs struct {
-	ConsolidationConfig any
+	ConsolidationConfig            any
 	DisableNaturalLanguageMemories any
-	EnableThirdPersonMemories any
-	GenerateMemoriesExamples any
-	MemoryTopics any
-	ScopeKeys any
+	EnableThirdPersonMemories      any
+	GenerateMemoriesExamples       any
+	MemoryTopics                   any
+	ScopeKeys                      any
 }
 
 type ReasoningEngine_ContextSpec_MemoryBankConfig_GenerationConfig_GenerationTriggerConfig_GenerationRule struct {
@@ -245,7 +245,7 @@ type ReasoningEngine_Spec_DeploymentSpec_AgentGatewayConfig struct {
 }
 
 type ReasoningEngine_Spec_DeploymentSpec_Env struct {
-	Name any
+	Name  any
 	Value any
 }
 
@@ -264,7 +264,7 @@ type ReasoningEngine_Spec_DeploymentSpec_KeepAliveProbe struct {
 }
 
 type ReasoningEngine_Spec_DeploymentSpec_PscInterfaceConfig_DnsPeeringConfigs struct {
-	Domain any
+	Domain        any
 	TargetNetwork any
 	TargetProject any
 }
@@ -277,12 +277,12 @@ type ReasoningEngine_Spec_DeploymentSpec_PscInterfaceConfig struct {
 }
 
 type ReasoningEngine_Spec_DeploymentSpec_SecretEnv_SecretRef struct {
-	Secret any
+	Secret  any
 	Version any
 }
 
 type ReasoningEngine_Spec_DeploymentSpec_SecretEnv struct {
-	Name any
+	Name      any
 	SecretRef any
 }
 
@@ -402,557 +402,555 @@ type ReasoningEngine_Spec struct {
 }
 
 var ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_ConsolidationConfigFields = ubx.FieldMap{
-		"RevisionsPerCandidateCount": ubx.FieldSpec{WireName: "revisions_per_candidate_count"},
-	}
+	"RevisionsPerCandidateCount": ubx.FieldSpec{WireName: "revisions_per_candidate_count"},
+}
 
 var ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_AudioTranscription_WordsFields = ubx.FieldMap{
-		"EndOffset": ubx.FieldSpec{WireName: "end_offset"},
-		"StartOffset": ubx.FieldSpec{WireName: "start_offset"},
-		"Word": ubx.FieldSpec{WireName: "word"},
-	}
+	"EndOffset":   ubx.FieldSpec{WireName: "end_offset"},
+	"StartOffset": ubx.FieldSpec{WireName: "start_offset"},
+	"Word":        ubx.FieldSpec{WireName: "word"},
+}
 
 var ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_AudioTranscriptionFields = ubx.FieldMap{
-		"SpeakerLabel": ubx.FieldSpec{WireName: "speaker_label"},
-		"Text": ubx.FieldSpec{WireName: "text"},
-		"Words": ubx.FieldSpec{
-			WireName: "words",
-			Kind: "list",
-			Fields: ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_AudioTranscription_WordsFields,
-		},
-	}
+	"SpeakerLabel": ubx.FieldSpec{WireName: "speaker_label"},
+	"Text":         ubx.FieldSpec{WireName: "text"},
+	"Words": ubx.FieldSpec{
+		WireName: "words",
+		Kind:     "list",
+		Fields:   ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_AudioTranscription_WordsFields,
+	},
+}
 
 var ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_CodeExecutionResultFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Outcome": ubx.FieldSpec{WireName: "outcome"},
-		"Output": ubx.FieldSpec{WireName: "output"},
-	}
+	"Id":      ubx.FieldSpec{WireName: "id"},
+	"Outcome": ubx.FieldSpec{WireName: "outcome"},
+	"Output":  ubx.FieldSpec{WireName: "output"},
+}
 
 var ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_ExecutableCodeFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Language": ubx.FieldSpec{WireName: "language"},
-	}
+	"Code":     ubx.FieldSpec{WireName: "code"},
+	"Id":       ubx.FieldSpec{WireName: "id"},
+	"Language": ubx.FieldSpec{WireName: "language"},
+}
 
 var ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FileDataFields = ubx.FieldMap{
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"FileUri": ubx.FieldSpec{WireName: "file_uri"},
-		"MimeType": ubx.FieldSpec{WireName: "mime_type"},
-	}
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"FileUri":     ubx.FieldSpec{WireName: "file_uri"},
+	"MimeType":    ubx.FieldSpec{WireName: "mime_type"},
+}
 
 var ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FunctionCall_PartialArgsFields = ubx.FieldMap{
-		"BoolValue": ubx.FieldSpec{WireName: "bool_value"},
-		"JsonPath": ubx.FieldSpec{WireName: "json_path"},
-		"NullValue": ubx.FieldSpec{WireName: "null_value"},
-		"NumberValue": ubx.FieldSpec{WireName: "number_value"},
-		"StringValue": ubx.FieldSpec{WireName: "string_value"},
-		"WillContinue": ubx.FieldSpec{WireName: "will_continue"},
-	}
+	"BoolValue":    ubx.FieldSpec{WireName: "bool_value"},
+	"JsonPath":     ubx.FieldSpec{WireName: "json_path"},
+	"NullValue":    ubx.FieldSpec{WireName: "null_value"},
+	"NumberValue":  ubx.FieldSpec{WireName: "number_value"},
+	"StringValue":  ubx.FieldSpec{WireName: "string_value"},
+	"WillContinue": ubx.FieldSpec{WireName: "will_continue"},
+}
 
 var ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FunctionCallFields = ubx.FieldMap{
-		"Args": ubx.FieldSpec{WireName: "args"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PartialArgs": ubx.FieldSpec{
-			WireName: "partial_args",
-			Kind: "list",
-			Fields: ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FunctionCall_PartialArgsFields,
-		},
-		"WillContinue": ubx.FieldSpec{WireName: "will_continue"},
-	}
+	"Args": ubx.FieldSpec{WireName: "args"},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"PartialArgs": ubx.FieldSpec{
+		WireName: "partial_args",
+		Kind:     "list",
+		Fields:   ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FunctionCall_PartialArgsFields,
+	},
+	"WillContinue": ubx.FieldSpec{WireName: "will_continue"},
+}
 
 var ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FunctionResponse_Parts_InlineDataFields = ubx.FieldMap{
-		"Data": ubx.FieldSpec{WireName: "data"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"MimeType": ubx.FieldSpec{WireName: "mime_type"},
-	}
+	"Data":        ubx.FieldSpec{WireName: "data"},
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"MimeType":    ubx.FieldSpec{WireName: "mime_type"},
+}
 
 var ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FunctionResponse_PartsFields = ubx.FieldMap{
-		"FileData": ubx.FieldSpec{
-			WireName: "file_data",
-			Kind: "object",
-			Fields: ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FileDataFields,
-		},
-		"InlineData": ubx.FieldSpec{
-			WireName: "inline_data",
-			Kind: "object",
-			Fields: ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FunctionResponse_Parts_InlineDataFields,
-		},
-	}
+	"FileData": ubx.FieldSpec{
+		WireName: "file_data",
+		Kind:     "object",
+		Fields:   ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FileDataFields,
+	},
+	"InlineData": ubx.FieldSpec{
+		WireName: "inline_data",
+		Kind:     "object",
+		Fields:   ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FunctionResponse_Parts_InlineDataFields,
+	},
+}
 
 var ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FunctionResponseFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Parts": ubx.FieldSpec{
-			WireName: "parts",
-			Kind: "list",
-			Fields: ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FunctionResponse_PartsFields,
-		},
-		"Response": ubx.FieldSpec{WireName: "response"},
-		"Scheduling": ubx.FieldSpec{WireName: "scheduling"},
-	}
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Parts": ubx.FieldSpec{
+		WireName: "parts",
+		Kind:     "list",
+		Fields:   ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FunctionResponse_PartsFields,
+	},
+	"Response":   ubx.FieldSpec{WireName: "response"},
+	"Scheduling": ubx.FieldSpec{WireName: "scheduling"},
+}
 
 var ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_MediaResolutionFields = ubx.FieldMap{
-		"Level": ubx.FieldSpec{WireName: "level"},
-	}
+	"Level": ubx.FieldSpec{WireName: "level"},
+}
 
 var ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_VideoMetadataFields = ubx.FieldMap{
-		"EndOffset": ubx.FieldSpec{WireName: "end_offset"},
-		"Fps": ubx.FieldSpec{WireName: "fps"},
-		"StartOffset": ubx.FieldSpec{WireName: "start_offset"},
-	}
+	"EndOffset":   ubx.FieldSpec{WireName: "end_offset"},
+	"Fps":         ubx.FieldSpec{WireName: "fps"},
+	"StartOffset": ubx.FieldSpec{WireName: "start_offset"},
+}
 
 var ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_PartsFields = ubx.FieldMap{
-		"AudioTranscription": ubx.FieldSpec{
-			WireName: "audio_transcription",
-			Kind: "object",
-			Fields: ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_AudioTranscriptionFields,
-		},
-		"CodeExecutionResult": ubx.FieldSpec{
-			WireName: "code_execution_result",
-			Kind: "object",
-			Fields: ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_CodeExecutionResultFields,
-		},
-		"ExecutableCode": ubx.FieldSpec{
-			WireName: "executable_code",
-			Kind: "object",
-			Fields: ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_ExecutableCodeFields,
-		},
-		"FileData": ubx.FieldSpec{
-			WireName: "file_data",
-			Kind: "object",
-			Fields: ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FileDataFields,
-		},
-		"FunctionCall": ubx.FieldSpec{
-			WireName: "function_call",
-			Kind: "object",
-			Fields: ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FunctionCallFields,
-		},
-		"FunctionResponse": ubx.FieldSpec{
-			WireName: "function_response",
-			Kind: "object",
-			Fields: ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FunctionResponseFields,
-		},
-		"InlineData": ubx.FieldSpec{
-			WireName: "inline_data",
-			Kind: "object",
-			Fields: ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FunctionResponse_Parts_InlineDataFields,
-		},
-		"MediaResolution": ubx.FieldSpec{
-			WireName: "media_resolution",
-			Kind: "object",
-			Fields: ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_MediaResolutionFields,
-		},
-		"Text": ubx.FieldSpec{WireName: "text"},
-		"Thought": ubx.FieldSpec{WireName: "thought"},
-		"ThoughtSignature": ubx.FieldSpec{WireName: "thought_signature"},
-		"VideoMetadata": ubx.FieldSpec{
-			WireName: "video_metadata",
-			Kind: "object",
-			Fields: ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_VideoMetadataFields,
-		},
-	}
+	"AudioTranscription": ubx.FieldSpec{
+		WireName: "audio_transcription",
+		Kind:     "object",
+		Fields:   ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_AudioTranscriptionFields,
+	},
+	"CodeExecutionResult": ubx.FieldSpec{
+		WireName: "code_execution_result",
+		Kind:     "object",
+		Fields:   ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_CodeExecutionResultFields,
+	},
+	"ExecutableCode": ubx.FieldSpec{
+		WireName: "executable_code",
+		Kind:     "object",
+		Fields:   ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_ExecutableCodeFields,
+	},
+	"FileData": ubx.FieldSpec{
+		WireName: "file_data",
+		Kind:     "object",
+		Fields:   ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FileDataFields,
+	},
+	"FunctionCall": ubx.FieldSpec{
+		WireName: "function_call",
+		Kind:     "object",
+		Fields:   ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FunctionCallFields,
+	},
+	"FunctionResponse": ubx.FieldSpec{
+		WireName: "function_response",
+		Kind:     "object",
+		Fields:   ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FunctionResponseFields,
+	},
+	"InlineData": ubx.FieldSpec{
+		WireName: "inline_data",
+		Kind:     "object",
+		Fields:   ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_FunctionResponse_Parts_InlineDataFields,
+	},
+	"MediaResolution": ubx.FieldSpec{
+		WireName: "media_resolution",
+		Kind:     "object",
+		Fields:   ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_MediaResolutionFields,
+	},
+	"Text":             ubx.FieldSpec{WireName: "text"},
+	"Thought":          ubx.FieldSpec{WireName: "thought"},
+	"ThoughtSignature": ubx.FieldSpec{WireName: "thought_signature"},
+	"VideoMetadata": ubx.FieldSpec{
+		WireName: "video_metadata",
+		Kind:     "object",
+		Fields:   ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_Parts_VideoMetadataFields,
+	},
+}
 
 var ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_ContentFields = ubx.FieldMap{
-		"Parts": ubx.FieldSpec{
-			WireName: "parts",
-			Kind: "list",
-			Fields: ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_PartsFields,
-		},
-		"Role": ubx.FieldSpec{WireName: "role"},
-	}
+	"Parts": ubx.FieldSpec{
+		WireName: "parts",
+		Kind:     "list",
+		Fields:   ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_Content_PartsFields,
+	},
+	"Role": ubx.FieldSpec{WireName: "role"},
+}
 
 var ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_EventsFields = ubx.FieldMap{
-		"Content": ubx.FieldSpec{
-			WireName: "content",
-			Kind: "object",
-			Fields: ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_ContentFields,
-		},
-	}
+	"Content": ubx.FieldSpec{
+		WireName: "content",
+		Kind:     "object",
+		Fields:   ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_Events_ContentFields,
+	},
+}
 
 var ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSourceFields = ubx.FieldMap{
-		"Events": ubx.FieldSpec{
-			WireName: "events",
-			Kind: "list",
-			Fields: ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_EventsFields,
-		},
-	}
+	"Events": ubx.FieldSpec{
+		WireName: "events",
+		Kind:     "list",
+		Fields:   ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSource_EventsFields,
+	},
+}
 
 var ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_GeneratedMemories_TopicsFields = ubx.FieldMap{
-		"CustomMemoryTopicLabel": ubx.FieldSpec{WireName: "custom_memory_topic_label"},
-		"ManagedMemoryTopic": ubx.FieldSpec{WireName: "managed_memory_topic"},
-	}
+	"CustomMemoryTopicLabel": ubx.FieldSpec{WireName: "custom_memory_topic_label"},
+	"ManagedMemoryTopic":     ubx.FieldSpec{WireName: "managed_memory_topic"},
+}
 
 var ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_GeneratedMemoriesFields = ubx.FieldMap{
-		"Fact": ubx.FieldSpec{WireName: "fact"},
-		"Topics": ubx.FieldSpec{
-			WireName: "topics",
-			Kind: "list",
-			Fields: ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_GeneratedMemories_TopicsFields,
-		},
-	}
+	"Fact": ubx.FieldSpec{WireName: "fact"},
+	"Topics": ubx.FieldSpec{
+		WireName: "topics",
+		Kind:     "list",
+		Fields:   ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_GeneratedMemories_TopicsFields,
+	},
+}
 
 var ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamplesFields = ubx.FieldMap{
-		"ConversationSource": ubx.FieldSpec{
-			WireName: "conversation_source",
-			Kind: "object",
-			Fields: ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSourceFields,
-		},
-		"GeneratedMemories": ubx.FieldSpec{
-			WireName: "generated_memories",
-			Kind: "list",
-			Fields: ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_GeneratedMemoriesFields,
-		},
-	}
+	"ConversationSource": ubx.FieldSpec{
+		WireName: "conversation_source",
+		Kind:     "object",
+		Fields:   ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_ConversationSourceFields,
+	},
+	"GeneratedMemories": ubx.FieldSpec{
+		WireName: "generated_memories",
+		Kind:     "list",
+		Fields:   ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamples_GeneratedMemoriesFields,
+	},
+}
 
 var ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_MemoryTopics_CustomMemoryTopicFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Label": ubx.FieldSpec{WireName: "label"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Label":       ubx.FieldSpec{WireName: "label"},
+}
 
 var ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_MemoryTopics_ManagedMemoryTopicFields = ubx.FieldMap{
-		"ManagedTopicEnum": ubx.FieldSpec{WireName: "managed_topic_enum"},
-	}
+	"ManagedTopicEnum": ubx.FieldSpec{WireName: "managed_topic_enum"},
+}
 
 var ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_MemoryTopicsFields = ubx.FieldMap{
-		"CustomMemoryTopic": ubx.FieldSpec{
-			WireName: "custom_memory_topic",
-			Kind: "object",
-			Fields: ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_MemoryTopics_CustomMemoryTopicFields,
-		},
-		"ManagedMemoryTopic": ubx.FieldSpec{
-			WireName: "managed_memory_topic",
-			Kind: "object",
-			Fields: ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_MemoryTopics_ManagedMemoryTopicFields,
-		},
-	}
+	"CustomMemoryTopic": ubx.FieldSpec{
+		WireName: "custom_memory_topic",
+		Kind:     "object",
+		Fields:   ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_MemoryTopics_CustomMemoryTopicFields,
+	},
+	"ManagedMemoryTopic": ubx.FieldSpec{
+		WireName: "managed_memory_topic",
+		Kind:     "object",
+		Fields:   ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_MemoryTopics_ManagedMemoryTopicFields,
+	},
+}
 
 var ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigsFields = ubx.FieldMap{
-		"ConsolidationConfig": ubx.FieldSpec{
-			WireName: "consolidation_config",
-			Kind: "object",
-			Fields: ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_ConsolidationConfigFields,
-		},
-		"DisableNaturalLanguageMemories": ubx.FieldSpec{WireName: "disable_natural_language_memories"},
-		"EnableThirdPersonMemories": ubx.FieldSpec{WireName: "enable_third_person_memories"},
-		"GenerateMemoriesExamples": ubx.FieldSpec{
-			WireName: "generate_memories_examples",
-			Kind: "list",
-			Fields: ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamplesFields,
-		},
-		"MemoryTopics": ubx.FieldSpec{
-			WireName: "memory_topics",
-			Kind: "list",
-			Fields: ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_MemoryTopicsFields,
-		},
-		"ScopeKeys": ubx.FieldSpec{WireName: "scope_keys"},
-	}
+	"ConsolidationConfig": ubx.FieldSpec{
+		WireName: "consolidation_config",
+		Kind:     "object",
+		Fields:   ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_ConsolidationConfigFields,
+	},
+	"DisableNaturalLanguageMemories": ubx.FieldSpec{WireName: "disable_natural_language_memories"},
+	"EnableThirdPersonMemories":      ubx.FieldSpec{WireName: "enable_third_person_memories"},
+	"GenerateMemoriesExamples": ubx.FieldSpec{
+		WireName: "generate_memories_examples",
+		Kind:     "list",
+		Fields:   ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_GenerateMemoriesExamplesFields,
+	},
+	"MemoryTopics": ubx.FieldSpec{
+		WireName: "memory_topics",
+		Kind:     "list",
+		Fields:   ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigs_MemoryTopicsFields,
+	},
+	"ScopeKeys": ubx.FieldSpec{WireName: "scope_keys"},
+}
 
 var ReasoningEngine_ContextSpec_MemoryBankConfig_GenerationConfig_GenerationTriggerConfig_GenerationRuleFields = ubx.FieldMap{
-		"EventCount": ubx.FieldSpec{WireName: "event_count"},
-		"FixedInterval": ubx.FieldSpec{WireName: "fixed_interval"},
-		"IdleDuration": ubx.FieldSpec{WireName: "idle_duration"},
-		"OverlapEventCount": ubx.FieldSpec{WireName: "overlap_event_count"},
-	}
+	"EventCount":        ubx.FieldSpec{WireName: "event_count"},
+	"FixedInterval":     ubx.FieldSpec{WireName: "fixed_interval"},
+	"IdleDuration":      ubx.FieldSpec{WireName: "idle_duration"},
+	"OverlapEventCount": ubx.FieldSpec{WireName: "overlap_event_count"},
+}
 
 var ReasoningEngine_ContextSpec_MemoryBankConfig_GenerationConfig_GenerationTriggerConfigFields = ubx.FieldMap{
-		"GenerationRule": ubx.FieldSpec{
-			WireName: "generation_rule",
-			Kind: "object",
-			Fields: ReasoningEngine_ContextSpec_MemoryBankConfig_GenerationConfig_GenerationTriggerConfig_GenerationRuleFields,
-		},
-	}
+	"GenerationRule": ubx.FieldSpec{
+		WireName: "generation_rule",
+		Kind:     "object",
+		Fields:   ReasoningEngine_ContextSpec_MemoryBankConfig_GenerationConfig_GenerationTriggerConfig_GenerationRuleFields,
+	},
+}
 
 var ReasoningEngine_ContextSpec_MemoryBankConfig_GenerationConfigFields = ubx.FieldMap{
-		"GenerationTriggerConfig": ubx.FieldSpec{
-			WireName: "generation_trigger_config",
-			Kind: "object",
-			Fields: ReasoningEngine_ContextSpec_MemoryBankConfig_GenerationConfig_GenerationTriggerConfigFields,
-		},
-		"Model": ubx.FieldSpec{WireName: "model"},
-	}
+	"GenerationTriggerConfig": ubx.FieldSpec{
+		WireName: "generation_trigger_config",
+		Kind:     "object",
+		Fields:   ReasoningEngine_ContextSpec_MemoryBankConfig_GenerationConfig_GenerationTriggerConfigFields,
+	},
+	"Model": ubx.FieldSpec{WireName: "model"},
+}
 
 var ReasoningEngine_ContextSpec_MemoryBankConfig_SimilaritySearchConfigFields = ubx.FieldMap{
-		"EmbeddingModel": ubx.FieldSpec{WireName: "embedding_model"},
-	}
+	"EmbeddingModel": ubx.FieldSpec{WireName: "embedding_model"},
+}
 
 var ReasoningEngine_ContextSpec_MemoryBankConfig_TtlConfig_GranularTtlConfigFields = ubx.FieldMap{
-		"CreateTtl": ubx.FieldSpec{WireName: "create_ttl"},
-		"GenerateCreatedTtl": ubx.FieldSpec{WireName: "generate_created_ttl"},
-		"GenerateUpdatedTtl": ubx.FieldSpec{WireName: "generate_updated_ttl"},
-	}
+	"CreateTtl":          ubx.FieldSpec{WireName: "create_ttl"},
+	"GenerateCreatedTtl": ubx.FieldSpec{WireName: "generate_created_ttl"},
+	"GenerateUpdatedTtl": ubx.FieldSpec{WireName: "generate_updated_ttl"},
+}
 
 var ReasoningEngine_ContextSpec_MemoryBankConfig_TtlConfigFields = ubx.FieldMap{
-		"DefaultTtl": ubx.FieldSpec{WireName: "default_ttl"},
-		"GranularTtlConfig": ubx.FieldSpec{
-			WireName: "granular_ttl_config",
-			Kind: "object",
-			Fields: ReasoningEngine_ContextSpec_MemoryBankConfig_TtlConfig_GranularTtlConfigFields,
-		},
-		"MemoryRevisionDefaultTtl": ubx.FieldSpec{WireName: "memory_revision_default_ttl"},
-	}
+	"DefaultTtl": ubx.FieldSpec{WireName: "default_ttl"},
+	"GranularTtlConfig": ubx.FieldSpec{
+		WireName: "granular_ttl_config",
+		Kind:     "object",
+		Fields:   ReasoningEngine_ContextSpec_MemoryBankConfig_TtlConfig_GranularTtlConfigFields,
+	},
+	"MemoryRevisionDefaultTtl": ubx.FieldSpec{WireName: "memory_revision_default_ttl"},
+}
 
 var ReasoningEngine_ContextSpec_MemoryBankConfigFields = ubx.FieldMap{
-		"CustomizationConfigs": ubx.FieldSpec{
-			WireName: "customization_configs",
-			Kind: "list",
-			Fields: ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigsFields,
-		},
-		"DisableMemoryRevisions": ubx.FieldSpec{WireName: "disable_memory_revisions"},
-		"GenerationConfig": ubx.FieldSpec{
-			WireName: "generation_config",
-			Kind: "object",
-			Fields: ReasoningEngine_ContextSpec_MemoryBankConfig_GenerationConfigFields,
-		},
-		"SimilaritySearchConfig": ubx.FieldSpec{
-			WireName: "similarity_search_config",
-			Kind: "object",
-			Fields: ReasoningEngine_ContextSpec_MemoryBankConfig_SimilaritySearchConfigFields,
-		},
-		"TtlConfig": ubx.FieldSpec{
-			WireName: "ttl_config",
-			Kind: "object",
-			Fields: ReasoningEngine_ContextSpec_MemoryBankConfig_TtlConfigFields,
-		},
-	}
+	"CustomizationConfigs": ubx.FieldSpec{
+		WireName: "customization_configs",
+		Kind:     "list",
+		Fields:   ReasoningEngine_ContextSpec_MemoryBankConfig_CustomizationConfigsFields,
+	},
+	"DisableMemoryRevisions": ubx.FieldSpec{WireName: "disable_memory_revisions"},
+	"GenerationConfig": ubx.FieldSpec{
+		WireName: "generation_config",
+		Kind:     "object",
+		Fields:   ReasoningEngine_ContextSpec_MemoryBankConfig_GenerationConfigFields,
+	},
+	"SimilaritySearchConfig": ubx.FieldSpec{
+		WireName: "similarity_search_config",
+		Kind:     "object",
+		Fields:   ReasoningEngine_ContextSpec_MemoryBankConfig_SimilaritySearchConfigFields,
+	},
+	"TtlConfig": ubx.FieldSpec{
+		WireName: "ttl_config",
+		Kind:     "object",
+		Fields:   ReasoningEngine_ContextSpec_MemoryBankConfig_TtlConfigFields,
+	},
+}
 
 var ReasoningEngine_ContextSpecFields = ubx.FieldMap{
-		"MemoryBankConfig": ubx.FieldSpec{
-			WireName: "memory_bank_config",
-			Kind: "object",
-			Fields: ReasoningEngine_ContextSpec_MemoryBankConfigFields,
-		},
-	}
+	"MemoryBankConfig": ubx.FieldSpec{
+		WireName: "memory_bank_config",
+		Kind:     "object",
+		Fields:   ReasoningEngine_ContextSpec_MemoryBankConfigFields,
+	},
+}
 
 var ReasoningEngine_EncryptionSpecFields = ubx.FieldMap{
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-	}
+	"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
+}
 
 var ReasoningEngine_Spec_BuildSpecFields = ubx.FieldMap{
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-		"WorkerPool": ubx.FieldSpec{WireName: "worker_pool"},
-	}
+	"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
+	"WorkerPool":     ubx.FieldSpec{WireName: "worker_pool"},
+}
 
 var ReasoningEngine_Spec_ContainerSpecFields = ubx.FieldMap{
-		"ImageUri": ubx.FieldSpec{WireName: "image_uri"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-	}
+	"ImageUri": ubx.FieldSpec{WireName: "image_uri"},
+	"Port":     ubx.FieldSpec{WireName: "port"},
+}
 
 var ReasoningEngine_Spec_DeploymentSpec_AgentGatewayConfig_AgentToAnywhereConfigFields = ubx.FieldMap{
-		"AgentGateway": ubx.FieldSpec{WireName: "agent_gateway"},
-	}
+	"AgentGateway": ubx.FieldSpec{WireName: "agent_gateway"},
+}
 
 var ReasoningEngine_Spec_DeploymentSpec_AgentGatewayConfigFields = ubx.FieldMap{
-		"AgentToAnywhereConfig": ubx.FieldSpec{
-			WireName: "agent_to_anywhere_config",
-			Kind: "object",
-			Fields: ReasoningEngine_Spec_DeploymentSpec_AgentGatewayConfig_AgentToAnywhereConfigFields,
-		},
-		"ClientToAgentConfig": ubx.FieldSpec{
-			WireName: "client_to_agent_config",
-			Kind: "object",
-			Fields: ReasoningEngine_Spec_DeploymentSpec_AgentGatewayConfig_AgentToAnywhereConfigFields,
-		},
-	}
+	"AgentToAnywhereConfig": ubx.FieldSpec{
+		WireName: "agent_to_anywhere_config",
+		Kind:     "object",
+		Fields:   ReasoningEngine_Spec_DeploymentSpec_AgentGatewayConfig_AgentToAnywhereConfigFields,
+	},
+	"ClientToAgentConfig": ubx.FieldSpec{
+		WireName: "client_to_agent_config",
+		Kind:     "object",
+		Fields:   ReasoningEngine_Spec_DeploymentSpec_AgentGatewayConfig_AgentToAnywhereConfigFields,
+	},
+}
 
 var ReasoningEngine_Spec_DeploymentSpec_EnvFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var ReasoningEngine_Spec_DeploymentSpec_KeepAliveProbe_HttpGetFields = ubx.FieldMap{
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-	}
+	"Path": ubx.FieldSpec{WireName: "path"},
+	"Port": ubx.FieldSpec{WireName: "port"},
+}
 
 var ReasoningEngine_Spec_DeploymentSpec_KeepAliveProbeFields = ubx.FieldMap{
-		"HttpGet": ubx.FieldSpec{
-			WireName: "http_get",
-			Kind: "object",
-			Fields: ReasoningEngine_Spec_DeploymentSpec_KeepAliveProbe_HttpGetFields,
-		},
-		"MaxSeconds": ubx.FieldSpec{WireName: "max_seconds"},
-	}
+	"HttpGet": ubx.FieldSpec{
+		WireName: "http_get",
+		Kind:     "object",
+		Fields:   ReasoningEngine_Spec_DeploymentSpec_KeepAliveProbe_HttpGetFields,
+	},
+	"MaxSeconds": ubx.FieldSpec{WireName: "max_seconds"},
+}
 
 var ReasoningEngine_Spec_DeploymentSpec_PscInterfaceConfig_DnsPeeringConfigsFields = ubx.FieldMap{
-		"Domain": ubx.FieldSpec{WireName: "domain"},
-		"TargetNetwork": ubx.FieldSpec{WireName: "target_network"},
-		"TargetProject": ubx.FieldSpec{WireName: "target_project"},
-	}
+	"Domain":        ubx.FieldSpec{WireName: "domain"},
+	"TargetNetwork": ubx.FieldSpec{WireName: "target_network"},
+	"TargetProject": ubx.FieldSpec{WireName: "target_project"},
+}
 
 var ReasoningEngine_Spec_DeploymentSpec_PscInterfaceConfigFields = ubx.FieldMap{
-		"DnsPeeringConfigs": ubx.FieldSpec{
-			WireName: "dns_peering_configs",
-			Kind: "list",
-			Fields: ReasoningEngine_Spec_DeploymentSpec_PscInterfaceConfig_DnsPeeringConfigsFields,
-		},
-		"NetworkAttachment": ubx.FieldSpec{WireName: "network_attachment"},
-	}
+	"DnsPeeringConfigs": ubx.FieldSpec{
+		WireName: "dns_peering_configs",
+		Kind:     "list",
+		Fields:   ReasoningEngine_Spec_DeploymentSpec_PscInterfaceConfig_DnsPeeringConfigsFields,
+	},
+	"NetworkAttachment": ubx.FieldSpec{WireName: "network_attachment"},
+}
 
 var ReasoningEngine_Spec_DeploymentSpec_SecretEnv_SecretRefFields = ubx.FieldMap{
-		"Secret": ubx.FieldSpec{WireName: "secret"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"Secret":  ubx.FieldSpec{WireName: "secret"},
+	"Version": ubx.FieldSpec{WireName: "version"},
+}
 
 var ReasoningEngine_Spec_DeploymentSpec_SecretEnvFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SecretRef": ubx.FieldSpec{
-			WireName: "secret_ref",
-			Kind: "object",
-			Fields: ReasoningEngine_Spec_DeploymentSpec_SecretEnv_SecretRefFields,
-		},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"SecretRef": ubx.FieldSpec{
+		WireName: "secret_ref",
+		Kind:     "object",
+		Fields:   ReasoningEngine_Spec_DeploymentSpec_SecretEnv_SecretRefFields,
+	},
+}
 
 var ReasoningEngine_Spec_DeploymentSpecFields = ubx.FieldMap{
-		"AgentGatewayConfig": ubx.FieldSpec{
-			WireName: "agent_gateway_config",
-			Kind: "object",
-			Fields: ReasoningEngine_Spec_DeploymentSpec_AgentGatewayConfigFields,
-		},
-		"ContainerConcurrency": ubx.FieldSpec{WireName: "container_concurrency"},
-		"Env": ubx.FieldSpec{
-			WireName: "env",
-			Kind: "list",
-			Fields: ReasoningEngine_Spec_DeploymentSpec_EnvFields,
-		},
-		"KeepAliveProbe": ubx.FieldSpec{
-			WireName: "keep_alive_probe",
-			Kind: "object",
-			Fields: ReasoningEngine_Spec_DeploymentSpec_KeepAliveProbeFields,
-		},
-		"MaxInstances": ubx.FieldSpec{WireName: "max_instances"},
-		"MinInstances": ubx.FieldSpec{WireName: "min_instances"},
-		"PscInterfaceConfig": ubx.FieldSpec{
-			WireName: "psc_interface_config",
-			Kind: "object",
-			Fields: ReasoningEngine_Spec_DeploymentSpec_PscInterfaceConfigFields,
-		},
-		"ResourceLimits": ubx.FieldSpec{WireName: "resource_limits"},
-		"SecretEnv": ubx.FieldSpec{
-			WireName: "secret_env",
-			Kind: "list",
-			Fields: ReasoningEngine_Spec_DeploymentSpec_SecretEnvFields,
-		},
-	}
+	"AgentGatewayConfig": ubx.FieldSpec{
+		WireName: "agent_gateway_config",
+		Kind:     "object",
+		Fields:   ReasoningEngine_Spec_DeploymentSpec_AgentGatewayConfigFields,
+	},
+	"ContainerConcurrency": ubx.FieldSpec{WireName: "container_concurrency"},
+	"Env": ubx.FieldSpec{
+		WireName: "env",
+		Kind:     "list",
+		Fields:   ReasoningEngine_Spec_DeploymentSpec_EnvFields,
+	},
+	"KeepAliveProbe": ubx.FieldSpec{
+		WireName: "keep_alive_probe",
+		Kind:     "object",
+		Fields:   ReasoningEngine_Spec_DeploymentSpec_KeepAliveProbeFields,
+	},
+	"MaxInstances": ubx.FieldSpec{WireName: "max_instances"},
+	"MinInstances": ubx.FieldSpec{WireName: "min_instances"},
+	"PscInterfaceConfig": ubx.FieldSpec{
+		WireName: "psc_interface_config",
+		Kind:     "object",
+		Fields:   ReasoningEngine_Spec_DeploymentSpec_PscInterfaceConfigFields,
+	},
+	"ResourceLimits": ubx.FieldSpec{WireName: "resource_limits"},
+	"SecretEnv": ubx.FieldSpec{
+		WireName: "secret_env",
+		Kind:     "list",
+		Fields:   ReasoningEngine_Spec_DeploymentSpec_SecretEnvFields,
+	},
+}
 
 var ReasoningEngine_Spec_PackageSpecFields = ubx.FieldMap{
-		"DependencyFilesGcsUri": ubx.FieldSpec{WireName: "dependency_files_gcs_uri"},
-		"PickleObjectGcsUri": ubx.FieldSpec{WireName: "pickle_object_gcs_uri"},
-		"PythonVersion": ubx.FieldSpec{WireName: "python_version"},
-		"RequirementsGcsUri": ubx.FieldSpec{WireName: "requirements_gcs_uri"},
-	}
+	"DependencyFilesGcsUri": ubx.FieldSpec{WireName: "dependency_files_gcs_uri"},
+	"PickleObjectGcsUri":    ubx.FieldSpec{WireName: "pickle_object_gcs_uri"},
+	"PythonVersion":         ubx.FieldSpec{WireName: "python_version"},
+	"RequirementsGcsUri":    ubx.FieldSpec{WireName: "requirements_gcs_uri"},
+}
 
 var ReasoningEngine_Spec_SourceCodeSpec_AgentConfigSource_AdkConfigFields = ubx.FieldMap{
-		"JsonConfig": ubx.FieldSpec{WireName: "json_config"},
-	}
+	"JsonConfig": ubx.FieldSpec{WireName: "json_config"},
+}
 
 var ReasoningEngine_Spec_SourceCodeSpec_AgentConfigSource_InlineSourceFields = ubx.FieldMap{
-		"SourceArchive": ubx.FieldSpec{WireName: "source_archive"},
-	}
+	"SourceArchive": ubx.FieldSpec{WireName: "source_archive"},
+}
 
 var ReasoningEngine_Spec_SourceCodeSpec_AgentConfigSourceFields = ubx.FieldMap{
-		"AdkConfig": ubx.FieldSpec{
-			WireName: "adk_config",
-			Kind: "object",
-			Fields: ReasoningEngine_Spec_SourceCodeSpec_AgentConfigSource_AdkConfigFields,
-		},
-		"InlineSource": ubx.FieldSpec{
-			WireName: "inline_source",
-			Kind: "object",
-			Fields: ReasoningEngine_Spec_SourceCodeSpec_AgentConfigSource_InlineSourceFields,
-		},
-	}
+	"AdkConfig": ubx.FieldSpec{
+		WireName: "adk_config",
+		Kind:     "object",
+		Fields:   ReasoningEngine_Spec_SourceCodeSpec_AgentConfigSource_AdkConfigFields,
+	},
+	"InlineSource": ubx.FieldSpec{
+		WireName: "inline_source",
+		Kind:     "object",
+		Fields:   ReasoningEngine_Spec_SourceCodeSpec_AgentConfigSource_InlineSourceFields,
+	},
+}
 
 var ReasoningEngine_Spec_SourceCodeSpec_DeveloperConnectSource_ConfigFields = ubx.FieldMap{
-		"Dir": ubx.FieldSpec{WireName: "dir"},
-		"GitRepositoryLink": ubx.FieldSpec{WireName: "git_repository_link"},
-		"Revision": ubx.FieldSpec{WireName: "revision"},
-	}
+	"Dir":               ubx.FieldSpec{WireName: "dir"},
+	"GitRepositoryLink": ubx.FieldSpec{WireName: "git_repository_link"},
+	"Revision":          ubx.FieldSpec{WireName: "revision"},
+}
 
 var ReasoningEngine_Spec_SourceCodeSpec_DeveloperConnectSourceFields = ubx.FieldMap{
-		"Config": ubx.FieldSpec{
-			WireName: "config",
-			Kind: "object",
-			Fields: ReasoningEngine_Spec_SourceCodeSpec_DeveloperConnectSource_ConfigFields,
-		},
-	}
+	"Config": ubx.FieldSpec{
+		WireName: "config",
+		Kind:     "object",
+		Fields:   ReasoningEngine_Spec_SourceCodeSpec_DeveloperConnectSource_ConfigFields,
+	},
+}
 
 var ReasoningEngine_Spec_SourceCodeSpec_ImageSpecFields = ubx.FieldMap{
-		"BuildArgs": ubx.FieldSpec{WireName: "build_args"},
-	}
+	"BuildArgs": ubx.FieldSpec{WireName: "build_args"},
+}
 
 var ReasoningEngine_Spec_SourceCodeSpec_PythonSpecFields = ubx.FieldMap{
-		"EntrypointModule": ubx.FieldSpec{WireName: "entrypoint_module"},
-		"EntrypointObject": ubx.FieldSpec{WireName: "entrypoint_object"},
-		"RequirementsFile": ubx.FieldSpec{WireName: "requirements_file"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"EntrypointModule": ubx.FieldSpec{WireName: "entrypoint_module"},
+	"EntrypointObject": ubx.FieldSpec{WireName: "entrypoint_object"},
+	"RequirementsFile": ubx.FieldSpec{WireName: "requirements_file"},
+	"Version":          ubx.FieldSpec{WireName: "version"},
+}
 
 var ReasoningEngine_Spec_SourceCodeSpecFields = ubx.FieldMap{
-		"AgentConfigSource": ubx.FieldSpec{
-			WireName: "agent_config_source",
-			Kind: "object",
-			Fields: ReasoningEngine_Spec_SourceCodeSpec_AgentConfigSourceFields,
-		},
-		"DeveloperConnectSource": ubx.FieldSpec{
-			WireName: "developer_connect_source",
-			Kind: "object",
-			Fields: ReasoningEngine_Spec_SourceCodeSpec_DeveloperConnectSourceFields,
-		},
-		"ImageSpec": ubx.FieldSpec{
-			WireName: "image_spec",
-			Kind: "object",
-			Fields: ReasoningEngine_Spec_SourceCodeSpec_ImageSpecFields,
-		},
-		"InlineSource": ubx.FieldSpec{
-			WireName: "inline_source",
-			Kind: "object",
-			Fields: ReasoningEngine_Spec_SourceCodeSpec_AgentConfigSource_InlineSourceFields,
-		},
-		"PythonSpec": ubx.FieldSpec{
-			WireName: "python_spec",
-			Kind: "object",
-			Fields: ReasoningEngine_Spec_SourceCodeSpec_PythonSpecFields,
-		},
-	}
+	"AgentConfigSource": ubx.FieldSpec{
+		WireName: "agent_config_source",
+		Kind:     "object",
+		Fields:   ReasoningEngine_Spec_SourceCodeSpec_AgentConfigSourceFields,
+	},
+	"DeveloperConnectSource": ubx.FieldSpec{
+		WireName: "developer_connect_source",
+		Kind:     "object",
+		Fields:   ReasoningEngine_Spec_SourceCodeSpec_DeveloperConnectSourceFields,
+	},
+	"ImageSpec": ubx.FieldSpec{
+		WireName: "image_spec",
+		Kind:     "object",
+		Fields:   ReasoningEngine_Spec_SourceCodeSpec_ImageSpecFields,
+	},
+	"InlineSource": ubx.FieldSpec{
+		WireName: "inline_source",
+		Kind:     "object",
+		Fields:   ReasoningEngine_Spec_SourceCodeSpec_AgentConfigSource_InlineSourceFields,
+	},
+	"PythonSpec": ubx.FieldSpec{
+		WireName: "python_spec",
+		Kind:     "object",
+		Fields:   ReasoningEngine_Spec_SourceCodeSpec_PythonSpecFields,
+	},
+}
 
 var ReasoningEngine_SpecFields = ubx.FieldMap{
-		"AgentFramework": ubx.FieldSpec{WireName: "agent_framework"},
-		"BuildSpec": ubx.FieldSpec{
-			WireName: "build_spec",
-			Kind: "object",
-			Fields: ReasoningEngine_Spec_BuildSpecFields,
-		},
-		"ClassMethods": ubx.FieldSpec{WireName: "class_methods"},
-		"ContainerSpec": ubx.FieldSpec{
-			WireName: "container_spec",
-			Kind: "object",
-			Fields: ReasoningEngine_Spec_ContainerSpecFields,
-		},
-		"DeploymentSpec": ubx.FieldSpec{
-			WireName: "deployment_spec",
-			Kind: "object",
-			Fields: ReasoningEngine_Spec_DeploymentSpecFields,
-		},
-		"EffectiveIdentity": ubx.FieldSpec{WireName: "effective_identity"},
-		"IdentityType": ubx.FieldSpec{WireName: "identity_type"},
-		"PackageSpec": ubx.FieldSpec{
-			WireName: "package_spec",
-			Kind: "object",
-			Fields: ReasoningEngine_Spec_PackageSpecFields,
-		},
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-		"SourceCodeSpec": ubx.FieldSpec{
-			WireName: "source_code_spec",
-			Kind: "object",
-			Fields: ReasoningEngine_Spec_SourceCodeSpecFields,
-		},
-	}
+	"AgentFramework": ubx.FieldSpec{WireName: "agent_framework"},
+	"BuildSpec": ubx.FieldSpec{
+		WireName: "build_spec",
+		Kind:     "object",
+		Fields:   ReasoningEngine_Spec_BuildSpecFields,
+	},
+	"ClassMethods": ubx.FieldSpec{WireName: "class_methods"},
+	"ContainerSpec": ubx.FieldSpec{
+		WireName: "container_spec",
+		Kind:     "object",
+		Fields:   ReasoningEngine_Spec_ContainerSpecFields,
+	},
+	"DeploymentSpec": ubx.FieldSpec{
+		WireName: "deployment_spec",
+		Kind:     "object",
+		Fields:   ReasoningEngine_Spec_DeploymentSpecFields,
+	},
+	"EffectiveIdentity": ubx.FieldSpec{WireName: "effective_identity"},
+	"IdentityType":      ubx.FieldSpec{WireName: "identity_type"},
+	"PackageSpec": ubx.FieldSpec{
+		WireName: "package_spec",
+		Kind:     "object",
+		Fields:   ReasoningEngine_Spec_PackageSpecFields,
+	},
+	"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
+	"SourceCodeSpec": ubx.FieldSpec{
+		WireName: "source_code_spec",
+		Kind:     "object",
+		Fields:   ReasoningEngine_Spec_SourceCodeSpecFields,
+	},
+}
 
 type ReasoningEngineConfig struct {
 	// Configuration for how Agent Engine sub-resources should manage context.
 	ContextSpec any
-	// Output only. Timestamp when this ReasoningEngine was created.
-	CreateTime any
 	// Optional. The description of the ReasoningEngine.
 	Description any
 	// Required. The display name of the ReasoningEngine.
@@ -967,8 +965,6 @@ type ReasoningEngineConfig struct {
 	Name any
 	// ReasoningEngine configurations
 	Spec any
-	// Output only. Timestamp when this ReasoningEngine was most recently updated.
-	UpdateTime any
 }
 
 type ReasoningEngineAttrs struct {
@@ -999,25 +995,23 @@ var ReasoningEngine = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ContextSpec": ubx.FieldSpec{
 			WireName: "context_spec",
-			Kind: "object",
-			Fields: ReasoningEngine_ContextSpecFields,
+			Kind:     "object",
+			Fields:   ReasoningEngine_ContextSpecFields,
 		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"EncryptionSpec": ubx.FieldSpec{
 			WireName: "encryption_spec",
-			Kind: "object",
-			Fields: ReasoningEngine_EncryptionSpecFields,
+			Kind:     "object",
+			Fields:   ReasoningEngine_EncryptionSpecFields,
 		},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
+		"Etag":   ubx.FieldSpec{WireName: "etag"},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":   ubx.FieldSpec{WireName: "name"},
 		"Spec": ubx.FieldSpec{
 			WireName: "spec",
-			Kind: "object",
-			Fields: ReasoningEngine_SpecFields,
+			Kind:     "object",
+			Fields:   ReasoningEngine_SpecFields,
 		},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

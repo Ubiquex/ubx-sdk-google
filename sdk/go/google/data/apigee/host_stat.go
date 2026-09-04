@@ -4,20 +4,20 @@ package apigee
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type HostStat_Environments_Dimensions_Metrics struct {
-	Name any
+	Name   any
 	Values any
 }
 
 type HostStat_Environments_Dimensions struct {
 	IndividualNames any
-	Metrics any
-	Name any
+	Metrics         any
+	Name            any
 }
 
 type HostStat_Environments struct {
 	Dimensions any
-	Metrics any
-	Name any
+	Metrics    any
+	Name       any
 }
 
 type HostStat_MetaData struct {
@@ -28,64 +28,64 @@ type HostStat_MetaData struct {
 }
 
 type HostStatConfig struct {
-	Accuracy any
+	Accuracy         any
 	EnvgroupHostname any
-	Filter any
-	Limit any
-	Name any
-	Offset any
-	Realtime any
-	Select any
-	Sort any
-	Sortby any
-	TimeRange any
-	TimeUnit any
-	Topk any
-	TsAscending any
-	Tzo any
+	Filter           any
+	Limit            any
+	Name             any
+	Offset           any
+	Realtime         any
+	Select           any
+	Sort             any
+	Sortby           any
+	TimeRange        any
+	TimeUnit         any
+	Topk             any
+	TsAscending      any
+	Tzo              any
 }
 
 type HostStatAttrs struct {
-	Accuracy any
+	Accuracy         any
 	EnvgroupHostname any
 	// List of query results on the environment level.
 	Environments any
-	Filter any
+	Filter       any
 	// List of query results grouped by host.
 	Hosts any
 	Limit any
 	// Encapsulates additional information about query execution.
-	MetaData any
-	Name any
-	Offset any
-	Realtime any
-	Select any
-	Sort any
-	Sortby any
-	TimeRange any
-	TimeUnit any
-	Topk any
+	MetaData    any
+	Name        any
+	Offset      any
+	Realtime    any
+	Select      any
+	Sort        any
+	Sortby      any
+	TimeRange   any
+	TimeUnit    any
+	Topk        any
 	TsAscending any
-	Tzo any
+	Tzo         any
 }
 
 var HostStat = ubx.DataSourceBinding{
 	WireType: "google_apigee_host_stat",
 	Fields: ubx.FieldMap{
-		"Accuracy": ubx.FieldSpec{WireName: "accuracy"},
+		"Accuracy":         ubx.FieldSpec{WireName: "accuracy"},
 		"EnvgroupHostname": ubx.FieldSpec{WireName: "envgroup_hostname"},
-		"Filter": ubx.FieldSpec{WireName: "filter"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Offset": ubx.FieldSpec{WireName: "offset"},
-		"Realtime": ubx.FieldSpec{WireName: "realtime"},
-		"Select": ubx.FieldSpec{WireName: "select"},
-		"Sort": ubx.FieldSpec{WireName: "sort"},
-		"Sortby": ubx.FieldSpec{WireName: "sortby"},
-		"TimeRange": ubx.FieldSpec{WireName: "time_range"},
-		"TimeUnit": ubx.FieldSpec{WireName: "time_unit"},
-		"Topk": ubx.FieldSpec{WireName: "topk"},
-		"TsAscending": ubx.FieldSpec{WireName: "ts_ascending"},
-		"Tzo": ubx.FieldSpec{WireName: "tzo"},
+		"Filter":           ubx.FieldSpec{WireName: "filter"},
+		"Limit":            ubx.FieldSpec{WireName: "limit"},
+		"Name":             ubx.FieldSpec{WireName: "name"},
+		"Offset":           ubx.FieldSpec{WireName: "offset"},
+		"Realtime":         ubx.FieldSpec{WireName: "realtime"},
+		"Select":           ubx.FieldSpec{WireName: "select"},
+		"Sort":             ubx.FieldSpec{WireName: "sort"},
+		"Sortby":           ubx.FieldSpec{WireName: "sortby"},
+		"TimeRange":        ubx.FieldSpec{WireName: "time_range"},
+		"TimeUnit":         ubx.FieldSpec{WireName: "time_unit"},
+		"Topk":             ubx.FieldSpec{WireName: "topk"},
+		"TsAscending":      ubx.FieldSpec{WireName: "ts_ascending"},
+		"Tzo":              ubx.FieldSpec{WireName: "tzo"},
 	},
 }

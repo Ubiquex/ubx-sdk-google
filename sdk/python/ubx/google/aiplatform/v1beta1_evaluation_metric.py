@@ -862,8 +862,6 @@ _V1beta1EvaluationMetric_MetricFields = {
 
 @dataclasses.dataclass
 class V1beta1EvaluationMetricConfig:
-    # Output only. The time when the EvaluationMetric was created.
-    create_time: Any = None
     # Optional. A description of the EvaluationMetric.
     description: Any = None
     # Required. The user-friendly display name for the EvaluationMetric.
@@ -878,8 +876,6 @@ class V1beta1EvaluationMetricConfig:
     metric: Any = None
     # Identifier. The resource name of the EvaluationMetric. Format: `projects/{project}/locations/{location}/evaluationMetrics/{evaluation_metric}`
     name: Any = None
-    # Output only. The time when the EvaluationMetric was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V1beta1EvaluationMetricAttrs:
@@ -905,7 +901,6 @@ class V1beta1EvaluationMetricAttrs:
 V1beta1EvaluationMetric = ubx.ResourceBinding(
     wire_type="google_aiplatform_v1beta1_evaluation_metric",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "encryption_spec": ubx.FieldSpec(
@@ -921,6 +916,5 @@ V1beta1EvaluationMetric = ubx.ResourceBinding(
             fields=_V1beta1EvaluationMetric_MetricFields,
         ),
         "name": ubx.FieldSpec(wire_name="name"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

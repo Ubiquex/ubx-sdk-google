@@ -19,12 +19,6 @@ class V1alphaDomainMapping_SslSettings:
     # Output only. Whether the mapped certificate is an App Engine managed certificate. Managed certificates are created by default with a domain mapping. To opt out, specify no_managed_certificate on a CREATE or UPDATE request.@OutputOnly
     is_managed_certificate: Any = None
 
-_V1alphaDomainMapping_ResourceRecordsFields = {
-    "name": ubx.FieldSpec(wire_name="name"),
-    "rrdata": ubx.FieldSpec(wire_name="rrdata"),
-    "type": ubx.FieldSpec(wire_name="type"),
-}
-
 _V1alphaDomainMapping_SslSettingsFields = {
     "certificate_id": ubx.FieldSpec(wire_name="certificate_id"),
     "is_managed_certificate": ubx.FieldSpec(wire_name="is_managed_certificate"),
@@ -34,10 +28,6 @@ _V1alphaDomainMapping_SslSettingsFields = {
 class V1alphaDomainMappingConfig:
     # Relative name of the domain serving the application. Example: example.com.
     id: Any = None
-    # Output only. Full path to the DomainMapping resource in the API. Example: apps/myapp/domainMapping/example.com.@OutputOnly
-    name: Any = None
-    # Output only. The resource records required to configure this domain mapping. These records must be added to the domain's DNS configuration in order to serve the application via this domain mapping.@OutputOnly
-    resource_records: Any = None
     # SSL configuration for a DomainMapping resource.
     ssl_settings: Any = None
 
@@ -56,12 +46,6 @@ V1alphaDomainMapping = ubx.ResourceBinding(
     wire_type="google_appengine_v1alpha_domain_mapping",
     fields={
         "id": ubx.FieldSpec(wire_name="id"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "resource_records": ubx.FieldSpec(
-            wire_name="resource_records",
-            kind="list",
-            fields=_V1alphaDomainMapping_ResourceRecordsFields,
-        ),
         "ssl_settings": ubx.FieldSpec(
             wire_name="ssl_settings",
             kind="object",

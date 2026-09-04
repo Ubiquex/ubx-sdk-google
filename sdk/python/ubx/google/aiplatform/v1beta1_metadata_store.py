@@ -35,20 +35,14 @@ _V1beta1MetadataStore_StateFields = {
 
 @dataclasses.dataclass
 class V1beta1MetadataStoreConfig:
-    # Output only. Timestamp when this MetadataStore was created.
-    create_time: Any = None
     # Represents Dataplex integration settings.
     dataplex_config: Any = None
     # Description of the MetadataStore.
     description: Any = None
     # Represents a customer-managed encryption key specification that can be applied to a Vertex AI resource.
     encryption_spec: Any = None
-    # Output only. The resource name of the MetadataStore instance.
-    name: Any = None
     # Represents state information for a MetadataStore.
     state: Any = None
-    # Output only. Timestamp when this MetadataStore was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V1beta1MetadataStoreAttrs:
@@ -70,7 +64,6 @@ class V1beta1MetadataStoreAttrs:
 V1beta1MetadataStore = ubx.ResourceBinding(
     wire_type="google_aiplatform_v1beta1_metadata_store",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "dataplex_config": ubx.FieldSpec(
             wire_name="dataplex_config",
             kind="object",
@@ -82,12 +75,10 @@ V1beta1MetadataStore = ubx.ResourceBinding(
             kind="object",
             fields=_V1beta1MetadataStore_EncryptionSpecFields,
         ),
-        "name": ubx.FieldSpec(wire_name="name"),
         "state": ubx.FieldSpec(
             wire_name="state",
             kind="object",
             fields=_V1beta1MetadataStore_StateFields,
         ),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

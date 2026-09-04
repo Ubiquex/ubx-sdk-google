@@ -15,16 +15,10 @@ export interface BackupVaultConfig {
   accessRestriction?: string | Computed<string>;
   /** Optional. User annotations. See https://google.aip.dev/128#annotations Stores small amounts of arbitrary data. */
   annotations?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. The number of backups in this backup vault. */
-  backupCount?: string | Computed<string>;
   /** Required. The default and minimum enforced retention for each backup within the backup vault. The enforced retention for each backup can be extended. Note: Longer minimum enforced retention period impacts potential storage costs post introductory trial. We recommend starting with a short duration of 3 days or less. */
   backupMinimumEnforcedRetentionDuration?: string | Computed<string>;
   /** Optional. Setting for how a backup's enforced retention end time is inherited. */
   backupRetentionInheritance?: string | Computed<string>;
-  /** Output only. The time when the instance was created. */
-  createTime?: string | Computed<string>;
-  /** Output only. Set to true when there are no backups nested under this resource. */
-  deletable?: boolean | Computed<boolean>;
   /** Optional. The description of the BackupVault instance (2048 characters or less). */
   description?: string | Computed<string>;
   /** Optional. Time after which the BackupVault resource is locked. */
@@ -35,18 +29,6 @@ export interface BackupVaultConfig {
   etag?: string | Computed<string>;
   /** Optional. Resource labels to represent user provided metadata. No labels currently defined: */
   labels?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. Identifier. Name of the backup vault to create. It must have the format`"projects/{project}/locations/{location}/backupVaults/{backupvault}"`. `{backupvault}` cannot be changed after creation. It must be between 3-63 characters long and must be unique within the project and location. */
-  name?: string | Computed<string>;
-  /** Output only. Service account used by the BackupVault Service for this BackupVault. The user should grant this account permissions in their workload project to enable the service to run backups and restores there. */
-  serviceAccount?: string | Computed<string>;
-  /** Output only. The BackupVault resource instance state. */
-  state?: string | Computed<string>;
-  /** Output only. Total size of the storage used by all backup resources. */
-  totalStoredBytes?: string | Computed<string>;
-  /** Output only. Immutable after resource creation until resource deletion. */
-  uid?: string | Computed<string>;
-  /** Output only. The time when the instance was updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface BackupVaultAttrs {
@@ -93,11 +75,8 @@ export const BackupVault: ResourceBinding<BackupVaultConfig, BackupVaultAttrs> =
   fields: {
     accessRestriction: "access_restriction",
     annotations: "annotations",
-    backupCount: "backup_count",
     backupMinimumEnforcedRetentionDuration: "backup_minimum_enforced_retention_duration",
     backupRetentionInheritance: "backup_retention_inheritance",
-    createTime: "create_time",
-    deletable: "deletable",
     description: "description",
     effectiveTime: "effective_time",
     encryptionConfig: {
@@ -107,11 +86,5 @@ export const BackupVault: ResourceBinding<BackupVaultConfig, BackupVaultAttrs> =
     },
     etag: "etag",
     labels: "labels",
-    name: "name",
-    serviceAccount: "service_account",
-    state: "state",
-    totalStoredBytes: "total_stored_bytes",
-    uid: "uid",
-    updateTime: "update_time",
   },
 };

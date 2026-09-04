@@ -88,8 +88,6 @@ class ClusterConfig:
     node_scaling_factor: Any = None
     # The number of nodes in the cluster. If no value is set, Cloud Bigtable automatically allocates nodes based on your data footprint and optimized for 50% storage utilization.
     serve_nodes: Any = None
-    # Output only. The current state of the cluster.
-    state: Any = None
 
 @dataclasses.dataclass
 class ClusterAttrs:
@@ -128,6 +126,5 @@ Cluster = ubx.ResourceBinding(
         "name": ubx.FieldSpec(wire_name="name"),
         "node_scaling_factor": ubx.FieldSpec(wire_name="node_scaling_factor"),
         "serve_nodes": ubx.FieldSpec(wire_name="serve_nodes"),
-        "state": ubx.FieldSpec(wire_name="state"),
     },
 )

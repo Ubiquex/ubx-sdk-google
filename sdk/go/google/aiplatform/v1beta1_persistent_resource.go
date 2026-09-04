@@ -18,7 +18,7 @@ type V1beta1PersistentResource_Error struct {
 }
 
 type V1beta1PersistentResource_PscInterfaceConfig_DnsPeeringConfigs struct {
-	Domain any
+	Domain        any
 	TargetNetwork any
 	TargetProject any
 }
@@ -37,32 +37,32 @@ type V1beta1PersistentResource_ResourcePools_AutoscalingSpec struct {
 
 type V1beta1PersistentResource_ResourcePools_DiskSpec struct {
 	BootDiskSizeGb any
-	BootDiskType any
+	BootDiskType   any
 }
 
 type V1beta1PersistentResource_ResourcePools_MachineSpec_ReservationAffinity struct {
-	Key any
+	Key                     any
 	ReservationAffinityType any
-	Values any
+	Values                  any
 }
 
 type V1beta1PersistentResource_ResourcePools_MachineSpec struct {
-	AcceleratorCount any
-	AcceleratorType any
-	GpuPartitionSize any
-	MachineType any
-	MinGpuDriverVersion any
+	AcceleratorCount      any
+	AcceleratorType       any
+	GpuPartitionSize      any
+	MachineType           any
+	MinGpuDriverVersion   any
 	MultihostGpuNodeCount any
-	ReservationAffinity any
-	TpuTopology any
+	ReservationAffinity   any
+	TpuTopology           any
 }
 
 type V1beta1PersistentResource_ResourcePools struct {
-	AutoscalingSpec any
-	DiskSpec any
-	Id any
-	MachineSpec any
-	ReplicaCount any
+	AutoscalingSpec  any
+	DiskSpec         any
+	Id               any
+	MachineSpec      any
+	ReplicaCount     any
 	UsedReplicaCount any
 }
 
@@ -75,8 +75,8 @@ type V1beta1PersistentResource_ResourceRuntime struct {
 
 type V1beta1PersistentResource_ResourceRuntimeSpec_RaySpec_NfsMounts struct {
 	MountPoint any
-	Path any
-	Server any
+	Path       any
+	Server     any
 }
 
 type V1beta1PersistentResource_ResourceRuntimeSpec_RaySpec_RayClusterAutoscalingSpec struct {
@@ -130,154 +130,152 @@ type V1beta1PersistentResource_ResourceRuntimeSpec struct {
 }
 
 var V1beta1PersistentResource_EncryptionSpecFields = ubx.FieldMap{
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-	}
+	"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
+}
 
 var V1beta1PersistentResource_ErrorFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"Code":    ubx.FieldSpec{WireName: "code"},
+	"Details": ubx.FieldSpec{WireName: "details"},
+	"Message": ubx.FieldSpec{WireName: "message"},
+}
 
 var V1beta1PersistentResource_PscInterfaceConfig_DnsPeeringConfigsFields = ubx.FieldMap{
-		"Domain": ubx.FieldSpec{WireName: "domain"},
-		"TargetNetwork": ubx.FieldSpec{WireName: "target_network"},
-		"TargetProject": ubx.FieldSpec{WireName: "target_project"},
-	}
+	"Domain":        ubx.FieldSpec{WireName: "domain"},
+	"TargetNetwork": ubx.FieldSpec{WireName: "target_network"},
+	"TargetProject": ubx.FieldSpec{WireName: "target_project"},
+}
 
 var V1beta1PersistentResource_PscInterfaceConfigFields = ubx.FieldMap{
-		"DnsPeeringConfigs": ubx.FieldSpec{
-			WireName: "dns_peering_configs",
-			Kind: "list",
-			Fields: V1beta1PersistentResource_PscInterfaceConfig_DnsPeeringConfigsFields,
-		},
-		"NetworkAttachment": ubx.FieldSpec{WireName: "network_attachment"},
-	}
+	"DnsPeeringConfigs": ubx.FieldSpec{
+		WireName: "dns_peering_configs",
+		Kind:     "list",
+		Fields:   V1beta1PersistentResource_PscInterfaceConfig_DnsPeeringConfigsFields,
+	},
+	"NetworkAttachment": ubx.FieldSpec{WireName: "network_attachment"},
+}
 
 var V1beta1PersistentResource_ResourcePools_AutoscalingSpecFields = ubx.FieldMap{
-		"MaxReplicaCount": ubx.FieldSpec{WireName: "max_replica_count"},
-		"MinReplicaCount": ubx.FieldSpec{WireName: "min_replica_count"},
-	}
+	"MaxReplicaCount": ubx.FieldSpec{WireName: "max_replica_count"},
+	"MinReplicaCount": ubx.FieldSpec{WireName: "min_replica_count"},
+}
 
 var V1beta1PersistentResource_ResourcePools_DiskSpecFields = ubx.FieldMap{
-		"BootDiskSizeGb": ubx.FieldSpec{WireName: "boot_disk_size_gb"},
-		"BootDiskType": ubx.FieldSpec{WireName: "boot_disk_type"},
-	}
+	"BootDiskSizeGb": ubx.FieldSpec{WireName: "boot_disk_size_gb"},
+	"BootDiskType":   ubx.FieldSpec{WireName: "boot_disk_type"},
+}
 
 var V1beta1PersistentResource_ResourcePools_MachineSpec_ReservationAffinityFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"ReservationAffinityType": ubx.FieldSpec{WireName: "reservation_affinity_type"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Key":                     ubx.FieldSpec{WireName: "key"},
+	"ReservationAffinityType": ubx.FieldSpec{WireName: "reservation_affinity_type"},
+	"Values":                  ubx.FieldSpec{WireName: "values"},
+}
 
 var V1beta1PersistentResource_ResourcePools_MachineSpecFields = ubx.FieldMap{
-		"AcceleratorCount": ubx.FieldSpec{WireName: "accelerator_count"},
-		"AcceleratorType": ubx.FieldSpec{WireName: "accelerator_type"},
-		"GpuPartitionSize": ubx.FieldSpec{WireName: "gpu_partition_size"},
-		"MachineType": ubx.FieldSpec{WireName: "machine_type"},
-		"MinGpuDriverVersion": ubx.FieldSpec{WireName: "min_gpu_driver_version"},
-		"MultihostGpuNodeCount": ubx.FieldSpec{WireName: "multihost_gpu_node_count"},
-		"ReservationAffinity": ubx.FieldSpec{
-			WireName: "reservation_affinity",
-			Kind: "object",
-			Fields: V1beta1PersistentResource_ResourcePools_MachineSpec_ReservationAffinityFields,
-		},
-		"TpuTopology": ubx.FieldSpec{WireName: "tpu_topology"},
-	}
+	"AcceleratorCount":      ubx.FieldSpec{WireName: "accelerator_count"},
+	"AcceleratorType":       ubx.FieldSpec{WireName: "accelerator_type"},
+	"GpuPartitionSize":      ubx.FieldSpec{WireName: "gpu_partition_size"},
+	"MachineType":           ubx.FieldSpec{WireName: "machine_type"},
+	"MinGpuDriverVersion":   ubx.FieldSpec{WireName: "min_gpu_driver_version"},
+	"MultihostGpuNodeCount": ubx.FieldSpec{WireName: "multihost_gpu_node_count"},
+	"ReservationAffinity": ubx.FieldSpec{
+		WireName: "reservation_affinity",
+		Kind:     "object",
+		Fields:   V1beta1PersistentResource_ResourcePools_MachineSpec_ReservationAffinityFields,
+	},
+	"TpuTopology": ubx.FieldSpec{WireName: "tpu_topology"},
+}
 
 var V1beta1PersistentResource_ResourcePoolsFields = ubx.FieldMap{
-		"AutoscalingSpec": ubx.FieldSpec{
-			WireName: "autoscaling_spec",
-			Kind: "object",
-			Fields: V1beta1PersistentResource_ResourcePools_AutoscalingSpecFields,
-		},
-		"DiskSpec": ubx.FieldSpec{
-			WireName: "disk_spec",
-			Kind: "object",
-			Fields: V1beta1PersistentResource_ResourcePools_DiskSpecFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"MachineSpec": ubx.FieldSpec{
-			WireName: "machine_spec",
-			Kind: "object",
-			Fields: V1beta1PersistentResource_ResourcePools_MachineSpecFields,
-		},
-		"ReplicaCount": ubx.FieldSpec{WireName: "replica_count"},
-		"UsedReplicaCount": ubx.FieldSpec{WireName: "used_replica_count"},
-	}
+	"AutoscalingSpec": ubx.FieldSpec{
+		WireName: "autoscaling_spec",
+		Kind:     "object",
+		Fields:   V1beta1PersistentResource_ResourcePools_AutoscalingSpecFields,
+	},
+	"DiskSpec": ubx.FieldSpec{
+		WireName: "disk_spec",
+		Kind:     "object",
+		Fields:   V1beta1PersistentResource_ResourcePools_DiskSpecFields,
+	},
+	"Id": ubx.FieldSpec{WireName: "id"},
+	"MachineSpec": ubx.FieldSpec{
+		WireName: "machine_spec",
+		Kind:     "object",
+		Fields:   V1beta1PersistentResource_ResourcePools_MachineSpecFields,
+	},
+	"ReplicaCount":     ubx.FieldSpec{WireName: "replica_count"},
+	"UsedReplicaCount": ubx.FieldSpec{WireName: "used_replica_count"},
+}
 
 var V1beta1PersistentResource_ResourceRuntimeFields = ubx.FieldMap{
-		"AccessUris": ubx.FieldSpec{WireName: "access_uris"},
-		"NotebookRuntimeTemplate": ubx.FieldSpec{WireName: "notebook_runtime_template"},
-	}
+	"AccessUris":              ubx.FieldSpec{WireName: "access_uris"},
+	"NotebookRuntimeTemplate": ubx.FieldSpec{WireName: "notebook_runtime_template"},
+}
 
 var V1beta1PersistentResource_ResourceRuntimeSpec_RaySpec_NfsMountsFields = ubx.FieldMap{
-		"MountPoint": ubx.FieldSpec{WireName: "mount_point"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"Server": ubx.FieldSpec{WireName: "server"},
-	}
+	"MountPoint": ubx.FieldSpec{WireName: "mount_point"},
+	"Path":       ubx.FieldSpec{WireName: "path"},
+	"Server":     ubx.FieldSpec{WireName: "server"},
+}
 
 var V1beta1PersistentResource_ResourceRuntimeSpec_RaySpec_RayClusterAutoscalingSpecFields = ubx.FieldMap{
-		"IdleTimeoutMinutes": ubx.FieldSpec{WireName: "idle_timeout_minutes"},
-		"UpscalingSpeed": ubx.FieldSpec{WireName: "upscaling_speed"},
-	}
+	"IdleTimeoutMinutes": ubx.FieldSpec{WireName: "idle_timeout_minutes"},
+	"UpscalingSpeed":     ubx.FieldSpec{WireName: "upscaling_speed"},
+}
 
 var V1beta1PersistentResource_ResourceRuntimeSpec_RaySpec_RayLogsSpecFields = ubx.FieldMap{
-		"Disabled": ubx.FieldSpec{WireName: "disabled"},
-	}
+	"Disabled": ubx.FieldSpec{WireName: "disabled"},
+}
 
 var V1beta1PersistentResource_ResourceRuntimeSpec_RaySpec_RayMetricSpecFields = ubx.FieldMap{
-		"Disabled": ubx.FieldSpec{WireName: "disabled"},
-		"EnableUsageStatsCollection": ubx.FieldSpec{WireName: "enable_usage_stats_collection"},
-	}
+	"Disabled":                   ubx.FieldSpec{WireName: "disabled"},
+	"EnableUsageStatsCollection": ubx.FieldSpec{WireName: "enable_usage_stats_collection"},
+}
 
 var V1beta1PersistentResource_ResourceRuntimeSpec_RaySpecFields = ubx.FieldMap{
-		"HeadNodeResourcePoolId": ubx.FieldSpec{WireName: "head_node_resource_pool_id"},
-		"ImageUri": ubx.FieldSpec{WireName: "image_uri"},
-		"NfsMounts": ubx.FieldSpec{
-			WireName: "nfs_mounts",
-			Kind: "list",
-			Fields: V1beta1PersistentResource_ResourceRuntimeSpec_RaySpec_NfsMountsFields,
-		},
-		"RayClusterAutoscalingSpec": ubx.FieldSpec{
-			WireName: "ray_cluster_autoscaling_spec",
-			Kind: "object",
-			Fields: V1beta1PersistentResource_ResourceRuntimeSpec_RaySpec_RayClusterAutoscalingSpecFields,
-		},
-		"RayLogsSpec": ubx.FieldSpec{
-			WireName: "ray_logs_spec",
-			Kind: "object",
-			Fields: V1beta1PersistentResource_ResourceRuntimeSpec_RaySpec_RayLogsSpecFields,
-		},
-		"RayMetricSpec": ubx.FieldSpec{
-			WireName: "ray_metric_spec",
-			Kind: "object",
-			Fields: V1beta1PersistentResource_ResourceRuntimeSpec_RaySpec_RayMetricSpecFields,
-		},
-		"ResourcePoolImages": ubx.FieldSpec{WireName: "resource_pool_images"},
-	}
+	"HeadNodeResourcePoolId": ubx.FieldSpec{WireName: "head_node_resource_pool_id"},
+	"ImageUri":               ubx.FieldSpec{WireName: "image_uri"},
+	"NfsMounts": ubx.FieldSpec{
+		WireName: "nfs_mounts",
+		Kind:     "list",
+		Fields:   V1beta1PersistentResource_ResourceRuntimeSpec_RaySpec_NfsMountsFields,
+	},
+	"RayClusterAutoscalingSpec": ubx.FieldSpec{
+		WireName: "ray_cluster_autoscaling_spec",
+		Kind:     "object",
+		Fields:   V1beta1PersistentResource_ResourceRuntimeSpec_RaySpec_RayClusterAutoscalingSpecFields,
+	},
+	"RayLogsSpec": ubx.FieldSpec{
+		WireName: "ray_logs_spec",
+		Kind:     "object",
+		Fields:   V1beta1PersistentResource_ResourceRuntimeSpec_RaySpec_RayLogsSpecFields,
+	},
+	"RayMetricSpec": ubx.FieldSpec{
+		WireName: "ray_metric_spec",
+		Kind:     "object",
+		Fields:   V1beta1PersistentResource_ResourceRuntimeSpec_RaySpec_RayMetricSpecFields,
+	},
+	"ResourcePoolImages": ubx.FieldSpec{WireName: "resource_pool_images"},
+}
 
 var V1beta1PersistentResource_ResourceRuntimeSpec_ServiceAccountSpecFields = ubx.FieldMap{
-		"EnableCustomServiceAccount": ubx.FieldSpec{WireName: "enable_custom_service_account"},
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-	}
+	"EnableCustomServiceAccount": ubx.FieldSpec{WireName: "enable_custom_service_account"},
+	"ServiceAccount":             ubx.FieldSpec{WireName: "service_account"},
+}
 
 var V1beta1PersistentResource_ResourceRuntimeSpecFields = ubx.FieldMap{
-		"RaySpec": ubx.FieldSpec{
-			WireName: "ray_spec",
-			Kind: "object",
-			Fields: V1beta1PersistentResource_ResourceRuntimeSpec_RaySpecFields,
-		},
-		"ServiceAccountSpec": ubx.FieldSpec{
-			WireName: "service_account_spec",
-			Kind: "object",
-			Fields: V1beta1PersistentResource_ResourceRuntimeSpec_ServiceAccountSpecFields,
-		},
-	}
+	"RaySpec": ubx.FieldSpec{
+		WireName: "ray_spec",
+		Kind:     "object",
+		Fields:   V1beta1PersistentResource_ResourceRuntimeSpec_RaySpecFields,
+	},
+	"ServiceAccountSpec": ubx.FieldSpec{
+		WireName: "service_account_spec",
+		Kind:     "object",
+		Fields:   V1beta1PersistentResource_ResourceRuntimeSpec_ServiceAccountSpecFields,
+	},
+}
 
 type V1beta1PersistentResourceConfig struct {
-	// Output only. Time when the PersistentResource was created.
-	CreateTime any
 	// Optional. The display name of the PersistentResource. The name can be up to 128 characters long and can consist of any UTF-8 characters.
 	DisplayName any
 	// Represents a customer-managed encryption key specification that can be applied to a Vertex AI resource.
@@ -300,16 +298,6 @@ type V1beta1PersistentResourceConfig struct {
 	ResourceRuntime any
 	// Configuration for the runtime on a PersistentResource instance, including but not limited to: * Service accounts used to run the workloads. * Whether to make it a dedicated Ray Cluster.
 	ResourceRuntimeSpec any
-	// Output only. Reserved for future use.
-	SatisfiesPzi any
-	// Output only. Reserved for future use.
-	SatisfiesPzs any
-	// Output only. Time when the PersistentResource for the first time entered the `RUNNING` state.
-	StartTime any
-	// Output only. The detailed state of a Study.
-	State any
-	// Output only. Time when the PersistentResource was most recently updated.
-	UpdateTime any
 }
 
 type V1beta1PersistentResourceAttrs struct {
@@ -352,46 +340,40 @@ type V1beta1PersistentResourceAttrs struct {
 var V1beta1PersistentResource = ubx.ResourceBinding{
 	WireType: "google_aiplatform_v1beta1_persistent_resource",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"EncryptionSpec": ubx.FieldSpec{
 			WireName: "encryption_spec",
-			Kind: "object",
-			Fields: V1beta1PersistentResource_EncryptionSpecFields,
+			Kind:     "object",
+			Fields:   V1beta1PersistentResource_EncryptionSpecFields,
 		},
 		"Error": ubx.FieldSpec{
 			WireName: "error",
-			Kind: "object",
-			Fields: V1beta1PersistentResource_ErrorFields,
+			Kind:     "object",
+			Fields:   V1beta1PersistentResource_ErrorFields,
 		},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Labels":  ubx.FieldSpec{WireName: "labels"},
+		"Name":    ubx.FieldSpec{WireName: "name"},
 		"Network": ubx.FieldSpec{WireName: "network"},
 		"PscInterfaceConfig": ubx.FieldSpec{
 			WireName: "psc_interface_config",
-			Kind: "object",
-			Fields: V1beta1PersistentResource_PscInterfaceConfigFields,
+			Kind:     "object",
+			Fields:   V1beta1PersistentResource_PscInterfaceConfigFields,
 		},
 		"ReservedIpRanges": ubx.FieldSpec{WireName: "reserved_ip_ranges"},
 		"ResourcePools": ubx.FieldSpec{
 			WireName: "resource_pools",
-			Kind: "list",
-			Fields: V1beta1PersistentResource_ResourcePoolsFields,
+			Kind:     "list",
+			Fields:   V1beta1PersistentResource_ResourcePoolsFields,
 		},
 		"ResourceRuntime": ubx.FieldSpec{
 			WireName: "resource_runtime",
-			Kind: "object",
-			Fields: V1beta1PersistentResource_ResourceRuntimeFields,
+			Kind:     "object",
+			Fields:   V1beta1PersistentResource_ResourceRuntimeFields,
 		},
 		"ResourceRuntimeSpec": ubx.FieldSpec{
 			WireName: "resource_runtime_spec",
-			Kind: "object",
-			Fields: V1beta1PersistentResource_ResourceRuntimeSpecFields,
+			Kind:     "object",
+			Fields:   V1beta1PersistentResource_ResourceRuntimeSpecFields,
 		},
-		"SatisfiesPzi": ubx.FieldSpec{WireName: "satisfies_pzi"},
-		"SatisfiesPzs": ubx.FieldSpec{WireName: "satisfies_pzs"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

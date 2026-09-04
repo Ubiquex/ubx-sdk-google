@@ -16,82 +16,82 @@ type AutomationRun_AdvanceRolloutOperation struct {
 
 type AutomationRun_AutomationSnapshot_Rules_AdvanceRolloutRule_Condition_TargetsPresentCondition struct {
 	MissingTargets any
-	Status any
-	UpdateTime any
+	Status         any
+	UpdateTime     any
 }
 
 type AutomationRun_AutomationSnapshot_Rules_AdvanceRolloutRule_Condition_TimedPromoteReleaseCondition_TargetsList struct {
 	DestinationTargetId any
-	SourceTargetId any
+	SourceTargetId      any
 }
 
 type AutomationRun_AutomationSnapshot_Rules_AdvanceRolloutRule_Condition_TimedPromoteReleaseCondition struct {
 	NextPromotionTime any
-	TargetsList any
+	TargetsList       any
 }
 
 type AutomationRun_AutomationSnapshot_Rules_AdvanceRolloutRule_Condition struct {
-	TargetsPresentCondition any
+	TargetsPresentCondition      any
 	TimedPromoteReleaseCondition any
 }
 
 type AutomationRun_AutomationSnapshot_Rules_AdvanceRolloutRule struct {
-	Condition any
-	Id any
+	Condition    any
+	Id           any
 	SourcePhases any
-	Wait any
+	Wait         any
 }
 
 type AutomationRun_AutomationSnapshot_Rules_PromoteReleaseRule struct {
-	Condition any
-	DestinationPhase any
+	Condition           any
+	DestinationPhase    any
 	DestinationTargetId any
-	Id any
-	Wait any
+	Id                  any
+	Wait                any
 }
 
 type AutomationRun_AutomationSnapshot_Rules_RepairRolloutRule_RepairPhases_Retry struct {
-	Attempts any
+	Attempts    any
 	BackoffMode any
-	Wait any
+	Wait        any
 }
 
 type AutomationRun_AutomationSnapshot_Rules_RepairRolloutRule_RepairPhases_Rollback struct {
-	DestinationPhase any
+	DestinationPhase                any
 	DisableRollbackIfRolloutPending any
 }
 
 type AutomationRun_AutomationSnapshot_Rules_RepairRolloutRule_RepairPhases struct {
-	Retry any
+	Retry    any
 	Rollback any
 }
 
 type AutomationRun_AutomationSnapshot_Rules_RepairRolloutRule struct {
-	Condition any
-	Id any
-	Jobs any
-	Phases any
+	Condition    any
+	Id           any
+	Jobs         any
+	Phases       any
 	RepairPhases any
 }
 
 type AutomationRun_AutomationSnapshot_Rules_TimedPromoteReleaseRule struct {
-	Condition any
-	DestinationPhase any
+	Condition           any
+	DestinationPhase    any
 	DestinationTargetId any
-	Id any
-	Schedule any
-	TimeZone any
+	Id                  any
+	Schedule            any
+	TimeZone            any
 }
 
 type AutomationRun_AutomationSnapshot_Rules struct {
-	AdvanceRolloutRule any
-	PromoteReleaseRule any
-	RepairRolloutRule any
+	AdvanceRolloutRule      any
+	PromoteReleaseRule      any
+	RepairRolloutRule       any
 	TimedPromoteReleaseRule any
 }
 
 type AutomationRun_AutomationSnapshot_Selector_Targets struct {
-	Id any
+	Id     any
 	Labels any
 }
 
@@ -129,8 +129,8 @@ type AutomationRun_AutomationSnapshot struct {
 
 type AutomationRun_PolicyViolation_PolicyViolationDetails struct {
 	FailureMessage any
-	Policy any
-	RuleId any
+	Policy         any
+	RuleId         any
 }
 
 type AutomationRun_PolicyViolation struct {
@@ -150,28 +150,28 @@ type AutomationRun_PromoteReleaseOperation struct {
 }
 
 type AutomationRun_RepairRolloutOperation_RepairPhases_Retry_Attempts struct {
-	Attempt any
-	State any
+	Attempt   any
+	State     any
 	StateDesc any
-	Wait any
+	Wait      any
 }
 
 type AutomationRun_RepairRolloutOperation_RepairPhases_Retry struct {
-	Attempts any
-	BackoffMode any
+	Attempts      any
+	BackoffMode   any
 	TotalAttempts any
 }
 
 type AutomationRun_RepairRolloutOperation_RepairPhases_Rollback struct {
-	DestinationPhase any
+	DestinationPhase                any
 	DisableRollbackIfRolloutPending any
-	RolloutId any
-	State any
-	StateDesc any
+	RolloutId                       any
+	State                           any
+	StateDesc                       any
 }
 
 type AutomationRun_RepairRolloutOperation_RepairPhases struct {
-	Retry any
+	Retry    any
 	Rollback any
 }
 
@@ -198,7 +198,6 @@ type AutomationRun_TimedPromoteReleaseOperation struct {
 }
 
 type AutomationRunConfig struct {
-	Name any
 }
 
 type AutomationRunAttrs struct {
@@ -214,7 +213,7 @@ type AutomationRunAttrs struct {
 	Etag any
 	// Output only. Time the `AutomationRun` expires. An `AutomationRun` expires after 14 days from its creation date.
 	ExpireTime any
-	Name any
+	Name       any
 	// Returned from an action if one or more policies were violated, and therefore the action was prevented. Contains information about what policies were violated and why.
 	PolicyViolation any
 	// Contains the information of an automated promote-release operation.
@@ -243,7 +242,5 @@ type AutomationRunAttrs struct {
 
 var AutomationRun = ubx.DataSourceBinding{
 	WireType: "google_clouddeploy_automation_run",
-	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	},
+	Fields:   ubx.FieldMap{},
 }

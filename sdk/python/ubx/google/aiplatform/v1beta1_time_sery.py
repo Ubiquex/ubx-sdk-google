@@ -23,8 +23,6 @@ _V1beta1TimeSery_MetadataFields = {
 
 @dataclasses.dataclass
 class V1beta1TimeSeryConfig:
-    # Output only. Timestamp when this TensorboardTimeSeries was created.
-    create_time: Any = None
     # Description of this TensorboardTimeSeries.
     description: Any = None
     # Required. User provided name of this TensorboardTimeSeries. This value should be unique among all TensorboardTimeSeries resources belonging to the same TensorboardRun resource (parent resource).
@@ -33,14 +31,10 @@ class V1beta1TimeSeryConfig:
     etag: Any = None
     # Describes metadata for a TensorboardTimeSeries.
     metadata: Any = None
-    # Output only. Name of the TensorboardTimeSeries.
-    name: Any = None
     # Data of the current plugin, with the size limited to 65KB.
     plugin_data: Any = None
     # Immutable. Name of the plugin this time series pertain to. Such as Scalar, Tensor, Blob
     plugin_name: Any = None
-    # Output only. Timestamp when this TensorboardTimeSeries was last updated.
-    update_time: Any = None
     # Required. Immutable. Type of TensorboardTimeSeries value.
     value_type: Any = None
 
@@ -70,7 +64,6 @@ class V1beta1TimeSeryAttrs:
 V1beta1TimeSery = ubx.ResourceBinding(
     wire_type="google_aiplatform_v1beta1_time_sery",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "etag": ubx.FieldSpec(wire_name="etag"),
@@ -79,10 +72,8 @@ V1beta1TimeSery = ubx.ResourceBinding(
             kind="object",
             fields=_V1beta1TimeSery_MetadataFields,
         ),
-        "name": ubx.FieldSpec(wire_name="name"),
         "plugin_data": ubx.FieldSpec(wire_name="plugin_data"),
         "plugin_name": ubx.FieldSpec(wire_name="plugin_name"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
         "value_type": ubx.FieldSpec(wire_name="value_type"),
     },
 )

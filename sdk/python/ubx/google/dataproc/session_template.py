@@ -177,10 +177,6 @@ _SessionTemplate_RuntimeConfigFields = {
 
 @dataclasses.dataclass
 class SessionTemplateConfig:
-    # Output only. The time when the template was created.
-    create_time: Any = None
-    # Output only. The email address of the user who created the template.
-    creator: Any = None
     # Optional. Brief description of the template.
     description: Any = None
     # Environment configuration for a workload.
@@ -195,10 +191,6 @@ class SessionTemplateConfig:
     runtime_config: Any = None
     # Spark connect configuration for an interactive session.
     spark_connect_session: Any = None
-    # Output only. The time the template was last updated.
-    update_time: Any = None
-    # Output only. A session template UUID (Unique Universal Identifier). The service generates this value when it creates the session template.
-    uuid: Any = None
 
 @dataclasses.dataclass
 class SessionTemplateAttrs:
@@ -228,8 +220,6 @@ class SessionTemplateAttrs:
 SessionTemplate = ubx.ResourceBinding(
     wire_type="google_dataproc_session_template",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
-        "creator": ubx.FieldSpec(wire_name="creator"),
         "description": ubx.FieldSpec(wire_name="description"),
         "environment_config": ubx.FieldSpec(
             wire_name="environment_config",
@@ -249,7 +239,5 @@ SessionTemplate = ubx.ResourceBinding(
             fields=_SessionTemplate_RuntimeConfigFields,
         ),
         "spark_connect_session": ubx.FieldSpec(wire_name="spark_connect_session"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
-        "uuid": ubx.FieldSpec(wire_name="uuid"),
     },
 )

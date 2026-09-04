@@ -5,46 +5,42 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V3beta1Version_NluSettings struct {
 	ClassificationThreshold any
-	ModelTrainingMode any
-	ModelType any
+	ModelTrainingMode       any
+	ModelType               any
 }
 
 var V3beta1Version_NluSettingsFields = ubx.FieldMap{
-		"ClassificationThreshold": ubx.FieldSpec{WireName: "classification_threshold"},
-		"ModelTrainingMode": ubx.FieldSpec{WireName: "model_training_mode"},
-		"ModelType": ubx.FieldSpec{WireName: "model_type"},
-	}
+	"ClassificationThreshold": ubx.FieldSpec{WireName: "classification_threshold"},
+	"ModelTrainingMode":       ubx.FieldSpec{WireName: "model_training_mode"},
+	"ModelType":               ubx.FieldSpec{WireName: "model_type"},
+}
 
 type V3beta1VersionConfig struct {
-	CreateTime any
 	Description any
 	DisplayName any
-	Name any
+	Name        any
 	NluSettings any
-	State any
 }
 
 type V3beta1VersionAttrs struct {
-	CreateTime any
+	CreateTime  any
 	Description any
 	DisplayName any
-	Name any
+	Name        any
 	NluSettings any
-	State any
+	State       any
 }
 
 var V3beta1Version = ubx.ResourceBinding{
 	WireType: "google_dialogflow_v3beta1_version",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"NluSettings": ubx.FieldSpec{
 			WireName: "nlu_settings",
-			Kind: "object",
-			Fields: V3beta1Version_NluSettingsFields,
+			Kind:     "object",
+			Fields:   V3beta1Version_NluSettingsFields,
 		},
-		"State": ubx.FieldSpec{WireName: "state"},
 	},
 }

@@ -150,7 +150,7 @@ class ImageImportJob_Warnings:
 
 @dataclasses.dataclass
 class ImageImportJobConfig:
-    name: Any = None
+    pass
 
 @dataclasses.dataclass
 class ImageImportJobAttrs:
@@ -179,6 +179,5 @@ class ImageImportJobAttrs:
 ImageImportJob = ubx.DataSourceBinding(
     wire_type="google_vmmigration_image_import_job",
     fields={
-        "name": ubx.FieldSpec(wire_name="name"),
     },
 )

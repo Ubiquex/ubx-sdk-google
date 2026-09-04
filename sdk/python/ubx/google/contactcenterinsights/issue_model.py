@@ -54,26 +54,18 @@ _IssueModel_TrainingStatsFields = {
 
 @dataclasses.dataclass
 class IssueModelConfig:
-    # Output only. The time at which this issue model was created.
-    create_time: Any = None
     # The representative name for the issue model.
     display_name: Any = None
     # Configs for the input data used to create the issue model.
     input_data_config: Any = None
-    # Output only. Number of issues in this issue model.
-    issue_count: Any = None
     # Language of the model.
     language_code: Any = None
     # Type of the model.
     model_type: Any = None
     # Immutable. The resource name of the issue model. Format: projects/{project}/locations/{location}/issueModels/{issue_model}
     name: Any = None
-    # Output only. State of the model.
-    state: Any = None
     # Aggregated statistics about an issue model.
     training_stats: Any = None
-    # Output only. The most recent time at which the issue model was updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class IssueModelAttrs:
@@ -101,23 +93,19 @@ class IssueModelAttrs:
 IssueModel = ubx.ResourceBinding(
     wire_type="google_contactcenterinsights_issue_model",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "input_data_config": ubx.FieldSpec(
             wire_name="input_data_config",
             kind="object",
             fields=_IssueModel_InputDataConfigFields,
         ),
-        "issue_count": ubx.FieldSpec(wire_name="issue_count"),
         "language_code": ubx.FieldSpec(wire_name="language_code"),
         "model_type": ubx.FieldSpec(wire_name="model_type"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "state": ubx.FieldSpec(wire_name="state"),
         "training_stats": ubx.FieldSpec(
             wire_name="training_stats",
             kind="object",
             fields=_IssueModel_TrainingStatsFields,
         ),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

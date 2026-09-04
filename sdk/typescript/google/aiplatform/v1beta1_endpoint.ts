@@ -324,371 +324,6 @@ const V1beta1Endpoint_ClientConnectionConfigFields: FieldMap = {
   inferenceTimeout: "inference_timeout",
 };
 
-const V1beta1Endpoint_DeployedModels_AutomaticResourcesFields: FieldMap = {
-  maxReplicaCount: "max_replica_count",
-  minReplicaCount: "min_replica_count",
-};
-
-const V1beta1Endpoint_DeployedModels_DedicatedResources_AutoscalingMetricSpecsFields: FieldMap = {
-  metricName: "metric_name",
-  monitoredResourceLabels: "monitored_resource_labels",
-  target: "target",
-};
-
-const V1beta1Endpoint_DeployedModels_DedicatedResources_FlexStartFields: FieldMap = {
-  maxRuntimeDuration: "max_runtime_duration",
-};
-
-const V1beta1Endpoint_DeployedModels_DedicatedResources_MachineSpec_ReservationAffinityFields: FieldMap = {
-  key: "key",
-  reservationAffinityType: "reservation_affinity_type",
-  values: "values",
-};
-
-const V1beta1Endpoint_DeployedModels_DedicatedResources_MachineSpecFields: FieldMap = {
-  acceleratorCount: "accelerator_count",
-  acceleratorType: "accelerator_type",
-  gpuPartitionSize: "gpu_partition_size",
-  machineType: "machine_type",
-  minGpuDriverVersion: "min_gpu_driver_version",
-  multihostGpuNodeCount: "multihost_gpu_node_count",
-  reservationAffinity: {
-    wireName: "reservation_affinity",
-    kind: "object",
-    fields: V1beta1Endpoint_DeployedModels_DedicatedResources_MachineSpec_ReservationAffinityFields,
-  },
-  tpuTopology: "tpu_topology",
-};
-
-const V1beta1Endpoint_DeployedModels_DedicatedResources_ScaleToZeroSpecFields: FieldMap = {
-  idleScaledownPeriod: "idle_scaledown_period",
-  minScaleupPeriod: "min_scaleup_period",
-};
-
-const V1beta1Endpoint_DeployedModels_DedicatedResourcesFields: FieldMap = {
-  autoscalingMetricSpecs: {
-    wireName: "autoscaling_metric_specs",
-    kind: "list",
-    fields: V1beta1Endpoint_DeployedModels_DedicatedResources_AutoscalingMetricSpecsFields,
-  },
-  flexStart: {
-    wireName: "flex_start",
-    kind: "object",
-    fields: V1beta1Endpoint_DeployedModels_DedicatedResources_FlexStartFields,
-  },
-  initialReplicaCount: "initial_replica_count",
-  machineSpec: {
-    wireName: "machine_spec",
-    kind: "object",
-    fields: V1beta1Endpoint_DeployedModels_DedicatedResources_MachineSpecFields,
-  },
-  maxReplicaCount: "max_replica_count",
-  minReplicaCount: "min_replica_count",
-  requiredReplicaCount: "required_replica_count",
-  scaleToZeroSpec: {
-    wireName: "scale_to_zero_spec",
-    kind: "object",
-    fields: V1beta1Endpoint_DeployedModels_DedicatedResources_ScaleToZeroSpecFields,
-  },
-  spot: "spot",
-};
-
-const V1beta1Endpoint_DeployedModels_ExplanationSpec_Metadata_Inputs_FeatureValueDomainFields: FieldMap = {
-  maxValue: "max_value",
-  minValue: "min_value",
-  originalMean: "original_mean",
-  originalStddev: "original_stddev",
-};
-
-const V1beta1Endpoint_DeployedModels_ExplanationSpec_Metadata_Inputs_VisualizationFields: FieldMap = {
-  clipPercentLowerbound: "clip_percent_lowerbound",
-  clipPercentUpperbound: "clip_percent_upperbound",
-  colorMap: "color_map",
-  overlayType: "overlay_type",
-  polarity: "polarity",
-  type: "type",
-};
-
-const V1beta1Endpoint_DeployedModels_ExplanationSpec_Metadata_InputsFields: FieldMap = {
-  denseShapeTensorName: "dense_shape_tensor_name",
-  encodedBaselines: "encoded_baselines",
-  encodedTensorName: "encoded_tensor_name",
-  encoding: "encoding",
-  featureValueDomain: {
-    wireName: "feature_value_domain",
-    kind: "object",
-    fields: V1beta1Endpoint_DeployedModels_ExplanationSpec_Metadata_Inputs_FeatureValueDomainFields,
-  },
-  groupName: "group_name",
-  indexFeatureMapping: "index_feature_mapping",
-  indicesTensorName: "indices_tensor_name",
-  inputBaselines: "input_baselines",
-  inputTensorName: "input_tensor_name",
-  modality: "modality",
-  visualization: {
-    wireName: "visualization",
-    kind: "object",
-    fields: V1beta1Endpoint_DeployedModels_ExplanationSpec_Metadata_Inputs_VisualizationFields,
-  },
-};
-
-const V1beta1Endpoint_DeployedModels_ExplanationSpec_Metadata_OutputsFields: FieldMap = {
-  displayNameMappingKey: "display_name_mapping_key",
-  indexDisplayNameMapping: "index_display_name_mapping",
-  outputTensorName: "output_tensor_name",
-};
-
-const V1beta1Endpoint_DeployedModels_ExplanationSpec_MetadataFields: FieldMap = {
-  featureAttributionsSchemaUri: "feature_attributions_schema_uri",
-  inputs: {
-    wireName: "inputs",
-    kind: "map",
-    fields: V1beta1Endpoint_DeployedModels_ExplanationSpec_Metadata_InputsFields,
-  },
-  latentSpaceSource: "latent_space_source",
-  outputs: {
-    wireName: "outputs",
-    kind: "map",
-    fields: V1beta1Endpoint_DeployedModels_ExplanationSpec_Metadata_OutputsFields,
-  },
-};
-
-const V1beta1Endpoint_DeployedModels_ExplanationSpec_Parameters_Examples_ExampleGcsSource_GcsSourceFields: FieldMap = {
-  uris: "uris",
-};
-
-const V1beta1Endpoint_DeployedModels_ExplanationSpec_Parameters_Examples_ExampleGcsSourceFields: FieldMap = {
-  dataFormat: "data_format",
-  gcsSource: {
-    wireName: "gcs_source",
-    kind: "object",
-    fields: V1beta1Endpoint_DeployedModels_ExplanationSpec_Parameters_Examples_ExampleGcsSource_GcsSourceFields,
-  },
-};
-
-const V1beta1Endpoint_DeployedModels_ExplanationSpec_Parameters_Examples_PresetsFields: FieldMap = {
-  modality: "modality",
-  query: "query",
-};
-
-const V1beta1Endpoint_DeployedModels_ExplanationSpec_Parameters_ExamplesFields: FieldMap = {
-  exampleGcsSource: {
-    wireName: "example_gcs_source",
-    kind: "object",
-    fields: V1beta1Endpoint_DeployedModels_ExplanationSpec_Parameters_Examples_ExampleGcsSourceFields,
-  },
-  gcsSource: {
-    wireName: "gcs_source",
-    kind: "object",
-    fields: V1beta1Endpoint_DeployedModels_ExplanationSpec_Parameters_Examples_ExampleGcsSource_GcsSourceFields,
-  },
-  nearestNeighborSearchConfig: "nearest_neighbor_search_config",
-  neighborCount: "neighbor_count",
-  presets: {
-    wireName: "presets",
-    kind: "object",
-    fields: V1beta1Endpoint_DeployedModels_ExplanationSpec_Parameters_Examples_PresetsFields,
-  },
-};
-
-const V1beta1Endpoint_DeployedModels_ExplanationSpec_Parameters_IntegratedGradientsAttribution_BlurBaselineConfigFields: FieldMap = {
-  maxBlurSigma: "max_blur_sigma",
-};
-
-const V1beta1Endpoint_DeployedModels_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfig_FeatureNoiseSigma_NoiseSigmaFields: FieldMap = {
-  name: "name",
-  sigma: "sigma",
-};
-
-const V1beta1Endpoint_DeployedModels_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfig_FeatureNoiseSigmaFields: FieldMap = {
-  noiseSigma: {
-    wireName: "noise_sigma",
-    kind: "list",
-    fields: V1beta1Endpoint_DeployedModels_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfig_FeatureNoiseSigma_NoiseSigmaFields,
-  },
-};
-
-const V1beta1Endpoint_DeployedModels_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfigFields: FieldMap = {
-  featureNoiseSigma: {
-    wireName: "feature_noise_sigma",
-    kind: "object",
-    fields: V1beta1Endpoint_DeployedModels_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfig_FeatureNoiseSigmaFields,
-  },
-  noiseSigma: "noise_sigma",
-  noisySampleCount: "noisy_sample_count",
-};
-
-const V1beta1Endpoint_DeployedModels_ExplanationSpec_Parameters_IntegratedGradientsAttributionFields: FieldMap = {
-  blurBaselineConfig: {
-    wireName: "blur_baseline_config",
-    kind: "object",
-    fields: V1beta1Endpoint_DeployedModels_ExplanationSpec_Parameters_IntegratedGradientsAttribution_BlurBaselineConfigFields,
-  },
-  smoothGradConfig: {
-    wireName: "smooth_grad_config",
-    kind: "object",
-    fields: V1beta1Endpoint_DeployedModels_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfigFields,
-  },
-  stepCount: "step_count",
-};
-
-const V1beta1Endpoint_DeployedModels_ExplanationSpec_Parameters_SampledShapleyAttributionFields: FieldMap = {
-  pathCount: "path_count",
-};
-
-const V1beta1Endpoint_DeployedModels_ExplanationSpec_ParametersFields: FieldMap = {
-  examples: {
-    wireName: "examples",
-    kind: "object",
-    fields: V1beta1Endpoint_DeployedModels_ExplanationSpec_Parameters_ExamplesFields,
-  },
-  integratedGradientsAttribution: {
-    wireName: "integrated_gradients_attribution",
-    kind: "object",
-    fields: V1beta1Endpoint_DeployedModels_ExplanationSpec_Parameters_IntegratedGradientsAttributionFields,
-  },
-  outputIndices: "output_indices",
-  sampledShapleyAttribution: {
-    wireName: "sampled_shapley_attribution",
-    kind: "object",
-    fields: V1beta1Endpoint_DeployedModels_ExplanationSpec_Parameters_SampledShapleyAttributionFields,
-  },
-  topK: "top_k",
-  xraiAttribution: {
-    wireName: "xrai_attribution",
-    kind: "object",
-    fields: V1beta1Endpoint_DeployedModels_ExplanationSpec_Parameters_IntegratedGradientsAttributionFields,
-  },
-};
-
-const V1beta1Endpoint_DeployedModels_ExplanationSpecFields: FieldMap = {
-  metadata: {
-    wireName: "metadata",
-    kind: "object",
-    fields: V1beta1Endpoint_DeployedModels_ExplanationSpec_MetadataFields,
-  },
-  parameters: {
-    wireName: "parameters",
-    kind: "object",
-    fields: V1beta1Endpoint_DeployedModels_ExplanationSpec_ParametersFields,
-  },
-};
-
-const V1beta1Endpoint_DeployedModels_FasterDeploymentConfigFields: FieldMap = {
-  fastTryoutEnabled: "fast_tryout_enabled",
-};
-
-const V1beta1Endpoint_DeployedModels_FullFineTunedResourcesFields: FieldMap = {
-  deploymentType: "deployment_type",
-  modelInferenceUnitCount: "model_inference_unit_count",
-};
-
-const V1beta1Endpoint_DeployedModels_PrivateEndpointsFields: FieldMap = {
-  explainHttpUri: "explain_http_uri",
-  healthHttpUri: "health_http_uri",
-  predictHttpUri: "predict_http_uri",
-  serviceAttachment: "service_attachment",
-};
-
-const V1beta1Endpoint_DeployedModels_RolloutOptionsFields: FieldMap = {
-  maxSurgePercentage: "max_surge_percentage",
-  maxSurgeReplicas: "max_surge_replicas",
-  maxUnavailablePercentage: "max_unavailable_percentage",
-  maxUnavailableReplicas: "max_unavailable_replicas",
-  previousDeployedModel: "previous_deployed_model",
-  revisionNumber: "revision_number",
-};
-
-const V1beta1Endpoint_DeployedModels_SpeculativeDecodingSpec_DraftModelSpeculationFields: FieldMap = {
-  draftModel: "draft_model",
-};
-
-const V1beta1Endpoint_DeployedModels_SpeculativeDecodingSpec_NgramSpeculationFields: FieldMap = {
-  ngramSize: "ngram_size",
-};
-
-const V1beta1Endpoint_DeployedModels_SpeculativeDecodingSpecFields: FieldMap = {
-  draftModelSpeculation: {
-    wireName: "draft_model_speculation",
-    kind: "object",
-    fields: V1beta1Endpoint_DeployedModels_SpeculativeDecodingSpec_DraftModelSpeculationFields,
-  },
-  ngramSpeculation: {
-    wireName: "ngram_speculation",
-    kind: "object",
-    fields: V1beta1Endpoint_DeployedModels_SpeculativeDecodingSpec_NgramSpeculationFields,
-  },
-  speculativeTokenCount: "speculative_token_count",
-};
-
-const V1beta1Endpoint_DeployedModels_StatusFields: FieldMap = {
-  availableReplicaCount: "available_replica_count",
-  lastUpdateTime: "last_update_time",
-  message: "message",
-};
-
-const V1beta1Endpoint_DeployedModelsFields: FieldMap = {
-  automaticResources: {
-    wireName: "automatic_resources",
-    kind: "object",
-    fields: V1beta1Endpoint_DeployedModels_AutomaticResourcesFields,
-  },
-  checkpointId: "checkpoint_id",
-  createTime: "create_time",
-  dedicatedResources: {
-    wireName: "dedicated_resources",
-    kind: "object",
-    fields: V1beta1Endpoint_DeployedModels_DedicatedResourcesFields,
-  },
-  disableContainerLogging: "disable_container_logging",
-  disableExplanations: "disable_explanations",
-  displayName: "display_name",
-  enableAccessLogging: "enable_access_logging",
-  enableContainerLogging: "enable_container_logging",
-  explanationSpec: {
-    wireName: "explanation_spec",
-    kind: "object",
-    fields: V1beta1Endpoint_DeployedModels_ExplanationSpecFields,
-  },
-  fasterDeploymentConfig: {
-    wireName: "faster_deployment_config",
-    kind: "object",
-    fields: V1beta1Endpoint_DeployedModels_FasterDeploymentConfigFields,
-  },
-  fullFineTunedResources: {
-    wireName: "full_fine_tuned_resources",
-    kind: "object",
-    fields: V1beta1Endpoint_DeployedModels_FullFineTunedResourcesFields,
-  },
-  gdcConnectedModel: "gdc_connected_model",
-  id: "id",
-  model: "model",
-  modelVersionId: "model_version_id",
-  privateEndpoints: {
-    wireName: "private_endpoints",
-    kind: "object",
-    fields: V1beta1Endpoint_DeployedModels_PrivateEndpointsFields,
-  },
-  rolloutOptions: {
-    wireName: "rollout_options",
-    kind: "object",
-    fields: V1beta1Endpoint_DeployedModels_RolloutOptionsFields,
-  },
-  serviceAccount: "service_account",
-  sharedResources: "shared_resources",
-  speculativeDecodingSpec: {
-    wireName: "speculative_decoding_spec",
-    kind: "object",
-    fields: V1beta1Endpoint_DeployedModels_SpeculativeDecodingSpecFields,
-  },
-  status: {
-    wireName: "status",
-    kind: "object",
-    fields: V1beta1Endpoint_DeployedModels_StatusFields,
-  },
-  systemLabels: "system_labels",
-};
-
 const V1beta1Endpoint_EncryptionSpecFields: FieldMap = {
   kmsKeyName: "kms_key_name",
 };
@@ -778,14 +413,8 @@ const V1beta1Endpoint_PublisherModelConfigFields: FieldMap = {
 export interface V1beta1EndpointConfig {
   /** Configurations (e.g. inference timeout) that are applied on your endpoints. */
   clientConnectionConfig?: V1beta1Endpoint_ClientConnectionConfig | Computed<V1beta1Endpoint_ClientConnectionConfig>;
-  /** Output only. Timestamp when this Endpoint was created. */
-  createTime?: string | Computed<string>;
-  /** Output only. DNS of the dedicated endpoint. Will only be populated if dedicated_endpoint_enabled is true. Depending on the features enabled, uid might be a random number or a string. For example, if fast_tryout is enabled, uid will be fasttryout. Format: `https://{endpoint_id}.{region}-{uid}.prediction.vertexai.goog`. */
-  dedicatedEndpointDns?: string | Computed<string>;
   /** If true, the endpoint will be exposed through a dedicated DNS [Endpoint.dedicated_endpoint_dns]. Your request to the dedicated DNS will be isolated from other users' traffic and will have better performance and reliability. Note: Once you enabled dedicated endpoint, you won't be able to send request to the shared DNS {region}-aiplatform.googleapis.com. The limitation will be removed soon. */
   dedicatedEndpointEnabled?: boolean | Computed<boolean>;
-  /** Output only. The models deployed in this Endpoint. To add or remove DeployedModels use EndpointService.DeployModel and EndpointService.UndeployModel respectively. */
-  deployedModels?: V1beta1Endpoint_DeployedModels[] | Computed<V1beta1Endpoint_DeployedModels[]>;
   /** The description of the Endpoint. */
   description?: string | Computed<string>;
   /** Required. The display name of the Endpoint. The name can be up to 128 characters long and can consist of any UTF-8 characters. */
@@ -802,8 +431,6 @@ export interface V1beta1EndpointConfig {
   genAiAdvancedFeaturesConfig?: V1beta1Endpoint_GenAiAdvancedFeaturesConfig | Computed<V1beta1Endpoint_GenAiAdvancedFeaturesConfig>;
   /** The labels with user-defined metadata to organize your Endpoints. Label keys and values can be no longer than 64 characters (Unicode codepoints), can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. See https://goo.gl/xmQnxf for more information and examples of labels. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. Resource name of the Model Monitoring job associated with this Endpoint if monitoring is enabled by JobService.CreateModelDeploymentMonitoringJob. Format: `projects/{project}/locations/{location}/modelDeploymentMonitoringJobs/{model_deployment_monitoring_job}` */
-  modelDeploymentMonitoringJob?: string | Computed<string>;
   /** Identifier. The resource name of the Endpoint. */
   name?: string | Computed<string>;
   /** Optional. The full name of the Google Compute Engine [network](https://cloud.google.com//compute/docs/networks-and-firewalls#networks) to which the Endpoint should be peered. Private services access must already be configured for the network. If left unspecified, the Endpoint is not peered with any network. Only one of the fields, network or enable_private_service_connect, can be set. [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert): `projects/{project}/global/networks/{network}`. Where `{project}` is a project number, as in `12345`, and `{network}` is network name. */
@@ -814,14 +441,8 @@ export interface V1beta1EndpointConfig {
   privateServiceConnectConfig?: V1beta1Endpoint_PrivateServiceConnectConfig | Computed<V1beta1Endpoint_PrivateServiceConnectConfig>;
   /** This message contains configs of a publisher model. */
   publisherModelConfig?: V1beta1Endpoint_PublisherModelConfig | Computed<V1beta1Endpoint_PublisherModelConfig>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzi?: boolean | Computed<boolean>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzs?: boolean | Computed<boolean>;
   /** A map from a DeployedModel's ID to the percentage of this Endpoint's traffic that should be forwarded to that DeployedModel. If a DeployedModel's ID is not listed in this map, then it receives no traffic. The traffic percentage values must add up to 100, or map must be empty if the Endpoint is to not accept any traffic at a moment. */
   trafficSplit?: Record<string, number> | Computed<Record<string, number>>;
-  /** Output only. Timestamp when this Endpoint was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1beta1EndpointAttrs {
@@ -881,14 +502,7 @@ export const V1beta1Endpoint: ResourceBinding<V1beta1EndpointConfig, V1beta1Endp
       kind: "object",
       fields: V1beta1Endpoint_ClientConnectionConfigFields,
     },
-    createTime: "create_time",
-    dedicatedEndpointDns: "dedicated_endpoint_dns",
     dedicatedEndpointEnabled: "dedicated_endpoint_enabled",
-    deployedModels: {
-      wireName: "deployed_models",
-      kind: "list",
-      fields: V1beta1Endpoint_DeployedModelsFields,
-    },
     description: "description",
     displayName: "display_name",
     enablePrivateServiceConnect: "enable_private_service_connect",
@@ -909,7 +523,6 @@ export const V1beta1Endpoint: ResourceBinding<V1beta1EndpointConfig, V1beta1Endp
       fields: V1beta1Endpoint_GenAiAdvancedFeaturesConfigFields,
     },
     labels: "labels",
-    modelDeploymentMonitoringJob: "model_deployment_monitoring_job",
     name: "name",
     network: "network",
     predictRequestResponseLoggingConfig: {
@@ -927,9 +540,6 @@ export const V1beta1Endpoint: ResourceBinding<V1beta1EndpointConfig, V1beta1Endp
       kind: "object",
       fields: V1beta1Endpoint_PublisherModelConfigFields,
     },
-    satisfiesPzi: "satisfies_pzi",
-    satisfiesPzs: "satisfies_pzs",
     trafficSplit: "traffic_split",
-    updateTime: "update_time",
   },
 };

@@ -628,8 +628,6 @@ _ConnectionProfile_WorkdayProfileFields = {
 class ConnectionProfileConfig:
     # Profile for connecting to a BigQuery destination.
     bigquery_profile: Any = None
-    # Output only. The create time of the resource.
-    create_time: Any = None
     # Profile for connecting to a Dataverse source.
     dataverse_profile: Any = None
     # Required. Display name.
@@ -644,8 +642,6 @@ class ConnectionProfileConfig:
     mongodb_profile: Any = None
     # Profile for connecting to a MySQL source.
     mysql_profile: Any = None
-    # Output only. Identifier. The resource's name.
-    name: Any = None
     # Profile for connecting to an Oracle source.
     oracle_profile: Any = None
     # Profile for connecting to a PostgreSQL source.
@@ -656,10 +652,6 @@ class ConnectionProfileConfig:
     salesforce_marketing_cloud_profile: Any = None
     # Profile for connecting to a Salesforce source.
     salesforce_profile: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzi: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzs: Any = None
     # Profile for connecting to a ServiceNow source.
     service_now_profile: Any = None
     # Profile for connecting to a Spanner source.
@@ -668,8 +660,6 @@ class ConnectionProfileConfig:
     sql_server_profile: Any = None
     # Static IP address connectivity. Used when the source database is configured to allow incoming connections from the Datastream public IP addresses for the region specified in the connection profile.
     static_service_ip_connectivity: Any = None
-    # Output only. The update time of the resource.
-    update_time: Any = None
     # Profile for connecting to a Workday source.
     workday_profile: Any = None
 
@@ -726,7 +716,6 @@ ConnectionProfile = ubx.ResourceBinding(
     wire_type="google_datastream_connection_profile",
     fields={
         "bigquery_profile": ubx.FieldSpec(wire_name="bigquery_profile"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "dataverse_profile": ubx.FieldSpec(
             wire_name="dataverse_profile",
             kind="object",
@@ -754,7 +743,6 @@ ConnectionProfile = ubx.ResourceBinding(
             kind="object",
             fields=_ConnectionProfile_MysqlProfileFields,
         ),
-        "name": ubx.FieldSpec(wire_name="name"),
         "oracle_profile": ubx.FieldSpec(
             wire_name="oracle_profile",
             kind="object",
@@ -780,8 +768,6 @@ ConnectionProfile = ubx.ResourceBinding(
             kind="object",
             fields=_ConnectionProfile_SalesforceProfileFields,
         ),
-        "satisfies_pzi": ubx.FieldSpec(wire_name="satisfies_pzi"),
-        "satisfies_pzs": ubx.FieldSpec(wire_name="satisfies_pzs"),
         "service_now_profile": ubx.FieldSpec(
             wire_name="service_now_profile",
             kind="object",
@@ -798,7 +784,6 @@ ConnectionProfile = ubx.ResourceBinding(
             fields=_ConnectionProfile_SqlServerProfileFields,
         ),
         "static_service_ip_connectivity": ubx.FieldSpec(wire_name="static_service_ip_connectivity"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
         "workday_profile": ubx.FieldSpec(
             wire_name="workday_profile",
             kind="object",

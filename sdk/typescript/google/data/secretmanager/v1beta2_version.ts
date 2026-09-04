@@ -29,7 +29,6 @@ export interface V1beta2Version_ReplicationStatus {
 }
 
 export interface V1beta2VersionConfig {
-  name: string | Computed<string>;
 }
 
 export interface V1beta2VersionAttrs {
@@ -55,6 +54,5 @@ export interface V1beta2VersionAttrs {
 export const V1beta2Version: DataSourceBinding<V1beta2VersionConfig, V1beta2VersionAttrs> = {
   wireType: "google_secretmanager_v1beta2_version",
   fields: {
-    name: "name",
   },
 };

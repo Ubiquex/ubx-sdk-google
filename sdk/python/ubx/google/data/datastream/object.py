@@ -111,7 +111,7 @@ class Object_SourceObject:
 
 @dataclasses.dataclass
 class ObjectConfig:
-    name: Any = None
+    pass
 
 @dataclasses.dataclass
 class ObjectAttrs:
@@ -134,6 +134,5 @@ class ObjectAttrs:
 Object = ubx.DataSourceBinding(
     wire_type="google_datastream_object",
     fields={
-        "name": ubx.FieldSpec(wire_name="name"),
     },
 )

@@ -20,19 +20,17 @@ type V1beta1SacRealm_SymantecOptions struct {
 }
 
 var V1beta1SacRealm_PairingKeyFields = ubx.FieldMap{
-		"ExpireTime": ubx.FieldSpec{WireName: "expire_time"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-	}
+	"ExpireTime": ubx.FieldSpec{WireName: "expire_time"},
+	"Key":        ubx.FieldSpec{WireName: "key"},
+}
 
 var V1beta1SacRealm_SymantecOptionsFields = ubx.FieldMap{
-		"AvailableSymantecSites": ubx.FieldSpec{WireName: "available_symantec_sites"},
-		"SecretPath": ubx.FieldSpec{WireName: "secret_path"},
-		"SymantecConnectionState": ubx.FieldSpec{WireName: "symantec_connection_state"},
-	}
+	"AvailableSymantecSites":  ubx.FieldSpec{WireName: "available_symantec_sites"},
+	"SecretPath":              ubx.FieldSpec{WireName: "secret_path"},
+	"SymantecConnectionState": ubx.FieldSpec{WireName: "symantec_connection_state"},
+}
 
 type V1beta1SacRealmConfig struct {
-	// Output only. Timestamp when the realm was created.
-	CreateTime any
 	// Optional. Optional list of labels applied to the resource.
 	Labels any
 	// Identifier. Resource name, in the form `projects/{project}/locations/global/sacRealms/{sacRealm}`.
@@ -41,12 +39,8 @@ type V1beta1SacRealmConfig struct {
 	PairingKey any
 	// Immutable. SSE service provider associated with the realm.
 	SecurityService any
-	// Output only. State of the realm.
-	State any
 	// Fields specific to realms using Symantec Cloud SWG.
 	SymantecOptions any
-	// Output only. Timestamp when the realm was last updated.
-	UpdateTime any
 }
 
 type V1beta1SacRealmAttrs struct {
@@ -71,21 +65,18 @@ type V1beta1SacRealmAttrs struct {
 var V1beta1SacRealm = ubx.ResourceBinding{
 	WireType: "google_networksecurity_v1beta1_sac_realm",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":   ubx.FieldSpec{WireName: "name"},
 		"PairingKey": ubx.FieldSpec{
 			WireName: "pairing_key",
-			Kind: "object",
-			Fields: V1beta1SacRealm_PairingKeyFields,
+			Kind:     "object",
+			Fields:   V1beta1SacRealm_PairingKeyFields,
 		},
 		"SecurityService": ubx.FieldSpec{WireName: "security_service"},
-		"State": ubx.FieldSpec{WireName: "state"},
 		"SymantecOptions": ubx.FieldSpec{
 			WireName: "symantec_options",
-			Kind: "object",
-			Fields: V1beta1SacRealm_SymantecOptionsFields,
+			Kind:     "object",
+			Fields:   V1beta1SacRealm_SymantecOptionsFields,
 		},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

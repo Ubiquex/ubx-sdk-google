@@ -5,10 +5,10 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SecurityReport_Metrics struct {
 	AggregationFunction any
-	Alias any
-	Name any
-	Operator any
-	Value any
+	Alias               any
+	Name                any
+	Operator            any
+	Value               any
 }
 
 type SecurityReport_QueryParams struct {
@@ -34,12 +34,12 @@ type SecurityReport_Result struct {
 }
 
 var SecurityReport_MetricsFields = ubx.FieldMap{
-		"AggregationFunction": ubx.FieldSpec{WireName: "aggregation_function"},
-		"Alias": ubx.FieldSpec{WireName: "alias"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"AggregationFunction": ubx.FieldSpec{WireName: "aggregation_function"},
+	"Alias":               ubx.FieldSpec{WireName: "alias"},
+	"Name":                ubx.FieldSpec{WireName: "name"},
+	"Operator":            ubx.FieldSpec{WireName: "operator"},
+	"Value":               ubx.FieldSpec{WireName: "value"},
+}
 
 type SecurityReportConfig struct {
 	// Delimiter used in the CSV file, if `outputFormat` is set to `csv`. Defaults to the `,` (comma) character. Supported delimiter characters include comma (`,`), pipe (`|`), and tab (`\t`).
@@ -114,20 +114,20 @@ type SecurityReportAttrs struct {
 var SecurityReport = ubx.ResourceBinding{
 	WireType: "google_apigee_security_report",
 	Fields: ubx.FieldMap{
-		"CsvDelimiter": ubx.FieldSpec{WireName: "csv_delimiter"},
-		"Dimensions": ubx.FieldSpec{WireName: "dimensions"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"CsvDelimiter":     ubx.FieldSpec{WireName: "csv_delimiter"},
+		"Dimensions":       ubx.FieldSpec{WireName: "dimensions"},
+		"DisplayName":      ubx.FieldSpec{WireName: "display_name"},
 		"EnvgroupHostname": ubx.FieldSpec{WireName: "envgroup_hostname"},
-		"Filter": ubx.FieldSpec{WireName: "filter"},
-		"GroupByTimeUnit": ubx.FieldSpec{WireName: "group_by_time_unit"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"Filter":           ubx.FieldSpec{WireName: "filter"},
+		"GroupByTimeUnit":  ubx.FieldSpec{WireName: "group_by_time_unit"},
+		"Limit":            ubx.FieldSpec{WireName: "limit"},
 		"Metrics": ubx.FieldSpec{
 			WireName: "metrics",
-			Kind: "list",
-			Fields: SecurityReport_MetricsFields,
+			Kind:     "list",
+			Fields:   SecurityReport_MetricsFields,
 		},
-		"MimeType": ubx.FieldSpec{WireName: "mime_type"},
+		"MimeType":           ubx.FieldSpec{WireName: "mime_type"},
 		"ReportDefinitionId": ubx.FieldSpec{WireName: "report_definition_id"},
-		"TimeRange": ubx.FieldSpec{WireName: "time_range"},
+		"TimeRange":          ubx.FieldSpec{WireName: "time_range"},
 	},
 }

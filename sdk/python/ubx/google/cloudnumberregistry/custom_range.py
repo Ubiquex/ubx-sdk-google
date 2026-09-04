@@ -34,8 +34,6 @@ class CustomRangeConfig:
     parent_range: Any = None
     # Optional. The resource name of the Realm associated with the CustomRange, in the format `projects/{project}/locations/{location}/realms/{realm}`. The Realm must be in the same project as the CustomRange. This field must not be set if the `parent_range` field is set, as the Realm will be inherited from the parent CustomRange.
     realm: Any = None
-    # Output only. The RegistryBook of the CustomRange. This field is inherited from the Realm or parent CustomRange depending on which one is specified.
-    registry_book: Any = None
 
 @dataclasses.dataclass
 class CustomRangeAttrs:
@@ -73,6 +71,5 @@ CustomRange = ubx.ResourceBinding(
         "name": ubx.FieldSpec(wire_name="name"),
         "parent_range": ubx.FieldSpec(wire_name="parent_range"),
         "realm": ubx.FieldSpec(wire_name="realm"),
-        "registry_book": ubx.FieldSpec(wire_name="registry_book"),
     },
 )

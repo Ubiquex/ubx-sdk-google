@@ -11,35 +11,16 @@ class Processor_ProcessorVersionAliases:
     alias: Any = None
     processor_version: Any = None
 
-_Processor_ProcessorVersionAliasesFields = {
-    "alias": ubx.FieldSpec(wire_name="alias"),
-    "processor_version": ubx.FieldSpec(wire_name="processor_version"),
-}
-
 @dataclasses.dataclass
 class ProcessorConfig:
     # Optional. SchemaVersion used by the Processor. It is the same as Processor's DatasetSchema.schema_version Format is `projects/{project}/locations/{location}/schemas/{schema}/schemaVersions/{schema_version}.
     active_schema_version: Any = None
-    # Output only. The time the processor was created.
-    create_time: Any = None
     # The default processor version.
     default_processor_version: Any = None
     # The display name of the processor.
     display_name: Any = None
     # The [KMS key](https://cloud.google.com/security-key-management) used for encryption and decryption in CMEK scenarios.
     kms_key_name: Any = None
-    # Output only. Immutable. The resource name of the processor. Format: `projects/{project}/locations/{location}/processors/{processor}`
-    name: Any = None
-    # Output only. Immutable. The http endpoint that can be called to invoke processing.
-    process_endpoint: Any = None
-    # Output only. The processor version aliases.
-    processor_version_aliases: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzi: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzs: Any = None
-    # Output only. The state of the processor.
-    state: Any = None
     # The processor type, such as: `OCR_PROCESSOR`, `INVOICE_PROCESSOR`. To get a list of processor types, see FetchProcessorTypes.
     type: Any = None
 
@@ -74,20 +55,9 @@ Processor = ubx.ResourceBinding(
     wire_type="google_documentai_processor",
     fields={
         "active_schema_version": ubx.FieldSpec(wire_name="active_schema_version"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "default_processor_version": ubx.FieldSpec(wire_name="default_processor_version"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "kms_key_name": ubx.FieldSpec(wire_name="kms_key_name"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "process_endpoint": ubx.FieldSpec(wire_name="process_endpoint"),
-        "processor_version_aliases": ubx.FieldSpec(
-            wire_name="processor_version_aliases",
-            kind="list",
-            fields=_Processor_ProcessorVersionAliasesFields,
-        ),
-        "satisfies_pzi": ubx.FieldSpec(wire_name="satisfies_pzi"),
-        "satisfies_pzs": ubx.FieldSpec(wire_name="satisfies_pzs"),
-        "state": ubx.FieldSpec(wire_name="state"),
         "type": ubx.FieldSpec(wire_name="type"),
     },
 )

@@ -53,17 +53,11 @@ const BetaPacketMirroring_MirroredResourcesFields: FieldMap = {
 
 export interface BetaPacketMirroringConfig {
   collectorIlb?: BetaPacketMirroring_CollectorIlb | Computed<BetaPacketMirroring_CollectorIlb>;
-  /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
-  creationTimestamp?: string | Computed<string>;
   /** An optional description of this resource. Provide this property when you create the resource. */
   description?: string | Computed<string>;
   /** Indicates whether or not this packet mirroring takes effect. If set to FALSE, this packet mirroring policy will not be enforced on the network. The default is TRUE. */
   enable?: string | Computed<string>;
   filter?: BetaPacketMirroring_Filter | Computed<BetaPacketMirroring_Filter>;
-  /** Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server. */
-  id?: string | Computed<string>;
-  /** Output only. [Output Only] Type of the resource. Alwayscompute#packetMirroring for packet mirrorings. */
-  kind?: string | Computed<string>;
   mirroredResources?: BetaPacketMirroring_MirroredResources | Computed<BetaPacketMirroring_MirroredResources>;
   /** Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
   name?: string | Computed<string>;
@@ -72,8 +66,6 @@ export interface BetaPacketMirroringConfig {
   priority?: number | Computed<number>;
   /** [Output Only] URI of the region where the packetMirroring resides. */
   region?: string | Computed<string>;
-  /** Output only. [Output Only] Server-defined URL for the resource. */
-  selfLink?: string | Computed<string>;
 }
 
 export interface BetaPacketMirroringAttrs {
@@ -109,7 +101,6 @@ export const BetaPacketMirroring: ResourceBinding<BetaPacketMirroringConfig, Bet
       kind: "object",
       fields: BetaPacketMirroring_CollectorIlbFields,
     },
-    creationTimestamp: "creation_timestamp",
     description: "description",
     enable: "enable",
     filter: {
@@ -117,8 +108,6 @@ export const BetaPacketMirroring: ResourceBinding<BetaPacketMirroringConfig, Bet
       kind: "object",
       fields: BetaPacketMirroring_FilterFields,
     },
-    id: "id",
-    kind: "kind",
     mirroredResources: {
       wireName: "mirrored_resources",
       kind: "object",
@@ -132,6 +121,5 @@ export const BetaPacketMirroring: ResourceBinding<BetaPacketMirroringConfig, Bet
     },
     priority: "priority",
     region: "region",
-    selfLink: "self_link",
   },
 };

@@ -74,55 +74,14 @@ _ServiceConnectionPolicy_PscConfigFields = {
     "subnetworks": ubx.FieldSpec(wire_name="subnetworks"),
 }
 
-_ServiceConnectionPolicy_PscConnections_ErrorFields = {
-    "code": ubx.FieldSpec(wire_name="code"),
-    "details": ubx.FieldSpec(wire_name="details"),
-    "message": ubx.FieldSpec(wire_name="message"),
-}
-
-_ServiceConnectionPolicy_PscConnections_ErrorInfoFields = {
-    "domain": ubx.FieldSpec(wire_name="domain"),
-    "metadata": ubx.FieldSpec(wire_name="metadata"),
-    "reason": ubx.FieldSpec(wire_name="reason"),
-}
-
-_ServiceConnectionPolicy_PscConnectionsFields = {
-    "consumer_address": ubx.FieldSpec(wire_name="consumer_address"),
-    "consumer_forwarding_rule": ubx.FieldSpec(wire_name="consumer_forwarding_rule"),
-    "consumer_target_project": ubx.FieldSpec(wire_name="consumer_target_project"),
-    "error": ubx.FieldSpec(
-        wire_name="error",
-        kind="object",
-        fields=_ServiceConnectionPolicy_PscConnections_ErrorFields,
-    ),
-    "error_info": ubx.FieldSpec(
-        wire_name="error_info",
-        kind="object",
-        fields=_ServiceConnectionPolicy_PscConnections_ErrorInfoFields,
-    ),
-    "error_type": ubx.FieldSpec(wire_name="error_type"),
-    "gce_operation": ubx.FieldSpec(wire_name="gce_operation"),
-    "ip_version": ubx.FieldSpec(wire_name="ip_version"),
-    "producer_instance_id": ubx.FieldSpec(wire_name="producer_instance_id"),
-    "producer_instance_metadata": ubx.FieldSpec(wire_name="producer_instance_metadata"),
-    "psc_connection_id": ubx.FieldSpec(wire_name="psc_connection_id"),
-    "selected_subnetwork": ubx.FieldSpec(wire_name="selected_subnetwork"),
-    "service_class": ubx.FieldSpec(wire_name="service_class"),
-    "state": ubx.FieldSpec(wire_name="state"),
-}
-
 @dataclasses.dataclass
 class ServiceConnectionPolicyConfig:
     # Information for the automatically created subnetwork and its associated IR.
     auto_created_subnet_info: Any = None
-    # Output only. Time when the ServiceConnectionPolicy was created.
-    create_time: Any = None
     # A description of this resource.
     description: Any = None
     # Optional. The etag is computed by the server, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding.
     etag: Any = None
-    # Output only. The type of underlying resources used to create the connection.
-    infrastructure: Any = None
     # User-defined labels.
     labels: Any = None
     # Immutable. The name of a ServiceConnectionPolicy. Format: projects/{project}/locations/{location}/serviceConnectionPolicies/{service_connection_policy} See: https://google.aip.dev/122#fields-representing-resource-names
@@ -131,12 +90,8 @@ class ServiceConnectionPolicyConfig:
     network: Any = None
     # Configuration used for Private Service Connect connections. Used when Infrastructure is PSC.
     psc_config: Any = None
-    # Output only. [Output only] Information about each Private Service Connect connection.
-    psc_connections: Any = None
     # The service class identifier for which this ServiceConnectionPolicy is for. The service class identifier is a unique, symbolic representation of a ServiceClass. It is provided by the Service Producer. Google services have a prefix of gcp or google-cloud. For example, gcp-memorystore-redis or google-cloud-sql. 3rd party services do not. For example, test-service-a3dfcx.
     service_class: Any = None
-    # Output only. Time when the ServiceConnectionPolicy was updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class ServiceConnectionPolicyAttrs:
@@ -173,10 +128,8 @@ ServiceConnectionPolicy = ubx.ResourceBinding(
             kind="object",
             fields=_ServiceConnectionPolicy_AutoCreatedSubnetInfoFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "etag": ubx.FieldSpec(wire_name="etag"),
-        "infrastructure": ubx.FieldSpec(wire_name="infrastructure"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "name": ubx.FieldSpec(wire_name="name"),
         "network": ubx.FieldSpec(wire_name="network"),
@@ -185,12 +138,6 @@ ServiceConnectionPolicy = ubx.ResourceBinding(
             kind="object",
             fields=_ServiceConnectionPolicy_PscConfigFields,
         ),
-        "psc_connections": ubx.FieldSpec(
-            wire_name="psc_connections",
-            kind="list",
-            fields=_ServiceConnectionPolicy_PscConnectionsFields,
-        ),
         "service_class": ubx.FieldSpec(wire_name="service_class"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

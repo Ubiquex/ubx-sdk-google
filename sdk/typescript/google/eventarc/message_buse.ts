@@ -13,24 +13,16 @@ const MessageBuse_LoggingConfigFields: FieldMap = {
 export interface MessageBuseConfig {
   /** Optional. Resource annotations. */
   annotations?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. The creation time. */
-  createTime?: string | Computed<string>;
   /** Optional. Resource name of a KMS crypto key (managed by the user) used to encrypt/decrypt their event data. It must match the pattern `projects/* /locations/* /keyRings/* /cryptoKeys/*`. */
   cryptoKeyName?: string | Computed<string>;
   /** Optional. Resource display name. */
   displayName?: string | Computed<string>;
-  /** Output only. This checksum is computed by the server based on the value of other fields, and might be sent only on update and delete requests to ensure that the client has an up-to-date value before proceeding. */
-  etag?: string | Computed<string>;
   /** Optional. Resource labels. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** The configuration for Platform Telemetry logging for Eventarc Advanced resources. */
   loggingConfig?: MessageBuse_LoggingConfig | Computed<MessageBuse_LoggingConfig>;
   /** Identifier. Resource name of the form projects/{project}/locations/{location}/messageBuses/{message_bus} */
   name?: string | Computed<string>;
-  /** Output only. Server assigned unique identifier for the channel. The value is a UUID4 string and guaranteed to remain unchanged until the resource is deleted. */
-  uid?: string | Computed<string>;
-  /** Output only. The last-modified time. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface MessageBuseAttrs {
@@ -60,10 +52,8 @@ export const MessageBuse: ResourceBinding<MessageBuseConfig, MessageBuseAttrs> =
   wireType: "google_eventarc_message_buse",
   fields: {
     annotations: "annotations",
-    createTime: "create_time",
     cryptoKeyName: "crypto_key_name",
     displayName: "display_name",
-    etag: "etag",
     labels: "labels",
     loggingConfig: {
       wireName: "logging_config",
@@ -71,7 +61,5 @@ export const MessageBuse: ResourceBinding<MessageBuseConfig, MessageBuseAttrs> =
       fields: MessageBuse_LoggingConfigFields,
     },
     name: "name",
-    uid: "uid",
-    updateTime: "update_time",
   },
 };

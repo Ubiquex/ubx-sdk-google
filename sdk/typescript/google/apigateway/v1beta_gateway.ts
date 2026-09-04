@@ -4,20 +4,10 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 export interface V1betaGatewayConfig {
   /** Required. Resource name of the API Config for this Gateway. Format: projects/{project}/locations/global/apis/{api}/configs/{apiConfig} */
   apiConfig?: string | Computed<string>;
-  /** Output only. Created time. */
-  createTime?: string | Computed<string>;
-  /** Output only. The default API Gateway host name of the form `{gateway_id}-{hash}.{region_code}.gateway.dev`. */
-  defaultHostname?: string | Computed<string>;
   /** Optional. Display name. */
   displayName?: string | Computed<string>;
   /** Optional. Resource labels to represent user-provided metadata. Refer to cloud documentation on labels for more details. https://cloud.google.com/compute/docs/labeling-resources */
   labels?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. Resource name of the Gateway. Format: projects/{project}/locations/{location}/gateways/{gateway} */
-  name?: string | Computed<string>;
-  /** Output only. The current state of the Gateway. */
-  state?: string | Computed<string>;
-  /** Output only. Updated time. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1betaGatewayAttrs {
@@ -43,12 +33,7 @@ export const V1betaGateway: ResourceBinding<V1betaGatewayConfig, V1betaGatewayAt
   wireType: "google_apigateway_v1beta_gateway",
   fields: {
     apiConfig: "api_config",
-    createTime: "create_time",
-    defaultHostname: "default_hostname",
     displayName: "display_name",
     labels: "labels",
-    name: "name",
-    state: "state",
-    updateTime: "update_time",
   },
 };

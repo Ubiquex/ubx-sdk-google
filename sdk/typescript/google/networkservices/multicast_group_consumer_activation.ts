@@ -20,8 +20,6 @@ const MulticastGroupConsumerActivation_StateFields: FieldMap = {
 };
 
 export interface MulticastGroupConsumerActivationConfig {
-  /** Output only. [Output only] The timestamp when the multicast group consumer activation was created. */
-  createTime?: string | Computed<string>;
   /** Optional. An optional text description of the multicast group consumer activation. */
   description?: string | Computed<string>;
   /** Optional. Labels as key-value pairs */
@@ -36,14 +34,8 @@ export interface MulticastGroupConsumerActivationConfig {
   multicastGroupRangeActivation?: string | Computed<string>;
   /** Identifier. The resource name of the multicast group consumer activation. Use the following format: `projects/* /locations/* /multicastGroupConsumerActivations/*`. */
   name?: string | Computed<string>;
-  /** Output only. [Deprecated] The resource state of the multicast group consumer activation. Use the state field instead. */
-  resourceState?: string | Computed<string>;
   /** The multicast resource's state. */
   state?: MulticastGroupConsumerActivation_State | Computed<MulticastGroupConsumerActivation_State>;
-  /** Output only. [Output only] The Google-generated UUID for the resource. This value is unique across all multicast group consumer activation resources. If a group consumer activation is deleted and another with the same name is created, the new group consumer activation is assigned a different unique_id. */
-  uniqueId?: string | Computed<string>;
-  /** Output only. [Output only] The timestamp when the multicast group consumer activation was most recently updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface MulticastGroupConsumerActivationAttrs {
@@ -76,7 +68,6 @@ export interface MulticastGroupConsumerActivationAttrs {
 export const MulticastGroupConsumerActivation: ResourceBinding<MulticastGroupConsumerActivationConfig, MulticastGroupConsumerActivationAttrs> = {
   wireType: "google_networkservices_multicast_group_consumer_activation",
   fields: {
-    createTime: "create_time",
     description: "description",
     labels: "labels",
     logConfig: {
@@ -88,13 +79,10 @@ export const MulticastGroupConsumerActivation: ResourceBinding<MulticastGroupCon
     multicastGroup: "multicast_group",
     multicastGroupRangeActivation: "multicast_group_range_activation",
     name: "name",
-    resourceState: "resource_state",
     state: {
       wireName: "state",
       kind: "object",
       fields: MulticastGroupConsumerActivation_StateFields,
     },
-    uniqueId: "unique_id",
-    updateTime: "update_time",
   },
 };

@@ -19,16 +19,12 @@ const V1betaLicenseConfig_EarlyTerminationDateFields: FieldMap = {
 export interface V1betaLicenseConfigConfig {
   /** Optional. Whether the license config should be auto renewed when it reaches the end date. */
   autoRenew?: boolean | Computed<boolean>;
-  /** Output only. Indication of whether the subscription is terminated earlier than the expiration date. This is usually terminated by pipeline once the subscription gets terminated from subsv3. */
-  earlyTerminated?: boolean | Computed<boolean>;
   /** Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp */
   earlyTerminationDate?: V1betaLicenseConfig_EarlyTerminationDate | Computed<V1betaLicenseConfig_EarlyTerminationDate>;
   /** Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp */
   endDate?: V1betaLicenseConfig_EarlyTerminationDate | Computed<V1betaLicenseConfig_EarlyTerminationDate>;
   /** Optional. Whether the license config is for free trial. */
   freeTrial?: boolean | Computed<boolean>;
-  /** Output only. Whether the license config is for Gemini bundle. */
-  geminiBundle?: boolean | Computed<boolean>;
   /** Optional. Timestamp of the most recent user-initiated update (seat count change or subscription term change). Unlike `update_time`, this field is only stamped when a customer explicitly updates the license (e.g. via the UI), and is not touched by system-driven writes (subscription pipeline, BALC propagation, etc.). */
   lastUserUpdateTime?: string | Computed<string>;
   /** Required. Number of licenses purchased. */
@@ -37,8 +33,6 @@ export interface V1betaLicenseConfigConfig {
   name?: string | Computed<string>;
   /** Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp */
   startDate?: V1betaLicenseConfig_EarlyTerminationDate | Computed<V1betaLicenseConfig_EarlyTerminationDate>;
-  /** Output only. The state of the license config. */
-  state?: string | Computed<string>;
   /** Required. Subscription term. */
   subscriptionTerm?: string | Computed<string>;
   /** Required. Subscription tier information for the license config. */
@@ -78,7 +72,6 @@ export const V1betaLicenseConfig: ResourceBinding<V1betaLicenseConfigConfig, V1b
   wireType: "google_discoveryengine_v1beta_license_config",
   fields: {
     autoRenew: "auto_renew",
-    earlyTerminated: "early_terminated",
     earlyTerminationDate: {
       wireName: "early_termination_date",
       kind: "object",
@@ -90,7 +83,6 @@ export const V1betaLicenseConfig: ResourceBinding<V1betaLicenseConfigConfig, V1b
       fields: V1betaLicenseConfig_EarlyTerminationDateFields,
     },
     freeTrial: "free_trial",
-    geminiBundle: "gemini_bundle",
     lastUserUpdateTime: "last_user_update_time",
     licenseCount: "license_count",
     name: "name",
@@ -99,7 +91,6 @@ export const V1betaLicenseConfig: ResourceBinding<V1betaLicenseConfigConfig, V1b
       kind: "object",
       fields: V1betaLicenseConfig_EarlyTerminationDateFields,
     },
-    state: "state",
     subscriptionTerm: "subscription_term",
     subscriptionTier: "subscription_tier",
   },

@@ -26,10 +26,6 @@ class BetaGlobalForwardingRule_ServiceDirectoryRegistrations:
     service: Any = None
     service_directory_region: Any = None
 
-_BetaGlobalForwardingRule_AttachedExtensionsFields = {
-    "reference": ubx.FieldSpec(wire_name="reference"),
-}
-
 _BetaGlobalForwardingRule_MetadataFilters_FilterLabelsFields = {
     "name": ubx.FieldSpec(wire_name="name"),
     "value": ubx.FieldSpec(wire_name="value"),
@@ -58,18 +54,8 @@ class BetaGlobalForwardingRuleConfig:
     allow_global_access: Any = None
     # This is used in PSC consumer ForwardingRule to control whether the PSC endpoint can be accessed from another region.
     allow_psc_global_access: Any = None
-    # Output only. [Output Only]. The extensions that are attached to this ForwardingRule.
-    attached_extensions: Any = None
-    # Output only. [Output Only] Specifies the load balancing availability group, one of the two that collectively provide high availability. Specifies the availability group of the forwarding rule. This field is for use by global external passthrough load balancers (load balancing scheme EXTERNAL_PASSTHROUGH) and is set for the child forwarding rules only. The possible values are: - AVAILABILITY_GROUP0: Set for the child forwarding rule that is programmed on the AVAILABILITY_GROUP0 load balancing stack. The child forwarding rule has the same IP protocol, port, and backend service settings as the parent forwarding rule, but has only one of the two IP addresses of the parent forwarding rule, the one with the purpose PASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP0. - AVAILABILITY_GROUP1: Set for the child forwarding rule that is programmed on the AVAILABILITY_GROUP1 load balancing stack. The child forwarding rule has the same IP protocol, port and backend service settings as the parent forwarding rule, but has only one of the two IP addresses of the parent forwarding rule, the one with the purposePASSTHROUGH_LOAD_BALANCER_AVAILABILITY_GROUP1. For each global external Passthrough Network Load Balancer forwarding rule (a parent forwarding rule) that you create, Google Cloud generates two output-only child forwarding rules, one forAVAILABILITY_GROUP0 and one forAVAILABILITY_GROUP1.
-    availability_group: Any = None
     # Identifies the backend service to which the forwarding rule sends traffic. It is a required field for the following load balancers: - Internal passthrough Network Load Balancers - Backend service-based regional external passthrough Network Load Balancers - Global external passthrough Network Load Balancers It cannot be set by other load balancer types and protocol forwarding rules.
     backend_service: Any = None
-    # Output only. [Output Only] The URL for the corresponding base forwarding rule. By base forwarding rule, we mean the forwarding rule that has the same IP address, protocol, and port settings with the current forwarding rule, but without sourceIPRanges specified. Always empty if the current forwarding rule does not have sourceIPRanges specified.
-    base_forwarding_rule: Any = None
-    # Output only. [Output Only] The resource URLs for the child forwarding rules. Applicable only to the parent forwarding rule of global external passthrough load balancers. This field contains the list of child forwarding rule URLs associated with the parent forwarding rule: one for each availability group. AVAILABILITY_GROUP0 will be the first element, and AVAILABILITY_GROUP1 will be the second element. Refer to theavailabilityGroup field for further details. It cannot be set by any other forwarding rules.
-    child_forwarding_rules: Any = None
-    # Output only. [Output Only] Creation timestamp inRFC3339 text format.
-    creation_timestamp: Any = None
     # An optional description of this resource. Provide this property when you create the resource.
     description: Any = None
     # Specifies the canary migration state for the backend buckets attached to this forwarding rule. Possible values are PREPARE, TEST_BY_PERCENTAGE, and TEST_ALL_TRAFFIC. To begin the migration from EXTERNAL to EXTERNAL_MANAGED, the state must be changed to PREPARE. The state must be changed to TEST_ALL_TRAFFIC before the loadBalancingScheme can be changed to EXTERNAL_MANAGED. Optionally, the TEST_BY_PERCENTAGE state can be used to migrate traffic to backend buckets attached to this forwarding rule by percentage using externalManagedBackendBucketMigrationTestingPercentage. Rolling back a migration requires the states to be set in reverse order. So changing the scheme from EXTERNAL_MANAGED to EXTERNAL requires the state to be set to TEST_ALL_TRAFFIC at the same time. Optionally, the TEST_BY_PERCENTAGE state can be used to migrate some traffic back to EXTERNAL or PREPARE can be used to migrate all traffic back to EXTERNAL.
@@ -92,8 +78,6 @@ class BetaGlobalForwardingRuleConfig:
     ipprotocol: Any = None
     # Indicates whether or not this load balancer can be used as a collector for packet mirroring. To prevent mirroring loops, instances behind this load balancer will not have their traffic mirrored even if aPacketMirroring rule applies to them. This can only be set to true for load balancers that have theirloadBalancingScheme set to INTERNAL.
     is_mirroring_collector: Any = None
-    # Output only. [Output Only] Type of the resource. Alwayscompute#forwardingRule for forwarding rule resources.
-    kind: Any = None
     # A fingerprint for the labels being applied to this resource, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a ForwardingRule.
     label_fingerprint: Any = None
     # Labels for this resource. These can only be added or modified by thesetLabels method. Each label key/value pair must comply withRFC1035. Label values may be empty.
@@ -110,21 +94,14 @@ class BetaGlobalForwardingRuleConfig:
     network_tier: Any = None
     # This is used in PSC consumer ForwardingRule to control whether it should try to auto-generate a DNS zone or not. Non-PSC forwarding rules do not use this field. Once set, this field is not mutable.
     no_automate_dns_zone: Any = None
-    # Output only. [Output Only] The resource URL for the parent forwarding rule. Applicable only to the child forwarding rules of global external passthrough load balancers. This field contains the URL of the parent forwarding rule.
-    parent_forwarding_rule: Any = None
     # The ports, portRange, and allPorts fields are mutually exclusive. Only packets addressed to ports in the specified range will be forwarded to the backends configured with this forwarding rule. The portRange field has the following limitations: - It requires that the forwarding rule IPProtocol be TCP, UDP, or SCTP, and - It's applicable only to the following products: external passthrough Network Load Balancers, internal and external proxy Network Load Balancers, internal and external Application Load Balancers, external protocol forwarding, and Classic VPN. - Some products have restrictions on what ports can be used. See port specifications for details. For external forwarding rules, two or more forwarding rules cannot use the same [IPAddress, IPProtocol] pair (specified inIPAddress, IPAddresses, IPProtocol fields) if they have overlapping portRanges. For internal forwarding rules within the same VPC network, two or more forwarding rules cannot use the same [IPAddress, IPProtocol] pair, and cannot have overlapping portRanges. @pattern: \\d+(?:-\\d+)?
     port_range: Any = None
     # The ports, portRange, and allPorts fields are mutually exclusive. Only packets addressed to ports in the specified range will be forwarded to the backends configured with this forwarding rule. The ports field has the following limitations: - It requires that the forwarding rule IPProtocol be TCP, UDP, or SCTP, and - It's applicable only to the following products: internal passthrough Network Load Balancers, backend service-based external passthrough Network Load Balancers, and internal protocol forwarding. - You can specify a list of up to five ports by number, separated by commas. The ports can be contiguous or discontiguous. For external forwarding rules, two or more forwarding rules cannot use the same [IPAddress, IPProtocol] pair (specified inIPAddress, IPAddresses, IPProtocol fields) if they share at least one port number. For internal forwarding rules within the same VPC network, two or more forwarding rules cannot use the same [IPAddress, IPProtocol] pair if they share at least one port number. @pattern: \\d+(?:-\\d+)?
     ports: Any = None
     # [Output Only] The PSC connection id of the PSC forwarding rule.
     psc_connection_id: Any = None
-    psc_connection_status: Any = None
-    # Output only. [Output Only] URL of the region where the regional forwarding rule resides. This field is not applicable to global forwarding rules. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
-    region: Any = None
     # [Output Only] Server-defined URL for the resource.
     self_link: Any = None
-    # Output only. [Output Only] Server-defined URL for this resource with the resource id.
-    self_link_with_id: Any = None
     # Service Directory resources to register this forwarding rule with. Currently, only supports a single Service Directory resource.
     service_directory_registrations: Any = None
     # An optional prefix to the service name for this forwarding rule. If specified, the prefix is the first label of the fully qualified service name. The label must be 1-63 characters long, and comply withRFC1035. Specifically, the label must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. This field is only used for internal load balancing.
@@ -232,16 +209,7 @@ BetaGlobalForwardingRule = ubx.ResourceBinding(
         "all_ports": ubx.FieldSpec(wire_name="all_ports"),
         "allow_global_access": ubx.FieldSpec(wire_name="allow_global_access"),
         "allow_psc_global_access": ubx.FieldSpec(wire_name="allow_psc_global_access"),
-        "attached_extensions": ubx.FieldSpec(
-            wire_name="attached_extensions",
-            kind="list",
-            fields=_BetaGlobalForwardingRule_AttachedExtensionsFields,
-        ),
-        "availability_group": ubx.FieldSpec(wire_name="availability_group"),
         "backend_service": ubx.FieldSpec(wire_name="backend_service"),
-        "base_forwarding_rule": ubx.FieldSpec(wire_name="base_forwarding_rule"),
-        "child_forwarding_rules": ubx.FieldSpec(wire_name="child_forwarding_rules"),
-        "creation_timestamp": ubx.FieldSpec(wire_name="creation_timestamp"),
         "description": ubx.FieldSpec(wire_name="description"),
         "external_managed_backend_bucket_migration_state": ubx.FieldSpec(wire_name="external_managed_backend_bucket_migration_state"),
         "external_managed_backend_bucket_migration_testing_percentage": ubx.FieldSpec(wire_name="external_managed_backend_bucket_migration_testing_percentage"),
@@ -253,7 +221,6 @@ BetaGlobalForwardingRule = ubx.ResourceBinding(
         "ipaddresses": ubx.FieldSpec(wire_name="ipaddresses"),
         "ipprotocol": ubx.FieldSpec(wire_name="ipprotocol"),
         "is_mirroring_collector": ubx.FieldSpec(wire_name="is_mirroring_collector"),
-        "kind": ubx.FieldSpec(wire_name="kind"),
         "label_fingerprint": ubx.FieldSpec(wire_name="label_fingerprint"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "load_balancing_scheme": ubx.FieldSpec(wire_name="load_balancing_scheme"),
@@ -266,14 +233,10 @@ BetaGlobalForwardingRule = ubx.ResourceBinding(
         "network": ubx.FieldSpec(wire_name="network"),
         "network_tier": ubx.FieldSpec(wire_name="network_tier"),
         "no_automate_dns_zone": ubx.FieldSpec(wire_name="no_automate_dns_zone"),
-        "parent_forwarding_rule": ubx.FieldSpec(wire_name="parent_forwarding_rule"),
         "port_range": ubx.FieldSpec(wire_name="port_range"),
         "ports": ubx.FieldSpec(wire_name="ports"),
         "psc_connection_id": ubx.FieldSpec(wire_name="psc_connection_id"),
-        "psc_connection_status": ubx.FieldSpec(wire_name="psc_connection_status"),
-        "region": ubx.FieldSpec(wire_name="region"),
         "self_link": ubx.FieldSpec(wire_name="self_link"),
-        "self_link_with_id": ubx.FieldSpec(wire_name="self_link_with_id"),
         "service_directory_registrations": ubx.FieldSpec(
             wire_name="service_directory_registrations",
             kind="list",

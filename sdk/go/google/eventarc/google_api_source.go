@@ -19,30 +19,26 @@ type GoogleApiSource_ProjectSubscriptions struct {
 }
 
 var GoogleApiSource_LoggingConfigFields = ubx.FieldMap{
-		"LogSeverity": ubx.FieldSpec{WireName: "log_severity"},
-	}
+	"LogSeverity": ubx.FieldSpec{WireName: "log_severity"},
+}
 
 var GoogleApiSource_OrganizationSubscriptionFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+}
 
 var GoogleApiSource_ProjectSubscriptionsFields = ubx.FieldMap{
-		"List": ubx.FieldSpec{WireName: "list"},
-	}
+	"List": ubx.FieldSpec{WireName: "list"},
+}
 
 type GoogleApiSourceConfig struct {
 	// Optional. Resource annotations.
 	Annotations any
-	// Output only. The creation time.
-	CreateTime any
 	// Optional. Resource name of a KMS crypto key (managed by the user) used to encrypt/decrypt their event data. It must match the pattern `projects/*/locations/*/keyRings/*/cryptoKeys/*`.
 	CryptoKeyName any
 	// Required. Destination is the message bus that the GoogleApiSource is delivering to. It must be point to the full resource name of a MessageBus. Format: "projects/{PROJECT_ID}/locations/{region}/messagesBuses/{MESSAGE_BUS_ID)
 	Destination any
 	// Optional. Resource display name.
 	DisplayName any
-	// Output only. This checksum is computed by the server based on the value of other fields, and might be sent only on update and delete requests to ensure that the client has an up-to-date value before proceeding.
-	Etag any
 	// Optional. Resource labels.
 	Labels any
 	// The configuration for Platform Telemetry logging for Eventarc Advanced resources.
@@ -53,10 +49,6 @@ type GoogleApiSourceConfig struct {
 	OrganizationSubscription any
 	// Config to enable subscribing to all events from a list of projects.
 	ProjectSubscriptions any
-	// Output only. Server assigned unique identifier for the channel. The value is a UUID4 string and guaranteed to remain unchanged until the resource is deleted.
-	Uid any
-	// Output only. The last-modified time.
-	UpdateTime any
 }
 
 type GoogleApiSourceAttrs struct {
@@ -91,30 +83,26 @@ type GoogleApiSourceAttrs struct {
 var GoogleApiSource = ubx.ResourceBinding{
 	WireType: "google_eventarc_google_api_source",
 	Fields: ubx.FieldMap{
-		"Annotations": ubx.FieldSpec{WireName: "annotations"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
+		"Annotations":   ubx.FieldSpec{WireName: "annotations"},
 		"CryptoKeyName": ubx.FieldSpec{WireName: "crypto_key_name"},
-		"Destination": ubx.FieldSpec{WireName: "destination"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Destination":   ubx.FieldSpec{WireName: "destination"},
+		"DisplayName":   ubx.FieldSpec{WireName: "display_name"},
+		"Labels":        ubx.FieldSpec{WireName: "labels"},
 		"LoggingConfig": ubx.FieldSpec{
 			WireName: "logging_config",
-			Kind: "object",
-			Fields: GoogleApiSource_LoggingConfigFields,
+			Kind:     "object",
+			Fields:   GoogleApiSource_LoggingConfigFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"OrganizationSubscription": ubx.FieldSpec{
 			WireName: "organization_subscription",
-			Kind: "object",
-			Fields: GoogleApiSource_OrganizationSubscriptionFields,
+			Kind:     "object",
+			Fields:   GoogleApiSource_OrganizationSubscriptionFields,
 		},
 		"ProjectSubscriptions": ubx.FieldSpec{
 			WireName: "project_subscriptions",
-			Kind: "object",
-			Fields: GoogleApiSource_ProjectSubscriptionsFields,
+			Kind:     "object",
+			Fields:   GoogleApiSource_ProjectSubscriptionsFields,
 		},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

@@ -896,15 +896,10 @@ _V2beta1Evaluation_SummarizationMetricsFields = {
 
 @dataclasses.dataclass
 class V2beta1EvaluationConfig:
-    complete_time: Any = None
-    create_time: Any = None
     display_name: Any = None
     evaluation_status: Any = None
     generator_evaluation_config: Any = None
     initial_generator: Any = None
-    name: Any = None
-    satisfies_pzi: Any = None
-    satisfies_pzs: Any = None
     summarization_metrics: Any = None
 
 @dataclasses.dataclass
@@ -923,8 +918,6 @@ class V2beta1EvaluationAttrs:
 V2beta1Evaluation = ubx.ResourceBinding(
     wire_type="google_dialogflow_v2beta1_evaluation",
     fields={
-        "complete_time": ubx.FieldSpec(wire_name="complete_time"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "evaluation_status": ubx.FieldSpec(
             wire_name="evaluation_status",
@@ -941,9 +934,6 @@ V2beta1Evaluation = ubx.ResourceBinding(
             kind="object",
             fields=_V2beta1Evaluation_InitialGeneratorFields,
         ),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "satisfies_pzi": ubx.FieldSpec(wire_name="satisfies_pzi"),
-        "satisfies_pzs": ubx.FieldSpec(wire_name="satisfies_pzs"),
         "summarization_metrics": ubx.FieldSpec(
             wire_name="summarization_metrics",
             kind="object",

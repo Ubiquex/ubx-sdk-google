@@ -8,20 +8,12 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class V1beta1SnapshotConfig:
-    # Output only. The time when the snapshot was created.
-    create_time: Any = None
     # A description of the snapshot with 2048 characters or less. Requests with longer descriptions will be rejected.
     description: Any = None
     # Resource labels to represent user provided metadata.
     labels: Any = None
     # Identifier. The resource name of the snapshot. Format: `projects/{project_id}/locations/{location}/volumes/{volume_id}/snapshots/{snapshot_id}`.
     name: Any = None
-    # Output only. The snapshot state.
-    state: Any = None
-    # Output only. State details of the storage pool
-    state_details: Any = None
-    # Output only. Current storage usage for the snapshot in bytes.
-    used_bytes: Any = None
 
 @dataclasses.dataclass
 class V1beta1SnapshotAttrs:
@@ -43,12 +35,8 @@ class V1beta1SnapshotAttrs:
 V1beta1Snapshot = ubx.ResourceBinding(
     wire_type="google_netapp_v1beta1_snapshot",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "state_details": ubx.FieldSpec(wire_name="state_details"),
-        "used_bytes": ubx.FieldSpec(wire_name="used_bytes"),
     },
 )

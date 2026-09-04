@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type GrpcRoute_Rules_Action_Destinations struct {
 	ServiceName any
-	Weight any
+	Weight      any
 }
 
 type GrpcRoute_Rules_Action_FaultInjectionPolicy_Abort struct {
@@ -24,7 +24,7 @@ type GrpcRoute_Rules_Action_FaultInjectionPolicy struct {
 }
 
 type GrpcRoute_Rules_Action_RetryPolicy struct {
-	NumRetries any
+	NumRetries      any
 	RetryConditions any
 }
 
@@ -33,141 +33,139 @@ type GrpcRoute_Rules_Action_StatefulSessionAffinity struct {
 }
 
 type GrpcRoute_Rules_Action struct {
-	Destinations any
-	FaultInjectionPolicy any
-	IdleTimeout any
-	RetryPolicy any
+	Destinations            any
+	FaultInjectionPolicy    any
+	IdleTimeout             any
+	RetryPolicy             any
 	StatefulSessionAffinity any
-	Timeout any
+	Timeout                 any
 }
 
 type GrpcRoute_Rules_Matches_Headers struct {
-	Key any
-	Type any
+	Key   any
+	Type  any
 	Value any
 }
 
 type GrpcRoute_Rules_Matches_Method struct {
 	CaseSensitive any
-	GrpcMethod any
-	GrpcService any
-	Type any
+	GrpcMethod    any
+	GrpcService   any
+	Type          any
 }
 
 type GrpcRoute_Rules_Matches struct {
 	Headers any
-	Method any
+	Method  any
 }
 
 type GrpcRoute_Rules struct {
-	Action any
+	Action  any
 	Matches any
 }
 
 var GrpcRoute_Rules_Action_DestinationsFields = ubx.FieldMap{
-		"ServiceName": ubx.FieldSpec{WireName: "service_name"},
-		"Weight": ubx.FieldSpec{WireName: "weight"},
-	}
+	"ServiceName": ubx.FieldSpec{WireName: "service_name"},
+	"Weight":      ubx.FieldSpec{WireName: "weight"},
+}
 
 var GrpcRoute_Rules_Action_FaultInjectionPolicy_AbortFields = ubx.FieldMap{
-		"HttpStatus": ubx.FieldSpec{WireName: "http_status"},
-		"Percentage": ubx.FieldSpec{WireName: "percentage"},
-	}
+	"HttpStatus": ubx.FieldSpec{WireName: "http_status"},
+	"Percentage": ubx.FieldSpec{WireName: "percentage"},
+}
 
 var GrpcRoute_Rules_Action_FaultInjectionPolicy_DelayFields = ubx.FieldMap{
-		"FixedDelay": ubx.FieldSpec{WireName: "fixed_delay"},
-		"Percentage": ubx.FieldSpec{WireName: "percentage"},
-	}
+	"FixedDelay": ubx.FieldSpec{WireName: "fixed_delay"},
+	"Percentage": ubx.FieldSpec{WireName: "percentage"},
+}
 
 var GrpcRoute_Rules_Action_FaultInjectionPolicyFields = ubx.FieldMap{
-		"Abort": ubx.FieldSpec{
-			WireName: "abort",
-			Kind: "object",
-			Fields: GrpcRoute_Rules_Action_FaultInjectionPolicy_AbortFields,
-		},
-		"Delay": ubx.FieldSpec{
-			WireName: "delay",
-			Kind: "object",
-			Fields: GrpcRoute_Rules_Action_FaultInjectionPolicy_DelayFields,
-		},
-	}
+	"Abort": ubx.FieldSpec{
+		WireName: "abort",
+		Kind:     "object",
+		Fields:   GrpcRoute_Rules_Action_FaultInjectionPolicy_AbortFields,
+	},
+	"Delay": ubx.FieldSpec{
+		WireName: "delay",
+		Kind:     "object",
+		Fields:   GrpcRoute_Rules_Action_FaultInjectionPolicy_DelayFields,
+	},
+}
 
 var GrpcRoute_Rules_Action_RetryPolicyFields = ubx.FieldMap{
-		"NumRetries": ubx.FieldSpec{WireName: "num_retries"},
-		"RetryConditions": ubx.FieldSpec{WireName: "retry_conditions"},
-	}
+	"NumRetries":      ubx.FieldSpec{WireName: "num_retries"},
+	"RetryConditions": ubx.FieldSpec{WireName: "retry_conditions"},
+}
 
 var GrpcRoute_Rules_Action_StatefulSessionAffinityFields = ubx.FieldMap{
-		"CookieTtl": ubx.FieldSpec{WireName: "cookie_ttl"},
-	}
+	"CookieTtl": ubx.FieldSpec{WireName: "cookie_ttl"},
+}
 
 var GrpcRoute_Rules_ActionFields = ubx.FieldMap{
-		"Destinations": ubx.FieldSpec{
-			WireName: "destinations",
-			Kind: "list",
-			Fields: GrpcRoute_Rules_Action_DestinationsFields,
-		},
-		"FaultInjectionPolicy": ubx.FieldSpec{
-			WireName: "fault_injection_policy",
-			Kind: "object",
-			Fields: GrpcRoute_Rules_Action_FaultInjectionPolicyFields,
-		},
-		"IdleTimeout": ubx.FieldSpec{WireName: "idle_timeout"},
-		"RetryPolicy": ubx.FieldSpec{
-			WireName: "retry_policy",
-			Kind: "object",
-			Fields: GrpcRoute_Rules_Action_RetryPolicyFields,
-		},
-		"StatefulSessionAffinity": ubx.FieldSpec{
-			WireName: "stateful_session_affinity",
-			Kind: "object",
-			Fields: GrpcRoute_Rules_Action_StatefulSessionAffinityFields,
-		},
-		"Timeout": ubx.FieldSpec{WireName: "timeout"},
-	}
+	"Destinations": ubx.FieldSpec{
+		WireName: "destinations",
+		Kind:     "list",
+		Fields:   GrpcRoute_Rules_Action_DestinationsFields,
+	},
+	"FaultInjectionPolicy": ubx.FieldSpec{
+		WireName: "fault_injection_policy",
+		Kind:     "object",
+		Fields:   GrpcRoute_Rules_Action_FaultInjectionPolicyFields,
+	},
+	"IdleTimeout": ubx.FieldSpec{WireName: "idle_timeout"},
+	"RetryPolicy": ubx.FieldSpec{
+		WireName: "retry_policy",
+		Kind:     "object",
+		Fields:   GrpcRoute_Rules_Action_RetryPolicyFields,
+	},
+	"StatefulSessionAffinity": ubx.FieldSpec{
+		WireName: "stateful_session_affinity",
+		Kind:     "object",
+		Fields:   GrpcRoute_Rules_Action_StatefulSessionAffinityFields,
+	},
+	"Timeout": ubx.FieldSpec{WireName: "timeout"},
+}
 
 var GrpcRoute_Rules_Matches_HeadersFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Type":  ubx.FieldSpec{WireName: "type"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var GrpcRoute_Rules_Matches_MethodFields = ubx.FieldMap{
-		"CaseSensitive": ubx.FieldSpec{WireName: "case_sensitive"},
-		"GrpcMethod": ubx.FieldSpec{WireName: "grpc_method"},
-		"GrpcService": ubx.FieldSpec{WireName: "grpc_service"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"CaseSensitive": ubx.FieldSpec{WireName: "case_sensitive"},
+	"GrpcMethod":    ubx.FieldSpec{WireName: "grpc_method"},
+	"GrpcService":   ubx.FieldSpec{WireName: "grpc_service"},
+	"Type":          ubx.FieldSpec{WireName: "type"},
+}
 
 var GrpcRoute_Rules_MatchesFields = ubx.FieldMap{
-		"Headers": ubx.FieldSpec{
-			WireName: "headers",
-			Kind: "list",
-			Fields: GrpcRoute_Rules_Matches_HeadersFields,
-		},
-		"Method": ubx.FieldSpec{
-			WireName: "method",
-			Kind: "object",
-			Fields: GrpcRoute_Rules_Matches_MethodFields,
-		},
-	}
+	"Headers": ubx.FieldSpec{
+		WireName: "headers",
+		Kind:     "list",
+		Fields:   GrpcRoute_Rules_Matches_HeadersFields,
+	},
+	"Method": ubx.FieldSpec{
+		WireName: "method",
+		Kind:     "object",
+		Fields:   GrpcRoute_Rules_Matches_MethodFields,
+	},
+}
 
 var GrpcRoute_RulesFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{
-			WireName: "action",
-			Kind: "object",
-			Fields: GrpcRoute_Rules_ActionFields,
-		},
-		"Matches": ubx.FieldSpec{
-			WireName: "matches",
-			Kind: "list",
-			Fields: GrpcRoute_Rules_MatchesFields,
-		},
-	}
+	"Action": ubx.FieldSpec{
+		WireName: "action",
+		Kind:     "object",
+		Fields:   GrpcRoute_Rules_ActionFields,
+	},
+	"Matches": ubx.FieldSpec{
+		WireName: "matches",
+		Kind:     "list",
+		Fields:   GrpcRoute_Rules_MatchesFields,
+	},
+}
 
 type GrpcRouteConfig struct {
-	// Output only. The timestamp when the resource was created.
-	CreateTime any
 	// Optional. A free-text description of the resource. Max length 1024 characters.
 	Description any
 	// Optional. Gateways defines a list of gateways this GrpcRoute is attached to, as one of the routing rules to route the requests served by the gateway. Each gateway reference should match the pattern: `projects/*/locations/*/gateways/`
@@ -182,10 +180,6 @@ type GrpcRouteConfig struct {
 	Name any
 	// Required. A list of detailed rules defining how to route traffic. Within a single GrpcRoute, the GrpcRoute.RouteAction associated with the first matching GrpcRoute.RouteRule will be executed. At least one rule must be supplied.
 	Rules any
-	// Output only. Server-defined URL of this resource
-	SelfLink any
-	// Output only. The timestamp when the resource was updated.
-	UpdateTime any
 }
 
 type GrpcRouteAttrs struct {
@@ -214,19 +208,16 @@ type GrpcRouteAttrs struct {
 var GrpcRoute = ubx.ResourceBinding{
 	WireType: "google_networkservices_grpc_route",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Gateways": ubx.FieldSpec{WireName: "gateways"},
-		"Hostnames": ubx.FieldSpec{WireName: "hostnames"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Meshes": ubx.FieldSpec{WireName: "meshes"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Gateways":    ubx.FieldSpec{WireName: "gateways"},
+		"Hostnames":   ubx.FieldSpec{WireName: "hostnames"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
+		"Meshes":      ubx.FieldSpec{WireName: "meshes"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"Rules": ubx.FieldSpec{
 			WireName: "rules",
-			Kind: "list",
-			Fields: GrpcRoute_RulesFields,
+			Kind:     "list",
+			Fields:   GrpcRoute_RulesFields,
 		},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

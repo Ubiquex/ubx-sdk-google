@@ -51,15 +51,15 @@ type CompilationResult_CodeCompilationConfig struct {
 
 type CompilationResult_CompilationErrors_ActionTarget struct {
 	Database any
-	Name any
-	Schema any
+	Name     any
+	Schema   any
 }
 
 type CompilationResult_CompilationErrors struct {
 	ActionTarget any
-	Message any
-	Path any
-	Stack any
+	Message      any
+	Path         any
+	Stack        any
 }
 
 type CompilationResult_DataEncryptionState struct {
@@ -82,102 +82,73 @@ type CompilationResult_PrivateResourceMetadata struct {
 }
 
 var CompilationResult_CodeCompilationConfig_DefaultNotebookRuntimeOptions_GcsRepositorySnapshotDestinationFields = ubx.FieldMap{
-		"RepositorySnapshotUri": ubx.FieldSpec{WireName: "repository_snapshot_uri"},
-	}
+	"RepositorySnapshotUri": ubx.FieldSpec{WireName: "repository_snapshot_uri"},
+}
 
 var CompilationResult_CodeCompilationConfig_DefaultNotebookRuntimeOptionsFields = ubx.FieldMap{
-		"AiPlatformNotebookRuntimeTemplate": ubx.FieldSpec{WireName: "ai_platform_notebook_runtime_template"},
-		"GcsOutputBucket": ubx.FieldSpec{WireName: "gcs_output_bucket"},
-		"GcsRepositorySnapshotDestination": ubx.FieldSpec{
-			WireName: "gcs_repository_snapshot_destination",
-			Kind: "object",
-			Fields: CompilationResult_CodeCompilationConfig_DefaultNotebookRuntimeOptions_GcsRepositorySnapshotDestinationFields,
-		},
-	}
+	"AiPlatformNotebookRuntimeTemplate": ubx.FieldSpec{WireName: "ai_platform_notebook_runtime_template"},
+	"GcsOutputBucket":                   ubx.FieldSpec{WireName: "gcs_output_bucket"},
+	"GcsRepositorySnapshotDestination": ubx.FieldSpec{
+		WireName: "gcs_repository_snapshot_destination",
+		Kind:     "object",
+		Fields:   CompilationResult_CodeCompilationConfig_DefaultNotebookRuntimeOptions_GcsRepositorySnapshotDestinationFields,
+	},
+}
 
 var CompilationResult_CodeCompilationConfig_PipelineConfigFields = ubx.FieldMap{
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"PipelineType": ubx.FieldSpec{WireName: "pipeline_type"},
-	}
+	"Path":         ubx.FieldSpec{WireName: "path"},
+	"PipelineType": ubx.FieldSpec{WireName: "pipeline_type"},
+}
 
 var CompilationResult_CodeCompilationConfigFields = ubx.FieldMap{
-		"AssertionSchema": ubx.FieldSpec{WireName: "assertion_schema"},
-		"BuiltinAssertionNamePrefix": ubx.FieldSpec{WireName: "builtin_assertion_name_prefix"},
-		"DatabaseSuffix": ubx.FieldSpec{WireName: "database_suffix"},
-		"DefaultDatabase": ubx.FieldSpec{WireName: "default_database"},
-		"DefaultLocation": ubx.FieldSpec{WireName: "default_location"},
-		"DefaultNotebookRuntimeOptions": ubx.FieldSpec{
-			WireName: "default_notebook_runtime_options",
-			Kind: "object",
-			Fields: CompilationResult_CodeCompilationConfig_DefaultNotebookRuntimeOptionsFields,
-		},
-		"DefaultSchema": ubx.FieldSpec{WireName: "default_schema"},
-		"PipelineConfig": ubx.FieldSpec{
-			WireName: "pipeline_config",
-			Kind: "object",
-			Fields: CompilationResult_CodeCompilationConfig_PipelineConfigFields,
-		},
-		"SchemaSuffix": ubx.FieldSpec{WireName: "schema_suffix"},
-		"TablePrefix": ubx.FieldSpec{WireName: "table_prefix"},
-		"Vars": ubx.FieldSpec{WireName: "vars"},
-	}
-
-var CompilationResult_CompilationErrors_ActionTargetFields = ubx.FieldMap{
-		"Database": ubx.FieldSpec{WireName: "database"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Schema": ubx.FieldSpec{WireName: "schema"},
-	}
-
-var CompilationResult_CompilationErrorsFields = ubx.FieldMap{
-		"ActionTarget": ubx.FieldSpec{
-			WireName: "action_target",
-			Kind: "object",
-			Fields: CompilationResult_CompilationErrors_ActionTargetFields,
-		},
-		"Message": ubx.FieldSpec{WireName: "message"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"Stack": ubx.FieldSpec{WireName: "stack"},
-	}
+	"AssertionSchema":            ubx.FieldSpec{WireName: "assertion_schema"},
+	"BuiltinAssertionNamePrefix": ubx.FieldSpec{WireName: "builtin_assertion_name_prefix"},
+	"DatabaseSuffix":             ubx.FieldSpec{WireName: "database_suffix"},
+	"DefaultDatabase":            ubx.FieldSpec{WireName: "default_database"},
+	"DefaultLocation":            ubx.FieldSpec{WireName: "default_location"},
+	"DefaultNotebookRuntimeOptions": ubx.FieldSpec{
+		WireName: "default_notebook_runtime_options",
+		Kind:     "object",
+		Fields:   CompilationResult_CodeCompilationConfig_DefaultNotebookRuntimeOptionsFields,
+	},
+	"DefaultSchema": ubx.FieldSpec{WireName: "default_schema"},
+	"PipelineConfig": ubx.FieldSpec{
+		WireName: "pipeline_config",
+		Kind:     "object",
+		Fields:   CompilationResult_CodeCompilationConfig_PipelineConfigFields,
+	},
+	"SchemaSuffix": ubx.FieldSpec{WireName: "schema_suffix"},
+	"TablePrefix":  ubx.FieldSpec{WireName: "table_prefix"},
+	"Vars":         ubx.FieldSpec{WireName: "vars"},
+}
 
 var CompilationResult_DataEncryptionStateFields = ubx.FieldMap{
-		"KmsKeyVersionName": ubx.FieldSpec{WireName: "kms_key_version_name"},
-	}
+	"KmsKeyVersionName": ubx.FieldSpec{WireName: "kms_key_version_name"},
+}
 
 var CompilationResult_GcsRepositorySnapshotMetadataFields = ubx.FieldMap{
-		"Crc32cChecksum": ubx.FieldSpec{WireName: "crc32c_checksum"},
-		"Generation": ubx.FieldSpec{WireName: "generation"},
-		"RepositorySnapshotUri": ubx.FieldSpec{WireName: "repository_snapshot_uri"},
-	}
+	"Crc32cChecksum":        ubx.FieldSpec{WireName: "crc32c_checksum"},
+	"Generation":            ubx.FieldSpec{WireName: "generation"},
+	"RepositorySnapshotUri": ubx.FieldSpec{WireName: "repository_snapshot_uri"},
+}
 
 var CompilationResult_PrivateResourceMetadataFields = ubx.FieldMap{
-		"UserScoped": ubx.FieldSpec{WireName: "user_scoped"},
-	}
+	"UserScoped": ubx.FieldSpec{WireName: "user_scoped"},
+}
 
 type CompilationResultConfig struct {
 	// Configures various aspects of Dataform code compilation.
 	CodeCompilationConfig any
-	// Output only. Errors encountered during project compilation.
-	CompilationErrors any
-	// Output only. The timestamp of when the compilation result was created.
-	CreateTime any
 	// Describes encryption state of a resource.
 	DataEncryptionState any
-	// Output only. The version of `@dataform/core` that was used for compilation.
-	DataformCoreVersion any
 	// Metadata about a repository snapshot stored in Google Cloud Storage.
 	GcsRepositorySnapshotMetadata any
 	// Immutable. Git commit/tag/branch name at which the repository should be compiled. Must exist in the remote repository. Examples: - a commit SHA: `12ade345` - a tag: `tag1` - a branch name: `branch1`
 	GitCommitish any
-	// Output only. All the metadata information that is used internally to serve the resource. For example: timestamps, flags, status fields, etc. The format of this field is a JSON string.
-	InternalMetadata any
-	// Output only. The compilation result's name.
-	Name any
 	// Metadata used to identify if a resource is user scoped.
 	PrivateResourceMetadata any
 	// Immutable. The name of the release config to compile. Must be in the format `projects/*/locations/*/repositories/*/releaseConfigs/*`.
 	ReleaseConfig any
-	// Output only. The fully resolved Git commit SHA of the code that was compiled. Not set for compilation results whose source is a workspace.
-	ResolvedGitCommitSha any
 	// Immutable. The name of the workspace to compile. Must be in the format `projects/*/locations/*/repositories/*/workspaces/*`.
 	Workspace any
 }
@@ -216,36 +187,26 @@ var CompilationResult = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"CodeCompilationConfig": ubx.FieldSpec{
 			WireName: "code_compilation_config",
-			Kind: "object",
-			Fields: CompilationResult_CodeCompilationConfigFields,
+			Kind:     "object",
+			Fields:   CompilationResult_CodeCompilationConfigFields,
 		},
-		"CompilationErrors": ubx.FieldSpec{
-			WireName: "compilation_errors",
-			Kind: "list",
-			Fields: CompilationResult_CompilationErrorsFields,
-		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"DataEncryptionState": ubx.FieldSpec{
 			WireName: "data_encryption_state",
-			Kind: "object",
-			Fields: CompilationResult_DataEncryptionStateFields,
+			Kind:     "object",
+			Fields:   CompilationResult_DataEncryptionStateFields,
 		},
-		"DataformCoreVersion": ubx.FieldSpec{WireName: "dataform_core_version"},
 		"GcsRepositorySnapshotMetadata": ubx.FieldSpec{
 			WireName: "gcs_repository_snapshot_metadata",
-			Kind: "object",
-			Fields: CompilationResult_GcsRepositorySnapshotMetadataFields,
+			Kind:     "object",
+			Fields:   CompilationResult_GcsRepositorySnapshotMetadataFields,
 		},
 		"GitCommitish": ubx.FieldSpec{WireName: "git_commitish"},
-		"InternalMetadata": ubx.FieldSpec{WireName: "internal_metadata"},
-		"Name": ubx.FieldSpec{WireName: "name"},
 		"PrivateResourceMetadata": ubx.FieldSpec{
 			WireName: "private_resource_metadata",
-			Kind: "object",
-			Fields: CompilationResult_PrivateResourceMetadataFields,
+			Kind:     "object",
+			Fields:   CompilationResult_PrivateResourceMetadataFields,
 		},
 		"ReleaseConfig": ubx.FieldSpec{WireName: "release_config"},
-		"ResolvedGitCommitSha": ubx.FieldSpec{WireName: "resolved_git_commit_sha"},
-		"Workspace": ubx.FieldSpec{WireName: "workspace"},
+		"Workspace":     ubx.FieldSpec{WireName: "workspace"},
 	},
 }

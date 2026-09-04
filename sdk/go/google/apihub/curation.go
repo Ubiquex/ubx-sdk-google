@@ -16,49 +16,32 @@ type Curation_Endpoint struct {
 }
 
 type Curation_PluginInstanceActions struct {
-	ActionId any
+	ActionId       any
 	PluginInstance any
 }
 
 var Curation_Endpoint_ApplicationIntegrationEndpointDetailsFields = ubx.FieldMap{
-		"TriggerId": ubx.FieldSpec{WireName: "trigger_id"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"TriggerId": ubx.FieldSpec{WireName: "trigger_id"},
+	"Uri":       ubx.FieldSpec{WireName: "uri"},
+}
 
 var Curation_EndpointFields = ubx.FieldMap{
-		"ApplicationIntegrationEndpointDetails": ubx.FieldSpec{
-			WireName: "application_integration_endpoint_details",
-			Kind: "object",
-			Fields: Curation_Endpoint_ApplicationIntegrationEndpointDetailsFields,
-		},
-	}
-
-var Curation_PluginInstanceActionsFields = ubx.FieldMap{
-		"ActionId": ubx.FieldSpec{WireName: "action_id"},
-		"PluginInstance": ubx.FieldSpec{WireName: "plugin_instance"},
-	}
+	"ApplicationIntegrationEndpointDetails": ubx.FieldSpec{
+		WireName: "application_integration_endpoint_details",
+		Kind:     "object",
+		Fields:   Curation_Endpoint_ApplicationIntegrationEndpointDetailsFields,
+	},
+}
 
 type CurationConfig struct {
-	// Output only. The time at which the curation was created.
-	CreateTime any
 	// Optional. The description of the curation.
 	Description any
 	// Required. The display name of the curation.
 	DisplayName any
 	// The endpoint to be triggered for curation. The endpoint will be invoked with a request payload containing ApiMetadata. Response should contain curated data in the form of ApiMetadata.
 	Endpoint any
-	// Output only. The error code of the last execution of the curation. The error code is populated only when the last execution state is failed.
-	LastExecutionErrorCode any
-	// Output only. Error message describing the failure, if any, during the last execution of the curation.
-	LastExecutionErrorMessage any
-	// Output only. The last execution state of the curation.
-	LastExecutionState any
 	// Identifier. The name of the curation. Format: `projects/{project}/locations/{location}/curations/{curation}`
 	Name any
-	// Output only. The plugin instances and associated actions that are using the curation. Note: A particular curation could be used by multiple plugin instances or multiple actions in a plugin instance.
-	PluginInstanceActions any
-	// Output only. The time at which the curation was last updated.
-	UpdateTime any
 }
 
 type CurationAttrs struct {
@@ -87,23 +70,13 @@ type CurationAttrs struct {
 var Curation = ubx.ResourceBinding{
 	WireType: "google_apihub_curation",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"Endpoint": ubx.FieldSpec{
 			WireName: "endpoint",
-			Kind: "object",
-			Fields: Curation_EndpointFields,
+			Kind:     "object",
+			Fields:   Curation_EndpointFields,
 		},
-		"LastExecutionErrorCode": ubx.FieldSpec{WireName: "last_execution_error_code"},
-		"LastExecutionErrorMessage": ubx.FieldSpec{WireName: "last_execution_error_message"},
-		"LastExecutionState": ubx.FieldSpec{WireName: "last_execution_state"},
 		"Name": ubx.FieldSpec{WireName: "name"},
-		"PluginInstanceActions": ubx.FieldSpec{
-			WireName: "plugin_instance_actions",
-			Kind: "list",
-			Fields: Curation_PluginInstanceActionsFields,
-		},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

@@ -26,7 +26,6 @@ export interface BetaNodeType_Deprecated {
 export interface BetaNodeTypeConfig {
   nodeType: string | Computed<string>;
   project: string | Computed<string>;
-  zone: string | Computed<string>;
 }
 
 export interface BetaNodeTypeAttrs {
@@ -64,6 +63,5 @@ export const BetaNodeType: DataSourceBinding<BetaNodeTypeConfig, BetaNodeTypeAtt
   fields: {
     nodeType: "node_type",
     project: "project",
-    zone: "zone",
   },
 };

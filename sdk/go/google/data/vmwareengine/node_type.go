@@ -4,7 +4,6 @@ package vmwareengine
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type NodeTypeConfig struct {
-	Name any
 }
 
 type NodeTypeAttrs struct {
@@ -22,7 +21,7 @@ type NodeTypeAttrs struct {
 	Kind any
 	// Output only. The amount of physical memory available, defined in GB.
 	MemoryGb any
-	Name any
+	Name     any
 	// Output only. The canonical identifier of the node type (corresponds to the `NodeType`). For example: standard-72.
 	NodeTypeId any
 	// Output only. The total number of CPU cores in a single node.
@@ -33,7 +32,5 @@ type NodeTypeAttrs struct {
 
 var NodeType = ubx.DataSourceBinding{
 	WireType: "google_vmwareengine_node_type",
-	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	},
+	Fields:   ubx.FieldMap{},
 }

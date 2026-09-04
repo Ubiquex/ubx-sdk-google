@@ -13,7 +13,7 @@ type V1alphaApp_AabCertificate struct {
 }
 
 type V1alphaAppConfig struct {
-	AppView any
+	AppView        any
 	MobilesdkAppId any
 }
 
@@ -23,12 +23,12 @@ type V1alphaAppAttrs struct {
 	// App bundle state. Only valid for android apps. The app_view field in the request must be set to FULL in order for this to be populated.
 	AabState any
 	// Firebase gmp app id
-	AppId any
+	AppId   any
 	AppView any
 	// Bundle identifier
 	BundleId any
 	// Developer contact email for testers to reach out to about privacy or support issues.
-	ContactEmail any
+	ContactEmail   any
 	MobilesdkAppId any
 	// iOS or Android
 	Platform any
@@ -39,7 +39,7 @@ type V1alphaAppAttrs struct {
 var V1alphaApp = ubx.DataSourceBinding{
 	WireType: "google_firebaseappdistribution_v1alpha_app",
 	Fields: ubx.FieldMap{
-		"AppView": ubx.FieldSpec{WireName: "app_view"},
+		"AppView":        ubx.FieldSpec{WireName: "app_view"},
 		"MobilesdkAppId": ubx.FieldSpec{WireName: "mobilesdk_app_id"},
 	},
 }

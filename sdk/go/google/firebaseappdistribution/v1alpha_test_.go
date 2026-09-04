@@ -4,11 +4,11 @@ package firebaseappdistribution
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1alphaTest_AiInstructions_Steps struct {
-	Assertion any
-	Goal any
-	Hint any
+	Assertion       any
+	Goal            any
+	Hint            any
 	SuccessCriteria any
-	TestCase any
+	TestCase        any
 }
 
 type V1alphaTest_AiInstructions struct {
@@ -18,19 +18,19 @@ type V1alphaTest_AiInstructions struct {
 
 type V1alphaTest_DeviceExecutions_AiStepResults_AssertionDetails_Screenshot struct {
 	Height any
-	Uri any
-	Width any
+	Uri    any
+	Width  any
 }
 
 type V1alphaTest_DeviceExecutions_AiStepResults_AssertionDetails struct {
 	Explanation any
-	Result any
-	Screenshot any
+	Result      any
+	Screenshot  any
 }
 
 type V1alphaTest_DeviceExecutions_AiStepResults_GoalDetails_GoalActions_DebugInfo struct {
 	AnnotatedScreenshotUri any
-	JsonUri any
+	JsonUri                any
 }
 
 type V1alphaTest_DeviceExecutions_AiStepResults_GoalDetails_GoalActions_DeviceAction_DeviceInteractions_DragAndDrop_End struct {
@@ -39,20 +39,20 @@ type V1alphaTest_DeviceExecutions_AiStepResults_GoalDetails_GoalActions_DeviceAc
 }
 
 type V1alphaTest_DeviceExecutions_AiStepResults_GoalDetails_GoalActions_DeviceAction_DeviceInteractions_DragAndDrop struct {
-	End any
+	End   any
 	Start any
 }
 
 type V1alphaTest_DeviceExecutions_AiStepResults_GoalDetails_GoalActions_DeviceAction_DeviceInteractions_EnterText_ElementBounds struct {
 	Bottom any
-	Left any
-	Right any
-	Top any
+	Left   any
+	Right  any
+	Top    any
 }
 
 type V1alphaTest_DeviceExecutions_AiStepResults_GoalDetails_GoalActions_DeviceAction_DeviceInteractions_EnterText struct {
 	ElementBounds any
-	Text any
+	Text          any
 }
 
 type V1alphaTest_DeviceExecutions_AiStepResults_GoalDetails_GoalActions_DeviceAction_DeviceInteractions_Wait struct {
@@ -60,36 +60,36 @@ type V1alphaTest_DeviceExecutions_AiStepResults_GoalDetails_GoalActions_DeviceAc
 }
 
 type V1alphaTest_DeviceExecutions_AiStepResults_GoalDetails_GoalActions_DeviceAction_DeviceInteractions struct {
-	BackAction any
-	DragAndDrop any
-	EnterText any
-	KeyCode any
-	LongPress any
-	Screenshot any
-	Swipe any
-	Tap any
+	BackAction        any
+	DragAndDrop       any
+	EnterText         any
+	KeyCode           any
+	LongPress         any
+	Screenshot        any
+	Swipe             any
+	Tap               any
 	TargetFoldedState any
 	TargetOrientation any
-	TextInput any
-	Wait any
+	TextInput         any
+	Wait              any
 }
 
 type V1alphaTest_DeviceExecutions_AiStepResults_GoalDetails_GoalActions_DeviceAction struct {
-	Description any
+	Description        any
 	DeviceInteractions any
 }
 
 type V1alphaTest_DeviceExecutions_AiStepResults_GoalDetails_GoalActions_TerminalAction struct {
-	Reason any
+	Reason     any
 	Screenshot any
 }
 
 type V1alphaTest_DeviceExecutions_AiStepResults_GoalDetails_GoalActions struct {
-	CachingType any
-	DebugInfo any
-	DeviceAction any
-	Explanation any
-	StartTime any
+	CachingType    any
+	DebugInfo      any
+	DeviceAction   any
+	Explanation    any
+	StartTime      any
 	TerminalAction any
 }
 
@@ -99,47 +99,47 @@ type V1alphaTest_DeviceExecutions_AiStepResults_GoalDetails struct {
 
 type V1alphaTest_DeviceExecutions_AiStepResults struct {
 	AssertionDetails any
-	GoalDetails any
-	State any
-	Step any
+	GoalDetails      any
+	State            any
+	Step             any
 }
 
 type V1alphaTest_DeviceExecutions_AppCrash struct {
-	Message any
+	Message    any
 	StackTrace any
 }
 
 type V1alphaTest_DeviceExecutions_Device struct {
-	Locale any
-	Model any
+	Locale      any
+	Model       any
 	Orientation any
-	Version any
+	Version     any
 }
 
 type V1alphaTest_DeviceExecutions_RoboStats struct {
-	ActionsPerformed any
-	CrawlDuration any
-	DistinctVisitedScreens any
+	ActionsPerformed          any
+	CrawlDuration             any
+	DistinctVisitedScreens    any
 	MainActivityCrawlTimedOut any
 }
 
 type V1alphaTest_DeviceExecutions struct {
-	AiStepResults any
-	AppCrash any
-	CrawlGraphUri any
-	Device any
-	ExecutionType any
-	FailedReason any
+	AiStepResults           any
+	AppCrash                any
+	CrawlGraphUri           any
+	Device                  any
+	ExecutionType           any
+	FailedReason            any
 	FinalAiAssertionMissing any
-	InconclusiveReason any
-	Name any
-	OriginDeviceExecution any
-	ResultsStoragePath any
-	RoboStats any
-	ScreenshotUris any
-	State any
-	VideoStartTime any
-	VideoUri any
+	InconclusiveReason      any
+	Name                    any
+	OriginDeviceExecution   any
+	ResultsStoragePath      any
+	RoboStats               any
+	ScreenshotUris          any
+	State                   any
+	VideoStartTime          any
+	VideoUri                any
 }
 
 type V1alphaTest_LoginCredential_FieldHints struct {
@@ -161,263 +161,261 @@ type V1alphaTest_LoginCredential struct {
 }
 
 var V1alphaTest_AiInstructions_StepsFields = ubx.FieldMap{
-		"Assertion": ubx.FieldSpec{WireName: "assertion"},
-		"Goal": ubx.FieldSpec{WireName: "goal"},
-		"Hint": ubx.FieldSpec{WireName: "hint"},
-		"SuccessCriteria": ubx.FieldSpec{WireName: "success_criteria"},
-		"TestCase": ubx.FieldSpec{WireName: "test_case"},
-	}
+	"Assertion":       ubx.FieldSpec{WireName: "assertion"},
+	"Goal":            ubx.FieldSpec{WireName: "goal"},
+	"Hint":            ubx.FieldSpec{WireName: "hint"},
+	"SuccessCriteria": ubx.FieldSpec{WireName: "success_criteria"},
+	"TestCase":        ubx.FieldSpec{WireName: "test_case"},
+}
 
 var V1alphaTest_AiInstructionsFields = ubx.FieldMap{
-		"Steps": ubx.FieldSpec{
-			WireName: "steps",
-			Kind: "list",
-			Fields: V1alphaTest_AiInstructions_StepsFields,
-		},
-	}
+	"Steps": ubx.FieldSpec{
+		WireName: "steps",
+		Kind:     "list",
+		Fields:   V1alphaTest_AiInstructions_StepsFields,
+	},
+}
 
 var V1alphaTest_DeviceExecutions_AiStepResults_AssertionDetails_ScreenshotFields = ubx.FieldMap{
-		"Height": ubx.FieldSpec{WireName: "height"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-		"Width": ubx.FieldSpec{WireName: "width"},
-	}
+	"Height": ubx.FieldSpec{WireName: "height"},
+	"Uri":    ubx.FieldSpec{WireName: "uri"},
+	"Width":  ubx.FieldSpec{WireName: "width"},
+}
 
 var V1alphaTest_DeviceExecutions_AiStepResults_AssertionDetailsFields = ubx.FieldMap{
-		"Explanation": ubx.FieldSpec{WireName: "explanation"},
-		"Result": ubx.FieldSpec{WireName: "result"},
-		"Screenshot": ubx.FieldSpec{
-			WireName: "screenshot",
-			Kind: "object",
-			Fields: V1alphaTest_DeviceExecutions_AiStepResults_AssertionDetails_ScreenshotFields,
-		},
-	}
+	"Explanation": ubx.FieldSpec{WireName: "explanation"},
+	"Result":      ubx.FieldSpec{WireName: "result"},
+	"Screenshot": ubx.FieldSpec{
+		WireName: "screenshot",
+		Kind:     "object",
+		Fields:   V1alphaTest_DeviceExecutions_AiStepResults_AssertionDetails_ScreenshotFields,
+	},
+}
 
 var V1alphaTest_DeviceExecutions_AiStepResults_GoalDetails_GoalActions_DebugInfoFields = ubx.FieldMap{
-		"AnnotatedScreenshotUri": ubx.FieldSpec{WireName: "annotated_screenshot_uri"},
-		"JsonUri": ubx.FieldSpec{WireName: "json_uri"},
-	}
+	"AnnotatedScreenshotUri": ubx.FieldSpec{WireName: "annotated_screenshot_uri"},
+	"JsonUri":                ubx.FieldSpec{WireName: "json_uri"},
+}
 
 var V1alphaTest_DeviceExecutions_AiStepResults_GoalDetails_GoalActions_DeviceAction_DeviceInteractions_DragAndDrop_EndFields = ubx.FieldMap{
-		"XCoordinate": ubx.FieldSpec{WireName: "x_coordinate"},
-		"YCoordinate": ubx.FieldSpec{WireName: "y_coordinate"},
-	}
+	"XCoordinate": ubx.FieldSpec{WireName: "x_coordinate"},
+	"YCoordinate": ubx.FieldSpec{WireName: "y_coordinate"},
+}
 
 var V1alphaTest_DeviceExecutions_AiStepResults_GoalDetails_GoalActions_DeviceAction_DeviceInteractions_DragAndDropFields = ubx.FieldMap{
-		"End": ubx.FieldSpec{
-			WireName: "end",
-			Kind: "object",
-			Fields: V1alphaTest_DeviceExecutions_AiStepResults_GoalDetails_GoalActions_DeviceAction_DeviceInteractions_DragAndDrop_EndFields,
-		},
-		"Start": ubx.FieldSpec{
-			WireName: "start",
-			Kind: "object",
-			Fields: V1alphaTest_DeviceExecutions_AiStepResults_GoalDetails_GoalActions_DeviceAction_DeviceInteractions_DragAndDrop_EndFields,
-		},
-	}
+	"End": ubx.FieldSpec{
+		WireName: "end",
+		Kind:     "object",
+		Fields:   V1alphaTest_DeviceExecutions_AiStepResults_GoalDetails_GoalActions_DeviceAction_DeviceInteractions_DragAndDrop_EndFields,
+	},
+	"Start": ubx.FieldSpec{
+		WireName: "start",
+		Kind:     "object",
+		Fields:   V1alphaTest_DeviceExecutions_AiStepResults_GoalDetails_GoalActions_DeviceAction_DeviceInteractions_DragAndDrop_EndFields,
+	},
+}
 
 var V1alphaTest_DeviceExecutions_AiStepResults_GoalDetails_GoalActions_DeviceAction_DeviceInteractions_EnterText_ElementBoundsFields = ubx.FieldMap{
-		"Bottom": ubx.FieldSpec{WireName: "bottom"},
-		"Left": ubx.FieldSpec{WireName: "left"},
-		"Right": ubx.FieldSpec{WireName: "right"},
-		"Top": ubx.FieldSpec{WireName: "top"},
-	}
+	"Bottom": ubx.FieldSpec{WireName: "bottom"},
+	"Left":   ubx.FieldSpec{WireName: "left"},
+	"Right":  ubx.FieldSpec{WireName: "right"},
+	"Top":    ubx.FieldSpec{WireName: "top"},
+}
 
 var V1alphaTest_DeviceExecutions_AiStepResults_GoalDetails_GoalActions_DeviceAction_DeviceInteractions_EnterTextFields = ubx.FieldMap{
-		"ElementBounds": ubx.FieldSpec{
-			WireName: "element_bounds",
-			Kind: "object",
-			Fields: V1alphaTest_DeviceExecutions_AiStepResults_GoalDetails_GoalActions_DeviceAction_DeviceInteractions_EnterText_ElementBoundsFields,
-		},
-		"Text": ubx.FieldSpec{WireName: "text"},
-	}
+	"ElementBounds": ubx.FieldSpec{
+		WireName: "element_bounds",
+		Kind:     "object",
+		Fields:   V1alphaTest_DeviceExecutions_AiStepResults_GoalDetails_GoalActions_DeviceAction_DeviceInteractions_EnterText_ElementBoundsFields,
+	},
+	"Text": ubx.FieldSpec{WireName: "text"},
+}
 
 var V1alphaTest_DeviceExecutions_AiStepResults_GoalDetails_GoalActions_DeviceAction_DeviceInteractions_WaitFields = ubx.FieldMap{
-		"Duration": ubx.FieldSpec{WireName: "duration"},
-	}
+	"Duration": ubx.FieldSpec{WireName: "duration"},
+}
 
 var V1alphaTest_DeviceExecutions_AiStepResults_GoalDetails_GoalActions_DeviceAction_DeviceInteractionsFields = ubx.FieldMap{
-		"BackAction": ubx.FieldSpec{WireName: "back_action"},
-		"DragAndDrop": ubx.FieldSpec{
-			WireName: "drag_and_drop",
-			Kind: "object",
-			Fields: V1alphaTest_DeviceExecutions_AiStepResults_GoalDetails_GoalActions_DeviceAction_DeviceInteractions_DragAndDropFields,
-		},
-		"EnterText": ubx.FieldSpec{
-			WireName: "enter_text",
-			Kind: "object",
-			Fields: V1alphaTest_DeviceExecutions_AiStepResults_GoalDetails_GoalActions_DeviceAction_DeviceInteractions_EnterTextFields,
-		},
-		"KeyCode": ubx.FieldSpec{WireName: "key_code"},
-		"LongPress": ubx.FieldSpec{
-			WireName: "long_press",
-			Kind: "object",
-			Fields: V1alphaTest_DeviceExecutions_AiStepResults_GoalDetails_GoalActions_DeviceAction_DeviceInteractions_DragAndDrop_EndFields,
-		},
-		"Screenshot": ubx.FieldSpec{
-			WireName: "screenshot",
-			Kind: "object",
-			Fields: V1alphaTest_DeviceExecutions_AiStepResults_AssertionDetails_ScreenshotFields,
-		},
-		"Swipe": ubx.FieldSpec{
-			WireName: "swipe",
-			Kind: "object",
-			Fields: V1alphaTest_DeviceExecutions_AiStepResults_GoalDetails_GoalActions_DeviceAction_DeviceInteractions_DragAndDropFields,
-		},
-		"Tap": ubx.FieldSpec{
-			WireName: "tap",
-			Kind: "object",
-			Fields: V1alphaTest_DeviceExecutions_AiStepResults_GoalDetails_GoalActions_DeviceAction_DeviceInteractions_DragAndDrop_EndFields,
-		},
-		"TargetFoldedState": ubx.FieldSpec{WireName: "target_folded_state"},
-		"TargetOrientation": ubx.FieldSpec{WireName: "target_orientation"},
-		"TextInput": ubx.FieldSpec{WireName: "text_input"},
-		"Wait": ubx.FieldSpec{
-			WireName: "wait",
-			Kind: "object",
-			Fields: V1alphaTest_DeviceExecutions_AiStepResults_GoalDetails_GoalActions_DeviceAction_DeviceInteractions_WaitFields,
-		},
-	}
+	"BackAction": ubx.FieldSpec{WireName: "back_action"},
+	"DragAndDrop": ubx.FieldSpec{
+		WireName: "drag_and_drop",
+		Kind:     "object",
+		Fields:   V1alphaTest_DeviceExecutions_AiStepResults_GoalDetails_GoalActions_DeviceAction_DeviceInteractions_DragAndDropFields,
+	},
+	"EnterText": ubx.FieldSpec{
+		WireName: "enter_text",
+		Kind:     "object",
+		Fields:   V1alphaTest_DeviceExecutions_AiStepResults_GoalDetails_GoalActions_DeviceAction_DeviceInteractions_EnterTextFields,
+	},
+	"KeyCode": ubx.FieldSpec{WireName: "key_code"},
+	"LongPress": ubx.FieldSpec{
+		WireName: "long_press",
+		Kind:     "object",
+		Fields:   V1alphaTest_DeviceExecutions_AiStepResults_GoalDetails_GoalActions_DeviceAction_DeviceInteractions_DragAndDrop_EndFields,
+	},
+	"Screenshot": ubx.FieldSpec{
+		WireName: "screenshot",
+		Kind:     "object",
+		Fields:   V1alphaTest_DeviceExecutions_AiStepResults_AssertionDetails_ScreenshotFields,
+	},
+	"Swipe": ubx.FieldSpec{
+		WireName: "swipe",
+		Kind:     "object",
+		Fields:   V1alphaTest_DeviceExecutions_AiStepResults_GoalDetails_GoalActions_DeviceAction_DeviceInteractions_DragAndDropFields,
+	},
+	"Tap": ubx.FieldSpec{
+		WireName: "tap",
+		Kind:     "object",
+		Fields:   V1alphaTest_DeviceExecutions_AiStepResults_GoalDetails_GoalActions_DeviceAction_DeviceInteractions_DragAndDrop_EndFields,
+	},
+	"TargetFoldedState": ubx.FieldSpec{WireName: "target_folded_state"},
+	"TargetOrientation": ubx.FieldSpec{WireName: "target_orientation"},
+	"TextInput":         ubx.FieldSpec{WireName: "text_input"},
+	"Wait": ubx.FieldSpec{
+		WireName: "wait",
+		Kind:     "object",
+		Fields:   V1alphaTest_DeviceExecutions_AiStepResults_GoalDetails_GoalActions_DeviceAction_DeviceInteractions_WaitFields,
+	},
+}
 
 var V1alphaTest_DeviceExecutions_AiStepResults_GoalDetails_GoalActions_DeviceActionFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DeviceInteractions": ubx.FieldSpec{
-			WireName: "device_interactions",
-			Kind: "list",
-			Fields: V1alphaTest_DeviceExecutions_AiStepResults_GoalDetails_GoalActions_DeviceAction_DeviceInteractionsFields,
-		},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"DeviceInteractions": ubx.FieldSpec{
+		WireName: "device_interactions",
+		Kind:     "list",
+		Fields:   V1alphaTest_DeviceExecutions_AiStepResults_GoalDetails_GoalActions_DeviceAction_DeviceInteractionsFields,
+	},
+}
 
 var V1alphaTest_DeviceExecutions_AiStepResults_GoalDetails_GoalActions_TerminalActionFields = ubx.FieldMap{
-		"Reason": ubx.FieldSpec{WireName: "reason"},
-		"Screenshot": ubx.FieldSpec{
-			WireName: "screenshot",
-			Kind: "object",
-			Fields: V1alphaTest_DeviceExecutions_AiStepResults_AssertionDetails_ScreenshotFields,
-		},
-	}
+	"Reason": ubx.FieldSpec{WireName: "reason"},
+	"Screenshot": ubx.FieldSpec{
+		WireName: "screenshot",
+		Kind:     "object",
+		Fields:   V1alphaTest_DeviceExecutions_AiStepResults_AssertionDetails_ScreenshotFields,
+	},
+}
 
 var V1alphaTest_DeviceExecutions_AiStepResults_GoalDetails_GoalActionsFields = ubx.FieldMap{
-		"CachingType": ubx.FieldSpec{WireName: "caching_type"},
-		"DebugInfo": ubx.FieldSpec{
-			WireName: "debug_info",
-			Kind: "object",
-			Fields: V1alphaTest_DeviceExecutions_AiStepResults_GoalDetails_GoalActions_DebugInfoFields,
-		},
-		"DeviceAction": ubx.FieldSpec{
-			WireName: "device_action",
-			Kind: "object",
-			Fields: V1alphaTest_DeviceExecutions_AiStepResults_GoalDetails_GoalActions_DeviceActionFields,
-		},
-		"Explanation": ubx.FieldSpec{WireName: "explanation"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"TerminalAction": ubx.FieldSpec{
-			WireName: "terminal_action",
-			Kind: "object",
-			Fields: V1alphaTest_DeviceExecutions_AiStepResults_GoalDetails_GoalActions_TerminalActionFields,
-		},
-	}
+	"CachingType": ubx.FieldSpec{WireName: "caching_type"},
+	"DebugInfo": ubx.FieldSpec{
+		WireName: "debug_info",
+		Kind:     "object",
+		Fields:   V1alphaTest_DeviceExecutions_AiStepResults_GoalDetails_GoalActions_DebugInfoFields,
+	},
+	"DeviceAction": ubx.FieldSpec{
+		WireName: "device_action",
+		Kind:     "object",
+		Fields:   V1alphaTest_DeviceExecutions_AiStepResults_GoalDetails_GoalActions_DeviceActionFields,
+	},
+	"Explanation": ubx.FieldSpec{WireName: "explanation"},
+	"StartTime":   ubx.FieldSpec{WireName: "start_time"},
+	"TerminalAction": ubx.FieldSpec{
+		WireName: "terminal_action",
+		Kind:     "object",
+		Fields:   V1alphaTest_DeviceExecutions_AiStepResults_GoalDetails_GoalActions_TerminalActionFields,
+	},
+}
 
 var V1alphaTest_DeviceExecutions_AiStepResults_GoalDetailsFields = ubx.FieldMap{
-		"GoalActions": ubx.FieldSpec{
-			WireName: "goal_actions",
-			Kind: "list",
-			Fields: V1alphaTest_DeviceExecutions_AiStepResults_GoalDetails_GoalActionsFields,
-		},
-	}
+	"GoalActions": ubx.FieldSpec{
+		WireName: "goal_actions",
+		Kind:     "list",
+		Fields:   V1alphaTest_DeviceExecutions_AiStepResults_GoalDetails_GoalActionsFields,
+	},
+}
 
 var V1alphaTest_DeviceExecutions_AiStepResultsFields = ubx.FieldMap{
-		"AssertionDetails": ubx.FieldSpec{
-			WireName: "assertion_details",
-			Kind: "object",
-			Fields: V1alphaTest_DeviceExecutions_AiStepResults_AssertionDetailsFields,
-		},
-		"GoalDetails": ubx.FieldSpec{
-			WireName: "goal_details",
-			Kind: "object",
-			Fields: V1alphaTest_DeviceExecutions_AiStepResults_GoalDetailsFields,
-		},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"Step": ubx.FieldSpec{
-			WireName: "step",
-			Kind: "object",
-			Fields: V1alphaTest_AiInstructions_StepsFields,
-		},
-	}
+	"AssertionDetails": ubx.FieldSpec{
+		WireName: "assertion_details",
+		Kind:     "object",
+		Fields:   V1alphaTest_DeviceExecutions_AiStepResults_AssertionDetailsFields,
+	},
+	"GoalDetails": ubx.FieldSpec{
+		WireName: "goal_details",
+		Kind:     "object",
+		Fields:   V1alphaTest_DeviceExecutions_AiStepResults_GoalDetailsFields,
+	},
+	"State": ubx.FieldSpec{WireName: "state"},
+	"Step": ubx.FieldSpec{
+		WireName: "step",
+		Kind:     "object",
+		Fields:   V1alphaTest_AiInstructions_StepsFields,
+	},
+}
 
 var V1alphaTest_DeviceExecutions_AppCrashFields = ubx.FieldMap{
-		"Message": ubx.FieldSpec{WireName: "message"},
-		"StackTrace": ubx.FieldSpec{WireName: "stack_trace"},
-	}
+	"Message":    ubx.FieldSpec{WireName: "message"},
+	"StackTrace": ubx.FieldSpec{WireName: "stack_trace"},
+}
 
 var V1alphaTest_DeviceExecutions_DeviceFields = ubx.FieldMap{
-		"Locale": ubx.FieldSpec{WireName: "locale"},
-		"Model": ubx.FieldSpec{WireName: "model"},
-		"Orientation": ubx.FieldSpec{WireName: "orientation"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"Locale":      ubx.FieldSpec{WireName: "locale"},
+	"Model":       ubx.FieldSpec{WireName: "model"},
+	"Orientation": ubx.FieldSpec{WireName: "orientation"},
+	"Version":     ubx.FieldSpec{WireName: "version"},
+}
 
 var V1alphaTest_DeviceExecutions_RoboStatsFields = ubx.FieldMap{
-		"ActionsPerformed": ubx.FieldSpec{WireName: "actions_performed"},
-		"CrawlDuration": ubx.FieldSpec{WireName: "crawl_duration"},
-		"DistinctVisitedScreens": ubx.FieldSpec{WireName: "distinct_visited_screens"},
-		"MainActivityCrawlTimedOut": ubx.FieldSpec{WireName: "main_activity_crawl_timed_out"},
-	}
+	"ActionsPerformed":          ubx.FieldSpec{WireName: "actions_performed"},
+	"CrawlDuration":             ubx.FieldSpec{WireName: "crawl_duration"},
+	"DistinctVisitedScreens":    ubx.FieldSpec{WireName: "distinct_visited_screens"},
+	"MainActivityCrawlTimedOut": ubx.FieldSpec{WireName: "main_activity_crawl_timed_out"},
+}
 
 var V1alphaTest_DeviceExecutionsFields = ubx.FieldMap{
-		"AiStepResults": ubx.FieldSpec{
-			WireName: "ai_step_results",
-			Kind: "list",
-			Fields: V1alphaTest_DeviceExecutions_AiStepResultsFields,
-		},
-		"AppCrash": ubx.FieldSpec{
-			WireName: "app_crash",
-			Kind: "object",
-			Fields: V1alphaTest_DeviceExecutions_AppCrashFields,
-		},
-		"CrawlGraphUri": ubx.FieldSpec{WireName: "crawl_graph_uri"},
-		"Device": ubx.FieldSpec{
-			WireName: "device",
-			Kind: "object",
-			Fields: V1alphaTest_DeviceExecutions_DeviceFields,
-		},
-		"ExecutionType": ubx.FieldSpec{WireName: "execution_type"},
-		"FailedReason": ubx.FieldSpec{WireName: "failed_reason"},
-		"FinalAiAssertionMissing": ubx.FieldSpec{WireName: "final_ai_assertion_missing"},
-		"InconclusiveReason": ubx.FieldSpec{WireName: "inconclusive_reason"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"OriginDeviceExecution": ubx.FieldSpec{WireName: "origin_device_execution"},
-		"ResultsStoragePath": ubx.FieldSpec{WireName: "results_storage_path"},
-		"RoboStats": ubx.FieldSpec{
-			WireName: "robo_stats",
-			Kind: "object",
-			Fields: V1alphaTest_DeviceExecutions_RoboStatsFields,
-		},
-		"ScreenshotUris": ubx.FieldSpec{WireName: "screenshot_uris"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"VideoStartTime": ubx.FieldSpec{WireName: "video_start_time"},
-		"VideoUri": ubx.FieldSpec{WireName: "video_uri"},
-	}
+	"AiStepResults": ubx.FieldSpec{
+		WireName: "ai_step_results",
+		Kind:     "list",
+		Fields:   V1alphaTest_DeviceExecutions_AiStepResultsFields,
+	},
+	"AppCrash": ubx.FieldSpec{
+		WireName: "app_crash",
+		Kind:     "object",
+		Fields:   V1alphaTest_DeviceExecutions_AppCrashFields,
+	},
+	"CrawlGraphUri": ubx.FieldSpec{WireName: "crawl_graph_uri"},
+	"Device": ubx.FieldSpec{
+		WireName: "device",
+		Kind:     "object",
+		Fields:   V1alphaTest_DeviceExecutions_DeviceFields,
+	},
+	"ExecutionType":           ubx.FieldSpec{WireName: "execution_type"},
+	"FailedReason":            ubx.FieldSpec{WireName: "failed_reason"},
+	"FinalAiAssertionMissing": ubx.FieldSpec{WireName: "final_ai_assertion_missing"},
+	"InconclusiveReason":      ubx.FieldSpec{WireName: "inconclusive_reason"},
+	"Name":                    ubx.FieldSpec{WireName: "name"},
+	"OriginDeviceExecution":   ubx.FieldSpec{WireName: "origin_device_execution"},
+	"ResultsStoragePath":      ubx.FieldSpec{WireName: "results_storage_path"},
+	"RoboStats": ubx.FieldSpec{
+		WireName: "robo_stats",
+		Kind:     "object",
+		Fields:   V1alphaTest_DeviceExecutions_RoboStatsFields,
+	},
+	"ScreenshotUris": ubx.FieldSpec{WireName: "screenshot_uris"},
+	"State":          ubx.FieldSpec{WireName: "state"},
+	"VideoStartTime": ubx.FieldSpec{WireName: "video_start_time"},
+	"VideoUri":       ubx.FieldSpec{WireName: "video_uri"},
+}
 
 var V1alphaTest_LoginCredential_FieldHintsFields = ubx.FieldMap{
-		"PasswordResourceName": ubx.FieldSpec{WireName: "password_resource_name"},
-		"UsernameResourceName": ubx.FieldSpec{WireName: "username_resource_name"},
-	}
+	"PasswordResourceName": ubx.FieldSpec{WireName: "password_resource_name"},
+	"UsernameResourceName": ubx.FieldSpec{WireName: "username_resource_name"},
+}
 
 var V1alphaTest_LoginCredentialFields = ubx.FieldMap{
-		"FieldHints": ubx.FieldSpec{
-			WireName: "field_hints",
-			Kind: "object",
-			Fields: V1alphaTest_LoginCredential_FieldHintsFields,
-		},
-		"Google": ubx.FieldSpec{WireName: "google"},
-		"Password": ubx.FieldSpec{WireName: "password"},
-		"Username": ubx.FieldSpec{WireName: "username"},
-	}
+	"FieldHints": ubx.FieldSpec{
+		WireName: "field_hints",
+		Kind:     "object",
+		Fields:   V1alphaTest_LoginCredential_FieldHintsFields,
+	},
+	"Google":   ubx.FieldSpec{WireName: "google"},
+	"Password": ubx.FieldSpec{WireName: "password"},
+	"Username": ubx.FieldSpec{WireName: "username"},
+}
 
 type V1alphaTestConfig struct {
 	AiInstructions any
-	// Output only. Timestamp when the test was run.
-	CreateTime any
 	// Required. The results of the test on each device.
 	DeviceExecutions any
 	// Optional. Display name of the release test. Required if the release test is created with multiple goals.
@@ -430,8 +428,6 @@ type V1alphaTestConfig struct {
 	ResultsBucket any
 	// Optional. The test case that was used to generate this release test. Note: The test case may have changed or been deleted since the release test was created. Format: `projects/{project_number}/apps/{app}/testCases/{test_case}`
 	TestCase any
-	// Output only. The state of the release test.
-	TestState any
 }
 
 type V1alphaTestAttrs struct {
@@ -459,24 +455,22 @@ var V1alphaTest = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AiInstructions": ubx.FieldSpec{
 			WireName: "ai_instructions",
-			Kind: "object",
-			Fields: V1alphaTest_AiInstructionsFields,
+			Kind:     "object",
+			Fields:   V1alphaTest_AiInstructionsFields,
 		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"DeviceExecutions": ubx.FieldSpec{
 			WireName: "device_executions",
-			Kind: "list",
-			Fields: V1alphaTest_DeviceExecutionsFields,
+			Kind:     "list",
+			Fields:   V1alphaTest_DeviceExecutionsFields,
 		},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"LoginCredential": ubx.FieldSpec{
 			WireName: "login_credential",
-			Kind: "object",
-			Fields: V1alphaTest_LoginCredentialFields,
+			Kind:     "object",
+			Fields:   V1alphaTest_LoginCredentialFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":          ubx.FieldSpec{WireName: "name"},
 		"ResultsBucket": ubx.FieldSpec{WireName: "results_bucket"},
-		"TestCase": ubx.FieldSpec{WireName: "test_case"},
-		"TestState": ubx.FieldSpec{WireName: "test_state"},
+		"TestCase":      ubx.FieldSpec{WireName: "test_case"},
 	},
 }

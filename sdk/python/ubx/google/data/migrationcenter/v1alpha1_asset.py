@@ -903,7 +903,6 @@ class V1alpha1Asset_VirtualMachineDetails:
 
 @dataclasses.dataclass
 class V1alpha1AssetConfig:
-    name: Any = None
     view: Any = None
 
 @dataclasses.dataclass
@@ -1008,7 +1007,6 @@ class V1alpha1AssetAttrs:
 V1alpha1Asset = ubx.DataSourceBinding(
     wire_type="google_migrationcenter_v1alpha1_asset",
     fields={
-        "name": ubx.FieldSpec(wire_name="name"),
         "view": ubx.FieldSpec(wire_name="view"),
     },
 )

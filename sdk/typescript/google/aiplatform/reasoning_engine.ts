@@ -949,8 +949,6 @@ const ReasoningEngine_SpecFields: FieldMap = {
 export interface ReasoningEngineConfig {
   /** Configuration for how Agent Engine sub-resources should manage context. */
   contextSpec?: ReasoningEngine_ContextSpec | Computed<ReasoningEngine_ContextSpec>;
-  /** Output only. Timestamp when this ReasoningEngine was created. */
-  createTime?: string | Computed<string>;
   /** Optional. The description of the ReasoningEngine. */
   description?: string | Computed<string>;
   /** Required. The display name of the ReasoningEngine. */
@@ -965,8 +963,6 @@ export interface ReasoningEngineConfig {
   name?: string | Computed<string>;
   /** ReasoningEngine configurations */
   spec?: ReasoningEngine_Spec | Computed<ReasoningEngine_Spec>;
-  /** Output only. Timestamp when this ReasoningEngine was most recently updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface ReasoningEngineAttrs {
@@ -1000,7 +996,6 @@ export const ReasoningEngine: ResourceBinding<ReasoningEngineConfig, ReasoningEn
       kind: "object",
       fields: ReasoningEngine_ContextSpecFields,
     },
-    createTime: "create_time",
     description: "description",
     displayName: "display_name",
     encryptionSpec: {
@@ -1016,6 +1011,5 @@ export const ReasoningEngine: ResourceBinding<ReasoningEngineConfig, ReasoningEn
       kind: "object",
       fields: ReasoningEngine_SpecFields,
     },
-    updateTime: "update_time",
   },
 };

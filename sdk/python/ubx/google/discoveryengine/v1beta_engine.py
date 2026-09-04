@@ -280,8 +280,6 @@ class V1betaEngineConfig:
     agent_gateway_setting: Any = None
     # Optional. Immutable. This the application type which this engine resource represents. NOTE: this is a new concept independ of existing industry vertical or solution type.
     app_type: Any = None
-    # Output only. The Agent registry containing the agents, MCP servers and tools associated with this engine. Derived server-side from the linked Agent Gateway's registry.
-    associated_agent_registry: Any = None
     # Configurations for a Chat Engine.
     chat_engine_config: Any = None
     # Additional information of a Chat Engine. Fields in this message are output only.
@@ -294,8 +292,6 @@ class V1betaEngineConfig:
     configurable_billing_approach: Any = None
     # Optional. Maps a connector ID (e.g., "hybrid-github", "shopify") to tenant-specific information required for that connector. The structure of the tenant information string is connector-dependent.
     connector_tenant_info: Any = None
-    # Output only. Timestamp the Recommendation Engine was created at.
-    create_time: Any = None
     # Optional. The data stores associated with this engine. For SOLUTION_TYPE_SEARCH and SOLUTION_TYPE_RECOMMENDATION type of engines, they can only associate with at most one data store. If solution_type is SOLUTION_TYPE_CHAT, multiple DataStores in the same Collection can be associated here. Note that when used in CreateEngineRequest, one DataStore id must be provided as the system will use it for necessary initializations.
     data_store_ids: Any = None
     # Optional. Whether to disable analytics for searches performed on this engine.
@@ -324,8 +320,6 @@ class V1betaEngineConfig:
     search_engine_config: Any = None
     # Required. The solutions of the engine.
     solution_type: Any = None
-    # Output only. Timestamp the Recommendation Engine was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V1betaEngineAttrs:
@@ -389,7 +383,6 @@ V1betaEngine = ubx.ResourceBinding(
             fields=_V1betaEngine_AgentGatewaySettingFields,
         ),
         "app_type": ubx.FieldSpec(wire_name="app_type"),
-        "associated_agent_registry": ubx.FieldSpec(wire_name="associated_agent_registry"),
         "chat_engine_config": ubx.FieldSpec(
             wire_name="chat_engine_config",
             kind="object",
@@ -412,7 +405,6 @@ V1betaEngine = ubx.ResourceBinding(
         ),
         "configurable_billing_approach": ubx.FieldSpec(wire_name="configurable_billing_approach"),
         "connector_tenant_info": ubx.FieldSpec(wire_name="connector_tenant_info"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "data_store_ids": ubx.FieldSpec(wire_name="data_store_ids"),
         "disable_analytics": ubx.FieldSpec(wire_name="disable_analytics"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
@@ -443,6 +435,5 @@ V1betaEngine = ubx.ResourceBinding(
             fields=_V1betaEngine_SearchEngineConfigFields,
         ),
         "solution_type": ubx.FieldSpec(wire_name="solution_type"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

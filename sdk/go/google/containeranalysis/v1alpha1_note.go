@@ -56,8 +56,8 @@ type V1alpha1Note_Compliance_CisBenchmark struct {
 
 type V1alpha1Note_Compliance_Version struct {
 	BenchmarkDocument any
-	CpeUri any
-	Version any
+	CpeUri            any
+	Version           any
 }
 
 type V1alpha1Note_Compliance struct {
@@ -90,25 +90,25 @@ type V1alpha1Note_Discovery struct {
 }
 
 type V1alpha1Note_Package_Digest struct {
-	Algo any
+	Algo        any
 	DigestBytes any
 }
 
 type V1alpha1Note_Package_Distribution_LatestVersion struct {
-	Epoch any
+	Epoch     any
 	Inclusive any
-	Kind any
-	Name any
-	Revision any
+	Kind      any
+	Name      any
+	Revision  any
 }
 
 type V1alpha1Note_Package_Distribution struct {
-	Architecture any
-	CpeUri any
-	Description any
+	Architecture  any
+	CpeUri        any
+	Description   any
 	LatestVersion any
-	Maintainer any
-	Url any
+	Maintainer    any
+	Url           any
 }
 
 type V1alpha1Note_Package_License struct {
@@ -145,7 +145,7 @@ type V1alpha1Note_Package struct {
 
 type V1alpha1Note_RelatedUrl struct {
 	Label any
-	Url any
+	Url   any
 }
 
 type V1alpha1Note_Sbom struct {
@@ -173,9 +173,9 @@ type V1alpha1Note_SpdxFile struct {
 
 type V1alpha1Note_SpdxPackage_ExternalRefs struct {
 	Category any
-	Comment any
-	Locator any
-	Type any
+	Comment  any
+	Locator  any
+	Type     any
 }
 
 type V1alpha1Note_SpdxPackage struct {
@@ -222,9 +222,9 @@ type V1alpha1Note_SpdxRelationship struct {
 
 type V1alpha1Note_Upgrade_Distributions struct {
 	Classification any
-	CpeUri any
-	Cve any
-	Severity any
+	CpeUri         any
+	Cve            any
+	Severity       any
 }
 
 type V1alpha1Note_Upgrade struct {
@@ -245,13 +245,13 @@ type V1alpha1Note_VulnerabilityAssessment_Assessment_Justification struct {
 
 type V1alpha1Note_VulnerabilityAssessment_Assessment_RelatedUris struct {
 	Label any
-	Uri any
+	Uri   any
 }
 
 type V1alpha1Note_VulnerabilityAssessment_Assessment_Remediations struct {
-	Details any
+	Details         any
 	RemediationType any
-	RemediationUri any
+	RemediationUri  any
 }
 
 type V1alpha1Note_VulnerabilityAssessment_Assessment struct {
@@ -333,9 +333,9 @@ type V1alpha1Note_VulnerabilityType_CvssV2 struct {
 	// Optional. Confidentiality Impact (C). Defined in CVSS v2, v3.
 	ConfidentialityImpact any
 	// Optional. Exploit Maturity (E). Defined in CVSS v4.
-	ExploitMaturity any
+	ExploitMaturity     any
 	ExploitabilityScore any
-	ImpactScore any
+	ImpactScore         any
 	// Optional. Integrity Impact (I). Defined in CVSS v2, v3.
 	IntegrityImpact any
 	// Optional. Privileges Required (PR). Defined in CVSS v3, v4.
@@ -360,44 +360,44 @@ type V1alpha1Note_VulnerabilityType_CvssV2 struct {
 
 type V1alpha1Note_VulnerabilityType_Details_FixedLocation_FileLocation_LayerDetails_BaseImages struct {
 	LayerCount any
-	Name any
-	Registry any
+	Name       any
+	Registry   any
 	Repository any
 }
 
 type V1alpha1Note_VulnerabilityType_Details_FixedLocation_FileLocation_LayerDetails struct {
 	BaseImages any
-	ChainId any
-	Command any
-	DiffId any
-	Index any
+	ChainId    any
+	Command    any
+	DiffId     any
+	Index      any
 }
 
 type V1alpha1Note_VulnerabilityType_Details_FixedLocation_FileLocation struct {
-	FilePath any
+	FilePath     any
 	LayerDetails any
-	LineNumber any
+	LineNumber   any
 }
 
 type V1alpha1Note_VulnerabilityType_Details_FixedLocation struct {
-	CpeUri any
+	CpeUri       any
 	FileLocation any
-	Package any
-	Version any
+	Package      any
+	Version      any
 }
 
 type V1alpha1Note_VulnerabilityType_Details struct {
-	CpeUri any
-	Description any
-	FixedLocation any
-	IsObsolete any
+	CpeUri             any
+	Description        any
+	FixedLocation      any
+	IsObsolete         any
 	MaxAffectedVersion any
 	MinAffectedVersion any
-	Package any
-	PackageType any
-	SeverityName any
-	Source any
-	Vendor any
+	Package            any
+	PackageType        any
+	SeverityName       any
+	Source             any
+	Vendor             any
 }
 
 type V1alpha1Note_VulnerabilityType struct {
@@ -420,430 +420,430 @@ type V1alpha1Note_VulnerabilityType struct {
 }
 
 var V1alpha1Note_AttestationAuthority_HintFields = ubx.FieldMap{
-		"HumanReadableName": ubx.FieldSpec{WireName: "human_readable_name"},
-	}
+	"HumanReadableName": ubx.FieldSpec{WireName: "human_readable_name"},
+}
 
 var V1alpha1Note_AttestationAuthorityFields = ubx.FieldMap{
-		"Hint": ubx.FieldSpec{
-			WireName: "hint",
-			Kind: "object",
-			Fields: V1alpha1Note_AttestationAuthority_HintFields,
-		},
-	}
+	"Hint": ubx.FieldSpec{
+		WireName: "hint",
+		Kind:     "object",
+		Fields:   V1alpha1Note_AttestationAuthority_HintFields,
+	},
+}
 
 var V1alpha1Note_BaseImage_FingerprintFields = ubx.FieldMap{
-		"V1Name": ubx.FieldSpec{WireName: "v1_name"},
-		"V2Blob": ubx.FieldSpec{WireName: "v2_blob"},
-		"V2Name": ubx.FieldSpec{WireName: "v2_name"},
-	}
+	"V1Name": ubx.FieldSpec{WireName: "v1_name"},
+	"V2Blob": ubx.FieldSpec{WireName: "v2_blob"},
+	"V2Name": ubx.FieldSpec{WireName: "v2_name"},
+}
 
 var V1alpha1Note_BaseImageFields = ubx.FieldMap{
-		"Fingerprint": ubx.FieldSpec{
-			WireName: "fingerprint",
-			Kind: "object",
-			Fields: V1alpha1Note_BaseImage_FingerprintFields,
-		},
-		"ResourceUrl": ubx.FieldSpec{WireName: "resource_url"},
-	}
+	"Fingerprint": ubx.FieldSpec{
+		WireName: "fingerprint",
+		Kind:     "object",
+		Fields:   V1alpha1Note_BaseImage_FingerprintFields,
+	},
+	"ResourceUrl": ubx.FieldSpec{WireName: "resource_url"},
+}
 
 var V1alpha1Note_BuildType_SignatureFields = ubx.FieldMap{
-		"KeyId": ubx.FieldSpec{WireName: "key_id"},
-		"KeyType": ubx.FieldSpec{WireName: "key_type"},
-		"PublicKey": ubx.FieldSpec{WireName: "public_key"},
-		"Signature": ubx.FieldSpec{WireName: "signature"},
-	}
+	"KeyId":     ubx.FieldSpec{WireName: "key_id"},
+	"KeyType":   ubx.FieldSpec{WireName: "key_type"},
+	"PublicKey": ubx.FieldSpec{WireName: "public_key"},
+	"Signature": ubx.FieldSpec{WireName: "signature"},
+}
 
 var V1alpha1Note_BuildTypeFields = ubx.FieldMap{
-		"BuilderVersion": ubx.FieldSpec{WireName: "builder_version"},
-		"Signature": ubx.FieldSpec{
-			WireName: "signature",
-			Kind: "object",
-			Fields: V1alpha1Note_BuildType_SignatureFields,
-		},
-	}
+	"BuilderVersion": ubx.FieldSpec{WireName: "builder_version"},
+	"Signature": ubx.FieldSpec{
+		WireName: "signature",
+		Kind:     "object",
+		Fields:   V1alpha1Note_BuildType_SignatureFields,
+	},
+}
 
 var V1alpha1Note_Compliance_CisBenchmarkFields = ubx.FieldMap{
-		"ProfileLevel": ubx.FieldSpec{WireName: "profile_level"},
-		"Severity": ubx.FieldSpec{WireName: "severity"},
-	}
+	"ProfileLevel": ubx.FieldSpec{WireName: "profile_level"},
+	"Severity":     ubx.FieldSpec{WireName: "severity"},
+}
 
 var V1alpha1Note_Compliance_VersionFields = ubx.FieldMap{
-		"BenchmarkDocument": ubx.FieldSpec{WireName: "benchmark_document"},
-		"CpeUri": ubx.FieldSpec{WireName: "cpe_uri"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"BenchmarkDocument": ubx.FieldSpec{WireName: "benchmark_document"},
+	"CpeUri":            ubx.FieldSpec{WireName: "cpe_uri"},
+	"Version":           ubx.FieldSpec{WireName: "version"},
+}
 
 var V1alpha1Note_ComplianceFields = ubx.FieldMap{
-		"CisBenchmark": ubx.FieldSpec{
-			WireName: "cis_benchmark",
-			Kind: "object",
-			Fields: V1alpha1Note_Compliance_CisBenchmarkFields,
-		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Impact": ubx.FieldSpec{WireName: "impact"},
-		"Rationale": ubx.FieldSpec{WireName: "rationale"},
-		"Remediation": ubx.FieldSpec{WireName: "remediation"},
-		"ScanInstructions": ubx.FieldSpec{WireName: "scan_instructions"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-		"Version": ubx.FieldSpec{
-			WireName: "version",
-			Kind: "list",
-			Fields: V1alpha1Note_Compliance_VersionFields,
-		},
-	}
+	"CisBenchmark": ubx.FieldSpec{
+		WireName: "cis_benchmark",
+		Kind:     "object",
+		Fields:   V1alpha1Note_Compliance_CisBenchmarkFields,
+	},
+	"Description":      ubx.FieldSpec{WireName: "description"},
+	"Impact":           ubx.FieldSpec{WireName: "impact"},
+	"Rationale":        ubx.FieldSpec{WireName: "rationale"},
+	"Remediation":      ubx.FieldSpec{WireName: "remediation"},
+	"ScanInstructions": ubx.FieldSpec{WireName: "scan_instructions"},
+	"Title":            ubx.FieldSpec{WireName: "title"},
+	"Version": ubx.FieldSpec{
+		WireName: "version",
+		Kind:     "list",
+		Fields:   V1alpha1Note_Compliance_VersionFields,
+	},
+}
 
 var V1alpha1Note_DeployableFields = ubx.FieldMap{
-		"ResourceUri": ubx.FieldSpec{WireName: "resource_uri"},
-	}
+	"ResourceUri": ubx.FieldSpec{WireName: "resource_uri"},
+}
 
 var V1alpha1Note_DiscoveryFields = ubx.FieldMap{
-		"AnalysisKind": ubx.FieldSpec{WireName: "analysis_kind"},
-	}
+	"AnalysisKind": ubx.FieldSpec{WireName: "analysis_kind"},
+}
 
 var V1alpha1Note_Package_DigestFields = ubx.FieldMap{
-		"Algo": ubx.FieldSpec{WireName: "algo"},
-		"DigestBytes": ubx.FieldSpec{WireName: "digest_bytes"},
-	}
+	"Algo":        ubx.FieldSpec{WireName: "algo"},
+	"DigestBytes": ubx.FieldSpec{WireName: "digest_bytes"},
+}
 
 var V1alpha1Note_Package_Distribution_LatestVersionFields = ubx.FieldMap{
-		"Epoch": ubx.FieldSpec{WireName: "epoch"},
-		"Inclusive": ubx.FieldSpec{WireName: "inclusive"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Revision": ubx.FieldSpec{WireName: "revision"},
-	}
+	"Epoch":     ubx.FieldSpec{WireName: "epoch"},
+	"Inclusive": ubx.FieldSpec{WireName: "inclusive"},
+	"Kind":      ubx.FieldSpec{WireName: "kind"},
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"Revision":  ubx.FieldSpec{WireName: "revision"},
+}
 
 var V1alpha1Note_Package_DistributionFields = ubx.FieldMap{
-		"Architecture": ubx.FieldSpec{WireName: "architecture"},
-		"CpeUri": ubx.FieldSpec{WireName: "cpe_uri"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"LatestVersion": ubx.FieldSpec{
-			WireName: "latest_version",
-			Kind: "object",
-			Fields: V1alpha1Note_Package_Distribution_LatestVersionFields,
-		},
-		"Maintainer": ubx.FieldSpec{WireName: "maintainer"},
-		"Url": ubx.FieldSpec{WireName: "url"},
-	}
+	"Architecture": ubx.FieldSpec{WireName: "architecture"},
+	"CpeUri":       ubx.FieldSpec{WireName: "cpe_uri"},
+	"Description":  ubx.FieldSpec{WireName: "description"},
+	"LatestVersion": ubx.FieldSpec{
+		WireName: "latest_version",
+		Kind:     "object",
+		Fields:   V1alpha1Note_Package_Distribution_LatestVersionFields,
+	},
+	"Maintainer": ubx.FieldSpec{WireName: "maintainer"},
+	"Url":        ubx.FieldSpec{WireName: "url"},
+}
 
 var V1alpha1Note_Package_LicenseFields = ubx.FieldMap{
-		"Comments": ubx.FieldSpec{WireName: "comments"},
-		"Expression": ubx.FieldSpec{WireName: "expression"},
-	}
+	"Comments":   ubx.FieldSpec{WireName: "comments"},
+	"Expression": ubx.FieldSpec{WireName: "expression"},
+}
 
 var V1alpha1Note_PackageFields = ubx.FieldMap{
-		"Architecture": ubx.FieldSpec{WireName: "architecture"},
-		"CpeUri": ubx.FieldSpec{WireName: "cpe_uri"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Digest": ubx.FieldSpec{
-			WireName: "digest",
-			Kind: "list",
-			Fields: V1alpha1Note_Package_DigestFields,
-		},
-		"Distribution": ubx.FieldSpec{
-			WireName: "distribution",
-			Kind: "list",
-			Fields: V1alpha1Note_Package_DistributionFields,
-		},
-		"License": ubx.FieldSpec{
-			WireName: "license",
-			Kind: "object",
-			Fields: V1alpha1Note_Package_LicenseFields,
-		},
-		"Maintainer": ubx.FieldSpec{WireName: "maintainer"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PackageType": ubx.FieldSpec{WireName: "package_type"},
-		"Url": ubx.FieldSpec{WireName: "url"},
-		"Version": ubx.FieldSpec{
-			WireName: "version",
-			Kind: "object",
-			Fields: V1alpha1Note_Package_Distribution_LatestVersionFields,
-		},
-	}
+	"Architecture": ubx.FieldSpec{WireName: "architecture"},
+	"CpeUri":       ubx.FieldSpec{WireName: "cpe_uri"},
+	"Description":  ubx.FieldSpec{WireName: "description"},
+	"Digest": ubx.FieldSpec{
+		WireName: "digest",
+		Kind:     "list",
+		Fields:   V1alpha1Note_Package_DigestFields,
+	},
+	"Distribution": ubx.FieldSpec{
+		WireName: "distribution",
+		Kind:     "list",
+		Fields:   V1alpha1Note_Package_DistributionFields,
+	},
+	"License": ubx.FieldSpec{
+		WireName: "license",
+		Kind:     "object",
+		Fields:   V1alpha1Note_Package_LicenseFields,
+	},
+	"Maintainer":  ubx.FieldSpec{WireName: "maintainer"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"PackageType": ubx.FieldSpec{WireName: "package_type"},
+	"Url":         ubx.FieldSpec{WireName: "url"},
+	"Version": ubx.FieldSpec{
+		WireName: "version",
+		Kind:     "object",
+		Fields:   V1alpha1Note_Package_Distribution_LatestVersionFields,
+	},
+}
 
 var V1alpha1Note_RelatedUrlFields = ubx.FieldMap{
-		"Label": ubx.FieldSpec{WireName: "label"},
-		"Url": ubx.FieldSpec{WireName: "url"},
-	}
+	"Label": ubx.FieldSpec{WireName: "label"},
+	"Url":   ubx.FieldSpec{WireName: "url"},
+}
 
 var V1alpha1Note_SbomFields = ubx.FieldMap{
-		"DataLicence": ubx.FieldSpec{WireName: "data_licence"},
-		"SpdxVersion": ubx.FieldSpec{WireName: "spdx_version"},
-	}
+	"DataLicence": ubx.FieldSpec{WireName: "data_licence"},
+	"SpdxVersion": ubx.FieldSpec{WireName: "spdx_version"},
+}
 
 var V1alpha1Note_SbomReferenceFields = ubx.FieldMap{
-		"Format": ubx.FieldSpec{WireName: "format"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"Format":  ubx.FieldSpec{WireName: "format"},
+	"Version": ubx.FieldSpec{WireName: "version"},
+}
 
 var V1alpha1Note_SpdxFileFields = ubx.FieldMap{
-		"Checksum": ubx.FieldSpec{WireName: "checksum"},
-		"FileType": ubx.FieldSpec{WireName: "file_type"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-	}
+	"Checksum": ubx.FieldSpec{WireName: "checksum"},
+	"FileType": ubx.FieldSpec{WireName: "file_type"},
+	"Title":    ubx.FieldSpec{WireName: "title"},
+}
 
 var V1alpha1Note_SpdxPackage_ExternalRefsFields = ubx.FieldMap{
-		"Category": ubx.FieldSpec{WireName: "category"},
-		"Comment": ubx.FieldSpec{WireName: "comment"},
-		"Locator": ubx.FieldSpec{WireName: "locator"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Category": ubx.FieldSpec{WireName: "category"},
+	"Comment":  ubx.FieldSpec{WireName: "comment"},
+	"Locator":  ubx.FieldSpec{WireName: "locator"},
+	"Type":     ubx.FieldSpec{WireName: "type"},
+}
 
 var V1alpha1Note_SpdxPackageFields = ubx.FieldMap{
-		"Analyzed": ubx.FieldSpec{WireName: "analyzed"},
-		"Attribution": ubx.FieldSpec{WireName: "attribution"},
-		"Checksum": ubx.FieldSpec{WireName: "checksum"},
-		"Copyright": ubx.FieldSpec{WireName: "copyright"},
-		"DetailedDescription": ubx.FieldSpec{WireName: "detailed_description"},
-		"DownloadLocation": ubx.FieldSpec{WireName: "download_location"},
-		"ExternalRefs": ubx.FieldSpec{
-			WireName: "external_refs",
-			Kind: "list",
-			Fields: V1alpha1Note_SpdxPackage_ExternalRefsFields,
-		},
-		"FilesLicenseInfo": ubx.FieldSpec{WireName: "files_license_info"},
-		"HomePage": ubx.FieldSpec{WireName: "home_page"},
-		"LicenseDeclared": ubx.FieldSpec{
-			WireName: "license_declared",
-			Kind: "object",
-			Fields: V1alpha1Note_Package_LicenseFields,
-		},
-		"Originator": ubx.FieldSpec{WireName: "originator"},
-		"PackageType": ubx.FieldSpec{WireName: "package_type"},
-		"SummaryDescription": ubx.FieldSpec{WireName: "summary_description"},
-		"Supplier": ubx.FieldSpec{WireName: "supplier"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-		"VerificationCode": ubx.FieldSpec{WireName: "verification_code"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"Analyzed":            ubx.FieldSpec{WireName: "analyzed"},
+	"Attribution":         ubx.FieldSpec{WireName: "attribution"},
+	"Checksum":            ubx.FieldSpec{WireName: "checksum"},
+	"Copyright":           ubx.FieldSpec{WireName: "copyright"},
+	"DetailedDescription": ubx.FieldSpec{WireName: "detailed_description"},
+	"DownloadLocation":    ubx.FieldSpec{WireName: "download_location"},
+	"ExternalRefs": ubx.FieldSpec{
+		WireName: "external_refs",
+		Kind:     "list",
+		Fields:   V1alpha1Note_SpdxPackage_ExternalRefsFields,
+	},
+	"FilesLicenseInfo": ubx.FieldSpec{WireName: "files_license_info"},
+	"HomePage":         ubx.FieldSpec{WireName: "home_page"},
+	"LicenseDeclared": ubx.FieldSpec{
+		WireName: "license_declared",
+		Kind:     "object",
+		Fields:   V1alpha1Note_Package_LicenseFields,
+	},
+	"Originator":         ubx.FieldSpec{WireName: "originator"},
+	"PackageType":        ubx.FieldSpec{WireName: "package_type"},
+	"SummaryDescription": ubx.FieldSpec{WireName: "summary_description"},
+	"Supplier":           ubx.FieldSpec{WireName: "supplier"},
+	"Title":              ubx.FieldSpec{WireName: "title"},
+	"VerificationCode":   ubx.FieldSpec{WireName: "verification_code"},
+	"Version":            ubx.FieldSpec{WireName: "version"},
+}
 
 var V1alpha1Note_SpdxRelationshipFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var V1alpha1Note_Upgrade_DistributionsFields = ubx.FieldMap{
-		"Classification": ubx.FieldSpec{WireName: "classification"},
-		"CpeUri": ubx.FieldSpec{WireName: "cpe_uri"},
-		"Cve": ubx.FieldSpec{WireName: "cve"},
-		"Severity": ubx.FieldSpec{WireName: "severity"},
-	}
+	"Classification": ubx.FieldSpec{WireName: "classification"},
+	"CpeUri":         ubx.FieldSpec{WireName: "cpe_uri"},
+	"Cve":            ubx.FieldSpec{WireName: "cve"},
+	"Severity":       ubx.FieldSpec{WireName: "severity"},
+}
 
 var V1alpha1Note_UpgradeFields = ubx.FieldMap{
-		"Distributions": ubx.FieldSpec{
-			WireName: "distributions",
-			Kind: "list",
-			Fields: V1alpha1Note_Upgrade_DistributionsFields,
-		},
-		"Package": ubx.FieldSpec{WireName: "package"},
-		"Version": ubx.FieldSpec{
-			WireName: "version",
-			Kind: "object",
-			Fields: V1alpha1Note_Package_Distribution_LatestVersionFields,
-		},
-	}
+	"Distributions": ubx.FieldSpec{
+		WireName: "distributions",
+		Kind:     "list",
+		Fields:   V1alpha1Note_Upgrade_DistributionsFields,
+	},
+	"Package": ubx.FieldSpec{WireName: "package"},
+	"Version": ubx.FieldSpec{
+		WireName: "version",
+		Kind:     "object",
+		Fields:   V1alpha1Note_Package_Distribution_LatestVersionFields,
+	},
+}
 
 var V1alpha1Note_VulnerabilityAssessment_Assessment_JustificationFields = ubx.FieldMap{
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"JustificationType": ubx.FieldSpec{WireName: "justification_type"},
-	}
+	"Details":           ubx.FieldSpec{WireName: "details"},
+	"JustificationType": ubx.FieldSpec{WireName: "justification_type"},
+}
 
 var V1alpha1Note_VulnerabilityAssessment_Assessment_RelatedUrisFields = ubx.FieldMap{
-		"Label": ubx.FieldSpec{WireName: "label"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"Label": ubx.FieldSpec{WireName: "label"},
+	"Uri":   ubx.FieldSpec{WireName: "uri"},
+}
 
 var V1alpha1Note_VulnerabilityAssessment_Assessment_RemediationsFields = ubx.FieldMap{
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"RemediationType": ubx.FieldSpec{WireName: "remediation_type"},
-		"RemediationUri": ubx.FieldSpec{
-			WireName: "remediation_uri",
-			Kind: "object",
-			Fields: V1alpha1Note_VulnerabilityAssessment_Assessment_RelatedUrisFields,
-		},
-	}
+	"Details":         ubx.FieldSpec{WireName: "details"},
+	"RemediationType": ubx.FieldSpec{WireName: "remediation_type"},
+	"RemediationUri": ubx.FieldSpec{
+		WireName: "remediation_uri",
+		Kind:     "object",
+		Fields:   V1alpha1Note_VulnerabilityAssessment_Assessment_RelatedUrisFields,
+	},
+}
 
 var V1alpha1Note_VulnerabilityAssessment_AssessmentFields = ubx.FieldMap{
-		"Cve": ubx.FieldSpec{WireName: "cve"},
-		"Impacts": ubx.FieldSpec{WireName: "impacts"},
-		"Justification": ubx.FieldSpec{
-			WireName: "justification",
-			Kind: "object",
-			Fields: V1alpha1Note_VulnerabilityAssessment_Assessment_JustificationFields,
-		},
-		"LongDescription": ubx.FieldSpec{WireName: "long_description"},
-		"RelatedUris": ubx.FieldSpec{
-			WireName: "related_uris",
-			Kind: "list",
-			Fields: V1alpha1Note_VulnerabilityAssessment_Assessment_RelatedUrisFields,
-		},
-		"Remediations": ubx.FieldSpec{
-			WireName: "remediations",
-			Kind: "list",
-			Fields: V1alpha1Note_VulnerabilityAssessment_Assessment_RemediationsFields,
-		},
-		"ShortDescription": ubx.FieldSpec{WireName: "short_description"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"VulnerabilityId": ubx.FieldSpec{WireName: "vulnerability_id"},
-	}
+	"Cve":     ubx.FieldSpec{WireName: "cve"},
+	"Impacts": ubx.FieldSpec{WireName: "impacts"},
+	"Justification": ubx.FieldSpec{
+		WireName: "justification",
+		Kind:     "object",
+		Fields:   V1alpha1Note_VulnerabilityAssessment_Assessment_JustificationFields,
+	},
+	"LongDescription": ubx.FieldSpec{WireName: "long_description"},
+	"RelatedUris": ubx.FieldSpec{
+		WireName: "related_uris",
+		Kind:     "list",
+		Fields:   V1alpha1Note_VulnerabilityAssessment_Assessment_RelatedUrisFields,
+	},
+	"Remediations": ubx.FieldSpec{
+		WireName: "remediations",
+		Kind:     "list",
+		Fields:   V1alpha1Note_VulnerabilityAssessment_Assessment_RemediationsFields,
+	},
+	"ShortDescription": ubx.FieldSpec{WireName: "short_description"},
+	"State":            ubx.FieldSpec{WireName: "state"},
+	"VulnerabilityId":  ubx.FieldSpec{WireName: "vulnerability_id"},
+}
 
 var V1alpha1Note_VulnerabilityAssessment_Product_IdentifierHelperFields = ubx.FieldMap{
-		"Field": ubx.FieldSpec{WireName: "field"},
-		"GenericUri": ubx.FieldSpec{WireName: "generic_uri"},
-	}
+	"Field":      ubx.FieldSpec{WireName: "field"},
+	"GenericUri": ubx.FieldSpec{WireName: "generic_uri"},
+}
 
 var V1alpha1Note_VulnerabilityAssessment_ProductFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"IdentifierHelper": ubx.FieldSpec{
-			WireName: "identifier_helper",
-			Kind: "object",
-			Fields: V1alpha1Note_VulnerabilityAssessment_Product_IdentifierHelperFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Id": ubx.FieldSpec{WireName: "id"},
+	"IdentifierHelper": ubx.FieldSpec{
+		WireName: "identifier_helper",
+		Kind:     "object",
+		Fields:   V1alpha1Note_VulnerabilityAssessment_Product_IdentifierHelperFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var V1alpha1Note_VulnerabilityAssessment_PublisherFields = ubx.FieldMap{
-		"IssuingAuthority": ubx.FieldSpec{WireName: "issuing_authority"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PublisherNamespace": ubx.FieldSpec{WireName: "publisher_namespace"},
-	}
+	"IssuingAuthority":   ubx.FieldSpec{WireName: "issuing_authority"},
+	"Name":               ubx.FieldSpec{WireName: "name"},
+	"PublisherNamespace": ubx.FieldSpec{WireName: "publisher_namespace"},
+}
 
 var V1alpha1Note_VulnerabilityAssessmentFields = ubx.FieldMap{
-		"Assessment": ubx.FieldSpec{
-			WireName: "assessment",
-			Kind: "object",
-			Fields: V1alpha1Note_VulnerabilityAssessment_AssessmentFields,
-		},
-		"LanguageCode": ubx.FieldSpec{WireName: "language_code"},
-		"LongDescription": ubx.FieldSpec{WireName: "long_description"},
-		"Product": ubx.FieldSpec{
-			WireName: "product",
-			Kind: "object",
-			Fields: V1alpha1Note_VulnerabilityAssessment_ProductFields,
-		},
-		"Publisher": ubx.FieldSpec{
-			WireName: "publisher",
-			Kind: "object",
-			Fields: V1alpha1Note_VulnerabilityAssessment_PublisherFields,
-		},
-		"ShortDescription": ubx.FieldSpec{WireName: "short_description"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-	}
+	"Assessment": ubx.FieldSpec{
+		WireName: "assessment",
+		Kind:     "object",
+		Fields:   V1alpha1Note_VulnerabilityAssessment_AssessmentFields,
+	},
+	"LanguageCode":    ubx.FieldSpec{WireName: "language_code"},
+	"LongDescription": ubx.FieldSpec{WireName: "long_description"},
+	"Product": ubx.FieldSpec{
+		WireName: "product",
+		Kind:     "object",
+		Fields:   V1alpha1Note_VulnerabilityAssessment_ProductFields,
+	},
+	"Publisher": ubx.FieldSpec{
+		WireName: "publisher",
+		Kind:     "object",
+		Fields:   V1alpha1Note_VulnerabilityAssessment_PublisherFields,
+	},
+	"ShortDescription": ubx.FieldSpec{WireName: "short_description"},
+	"Title":            ubx.FieldSpec{WireName: "title"},
+}
 
 var V1alpha1Note_VulnerabilityType_CvssV2Fields = ubx.FieldMap{
-		"AttackComplexity": ubx.FieldSpec{WireName: "attack_complexity"},
-		"AttackRequirements": ubx.FieldSpec{WireName: "attack_requirements"},
-		"AttackVector": ubx.FieldSpec{WireName: "attack_vector"},
-		"Authentication": ubx.FieldSpec{WireName: "authentication"},
-		"AvailabilityImpact": ubx.FieldSpec{WireName: "availability_impact"},
-		"BaseScore": ubx.FieldSpec{WireName: "base_score"},
-		"ConfidentialityImpact": ubx.FieldSpec{WireName: "confidentiality_impact"},
-		"ExploitMaturity": ubx.FieldSpec{WireName: "exploit_maturity"},
-		"ExploitabilityScore": ubx.FieldSpec{WireName: "exploitability_score"},
-		"ImpactScore": ubx.FieldSpec{WireName: "impact_score"},
-		"IntegrityImpact": ubx.FieldSpec{WireName: "integrity_impact"},
-		"PrivilegesRequired": ubx.FieldSpec{WireName: "privileges_required"},
-		"Scope": ubx.FieldSpec{WireName: "scope"},
-		"SubsequentSystemAvailabilityImpact": ubx.FieldSpec{WireName: "subsequent_system_availability_impact"},
-		"SubsequentSystemConfidentialityImpact": ubx.FieldSpec{WireName: "subsequent_system_confidentiality_impact"},
-		"SubsequentSystemIntegrityImpact": ubx.FieldSpec{WireName: "subsequent_system_integrity_impact"},
-		"UserInteraction": ubx.FieldSpec{WireName: "user_interaction"},
-		"VulnerableSystemAvailabilityImpact": ubx.FieldSpec{WireName: "vulnerable_system_availability_impact"},
-		"VulnerableSystemConfidentialityImpact": ubx.FieldSpec{WireName: "vulnerable_system_confidentiality_impact"},
-		"VulnerableSystemIntegrityImpact": ubx.FieldSpec{WireName: "vulnerable_system_integrity_impact"},
-	}
+	"AttackComplexity":                      ubx.FieldSpec{WireName: "attack_complexity"},
+	"AttackRequirements":                    ubx.FieldSpec{WireName: "attack_requirements"},
+	"AttackVector":                          ubx.FieldSpec{WireName: "attack_vector"},
+	"Authentication":                        ubx.FieldSpec{WireName: "authentication"},
+	"AvailabilityImpact":                    ubx.FieldSpec{WireName: "availability_impact"},
+	"BaseScore":                             ubx.FieldSpec{WireName: "base_score"},
+	"ConfidentialityImpact":                 ubx.FieldSpec{WireName: "confidentiality_impact"},
+	"ExploitMaturity":                       ubx.FieldSpec{WireName: "exploit_maturity"},
+	"ExploitabilityScore":                   ubx.FieldSpec{WireName: "exploitability_score"},
+	"ImpactScore":                           ubx.FieldSpec{WireName: "impact_score"},
+	"IntegrityImpact":                       ubx.FieldSpec{WireName: "integrity_impact"},
+	"PrivilegesRequired":                    ubx.FieldSpec{WireName: "privileges_required"},
+	"Scope":                                 ubx.FieldSpec{WireName: "scope"},
+	"SubsequentSystemAvailabilityImpact":    ubx.FieldSpec{WireName: "subsequent_system_availability_impact"},
+	"SubsequentSystemConfidentialityImpact": ubx.FieldSpec{WireName: "subsequent_system_confidentiality_impact"},
+	"SubsequentSystemIntegrityImpact":       ubx.FieldSpec{WireName: "subsequent_system_integrity_impact"},
+	"UserInteraction":                       ubx.FieldSpec{WireName: "user_interaction"},
+	"VulnerableSystemAvailabilityImpact":    ubx.FieldSpec{WireName: "vulnerable_system_availability_impact"},
+	"VulnerableSystemConfidentialityImpact": ubx.FieldSpec{WireName: "vulnerable_system_confidentiality_impact"},
+	"VulnerableSystemIntegrityImpact":       ubx.FieldSpec{WireName: "vulnerable_system_integrity_impact"},
+}
 
 var V1alpha1Note_VulnerabilityType_Details_FixedLocation_FileLocation_LayerDetails_BaseImagesFields = ubx.FieldMap{
-		"LayerCount": ubx.FieldSpec{WireName: "layer_count"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Registry": ubx.FieldSpec{WireName: "registry"},
-		"Repository": ubx.FieldSpec{WireName: "repository"},
-	}
+	"LayerCount": ubx.FieldSpec{WireName: "layer_count"},
+	"Name":       ubx.FieldSpec{WireName: "name"},
+	"Registry":   ubx.FieldSpec{WireName: "registry"},
+	"Repository": ubx.FieldSpec{WireName: "repository"},
+}
 
 var V1alpha1Note_VulnerabilityType_Details_FixedLocation_FileLocation_LayerDetailsFields = ubx.FieldMap{
-		"BaseImages": ubx.FieldSpec{
-			WireName: "base_images",
-			Kind: "list",
-			Fields: V1alpha1Note_VulnerabilityType_Details_FixedLocation_FileLocation_LayerDetails_BaseImagesFields,
-		},
-		"ChainId": ubx.FieldSpec{WireName: "chain_id"},
-		"Command": ubx.FieldSpec{WireName: "command"},
-		"DiffId": ubx.FieldSpec{WireName: "diff_id"},
-		"Index": ubx.FieldSpec{WireName: "index"},
-	}
+	"BaseImages": ubx.FieldSpec{
+		WireName: "base_images",
+		Kind:     "list",
+		Fields:   V1alpha1Note_VulnerabilityType_Details_FixedLocation_FileLocation_LayerDetails_BaseImagesFields,
+	},
+	"ChainId": ubx.FieldSpec{WireName: "chain_id"},
+	"Command": ubx.FieldSpec{WireName: "command"},
+	"DiffId":  ubx.FieldSpec{WireName: "diff_id"},
+	"Index":   ubx.FieldSpec{WireName: "index"},
+}
 
 var V1alpha1Note_VulnerabilityType_Details_FixedLocation_FileLocationFields = ubx.FieldMap{
-		"FilePath": ubx.FieldSpec{WireName: "file_path"},
-		"LayerDetails": ubx.FieldSpec{
-			WireName: "layer_details",
-			Kind: "object",
-			Fields: V1alpha1Note_VulnerabilityType_Details_FixedLocation_FileLocation_LayerDetailsFields,
-		},
-		"LineNumber": ubx.FieldSpec{WireName: "line_number"},
-	}
+	"FilePath": ubx.FieldSpec{WireName: "file_path"},
+	"LayerDetails": ubx.FieldSpec{
+		WireName: "layer_details",
+		Kind:     "object",
+		Fields:   V1alpha1Note_VulnerabilityType_Details_FixedLocation_FileLocation_LayerDetailsFields,
+	},
+	"LineNumber": ubx.FieldSpec{WireName: "line_number"},
+}
 
 var V1alpha1Note_VulnerabilityType_Details_FixedLocationFields = ubx.FieldMap{
-		"CpeUri": ubx.FieldSpec{WireName: "cpe_uri"},
-		"FileLocation": ubx.FieldSpec{
-			WireName: "file_location",
-			Kind: "list",
-			Fields: V1alpha1Note_VulnerabilityType_Details_FixedLocation_FileLocationFields,
-		},
-		"Package": ubx.FieldSpec{WireName: "package"},
-		"Version": ubx.FieldSpec{
-			WireName: "version",
-			Kind: "object",
-			Fields: V1alpha1Note_Package_Distribution_LatestVersionFields,
-		},
-	}
+	"CpeUri": ubx.FieldSpec{WireName: "cpe_uri"},
+	"FileLocation": ubx.FieldSpec{
+		WireName: "file_location",
+		Kind:     "list",
+		Fields:   V1alpha1Note_VulnerabilityType_Details_FixedLocation_FileLocationFields,
+	},
+	"Package": ubx.FieldSpec{WireName: "package"},
+	"Version": ubx.FieldSpec{
+		WireName: "version",
+		Kind:     "object",
+		Fields:   V1alpha1Note_Package_Distribution_LatestVersionFields,
+	},
+}
 
 var V1alpha1Note_VulnerabilityType_DetailsFields = ubx.FieldMap{
-		"CpeUri": ubx.FieldSpec{WireName: "cpe_uri"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"FixedLocation": ubx.FieldSpec{
-			WireName: "fixed_location",
-			Kind: "object",
-			Fields: V1alpha1Note_VulnerabilityType_Details_FixedLocationFields,
-		},
-		"IsObsolete": ubx.FieldSpec{WireName: "is_obsolete"},
-		"MaxAffectedVersion": ubx.FieldSpec{
-			WireName: "max_affected_version",
-			Kind: "object",
-			Fields: V1alpha1Note_Package_Distribution_LatestVersionFields,
-		},
-		"MinAffectedVersion": ubx.FieldSpec{
-			WireName: "min_affected_version",
-			Kind: "object",
-			Fields: V1alpha1Note_Package_Distribution_LatestVersionFields,
-		},
-		"Package": ubx.FieldSpec{WireName: "package"},
-		"PackageType": ubx.FieldSpec{WireName: "package_type"},
-		"SeverityName": ubx.FieldSpec{WireName: "severity_name"},
-		"Source": ubx.FieldSpec{WireName: "source"},
-		"Vendor": ubx.FieldSpec{WireName: "vendor"},
-	}
+	"CpeUri":      ubx.FieldSpec{WireName: "cpe_uri"},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"FixedLocation": ubx.FieldSpec{
+		WireName: "fixed_location",
+		Kind:     "object",
+		Fields:   V1alpha1Note_VulnerabilityType_Details_FixedLocationFields,
+	},
+	"IsObsolete": ubx.FieldSpec{WireName: "is_obsolete"},
+	"MaxAffectedVersion": ubx.FieldSpec{
+		WireName: "max_affected_version",
+		Kind:     "object",
+		Fields:   V1alpha1Note_Package_Distribution_LatestVersionFields,
+	},
+	"MinAffectedVersion": ubx.FieldSpec{
+		WireName: "min_affected_version",
+		Kind:     "object",
+		Fields:   V1alpha1Note_Package_Distribution_LatestVersionFields,
+	},
+	"Package":      ubx.FieldSpec{WireName: "package"},
+	"PackageType":  ubx.FieldSpec{WireName: "package_type"},
+	"SeverityName": ubx.FieldSpec{WireName: "severity_name"},
+	"Source":       ubx.FieldSpec{WireName: "source"},
+	"Vendor":       ubx.FieldSpec{WireName: "vendor"},
+}
 
 var V1alpha1Note_VulnerabilityTypeFields = ubx.FieldMap{
-		"AdvisoryPublishTime": ubx.FieldSpec{WireName: "advisory_publish_time"},
-		"CvssScore": ubx.FieldSpec{WireName: "cvss_score"},
-		"CvssV2": ubx.FieldSpec{
-			WireName: "cvss_v2",
-			Kind: "object",
-			Fields: V1alpha1Note_VulnerabilityType_CvssV2Fields,
-		},
-		"CvssV4": ubx.FieldSpec{
-			WireName: "cvss_v4",
-			Kind: "object",
-			Fields: V1alpha1Note_VulnerabilityType_CvssV2Fields,
-		},
-		"CvssVersion": ubx.FieldSpec{WireName: "cvss_version"},
-		"Cwe": ubx.FieldSpec{WireName: "cwe"},
-		"Details": ubx.FieldSpec{
-			WireName: "details",
-			Kind: "list",
-			Fields: V1alpha1Note_VulnerabilityType_DetailsFields,
-		},
-		"Severity": ubx.FieldSpec{WireName: "severity"},
-	}
+	"AdvisoryPublishTime": ubx.FieldSpec{WireName: "advisory_publish_time"},
+	"CvssScore":           ubx.FieldSpec{WireName: "cvss_score"},
+	"CvssV2": ubx.FieldSpec{
+		WireName: "cvss_v2",
+		Kind:     "object",
+		Fields:   V1alpha1Note_VulnerabilityType_CvssV2Fields,
+	},
+	"CvssV4": ubx.FieldSpec{
+		WireName: "cvss_v4",
+		Kind:     "object",
+		Fields:   V1alpha1Note_VulnerabilityType_CvssV2Fields,
+	},
+	"CvssVersion": ubx.FieldSpec{WireName: "cvss_version"},
+	"Cwe":         ubx.FieldSpec{WireName: "cwe"},
+	"Details": ubx.FieldSpec{
+		WireName: "details",
+		Kind:     "list",
+		Fields:   V1alpha1Note_VulnerabilityType_DetailsFields,
+	},
+	"Severity": ubx.FieldSpec{WireName: "severity"},
+}
 
 type V1alpha1NoteConfig struct {
 	// AISkillAnalysisNote provides the metadata of an AI-based skill analysis.
@@ -961,96 +961,96 @@ var V1alpha1Note = ubx.ResourceBinding{
 		"AiSkillAnalysis": ubx.FieldSpec{WireName: "ai_skill_analysis"},
 		"AttestationAuthority": ubx.FieldSpec{
 			WireName: "attestation_authority",
-			Kind: "object",
-			Fields: V1alpha1Note_AttestationAuthorityFields,
+			Kind:     "object",
+			Fields:   V1alpha1Note_AttestationAuthorityFields,
 		},
 		"BaseImage": ubx.FieldSpec{
 			WireName: "base_image",
-			Kind: "object",
-			Fields: V1alpha1Note_BaseImageFields,
+			Kind:     "object",
+			Fields:   V1alpha1Note_BaseImageFields,
 		},
 		"BuildType": ubx.FieldSpec{
 			WireName: "build_type",
-			Kind: "object",
-			Fields: V1alpha1Note_BuildTypeFields,
+			Kind:     "object",
+			Fields:   V1alpha1Note_BuildTypeFields,
 		},
 		"Compliance": ubx.FieldSpec{
 			WireName: "compliance",
-			Kind: "object",
-			Fields: V1alpha1Note_ComplianceFields,
+			Kind:     "object",
+			Fields:   V1alpha1Note_ComplianceFields,
 		},
 		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Deployable": ubx.FieldSpec{
 			WireName: "deployable",
-			Kind: "object",
-			Fields: V1alpha1Note_DeployableFields,
+			Kind:     "object",
+			Fields:   V1alpha1Note_DeployableFields,
 		},
 		"Discovery": ubx.FieldSpec{
 			WireName: "discovery",
-			Kind: "object",
-			Fields: V1alpha1Note_DiscoveryFields,
+			Kind:     "object",
+			Fields:   V1alpha1Note_DiscoveryFields,
 		},
 		"DsseAttestation": ubx.FieldSpec{
 			WireName: "dsse_attestation",
-			Kind: "object",
-			Fields: V1alpha1Note_AttestationAuthorityFields,
+			Kind:     "object",
+			Fields:   V1alpha1Note_AttestationAuthorityFields,
 		},
-		"ExpirationTime": ubx.FieldSpec{WireName: "expiration_time"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
+		"ExpirationTime":  ubx.FieldSpec{WireName: "expiration_time"},
+		"Kind":            ubx.FieldSpec{WireName: "kind"},
 		"LongDescription": ubx.FieldSpec{WireName: "long_description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":            ubx.FieldSpec{WireName: "name"},
 		"Package": ubx.FieldSpec{
 			WireName: "package",
-			Kind: "object",
-			Fields: V1alpha1Note_PackageFields,
+			Kind:     "object",
+			Fields:   V1alpha1Note_PackageFields,
 		},
 		"RelatedUrl": ubx.FieldSpec{
 			WireName: "related_url",
-			Kind: "list",
-			Fields: V1alpha1Note_RelatedUrlFields,
+			Kind:     "list",
+			Fields:   V1alpha1Note_RelatedUrlFields,
 		},
 		"Sbom": ubx.FieldSpec{
 			WireName: "sbom",
-			Kind: "object",
-			Fields: V1alpha1Note_SbomFields,
+			Kind:     "object",
+			Fields:   V1alpha1Note_SbomFields,
 		},
 		"SbomReference": ubx.FieldSpec{
 			WireName: "sbom_reference",
-			Kind: "object",
-			Fields: V1alpha1Note_SbomReferenceFields,
+			Kind:     "object",
+			Fields:   V1alpha1Note_SbomReferenceFields,
 		},
-		"Secret": ubx.FieldSpec{WireName: "secret"},
+		"Secret":           ubx.FieldSpec{WireName: "secret"},
 		"ShortDescription": ubx.FieldSpec{WireName: "short_description"},
 		"SpdxFile": ubx.FieldSpec{
 			WireName: "spdx_file",
-			Kind: "object",
-			Fields: V1alpha1Note_SpdxFileFields,
+			Kind:     "object",
+			Fields:   V1alpha1Note_SpdxFileFields,
 		},
 		"SpdxPackage": ubx.FieldSpec{
 			WireName: "spdx_package",
-			Kind: "object",
-			Fields: V1alpha1Note_SpdxPackageFields,
+			Kind:     "object",
+			Fields:   V1alpha1Note_SpdxPackageFields,
 		},
 		"SpdxRelationship": ubx.FieldSpec{
 			WireName: "spdx_relationship",
-			Kind: "object",
-			Fields: V1alpha1Note_SpdxRelationshipFields,
+			Kind:     "object",
+			Fields:   V1alpha1Note_SpdxRelationshipFields,
 		},
 		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 		"Upgrade": ubx.FieldSpec{
 			WireName: "upgrade",
-			Kind: "object",
-			Fields: V1alpha1Note_UpgradeFields,
+			Kind:     "object",
+			Fields:   V1alpha1Note_UpgradeFields,
 		},
 		"VulnerabilityAssessment": ubx.FieldSpec{
 			WireName: "vulnerability_assessment",
-			Kind: "object",
-			Fields: V1alpha1Note_VulnerabilityAssessmentFields,
+			Kind:     "object",
+			Fields:   V1alpha1Note_VulnerabilityAssessmentFields,
 		},
 		"VulnerabilityType": ubx.FieldSpec{
 			WireName: "vulnerability_type",
-			Kind: "object",
-			Fields: V1alpha1Note_VulnerabilityTypeFields,
+			Kind:     "object",
+			Fields:   V1alpha1Note_VulnerabilityTypeFields,
 		},
 	},
 }

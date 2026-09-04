@@ -4,8 +4,6 @@ package netapp
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta1QuotaRuleConfig struct {
-	// Output only. Create time of the quota rule
-	CreateTime any
 	// Optional. Description of the quota rule
 	Description any
 	// Required. The maximum allowed disk space in MiB.
@@ -14,10 +12,6 @@ type V1beta1QuotaRuleConfig struct {
 	Labels any
 	// Identifier. The resource name of the quota rule. Format: `projects/{project_number}/locations/{location_id}/volumes/volumes/{volume_id}/quotaRules/{quota_rule_id}`.
 	Name any
-	// Output only. State of the quota rule
-	State any
-	// Output only. State details of the quota rule
-	StateDetails any
 	// Optional. The quota rule applies to the specified user or group, identified by a Unix UID/GID, Windows SID, or null for default.
 	Target any
 	// Required. The type of quota rule.
@@ -48,14 +42,11 @@ type V1beta1QuotaRuleAttrs struct {
 var V1beta1QuotaRule = ubx.ResourceBinding{
 	WireType: "google_netapp_v1beta1_quota_rule",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":  ubx.FieldSpec{WireName: "description"},
 		"DiskLimitMib": ubx.FieldSpec{WireName: "disk_limit_mib"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"StateDetails": ubx.FieldSpec{WireName: "state_details"},
-		"Target": ubx.FieldSpec{WireName: "target"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"Labels":       ubx.FieldSpec{WireName: "labels"},
+		"Name":         ubx.FieldSpec{WireName: "name"},
+		"Target":       ubx.FieldSpec{WireName: "target"},
+		"Type":         ubx.FieldSpec{WireName: "type"},
 	},
 }

@@ -4,12 +4,12 @@ package discoveryengine
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1alphaProject_ConfigurableBillingStatus_AgentSearchTokenSubscriptionStatuses struct {
-	EffectiveTpmThreshold any
-	ModelVersion any
-	StartTime any
-	TerminateTime any
+	EffectiveTpmThreshold      any
+	ModelVersion               any
+	StartTime                  any
+	TerminateTime              any
 	TpmThresholdNextUpdateTime any
-	UpdateType any
+	UpdateType                 any
 }
 
 type V1alphaProject_ConfigurableBillingStatus struct {
@@ -72,15 +72,14 @@ type V1alphaProject_CustomerProvidedConfig struct {
 }
 
 type V1alphaProject_ServiceTermsMap struct {
-	AcceptTime any
+	AcceptTime  any
 	DeclineTime any
-	Id any
-	State any
-	Version any
+	Id          any
+	State       any
+	Version     any
 }
 
 type V1alphaProjectConfig struct {
-	Name any
 }
 
 type V1alphaProjectAttrs struct {
@@ -90,7 +89,7 @@ type V1alphaProjectAttrs struct {
 	CreateTime any
 	// Customer provided configurations.
 	CustomerProvidedConfig any
-	Name any
+	Name                   any
 	// Output only. The timestamp when this project is successfully provisioned. Empty value means this project is still provisioning and is not ready for use.
 	ProvisionCompletionTime any
 	// Output only. A map of terms of services. The key is the `id` of ServiceTerms.
@@ -99,7 +98,5 @@ type V1alphaProjectAttrs struct {
 
 var V1alphaProject = ubx.DataSourceBinding{
 	WireType: "google_discoveryengine_v1alpha_project",
-	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	},
+	Fields:   ubx.FieldMap{},
 }

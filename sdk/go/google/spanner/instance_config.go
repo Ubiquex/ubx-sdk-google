@@ -5,8 +5,8 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InstanceConfig_InstanceConfig_OptionalReplicas struct {
 	DefaultLeaderLocation any
-	Location any
-	Type any
+	Location              any
+	Type                  any
 }
 
 type InstanceConfig_InstanceConfig struct {
@@ -41,35 +41,35 @@ type InstanceConfig_InstanceConfig struct {
 }
 
 var InstanceConfig_InstanceConfig_OptionalReplicasFields = ubx.FieldMap{
-		"DefaultLeaderLocation": ubx.FieldSpec{WireName: "default_leader_location"},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"DefaultLeaderLocation": ubx.FieldSpec{WireName: "default_leader_location"},
+	"Location":              ubx.FieldSpec{WireName: "location"},
+	"Type":                  ubx.FieldSpec{WireName: "type"},
+}
 
 var InstanceConfig_InstanceConfigFields = ubx.FieldMap{
-		"BaseConfig": ubx.FieldSpec{WireName: "base_config"},
-		"ConfigType": ubx.FieldSpec{WireName: "config_type"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"FreeInstanceAvailability": ubx.FieldSpec{WireName: "free_instance_availability"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"LeaderOptions": ubx.FieldSpec{WireName: "leader_options"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"OptionalReplicas": ubx.FieldSpec{
-			WireName: "optional_replicas",
-			Kind: "list",
-			Fields: InstanceConfig_InstanceConfig_OptionalReplicasFields,
-		},
-		"QuorumType": ubx.FieldSpec{WireName: "quorum_type"},
-		"Reconciling": ubx.FieldSpec{WireName: "reconciling"},
-		"Replicas": ubx.FieldSpec{
-			WireName: "replicas",
-			Kind: "list",
-			Fields: InstanceConfig_InstanceConfig_OptionalReplicasFields,
-		},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"StorageLimitPerProcessingUnit": ubx.FieldSpec{WireName: "storage_limit_per_processing_unit"},
-	}
+	"BaseConfig":               ubx.FieldSpec{WireName: "base_config"},
+	"ConfigType":               ubx.FieldSpec{WireName: "config_type"},
+	"DisplayName":              ubx.FieldSpec{WireName: "display_name"},
+	"Etag":                     ubx.FieldSpec{WireName: "etag"},
+	"FreeInstanceAvailability": ubx.FieldSpec{WireName: "free_instance_availability"},
+	"Labels":                   ubx.FieldSpec{WireName: "labels"},
+	"LeaderOptions":            ubx.FieldSpec{WireName: "leader_options"},
+	"Name":                     ubx.FieldSpec{WireName: "name"},
+	"OptionalReplicas": ubx.FieldSpec{
+		WireName: "optional_replicas",
+		Kind:     "list",
+		Fields:   InstanceConfig_InstanceConfig_OptionalReplicasFields,
+	},
+	"QuorumType":  ubx.FieldSpec{WireName: "quorum_type"},
+	"Reconciling": ubx.FieldSpec{WireName: "reconciling"},
+	"Replicas": ubx.FieldSpec{
+		WireName: "replicas",
+		Kind:     "list",
+		Fields:   InstanceConfig_InstanceConfig_OptionalReplicasFields,
+	},
+	"State":                         ubx.FieldSpec{WireName: "state"},
+	"StorageLimitPerProcessingUnit": ubx.FieldSpec{WireName: "storage_limit_per_processing_unit"},
+}
 
 type InstanceConfigConfig struct {
 	// A possible configuration for a Cloud Spanner instance. Configurations define the geographic placement of nodes and their replication.
@@ -122,10 +122,10 @@ var InstanceConfig = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"InstanceConfig": ubx.FieldSpec{
 			WireName: "instance_config",
-			Kind: "object",
-			Fields: InstanceConfig_InstanceConfigFields,
+			Kind:     "object",
+			Fields:   InstanceConfig_InstanceConfigFields,
 		},
 		"InstanceConfigId": ubx.FieldSpec{WireName: "instance_config_id"},
-		"ValidateOnly": ubx.FieldSpec{WireName: "validate_only"},
+		"ValidateOnly":     ubx.FieldSpec{WireName: "validate_only"},
 	},
 }

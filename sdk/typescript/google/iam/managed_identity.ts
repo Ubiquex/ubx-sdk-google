@@ -6,12 +6,8 @@ export interface ManagedIdentityConfig {
   description?: string | Computed<string>;
   /** Optional. Whether the managed identity is disabled. If disabled, credentials may no longer be issued for the identity, however existing credentials will still be accepted until they expire. */
   disabled?: boolean | Computed<boolean>;
-  /** Output only. Time after which the managed identity will be permanently purged and cannot be recovered. */
-  expireTime?: string | Computed<string>;
   /** Identifier. The resource name of the managed identity. */
   name?: string | Computed<string>;
-  /** Output only. The state of the managed identity. */
-  state?: string | Computed<string>;
 }
 
 export interface ManagedIdentityAttrs {
@@ -32,8 +28,6 @@ export const ManagedIdentity: ResourceBinding<ManagedIdentityConfig, ManagedIden
   fields: {
     description: "description",
     disabled: "disabled",
-    expireTime: "expire_time",
     name: "name",
-    state: "state",
   },
 };

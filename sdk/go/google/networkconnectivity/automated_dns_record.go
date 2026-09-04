@@ -11,15 +11,13 @@ type AutomatedDnsRecord_CurrentConfig struct {
 }
 
 var AutomatedDnsRecord_CurrentConfigFields = ubx.FieldMap{
-		"Rrdatas": ubx.FieldSpec{WireName: "rrdatas"},
-		"Ttl": ubx.FieldSpec{WireName: "ttl"},
-	}
+	"Rrdatas": ubx.FieldSpec{WireName: "rrdatas"},
+	"Ttl":     ubx.FieldSpec{WireName: "ttl"},
+}
 
 type AutomatedDnsRecordConfig struct {
 	// Required. Immutable. The full resource path of the consumer network this AutomatedDnsRecord is visible to. Example: "projects/{projectNumOrId}/global/networks/{networkName}".
 	ConsumerNetwork any
-	// Output only. The timestamp of when the record was created.
-	CreateTime any
 	// Required. Immutable. The creation mode of the AutomatedDnsRecord. This field is immutable.
 	CreationMode any
 	// Defines the configuration of a DNS record.
@@ -28,12 +26,8 @@ type AutomatedDnsRecordConfig struct {
 	Description any
 	// Required. Immutable. The dns suffix for this record to use in longest-suffix matching. Requires a trailing dot. Example: "example.com."
 	DnsSuffix any
-	// Output only. DnsZone is the DNS zone managed by automation. Format: projects/{project}/managedZones/{managedZone}
-	DnsZone any
 	// Optional. The etag is computed by the server, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding.
 	Etag any
-	// Output only. The FQDN created by combining the hostname and dns suffix. Should include a trailing dot.
-	Fqdn any
 	// Required. Immutable. The hostname for the DNS record. This value will be prepended to the `dns_suffix` to create the full domain name (FQDN) for the record. For example, if `hostname` is "corp.db" and `dns_suffix` is "example.com.", the resulting record will be "corp.db.example.com.". Should not include a trailing dot.
 	Hostname any
 	// Optional. User-defined labels.
@@ -46,12 +40,6 @@ type AutomatedDnsRecordConfig struct {
 	RecordType any
 	// Required. Immutable. The service class identifier which authorizes this AutomatedDnsRecord. Any API calls targeting this AutomatedDnsRecord must have `networkconnectivity.serviceClasses.use` IAM permission for the provided service class.
 	ServiceClass any
-	// Output only. The current operational state of this AutomatedDnsRecord as managed by Service Connectivity Automation.
-	State any
-	// Output only. A human-readable message providing more context about the current state, such as an error description if the state is `FAILED_DEPROGRAMMING`.
-	StateDetails any
-	// Output only. The timestamp of when the record was updated.
-	UpdateTime any
 }
 
 type AutomatedDnsRecordAttrs struct {
@@ -97,30 +85,24 @@ var AutomatedDnsRecord = ubx.ResourceBinding{
 	WireType: "google_networkconnectivity_automated_dns_record",
 	Fields: ubx.FieldMap{
 		"ConsumerNetwork": ubx.FieldSpec{WireName: "consumer_network"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"CreationMode": ubx.FieldSpec{WireName: "creation_mode"},
+		"CreationMode":    ubx.FieldSpec{WireName: "creation_mode"},
 		"CurrentConfig": ubx.FieldSpec{
 			WireName: "current_config",
-			Kind: "object",
-			Fields: AutomatedDnsRecord_CurrentConfigFields,
+			Kind:     "object",
+			Fields:   AutomatedDnsRecord_CurrentConfigFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"DnsSuffix": ubx.FieldSpec{WireName: "dns_suffix"},
-		"DnsZone": ubx.FieldSpec{WireName: "dns_zone"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Fqdn": ubx.FieldSpec{WireName: "fqdn"},
-		"Hostname": ubx.FieldSpec{WireName: "hostname"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"DnsSuffix":   ubx.FieldSpec{WireName: "dns_suffix"},
+		"Etag":        ubx.FieldSpec{WireName: "etag"},
+		"Hostname":    ubx.FieldSpec{WireName: "hostname"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"OriginalConfig": ubx.FieldSpec{
 			WireName: "original_config",
-			Kind: "object",
-			Fields: AutomatedDnsRecord_CurrentConfigFields,
+			Kind:     "object",
+			Fields:   AutomatedDnsRecord_CurrentConfigFields,
 		},
-		"RecordType": ubx.FieldSpec{WireName: "record_type"},
+		"RecordType":   ubx.FieldSpec{WireName: "record_type"},
 		"ServiceClass": ubx.FieldSpec{WireName: "service_class"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"StateDetails": ubx.FieldSpec{WireName: "state_details"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

@@ -8,8 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class HostProjectRegistrationConfig:
-    # Output only. The time at which the host project registration was created.
-    create_time: Any = None
     # Required. Immutable. Google cloud project name in the format: "projects/abc" or "projects/123". As input, project name with either project id or number are accepted. As output, this field will contain project number.
     gcp_project: Any = None
     # Identifier. The name of the host project registration. Format: "projects/{project}/locations/{location}/hostProjectRegistrations/{host_project_registration}".
@@ -27,7 +25,6 @@ class HostProjectRegistrationAttrs:
 HostProjectRegistration = ubx.ResourceBinding(
     wire_type="google_apihub_host_project_registration",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "gcp_project": ubx.FieldSpec(wire_name="gcp_project"),
         "name": ubx.FieldSpec(wire_name="name"),
     },

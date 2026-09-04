@@ -50,41 +50,41 @@ type AutoscalingPolicy_SecondaryWorkerConfig struct {
 }
 
 var AutoscalingPolicy_BasicAlgorithm_SparkStandaloneConfigFields = ubx.FieldMap{
-		"GracefulDecommissionTimeout": ubx.FieldSpec{WireName: "graceful_decommission_timeout"},
-		"RemoveOnlyIdleWorkers": ubx.FieldSpec{WireName: "remove_only_idle_workers"},
-		"ScaleDownFactor": ubx.FieldSpec{WireName: "scale_down_factor"},
-		"ScaleDownMinWorkerFraction": ubx.FieldSpec{WireName: "scale_down_min_worker_fraction"},
-		"ScaleUpFactor": ubx.FieldSpec{WireName: "scale_up_factor"},
-		"ScaleUpMinWorkerFraction": ubx.FieldSpec{WireName: "scale_up_min_worker_fraction"},
-	}
+	"GracefulDecommissionTimeout": ubx.FieldSpec{WireName: "graceful_decommission_timeout"},
+	"RemoveOnlyIdleWorkers":       ubx.FieldSpec{WireName: "remove_only_idle_workers"},
+	"ScaleDownFactor":             ubx.FieldSpec{WireName: "scale_down_factor"},
+	"ScaleDownMinWorkerFraction":  ubx.FieldSpec{WireName: "scale_down_min_worker_fraction"},
+	"ScaleUpFactor":               ubx.FieldSpec{WireName: "scale_up_factor"},
+	"ScaleUpMinWorkerFraction":    ubx.FieldSpec{WireName: "scale_up_min_worker_fraction"},
+}
 
 var AutoscalingPolicy_BasicAlgorithm_YarnConfigFields = ubx.FieldMap{
-		"GracefulDecommissionTimeout": ubx.FieldSpec{WireName: "graceful_decommission_timeout"},
-		"ScaleDownFactor": ubx.FieldSpec{WireName: "scale_down_factor"},
-		"ScaleDownMinWorkerFraction": ubx.FieldSpec{WireName: "scale_down_min_worker_fraction"},
-		"ScaleUpFactor": ubx.FieldSpec{WireName: "scale_up_factor"},
-		"ScaleUpMinWorkerFraction": ubx.FieldSpec{WireName: "scale_up_min_worker_fraction"},
-	}
+	"GracefulDecommissionTimeout": ubx.FieldSpec{WireName: "graceful_decommission_timeout"},
+	"ScaleDownFactor":             ubx.FieldSpec{WireName: "scale_down_factor"},
+	"ScaleDownMinWorkerFraction":  ubx.FieldSpec{WireName: "scale_down_min_worker_fraction"},
+	"ScaleUpFactor":               ubx.FieldSpec{WireName: "scale_up_factor"},
+	"ScaleUpMinWorkerFraction":    ubx.FieldSpec{WireName: "scale_up_min_worker_fraction"},
+}
 
 var AutoscalingPolicy_BasicAlgorithmFields = ubx.FieldMap{
-		"CooldownPeriod": ubx.FieldSpec{WireName: "cooldown_period"},
-		"SparkStandaloneConfig": ubx.FieldSpec{
-			WireName: "spark_standalone_config",
-			Kind: "object",
-			Fields: AutoscalingPolicy_BasicAlgorithm_SparkStandaloneConfigFields,
-		},
-		"YarnConfig": ubx.FieldSpec{
-			WireName: "yarn_config",
-			Kind: "object",
-			Fields: AutoscalingPolicy_BasicAlgorithm_YarnConfigFields,
-		},
-	}
+	"CooldownPeriod": ubx.FieldSpec{WireName: "cooldown_period"},
+	"SparkStandaloneConfig": ubx.FieldSpec{
+		WireName: "spark_standalone_config",
+		Kind:     "object",
+		Fields:   AutoscalingPolicy_BasicAlgorithm_SparkStandaloneConfigFields,
+	},
+	"YarnConfig": ubx.FieldSpec{
+		WireName: "yarn_config",
+		Kind:     "object",
+		Fields:   AutoscalingPolicy_BasicAlgorithm_YarnConfigFields,
+	},
+}
 
 var AutoscalingPolicy_SecondaryWorkerConfigFields = ubx.FieldMap{
-		"MaxInstances": ubx.FieldSpec{WireName: "max_instances"},
-		"MinInstances": ubx.FieldSpec{WireName: "min_instances"},
-		"Weight": ubx.FieldSpec{WireName: "weight"},
-	}
+	"MaxInstances": ubx.FieldSpec{WireName: "max_instances"},
+	"MinInstances": ubx.FieldSpec{WireName: "min_instances"},
+	"Weight":       ubx.FieldSpec{WireName: "weight"},
+}
 
 type AutoscalingPolicyConfig struct {
 	// Basic algorithm for autoscaling.
@@ -95,8 +95,6 @@ type AutoscalingPolicyConfig struct {
 	Id any
 	// Optional. The labels to associate with this autoscaling policy. Label keys must contain 1 to 63 characters, and must conform to RFC 1035 (https://www.ietf.org/rfc/rfc1035.txt). Label values may be empty, but, if present, must contain 1 to 63 characters, and must conform to RFC 1035 (https://www.ietf.org/rfc/rfc1035.txt). No more than 32 labels can be associated with an autoscaling policy.
 	Labels any
-	// Output only. The "resource name" of the autoscaling policy, as described in https://cloud.google.com/apis/design/resource_names. For projects.regions.autoscalingPolicies, the resource name of the policy has the following format: projects/{project_id}/regions/{region}/autoscalingPolicies/{policy_id} For projects.locations.autoscalingPolicies, the resource name of the policy has the following format: projects/{project_id}/locations/{location}/autoscalingPolicies/{policy_id}
-	Name any
 	// Configuration for the size bounds of an instance group, including its proportional size to other groups.
 	SecondaryWorkerConfig any
 	// Configuration for the size bounds of an instance group, including its proportional size to other groups.
@@ -125,22 +123,21 @@ var AutoscalingPolicy = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"BasicAlgorithm": ubx.FieldSpec{
 			WireName: "basic_algorithm",
-			Kind: "object",
-			Fields: AutoscalingPolicy_BasicAlgorithmFields,
+			Kind:     "object",
+			Fields:   AutoscalingPolicy_BasicAlgorithmFields,
 		},
 		"ClusterType": ubx.FieldSpec{WireName: "cluster_type"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Id":          ubx.FieldSpec{WireName: "id"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
 		"SecondaryWorkerConfig": ubx.FieldSpec{
 			WireName: "secondary_worker_config",
-			Kind: "object",
-			Fields: AutoscalingPolicy_SecondaryWorkerConfigFields,
+			Kind:     "object",
+			Fields:   AutoscalingPolicy_SecondaryWorkerConfigFields,
 		},
 		"WorkerConfig": ubx.FieldSpec{
 			WireName: "worker_config",
-			Kind: "object",
-			Fields: AutoscalingPolicy_SecondaryWorkerConfigFields,
+			Kind:     "object",
+			Fields:   AutoscalingPolicy_SecondaryWorkerConfigFields,
 		},
 	},
 }

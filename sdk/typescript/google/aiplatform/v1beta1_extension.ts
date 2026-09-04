@@ -153,61 +153,6 @@ export interface V1beta1Extension_ToolUseExamples {
   responseSummary?: string | Computed<string>;
 }
 
-const V1beta1Extension_ExtensionOperations_FunctionDeclaration_ParametersFields: FieldMap = {
-  additionalProperties: "additional_properties",
-  anyOf: "any_of",
-  default: "default",
-  defs: "defs",
-  description: "description",
-  enum: "enum",
-  example: "example",
-  format: "format",
-  items: "items",
-  maxItems: "max_items",
-  maxLength: "max_length",
-  maxProperties: "max_properties",
-  maximum: "maximum",
-  minItems: "min_items",
-  minLength: "min_length",
-  minProperties: "min_properties",
-  minimum: "minimum",
-  nullable: "nullable",
-  pattern: "pattern",
-  properties: "properties",
-  propertyOrdering: "property_ordering",
-  ref: "ref",
-  required: "required",
-  title: "title",
-  type: "type",
-};
-
-const V1beta1Extension_ExtensionOperations_FunctionDeclarationFields: FieldMap = {
-  behavior: "behavior",
-  description: "description",
-  name: "name",
-  parameters: {
-    wireName: "parameters",
-    kind: "object",
-    fields: V1beta1Extension_ExtensionOperations_FunctionDeclaration_ParametersFields,
-  },
-  parametersJsonSchema: "parameters_json_schema",
-  response: {
-    wireName: "response",
-    kind: "object",
-    fields: V1beta1Extension_ExtensionOperations_FunctionDeclaration_ParametersFields,
-  },
-  responseJsonSchema: "response_json_schema",
-};
-
-const V1beta1Extension_ExtensionOperationsFields: FieldMap = {
-  functionDeclaration: {
-    wireName: "function_declaration",
-    kind: "object",
-    fields: V1beta1Extension_ExtensionOperations_FunctionDeclarationFields,
-  },
-  operationId: "operation_id",
-};
-
 const V1beta1Extension_Manifest_ApiSpecFields: FieldMap = {
   openApiGcsUri: "open_api_gcs_uri",
   openApiYaml: "open_api_yaml",
@@ -330,16 +275,12 @@ const V1beta1Extension_ToolUseExamplesFields: FieldMap = {
 };
 
 export interface V1beta1ExtensionConfig {
-  /** Output only. Timestamp when this Extension was created. */
-  createTime?: string | Computed<string>;
   /** Optional. The description of the Extension. */
   description?: string | Computed<string>;
   /** Required. The display name of the Extension. The name can be up to 128 characters long and can consist of any UTF-8 characters. */
   displayName?: string | Computed<string>;
   /** Optional. Used to perform consistent read-modify-write updates. If not set, a blind "overwrite" update happens. */
   etag?: string | Computed<string>;
-  /** Output only. Supported operations. */
-  extensionOperations?: V1beta1Extension_ExtensionOperations[] | Computed<V1beta1Extension_ExtensionOperations[]>;
   /** Manifest spec of an Extension needed for runtime execution. */
   manifest?: V1beta1Extension_Manifest | Computed<V1beta1Extension_Manifest>;
   /** Identifier. The resource name of the Extension. */
@@ -348,14 +289,8 @@ export interface V1beta1ExtensionConfig {
   privateServiceConnectConfig?: V1beta1Extension_PrivateServiceConnectConfig | Computed<V1beta1Extension_PrivateServiceConnectConfig>;
   /** Runtime configuration to run the extension. */
   runtimeConfig?: V1beta1Extension_RuntimeConfig | Computed<V1beta1Extension_RuntimeConfig>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzi?: boolean | Computed<boolean>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzs?: boolean | Computed<boolean>;
   /** Optional. Examples to illustrate the usage of the extension as a tool. */
   toolUseExamples?: V1beta1Extension_ToolUseExamples[] | Computed<V1beta1Extension_ToolUseExamples[]>;
-  /** Output only. Timestamp when this Extension was most recently updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1beta1ExtensionAttrs {
@@ -390,15 +325,9 @@ export interface V1beta1ExtensionAttrs {
 export const V1beta1Extension: ResourceBinding<V1beta1ExtensionConfig, V1beta1ExtensionAttrs> = {
   wireType: "google_aiplatform_v1beta1_extension",
   fields: {
-    createTime: "create_time",
     description: "description",
     displayName: "display_name",
     etag: "etag",
-    extensionOperations: {
-      wireName: "extension_operations",
-      kind: "list",
-      fields: V1beta1Extension_ExtensionOperationsFields,
-    },
     manifest: {
       wireName: "manifest",
       kind: "object",
@@ -415,13 +344,10 @@ export const V1beta1Extension: ResourceBinding<V1beta1ExtensionConfig, V1beta1Ex
       kind: "object",
       fields: V1beta1Extension_RuntimeConfigFields,
     },
-    satisfiesPzi: "satisfies_pzi",
-    satisfiesPzs: "satisfies_pzs",
     toolUseExamples: {
       wireName: "tool_use_examples",
       kind: "list",
       fields: V1beta1Extension_ToolUseExamplesFields,
     },
-    updateTime: "update_time",
   },
 };

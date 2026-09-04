@@ -24,10 +24,10 @@ type Job_Configuration_Copy struct {
 	DestinationEncryptionConfiguration any
 	// Optional. The time when the destination table expires. Expired tables will be deleted and their storage reclaimed.
 	DestinationExpirationTime any
-	DestinationTable any
+	DestinationTable          any
 	// Optional. Supported operation types in table copy job.
 	OperationType any
-	SourceTable any
+	SourceTable   any
 	// [Pick one] Source tables to copy.
 	SourceTables any
 	// Optional. Specifies the action that occurs if the destination table already exists. The following values are supported: * WRITE_TRUNCATE: If the table already exists, BigQuery overwrites the table data and uses the schema and table constraints from the source table. * WRITE_APPEND: If the table already exists, BigQuery appends the data to the table. * WRITE_EMPTY: If the table already exists and contains data, a 'duplicate' error is returned in the job result. The default value is WRITE_EMPTY. Each action is atomic and only occurs if BigQuery is able to complete the job successfully. Creation, truncation and append actions occur as one atomic update upon job completion.
@@ -76,7 +76,7 @@ type Job_Configuration_Load_Clustering struct {
 }
 
 type Job_Configuration_Load_ConnectionProperties struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -144,14 +144,14 @@ type Job_Configuration_Load_Schema_Fields_DataPolicyList struct {
 }
 
 type Job_Configuration_Load_Schema_Fields_GeneratedColumn_GeneratedExpressionInfo struct {
-	Asynchronous any
+	Asynchronous         any
 	GenerationExpression any
-	Stored any
+	Stored               any
 }
 
 type Job_Configuration_Load_Schema_Fields_GeneratedColumn struct {
 	GeneratedExpressionInfo any
-	GeneratedMode any
+	GeneratedMode           any
 }
 
 type Job_Configuration_Load_Schema_Fields_RangeElementType struct {
@@ -159,26 +159,26 @@ type Job_Configuration_Load_Schema_Fields_RangeElementType struct {
 }
 
 type Job_Configuration_Load_Schema_Fields struct {
-	Categories any
-	Collation any
+	Categories             any
+	Collation              any
 	DataGovernanceTagsInfo any
-	DataPolicies any
-	DataPolicyList any
+	DataPolicies           any
+	DataPolicyList         any
 	DefaultValueExpression any
-	Description any
-	Fields any
-	ForeignTypeDefinition any
-	GeneratedColumn any
-	MaxLength any
-	Mode any
-	Name any
-	PolicyTags any
-	Precision any
-	RangeElementType any
-	RoundingMode any
-	Scale any
-	TimestampPrecision any
-	Type any
+	Description            any
+	Fields                 any
+	ForeignTypeDefinition  any
+	GeneratedColumn        any
+	MaxLength              any
+	Mode                   any
+	Name                   any
+	PolicyTags             any
+	Precision              any
+	RangeElementType       any
+	RoundingMode           any
+	Scale                  any
+	TimestampPrecision     any
+	Type                   any
 }
 
 type Job_Configuration_Load_Schema_ForeignTypeInfo struct {
@@ -231,7 +231,7 @@ type Job_Configuration_Load struct {
 	DecimalTargetTypes any
 	// Configuration for Cloud KMS encryption settings.
 	DestinationEncryptionConfiguration any
-	DestinationTable any
+	DestinationTable                   any
 	// Properties for the destination table.
 	DestinationTableProperties any
 	// Optional. The character encoding of the data. The supported values are UTF-8, ISO-8859-1, UTF-16BE, UTF-16LE, UTF-32BE, and UTF-32LE. The default value is UTF-8. BigQuery decodes the data after the raw, binary data has been split using the values of the `quote` and `fieldDelimiter` properties. If you don't specify an encoding, or if you specify a UTF-8 encoding when the CSV file is not UTF-8 encoded, BigQuery attempts to convert the data to UTF-8. Generally, your data loads successfully, but it may not match byte-for-byte what you expect. To avoid this, specify the correct encoding by using the `--encoding` flag. If BigQuery can't convert a character other than the ASCII `0` character, BigQuery converts the character to the standard Unicode replacement character: �.
@@ -259,7 +259,7 @@ type Job_Configuration_Load struct {
 	// If sourceFormat is set to "DATASTORE_BACKUP", indicates which entity properties to load into BigQuery from a Cloud Datastore backup. Property names are case sensitive and must be top-level properties. If no properties are specified, BigQuery loads all properties. If any named property isn't found in the Cloud Datastore backup, an invalid error is returned in the job result.
 	ProjectionFields any
 	// Optional. The value that is used to quote data sections in a CSV file. BigQuery converts the string to ISO-8859-1 encoding, and then uses the first byte of the encoded string to split the data in its raw, binary state. The default value is a double-quote ('"'). If your data does not contain quoted sections, set the property value to an empty string. If your data contains quoted newline characters, you must also set the allowQuotedNewlines property to true. To include the specific quote character within a quoted value, precede it with an additional matching quote character. For example, if you want to escape the default character ' " ', use ' "" '. @default "
-	Quote any
+	Quote             any
 	RangePartitioning any
 	// Optional. The user can provide a reference file with the reader schema. This file is only loaded if it is part of source URIs, but is not loaded otherwise. It is enabled for the following formats: AVRO, PARQUET, ORC.
 	ReferenceFileSchemaUri any
@@ -280,7 +280,7 @@ type Job_Configuration_Load struct {
 	// [Required] The fully-qualified URIs that point to your data in Google Cloud. For Google Cloud Storage URIs: Each URI can contain one '*' wildcard character and it must come after the 'bucket' name. Size limits related to load jobs apply to external data sources. For Google Cloud Bigtable URIs: Exactly one URI can be specified and it has be a fully specified and valid HTTPS URL for a Google Cloud Bigtable table. For Google Cloud Datastore backups: Exactly one URI can be specified. Also, the '*' wildcard character is not allowed.
 	SourceUris any
 	// Optional. Date format used for parsing TIME values.
-	TimeFormat any
+	TimeFormat       any
 	TimePartitioning any
 	// Optional. Default time zone that will apply when parsing timestamp values that have no specific time zone.
 	TimeZone any
@@ -303,33 +303,33 @@ type Job_Configuration_Query_DefaultDataset struct {
 
 type Job_Configuration_Query_QueryParameters_ParameterType_StructTypes struct {
 	Description any
-	Name any
-	Type any
+	Name        any
+	Type        any
 }
 
 type Job_Configuration_Query_QueryParameters_ParameterType struct {
-	ArrayType any
-	RangeElementType any
-	StructTypes any
+	ArrayType          any
+	RangeElementType   any
+	StructTypes        any
 	TimestampPrecision any
-	Type any
+	Type               any
 }
 
 type Job_Configuration_Query_QueryParameters_ParameterValue_RangeValue struct {
-	End any
+	End   any
 	Start any
 }
 
 type Job_Configuration_Query_QueryParameters_ParameterValue struct {
-	ArrayValues any
-	RangeValue any
+	ArrayValues  any
+	RangeValue   any
 	StructValues any
-	Value any
+	Value        any
 }
 
 type Job_Configuration_Query_QueryParameters struct {
-	Name any
-	ParameterType any
+	Name           any
+	ParameterType  any
 	ParameterValue any
 }
 
@@ -354,8 +354,8 @@ type Job_Configuration_Query_SystemVariables_Types_StructType struct {
 type Job_Configuration_Query_SystemVariables_Types struct {
 	ArrayElementType any
 	RangeElementType any
-	StructType any
-	TypeKind any
+	StructType       any
+	TypeKind         any
 }
 
 type Job_Configuration_Query_SystemVariables struct {
@@ -371,50 +371,50 @@ type Job_Configuration_Query_TableDefinitions_AvroOptions struct {
 
 type Job_Configuration_Query_TableDefinitions_BigtableOptions_ColumnFamilies_Columns_ProtoConfig struct {
 	ProtoMessageName any
-	SchemaBundleId any
+	SchemaBundleId   any
 }
 
 type Job_Configuration_Query_TableDefinitions_BigtableOptions_ColumnFamilies_Columns struct {
-	Encoding any
-	FieldName any
-	OnlyReadLatest any
-	ProtoConfig any
+	Encoding         any
+	FieldName        any
+	OnlyReadLatest   any
+	ProtoConfig      any
 	QualifierEncoded any
-	QualifierString any
-	Type any
+	QualifierString  any
+	Type             any
 }
 
 type Job_Configuration_Query_TableDefinitions_BigtableOptions_ColumnFamilies struct {
-	Columns any
-	Encoding any
-	FamilyId any
+	Columns        any
+	Encoding       any
+	FamilyId       any
 	OnlyReadLatest any
-	ProtoConfig any
-	Type any
+	ProtoConfig    any
+	Type           any
 }
 
 type Job_Configuration_Query_TableDefinitions_BigtableOptions struct {
-	ColumnFamilies any
+	ColumnFamilies                  any
 	IgnoreUnspecifiedColumnFamilies any
-	OutputColumnFamiliesAsJson any
-	ReadRowkeyAsString any
+	OutputColumnFamiliesAsJson      any
+	ReadRowkeyAsString              any
 }
 
 type Job_Configuration_Query_TableDefinitions_CsvOptions struct {
-	AllowJaggedRows any
-	AllowQuotedNewlines any
-	Encoding any
-	FieldDelimiter any
-	NullMarker any
-	NullMarkers any
+	AllowJaggedRows                any
+	AllowQuotedNewlines            any
+	Encoding                       any
+	FieldDelimiter                 any
+	NullMarker                     any
+	NullMarkers                    any
 	PreserveAsciiControlCharacters any
-	Quote any
-	SkipLeadingRows any
-	SourceColumnMatch any
+	Quote                          any
+	SkipLeadingRows                any
+	SourceColumnMatch              any
 }
 
 type Job_Configuration_Query_TableDefinitions_GoogleSheetsOptions struct {
-	Range any
+	Range           any
 	SkipLeadingRows any
 }
 
@@ -423,37 +423,37 @@ type Job_Configuration_Query_TableDefinitions_JsonOptions struct {
 }
 
 type Job_Configuration_Query_TableDefinitions struct {
-	Autodetect any
-	AvroOptions any
-	BigtableOptions any
-	Compression any
-	ConnectionId any
-	CsvOptions any
-	DateFormat any
-	DatetimeFormat any
-	DecimalTargetTypes any
-	FileSetSpecType any
-	GoogleSheetsOptions any
-	HivePartitioningOptions any
-	IgnoreUnknownValues any
-	JsonExtension any
-	JsonOptions any
-	MaxBadRecords any
-	MetadataCacheMode any
-	ObjectMetadata any
-	ParquetOptions any
-	ReferenceFileSchemaUri any
-	Schema any
-	SourceFormat any
-	SourceUris any
-	TimeFormat any
-	TimeZone any
-	TimestampFormat any
+	Autodetect               any
+	AvroOptions              any
+	BigtableOptions          any
+	Compression              any
+	ConnectionId             any
+	CsvOptions               any
+	DateFormat               any
+	DatetimeFormat           any
+	DecimalTargetTypes       any
+	FileSetSpecType          any
+	GoogleSheetsOptions      any
+	HivePartitioningOptions  any
+	IgnoreUnknownValues      any
+	JsonExtension            any
+	JsonOptions              any
+	MaxBadRecords            any
+	MetadataCacheMode        any
+	ObjectMetadata           any
+	ParquetOptions           any
+	ReferenceFileSchemaUri   any
+	Schema                   any
+	SourceFormat             any
+	SourceUris               any
+	TimeFormat               any
+	TimeZone                 any
+	TimestampFormat          any
 	TimestampTargetPrecision any
 }
 
 type Job_Configuration_Query_UserDefinedFunctionResources struct {
-	InlineCode any
+	InlineCode  any
 	ResourceUri any
 }
 
@@ -474,7 +474,7 @@ type Job_Configuration_Query struct {
 	DefaultDataset any
 	// Configuration for Cloud KMS encryption settings.
 	DestinationEncryptionConfiguration any
-	DestinationTable any
+	DestinationTable                   any
 	// Optional. If true and query uses legacy SQL dialect, flattens all nested and repeated fields in the query results. allowLargeResults must be true if this is set to false. For GoogleSQL queries, this flag is ignored and results are never flattened.
 	FlattenResults any
 	// Optional. [Deprecated] Maximum billing tier allowed for this query. The billing tier controls the amount of compute resources allotted to the query, and multiplies the on-demand cost of the query accordingly. A query that runs within its allotted resources will succeed and indicate its billing tier in statistics.query.billingTier, but if the query exceeds its allotted resources, it will fail with billingTierLimitExceeded. WARNING: The billed byte amount can be multiplied by an amount up to this number! Most users should not need to alter this setting, and we recommend that you avoid introducing new uses of it.
@@ -490,7 +490,7 @@ type Job_Configuration_Query struct {
 	// [Required] SQL query text to execute. The useLegacySql field can be used to indicate whether the query uses legacy SQL or GoogleSQL.
 	Query any
 	// Query parameters for GoogleSQL queries.
-	QueryParameters any
+	QueryParameters   any
 	RangePartitioning any
 	// Allows the schema of the destination table to be updated as a side effect of the query job. Schema update options are supported in three cases: when writeDisposition is WRITE_APPEND; when writeDisposition is WRITE_TRUNCATE_DATA; when writeDisposition is WRITE_TRUNCATE and the destination table is a partition of a table, specified by partition decorators. For normal tables, WRITE_TRUNCATE will always overwrite the schema. One or more of the following values are specified: * ALLOW_FIELD_ADDITION: allow adding a nullable field to the schema. * ALLOW_FIELD_RELAXATION: allow relaxing a required field in the original schema to nullable.
 	SchemaUpdateOptions any
@@ -565,13 +565,13 @@ type Job_Statistics_DataMaskingStatistics struct {
 }
 
 type Job_Statistics_Extract_Timeline struct {
-	ActiveUnits any
-	CompletedUnits any
-	ElapsedMs any
+	ActiveUnits            any
+	CompletedUnits         any
+	ElapsedMs              any
 	EstimatedRunnableUnits any
-	PendingUnits any
-	ShuffleRamUsageRatio any
-	TotalSlotMs any
+	PendingUnits           any
+	ShuffleRamUsageRatio   any
+	TotalSlotMs            any
 }
 
 type Job_Statistics_Extract struct {
@@ -599,7 +599,7 @@ type Job_Statistics_Load struct {
 }
 
 type Job_Statistics_Query_BiEngineStatistics_BiEngineReasons struct {
-	Code any
+	Code    any
 	Message any
 }
 
@@ -653,12 +653,12 @@ type Job_Statistics_Query_ExportDataStatistics struct {
 }
 
 type Job_Statistics_Query_ExternalServiceCosts struct {
-	BillingMethod any
-	BytesBilled any
-	BytesProcessed any
-	ExternalService any
+	BillingMethod     any
+	BytesBilled       any
+	BytesProcessed    any
+	ExternalService   any
 	ReservedSlotCount any
-	SlotMs any
+	SlotMs            any
 }
 
 type Job_Statistics_Query_GenAiStats_ErrorStats struct {
@@ -671,22 +671,22 @@ type Job_Statistics_Query_GenAiStats_FunctionStats_CacheStats struct {
 }
 
 type Job_Statistics_Query_GenAiStats_FunctionStats_CostOptimizationStats struct {
-	Message any
+	Message              any
 	NumCostOptimizedRows any
 }
 
 type Job_Statistics_Query_GenAiStats_FunctionStats_ErrorStats struct {
-	Errors any
+	Errors        any
 	NumFailedRows any
 }
 
 type Job_Statistics_Query_GenAiStats_FunctionStats struct {
-	CacheStats any
+	CacheStats            any
 	CostOptimizationStats any
-	ErrorStats any
-	FunctionName any
-	NumProcessedRows any
-	Prompt any
+	ErrorStats            any
+	FunctionName          any
+	NumProcessedRows      any
+	Prompt                any
 }
 
 type Job_Statistics_Query_GenAiStats struct {
@@ -729,10 +729,10 @@ type Job_Statistics_Query_LoadQueryStatistics struct {
 }
 
 type Job_Statistics_Query_MaterializedViewStatistics_MaterializedView struct {
-	Chosen any
+	Chosen              any
 	EstimatedBytesSaved any
-	RejectedReason any
-	TableReference any
+	RejectedReason      any
+	TableReference      any
 }
 
 type Job_Statistics_Query_MaterializedViewStatistics struct {
@@ -742,17 +742,17 @@ type Job_Statistics_Query_MaterializedViewStatistics struct {
 
 type Job_Statistics_Query_MetadataCacheStatistics_TableMetadataCacheUsage_PruningStats struct {
 	PostCmetaPruningParallelInputCount any
-	PostCmetaPruningPartitionCount any
-	PreCmetaPruningParallelInputCount any
+	PostCmetaPruningPartitionCount     any
+	PreCmetaPruningParallelInputCount  any
 }
 
 type Job_Statistics_Query_MetadataCacheStatistics_TableMetadataCacheUsage struct {
-	Explanation any
-	PruningStats any
-	Staleness any
+	Explanation    any
+	PruningStats   any
+	Staleness      any
 	TableReference any
-	TableType any
-	UnusedReason any
+	TableType      any
+	UnusedReason   any
 }
 
 type Job_Statistics_Query_MetadataCacheStatistics struct {
@@ -761,9 +761,9 @@ type Job_Statistics_Query_MetadataCacheStatistics struct {
 }
 
 type Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ArimaForecastingMetrics_ArimaFittingMetrics struct {
-	Aic any
+	Aic           any
 	LogLikelihood any
-	Variance any
+	Variance      any
 }
 
 type Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ArimaForecastingMetrics_ArimaSingleModelForecastingMetrics_NonSeasonalOrder struct {
@@ -774,57 +774,57 @@ type Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ArimaForec
 
 type Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ArimaForecastingMetrics_ArimaSingleModelForecastingMetrics struct {
 	ArimaFittingMetrics any
-	HasDrift any
-	HasHolidayEffect any
-	HasSpikesAndDips any
-	HasStepChanges any
-	NonSeasonalOrder any
-	SeasonalPeriods any
-	TimeSeriesId any
-	TimeSeriesIds any
+	HasDrift            any
+	HasHolidayEffect    any
+	HasSpikesAndDips    any
+	HasStepChanges      any
+	NonSeasonalOrder    any
+	SeasonalPeriods     any
+	TimeSeriesId        any
+	TimeSeriesIds       any
 }
 
 type Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ArimaForecastingMetrics struct {
-	ArimaFittingMetrics any
+	ArimaFittingMetrics                any
 	ArimaSingleModelForecastingMetrics any
-	HasDrift any
-	NonSeasonalOrder any
-	SeasonalPeriods any
-	TimeSeriesId any
+	HasDrift                           any
+	NonSeasonalOrder                   any
+	SeasonalPeriods                    any
+	TimeSeriesId                       any
 }
 
 type Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_BinaryClassificationMetrics_AggregateClassificationMetrics struct {
-	Accuracy any
-	F1Score any
-	LogLoss any
+	Accuracy  any
+	F1Score   any
+	LogLoss   any
 	Precision any
-	Recall any
-	RocAuc any
+	Recall    any
+	RocAuc    any
 	Threshold any
 }
 
 type Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_BinaryClassificationMetrics_BinaryConfusionMatrixList struct {
-	Accuracy any
-	F1Score any
-	FalseNegatives any
-	FalsePositives any
+	Accuracy               any
+	F1Score                any
+	FalseNegatives         any
+	FalsePositives         any
 	PositiveClassThreshold any
-	Precision any
-	Recall any
-	TrueNegatives any
-	TruePositives any
+	Precision              any
+	Recall                 any
+	TrueNegatives          any
+	TruePositives          any
 }
 
 type Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_BinaryClassificationMetrics struct {
 	AggregateClassificationMetrics any
-	BinaryConfusionMatrixList any
-	NegativeLabel any
-	PositiveLabel any
+	BinaryConfusionMatrixList      any
+	NegativeLabel                  any
+	PositiveLabel                  any
 }
 
 type Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ClusteringMetrics_Clusters_FeatureValues_CategoricalValue_CategoryCounts struct {
 	Category any
-	Count any
+	Count    any
 }
 
 type Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ClusteringMetrics_Clusters_FeatureValues_CategoricalValue struct {
@@ -833,19 +833,19 @@ type Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_Clustering
 
 type Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ClusteringMetrics_Clusters_FeatureValues struct {
 	CategoricalValue any
-	FeatureColumn any
-	NumericalValue any
+	FeatureColumn    any
+	NumericalValue   any
 }
 
 type Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ClusteringMetrics_Clusters struct {
-	CentroidId any
-	Count any
+	CentroidId    any
+	Count         any
 	FeatureValues any
 }
 
 type Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ClusteringMetrics struct {
-	Clusters any
-	DaviesBouldinIndex any
+	Clusters            any
+	DaviesBouldinIndex  any
 	MeanSquaredDistance any
 }
 
@@ -854,213 +854,213 @@ type Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_Dimensiona
 }
 
 type Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_MultiClassClassificationMetrics_ConfusionMatrixList_Rows_Entries struct {
-	ItemCount any
+	ItemCount      any
 	PredictedLabel any
 }
 
 type Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_MultiClassClassificationMetrics_ConfusionMatrixList_Rows struct {
 	ActualLabel any
-	Entries any
+	Entries     any
 }
 
 type Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_MultiClassClassificationMetrics_ConfusionMatrixList struct {
 	ConfidenceThreshold any
-	Rows any
+	Rows                any
 }
 
 type Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_MultiClassClassificationMetrics struct {
 	AggregateClassificationMetrics any
-	ConfusionMatrixList any
+	ConfusionMatrixList            any
 }
 
 type Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_RankingMetrics struct {
-	AverageRank any
-	MeanAveragePrecision any
-	MeanSquaredError any
+	AverageRank                        any
+	MeanAveragePrecision               any
+	MeanSquaredError                   any
 	NormalizedDiscountedCumulativeGain any
 }
 
 type Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_RegressionMetrics struct {
-	MeanAbsoluteError any
-	MeanSquaredError any
+	MeanAbsoluteError   any
+	MeanSquaredError    any
 	MeanSquaredLogError any
 	MedianAbsoluteError any
-	RSquared any
+	RSquared            any
 }
 
 type Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics struct {
-	ArimaForecastingMetrics any
-	BinaryClassificationMetrics any
-	ClusteringMetrics any
-	DimensionalityReductionMetrics any
+	ArimaForecastingMetrics         any
+	BinaryClassificationMetrics     any
+	ClusteringMetrics               any
+	DimensionalityReductionMetrics  any
 	MultiClassClassificationMetrics any
-	RankingMetrics any
-	RegressionMetrics any
+	RankingMetrics                  any
+	RegressionMetrics               any
 }
 
 type Job_Statistics_Query_MlStatistics_HparamTrials_Hparams struct {
-	ActivationFn any
-	AdjustStepChanges any
-	ApproxGlobalFeatureContrib any
-	AutoArima any
-	AutoArimaMaxOrder any
-	AutoArimaMinOrder any
-	AutoClassWeights any
-	BatchSize any
-	BoosterType any
-	BudgetHours any
-	CalculatePvalues any
-	CategoryEncodingMethod any
-	CleanSpikesAndDips any
-	ColorSpace any
-	ColsampleBylevel any
-	ColsampleBynode any
-	ColsampleBytree any
-	ContributionMetric any
-	DartNormalizeType any
-	DataFrequency any
-	DataSplitColumn any
-	DataSplitEvalFraction any
-	DataSplitMethod any
-	DecomposeTimeSeries any
-	DimensionIdColumns any
-	DistanceType any
-	Dropout any
-	EarlyStop any
-	EnableGlobalExplain any
-	EndpointIdleTtl any
-	FeedbackType any
-	FitIntercept any
-	ForecastLimitLowerBound any
-	ForecastLimitUpperBound any
-	HiddenUnits any
-	HolidayRegion any
-	HolidayRegions any
-	Horizon any
-	HparamTuningObjectives any
-	HuggingFaceModelId any
-	IncludeDrift any
-	InitialLearnRate any
-	InputLabelColumns any
-	InstanceWeightColumn any
+	ActivationFn                any
+	AdjustStepChanges           any
+	ApproxGlobalFeatureContrib  any
+	AutoArima                   any
+	AutoArimaMaxOrder           any
+	AutoArimaMinOrder           any
+	AutoClassWeights            any
+	BatchSize                   any
+	BoosterType                 any
+	BudgetHours                 any
+	CalculatePvalues            any
+	CategoryEncodingMethod      any
+	CleanSpikesAndDips          any
+	ColorSpace                  any
+	ColsampleBylevel            any
+	ColsampleBynode             any
+	ColsampleBytree             any
+	ContributionMetric          any
+	DartNormalizeType           any
+	DataFrequency               any
+	DataSplitColumn             any
+	DataSplitEvalFraction       any
+	DataSplitMethod             any
+	DecomposeTimeSeries         any
+	DimensionIdColumns          any
+	DistanceType                any
+	Dropout                     any
+	EarlyStop                   any
+	EnableGlobalExplain         any
+	EndpointIdleTtl             any
+	FeedbackType                any
+	FitIntercept                any
+	ForecastLimitLowerBound     any
+	ForecastLimitUpperBound     any
+	HiddenUnits                 any
+	HolidayRegion               any
+	HolidayRegions              any
+	Horizon                     any
+	HparamTuningObjectives      any
+	HuggingFaceModelId          any
+	IncludeDrift                any
+	InitialLearnRate            any
+	InputLabelColumns           any
+	InstanceWeightColumn        any
 	IntegratedGradientsNumSteps any
-	IsTestColumn any
-	ItemColumn any
-	KmeansInitializationColumn any
-	KmeansInitializationMethod any
-	L1RegActivation any
-	L1Regularization any
-	L2Regularization any
-	LabelClassWeights any
-	LearnRate any
-	LearnRateStrategy any
-	LossType any
-	MachineType any
-	MaxIterations any
-	MaxParallelTrials any
-	MaxReplicaCount any
-	MaxTimeSeriesLength any
-	MaxTreeDepth any
-	MinAprioriSupport any
-	MinRelativeProgress any
-	MinReplicaCount any
-	MinSplitLoss any
-	MinTimeSeriesLength any
-	MinTreeChildWeight any
-	ModelGardenModelName any
-	ModelRegistry any
-	ModelUri any
-	NonSeasonalOrder any
-	NumClusters any
-	NumFactors any
-	NumParallelTree any
-	NumPrincipalComponents any
-	NumTrials any
-	OptimizationStrategy any
-	Optimizer any
-	PcaExplainedVarianceRatio any
-	PcaSolver any
-	ReservationAffinityKey any
-	ReservationAffinityType any
-	ReservationAffinityValues any
-	SampledShapleyNumPaths any
-	ScaleFeatures any
-	StandardizeFeatures any
-	Subsample any
-	TfVersion any
-	TimeSeriesDataColumn any
-	TimeSeriesIdColumn any
-	TimeSeriesIdColumns any
-	TimeSeriesLengthFraction any
-	TimeSeriesTimestampColumn any
-	TreeMethod any
-	TrendSmoothingWindowSize any
-	UserColumn any
+	IsTestColumn                any
+	ItemColumn                  any
+	KmeansInitializationColumn  any
+	KmeansInitializationMethod  any
+	L1RegActivation             any
+	L1Regularization            any
+	L2Regularization            any
+	LabelClassWeights           any
+	LearnRate                   any
+	LearnRateStrategy           any
+	LossType                    any
+	MachineType                 any
+	MaxIterations               any
+	MaxParallelTrials           any
+	MaxReplicaCount             any
+	MaxTimeSeriesLength         any
+	MaxTreeDepth                any
+	MinAprioriSupport           any
+	MinRelativeProgress         any
+	MinReplicaCount             any
+	MinSplitLoss                any
+	MinTimeSeriesLength         any
+	MinTreeChildWeight          any
+	ModelGardenModelName        any
+	ModelRegistry               any
+	ModelUri                    any
+	NonSeasonalOrder            any
+	NumClusters                 any
+	NumFactors                  any
+	NumParallelTree             any
+	NumPrincipalComponents      any
+	NumTrials                   any
+	OptimizationStrategy        any
+	Optimizer                   any
+	PcaExplainedVarianceRatio   any
+	PcaSolver                   any
+	ReservationAffinityKey      any
+	ReservationAffinityType     any
+	ReservationAffinityValues   any
+	SampledShapleyNumPaths      any
+	ScaleFeatures               any
+	StandardizeFeatures         any
+	Subsample                   any
+	TfVersion                   any
+	TimeSeriesDataColumn        any
+	TimeSeriesIdColumn          any
+	TimeSeriesIdColumns         any
+	TimeSeriesLengthFraction    any
+	TimeSeriesTimestampColumn   any
+	TreeMethod                  any
+	TrendSmoothingWindowSize    any
+	UserColumn                  any
 	VertexAiModelVersionAliases any
-	WalsAlpha any
-	WarmStart any
-	XgboostVersion any
+	WalsAlpha                   any
+	WarmStart                   any
+	XgboostVersion              any
 }
 
 type Job_Statistics_Query_MlStatistics_HparamTrials struct {
-	EndTimeMs any
-	ErrorMessage any
-	EvalLoss any
-	EvaluationMetrics any
+	EndTimeMs                     any
+	ErrorMessage                  any
+	EvalLoss                      any
+	EvaluationMetrics             any
 	HparamTuningEvaluationMetrics any
-	Hparams any
-	StartTimeMs any
-	Status any
-	TrainingLoss any
-	TrialId any
+	Hparams                       any
+	StartTimeMs                   any
+	Status                        any
+	TrainingLoss                  any
+	TrialId                       any
 }
 
 type Job_Statistics_Query_MlStatistics_IterationResults_ArimaResult_ArimaModelInfo_ArimaCoefficients struct {
 	AutoRegressiveCoefficients any
-	InterceptCoefficient any
-	MovingAverageCoefficients any
+	InterceptCoefficient       any
+	MovingAverageCoefficients  any
 }
 
 type Job_Statistics_Query_MlStatistics_IterationResults_ArimaResult_ArimaModelInfo struct {
-	ArimaCoefficients any
+	ArimaCoefficients   any
 	ArimaFittingMetrics any
-	HasDrift any
-	HasHolidayEffect any
-	HasSpikesAndDips any
-	HasStepChanges any
-	NonSeasonalOrder any
-	SeasonalPeriods any
-	TimeSeriesId any
-	TimeSeriesIds any
+	HasDrift            any
+	HasHolidayEffect    any
+	HasSpikesAndDips    any
+	HasStepChanges      any
+	NonSeasonalOrder    any
+	SeasonalPeriods     any
+	TimeSeriesId        any
+	TimeSeriesIds       any
 }
 
 type Job_Statistics_Query_MlStatistics_IterationResults_ArimaResult struct {
-	ArimaModelInfo any
+	ArimaModelInfo  any
 	SeasonalPeriods any
 }
 
 type Job_Statistics_Query_MlStatistics_IterationResults_ClusterInfos struct {
-	CentroidId any
+	CentroidId    any
 	ClusterRadius any
-	ClusterSize any
+	ClusterSize   any
 }
 
 type Job_Statistics_Query_MlStatistics_IterationResults_PrincipalComponentInfos struct {
 	CumulativeExplainedVarianceRatio any
-	ExplainedVariance any
-	ExplainedVarianceRatio any
-	PrincipalComponentId any
+	ExplainedVariance                any
+	ExplainedVarianceRatio           any
+	PrincipalComponentId             any
 }
 
 type Job_Statistics_Query_MlStatistics_IterationResults struct {
-	ArimaResult any
-	ClusterInfos any
-	DurationMs any
-	EvalLoss any
-	Index any
-	LearnRate any
+	ArimaResult             any
+	ClusterInfos            any
+	DurationMs              any
+	EvalLoss                any
+	Index                   any
+	LearnRate               any
 	PrincipalComponentInfos any
-	TrainingLoss any
+	TrainingLoss            any
 }
 
 type Job_Statistics_Query_MlStatistics struct {
@@ -1084,8 +1084,8 @@ type Job_Statistics_Query_ModelTraining struct {
 }
 
 type Job_Statistics_Query_ObjectStorageStats struct {
-	CacheBytesRead any
-	CloudProvider any
+	CacheBytesRead         any
+	CloudProvider          any
 	ObjectStorageBytesRead any
 }
 
@@ -1095,21 +1095,21 @@ type Job_Statistics_Query_PerformanceInsights_StagePerformanceChangeInsights_Inp
 
 type Job_Statistics_Query_PerformanceInsights_StagePerformanceChangeInsights struct {
 	InputDataChange any
-	StageId any
+	StageId         any
 }
 
 type Job_Statistics_Query_PerformanceInsights_StagePerformanceStandaloneInsights_HighCardinalityJoins struct {
-	LeftRows any
+	LeftRows   any
 	OutputRows any
-	RightRows any
-	StepIndex any
+	RightRows  any
+	StepIndex  any
 }
 
 type Job_Statistics_Query_PerformanceInsights_StagePerformanceStandaloneInsights_PartitionSkew_SkewSources struct {
-	OutputBytesMax any
+	OutputBytesMax    any
 	OutputBytesMedian any
-	OutputBytesP95 any
-	StageId any
+	OutputBytesP95    any
+	StageId           any
 }
 
 type Job_Statistics_Query_PerformanceInsights_StagePerformanceStandaloneInsights_PartitionSkew struct {
@@ -1117,23 +1117,23 @@ type Job_Statistics_Query_PerformanceInsights_StagePerformanceStandaloneInsights
 }
 
 type Job_Statistics_Query_PerformanceInsights_StagePerformanceStandaloneInsights struct {
-	BiEngineReasons any
-	HighCardinalityJoins any
+	BiEngineReasons          any
+	HighCardinalityJoins     any
 	InsufficientShuffleQuota any
-	PartitionSkew any
-	SlotContention any
-	StageId any
+	PartitionSkew            any
+	SlotContention           any
+	StageId                  any
 }
 
 type Job_Statistics_Query_PerformanceInsights_TableChangeInsights_MetadataCacheStalenessInsight struct {
-	AvgPreviousStalenessMs any
+	AvgPreviousStalenessMs      any
 	StalenessPercentageIncrease any
 }
 
 type Job_Statistics_Query_PerformanceInsights_TableChangeInsights struct {
 	MetadataCacheNotUsedButUsedPreviously any
-	MetadataCacheStalenessInsight any
-	TableReference any
+	MetadataCacheStalenessInsight         any
+	TableReference                        any
 }
 
 type Job_Statistics_Query_PerformanceInsights struct {
@@ -1153,67 +1153,67 @@ type Job_Statistics_Query_QueryInfo struct {
 }
 
 type Job_Statistics_Query_QueryPlan_Steps struct {
-	Kind any
+	Kind     any
 	Substeps any
 }
 
 type Job_Statistics_Query_QueryPlan struct {
-	CompletedParallelInputs any
-	ComputeMode any
-	ComputeMsAvg any
-	ComputeMsMax any
-	ComputeRatioAvg any
-	ComputeRatioMax any
-	EndMs any
-	Id any
-	InputStages any
-	Name any
-	ParallelInputs any
-	ReadMsAvg any
-	ReadMsMax any
-	ReadRatioAvg any
-	ReadRatioMax any
-	RecordsRead any
-	RecordsWritten any
-	ShuffleOutputBytes any
+	CompletedParallelInputs   any
+	ComputeMode               any
+	ComputeMsAvg              any
+	ComputeMsMax              any
+	ComputeRatioAvg           any
+	ComputeRatioMax           any
+	EndMs                     any
+	Id                        any
+	InputStages               any
+	Name                      any
+	ParallelInputs            any
+	ReadMsAvg                 any
+	ReadMsMax                 any
+	ReadRatioAvg              any
+	ReadRatioMax              any
+	RecordsRead               any
+	RecordsWritten            any
+	ShuffleOutputBytes        any
 	ShuffleOutputBytesSpilled any
-	SlotMs any
-	StartMs any
-	Status any
-	Steps any
-	WaitMsAvg any
-	WaitMsMax any
-	WaitRatioAvg any
-	WaitRatioMax any
-	WriteMsAvg any
-	WriteMsMax any
-	WriteRatioAvg any
-	WriteRatioMax any
+	SlotMs                    any
+	StartMs                   any
+	Status                    any
+	Steps                     any
+	WaitMsAvg                 any
+	WaitMsMax                 any
+	WaitRatioAvg              any
+	WaitRatioMax              any
+	WriteMsAvg                any
+	WriteMsMax                any
+	WriteRatioAvg             any
+	WriteRatioMax             any
 }
 
 type Job_Statistics_Query_ReferencedPropertyGraphs struct {
-	DatasetId any
-	ProjectId any
+	DatasetId       any
+	ProjectId       any
 	PropertyGraphId any
 }
 
 type Job_Statistics_Query_ReservationUsage struct {
-	Name any
+	Name   any
 	SlotMs any
 }
 
 type Job_Statistics_Query_SearchStatistics_IndexPruningStats struct {
-	BaseTable any
-	IndexId any
+	BaseTable                          any
+	IndexId                            any
 	PostIndexPruningParallelInputCount any
-	PreIndexPruningParallelInputCount any
+	PreIndexPruningParallelInputCount  any
 }
 
 type Job_Statistics_Query_SearchStatistics_IndexUnusedReasons struct {
 	BaseTable any
-	Code any
+	Code      any
 	IndexName any
-	Message any
+	Message   any
 }
 
 type Job_Statistics_Query_SearchStatistics struct {
@@ -1248,14 +1248,14 @@ type Job_Statistics_Query_SparkStatistics struct {
 }
 
 type Job_Statistics_Query_VectorSearchStatistics_StoredColumnsUsages_StoredColumnsUnusedReasons struct {
-	Code any
-	Message any
+	Code             any
+	Message          any
 	UncoveredColumns any
 }
 
 type Job_Statistics_Query_VectorSearchStatistics_StoredColumnsUsages struct {
-	BaseTable any
-	IsQueryAccelerated any
+	BaseTable                  any
+	IsQueryAccelerated         any
 	StoredColumnsUnusedReasons any
 }
 
@@ -1277,11 +1277,11 @@ type Job_Statistics_Query struct {
 	CacheHit any
 	// Identifier for a dataset.
 	DclTargetDataset any
-	DclTargetTable any
-	DclTargetView any
+	DclTargetTable   any
+	DclTargetView    any
 	// Output only. The number of row access policies affected by a DDL statement. Present only for DROP ALL ROW ACCESS POLICIES queries.
 	DdlAffectedRowAccessPolicyCount any
-	DdlDestinationTable any
+	DdlDestinationTable             any
 	// Output only. The DDL operation performed, possibly dependent on the pre-existence of the DDL target.
 	DdlOperationPerformed any
 	// Identifier for a dataset.
@@ -1290,7 +1290,7 @@ type Job_Statistics_Query struct {
 	DdlTargetRoutine any
 	// Id path of a row access policy.
 	DdlTargetRowAccessPolicy any
-	DdlTargetTable any
+	DdlTargetTable           any
 	// Detailed statistics for DML statements
 	DmlStats any
 	// Output only. The original estimate of bytes processed for the job.
@@ -1310,7 +1310,7 @@ type Job_Statistics_Query struct {
 	// Statistics for metadata caching in queried tables.
 	MetadataCacheStatistics any
 	// Job statistics specific to a BigQuery ML training job.
-	MlStatistics any
+	MlStatistics  any
 	ModelTraining any
 	// Deprecated.
 	ModelTrainingCurrentIteration any
@@ -1370,12 +1370,12 @@ type Job_Statistics_RowLevelSecurityStatistics struct {
 }
 
 type Job_Statistics_ScriptStatistics_StackFrames struct {
-	EndColumn any
-	EndLine any
+	EndColumn   any
+	EndLine     any
 	ProcedureId any
 	StartColumn any
-	StartLine any
-	Text any
+	StartLine   any
+	Text        any
 }
 
 type Job_Statistics_ScriptStatistics struct {
@@ -1469,1917 +1469,1905 @@ type Job_Status struct {
 }
 
 var Job_Configuration_Copy_DestinationEncryptionConfigurationFields = ubx.FieldMap{
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-	}
+	"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
+}
 
 var Job_Configuration_Copy_DestinationTableFields = ubx.FieldMap{
-		"DatasetId": ubx.FieldSpec{WireName: "dataset_id"},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-		"TableId": ubx.FieldSpec{WireName: "table_id"},
-	}
+	"DatasetId": ubx.FieldSpec{WireName: "dataset_id"},
+	"ProjectId": ubx.FieldSpec{WireName: "project_id"},
+	"TableId":   ubx.FieldSpec{WireName: "table_id"},
+}
 
 var Job_Configuration_CopyFields = ubx.FieldMap{
-		"CreateDisposition": ubx.FieldSpec{WireName: "create_disposition"},
-		"DestinationEncryptionConfiguration": ubx.FieldSpec{
-			WireName: "destination_encryption_configuration",
-			Kind: "object",
-			Fields: Job_Configuration_Copy_DestinationEncryptionConfigurationFields,
-		},
-		"DestinationExpirationTime": ubx.FieldSpec{WireName: "destination_expiration_time"},
-		"DestinationTable": ubx.FieldSpec{
-			WireName: "destination_table",
-			Kind: "object",
-			Fields: Job_Configuration_Copy_DestinationTableFields,
-		},
-		"OperationType": ubx.FieldSpec{WireName: "operation_type"},
-		"SourceTable": ubx.FieldSpec{
-			WireName: "source_table",
-			Kind: "object",
-			Fields: Job_Configuration_Copy_DestinationTableFields,
-		},
-		"SourceTables": ubx.FieldSpec{
-			WireName: "source_tables",
-			Kind: "list",
-			Fields: Job_Configuration_Copy_DestinationTableFields,
-		},
-		"WriteDisposition": ubx.FieldSpec{WireName: "write_disposition"},
-	}
+	"CreateDisposition": ubx.FieldSpec{WireName: "create_disposition"},
+	"DestinationEncryptionConfiguration": ubx.FieldSpec{
+		WireName: "destination_encryption_configuration",
+		Kind:     "object",
+		Fields:   Job_Configuration_Copy_DestinationEncryptionConfigurationFields,
+	},
+	"DestinationExpirationTime": ubx.FieldSpec{WireName: "destination_expiration_time"},
+	"DestinationTable": ubx.FieldSpec{
+		WireName: "destination_table",
+		Kind:     "object",
+		Fields:   Job_Configuration_Copy_DestinationTableFields,
+	},
+	"OperationType": ubx.FieldSpec{WireName: "operation_type"},
+	"SourceTable": ubx.FieldSpec{
+		WireName: "source_table",
+		Kind:     "object",
+		Fields:   Job_Configuration_Copy_DestinationTableFields,
+	},
+	"SourceTables": ubx.FieldSpec{
+		WireName: "source_tables",
+		Kind:     "list",
+		Fields:   Job_Configuration_Copy_DestinationTableFields,
+	},
+	"WriteDisposition": ubx.FieldSpec{WireName: "write_disposition"},
+}
 
 var Job_Configuration_Extract_ModelExtractOptionsFields = ubx.FieldMap{
-		"TrialId": ubx.FieldSpec{WireName: "trial_id"},
-	}
+	"TrialId": ubx.FieldSpec{WireName: "trial_id"},
+}
 
 var Job_Configuration_Extract_SourceModelFields = ubx.FieldMap{
-		"DatasetId": ubx.FieldSpec{WireName: "dataset_id"},
-		"ModelId": ubx.FieldSpec{WireName: "model_id"},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-	}
+	"DatasetId": ubx.FieldSpec{WireName: "dataset_id"},
+	"ModelId":   ubx.FieldSpec{WireName: "model_id"},
+	"ProjectId": ubx.FieldSpec{WireName: "project_id"},
+}
 
 var Job_Configuration_ExtractFields = ubx.FieldMap{
-		"Compression": ubx.FieldSpec{WireName: "compression"},
-		"DestinationFormat": ubx.FieldSpec{WireName: "destination_format"},
-		"DestinationUri": ubx.FieldSpec{WireName: "destination_uri"},
-		"DestinationUris": ubx.FieldSpec{WireName: "destination_uris"},
-		"FieldDelimiter": ubx.FieldSpec{WireName: "field_delimiter"},
-		"ModelExtractOptions": ubx.FieldSpec{
-			WireName: "model_extract_options",
-			Kind: "object",
-			Fields: Job_Configuration_Extract_ModelExtractOptionsFields,
-		},
-		"PrintHeader": ubx.FieldSpec{WireName: "print_header"},
-		"SourceModel": ubx.FieldSpec{
-			WireName: "source_model",
-			Kind: "object",
-			Fields: Job_Configuration_Extract_SourceModelFields,
-		},
-		"SourceTable": ubx.FieldSpec{
-			WireName: "source_table",
-			Kind: "object",
-			Fields: Job_Configuration_Copy_DestinationTableFields,
-		},
-		"UseAvroLogicalTypes": ubx.FieldSpec{WireName: "use_avro_logical_types"},
-	}
+	"Compression":       ubx.FieldSpec{WireName: "compression"},
+	"DestinationFormat": ubx.FieldSpec{WireName: "destination_format"},
+	"DestinationUri":    ubx.FieldSpec{WireName: "destination_uri"},
+	"DestinationUris":   ubx.FieldSpec{WireName: "destination_uris"},
+	"FieldDelimiter":    ubx.FieldSpec{WireName: "field_delimiter"},
+	"ModelExtractOptions": ubx.FieldSpec{
+		WireName: "model_extract_options",
+		Kind:     "object",
+		Fields:   Job_Configuration_Extract_ModelExtractOptionsFields,
+	},
+	"PrintHeader": ubx.FieldSpec{WireName: "print_header"},
+	"SourceModel": ubx.FieldSpec{
+		WireName: "source_model",
+		Kind:     "object",
+		Fields:   Job_Configuration_Extract_SourceModelFields,
+	},
+	"SourceTable": ubx.FieldSpec{
+		WireName: "source_table",
+		Kind:     "object",
+		Fields:   Job_Configuration_Copy_DestinationTableFields,
+	},
+	"UseAvroLogicalTypes": ubx.FieldSpec{WireName: "use_avro_logical_types"},
+}
 
 var Job_Configuration_Load_ClusteringFields = ubx.FieldMap{
-		"Fields": ubx.FieldSpec{WireName: "fields"},
-	}
+	"Fields": ubx.FieldSpec{WireName: "fields"},
+}
 
 var Job_Configuration_Load_ConnectionPropertiesFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Job_Configuration_Load_DestinationTablePropertiesFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"ExpirationTime": ubx.FieldSpec{WireName: "expiration_time"},
-		"FriendlyName": ubx.FieldSpec{WireName: "friendly_name"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-	}
+	"Description":    ubx.FieldSpec{WireName: "description"},
+	"ExpirationTime": ubx.FieldSpec{WireName: "expiration_time"},
+	"FriendlyName":   ubx.FieldSpec{WireName: "friendly_name"},
+	"Labels":         ubx.FieldSpec{WireName: "labels"},
+}
 
 var Job_Configuration_Load_HivePartitioningOptionsFields = ubx.FieldMap{
-		"Fields": ubx.FieldSpec{WireName: "fields"},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"RequirePartitionFilter": ubx.FieldSpec{WireName: "require_partition_filter"},
-		"SourceUriPrefix": ubx.FieldSpec{WireName: "source_uri_prefix"},
-	}
+	"Fields":                 ubx.FieldSpec{WireName: "fields"},
+	"Mode":                   ubx.FieldSpec{WireName: "mode"},
+	"RequirePartitionFilter": ubx.FieldSpec{WireName: "require_partition_filter"},
+	"SourceUriPrefix":        ubx.FieldSpec{WireName: "source_uri_prefix"},
+}
 
 var Job_Configuration_Load_ParquetOptionsFields = ubx.FieldMap{
-		"EnableListInference": ubx.FieldSpec{WireName: "enable_list_inference"},
-		"EnumAsString": ubx.FieldSpec{WireName: "enum_as_string"},
-		"MapTargetType": ubx.FieldSpec{WireName: "map_target_type"},
-	}
+	"EnableListInference": ubx.FieldSpec{WireName: "enable_list_inference"},
+	"EnumAsString":        ubx.FieldSpec{WireName: "enum_as_string"},
+	"MapTargetType":       ubx.FieldSpec{WireName: "map_target_type"},
+}
 
 var Job_Configuration_Load_RangePartitioning_RangeFields = ubx.FieldMap{
-		"End": ubx.FieldSpec{WireName: "end"},
-		"Interval": ubx.FieldSpec{WireName: "interval"},
-		"Start": ubx.FieldSpec{WireName: "start"},
-	}
+	"End":      ubx.FieldSpec{WireName: "end"},
+	"Interval": ubx.FieldSpec{WireName: "interval"},
+	"Start":    ubx.FieldSpec{WireName: "start"},
+}
 
 var Job_Configuration_Load_RangePartitioningFields = ubx.FieldMap{
-		"Field": ubx.FieldSpec{WireName: "field"},
-		"Range": ubx.FieldSpec{
-			WireName: "range",
-			Kind: "object",
-			Fields: Job_Configuration_Load_RangePartitioning_RangeFields,
-		},
-	}
+	"Field": ubx.FieldSpec{WireName: "field"},
+	"Range": ubx.FieldSpec{
+		WireName: "range",
+		Kind:     "object",
+		Fields:   Job_Configuration_Load_RangePartitioning_RangeFields,
+	},
+}
 
 var Job_Configuration_Load_Schema_Fields_CategoriesFields = ubx.FieldMap{
-		"Names": ubx.FieldSpec{WireName: "names"},
-	}
+	"Names": ubx.FieldSpec{WireName: "names"},
+}
 
 var Job_Configuration_Load_Schema_Fields_DataGovernanceTagsInfoFields = ubx.FieldMap{
-		"DataGovernanceTags": ubx.FieldSpec{WireName: "data_governance_tags"},
-	}
+	"DataGovernanceTags": ubx.FieldSpec{WireName: "data_governance_tags"},
+}
 
 var Job_Configuration_Load_Schema_Fields_DataPoliciesFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var Job_Configuration_Load_Schema_Fields_DataPolicyListFields = ubx.FieldMap{
-		"DataPolicies": ubx.FieldSpec{
-			WireName: "data_policies",
-			Kind: "list",
-			Fields: Job_Configuration_Load_Schema_Fields_DataPoliciesFields,
-		},
-	}
+	"DataPolicies": ubx.FieldSpec{
+		WireName: "data_policies",
+		Kind:     "list",
+		Fields:   Job_Configuration_Load_Schema_Fields_DataPoliciesFields,
+	},
+}
 
 var Job_Configuration_Load_Schema_Fields_GeneratedColumn_GeneratedExpressionInfoFields = ubx.FieldMap{
-		"Asynchronous": ubx.FieldSpec{WireName: "asynchronous"},
-		"GenerationExpression": ubx.FieldSpec{WireName: "generation_expression"},
-		"Stored": ubx.FieldSpec{WireName: "stored"},
-	}
+	"Asynchronous":         ubx.FieldSpec{WireName: "asynchronous"},
+	"GenerationExpression": ubx.FieldSpec{WireName: "generation_expression"},
+	"Stored":               ubx.FieldSpec{WireName: "stored"},
+}
 
 var Job_Configuration_Load_Schema_Fields_GeneratedColumnFields = ubx.FieldMap{
-		"GeneratedExpressionInfo": ubx.FieldSpec{
-			WireName: "generated_expression_info",
-			Kind: "object",
-			Fields: Job_Configuration_Load_Schema_Fields_GeneratedColumn_GeneratedExpressionInfoFields,
-		},
-		"GeneratedMode": ubx.FieldSpec{WireName: "generated_mode"},
-	}
+	"GeneratedExpressionInfo": ubx.FieldSpec{
+		WireName: "generated_expression_info",
+		Kind:     "object",
+		Fields:   Job_Configuration_Load_Schema_Fields_GeneratedColumn_GeneratedExpressionInfoFields,
+	},
+	"GeneratedMode": ubx.FieldSpec{WireName: "generated_mode"},
+}
 
 var Job_Configuration_Load_Schema_Fields_RangeElementTypeFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var Job_Configuration_Load_Schema_FieldsFields = ubx.FieldMap{
-		"Categories": ubx.FieldSpec{
-			WireName: "categories",
-			Kind: "object",
-			Fields: Job_Configuration_Load_Schema_Fields_CategoriesFields,
-		},
-		"Collation": ubx.FieldSpec{WireName: "collation"},
-		"DataGovernanceTagsInfo": ubx.FieldSpec{
-			WireName: "data_governance_tags_info",
-			Kind: "object",
-			Fields: Job_Configuration_Load_Schema_Fields_DataGovernanceTagsInfoFields,
-		},
-		"DataPolicies": ubx.FieldSpec{
-			WireName: "data_policies",
-			Kind: "list",
-			Fields: Job_Configuration_Load_Schema_Fields_DataPoliciesFields,
-		},
-		"DataPolicyList": ubx.FieldSpec{
-			WireName: "data_policy_list",
-			Kind: "object",
-			Fields: Job_Configuration_Load_Schema_Fields_DataPolicyListFields,
-		},
-		"DefaultValueExpression": ubx.FieldSpec{WireName: "default_value_expression"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Fields": ubx.FieldSpec{WireName: "fields"},
-		"ForeignTypeDefinition": ubx.FieldSpec{WireName: "foreign_type_definition"},
-		"GeneratedColumn": ubx.FieldSpec{
-			WireName: "generated_column",
-			Kind: "object",
-			Fields: Job_Configuration_Load_Schema_Fields_GeneratedColumnFields,
-		},
-		"MaxLength": ubx.FieldSpec{WireName: "max_length"},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PolicyTags": ubx.FieldSpec{
-			WireName: "policy_tags",
-			Kind: "object",
-			Fields: Job_Configuration_Load_Schema_Fields_CategoriesFields,
-		},
-		"Precision": ubx.FieldSpec{WireName: "precision"},
-		"RangeElementType": ubx.FieldSpec{
-			WireName: "range_element_type",
-			Kind: "object",
-			Fields: Job_Configuration_Load_Schema_Fields_RangeElementTypeFields,
-		},
-		"RoundingMode": ubx.FieldSpec{WireName: "rounding_mode"},
-		"Scale": ubx.FieldSpec{WireName: "scale"},
-		"TimestampPrecision": ubx.FieldSpec{WireName: "timestamp_precision"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Categories": ubx.FieldSpec{
+		WireName: "categories",
+		Kind:     "object",
+		Fields:   Job_Configuration_Load_Schema_Fields_CategoriesFields,
+	},
+	"Collation": ubx.FieldSpec{WireName: "collation"},
+	"DataGovernanceTagsInfo": ubx.FieldSpec{
+		WireName: "data_governance_tags_info",
+		Kind:     "object",
+		Fields:   Job_Configuration_Load_Schema_Fields_DataGovernanceTagsInfoFields,
+	},
+	"DataPolicies": ubx.FieldSpec{
+		WireName: "data_policies",
+		Kind:     "list",
+		Fields:   Job_Configuration_Load_Schema_Fields_DataPoliciesFields,
+	},
+	"DataPolicyList": ubx.FieldSpec{
+		WireName: "data_policy_list",
+		Kind:     "object",
+		Fields:   Job_Configuration_Load_Schema_Fields_DataPolicyListFields,
+	},
+	"DefaultValueExpression": ubx.FieldSpec{WireName: "default_value_expression"},
+	"Description":            ubx.FieldSpec{WireName: "description"},
+	"Fields":                 ubx.FieldSpec{WireName: "fields"},
+	"ForeignTypeDefinition":  ubx.FieldSpec{WireName: "foreign_type_definition"},
+	"GeneratedColumn": ubx.FieldSpec{
+		WireName: "generated_column",
+		Kind:     "object",
+		Fields:   Job_Configuration_Load_Schema_Fields_GeneratedColumnFields,
+	},
+	"MaxLength": ubx.FieldSpec{WireName: "max_length"},
+	"Mode":      ubx.FieldSpec{WireName: "mode"},
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"PolicyTags": ubx.FieldSpec{
+		WireName: "policy_tags",
+		Kind:     "object",
+		Fields:   Job_Configuration_Load_Schema_Fields_CategoriesFields,
+	},
+	"Precision": ubx.FieldSpec{WireName: "precision"},
+	"RangeElementType": ubx.FieldSpec{
+		WireName: "range_element_type",
+		Kind:     "object",
+		Fields:   Job_Configuration_Load_Schema_Fields_RangeElementTypeFields,
+	},
+	"RoundingMode":       ubx.FieldSpec{WireName: "rounding_mode"},
+	"Scale":              ubx.FieldSpec{WireName: "scale"},
+	"TimestampPrecision": ubx.FieldSpec{WireName: "timestamp_precision"},
+	"Type":               ubx.FieldSpec{WireName: "type"},
+}
 
 var Job_Configuration_Load_Schema_ForeignTypeInfoFields = ubx.FieldMap{
-		"TypeSystem": ubx.FieldSpec{WireName: "type_system"},
-	}
+	"TypeSystem": ubx.FieldSpec{WireName: "type_system"},
+}
 
 var Job_Configuration_Load_SchemaFields = ubx.FieldMap{
-		"Fields": ubx.FieldSpec{
-			WireName: "fields",
-			Kind: "list",
-			Fields: Job_Configuration_Load_Schema_FieldsFields,
-		},
-		"ForeignTypeInfo": ubx.FieldSpec{
-			WireName: "foreign_type_info",
-			Kind: "object",
-			Fields: Job_Configuration_Load_Schema_ForeignTypeInfoFields,
-		},
-	}
+	"Fields": ubx.FieldSpec{
+		WireName: "fields",
+		Kind:     "list",
+		Fields:   Job_Configuration_Load_Schema_FieldsFields,
+	},
+	"ForeignTypeInfo": ubx.FieldSpec{
+		WireName: "foreign_type_info",
+		Kind:     "object",
+		Fields:   Job_Configuration_Load_Schema_ForeignTypeInfoFields,
+	},
+}
 
 var Job_Configuration_Load_TimePartitioningFields = ubx.FieldMap{
-		"ExpirationMs": ubx.FieldSpec{WireName: "expiration_ms"},
-		"Field": ubx.FieldSpec{WireName: "field"},
-		"RequirePartitionFilter": ubx.FieldSpec{WireName: "require_partition_filter"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"ExpirationMs":           ubx.FieldSpec{WireName: "expiration_ms"},
+	"Field":                  ubx.FieldSpec{WireName: "field"},
+	"RequirePartitionFilter": ubx.FieldSpec{WireName: "require_partition_filter"},
+	"Type":                   ubx.FieldSpec{WireName: "type"},
+}
 
 var Job_Configuration_LoadFields = ubx.FieldMap{
-		"AllowJaggedRows": ubx.FieldSpec{WireName: "allow_jagged_rows"},
-		"AllowQuotedNewlines": ubx.FieldSpec{WireName: "allow_quoted_newlines"},
-		"Autodetect": ubx.FieldSpec{WireName: "autodetect"},
-		"Clustering": ubx.FieldSpec{
-			WireName: "clustering",
-			Kind: "object",
-			Fields: Job_Configuration_Load_ClusteringFields,
-		},
-		"ColumnNameCharacterMap": ubx.FieldSpec{WireName: "column_name_character_map"},
-		"ConnectionProperties": ubx.FieldSpec{
-			WireName: "connection_properties",
-			Kind: "list",
-			Fields: Job_Configuration_Load_ConnectionPropertiesFields,
-		},
-		"CopyFilesOnly": ubx.FieldSpec{WireName: "copy_files_only"},
-		"CreateDisposition": ubx.FieldSpec{WireName: "create_disposition"},
-		"CreateSession": ubx.FieldSpec{WireName: "create_session"},
-		"DateFormat": ubx.FieldSpec{WireName: "date_format"},
-		"DatetimeFormat": ubx.FieldSpec{WireName: "datetime_format"},
-		"DecimalTargetTypes": ubx.FieldSpec{WireName: "decimal_target_types"},
-		"DestinationEncryptionConfiguration": ubx.FieldSpec{
-			WireName: "destination_encryption_configuration",
-			Kind: "object",
-			Fields: Job_Configuration_Copy_DestinationEncryptionConfigurationFields,
-		},
-		"DestinationTable": ubx.FieldSpec{
-			WireName: "destination_table",
-			Kind: "object",
-			Fields: Job_Configuration_Copy_DestinationTableFields,
-		},
-		"DestinationTableProperties": ubx.FieldSpec{
-			WireName: "destination_table_properties",
-			Kind: "object",
-			Fields: Job_Configuration_Load_DestinationTablePropertiesFields,
-		},
-		"Encoding": ubx.FieldSpec{WireName: "encoding"},
-		"FieldDelimiter": ubx.FieldSpec{WireName: "field_delimiter"},
-		"FileSetSpecType": ubx.FieldSpec{WireName: "file_set_spec_type"},
-		"HivePartitioningOptions": ubx.FieldSpec{
-			WireName: "hive_partitioning_options",
-			Kind: "object",
-			Fields: Job_Configuration_Load_HivePartitioningOptionsFields,
-		},
-		"IgnoreUnknownValues": ubx.FieldSpec{WireName: "ignore_unknown_values"},
-		"JsonExtension": ubx.FieldSpec{WireName: "json_extension"},
-		"MaxBadRecords": ubx.FieldSpec{WireName: "max_bad_records"},
-		"NullMarker": ubx.FieldSpec{WireName: "null_marker"},
-		"NullMarkers": ubx.FieldSpec{WireName: "null_markers"},
-		"ParquetOptions": ubx.FieldSpec{
-			WireName: "parquet_options",
-			Kind: "object",
-			Fields: Job_Configuration_Load_ParquetOptionsFields,
-		},
-		"PreserveAsciiControlCharacters": ubx.FieldSpec{WireName: "preserve_ascii_control_characters"},
-		"ProjectionFields": ubx.FieldSpec{WireName: "projection_fields"},
-		"Quote": ubx.FieldSpec{WireName: "quote"},
-		"RangePartitioning": ubx.FieldSpec{
-			WireName: "range_partitioning",
-			Kind: "object",
-			Fields: Job_Configuration_Load_RangePartitioningFields,
-		},
-		"ReferenceFileSchemaUri": ubx.FieldSpec{WireName: "reference_file_schema_uri"},
-		"Schema": ubx.FieldSpec{
-			WireName: "schema",
-			Kind: "object",
-			Fields: Job_Configuration_Load_SchemaFields,
-		},
-		"SchemaInline": ubx.FieldSpec{WireName: "schema_inline"},
-		"SchemaInlineFormat": ubx.FieldSpec{WireName: "schema_inline_format"},
-		"SchemaUpdateOptions": ubx.FieldSpec{WireName: "schema_update_options"},
-		"SkipLeadingRows": ubx.FieldSpec{WireName: "skip_leading_rows"},
-		"SourceColumnMatch": ubx.FieldSpec{WireName: "source_column_match"},
-		"SourceFormat": ubx.FieldSpec{WireName: "source_format"},
-		"SourceUris": ubx.FieldSpec{WireName: "source_uris"},
-		"TimeFormat": ubx.FieldSpec{WireName: "time_format"},
-		"TimePartitioning": ubx.FieldSpec{
-			WireName: "time_partitioning",
-			Kind: "object",
-			Fields: Job_Configuration_Load_TimePartitioningFields,
-		},
-		"TimeZone": ubx.FieldSpec{WireName: "time_zone"},
-		"TimestampFormat": ubx.FieldSpec{WireName: "timestamp_format"},
-		"TimestampTargetPrecision": ubx.FieldSpec{WireName: "timestamp_target_precision"},
-		"UseAvroLogicalTypes": ubx.FieldSpec{WireName: "use_avro_logical_types"},
-		"WriteDisposition": ubx.FieldSpec{WireName: "write_disposition"},
-	}
+	"AllowJaggedRows":     ubx.FieldSpec{WireName: "allow_jagged_rows"},
+	"AllowQuotedNewlines": ubx.FieldSpec{WireName: "allow_quoted_newlines"},
+	"Autodetect":          ubx.FieldSpec{WireName: "autodetect"},
+	"Clustering": ubx.FieldSpec{
+		WireName: "clustering",
+		Kind:     "object",
+		Fields:   Job_Configuration_Load_ClusteringFields,
+	},
+	"ColumnNameCharacterMap": ubx.FieldSpec{WireName: "column_name_character_map"},
+	"ConnectionProperties": ubx.FieldSpec{
+		WireName: "connection_properties",
+		Kind:     "list",
+		Fields:   Job_Configuration_Load_ConnectionPropertiesFields,
+	},
+	"CopyFilesOnly":      ubx.FieldSpec{WireName: "copy_files_only"},
+	"CreateDisposition":  ubx.FieldSpec{WireName: "create_disposition"},
+	"CreateSession":      ubx.FieldSpec{WireName: "create_session"},
+	"DateFormat":         ubx.FieldSpec{WireName: "date_format"},
+	"DatetimeFormat":     ubx.FieldSpec{WireName: "datetime_format"},
+	"DecimalTargetTypes": ubx.FieldSpec{WireName: "decimal_target_types"},
+	"DestinationEncryptionConfiguration": ubx.FieldSpec{
+		WireName: "destination_encryption_configuration",
+		Kind:     "object",
+		Fields:   Job_Configuration_Copy_DestinationEncryptionConfigurationFields,
+	},
+	"DestinationTable": ubx.FieldSpec{
+		WireName: "destination_table",
+		Kind:     "object",
+		Fields:   Job_Configuration_Copy_DestinationTableFields,
+	},
+	"DestinationTableProperties": ubx.FieldSpec{
+		WireName: "destination_table_properties",
+		Kind:     "object",
+		Fields:   Job_Configuration_Load_DestinationTablePropertiesFields,
+	},
+	"Encoding":        ubx.FieldSpec{WireName: "encoding"},
+	"FieldDelimiter":  ubx.FieldSpec{WireName: "field_delimiter"},
+	"FileSetSpecType": ubx.FieldSpec{WireName: "file_set_spec_type"},
+	"HivePartitioningOptions": ubx.FieldSpec{
+		WireName: "hive_partitioning_options",
+		Kind:     "object",
+		Fields:   Job_Configuration_Load_HivePartitioningOptionsFields,
+	},
+	"IgnoreUnknownValues": ubx.FieldSpec{WireName: "ignore_unknown_values"},
+	"JsonExtension":       ubx.FieldSpec{WireName: "json_extension"},
+	"MaxBadRecords":       ubx.FieldSpec{WireName: "max_bad_records"},
+	"NullMarker":          ubx.FieldSpec{WireName: "null_marker"},
+	"NullMarkers":         ubx.FieldSpec{WireName: "null_markers"},
+	"ParquetOptions": ubx.FieldSpec{
+		WireName: "parquet_options",
+		Kind:     "object",
+		Fields:   Job_Configuration_Load_ParquetOptionsFields,
+	},
+	"PreserveAsciiControlCharacters": ubx.FieldSpec{WireName: "preserve_ascii_control_characters"},
+	"ProjectionFields":               ubx.FieldSpec{WireName: "projection_fields"},
+	"Quote":                          ubx.FieldSpec{WireName: "quote"},
+	"RangePartitioning": ubx.FieldSpec{
+		WireName: "range_partitioning",
+		Kind:     "object",
+		Fields:   Job_Configuration_Load_RangePartitioningFields,
+	},
+	"ReferenceFileSchemaUri": ubx.FieldSpec{WireName: "reference_file_schema_uri"},
+	"Schema": ubx.FieldSpec{
+		WireName: "schema",
+		Kind:     "object",
+		Fields:   Job_Configuration_Load_SchemaFields,
+	},
+	"SchemaInline":        ubx.FieldSpec{WireName: "schema_inline"},
+	"SchemaInlineFormat":  ubx.FieldSpec{WireName: "schema_inline_format"},
+	"SchemaUpdateOptions": ubx.FieldSpec{WireName: "schema_update_options"},
+	"SkipLeadingRows":     ubx.FieldSpec{WireName: "skip_leading_rows"},
+	"SourceColumnMatch":   ubx.FieldSpec{WireName: "source_column_match"},
+	"SourceFormat":        ubx.FieldSpec{WireName: "source_format"},
+	"SourceUris":          ubx.FieldSpec{WireName: "source_uris"},
+	"TimeFormat":          ubx.FieldSpec{WireName: "time_format"},
+	"TimePartitioning": ubx.FieldSpec{
+		WireName: "time_partitioning",
+		Kind:     "object",
+		Fields:   Job_Configuration_Load_TimePartitioningFields,
+	},
+	"TimeZone":                 ubx.FieldSpec{WireName: "time_zone"},
+	"TimestampFormat":          ubx.FieldSpec{WireName: "timestamp_format"},
+	"TimestampTargetPrecision": ubx.FieldSpec{WireName: "timestamp_target_precision"},
+	"UseAvroLogicalTypes":      ubx.FieldSpec{WireName: "use_avro_logical_types"},
+	"WriteDisposition":         ubx.FieldSpec{WireName: "write_disposition"},
+}
 
 var Job_Configuration_Query_DefaultDatasetFields = ubx.FieldMap{
-		"DatasetId": ubx.FieldSpec{WireName: "dataset_id"},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-	}
+	"DatasetId": ubx.FieldSpec{WireName: "dataset_id"},
+	"ProjectId": ubx.FieldSpec{WireName: "project_id"},
+}
 
 var Job_Configuration_Query_QueryParameters_ParameterType_StructTypesFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"Type":        ubx.FieldSpec{WireName: "type"},
+}
 
 var Job_Configuration_Query_QueryParameters_ParameterTypeFields = ubx.FieldMap{
-		"ArrayType": ubx.FieldSpec{WireName: "array_type"},
-		"RangeElementType": ubx.FieldSpec{WireName: "range_element_type"},
-		"StructTypes": ubx.FieldSpec{
-			WireName: "struct_types",
-			Kind: "list",
-			Fields: Job_Configuration_Query_QueryParameters_ParameterType_StructTypesFields,
-		},
-		"TimestampPrecision": ubx.FieldSpec{WireName: "timestamp_precision"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"ArrayType":        ubx.FieldSpec{WireName: "array_type"},
+	"RangeElementType": ubx.FieldSpec{WireName: "range_element_type"},
+	"StructTypes": ubx.FieldSpec{
+		WireName: "struct_types",
+		Kind:     "list",
+		Fields:   Job_Configuration_Query_QueryParameters_ParameterType_StructTypesFields,
+	},
+	"TimestampPrecision": ubx.FieldSpec{WireName: "timestamp_precision"},
+	"Type":               ubx.FieldSpec{WireName: "type"},
+}
 
 var Job_Configuration_Query_QueryParameters_ParameterValue_RangeValueFields = ubx.FieldMap{
-		"End": ubx.FieldSpec{WireName: "end"},
-		"Start": ubx.FieldSpec{WireName: "start"},
-	}
+	"End":   ubx.FieldSpec{WireName: "end"},
+	"Start": ubx.FieldSpec{WireName: "start"},
+}
 
 var Job_Configuration_Query_QueryParameters_ParameterValueFields = ubx.FieldMap{
-		"ArrayValues": ubx.FieldSpec{WireName: "array_values"},
-		"RangeValue": ubx.FieldSpec{
-			WireName: "range_value",
-			Kind: "object",
-			Fields: Job_Configuration_Query_QueryParameters_ParameterValue_RangeValueFields,
-		},
-		"StructValues": ubx.FieldSpec{WireName: "struct_values"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"ArrayValues": ubx.FieldSpec{WireName: "array_values"},
+	"RangeValue": ubx.FieldSpec{
+		WireName: "range_value",
+		Kind:     "object",
+		Fields:   Job_Configuration_Query_QueryParameters_ParameterValue_RangeValueFields,
+	},
+	"StructValues": ubx.FieldSpec{WireName: "struct_values"},
+	"Value":        ubx.FieldSpec{WireName: "value"},
+}
 
 var Job_Configuration_Query_QueryParametersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ParameterType": ubx.FieldSpec{
-			WireName: "parameter_type",
-			Kind: "object",
-			Fields: Job_Configuration_Query_QueryParameters_ParameterTypeFields,
-		},
-		"ParameterValue": ubx.FieldSpec{
-			WireName: "parameter_value",
-			Kind: "object",
-			Fields: Job_Configuration_Query_QueryParameters_ParameterValueFields,
-		},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"ParameterType": ubx.FieldSpec{
+		WireName: "parameter_type",
+		Kind:     "object",
+		Fields:   Job_Configuration_Query_QueryParameters_ParameterTypeFields,
+	},
+	"ParameterValue": ubx.FieldSpec{
+		WireName: "parameter_value",
+		Kind:     "object",
+		Fields:   Job_Configuration_Query_QueryParameters_ParameterValueFields,
+	},
+}
 
 var Job_Configuration_Query_ScriptOptionsFields = ubx.FieldMap{
-		"KeyResultStatement": ubx.FieldSpec{WireName: "key_result_statement"},
-		"StatementByteBudget": ubx.FieldSpec{WireName: "statement_byte_budget"},
-		"StatementTimeoutMs": ubx.FieldSpec{WireName: "statement_timeout_ms"},
-	}
+	"KeyResultStatement":  ubx.FieldSpec{WireName: "key_result_statement"},
+	"StatementByteBudget": ubx.FieldSpec{WireName: "statement_byte_budget"},
+	"StatementTimeoutMs":  ubx.FieldSpec{WireName: "statement_timeout_ms"},
+}
 
 var Job_Configuration_Query_SystemVariables_Types_StructType_FieldsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var Job_Configuration_Query_SystemVariables_Types_StructTypeFields = ubx.FieldMap{
-		"Fields": ubx.FieldSpec{
-			WireName: "fields",
-			Kind: "list",
-			Fields: Job_Configuration_Query_SystemVariables_Types_StructType_FieldsFields,
-		},
-	}
+	"Fields": ubx.FieldSpec{
+		WireName: "fields",
+		Kind:     "list",
+		Fields:   Job_Configuration_Query_SystemVariables_Types_StructType_FieldsFields,
+	},
+}
 
 var Job_Configuration_Query_SystemVariables_TypesFields = ubx.FieldMap{
-		"ArrayElementType": ubx.FieldSpec{WireName: "array_element_type"},
-		"RangeElementType": ubx.FieldSpec{WireName: "range_element_type"},
-		"StructType": ubx.FieldSpec{
-			WireName: "struct_type",
-			Kind: "object",
-			Fields: Job_Configuration_Query_SystemVariables_Types_StructTypeFields,
-		},
-		"TypeKind": ubx.FieldSpec{WireName: "type_kind"},
-	}
+	"ArrayElementType": ubx.FieldSpec{WireName: "array_element_type"},
+	"RangeElementType": ubx.FieldSpec{WireName: "range_element_type"},
+	"StructType": ubx.FieldSpec{
+		WireName: "struct_type",
+		Kind:     "object",
+		Fields:   Job_Configuration_Query_SystemVariables_Types_StructTypeFields,
+	},
+	"TypeKind": ubx.FieldSpec{WireName: "type_kind"},
+}
 
 var Job_Configuration_Query_SystemVariablesFields = ubx.FieldMap{
-		"Types": ubx.FieldSpec{
-			WireName: "types",
-			Kind: "map",
-			Fields: Job_Configuration_Query_SystemVariables_TypesFields,
-		},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Types": ubx.FieldSpec{
+		WireName: "types",
+		Kind:     "map",
+		Fields:   Job_Configuration_Query_SystemVariables_TypesFields,
+	},
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 var Job_Configuration_Query_TableDefinitions_AvroOptionsFields = ubx.FieldMap{
-		"UseAvroLogicalTypes": ubx.FieldSpec{WireName: "use_avro_logical_types"},
-	}
+	"UseAvroLogicalTypes": ubx.FieldSpec{WireName: "use_avro_logical_types"},
+}
 
 var Job_Configuration_Query_TableDefinitions_BigtableOptions_ColumnFamilies_Columns_ProtoConfigFields = ubx.FieldMap{
-		"ProtoMessageName": ubx.FieldSpec{WireName: "proto_message_name"},
-		"SchemaBundleId": ubx.FieldSpec{WireName: "schema_bundle_id"},
-	}
+	"ProtoMessageName": ubx.FieldSpec{WireName: "proto_message_name"},
+	"SchemaBundleId":   ubx.FieldSpec{WireName: "schema_bundle_id"},
+}
 
 var Job_Configuration_Query_TableDefinitions_BigtableOptions_ColumnFamilies_ColumnsFields = ubx.FieldMap{
-		"Encoding": ubx.FieldSpec{WireName: "encoding"},
-		"FieldName": ubx.FieldSpec{WireName: "field_name"},
-		"OnlyReadLatest": ubx.FieldSpec{WireName: "only_read_latest"},
-		"ProtoConfig": ubx.FieldSpec{
-			WireName: "proto_config",
-			Kind: "object",
-			Fields: Job_Configuration_Query_TableDefinitions_BigtableOptions_ColumnFamilies_Columns_ProtoConfigFields,
-		},
-		"QualifierEncoded": ubx.FieldSpec{WireName: "qualifier_encoded"},
-		"QualifierString": ubx.FieldSpec{WireName: "qualifier_string"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Encoding":       ubx.FieldSpec{WireName: "encoding"},
+	"FieldName":      ubx.FieldSpec{WireName: "field_name"},
+	"OnlyReadLatest": ubx.FieldSpec{WireName: "only_read_latest"},
+	"ProtoConfig": ubx.FieldSpec{
+		WireName: "proto_config",
+		Kind:     "object",
+		Fields:   Job_Configuration_Query_TableDefinitions_BigtableOptions_ColumnFamilies_Columns_ProtoConfigFields,
+	},
+	"QualifierEncoded": ubx.FieldSpec{WireName: "qualifier_encoded"},
+	"QualifierString":  ubx.FieldSpec{WireName: "qualifier_string"},
+	"Type":             ubx.FieldSpec{WireName: "type"},
+}
 
 var Job_Configuration_Query_TableDefinitions_BigtableOptions_ColumnFamiliesFields = ubx.FieldMap{
-		"Columns": ubx.FieldSpec{
-			WireName: "columns",
-			Kind: "list",
-			Fields: Job_Configuration_Query_TableDefinitions_BigtableOptions_ColumnFamilies_ColumnsFields,
-		},
-		"Encoding": ubx.FieldSpec{WireName: "encoding"},
-		"FamilyId": ubx.FieldSpec{WireName: "family_id"},
-		"OnlyReadLatest": ubx.FieldSpec{WireName: "only_read_latest"},
-		"ProtoConfig": ubx.FieldSpec{
-			WireName: "proto_config",
-			Kind: "object",
-			Fields: Job_Configuration_Query_TableDefinitions_BigtableOptions_ColumnFamilies_Columns_ProtoConfigFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Columns": ubx.FieldSpec{
+		WireName: "columns",
+		Kind:     "list",
+		Fields:   Job_Configuration_Query_TableDefinitions_BigtableOptions_ColumnFamilies_ColumnsFields,
+	},
+	"Encoding":       ubx.FieldSpec{WireName: "encoding"},
+	"FamilyId":       ubx.FieldSpec{WireName: "family_id"},
+	"OnlyReadLatest": ubx.FieldSpec{WireName: "only_read_latest"},
+	"ProtoConfig": ubx.FieldSpec{
+		WireName: "proto_config",
+		Kind:     "object",
+		Fields:   Job_Configuration_Query_TableDefinitions_BigtableOptions_ColumnFamilies_Columns_ProtoConfigFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var Job_Configuration_Query_TableDefinitions_BigtableOptionsFields = ubx.FieldMap{
-		"ColumnFamilies": ubx.FieldSpec{
-			WireName: "column_families",
-			Kind: "list",
-			Fields: Job_Configuration_Query_TableDefinitions_BigtableOptions_ColumnFamiliesFields,
-		},
-		"IgnoreUnspecifiedColumnFamilies": ubx.FieldSpec{WireName: "ignore_unspecified_column_families"},
-		"OutputColumnFamiliesAsJson": ubx.FieldSpec{WireName: "output_column_families_as_json"},
-		"ReadRowkeyAsString": ubx.FieldSpec{WireName: "read_rowkey_as_string"},
-	}
+	"ColumnFamilies": ubx.FieldSpec{
+		WireName: "column_families",
+		Kind:     "list",
+		Fields:   Job_Configuration_Query_TableDefinitions_BigtableOptions_ColumnFamiliesFields,
+	},
+	"IgnoreUnspecifiedColumnFamilies": ubx.FieldSpec{WireName: "ignore_unspecified_column_families"},
+	"OutputColumnFamiliesAsJson":      ubx.FieldSpec{WireName: "output_column_families_as_json"},
+	"ReadRowkeyAsString":              ubx.FieldSpec{WireName: "read_rowkey_as_string"},
+}
 
 var Job_Configuration_Query_TableDefinitions_CsvOptionsFields = ubx.FieldMap{
-		"AllowJaggedRows": ubx.FieldSpec{WireName: "allow_jagged_rows"},
-		"AllowQuotedNewlines": ubx.FieldSpec{WireName: "allow_quoted_newlines"},
-		"Encoding": ubx.FieldSpec{WireName: "encoding"},
-		"FieldDelimiter": ubx.FieldSpec{WireName: "field_delimiter"},
-		"NullMarker": ubx.FieldSpec{WireName: "null_marker"},
-		"NullMarkers": ubx.FieldSpec{WireName: "null_markers"},
-		"PreserveAsciiControlCharacters": ubx.FieldSpec{WireName: "preserve_ascii_control_characters"},
-		"Quote": ubx.FieldSpec{WireName: "quote"},
-		"SkipLeadingRows": ubx.FieldSpec{WireName: "skip_leading_rows"},
-		"SourceColumnMatch": ubx.FieldSpec{WireName: "source_column_match"},
-	}
+	"AllowJaggedRows":                ubx.FieldSpec{WireName: "allow_jagged_rows"},
+	"AllowQuotedNewlines":            ubx.FieldSpec{WireName: "allow_quoted_newlines"},
+	"Encoding":                       ubx.FieldSpec{WireName: "encoding"},
+	"FieldDelimiter":                 ubx.FieldSpec{WireName: "field_delimiter"},
+	"NullMarker":                     ubx.FieldSpec{WireName: "null_marker"},
+	"NullMarkers":                    ubx.FieldSpec{WireName: "null_markers"},
+	"PreserveAsciiControlCharacters": ubx.FieldSpec{WireName: "preserve_ascii_control_characters"},
+	"Quote":                          ubx.FieldSpec{WireName: "quote"},
+	"SkipLeadingRows":                ubx.FieldSpec{WireName: "skip_leading_rows"},
+	"SourceColumnMatch":              ubx.FieldSpec{WireName: "source_column_match"},
+}
 
 var Job_Configuration_Query_TableDefinitions_GoogleSheetsOptionsFields = ubx.FieldMap{
-		"Range": ubx.FieldSpec{WireName: "range"},
-		"SkipLeadingRows": ubx.FieldSpec{WireName: "skip_leading_rows"},
-	}
+	"Range":           ubx.FieldSpec{WireName: "range"},
+	"SkipLeadingRows": ubx.FieldSpec{WireName: "skip_leading_rows"},
+}
 
 var Job_Configuration_Query_TableDefinitions_JsonOptionsFields = ubx.FieldMap{
-		"Encoding": ubx.FieldSpec{WireName: "encoding"},
-	}
+	"Encoding": ubx.FieldSpec{WireName: "encoding"},
+}
 
 var Job_Configuration_Query_TableDefinitionsFields = ubx.FieldMap{
-		"Autodetect": ubx.FieldSpec{WireName: "autodetect"},
-		"AvroOptions": ubx.FieldSpec{
-			WireName: "avro_options",
-			Kind: "object",
-			Fields: Job_Configuration_Query_TableDefinitions_AvroOptionsFields,
-		},
-		"BigtableOptions": ubx.FieldSpec{
-			WireName: "bigtable_options",
-			Kind: "object",
-			Fields: Job_Configuration_Query_TableDefinitions_BigtableOptionsFields,
-		},
-		"Compression": ubx.FieldSpec{WireName: "compression"},
-		"ConnectionId": ubx.FieldSpec{WireName: "connection_id"},
-		"CsvOptions": ubx.FieldSpec{
-			WireName: "csv_options",
-			Kind: "object",
-			Fields: Job_Configuration_Query_TableDefinitions_CsvOptionsFields,
-		},
-		"DateFormat": ubx.FieldSpec{WireName: "date_format"},
-		"DatetimeFormat": ubx.FieldSpec{WireName: "datetime_format"},
-		"DecimalTargetTypes": ubx.FieldSpec{WireName: "decimal_target_types"},
-		"FileSetSpecType": ubx.FieldSpec{WireName: "file_set_spec_type"},
-		"GoogleSheetsOptions": ubx.FieldSpec{
-			WireName: "google_sheets_options",
-			Kind: "object",
-			Fields: Job_Configuration_Query_TableDefinitions_GoogleSheetsOptionsFields,
-		},
-		"HivePartitioningOptions": ubx.FieldSpec{
-			WireName: "hive_partitioning_options",
-			Kind: "object",
-			Fields: Job_Configuration_Load_HivePartitioningOptionsFields,
-		},
-		"IgnoreUnknownValues": ubx.FieldSpec{WireName: "ignore_unknown_values"},
-		"JsonExtension": ubx.FieldSpec{WireName: "json_extension"},
-		"JsonOptions": ubx.FieldSpec{
-			WireName: "json_options",
-			Kind: "object",
-			Fields: Job_Configuration_Query_TableDefinitions_JsonOptionsFields,
-		},
-		"MaxBadRecords": ubx.FieldSpec{WireName: "max_bad_records"},
-		"MetadataCacheMode": ubx.FieldSpec{WireName: "metadata_cache_mode"},
-		"ObjectMetadata": ubx.FieldSpec{WireName: "object_metadata"},
-		"ParquetOptions": ubx.FieldSpec{
-			WireName: "parquet_options",
-			Kind: "object",
-			Fields: Job_Configuration_Load_ParquetOptionsFields,
-		},
-		"ReferenceFileSchemaUri": ubx.FieldSpec{WireName: "reference_file_schema_uri"},
-		"Schema": ubx.FieldSpec{
-			WireName: "schema",
-			Kind: "object",
-			Fields: Job_Configuration_Load_SchemaFields,
-		},
-		"SourceFormat": ubx.FieldSpec{WireName: "source_format"},
-		"SourceUris": ubx.FieldSpec{WireName: "source_uris"},
-		"TimeFormat": ubx.FieldSpec{WireName: "time_format"},
-		"TimeZone": ubx.FieldSpec{WireName: "time_zone"},
-		"TimestampFormat": ubx.FieldSpec{WireName: "timestamp_format"},
-		"TimestampTargetPrecision": ubx.FieldSpec{WireName: "timestamp_target_precision"},
-	}
+	"Autodetect": ubx.FieldSpec{WireName: "autodetect"},
+	"AvroOptions": ubx.FieldSpec{
+		WireName: "avro_options",
+		Kind:     "object",
+		Fields:   Job_Configuration_Query_TableDefinitions_AvroOptionsFields,
+	},
+	"BigtableOptions": ubx.FieldSpec{
+		WireName: "bigtable_options",
+		Kind:     "object",
+		Fields:   Job_Configuration_Query_TableDefinitions_BigtableOptionsFields,
+	},
+	"Compression":  ubx.FieldSpec{WireName: "compression"},
+	"ConnectionId": ubx.FieldSpec{WireName: "connection_id"},
+	"CsvOptions": ubx.FieldSpec{
+		WireName: "csv_options",
+		Kind:     "object",
+		Fields:   Job_Configuration_Query_TableDefinitions_CsvOptionsFields,
+	},
+	"DateFormat":         ubx.FieldSpec{WireName: "date_format"},
+	"DatetimeFormat":     ubx.FieldSpec{WireName: "datetime_format"},
+	"DecimalTargetTypes": ubx.FieldSpec{WireName: "decimal_target_types"},
+	"FileSetSpecType":    ubx.FieldSpec{WireName: "file_set_spec_type"},
+	"GoogleSheetsOptions": ubx.FieldSpec{
+		WireName: "google_sheets_options",
+		Kind:     "object",
+		Fields:   Job_Configuration_Query_TableDefinitions_GoogleSheetsOptionsFields,
+	},
+	"HivePartitioningOptions": ubx.FieldSpec{
+		WireName: "hive_partitioning_options",
+		Kind:     "object",
+		Fields:   Job_Configuration_Load_HivePartitioningOptionsFields,
+	},
+	"IgnoreUnknownValues": ubx.FieldSpec{WireName: "ignore_unknown_values"},
+	"JsonExtension":       ubx.FieldSpec{WireName: "json_extension"},
+	"JsonOptions": ubx.FieldSpec{
+		WireName: "json_options",
+		Kind:     "object",
+		Fields:   Job_Configuration_Query_TableDefinitions_JsonOptionsFields,
+	},
+	"MaxBadRecords":     ubx.FieldSpec{WireName: "max_bad_records"},
+	"MetadataCacheMode": ubx.FieldSpec{WireName: "metadata_cache_mode"},
+	"ObjectMetadata":    ubx.FieldSpec{WireName: "object_metadata"},
+	"ParquetOptions": ubx.FieldSpec{
+		WireName: "parquet_options",
+		Kind:     "object",
+		Fields:   Job_Configuration_Load_ParquetOptionsFields,
+	},
+	"ReferenceFileSchemaUri": ubx.FieldSpec{WireName: "reference_file_schema_uri"},
+	"Schema": ubx.FieldSpec{
+		WireName: "schema",
+		Kind:     "object",
+		Fields:   Job_Configuration_Load_SchemaFields,
+	},
+	"SourceFormat":             ubx.FieldSpec{WireName: "source_format"},
+	"SourceUris":               ubx.FieldSpec{WireName: "source_uris"},
+	"TimeFormat":               ubx.FieldSpec{WireName: "time_format"},
+	"TimeZone":                 ubx.FieldSpec{WireName: "time_zone"},
+	"TimestampFormat":          ubx.FieldSpec{WireName: "timestamp_format"},
+	"TimestampTargetPrecision": ubx.FieldSpec{WireName: "timestamp_target_precision"},
+}
 
 var Job_Configuration_Query_UserDefinedFunctionResourcesFields = ubx.FieldMap{
-		"InlineCode": ubx.FieldSpec{WireName: "inline_code"},
-		"ResourceUri": ubx.FieldSpec{WireName: "resource_uri"},
-	}
+	"InlineCode":  ubx.FieldSpec{WireName: "inline_code"},
+	"ResourceUri": ubx.FieldSpec{WireName: "resource_uri"},
+}
 
 var Job_Configuration_QueryFields = ubx.FieldMap{
-		"AllowLargeResults": ubx.FieldSpec{WireName: "allow_large_results"},
-		"Clustering": ubx.FieldSpec{
-			WireName: "clustering",
-			Kind: "object",
-			Fields: Job_Configuration_Load_ClusteringFields,
-		},
-		"ConnectionProperties": ubx.FieldSpec{
-			WireName: "connection_properties",
-			Kind: "list",
-			Fields: Job_Configuration_Load_ConnectionPropertiesFields,
-		},
-		"Continuous": ubx.FieldSpec{WireName: "continuous"},
-		"CreateDisposition": ubx.FieldSpec{WireName: "create_disposition"},
-		"CreateSession": ubx.FieldSpec{WireName: "create_session"},
-		"DefaultDataset": ubx.FieldSpec{
-			WireName: "default_dataset",
-			Kind: "object",
-			Fields: Job_Configuration_Query_DefaultDatasetFields,
-		},
-		"DestinationEncryptionConfiguration": ubx.FieldSpec{
-			WireName: "destination_encryption_configuration",
-			Kind: "object",
-			Fields: Job_Configuration_Copy_DestinationEncryptionConfigurationFields,
-		},
-		"DestinationTable": ubx.FieldSpec{
-			WireName: "destination_table",
-			Kind: "object",
-			Fields: Job_Configuration_Copy_DestinationTableFields,
-		},
-		"FlattenResults": ubx.FieldSpec{WireName: "flatten_results"},
-		"MaximumBillingTier": ubx.FieldSpec{WireName: "maximum_billing_tier"},
-		"MaximumBytesBilled": ubx.FieldSpec{WireName: "maximum_bytes_billed"},
-		"ParameterMode": ubx.FieldSpec{WireName: "parameter_mode"},
-		"PreserveNulls": ubx.FieldSpec{WireName: "preserve_nulls"},
-		"Priority": ubx.FieldSpec{WireName: "priority"},
-		"Query": ubx.FieldSpec{WireName: "query"},
-		"QueryParameters": ubx.FieldSpec{
-			WireName: "query_parameters",
-			Kind: "list",
-			Fields: Job_Configuration_Query_QueryParametersFields,
-		},
-		"RangePartitioning": ubx.FieldSpec{
-			WireName: "range_partitioning",
-			Kind: "object",
-			Fields: Job_Configuration_Load_RangePartitioningFields,
-		},
-		"SchemaUpdateOptions": ubx.FieldSpec{WireName: "schema_update_options"},
-		"ScriptOptions": ubx.FieldSpec{
-			WireName: "script_options",
-			Kind: "object",
-			Fields: Job_Configuration_Query_ScriptOptionsFields,
-		},
-		"SystemVariables": ubx.FieldSpec{
-			WireName: "system_variables",
-			Kind: "object",
-			Fields: Job_Configuration_Query_SystemVariablesFields,
-		},
-		"TableDefinitions": ubx.FieldSpec{
-			WireName: "table_definitions",
-			Kind: "map",
-			Fields: Job_Configuration_Query_TableDefinitionsFields,
-		},
-		"TimePartitioning": ubx.FieldSpec{
-			WireName: "time_partitioning",
-			Kind: "object",
-			Fields: Job_Configuration_Load_TimePartitioningFields,
-		},
-		"UseLegacySql": ubx.FieldSpec{WireName: "use_legacy_sql"},
-		"UseQueryCache": ubx.FieldSpec{WireName: "use_query_cache"},
-		"UserDefinedFunctionResources": ubx.FieldSpec{
-			WireName: "user_defined_function_resources",
-			Kind: "list",
-			Fields: Job_Configuration_Query_UserDefinedFunctionResourcesFields,
-		},
-		"WriteDisposition": ubx.FieldSpec{WireName: "write_disposition"},
-		"WriteIncrementalResults": ubx.FieldSpec{WireName: "write_incremental_results"},
-	}
+	"AllowLargeResults": ubx.FieldSpec{WireName: "allow_large_results"},
+	"Clustering": ubx.FieldSpec{
+		WireName: "clustering",
+		Kind:     "object",
+		Fields:   Job_Configuration_Load_ClusteringFields,
+	},
+	"ConnectionProperties": ubx.FieldSpec{
+		WireName: "connection_properties",
+		Kind:     "list",
+		Fields:   Job_Configuration_Load_ConnectionPropertiesFields,
+	},
+	"Continuous":        ubx.FieldSpec{WireName: "continuous"},
+	"CreateDisposition": ubx.FieldSpec{WireName: "create_disposition"},
+	"CreateSession":     ubx.FieldSpec{WireName: "create_session"},
+	"DefaultDataset": ubx.FieldSpec{
+		WireName: "default_dataset",
+		Kind:     "object",
+		Fields:   Job_Configuration_Query_DefaultDatasetFields,
+	},
+	"DestinationEncryptionConfiguration": ubx.FieldSpec{
+		WireName: "destination_encryption_configuration",
+		Kind:     "object",
+		Fields:   Job_Configuration_Copy_DestinationEncryptionConfigurationFields,
+	},
+	"DestinationTable": ubx.FieldSpec{
+		WireName: "destination_table",
+		Kind:     "object",
+		Fields:   Job_Configuration_Copy_DestinationTableFields,
+	},
+	"FlattenResults":     ubx.FieldSpec{WireName: "flatten_results"},
+	"MaximumBillingTier": ubx.FieldSpec{WireName: "maximum_billing_tier"},
+	"MaximumBytesBilled": ubx.FieldSpec{WireName: "maximum_bytes_billed"},
+	"ParameterMode":      ubx.FieldSpec{WireName: "parameter_mode"},
+	"PreserveNulls":      ubx.FieldSpec{WireName: "preserve_nulls"},
+	"Priority":           ubx.FieldSpec{WireName: "priority"},
+	"Query":              ubx.FieldSpec{WireName: "query"},
+	"QueryParameters": ubx.FieldSpec{
+		WireName: "query_parameters",
+		Kind:     "list",
+		Fields:   Job_Configuration_Query_QueryParametersFields,
+	},
+	"RangePartitioning": ubx.FieldSpec{
+		WireName: "range_partitioning",
+		Kind:     "object",
+		Fields:   Job_Configuration_Load_RangePartitioningFields,
+	},
+	"SchemaUpdateOptions": ubx.FieldSpec{WireName: "schema_update_options"},
+	"ScriptOptions": ubx.FieldSpec{
+		WireName: "script_options",
+		Kind:     "object",
+		Fields:   Job_Configuration_Query_ScriptOptionsFields,
+	},
+	"SystemVariables": ubx.FieldSpec{
+		WireName: "system_variables",
+		Kind:     "object",
+		Fields:   Job_Configuration_Query_SystemVariablesFields,
+	},
+	"TableDefinitions": ubx.FieldSpec{
+		WireName: "table_definitions",
+		Kind:     "map",
+		Fields:   Job_Configuration_Query_TableDefinitionsFields,
+	},
+	"TimePartitioning": ubx.FieldSpec{
+		WireName: "time_partitioning",
+		Kind:     "object",
+		Fields:   Job_Configuration_Load_TimePartitioningFields,
+	},
+	"UseLegacySql":  ubx.FieldSpec{WireName: "use_legacy_sql"},
+	"UseQueryCache": ubx.FieldSpec{WireName: "use_query_cache"},
+	"UserDefinedFunctionResources": ubx.FieldSpec{
+		WireName: "user_defined_function_resources",
+		Kind:     "list",
+		Fields:   Job_Configuration_Query_UserDefinedFunctionResourcesFields,
+	},
+	"WriteDisposition":        ubx.FieldSpec{WireName: "write_disposition"},
+	"WriteIncrementalResults": ubx.FieldSpec{WireName: "write_incremental_results"},
+}
 
 var Job_ConfigurationFields = ubx.FieldMap{
-		"Copy": ubx.FieldSpec{
-			WireName: "copy",
-			Kind: "object",
-			Fields: Job_Configuration_CopyFields,
-		},
-		"DryRun": ubx.FieldSpec{WireName: "dry_run"},
-		"Extract": ubx.FieldSpec{
-			WireName: "extract",
-			Kind: "object",
-			Fields: Job_Configuration_ExtractFields,
-		},
-		"JobTimeoutMs": ubx.FieldSpec{WireName: "job_timeout_ms"},
-		"JobType": ubx.FieldSpec{WireName: "job_type"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Load": ubx.FieldSpec{
-			WireName: "load",
-			Kind: "object",
-			Fields: Job_Configuration_LoadFields,
-		},
-		"MaxSlots": ubx.FieldSpec{WireName: "max_slots"},
-		"Query": ubx.FieldSpec{
-			WireName: "query",
-			Kind: "object",
-			Fields: Job_Configuration_QueryFields,
-		},
-		"Reservation": ubx.FieldSpec{WireName: "reservation"},
-	}
+	"Copy": ubx.FieldSpec{
+		WireName: "copy",
+		Kind:     "object",
+		Fields:   Job_Configuration_CopyFields,
+	},
+	"DryRun": ubx.FieldSpec{WireName: "dry_run"},
+	"Extract": ubx.FieldSpec{
+		WireName: "extract",
+		Kind:     "object",
+		Fields:   Job_Configuration_ExtractFields,
+	},
+	"JobTimeoutMs": ubx.FieldSpec{WireName: "job_timeout_ms"},
+	"JobType":      ubx.FieldSpec{WireName: "job_type"},
+	"Labels":       ubx.FieldSpec{WireName: "labels"},
+	"Load": ubx.FieldSpec{
+		WireName: "load",
+		Kind:     "object",
+		Fields:   Job_Configuration_LoadFields,
+	},
+	"MaxSlots": ubx.FieldSpec{WireName: "max_slots"},
+	"Query": ubx.FieldSpec{
+		WireName: "query",
+		Kind:     "object",
+		Fields:   Job_Configuration_QueryFields,
+	},
+	"Reservation": ubx.FieldSpec{WireName: "reservation"},
+}
 
 var Job_JobCreationReasonFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-	}
+	"Code": ubx.FieldSpec{WireName: "code"},
+}
 
 var Job_JobReferenceFields = ubx.FieldMap{
-		"JobId": ubx.FieldSpec{WireName: "job_id"},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-	}
+	"JobId":     ubx.FieldSpec{WireName: "job_id"},
+	"Location":  ubx.FieldSpec{WireName: "location"},
+	"ProjectId": ubx.FieldSpec{WireName: "project_id"},
+}
 
 var Job_Statistics_CopyFields = ubx.FieldMap{
-		"CopiedLogicalBytes": ubx.FieldSpec{WireName: "copied_logical_bytes"},
-		"CopiedRows": ubx.FieldSpec{WireName: "copied_rows"},
-		"RemoteDestinationRegion": ubx.FieldSpec{WireName: "remote_destination_region"},
-	}
+	"CopiedLogicalBytes":      ubx.FieldSpec{WireName: "copied_logical_bytes"},
+	"CopiedRows":              ubx.FieldSpec{WireName: "copied_rows"},
+	"RemoteDestinationRegion": ubx.FieldSpec{WireName: "remote_destination_region"},
+}
 
 var Job_Statistics_DataMaskingStatisticsFields = ubx.FieldMap{
-		"DataMaskingApplied": ubx.FieldSpec{WireName: "data_masking_applied"},
-	}
+	"DataMaskingApplied": ubx.FieldSpec{WireName: "data_masking_applied"},
+}
 
 var Job_Statistics_Extract_TimelineFields = ubx.FieldMap{
-		"ActiveUnits": ubx.FieldSpec{WireName: "active_units"},
-		"CompletedUnits": ubx.FieldSpec{WireName: "completed_units"},
-		"ElapsedMs": ubx.FieldSpec{WireName: "elapsed_ms"},
-		"EstimatedRunnableUnits": ubx.FieldSpec{WireName: "estimated_runnable_units"},
-		"PendingUnits": ubx.FieldSpec{WireName: "pending_units"},
-		"ShuffleRamUsageRatio": ubx.FieldSpec{WireName: "shuffle_ram_usage_ratio"},
-		"TotalSlotMs": ubx.FieldSpec{WireName: "total_slot_ms"},
-	}
+	"ActiveUnits":            ubx.FieldSpec{WireName: "active_units"},
+	"CompletedUnits":         ubx.FieldSpec{WireName: "completed_units"},
+	"ElapsedMs":              ubx.FieldSpec{WireName: "elapsed_ms"},
+	"EstimatedRunnableUnits": ubx.FieldSpec{WireName: "estimated_runnable_units"},
+	"PendingUnits":           ubx.FieldSpec{WireName: "pending_units"},
+	"ShuffleRamUsageRatio":   ubx.FieldSpec{WireName: "shuffle_ram_usage_ratio"},
+	"TotalSlotMs":            ubx.FieldSpec{WireName: "total_slot_ms"},
+}
 
 var Job_Statistics_ExtractFields = ubx.FieldMap{
-		"DestinationUriFileCounts": ubx.FieldSpec{WireName: "destination_uri_file_counts"},
-		"InputBytes": ubx.FieldSpec{WireName: "input_bytes"},
-		"Timeline": ubx.FieldSpec{
-			WireName: "timeline",
-			Kind: "list",
-			Fields: Job_Statistics_Extract_TimelineFields,
-		},
-	}
+	"DestinationUriFileCounts": ubx.FieldSpec{WireName: "destination_uri_file_counts"},
+	"InputBytes":               ubx.FieldSpec{WireName: "input_bytes"},
+	"Timeline": ubx.FieldSpec{
+		WireName: "timeline",
+		Kind:     "list",
+		Fields:   Job_Statistics_Extract_TimelineFields,
+	},
+}
 
 var Job_Statistics_LoadFields = ubx.FieldMap{
-		"BadRecords": ubx.FieldSpec{WireName: "bad_records"},
-		"InputFileBytes": ubx.FieldSpec{WireName: "input_file_bytes"},
-		"InputFiles": ubx.FieldSpec{WireName: "input_files"},
-		"OutputBytes": ubx.FieldSpec{WireName: "output_bytes"},
-		"OutputRows": ubx.FieldSpec{WireName: "output_rows"},
-		"Timeline": ubx.FieldSpec{
-			WireName: "timeline",
-			Kind: "list",
-			Fields: Job_Statistics_Extract_TimelineFields,
-		},
-	}
+	"BadRecords":     ubx.FieldSpec{WireName: "bad_records"},
+	"InputFileBytes": ubx.FieldSpec{WireName: "input_file_bytes"},
+	"InputFiles":     ubx.FieldSpec{WireName: "input_files"},
+	"OutputBytes":    ubx.FieldSpec{WireName: "output_bytes"},
+	"OutputRows":     ubx.FieldSpec{WireName: "output_rows"},
+	"Timeline": ubx.FieldSpec{
+		WireName: "timeline",
+		Kind:     "list",
+		Fields:   Job_Statistics_Extract_TimelineFields,
+	},
+}
 
 var Job_Statistics_Query_BiEngineStatistics_BiEngineReasonsFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"Code":    ubx.FieldSpec{WireName: "code"},
+	"Message": ubx.FieldSpec{WireName: "message"},
+}
 
 var Job_Statistics_Query_BiEngineStatisticsFields = ubx.FieldMap{
-		"AccelerationMode": ubx.FieldSpec{WireName: "acceleration_mode"},
-		"BiEngineMode": ubx.FieldSpec{WireName: "bi_engine_mode"},
-		"BiEngineReasons": ubx.FieldSpec{
-			WireName: "bi_engine_reasons",
-			Kind: "list",
-			Fields: Job_Statistics_Query_BiEngineStatistics_BiEngineReasonsFields,
-		},
-	}
+	"AccelerationMode": ubx.FieldSpec{WireName: "acceleration_mode"},
+	"BiEngineMode":     ubx.FieldSpec{WireName: "bi_engine_mode"},
+	"BiEngineReasons": ubx.FieldSpec{
+		WireName: "bi_engine_reasons",
+		Kind:     "list",
+		Fields:   Job_Statistics_Query_BiEngineStatistics_BiEngineReasonsFields,
+	},
+}
 
 var Job_Statistics_Query_DdlTargetRoutineFields = ubx.FieldMap{
-		"DatasetId": ubx.FieldSpec{WireName: "dataset_id"},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-		"RoutineId": ubx.FieldSpec{WireName: "routine_id"},
-	}
+	"DatasetId": ubx.FieldSpec{WireName: "dataset_id"},
+	"ProjectId": ubx.FieldSpec{WireName: "project_id"},
+	"RoutineId": ubx.FieldSpec{WireName: "routine_id"},
+}
 
 var Job_Statistics_Query_DdlTargetRowAccessPolicyFields = ubx.FieldMap{
-		"DatasetId": ubx.FieldSpec{WireName: "dataset_id"},
-		"PolicyId": ubx.FieldSpec{WireName: "policy_id"},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-		"TableId": ubx.FieldSpec{WireName: "table_id"},
-	}
+	"DatasetId": ubx.FieldSpec{WireName: "dataset_id"},
+	"PolicyId":  ubx.FieldSpec{WireName: "policy_id"},
+	"ProjectId": ubx.FieldSpec{WireName: "project_id"},
+	"TableId":   ubx.FieldSpec{WireName: "table_id"},
+}
 
 var Job_Statistics_Query_DmlStatsFields = ubx.FieldMap{
-		"DeletedRowCount": ubx.FieldSpec{WireName: "deleted_row_count"},
-		"DmlMode": ubx.FieldSpec{WireName: "dml_mode"},
-		"FineGrainedDmlUnusedReason": ubx.FieldSpec{WireName: "fine_grained_dml_unused_reason"},
-		"InsertedRowCount": ubx.FieldSpec{WireName: "inserted_row_count"},
-		"UpdatedRowCount": ubx.FieldSpec{WireName: "updated_row_count"},
-	}
+	"DeletedRowCount":            ubx.FieldSpec{WireName: "deleted_row_count"},
+	"DmlMode":                    ubx.FieldSpec{WireName: "dml_mode"},
+	"FineGrainedDmlUnusedReason": ubx.FieldSpec{WireName: "fine_grained_dml_unused_reason"},
+	"InsertedRowCount":           ubx.FieldSpec{WireName: "inserted_row_count"},
+	"UpdatedRowCount":            ubx.FieldSpec{WireName: "updated_row_count"},
+}
 
 var Job_Statistics_Query_ExportDataStatisticsFields = ubx.FieldMap{
-		"FileCount": ubx.FieldSpec{WireName: "file_count"},
-		"RowCount": ubx.FieldSpec{WireName: "row_count"},
-	}
+	"FileCount": ubx.FieldSpec{WireName: "file_count"},
+	"RowCount":  ubx.FieldSpec{WireName: "row_count"},
+}
 
 var Job_Statistics_Query_ExternalServiceCostsFields = ubx.FieldMap{
-		"BillingMethod": ubx.FieldSpec{WireName: "billing_method"},
-		"BytesBilled": ubx.FieldSpec{WireName: "bytes_billed"},
-		"BytesProcessed": ubx.FieldSpec{WireName: "bytes_processed"},
-		"ExternalService": ubx.FieldSpec{WireName: "external_service"},
-		"ReservedSlotCount": ubx.FieldSpec{WireName: "reserved_slot_count"},
-		"SlotMs": ubx.FieldSpec{WireName: "slot_ms"},
-	}
+	"BillingMethod":     ubx.FieldSpec{WireName: "billing_method"},
+	"BytesBilled":       ubx.FieldSpec{WireName: "bytes_billed"},
+	"BytesProcessed":    ubx.FieldSpec{WireName: "bytes_processed"},
+	"ExternalService":   ubx.FieldSpec{WireName: "external_service"},
+	"ReservedSlotCount": ubx.FieldSpec{WireName: "reserved_slot_count"},
+	"SlotMs":            ubx.FieldSpec{WireName: "slot_ms"},
+}
 
 var Job_Statistics_Query_GenAiStats_ErrorStatsFields = ubx.FieldMap{
-		"Errors": ubx.FieldSpec{WireName: "errors"},
-	}
+	"Errors": ubx.FieldSpec{WireName: "errors"},
+}
 
 var Job_Statistics_Query_GenAiStats_FunctionStats_CacheStatsFields = ubx.FieldMap{
-		"NumCacheHitRows": ubx.FieldSpec{WireName: "num_cache_hit_rows"},
-	}
+	"NumCacheHitRows": ubx.FieldSpec{WireName: "num_cache_hit_rows"},
+}
 
 var Job_Statistics_Query_GenAiStats_FunctionStats_CostOptimizationStatsFields = ubx.FieldMap{
-		"Message": ubx.FieldSpec{WireName: "message"},
-		"NumCostOptimizedRows": ubx.FieldSpec{WireName: "num_cost_optimized_rows"},
-	}
+	"Message":              ubx.FieldSpec{WireName: "message"},
+	"NumCostOptimizedRows": ubx.FieldSpec{WireName: "num_cost_optimized_rows"},
+}
 
 var Job_Statistics_Query_GenAiStats_FunctionStats_ErrorStatsFields = ubx.FieldMap{
-		"Errors": ubx.FieldSpec{WireName: "errors"},
-		"NumFailedRows": ubx.FieldSpec{WireName: "num_failed_rows"},
-	}
+	"Errors":        ubx.FieldSpec{WireName: "errors"},
+	"NumFailedRows": ubx.FieldSpec{WireName: "num_failed_rows"},
+}
 
 var Job_Statistics_Query_GenAiStats_FunctionStatsFields = ubx.FieldMap{
-		"CacheStats": ubx.FieldSpec{
-			WireName: "cache_stats",
-			Kind: "object",
-			Fields: Job_Statistics_Query_GenAiStats_FunctionStats_CacheStatsFields,
-		},
-		"CostOptimizationStats": ubx.FieldSpec{
-			WireName: "cost_optimization_stats",
-			Kind: "object",
-			Fields: Job_Statistics_Query_GenAiStats_FunctionStats_CostOptimizationStatsFields,
-		},
-		"ErrorStats": ubx.FieldSpec{
-			WireName: "error_stats",
-			Kind: "object",
-			Fields: Job_Statistics_Query_GenAiStats_FunctionStats_ErrorStatsFields,
-		},
-		"FunctionName": ubx.FieldSpec{WireName: "function_name"},
-		"NumProcessedRows": ubx.FieldSpec{WireName: "num_processed_rows"},
-		"Prompt": ubx.FieldSpec{WireName: "prompt"},
-	}
+	"CacheStats": ubx.FieldSpec{
+		WireName: "cache_stats",
+		Kind:     "object",
+		Fields:   Job_Statistics_Query_GenAiStats_FunctionStats_CacheStatsFields,
+	},
+	"CostOptimizationStats": ubx.FieldSpec{
+		WireName: "cost_optimization_stats",
+		Kind:     "object",
+		Fields:   Job_Statistics_Query_GenAiStats_FunctionStats_CostOptimizationStatsFields,
+	},
+	"ErrorStats": ubx.FieldSpec{
+		WireName: "error_stats",
+		Kind:     "object",
+		Fields:   Job_Statistics_Query_GenAiStats_FunctionStats_ErrorStatsFields,
+	},
+	"FunctionName":     ubx.FieldSpec{WireName: "function_name"},
+	"NumProcessedRows": ubx.FieldSpec{WireName: "num_processed_rows"},
+	"Prompt":           ubx.FieldSpec{WireName: "prompt"},
+}
 
 var Job_Statistics_Query_GenAiStatsFields = ubx.FieldMap{
-		"ErrorStats": ubx.FieldSpec{
-			WireName: "error_stats",
-			Kind: "object",
-			Fields: Job_Statistics_Query_GenAiStats_ErrorStatsFields,
-		},
-		"FunctionStats": ubx.FieldSpec{
-			WireName: "function_stats",
-			Kind: "list",
-			Fields: Job_Statistics_Query_GenAiStats_FunctionStatsFields,
-		},
-	}
+	"ErrorStats": ubx.FieldSpec{
+		WireName: "error_stats",
+		Kind:     "object",
+		Fields:   Job_Statistics_Query_GenAiStats_ErrorStatsFields,
+	},
+	"FunctionStats": ubx.FieldSpec{
+		WireName: "function_stats",
+		Kind:     "list",
+		Fields:   Job_Statistics_Query_GenAiStats_FunctionStatsFields,
+	},
+}
 
 var Job_Statistics_Query_IncrementalResultStatsFields = ubx.FieldMap{
-		"DisabledReason": ubx.FieldSpec{WireName: "disabled_reason"},
-		"DisabledReasonDetails": ubx.FieldSpec{WireName: "disabled_reason_details"},
-		"FirstIncrementalRowTime": ubx.FieldSpec{WireName: "first_incremental_row_time"},
-		"IncrementalRowCount": ubx.FieldSpec{WireName: "incremental_row_count"},
-		"LastIncrementalRowTime": ubx.FieldSpec{WireName: "last_incremental_row_time"},
-		"ResultSetLastModifyTime": ubx.FieldSpec{WireName: "result_set_last_modify_time"},
-		"ResultSetLastReplaceTime": ubx.FieldSpec{WireName: "result_set_last_replace_time"},
-	}
+	"DisabledReason":           ubx.FieldSpec{WireName: "disabled_reason"},
+	"DisabledReasonDetails":    ubx.FieldSpec{WireName: "disabled_reason_details"},
+	"FirstIncrementalRowTime":  ubx.FieldSpec{WireName: "first_incremental_row_time"},
+	"IncrementalRowCount":      ubx.FieldSpec{WireName: "incremental_row_count"},
+	"LastIncrementalRowTime":   ubx.FieldSpec{WireName: "last_incremental_row_time"},
+	"ResultSetLastModifyTime":  ubx.FieldSpec{WireName: "result_set_last_modify_time"},
+	"ResultSetLastReplaceTime": ubx.FieldSpec{WireName: "result_set_last_replace_time"},
+}
 
 var Job_Statistics_Query_LoadQueryStatisticsFields = ubx.FieldMap{
-		"BadRecords": ubx.FieldSpec{WireName: "bad_records"},
-		"BytesTransferred": ubx.FieldSpec{WireName: "bytes_transferred"},
-		"InputFileBytes": ubx.FieldSpec{WireName: "input_file_bytes"},
-		"InputFiles": ubx.FieldSpec{WireName: "input_files"},
-		"OutputBytes": ubx.FieldSpec{WireName: "output_bytes"},
-		"OutputRows": ubx.FieldSpec{WireName: "output_rows"},
-	}
+	"BadRecords":       ubx.FieldSpec{WireName: "bad_records"},
+	"BytesTransferred": ubx.FieldSpec{WireName: "bytes_transferred"},
+	"InputFileBytes":   ubx.FieldSpec{WireName: "input_file_bytes"},
+	"InputFiles":       ubx.FieldSpec{WireName: "input_files"},
+	"OutputBytes":      ubx.FieldSpec{WireName: "output_bytes"},
+	"OutputRows":       ubx.FieldSpec{WireName: "output_rows"},
+}
 
 var Job_Statistics_Query_MaterializedViewStatistics_MaterializedViewFields = ubx.FieldMap{
-		"Chosen": ubx.FieldSpec{WireName: "chosen"},
-		"EstimatedBytesSaved": ubx.FieldSpec{WireName: "estimated_bytes_saved"},
-		"RejectedReason": ubx.FieldSpec{WireName: "rejected_reason"},
-		"TableReference": ubx.FieldSpec{
-			WireName: "table_reference",
-			Kind: "object",
-			Fields: Job_Configuration_Copy_DestinationTableFields,
-		},
-	}
+	"Chosen":              ubx.FieldSpec{WireName: "chosen"},
+	"EstimatedBytesSaved": ubx.FieldSpec{WireName: "estimated_bytes_saved"},
+	"RejectedReason":      ubx.FieldSpec{WireName: "rejected_reason"},
+	"TableReference": ubx.FieldSpec{
+		WireName: "table_reference",
+		Kind:     "object",
+		Fields:   Job_Configuration_Copy_DestinationTableFields,
+	},
+}
 
 var Job_Statistics_Query_MaterializedViewStatisticsFields = ubx.FieldMap{
-		"MaterializedView": ubx.FieldSpec{
-			WireName: "materialized_view",
-			Kind: "list",
-			Fields: Job_Statistics_Query_MaterializedViewStatistics_MaterializedViewFields,
-		},
-	}
+	"MaterializedView": ubx.FieldSpec{
+		WireName: "materialized_view",
+		Kind:     "list",
+		Fields:   Job_Statistics_Query_MaterializedViewStatistics_MaterializedViewFields,
+	},
+}
 
 var Job_Statistics_Query_MetadataCacheStatistics_TableMetadataCacheUsage_PruningStatsFields = ubx.FieldMap{
-		"PostCmetaPruningParallelInputCount": ubx.FieldSpec{WireName: "post_cmeta_pruning_parallel_input_count"},
-		"PostCmetaPruningPartitionCount": ubx.FieldSpec{WireName: "post_cmeta_pruning_partition_count"},
-		"PreCmetaPruningParallelInputCount": ubx.FieldSpec{WireName: "pre_cmeta_pruning_parallel_input_count"},
-	}
+	"PostCmetaPruningParallelInputCount": ubx.FieldSpec{WireName: "post_cmeta_pruning_parallel_input_count"},
+	"PostCmetaPruningPartitionCount":     ubx.FieldSpec{WireName: "post_cmeta_pruning_partition_count"},
+	"PreCmetaPruningParallelInputCount":  ubx.FieldSpec{WireName: "pre_cmeta_pruning_parallel_input_count"},
+}
 
 var Job_Statistics_Query_MetadataCacheStatistics_TableMetadataCacheUsageFields = ubx.FieldMap{
-		"Explanation": ubx.FieldSpec{WireName: "explanation"},
-		"PruningStats": ubx.FieldSpec{
-			WireName: "pruning_stats",
-			Kind: "object",
-			Fields: Job_Statistics_Query_MetadataCacheStatistics_TableMetadataCacheUsage_PruningStatsFields,
-		},
-		"Staleness": ubx.FieldSpec{WireName: "staleness"},
-		"TableReference": ubx.FieldSpec{
-			WireName: "table_reference",
-			Kind: "object",
-			Fields: Job_Configuration_Copy_DestinationTableFields,
-		},
-		"TableType": ubx.FieldSpec{WireName: "table_type"},
-		"UnusedReason": ubx.FieldSpec{WireName: "unused_reason"},
-	}
+	"Explanation": ubx.FieldSpec{WireName: "explanation"},
+	"PruningStats": ubx.FieldSpec{
+		WireName: "pruning_stats",
+		Kind:     "object",
+		Fields:   Job_Statistics_Query_MetadataCacheStatistics_TableMetadataCacheUsage_PruningStatsFields,
+	},
+	"Staleness": ubx.FieldSpec{WireName: "staleness"},
+	"TableReference": ubx.FieldSpec{
+		WireName: "table_reference",
+		Kind:     "object",
+		Fields:   Job_Configuration_Copy_DestinationTableFields,
+	},
+	"TableType":    ubx.FieldSpec{WireName: "table_type"},
+	"UnusedReason": ubx.FieldSpec{WireName: "unused_reason"},
+}
 
 var Job_Statistics_Query_MetadataCacheStatisticsFields = ubx.FieldMap{
-		"TableMetadataCacheUsage": ubx.FieldSpec{
-			WireName: "table_metadata_cache_usage",
-			Kind: "list",
-			Fields: Job_Statistics_Query_MetadataCacheStatistics_TableMetadataCacheUsageFields,
-		},
-	}
+	"TableMetadataCacheUsage": ubx.FieldSpec{
+		WireName: "table_metadata_cache_usage",
+		Kind:     "list",
+		Fields:   Job_Statistics_Query_MetadataCacheStatistics_TableMetadataCacheUsageFields,
+	},
+}
 
 var Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ArimaForecastingMetrics_ArimaFittingMetricsFields = ubx.FieldMap{
-		"Aic": ubx.FieldSpec{WireName: "aic"},
-		"LogLikelihood": ubx.FieldSpec{WireName: "log_likelihood"},
-		"Variance": ubx.FieldSpec{WireName: "variance"},
-	}
+	"Aic":           ubx.FieldSpec{WireName: "aic"},
+	"LogLikelihood": ubx.FieldSpec{WireName: "log_likelihood"},
+	"Variance":      ubx.FieldSpec{WireName: "variance"},
+}
 
 var Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ArimaForecastingMetrics_ArimaSingleModelForecastingMetrics_NonSeasonalOrderFields = ubx.FieldMap{
-		"D": ubx.FieldSpec{WireName: "d"},
-		"P": ubx.FieldSpec{WireName: "p"},
-		"Q": ubx.FieldSpec{WireName: "q"},
-	}
+	"D": ubx.FieldSpec{WireName: "d"},
+	"P": ubx.FieldSpec{WireName: "p"},
+	"Q": ubx.FieldSpec{WireName: "q"},
+}
 
 var Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ArimaForecastingMetrics_ArimaSingleModelForecastingMetricsFields = ubx.FieldMap{
-		"ArimaFittingMetrics": ubx.FieldSpec{
-			WireName: "arima_fitting_metrics",
-			Kind: "object",
-			Fields: Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ArimaForecastingMetrics_ArimaFittingMetricsFields,
-		},
-		"HasDrift": ubx.FieldSpec{WireName: "has_drift"},
-		"HasHolidayEffect": ubx.FieldSpec{WireName: "has_holiday_effect"},
-		"HasSpikesAndDips": ubx.FieldSpec{WireName: "has_spikes_and_dips"},
-		"HasStepChanges": ubx.FieldSpec{WireName: "has_step_changes"},
-		"NonSeasonalOrder": ubx.FieldSpec{
-			WireName: "non_seasonal_order",
-			Kind: "object",
-			Fields: Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ArimaForecastingMetrics_ArimaSingleModelForecastingMetrics_NonSeasonalOrderFields,
-		},
-		"SeasonalPeriods": ubx.FieldSpec{WireName: "seasonal_periods"},
-		"TimeSeriesId": ubx.FieldSpec{WireName: "time_series_id"},
-		"TimeSeriesIds": ubx.FieldSpec{WireName: "time_series_ids"},
-	}
+	"ArimaFittingMetrics": ubx.FieldSpec{
+		WireName: "arima_fitting_metrics",
+		Kind:     "object",
+		Fields:   Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ArimaForecastingMetrics_ArimaFittingMetricsFields,
+	},
+	"HasDrift":         ubx.FieldSpec{WireName: "has_drift"},
+	"HasHolidayEffect": ubx.FieldSpec{WireName: "has_holiday_effect"},
+	"HasSpikesAndDips": ubx.FieldSpec{WireName: "has_spikes_and_dips"},
+	"HasStepChanges":   ubx.FieldSpec{WireName: "has_step_changes"},
+	"NonSeasonalOrder": ubx.FieldSpec{
+		WireName: "non_seasonal_order",
+		Kind:     "object",
+		Fields:   Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ArimaForecastingMetrics_ArimaSingleModelForecastingMetrics_NonSeasonalOrderFields,
+	},
+	"SeasonalPeriods": ubx.FieldSpec{WireName: "seasonal_periods"},
+	"TimeSeriesId":    ubx.FieldSpec{WireName: "time_series_id"},
+	"TimeSeriesIds":   ubx.FieldSpec{WireName: "time_series_ids"},
+}
 
 var Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ArimaForecastingMetricsFields = ubx.FieldMap{
-		"ArimaFittingMetrics": ubx.FieldSpec{
-			WireName: "arima_fitting_metrics",
-			Kind: "list",
-			Fields: Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ArimaForecastingMetrics_ArimaFittingMetricsFields,
-		},
-		"ArimaSingleModelForecastingMetrics": ubx.FieldSpec{
-			WireName: "arima_single_model_forecasting_metrics",
-			Kind: "list",
-			Fields: Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ArimaForecastingMetrics_ArimaSingleModelForecastingMetricsFields,
-		},
-		"HasDrift": ubx.FieldSpec{WireName: "has_drift"},
-		"NonSeasonalOrder": ubx.FieldSpec{
-			WireName: "non_seasonal_order",
-			Kind: "list",
-			Fields: Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ArimaForecastingMetrics_ArimaSingleModelForecastingMetrics_NonSeasonalOrderFields,
-		},
-		"SeasonalPeriods": ubx.FieldSpec{WireName: "seasonal_periods"},
-		"TimeSeriesId": ubx.FieldSpec{WireName: "time_series_id"},
-	}
+	"ArimaFittingMetrics": ubx.FieldSpec{
+		WireName: "arima_fitting_metrics",
+		Kind:     "list",
+		Fields:   Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ArimaForecastingMetrics_ArimaFittingMetricsFields,
+	},
+	"ArimaSingleModelForecastingMetrics": ubx.FieldSpec{
+		WireName: "arima_single_model_forecasting_metrics",
+		Kind:     "list",
+		Fields:   Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ArimaForecastingMetrics_ArimaSingleModelForecastingMetricsFields,
+	},
+	"HasDrift": ubx.FieldSpec{WireName: "has_drift"},
+	"NonSeasonalOrder": ubx.FieldSpec{
+		WireName: "non_seasonal_order",
+		Kind:     "list",
+		Fields:   Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ArimaForecastingMetrics_ArimaSingleModelForecastingMetrics_NonSeasonalOrderFields,
+	},
+	"SeasonalPeriods": ubx.FieldSpec{WireName: "seasonal_periods"},
+	"TimeSeriesId":    ubx.FieldSpec{WireName: "time_series_id"},
+}
 
 var Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_BinaryClassificationMetrics_AggregateClassificationMetricsFields = ubx.FieldMap{
-		"Accuracy": ubx.FieldSpec{WireName: "accuracy"},
-		"F1Score": ubx.FieldSpec{WireName: "f1_score"},
-		"LogLoss": ubx.FieldSpec{WireName: "log_loss"},
-		"Precision": ubx.FieldSpec{WireName: "precision"},
-		"Recall": ubx.FieldSpec{WireName: "recall"},
-		"RocAuc": ubx.FieldSpec{WireName: "roc_auc"},
-		"Threshold": ubx.FieldSpec{WireName: "threshold"},
-	}
+	"Accuracy":  ubx.FieldSpec{WireName: "accuracy"},
+	"F1Score":   ubx.FieldSpec{WireName: "f1_score"},
+	"LogLoss":   ubx.FieldSpec{WireName: "log_loss"},
+	"Precision": ubx.FieldSpec{WireName: "precision"},
+	"Recall":    ubx.FieldSpec{WireName: "recall"},
+	"RocAuc":    ubx.FieldSpec{WireName: "roc_auc"},
+	"Threshold": ubx.FieldSpec{WireName: "threshold"},
+}
 
 var Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_BinaryClassificationMetrics_BinaryConfusionMatrixListFields = ubx.FieldMap{
-		"Accuracy": ubx.FieldSpec{WireName: "accuracy"},
-		"F1Score": ubx.FieldSpec{WireName: "f1_score"},
-		"FalseNegatives": ubx.FieldSpec{WireName: "false_negatives"},
-		"FalsePositives": ubx.FieldSpec{WireName: "false_positives"},
-		"PositiveClassThreshold": ubx.FieldSpec{WireName: "positive_class_threshold"},
-		"Precision": ubx.FieldSpec{WireName: "precision"},
-		"Recall": ubx.FieldSpec{WireName: "recall"},
-		"TrueNegatives": ubx.FieldSpec{WireName: "true_negatives"},
-		"TruePositives": ubx.FieldSpec{WireName: "true_positives"},
-	}
+	"Accuracy":               ubx.FieldSpec{WireName: "accuracy"},
+	"F1Score":                ubx.FieldSpec{WireName: "f1_score"},
+	"FalseNegatives":         ubx.FieldSpec{WireName: "false_negatives"},
+	"FalsePositives":         ubx.FieldSpec{WireName: "false_positives"},
+	"PositiveClassThreshold": ubx.FieldSpec{WireName: "positive_class_threshold"},
+	"Precision":              ubx.FieldSpec{WireName: "precision"},
+	"Recall":                 ubx.FieldSpec{WireName: "recall"},
+	"TrueNegatives":          ubx.FieldSpec{WireName: "true_negatives"},
+	"TruePositives":          ubx.FieldSpec{WireName: "true_positives"},
+}
 
 var Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_BinaryClassificationMetricsFields = ubx.FieldMap{
-		"AggregateClassificationMetrics": ubx.FieldSpec{
-			WireName: "aggregate_classification_metrics",
-			Kind: "object",
-			Fields: Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_BinaryClassificationMetrics_AggregateClassificationMetricsFields,
-		},
-		"BinaryConfusionMatrixList": ubx.FieldSpec{
-			WireName: "binary_confusion_matrix_list",
-			Kind: "list",
-			Fields: Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_BinaryClassificationMetrics_BinaryConfusionMatrixListFields,
-		},
-		"NegativeLabel": ubx.FieldSpec{WireName: "negative_label"},
-		"PositiveLabel": ubx.FieldSpec{WireName: "positive_label"},
-	}
+	"AggregateClassificationMetrics": ubx.FieldSpec{
+		WireName: "aggregate_classification_metrics",
+		Kind:     "object",
+		Fields:   Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_BinaryClassificationMetrics_AggregateClassificationMetricsFields,
+	},
+	"BinaryConfusionMatrixList": ubx.FieldSpec{
+		WireName: "binary_confusion_matrix_list",
+		Kind:     "list",
+		Fields:   Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_BinaryClassificationMetrics_BinaryConfusionMatrixListFields,
+	},
+	"NegativeLabel": ubx.FieldSpec{WireName: "negative_label"},
+	"PositiveLabel": ubx.FieldSpec{WireName: "positive_label"},
+}
 
 var Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ClusteringMetrics_Clusters_FeatureValues_CategoricalValue_CategoryCountsFields = ubx.FieldMap{
-		"Category": ubx.FieldSpec{WireName: "category"},
-		"Count": ubx.FieldSpec{WireName: "count"},
-	}
+	"Category": ubx.FieldSpec{WireName: "category"},
+	"Count":    ubx.FieldSpec{WireName: "count"},
+}
 
 var Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ClusteringMetrics_Clusters_FeatureValues_CategoricalValueFields = ubx.FieldMap{
-		"CategoryCounts": ubx.FieldSpec{
-			WireName: "category_counts",
-			Kind: "list",
-			Fields: Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ClusteringMetrics_Clusters_FeatureValues_CategoricalValue_CategoryCountsFields,
-		},
-	}
+	"CategoryCounts": ubx.FieldSpec{
+		WireName: "category_counts",
+		Kind:     "list",
+		Fields:   Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ClusteringMetrics_Clusters_FeatureValues_CategoricalValue_CategoryCountsFields,
+	},
+}
 
 var Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ClusteringMetrics_Clusters_FeatureValuesFields = ubx.FieldMap{
-		"CategoricalValue": ubx.FieldSpec{
-			WireName: "categorical_value",
-			Kind: "object",
-			Fields: Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ClusteringMetrics_Clusters_FeatureValues_CategoricalValueFields,
-		},
-		"FeatureColumn": ubx.FieldSpec{WireName: "feature_column"},
-		"NumericalValue": ubx.FieldSpec{WireName: "numerical_value"},
-	}
+	"CategoricalValue": ubx.FieldSpec{
+		WireName: "categorical_value",
+		Kind:     "object",
+		Fields:   Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ClusteringMetrics_Clusters_FeatureValues_CategoricalValueFields,
+	},
+	"FeatureColumn":  ubx.FieldSpec{WireName: "feature_column"},
+	"NumericalValue": ubx.FieldSpec{WireName: "numerical_value"},
+}
 
 var Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ClusteringMetrics_ClustersFields = ubx.FieldMap{
-		"CentroidId": ubx.FieldSpec{WireName: "centroid_id"},
-		"Count": ubx.FieldSpec{WireName: "count"},
-		"FeatureValues": ubx.FieldSpec{
-			WireName: "feature_values",
-			Kind: "list",
-			Fields: Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ClusteringMetrics_Clusters_FeatureValuesFields,
-		},
-	}
+	"CentroidId": ubx.FieldSpec{WireName: "centroid_id"},
+	"Count":      ubx.FieldSpec{WireName: "count"},
+	"FeatureValues": ubx.FieldSpec{
+		WireName: "feature_values",
+		Kind:     "list",
+		Fields:   Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ClusteringMetrics_Clusters_FeatureValuesFields,
+	},
+}
 
 var Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ClusteringMetricsFields = ubx.FieldMap{
-		"Clusters": ubx.FieldSpec{
-			WireName: "clusters",
-			Kind: "list",
-			Fields: Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ClusteringMetrics_ClustersFields,
-		},
-		"DaviesBouldinIndex": ubx.FieldSpec{WireName: "davies_bouldin_index"},
-		"MeanSquaredDistance": ubx.FieldSpec{WireName: "mean_squared_distance"},
-	}
+	"Clusters": ubx.FieldSpec{
+		WireName: "clusters",
+		Kind:     "list",
+		Fields:   Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ClusteringMetrics_ClustersFields,
+	},
+	"DaviesBouldinIndex":  ubx.FieldSpec{WireName: "davies_bouldin_index"},
+	"MeanSquaredDistance": ubx.FieldSpec{WireName: "mean_squared_distance"},
+}
 
 var Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_DimensionalityReductionMetricsFields = ubx.FieldMap{
-		"TotalExplainedVarianceRatio": ubx.FieldSpec{WireName: "total_explained_variance_ratio"},
-	}
+	"TotalExplainedVarianceRatio": ubx.FieldSpec{WireName: "total_explained_variance_ratio"},
+}
 
 var Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_MultiClassClassificationMetrics_ConfusionMatrixList_Rows_EntriesFields = ubx.FieldMap{
-		"ItemCount": ubx.FieldSpec{WireName: "item_count"},
-		"PredictedLabel": ubx.FieldSpec{WireName: "predicted_label"},
-	}
+	"ItemCount":      ubx.FieldSpec{WireName: "item_count"},
+	"PredictedLabel": ubx.FieldSpec{WireName: "predicted_label"},
+}
 
 var Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_MultiClassClassificationMetrics_ConfusionMatrixList_RowsFields = ubx.FieldMap{
-		"ActualLabel": ubx.FieldSpec{WireName: "actual_label"},
-		"Entries": ubx.FieldSpec{
-			WireName: "entries",
-			Kind: "list",
-			Fields: Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_MultiClassClassificationMetrics_ConfusionMatrixList_Rows_EntriesFields,
-		},
-	}
+	"ActualLabel": ubx.FieldSpec{WireName: "actual_label"},
+	"Entries": ubx.FieldSpec{
+		WireName: "entries",
+		Kind:     "list",
+		Fields:   Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_MultiClassClassificationMetrics_ConfusionMatrixList_Rows_EntriesFields,
+	},
+}
 
 var Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_MultiClassClassificationMetrics_ConfusionMatrixListFields = ubx.FieldMap{
-		"ConfidenceThreshold": ubx.FieldSpec{WireName: "confidence_threshold"},
-		"Rows": ubx.FieldSpec{
-			WireName: "rows",
-			Kind: "list",
-			Fields: Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_MultiClassClassificationMetrics_ConfusionMatrixList_RowsFields,
-		},
-	}
+	"ConfidenceThreshold": ubx.FieldSpec{WireName: "confidence_threshold"},
+	"Rows": ubx.FieldSpec{
+		WireName: "rows",
+		Kind:     "list",
+		Fields:   Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_MultiClassClassificationMetrics_ConfusionMatrixList_RowsFields,
+	},
+}
 
 var Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_MultiClassClassificationMetricsFields = ubx.FieldMap{
-		"AggregateClassificationMetrics": ubx.FieldSpec{
-			WireName: "aggregate_classification_metrics",
-			Kind: "object",
-			Fields: Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_BinaryClassificationMetrics_AggregateClassificationMetricsFields,
-		},
-		"ConfusionMatrixList": ubx.FieldSpec{
-			WireName: "confusion_matrix_list",
-			Kind: "list",
-			Fields: Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_MultiClassClassificationMetrics_ConfusionMatrixListFields,
-		},
-	}
+	"AggregateClassificationMetrics": ubx.FieldSpec{
+		WireName: "aggregate_classification_metrics",
+		Kind:     "object",
+		Fields:   Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_BinaryClassificationMetrics_AggregateClassificationMetricsFields,
+	},
+	"ConfusionMatrixList": ubx.FieldSpec{
+		WireName: "confusion_matrix_list",
+		Kind:     "list",
+		Fields:   Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_MultiClassClassificationMetrics_ConfusionMatrixListFields,
+	},
+}
 
 var Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_RankingMetricsFields = ubx.FieldMap{
-		"AverageRank": ubx.FieldSpec{WireName: "average_rank"},
-		"MeanAveragePrecision": ubx.FieldSpec{WireName: "mean_average_precision"},
-		"MeanSquaredError": ubx.FieldSpec{WireName: "mean_squared_error"},
-		"NormalizedDiscountedCumulativeGain": ubx.FieldSpec{WireName: "normalized_discounted_cumulative_gain"},
-	}
+	"AverageRank":                        ubx.FieldSpec{WireName: "average_rank"},
+	"MeanAveragePrecision":               ubx.FieldSpec{WireName: "mean_average_precision"},
+	"MeanSquaredError":                   ubx.FieldSpec{WireName: "mean_squared_error"},
+	"NormalizedDiscountedCumulativeGain": ubx.FieldSpec{WireName: "normalized_discounted_cumulative_gain"},
+}
 
 var Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_RegressionMetricsFields = ubx.FieldMap{
-		"MeanAbsoluteError": ubx.FieldSpec{WireName: "mean_absolute_error"},
-		"MeanSquaredError": ubx.FieldSpec{WireName: "mean_squared_error"},
-		"MeanSquaredLogError": ubx.FieldSpec{WireName: "mean_squared_log_error"},
-		"MedianAbsoluteError": ubx.FieldSpec{WireName: "median_absolute_error"},
-		"RSquared": ubx.FieldSpec{WireName: "r_squared"},
-	}
+	"MeanAbsoluteError":   ubx.FieldSpec{WireName: "mean_absolute_error"},
+	"MeanSquaredError":    ubx.FieldSpec{WireName: "mean_squared_error"},
+	"MeanSquaredLogError": ubx.FieldSpec{WireName: "mean_squared_log_error"},
+	"MedianAbsoluteError": ubx.FieldSpec{WireName: "median_absolute_error"},
+	"RSquared":            ubx.FieldSpec{WireName: "r_squared"},
+}
 
 var Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetricsFields = ubx.FieldMap{
-		"ArimaForecastingMetrics": ubx.FieldSpec{
-			WireName: "arima_forecasting_metrics",
-			Kind: "object",
-			Fields: Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ArimaForecastingMetricsFields,
-		},
-		"BinaryClassificationMetrics": ubx.FieldSpec{
-			WireName: "binary_classification_metrics",
-			Kind: "object",
-			Fields: Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_BinaryClassificationMetricsFields,
-		},
-		"ClusteringMetrics": ubx.FieldSpec{
-			WireName: "clustering_metrics",
-			Kind: "object",
-			Fields: Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ClusteringMetricsFields,
-		},
-		"DimensionalityReductionMetrics": ubx.FieldSpec{
-			WireName: "dimensionality_reduction_metrics",
-			Kind: "object",
-			Fields: Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_DimensionalityReductionMetricsFields,
-		},
-		"MultiClassClassificationMetrics": ubx.FieldSpec{
-			WireName: "multi_class_classification_metrics",
-			Kind: "object",
-			Fields: Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_MultiClassClassificationMetricsFields,
-		},
-		"RankingMetrics": ubx.FieldSpec{
-			WireName: "ranking_metrics",
-			Kind: "object",
-			Fields: Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_RankingMetricsFields,
-		},
-		"RegressionMetrics": ubx.FieldSpec{
-			WireName: "regression_metrics",
-			Kind: "object",
-			Fields: Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_RegressionMetricsFields,
-		},
-	}
+	"ArimaForecastingMetrics": ubx.FieldSpec{
+		WireName: "arima_forecasting_metrics",
+		Kind:     "object",
+		Fields:   Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ArimaForecastingMetricsFields,
+	},
+	"BinaryClassificationMetrics": ubx.FieldSpec{
+		WireName: "binary_classification_metrics",
+		Kind:     "object",
+		Fields:   Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_BinaryClassificationMetricsFields,
+	},
+	"ClusteringMetrics": ubx.FieldSpec{
+		WireName: "clustering_metrics",
+		Kind:     "object",
+		Fields:   Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ClusteringMetricsFields,
+	},
+	"DimensionalityReductionMetrics": ubx.FieldSpec{
+		WireName: "dimensionality_reduction_metrics",
+		Kind:     "object",
+		Fields:   Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_DimensionalityReductionMetricsFields,
+	},
+	"MultiClassClassificationMetrics": ubx.FieldSpec{
+		WireName: "multi_class_classification_metrics",
+		Kind:     "object",
+		Fields:   Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_MultiClassClassificationMetricsFields,
+	},
+	"RankingMetrics": ubx.FieldSpec{
+		WireName: "ranking_metrics",
+		Kind:     "object",
+		Fields:   Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_RankingMetricsFields,
+	},
+	"RegressionMetrics": ubx.FieldSpec{
+		WireName: "regression_metrics",
+		Kind:     "object",
+		Fields:   Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_RegressionMetricsFields,
+	},
+}
 
 var Job_Statistics_Query_MlStatistics_HparamTrials_HparamsFields = ubx.FieldMap{
-		"ActivationFn": ubx.FieldSpec{WireName: "activation_fn"},
-		"AdjustStepChanges": ubx.FieldSpec{WireName: "adjust_step_changes"},
-		"ApproxGlobalFeatureContrib": ubx.FieldSpec{WireName: "approx_global_feature_contrib"},
-		"AutoArima": ubx.FieldSpec{WireName: "auto_arima"},
-		"AutoArimaMaxOrder": ubx.FieldSpec{WireName: "auto_arima_max_order"},
-		"AutoArimaMinOrder": ubx.FieldSpec{WireName: "auto_arima_min_order"},
-		"AutoClassWeights": ubx.FieldSpec{WireName: "auto_class_weights"},
-		"BatchSize": ubx.FieldSpec{WireName: "batch_size"},
-		"BoosterType": ubx.FieldSpec{WireName: "booster_type"},
-		"BudgetHours": ubx.FieldSpec{WireName: "budget_hours"},
-		"CalculatePvalues": ubx.FieldSpec{WireName: "calculate_pvalues"},
-		"CategoryEncodingMethod": ubx.FieldSpec{WireName: "category_encoding_method"},
-		"CleanSpikesAndDips": ubx.FieldSpec{WireName: "clean_spikes_and_dips"},
-		"ColorSpace": ubx.FieldSpec{WireName: "color_space"},
-		"ColsampleBylevel": ubx.FieldSpec{WireName: "colsample_bylevel"},
-		"ColsampleBynode": ubx.FieldSpec{WireName: "colsample_bynode"},
-		"ColsampleBytree": ubx.FieldSpec{WireName: "colsample_bytree"},
-		"ContributionMetric": ubx.FieldSpec{WireName: "contribution_metric"},
-		"DartNormalizeType": ubx.FieldSpec{WireName: "dart_normalize_type"},
-		"DataFrequency": ubx.FieldSpec{WireName: "data_frequency"},
-		"DataSplitColumn": ubx.FieldSpec{WireName: "data_split_column"},
-		"DataSplitEvalFraction": ubx.FieldSpec{WireName: "data_split_eval_fraction"},
-		"DataSplitMethod": ubx.FieldSpec{WireName: "data_split_method"},
-		"DecomposeTimeSeries": ubx.FieldSpec{WireName: "decompose_time_series"},
-		"DimensionIdColumns": ubx.FieldSpec{WireName: "dimension_id_columns"},
-		"DistanceType": ubx.FieldSpec{WireName: "distance_type"},
-		"Dropout": ubx.FieldSpec{WireName: "dropout"},
-		"EarlyStop": ubx.FieldSpec{WireName: "early_stop"},
-		"EnableGlobalExplain": ubx.FieldSpec{WireName: "enable_global_explain"},
-		"EndpointIdleTtl": ubx.FieldSpec{WireName: "endpoint_idle_ttl"},
-		"FeedbackType": ubx.FieldSpec{WireName: "feedback_type"},
-		"FitIntercept": ubx.FieldSpec{WireName: "fit_intercept"},
-		"ForecastLimitLowerBound": ubx.FieldSpec{WireName: "forecast_limit_lower_bound"},
-		"ForecastLimitUpperBound": ubx.FieldSpec{WireName: "forecast_limit_upper_bound"},
-		"HiddenUnits": ubx.FieldSpec{WireName: "hidden_units"},
-		"HolidayRegion": ubx.FieldSpec{WireName: "holiday_region"},
-		"HolidayRegions": ubx.FieldSpec{WireName: "holiday_regions"},
-		"Horizon": ubx.FieldSpec{WireName: "horizon"},
-		"HparamTuningObjectives": ubx.FieldSpec{WireName: "hparam_tuning_objectives"},
-		"HuggingFaceModelId": ubx.FieldSpec{WireName: "hugging_face_model_id"},
-		"IncludeDrift": ubx.FieldSpec{WireName: "include_drift"},
-		"InitialLearnRate": ubx.FieldSpec{WireName: "initial_learn_rate"},
-		"InputLabelColumns": ubx.FieldSpec{WireName: "input_label_columns"},
-		"InstanceWeightColumn": ubx.FieldSpec{WireName: "instance_weight_column"},
-		"IntegratedGradientsNumSteps": ubx.FieldSpec{WireName: "integrated_gradients_num_steps"},
-		"IsTestColumn": ubx.FieldSpec{WireName: "is_test_column"},
-		"ItemColumn": ubx.FieldSpec{WireName: "item_column"},
-		"KmeansInitializationColumn": ubx.FieldSpec{WireName: "kmeans_initialization_column"},
-		"KmeansInitializationMethod": ubx.FieldSpec{WireName: "kmeans_initialization_method"},
-		"L1RegActivation": ubx.FieldSpec{WireName: "l1_reg_activation"},
-		"L1Regularization": ubx.FieldSpec{WireName: "l1_regularization"},
-		"L2Regularization": ubx.FieldSpec{WireName: "l2_regularization"},
-		"LabelClassWeights": ubx.FieldSpec{WireName: "label_class_weights"},
-		"LearnRate": ubx.FieldSpec{WireName: "learn_rate"},
-		"LearnRateStrategy": ubx.FieldSpec{WireName: "learn_rate_strategy"},
-		"LossType": ubx.FieldSpec{WireName: "loss_type"},
-		"MachineType": ubx.FieldSpec{WireName: "machine_type"},
-		"MaxIterations": ubx.FieldSpec{WireName: "max_iterations"},
-		"MaxParallelTrials": ubx.FieldSpec{WireName: "max_parallel_trials"},
-		"MaxReplicaCount": ubx.FieldSpec{WireName: "max_replica_count"},
-		"MaxTimeSeriesLength": ubx.FieldSpec{WireName: "max_time_series_length"},
-		"MaxTreeDepth": ubx.FieldSpec{WireName: "max_tree_depth"},
-		"MinAprioriSupport": ubx.FieldSpec{WireName: "min_apriori_support"},
-		"MinRelativeProgress": ubx.FieldSpec{WireName: "min_relative_progress"},
-		"MinReplicaCount": ubx.FieldSpec{WireName: "min_replica_count"},
-		"MinSplitLoss": ubx.FieldSpec{WireName: "min_split_loss"},
-		"MinTimeSeriesLength": ubx.FieldSpec{WireName: "min_time_series_length"},
-		"MinTreeChildWeight": ubx.FieldSpec{WireName: "min_tree_child_weight"},
-		"ModelGardenModelName": ubx.FieldSpec{WireName: "model_garden_model_name"},
-		"ModelRegistry": ubx.FieldSpec{WireName: "model_registry"},
-		"ModelUri": ubx.FieldSpec{WireName: "model_uri"},
-		"NonSeasonalOrder": ubx.FieldSpec{
-			WireName: "non_seasonal_order",
-			Kind: "object",
-			Fields: Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ArimaForecastingMetrics_ArimaSingleModelForecastingMetrics_NonSeasonalOrderFields,
-		},
-		"NumClusters": ubx.FieldSpec{WireName: "num_clusters"},
-		"NumFactors": ubx.FieldSpec{WireName: "num_factors"},
-		"NumParallelTree": ubx.FieldSpec{WireName: "num_parallel_tree"},
-		"NumPrincipalComponents": ubx.FieldSpec{WireName: "num_principal_components"},
-		"NumTrials": ubx.FieldSpec{WireName: "num_trials"},
-		"OptimizationStrategy": ubx.FieldSpec{WireName: "optimization_strategy"},
-		"Optimizer": ubx.FieldSpec{WireName: "optimizer"},
-		"PcaExplainedVarianceRatio": ubx.FieldSpec{WireName: "pca_explained_variance_ratio"},
-		"PcaSolver": ubx.FieldSpec{WireName: "pca_solver"},
-		"ReservationAffinityKey": ubx.FieldSpec{WireName: "reservation_affinity_key"},
-		"ReservationAffinityType": ubx.FieldSpec{WireName: "reservation_affinity_type"},
-		"ReservationAffinityValues": ubx.FieldSpec{WireName: "reservation_affinity_values"},
-		"SampledShapleyNumPaths": ubx.FieldSpec{WireName: "sampled_shapley_num_paths"},
-		"ScaleFeatures": ubx.FieldSpec{WireName: "scale_features"},
-		"StandardizeFeatures": ubx.FieldSpec{WireName: "standardize_features"},
-		"Subsample": ubx.FieldSpec{WireName: "subsample"},
-		"TfVersion": ubx.FieldSpec{WireName: "tf_version"},
-		"TimeSeriesDataColumn": ubx.FieldSpec{WireName: "time_series_data_column"},
-		"TimeSeriesIdColumn": ubx.FieldSpec{WireName: "time_series_id_column"},
-		"TimeSeriesIdColumns": ubx.FieldSpec{WireName: "time_series_id_columns"},
-		"TimeSeriesLengthFraction": ubx.FieldSpec{WireName: "time_series_length_fraction"},
-		"TimeSeriesTimestampColumn": ubx.FieldSpec{WireName: "time_series_timestamp_column"},
-		"TreeMethod": ubx.FieldSpec{WireName: "tree_method"},
-		"TrendSmoothingWindowSize": ubx.FieldSpec{WireName: "trend_smoothing_window_size"},
-		"UserColumn": ubx.FieldSpec{WireName: "user_column"},
-		"VertexAiModelVersionAliases": ubx.FieldSpec{WireName: "vertex_ai_model_version_aliases"},
-		"WalsAlpha": ubx.FieldSpec{WireName: "wals_alpha"},
-		"WarmStart": ubx.FieldSpec{WireName: "warm_start"},
-		"XgboostVersion": ubx.FieldSpec{WireName: "xgboost_version"},
-	}
+	"ActivationFn":                ubx.FieldSpec{WireName: "activation_fn"},
+	"AdjustStepChanges":           ubx.FieldSpec{WireName: "adjust_step_changes"},
+	"ApproxGlobalFeatureContrib":  ubx.FieldSpec{WireName: "approx_global_feature_contrib"},
+	"AutoArima":                   ubx.FieldSpec{WireName: "auto_arima"},
+	"AutoArimaMaxOrder":           ubx.FieldSpec{WireName: "auto_arima_max_order"},
+	"AutoArimaMinOrder":           ubx.FieldSpec{WireName: "auto_arima_min_order"},
+	"AutoClassWeights":            ubx.FieldSpec{WireName: "auto_class_weights"},
+	"BatchSize":                   ubx.FieldSpec{WireName: "batch_size"},
+	"BoosterType":                 ubx.FieldSpec{WireName: "booster_type"},
+	"BudgetHours":                 ubx.FieldSpec{WireName: "budget_hours"},
+	"CalculatePvalues":            ubx.FieldSpec{WireName: "calculate_pvalues"},
+	"CategoryEncodingMethod":      ubx.FieldSpec{WireName: "category_encoding_method"},
+	"CleanSpikesAndDips":          ubx.FieldSpec{WireName: "clean_spikes_and_dips"},
+	"ColorSpace":                  ubx.FieldSpec{WireName: "color_space"},
+	"ColsampleBylevel":            ubx.FieldSpec{WireName: "colsample_bylevel"},
+	"ColsampleBynode":             ubx.FieldSpec{WireName: "colsample_bynode"},
+	"ColsampleBytree":             ubx.FieldSpec{WireName: "colsample_bytree"},
+	"ContributionMetric":          ubx.FieldSpec{WireName: "contribution_metric"},
+	"DartNormalizeType":           ubx.FieldSpec{WireName: "dart_normalize_type"},
+	"DataFrequency":               ubx.FieldSpec{WireName: "data_frequency"},
+	"DataSplitColumn":             ubx.FieldSpec{WireName: "data_split_column"},
+	"DataSplitEvalFraction":       ubx.FieldSpec{WireName: "data_split_eval_fraction"},
+	"DataSplitMethod":             ubx.FieldSpec{WireName: "data_split_method"},
+	"DecomposeTimeSeries":         ubx.FieldSpec{WireName: "decompose_time_series"},
+	"DimensionIdColumns":          ubx.FieldSpec{WireName: "dimension_id_columns"},
+	"DistanceType":                ubx.FieldSpec{WireName: "distance_type"},
+	"Dropout":                     ubx.FieldSpec{WireName: "dropout"},
+	"EarlyStop":                   ubx.FieldSpec{WireName: "early_stop"},
+	"EnableGlobalExplain":         ubx.FieldSpec{WireName: "enable_global_explain"},
+	"EndpointIdleTtl":             ubx.FieldSpec{WireName: "endpoint_idle_ttl"},
+	"FeedbackType":                ubx.FieldSpec{WireName: "feedback_type"},
+	"FitIntercept":                ubx.FieldSpec{WireName: "fit_intercept"},
+	"ForecastLimitLowerBound":     ubx.FieldSpec{WireName: "forecast_limit_lower_bound"},
+	"ForecastLimitUpperBound":     ubx.FieldSpec{WireName: "forecast_limit_upper_bound"},
+	"HiddenUnits":                 ubx.FieldSpec{WireName: "hidden_units"},
+	"HolidayRegion":               ubx.FieldSpec{WireName: "holiday_region"},
+	"HolidayRegions":              ubx.FieldSpec{WireName: "holiday_regions"},
+	"Horizon":                     ubx.FieldSpec{WireName: "horizon"},
+	"HparamTuningObjectives":      ubx.FieldSpec{WireName: "hparam_tuning_objectives"},
+	"HuggingFaceModelId":          ubx.FieldSpec{WireName: "hugging_face_model_id"},
+	"IncludeDrift":                ubx.FieldSpec{WireName: "include_drift"},
+	"InitialLearnRate":            ubx.FieldSpec{WireName: "initial_learn_rate"},
+	"InputLabelColumns":           ubx.FieldSpec{WireName: "input_label_columns"},
+	"InstanceWeightColumn":        ubx.FieldSpec{WireName: "instance_weight_column"},
+	"IntegratedGradientsNumSteps": ubx.FieldSpec{WireName: "integrated_gradients_num_steps"},
+	"IsTestColumn":                ubx.FieldSpec{WireName: "is_test_column"},
+	"ItemColumn":                  ubx.FieldSpec{WireName: "item_column"},
+	"KmeansInitializationColumn":  ubx.FieldSpec{WireName: "kmeans_initialization_column"},
+	"KmeansInitializationMethod":  ubx.FieldSpec{WireName: "kmeans_initialization_method"},
+	"L1RegActivation":             ubx.FieldSpec{WireName: "l1_reg_activation"},
+	"L1Regularization":            ubx.FieldSpec{WireName: "l1_regularization"},
+	"L2Regularization":            ubx.FieldSpec{WireName: "l2_regularization"},
+	"LabelClassWeights":           ubx.FieldSpec{WireName: "label_class_weights"},
+	"LearnRate":                   ubx.FieldSpec{WireName: "learn_rate"},
+	"LearnRateStrategy":           ubx.FieldSpec{WireName: "learn_rate_strategy"},
+	"LossType":                    ubx.FieldSpec{WireName: "loss_type"},
+	"MachineType":                 ubx.FieldSpec{WireName: "machine_type"},
+	"MaxIterations":               ubx.FieldSpec{WireName: "max_iterations"},
+	"MaxParallelTrials":           ubx.FieldSpec{WireName: "max_parallel_trials"},
+	"MaxReplicaCount":             ubx.FieldSpec{WireName: "max_replica_count"},
+	"MaxTimeSeriesLength":         ubx.FieldSpec{WireName: "max_time_series_length"},
+	"MaxTreeDepth":                ubx.FieldSpec{WireName: "max_tree_depth"},
+	"MinAprioriSupport":           ubx.FieldSpec{WireName: "min_apriori_support"},
+	"MinRelativeProgress":         ubx.FieldSpec{WireName: "min_relative_progress"},
+	"MinReplicaCount":             ubx.FieldSpec{WireName: "min_replica_count"},
+	"MinSplitLoss":                ubx.FieldSpec{WireName: "min_split_loss"},
+	"MinTimeSeriesLength":         ubx.FieldSpec{WireName: "min_time_series_length"},
+	"MinTreeChildWeight":          ubx.FieldSpec{WireName: "min_tree_child_weight"},
+	"ModelGardenModelName":        ubx.FieldSpec{WireName: "model_garden_model_name"},
+	"ModelRegistry":               ubx.FieldSpec{WireName: "model_registry"},
+	"ModelUri":                    ubx.FieldSpec{WireName: "model_uri"},
+	"NonSeasonalOrder": ubx.FieldSpec{
+		WireName: "non_seasonal_order",
+		Kind:     "object",
+		Fields:   Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ArimaForecastingMetrics_ArimaSingleModelForecastingMetrics_NonSeasonalOrderFields,
+	},
+	"NumClusters":                 ubx.FieldSpec{WireName: "num_clusters"},
+	"NumFactors":                  ubx.FieldSpec{WireName: "num_factors"},
+	"NumParallelTree":             ubx.FieldSpec{WireName: "num_parallel_tree"},
+	"NumPrincipalComponents":      ubx.FieldSpec{WireName: "num_principal_components"},
+	"NumTrials":                   ubx.FieldSpec{WireName: "num_trials"},
+	"OptimizationStrategy":        ubx.FieldSpec{WireName: "optimization_strategy"},
+	"Optimizer":                   ubx.FieldSpec{WireName: "optimizer"},
+	"PcaExplainedVarianceRatio":   ubx.FieldSpec{WireName: "pca_explained_variance_ratio"},
+	"PcaSolver":                   ubx.FieldSpec{WireName: "pca_solver"},
+	"ReservationAffinityKey":      ubx.FieldSpec{WireName: "reservation_affinity_key"},
+	"ReservationAffinityType":     ubx.FieldSpec{WireName: "reservation_affinity_type"},
+	"ReservationAffinityValues":   ubx.FieldSpec{WireName: "reservation_affinity_values"},
+	"SampledShapleyNumPaths":      ubx.FieldSpec{WireName: "sampled_shapley_num_paths"},
+	"ScaleFeatures":               ubx.FieldSpec{WireName: "scale_features"},
+	"StandardizeFeatures":         ubx.FieldSpec{WireName: "standardize_features"},
+	"Subsample":                   ubx.FieldSpec{WireName: "subsample"},
+	"TfVersion":                   ubx.FieldSpec{WireName: "tf_version"},
+	"TimeSeriesDataColumn":        ubx.FieldSpec{WireName: "time_series_data_column"},
+	"TimeSeriesIdColumn":          ubx.FieldSpec{WireName: "time_series_id_column"},
+	"TimeSeriesIdColumns":         ubx.FieldSpec{WireName: "time_series_id_columns"},
+	"TimeSeriesLengthFraction":    ubx.FieldSpec{WireName: "time_series_length_fraction"},
+	"TimeSeriesTimestampColumn":   ubx.FieldSpec{WireName: "time_series_timestamp_column"},
+	"TreeMethod":                  ubx.FieldSpec{WireName: "tree_method"},
+	"TrendSmoothingWindowSize":    ubx.FieldSpec{WireName: "trend_smoothing_window_size"},
+	"UserColumn":                  ubx.FieldSpec{WireName: "user_column"},
+	"VertexAiModelVersionAliases": ubx.FieldSpec{WireName: "vertex_ai_model_version_aliases"},
+	"WalsAlpha":                   ubx.FieldSpec{WireName: "wals_alpha"},
+	"WarmStart":                   ubx.FieldSpec{WireName: "warm_start"},
+	"XgboostVersion":              ubx.FieldSpec{WireName: "xgboost_version"},
+}
 
 var Job_Statistics_Query_MlStatistics_HparamTrialsFields = ubx.FieldMap{
-		"EndTimeMs": ubx.FieldSpec{WireName: "end_time_ms"},
-		"ErrorMessage": ubx.FieldSpec{WireName: "error_message"},
-		"EvalLoss": ubx.FieldSpec{WireName: "eval_loss"},
-		"EvaluationMetrics": ubx.FieldSpec{
-			WireName: "evaluation_metrics",
-			Kind: "object",
-			Fields: Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetricsFields,
-		},
-		"HparamTuningEvaluationMetrics": ubx.FieldSpec{
-			WireName: "hparam_tuning_evaluation_metrics",
-			Kind: "object",
-			Fields: Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetricsFields,
-		},
-		"Hparams": ubx.FieldSpec{
-			WireName: "hparams",
-			Kind: "object",
-			Fields: Job_Statistics_Query_MlStatistics_HparamTrials_HparamsFields,
-		},
-		"StartTimeMs": ubx.FieldSpec{WireName: "start_time_ms"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"TrainingLoss": ubx.FieldSpec{WireName: "training_loss"},
-		"TrialId": ubx.FieldSpec{WireName: "trial_id"},
-	}
+	"EndTimeMs":    ubx.FieldSpec{WireName: "end_time_ms"},
+	"ErrorMessage": ubx.FieldSpec{WireName: "error_message"},
+	"EvalLoss":     ubx.FieldSpec{WireName: "eval_loss"},
+	"EvaluationMetrics": ubx.FieldSpec{
+		WireName: "evaluation_metrics",
+		Kind:     "object",
+		Fields:   Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetricsFields,
+	},
+	"HparamTuningEvaluationMetrics": ubx.FieldSpec{
+		WireName: "hparam_tuning_evaluation_metrics",
+		Kind:     "object",
+		Fields:   Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetricsFields,
+	},
+	"Hparams": ubx.FieldSpec{
+		WireName: "hparams",
+		Kind:     "object",
+		Fields:   Job_Statistics_Query_MlStatistics_HparamTrials_HparamsFields,
+	},
+	"StartTimeMs":  ubx.FieldSpec{WireName: "start_time_ms"},
+	"Status":       ubx.FieldSpec{WireName: "status"},
+	"TrainingLoss": ubx.FieldSpec{WireName: "training_loss"},
+	"TrialId":      ubx.FieldSpec{WireName: "trial_id"},
+}
 
 var Job_Statistics_Query_MlStatistics_IterationResults_ArimaResult_ArimaModelInfo_ArimaCoefficientsFields = ubx.FieldMap{
-		"AutoRegressiveCoefficients": ubx.FieldSpec{WireName: "auto_regressive_coefficients"},
-		"InterceptCoefficient": ubx.FieldSpec{WireName: "intercept_coefficient"},
-		"MovingAverageCoefficients": ubx.FieldSpec{WireName: "moving_average_coefficients"},
-	}
+	"AutoRegressiveCoefficients": ubx.FieldSpec{WireName: "auto_regressive_coefficients"},
+	"InterceptCoefficient":       ubx.FieldSpec{WireName: "intercept_coefficient"},
+	"MovingAverageCoefficients":  ubx.FieldSpec{WireName: "moving_average_coefficients"},
+}
 
 var Job_Statistics_Query_MlStatistics_IterationResults_ArimaResult_ArimaModelInfoFields = ubx.FieldMap{
-		"ArimaCoefficients": ubx.FieldSpec{
-			WireName: "arima_coefficients",
-			Kind: "object",
-			Fields: Job_Statistics_Query_MlStatistics_IterationResults_ArimaResult_ArimaModelInfo_ArimaCoefficientsFields,
-		},
-		"ArimaFittingMetrics": ubx.FieldSpec{
-			WireName: "arima_fitting_metrics",
-			Kind: "object",
-			Fields: Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ArimaForecastingMetrics_ArimaFittingMetricsFields,
-		},
-		"HasDrift": ubx.FieldSpec{WireName: "has_drift"},
-		"HasHolidayEffect": ubx.FieldSpec{WireName: "has_holiday_effect"},
-		"HasSpikesAndDips": ubx.FieldSpec{WireName: "has_spikes_and_dips"},
-		"HasStepChanges": ubx.FieldSpec{WireName: "has_step_changes"},
-		"NonSeasonalOrder": ubx.FieldSpec{
-			WireName: "non_seasonal_order",
-			Kind: "object",
-			Fields: Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ArimaForecastingMetrics_ArimaSingleModelForecastingMetrics_NonSeasonalOrderFields,
-		},
-		"SeasonalPeriods": ubx.FieldSpec{WireName: "seasonal_periods"},
-		"TimeSeriesId": ubx.FieldSpec{WireName: "time_series_id"},
-		"TimeSeriesIds": ubx.FieldSpec{WireName: "time_series_ids"},
-	}
+	"ArimaCoefficients": ubx.FieldSpec{
+		WireName: "arima_coefficients",
+		Kind:     "object",
+		Fields:   Job_Statistics_Query_MlStatistics_IterationResults_ArimaResult_ArimaModelInfo_ArimaCoefficientsFields,
+	},
+	"ArimaFittingMetrics": ubx.FieldSpec{
+		WireName: "arima_fitting_metrics",
+		Kind:     "object",
+		Fields:   Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ArimaForecastingMetrics_ArimaFittingMetricsFields,
+	},
+	"HasDrift":         ubx.FieldSpec{WireName: "has_drift"},
+	"HasHolidayEffect": ubx.FieldSpec{WireName: "has_holiday_effect"},
+	"HasSpikesAndDips": ubx.FieldSpec{WireName: "has_spikes_and_dips"},
+	"HasStepChanges":   ubx.FieldSpec{WireName: "has_step_changes"},
+	"NonSeasonalOrder": ubx.FieldSpec{
+		WireName: "non_seasonal_order",
+		Kind:     "object",
+		Fields:   Job_Statistics_Query_MlStatistics_HparamTrials_EvaluationMetrics_ArimaForecastingMetrics_ArimaSingleModelForecastingMetrics_NonSeasonalOrderFields,
+	},
+	"SeasonalPeriods": ubx.FieldSpec{WireName: "seasonal_periods"},
+	"TimeSeriesId":    ubx.FieldSpec{WireName: "time_series_id"},
+	"TimeSeriesIds":   ubx.FieldSpec{WireName: "time_series_ids"},
+}
 
 var Job_Statistics_Query_MlStatistics_IterationResults_ArimaResultFields = ubx.FieldMap{
-		"ArimaModelInfo": ubx.FieldSpec{
-			WireName: "arima_model_info",
-			Kind: "list",
-			Fields: Job_Statistics_Query_MlStatistics_IterationResults_ArimaResult_ArimaModelInfoFields,
-		},
-		"SeasonalPeriods": ubx.FieldSpec{WireName: "seasonal_periods"},
-	}
+	"ArimaModelInfo": ubx.FieldSpec{
+		WireName: "arima_model_info",
+		Kind:     "list",
+		Fields:   Job_Statistics_Query_MlStatistics_IterationResults_ArimaResult_ArimaModelInfoFields,
+	},
+	"SeasonalPeriods": ubx.FieldSpec{WireName: "seasonal_periods"},
+}
 
 var Job_Statistics_Query_MlStatistics_IterationResults_ClusterInfosFields = ubx.FieldMap{
-		"CentroidId": ubx.FieldSpec{WireName: "centroid_id"},
-		"ClusterRadius": ubx.FieldSpec{WireName: "cluster_radius"},
-		"ClusterSize": ubx.FieldSpec{WireName: "cluster_size"},
-	}
+	"CentroidId":    ubx.FieldSpec{WireName: "centroid_id"},
+	"ClusterRadius": ubx.FieldSpec{WireName: "cluster_radius"},
+	"ClusterSize":   ubx.FieldSpec{WireName: "cluster_size"},
+}
 
 var Job_Statistics_Query_MlStatistics_IterationResults_PrincipalComponentInfosFields = ubx.FieldMap{
-		"CumulativeExplainedVarianceRatio": ubx.FieldSpec{WireName: "cumulative_explained_variance_ratio"},
-		"ExplainedVariance": ubx.FieldSpec{WireName: "explained_variance"},
-		"ExplainedVarianceRatio": ubx.FieldSpec{WireName: "explained_variance_ratio"},
-		"PrincipalComponentId": ubx.FieldSpec{WireName: "principal_component_id"},
-	}
+	"CumulativeExplainedVarianceRatio": ubx.FieldSpec{WireName: "cumulative_explained_variance_ratio"},
+	"ExplainedVariance":                ubx.FieldSpec{WireName: "explained_variance"},
+	"ExplainedVarianceRatio":           ubx.FieldSpec{WireName: "explained_variance_ratio"},
+	"PrincipalComponentId":             ubx.FieldSpec{WireName: "principal_component_id"},
+}
 
 var Job_Statistics_Query_MlStatistics_IterationResultsFields = ubx.FieldMap{
-		"ArimaResult": ubx.FieldSpec{
-			WireName: "arima_result",
-			Kind: "object",
-			Fields: Job_Statistics_Query_MlStatistics_IterationResults_ArimaResultFields,
-		},
-		"ClusterInfos": ubx.FieldSpec{
-			WireName: "cluster_infos",
-			Kind: "list",
-			Fields: Job_Statistics_Query_MlStatistics_IterationResults_ClusterInfosFields,
-		},
-		"DurationMs": ubx.FieldSpec{WireName: "duration_ms"},
-		"EvalLoss": ubx.FieldSpec{WireName: "eval_loss"},
-		"Index": ubx.FieldSpec{WireName: "index"},
-		"LearnRate": ubx.FieldSpec{WireName: "learn_rate"},
-		"PrincipalComponentInfos": ubx.FieldSpec{
-			WireName: "principal_component_infos",
-			Kind: "list",
-			Fields: Job_Statistics_Query_MlStatistics_IterationResults_PrincipalComponentInfosFields,
-		},
-		"TrainingLoss": ubx.FieldSpec{WireName: "training_loss"},
-	}
+	"ArimaResult": ubx.FieldSpec{
+		WireName: "arima_result",
+		Kind:     "object",
+		Fields:   Job_Statistics_Query_MlStatistics_IterationResults_ArimaResultFields,
+	},
+	"ClusterInfos": ubx.FieldSpec{
+		WireName: "cluster_infos",
+		Kind:     "list",
+		Fields:   Job_Statistics_Query_MlStatistics_IterationResults_ClusterInfosFields,
+	},
+	"DurationMs": ubx.FieldSpec{WireName: "duration_ms"},
+	"EvalLoss":   ubx.FieldSpec{WireName: "eval_loss"},
+	"Index":      ubx.FieldSpec{WireName: "index"},
+	"LearnRate":  ubx.FieldSpec{WireName: "learn_rate"},
+	"PrincipalComponentInfos": ubx.FieldSpec{
+		WireName: "principal_component_infos",
+		Kind:     "list",
+		Fields:   Job_Statistics_Query_MlStatistics_IterationResults_PrincipalComponentInfosFields,
+	},
+	"TrainingLoss": ubx.FieldSpec{WireName: "training_loss"},
+}
 
 var Job_Statistics_Query_MlStatisticsFields = ubx.FieldMap{
-		"HparamTrials": ubx.FieldSpec{
-			WireName: "hparam_trials",
-			Kind: "list",
-			Fields: Job_Statistics_Query_MlStatistics_HparamTrialsFields,
-		},
-		"IterationResults": ubx.FieldSpec{
-			WireName: "iteration_results",
-			Kind: "list",
-			Fields: Job_Statistics_Query_MlStatistics_IterationResultsFields,
-		},
-		"MaxIterations": ubx.FieldSpec{WireName: "max_iterations"},
-		"ModelType": ubx.FieldSpec{WireName: "model_type"},
-		"TrainingType": ubx.FieldSpec{WireName: "training_type"},
-	}
+	"HparamTrials": ubx.FieldSpec{
+		WireName: "hparam_trials",
+		Kind:     "list",
+		Fields:   Job_Statistics_Query_MlStatistics_HparamTrialsFields,
+	},
+	"IterationResults": ubx.FieldSpec{
+		WireName: "iteration_results",
+		Kind:     "list",
+		Fields:   Job_Statistics_Query_MlStatistics_IterationResultsFields,
+	},
+	"MaxIterations": ubx.FieldSpec{WireName: "max_iterations"},
+	"ModelType":     ubx.FieldSpec{WireName: "model_type"},
+	"TrainingType":  ubx.FieldSpec{WireName: "training_type"},
+}
 
 var Job_Statistics_Query_ModelTrainingFields = ubx.FieldMap{
-		"CurrentIteration": ubx.FieldSpec{WireName: "current_iteration"},
-		"ExpectedTotalIterations": ubx.FieldSpec{WireName: "expected_total_iterations"},
-	}
+	"CurrentIteration":        ubx.FieldSpec{WireName: "current_iteration"},
+	"ExpectedTotalIterations": ubx.FieldSpec{WireName: "expected_total_iterations"},
+}
 
 var Job_Statistics_Query_ObjectStorageStatsFields = ubx.FieldMap{
-		"CacheBytesRead": ubx.FieldSpec{WireName: "cache_bytes_read"},
-		"CloudProvider": ubx.FieldSpec{WireName: "cloud_provider"},
-		"ObjectStorageBytesRead": ubx.FieldSpec{WireName: "object_storage_bytes_read"},
-	}
+	"CacheBytesRead":         ubx.FieldSpec{WireName: "cache_bytes_read"},
+	"CloudProvider":          ubx.FieldSpec{WireName: "cloud_provider"},
+	"ObjectStorageBytesRead": ubx.FieldSpec{WireName: "object_storage_bytes_read"},
+}
 
 var Job_Statistics_Query_PerformanceInsights_StagePerformanceChangeInsights_InputDataChangeFields = ubx.FieldMap{
-		"RecordsReadDiffPercentage": ubx.FieldSpec{WireName: "records_read_diff_percentage"},
-	}
+	"RecordsReadDiffPercentage": ubx.FieldSpec{WireName: "records_read_diff_percentage"},
+}
 
 var Job_Statistics_Query_PerformanceInsights_StagePerformanceChangeInsightsFields = ubx.FieldMap{
-		"InputDataChange": ubx.FieldSpec{
-			WireName: "input_data_change",
-			Kind: "object",
-			Fields: Job_Statistics_Query_PerformanceInsights_StagePerformanceChangeInsights_InputDataChangeFields,
-		},
-		"StageId": ubx.FieldSpec{WireName: "stage_id"},
-	}
+	"InputDataChange": ubx.FieldSpec{
+		WireName: "input_data_change",
+		Kind:     "object",
+		Fields:   Job_Statistics_Query_PerformanceInsights_StagePerformanceChangeInsights_InputDataChangeFields,
+	},
+	"StageId": ubx.FieldSpec{WireName: "stage_id"},
+}
 
 var Job_Statistics_Query_PerformanceInsights_StagePerformanceStandaloneInsights_HighCardinalityJoinsFields = ubx.FieldMap{
-		"LeftRows": ubx.FieldSpec{WireName: "left_rows"},
-		"OutputRows": ubx.FieldSpec{WireName: "output_rows"},
-		"RightRows": ubx.FieldSpec{WireName: "right_rows"},
-		"StepIndex": ubx.FieldSpec{WireName: "step_index"},
-	}
+	"LeftRows":   ubx.FieldSpec{WireName: "left_rows"},
+	"OutputRows": ubx.FieldSpec{WireName: "output_rows"},
+	"RightRows":  ubx.FieldSpec{WireName: "right_rows"},
+	"StepIndex":  ubx.FieldSpec{WireName: "step_index"},
+}
 
 var Job_Statistics_Query_PerformanceInsights_StagePerformanceStandaloneInsights_PartitionSkew_SkewSourcesFields = ubx.FieldMap{
-		"OutputBytesMax": ubx.FieldSpec{WireName: "output_bytes_max"},
-		"OutputBytesMedian": ubx.FieldSpec{WireName: "output_bytes_median"},
-		"OutputBytesP95": ubx.FieldSpec{WireName: "output_bytes_p95"},
-		"StageId": ubx.FieldSpec{WireName: "stage_id"},
-	}
+	"OutputBytesMax":    ubx.FieldSpec{WireName: "output_bytes_max"},
+	"OutputBytesMedian": ubx.FieldSpec{WireName: "output_bytes_median"},
+	"OutputBytesP95":    ubx.FieldSpec{WireName: "output_bytes_p95"},
+	"StageId":           ubx.FieldSpec{WireName: "stage_id"},
+}
 
 var Job_Statistics_Query_PerformanceInsights_StagePerformanceStandaloneInsights_PartitionSkewFields = ubx.FieldMap{
-		"SkewSources": ubx.FieldSpec{
-			WireName: "skew_sources",
-			Kind: "list",
-			Fields: Job_Statistics_Query_PerformanceInsights_StagePerformanceStandaloneInsights_PartitionSkew_SkewSourcesFields,
-		},
-	}
+	"SkewSources": ubx.FieldSpec{
+		WireName: "skew_sources",
+		Kind:     "list",
+		Fields:   Job_Statistics_Query_PerformanceInsights_StagePerformanceStandaloneInsights_PartitionSkew_SkewSourcesFields,
+	},
+}
 
 var Job_Statistics_Query_PerformanceInsights_StagePerformanceStandaloneInsightsFields = ubx.FieldMap{
-		"BiEngineReasons": ubx.FieldSpec{
-			WireName: "bi_engine_reasons",
-			Kind: "list",
-			Fields: Job_Statistics_Query_BiEngineStatistics_BiEngineReasonsFields,
-		},
-		"HighCardinalityJoins": ubx.FieldSpec{
-			WireName: "high_cardinality_joins",
-			Kind: "list",
-			Fields: Job_Statistics_Query_PerformanceInsights_StagePerformanceStandaloneInsights_HighCardinalityJoinsFields,
-		},
-		"InsufficientShuffleQuota": ubx.FieldSpec{WireName: "insufficient_shuffle_quota"},
-		"PartitionSkew": ubx.FieldSpec{
-			WireName: "partition_skew",
-			Kind: "object",
-			Fields: Job_Statistics_Query_PerformanceInsights_StagePerformanceStandaloneInsights_PartitionSkewFields,
-		},
-		"SlotContention": ubx.FieldSpec{WireName: "slot_contention"},
-		"StageId": ubx.FieldSpec{WireName: "stage_id"},
-	}
+	"BiEngineReasons": ubx.FieldSpec{
+		WireName: "bi_engine_reasons",
+		Kind:     "list",
+		Fields:   Job_Statistics_Query_BiEngineStatistics_BiEngineReasonsFields,
+	},
+	"HighCardinalityJoins": ubx.FieldSpec{
+		WireName: "high_cardinality_joins",
+		Kind:     "list",
+		Fields:   Job_Statistics_Query_PerformanceInsights_StagePerformanceStandaloneInsights_HighCardinalityJoinsFields,
+	},
+	"InsufficientShuffleQuota": ubx.FieldSpec{WireName: "insufficient_shuffle_quota"},
+	"PartitionSkew": ubx.FieldSpec{
+		WireName: "partition_skew",
+		Kind:     "object",
+		Fields:   Job_Statistics_Query_PerformanceInsights_StagePerformanceStandaloneInsights_PartitionSkewFields,
+	},
+	"SlotContention": ubx.FieldSpec{WireName: "slot_contention"},
+	"StageId":        ubx.FieldSpec{WireName: "stage_id"},
+}
 
 var Job_Statistics_Query_PerformanceInsights_TableChangeInsights_MetadataCacheStalenessInsightFields = ubx.FieldMap{
-		"AvgPreviousStalenessMs": ubx.FieldSpec{WireName: "avg_previous_staleness_ms"},
-		"StalenessPercentageIncrease": ubx.FieldSpec{WireName: "staleness_percentage_increase"},
-	}
+	"AvgPreviousStalenessMs":      ubx.FieldSpec{WireName: "avg_previous_staleness_ms"},
+	"StalenessPercentageIncrease": ubx.FieldSpec{WireName: "staleness_percentage_increase"},
+}
 
 var Job_Statistics_Query_PerformanceInsights_TableChangeInsightsFields = ubx.FieldMap{
-		"MetadataCacheNotUsedButUsedPreviously": ubx.FieldSpec{WireName: "metadata_cache_not_used_but_used_previously"},
-		"MetadataCacheStalenessInsight": ubx.FieldSpec{
-			WireName: "metadata_cache_staleness_insight",
-			Kind: "object",
-			Fields: Job_Statistics_Query_PerformanceInsights_TableChangeInsights_MetadataCacheStalenessInsightFields,
-		},
-		"TableReference": ubx.FieldSpec{
-			WireName: "table_reference",
-			Kind: "object",
-			Fields: Job_Configuration_Copy_DestinationTableFields,
-		},
-	}
+	"MetadataCacheNotUsedButUsedPreviously": ubx.FieldSpec{WireName: "metadata_cache_not_used_but_used_previously"},
+	"MetadataCacheStalenessInsight": ubx.FieldSpec{
+		WireName: "metadata_cache_staleness_insight",
+		Kind:     "object",
+		Fields:   Job_Statistics_Query_PerformanceInsights_TableChangeInsights_MetadataCacheStalenessInsightFields,
+	},
+	"TableReference": ubx.FieldSpec{
+		WireName: "table_reference",
+		Kind:     "object",
+		Fields:   Job_Configuration_Copy_DestinationTableFields,
+	},
+}
 
 var Job_Statistics_Query_PerformanceInsightsFields = ubx.FieldMap{
-		"AvgPreviousExecutionMs": ubx.FieldSpec{WireName: "avg_previous_execution_ms"},
-		"StagePerformanceChangeInsights": ubx.FieldSpec{
-			WireName: "stage_performance_change_insights",
-			Kind: "list",
-			Fields: Job_Statistics_Query_PerformanceInsights_StagePerformanceChangeInsightsFields,
-		},
-		"StagePerformanceStandaloneInsights": ubx.FieldSpec{
-			WireName: "stage_performance_standalone_insights",
-			Kind: "list",
-			Fields: Job_Statistics_Query_PerformanceInsights_StagePerformanceStandaloneInsightsFields,
-		},
-		"TableChangeInsights": ubx.FieldSpec{
-			WireName: "table_change_insights",
-			Kind: "list",
-			Fields: Job_Statistics_Query_PerformanceInsights_TableChangeInsightsFields,
-		},
-	}
+	"AvgPreviousExecutionMs": ubx.FieldSpec{WireName: "avg_previous_execution_ms"},
+	"StagePerformanceChangeInsights": ubx.FieldSpec{
+		WireName: "stage_performance_change_insights",
+		Kind:     "list",
+		Fields:   Job_Statistics_Query_PerformanceInsights_StagePerformanceChangeInsightsFields,
+	},
+	"StagePerformanceStandaloneInsights": ubx.FieldSpec{
+		WireName: "stage_performance_standalone_insights",
+		Kind:     "list",
+		Fields:   Job_Statistics_Query_PerformanceInsights_StagePerformanceStandaloneInsightsFields,
+	},
+	"TableChangeInsights": ubx.FieldSpec{
+		WireName: "table_change_insights",
+		Kind:     "list",
+		Fields:   Job_Statistics_Query_PerformanceInsights_TableChangeInsightsFields,
+	},
+}
 
 var Job_Statistics_Query_QueryInfoFields = ubx.FieldMap{
-		"OptimizationDetails": ubx.FieldSpec{WireName: "optimization_details"},
-	}
+	"OptimizationDetails": ubx.FieldSpec{WireName: "optimization_details"},
+}
 
 var Job_Statistics_Query_QueryPlan_StepsFields = ubx.FieldMap{
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Substeps": ubx.FieldSpec{WireName: "substeps"},
-	}
+	"Kind":     ubx.FieldSpec{WireName: "kind"},
+	"Substeps": ubx.FieldSpec{WireName: "substeps"},
+}
 
 var Job_Statistics_Query_QueryPlanFields = ubx.FieldMap{
-		"CompletedParallelInputs": ubx.FieldSpec{WireName: "completed_parallel_inputs"},
-		"ComputeMode": ubx.FieldSpec{WireName: "compute_mode"},
-		"ComputeMsAvg": ubx.FieldSpec{WireName: "compute_ms_avg"},
-		"ComputeMsMax": ubx.FieldSpec{WireName: "compute_ms_max"},
-		"ComputeRatioAvg": ubx.FieldSpec{WireName: "compute_ratio_avg"},
-		"ComputeRatioMax": ubx.FieldSpec{WireName: "compute_ratio_max"},
-		"EndMs": ubx.FieldSpec{WireName: "end_ms"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"InputStages": ubx.FieldSpec{WireName: "input_stages"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ParallelInputs": ubx.FieldSpec{WireName: "parallel_inputs"},
-		"ReadMsAvg": ubx.FieldSpec{WireName: "read_ms_avg"},
-		"ReadMsMax": ubx.FieldSpec{WireName: "read_ms_max"},
-		"ReadRatioAvg": ubx.FieldSpec{WireName: "read_ratio_avg"},
-		"ReadRatioMax": ubx.FieldSpec{WireName: "read_ratio_max"},
-		"RecordsRead": ubx.FieldSpec{WireName: "records_read"},
-		"RecordsWritten": ubx.FieldSpec{WireName: "records_written"},
-		"ShuffleOutputBytes": ubx.FieldSpec{WireName: "shuffle_output_bytes"},
-		"ShuffleOutputBytesSpilled": ubx.FieldSpec{WireName: "shuffle_output_bytes_spilled"},
-		"SlotMs": ubx.FieldSpec{WireName: "slot_ms"},
-		"StartMs": ubx.FieldSpec{WireName: "start_ms"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"Steps": ubx.FieldSpec{
-			WireName: "steps",
-			Kind: "list",
-			Fields: Job_Statistics_Query_QueryPlan_StepsFields,
-		},
-		"WaitMsAvg": ubx.FieldSpec{WireName: "wait_ms_avg"},
-		"WaitMsMax": ubx.FieldSpec{WireName: "wait_ms_max"},
-		"WaitRatioAvg": ubx.FieldSpec{WireName: "wait_ratio_avg"},
-		"WaitRatioMax": ubx.FieldSpec{WireName: "wait_ratio_max"},
-		"WriteMsAvg": ubx.FieldSpec{WireName: "write_ms_avg"},
-		"WriteMsMax": ubx.FieldSpec{WireName: "write_ms_max"},
-		"WriteRatioAvg": ubx.FieldSpec{WireName: "write_ratio_avg"},
-		"WriteRatioMax": ubx.FieldSpec{WireName: "write_ratio_max"},
-	}
+	"CompletedParallelInputs":   ubx.FieldSpec{WireName: "completed_parallel_inputs"},
+	"ComputeMode":               ubx.FieldSpec{WireName: "compute_mode"},
+	"ComputeMsAvg":              ubx.FieldSpec{WireName: "compute_ms_avg"},
+	"ComputeMsMax":              ubx.FieldSpec{WireName: "compute_ms_max"},
+	"ComputeRatioAvg":           ubx.FieldSpec{WireName: "compute_ratio_avg"},
+	"ComputeRatioMax":           ubx.FieldSpec{WireName: "compute_ratio_max"},
+	"EndMs":                     ubx.FieldSpec{WireName: "end_ms"},
+	"Id":                        ubx.FieldSpec{WireName: "id"},
+	"InputStages":               ubx.FieldSpec{WireName: "input_stages"},
+	"Name":                      ubx.FieldSpec{WireName: "name"},
+	"ParallelInputs":            ubx.FieldSpec{WireName: "parallel_inputs"},
+	"ReadMsAvg":                 ubx.FieldSpec{WireName: "read_ms_avg"},
+	"ReadMsMax":                 ubx.FieldSpec{WireName: "read_ms_max"},
+	"ReadRatioAvg":              ubx.FieldSpec{WireName: "read_ratio_avg"},
+	"ReadRatioMax":              ubx.FieldSpec{WireName: "read_ratio_max"},
+	"RecordsRead":               ubx.FieldSpec{WireName: "records_read"},
+	"RecordsWritten":            ubx.FieldSpec{WireName: "records_written"},
+	"ShuffleOutputBytes":        ubx.FieldSpec{WireName: "shuffle_output_bytes"},
+	"ShuffleOutputBytesSpilled": ubx.FieldSpec{WireName: "shuffle_output_bytes_spilled"},
+	"SlotMs":                    ubx.FieldSpec{WireName: "slot_ms"},
+	"StartMs":                   ubx.FieldSpec{WireName: "start_ms"},
+	"Status":                    ubx.FieldSpec{WireName: "status"},
+	"Steps": ubx.FieldSpec{
+		WireName: "steps",
+		Kind:     "list",
+		Fields:   Job_Statistics_Query_QueryPlan_StepsFields,
+	},
+	"WaitMsAvg":     ubx.FieldSpec{WireName: "wait_ms_avg"},
+	"WaitMsMax":     ubx.FieldSpec{WireName: "wait_ms_max"},
+	"WaitRatioAvg":  ubx.FieldSpec{WireName: "wait_ratio_avg"},
+	"WaitRatioMax":  ubx.FieldSpec{WireName: "wait_ratio_max"},
+	"WriteMsAvg":    ubx.FieldSpec{WireName: "write_ms_avg"},
+	"WriteMsMax":    ubx.FieldSpec{WireName: "write_ms_max"},
+	"WriteRatioAvg": ubx.FieldSpec{WireName: "write_ratio_avg"},
+	"WriteRatioMax": ubx.FieldSpec{WireName: "write_ratio_max"},
+}
 
 var Job_Statistics_Query_ReferencedPropertyGraphsFields = ubx.FieldMap{
-		"DatasetId": ubx.FieldSpec{WireName: "dataset_id"},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-		"PropertyGraphId": ubx.FieldSpec{WireName: "property_graph_id"},
-	}
+	"DatasetId":       ubx.FieldSpec{WireName: "dataset_id"},
+	"ProjectId":       ubx.FieldSpec{WireName: "project_id"},
+	"PropertyGraphId": ubx.FieldSpec{WireName: "property_graph_id"},
+}
 
 var Job_Statistics_Query_ReservationUsageFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SlotMs": ubx.FieldSpec{WireName: "slot_ms"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"SlotMs": ubx.FieldSpec{WireName: "slot_ms"},
+}
 
 var Job_Statistics_Query_SearchStatistics_IndexPruningStatsFields = ubx.FieldMap{
-		"BaseTable": ubx.FieldSpec{
-			WireName: "base_table",
-			Kind: "object",
-			Fields: Job_Configuration_Copy_DestinationTableFields,
-		},
-		"IndexId": ubx.FieldSpec{WireName: "index_id"},
-		"PostIndexPruningParallelInputCount": ubx.FieldSpec{WireName: "post_index_pruning_parallel_input_count"},
-		"PreIndexPruningParallelInputCount": ubx.FieldSpec{WireName: "pre_index_pruning_parallel_input_count"},
-	}
+	"BaseTable": ubx.FieldSpec{
+		WireName: "base_table",
+		Kind:     "object",
+		Fields:   Job_Configuration_Copy_DestinationTableFields,
+	},
+	"IndexId":                            ubx.FieldSpec{WireName: "index_id"},
+	"PostIndexPruningParallelInputCount": ubx.FieldSpec{WireName: "post_index_pruning_parallel_input_count"},
+	"PreIndexPruningParallelInputCount":  ubx.FieldSpec{WireName: "pre_index_pruning_parallel_input_count"},
+}
 
 var Job_Statistics_Query_SearchStatistics_IndexUnusedReasonsFields = ubx.FieldMap{
-		"BaseTable": ubx.FieldSpec{
-			WireName: "base_table",
-			Kind: "object",
-			Fields: Job_Configuration_Copy_DestinationTableFields,
-		},
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"IndexName": ubx.FieldSpec{WireName: "index_name"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"BaseTable": ubx.FieldSpec{
+		WireName: "base_table",
+		Kind:     "object",
+		Fields:   Job_Configuration_Copy_DestinationTableFields,
+	},
+	"Code":      ubx.FieldSpec{WireName: "code"},
+	"IndexName": ubx.FieldSpec{WireName: "index_name"},
+	"Message":   ubx.FieldSpec{WireName: "message"},
+}
 
 var Job_Statistics_Query_SearchStatisticsFields = ubx.FieldMap{
-		"IndexPruningStats": ubx.FieldSpec{
-			WireName: "index_pruning_stats",
-			Kind: "list",
-			Fields: Job_Statistics_Query_SearchStatistics_IndexPruningStatsFields,
-		},
-		"IndexUnusedReasons": ubx.FieldSpec{
-			WireName: "index_unused_reasons",
-			Kind: "list",
-			Fields: Job_Statistics_Query_SearchStatistics_IndexUnusedReasonsFields,
-		},
-		"IndexUsageMode": ubx.FieldSpec{WireName: "index_usage_mode"},
-	}
+	"IndexPruningStats": ubx.FieldSpec{
+		WireName: "index_pruning_stats",
+		Kind:     "list",
+		Fields:   Job_Statistics_Query_SearchStatistics_IndexPruningStatsFields,
+	},
+	"IndexUnusedReasons": ubx.FieldSpec{
+		WireName: "index_unused_reasons",
+		Kind:     "list",
+		Fields:   Job_Statistics_Query_SearchStatistics_IndexUnusedReasonsFields,
+	},
+	"IndexUsageMode": ubx.FieldSpec{WireName: "index_usage_mode"},
+}
 
 var Job_Statistics_Query_SparkStatistics_LoggingInfoFields = ubx.FieldMap{
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
-	}
+	"ProjectId":    ubx.FieldSpec{WireName: "project_id"},
+	"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
+}
 
 var Job_Statistics_Query_SparkStatisticsFields = ubx.FieldMap{
-		"Endpoints": ubx.FieldSpec{WireName: "endpoints"},
-		"GcsStagingBucket": ubx.FieldSpec{WireName: "gcs_staging_bucket"},
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-		"LoggingInfo": ubx.FieldSpec{
-			WireName: "logging_info",
-			Kind: "object",
-			Fields: Job_Statistics_Query_SparkStatistics_LoggingInfoFields,
-		},
-		"SparkJobId": ubx.FieldSpec{WireName: "spark_job_id"},
-		"SparkJobLocation": ubx.FieldSpec{WireName: "spark_job_location"},
-	}
+	"Endpoints":        ubx.FieldSpec{WireName: "endpoints"},
+	"GcsStagingBucket": ubx.FieldSpec{WireName: "gcs_staging_bucket"},
+	"KmsKeyName":       ubx.FieldSpec{WireName: "kms_key_name"},
+	"LoggingInfo": ubx.FieldSpec{
+		WireName: "logging_info",
+		Kind:     "object",
+		Fields:   Job_Statistics_Query_SparkStatistics_LoggingInfoFields,
+	},
+	"SparkJobId":       ubx.FieldSpec{WireName: "spark_job_id"},
+	"SparkJobLocation": ubx.FieldSpec{WireName: "spark_job_location"},
+}
 
 var Job_Statistics_Query_VectorSearchStatistics_StoredColumnsUsages_StoredColumnsUnusedReasonsFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-		"UncoveredColumns": ubx.FieldSpec{WireName: "uncovered_columns"},
-	}
+	"Code":             ubx.FieldSpec{WireName: "code"},
+	"Message":          ubx.FieldSpec{WireName: "message"},
+	"UncoveredColumns": ubx.FieldSpec{WireName: "uncovered_columns"},
+}
 
 var Job_Statistics_Query_VectorSearchStatistics_StoredColumnsUsagesFields = ubx.FieldMap{
-		"BaseTable": ubx.FieldSpec{
-			WireName: "base_table",
-			Kind: "object",
-			Fields: Job_Configuration_Copy_DestinationTableFields,
-		},
-		"IsQueryAccelerated": ubx.FieldSpec{WireName: "is_query_accelerated"},
-		"StoredColumnsUnusedReasons": ubx.FieldSpec{
-			WireName: "stored_columns_unused_reasons",
-			Kind: "list",
-			Fields: Job_Statistics_Query_VectorSearchStatistics_StoredColumnsUsages_StoredColumnsUnusedReasonsFields,
-		},
-	}
+	"BaseTable": ubx.FieldSpec{
+		WireName: "base_table",
+		Kind:     "object",
+		Fields:   Job_Configuration_Copy_DestinationTableFields,
+	},
+	"IsQueryAccelerated": ubx.FieldSpec{WireName: "is_query_accelerated"},
+	"StoredColumnsUnusedReasons": ubx.FieldSpec{
+		WireName: "stored_columns_unused_reasons",
+		Kind:     "list",
+		Fields:   Job_Statistics_Query_VectorSearchStatistics_StoredColumnsUsages_StoredColumnsUnusedReasonsFields,
+	},
+}
 
 var Job_Statistics_Query_VectorSearchStatisticsFields = ubx.FieldMap{
-		"IndexUnusedReasons": ubx.FieldSpec{
-			WireName: "index_unused_reasons",
-			Kind: "list",
-			Fields: Job_Statistics_Query_SearchStatistics_IndexUnusedReasonsFields,
-		},
-		"IndexUsageMode": ubx.FieldSpec{WireName: "index_usage_mode"},
-		"StoredColumnsUsages": ubx.FieldSpec{
-			WireName: "stored_columns_usages",
-			Kind: "list",
-			Fields: Job_Statistics_Query_VectorSearchStatistics_StoredColumnsUsagesFields,
-		},
-	}
+	"IndexUnusedReasons": ubx.FieldSpec{
+		WireName: "index_unused_reasons",
+		Kind:     "list",
+		Fields:   Job_Statistics_Query_SearchStatistics_IndexUnusedReasonsFields,
+	},
+	"IndexUsageMode": ubx.FieldSpec{WireName: "index_usage_mode"},
+	"StoredColumnsUsages": ubx.FieldSpec{
+		WireName: "stored_columns_usages",
+		Kind:     "list",
+		Fields:   Job_Statistics_Query_VectorSearchStatistics_StoredColumnsUsagesFields,
+	},
+}
 
 var Job_Statistics_QueryFields = ubx.FieldMap{
-		"BiEngineStatistics": ubx.FieldSpec{
-			WireName: "bi_engine_statistics",
-			Kind: "object",
-			Fields: Job_Statistics_Query_BiEngineStatisticsFields,
-		},
-		"BillingTier": ubx.FieldSpec{WireName: "billing_tier"},
-		"CacheHit": ubx.FieldSpec{WireName: "cache_hit"},
-		"DclTargetDataset": ubx.FieldSpec{
-			WireName: "dcl_target_dataset",
-			Kind: "object",
-			Fields: Job_Configuration_Query_DefaultDatasetFields,
-		},
-		"DclTargetTable": ubx.FieldSpec{
-			WireName: "dcl_target_table",
-			Kind: "object",
-			Fields: Job_Configuration_Copy_DestinationTableFields,
-		},
-		"DclTargetView": ubx.FieldSpec{
-			WireName: "dcl_target_view",
-			Kind: "object",
-			Fields: Job_Configuration_Copy_DestinationTableFields,
-		},
-		"DdlAffectedRowAccessPolicyCount": ubx.FieldSpec{WireName: "ddl_affected_row_access_policy_count"},
-		"DdlDestinationTable": ubx.FieldSpec{
-			WireName: "ddl_destination_table",
-			Kind: "object",
-			Fields: Job_Configuration_Copy_DestinationTableFields,
-		},
-		"DdlOperationPerformed": ubx.FieldSpec{WireName: "ddl_operation_performed"},
-		"DdlTargetDataset": ubx.FieldSpec{
-			WireName: "ddl_target_dataset",
-			Kind: "object",
-			Fields: Job_Configuration_Query_DefaultDatasetFields,
-		},
-		"DdlTargetRoutine": ubx.FieldSpec{
-			WireName: "ddl_target_routine",
-			Kind: "object",
-			Fields: Job_Statistics_Query_DdlTargetRoutineFields,
-		},
-		"DdlTargetRowAccessPolicy": ubx.FieldSpec{
-			WireName: "ddl_target_row_access_policy",
-			Kind: "object",
-			Fields: Job_Statistics_Query_DdlTargetRowAccessPolicyFields,
-		},
-		"DdlTargetTable": ubx.FieldSpec{
-			WireName: "ddl_target_table",
-			Kind: "object",
-			Fields: Job_Configuration_Copy_DestinationTableFields,
-		},
-		"DmlStats": ubx.FieldSpec{
-			WireName: "dml_stats",
-			Kind: "object",
-			Fields: Job_Statistics_Query_DmlStatsFields,
-		},
-		"EstimatedBytesProcessed": ubx.FieldSpec{WireName: "estimated_bytes_processed"},
-		"ExportDataStatistics": ubx.FieldSpec{
-			WireName: "export_data_statistics",
-			Kind: "object",
-			Fields: Job_Statistics_Query_ExportDataStatisticsFields,
-		},
-		"ExternalServiceCosts": ubx.FieldSpec{
-			WireName: "external_service_costs",
-			Kind: "list",
-			Fields: Job_Statistics_Query_ExternalServiceCostsFields,
-		},
-		"GenAiStats": ubx.FieldSpec{
-			WireName: "gen_ai_stats",
-			Kind: "object",
-			Fields: Job_Statistics_Query_GenAiStatsFields,
-		},
-		"IncrementalResultStats": ubx.FieldSpec{
-			WireName: "incremental_result_stats",
-			Kind: "object",
-			Fields: Job_Statistics_Query_IncrementalResultStatsFields,
-		},
-		"LoadQueryStatistics": ubx.FieldSpec{
-			WireName: "load_query_statistics",
-			Kind: "object",
-			Fields: Job_Statistics_Query_LoadQueryStatisticsFields,
-		},
-		"MaterializedViewStatistics": ubx.FieldSpec{
-			WireName: "materialized_view_statistics",
-			Kind: "object",
-			Fields: Job_Statistics_Query_MaterializedViewStatisticsFields,
-		},
-		"MetadataCacheStatistics": ubx.FieldSpec{
-			WireName: "metadata_cache_statistics",
-			Kind: "object",
-			Fields: Job_Statistics_Query_MetadataCacheStatisticsFields,
-		},
-		"MlStatistics": ubx.FieldSpec{
-			WireName: "ml_statistics",
-			Kind: "object",
-			Fields: Job_Statistics_Query_MlStatisticsFields,
-		},
-		"ModelTraining": ubx.FieldSpec{
-			WireName: "model_training",
-			Kind: "object",
-			Fields: Job_Statistics_Query_ModelTrainingFields,
-		},
-		"ModelTrainingCurrentIteration": ubx.FieldSpec{WireName: "model_training_current_iteration"},
-		"ModelTrainingExpectedTotalIteration": ubx.FieldSpec{WireName: "model_training_expected_total_iteration"},
-		"NumDmlAffectedRows": ubx.FieldSpec{WireName: "num_dml_affected_rows"},
-		"ObjectStorageStats": ubx.FieldSpec{
-			WireName: "object_storage_stats",
-			Kind: "list",
-			Fields: Job_Statistics_Query_ObjectStorageStatsFields,
-		},
-		"PerformanceInsights": ubx.FieldSpec{
-			WireName: "performance_insights",
-			Kind: "object",
-			Fields: Job_Statistics_Query_PerformanceInsightsFields,
-		},
-		"QueryInfo": ubx.FieldSpec{
-			WireName: "query_info",
-			Kind: "object",
-			Fields: Job_Statistics_Query_QueryInfoFields,
-		},
-		"QueryPlan": ubx.FieldSpec{
-			WireName: "query_plan",
-			Kind: "list",
-			Fields: Job_Statistics_Query_QueryPlanFields,
-		},
-		"ReferencedPropertyGraphs": ubx.FieldSpec{
-			WireName: "referenced_property_graphs",
-			Kind: "list",
-			Fields: Job_Statistics_Query_ReferencedPropertyGraphsFields,
-		},
-		"ReferencedRoutines": ubx.FieldSpec{
-			WireName: "referenced_routines",
-			Kind: "list",
-			Fields: Job_Statistics_Query_DdlTargetRoutineFields,
-		},
-		"ReferencedTables": ubx.FieldSpec{
-			WireName: "referenced_tables",
-			Kind: "list",
-			Fields: Job_Configuration_Copy_DestinationTableFields,
-		},
-		"ReservationUsage": ubx.FieldSpec{
-			WireName: "reservation_usage",
-			Kind: "list",
-			Fields: Job_Statistics_Query_ReservationUsageFields,
-		},
-		"Schema": ubx.FieldSpec{
-			WireName: "schema",
-			Kind: "object",
-			Fields: Job_Configuration_Load_SchemaFields,
-		},
-		"SearchStatistics": ubx.FieldSpec{
-			WireName: "search_statistics",
-			Kind: "object",
-			Fields: Job_Statistics_Query_SearchStatisticsFields,
-		},
-		"SparkStatistics": ubx.FieldSpec{
-			WireName: "spark_statistics",
-			Kind: "object",
-			Fields: Job_Statistics_Query_SparkStatisticsFields,
-		},
-		"StatementType": ubx.FieldSpec{WireName: "statement_type"},
-		"Timeline": ubx.FieldSpec{
-			WireName: "timeline",
-			Kind: "list",
-			Fields: Job_Statistics_Extract_TimelineFields,
-		},
-		"TotalBytesBilled": ubx.FieldSpec{WireName: "total_bytes_billed"},
-		"TotalBytesProcessed": ubx.FieldSpec{WireName: "total_bytes_processed"},
-		"TotalBytesProcessedAccuracy": ubx.FieldSpec{WireName: "total_bytes_processed_accuracy"},
-		"TotalPartitionsProcessed": ubx.FieldSpec{WireName: "total_partitions_processed"},
-		"TotalServicesSkuSlotMs": ubx.FieldSpec{WireName: "total_services_sku_slot_ms"},
-		"TotalSlotMs": ubx.FieldSpec{WireName: "total_slot_ms"},
-		"TransferredBytes": ubx.FieldSpec{WireName: "transferred_bytes"},
-		"UndeclaredQueryParameters": ubx.FieldSpec{
-			WireName: "undeclared_query_parameters",
-			Kind: "list",
-			Fields: Job_Configuration_Query_QueryParametersFields,
-		},
-		"VectorSearchStatistics": ubx.FieldSpec{
-			WireName: "vector_search_statistics",
-			Kind: "object",
-			Fields: Job_Statistics_Query_VectorSearchStatisticsFields,
-		},
-	}
+	"BiEngineStatistics": ubx.FieldSpec{
+		WireName: "bi_engine_statistics",
+		Kind:     "object",
+		Fields:   Job_Statistics_Query_BiEngineStatisticsFields,
+	},
+	"BillingTier": ubx.FieldSpec{WireName: "billing_tier"},
+	"CacheHit":    ubx.FieldSpec{WireName: "cache_hit"},
+	"DclTargetDataset": ubx.FieldSpec{
+		WireName: "dcl_target_dataset",
+		Kind:     "object",
+		Fields:   Job_Configuration_Query_DefaultDatasetFields,
+	},
+	"DclTargetTable": ubx.FieldSpec{
+		WireName: "dcl_target_table",
+		Kind:     "object",
+		Fields:   Job_Configuration_Copy_DestinationTableFields,
+	},
+	"DclTargetView": ubx.FieldSpec{
+		WireName: "dcl_target_view",
+		Kind:     "object",
+		Fields:   Job_Configuration_Copy_DestinationTableFields,
+	},
+	"DdlAffectedRowAccessPolicyCount": ubx.FieldSpec{WireName: "ddl_affected_row_access_policy_count"},
+	"DdlDestinationTable": ubx.FieldSpec{
+		WireName: "ddl_destination_table",
+		Kind:     "object",
+		Fields:   Job_Configuration_Copy_DestinationTableFields,
+	},
+	"DdlOperationPerformed": ubx.FieldSpec{WireName: "ddl_operation_performed"},
+	"DdlTargetDataset": ubx.FieldSpec{
+		WireName: "ddl_target_dataset",
+		Kind:     "object",
+		Fields:   Job_Configuration_Query_DefaultDatasetFields,
+	},
+	"DdlTargetRoutine": ubx.FieldSpec{
+		WireName: "ddl_target_routine",
+		Kind:     "object",
+		Fields:   Job_Statistics_Query_DdlTargetRoutineFields,
+	},
+	"DdlTargetRowAccessPolicy": ubx.FieldSpec{
+		WireName: "ddl_target_row_access_policy",
+		Kind:     "object",
+		Fields:   Job_Statistics_Query_DdlTargetRowAccessPolicyFields,
+	},
+	"DdlTargetTable": ubx.FieldSpec{
+		WireName: "ddl_target_table",
+		Kind:     "object",
+		Fields:   Job_Configuration_Copy_DestinationTableFields,
+	},
+	"DmlStats": ubx.FieldSpec{
+		WireName: "dml_stats",
+		Kind:     "object",
+		Fields:   Job_Statistics_Query_DmlStatsFields,
+	},
+	"EstimatedBytesProcessed": ubx.FieldSpec{WireName: "estimated_bytes_processed"},
+	"ExportDataStatistics": ubx.FieldSpec{
+		WireName: "export_data_statistics",
+		Kind:     "object",
+		Fields:   Job_Statistics_Query_ExportDataStatisticsFields,
+	},
+	"ExternalServiceCosts": ubx.FieldSpec{
+		WireName: "external_service_costs",
+		Kind:     "list",
+		Fields:   Job_Statistics_Query_ExternalServiceCostsFields,
+	},
+	"GenAiStats": ubx.FieldSpec{
+		WireName: "gen_ai_stats",
+		Kind:     "object",
+		Fields:   Job_Statistics_Query_GenAiStatsFields,
+	},
+	"IncrementalResultStats": ubx.FieldSpec{
+		WireName: "incremental_result_stats",
+		Kind:     "object",
+		Fields:   Job_Statistics_Query_IncrementalResultStatsFields,
+	},
+	"LoadQueryStatistics": ubx.FieldSpec{
+		WireName: "load_query_statistics",
+		Kind:     "object",
+		Fields:   Job_Statistics_Query_LoadQueryStatisticsFields,
+	},
+	"MaterializedViewStatistics": ubx.FieldSpec{
+		WireName: "materialized_view_statistics",
+		Kind:     "object",
+		Fields:   Job_Statistics_Query_MaterializedViewStatisticsFields,
+	},
+	"MetadataCacheStatistics": ubx.FieldSpec{
+		WireName: "metadata_cache_statistics",
+		Kind:     "object",
+		Fields:   Job_Statistics_Query_MetadataCacheStatisticsFields,
+	},
+	"MlStatistics": ubx.FieldSpec{
+		WireName: "ml_statistics",
+		Kind:     "object",
+		Fields:   Job_Statistics_Query_MlStatisticsFields,
+	},
+	"ModelTraining": ubx.FieldSpec{
+		WireName: "model_training",
+		Kind:     "object",
+		Fields:   Job_Statistics_Query_ModelTrainingFields,
+	},
+	"ModelTrainingCurrentIteration":       ubx.FieldSpec{WireName: "model_training_current_iteration"},
+	"ModelTrainingExpectedTotalIteration": ubx.FieldSpec{WireName: "model_training_expected_total_iteration"},
+	"NumDmlAffectedRows":                  ubx.FieldSpec{WireName: "num_dml_affected_rows"},
+	"ObjectStorageStats": ubx.FieldSpec{
+		WireName: "object_storage_stats",
+		Kind:     "list",
+		Fields:   Job_Statistics_Query_ObjectStorageStatsFields,
+	},
+	"PerformanceInsights": ubx.FieldSpec{
+		WireName: "performance_insights",
+		Kind:     "object",
+		Fields:   Job_Statistics_Query_PerformanceInsightsFields,
+	},
+	"QueryInfo": ubx.FieldSpec{
+		WireName: "query_info",
+		Kind:     "object",
+		Fields:   Job_Statistics_Query_QueryInfoFields,
+	},
+	"QueryPlan": ubx.FieldSpec{
+		WireName: "query_plan",
+		Kind:     "list",
+		Fields:   Job_Statistics_Query_QueryPlanFields,
+	},
+	"ReferencedPropertyGraphs": ubx.FieldSpec{
+		WireName: "referenced_property_graphs",
+		Kind:     "list",
+		Fields:   Job_Statistics_Query_ReferencedPropertyGraphsFields,
+	},
+	"ReferencedRoutines": ubx.FieldSpec{
+		WireName: "referenced_routines",
+		Kind:     "list",
+		Fields:   Job_Statistics_Query_DdlTargetRoutineFields,
+	},
+	"ReferencedTables": ubx.FieldSpec{
+		WireName: "referenced_tables",
+		Kind:     "list",
+		Fields:   Job_Configuration_Copy_DestinationTableFields,
+	},
+	"ReservationUsage": ubx.FieldSpec{
+		WireName: "reservation_usage",
+		Kind:     "list",
+		Fields:   Job_Statistics_Query_ReservationUsageFields,
+	},
+	"Schema": ubx.FieldSpec{
+		WireName: "schema",
+		Kind:     "object",
+		Fields:   Job_Configuration_Load_SchemaFields,
+	},
+	"SearchStatistics": ubx.FieldSpec{
+		WireName: "search_statistics",
+		Kind:     "object",
+		Fields:   Job_Statistics_Query_SearchStatisticsFields,
+	},
+	"SparkStatistics": ubx.FieldSpec{
+		WireName: "spark_statistics",
+		Kind:     "object",
+		Fields:   Job_Statistics_Query_SparkStatisticsFields,
+	},
+	"StatementType": ubx.FieldSpec{WireName: "statement_type"},
+	"Timeline": ubx.FieldSpec{
+		WireName: "timeline",
+		Kind:     "list",
+		Fields:   Job_Statistics_Extract_TimelineFields,
+	},
+	"TotalBytesBilled":            ubx.FieldSpec{WireName: "total_bytes_billed"},
+	"TotalBytesProcessed":         ubx.FieldSpec{WireName: "total_bytes_processed"},
+	"TotalBytesProcessedAccuracy": ubx.FieldSpec{WireName: "total_bytes_processed_accuracy"},
+	"TotalPartitionsProcessed":    ubx.FieldSpec{WireName: "total_partitions_processed"},
+	"TotalServicesSkuSlotMs":      ubx.FieldSpec{WireName: "total_services_sku_slot_ms"},
+	"TotalSlotMs":                 ubx.FieldSpec{WireName: "total_slot_ms"},
+	"TransferredBytes":            ubx.FieldSpec{WireName: "transferred_bytes"},
+	"UndeclaredQueryParameters": ubx.FieldSpec{
+		WireName: "undeclared_query_parameters",
+		Kind:     "list",
+		Fields:   Job_Configuration_Query_QueryParametersFields,
+	},
+	"VectorSearchStatistics": ubx.FieldSpec{
+		WireName: "vector_search_statistics",
+		Kind:     "object",
+		Fields:   Job_Statistics_Query_VectorSearchStatisticsFields,
+	},
+}
 
 var Job_Statistics_RowLevelSecurityStatisticsFields = ubx.FieldMap{
-		"RowLevelSecurityApplied": ubx.FieldSpec{WireName: "row_level_security_applied"},
-	}
+	"RowLevelSecurityApplied": ubx.FieldSpec{WireName: "row_level_security_applied"},
+}
 
 var Job_Statistics_ScriptStatistics_StackFramesFields = ubx.FieldMap{
-		"EndColumn": ubx.FieldSpec{WireName: "end_column"},
-		"EndLine": ubx.FieldSpec{WireName: "end_line"},
-		"ProcedureId": ubx.FieldSpec{WireName: "procedure_id"},
-		"StartColumn": ubx.FieldSpec{WireName: "start_column"},
-		"StartLine": ubx.FieldSpec{WireName: "start_line"},
-		"Text": ubx.FieldSpec{WireName: "text"},
-	}
+	"EndColumn":   ubx.FieldSpec{WireName: "end_column"},
+	"EndLine":     ubx.FieldSpec{WireName: "end_line"},
+	"ProcedureId": ubx.FieldSpec{WireName: "procedure_id"},
+	"StartColumn": ubx.FieldSpec{WireName: "start_column"},
+	"StartLine":   ubx.FieldSpec{WireName: "start_line"},
+	"Text":        ubx.FieldSpec{WireName: "text"},
+}
 
 var Job_Statistics_ScriptStatisticsFields = ubx.FieldMap{
-		"EvaluationKind": ubx.FieldSpec{WireName: "evaluation_kind"},
-		"StackFrames": ubx.FieldSpec{
-			WireName: "stack_frames",
-			Kind: "list",
-			Fields: Job_Statistics_ScriptStatistics_StackFramesFields,
-		},
-	}
+	"EvaluationKind": ubx.FieldSpec{WireName: "evaluation_kind"},
+	"StackFrames": ubx.FieldSpec{
+		WireName: "stack_frames",
+		Kind:     "list",
+		Fields:   Job_Statistics_ScriptStatistics_StackFramesFields,
+	},
+}
 
 var Job_Statistics_SessionInfoFields = ubx.FieldMap{
-		"SessionId": ubx.FieldSpec{WireName: "session_id"},
-	}
+	"SessionId": ubx.FieldSpec{WireName: "session_id"},
+}
 
 var Job_Statistics_TransactionInfoFields = ubx.FieldMap{
-		"TransactionId": ubx.FieldSpec{WireName: "transaction_id"},
-	}
+	"TransactionId": ubx.FieldSpec{WireName: "transaction_id"},
+}
 
 var Job_StatisticsFields = ubx.FieldMap{
-		"CompletionRatio": ubx.FieldSpec{WireName: "completion_ratio"},
-		"Copy": ubx.FieldSpec{
-			WireName: "copy",
-			Kind: "object",
-			Fields: Job_Statistics_CopyFields,
-		},
-		"CreationTime": ubx.FieldSpec{WireName: "creation_time"},
-		"DataMaskingStatistics": ubx.FieldSpec{
-			WireName: "data_masking_statistics",
-			Kind: "object",
-			Fields: Job_Statistics_DataMaskingStatisticsFields,
-		},
-		"Edition": ubx.FieldSpec{WireName: "edition"},
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"Extract": ubx.FieldSpec{
-			WireName: "extract",
-			Kind: "object",
-			Fields: Job_Statistics_ExtractFields,
-		},
-		"FinalExecutionDurationMs": ubx.FieldSpec{WireName: "final_execution_duration_ms"},
-		"GlobalQueryRemoteRegions": ubx.FieldSpec{WireName: "global_query_remote_regions"},
-		"Load": ubx.FieldSpec{
-			WireName: "load",
-			Kind: "object",
-			Fields: Job_Statistics_LoadFields,
-		},
-		"NumChildJobs": ubx.FieldSpec{WireName: "num_child_jobs"},
-		"ParentGlobalQueryJob": ubx.FieldSpec{
-			WireName: "parent_global_query_job",
-			Kind: "object",
-			Fields: Job_JobReferenceFields,
-		},
-		"ParentJobId": ubx.FieldSpec{WireName: "parent_job_id"},
-		"Query": ubx.FieldSpec{
-			WireName: "query",
-			Kind: "object",
-			Fields: Job_Statistics_QueryFields,
-		},
-		"QuotaDeferments": ubx.FieldSpec{WireName: "quota_deferments"},
-		"ReservationGroupPath": ubx.FieldSpec{WireName: "reservation_group_path"},
-		"ReservationId": ubx.FieldSpec{WireName: "reservation_id"},
-		"ReservationUsage": ubx.FieldSpec{
-			WireName: "reservation_usage",
-			Kind: "list",
-			Fields: Job_Statistics_Query_ReservationUsageFields,
-		},
-		"RowLevelSecurityStatistics": ubx.FieldSpec{
-			WireName: "row_level_security_statistics",
-			Kind: "object",
-			Fields: Job_Statistics_RowLevelSecurityStatisticsFields,
-		},
-		"ScriptStatistics": ubx.FieldSpec{
-			WireName: "script_statistics",
-			Kind: "object",
-			Fields: Job_Statistics_ScriptStatisticsFields,
-		},
-		"SessionInfo": ubx.FieldSpec{
-			WireName: "session_info",
-			Kind: "object",
-			Fields: Job_Statistics_SessionInfoFields,
-		},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"TotalBytesProcessed": ubx.FieldSpec{WireName: "total_bytes_processed"},
-		"TotalSlotMs": ubx.FieldSpec{WireName: "total_slot_ms"},
-		"TransactionInfo": ubx.FieldSpec{
-			WireName: "transaction_info",
-			Kind: "object",
-			Fields: Job_Statistics_TransactionInfoFields,
-		},
-	}
+	"CompletionRatio": ubx.FieldSpec{WireName: "completion_ratio"},
+	"Copy": ubx.FieldSpec{
+		WireName: "copy",
+		Kind:     "object",
+		Fields:   Job_Statistics_CopyFields,
+	},
+	"CreationTime": ubx.FieldSpec{WireName: "creation_time"},
+	"DataMaskingStatistics": ubx.FieldSpec{
+		WireName: "data_masking_statistics",
+		Kind:     "object",
+		Fields:   Job_Statistics_DataMaskingStatisticsFields,
+	},
+	"Edition": ubx.FieldSpec{WireName: "edition"},
+	"EndTime": ubx.FieldSpec{WireName: "end_time"},
+	"Extract": ubx.FieldSpec{
+		WireName: "extract",
+		Kind:     "object",
+		Fields:   Job_Statistics_ExtractFields,
+	},
+	"FinalExecutionDurationMs": ubx.FieldSpec{WireName: "final_execution_duration_ms"},
+	"GlobalQueryRemoteRegions": ubx.FieldSpec{WireName: "global_query_remote_regions"},
+	"Load": ubx.FieldSpec{
+		WireName: "load",
+		Kind:     "object",
+		Fields:   Job_Statistics_LoadFields,
+	},
+	"NumChildJobs": ubx.FieldSpec{WireName: "num_child_jobs"},
+	"ParentGlobalQueryJob": ubx.FieldSpec{
+		WireName: "parent_global_query_job",
+		Kind:     "object",
+		Fields:   Job_JobReferenceFields,
+	},
+	"ParentJobId": ubx.FieldSpec{WireName: "parent_job_id"},
+	"Query": ubx.FieldSpec{
+		WireName: "query",
+		Kind:     "object",
+		Fields:   Job_Statistics_QueryFields,
+	},
+	"QuotaDeferments":      ubx.FieldSpec{WireName: "quota_deferments"},
+	"ReservationGroupPath": ubx.FieldSpec{WireName: "reservation_group_path"},
+	"ReservationId":        ubx.FieldSpec{WireName: "reservation_id"},
+	"ReservationUsage": ubx.FieldSpec{
+		WireName: "reservation_usage",
+		Kind:     "list",
+		Fields:   Job_Statistics_Query_ReservationUsageFields,
+	},
+	"RowLevelSecurityStatistics": ubx.FieldSpec{
+		WireName: "row_level_security_statistics",
+		Kind:     "object",
+		Fields:   Job_Statistics_RowLevelSecurityStatisticsFields,
+	},
+	"ScriptStatistics": ubx.FieldSpec{
+		WireName: "script_statistics",
+		Kind:     "object",
+		Fields:   Job_Statistics_ScriptStatisticsFields,
+	},
+	"SessionInfo": ubx.FieldSpec{
+		WireName: "session_info",
+		Kind:     "object",
+		Fields:   Job_Statistics_SessionInfoFields,
+	},
+	"StartTime":           ubx.FieldSpec{WireName: "start_time"},
+	"TotalBytesProcessed": ubx.FieldSpec{WireName: "total_bytes_processed"},
+	"TotalSlotMs":         ubx.FieldSpec{WireName: "total_slot_ms"},
+	"TransactionInfo": ubx.FieldSpec{
+		WireName: "transaction_info",
+		Kind:     "object",
+		Fields:   Job_Statistics_TransactionInfoFields,
+	},
+}
 
 var Job_Status_ErrorResultFields = ubx.FieldMap{
-		"DebugInfo": ubx.FieldSpec{WireName: "debug_info"},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-		"Reason": ubx.FieldSpec{WireName: "reason"},
-	}
+	"DebugInfo": ubx.FieldSpec{WireName: "debug_info"},
+	"Location":  ubx.FieldSpec{WireName: "location"},
+	"Message":   ubx.FieldSpec{WireName: "message"},
+	"Reason":    ubx.FieldSpec{WireName: "reason"},
+}
 
 var Job_StatusFields = ubx.FieldMap{
-		"ErrorResult": ubx.FieldSpec{
-			WireName: "error_result",
-			Kind: "object",
-			Fields: Job_Status_ErrorResultFields,
-		},
-		"Errors": ubx.FieldSpec{
-			WireName: "errors",
-			Kind: "list",
-			Fields: Job_Status_ErrorResultFields,
-		},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"ErrorResult": ubx.FieldSpec{
+		WireName: "error_result",
+		Kind:     "object",
+		Fields:   Job_Status_ErrorResultFields,
+	},
+	"Errors": ubx.FieldSpec{
+		WireName: "errors",
+		Kind:     "list",
+		Fields:   Job_Status_ErrorResultFields,
+	},
+	"State": ubx.FieldSpec{WireName: "state"},
+}
 
 type JobConfig struct {
 	Configuration any
-	// Output only. A hash of this resource.
-	Etag any
-	// Output only. Opaque ID field of the job.
-	Id any
 	// Reason about why a Job was created from a [`jobs.query`](https://cloud.google.com/bigquery/docs/reference/rest/v2/jobs/query) method when used with `JOB_CREATION_OPTIONAL` Job creation mode. For [`jobs.insert`](https://cloud.google.com/bigquery/docs/reference/rest/v2/jobs/insert) method calls it will always be `REQUESTED`.
 	JobCreationReason any
 	// A job reference is a fully qualified identifier for referring to a job.
 	JobReference any
-	// Output only. The type of the resource.
-	Kind any
-	// Output only. [Full-projection-only] String representation of identity of requesting party. Populated for both first- and third-party identities. Only present for APIs that support third-party identities.
-	PrincipalSubject any
-	// Output only. A URL that can be used to access the resource again.
-	SelfLink any
 	// Statistics for a single job execution.
 	Statistics any
-	Status any
-	// Output only. Email address of the user who ran the job.
-	UserEmail any
+	Status     any
 }
 
 type JobAttrs struct {
@@ -3400,7 +3388,7 @@ type JobAttrs struct {
 	SelfLink any
 	// Statistics for a single job execution.
 	Statistics any
-	Status any
+	Status     any
 	// Output only. Email address of the user who ran the job.
 	UserEmail any
 }
@@ -3410,34 +3398,28 @@ var Job = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Configuration": ubx.FieldSpec{
 			WireName: "configuration",
-			Kind: "object",
-			Fields: Job_ConfigurationFields,
+			Kind:     "object",
+			Fields:   Job_ConfigurationFields,
 		},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Id": ubx.FieldSpec{WireName: "id"},
 		"JobCreationReason": ubx.FieldSpec{
 			WireName: "job_creation_reason",
-			Kind: "object",
-			Fields: Job_JobCreationReasonFields,
+			Kind:     "object",
+			Fields:   Job_JobCreationReasonFields,
 		},
 		"JobReference": ubx.FieldSpec{
 			WireName: "job_reference",
-			Kind: "object",
-			Fields: Job_JobReferenceFields,
+			Kind:     "object",
+			Fields:   Job_JobReferenceFields,
 		},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"PrincipalSubject": ubx.FieldSpec{WireName: "principal_subject"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
 		"Statistics": ubx.FieldSpec{
 			WireName: "statistics",
-			Kind: "object",
-			Fields: Job_StatisticsFields,
+			Kind:     "object",
+			Fields:   Job_StatisticsFields,
 		},
 		"Status": ubx.FieldSpec{
 			WireName: "status",
-			Kind: "object",
-			Fields: Job_StatusFields,
+			Kind:     "object",
+			Fields:   Job_StatusFields,
 		},
-		"UserEmail": ubx.FieldSpec{WireName: "user_email"},
 	},
 }

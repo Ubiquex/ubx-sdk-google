@@ -56,105 +56,11 @@ export interface V1alpha1ReportExportJob_SignedUriDestination {
   fileFormat?: string | Computed<string>;
 }
 
-const V1alpha1ReportExportJob_RecentExecutions_Result_ErrorFields: FieldMap = {
-  code: "code",
-  details: "details",
-  message: "message",
-};
-
-const V1alpha1ReportExportJob_RecentExecutions_Result_OutputFiles_Entries_CsvOutputFile_SignedUriFields: FieldMap = {
-  file: "file",
-  uri: "uri",
-};
-
-const V1alpha1ReportExportJob_RecentExecutions_Result_OutputFiles_Entries_CsvOutputFileFields: FieldMap = {
-  columnsCount: "columns_count",
-  rowCount: "row_count",
-  signedUri: {
-    wireName: "signed_uri",
-    kind: "object",
-    fields: V1alpha1ReportExportJob_RecentExecutions_Result_OutputFiles_Entries_CsvOutputFile_SignedUriFields,
-  },
-};
-
-const V1alpha1ReportExportJob_RecentExecutions_Result_OutputFiles_Entries_XlsxOutputFileFields: FieldMap = {
-  signedUri: {
-    wireName: "signed_uri",
-    kind: "object",
-    fields: V1alpha1ReportExportJob_RecentExecutions_Result_OutputFiles_Entries_CsvOutputFile_SignedUriFields,
-  },
-};
-
-const V1alpha1ReportExportJob_RecentExecutions_Result_OutputFiles_EntriesFields: FieldMap = {
-  csvOutputFile: {
-    wireName: "csv_output_file",
-    kind: "object",
-    fields: V1alpha1ReportExportJob_RecentExecutions_Result_OutputFiles_Entries_CsvOutputFileFields,
-  },
-  fileSizeBytes: "file_size_bytes",
-  xlsxOutputFile: {
-    wireName: "xlsx_output_file",
-    kind: "object",
-    fields: V1alpha1ReportExportJob_RecentExecutions_Result_OutputFiles_Entries_XlsxOutputFileFields,
-  },
-};
-
-const V1alpha1ReportExportJob_RecentExecutions_Result_OutputFilesFields: FieldMap = {
-  entries: {
-    wireName: "entries",
-    kind: "list",
-    fields: V1alpha1ReportExportJob_RecentExecutions_Result_OutputFiles_EntriesFields,
-  },
-};
-
-const V1alpha1ReportExportJob_RecentExecutions_Result_SignedUrisFields: FieldMap = {
-  signedUris: {
-    wireName: "signed_uris",
-    kind: "list",
-    fields: V1alpha1ReportExportJob_RecentExecutions_Result_OutputFiles_Entries_CsvOutputFile_SignedUriFields,
-  },
-};
-
-const V1alpha1ReportExportJob_RecentExecutions_ResultFields: FieldMap = {
-  error: {
-    wireName: "error",
-    kind: "object",
-    fields: V1alpha1ReportExportJob_RecentExecutions_Result_ErrorFields,
-  },
-  outputFiles: {
-    wireName: "output_files",
-    kind: "object",
-    fields: V1alpha1ReportExportJob_RecentExecutions_Result_OutputFilesFields,
-  },
-  signedUris: {
-    wireName: "signed_uris",
-    kind: "object",
-    fields: V1alpha1ReportExportJob_RecentExecutions_Result_SignedUrisFields,
-  },
-};
-
-const V1alpha1ReportExportJob_RecentExecutionsFields: FieldMap = {
-  endTime: "end_time",
-  executionId: "execution_id",
-  expireTime: "expire_time",
-  progressPercentage: "progress_percentage",
-  result: {
-    wireName: "result",
-    kind: "object",
-    fields: V1alpha1ReportExportJob_RecentExecutions_ResultFields,
-  },
-  startTime: "start_time",
-};
-
 const V1alpha1ReportExportJob_SignedUriDestinationFields: FieldMap = {
   fileFormat: "file_format",
 };
 
 export interface V1alpha1ReportExportJobConfig {
-  /** Output only. Identifier. Resource name. */
-  name?: string | Computed<string>;
-  /** Output only. Recent not expired executions of the export report job. */
-  recentExecutions?: V1alpha1ReportExportJob_RecentExecutions[] | Computed<V1alpha1ReportExportJob_RecentExecutions[]>;
   /** Signed URI destination configuration. */
   signedUriDestination?: V1alpha1ReportExportJob_SignedUriDestination | Computed<V1alpha1ReportExportJob_SignedUriDestination>;
 }
@@ -171,12 +77,6 @@ export interface V1alpha1ReportExportJobAttrs {
 export const V1alpha1ReportExportJob: ResourceBinding<V1alpha1ReportExportJobConfig, V1alpha1ReportExportJobAttrs> = {
   wireType: "google_migrationcenter_v1alpha1_report_export_job",
   fields: {
-    name: "name",
-    recentExecutions: {
-      wireName: "recent_executions",
-      kind: "list",
-      fields: V1alpha1ReportExportJob_RecentExecutionsFields,
-    },
     signedUriDestination: {
       wireName: "signed_uri_destination",
       kind: "object",

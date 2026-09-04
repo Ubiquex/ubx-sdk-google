@@ -53,20 +53,10 @@ const ChannelPartnerLink_ChannelPartnerCloudIdentityInfoFields: FieldMap = {
 export interface ChannelPartnerLinkConfig {
   /** Cloud Identity information for the Cloud Channel Customer. */
   channelPartnerCloudIdentityInfo?: ChannelPartnerLink_ChannelPartnerCloudIdentityInfo | Computed<ChannelPartnerLink_ChannelPartnerCloudIdentityInfo>;
-  /** Output only. Timestamp of when the channel partner link is created. */
-  createTime?: string | Computed<string>;
-  /** Output only. URI of the web page where partner accepts the link invitation. */
-  inviteLinkUri?: string | Computed<string>;
   /** Required. State of the channel partner link. */
   linkState?: string | Computed<string>;
-  /** Output only. Resource name for the channel partner link, in the format accounts/{account_id}/channelPartnerLinks/{id}. */
-  name?: string | Computed<string>;
-  /** Output only. Public identifier that a customer must use to generate a transfer token to move to this distributor-reseller combination. */
-  publicId?: string | Computed<string>;
   /** Required. Cloud Identity ID of the linked reseller. */
   resellerCloudIdentityId?: string | Computed<string>;
-  /** Output only. Timestamp of when the channel partner link is updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface ChannelPartnerLinkAttrs {
@@ -96,12 +86,7 @@ export const ChannelPartnerLink: ResourceBinding<ChannelPartnerLinkConfig, Chann
       kind: "object",
       fields: ChannelPartnerLink_ChannelPartnerCloudIdentityInfoFields,
     },
-    createTime: "create_time",
-    inviteLinkUri: "invite_link_uri",
     linkState: "link_state",
-    name: "name",
-    publicId: "public_id",
     resellerCloudIdentityId: "reseller_cloud_identity_id",
-    updateTime: "update_time",
   },
 };

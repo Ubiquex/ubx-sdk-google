@@ -20,44 +20,16 @@ class MirroringDeploymentGroup_NestedDeployments:
     name: Any = None
     state: Any = None
 
-_MirroringDeploymentGroup_ConnectedEndpointGroupsFields = {
-    "name": ubx.FieldSpec(wire_name="name"),
-}
-
-_MirroringDeploymentGroup_LocationsFields = {
-    "location": ubx.FieldSpec(wire_name="location"),
-    "state": ubx.FieldSpec(wire_name="state"),
-}
-
-_MirroringDeploymentGroup_NestedDeploymentsFields = {
-    "name": ubx.FieldSpec(wire_name="name"),
-    "state": ubx.FieldSpec(wire_name="state"),
-}
-
 @dataclasses.dataclass
 class MirroringDeploymentGroupConfig:
-    # Output only. The list of endpoint groups that are connected to this resource.
-    connected_endpoint_groups: Any = None
-    # Output only. The timestamp when the resource was created. See https://google.aip.dev/148#timestamps.
-    create_time: Any = None
     # Optional. User-provided description of the deployment group. Used as additional context for the deployment group.
     description: Any = None
     # Optional. Labels are key/value pairs that help to organize and filter resources.
     labels: Any = None
-    # Output only. The list of locations where the deployment group is present.
-    locations: Any = None
     # Immutable. Identifier. The resource name of this deployment group, for example: `projects/123456789/locations/global/mirroringDeploymentGroups/my-dg`. See https://google.aip.dev/122 for more details.
     name: Any = None
-    # Output only. The list of Mirroring Deployments that belong to this group.
-    nested_deployments: Any = None
     # Required. Immutable. The network that will be used for all child deployments, for example: `projects/{project}/global/networks/{network}`. See https://google.aip.dev/124.
     network: Any = None
-    # Output only. The current state of the resource does not match the user's intended state, and the system is working to reconcile them. This is part of the normal operation (e.g. adding a new deployment to the group) See https://google.aip.dev/128.
-    reconciling: Any = None
-    # Output only. The current state of the deployment group. See https://google.aip.dev/216.
-    state: Any = None
-    # Output only. The timestamp when the resource was most recently updated. See https://google.aip.dev/148#timestamps.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class MirroringDeploymentGroupAttrs:
@@ -87,28 +59,9 @@ class MirroringDeploymentGroupAttrs:
 MirroringDeploymentGroup = ubx.ResourceBinding(
     wire_type="google_networksecurity_mirroring_deployment_group",
     fields={
-        "connected_endpoint_groups": ubx.FieldSpec(
-            wire_name="connected_endpoint_groups",
-            kind="list",
-            fields=_MirroringDeploymentGroup_ConnectedEndpointGroupsFields,
-        ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "labels": ubx.FieldSpec(wire_name="labels"),
-        "locations": ubx.FieldSpec(
-            wire_name="locations",
-            kind="list",
-            fields=_MirroringDeploymentGroup_LocationsFields,
-        ),
         "name": ubx.FieldSpec(wire_name="name"),
-        "nested_deployments": ubx.FieldSpec(
-            wire_name="nested_deployments",
-            kind="list",
-            fields=_MirroringDeploymentGroup_NestedDeploymentsFields,
-        ),
         "network": ubx.FieldSpec(wire_name="network"),
-        "reconciling": ubx.FieldSpec(wire_name="reconciling"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

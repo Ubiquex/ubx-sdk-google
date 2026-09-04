@@ -4,16 +4,6 @@ package biglake
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CatalogConfig struct {
-	// Output only. The creation time of the catalog.
-	CreateTime any
-	// Output only. The deletion time of the catalog. Only set after the catalog is deleted.
-	DeleteTime any
-	// Output only. The time when this catalog is considered expired. Only set after the catalog is deleted.
-	ExpireTime any
-	// Output only. The resource name. Format: projects/{project_id_or_number}/locations/{location_id}/catalogs/{catalog_id}
-	Name any
-	// Output only. The last modification time of the catalog.
-	UpdateTime any
 }
 
 type CatalogAttrs struct {
@@ -31,11 +21,5 @@ type CatalogAttrs struct {
 
 var Catalog = ubx.ResourceBinding{
 	WireType: "google_biglake_catalog",
-	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DeleteTime": ubx.FieldSpec{WireName: "delete_time"},
-		"ExpireTime": ubx.FieldSpec{WireName: "expire_time"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-	},
+	Fields:   ubx.FieldMap{},
 }

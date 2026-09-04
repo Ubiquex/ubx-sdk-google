@@ -4,8 +4,6 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 export interface ConfigurationConfig {
   /** Required. The name of the organization. Zero-touch enrollment shows this organization name to device users during device provisioning. */
   companyName?: string | Computed<string>;
-  /** Output only. The ID of the configuration. Assigned by the server. */
-  configurationId?: string | Computed<string>;
   /** Required. A short name that describes the configuration's purpose. For example, _Sales team_ or _Temporary employees_. The zero-touch enrollment portal displays this name to IT admins. */
   configurationName?: string | Computed<string>;
   /** Required. The email address that device users can contact to get help. Zero-touch enrollment shows this email address to device users before device provisioning. The value is validated on input. */
@@ -22,8 +20,6 @@ export interface ConfigurationConfig {
   forcedResetTime?: string | Computed<string>;
   /** Required. Whether this is the default configuration that zero-touch enrollment applies to any new devices the organization purchases in the future. Only one customer configuration can be the default. Setting this value to `true`, changes the previous default configuration's `isDefault` value to `false`. */
   isDefault?: boolean | Computed<boolean>;
-  /** Output only. The API resource name in the format `customers/[CUSTOMER_ID]/configurations/[CONFIGURATION_ID]`. Assigned by the server. */
-  name?: string | Computed<string>;
 }
 
 export interface ConfigurationAttrs {
@@ -55,7 +51,6 @@ export const Configuration: ResourceBinding<ConfigurationConfig, ConfigurationAt
   wireType: "google_androiddeviceprovisioning_configuration",
   fields: {
     companyName: "company_name",
-    configurationId: "configuration_id",
     configurationName: "configuration_name",
     contactEmail: "contact_email",
     contactPhone: "contact_phone",
@@ -64,6 +59,5 @@ export const Configuration: ResourceBinding<ConfigurationConfig, ConfigurationAt
     dpcResourcePath: "dpc_resource_path",
     forcedResetTime: "forced_reset_time",
     isDefault: "is_default",
-    name: "name",
   },
 };

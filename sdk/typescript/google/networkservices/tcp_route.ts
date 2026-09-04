@@ -56,8 +56,6 @@ const TcpRoute_RulesFields: FieldMap = {
 };
 
 export interface TcpRouteConfig {
-  /** Output only. The timestamp when the resource was created. */
-  createTime?: string | Computed<string>;
   /** Optional. A free-text description of the resource. Max length 1024 characters. */
   description?: string | Computed<string>;
   /** Optional. Gateways defines a list of gateways this TcpRoute is attached to, as one of the routing rules to route the requests served by the gateway. Each gateway reference should match the pattern: `projects/* /locations/* /gateways/` */
@@ -70,10 +68,6 @@ export interface TcpRouteConfig {
   name?: string | Computed<string>;
   /** Required. Rules that define how traffic is routed and handled. At least one RouteRule must be supplied. If there are multiple rules then the action taken will be the first rule to match. */
   rules?: TcpRoute_Rules[] | Computed<TcpRoute_Rules[]>;
-  /** Output only. Server-defined URL of this resource */
-  selfLink?: string | Computed<string>;
-  /** Output only. The timestamp when the resource was updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface TcpRouteAttrs {
@@ -100,7 +94,6 @@ export interface TcpRouteAttrs {
 export const TcpRoute: ResourceBinding<TcpRouteConfig, TcpRouteAttrs> = {
   wireType: "google_networkservices_tcp_route",
   fields: {
-    createTime: "create_time",
     description: "description",
     gateways: "gateways",
     labels: "labels",
@@ -111,7 +104,5 @@ export const TcpRoute: ResourceBinding<TcpRouteConfig, TcpRouteAttrs> = {
       kind: "list",
       fields: TcpRoute_RulesFields,
     },
-    selfLink: "self_link",
-    updateTime: "update_time",
   },
 };

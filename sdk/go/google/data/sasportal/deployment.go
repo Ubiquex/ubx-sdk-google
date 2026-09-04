@@ -4,7 +4,6 @@ package sasportal
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DeploymentConfig struct {
-	Name any
 }
 
 type DeploymentAttrs struct {
@@ -19,7 +18,5 @@ type DeploymentAttrs struct {
 
 var Deployment = ubx.DataSourceBinding{
 	WireType: "google_sasportal_deployment",
-	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	},
+	Fields:   ubx.FieldMap{},
 }

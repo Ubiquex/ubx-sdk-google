@@ -143,14 +143,8 @@ _V1alphaAlphaEvolveExperiment_StatsFields = {
 class V1alphaAlphaEvolveExperimentConfig:
     # Configuration of an experiment.
     config: Any = None
-    # Output only. Time when the experiment was created.
-    create_time: Any = None
-    # Output only. Specifies the name of the seed program used to start the experiment.
-    initial_alpha_evolve_program: Any = None
     # Identifier. The full resource name of the experiment. Format: `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}/sessions/{session}/alphaEvolveExperiments/{alpha_evolve_experiment}`
     name: Any = None
-    # Output only. The state of the experiment.
-    state: Any = None
     # Stats about the experiment.
     stats: Any = None
 
@@ -177,10 +171,7 @@ V1alphaAlphaEvolveExperiment = ubx.ResourceBinding(
             kind="object",
             fields=_V1alphaAlphaEvolveExperiment_ConfigFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
-        "initial_alpha_evolve_program": ubx.FieldSpec(wire_name="initial_alpha_evolve_program"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "state": ubx.FieldSpec(wire_name="state"),
         "stats": ubx.FieldSpec(
             wire_name="stats",
             kind="object",

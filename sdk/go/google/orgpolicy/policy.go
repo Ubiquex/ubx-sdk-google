@@ -5,23 +5,23 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Policy_Alternate_Spec_Rules_Condition struct {
 	Description any
-	Expression any
-	Location any
-	Title any
+	Expression  any
+	Location    any
+	Title       any
 }
 
 type Policy_Alternate_Spec_Rules_Values struct {
 	AllowedValues any
-	DeniedValues any
+	DeniedValues  any
 }
 
 type Policy_Alternate_Spec_Rules struct {
-	AllowAll any
-	Condition any
-	DenyAll any
-	Enforce any
+	AllowAll   any
+	Condition  any
+	DenyAll    any
+	Enforce    any
 	Parameters any
-	Values any
+	Values     any
 }
 
 type Policy_Alternate_Spec struct {
@@ -45,54 +45,54 @@ type Policy_Alternate struct {
 }
 
 var Policy_Alternate_Spec_Rules_ConditionFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Expression": ubx.FieldSpec{WireName: "expression"},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Expression":  ubx.FieldSpec{WireName: "expression"},
+	"Location":    ubx.FieldSpec{WireName: "location"},
+	"Title":       ubx.FieldSpec{WireName: "title"},
+}
 
 var Policy_Alternate_Spec_Rules_ValuesFields = ubx.FieldMap{
-		"AllowedValues": ubx.FieldSpec{WireName: "allowed_values"},
-		"DeniedValues": ubx.FieldSpec{WireName: "denied_values"},
-	}
+	"AllowedValues": ubx.FieldSpec{WireName: "allowed_values"},
+	"DeniedValues":  ubx.FieldSpec{WireName: "denied_values"},
+}
 
 var Policy_Alternate_Spec_RulesFields = ubx.FieldMap{
-		"AllowAll": ubx.FieldSpec{WireName: "allow_all"},
-		"Condition": ubx.FieldSpec{
-			WireName: "condition",
-			Kind: "object",
-			Fields: Policy_Alternate_Spec_Rules_ConditionFields,
-		},
-		"DenyAll": ubx.FieldSpec{WireName: "deny_all"},
-		"Enforce": ubx.FieldSpec{WireName: "enforce"},
-		"Parameters": ubx.FieldSpec{WireName: "parameters"},
-		"Values": ubx.FieldSpec{
-			WireName: "values",
-			Kind: "object",
-			Fields: Policy_Alternate_Spec_Rules_ValuesFields,
-		},
-	}
+	"AllowAll": ubx.FieldSpec{WireName: "allow_all"},
+	"Condition": ubx.FieldSpec{
+		WireName: "condition",
+		Kind:     "object",
+		Fields:   Policy_Alternate_Spec_Rules_ConditionFields,
+	},
+	"DenyAll":    ubx.FieldSpec{WireName: "deny_all"},
+	"Enforce":    ubx.FieldSpec{WireName: "enforce"},
+	"Parameters": ubx.FieldSpec{WireName: "parameters"},
+	"Values": ubx.FieldSpec{
+		WireName: "values",
+		Kind:     "object",
+		Fields:   Policy_Alternate_Spec_Rules_ValuesFields,
+	},
+}
 
 var Policy_Alternate_SpecFields = ubx.FieldMap{
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"InheritFromParent": ubx.FieldSpec{WireName: "inherit_from_parent"},
-		"Reset": ubx.FieldSpec{WireName: "reset"},
-		"Rules": ubx.FieldSpec{
-			WireName: "rules",
-			Kind: "list",
-			Fields: Policy_Alternate_Spec_RulesFields,
-		},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-	}
+	"Etag":              ubx.FieldSpec{WireName: "etag"},
+	"InheritFromParent": ubx.FieldSpec{WireName: "inherit_from_parent"},
+	"Reset":             ubx.FieldSpec{WireName: "reset"},
+	"Rules": ubx.FieldSpec{
+		WireName: "rules",
+		Kind:     "list",
+		Fields:   Policy_Alternate_Spec_RulesFields,
+	},
+	"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+}
 
 var Policy_AlternateFields = ubx.FieldMap{
-		"Launch": ubx.FieldSpec{WireName: "launch"},
-		"Spec": ubx.FieldSpec{
-			WireName: "spec",
-			Kind: "object",
-			Fields: Policy_Alternate_SpecFields,
-		},
-	}
+	"Launch": ubx.FieldSpec{WireName: "launch"},
+	"Spec": ubx.FieldSpec{
+		WireName: "spec",
+		Kind:     "object",
+		Fields:   Policy_Alternate_SpecFields,
+	},
+}
 
 type PolicyConfig struct {
 	// Similar to PolicySpec but with an extra 'launch' field for launch reference. The PolicySpec here is specific for dry-run.
@@ -125,20 +125,20 @@ var Policy = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Alternate": ubx.FieldSpec{
 			WireName: "alternate",
-			Kind: "object",
-			Fields: Policy_AlternateFields,
+			Kind:     "object",
+			Fields:   Policy_AlternateFields,
 		},
 		"DryRunSpec": ubx.FieldSpec{
 			WireName: "dry_run_spec",
-			Kind: "object",
-			Fields: Policy_Alternate_SpecFields,
+			Kind:     "object",
+			Fields:   Policy_Alternate_SpecFields,
 		},
 		"Etag": ubx.FieldSpec{WireName: "etag"},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Spec": ubx.FieldSpec{
 			WireName: "spec",
-			Kind: "object",
-			Fields: Policy_Alternate_SpecFields,
+			Kind:     "object",
+			Fields:   Policy_Alternate_SpecFields,
 		},
 	},
 }

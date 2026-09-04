@@ -126,8 +126,6 @@ const FeatureOnlineStore_EncryptionSpecFields: FieldMap = {
 
 export interface FeatureOnlineStoreConfig {
   bigtable?: FeatureOnlineStore_Bigtable | Computed<FeatureOnlineStore_Bigtable>;
-  /** Output only. Timestamp when this FeatureOnlineStore was created. */
-  createTime?: string | Computed<string>;
   /** The dedicated serving endpoint for this FeatureOnlineStore. Only need to set when you choose Optimized storage type. Public endpoint is provisioned by default. */
   dedicatedServingEndpoint?: FeatureOnlineStore_DedicatedServingEndpoint | Computed<FeatureOnlineStore_DedicatedServingEndpoint>;
   /** Represents a customer-managed encryption key specification that can be applied to a Vertex AI resource. */
@@ -140,14 +138,6 @@ export interface FeatureOnlineStoreConfig {
   name?: string | Computed<string>;
   /** Optimized storage type */
   optimized?: unknown | Computed<unknown>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzi?: boolean | Computed<boolean>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzs?: boolean | Computed<boolean>;
-  /** Output only. State of the featureOnlineStore. */
-  state?: string | Computed<string>;
-  /** Output only. Timestamp when this FeatureOnlineStore was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface FeatureOnlineStoreAttrs {
@@ -184,7 +174,6 @@ export const FeatureOnlineStore: ResourceBinding<FeatureOnlineStoreConfig, Featu
       kind: "object",
       fields: FeatureOnlineStore_BigtableFields,
     },
-    createTime: "create_time",
     dedicatedServingEndpoint: {
       wireName: "dedicated_serving_endpoint",
       kind: "object",
@@ -199,9 +188,5 @@ export const FeatureOnlineStore: ResourceBinding<FeatureOnlineStoreConfig, Featu
     labels: "labels",
     name: "name",
     optimized: "optimized",
-    satisfiesPzi: "satisfies_pzi",
-    satisfiesPzs: "satisfies_pzs",
-    state: "state",
-    updateTime: "update_time",
   },
 };

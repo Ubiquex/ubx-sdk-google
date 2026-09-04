@@ -4,28 +4,28 @@ package dialogflow
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V2beta1ParticipantConfig struct {
-	AgentDesktopSource any
+	AgentDesktopSource       any
 	DocumentsMetadataFilters any
-	Name any
+	Name                     any
 	ObfuscatedExternalUserId any
-	Role any
+	Role                     any
 }
 
 type V2beta1ParticipantAttrs struct {
-	AgentDesktopSource any
+	AgentDesktopSource       any
 	DocumentsMetadataFilters any
-	Name any
+	Name                     any
 	ObfuscatedExternalUserId any
-	Role any
+	Role                     any
 }
 
 var V2beta1Participant = ubx.ResourceBinding{
 	WireType: "google_dialogflow_v2beta1_participant",
 	Fields: ubx.FieldMap{
-		"AgentDesktopSource": ubx.FieldSpec{WireName: "agent_desktop_source"},
+		"AgentDesktopSource":       ubx.FieldSpec{WireName: "agent_desktop_source"},
 		"DocumentsMetadataFilters": ubx.FieldSpec{WireName: "documents_metadata_filters"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":                     ubx.FieldSpec{WireName: "name"},
 		"ObfuscatedExternalUserId": ubx.FieldSpec{WireName: "obfuscated_external_user_id"},
-		"Role": ubx.FieldSpec{WireName: "role"},
+		"Role":                     ubx.FieldSpec{WireName: "role"},
 	},
 }

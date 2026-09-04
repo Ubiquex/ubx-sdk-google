@@ -2,14 +2,10 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface V1beta1UrlListConfig {
-  /** Output only. Time when the security policy was created. */
-  createTime?: string | Computed<string>;
   /** Optional. Free-text description of the resource. */
   description?: string | Computed<string>;
   /** Required. Name of the resource provided by the user. Name is of the form projects/{project}/locations/{location}/urlLists/{url_list} url_list should match the pattern:(^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$). */
   name?: string | Computed<string>;
-  /** Output only. Time when the security policy was updated. */
-  updateTime?: string | Computed<string>;
   /** Required. FQDNs and URLs. */
   values?: string[] | Computed<string[]>;
 }
@@ -30,10 +26,8 @@ export interface V1beta1UrlListAttrs {
 export const V1beta1UrlList: ResourceBinding<V1beta1UrlListConfig, V1beta1UrlListAttrs> = {
   wireType: "google_networksecurity_v1beta1_url_list",
   fields: {
-    createTime: "create_time",
     description: "description",
     name: "name",
-    updateTime: "update_time",
     values: "values",
   },
 };

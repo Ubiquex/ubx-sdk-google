@@ -41,8 +41,6 @@ _FeedbackLabel_QaAnswerLabelFields = {
 
 @dataclasses.dataclass
 class FeedbackLabelConfig:
-    # Output only. Create time of the label.
-    create_time: Any = None
     # String label used for Topic Modeling.
     label: Any = None
     # Name of the resource to be labeled. Supported resources are: * `projects/{project}/locations/{location}/qaScorecards/{scorecard}/revisions/{revision}/qaQuestions/{question}` * `projects/{project}/locations/{location}/issueModels/{issue_model}` * `projects/{project}/locations/{location}/generators/{generator_id}`
@@ -51,8 +49,6 @@ class FeedbackLabelConfig:
     name: Any = None
     # Message for holding the value of a QaAnswer. QaQuestion.AnswerChoice defines the possible answer values for a question.
     qa_answer_label: Any = None
-    # Output only. Update time of the label.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class FeedbackLabelAttrs:
@@ -72,7 +68,6 @@ class FeedbackLabelAttrs:
 FeedbackLabel = ubx.ResourceBinding(
     wire_type="google_contactcenterinsights_feedback_label",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "label": ubx.FieldSpec(wire_name="label"),
         "labeled_resource": ubx.FieldSpec(wire_name="labeled_resource"),
         "name": ubx.FieldSpec(wire_name="name"),
@@ -81,6 +76,5 @@ FeedbackLabel = ubx.ResourceBinding(
             kind="object",
             fields=_FeedbackLabel_QaAnswerLabelFields,
         ),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

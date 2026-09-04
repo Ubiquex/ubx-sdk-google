@@ -34,8 +34,6 @@ _ApimServiceExtension_NetworkConfigsFields = {
 
 @dataclasses.dataclass
 class ApimServiceExtensionConfig:
-    # Output only. The time that this resource was created on the server.
-    create_time: Any = None
     # Required. Name of the proxy deployed in the Apigee X instance.
     extension_processor: Any = None
     # Optional. List of extensions that are part of the service extension. Refer to https://cloud.google.com/service-extensions/docs/quotas#limits for any limits.
@@ -48,10 +46,6 @@ class ApimServiceExtensionConfig:
     network: Any = None
     # Required. List of network configurations for the APIM service extension.
     network_configs: Any = None
-    # Output only. State of the APIM service extension. Values other than `ACTIVE` mean the resource is not ready to use.
-    state: Any = None
-    # Output only. The time that this resource was updated on the server.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class ApimServiceExtensionAttrs:
@@ -77,7 +71,6 @@ class ApimServiceExtensionAttrs:
 ApimServiceExtension = ubx.ResourceBinding(
     wire_type="google_apigee_apim_service_extension",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "extension_processor": ubx.FieldSpec(wire_name="extension_processor"),
         "extensions": ubx.FieldSpec(
             wire_name="extensions",
@@ -92,7 +85,5 @@ ApimServiceExtension = ubx.ResourceBinding(
             kind="list",
             fields=_ApimServiceExtension_NetworkConfigsFields,
         ),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

@@ -4,27 +4,18 @@ package compute
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type InterconnectGroup_Configured_TopologyCapability_IntendedCapabilityBlockers struct {
-	// The type of blocker preventing the intended capability. Possible values: INCOMPATIBLE_METROS, NOT_AVAILABLE, NO_INTERCONNECTS, NO_INTERCONNECTS_IN_METRO_AND_ZONE, OTHER, UNSPECIFIED. (AI-inferred)
-	BlockerType any
-	// A URL to documentation explaining why the intended capability is blocked. (AI-inferred)
+	BlockerType       any
 	DocumentationLink any
-	// A human-readable explanation of why the intended topology capability is blocked. (AI-inferred)
-	Explanation any
-	// List of facility names that are blocking the intended topology capability for this interconnect group. (AI-inferred)
-	Facilities any
-	// The list of interconnect names that are blocking the intended topology capability for this interconnect group. (AI-inferred)
-	Interconnects any
-	// List of metro names (geographic locations) that block the intended topology capability from being achieved. (AI-inferred)
-	Metros any
-	// A list of zones in which the intended topology capability is blocked or unavailable, as part of a capability blocker. (AI-inferred)
-	Zones any
+	Explanation       any
+	Facilities        any
+	Interconnects     any
+	Metros            any
+	Zones             any
 }
 
 type InterconnectGroup_Configured_TopologyCapability struct {
-	// A list of reasons that prevent the interconnect group's intended topology capability from being realized. This computed field is empty when the intended capability is fully supported, and provides details on any issues otherwise. (AI-inferred)
 	IntendedCapabilityBlockers any
-	// The supported service level agreement (SLA) for this topology capability. Possible values are: NO_SLA, PRODUCTION_CRITICAL, PRODUCTION_NON_CRITICAL, UNSPECIFIED. (AI-inferred)
-	SupportedSla any
+	SupportedSla               any
 }
 
 type InterconnectGroup_Configured struct {
@@ -33,7 +24,6 @@ type InterconnectGroup_Configured struct {
 }
 
 type InterconnectGroup_Intent struct {
-	// Specifies the topology capability level for the interconnect group, indicating the required service level. Valid values are: NO_SLA (no service level agreement), PRODUCTION_CRITICAL (production workloads requiring high reliability), PRODUCTION_NON_CRITICAL (production workloads without critical reliability requirements), and UNSPECIFIED (value not set). (AI-inferred)
 	TopologyCapability any
 }
 
@@ -43,114 +33,104 @@ type InterconnectGroup_Interconnects struct {
 
 type InterconnectGroup_PhysicalStructure_Metros_Facilities_Zones struct {
 	Interconnects any
-	Zone any
+	Zone          any
 }
 
 type InterconnectGroup_PhysicalStructure_Metros_Facilities struct {
 	Facility any
-	Zones any
+	Zones    any
 }
 
 type InterconnectGroup_PhysicalStructure_Metros struct {
 	Facilities any
-	// The metropolitan area where the interconnect group's physical structure is located, such as 'london' or 'sydney'. (AI-inferred)
-	Metro any
+	Metro      any
 }
 
 type InterconnectGroup_PhysicalStructure struct {
-	// The metropolitan areas where the physical structure of the interconnect group is located. This computed field provides the list of metros supported by the physical infrastructure. (AI-inferred)
 	Metros any
 }
 
 var InterconnectGroup_Configured_TopologyCapability_IntendedCapabilityBlockersFields = ubx.FieldMap{
-		"BlockerType": ubx.FieldSpec{WireName: "blocker_type"},
-		"DocumentationLink": ubx.FieldSpec{WireName: "documentation_link"},
-		"Explanation": ubx.FieldSpec{WireName: "explanation"},
-		"Facilities": ubx.FieldSpec{WireName: "facilities"},
-		"Interconnects": ubx.FieldSpec{WireName: "interconnects"},
-		"Metros": ubx.FieldSpec{WireName: "metros"},
-		"Zones": ubx.FieldSpec{WireName: "zones"},
-	}
+	"BlockerType":       ubx.FieldSpec{WireName: "blocker_type"},
+	"DocumentationLink": ubx.FieldSpec{WireName: "documentation_link"},
+	"Explanation":       ubx.FieldSpec{WireName: "explanation"},
+	"Facilities":        ubx.FieldSpec{WireName: "facilities"},
+	"Interconnects":     ubx.FieldSpec{WireName: "interconnects"},
+	"Metros":            ubx.FieldSpec{WireName: "metros"},
+	"Zones":             ubx.FieldSpec{WireName: "zones"},
+}
 
 var InterconnectGroup_Configured_TopologyCapabilityFields = ubx.FieldMap{
-		"IntendedCapabilityBlockers": ubx.FieldSpec{
-			WireName: "intended_capability_blockers",
-			Kind: "list",
-			Fields: InterconnectGroup_Configured_TopologyCapability_IntendedCapabilityBlockersFields,
-		},
-		"SupportedSla": ubx.FieldSpec{WireName: "supported_sla"},
-	}
+	"IntendedCapabilityBlockers": ubx.FieldSpec{
+		WireName: "intended_capability_blockers",
+		Kind:     "list",
+		Fields:   InterconnectGroup_Configured_TopologyCapability_IntendedCapabilityBlockersFields,
+	},
+	"SupportedSla": ubx.FieldSpec{WireName: "supported_sla"},
+}
 
 var InterconnectGroup_ConfiguredFields = ubx.FieldMap{
-		"TopologyCapability": ubx.FieldSpec{
-			WireName: "topology_capability",
-			Kind: "object",
-			Fields: InterconnectGroup_Configured_TopologyCapabilityFields,
-		},
-	}
+	"TopologyCapability": ubx.FieldSpec{
+		WireName: "topology_capability",
+		Kind:     "object",
+		Fields:   InterconnectGroup_Configured_TopologyCapabilityFields,
+	},
+}
 
 var InterconnectGroup_IntentFields = ubx.FieldMap{
-		"TopologyCapability": ubx.FieldSpec{WireName: "topology_capability"},
-	}
+	"TopologyCapability": ubx.FieldSpec{WireName: "topology_capability"},
+}
 
 var InterconnectGroup_InterconnectsFields = ubx.FieldMap{
-		"Interconnect": ubx.FieldSpec{WireName: "interconnect"},
-	}
+	"Interconnect": ubx.FieldSpec{WireName: "interconnect"},
+}
 
 var InterconnectGroup_PhysicalStructure_Metros_Facilities_ZonesFields = ubx.FieldMap{
-		"Interconnects": ubx.FieldSpec{WireName: "interconnects"},
-		"Zone": ubx.FieldSpec{WireName: "zone"},
-	}
+	"Interconnects": ubx.FieldSpec{WireName: "interconnects"},
+	"Zone":          ubx.FieldSpec{WireName: "zone"},
+}
 
 var InterconnectGroup_PhysicalStructure_Metros_FacilitiesFields = ubx.FieldMap{
-		"Facility": ubx.FieldSpec{WireName: "facility"},
-		"Zones": ubx.FieldSpec{
-			WireName: "zones",
-			Kind: "list",
-			Fields: InterconnectGroup_PhysicalStructure_Metros_Facilities_ZonesFields,
-		},
-	}
+	"Facility": ubx.FieldSpec{WireName: "facility"},
+	"Zones": ubx.FieldSpec{
+		WireName: "zones",
+		Kind:     "list",
+		Fields:   InterconnectGroup_PhysicalStructure_Metros_Facilities_ZonesFields,
+	},
+}
 
 var InterconnectGroup_PhysicalStructure_MetrosFields = ubx.FieldMap{
-		"Facilities": ubx.FieldSpec{
-			WireName: "facilities",
-			Kind: "list",
-			Fields: InterconnectGroup_PhysicalStructure_Metros_FacilitiesFields,
-		},
-		"Metro": ubx.FieldSpec{WireName: "metro"},
-	}
+	"Facilities": ubx.FieldSpec{
+		WireName: "facilities",
+		Kind:     "list",
+		Fields:   InterconnectGroup_PhysicalStructure_Metros_FacilitiesFields,
+	},
+	"Metro": ubx.FieldSpec{WireName: "metro"},
+}
 
 var InterconnectGroup_PhysicalStructureFields = ubx.FieldMap{
-		"Metros": ubx.FieldSpec{
-			WireName: "metros",
-			Kind: "list",
-			Fields: InterconnectGroup_PhysicalStructure_MetrosFields,
-		},
-	}
+	"Metros": ubx.FieldSpec{
+		WireName: "metros",
+		Kind:     "list",
+		Fields:   InterconnectGroup_PhysicalStructure_MetrosFields,
+	},
+}
 
 type InterconnectGroupConfig struct {
 	// [Output Only] The status of the group as configured. This has the same structure as the operational field reported by the OperationalStatus method, but does not take into account the operational status of each resource.
 	Configured any
-	// Output only. [Output Only] Creation timestamp inRFC3339 text format.
-	CreationTimestamp any
 	// An optional description of this resource. Provide this property when you create the resource.
 	Description any
 	// Opaque system-generated token that uniquely identifies the configuration. If provided when patching a configuration in update mode, the provided token must match the current token or the update is rejected. This provides a reliable means of doing read-modify-write (optimistic locking) as described by AIP 154.
 	Etag any
-	// Output only. [Output Only] The unique identifier for the resource type. The server generates this identifier.
-	Id any
 	// The user's intent for this group. This is the only required field besides the name that must be specified on group creation.
 	Intent any
 	// Interconnects in the InterconnectGroup. Keys are arbitrary user-specified strings. Users are encouraged, but not required, to use their preferred format for resource links as keys. Note that there are add-members and remove-members methods in gcloud. The size of this map is limited by an "Interconnects per group" quota.
 	Interconnects any
-	// Output only. [Output Only] Type of the resource. Always compute#InterconnectGroup
-	Kind any
 	// Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
 	Name any
 	// [Output Only] An analysis of the physical layout of Interconnects in this group. Every Interconnect in the group is shown once in this structure.
 	PhysicalStructure any
-	// Output only. [Output Only] Server-defined URL for the resource.
-	SelfLink any
 }
 
 type InterconnectGroupAttrs struct {
@@ -183,30 +163,26 @@ var InterconnectGroup = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Configured": ubx.FieldSpec{
 			WireName: "configured",
-			Kind: "object",
-			Fields: InterconnectGroup_ConfiguredFields,
+			Kind:     "object",
+			Fields:   InterconnectGroup_ConfiguredFields,
 		},
-		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Id": ubx.FieldSpec{WireName: "id"},
+		"Etag":        ubx.FieldSpec{WireName: "etag"},
 		"Intent": ubx.FieldSpec{
 			WireName: "intent",
-			Kind: "object",
-			Fields: InterconnectGroup_IntentFields,
+			Kind:     "object",
+			Fields:   InterconnectGroup_IntentFields,
 		},
 		"Interconnects": ubx.FieldSpec{
 			WireName: "interconnects",
-			Kind: "map",
-			Fields: InterconnectGroup_InterconnectsFields,
+			Kind:     "map",
+			Fields:   InterconnectGroup_InterconnectsFields,
 		},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"PhysicalStructure": ubx.FieldSpec{
 			WireName: "physical_structure",
-			Kind: "object",
-			Fields: InterconnectGroup_PhysicalStructureFields,
+			Kind:     "object",
+			Fields:   InterconnectGroup_PhysicalStructureFields,
 		},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
 	},
 }

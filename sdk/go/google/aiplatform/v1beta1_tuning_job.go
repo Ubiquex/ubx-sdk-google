@@ -64,25 +64,25 @@ type V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOut
 }
 
 type V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults_PairwiseMetricResult struct {
-	CustomOutput any
-	Explanation any
+	CustomOutput   any
+	Explanation    any
 	PairwiseChoice any
 }
 
 type V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults_PointwiseMetricResult struct {
 	CustomOutput any
-	Explanation any
-	Score any
+	Explanation  any
+	Score        any
 }
 
 type V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults struct {
-	AggregationMetric any
-	BleuMetricValue any
+	AggregationMetric         any
+	BleuMetricValue           any
 	CustomCodeExecutionResult any
-	ExactMatchMetricValue any
-	PairwiseMetricResult any
-	PointwiseMetricResult any
-	RougeMetricValue any
+	ExactMatchMetricValue     any
+	PairwiseMetricResult      any
+	PointwiseMetricResult     any
+	RougeMetricValue          any
 }
 
 type V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_Dataset_BigquerySource struct {
@@ -95,12 +95,12 @@ type V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOut
 
 type V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_Dataset struct {
 	BigquerySource any
-	GcsSource any
+	GcsSource      any
 }
 
 type V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput struct {
 	AggregationResults any
-	Dataset any
+	Dataset            any
 }
 
 type V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_OutputInfo struct {
@@ -109,15 +109,15 @@ type V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_OutputInfo str
 
 type V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse struct {
 	AggregationOutput any
-	OutputInfo any
+	OutputInfo        any
 }
 
 type V1beta1TuningJob_EvaluateDatasetRuns struct {
-	CheckpointId any
-	Error any
+	CheckpointId            any
+	Error                   any
 	EvaluateDatasetResponse any
-	EvaluationRun any
-	OperationName any
+	EvaluationRun           any
+	OperationName           any
 }
 
 type V1beta1TuningJob_FullFineTuningSpec struct {
@@ -175,26 +175,26 @@ type V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewa
 
 type V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_AudioTranscriptionConfig struct {
 	AdaptationPhrases any
-	CustomVocabulary any
-	Diarization any
-	LanguageAuto any
-	LanguageCodes any
-	LanguageHints any
-	Mode any
-	WordTimestamp any
+	CustomVocabulary  any
+	Diarization       any
+	LanguageAuto      any
+	LanguageCodes     any
+	LanguageHints     any
+	Mode              any
+	WordTimestamp     any
 }
 
 type V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_ImageConfig_ImageOutputOptions struct {
 	CompressionQuality any
-	MimeType any
+	MimeType           any
 }
 
 type V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_ImageConfig struct {
-	AspectRatio any
+	AspectRatio        any
 	ImageOutputOptions any
-	ImageSize any
-	PersonGeneration any
-	ProminentPeople any
+	ImageSize          any
+	PersonGeneration   any
+	ProminentPeople    any
 }
 
 type V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_ModelConfig struct {
@@ -202,65 +202,65 @@ type V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewa
 }
 
 type V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_ResponseFormat_Audio struct {
-	BitRate any
-	Delivery any
-	MimeType any
+	BitRate    any
+	Delivery   any
+	MimeType   any
 	SampleRate any
 }
 
 type V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_ResponseFormat_Image struct {
 	AspectRatio any
-	Delivery any
-	ImageSize any
-	MimeType any
+	Delivery    any
+	ImageSize   any
+	MimeType    any
 }
 
 type V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_ResponseFormat_Text struct {
 	MimeType any
-	Schema any
+	Schema   any
 }
 
 type V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_ResponseFormat_Video struct {
 	AspectRatio any
-	Delivery any
-	Duration any
-	GcsUri any
-	Resolution any
+	Delivery    any
+	Duration    any
+	GcsUri      any
+	Resolution  any
 }
 
 type V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_ResponseFormat struct {
 	Audio any
 	Image any
-	Text any
+	Text  any
 	Video any
 }
 
 type V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_ResponseSchema struct {
 	AdditionalProperties any
-	AnyOf any
-	Default any
-	Defs any
-	Description any
-	Enum any
-	Example any
-	Format any
-	Items any
-	MaxItems any
-	MaxLength any
-	MaxProperties any
-	Maximum any
-	MinItems any
-	MinLength any
-	MinProperties any
-	Minimum any
-	Nullable any
-	Pattern any
-	Properties any
-	PropertyOrdering any
-	Ref any
-	Required any
-	Title any
-	Type any
+	AnyOf                any
+	Default              any
+	Defs                 any
+	Description          any
+	Enum                 any
+	Example              any
+	Format               any
+	Items                any
+	MaxItems             any
+	MaxLength            any
+	MaxProperties        any
+	Maximum              any
+	MinItems             any
+	MinLength            any
+	MinProperties        any
+	Minimum              any
+	Nullable             any
+	Pattern              any
+	Properties           any
+	PropertyOrdering     any
+	Ref                  any
+	Required             any
+	Title                any
+	Type                 any
 }
 
 type V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_RoutingConfig_AutoMode struct {
@@ -272,7 +272,7 @@ type V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewa
 }
 
 type V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_RoutingConfig struct {
-	AutoMode any
+	AutoMode   any
 	ManualMode any
 }
 
@@ -281,17 +281,17 @@ type V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewa
 }
 
 type V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig_ReplicatedVoiceConfig struct {
-	MimeType any
+	MimeType         any
 	VoiceSampleAudio any
 }
 
 type V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig struct {
-	PrebuiltVoiceConfig any
+	PrebuiltVoiceConfig   any
 	ReplicatedVoiceConfig any
 }
 
 type V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs struct {
-	Speaker any
+	Speaker     any
 	VoiceConfig any
 }
 
@@ -300,68 +300,68 @@ type V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewa
 }
 
 type V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_SpeechConfig struct {
-	LanguageCode any
+	LanguageCode            any
 	MultiSpeakerVoiceConfig any
-	VoiceConfig any
+	VoiceConfig             any
 }
 
 type V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_ThinkingConfig struct {
 	IncludeThoughts any
-	ThinkingBudget any
-	ThinkingLevel any
+	ThinkingBudget  any
+	ThinkingLevel   any
 }
 
 type V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig struct {
-	AudioTimestamp any
+	AudioTimestamp           any
 	AudioTranscriptionConfig any
-	CandidateCount any
-	EnableAffectiveDialog any
-	FrequencyPenalty any
-	ImageConfig any
-	Logprobs any
-	MaxOutputTokens any
-	MediaResolution any
-	ModelConfig any
-	PresencePenalty any
-	ResponseFormat any
-	ResponseJsonSchema any
-	ResponseLogprobs any
-	ResponseMimeType any
-	ResponseModalities any
-	ResponseSchema any
-	RoutingConfig any
-	Seed any
-	SpeechConfig any
-	StopSequences any
-	Temperature any
-	ThinkingConfig any
-	TopK any
-	TopP any
+	CandidateCount           any
+	EnableAffectiveDialog    any
+	FrequencyPenalty         any
+	ImageConfig              any
+	Logprobs                 any
+	MaxOutputTokens          any
+	MediaResolution          any
+	ModelConfig              any
+	PresencePenalty          any
+	ResponseFormat           any
+	ResponseJsonSchema       any
+	ResponseLogprobs         any
+	ResponseMimeType         any
+	ResponseModalities       any
+	ResponseSchema           any
+	RoutingConfig            any
+	Seed                     any
+	SpeechConfig             any
+	StopSequences            any
+	Temperature              any
+	ThinkingConfig           any
+	TopK                     any
+	TopP                     any
 }
 
 type V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig struct {
-	AutoraterModel any
-	FlipEnabled any
+	AutoraterModel   any
+	FlipEnabled      any
 	GenerationConfig any
-	SamplingCount any
+	SamplingCount    any
 }
 
 type V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterResponseParseConfig struct {
-	ParseType any
+	ParseType              any
 	RegexExtractExpression any
 }
 
 type V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_ExactMatchScorer struct {
 	CorrectAnswerReward any
-	Expression any
-	WrongAnswerReward any
+	Expression          any
+	WrongAnswerReward   any
 }
 
 type V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer struct {
-	AutoraterConfig any
-	AutoraterPrompt any
-	AutoraterResponseParseConfig any
-	ExactMatchScorer any
+	AutoraterConfig                any
+	AutoraterPrompt                any
+	AutoraterResponseParseConfig   any
+	ExactMatchScorer               any
 	ParsedResponseConversionScorer any
 }
 
@@ -374,34 +374,34 @@ type V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewa
 }
 
 type V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_StringMatchRewardScorer_JsonMatchExpression_ValueStringMatchExpression struct {
-	Expression any
+	Expression     any
 	MatchOperation any
 }
 
 type V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_StringMatchRewardScorer_JsonMatchExpression struct {
-	KeyName any
+	KeyName                    any
 	ValueStringMatchExpression any
 }
 
 type V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_StringMatchRewardScorer struct {
-	CorrectAnswerReward any
-	JsonMatchExpression any
+	CorrectAnswerReward   any
+	JsonMatchExpression   any
 	StringMatchExpression any
-	WrongAnswerReward any
+	WrongAnswerReward     any
 }
 
 type V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig struct {
-	AutoraterScorer any
-	CloudRunRewardScorer any
+	AutoraterScorer           any
+	CloudRunRewardScorer      any
 	CodeExecutionRewardScorer any
-	ParseResponseConfig any
-	RewardName any
-	StringMatchRewardScorer any
+	ParseResponseConfig       any
+	RewardName                any
+	StringMatchRewardScorer   any
 }
 
 type V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs struct {
 	RewardConfig any
-	Weight any
+	Weight       any
 }
 
 type V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig struct {
@@ -449,7 +449,7 @@ type V1beta1TuningJob_ReinforcementTuningSpec struct {
 
 type V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfig_DatasetCustomMetrics struct {
 	AggregationFunction any
-	DisplayName any
+	DisplayName         any
 }
 
 type V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_BleuSpec struct {
@@ -458,22 +458,22 @@ type V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_BleuSpec str
 
 type V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_ComputationBasedMetricSpec struct {
 	Parameters any
-	Type any
+	Type       any
 }
 
 type V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_CustomCodeExecutionSpec struct {
 	CodeExecutionRegion any
-	EvaluationFunction any
+	EvaluationFunction  any
 }
 
 type V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_LlmBasedMetricSpec_PredefinedRubricGenerationSpec struct {
-	MetricSpecName any
+	MetricSpecName       any
 	MetricSpecParameters any
 }
 
 type V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_LlmBasedMetricSpec_ResultParserConfig_CustomCodeParserConfig struct {
 	CodeExecutionRegion any
-	ParsingFunction any
+	ParsingFunction     any
 }
 
 type V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_LlmBasedMetricSpec_ResultParserConfig struct {
@@ -481,34 +481,34 @@ type V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_LlmBasedMetr
 }
 
 type V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_LlmBasedMetricSpec_RubricGenerationSpec struct {
-	ModelConfig any
-	PromptTemplate any
-	RubricContentType any
+	ModelConfig        any
+	PromptTemplate     any
+	RubricContentType  any
 	RubricTypeOntology any
 }
 
 type V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_LlmBasedMetricSpec struct {
-	AdditionalConfig any
-	JudgeAutoraterConfig any
-	MetricPromptTemplate any
+	AdditionalConfig               any
+	JudgeAutoraterConfig           any
+	MetricPromptTemplate           any
 	PredefinedRubricGenerationSpec any
-	ResultParserConfig any
-	RubricGenerationSpec any
-	RubricGroupKey any
-	SystemInstruction any
+	ResultParserConfig             any
+	RubricGenerationSpec           any
+	RubricGroupKey                 any
+	SystemInstruction              any
 }
 
 type V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_Metadata_ScoreRange struct {
 	Description any
-	Max any
-	Min any
-	Step any
+	Max         any
+	Min         any
+	Step        any
 }
 
 type V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_Metadata struct {
 	OtherMetadata any
-	ScoreRange any
-	Title any
+	ScoreRange    any
+	Title         any
 }
 
 type V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_PairwiseMetricSpec_CustomOutputFormatConfig struct {
@@ -516,37 +516,37 @@ type V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_PairwiseMetr
 }
 
 type V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_PairwiseMetricSpec struct {
-	BaselineResponseFieldName any
+	BaselineResponseFieldName  any
 	CandidateResponseFieldName any
-	CustomOutputFormatConfig any
-	MetricPromptTemplate any
-	SystemInstruction any
+	CustomOutputFormatConfig   any
+	MetricPromptTemplate       any
+	SystemInstruction          any
 }
 
 type V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_PointwiseMetricSpec struct {
 	CustomOutputFormatConfig any
-	MetricPromptTemplate any
-	SystemInstruction any
+	MetricPromptTemplate     any
+	SystemInstruction        any
 }
 
 type V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_RougeSpec struct {
-	RougeType any
+	RougeType      any
 	SplitSummaries any
-	UseStemmer any
+	UseStemmer     any
 }
 
 type V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics struct {
-	AggregationMetrics any
-	BleuSpec any
+	AggregationMetrics         any
+	BleuSpec                   any
 	ComputationBasedMetricSpec any
-	CustomCodeExecutionSpec any
-	ExactMatchSpec any
-	LlmBasedMetricSpec any
-	Metadata any
-	PairwiseMetricSpec any
-	PointwiseMetricSpec any
-	PredefinedMetricSpec any
-	RougeSpec any
+	CustomCodeExecutionSpec    any
+	ExactMatchSpec             any
+	LlmBasedMetricSpec         any
+	Metadata                   any
+	PairwiseMetricSpec         any
+	PointwiseMetricSpec        any
+	PredefinedMetricSpec       any
+	RougeSpec                  any
 }
 
 type V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfig_OutputConfig_GcsDestination struct {
@@ -589,9 +589,9 @@ type V1beta1TuningJob_SupervisedTuningSpec struct {
 
 type V1beta1TuningJob_TunedModel_Checkpoints struct {
 	CheckpointId any
-	Endpoint any
-	Epoch any
-	Step any
+	Endpoint     any
+	Epoch        any
+	Step         any
 }
 
 type V1beta1TuningJob_TunedModel struct {
@@ -605,7 +605,7 @@ type V1beta1TuningJob_TunedModel struct {
 
 type V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ContentsPerExampleDistribution_Buckets struct {
 	Count any
-	Left any
+	Left  any
 	Right any
 }
 
@@ -629,68 +629,68 @@ type V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats
 }
 
 type V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Contents_Parts_AudioTranscription_Words struct {
-	EndOffset any
+	EndOffset   any
 	StartOffset any
-	Word any
+	Word        any
 }
 
 type V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Contents_Parts_AudioTranscription struct {
 	SpeakerLabel any
-	Text any
-	Words any
+	Text         any
+	Words        any
 }
 
 type V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Contents_Parts_CodeExecutionResult struct {
-	Id any
+	Id      any
 	Outcome any
-	Output any
+	Output  any
 }
 
 type V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Contents_Parts_ExecutableCode struct {
-	Code any
-	Id any
+	Code     any
+	Id       any
 	Language any
 }
 
 type V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Contents_Parts_FileData struct {
 	DisplayName any
-	FileUri any
-	MimeType any
+	FileUri     any
+	MimeType    any
 }
 
 type V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Contents_Parts_FunctionCall_PartialArgs struct {
-	BoolValue any
-	JsonPath any
-	NullValue any
-	NumberValue any
-	StringValue any
+	BoolValue    any
+	JsonPath     any
+	NullValue    any
+	NumberValue  any
+	StringValue  any
 	WillContinue any
 }
 
 type V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Contents_Parts_FunctionCall struct {
-	Args any
-	Id any
-	Name any
-	PartialArgs any
+	Args         any
+	Id           any
+	Name         any
+	PartialArgs  any
 	WillContinue any
 }
 
 type V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Contents_Parts_FunctionResponse_Parts_InlineData struct {
-	Data any
+	Data        any
 	DisplayName any
-	MimeType any
+	MimeType    any
 }
 
 type V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Contents_Parts_FunctionResponse_Parts struct {
-	FileData any
+	FileData   any
 	InlineData any
 }
 
 type V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Contents_Parts_FunctionResponse struct {
-	Id any
-	Name any
-	Parts any
-	Response any
+	Id         any
+	Name       any
+	Parts      any
+	Response   any
 	Scheduling any
 }
 
@@ -699,82 +699,82 @@ type V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats
 }
 
 type V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Contents_Parts_VideoMetadata struct {
-	EndOffset any
-	Fps any
+	EndOffset   any
+	Fps         any
 	StartOffset any
 }
 
 type V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Contents_Parts struct {
-	AudioTranscription any
+	AudioTranscription  any
 	CodeExecutionResult any
-	ExecutableCode any
-	FileData any
-	FunctionCall any
-	FunctionResponse any
-	InlineData any
-	MediaProcessing any
-	MediaResolution any
-	Text any
-	Thought any
-	ThoughtSignature any
-	VideoMetadata any
+	ExecutableCode      any
+	FileData            any
+	FunctionCall        any
+	FunctionResponse    any
+	InlineData          any
+	MediaProcessing     any
+	MediaResolution     any
+	Text                any
+	Thought             any
+	ThoughtSignature    any
+	VideoMetadata       any
 }
 
 type V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Contents struct {
 	Parts any
-	Role any
+	Role  any
 }
 
 type V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_ComputerUse struct {
 	EnablePromptInjectionDetection any
-	Environment any
-	ExcludedPredefinedFunctions any
+	Environment                    any
+	ExcludedPredefinedFunctions    any
 }
 
 type V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_EnterpriseWebSearch struct {
 	BlockingConfidence any
-	ExcludeDomains any
+	ExcludeDomains     any
 }
 
 type V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_ExaAiSearch struct {
-	ApiKey any
+	ApiKey        any
 	CustomConfigs any
 }
 
 type V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_FunctionDeclarations struct {
-	Behavior any
-	Description any
-	Name any
-	Parameters any
+	Behavior             any
+	Description          any
+	Name                 any
+	Parameters           any
 	ParametersJsonSchema any
-	Response any
-	ResponseJsonSchema any
+	Response             any
+	ResponseJsonSchema   any
 }
 
 type V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_GoogleMaps_GroundingTypes struct {
-	Places any
+	Places  any
 	Routing any
 }
 
 type V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_GoogleMaps struct {
-	EnableWidget any
+	EnableWidget   any
 	GroundingTypes any
 }
 
 type V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_GoogleSearch_SearchTypes struct {
 	ImageSearch any
-	WebSearch any
+	WebSearch   any
 }
 
 type V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_GoogleSearch struct {
 	BlockingConfidence any
-	ExcludeDomains any
-	SearchTypes any
+	ExcludeDomains     any
+	SearchTypes        any
 }
 
 type V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_GoogleSearchRetrieval_DynamicRetrievalConfig struct {
 	DynamicThreshold any
-	Mode any
+	Mode             any
 }
 
 type V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_GoogleSearchRetrieval struct {
@@ -782,15 +782,15 @@ type V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats
 }
 
 type V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_ParallelAiSearch struct {
-	ApiKey any
-	CustomConfigs any
-	EnableDataRetention any
+	ApiKey                  any
+	CustomConfigs           any
+	EnableDataRetention     any
 	EnableZeroDataRetention any
 }
 
 type V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_Retrieval_ExternalApi_ApiAuth_ApiKeyConfig struct {
 	ApiKeySecretVersion any
-	ApiKeyString any
+	ApiKeyString        any
 }
 
 type V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_Retrieval_ExternalApi_ApiAuth struct {
@@ -798,10 +798,10 @@ type V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats
 }
 
 type V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_Retrieval_ExternalApi_AuthConfig_ApiKeyConfig struct {
-	ApiKeySecret any
-	ApiKeyString any
+	ApiKeySecret        any
+	ApiKeyString        any
 	HttpElementLocation any
-	Name any
+	Name                any
 }
 
 type V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_Retrieval_ExternalApi_AuthConfig_GoogleServiceAccountConfig struct {
@@ -813,60 +813,60 @@ type V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats
 }
 
 type V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_Retrieval_ExternalApi_AuthConfig_OauthConfig struct {
-	AccessToken any
+	AccessToken    any
 	ServiceAccount any
 }
 
 type V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_Retrieval_ExternalApi_AuthConfig_OidcConfig struct {
-	IdToken any
+	IdToken        any
 	ServiceAccount any
 }
 
 type V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_Retrieval_ExternalApi_AuthConfig struct {
-	ApiKeyConfig any
-	AuthType any
+	ApiKeyConfig               any
+	AuthType                   any
 	GoogleServiceAccountConfig any
-	HttpBasicAuthConfig any
-	OauthConfig any
-	OidcConfig any
+	HttpBasicAuthConfig        any
+	OauthConfig                any
+	OidcConfig                 any
 }
 
 type V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_Retrieval_ExternalApi_ElasticSearchParams struct {
-	Index any
-	NumHits any
+	Index          any
+	NumHits        any
 	SearchTemplate any
 }
 
 type V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_Retrieval_ExternalApi struct {
-	ApiAuth any
-	ApiSpec any
-	AuthConfig any
+	ApiAuth             any
+	ApiSpec             any
+	AuthConfig          any
 	ElasticSearchParams any
-	Endpoint any
-	SimpleSearchParams any
+	Endpoint            any
+	SimpleSearchParams  any
 }
 
 type V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_Retrieval_VertexAiSearch_DataStoreSpecs struct {
 	DataStore any
-	Filter any
+	Filter    any
 }
 
 type V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_Retrieval_VertexAiSearch struct {
 	DataStoreSpecs any
-	Datastore any
-	Engine any
-	Filter any
-	MaxResults any
+	Datastore      any
+	Engine         any
+	Filter         any
+	MaxResults     any
 }
 
 type V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_Retrieval_VertexRagStore_RagResources struct {
-	RagCorpus any
+	RagCorpus  any
 	RagFileIds any
 }
 
 type V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_Filter struct {
-	MetadataFilter any
-	VectorDistanceThreshold any
+	MetadataFilter            any
+	VectorDistanceThreshold   any
 	VectorSimilarityThreshold any
 }
 
@@ -875,52 +875,52 @@ type V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats
 }
 
 type V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_Ranking struct {
-	LlmRanker any
+	LlmRanker   any
 	RankService any
 }
 
 type V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_Retrieval_VertexRagStore_RagRetrievalConfig struct {
-	Filter any
+	Filter       any
 	HybridSearch any
-	Ranking any
-	TopK any
+	Ranking      any
+	TopK         any
 }
 
 type V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_Retrieval_VertexRagStore struct {
-	RagCorpora any
-	RagResources any
-	RagRetrievalConfig any
-	SimilarityTopK any
-	StoreContext any
+	RagCorpora              any
+	RagResources            any
+	RagRetrievalConfig      any
+	SimilarityTopK          any
+	StoreContext            any
 	VectorDistanceThreshold any
 }
 
 type V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_Retrieval struct {
 	DisableAttribution any
-	ExternalApi any
-	VertexAiSearch any
-	VertexRagStore any
+	ExternalApi        any
+	VertexAiSearch     any
+	VertexRagStore     any
 }
 
 type V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools struct {
-	CodeExecution any
-	ComputerUse any
-	EnterpriseWebSearch any
-	ExaAiSearch any
-	FunctionDeclarations any
-	GoogleMaps any
-	GoogleSearch any
+	CodeExecution         any
+	ComputerUse           any
+	EnterpriseWebSearch   any
+	ExaAiSearch           any
+	FunctionDeclarations  any
+	GoogleMaps            any
+	GoogleSearch          any
 	GoogleSearchRetrieval any
-	ParallelAiSearch any
-	Retrieval any
-	UrlContext any
+	ParallelAiSearch      any
+	Retrieval             any
+	UrlContext            any
 }
 
 type V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples struct {
-	Contents any
-	References any
+	Contents          any
+	References        any
 	SystemInstruction any
-	Tools any
+	Tools             any
 }
 
 type V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples struct {
@@ -964,12 +964,12 @@ type V1beta1TuningJob_TuningDataStats_DistillationDataStats struct {
 
 type V1beta1TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_Completions struct {
 	Completion any
-	Score any
+	Score      any
 }
 
 type V1beta1TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples struct {
 	Completions any
-	Contents any
+	Contents    any
 }
 
 type V1beta1TuningJob_TuningDataStats_PreferenceOptimizationDataStats struct {
@@ -997,7 +997,7 @@ type V1beta1TuningJob_TuningDataStats_PreferenceOptimizationDataStats struct {
 
 type V1beta1TuningJob_TuningDataStats_SupervisedTuningDataStats_UserInputTokenDistribution_Buckets struct {
 	Count any
-	Left any
+	Left  any
 	Right any
 }
 
@@ -1103,1632 +1103,1493 @@ type V1beta1TuningJob_VeoTuningSpec struct {
 }
 
 var V1beta1TuningJob_DistillationSpec_HyperParametersFields = ubx.FieldMap{
-		"AdapterSize": ubx.FieldSpec{WireName: "adapter_size"},
-		"BatchSize": ubx.FieldSpec{WireName: "batch_size"},
-		"EpochCount": ubx.FieldSpec{WireName: "epoch_count"},
-		"LearningRate": ubx.FieldSpec{WireName: "learning_rate"},
-		"LearningRateMultiplier": ubx.FieldSpec{WireName: "learning_rate_multiplier"},
-	}
+	"AdapterSize":            ubx.FieldSpec{WireName: "adapter_size"},
+	"BatchSize":              ubx.FieldSpec{WireName: "batch_size"},
+	"EpochCount":             ubx.FieldSpec{WireName: "epoch_count"},
+	"LearningRate":           ubx.FieldSpec{WireName: "learning_rate"},
+	"LearningRateMultiplier": ubx.FieldSpec{WireName: "learning_rate_multiplier"},
+}
 
 var V1beta1TuningJob_DistillationSpecFields = ubx.FieldMap{
-		"BaseTeacherModel": ubx.FieldSpec{WireName: "base_teacher_model"},
-		"HyperParameters": ubx.FieldSpec{
-			WireName: "hyper_parameters",
-			Kind: "object",
-			Fields: V1beta1TuningJob_DistillationSpec_HyperParametersFields,
-		},
-		"PipelineRootDirectory": ubx.FieldSpec{WireName: "pipeline_root_directory"},
-		"PromptDatasetUri": ubx.FieldSpec{WireName: "prompt_dataset_uri"},
-		"StudentModel": ubx.FieldSpec{WireName: "student_model"},
-		"TrainingDatasetUri": ubx.FieldSpec{WireName: "training_dataset_uri"},
-		"TunedTeacherModelSource": ubx.FieldSpec{WireName: "tuned_teacher_model_source"},
-		"TuningMode": ubx.FieldSpec{WireName: "tuning_mode"},
-		"ValidationDatasetUri": ubx.FieldSpec{WireName: "validation_dataset_uri"},
-	}
+	"BaseTeacherModel": ubx.FieldSpec{WireName: "base_teacher_model"},
+	"HyperParameters": ubx.FieldSpec{
+		WireName: "hyper_parameters",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_DistillationSpec_HyperParametersFields,
+	},
+	"PipelineRootDirectory":   ubx.FieldSpec{WireName: "pipeline_root_directory"},
+	"PromptDatasetUri":        ubx.FieldSpec{WireName: "prompt_dataset_uri"},
+	"StudentModel":            ubx.FieldSpec{WireName: "student_model"},
+	"TrainingDatasetUri":      ubx.FieldSpec{WireName: "training_dataset_uri"},
+	"TunedTeacherModelSource": ubx.FieldSpec{WireName: "tuned_teacher_model_source"},
+	"TuningMode":              ubx.FieldSpec{WireName: "tuning_mode"},
+	"ValidationDatasetUri":    ubx.FieldSpec{WireName: "validation_dataset_uri"},
+}
 
 var V1beta1TuningJob_EncryptionSpecFields = ubx.FieldMap{
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-	}
+	"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
+}
 
 var V1beta1TuningJob_ErrorFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
-
-var V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults_BleuMetricValueFields = ubx.FieldMap{
-		"Score": ubx.FieldSpec{WireName: "score"},
-	}
-
-var V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults_PairwiseMetricResult_CustomOutput_RawOutputsFields = ubx.FieldMap{
-		"RawOutput": ubx.FieldSpec{WireName: "raw_output"},
-	}
-
-var V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults_PairwiseMetricResult_CustomOutputFields = ubx.FieldMap{
-		"RawOutputs": ubx.FieldSpec{
-			WireName: "raw_outputs",
-			Kind: "object",
-			Fields: V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults_PairwiseMetricResult_CustomOutput_RawOutputsFields,
-		},
-	}
-
-var V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults_PairwiseMetricResultFields = ubx.FieldMap{
-		"CustomOutput": ubx.FieldSpec{
-			WireName: "custom_output",
-			Kind: "object",
-			Fields: V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults_PairwiseMetricResult_CustomOutputFields,
-		},
-		"Explanation": ubx.FieldSpec{WireName: "explanation"},
-		"PairwiseChoice": ubx.FieldSpec{WireName: "pairwise_choice"},
-	}
-
-var V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults_PointwiseMetricResultFields = ubx.FieldMap{
-		"CustomOutput": ubx.FieldSpec{
-			WireName: "custom_output",
-			Kind: "object",
-			Fields: V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults_PairwiseMetricResult_CustomOutputFields,
-		},
-		"Explanation": ubx.FieldSpec{WireName: "explanation"},
-		"Score": ubx.FieldSpec{WireName: "score"},
-	}
-
-var V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResultsFields = ubx.FieldMap{
-		"AggregationMetric": ubx.FieldSpec{WireName: "aggregation_metric"},
-		"BleuMetricValue": ubx.FieldSpec{
-			WireName: "bleu_metric_value",
-			Kind: "object",
-			Fields: V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults_BleuMetricValueFields,
-		},
-		"CustomCodeExecutionResult": ubx.FieldSpec{
-			WireName: "custom_code_execution_result",
-			Kind: "object",
-			Fields: V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults_BleuMetricValueFields,
-		},
-		"ExactMatchMetricValue": ubx.FieldSpec{
-			WireName: "exact_match_metric_value",
-			Kind: "object",
-			Fields: V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults_BleuMetricValueFields,
-		},
-		"PairwiseMetricResult": ubx.FieldSpec{
-			WireName: "pairwise_metric_result",
-			Kind: "object",
-			Fields: V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults_PairwiseMetricResultFields,
-		},
-		"PointwiseMetricResult": ubx.FieldSpec{
-			WireName: "pointwise_metric_result",
-			Kind: "object",
-			Fields: V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults_PointwiseMetricResultFields,
-		},
-		"RougeMetricValue": ubx.FieldSpec{
-			WireName: "rouge_metric_value",
-			Kind: "object",
-			Fields: V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults_BleuMetricValueFields,
-		},
-	}
-
-var V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_Dataset_BigquerySourceFields = ubx.FieldMap{
-		"InputUri": ubx.FieldSpec{WireName: "input_uri"},
-	}
-
-var V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_Dataset_GcsSourceFields = ubx.FieldMap{
-		"Uris": ubx.FieldSpec{WireName: "uris"},
-	}
-
-var V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_DatasetFields = ubx.FieldMap{
-		"BigquerySource": ubx.FieldSpec{
-			WireName: "bigquery_source",
-			Kind: "object",
-			Fields: V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_Dataset_BigquerySourceFields,
-		},
-		"GcsSource": ubx.FieldSpec{
-			WireName: "gcs_source",
-			Kind: "object",
-			Fields: V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_Dataset_GcsSourceFields,
-		},
-	}
-
-var V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutputFields = ubx.FieldMap{
-		"AggregationResults": ubx.FieldSpec{
-			WireName: "aggregation_results",
-			Kind: "list",
-			Fields: V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResultsFields,
-		},
-		"Dataset": ubx.FieldSpec{
-			WireName: "dataset",
-			Kind: "object",
-			Fields: V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_DatasetFields,
-		},
-	}
-
-var V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_OutputInfoFields = ubx.FieldMap{
-		"GcsOutputDirectory": ubx.FieldSpec{WireName: "gcs_output_directory"},
-	}
-
-var V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponseFields = ubx.FieldMap{
-		"AggregationOutput": ubx.FieldSpec{
-			WireName: "aggregation_output",
-			Kind: "object",
-			Fields: V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutputFields,
-		},
-		"OutputInfo": ubx.FieldSpec{
-			WireName: "output_info",
-			Kind: "object",
-			Fields: V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_OutputInfoFields,
-		},
-	}
-
-var V1beta1TuningJob_EvaluateDatasetRunsFields = ubx.FieldMap{
-		"CheckpointId": ubx.FieldSpec{WireName: "checkpoint_id"},
-		"Error": ubx.FieldSpec{
-			WireName: "error",
-			Kind: "object",
-			Fields: V1beta1TuningJob_ErrorFields,
-		},
-		"EvaluateDatasetResponse": ubx.FieldSpec{
-			WireName: "evaluate_dataset_response",
-			Kind: "object",
-			Fields: V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponseFields,
-		},
-		"EvaluationRun": ubx.FieldSpec{WireName: "evaluation_run"},
-		"OperationName": ubx.FieldSpec{WireName: "operation_name"},
-	}
+	"Code":    ubx.FieldSpec{WireName: "code"},
+	"Details": ubx.FieldSpec{WireName: "details"},
+	"Message": ubx.FieldSpec{WireName: "message"},
+}
 
 var V1beta1TuningJob_FullFineTuningSpecFields = ubx.FieldMap{
-		"HyperParameters": ubx.FieldSpec{
-			WireName: "hyper_parameters",
-			Kind: "object",
-			Fields: V1beta1TuningJob_DistillationSpec_HyperParametersFields,
-		},
-		"TrainingDatasetUri": ubx.FieldSpec{WireName: "training_dataset_uri"},
-		"ValidationDatasetUri": ubx.FieldSpec{WireName: "validation_dataset_uri"},
-	}
+	"HyperParameters": ubx.FieldSpec{
+		WireName: "hyper_parameters",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_DistillationSpec_HyperParametersFields,
+	},
+	"TrainingDatasetUri":   ubx.FieldSpec{WireName: "training_dataset_uri"},
+	"ValidationDatasetUri": ubx.FieldSpec{WireName: "validation_dataset_uri"},
+}
 
 var V1beta1TuningJob_PartnerModelTuningSpecFields = ubx.FieldMap{
-		"HyperParameters": ubx.FieldSpec{WireName: "hyper_parameters"},
-		"TrainingDatasetUri": ubx.FieldSpec{WireName: "training_dataset_uri"},
-		"ValidationDatasetUri": ubx.FieldSpec{WireName: "validation_dataset_uri"},
-	}
+	"HyperParameters":      ubx.FieldSpec{WireName: "hyper_parameters"},
+	"TrainingDatasetUri":   ubx.FieldSpec{WireName: "training_dataset_uri"},
+	"ValidationDatasetUri": ubx.FieldSpec{WireName: "validation_dataset_uri"},
+}
 
 var V1beta1TuningJob_PreTunedModelFields = ubx.FieldMap{
-		"BaseModel": ubx.FieldSpec{WireName: "base_model"},
-		"CheckpointId": ubx.FieldSpec{WireName: "checkpoint_id"},
-		"TunedModelName": ubx.FieldSpec{WireName: "tuned_model_name"},
-	}
+	"BaseModel":      ubx.FieldSpec{WireName: "base_model"},
+	"CheckpointId":   ubx.FieldSpec{WireName: "checkpoint_id"},
+	"TunedModelName": ubx.FieldSpec{WireName: "tuned_model_name"},
+}
 
 var V1beta1TuningJob_PreferenceOptimizationSpec_HyperParametersFields = ubx.FieldMap{
-		"AdapterSize": ubx.FieldSpec{WireName: "adapter_size"},
-		"Beta": ubx.FieldSpec{WireName: "beta"},
-		"EpochCount": ubx.FieldSpec{WireName: "epoch_count"},
-		"LearningRateMultiplier": ubx.FieldSpec{WireName: "learning_rate_multiplier"},
-	}
+	"AdapterSize":            ubx.FieldSpec{WireName: "adapter_size"},
+	"Beta":                   ubx.FieldSpec{WireName: "beta"},
+	"EpochCount":             ubx.FieldSpec{WireName: "epoch_count"},
+	"LearningRateMultiplier": ubx.FieldSpec{WireName: "learning_rate_multiplier"},
+}
 
 var V1beta1TuningJob_PreferenceOptimizationSpecFields = ubx.FieldMap{
-		"ExportLastCheckpointOnly": ubx.FieldSpec{WireName: "export_last_checkpoint_only"},
-		"HyperParameters": ubx.FieldSpec{
-			WireName: "hyper_parameters",
-			Kind: "object",
-			Fields: V1beta1TuningJob_PreferenceOptimizationSpec_HyperParametersFields,
-		},
-		"TrainingDatasetUri": ubx.FieldSpec{WireName: "training_dataset_uri"},
-		"ValidationDatasetUri": ubx.FieldSpec{WireName: "validation_dataset_uri"},
-	}
+	"ExportLastCheckpointOnly": ubx.FieldSpec{WireName: "export_last_checkpoint_only"},
+	"HyperParameters": ubx.FieldSpec{
+		WireName: "hyper_parameters",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_PreferenceOptimizationSpec_HyperParametersFields,
+	},
+	"TrainingDatasetUri":   ubx.FieldSpec{WireName: "training_dataset_uri"},
+	"ValidationDatasetUri": ubx.FieldSpec{WireName: "validation_dataset_uri"},
+}
 
 var V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_AudioTranscriptionConfig_LanguageHintsFields = ubx.FieldMap{
-		"LanguageCodes": ubx.FieldSpec{WireName: "language_codes"},
-	}
+	"LanguageCodes": ubx.FieldSpec{WireName: "language_codes"},
+}
 
 var V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_AudioTranscriptionConfigFields = ubx.FieldMap{
-		"AdaptationPhrases": ubx.FieldSpec{WireName: "adaptation_phrases"},
-		"CustomVocabulary": ubx.FieldSpec{WireName: "custom_vocabulary"},
-		"Diarization": ubx.FieldSpec{WireName: "diarization"},
-		"LanguageAuto": ubx.FieldSpec{WireName: "language_auto"},
-		"LanguageCodes": ubx.FieldSpec{WireName: "language_codes"},
-		"LanguageHints": ubx.FieldSpec{
-			WireName: "language_hints",
-			Kind: "object",
-			Fields: V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_AudioTranscriptionConfig_LanguageHintsFields,
-		},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"WordTimestamp": ubx.FieldSpec{WireName: "word_timestamp"},
-	}
+	"AdaptationPhrases": ubx.FieldSpec{WireName: "adaptation_phrases"},
+	"CustomVocabulary":  ubx.FieldSpec{WireName: "custom_vocabulary"},
+	"Diarization":       ubx.FieldSpec{WireName: "diarization"},
+	"LanguageAuto":      ubx.FieldSpec{WireName: "language_auto"},
+	"LanguageCodes":     ubx.FieldSpec{WireName: "language_codes"},
+	"LanguageHints": ubx.FieldSpec{
+		WireName: "language_hints",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_AudioTranscriptionConfig_LanguageHintsFields,
+	},
+	"Mode":          ubx.FieldSpec{WireName: "mode"},
+	"WordTimestamp": ubx.FieldSpec{WireName: "word_timestamp"},
+}
 
 var V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_ImageConfig_ImageOutputOptionsFields = ubx.FieldMap{
-		"CompressionQuality": ubx.FieldSpec{WireName: "compression_quality"},
-		"MimeType": ubx.FieldSpec{WireName: "mime_type"},
-	}
+	"CompressionQuality": ubx.FieldSpec{WireName: "compression_quality"},
+	"MimeType":           ubx.FieldSpec{WireName: "mime_type"},
+}
 
 var V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_ImageConfigFields = ubx.FieldMap{
-		"AspectRatio": ubx.FieldSpec{WireName: "aspect_ratio"},
-		"ImageOutputOptions": ubx.FieldSpec{
-			WireName: "image_output_options",
-			Kind: "object",
-			Fields: V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_ImageConfig_ImageOutputOptionsFields,
-		},
-		"ImageSize": ubx.FieldSpec{WireName: "image_size"},
-		"PersonGeneration": ubx.FieldSpec{WireName: "person_generation"},
-		"ProminentPeople": ubx.FieldSpec{WireName: "prominent_people"},
-	}
+	"AspectRatio": ubx.FieldSpec{WireName: "aspect_ratio"},
+	"ImageOutputOptions": ubx.FieldSpec{
+		WireName: "image_output_options",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_ImageConfig_ImageOutputOptionsFields,
+	},
+	"ImageSize":        ubx.FieldSpec{WireName: "image_size"},
+	"PersonGeneration": ubx.FieldSpec{WireName: "person_generation"},
+	"ProminentPeople":  ubx.FieldSpec{WireName: "prominent_people"},
+}
 
 var V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_ModelConfigFields = ubx.FieldMap{
-		"FeatureSelectionPreference": ubx.FieldSpec{WireName: "feature_selection_preference"},
-	}
+	"FeatureSelectionPreference": ubx.FieldSpec{WireName: "feature_selection_preference"},
+}
 
 var V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_ResponseFormat_AudioFields = ubx.FieldMap{
-		"BitRate": ubx.FieldSpec{WireName: "bit_rate"},
-		"Delivery": ubx.FieldSpec{WireName: "delivery"},
-		"MimeType": ubx.FieldSpec{WireName: "mime_type"},
-		"SampleRate": ubx.FieldSpec{WireName: "sample_rate"},
-	}
+	"BitRate":    ubx.FieldSpec{WireName: "bit_rate"},
+	"Delivery":   ubx.FieldSpec{WireName: "delivery"},
+	"MimeType":   ubx.FieldSpec{WireName: "mime_type"},
+	"SampleRate": ubx.FieldSpec{WireName: "sample_rate"},
+}
 
 var V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_ResponseFormat_ImageFields = ubx.FieldMap{
-		"AspectRatio": ubx.FieldSpec{WireName: "aspect_ratio"},
-		"Delivery": ubx.FieldSpec{WireName: "delivery"},
-		"ImageSize": ubx.FieldSpec{WireName: "image_size"},
-		"MimeType": ubx.FieldSpec{WireName: "mime_type"},
-	}
+	"AspectRatio": ubx.FieldSpec{WireName: "aspect_ratio"},
+	"Delivery":    ubx.FieldSpec{WireName: "delivery"},
+	"ImageSize":   ubx.FieldSpec{WireName: "image_size"},
+	"MimeType":    ubx.FieldSpec{WireName: "mime_type"},
+}
 
 var V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_ResponseFormat_TextFields = ubx.FieldMap{
-		"MimeType": ubx.FieldSpec{WireName: "mime_type"},
-		"Schema": ubx.FieldSpec{WireName: "schema"},
-	}
+	"MimeType": ubx.FieldSpec{WireName: "mime_type"},
+	"Schema":   ubx.FieldSpec{WireName: "schema"},
+}
 
 var V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_ResponseFormat_VideoFields = ubx.FieldMap{
-		"AspectRatio": ubx.FieldSpec{WireName: "aspect_ratio"},
-		"Delivery": ubx.FieldSpec{WireName: "delivery"},
-		"Duration": ubx.FieldSpec{WireName: "duration"},
-		"GcsUri": ubx.FieldSpec{WireName: "gcs_uri"},
-		"Resolution": ubx.FieldSpec{WireName: "resolution"},
-	}
+	"AspectRatio": ubx.FieldSpec{WireName: "aspect_ratio"},
+	"Delivery":    ubx.FieldSpec{WireName: "delivery"},
+	"Duration":    ubx.FieldSpec{WireName: "duration"},
+	"GcsUri":      ubx.FieldSpec{WireName: "gcs_uri"},
+	"Resolution":  ubx.FieldSpec{WireName: "resolution"},
+}
 
 var V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_ResponseFormatFields = ubx.FieldMap{
-		"Audio": ubx.FieldSpec{
-			WireName: "audio",
-			Kind: "object",
-			Fields: V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_ResponseFormat_AudioFields,
-		},
-		"Image": ubx.FieldSpec{
-			WireName: "image",
-			Kind: "object",
-			Fields: V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_ResponseFormat_ImageFields,
-		},
-		"Text": ubx.FieldSpec{
-			WireName: "text",
-			Kind: "object",
-			Fields: V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_ResponseFormat_TextFields,
-		},
-		"Video": ubx.FieldSpec{
-			WireName: "video",
-			Kind: "object",
-			Fields: V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_ResponseFormat_VideoFields,
-		},
-	}
+	"Audio": ubx.FieldSpec{
+		WireName: "audio",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_ResponseFormat_AudioFields,
+	},
+	"Image": ubx.FieldSpec{
+		WireName: "image",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_ResponseFormat_ImageFields,
+	},
+	"Text": ubx.FieldSpec{
+		WireName: "text",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_ResponseFormat_TextFields,
+	},
+	"Video": ubx.FieldSpec{
+		WireName: "video",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_ResponseFormat_VideoFields,
+	},
+}
 
 var V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_ResponseSchemaFields = ubx.FieldMap{
-		"AdditionalProperties": ubx.FieldSpec{WireName: "additional_properties"},
-		"AnyOf": ubx.FieldSpec{WireName: "any_of"},
-		"Default": ubx.FieldSpec{WireName: "default"},
-		"Defs": ubx.FieldSpec{WireName: "defs"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Enum": ubx.FieldSpec{WireName: "enum"},
-		"Example": ubx.FieldSpec{WireName: "example"},
-		"Format": ubx.FieldSpec{WireName: "format"},
-		"Items": ubx.FieldSpec{WireName: "items"},
-		"MaxItems": ubx.FieldSpec{WireName: "max_items"},
-		"MaxLength": ubx.FieldSpec{WireName: "max_length"},
-		"MaxProperties": ubx.FieldSpec{WireName: "max_properties"},
-		"Maximum": ubx.FieldSpec{WireName: "maximum"},
-		"MinItems": ubx.FieldSpec{WireName: "min_items"},
-		"MinLength": ubx.FieldSpec{WireName: "min_length"},
-		"MinProperties": ubx.FieldSpec{WireName: "min_properties"},
-		"Minimum": ubx.FieldSpec{WireName: "minimum"},
-		"Nullable": ubx.FieldSpec{WireName: "nullable"},
-		"Pattern": ubx.FieldSpec{WireName: "pattern"},
-		"Properties": ubx.FieldSpec{WireName: "properties"},
-		"PropertyOrdering": ubx.FieldSpec{WireName: "property_ordering"},
-		"Ref": ubx.FieldSpec{WireName: "ref"},
-		"Required": ubx.FieldSpec{WireName: "required"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"AdditionalProperties": ubx.FieldSpec{WireName: "additional_properties"},
+	"AnyOf":                ubx.FieldSpec{WireName: "any_of"},
+	"Default":              ubx.FieldSpec{WireName: "default"},
+	"Defs":                 ubx.FieldSpec{WireName: "defs"},
+	"Description":          ubx.FieldSpec{WireName: "description"},
+	"Enum":                 ubx.FieldSpec{WireName: "enum"},
+	"Example":              ubx.FieldSpec{WireName: "example"},
+	"Format":               ubx.FieldSpec{WireName: "format"},
+	"Items":                ubx.FieldSpec{WireName: "items"},
+	"MaxItems":             ubx.FieldSpec{WireName: "max_items"},
+	"MaxLength":            ubx.FieldSpec{WireName: "max_length"},
+	"MaxProperties":        ubx.FieldSpec{WireName: "max_properties"},
+	"Maximum":              ubx.FieldSpec{WireName: "maximum"},
+	"MinItems":             ubx.FieldSpec{WireName: "min_items"},
+	"MinLength":            ubx.FieldSpec{WireName: "min_length"},
+	"MinProperties":        ubx.FieldSpec{WireName: "min_properties"},
+	"Minimum":              ubx.FieldSpec{WireName: "minimum"},
+	"Nullable":             ubx.FieldSpec{WireName: "nullable"},
+	"Pattern":              ubx.FieldSpec{WireName: "pattern"},
+	"Properties":           ubx.FieldSpec{WireName: "properties"},
+	"PropertyOrdering":     ubx.FieldSpec{WireName: "property_ordering"},
+	"Ref":                  ubx.FieldSpec{WireName: "ref"},
+	"Required":             ubx.FieldSpec{WireName: "required"},
+	"Title":                ubx.FieldSpec{WireName: "title"},
+	"Type":                 ubx.FieldSpec{WireName: "type"},
+}
 
 var V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_RoutingConfig_AutoModeFields = ubx.FieldMap{
-		"ModelRoutingPreference": ubx.FieldSpec{WireName: "model_routing_preference"},
-	}
+	"ModelRoutingPreference": ubx.FieldSpec{WireName: "model_routing_preference"},
+}
 
 var V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_RoutingConfig_ManualModeFields = ubx.FieldMap{
-		"ModelName": ubx.FieldSpec{WireName: "model_name"},
-	}
+	"ModelName": ubx.FieldSpec{WireName: "model_name"},
+}
 
 var V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_RoutingConfigFields = ubx.FieldMap{
-		"AutoMode": ubx.FieldSpec{
-			WireName: "auto_mode",
-			Kind: "object",
-			Fields: V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_RoutingConfig_AutoModeFields,
-		},
-		"ManualMode": ubx.FieldSpec{
-			WireName: "manual_mode",
-			Kind: "object",
-			Fields: V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_RoutingConfig_ManualModeFields,
-		},
-	}
+	"AutoMode": ubx.FieldSpec{
+		WireName: "auto_mode",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_RoutingConfig_AutoModeFields,
+	},
+	"ManualMode": ubx.FieldSpec{
+		WireName: "manual_mode",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_RoutingConfig_ManualModeFields,
+	},
+}
 
 var V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig_PrebuiltVoiceConfigFields = ubx.FieldMap{
-		"VoiceName": ubx.FieldSpec{WireName: "voice_name"},
-	}
+	"VoiceName": ubx.FieldSpec{WireName: "voice_name"},
+}
 
 var V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig_ReplicatedVoiceConfigFields = ubx.FieldMap{
-		"MimeType": ubx.FieldSpec{WireName: "mime_type"},
-		"VoiceSampleAudio": ubx.FieldSpec{WireName: "voice_sample_audio"},
-	}
+	"MimeType":         ubx.FieldSpec{WireName: "mime_type"},
+	"VoiceSampleAudio": ubx.FieldSpec{WireName: "voice_sample_audio"},
+}
 
 var V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfigFields = ubx.FieldMap{
-		"PrebuiltVoiceConfig": ubx.FieldSpec{
-			WireName: "prebuilt_voice_config",
-			Kind: "object",
-			Fields: V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig_PrebuiltVoiceConfigFields,
-		},
-		"ReplicatedVoiceConfig": ubx.FieldSpec{
-			WireName: "replicated_voice_config",
-			Kind: "object",
-			Fields: V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig_ReplicatedVoiceConfigFields,
-		},
-	}
+	"PrebuiltVoiceConfig": ubx.FieldSpec{
+		WireName: "prebuilt_voice_config",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig_PrebuiltVoiceConfigFields,
+	},
+	"ReplicatedVoiceConfig": ubx.FieldSpec{
+		WireName: "replicated_voice_config",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfig_ReplicatedVoiceConfigFields,
+	},
+}
 
 var V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigsFields = ubx.FieldMap{
-		"Speaker": ubx.FieldSpec{WireName: "speaker"},
-		"VoiceConfig": ubx.FieldSpec{
-			WireName: "voice_config",
-			Kind: "object",
-			Fields: V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfigFields,
-		},
-	}
+	"Speaker": ubx.FieldSpec{WireName: "speaker"},
+	"VoiceConfig": ubx.FieldSpec{
+		WireName: "voice_config",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfigFields,
+	},
+}
 
 var V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfigFields = ubx.FieldMap{
-		"SpeakerVoiceConfigs": ubx.FieldSpec{
-			WireName: "speaker_voice_configs",
-			Kind: "list",
-			Fields: V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigsFields,
-		},
-	}
+	"SpeakerVoiceConfigs": ubx.FieldSpec{
+		WireName: "speaker_voice_configs",
+		Kind:     "list",
+		Fields:   V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigsFields,
+	},
+}
 
 var V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_SpeechConfigFields = ubx.FieldMap{
-		"LanguageCode": ubx.FieldSpec{WireName: "language_code"},
-		"MultiSpeakerVoiceConfig": ubx.FieldSpec{
-			WireName: "multi_speaker_voice_config",
-			Kind: "object",
-			Fields: V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfigFields,
-		},
-		"VoiceConfig": ubx.FieldSpec{
-			WireName: "voice_config",
-			Kind: "object",
-			Fields: V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfigFields,
-		},
-	}
+	"LanguageCode": ubx.FieldSpec{WireName: "language_code"},
+	"MultiSpeakerVoiceConfig": ubx.FieldSpec{
+		WireName: "multi_speaker_voice_config",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfigFields,
+	},
+	"VoiceConfig": ubx.FieldSpec{
+		WireName: "voice_config",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_SpeechConfig_MultiSpeakerVoiceConfig_SpeakerVoiceConfigs_VoiceConfigFields,
+	},
+}
 
 var V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_ThinkingConfigFields = ubx.FieldMap{
-		"IncludeThoughts": ubx.FieldSpec{WireName: "include_thoughts"},
-		"ThinkingBudget": ubx.FieldSpec{WireName: "thinking_budget"},
-		"ThinkingLevel": ubx.FieldSpec{WireName: "thinking_level"},
-	}
+	"IncludeThoughts": ubx.FieldSpec{WireName: "include_thoughts"},
+	"ThinkingBudget":  ubx.FieldSpec{WireName: "thinking_budget"},
+	"ThinkingLevel":   ubx.FieldSpec{WireName: "thinking_level"},
+}
 
 var V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfigFields = ubx.FieldMap{
-		"AudioTimestamp": ubx.FieldSpec{WireName: "audio_timestamp"},
-		"AudioTranscriptionConfig": ubx.FieldSpec{
-			WireName: "audio_transcription_config",
-			Kind: "object",
-			Fields: V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_AudioTranscriptionConfigFields,
-		},
-		"CandidateCount": ubx.FieldSpec{WireName: "candidate_count"},
-		"EnableAffectiveDialog": ubx.FieldSpec{WireName: "enable_affective_dialog"},
-		"FrequencyPenalty": ubx.FieldSpec{WireName: "frequency_penalty"},
-		"ImageConfig": ubx.FieldSpec{
-			WireName: "image_config",
-			Kind: "object",
-			Fields: V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_ImageConfigFields,
-		},
-		"Logprobs": ubx.FieldSpec{WireName: "logprobs"},
-		"MaxOutputTokens": ubx.FieldSpec{WireName: "max_output_tokens"},
-		"MediaResolution": ubx.FieldSpec{WireName: "media_resolution"},
-		"ModelConfig": ubx.FieldSpec{
-			WireName: "model_config",
-			Kind: "object",
-			Fields: V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_ModelConfigFields,
-		},
-		"PresencePenalty": ubx.FieldSpec{WireName: "presence_penalty"},
-		"ResponseFormat": ubx.FieldSpec{
-			WireName: "response_format",
-			Kind: "list",
-			Fields: V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_ResponseFormatFields,
-		},
-		"ResponseJsonSchema": ubx.FieldSpec{WireName: "response_json_schema"},
-		"ResponseLogprobs": ubx.FieldSpec{WireName: "response_logprobs"},
-		"ResponseMimeType": ubx.FieldSpec{WireName: "response_mime_type"},
-		"ResponseModalities": ubx.FieldSpec{WireName: "response_modalities"},
-		"ResponseSchema": ubx.FieldSpec{
-			WireName: "response_schema",
-			Kind: "object",
-			Fields: V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_ResponseSchemaFields,
-		},
-		"RoutingConfig": ubx.FieldSpec{
-			WireName: "routing_config",
-			Kind: "object",
-			Fields: V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_RoutingConfigFields,
-		},
-		"Seed": ubx.FieldSpec{WireName: "seed"},
-		"SpeechConfig": ubx.FieldSpec{
-			WireName: "speech_config",
-			Kind: "object",
-			Fields: V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_SpeechConfigFields,
-		},
-		"StopSequences": ubx.FieldSpec{WireName: "stop_sequences"},
-		"Temperature": ubx.FieldSpec{WireName: "temperature"},
-		"ThinkingConfig": ubx.FieldSpec{
-			WireName: "thinking_config",
-			Kind: "object",
-			Fields: V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_ThinkingConfigFields,
-		},
-		"TopK": ubx.FieldSpec{WireName: "top_k"},
-		"TopP": ubx.FieldSpec{WireName: "top_p"},
-	}
+	"AudioTimestamp": ubx.FieldSpec{WireName: "audio_timestamp"},
+	"AudioTranscriptionConfig": ubx.FieldSpec{
+		WireName: "audio_transcription_config",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_AudioTranscriptionConfigFields,
+	},
+	"CandidateCount":        ubx.FieldSpec{WireName: "candidate_count"},
+	"EnableAffectiveDialog": ubx.FieldSpec{WireName: "enable_affective_dialog"},
+	"FrequencyPenalty":      ubx.FieldSpec{WireName: "frequency_penalty"},
+	"ImageConfig": ubx.FieldSpec{
+		WireName: "image_config",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_ImageConfigFields,
+	},
+	"Logprobs":        ubx.FieldSpec{WireName: "logprobs"},
+	"MaxOutputTokens": ubx.FieldSpec{WireName: "max_output_tokens"},
+	"MediaResolution": ubx.FieldSpec{WireName: "media_resolution"},
+	"ModelConfig": ubx.FieldSpec{
+		WireName: "model_config",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_ModelConfigFields,
+	},
+	"PresencePenalty": ubx.FieldSpec{WireName: "presence_penalty"},
+	"ResponseFormat": ubx.FieldSpec{
+		WireName: "response_format",
+		Kind:     "list",
+		Fields:   V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_ResponseFormatFields,
+	},
+	"ResponseJsonSchema": ubx.FieldSpec{WireName: "response_json_schema"},
+	"ResponseLogprobs":   ubx.FieldSpec{WireName: "response_logprobs"},
+	"ResponseMimeType":   ubx.FieldSpec{WireName: "response_mime_type"},
+	"ResponseModalities": ubx.FieldSpec{WireName: "response_modalities"},
+	"ResponseSchema": ubx.FieldSpec{
+		WireName: "response_schema",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_ResponseSchemaFields,
+	},
+	"RoutingConfig": ubx.FieldSpec{
+		WireName: "routing_config",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_RoutingConfigFields,
+	},
+	"Seed": ubx.FieldSpec{WireName: "seed"},
+	"SpeechConfig": ubx.FieldSpec{
+		WireName: "speech_config",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_SpeechConfigFields,
+	},
+	"StopSequences": ubx.FieldSpec{WireName: "stop_sequences"},
+	"Temperature":   ubx.FieldSpec{WireName: "temperature"},
+	"ThinkingConfig": ubx.FieldSpec{
+		WireName: "thinking_config",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_ThinkingConfigFields,
+	},
+	"TopK": ubx.FieldSpec{WireName: "top_k"},
+	"TopP": ubx.FieldSpec{WireName: "top_p"},
+}
 
 var V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfigFields = ubx.FieldMap{
-		"AutoraterModel": ubx.FieldSpec{WireName: "autorater_model"},
-		"FlipEnabled": ubx.FieldSpec{WireName: "flip_enabled"},
-		"GenerationConfig": ubx.FieldSpec{
-			WireName: "generation_config",
-			Kind: "object",
-			Fields: V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfigFields,
-		},
-		"SamplingCount": ubx.FieldSpec{WireName: "sampling_count"},
-	}
+	"AutoraterModel": ubx.FieldSpec{WireName: "autorater_model"},
+	"FlipEnabled":    ubx.FieldSpec{WireName: "flip_enabled"},
+	"GenerationConfig": ubx.FieldSpec{
+		WireName: "generation_config",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfigFields,
+	},
+	"SamplingCount": ubx.FieldSpec{WireName: "sampling_count"},
+}
 
 var V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterResponseParseConfigFields = ubx.FieldMap{
-		"ParseType": ubx.FieldSpec{WireName: "parse_type"},
-		"RegexExtractExpression": ubx.FieldSpec{WireName: "regex_extract_expression"},
-	}
+	"ParseType":              ubx.FieldSpec{WireName: "parse_type"},
+	"RegexExtractExpression": ubx.FieldSpec{WireName: "regex_extract_expression"},
+}
 
 var V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_ExactMatchScorerFields = ubx.FieldMap{
-		"CorrectAnswerReward": ubx.FieldSpec{WireName: "correct_answer_reward"},
-		"Expression": ubx.FieldSpec{WireName: "expression"},
-		"WrongAnswerReward": ubx.FieldSpec{WireName: "wrong_answer_reward"},
-	}
+	"CorrectAnswerReward": ubx.FieldSpec{WireName: "correct_answer_reward"},
+	"Expression":          ubx.FieldSpec{WireName: "expression"},
+	"WrongAnswerReward":   ubx.FieldSpec{WireName: "wrong_answer_reward"},
+}
 
 var V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorerFields = ubx.FieldMap{
-		"AutoraterConfig": ubx.FieldSpec{
-			WireName: "autorater_config",
-			Kind: "object",
-			Fields: V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfigFields,
-		},
-		"AutoraterPrompt": ubx.FieldSpec{WireName: "autorater_prompt"},
-		"AutoraterResponseParseConfig": ubx.FieldSpec{
-			WireName: "autorater_response_parse_config",
-			Kind: "object",
-			Fields: V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterResponseParseConfigFields,
-		},
-		"ExactMatchScorer": ubx.FieldSpec{
-			WireName: "exact_match_scorer",
-			Kind: "object",
-			Fields: V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_ExactMatchScorerFields,
-		},
-		"ParsedResponseConversionScorer": ubx.FieldSpec{WireName: "parsed_response_conversion_scorer"},
-	}
+	"AutoraterConfig": ubx.FieldSpec{
+		WireName: "autorater_config",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfigFields,
+	},
+	"AutoraterPrompt": ubx.FieldSpec{WireName: "autorater_prompt"},
+	"AutoraterResponseParseConfig": ubx.FieldSpec{
+		WireName: "autorater_response_parse_config",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterResponseParseConfigFields,
+	},
+	"ExactMatchScorer": ubx.FieldSpec{
+		WireName: "exact_match_scorer",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_ExactMatchScorerFields,
+	},
+	"ParsedResponseConversionScorer": ubx.FieldSpec{WireName: "parsed_response_conversion_scorer"},
+}
 
 var V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_CloudRunRewardScorerFields = ubx.FieldMap{
-		"CloudRunUri": ubx.FieldSpec{WireName: "cloud_run_uri"},
-	}
+	"CloudRunUri": ubx.FieldSpec{WireName: "cloud_run_uri"},
+}
 
 var V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_CodeExecutionRewardScorerFields = ubx.FieldMap{
-		"PythonCodeSnippet": ubx.FieldSpec{WireName: "python_code_snippet"},
-	}
+	"PythonCodeSnippet": ubx.FieldSpec{WireName: "python_code_snippet"},
+}
 
 var V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_StringMatchRewardScorer_JsonMatchExpression_ValueStringMatchExpressionFields = ubx.FieldMap{
-		"Expression": ubx.FieldSpec{WireName: "expression"},
-		"MatchOperation": ubx.FieldSpec{WireName: "match_operation"},
-	}
+	"Expression":     ubx.FieldSpec{WireName: "expression"},
+	"MatchOperation": ubx.FieldSpec{WireName: "match_operation"},
+}
 
 var V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_StringMatchRewardScorer_JsonMatchExpressionFields = ubx.FieldMap{
-		"KeyName": ubx.FieldSpec{WireName: "key_name"},
-		"ValueStringMatchExpression": ubx.FieldSpec{
-			WireName: "value_string_match_expression",
-			Kind: "object",
-			Fields: V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_StringMatchRewardScorer_JsonMatchExpression_ValueStringMatchExpressionFields,
-		},
-	}
+	"KeyName": ubx.FieldSpec{WireName: "key_name"},
+	"ValueStringMatchExpression": ubx.FieldSpec{
+		WireName: "value_string_match_expression",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_StringMatchRewardScorer_JsonMatchExpression_ValueStringMatchExpressionFields,
+	},
+}
 
 var V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_StringMatchRewardScorerFields = ubx.FieldMap{
-		"CorrectAnswerReward": ubx.FieldSpec{WireName: "correct_answer_reward"},
-		"JsonMatchExpression": ubx.FieldSpec{
-			WireName: "json_match_expression",
-			Kind: "object",
-			Fields: V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_StringMatchRewardScorer_JsonMatchExpressionFields,
-		},
-		"StringMatchExpression": ubx.FieldSpec{
-			WireName: "string_match_expression",
-			Kind: "object",
-			Fields: V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_StringMatchRewardScorer_JsonMatchExpression_ValueStringMatchExpressionFields,
-		},
-		"WrongAnswerReward": ubx.FieldSpec{WireName: "wrong_answer_reward"},
-	}
+	"CorrectAnswerReward": ubx.FieldSpec{WireName: "correct_answer_reward"},
+	"JsonMatchExpression": ubx.FieldSpec{
+		WireName: "json_match_expression",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_StringMatchRewardScorer_JsonMatchExpressionFields,
+	},
+	"StringMatchExpression": ubx.FieldSpec{
+		WireName: "string_match_expression",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_StringMatchRewardScorer_JsonMatchExpression_ValueStringMatchExpressionFields,
+	},
+	"WrongAnswerReward": ubx.FieldSpec{WireName: "wrong_answer_reward"},
+}
 
 var V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfigFields = ubx.FieldMap{
-		"AutoraterScorer": ubx.FieldSpec{
-			WireName: "autorater_scorer",
-			Kind: "object",
-			Fields: V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorerFields,
-		},
-		"CloudRunRewardScorer": ubx.FieldSpec{
-			WireName: "cloud_run_reward_scorer",
-			Kind: "object",
-			Fields: V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_CloudRunRewardScorerFields,
-		},
-		"CodeExecutionRewardScorer": ubx.FieldSpec{
-			WireName: "code_execution_reward_scorer",
-			Kind: "object",
-			Fields: V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_CodeExecutionRewardScorerFields,
-		},
-		"ParseResponseConfig": ubx.FieldSpec{
-			WireName: "parse_response_config",
-			Kind: "object",
-			Fields: V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterResponseParseConfigFields,
-		},
-		"RewardName": ubx.FieldSpec{WireName: "reward_name"},
-		"StringMatchRewardScorer": ubx.FieldSpec{
-			WireName: "string_match_reward_scorer",
-			Kind: "object",
-			Fields: V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_StringMatchRewardScorerFields,
-		},
-	}
+	"AutoraterScorer": ubx.FieldSpec{
+		WireName: "autorater_scorer",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorerFields,
+	},
+	"CloudRunRewardScorer": ubx.FieldSpec{
+		WireName: "cloud_run_reward_scorer",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_CloudRunRewardScorerFields,
+	},
+	"CodeExecutionRewardScorer": ubx.FieldSpec{
+		WireName: "code_execution_reward_scorer",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_CodeExecutionRewardScorerFields,
+	},
+	"ParseResponseConfig": ubx.FieldSpec{
+		WireName: "parse_response_config",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterResponseParseConfigFields,
+	},
+	"RewardName": ubx.FieldSpec{WireName: "reward_name"},
+	"StringMatchRewardScorer": ubx.FieldSpec{
+		WireName: "string_match_reward_scorer",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_StringMatchRewardScorerFields,
+	},
+}
 
 var V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigsFields = ubx.FieldMap{
-		"RewardConfig": ubx.FieldSpec{
-			WireName: "reward_config",
-			Kind: "object",
-			Fields: V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfigFields,
-		},
-		"Weight": ubx.FieldSpec{WireName: "weight"},
-	}
+	"RewardConfig": ubx.FieldSpec{
+		WireName: "reward_config",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfigFields,
+	},
+	"Weight": ubx.FieldSpec{WireName: "weight"},
+}
 
 var V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfigFields = ubx.FieldMap{
-		"WeightedRewardConfigs": ubx.FieldSpec{
-			WireName: "weighted_reward_configs",
-			Kind: "list",
-			Fields: V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigsFields,
-		},
-	}
+	"WeightedRewardConfigs": ubx.FieldSpec{
+		WireName: "weighted_reward_configs",
+		Kind:     "list",
+		Fields:   V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigsFields,
+	},
+}
 
 var V1beta1TuningJob_ReinforcementTuningSpec_HyperParametersFields = ubx.FieldMap{
-		"AdapterSize": ubx.FieldSpec{WireName: "adapter_size"},
-		"BatchSize": ubx.FieldSpec{WireName: "batch_size"},
-		"CheckpointInterval": ubx.FieldSpec{WireName: "checkpoint_interval"},
-		"EpochCount": ubx.FieldSpec{WireName: "epoch_count"},
-		"EvaluateInterval": ubx.FieldSpec{WireName: "evaluate_interval"},
-		"LearningRateMultiplier": ubx.FieldSpec{WireName: "learning_rate_multiplier"},
-		"MaxOutputTokens": ubx.FieldSpec{WireName: "max_output_tokens"},
-		"SamplesPerPrompt": ubx.FieldSpec{WireName: "samples_per_prompt"},
-		"StepCount": ubx.FieldSpec{WireName: "step_count"},
-		"ThinkingBudget": ubx.FieldSpec{WireName: "thinking_budget"},
-		"ThinkingLevel": ubx.FieldSpec{WireName: "thinking_level"},
-	}
+	"AdapterSize":            ubx.FieldSpec{WireName: "adapter_size"},
+	"BatchSize":              ubx.FieldSpec{WireName: "batch_size"},
+	"CheckpointInterval":     ubx.FieldSpec{WireName: "checkpoint_interval"},
+	"EpochCount":             ubx.FieldSpec{WireName: "epoch_count"},
+	"EvaluateInterval":       ubx.FieldSpec{WireName: "evaluate_interval"},
+	"LearningRateMultiplier": ubx.FieldSpec{WireName: "learning_rate_multiplier"},
+	"MaxOutputTokens":        ubx.FieldSpec{WireName: "max_output_tokens"},
+	"SamplesPerPrompt":       ubx.FieldSpec{WireName: "samples_per_prompt"},
+	"StepCount":              ubx.FieldSpec{WireName: "step_count"},
+	"ThinkingBudget":         ubx.FieldSpec{WireName: "thinking_budget"},
+	"ThinkingLevel":          ubx.FieldSpec{WireName: "thinking_level"},
+}
 
 var V1beta1TuningJob_ReinforcementTuningSpecFields = ubx.FieldMap{
-		"CompositeRewardConfig": ubx.FieldSpec{
-			WireName: "composite_reward_config",
-			Kind: "object",
-			Fields: V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfigFields,
-		},
-		"HyperParameters": ubx.FieldSpec{
-			WireName: "hyper_parameters",
-			Kind: "object",
-			Fields: V1beta1TuningJob_ReinforcementTuningSpec_HyperParametersFields,
-		},
-		"SingleRewardConfig": ubx.FieldSpec{
-			WireName: "single_reward_config",
-			Kind: "object",
-			Fields: V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfigFields,
-		},
-		"TrainingDatasetUri": ubx.FieldSpec{WireName: "training_dataset_uri"},
-		"ValidationDatasetUri": ubx.FieldSpec{WireName: "validation_dataset_uri"},
-	}
+	"CompositeRewardConfig": ubx.FieldSpec{
+		WireName: "composite_reward_config",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfigFields,
+	},
+	"HyperParameters": ubx.FieldSpec{
+		WireName: "hyper_parameters",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_ReinforcementTuningSpec_HyperParametersFields,
+	},
+	"SingleRewardConfig": ubx.FieldSpec{
+		WireName: "single_reward_config",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfigFields,
+	},
+	"TrainingDatasetUri":   ubx.FieldSpec{WireName: "training_dataset_uri"},
+	"ValidationDatasetUri": ubx.FieldSpec{WireName: "validation_dataset_uri"},
+}
 
 var V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfig_DatasetCustomMetricsFields = ubx.FieldMap{
-		"AggregationFunction": ubx.FieldSpec{WireName: "aggregation_function"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-	}
+	"AggregationFunction": ubx.FieldSpec{WireName: "aggregation_function"},
+	"DisplayName":         ubx.FieldSpec{WireName: "display_name"},
+}
 
 var V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_BleuSpecFields = ubx.FieldMap{
-		"UseEffectiveOrder": ubx.FieldSpec{WireName: "use_effective_order"},
-	}
+	"UseEffectiveOrder": ubx.FieldSpec{WireName: "use_effective_order"},
+}
 
 var V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_ComputationBasedMetricSpecFields = ubx.FieldMap{
-		"Parameters": ubx.FieldSpec{WireName: "parameters"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Parameters": ubx.FieldSpec{WireName: "parameters"},
+	"Type":       ubx.FieldSpec{WireName: "type"},
+}
 
 var V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_CustomCodeExecutionSpecFields = ubx.FieldMap{
-		"CodeExecutionRegion": ubx.FieldSpec{WireName: "code_execution_region"},
-		"EvaluationFunction": ubx.FieldSpec{WireName: "evaluation_function"},
-	}
+	"CodeExecutionRegion": ubx.FieldSpec{WireName: "code_execution_region"},
+	"EvaluationFunction":  ubx.FieldSpec{WireName: "evaluation_function"},
+}
 
 var V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_LlmBasedMetricSpec_PredefinedRubricGenerationSpecFields = ubx.FieldMap{
-		"MetricSpecName": ubx.FieldSpec{WireName: "metric_spec_name"},
-		"MetricSpecParameters": ubx.FieldSpec{WireName: "metric_spec_parameters"},
-	}
+	"MetricSpecName":       ubx.FieldSpec{WireName: "metric_spec_name"},
+	"MetricSpecParameters": ubx.FieldSpec{WireName: "metric_spec_parameters"},
+}
 
 var V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_LlmBasedMetricSpec_ResultParserConfig_CustomCodeParserConfigFields = ubx.FieldMap{
-		"CodeExecutionRegion": ubx.FieldSpec{WireName: "code_execution_region"},
-		"ParsingFunction": ubx.FieldSpec{WireName: "parsing_function"},
-	}
+	"CodeExecutionRegion": ubx.FieldSpec{WireName: "code_execution_region"},
+	"ParsingFunction":     ubx.FieldSpec{WireName: "parsing_function"},
+}
 
 var V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_LlmBasedMetricSpec_ResultParserConfigFields = ubx.FieldMap{
-		"CustomCodeParserConfig": ubx.FieldSpec{
-			WireName: "custom_code_parser_config",
-			Kind: "object",
-			Fields: V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_LlmBasedMetricSpec_ResultParserConfig_CustomCodeParserConfigFields,
-		},
-	}
+	"CustomCodeParserConfig": ubx.FieldSpec{
+		WireName: "custom_code_parser_config",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_LlmBasedMetricSpec_ResultParserConfig_CustomCodeParserConfigFields,
+	},
+}
 
 var V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_LlmBasedMetricSpec_RubricGenerationSpecFields = ubx.FieldMap{
-		"ModelConfig": ubx.FieldSpec{
-			WireName: "model_config",
-			Kind: "object",
-			Fields: V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfigFields,
-		},
-		"PromptTemplate": ubx.FieldSpec{WireName: "prompt_template"},
-		"RubricContentType": ubx.FieldSpec{WireName: "rubric_content_type"},
-		"RubricTypeOntology": ubx.FieldSpec{WireName: "rubric_type_ontology"},
-	}
+	"ModelConfig": ubx.FieldSpec{
+		WireName: "model_config",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfigFields,
+	},
+	"PromptTemplate":     ubx.FieldSpec{WireName: "prompt_template"},
+	"RubricContentType":  ubx.FieldSpec{WireName: "rubric_content_type"},
+	"RubricTypeOntology": ubx.FieldSpec{WireName: "rubric_type_ontology"},
+}
 
 var V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_LlmBasedMetricSpecFields = ubx.FieldMap{
-		"AdditionalConfig": ubx.FieldSpec{WireName: "additional_config"},
-		"JudgeAutoraterConfig": ubx.FieldSpec{
-			WireName: "judge_autorater_config",
-			Kind: "object",
-			Fields: V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfigFields,
-		},
-		"MetricPromptTemplate": ubx.FieldSpec{WireName: "metric_prompt_template"},
-		"PredefinedRubricGenerationSpec": ubx.FieldSpec{
-			WireName: "predefined_rubric_generation_spec",
-			Kind: "object",
-			Fields: V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_LlmBasedMetricSpec_PredefinedRubricGenerationSpecFields,
-		},
-		"ResultParserConfig": ubx.FieldSpec{
-			WireName: "result_parser_config",
-			Kind: "object",
-			Fields: V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_LlmBasedMetricSpec_ResultParserConfigFields,
-		},
-		"RubricGenerationSpec": ubx.FieldSpec{
-			WireName: "rubric_generation_spec",
-			Kind: "object",
-			Fields: V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_LlmBasedMetricSpec_RubricGenerationSpecFields,
-		},
-		"RubricGroupKey": ubx.FieldSpec{WireName: "rubric_group_key"},
-		"SystemInstruction": ubx.FieldSpec{WireName: "system_instruction"},
-	}
+	"AdditionalConfig": ubx.FieldSpec{WireName: "additional_config"},
+	"JudgeAutoraterConfig": ubx.FieldSpec{
+		WireName: "judge_autorater_config",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfigFields,
+	},
+	"MetricPromptTemplate": ubx.FieldSpec{WireName: "metric_prompt_template"},
+	"PredefinedRubricGenerationSpec": ubx.FieldSpec{
+		WireName: "predefined_rubric_generation_spec",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_LlmBasedMetricSpec_PredefinedRubricGenerationSpecFields,
+	},
+	"ResultParserConfig": ubx.FieldSpec{
+		WireName: "result_parser_config",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_LlmBasedMetricSpec_ResultParserConfigFields,
+	},
+	"RubricGenerationSpec": ubx.FieldSpec{
+		WireName: "rubric_generation_spec",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_LlmBasedMetricSpec_RubricGenerationSpecFields,
+	},
+	"RubricGroupKey":    ubx.FieldSpec{WireName: "rubric_group_key"},
+	"SystemInstruction": ubx.FieldSpec{WireName: "system_instruction"},
+}
 
 var V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_Metadata_ScoreRangeFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Max": ubx.FieldSpec{WireName: "max"},
-		"Min": ubx.FieldSpec{WireName: "min"},
-		"Step": ubx.FieldSpec{WireName: "step"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Max":         ubx.FieldSpec{WireName: "max"},
+	"Min":         ubx.FieldSpec{WireName: "min"},
+	"Step":        ubx.FieldSpec{WireName: "step"},
+}
 
 var V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_MetadataFields = ubx.FieldMap{
-		"OtherMetadata": ubx.FieldSpec{WireName: "other_metadata"},
-		"ScoreRange": ubx.FieldSpec{
-			WireName: "score_range",
-			Kind: "object",
-			Fields: V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_Metadata_ScoreRangeFields,
-		},
-		"Title": ubx.FieldSpec{WireName: "title"},
-	}
+	"OtherMetadata": ubx.FieldSpec{WireName: "other_metadata"},
+	"ScoreRange": ubx.FieldSpec{
+		WireName: "score_range",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_Metadata_ScoreRangeFields,
+	},
+	"Title": ubx.FieldSpec{WireName: "title"},
+}
 
 var V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_PairwiseMetricSpec_CustomOutputFormatConfigFields = ubx.FieldMap{
-		"ReturnRawOutput": ubx.FieldSpec{WireName: "return_raw_output"},
-	}
+	"ReturnRawOutput": ubx.FieldSpec{WireName: "return_raw_output"},
+}
 
 var V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_PairwiseMetricSpecFields = ubx.FieldMap{
-		"BaselineResponseFieldName": ubx.FieldSpec{WireName: "baseline_response_field_name"},
-		"CandidateResponseFieldName": ubx.FieldSpec{WireName: "candidate_response_field_name"},
-		"CustomOutputFormatConfig": ubx.FieldSpec{
-			WireName: "custom_output_format_config",
-			Kind: "object",
-			Fields: V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_PairwiseMetricSpec_CustomOutputFormatConfigFields,
-		},
-		"MetricPromptTemplate": ubx.FieldSpec{WireName: "metric_prompt_template"},
-		"SystemInstruction": ubx.FieldSpec{WireName: "system_instruction"},
-	}
+	"BaselineResponseFieldName":  ubx.FieldSpec{WireName: "baseline_response_field_name"},
+	"CandidateResponseFieldName": ubx.FieldSpec{WireName: "candidate_response_field_name"},
+	"CustomOutputFormatConfig": ubx.FieldSpec{
+		WireName: "custom_output_format_config",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_PairwiseMetricSpec_CustomOutputFormatConfigFields,
+	},
+	"MetricPromptTemplate": ubx.FieldSpec{WireName: "metric_prompt_template"},
+	"SystemInstruction":    ubx.FieldSpec{WireName: "system_instruction"},
+}
 
 var V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_PointwiseMetricSpecFields = ubx.FieldMap{
-		"CustomOutputFormatConfig": ubx.FieldSpec{
-			WireName: "custom_output_format_config",
-			Kind: "object",
-			Fields: V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_PairwiseMetricSpec_CustomOutputFormatConfigFields,
-		},
-		"MetricPromptTemplate": ubx.FieldSpec{WireName: "metric_prompt_template"},
-		"SystemInstruction": ubx.FieldSpec{WireName: "system_instruction"},
-	}
+	"CustomOutputFormatConfig": ubx.FieldSpec{
+		WireName: "custom_output_format_config",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_PairwiseMetricSpec_CustomOutputFormatConfigFields,
+	},
+	"MetricPromptTemplate": ubx.FieldSpec{WireName: "metric_prompt_template"},
+	"SystemInstruction":    ubx.FieldSpec{WireName: "system_instruction"},
+}
 
 var V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_RougeSpecFields = ubx.FieldMap{
-		"RougeType": ubx.FieldSpec{WireName: "rouge_type"},
-		"SplitSummaries": ubx.FieldSpec{WireName: "split_summaries"},
-		"UseStemmer": ubx.FieldSpec{WireName: "use_stemmer"},
-	}
+	"RougeType":      ubx.FieldSpec{WireName: "rouge_type"},
+	"SplitSummaries": ubx.FieldSpec{WireName: "split_summaries"},
+	"UseStemmer":     ubx.FieldSpec{WireName: "use_stemmer"},
+}
 
 var V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfig_MetricsFields = ubx.FieldMap{
-		"AggregationMetrics": ubx.FieldSpec{WireName: "aggregation_metrics"},
-		"BleuSpec": ubx.FieldSpec{
-			WireName: "bleu_spec",
-			Kind: "object",
-			Fields: V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_BleuSpecFields,
-		},
-		"ComputationBasedMetricSpec": ubx.FieldSpec{
-			WireName: "computation_based_metric_spec",
-			Kind: "object",
-			Fields: V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_ComputationBasedMetricSpecFields,
-		},
-		"CustomCodeExecutionSpec": ubx.FieldSpec{
-			WireName: "custom_code_execution_spec",
-			Kind: "object",
-			Fields: V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_CustomCodeExecutionSpecFields,
-		},
-		"ExactMatchSpec": ubx.FieldSpec{WireName: "exact_match_spec"},
-		"LlmBasedMetricSpec": ubx.FieldSpec{
-			WireName: "llm_based_metric_spec",
-			Kind: "object",
-			Fields: V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_LlmBasedMetricSpecFields,
-		},
-		"Metadata": ubx.FieldSpec{
-			WireName: "metadata",
-			Kind: "object",
-			Fields: V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_MetadataFields,
-		},
-		"PairwiseMetricSpec": ubx.FieldSpec{
-			WireName: "pairwise_metric_spec",
-			Kind: "object",
-			Fields: V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_PairwiseMetricSpecFields,
-		},
-		"PointwiseMetricSpec": ubx.FieldSpec{
-			WireName: "pointwise_metric_spec",
-			Kind: "object",
-			Fields: V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_PointwiseMetricSpecFields,
-		},
-		"PredefinedMetricSpec": ubx.FieldSpec{
-			WireName: "predefined_metric_spec",
-			Kind: "object",
-			Fields: V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_LlmBasedMetricSpec_PredefinedRubricGenerationSpecFields,
-		},
-		"RougeSpec": ubx.FieldSpec{
-			WireName: "rouge_spec",
-			Kind: "object",
-			Fields: V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_RougeSpecFields,
-		},
-	}
+	"AggregationMetrics": ubx.FieldSpec{WireName: "aggregation_metrics"},
+	"BleuSpec": ubx.FieldSpec{
+		WireName: "bleu_spec",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_BleuSpecFields,
+	},
+	"ComputationBasedMetricSpec": ubx.FieldSpec{
+		WireName: "computation_based_metric_spec",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_ComputationBasedMetricSpecFields,
+	},
+	"CustomCodeExecutionSpec": ubx.FieldSpec{
+		WireName: "custom_code_execution_spec",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_CustomCodeExecutionSpecFields,
+	},
+	"ExactMatchSpec": ubx.FieldSpec{WireName: "exact_match_spec"},
+	"LlmBasedMetricSpec": ubx.FieldSpec{
+		WireName: "llm_based_metric_spec",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_LlmBasedMetricSpecFields,
+	},
+	"Metadata": ubx.FieldSpec{
+		WireName: "metadata",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_MetadataFields,
+	},
+	"PairwiseMetricSpec": ubx.FieldSpec{
+		WireName: "pairwise_metric_spec",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_PairwiseMetricSpecFields,
+	},
+	"PointwiseMetricSpec": ubx.FieldSpec{
+		WireName: "pointwise_metric_spec",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_PointwiseMetricSpecFields,
+	},
+	"PredefinedMetricSpec": ubx.FieldSpec{
+		WireName: "predefined_metric_spec",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_LlmBasedMetricSpec_PredefinedRubricGenerationSpecFields,
+	},
+	"RougeSpec": ubx.FieldSpec{
+		WireName: "rouge_spec",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfig_Metrics_RougeSpecFields,
+	},
+}
 
 var V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfig_OutputConfig_GcsDestinationFields = ubx.FieldMap{
-		"OutputUriPrefix": ubx.FieldSpec{WireName: "output_uri_prefix"},
-	}
+	"OutputUriPrefix": ubx.FieldSpec{WireName: "output_uri_prefix"},
+}
 
 var V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfig_OutputConfigFields = ubx.FieldMap{
-		"GcsDestination": ubx.FieldSpec{
-			WireName: "gcs_destination",
-			Kind: "object",
-			Fields: V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfig_OutputConfig_GcsDestinationFields,
-		},
-	}
+	"GcsDestination": ubx.FieldSpec{
+		WireName: "gcs_destination",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfig_OutputConfig_GcsDestinationFields,
+	},
+}
 
 var V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfigFields = ubx.FieldMap{
-		"AutoraterConfig": ubx.FieldSpec{
-			WireName: "autorater_config",
-			Kind: "object",
-			Fields: V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfigFields,
-		},
-		"DatasetCustomMetrics": ubx.FieldSpec{
-			WireName: "dataset_custom_metrics",
-			Kind: "list",
-			Fields: V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfig_DatasetCustomMetricsFields,
-		},
-		"InferenceGenerationConfig": ubx.FieldSpec{
-			WireName: "inference_generation_config",
-			Kind: "object",
-			Fields: V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfigFields,
-		},
-		"Metrics": ubx.FieldSpec{
-			WireName: "metrics",
-			Kind: "list",
-			Fields: V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfig_MetricsFields,
-		},
-		"OutputConfig": ubx.FieldSpec{
-			WireName: "output_config",
-			Kind: "object",
-			Fields: V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfig_OutputConfigFields,
-		},
-	}
+	"AutoraterConfig": ubx.FieldSpec{
+		WireName: "autorater_config",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfigFields,
+	},
+	"DatasetCustomMetrics": ubx.FieldSpec{
+		WireName: "dataset_custom_metrics",
+		Kind:     "list",
+		Fields:   V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfig_DatasetCustomMetricsFields,
+	},
+	"InferenceGenerationConfig": ubx.FieldSpec{
+		WireName: "inference_generation_config",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfigFields,
+	},
+	"Metrics": ubx.FieldSpec{
+		WireName: "metrics",
+		Kind:     "list",
+		Fields:   V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfig_MetricsFields,
+	},
+	"OutputConfig": ubx.FieldSpec{
+		WireName: "output_config",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfig_OutputConfigFields,
+	},
+}
 
 var V1beta1TuningJob_SupervisedTuningSpecFields = ubx.FieldMap{
-		"EvaluationConfig": ubx.FieldSpec{
-			WireName: "evaluation_config",
-			Kind: "object",
-			Fields: V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfigFields,
-		},
-		"ExportLastCheckpointOnly": ubx.FieldSpec{WireName: "export_last_checkpoint_only"},
-		"HyperParameters": ubx.FieldSpec{
-			WireName: "hyper_parameters",
-			Kind: "object",
-			Fields: V1beta1TuningJob_DistillationSpec_HyperParametersFields,
-		},
-		"TrainingDatasetUri": ubx.FieldSpec{WireName: "training_dataset_uri"},
-		"TuningMode": ubx.FieldSpec{WireName: "tuning_mode"},
-		"ValidationDatasetUri": ubx.FieldSpec{WireName: "validation_dataset_uri"},
-	}
+	"EvaluationConfig": ubx.FieldSpec{
+		WireName: "evaluation_config",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_SupervisedTuningSpec_EvaluationConfigFields,
+	},
+	"ExportLastCheckpointOnly": ubx.FieldSpec{WireName: "export_last_checkpoint_only"},
+	"HyperParameters": ubx.FieldSpec{
+		WireName: "hyper_parameters",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_DistillationSpec_HyperParametersFields,
+	},
+	"TrainingDatasetUri":   ubx.FieldSpec{WireName: "training_dataset_uri"},
+	"TuningMode":           ubx.FieldSpec{WireName: "tuning_mode"},
+	"ValidationDatasetUri": ubx.FieldSpec{WireName: "validation_dataset_uri"},
+}
 
 var V1beta1TuningJob_TunedModel_CheckpointsFields = ubx.FieldMap{
-		"CheckpointId": ubx.FieldSpec{WireName: "checkpoint_id"},
-		"Endpoint": ubx.FieldSpec{WireName: "endpoint"},
-		"Epoch": ubx.FieldSpec{WireName: "epoch"},
-		"Step": ubx.FieldSpec{WireName: "step"},
-	}
+	"CheckpointId": ubx.FieldSpec{WireName: "checkpoint_id"},
+	"Endpoint":     ubx.FieldSpec{WireName: "endpoint"},
+	"Epoch":        ubx.FieldSpec{WireName: "epoch"},
+	"Step":         ubx.FieldSpec{WireName: "step"},
+}
 
 var V1beta1TuningJob_TunedModelFields = ubx.FieldMap{
-		"Checkpoints": ubx.FieldSpec{
-			WireName: "checkpoints",
-			Kind: "list",
-			Fields: V1beta1TuningJob_TunedModel_CheckpointsFields,
-		},
-		"Endpoint": ubx.FieldSpec{WireName: "endpoint"},
-		"Model": ubx.FieldSpec{WireName: "model"},
-	}
+	"Checkpoints": ubx.FieldSpec{
+		WireName: "checkpoints",
+		Kind:     "list",
+		Fields:   V1beta1TuningJob_TunedModel_CheckpointsFields,
+	},
+	"Endpoint": ubx.FieldSpec{WireName: "endpoint"},
+	"Model":    ubx.FieldSpec{WireName: "model"},
+}
 
 var V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ContentsPerExampleDistribution_BucketsFields = ubx.FieldMap{
-		"Count": ubx.FieldSpec{WireName: "count"},
-		"Left": ubx.FieldSpec{WireName: "left"},
-		"Right": ubx.FieldSpec{WireName: "right"},
-	}
+	"Count": ubx.FieldSpec{WireName: "count"},
+	"Left":  ubx.FieldSpec{WireName: "left"},
+	"Right": ubx.FieldSpec{WireName: "right"},
+}
 
 var V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ContentsPerExampleDistributionFields = ubx.FieldMap{
-		"Buckets": ubx.FieldSpec{
-			WireName: "buckets",
-			Kind: "list",
-			Fields: V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ContentsPerExampleDistribution_BucketsFields,
-		},
-		"Max": ubx.FieldSpec{WireName: "max"},
-		"Mean": ubx.FieldSpec{WireName: "mean"},
-		"Median": ubx.FieldSpec{WireName: "median"},
-		"Min": ubx.FieldSpec{WireName: "min"},
-		"P5": ubx.FieldSpec{WireName: "p5"},
-		"P95": ubx.FieldSpec{WireName: "p95"},
-		"Sum": ubx.FieldSpec{WireName: "sum"},
-	}
+	"Buckets": ubx.FieldSpec{
+		WireName: "buckets",
+		Kind:     "list",
+		Fields:   V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ContentsPerExampleDistribution_BucketsFields,
+	},
+	"Max":    ubx.FieldSpec{WireName: "max"},
+	"Mean":   ubx.FieldSpec{WireName: "mean"},
+	"Median": ubx.FieldSpec{WireName: "median"},
+	"Min":    ubx.FieldSpec{WireName: "min"},
+	"P5":     ubx.FieldSpec{WireName: "p5"},
+	"P95":    ubx.FieldSpec{WireName: "p95"},
+	"Sum":    ubx.FieldSpec{WireName: "sum"},
+}
 
 var V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Contents_Parts_AudioTranscription_WordsFields = ubx.FieldMap{
-		"EndOffset": ubx.FieldSpec{WireName: "end_offset"},
-		"StartOffset": ubx.FieldSpec{WireName: "start_offset"},
-		"Word": ubx.FieldSpec{WireName: "word"},
-	}
+	"EndOffset":   ubx.FieldSpec{WireName: "end_offset"},
+	"StartOffset": ubx.FieldSpec{WireName: "start_offset"},
+	"Word":        ubx.FieldSpec{WireName: "word"},
+}
 
 var V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Contents_Parts_AudioTranscriptionFields = ubx.FieldMap{
-		"SpeakerLabel": ubx.FieldSpec{WireName: "speaker_label"},
-		"Text": ubx.FieldSpec{WireName: "text"},
-		"Words": ubx.FieldSpec{
-			WireName: "words",
-			Kind: "list",
-			Fields: V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Contents_Parts_AudioTranscription_WordsFields,
-		},
-	}
+	"SpeakerLabel": ubx.FieldSpec{WireName: "speaker_label"},
+	"Text":         ubx.FieldSpec{WireName: "text"},
+	"Words": ubx.FieldSpec{
+		WireName: "words",
+		Kind:     "list",
+		Fields:   V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Contents_Parts_AudioTranscription_WordsFields,
+	},
+}
 
 var V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Contents_Parts_CodeExecutionResultFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Outcome": ubx.FieldSpec{WireName: "outcome"},
-		"Output": ubx.FieldSpec{WireName: "output"},
-	}
+	"Id":      ubx.FieldSpec{WireName: "id"},
+	"Outcome": ubx.FieldSpec{WireName: "outcome"},
+	"Output":  ubx.FieldSpec{WireName: "output"},
+}
 
 var V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Contents_Parts_ExecutableCodeFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Language": ubx.FieldSpec{WireName: "language"},
-	}
+	"Code":     ubx.FieldSpec{WireName: "code"},
+	"Id":       ubx.FieldSpec{WireName: "id"},
+	"Language": ubx.FieldSpec{WireName: "language"},
+}
 
 var V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Contents_Parts_FileDataFields = ubx.FieldMap{
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"FileUri": ubx.FieldSpec{WireName: "file_uri"},
-		"MimeType": ubx.FieldSpec{WireName: "mime_type"},
-	}
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"FileUri":     ubx.FieldSpec{WireName: "file_uri"},
+	"MimeType":    ubx.FieldSpec{WireName: "mime_type"},
+}
 
 var V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Contents_Parts_FunctionCall_PartialArgsFields = ubx.FieldMap{
-		"BoolValue": ubx.FieldSpec{WireName: "bool_value"},
-		"JsonPath": ubx.FieldSpec{WireName: "json_path"},
-		"NullValue": ubx.FieldSpec{WireName: "null_value"},
-		"NumberValue": ubx.FieldSpec{WireName: "number_value"},
-		"StringValue": ubx.FieldSpec{WireName: "string_value"},
-		"WillContinue": ubx.FieldSpec{WireName: "will_continue"},
-	}
+	"BoolValue":    ubx.FieldSpec{WireName: "bool_value"},
+	"JsonPath":     ubx.FieldSpec{WireName: "json_path"},
+	"NullValue":    ubx.FieldSpec{WireName: "null_value"},
+	"NumberValue":  ubx.FieldSpec{WireName: "number_value"},
+	"StringValue":  ubx.FieldSpec{WireName: "string_value"},
+	"WillContinue": ubx.FieldSpec{WireName: "will_continue"},
+}
 
 var V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Contents_Parts_FunctionCallFields = ubx.FieldMap{
-		"Args": ubx.FieldSpec{WireName: "args"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PartialArgs": ubx.FieldSpec{
-			WireName: "partial_args",
-			Kind: "list",
-			Fields: V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Contents_Parts_FunctionCall_PartialArgsFields,
-		},
-		"WillContinue": ubx.FieldSpec{WireName: "will_continue"},
-	}
+	"Args": ubx.FieldSpec{WireName: "args"},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"PartialArgs": ubx.FieldSpec{
+		WireName: "partial_args",
+		Kind:     "list",
+		Fields:   V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Contents_Parts_FunctionCall_PartialArgsFields,
+	},
+	"WillContinue": ubx.FieldSpec{WireName: "will_continue"},
+}
 
 var V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Contents_Parts_FunctionResponse_Parts_InlineDataFields = ubx.FieldMap{
-		"Data": ubx.FieldSpec{WireName: "data"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"MimeType": ubx.FieldSpec{WireName: "mime_type"},
-	}
+	"Data":        ubx.FieldSpec{WireName: "data"},
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"MimeType":    ubx.FieldSpec{WireName: "mime_type"},
+}
 
 var V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Contents_Parts_FunctionResponse_PartsFields = ubx.FieldMap{
-		"FileData": ubx.FieldSpec{
-			WireName: "file_data",
-			Kind: "object",
-			Fields: V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Contents_Parts_FileDataFields,
-		},
-		"InlineData": ubx.FieldSpec{
-			WireName: "inline_data",
-			Kind: "object",
-			Fields: V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Contents_Parts_FunctionResponse_Parts_InlineDataFields,
-		},
-	}
+	"FileData": ubx.FieldSpec{
+		WireName: "file_data",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Contents_Parts_FileDataFields,
+	},
+	"InlineData": ubx.FieldSpec{
+		WireName: "inline_data",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Contents_Parts_FunctionResponse_Parts_InlineDataFields,
+	},
+}
 
 var V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Contents_Parts_FunctionResponseFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Parts": ubx.FieldSpec{
-			WireName: "parts",
-			Kind: "list",
-			Fields: V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Contents_Parts_FunctionResponse_PartsFields,
-		},
-		"Response": ubx.FieldSpec{WireName: "response"},
-		"Scheduling": ubx.FieldSpec{WireName: "scheduling"},
-	}
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Parts": ubx.FieldSpec{
+		WireName: "parts",
+		Kind:     "list",
+		Fields:   V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Contents_Parts_FunctionResponse_PartsFields,
+	},
+	"Response":   ubx.FieldSpec{WireName: "response"},
+	"Scheduling": ubx.FieldSpec{WireName: "scheduling"},
+}
 
 var V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Contents_Parts_MediaResolutionFields = ubx.FieldMap{
-		"Level": ubx.FieldSpec{WireName: "level"},
-	}
+	"Level": ubx.FieldSpec{WireName: "level"},
+}
 
 var V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Contents_Parts_VideoMetadataFields = ubx.FieldMap{
-		"EndOffset": ubx.FieldSpec{WireName: "end_offset"},
-		"Fps": ubx.FieldSpec{WireName: "fps"},
-		"StartOffset": ubx.FieldSpec{WireName: "start_offset"},
-	}
+	"EndOffset":   ubx.FieldSpec{WireName: "end_offset"},
+	"Fps":         ubx.FieldSpec{WireName: "fps"},
+	"StartOffset": ubx.FieldSpec{WireName: "start_offset"},
+}
 
 var V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Contents_PartsFields = ubx.FieldMap{
-		"AudioTranscription": ubx.FieldSpec{
-			WireName: "audio_transcription",
-			Kind: "object",
-			Fields: V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Contents_Parts_AudioTranscriptionFields,
-		},
-		"CodeExecutionResult": ubx.FieldSpec{
-			WireName: "code_execution_result",
-			Kind: "object",
-			Fields: V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Contents_Parts_CodeExecutionResultFields,
-		},
-		"ExecutableCode": ubx.FieldSpec{
-			WireName: "executable_code",
-			Kind: "object",
-			Fields: V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Contents_Parts_ExecutableCodeFields,
-		},
-		"FileData": ubx.FieldSpec{
-			WireName: "file_data",
-			Kind: "object",
-			Fields: V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Contents_Parts_FileDataFields,
-		},
-		"FunctionCall": ubx.FieldSpec{
-			WireName: "function_call",
-			Kind: "object",
-			Fields: V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Contents_Parts_FunctionCallFields,
-		},
-		"FunctionResponse": ubx.FieldSpec{
-			WireName: "function_response",
-			Kind: "object",
-			Fields: V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Contents_Parts_FunctionResponseFields,
-		},
-		"InlineData": ubx.FieldSpec{
-			WireName: "inline_data",
-			Kind: "object",
-			Fields: V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Contents_Parts_FunctionResponse_Parts_InlineDataFields,
-		},
-		"MediaProcessing": ubx.FieldSpec{WireName: "media_processing"},
-		"MediaResolution": ubx.FieldSpec{
-			WireName: "media_resolution",
-			Kind: "object",
-			Fields: V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Contents_Parts_MediaResolutionFields,
-		},
-		"Text": ubx.FieldSpec{WireName: "text"},
-		"Thought": ubx.FieldSpec{WireName: "thought"},
-		"ThoughtSignature": ubx.FieldSpec{WireName: "thought_signature"},
-		"VideoMetadata": ubx.FieldSpec{
-			WireName: "video_metadata",
-			Kind: "object",
-			Fields: V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Contents_Parts_VideoMetadataFields,
-		},
-	}
+	"AudioTranscription": ubx.FieldSpec{
+		WireName: "audio_transcription",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Contents_Parts_AudioTranscriptionFields,
+	},
+	"CodeExecutionResult": ubx.FieldSpec{
+		WireName: "code_execution_result",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Contents_Parts_CodeExecutionResultFields,
+	},
+	"ExecutableCode": ubx.FieldSpec{
+		WireName: "executable_code",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Contents_Parts_ExecutableCodeFields,
+	},
+	"FileData": ubx.FieldSpec{
+		WireName: "file_data",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Contents_Parts_FileDataFields,
+	},
+	"FunctionCall": ubx.FieldSpec{
+		WireName: "function_call",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Contents_Parts_FunctionCallFields,
+	},
+	"FunctionResponse": ubx.FieldSpec{
+		WireName: "function_response",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Contents_Parts_FunctionResponseFields,
+	},
+	"InlineData": ubx.FieldSpec{
+		WireName: "inline_data",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Contents_Parts_FunctionResponse_Parts_InlineDataFields,
+	},
+	"MediaProcessing": ubx.FieldSpec{WireName: "media_processing"},
+	"MediaResolution": ubx.FieldSpec{
+		WireName: "media_resolution",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Contents_Parts_MediaResolutionFields,
+	},
+	"Text":             ubx.FieldSpec{WireName: "text"},
+	"Thought":          ubx.FieldSpec{WireName: "thought"},
+	"ThoughtSignature": ubx.FieldSpec{WireName: "thought_signature"},
+	"VideoMetadata": ubx.FieldSpec{
+		WireName: "video_metadata",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Contents_Parts_VideoMetadataFields,
+	},
+}
 
 var V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_ContentsFields = ubx.FieldMap{
-		"Parts": ubx.FieldSpec{
-			WireName: "parts",
-			Kind: "list",
-			Fields: V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Contents_PartsFields,
-		},
-		"Role": ubx.FieldSpec{WireName: "role"},
-	}
+	"Parts": ubx.FieldSpec{
+		WireName: "parts",
+		Kind:     "list",
+		Fields:   V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Contents_PartsFields,
+	},
+	"Role": ubx.FieldSpec{WireName: "role"},
+}
 
 var V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_ComputerUseFields = ubx.FieldMap{
-		"EnablePromptInjectionDetection": ubx.FieldSpec{WireName: "enable_prompt_injection_detection"},
-		"Environment": ubx.FieldSpec{WireName: "environment"},
-		"ExcludedPredefinedFunctions": ubx.FieldSpec{WireName: "excluded_predefined_functions"},
-	}
+	"EnablePromptInjectionDetection": ubx.FieldSpec{WireName: "enable_prompt_injection_detection"},
+	"Environment":                    ubx.FieldSpec{WireName: "environment"},
+	"ExcludedPredefinedFunctions":    ubx.FieldSpec{WireName: "excluded_predefined_functions"},
+}
 
 var V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_EnterpriseWebSearchFields = ubx.FieldMap{
-		"BlockingConfidence": ubx.FieldSpec{WireName: "blocking_confidence"},
-		"ExcludeDomains": ubx.FieldSpec{WireName: "exclude_domains"},
-	}
+	"BlockingConfidence": ubx.FieldSpec{WireName: "blocking_confidence"},
+	"ExcludeDomains":     ubx.FieldSpec{WireName: "exclude_domains"},
+}
 
 var V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_ExaAiSearchFields = ubx.FieldMap{
-		"ApiKey": ubx.FieldSpec{WireName: "api_key"},
-		"CustomConfigs": ubx.FieldSpec{WireName: "custom_configs"},
-	}
+	"ApiKey":        ubx.FieldSpec{WireName: "api_key"},
+	"CustomConfigs": ubx.FieldSpec{WireName: "custom_configs"},
+}
 
 var V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_FunctionDeclarationsFields = ubx.FieldMap{
-		"Behavior": ubx.FieldSpec{WireName: "behavior"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Parameters": ubx.FieldSpec{
-			WireName: "parameters",
-			Kind: "object",
-			Fields: V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_ResponseSchemaFields,
-		},
-		"ParametersJsonSchema": ubx.FieldSpec{WireName: "parameters_json_schema"},
-		"Response": ubx.FieldSpec{
-			WireName: "response",
-			Kind: "object",
-			Fields: V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_ResponseSchemaFields,
-		},
-		"ResponseJsonSchema": ubx.FieldSpec{WireName: "response_json_schema"},
-	}
+	"Behavior":    ubx.FieldSpec{WireName: "behavior"},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"Parameters": ubx.FieldSpec{
+		WireName: "parameters",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_ResponseSchemaFields,
+	},
+	"ParametersJsonSchema": ubx.FieldSpec{WireName: "parameters_json_schema"},
+	"Response": ubx.FieldSpec{
+		WireName: "response",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_ResponseSchemaFields,
+	},
+	"ResponseJsonSchema": ubx.FieldSpec{WireName: "response_json_schema"},
+}
 
 var V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_GoogleMaps_GroundingTypesFields = ubx.FieldMap{
-		"Places": ubx.FieldSpec{WireName: "places"},
-		"Routing": ubx.FieldSpec{WireName: "routing"},
-	}
+	"Places":  ubx.FieldSpec{WireName: "places"},
+	"Routing": ubx.FieldSpec{WireName: "routing"},
+}
 
 var V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_GoogleMapsFields = ubx.FieldMap{
-		"EnableWidget": ubx.FieldSpec{WireName: "enable_widget"},
-		"GroundingTypes": ubx.FieldSpec{
-			WireName: "grounding_types",
-			Kind: "object",
-			Fields: V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_GoogleMaps_GroundingTypesFields,
-		},
-	}
+	"EnableWidget": ubx.FieldSpec{WireName: "enable_widget"},
+	"GroundingTypes": ubx.FieldSpec{
+		WireName: "grounding_types",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_GoogleMaps_GroundingTypesFields,
+	},
+}
 
 var V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_GoogleSearch_SearchTypesFields = ubx.FieldMap{
-		"ImageSearch": ubx.FieldSpec{WireName: "image_search"},
-		"WebSearch": ubx.FieldSpec{WireName: "web_search"},
-	}
+	"ImageSearch": ubx.FieldSpec{WireName: "image_search"},
+	"WebSearch":   ubx.FieldSpec{WireName: "web_search"},
+}
 
 var V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_GoogleSearchFields = ubx.FieldMap{
-		"BlockingConfidence": ubx.FieldSpec{WireName: "blocking_confidence"},
-		"ExcludeDomains": ubx.FieldSpec{WireName: "exclude_domains"},
-		"SearchTypes": ubx.FieldSpec{
-			WireName: "search_types",
-			Kind: "object",
-			Fields: V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_GoogleSearch_SearchTypesFields,
-		},
-	}
+	"BlockingConfidence": ubx.FieldSpec{WireName: "blocking_confidence"},
+	"ExcludeDomains":     ubx.FieldSpec{WireName: "exclude_domains"},
+	"SearchTypes": ubx.FieldSpec{
+		WireName: "search_types",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_GoogleSearch_SearchTypesFields,
+	},
+}
 
 var V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_GoogleSearchRetrieval_DynamicRetrievalConfigFields = ubx.FieldMap{
-		"DynamicThreshold": ubx.FieldSpec{WireName: "dynamic_threshold"},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-	}
+	"DynamicThreshold": ubx.FieldSpec{WireName: "dynamic_threshold"},
+	"Mode":             ubx.FieldSpec{WireName: "mode"},
+}
 
 var V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_GoogleSearchRetrievalFields = ubx.FieldMap{
-		"DynamicRetrievalConfig": ubx.FieldSpec{
-			WireName: "dynamic_retrieval_config",
-			Kind: "object",
-			Fields: V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_GoogleSearchRetrieval_DynamicRetrievalConfigFields,
-		},
-	}
+	"DynamicRetrievalConfig": ubx.FieldSpec{
+		WireName: "dynamic_retrieval_config",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_GoogleSearchRetrieval_DynamicRetrievalConfigFields,
+	},
+}
 
 var V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_ParallelAiSearchFields = ubx.FieldMap{
-		"ApiKey": ubx.FieldSpec{WireName: "api_key"},
-		"CustomConfigs": ubx.FieldSpec{WireName: "custom_configs"},
-		"EnableDataRetention": ubx.FieldSpec{WireName: "enable_data_retention"},
-		"EnableZeroDataRetention": ubx.FieldSpec{WireName: "enable_zero_data_retention"},
-	}
+	"ApiKey":                  ubx.FieldSpec{WireName: "api_key"},
+	"CustomConfigs":           ubx.FieldSpec{WireName: "custom_configs"},
+	"EnableDataRetention":     ubx.FieldSpec{WireName: "enable_data_retention"},
+	"EnableZeroDataRetention": ubx.FieldSpec{WireName: "enable_zero_data_retention"},
+}
 
 var V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_Retrieval_ExternalApi_ApiAuth_ApiKeyConfigFields = ubx.FieldMap{
-		"ApiKeySecretVersion": ubx.FieldSpec{WireName: "api_key_secret_version"},
-		"ApiKeyString": ubx.FieldSpec{WireName: "api_key_string"},
-	}
+	"ApiKeySecretVersion": ubx.FieldSpec{WireName: "api_key_secret_version"},
+	"ApiKeyString":        ubx.FieldSpec{WireName: "api_key_string"},
+}
 
 var V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_Retrieval_ExternalApi_ApiAuthFields = ubx.FieldMap{
-		"ApiKeyConfig": ubx.FieldSpec{
-			WireName: "api_key_config",
-			Kind: "object",
-			Fields: V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_Retrieval_ExternalApi_ApiAuth_ApiKeyConfigFields,
-		},
-	}
+	"ApiKeyConfig": ubx.FieldSpec{
+		WireName: "api_key_config",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_Retrieval_ExternalApi_ApiAuth_ApiKeyConfigFields,
+	},
+}
 
 var V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_Retrieval_ExternalApi_AuthConfig_ApiKeyConfigFields = ubx.FieldMap{
-		"ApiKeySecret": ubx.FieldSpec{WireName: "api_key_secret"},
-		"ApiKeyString": ubx.FieldSpec{WireName: "api_key_string"},
-		"HttpElementLocation": ubx.FieldSpec{WireName: "http_element_location"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"ApiKeySecret":        ubx.FieldSpec{WireName: "api_key_secret"},
+	"ApiKeyString":        ubx.FieldSpec{WireName: "api_key_string"},
+	"HttpElementLocation": ubx.FieldSpec{WireName: "http_element_location"},
+	"Name":                ubx.FieldSpec{WireName: "name"},
+}
 
 var V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_Retrieval_ExternalApi_AuthConfig_GoogleServiceAccountConfigFields = ubx.FieldMap{
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-	}
+	"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
+}
 
 var V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_Retrieval_ExternalApi_AuthConfig_HttpBasicAuthConfigFields = ubx.FieldMap{
-		"CredentialSecret": ubx.FieldSpec{WireName: "credential_secret"},
-	}
+	"CredentialSecret": ubx.FieldSpec{WireName: "credential_secret"},
+}
 
 var V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_Retrieval_ExternalApi_AuthConfig_OauthConfigFields = ubx.FieldMap{
-		"AccessToken": ubx.FieldSpec{WireName: "access_token"},
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-	}
+	"AccessToken":    ubx.FieldSpec{WireName: "access_token"},
+	"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
+}
 
 var V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_Retrieval_ExternalApi_AuthConfig_OidcConfigFields = ubx.FieldMap{
-		"IdToken": ubx.FieldSpec{WireName: "id_token"},
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-	}
+	"IdToken":        ubx.FieldSpec{WireName: "id_token"},
+	"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
+}
 
 var V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_Retrieval_ExternalApi_AuthConfigFields = ubx.FieldMap{
-		"ApiKeyConfig": ubx.FieldSpec{
-			WireName: "api_key_config",
-			Kind: "object",
-			Fields: V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_Retrieval_ExternalApi_AuthConfig_ApiKeyConfigFields,
-		},
-		"AuthType": ubx.FieldSpec{WireName: "auth_type"},
-		"GoogleServiceAccountConfig": ubx.FieldSpec{
-			WireName: "google_service_account_config",
-			Kind: "object",
-			Fields: V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_Retrieval_ExternalApi_AuthConfig_GoogleServiceAccountConfigFields,
-		},
-		"HttpBasicAuthConfig": ubx.FieldSpec{
-			WireName: "http_basic_auth_config",
-			Kind: "object",
-			Fields: V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_Retrieval_ExternalApi_AuthConfig_HttpBasicAuthConfigFields,
-		},
-		"OauthConfig": ubx.FieldSpec{
-			WireName: "oauth_config",
-			Kind: "object",
-			Fields: V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_Retrieval_ExternalApi_AuthConfig_OauthConfigFields,
-		},
-		"OidcConfig": ubx.FieldSpec{
-			WireName: "oidc_config",
-			Kind: "object",
-			Fields: V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_Retrieval_ExternalApi_AuthConfig_OidcConfigFields,
-		},
-	}
+	"ApiKeyConfig": ubx.FieldSpec{
+		WireName: "api_key_config",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_Retrieval_ExternalApi_AuthConfig_ApiKeyConfigFields,
+	},
+	"AuthType": ubx.FieldSpec{WireName: "auth_type"},
+	"GoogleServiceAccountConfig": ubx.FieldSpec{
+		WireName: "google_service_account_config",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_Retrieval_ExternalApi_AuthConfig_GoogleServiceAccountConfigFields,
+	},
+	"HttpBasicAuthConfig": ubx.FieldSpec{
+		WireName: "http_basic_auth_config",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_Retrieval_ExternalApi_AuthConfig_HttpBasicAuthConfigFields,
+	},
+	"OauthConfig": ubx.FieldSpec{
+		WireName: "oauth_config",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_Retrieval_ExternalApi_AuthConfig_OauthConfigFields,
+	},
+	"OidcConfig": ubx.FieldSpec{
+		WireName: "oidc_config",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_Retrieval_ExternalApi_AuthConfig_OidcConfigFields,
+	},
+}
 
 var V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_Retrieval_ExternalApi_ElasticSearchParamsFields = ubx.FieldMap{
-		"Index": ubx.FieldSpec{WireName: "index"},
-		"NumHits": ubx.FieldSpec{WireName: "num_hits"},
-		"SearchTemplate": ubx.FieldSpec{WireName: "search_template"},
-	}
+	"Index":          ubx.FieldSpec{WireName: "index"},
+	"NumHits":        ubx.FieldSpec{WireName: "num_hits"},
+	"SearchTemplate": ubx.FieldSpec{WireName: "search_template"},
+}
 
 var V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_Retrieval_ExternalApiFields = ubx.FieldMap{
-		"ApiAuth": ubx.FieldSpec{
-			WireName: "api_auth",
-			Kind: "object",
-			Fields: V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_Retrieval_ExternalApi_ApiAuthFields,
-		},
-		"ApiSpec": ubx.FieldSpec{WireName: "api_spec"},
-		"AuthConfig": ubx.FieldSpec{
-			WireName: "auth_config",
-			Kind: "object",
-			Fields: V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_Retrieval_ExternalApi_AuthConfigFields,
-		},
-		"ElasticSearchParams": ubx.FieldSpec{
-			WireName: "elastic_search_params",
-			Kind: "object",
-			Fields: V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_Retrieval_ExternalApi_ElasticSearchParamsFields,
-		},
-		"Endpoint": ubx.FieldSpec{WireName: "endpoint"},
-		"SimpleSearchParams": ubx.FieldSpec{WireName: "simple_search_params"},
-	}
+	"ApiAuth": ubx.FieldSpec{
+		WireName: "api_auth",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_Retrieval_ExternalApi_ApiAuthFields,
+	},
+	"ApiSpec": ubx.FieldSpec{WireName: "api_spec"},
+	"AuthConfig": ubx.FieldSpec{
+		WireName: "auth_config",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_Retrieval_ExternalApi_AuthConfigFields,
+	},
+	"ElasticSearchParams": ubx.FieldSpec{
+		WireName: "elastic_search_params",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_Retrieval_ExternalApi_ElasticSearchParamsFields,
+	},
+	"Endpoint":           ubx.FieldSpec{WireName: "endpoint"},
+	"SimpleSearchParams": ubx.FieldSpec{WireName: "simple_search_params"},
+}
 
 var V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_Retrieval_VertexAiSearch_DataStoreSpecsFields = ubx.FieldMap{
-		"DataStore": ubx.FieldSpec{WireName: "data_store"},
-		"Filter": ubx.FieldSpec{WireName: "filter"},
-	}
+	"DataStore": ubx.FieldSpec{WireName: "data_store"},
+	"Filter":    ubx.FieldSpec{WireName: "filter"},
+}
 
 var V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_Retrieval_VertexAiSearchFields = ubx.FieldMap{
-		"DataStoreSpecs": ubx.FieldSpec{
-			WireName: "data_store_specs",
-			Kind: "list",
-			Fields: V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_Retrieval_VertexAiSearch_DataStoreSpecsFields,
-		},
-		"Datastore": ubx.FieldSpec{WireName: "datastore"},
-		"Engine": ubx.FieldSpec{WireName: "engine"},
-		"Filter": ubx.FieldSpec{WireName: "filter"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-	}
+	"DataStoreSpecs": ubx.FieldSpec{
+		WireName: "data_store_specs",
+		Kind:     "list",
+		Fields:   V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_Retrieval_VertexAiSearch_DataStoreSpecsFields,
+	},
+	"Datastore":  ubx.FieldSpec{WireName: "datastore"},
+	"Engine":     ubx.FieldSpec{WireName: "engine"},
+	"Filter":     ubx.FieldSpec{WireName: "filter"},
+	"MaxResults": ubx.FieldSpec{WireName: "max_results"},
+}
 
 var V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_Retrieval_VertexRagStore_RagResourcesFields = ubx.FieldMap{
-		"RagCorpus": ubx.FieldSpec{WireName: "rag_corpus"},
-		"RagFileIds": ubx.FieldSpec{WireName: "rag_file_ids"},
-	}
+	"RagCorpus":  ubx.FieldSpec{WireName: "rag_corpus"},
+	"RagFileIds": ubx.FieldSpec{WireName: "rag_file_ids"},
+}
 
 var V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_FilterFields = ubx.FieldMap{
-		"MetadataFilter": ubx.FieldSpec{WireName: "metadata_filter"},
-		"VectorDistanceThreshold": ubx.FieldSpec{WireName: "vector_distance_threshold"},
-		"VectorSimilarityThreshold": ubx.FieldSpec{WireName: "vector_similarity_threshold"},
-	}
+	"MetadataFilter":            ubx.FieldSpec{WireName: "metadata_filter"},
+	"VectorDistanceThreshold":   ubx.FieldSpec{WireName: "vector_distance_threshold"},
+	"VectorSimilarityThreshold": ubx.FieldSpec{WireName: "vector_similarity_threshold"},
+}
 
 var V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_HybridSearchFields = ubx.FieldMap{
-		"Alpha": ubx.FieldSpec{WireName: "alpha"},
-	}
+	"Alpha": ubx.FieldSpec{WireName: "alpha"},
+}
 
 var V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_RankingFields = ubx.FieldMap{
-		"LlmRanker": ubx.FieldSpec{
-			WireName: "llm_ranker",
-			Kind: "object",
-			Fields: V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_RoutingConfig_ManualModeFields,
-		},
-		"RankService": ubx.FieldSpec{
-			WireName: "rank_service",
-			Kind: "object",
-			Fields: V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_RoutingConfig_ManualModeFields,
-		},
-	}
+	"LlmRanker": ubx.FieldSpec{
+		WireName: "llm_ranker",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_RoutingConfig_ManualModeFields,
+	},
+	"RankService": ubx.FieldSpec{
+		WireName: "rank_service",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_ReinforcementTuningSpec_CompositeRewardConfig_WeightedRewardConfigs_RewardConfig_AutoraterScorer_AutoraterConfig_GenerationConfig_RoutingConfig_ManualModeFields,
+	},
+}
 
 var V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_Retrieval_VertexRagStore_RagRetrievalConfigFields = ubx.FieldMap{
-		"Filter": ubx.FieldSpec{
-			WireName: "filter",
-			Kind: "object",
-			Fields: V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_FilterFields,
-		},
-		"HybridSearch": ubx.FieldSpec{
-			WireName: "hybrid_search",
-			Kind: "object",
-			Fields: V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_HybridSearchFields,
-		},
-		"Ranking": ubx.FieldSpec{
-			WireName: "ranking",
-			Kind: "object",
-			Fields: V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_RankingFields,
-		},
-		"TopK": ubx.FieldSpec{WireName: "top_k"},
-	}
+	"Filter": ubx.FieldSpec{
+		WireName: "filter",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_FilterFields,
+	},
+	"HybridSearch": ubx.FieldSpec{
+		WireName: "hybrid_search",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_HybridSearchFields,
+	},
+	"Ranking": ubx.FieldSpec{
+		WireName: "ranking",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_RankingFields,
+	},
+	"TopK": ubx.FieldSpec{WireName: "top_k"},
+}
 
 var V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_Retrieval_VertexRagStoreFields = ubx.FieldMap{
-		"RagCorpora": ubx.FieldSpec{WireName: "rag_corpora"},
-		"RagResources": ubx.FieldSpec{
-			WireName: "rag_resources",
-			Kind: "list",
-			Fields: V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_Retrieval_VertexRagStore_RagResourcesFields,
-		},
-		"RagRetrievalConfig": ubx.FieldSpec{
-			WireName: "rag_retrieval_config",
-			Kind: "object",
-			Fields: V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_Retrieval_VertexRagStore_RagRetrievalConfigFields,
-		},
-		"SimilarityTopK": ubx.FieldSpec{WireName: "similarity_top_k"},
-		"StoreContext": ubx.FieldSpec{WireName: "store_context"},
-		"VectorDistanceThreshold": ubx.FieldSpec{WireName: "vector_distance_threshold"},
-	}
+	"RagCorpora": ubx.FieldSpec{WireName: "rag_corpora"},
+	"RagResources": ubx.FieldSpec{
+		WireName: "rag_resources",
+		Kind:     "list",
+		Fields:   V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_Retrieval_VertexRagStore_RagResourcesFields,
+	},
+	"RagRetrievalConfig": ubx.FieldSpec{
+		WireName: "rag_retrieval_config",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_Retrieval_VertexRagStore_RagRetrievalConfigFields,
+	},
+	"SimilarityTopK":          ubx.FieldSpec{WireName: "similarity_top_k"},
+	"StoreContext":            ubx.FieldSpec{WireName: "store_context"},
+	"VectorDistanceThreshold": ubx.FieldSpec{WireName: "vector_distance_threshold"},
+}
 
 var V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_RetrievalFields = ubx.FieldMap{
-		"DisableAttribution": ubx.FieldSpec{WireName: "disable_attribution"},
-		"ExternalApi": ubx.FieldSpec{
-			WireName: "external_api",
-			Kind: "object",
-			Fields: V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_Retrieval_ExternalApiFields,
-		},
-		"VertexAiSearch": ubx.FieldSpec{
-			WireName: "vertex_ai_search",
-			Kind: "object",
-			Fields: V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_Retrieval_VertexAiSearchFields,
-		},
-		"VertexRagStore": ubx.FieldSpec{
-			WireName: "vertex_rag_store",
-			Kind: "object",
-			Fields: V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_Retrieval_VertexRagStoreFields,
-		},
-	}
+	"DisableAttribution": ubx.FieldSpec{WireName: "disable_attribution"},
+	"ExternalApi": ubx.FieldSpec{
+		WireName: "external_api",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_Retrieval_ExternalApiFields,
+	},
+	"VertexAiSearch": ubx.FieldSpec{
+		WireName: "vertex_ai_search",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_Retrieval_VertexAiSearchFields,
+	},
+	"VertexRagStore": ubx.FieldSpec{
+		WireName: "vertex_rag_store",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_Retrieval_VertexRagStoreFields,
+	},
+}
 
 var V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_ToolsFields = ubx.FieldMap{
-		"CodeExecution": ubx.FieldSpec{WireName: "code_execution"},
-		"ComputerUse": ubx.FieldSpec{
-			WireName: "computer_use",
-			Kind: "object",
-			Fields: V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_ComputerUseFields,
-		},
-		"EnterpriseWebSearch": ubx.FieldSpec{
-			WireName: "enterprise_web_search",
-			Kind: "object",
-			Fields: V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_EnterpriseWebSearchFields,
-		},
-		"ExaAiSearch": ubx.FieldSpec{
-			WireName: "exa_ai_search",
-			Kind: "object",
-			Fields: V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_ExaAiSearchFields,
-		},
-		"FunctionDeclarations": ubx.FieldSpec{
-			WireName: "function_declarations",
-			Kind: "list",
-			Fields: V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_FunctionDeclarationsFields,
-		},
-		"GoogleMaps": ubx.FieldSpec{
-			WireName: "google_maps",
-			Kind: "object",
-			Fields: V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_GoogleMapsFields,
-		},
-		"GoogleSearch": ubx.FieldSpec{
-			WireName: "google_search",
-			Kind: "object",
-			Fields: V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_GoogleSearchFields,
-		},
-		"GoogleSearchRetrieval": ubx.FieldSpec{
-			WireName: "google_search_retrieval",
-			Kind: "object",
-			Fields: V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_GoogleSearchRetrievalFields,
-		},
-		"ParallelAiSearch": ubx.FieldSpec{
-			WireName: "parallel_ai_search",
-			Kind: "object",
-			Fields: V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_ParallelAiSearchFields,
-		},
-		"Retrieval": ubx.FieldSpec{
-			WireName: "retrieval",
-			Kind: "object",
-			Fields: V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_RetrievalFields,
-		},
-		"UrlContext": ubx.FieldSpec{WireName: "url_context"},
-	}
+	"CodeExecution": ubx.FieldSpec{WireName: "code_execution"},
+	"ComputerUse": ubx.FieldSpec{
+		WireName: "computer_use",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_ComputerUseFields,
+	},
+	"EnterpriseWebSearch": ubx.FieldSpec{
+		WireName: "enterprise_web_search",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_EnterpriseWebSearchFields,
+	},
+	"ExaAiSearch": ubx.FieldSpec{
+		WireName: "exa_ai_search",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_ExaAiSearchFields,
+	},
+	"FunctionDeclarations": ubx.FieldSpec{
+		WireName: "function_declarations",
+		Kind:     "list",
+		Fields:   V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_FunctionDeclarationsFields,
+	},
+	"GoogleMaps": ubx.FieldSpec{
+		WireName: "google_maps",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_GoogleMapsFields,
+	},
+	"GoogleSearch": ubx.FieldSpec{
+		WireName: "google_search",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_GoogleSearchFields,
+	},
+	"GoogleSearchRetrieval": ubx.FieldSpec{
+		WireName: "google_search_retrieval",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_GoogleSearchRetrievalFields,
+	},
+	"ParallelAiSearch": ubx.FieldSpec{
+		WireName: "parallel_ai_search",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_ParallelAiSearchFields,
+	},
+	"Retrieval": ubx.FieldSpec{
+		WireName: "retrieval",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_Tools_RetrievalFields,
+	},
+	"UrlContext": ubx.FieldSpec{WireName: "url_context"},
+}
 
 var V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamplesFields = ubx.FieldMap{
-		"Contents": ubx.FieldSpec{
-			WireName: "contents",
-			Kind: "list",
-			Fields: V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_ContentsFields,
-		},
-		"References": ubx.FieldSpec{WireName: "references"},
-		"SystemInstruction": ubx.FieldSpec{
-			WireName: "system_instruction",
-			Kind: "object",
-			Fields: V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_ContentsFields,
-		},
-		"Tools": ubx.FieldSpec{
-			WireName: "tools",
-			Kind: "list",
-			Fields: V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_ToolsFields,
-		},
-	}
+	"Contents": ubx.FieldSpec{
+		WireName: "contents",
+		Kind:     "list",
+		Fields:   V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_ContentsFields,
+	},
+	"References": ubx.FieldSpec{WireName: "references"},
+	"SystemInstruction": ubx.FieldSpec{
+		WireName: "system_instruction",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_ContentsFields,
+	},
+	"Tools": ubx.FieldSpec{
+		WireName: "tools",
+		Kind:     "list",
+		Fields:   V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_ToolsFields,
+	},
+}
 
 var V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamplesFields = ubx.FieldMap{
-		"UserDatasetExamples": ubx.FieldSpec{
-			WireName: "user_dataset_examples",
-			Kind: "list",
-			Fields: V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamplesFields,
-		},
-	}
+	"UserDatasetExamples": ubx.FieldSpec{
+		WireName: "user_dataset_examples",
+		Kind:     "list",
+		Fields:   V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamplesFields,
+	},
+}
 
 var V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStatsFields = ubx.FieldMap{
-		"ContentsPerExampleDistribution": ubx.FieldSpec{
-			WireName: "contents_per_example_distribution",
-			Kind: "object",
-			Fields: V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ContentsPerExampleDistributionFields,
-		},
-		"DroppedExampleIndices": ubx.FieldSpec{WireName: "dropped_example_indices"},
-		"DroppedExampleReasons": ubx.FieldSpec{WireName: "dropped_example_reasons"},
-		"ReinforcementTuningUserDatasetExamples": ubx.FieldSpec{
-			WireName: "reinforcement_tuning_user_dataset_examples",
-			Kind: "object",
-			Fields: V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamplesFields,
-		},
-		"TotalBillableCharacterCount": ubx.FieldSpec{WireName: "total_billable_character_count"},
-		"TotalBillableTokenCount": ubx.FieldSpec{WireName: "total_billable_token_count"},
-		"TotalTuningCharacterCount": ubx.FieldSpec{WireName: "total_tuning_character_count"},
-		"TuningDatasetExampleCount": ubx.FieldSpec{WireName: "tuning_dataset_example_count"},
-		"TuningStepCount": ubx.FieldSpec{WireName: "tuning_step_count"},
-		"UserDatasetExamples": ubx.FieldSpec{
-			WireName: "user_dataset_examples",
-			Kind: "list",
-			Fields: V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_ContentsFields,
-		},
-		"UserInputTokenDistribution": ubx.FieldSpec{
-			WireName: "user_input_token_distribution",
-			Kind: "object",
-			Fields: V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ContentsPerExampleDistributionFields,
-		},
-		"UserMessagePerExampleDistribution": ubx.FieldSpec{
-			WireName: "user_message_per_example_distribution",
-			Kind: "object",
-			Fields: V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ContentsPerExampleDistributionFields,
-		},
-		"UserOutputTokenDistribution": ubx.FieldSpec{
-			WireName: "user_output_token_distribution",
-			Kind: "object",
-			Fields: V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ContentsPerExampleDistributionFields,
-		},
-	}
+	"ContentsPerExampleDistribution": ubx.FieldSpec{
+		WireName: "contents_per_example_distribution",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ContentsPerExampleDistributionFields,
+	},
+	"DroppedExampleIndices": ubx.FieldSpec{WireName: "dropped_example_indices"},
+	"DroppedExampleReasons": ubx.FieldSpec{WireName: "dropped_example_reasons"},
+	"ReinforcementTuningUserDatasetExamples": ubx.FieldSpec{
+		WireName: "reinforcement_tuning_user_dataset_examples",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamplesFields,
+	},
+	"TotalBillableCharacterCount": ubx.FieldSpec{WireName: "total_billable_character_count"},
+	"TotalBillableTokenCount":     ubx.FieldSpec{WireName: "total_billable_token_count"},
+	"TotalTuningCharacterCount":   ubx.FieldSpec{WireName: "total_tuning_character_count"},
+	"TuningDatasetExampleCount":   ubx.FieldSpec{WireName: "tuning_dataset_example_count"},
+	"TuningStepCount":             ubx.FieldSpec{WireName: "tuning_step_count"},
+	"UserDatasetExamples": ubx.FieldSpec{
+		WireName: "user_dataset_examples",
+		Kind:     "list",
+		Fields:   V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_ContentsFields,
+	},
+	"UserInputTokenDistribution": ubx.FieldSpec{
+		WireName: "user_input_token_distribution",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ContentsPerExampleDistributionFields,
+	},
+	"UserMessagePerExampleDistribution": ubx.FieldSpec{
+		WireName: "user_message_per_example_distribution",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ContentsPerExampleDistributionFields,
+	},
+	"UserOutputTokenDistribution": ubx.FieldSpec{
+		WireName: "user_output_token_distribution",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ContentsPerExampleDistributionFields,
+	},
+}
 
 var V1beta1TuningJob_TuningDataStats_DistillationDataStatsFields = ubx.FieldMap{
-		"TrainingDatasetStats": ubx.FieldSpec{
-			WireName: "training_dataset_stats",
-			Kind: "object",
-			Fields: V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStatsFields,
-		},
-	}
+	"TrainingDatasetStats": ubx.FieldSpec{
+		WireName: "training_dataset_stats",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStatsFields,
+	},
+}
 
 var V1beta1TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_CompletionsFields = ubx.FieldMap{
-		"Completion": ubx.FieldSpec{
-			WireName: "completion",
-			Kind: "object",
-			Fields: V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_ContentsFields,
-		},
-		"Score": ubx.FieldSpec{WireName: "score"},
-	}
+	"Completion": ubx.FieldSpec{
+		WireName: "completion",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_ContentsFields,
+	},
+	"Score": ubx.FieldSpec{WireName: "score"},
+}
 
 var V1beta1TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamplesFields = ubx.FieldMap{
-		"Completions": ubx.FieldSpec{
-			WireName: "completions",
-			Kind: "list",
-			Fields: V1beta1TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_CompletionsFields,
-		},
-		"Contents": ubx.FieldSpec{
-			WireName: "contents",
-			Kind: "list",
-			Fields: V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_ContentsFields,
-		},
-	}
+	"Completions": ubx.FieldSpec{
+		WireName: "completions",
+		Kind:     "list",
+		Fields:   V1beta1TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamples_CompletionsFields,
+	},
+	"Contents": ubx.FieldSpec{
+		WireName: "contents",
+		Kind:     "list",
+		Fields:   V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_ContentsFields,
+	},
+}
 
 var V1beta1TuningJob_TuningDataStats_PreferenceOptimizationDataStatsFields = ubx.FieldMap{
-		"DroppedExampleIndices": ubx.FieldSpec{WireName: "dropped_example_indices"},
-		"DroppedExampleReasons": ubx.FieldSpec{WireName: "dropped_example_reasons"},
-		"ScoreVariancePerExampleDistribution": ubx.FieldSpec{
-			WireName: "score_variance_per_example_distribution",
-			Kind: "object",
-			Fields: V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ContentsPerExampleDistributionFields,
-		},
-		"ScoresDistribution": ubx.FieldSpec{
-			WireName: "scores_distribution",
-			Kind: "object",
-			Fields: V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ContentsPerExampleDistributionFields,
-		},
-		"TotalBillableTokenCount": ubx.FieldSpec{WireName: "total_billable_token_count"},
-		"TuningDatasetExampleCount": ubx.FieldSpec{WireName: "tuning_dataset_example_count"},
-		"TuningStepCount": ubx.FieldSpec{WireName: "tuning_step_count"},
-		"UserDatasetExamples": ubx.FieldSpec{
-			WireName: "user_dataset_examples",
-			Kind: "list",
-			Fields: V1beta1TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamplesFields,
-		},
-		"UserInputTokenDistribution": ubx.FieldSpec{
-			WireName: "user_input_token_distribution",
-			Kind: "object",
-			Fields: V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ContentsPerExampleDistributionFields,
-		},
-		"UserOutputTokenDistribution": ubx.FieldSpec{
-			WireName: "user_output_token_distribution",
-			Kind: "object",
-			Fields: V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ContentsPerExampleDistributionFields,
-		},
-	}
+	"DroppedExampleIndices": ubx.FieldSpec{WireName: "dropped_example_indices"},
+	"DroppedExampleReasons": ubx.FieldSpec{WireName: "dropped_example_reasons"},
+	"ScoreVariancePerExampleDistribution": ubx.FieldSpec{
+		WireName: "score_variance_per_example_distribution",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ContentsPerExampleDistributionFields,
+	},
+	"ScoresDistribution": ubx.FieldSpec{
+		WireName: "scores_distribution",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ContentsPerExampleDistributionFields,
+	},
+	"TotalBillableTokenCount":   ubx.FieldSpec{WireName: "total_billable_token_count"},
+	"TuningDatasetExampleCount": ubx.FieldSpec{WireName: "tuning_dataset_example_count"},
+	"TuningStepCount":           ubx.FieldSpec{WireName: "tuning_step_count"},
+	"UserDatasetExamples": ubx.FieldSpec{
+		WireName: "user_dataset_examples",
+		Kind:     "list",
+		Fields:   V1beta1TuningJob_TuningDataStats_PreferenceOptimizationDataStats_UserDatasetExamplesFields,
+	},
+	"UserInputTokenDistribution": ubx.FieldSpec{
+		WireName: "user_input_token_distribution",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ContentsPerExampleDistributionFields,
+	},
+	"UserOutputTokenDistribution": ubx.FieldSpec{
+		WireName: "user_output_token_distribution",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ContentsPerExampleDistributionFields,
+	},
+}
 
 var V1beta1TuningJob_TuningDataStats_SupervisedTuningDataStats_UserInputTokenDistribution_BucketsFields = ubx.FieldMap{
-		"Count": ubx.FieldSpec{WireName: "count"},
-		"Left": ubx.FieldSpec{WireName: "left"},
-		"Right": ubx.FieldSpec{WireName: "right"},
-	}
+	"Count": ubx.FieldSpec{WireName: "count"},
+	"Left":  ubx.FieldSpec{WireName: "left"},
+	"Right": ubx.FieldSpec{WireName: "right"},
+}
 
 var V1beta1TuningJob_TuningDataStats_SupervisedTuningDataStats_UserInputTokenDistributionFields = ubx.FieldMap{
-		"BillableSum": ubx.FieldSpec{WireName: "billable_sum"},
-		"Buckets": ubx.FieldSpec{
-			WireName: "buckets",
-			Kind: "list",
-			Fields: V1beta1TuningJob_TuningDataStats_SupervisedTuningDataStats_UserInputTokenDistribution_BucketsFields,
-		},
-		"Max": ubx.FieldSpec{WireName: "max"},
-		"Mean": ubx.FieldSpec{WireName: "mean"},
-		"Median": ubx.FieldSpec{WireName: "median"},
-		"Min": ubx.FieldSpec{WireName: "min"},
-		"P5": ubx.FieldSpec{WireName: "p5"},
-		"P95": ubx.FieldSpec{WireName: "p95"},
-		"Sum": ubx.FieldSpec{WireName: "sum"},
-	}
+	"BillableSum": ubx.FieldSpec{WireName: "billable_sum"},
+	"Buckets": ubx.FieldSpec{
+		WireName: "buckets",
+		Kind:     "list",
+		Fields:   V1beta1TuningJob_TuningDataStats_SupervisedTuningDataStats_UserInputTokenDistribution_BucketsFields,
+	},
+	"Max":    ubx.FieldSpec{WireName: "max"},
+	"Mean":   ubx.FieldSpec{WireName: "mean"},
+	"Median": ubx.FieldSpec{WireName: "median"},
+	"Min":    ubx.FieldSpec{WireName: "min"},
+	"P5":     ubx.FieldSpec{WireName: "p5"},
+	"P95":    ubx.FieldSpec{WireName: "p95"},
+	"Sum":    ubx.FieldSpec{WireName: "sum"},
+}
 
 var V1beta1TuningJob_TuningDataStats_SupervisedTuningDataStatsFields = ubx.FieldMap{
-		"DroppedExampleReasons": ubx.FieldSpec{WireName: "dropped_example_reasons"},
-		"TotalBillableCharacterCount": ubx.FieldSpec{WireName: "total_billable_character_count"},
-		"TotalBillableTokenCount": ubx.FieldSpec{WireName: "total_billable_token_count"},
-		"TotalTruncatedExampleCount": ubx.FieldSpec{WireName: "total_truncated_example_count"},
-		"TotalTuningCharacterCount": ubx.FieldSpec{WireName: "total_tuning_character_count"},
-		"TruncatedExampleIndices": ubx.FieldSpec{WireName: "truncated_example_indices"},
-		"TuningDatasetExampleCount": ubx.FieldSpec{WireName: "tuning_dataset_example_count"},
-		"TuningStepCount": ubx.FieldSpec{WireName: "tuning_step_count"},
-		"UserDatasetExamples": ubx.FieldSpec{
-			WireName: "user_dataset_examples",
-			Kind: "list",
-			Fields: V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_ContentsFields,
-		},
-		"UserInputTokenDistribution": ubx.FieldSpec{
-			WireName: "user_input_token_distribution",
-			Kind: "object",
-			Fields: V1beta1TuningJob_TuningDataStats_SupervisedTuningDataStats_UserInputTokenDistributionFields,
-		},
-		"UserMessagePerExampleDistribution": ubx.FieldSpec{
-			WireName: "user_message_per_example_distribution",
-			Kind: "object",
-			Fields: V1beta1TuningJob_TuningDataStats_SupervisedTuningDataStats_UserInputTokenDistributionFields,
-		},
-		"UserOutputTokenDistribution": ubx.FieldSpec{
-			WireName: "user_output_token_distribution",
-			Kind: "object",
-			Fields: V1beta1TuningJob_TuningDataStats_SupervisedTuningDataStats_UserInputTokenDistributionFields,
-		},
-	}
+	"DroppedExampleReasons":       ubx.FieldSpec{WireName: "dropped_example_reasons"},
+	"TotalBillableCharacterCount": ubx.FieldSpec{WireName: "total_billable_character_count"},
+	"TotalBillableTokenCount":     ubx.FieldSpec{WireName: "total_billable_token_count"},
+	"TotalTruncatedExampleCount":  ubx.FieldSpec{WireName: "total_truncated_example_count"},
+	"TotalTuningCharacterCount":   ubx.FieldSpec{WireName: "total_tuning_character_count"},
+	"TruncatedExampleIndices":     ubx.FieldSpec{WireName: "truncated_example_indices"},
+	"TuningDatasetExampleCount":   ubx.FieldSpec{WireName: "tuning_dataset_example_count"},
+	"TuningStepCount":             ubx.FieldSpec{WireName: "tuning_step_count"},
+	"UserDatasetExamples": ubx.FieldSpec{
+		WireName: "user_dataset_examples",
+		Kind:     "list",
+		Fields:   V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStats_ReinforcementTuningUserDatasetExamples_UserDatasetExamples_ContentsFields,
+	},
+	"UserInputTokenDistribution": ubx.FieldSpec{
+		WireName: "user_input_token_distribution",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_TuningDataStats_SupervisedTuningDataStats_UserInputTokenDistributionFields,
+	},
+	"UserMessagePerExampleDistribution": ubx.FieldSpec{
+		WireName: "user_message_per_example_distribution",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_TuningDataStats_SupervisedTuningDataStats_UserInputTokenDistributionFields,
+	},
+	"UserOutputTokenDistribution": ubx.FieldSpec{
+		WireName: "user_output_token_distribution",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_TuningDataStats_SupervisedTuningDataStats_UserInputTokenDistributionFields,
+	},
+}
 
 var V1beta1TuningJob_TuningDataStatsFields = ubx.FieldMap{
-		"DistillationDataStats": ubx.FieldSpec{
-			WireName: "distillation_data_stats",
-			Kind: "object",
-			Fields: V1beta1TuningJob_TuningDataStats_DistillationDataStatsFields,
-		},
-		"PreferenceOptimizationDataStats": ubx.FieldSpec{
-			WireName: "preference_optimization_data_stats",
-			Kind: "object",
-			Fields: V1beta1TuningJob_TuningDataStats_PreferenceOptimizationDataStatsFields,
-		},
-		"ReinforcementTuningDataStats": ubx.FieldSpec{
-			WireName: "reinforcement_tuning_data_stats",
-			Kind: "object",
-			Fields: V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStatsFields,
-		},
-		"SupervisedTuningDataStats": ubx.FieldSpec{
-			WireName: "supervised_tuning_data_stats",
-			Kind: "object",
-			Fields: V1beta1TuningJob_TuningDataStats_SupervisedTuningDataStatsFields,
-		},
-	}
+	"DistillationDataStats": ubx.FieldSpec{
+		WireName: "distillation_data_stats",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_TuningDataStats_DistillationDataStatsFields,
+	},
+	"PreferenceOptimizationDataStats": ubx.FieldSpec{
+		WireName: "preference_optimization_data_stats",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_TuningDataStats_PreferenceOptimizationDataStatsFields,
+	},
+	"ReinforcementTuningDataStats": ubx.FieldSpec{
+		WireName: "reinforcement_tuning_data_stats",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_TuningDataStats_DistillationDataStats_TrainingDatasetStatsFields,
+	},
+	"SupervisedTuningDataStats": ubx.FieldSpec{
+		WireName: "supervised_tuning_data_stats",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_TuningDataStats_SupervisedTuningDataStatsFields,
+	},
+}
 
 var V1beta1TuningJob_TuningJobMetadataFields = ubx.FieldMap{
-		"CompletedEpochCount": ubx.FieldSpec{WireName: "completed_epoch_count"},
-		"CompletedStepCount": ubx.FieldSpec{WireName: "completed_step_count"},
-	}
+	"CompletedEpochCount": ubx.FieldSpec{WireName: "completed_epoch_count"},
+	"CompletedStepCount":  ubx.FieldSpec{WireName: "completed_step_count"},
+}
 
 var V1beta1TuningJob_VeoLoraTuningSpec_HyperParametersFields = ubx.FieldMap{
-		"AdapterSize": ubx.FieldSpec{WireName: "adapter_size"},
-		"EpochCount": ubx.FieldSpec{WireName: "epoch_count"},
-		"LearningRateMultiplier": ubx.FieldSpec{WireName: "learning_rate_multiplier"},
-		"TuningSpeed": ubx.FieldSpec{WireName: "tuning_speed"},
-		"TuningTask": ubx.FieldSpec{WireName: "tuning_task"},
-		"VeoDataMixtureRatio": ubx.FieldSpec{WireName: "veo_data_mixture_ratio"},
-	}
+	"AdapterSize":            ubx.FieldSpec{WireName: "adapter_size"},
+	"EpochCount":             ubx.FieldSpec{WireName: "epoch_count"},
+	"LearningRateMultiplier": ubx.FieldSpec{WireName: "learning_rate_multiplier"},
+	"TuningSpeed":            ubx.FieldSpec{WireName: "tuning_speed"},
+	"TuningTask":             ubx.FieldSpec{WireName: "tuning_task"},
+	"VeoDataMixtureRatio":    ubx.FieldSpec{WireName: "veo_data_mixture_ratio"},
+}
 
 var V1beta1TuningJob_VeoLoraTuningSpecFields = ubx.FieldMap{
-		"HyperParameters": ubx.FieldSpec{
-			WireName: "hyper_parameters",
-			Kind: "object",
-			Fields: V1beta1TuningJob_VeoLoraTuningSpec_HyperParametersFields,
-		},
-		"TrainingDatasetUri": ubx.FieldSpec{WireName: "training_dataset_uri"},
-		"ValidationDatasetUri": ubx.FieldSpec{WireName: "validation_dataset_uri"},
-		"VideoOrientation": ubx.FieldSpec{WireName: "video_orientation"},
-	}
+	"HyperParameters": ubx.FieldSpec{
+		WireName: "hyper_parameters",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_VeoLoraTuningSpec_HyperParametersFields,
+	},
+	"TrainingDatasetUri":   ubx.FieldSpec{WireName: "training_dataset_uri"},
+	"ValidationDatasetUri": ubx.FieldSpec{WireName: "validation_dataset_uri"},
+	"VideoOrientation":     ubx.FieldSpec{WireName: "video_orientation"},
+}
 
 var V1beta1TuningJob_VeoTuningSpecFields = ubx.FieldMap{
-		"HyperParameters": ubx.FieldSpec{
-			WireName: "hyper_parameters",
-			Kind: "object",
-			Fields: V1beta1TuningJob_VeoLoraTuningSpec_HyperParametersFields,
-		},
-		"TrainingDatasetUri": ubx.FieldSpec{WireName: "training_dataset_uri"},
-		"ValidationDatasetUri": ubx.FieldSpec{WireName: "validation_dataset_uri"},
-	}
+	"HyperParameters": ubx.FieldSpec{
+		WireName: "hyper_parameters",
+		Kind:     "object",
+		Fields:   V1beta1TuningJob_VeoLoraTuningSpec_HyperParametersFields,
+	},
+	"TrainingDatasetUri":   ubx.FieldSpec{WireName: "training_dataset_uri"},
+	"ValidationDatasetUri": ubx.FieldSpec{WireName: "validation_dataset_uri"},
+}
 
 type V1beta1TuningJobConfig struct {
 	// The base model that is being tuned. See [Supported models](https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/tuning#supported_models).
 	BaseModel any
-	// Output only. Time when the TuningJob was created.
-	CreateTime any
 	// Optional. The user-provided path to custom model weights. Set this field to tune a custom model. The path must be a Cloud Storage directory that contains the model weights in .safetensors format along with associated model metadata files. If this field is set, the base_model field must still be set to indicate which base model the custom model is derived from. This feature is only available for open source models.
 	CustomBaseModel any
 	// Optional. The description of the TuningJob.
@@ -2737,42 +2598,24 @@ type V1beta1TuningJobConfig struct {
 	DistillationSpec any
 	// Represents a customer-managed encryption key specification that can be applied to a Vertex AI resource.
 	EncryptionSpec any
-	// Output only. Time when the TuningJob entered any of the following JobStates: `JOB_STATE_SUCCEEDED`, `JOB_STATE_FAILED`, `JOB_STATE_CANCELLED`, `JOB_STATE_EXPIRED`.
-	EndTime any
 	// The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
 	Error any
-	// Output only. Evaluation runs for the Tuning Job.
-	EvaluateDatasetRuns any
-	// Output only. The Experiment associated with this TuningJob.
-	Experiment any
 	// Tuning Spec for Full Fine Tuning.
 	FullFineTuningSpec any
 	// Optional. The labels with user-defined metadata to organize TuningJob and generated resources such as Model and Endpoint. Label keys and values can be no longer than 64 characters (Unicode codepoints), can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. See https://goo.gl/xmQnxf for more information and examples of labels.
 	Labels any
-	// Output only. Identifier. Resource name of a TuningJob. Format: `projects/{project}/locations/{location}/tuningJobs/{tuning_job}`
-	Name any
 	// Optional. Cloud Storage path to the directory where tuning job outputs are written to. This field is only available and required for open source models.
 	OutputUri any
 	// Tuning spec for Partner models.
 	PartnerModelTuningSpec any
-	// Output only. The resource name of the PipelineJob associated with the TuningJob. Format: `projects/{project}/locations/{location}/pipelineJobs/{pipeline_job}`.
-	PipelineJob any
 	// A pre-tuned model for continuous tuning.
 	PreTunedModel any
 	// Tuning Spec for Preference Optimization.
 	PreferenceOptimizationSpec any
 	// Tuning spec for Reinforcement Tuning.
 	ReinforcementTuningSpec any
-	// Output only. Reserved for future use.
-	SatisfiesPzi any
-	// Output only. Reserved for future use.
-	SatisfiesPzs any
 	// The service account that the tuningJob workload runs as. If not specified, the Vertex AI Secure Fine-Tuned Service Agent in the project will be used. See https://cloud.google.com/iam/docs/service-agents#vertex-ai-secure-fine-tuning-service-agent Users starting the pipeline must have the `iam.serviceAccounts.actAs` permission on this service account.
 	ServiceAccount any
-	// Output only. Time when the TuningJob for the first time entered the `JOB_STATE_RUNNING` state.
-	StartTime any
-	// Output only. The detailed state of the job.
-	State any
 	// Tuning Spec for Supervised Tuning for first party models.
 	SupervisedTuningSpec any
 	// The Model Registry Model and Online Prediction Endpoint associated with this TuningJob.
@@ -2783,10 +2626,6 @@ type V1beta1TuningJobConfig struct {
 	TuningDataStats any
 	// Tuning job metadata.
 	TuningJobMetadata any
-	// Output only. The detail state of the tuning job (while the overall `JobState` is running).
-	TuningJobState any
-	// Output only. Time when the TuningJob was most recently updated.
-	UpdateTime any
 	// Tuning Spec for Veo LoRA Model Tuning.
 	VeoLoraTuningSpec any
 	// Tuning Spec for Veo Model Tuning.
@@ -2865,98 +2704,82 @@ type V1beta1TuningJobAttrs struct {
 var V1beta1TuningJob = ubx.ResourceBinding{
 	WireType: "google_aiplatform_v1beta1_tuning_job",
 	Fields: ubx.FieldMap{
-		"BaseModel": ubx.FieldSpec{WireName: "base_model"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
+		"BaseModel":       ubx.FieldSpec{WireName: "base_model"},
 		"CustomBaseModel": ubx.FieldSpec{WireName: "custom_base_model"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":     ubx.FieldSpec{WireName: "description"},
 		"DistillationSpec": ubx.FieldSpec{
 			WireName: "distillation_spec",
-			Kind: "object",
-			Fields: V1beta1TuningJob_DistillationSpecFields,
+			Kind:     "object",
+			Fields:   V1beta1TuningJob_DistillationSpecFields,
 		},
 		"EncryptionSpec": ubx.FieldSpec{
 			WireName: "encryption_spec",
-			Kind: "object",
-			Fields: V1beta1TuningJob_EncryptionSpecFields,
+			Kind:     "object",
+			Fields:   V1beta1TuningJob_EncryptionSpecFields,
 		},
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
 		"Error": ubx.FieldSpec{
 			WireName: "error",
-			Kind: "object",
-			Fields: V1beta1TuningJob_ErrorFields,
+			Kind:     "object",
+			Fields:   V1beta1TuningJob_ErrorFields,
 		},
-		"EvaluateDatasetRuns": ubx.FieldSpec{
-			WireName: "evaluate_dataset_runs",
-			Kind: "list",
-			Fields: V1beta1TuningJob_EvaluateDatasetRunsFields,
-		},
-		"Experiment": ubx.FieldSpec{WireName: "experiment"},
 		"FullFineTuningSpec": ubx.FieldSpec{
 			WireName: "full_fine_tuning_spec",
-			Kind: "object",
-			Fields: V1beta1TuningJob_FullFineTuningSpecFields,
+			Kind:     "object",
+			Fields:   V1beta1TuningJob_FullFineTuningSpecFields,
 		},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Labels":    ubx.FieldSpec{WireName: "labels"},
 		"OutputUri": ubx.FieldSpec{WireName: "output_uri"},
 		"PartnerModelTuningSpec": ubx.FieldSpec{
 			WireName: "partner_model_tuning_spec",
-			Kind: "object",
-			Fields: V1beta1TuningJob_PartnerModelTuningSpecFields,
+			Kind:     "object",
+			Fields:   V1beta1TuningJob_PartnerModelTuningSpecFields,
 		},
-		"PipelineJob": ubx.FieldSpec{WireName: "pipeline_job"},
 		"PreTunedModel": ubx.FieldSpec{
 			WireName: "pre_tuned_model",
-			Kind: "object",
-			Fields: V1beta1TuningJob_PreTunedModelFields,
+			Kind:     "object",
+			Fields:   V1beta1TuningJob_PreTunedModelFields,
 		},
 		"PreferenceOptimizationSpec": ubx.FieldSpec{
 			WireName: "preference_optimization_spec",
-			Kind: "object",
-			Fields: V1beta1TuningJob_PreferenceOptimizationSpecFields,
+			Kind:     "object",
+			Fields:   V1beta1TuningJob_PreferenceOptimizationSpecFields,
 		},
 		"ReinforcementTuningSpec": ubx.FieldSpec{
 			WireName: "reinforcement_tuning_spec",
-			Kind: "object",
-			Fields: V1beta1TuningJob_ReinforcementTuningSpecFields,
+			Kind:     "object",
+			Fields:   V1beta1TuningJob_ReinforcementTuningSpecFields,
 		},
-		"SatisfiesPzi": ubx.FieldSpec{WireName: "satisfies_pzi"},
-		"SatisfiesPzs": ubx.FieldSpec{WireName: "satisfies_pzs"},
 		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"State": ubx.FieldSpec{WireName: "state"},
 		"SupervisedTuningSpec": ubx.FieldSpec{
 			WireName: "supervised_tuning_spec",
-			Kind: "object",
-			Fields: V1beta1TuningJob_SupervisedTuningSpecFields,
+			Kind:     "object",
+			Fields:   V1beta1TuningJob_SupervisedTuningSpecFields,
 		},
 		"TunedModel": ubx.FieldSpec{
 			WireName: "tuned_model",
-			Kind: "object",
-			Fields: V1beta1TuningJob_TunedModelFields,
+			Kind:     "object",
+			Fields:   V1beta1TuningJob_TunedModelFields,
 		},
 		"TunedModelDisplayName": ubx.FieldSpec{WireName: "tuned_model_display_name"},
 		"TuningDataStats": ubx.FieldSpec{
 			WireName: "tuning_data_stats",
-			Kind: "object",
-			Fields: V1beta1TuningJob_TuningDataStatsFields,
+			Kind:     "object",
+			Fields:   V1beta1TuningJob_TuningDataStatsFields,
 		},
 		"TuningJobMetadata": ubx.FieldSpec{
 			WireName: "tuning_job_metadata",
-			Kind: "object",
-			Fields: V1beta1TuningJob_TuningJobMetadataFields,
+			Kind:     "object",
+			Fields:   V1beta1TuningJob_TuningJobMetadataFields,
 		},
-		"TuningJobState": ubx.FieldSpec{WireName: "tuning_job_state"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 		"VeoLoraTuningSpec": ubx.FieldSpec{
 			WireName: "veo_lora_tuning_spec",
-			Kind: "object",
-			Fields: V1beta1TuningJob_VeoLoraTuningSpecFields,
+			Kind:     "object",
+			Fields:   V1beta1TuningJob_VeoLoraTuningSpecFields,
 		},
 		"VeoTuningSpec": ubx.FieldSpec{
 			WireName: "veo_tuning_spec",
-			Kind: "object",
-			Fields: V1beta1TuningJob_VeoTuningSpecFields,
+			Kind:     "object",
+			Fields:   V1beta1TuningJob_VeoTuningSpecFields,
 		},
 	},
 }

@@ -4,18 +4,12 @@ package apigee
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EndpointAttachmentConfig struct {
-	// Output only. State of the endpoint attachment connection to the service attachment.
-	ConnectionState any
-	// Output only. Host that can be used in either the HTTP target endpoint directly or as the host in target server.
-	Host any
 	// Required. Location of the endpoint attachment.
 	Location any
 	// Name of the endpoint attachment. Use the following structure in your request: `organizations/{org}/endpointAttachments/{endpoint_attachment}`
 	Name any
 	// Format: projects/*/regions/*/serviceAttachments/*
 	ServiceAttachment any
-	// Output only. State of the endpoint attachment. Values other than `ACTIVE` mean the resource is not ready to use.
-	State any
 }
 
 type EndpointAttachmentAttrs struct {
@@ -36,11 +30,8 @@ type EndpointAttachmentAttrs struct {
 var EndpointAttachment = ubx.ResourceBinding{
 	WireType: "google_apigee_endpoint_attachment",
 	Fields: ubx.FieldMap{
-		"ConnectionState": ubx.FieldSpec{WireName: "connection_state"},
-		"Host": ubx.FieldSpec{WireName: "host"},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Location":          ubx.FieldSpec{WireName: "location"},
+		"Name":              ubx.FieldSpec{WireName: "name"},
 		"ServiceAttachment": ubx.FieldSpec{WireName: "service_attachment"},
-		"State": ubx.FieldSpec{WireName: "state"},
 	},
 }

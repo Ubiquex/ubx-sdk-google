@@ -154,15 +154,12 @@ _Example_ActionsFields = {
 class ExampleConfig:
     actions: Any = None
     conversation_state: Any = None
-    create_time: Any = None
     description: Any = None
     display_name: Any = None
     language_code: Any = None
     name: Any = None
     playbook_input: Any = None
     playbook_output: Any = None
-    token_count: Any = None
-    update_time: Any = None
 
 @dataclasses.dataclass
 class ExampleAttrs:
@@ -187,7 +184,6 @@ Example = ubx.ResourceBinding(
             fields=_Example_ActionsFields,
         ),
         "conversation_state": ubx.FieldSpec(wire_name="conversation_state"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "language_code": ubx.FieldSpec(wire_name="language_code"),
@@ -202,7 +198,5 @@ Example = ubx.ResourceBinding(
             kind="object",
             fields=_Example_Actions_PlaybookInvocation_PlaybookOutputFields,
         ),
-        "token_count": ubx.FieldSpec(wire_name="token_count"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

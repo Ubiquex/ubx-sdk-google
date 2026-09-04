@@ -82,68 +82,66 @@ type CryptoKey_VersionTemplate struct {
 }
 
 var CryptoKey_KeyAccessJustificationsPolicyFields = ubx.FieldMap{
-		"AllowedAccessReasons": ubx.FieldSpec{WireName: "allowed_access_reasons"},
-	}
+	"AllowedAccessReasons": ubx.FieldSpec{WireName: "allowed_access_reasons"},
+}
 
 var CryptoKey_Primary_Attestation_CertChainsFields = ubx.FieldMap{
-		"CaviumCerts": ubx.FieldSpec{WireName: "cavium_certs"},
-		"GoogleCardCerts": ubx.FieldSpec{WireName: "google_card_certs"},
-		"GooglePartitionCerts": ubx.FieldSpec{WireName: "google_partition_certs"},
-	}
+	"CaviumCerts":          ubx.FieldSpec{WireName: "cavium_certs"},
+	"GoogleCardCerts":      ubx.FieldSpec{WireName: "google_card_certs"},
+	"GooglePartitionCerts": ubx.FieldSpec{WireName: "google_partition_certs"},
+}
 
 var CryptoKey_Primary_AttestationFields = ubx.FieldMap{
-		"CertChains": ubx.FieldSpec{
-			WireName: "cert_chains",
-			Kind: "object",
-			Fields: CryptoKey_Primary_Attestation_CertChainsFields,
-		},
-		"Content": ubx.FieldSpec{WireName: "content"},
-		"Format": ubx.FieldSpec{WireName: "format"},
-	}
+	"CertChains": ubx.FieldSpec{
+		WireName: "cert_chains",
+		Kind:     "object",
+		Fields:   CryptoKey_Primary_Attestation_CertChainsFields,
+	},
+	"Content": ubx.FieldSpec{WireName: "content"},
+	"Format":  ubx.FieldSpec{WireName: "format"},
+}
 
 var CryptoKey_Primary_ExternalProtectionLevelOptionsFields = ubx.FieldMap{
-		"EkmConnectionBackendOverride": ubx.FieldSpec{WireName: "ekm_connection_backend_override"},
-		"EkmConnectionKeyPath": ubx.FieldSpec{WireName: "ekm_connection_key_path"},
-		"ExternalKeyUri": ubx.FieldSpec{WireName: "external_key_uri"},
-	}
+	"EkmConnectionBackendOverride": ubx.FieldSpec{WireName: "ekm_connection_backend_override"},
+	"EkmConnectionKeyPath":         ubx.FieldSpec{WireName: "ekm_connection_key_path"},
+	"ExternalKeyUri":               ubx.FieldSpec{WireName: "external_key_uri"},
+}
 
 var CryptoKey_PrimaryFields = ubx.FieldMap{
-		"Algorithm": ubx.FieldSpec{WireName: "algorithm"},
-		"Attestation": ubx.FieldSpec{
-			WireName: "attestation",
-			Kind: "object",
-			Fields: CryptoKey_Primary_AttestationFields,
-		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DestroyEventTime": ubx.FieldSpec{WireName: "destroy_event_time"},
-		"DestroyTime": ubx.FieldSpec{WireName: "destroy_time"},
-		"ExternalDestructionFailureReason": ubx.FieldSpec{WireName: "external_destruction_failure_reason"},
-		"ExternalProtectionLevelOptions": ubx.FieldSpec{
-			WireName: "external_protection_level_options",
-			Kind: "object",
-			Fields: CryptoKey_Primary_ExternalProtectionLevelOptionsFields,
-		},
-		"GenerateTime": ubx.FieldSpec{WireName: "generate_time"},
-		"GenerationFailureReason": ubx.FieldSpec{WireName: "generation_failure_reason"},
-		"HsmTrusted": ubx.FieldSpec{WireName: "hsm_trusted"},
-		"ImportFailureReason": ubx.FieldSpec{WireName: "import_failure_reason"},
-		"ImportJob": ubx.FieldSpec{WireName: "import_job"},
-		"ImportTime": ubx.FieldSpec{WireName: "import_time"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ProtectionLevel": ubx.FieldSpec{WireName: "protection_level"},
-		"ReimportEligible": ubx.FieldSpec{WireName: "reimport_eligible"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"TrustedWrappingEnabled": ubx.FieldSpec{WireName: "trusted_wrapping_enabled"},
-	}
+	"Algorithm": ubx.FieldSpec{WireName: "algorithm"},
+	"Attestation": ubx.FieldSpec{
+		WireName: "attestation",
+		Kind:     "object",
+		Fields:   CryptoKey_Primary_AttestationFields,
+	},
+	"CreateTime":                       ubx.FieldSpec{WireName: "create_time"},
+	"DestroyEventTime":                 ubx.FieldSpec{WireName: "destroy_event_time"},
+	"DestroyTime":                      ubx.FieldSpec{WireName: "destroy_time"},
+	"ExternalDestructionFailureReason": ubx.FieldSpec{WireName: "external_destruction_failure_reason"},
+	"ExternalProtectionLevelOptions": ubx.FieldSpec{
+		WireName: "external_protection_level_options",
+		Kind:     "object",
+		Fields:   CryptoKey_Primary_ExternalProtectionLevelOptionsFields,
+	},
+	"GenerateTime":            ubx.FieldSpec{WireName: "generate_time"},
+	"GenerationFailureReason": ubx.FieldSpec{WireName: "generation_failure_reason"},
+	"HsmTrusted":              ubx.FieldSpec{WireName: "hsm_trusted"},
+	"ImportFailureReason":     ubx.FieldSpec{WireName: "import_failure_reason"},
+	"ImportJob":               ubx.FieldSpec{WireName: "import_job"},
+	"ImportTime":              ubx.FieldSpec{WireName: "import_time"},
+	"Name":                    ubx.FieldSpec{WireName: "name"},
+	"ProtectionLevel":         ubx.FieldSpec{WireName: "protection_level"},
+	"ReimportEligible":        ubx.FieldSpec{WireName: "reimport_eligible"},
+	"State":                   ubx.FieldSpec{WireName: "state"},
+	"TrustedWrappingEnabled":  ubx.FieldSpec{WireName: "trusted_wrapping_enabled"},
+}
 
 var CryptoKey_VersionTemplateFields = ubx.FieldMap{
-		"Algorithm": ubx.FieldSpec{WireName: "algorithm"},
-		"ProtectionLevel": ubx.FieldSpec{WireName: "protection_level"},
-	}
+	"Algorithm":       ubx.FieldSpec{WireName: "algorithm"},
+	"ProtectionLevel": ubx.FieldSpec{WireName: "protection_level"},
+}
 
 type CryptoKeyConfig struct {
-	// Output only. The time at which this CryptoKey was created.
-	CreateTime any
 	// Immutable. The resource name of the backend environment where the key material for all CryptoKeyVersions associated with this CryptoKey reside and where all related cryptographic operations are performed. Only applicable if CryptoKeyVersions have a ProtectionLevel of EXTERNAL_VPC, with the resource name in the format `projects/*/locations/*/ekmConnections/*`. Only applicable if CryptoKeyVersions have a ProtectionLevel of HSM_SINGLE_TENANT, with the resource name in the format `projects/*/locations/*/singleTenantHsmInstances/*`. Note, this list is non-exhaustive and may apply to additional ProtectionLevels in the future.
 	CryptoKeyBackend any
 	// Immutable. The period of time that versions of this key spend in the DESTROY_SCHEDULED state before transitioning to DESTROYED. If not specified at creation time, the default duration is 30 days.
@@ -154,8 +152,6 @@ type CryptoKeyConfig struct {
 	KeyAccessJustificationsPolicy any
 	// Labels with user-defined metadata. For more information, see [Labeling Keys](https://cloud.google.com/kms/docs/labeling-keys).
 	Labels any
-	// Output only. The resource name for this CryptoKey in the format `projects/*/locations/*/keyRings/*/cryptoKeys/*`.
-	Name any
 	// At next_rotation_time, the Key Management Service will automatically: 1. Create a new version of this CryptoKey. 2. Mark the new version as primary. Key rotations performed manually via CreateCryptoKeyVersion and UpdateCryptoKeyPrimaryVersion do not affect next_rotation_time. Keys with purpose ENCRYPT_DECRYPT support automatic rotation. For other keys, this field must be omitted.
 	NextRotationTime any
 	// A CryptoKeyVersion represents an individual cryptographic key, and the associated key material. An ENABLED version can be used for cryptographic operations. For security reasons, the raw cryptographic key material represented by a CryptoKeyVersion can never be viewed or exported. It can only be used to encrypt, decrypt, or sign data when an authorized user or application invokes Cloud KMS.
@@ -198,29 +194,27 @@ type CryptoKeyAttrs struct {
 var CryptoKey = ubx.ResourceBinding{
 	WireType: "google_cloudkms_crypto_key",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"CryptoKeyBackend": ubx.FieldSpec{WireName: "crypto_key_backend"},
+		"CryptoKeyBackend":         ubx.FieldSpec{WireName: "crypto_key_backend"},
 		"DestroyScheduledDuration": ubx.FieldSpec{WireName: "destroy_scheduled_duration"},
-		"ImportOnly": ubx.FieldSpec{WireName: "import_only"},
+		"ImportOnly":               ubx.FieldSpec{WireName: "import_only"},
 		"KeyAccessJustificationsPolicy": ubx.FieldSpec{
 			WireName: "key_access_justifications_policy",
-			Kind: "object",
-			Fields: CryptoKey_KeyAccessJustificationsPolicyFields,
+			Kind:     "object",
+			Fields:   CryptoKey_KeyAccessJustificationsPolicyFields,
 		},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Labels":           ubx.FieldSpec{WireName: "labels"},
 		"NextRotationTime": ubx.FieldSpec{WireName: "next_rotation_time"},
 		"Primary": ubx.FieldSpec{
 			WireName: "primary",
-			Kind: "object",
-			Fields: CryptoKey_PrimaryFields,
+			Kind:     "object",
+			Fields:   CryptoKey_PrimaryFields,
 		},
-		"Purpose": ubx.FieldSpec{WireName: "purpose"},
+		"Purpose":        ubx.FieldSpec{WireName: "purpose"},
 		"RotationPeriod": ubx.FieldSpec{WireName: "rotation_period"},
 		"VersionTemplate": ubx.FieldSpec{
 			WireName: "version_template",
-			Kind: "object",
-			Fields: CryptoKey_VersionTemplateFields,
+			Kind:     "object",
+			Fields:   CryptoKey_VersionTemplateFields,
 		},
 	},
 }

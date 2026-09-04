@@ -52,24 +52,12 @@ const Datastore_NfsDatastoreFields: FieldMap = {
 };
 
 export interface DatastoreConfig {
-  /** Output only. Clusters to which the datastore is attached. */
-  clusters?: string[] | Computed<string[]>;
-  /** Output only. Creation time of this resource. */
-  createTime?: string | Computed<string>;
   /** Optional. User-provided description for this datastore */
   description?: string | Computed<string>;
   /** Optional. Checksum that may be sent on update and delete requests to ensure that the user-provided value is up to date before the server processes a request. The server computes checksums based on the value of other fields in the request. */
   etag?: string | Computed<string>;
-  /** Output only. Identifier. The resource name of this datastore. Resource names are schemeless URIs that follow the conventions in https://cloud.google.com/apis/design/resource_names. For example: `projects/my-project/locations/us-central1/datastores/datastore` */
-  name?: string | Computed<string>;
   /** The NFS datastore configuration. */
   nfsDatastore?: Datastore_NfsDatastore | Computed<Datastore_NfsDatastore>;
-  /** Output only. The state of the Datastore. */
-  state?: string | Computed<string>;
-  /** Output only. System-generated unique identifier for the resource. */
-  uid?: string | Computed<string>;
-  /** Output only. Last update time of this resource. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface DatastoreAttrs {
@@ -96,18 +84,12 @@ export interface DatastoreAttrs {
 export const Datastore: ResourceBinding<DatastoreConfig, DatastoreAttrs> = {
   wireType: "google_vmwareengine_datastore",
   fields: {
-    clusters: "clusters",
-    createTime: "create_time",
     description: "description",
     etag: "etag",
-    name: "name",
     nfsDatastore: {
       wireName: "nfs_datastore",
       kind: "object",
       fields: Datastore_NfsDatastoreFields,
     },
-    state: "state",
-    uid: "uid",
-    updateTime: "update_time",
   },
 };

@@ -29,9 +29,9 @@ type V1alphaInsight_Metadata_Fields struct {
 	Description any
 	DisplayName any
 	FilterAlias any
-	Filterable any
-	Groupable any
-	Id any
+	Filterable  any
+	Groupable   any
+	Id          any
 }
 
 type V1alphaInsight_Metadata struct {
@@ -54,8 +54,8 @@ type V1alphaInsight_Metadata struct {
 type V1alphaInsight_Rows_FieldValues struct {
 	DisplayName any
 	FilterAlias any
-	Id any
-	Value any
+	Id          any
+	Value       any
 }
 
 type V1alphaInsight_Rows struct {
@@ -63,7 +63,6 @@ type V1alphaInsight_Rows struct {
 }
 
 type V1alphaInsightConfig struct {
-	Name any
 	View any
 }
 
@@ -72,7 +71,7 @@ type V1alphaInsightAttrs struct {
 	AppliedConfig any
 	// Insight filters, groupings and aggregations that can be applied for the insight. Examples: aggregations, groups, field filters.
 	Metadata any
-	Name any
+	Name     any
 	// Output only. Result rows returned containing the required value(s).
 	Rows any
 	View any
@@ -81,7 +80,6 @@ type V1alphaInsightAttrs struct {
 var V1alphaInsight = ubx.DataSourceBinding{
 	WireType: "google_beyondcorp_v1alpha_insight",
 	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
 		"View": ubx.FieldSpec{WireName: "view"},
 	},
 }

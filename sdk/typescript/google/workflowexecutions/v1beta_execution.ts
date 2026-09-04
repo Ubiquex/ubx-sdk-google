@@ -89,22 +89,10 @@ export interface V1betaExecutionConfig {
   argument?: string | Computed<string>;
   /** The call logging level associated to this execution. */
   callLogLevel?: string | Computed<string>;
-  /** Output only. Marks the end of execution, successful or not. */
-  endTime?: string | Computed<string>;
   /** Error describes why the execution was abnormally terminated. */
   error?: V1betaExecution_Error | Computed<V1betaExecution_Error>;
-  /** Output only. The resource name of the execution. Format: projects/{project}/locations/{location}/workflows/{workflow}/executions/{execution} */
-  name?: string | Computed<string>;
-  /** Output only. Output of the execution represented as a JSON string. The value can only be present if the execution's state is `SUCCEEDED`. */
-  result?: string | Computed<string>;
-  /** Output only. Marks the beginning of execution. */
-  startTime?: string | Computed<string>;
-  /** Output only. Current state of the execution. */
-  state?: string | Computed<string>;
   /** Represents the current status of this execution. */
   status?: V1betaExecution_Status | Computed<V1betaExecution_Status>;
-  /** Output only. Revision of the workflow this execution is using. */
-  workflowRevisionId?: string | Computed<string>;
 }
 
 export interface V1betaExecutionAttrs {
@@ -135,21 +123,15 @@ export const V1betaExecution: ResourceBinding<V1betaExecutionConfig, V1betaExecu
   fields: {
     argument: "argument",
     callLogLevel: "call_log_level",
-    endTime: "end_time",
     error: {
       wireName: "error",
       kind: "object",
       fields: V1betaExecution_ErrorFields,
     },
-    name: "name",
-    result: "result",
-    startTime: "start_time",
-    state: "state",
     status: {
       wireName: "status",
       kind: "object",
       fields: V1betaExecution_StatusFields,
     },
-    workflowRevisionId: "workflow_revision_id",
   },
 };

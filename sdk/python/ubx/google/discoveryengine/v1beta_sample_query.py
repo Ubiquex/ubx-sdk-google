@@ -36,8 +36,6 @@ _V1betaSampleQuery_QueryEntryFields = {
 
 @dataclasses.dataclass
 class V1betaSampleQueryConfig:
-    # Output only. Timestamp the SampleQuery was created at.
-    create_time: Any = None
     # Identifier. The full resource name of the sample query, in the format of `projects/{project}/locations/{location}/sampleQuerySets/{sample_query_set}/sampleQueries/{sample_query}`. This field must be a UTF-8 encoded string with a length limit of 1024 characters.
     name: Any = None
     # Query Entry captures metadata to be used for search evaluation.
@@ -55,7 +53,6 @@ class V1betaSampleQueryAttrs:
 V1betaSampleQuery = ubx.ResourceBinding(
     wire_type="google_discoveryengine_v1beta_sample_query",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "name": ubx.FieldSpec(wire_name="name"),
         "query_entry": ubx.FieldSpec(
             wire_name="query_entry",

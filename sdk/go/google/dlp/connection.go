@@ -24,14 +24,14 @@ type Connection_CloudSql struct {
 }
 
 type Connection_Connection_Errors_Details struct {
-	Code any
+	Code    any
 	Details any
 	Message any
 }
 
 type Connection_Connection_Errors struct {
-	Details any
-	ExtraInfo any
+	Details    any
+	ExtraInfo  any
 	Timestamps any
 }
 
@@ -47,52 +47,52 @@ type Connection_Connection struct {
 }
 
 var Connection_CloudSql_UsernamePasswordFields = ubx.FieldMap{
-		"PasswordSecretVersionName": ubx.FieldSpec{WireName: "password_secret_version_name"},
-		"Username": ubx.FieldSpec{WireName: "username"},
-	}
+	"PasswordSecretVersionName": ubx.FieldSpec{WireName: "password_secret_version_name"},
+	"Username":                  ubx.FieldSpec{WireName: "username"},
+}
 
 var Connection_CloudSqlFields = ubx.FieldMap{
-		"CloudSqlIam": ubx.FieldSpec{WireName: "cloud_sql_iam"},
-		"ConnectionName": ubx.FieldSpec{WireName: "connection_name"},
-		"DatabaseEngine": ubx.FieldSpec{WireName: "database_engine"},
-		"MaxConnections": ubx.FieldSpec{WireName: "max_connections"},
-		"UsernamePassword": ubx.FieldSpec{
-			WireName: "username_password",
-			Kind: "object",
-			Fields: Connection_CloudSql_UsernamePasswordFields,
-		},
-	}
+	"CloudSqlIam":    ubx.FieldSpec{WireName: "cloud_sql_iam"},
+	"ConnectionName": ubx.FieldSpec{WireName: "connection_name"},
+	"DatabaseEngine": ubx.FieldSpec{WireName: "database_engine"},
+	"MaxConnections": ubx.FieldSpec{WireName: "max_connections"},
+	"UsernamePassword": ubx.FieldSpec{
+		WireName: "username_password",
+		Kind:     "object",
+		Fields:   Connection_CloudSql_UsernamePasswordFields,
+	},
+}
 
 var Connection_Connection_Errors_DetailsFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"Code":    ubx.FieldSpec{WireName: "code"},
+	"Details": ubx.FieldSpec{WireName: "details"},
+	"Message": ubx.FieldSpec{WireName: "message"},
+}
 
 var Connection_Connection_ErrorsFields = ubx.FieldMap{
-		"Details": ubx.FieldSpec{
-			WireName: "details",
-			Kind: "object",
-			Fields: Connection_Connection_Errors_DetailsFields,
-		},
-		"ExtraInfo": ubx.FieldSpec{WireName: "extra_info"},
-		"Timestamps": ubx.FieldSpec{WireName: "timestamps"},
-	}
+	"Details": ubx.FieldSpec{
+		WireName: "details",
+		Kind:     "object",
+		Fields:   Connection_Connection_Errors_DetailsFields,
+	},
+	"ExtraInfo":  ubx.FieldSpec{WireName: "extra_info"},
+	"Timestamps": ubx.FieldSpec{WireName: "timestamps"},
+}
 
 var Connection_ConnectionFields = ubx.FieldMap{
-		"CloudSql": ubx.FieldSpec{
-			WireName: "cloud_sql",
-			Kind: "object",
-			Fields: Connection_CloudSqlFields,
-		},
-		"Errors": ubx.FieldSpec{
-			WireName: "errors",
-			Kind: "list",
-			Fields: Connection_Connection_ErrorsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"CloudSql": ubx.FieldSpec{
+		WireName: "cloud_sql",
+		Kind:     "object",
+		Fields:   Connection_CloudSqlFields,
+	},
+	"Errors": ubx.FieldSpec{
+		WireName: "errors",
+		Kind:     "list",
+		Fields:   Connection_Connection_ErrorsFields,
+	},
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"State": ubx.FieldSpec{WireName: "state"},
+}
 
 type ConnectionConfig struct {
 	// A data connection to allow the DLP API to profile data in locations that require additional configuration.
@@ -117,8 +117,8 @@ var Connection = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Connection": ubx.FieldSpec{
 			WireName: "connection",
-			Kind: "object",
-			Fields: Connection_ConnectionFields,
+			Kind:     "object",
+			Fields:   Connection_ConnectionFields,
 		},
 	},
 }

@@ -8,13 +8,13 @@ type V1beta1Document_Fields_ArrayValue struct {
 }
 
 type V1beta1Document_Fields_FunctionValue struct {
-	Args any
-	Name any
+	Args    any
+	Name    any
 	Options any
 }
 
 type V1beta1Document_Fields_GeoPointValue struct {
-	Latitude any
+	Latitude  any
 	Longitude any
 }
 
@@ -27,87 +27,87 @@ type V1beta1Document_Fields_PipelineValue struct {
 }
 
 type V1beta1Document_Fields struct {
-	ArrayValue any
-	BooleanValue any
-	BytesValue any
-	DoubleValue any
-	FieldReferenceValue any
-	FunctionValue any
-	GeoPointValue any
-	IntegerValue any
-	MapValue any
-	NullValue any
-	PipelineValue any
-	ReferenceValue any
-	StringValue any
-	TimestampValue any
+	ArrayValue             any
+	BooleanValue           any
+	BytesValue             any
+	DoubleValue            any
+	FieldReferenceValue    any
+	FunctionValue          any
+	GeoPointValue          any
+	IntegerValue           any
+	MapValue               any
+	NullValue              any
+	PipelineValue          any
+	ReferenceValue         any
+	StringValue            any
+	TimestampValue         any
 	VariableReferenceValue any
 }
 
 var V1beta1Document_Fields_ArrayValueFields = ubx.FieldMap{
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 var V1beta1Document_Fields_FunctionValueFields = ubx.FieldMap{
-		"Args": ubx.FieldSpec{WireName: "args"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Options": ubx.FieldSpec{WireName: "options"},
-	}
+	"Args":    ubx.FieldSpec{WireName: "args"},
+	"Name":    ubx.FieldSpec{WireName: "name"},
+	"Options": ubx.FieldSpec{WireName: "options"},
+}
 
 var V1beta1Document_Fields_GeoPointValueFields = ubx.FieldMap{
-		"Latitude": ubx.FieldSpec{WireName: "latitude"},
-		"Longitude": ubx.FieldSpec{WireName: "longitude"},
-	}
+	"Latitude":  ubx.FieldSpec{WireName: "latitude"},
+	"Longitude": ubx.FieldSpec{WireName: "longitude"},
+}
 
 var V1beta1Document_Fields_MapValueFields = ubx.FieldMap{
-		"Fields": ubx.FieldSpec{WireName: "fields"},
-	}
+	"Fields": ubx.FieldSpec{WireName: "fields"},
+}
 
 var V1beta1Document_Fields_PipelineValueFields = ubx.FieldMap{
-		"Stages": ubx.FieldSpec{
-			WireName: "stages",
-			Kind: "list",
-			Fields: V1beta1Document_Fields_FunctionValueFields,
-		},
-	}
+	"Stages": ubx.FieldSpec{
+		WireName: "stages",
+		Kind:     "list",
+		Fields:   V1beta1Document_Fields_FunctionValueFields,
+	},
+}
 
 var V1beta1Document_FieldsFields = ubx.FieldMap{
-		"ArrayValue": ubx.FieldSpec{
-			WireName: "array_value",
-			Kind: "object",
-			Fields: V1beta1Document_Fields_ArrayValueFields,
-		},
-		"BooleanValue": ubx.FieldSpec{WireName: "boolean_value"},
-		"BytesValue": ubx.FieldSpec{WireName: "bytes_value"},
-		"DoubleValue": ubx.FieldSpec{WireName: "double_value"},
-		"FieldReferenceValue": ubx.FieldSpec{WireName: "field_reference_value"},
-		"FunctionValue": ubx.FieldSpec{
-			WireName: "function_value",
-			Kind: "object",
-			Fields: V1beta1Document_Fields_FunctionValueFields,
-		},
-		"GeoPointValue": ubx.FieldSpec{
-			WireName: "geo_point_value",
-			Kind: "object",
-			Fields: V1beta1Document_Fields_GeoPointValueFields,
-		},
-		"IntegerValue": ubx.FieldSpec{WireName: "integer_value"},
-		"MapValue": ubx.FieldSpec{
-			WireName: "map_value",
-			Kind: "object",
-			Fields: V1beta1Document_Fields_MapValueFields,
-		},
-		"NullValue": ubx.FieldSpec{WireName: "null_value"},
-		"PipelineValue": ubx.FieldSpec{
-			WireName: "pipeline_value",
-			Kind: "object",
-			Fields: V1beta1Document_Fields_PipelineValueFields,
-		},
-		"ReferenceValue": ubx.FieldSpec{WireName: "reference_value"},
-		"StringValue": ubx.FieldSpec{WireName: "string_value"},
-		"TimestampValue": ubx.FieldSpec{WireName: "timestamp_value"},
-		"VariableReferenceValue": ubx.FieldSpec{WireName: "variable_reference_value"},
-	}
+	"ArrayValue": ubx.FieldSpec{
+		WireName: "array_value",
+		Kind:     "object",
+		Fields:   V1beta1Document_Fields_ArrayValueFields,
+	},
+	"BooleanValue":        ubx.FieldSpec{WireName: "boolean_value"},
+	"BytesValue":          ubx.FieldSpec{WireName: "bytes_value"},
+	"DoubleValue":         ubx.FieldSpec{WireName: "double_value"},
+	"FieldReferenceValue": ubx.FieldSpec{WireName: "field_reference_value"},
+	"FunctionValue": ubx.FieldSpec{
+		WireName: "function_value",
+		Kind:     "object",
+		Fields:   V1beta1Document_Fields_FunctionValueFields,
+	},
+	"GeoPointValue": ubx.FieldSpec{
+		WireName: "geo_point_value",
+		Kind:     "object",
+		Fields:   V1beta1Document_Fields_GeoPointValueFields,
+	},
+	"IntegerValue": ubx.FieldSpec{WireName: "integer_value"},
+	"MapValue": ubx.FieldSpec{
+		WireName: "map_value",
+		Kind:     "object",
+		Fields:   V1beta1Document_Fields_MapValueFields,
+	},
+	"NullValue": ubx.FieldSpec{WireName: "null_value"},
+	"PipelineValue": ubx.FieldSpec{
+		WireName: "pipeline_value",
+		Kind:     "object",
+		Fields:   V1beta1Document_Fields_PipelineValueFields,
+	},
+	"ReferenceValue":         ubx.FieldSpec{WireName: "reference_value"},
+	"StringValue":            ubx.FieldSpec{WireName: "string_value"},
+	"TimestampValue":         ubx.FieldSpec{WireName: "timestamp_value"},
+	"VariableReferenceValue": ubx.FieldSpec{WireName: "variable_reference_value"},
+}
 
 type V1beta1DocumentConfig struct {
 	// Output only. The time at which the document was created. This value increases monotonically when a document is deleted then recreated. It can also be compared to values from other documents and the `read_time` of a query.
@@ -137,10 +137,10 @@ var V1beta1Document = ubx.ResourceBinding{
 		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Fields": ubx.FieldSpec{
 			WireName: "fields",
-			Kind: "map",
-			Fields: V1beta1Document_FieldsFields,
+			Kind:     "map",
+			Fields:   V1beta1Document_FieldsFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":       ubx.FieldSpec{WireName: "name"},
 		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

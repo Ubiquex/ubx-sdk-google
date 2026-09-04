@@ -4,68 +4,68 @@ package aiplatform
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CachedContent_Contents_Parts_AudioTranscription_Words struct {
-	EndOffset any
+	EndOffset   any
 	StartOffset any
-	Word any
+	Word        any
 }
 
 type CachedContent_Contents_Parts_AudioTranscription struct {
 	SpeakerLabel any
-	Text any
-	Words any
+	Text         any
+	Words        any
 }
 
 type CachedContent_Contents_Parts_CodeExecutionResult struct {
-	Id any
+	Id      any
 	Outcome any
-	Output any
+	Output  any
 }
 
 type CachedContent_Contents_Parts_ExecutableCode struct {
-	Code any
-	Id any
+	Code     any
+	Id       any
 	Language any
 }
 
 type CachedContent_Contents_Parts_FileData struct {
 	DisplayName any
-	FileUri any
-	MimeType any
+	FileUri     any
+	MimeType    any
 }
 
 type CachedContent_Contents_Parts_FunctionCall_PartialArgs struct {
-	BoolValue any
-	JsonPath any
-	NullValue any
-	NumberValue any
-	StringValue any
+	BoolValue    any
+	JsonPath     any
+	NullValue    any
+	NumberValue  any
+	StringValue  any
 	WillContinue any
 }
 
 type CachedContent_Contents_Parts_FunctionCall struct {
-	Args any
-	Id any
-	Name any
-	PartialArgs any
+	Args         any
+	Id           any
+	Name         any
+	PartialArgs  any
 	WillContinue any
 }
 
 type CachedContent_Contents_Parts_FunctionResponse_Parts_InlineData struct {
-	Data any
+	Data        any
 	DisplayName any
-	MimeType any
+	MimeType    any
 }
 
 type CachedContent_Contents_Parts_FunctionResponse_Parts struct {
-	FileData any
+	FileData   any
 	InlineData any
 }
 
 type CachedContent_Contents_Parts_FunctionResponse struct {
-	Id any
-	Name any
-	Parts any
-	Response any
+	Id         any
+	Name       any
+	Parts      any
+	Response   any
 	Scheduling any
 }
 
@@ -74,29 +74,29 @@ type CachedContent_Contents_Parts_MediaResolution struct {
 }
 
 type CachedContent_Contents_Parts_VideoMetadata struct {
-	EndOffset any
-	Fps any
+	EndOffset   any
+	Fps         any
 	StartOffset any
 }
 
 type CachedContent_Contents_Parts struct {
-	AudioTranscription any
+	AudioTranscription  any
 	CodeExecutionResult any
-	ExecutableCode any
-	FileData any
-	FunctionCall any
-	FunctionResponse any
-	InlineData any
-	MediaResolution any
-	Text any
-	Thought any
-	ThoughtSignature any
-	VideoMetadata any
+	ExecutableCode      any
+	FileData            any
+	FunctionCall        any
+	FunctionResponse    any
+	InlineData          any
+	MediaResolution     any
+	Text                any
+	Thought             any
+	ThoughtSignature    any
+	VideoMetadata       any
 }
 
 type CachedContent_Contents struct {
 	Parts any
-	Role any
+	Role  any
 }
 
 type CachedContent_EncryptionSpec struct {
@@ -136,82 +136,82 @@ type CachedContent_ToolConfig struct {
 
 type CachedContent_Tools_ComputerUse struct {
 	EnablePromptInjectionDetection any
-	Environment any
-	ExcludedPredefinedFunctions any
+	Environment                    any
+	ExcludedPredefinedFunctions    any
 }
 
 type CachedContent_Tools_EnterpriseWebSearch struct {
 	BlockingConfidence any
-	ExcludeDomains any
+	ExcludeDomains     any
 }
 
 type CachedContent_Tools_ExaAiSearch struct {
-	ApiKey any
+	ApiKey        any
 	CustomConfigs any
 }
 
 type CachedContent_Tools_FunctionDeclarations_Parameters struct {
 	AdditionalProperties any
-	AnyOf any
-	Default any
-	Defs any
-	Description any
-	Enum any
-	Example any
-	Format any
-	Items any
-	MaxItems any
-	MaxLength any
-	MaxProperties any
-	Maximum any
-	MinItems any
-	MinLength any
-	MinProperties any
-	Minimum any
-	Nullable any
-	Pattern any
-	Properties any
-	PropertyOrdering any
-	Ref any
-	Required any
-	Title any
-	Type any
+	AnyOf                any
+	Default              any
+	Defs                 any
+	Description          any
+	Enum                 any
+	Example              any
+	Format               any
+	Items                any
+	MaxItems             any
+	MaxLength            any
+	MaxProperties        any
+	Maximum              any
+	MinItems             any
+	MinLength            any
+	MinProperties        any
+	Minimum              any
+	Nullable             any
+	Pattern              any
+	Properties           any
+	PropertyOrdering     any
+	Ref                  any
+	Required             any
+	Title                any
+	Type                 any
 }
 
 type CachedContent_Tools_FunctionDeclarations struct {
-	Behavior any
-	Description any
-	Name any
-	Parameters any
+	Behavior             any
+	Description          any
+	Name                 any
+	Parameters           any
 	ParametersJsonSchema any
-	Response any
-	ResponseJsonSchema any
+	Response             any
+	ResponseJsonSchema   any
 }
 
 type CachedContent_Tools_GoogleMaps_GroundingTypes struct {
-	Places any
+	Places  any
 	Routing any
 }
 
 type CachedContent_Tools_GoogleMaps struct {
-	EnableWidget any
+	EnableWidget   any
 	GroundingTypes any
 }
 
 type CachedContent_Tools_GoogleSearch_SearchTypes struct {
 	ImageSearch any
-	WebSearch any
+	WebSearch   any
 }
 
 type CachedContent_Tools_GoogleSearch struct {
 	BlockingConfidence any
-	ExcludeDomains any
-	SearchTypes any
+	ExcludeDomains     any
+	SearchTypes        any
 }
 
 type CachedContent_Tools_GoogleSearchRetrieval_DynamicRetrievalConfig struct {
 	DynamicThreshold any
-	Mode any
+	Mode             any
 }
 
 type CachedContent_Tools_GoogleSearchRetrieval struct {
@@ -219,15 +219,15 @@ type CachedContent_Tools_GoogleSearchRetrieval struct {
 }
 
 type CachedContent_Tools_ParallelAiSearch struct {
-	ApiKey any
-	CustomConfigs any
-	EnableDataRetention any
+	ApiKey                  any
+	CustomConfigs           any
+	EnableDataRetention     any
 	EnableZeroDataRetention any
 }
 
 type CachedContent_Tools_Retrieval_ExternalApi_ApiAuth_ApiKeyConfig struct {
 	ApiKeySecretVersion any
-	ApiKeyString any
+	ApiKeyString        any
 }
 
 type CachedContent_Tools_Retrieval_ExternalApi_ApiAuth struct {
@@ -235,10 +235,10 @@ type CachedContent_Tools_Retrieval_ExternalApi_ApiAuth struct {
 }
 
 type CachedContent_Tools_Retrieval_ExternalApi_AuthConfig_ApiKeyConfig struct {
-	ApiKeySecret any
-	ApiKeyString any
+	ApiKeySecret        any
+	ApiKeyString        any
 	HttpElementLocation any
-	Name any
+	Name                any
 }
 
 type CachedContent_Tools_Retrieval_ExternalApi_AuthConfig_GoogleServiceAccountConfig struct {
@@ -250,60 +250,60 @@ type CachedContent_Tools_Retrieval_ExternalApi_AuthConfig_HttpBasicAuthConfig st
 }
 
 type CachedContent_Tools_Retrieval_ExternalApi_AuthConfig_OauthConfig struct {
-	AccessToken any
+	AccessToken    any
 	ServiceAccount any
 }
 
 type CachedContent_Tools_Retrieval_ExternalApi_AuthConfig_OidcConfig struct {
-	IdToken any
+	IdToken        any
 	ServiceAccount any
 }
 
 type CachedContent_Tools_Retrieval_ExternalApi_AuthConfig struct {
-	ApiKeyConfig any
-	AuthType any
+	ApiKeyConfig               any
+	AuthType                   any
 	GoogleServiceAccountConfig any
-	HttpBasicAuthConfig any
-	OauthConfig any
-	OidcConfig any
+	HttpBasicAuthConfig        any
+	OauthConfig                any
+	OidcConfig                 any
 }
 
 type CachedContent_Tools_Retrieval_ExternalApi_ElasticSearchParams struct {
-	Index any
-	NumHits any
+	Index          any
+	NumHits        any
 	SearchTemplate any
 }
 
 type CachedContent_Tools_Retrieval_ExternalApi struct {
-	ApiAuth any
-	ApiSpec any
-	AuthConfig any
+	ApiAuth             any
+	ApiSpec             any
+	AuthConfig          any
 	ElasticSearchParams any
-	Endpoint any
-	SimpleSearchParams any
+	Endpoint            any
+	SimpleSearchParams  any
 }
 
 type CachedContent_Tools_Retrieval_VertexAiSearch_DataStoreSpecs struct {
 	DataStore any
-	Filter any
+	Filter    any
 }
 
 type CachedContent_Tools_Retrieval_VertexAiSearch struct {
 	DataStoreSpecs any
-	Datastore any
-	Engine any
-	Filter any
-	MaxResults any
+	Datastore      any
+	Engine         any
+	Filter         any
+	MaxResults     any
 }
 
 type CachedContent_Tools_Retrieval_VertexRagStore_RagResources struct {
-	RagCorpus any
+	RagCorpus  any
 	RagFileIds any
 }
 
 type CachedContent_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_Filter struct {
-	MetadataFilter any
-	VectorDistanceThreshold any
+	MetadataFilter            any
+	VectorDistanceThreshold   any
 	VectorSimilarityThreshold any
 }
 
@@ -312,42 +312,42 @@ type CachedContent_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_Ranking_Llm
 }
 
 type CachedContent_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_Ranking struct {
-	LlmRanker any
+	LlmRanker   any
 	RankService any
 }
 
 type CachedContent_Tools_Retrieval_VertexRagStore_RagRetrievalConfig struct {
-	Filter any
+	Filter  any
 	Ranking any
-	TopK any
+	TopK    any
 }
 
 type CachedContent_Tools_Retrieval_VertexRagStore struct {
-	RagResources any
-	RagRetrievalConfig any
-	SimilarityTopK any
+	RagResources            any
+	RagRetrievalConfig      any
+	SimilarityTopK          any
 	VectorDistanceThreshold any
 }
 
 type CachedContent_Tools_Retrieval struct {
 	DisableAttribution any
-	ExternalApi any
-	VertexAiSearch any
-	VertexRagStore any
+	ExternalApi        any
+	VertexAiSearch     any
+	VertexRagStore     any
 }
 
 type CachedContent_Tools struct {
-	CodeExecution any
-	ComputerUse any
-	EnterpriseWebSearch any
-	ExaAiSearch any
-	FunctionDeclarations any
-	GoogleMaps any
-	GoogleSearch any
+	CodeExecution         any
+	ComputerUse           any
+	EnterpriseWebSearch   any
+	ExaAiSearch           any
+	FunctionDeclarations  any
+	GoogleMaps            any
+	GoogleSearch          any
 	GoogleSearchRetrieval any
-	ParallelAiSearch any
-	Retrieval any
-	UrlContext any
+	ParallelAiSearch      any
+	Retrieval             any
+	UrlContext            any
 }
 
 type CachedContent_UsageMetadata struct {
@@ -364,559 +364,557 @@ type CachedContent_UsageMetadata struct {
 }
 
 var CachedContent_Contents_Parts_AudioTranscription_WordsFields = ubx.FieldMap{
-		"EndOffset": ubx.FieldSpec{WireName: "end_offset"},
-		"StartOffset": ubx.FieldSpec{WireName: "start_offset"},
-		"Word": ubx.FieldSpec{WireName: "word"},
-	}
+	"EndOffset":   ubx.FieldSpec{WireName: "end_offset"},
+	"StartOffset": ubx.FieldSpec{WireName: "start_offset"},
+	"Word":        ubx.FieldSpec{WireName: "word"},
+}
 
 var CachedContent_Contents_Parts_AudioTranscriptionFields = ubx.FieldMap{
-		"SpeakerLabel": ubx.FieldSpec{WireName: "speaker_label"},
-		"Text": ubx.FieldSpec{WireName: "text"},
-		"Words": ubx.FieldSpec{
-			WireName: "words",
-			Kind: "list",
-			Fields: CachedContent_Contents_Parts_AudioTranscription_WordsFields,
-		},
-	}
+	"SpeakerLabel": ubx.FieldSpec{WireName: "speaker_label"},
+	"Text":         ubx.FieldSpec{WireName: "text"},
+	"Words": ubx.FieldSpec{
+		WireName: "words",
+		Kind:     "list",
+		Fields:   CachedContent_Contents_Parts_AudioTranscription_WordsFields,
+	},
+}
 
 var CachedContent_Contents_Parts_CodeExecutionResultFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Outcome": ubx.FieldSpec{WireName: "outcome"},
-		"Output": ubx.FieldSpec{WireName: "output"},
-	}
+	"Id":      ubx.FieldSpec{WireName: "id"},
+	"Outcome": ubx.FieldSpec{WireName: "outcome"},
+	"Output":  ubx.FieldSpec{WireName: "output"},
+}
 
 var CachedContent_Contents_Parts_ExecutableCodeFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Language": ubx.FieldSpec{WireName: "language"},
-	}
+	"Code":     ubx.FieldSpec{WireName: "code"},
+	"Id":       ubx.FieldSpec{WireName: "id"},
+	"Language": ubx.FieldSpec{WireName: "language"},
+}
 
 var CachedContent_Contents_Parts_FileDataFields = ubx.FieldMap{
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"FileUri": ubx.FieldSpec{WireName: "file_uri"},
-		"MimeType": ubx.FieldSpec{WireName: "mime_type"},
-	}
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"FileUri":     ubx.FieldSpec{WireName: "file_uri"},
+	"MimeType":    ubx.FieldSpec{WireName: "mime_type"},
+}
 
 var CachedContent_Contents_Parts_FunctionCall_PartialArgsFields = ubx.FieldMap{
-		"BoolValue": ubx.FieldSpec{WireName: "bool_value"},
-		"JsonPath": ubx.FieldSpec{WireName: "json_path"},
-		"NullValue": ubx.FieldSpec{WireName: "null_value"},
-		"NumberValue": ubx.FieldSpec{WireName: "number_value"},
-		"StringValue": ubx.FieldSpec{WireName: "string_value"},
-		"WillContinue": ubx.FieldSpec{WireName: "will_continue"},
-	}
+	"BoolValue":    ubx.FieldSpec{WireName: "bool_value"},
+	"JsonPath":     ubx.FieldSpec{WireName: "json_path"},
+	"NullValue":    ubx.FieldSpec{WireName: "null_value"},
+	"NumberValue":  ubx.FieldSpec{WireName: "number_value"},
+	"StringValue":  ubx.FieldSpec{WireName: "string_value"},
+	"WillContinue": ubx.FieldSpec{WireName: "will_continue"},
+}
 
 var CachedContent_Contents_Parts_FunctionCallFields = ubx.FieldMap{
-		"Args": ubx.FieldSpec{WireName: "args"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PartialArgs": ubx.FieldSpec{
-			WireName: "partial_args",
-			Kind: "list",
-			Fields: CachedContent_Contents_Parts_FunctionCall_PartialArgsFields,
-		},
-		"WillContinue": ubx.FieldSpec{WireName: "will_continue"},
-	}
+	"Args": ubx.FieldSpec{WireName: "args"},
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"PartialArgs": ubx.FieldSpec{
+		WireName: "partial_args",
+		Kind:     "list",
+		Fields:   CachedContent_Contents_Parts_FunctionCall_PartialArgsFields,
+	},
+	"WillContinue": ubx.FieldSpec{WireName: "will_continue"},
+}
 
 var CachedContent_Contents_Parts_FunctionResponse_Parts_InlineDataFields = ubx.FieldMap{
-		"Data": ubx.FieldSpec{WireName: "data"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"MimeType": ubx.FieldSpec{WireName: "mime_type"},
-	}
+	"Data":        ubx.FieldSpec{WireName: "data"},
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"MimeType":    ubx.FieldSpec{WireName: "mime_type"},
+}
 
 var CachedContent_Contents_Parts_FunctionResponse_PartsFields = ubx.FieldMap{
-		"FileData": ubx.FieldSpec{
-			WireName: "file_data",
-			Kind: "object",
-			Fields: CachedContent_Contents_Parts_FileDataFields,
-		},
-		"InlineData": ubx.FieldSpec{
-			WireName: "inline_data",
-			Kind: "object",
-			Fields: CachedContent_Contents_Parts_FunctionResponse_Parts_InlineDataFields,
-		},
-	}
+	"FileData": ubx.FieldSpec{
+		WireName: "file_data",
+		Kind:     "object",
+		Fields:   CachedContent_Contents_Parts_FileDataFields,
+	},
+	"InlineData": ubx.FieldSpec{
+		WireName: "inline_data",
+		Kind:     "object",
+		Fields:   CachedContent_Contents_Parts_FunctionResponse_Parts_InlineDataFields,
+	},
+}
 
 var CachedContent_Contents_Parts_FunctionResponseFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Parts": ubx.FieldSpec{
-			WireName: "parts",
-			Kind: "list",
-			Fields: CachedContent_Contents_Parts_FunctionResponse_PartsFields,
-		},
-		"Response": ubx.FieldSpec{WireName: "response"},
-		"Scheduling": ubx.FieldSpec{WireName: "scheduling"},
-	}
+	"Id":   ubx.FieldSpec{WireName: "id"},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Parts": ubx.FieldSpec{
+		WireName: "parts",
+		Kind:     "list",
+		Fields:   CachedContent_Contents_Parts_FunctionResponse_PartsFields,
+	},
+	"Response":   ubx.FieldSpec{WireName: "response"},
+	"Scheduling": ubx.FieldSpec{WireName: "scheduling"},
+}
 
 var CachedContent_Contents_Parts_MediaResolutionFields = ubx.FieldMap{
-		"Level": ubx.FieldSpec{WireName: "level"},
-	}
+	"Level": ubx.FieldSpec{WireName: "level"},
+}
 
 var CachedContent_Contents_Parts_VideoMetadataFields = ubx.FieldMap{
-		"EndOffset": ubx.FieldSpec{WireName: "end_offset"},
-		"Fps": ubx.FieldSpec{WireName: "fps"},
-		"StartOffset": ubx.FieldSpec{WireName: "start_offset"},
-	}
+	"EndOffset":   ubx.FieldSpec{WireName: "end_offset"},
+	"Fps":         ubx.FieldSpec{WireName: "fps"},
+	"StartOffset": ubx.FieldSpec{WireName: "start_offset"},
+}
 
 var CachedContent_Contents_PartsFields = ubx.FieldMap{
-		"AudioTranscription": ubx.FieldSpec{
-			WireName: "audio_transcription",
-			Kind: "object",
-			Fields: CachedContent_Contents_Parts_AudioTranscriptionFields,
-		},
-		"CodeExecutionResult": ubx.FieldSpec{
-			WireName: "code_execution_result",
-			Kind: "object",
-			Fields: CachedContent_Contents_Parts_CodeExecutionResultFields,
-		},
-		"ExecutableCode": ubx.FieldSpec{
-			WireName: "executable_code",
-			Kind: "object",
-			Fields: CachedContent_Contents_Parts_ExecutableCodeFields,
-		},
-		"FileData": ubx.FieldSpec{
-			WireName: "file_data",
-			Kind: "object",
-			Fields: CachedContent_Contents_Parts_FileDataFields,
-		},
-		"FunctionCall": ubx.FieldSpec{
-			WireName: "function_call",
-			Kind: "object",
-			Fields: CachedContent_Contents_Parts_FunctionCallFields,
-		},
-		"FunctionResponse": ubx.FieldSpec{
-			WireName: "function_response",
-			Kind: "object",
-			Fields: CachedContent_Contents_Parts_FunctionResponseFields,
-		},
-		"InlineData": ubx.FieldSpec{
-			WireName: "inline_data",
-			Kind: "object",
-			Fields: CachedContent_Contents_Parts_FunctionResponse_Parts_InlineDataFields,
-		},
-		"MediaResolution": ubx.FieldSpec{
-			WireName: "media_resolution",
-			Kind: "object",
-			Fields: CachedContent_Contents_Parts_MediaResolutionFields,
-		},
-		"Text": ubx.FieldSpec{WireName: "text"},
-		"Thought": ubx.FieldSpec{WireName: "thought"},
-		"ThoughtSignature": ubx.FieldSpec{WireName: "thought_signature"},
-		"VideoMetadata": ubx.FieldSpec{
-			WireName: "video_metadata",
-			Kind: "object",
-			Fields: CachedContent_Contents_Parts_VideoMetadataFields,
-		},
-	}
+	"AudioTranscription": ubx.FieldSpec{
+		WireName: "audio_transcription",
+		Kind:     "object",
+		Fields:   CachedContent_Contents_Parts_AudioTranscriptionFields,
+	},
+	"CodeExecutionResult": ubx.FieldSpec{
+		WireName: "code_execution_result",
+		Kind:     "object",
+		Fields:   CachedContent_Contents_Parts_CodeExecutionResultFields,
+	},
+	"ExecutableCode": ubx.FieldSpec{
+		WireName: "executable_code",
+		Kind:     "object",
+		Fields:   CachedContent_Contents_Parts_ExecutableCodeFields,
+	},
+	"FileData": ubx.FieldSpec{
+		WireName: "file_data",
+		Kind:     "object",
+		Fields:   CachedContent_Contents_Parts_FileDataFields,
+	},
+	"FunctionCall": ubx.FieldSpec{
+		WireName: "function_call",
+		Kind:     "object",
+		Fields:   CachedContent_Contents_Parts_FunctionCallFields,
+	},
+	"FunctionResponse": ubx.FieldSpec{
+		WireName: "function_response",
+		Kind:     "object",
+		Fields:   CachedContent_Contents_Parts_FunctionResponseFields,
+	},
+	"InlineData": ubx.FieldSpec{
+		WireName: "inline_data",
+		Kind:     "object",
+		Fields:   CachedContent_Contents_Parts_FunctionResponse_Parts_InlineDataFields,
+	},
+	"MediaResolution": ubx.FieldSpec{
+		WireName: "media_resolution",
+		Kind:     "object",
+		Fields:   CachedContent_Contents_Parts_MediaResolutionFields,
+	},
+	"Text":             ubx.FieldSpec{WireName: "text"},
+	"Thought":          ubx.FieldSpec{WireName: "thought"},
+	"ThoughtSignature": ubx.FieldSpec{WireName: "thought_signature"},
+	"VideoMetadata": ubx.FieldSpec{
+		WireName: "video_metadata",
+		Kind:     "object",
+		Fields:   CachedContent_Contents_Parts_VideoMetadataFields,
+	},
+}
 
 var CachedContent_ContentsFields = ubx.FieldMap{
-		"Parts": ubx.FieldSpec{
-			WireName: "parts",
-			Kind: "list",
-			Fields: CachedContent_Contents_PartsFields,
-		},
-		"Role": ubx.FieldSpec{WireName: "role"},
-	}
+	"Parts": ubx.FieldSpec{
+		WireName: "parts",
+		Kind:     "list",
+		Fields:   CachedContent_Contents_PartsFields,
+	},
+	"Role": ubx.FieldSpec{WireName: "role"},
+}
 
 var CachedContent_EncryptionSpecFields = ubx.FieldMap{
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-	}
+	"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
+}
 
 var CachedContent_ToolConfig_FunctionCallingConfigFields = ubx.FieldMap{
-		"AllowedFunctionNames": ubx.FieldSpec{WireName: "allowed_function_names"},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"StreamFunctionCallArguments": ubx.FieldSpec{WireName: "stream_function_call_arguments"},
-	}
+	"AllowedFunctionNames":        ubx.FieldSpec{WireName: "allowed_function_names"},
+	"Mode":                        ubx.FieldSpec{WireName: "mode"},
+	"StreamFunctionCallArguments": ubx.FieldSpec{WireName: "stream_function_call_arguments"},
+}
 
 var CachedContent_ToolConfig_RetrievalConfig_LatLngFields = ubx.FieldMap{
-		"Latitude": ubx.FieldSpec{WireName: "latitude"},
-		"Longitude": ubx.FieldSpec{WireName: "longitude"},
-	}
+	"Latitude":  ubx.FieldSpec{WireName: "latitude"},
+	"Longitude": ubx.FieldSpec{WireName: "longitude"},
+}
 
 var CachedContent_ToolConfig_RetrievalConfigFields = ubx.FieldMap{
-		"LanguageCode": ubx.FieldSpec{WireName: "language_code"},
-		"LatLng": ubx.FieldSpec{
-			WireName: "lat_lng",
-			Kind: "object",
-			Fields: CachedContent_ToolConfig_RetrievalConfig_LatLngFields,
-		},
-	}
+	"LanguageCode": ubx.FieldSpec{WireName: "language_code"},
+	"LatLng": ubx.FieldSpec{
+		WireName: "lat_lng",
+		Kind:     "object",
+		Fields:   CachedContent_ToolConfig_RetrievalConfig_LatLngFields,
+	},
+}
 
 var CachedContent_ToolConfigFields = ubx.FieldMap{
-		"FunctionCallingConfig": ubx.FieldSpec{
-			WireName: "function_calling_config",
-			Kind: "object",
-			Fields: CachedContent_ToolConfig_FunctionCallingConfigFields,
-		},
-		"RetrievalConfig": ubx.FieldSpec{
-			WireName: "retrieval_config",
-			Kind: "object",
-			Fields: CachedContent_ToolConfig_RetrievalConfigFields,
-		},
-	}
+	"FunctionCallingConfig": ubx.FieldSpec{
+		WireName: "function_calling_config",
+		Kind:     "object",
+		Fields:   CachedContent_ToolConfig_FunctionCallingConfigFields,
+	},
+	"RetrievalConfig": ubx.FieldSpec{
+		WireName: "retrieval_config",
+		Kind:     "object",
+		Fields:   CachedContent_ToolConfig_RetrievalConfigFields,
+	},
+}
 
 var CachedContent_Tools_ComputerUseFields = ubx.FieldMap{
-		"EnablePromptInjectionDetection": ubx.FieldSpec{WireName: "enable_prompt_injection_detection"},
-		"Environment": ubx.FieldSpec{WireName: "environment"},
-		"ExcludedPredefinedFunctions": ubx.FieldSpec{WireName: "excluded_predefined_functions"},
-	}
+	"EnablePromptInjectionDetection": ubx.FieldSpec{WireName: "enable_prompt_injection_detection"},
+	"Environment":                    ubx.FieldSpec{WireName: "environment"},
+	"ExcludedPredefinedFunctions":    ubx.FieldSpec{WireName: "excluded_predefined_functions"},
+}
 
 var CachedContent_Tools_EnterpriseWebSearchFields = ubx.FieldMap{
-		"BlockingConfidence": ubx.FieldSpec{WireName: "blocking_confidence"},
-		"ExcludeDomains": ubx.FieldSpec{WireName: "exclude_domains"},
-	}
+	"BlockingConfidence": ubx.FieldSpec{WireName: "blocking_confidence"},
+	"ExcludeDomains":     ubx.FieldSpec{WireName: "exclude_domains"},
+}
 
 var CachedContent_Tools_ExaAiSearchFields = ubx.FieldMap{
-		"ApiKey": ubx.FieldSpec{WireName: "api_key"},
-		"CustomConfigs": ubx.FieldSpec{WireName: "custom_configs"},
-	}
+	"ApiKey":        ubx.FieldSpec{WireName: "api_key"},
+	"CustomConfigs": ubx.FieldSpec{WireName: "custom_configs"},
+}
 
 var CachedContent_Tools_FunctionDeclarations_ParametersFields = ubx.FieldMap{
-		"AdditionalProperties": ubx.FieldSpec{WireName: "additional_properties"},
-		"AnyOf": ubx.FieldSpec{WireName: "any_of"},
-		"Default": ubx.FieldSpec{WireName: "default"},
-		"Defs": ubx.FieldSpec{WireName: "defs"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Enum": ubx.FieldSpec{WireName: "enum"},
-		"Example": ubx.FieldSpec{WireName: "example"},
-		"Format": ubx.FieldSpec{WireName: "format"},
-		"Items": ubx.FieldSpec{WireName: "items"},
-		"MaxItems": ubx.FieldSpec{WireName: "max_items"},
-		"MaxLength": ubx.FieldSpec{WireName: "max_length"},
-		"MaxProperties": ubx.FieldSpec{WireName: "max_properties"},
-		"Maximum": ubx.FieldSpec{WireName: "maximum"},
-		"MinItems": ubx.FieldSpec{WireName: "min_items"},
-		"MinLength": ubx.FieldSpec{WireName: "min_length"},
-		"MinProperties": ubx.FieldSpec{WireName: "min_properties"},
-		"Minimum": ubx.FieldSpec{WireName: "minimum"},
-		"Nullable": ubx.FieldSpec{WireName: "nullable"},
-		"Pattern": ubx.FieldSpec{WireName: "pattern"},
-		"Properties": ubx.FieldSpec{WireName: "properties"},
-		"PropertyOrdering": ubx.FieldSpec{WireName: "property_ordering"},
-		"Ref": ubx.FieldSpec{WireName: "ref"},
-		"Required": ubx.FieldSpec{WireName: "required"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"AdditionalProperties": ubx.FieldSpec{WireName: "additional_properties"},
+	"AnyOf":                ubx.FieldSpec{WireName: "any_of"},
+	"Default":              ubx.FieldSpec{WireName: "default"},
+	"Defs":                 ubx.FieldSpec{WireName: "defs"},
+	"Description":          ubx.FieldSpec{WireName: "description"},
+	"Enum":                 ubx.FieldSpec{WireName: "enum"},
+	"Example":              ubx.FieldSpec{WireName: "example"},
+	"Format":               ubx.FieldSpec{WireName: "format"},
+	"Items":                ubx.FieldSpec{WireName: "items"},
+	"MaxItems":             ubx.FieldSpec{WireName: "max_items"},
+	"MaxLength":            ubx.FieldSpec{WireName: "max_length"},
+	"MaxProperties":        ubx.FieldSpec{WireName: "max_properties"},
+	"Maximum":              ubx.FieldSpec{WireName: "maximum"},
+	"MinItems":             ubx.FieldSpec{WireName: "min_items"},
+	"MinLength":            ubx.FieldSpec{WireName: "min_length"},
+	"MinProperties":        ubx.FieldSpec{WireName: "min_properties"},
+	"Minimum":              ubx.FieldSpec{WireName: "minimum"},
+	"Nullable":             ubx.FieldSpec{WireName: "nullable"},
+	"Pattern":              ubx.FieldSpec{WireName: "pattern"},
+	"Properties":           ubx.FieldSpec{WireName: "properties"},
+	"PropertyOrdering":     ubx.FieldSpec{WireName: "property_ordering"},
+	"Ref":                  ubx.FieldSpec{WireName: "ref"},
+	"Required":             ubx.FieldSpec{WireName: "required"},
+	"Title":                ubx.FieldSpec{WireName: "title"},
+	"Type":                 ubx.FieldSpec{WireName: "type"},
+}
 
 var CachedContent_Tools_FunctionDeclarationsFields = ubx.FieldMap{
-		"Behavior": ubx.FieldSpec{WireName: "behavior"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Parameters": ubx.FieldSpec{
-			WireName: "parameters",
-			Kind: "object",
-			Fields: CachedContent_Tools_FunctionDeclarations_ParametersFields,
-		},
-		"ParametersJsonSchema": ubx.FieldSpec{WireName: "parameters_json_schema"},
-		"Response": ubx.FieldSpec{
-			WireName: "response",
-			Kind: "object",
-			Fields: CachedContent_Tools_FunctionDeclarations_ParametersFields,
-		},
-		"ResponseJsonSchema": ubx.FieldSpec{WireName: "response_json_schema"},
-	}
+	"Behavior":    ubx.FieldSpec{WireName: "behavior"},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"Parameters": ubx.FieldSpec{
+		WireName: "parameters",
+		Kind:     "object",
+		Fields:   CachedContent_Tools_FunctionDeclarations_ParametersFields,
+	},
+	"ParametersJsonSchema": ubx.FieldSpec{WireName: "parameters_json_schema"},
+	"Response": ubx.FieldSpec{
+		WireName: "response",
+		Kind:     "object",
+		Fields:   CachedContent_Tools_FunctionDeclarations_ParametersFields,
+	},
+	"ResponseJsonSchema": ubx.FieldSpec{WireName: "response_json_schema"},
+}
 
 var CachedContent_Tools_GoogleMaps_GroundingTypesFields = ubx.FieldMap{
-		"Places": ubx.FieldSpec{WireName: "places"},
-		"Routing": ubx.FieldSpec{WireName: "routing"},
-	}
+	"Places":  ubx.FieldSpec{WireName: "places"},
+	"Routing": ubx.FieldSpec{WireName: "routing"},
+}
 
 var CachedContent_Tools_GoogleMapsFields = ubx.FieldMap{
-		"EnableWidget": ubx.FieldSpec{WireName: "enable_widget"},
-		"GroundingTypes": ubx.FieldSpec{
-			WireName: "grounding_types",
-			Kind: "object",
-			Fields: CachedContent_Tools_GoogleMaps_GroundingTypesFields,
-		},
-	}
+	"EnableWidget": ubx.FieldSpec{WireName: "enable_widget"},
+	"GroundingTypes": ubx.FieldSpec{
+		WireName: "grounding_types",
+		Kind:     "object",
+		Fields:   CachedContent_Tools_GoogleMaps_GroundingTypesFields,
+	},
+}
 
 var CachedContent_Tools_GoogleSearch_SearchTypesFields = ubx.FieldMap{
-		"ImageSearch": ubx.FieldSpec{WireName: "image_search"},
-		"WebSearch": ubx.FieldSpec{WireName: "web_search"},
-	}
+	"ImageSearch": ubx.FieldSpec{WireName: "image_search"},
+	"WebSearch":   ubx.FieldSpec{WireName: "web_search"},
+}
 
 var CachedContent_Tools_GoogleSearchFields = ubx.FieldMap{
-		"BlockingConfidence": ubx.FieldSpec{WireName: "blocking_confidence"},
-		"ExcludeDomains": ubx.FieldSpec{WireName: "exclude_domains"},
-		"SearchTypes": ubx.FieldSpec{
-			WireName: "search_types",
-			Kind: "object",
-			Fields: CachedContent_Tools_GoogleSearch_SearchTypesFields,
-		},
-	}
+	"BlockingConfidence": ubx.FieldSpec{WireName: "blocking_confidence"},
+	"ExcludeDomains":     ubx.FieldSpec{WireName: "exclude_domains"},
+	"SearchTypes": ubx.FieldSpec{
+		WireName: "search_types",
+		Kind:     "object",
+		Fields:   CachedContent_Tools_GoogleSearch_SearchTypesFields,
+	},
+}
 
 var CachedContent_Tools_GoogleSearchRetrieval_DynamicRetrievalConfigFields = ubx.FieldMap{
-		"DynamicThreshold": ubx.FieldSpec{WireName: "dynamic_threshold"},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-	}
+	"DynamicThreshold": ubx.FieldSpec{WireName: "dynamic_threshold"},
+	"Mode":             ubx.FieldSpec{WireName: "mode"},
+}
 
 var CachedContent_Tools_GoogleSearchRetrievalFields = ubx.FieldMap{
-		"DynamicRetrievalConfig": ubx.FieldSpec{
-			WireName: "dynamic_retrieval_config",
-			Kind: "object",
-			Fields: CachedContent_Tools_GoogleSearchRetrieval_DynamicRetrievalConfigFields,
-		},
-	}
+	"DynamicRetrievalConfig": ubx.FieldSpec{
+		WireName: "dynamic_retrieval_config",
+		Kind:     "object",
+		Fields:   CachedContent_Tools_GoogleSearchRetrieval_DynamicRetrievalConfigFields,
+	},
+}
 
 var CachedContent_Tools_ParallelAiSearchFields = ubx.FieldMap{
-		"ApiKey": ubx.FieldSpec{WireName: "api_key"},
-		"CustomConfigs": ubx.FieldSpec{WireName: "custom_configs"},
-		"EnableDataRetention": ubx.FieldSpec{WireName: "enable_data_retention"},
-		"EnableZeroDataRetention": ubx.FieldSpec{WireName: "enable_zero_data_retention"},
-	}
+	"ApiKey":                  ubx.FieldSpec{WireName: "api_key"},
+	"CustomConfigs":           ubx.FieldSpec{WireName: "custom_configs"},
+	"EnableDataRetention":     ubx.FieldSpec{WireName: "enable_data_retention"},
+	"EnableZeroDataRetention": ubx.FieldSpec{WireName: "enable_zero_data_retention"},
+}
 
 var CachedContent_Tools_Retrieval_ExternalApi_ApiAuth_ApiKeyConfigFields = ubx.FieldMap{
-		"ApiKeySecretVersion": ubx.FieldSpec{WireName: "api_key_secret_version"},
-		"ApiKeyString": ubx.FieldSpec{WireName: "api_key_string"},
-	}
+	"ApiKeySecretVersion": ubx.FieldSpec{WireName: "api_key_secret_version"},
+	"ApiKeyString":        ubx.FieldSpec{WireName: "api_key_string"},
+}
 
 var CachedContent_Tools_Retrieval_ExternalApi_ApiAuthFields = ubx.FieldMap{
-		"ApiKeyConfig": ubx.FieldSpec{
-			WireName: "api_key_config",
-			Kind: "object",
-			Fields: CachedContent_Tools_Retrieval_ExternalApi_ApiAuth_ApiKeyConfigFields,
-		},
-	}
+	"ApiKeyConfig": ubx.FieldSpec{
+		WireName: "api_key_config",
+		Kind:     "object",
+		Fields:   CachedContent_Tools_Retrieval_ExternalApi_ApiAuth_ApiKeyConfigFields,
+	},
+}
 
 var CachedContent_Tools_Retrieval_ExternalApi_AuthConfig_ApiKeyConfigFields = ubx.FieldMap{
-		"ApiKeySecret": ubx.FieldSpec{WireName: "api_key_secret"},
-		"ApiKeyString": ubx.FieldSpec{WireName: "api_key_string"},
-		"HttpElementLocation": ubx.FieldSpec{WireName: "http_element_location"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"ApiKeySecret":        ubx.FieldSpec{WireName: "api_key_secret"},
+	"ApiKeyString":        ubx.FieldSpec{WireName: "api_key_string"},
+	"HttpElementLocation": ubx.FieldSpec{WireName: "http_element_location"},
+	"Name":                ubx.FieldSpec{WireName: "name"},
+}
 
 var CachedContent_Tools_Retrieval_ExternalApi_AuthConfig_GoogleServiceAccountConfigFields = ubx.FieldMap{
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-	}
+	"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
+}
 
 var CachedContent_Tools_Retrieval_ExternalApi_AuthConfig_HttpBasicAuthConfigFields = ubx.FieldMap{
-		"CredentialSecret": ubx.FieldSpec{WireName: "credential_secret"},
-	}
+	"CredentialSecret": ubx.FieldSpec{WireName: "credential_secret"},
+}
 
 var CachedContent_Tools_Retrieval_ExternalApi_AuthConfig_OauthConfigFields = ubx.FieldMap{
-		"AccessToken": ubx.FieldSpec{WireName: "access_token"},
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-	}
+	"AccessToken":    ubx.FieldSpec{WireName: "access_token"},
+	"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
+}
 
 var CachedContent_Tools_Retrieval_ExternalApi_AuthConfig_OidcConfigFields = ubx.FieldMap{
-		"IdToken": ubx.FieldSpec{WireName: "id_token"},
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-	}
+	"IdToken":        ubx.FieldSpec{WireName: "id_token"},
+	"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
+}
 
 var CachedContent_Tools_Retrieval_ExternalApi_AuthConfigFields = ubx.FieldMap{
-		"ApiKeyConfig": ubx.FieldSpec{
-			WireName: "api_key_config",
-			Kind: "object",
-			Fields: CachedContent_Tools_Retrieval_ExternalApi_AuthConfig_ApiKeyConfigFields,
-		},
-		"AuthType": ubx.FieldSpec{WireName: "auth_type"},
-		"GoogleServiceAccountConfig": ubx.FieldSpec{
-			WireName: "google_service_account_config",
-			Kind: "object",
-			Fields: CachedContent_Tools_Retrieval_ExternalApi_AuthConfig_GoogleServiceAccountConfigFields,
-		},
-		"HttpBasicAuthConfig": ubx.FieldSpec{
-			WireName: "http_basic_auth_config",
-			Kind: "object",
-			Fields: CachedContent_Tools_Retrieval_ExternalApi_AuthConfig_HttpBasicAuthConfigFields,
-		},
-		"OauthConfig": ubx.FieldSpec{
-			WireName: "oauth_config",
-			Kind: "object",
-			Fields: CachedContent_Tools_Retrieval_ExternalApi_AuthConfig_OauthConfigFields,
-		},
-		"OidcConfig": ubx.FieldSpec{
-			WireName: "oidc_config",
-			Kind: "object",
-			Fields: CachedContent_Tools_Retrieval_ExternalApi_AuthConfig_OidcConfigFields,
-		},
-	}
+	"ApiKeyConfig": ubx.FieldSpec{
+		WireName: "api_key_config",
+		Kind:     "object",
+		Fields:   CachedContent_Tools_Retrieval_ExternalApi_AuthConfig_ApiKeyConfigFields,
+	},
+	"AuthType": ubx.FieldSpec{WireName: "auth_type"},
+	"GoogleServiceAccountConfig": ubx.FieldSpec{
+		WireName: "google_service_account_config",
+		Kind:     "object",
+		Fields:   CachedContent_Tools_Retrieval_ExternalApi_AuthConfig_GoogleServiceAccountConfigFields,
+	},
+	"HttpBasicAuthConfig": ubx.FieldSpec{
+		WireName: "http_basic_auth_config",
+		Kind:     "object",
+		Fields:   CachedContent_Tools_Retrieval_ExternalApi_AuthConfig_HttpBasicAuthConfigFields,
+	},
+	"OauthConfig": ubx.FieldSpec{
+		WireName: "oauth_config",
+		Kind:     "object",
+		Fields:   CachedContent_Tools_Retrieval_ExternalApi_AuthConfig_OauthConfigFields,
+	},
+	"OidcConfig": ubx.FieldSpec{
+		WireName: "oidc_config",
+		Kind:     "object",
+		Fields:   CachedContent_Tools_Retrieval_ExternalApi_AuthConfig_OidcConfigFields,
+	},
+}
 
 var CachedContent_Tools_Retrieval_ExternalApi_ElasticSearchParamsFields = ubx.FieldMap{
-		"Index": ubx.FieldSpec{WireName: "index"},
-		"NumHits": ubx.FieldSpec{WireName: "num_hits"},
-		"SearchTemplate": ubx.FieldSpec{WireName: "search_template"},
-	}
+	"Index":          ubx.FieldSpec{WireName: "index"},
+	"NumHits":        ubx.FieldSpec{WireName: "num_hits"},
+	"SearchTemplate": ubx.FieldSpec{WireName: "search_template"},
+}
 
 var CachedContent_Tools_Retrieval_ExternalApiFields = ubx.FieldMap{
-		"ApiAuth": ubx.FieldSpec{
-			WireName: "api_auth",
-			Kind: "object",
-			Fields: CachedContent_Tools_Retrieval_ExternalApi_ApiAuthFields,
-		},
-		"ApiSpec": ubx.FieldSpec{WireName: "api_spec"},
-		"AuthConfig": ubx.FieldSpec{
-			WireName: "auth_config",
-			Kind: "object",
-			Fields: CachedContent_Tools_Retrieval_ExternalApi_AuthConfigFields,
-		},
-		"ElasticSearchParams": ubx.FieldSpec{
-			WireName: "elastic_search_params",
-			Kind: "object",
-			Fields: CachedContent_Tools_Retrieval_ExternalApi_ElasticSearchParamsFields,
-		},
-		"Endpoint": ubx.FieldSpec{WireName: "endpoint"},
-		"SimpleSearchParams": ubx.FieldSpec{WireName: "simple_search_params"},
-	}
+	"ApiAuth": ubx.FieldSpec{
+		WireName: "api_auth",
+		Kind:     "object",
+		Fields:   CachedContent_Tools_Retrieval_ExternalApi_ApiAuthFields,
+	},
+	"ApiSpec": ubx.FieldSpec{WireName: "api_spec"},
+	"AuthConfig": ubx.FieldSpec{
+		WireName: "auth_config",
+		Kind:     "object",
+		Fields:   CachedContent_Tools_Retrieval_ExternalApi_AuthConfigFields,
+	},
+	"ElasticSearchParams": ubx.FieldSpec{
+		WireName: "elastic_search_params",
+		Kind:     "object",
+		Fields:   CachedContent_Tools_Retrieval_ExternalApi_ElasticSearchParamsFields,
+	},
+	"Endpoint":           ubx.FieldSpec{WireName: "endpoint"},
+	"SimpleSearchParams": ubx.FieldSpec{WireName: "simple_search_params"},
+}
 
 var CachedContent_Tools_Retrieval_VertexAiSearch_DataStoreSpecsFields = ubx.FieldMap{
-		"DataStore": ubx.FieldSpec{WireName: "data_store"},
-		"Filter": ubx.FieldSpec{WireName: "filter"},
-	}
+	"DataStore": ubx.FieldSpec{WireName: "data_store"},
+	"Filter":    ubx.FieldSpec{WireName: "filter"},
+}
 
 var CachedContent_Tools_Retrieval_VertexAiSearchFields = ubx.FieldMap{
-		"DataStoreSpecs": ubx.FieldSpec{
-			WireName: "data_store_specs",
-			Kind: "list",
-			Fields: CachedContent_Tools_Retrieval_VertexAiSearch_DataStoreSpecsFields,
-		},
-		"Datastore": ubx.FieldSpec{WireName: "datastore"},
-		"Engine": ubx.FieldSpec{WireName: "engine"},
-		"Filter": ubx.FieldSpec{WireName: "filter"},
-		"MaxResults": ubx.FieldSpec{WireName: "max_results"},
-	}
+	"DataStoreSpecs": ubx.FieldSpec{
+		WireName: "data_store_specs",
+		Kind:     "list",
+		Fields:   CachedContent_Tools_Retrieval_VertexAiSearch_DataStoreSpecsFields,
+	},
+	"Datastore":  ubx.FieldSpec{WireName: "datastore"},
+	"Engine":     ubx.FieldSpec{WireName: "engine"},
+	"Filter":     ubx.FieldSpec{WireName: "filter"},
+	"MaxResults": ubx.FieldSpec{WireName: "max_results"},
+}
 
 var CachedContent_Tools_Retrieval_VertexRagStore_RagResourcesFields = ubx.FieldMap{
-		"RagCorpus": ubx.FieldSpec{WireName: "rag_corpus"},
-		"RagFileIds": ubx.FieldSpec{WireName: "rag_file_ids"},
-	}
+	"RagCorpus":  ubx.FieldSpec{WireName: "rag_corpus"},
+	"RagFileIds": ubx.FieldSpec{WireName: "rag_file_ids"},
+}
 
 var CachedContent_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_FilterFields = ubx.FieldMap{
-		"MetadataFilter": ubx.FieldSpec{WireName: "metadata_filter"},
-		"VectorDistanceThreshold": ubx.FieldSpec{WireName: "vector_distance_threshold"},
-		"VectorSimilarityThreshold": ubx.FieldSpec{WireName: "vector_similarity_threshold"},
-	}
+	"MetadataFilter":            ubx.FieldSpec{WireName: "metadata_filter"},
+	"VectorDistanceThreshold":   ubx.FieldSpec{WireName: "vector_distance_threshold"},
+	"VectorSimilarityThreshold": ubx.FieldSpec{WireName: "vector_similarity_threshold"},
+}
 
 var CachedContent_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_Ranking_LlmRankerFields = ubx.FieldMap{
-		"ModelName": ubx.FieldSpec{WireName: "model_name"},
-	}
+	"ModelName": ubx.FieldSpec{WireName: "model_name"},
+}
 
 var CachedContent_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_RankingFields = ubx.FieldMap{
-		"LlmRanker": ubx.FieldSpec{
-			WireName: "llm_ranker",
-			Kind: "object",
-			Fields: CachedContent_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_Ranking_LlmRankerFields,
-		},
-		"RankService": ubx.FieldSpec{
-			WireName: "rank_service",
-			Kind: "object",
-			Fields: CachedContent_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_Ranking_LlmRankerFields,
-		},
-	}
+	"LlmRanker": ubx.FieldSpec{
+		WireName: "llm_ranker",
+		Kind:     "object",
+		Fields:   CachedContent_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_Ranking_LlmRankerFields,
+	},
+	"RankService": ubx.FieldSpec{
+		WireName: "rank_service",
+		Kind:     "object",
+		Fields:   CachedContent_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_Ranking_LlmRankerFields,
+	},
+}
 
 var CachedContent_Tools_Retrieval_VertexRagStore_RagRetrievalConfigFields = ubx.FieldMap{
-		"Filter": ubx.FieldSpec{
-			WireName: "filter",
-			Kind: "object",
-			Fields: CachedContent_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_FilterFields,
-		},
-		"Ranking": ubx.FieldSpec{
-			WireName: "ranking",
-			Kind: "object",
-			Fields: CachedContent_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_RankingFields,
-		},
-		"TopK": ubx.FieldSpec{WireName: "top_k"},
-	}
+	"Filter": ubx.FieldSpec{
+		WireName: "filter",
+		Kind:     "object",
+		Fields:   CachedContent_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_FilterFields,
+	},
+	"Ranking": ubx.FieldSpec{
+		WireName: "ranking",
+		Kind:     "object",
+		Fields:   CachedContent_Tools_Retrieval_VertexRagStore_RagRetrievalConfig_RankingFields,
+	},
+	"TopK": ubx.FieldSpec{WireName: "top_k"},
+}
 
 var CachedContent_Tools_Retrieval_VertexRagStoreFields = ubx.FieldMap{
-		"RagResources": ubx.FieldSpec{
-			WireName: "rag_resources",
-			Kind: "list",
-			Fields: CachedContent_Tools_Retrieval_VertexRagStore_RagResourcesFields,
-		},
-		"RagRetrievalConfig": ubx.FieldSpec{
-			WireName: "rag_retrieval_config",
-			Kind: "object",
-			Fields: CachedContent_Tools_Retrieval_VertexRagStore_RagRetrievalConfigFields,
-		},
-		"SimilarityTopK": ubx.FieldSpec{WireName: "similarity_top_k"},
-		"VectorDistanceThreshold": ubx.FieldSpec{WireName: "vector_distance_threshold"},
-	}
+	"RagResources": ubx.FieldSpec{
+		WireName: "rag_resources",
+		Kind:     "list",
+		Fields:   CachedContent_Tools_Retrieval_VertexRagStore_RagResourcesFields,
+	},
+	"RagRetrievalConfig": ubx.FieldSpec{
+		WireName: "rag_retrieval_config",
+		Kind:     "object",
+		Fields:   CachedContent_Tools_Retrieval_VertexRagStore_RagRetrievalConfigFields,
+	},
+	"SimilarityTopK":          ubx.FieldSpec{WireName: "similarity_top_k"},
+	"VectorDistanceThreshold": ubx.FieldSpec{WireName: "vector_distance_threshold"},
+}
 
 var CachedContent_Tools_RetrievalFields = ubx.FieldMap{
-		"DisableAttribution": ubx.FieldSpec{WireName: "disable_attribution"},
-		"ExternalApi": ubx.FieldSpec{
-			WireName: "external_api",
-			Kind: "object",
-			Fields: CachedContent_Tools_Retrieval_ExternalApiFields,
-		},
-		"VertexAiSearch": ubx.FieldSpec{
-			WireName: "vertex_ai_search",
-			Kind: "object",
-			Fields: CachedContent_Tools_Retrieval_VertexAiSearchFields,
-		},
-		"VertexRagStore": ubx.FieldSpec{
-			WireName: "vertex_rag_store",
-			Kind: "object",
-			Fields: CachedContent_Tools_Retrieval_VertexRagStoreFields,
-		},
-	}
+	"DisableAttribution": ubx.FieldSpec{WireName: "disable_attribution"},
+	"ExternalApi": ubx.FieldSpec{
+		WireName: "external_api",
+		Kind:     "object",
+		Fields:   CachedContent_Tools_Retrieval_ExternalApiFields,
+	},
+	"VertexAiSearch": ubx.FieldSpec{
+		WireName: "vertex_ai_search",
+		Kind:     "object",
+		Fields:   CachedContent_Tools_Retrieval_VertexAiSearchFields,
+	},
+	"VertexRagStore": ubx.FieldSpec{
+		WireName: "vertex_rag_store",
+		Kind:     "object",
+		Fields:   CachedContent_Tools_Retrieval_VertexRagStoreFields,
+	},
+}
 
 var CachedContent_ToolsFields = ubx.FieldMap{
-		"CodeExecution": ubx.FieldSpec{WireName: "code_execution"},
-		"ComputerUse": ubx.FieldSpec{
-			WireName: "computer_use",
-			Kind: "object",
-			Fields: CachedContent_Tools_ComputerUseFields,
-		},
-		"EnterpriseWebSearch": ubx.FieldSpec{
-			WireName: "enterprise_web_search",
-			Kind: "object",
-			Fields: CachedContent_Tools_EnterpriseWebSearchFields,
-		},
-		"ExaAiSearch": ubx.FieldSpec{
-			WireName: "exa_ai_search",
-			Kind: "object",
-			Fields: CachedContent_Tools_ExaAiSearchFields,
-		},
-		"FunctionDeclarations": ubx.FieldSpec{
-			WireName: "function_declarations",
-			Kind: "list",
-			Fields: CachedContent_Tools_FunctionDeclarationsFields,
-		},
-		"GoogleMaps": ubx.FieldSpec{
-			WireName: "google_maps",
-			Kind: "object",
-			Fields: CachedContent_Tools_GoogleMapsFields,
-		},
-		"GoogleSearch": ubx.FieldSpec{
-			WireName: "google_search",
-			Kind: "object",
-			Fields: CachedContent_Tools_GoogleSearchFields,
-		},
-		"GoogleSearchRetrieval": ubx.FieldSpec{
-			WireName: "google_search_retrieval",
-			Kind: "object",
-			Fields: CachedContent_Tools_GoogleSearchRetrievalFields,
-		},
-		"ParallelAiSearch": ubx.FieldSpec{
-			WireName: "parallel_ai_search",
-			Kind: "object",
-			Fields: CachedContent_Tools_ParallelAiSearchFields,
-		},
-		"Retrieval": ubx.FieldSpec{
-			WireName: "retrieval",
-			Kind: "object",
-			Fields: CachedContent_Tools_RetrievalFields,
-		},
-		"UrlContext": ubx.FieldSpec{WireName: "url_context"},
-	}
+	"CodeExecution": ubx.FieldSpec{WireName: "code_execution"},
+	"ComputerUse": ubx.FieldSpec{
+		WireName: "computer_use",
+		Kind:     "object",
+		Fields:   CachedContent_Tools_ComputerUseFields,
+	},
+	"EnterpriseWebSearch": ubx.FieldSpec{
+		WireName: "enterprise_web_search",
+		Kind:     "object",
+		Fields:   CachedContent_Tools_EnterpriseWebSearchFields,
+	},
+	"ExaAiSearch": ubx.FieldSpec{
+		WireName: "exa_ai_search",
+		Kind:     "object",
+		Fields:   CachedContent_Tools_ExaAiSearchFields,
+	},
+	"FunctionDeclarations": ubx.FieldSpec{
+		WireName: "function_declarations",
+		Kind:     "list",
+		Fields:   CachedContent_Tools_FunctionDeclarationsFields,
+	},
+	"GoogleMaps": ubx.FieldSpec{
+		WireName: "google_maps",
+		Kind:     "object",
+		Fields:   CachedContent_Tools_GoogleMapsFields,
+	},
+	"GoogleSearch": ubx.FieldSpec{
+		WireName: "google_search",
+		Kind:     "object",
+		Fields:   CachedContent_Tools_GoogleSearchFields,
+	},
+	"GoogleSearchRetrieval": ubx.FieldSpec{
+		WireName: "google_search_retrieval",
+		Kind:     "object",
+		Fields:   CachedContent_Tools_GoogleSearchRetrievalFields,
+	},
+	"ParallelAiSearch": ubx.FieldSpec{
+		WireName: "parallel_ai_search",
+		Kind:     "object",
+		Fields:   CachedContent_Tools_ParallelAiSearchFields,
+	},
+	"Retrieval": ubx.FieldSpec{
+		WireName: "retrieval",
+		Kind:     "object",
+		Fields:   CachedContent_Tools_RetrievalFields,
+	},
+	"UrlContext": ubx.FieldSpec{WireName: "url_context"},
+}
 
 var CachedContent_UsageMetadataFields = ubx.FieldMap{
-		"AudioDurationSeconds": ubx.FieldSpec{WireName: "audio_duration_seconds"},
-		"ImageCount": ubx.FieldSpec{WireName: "image_count"},
-		"TextCount": ubx.FieldSpec{WireName: "text_count"},
-		"TotalTokenCount": ubx.FieldSpec{WireName: "total_token_count"},
-		"VideoDurationSeconds": ubx.FieldSpec{WireName: "video_duration_seconds"},
-	}
+	"AudioDurationSeconds": ubx.FieldSpec{WireName: "audio_duration_seconds"},
+	"ImageCount":           ubx.FieldSpec{WireName: "image_count"},
+	"TextCount":            ubx.FieldSpec{WireName: "text_count"},
+	"TotalTokenCount":      ubx.FieldSpec{WireName: "total_token_count"},
+	"VideoDurationSeconds": ubx.FieldSpec{WireName: "video_duration_seconds"},
+}
 
 type CachedContentConfig struct {
 	// Optional. Input only. Immutable. The content to cache
 	Contents any
-	// Output only. Creation time of the cache entry.
-	CreateTime any
 	// Optional. Immutable. The user-generated meaningful display name of the cached content.
 	DisplayName any
 	// Represents a customer-managed encryption key specification that can be applied to a Vertex AI resource.
@@ -935,8 +933,6 @@ type CachedContentConfig struct {
 	Tools any
 	// Input only. The TTL for this resource. The expiration time is computed: now + TTL.
 	Ttl any
-	// Output only. When the cache entry was last updated in UTC time.
-	UpdateTime any
 	// Metadata on the usage of the cached content.
 	UsageMetadata any
 }
@@ -975,40 +971,38 @@ var CachedContent = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Contents": ubx.FieldSpec{
 			WireName: "contents",
-			Kind: "list",
-			Fields: CachedContent_ContentsFields,
+			Kind:     "list",
+			Fields:   CachedContent_ContentsFields,
 		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"EncryptionSpec": ubx.FieldSpec{
 			WireName: "encryption_spec",
-			Kind: "object",
-			Fields: CachedContent_EncryptionSpecFields,
+			Kind:     "object",
+			Fields:   CachedContent_EncryptionSpecFields,
 		},
 		"ExpireTime": ubx.FieldSpec{WireName: "expire_time"},
-		"Model": ubx.FieldSpec{WireName: "model"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Model":      ubx.FieldSpec{WireName: "model"},
+		"Name":       ubx.FieldSpec{WireName: "name"},
 		"SystemInstruction": ubx.FieldSpec{
 			WireName: "system_instruction",
-			Kind: "object",
-			Fields: CachedContent_ContentsFields,
+			Kind:     "object",
+			Fields:   CachedContent_ContentsFields,
 		},
 		"ToolConfig": ubx.FieldSpec{
 			WireName: "tool_config",
-			Kind: "object",
-			Fields: CachedContent_ToolConfigFields,
+			Kind:     "object",
+			Fields:   CachedContent_ToolConfigFields,
 		},
 		"Tools": ubx.FieldSpec{
 			WireName: "tools",
-			Kind: "list",
-			Fields: CachedContent_ToolsFields,
+			Kind:     "list",
+			Fields:   CachedContent_ToolsFields,
 		},
 		"Ttl": ubx.FieldSpec{WireName: "ttl"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 		"UsageMetadata": ubx.FieldSpec{
 			WireName: "usage_metadata",
-			Kind: "object",
-			Fields: CachedContent_UsageMetadataFields,
+			Kind:     "object",
+			Fields:   CachedContent_UsageMetadataFields,
 		},
 	},
 }

@@ -52,22 +52,14 @@ _App_IapFields = {
 class AppConfig:
     # Google Apps authentication domain that controls which users can access this application.Defaults to open access for any Google Account.
     auth_domain: Any = None
-    # Output only. Google Cloud Storage bucket that can be used for storing files associated with this application. This bucket is associated with the application and can be used by the gcloud deployment commands.@OutputOnly
-    code_bucket: Any = None
     # The type of the Cloud Firestore or Cloud Datastore database associated with this application.
     database_type: Any = None
-    # Output only. Google Cloud Storage bucket that can be used by this application to store content.@OutputOnly
-    default_bucket: Any = None
     # Cookie expiration policy for this application.
     default_cookie_expiration: Any = None
-    # Output only. Hostname used to reach this application, as resolved by App Engine.@OutputOnly
-    default_hostname: Any = None
     # HTTP path dispatch rules for requests to the application that do not explicitly target a service or version. Rules are order-dependent. Up to 20 dispatch rules can be supported.
     dispatch_rules: Any = None
     # The feature specific settings to be used in the application. These define behaviors that are user configurable.
     feature_settings: Any = None
-    # Output only. The Google Container Registry domain used for storing managed build docker images for this application.
-    gcr_domain: Any = None
     # Additional Google Generated Customer Metadata, this field won't be provided by default and can be requested by setting the IncludeExtraData field in GetApplicationRequest
     generated_customer_metadata: Any = None
     # Identity-Aware Proxy
@@ -76,7 +68,6 @@ class AppConfig:
     id: Any = None
     # Location from which this application runs. Application instances run out of the data centers in the specified location, which is also where all of the application's end user content is stored.Defaults to us-central.View the list of supported locations (https://cloud.google.com/appengine/docs/locations).
     location_id: Any = None
-    name: Any = None
     # The service account associated with the application. This is the app-level default identity. If no identity provided during create version, Admin API will fallback to this one.
     service_account: Any = None
     # Serving status of this application.
@@ -124,11 +115,8 @@ App = ubx.ResourceBinding(
     wire_type="google_appengine_app",
     fields={
         "auth_domain": ubx.FieldSpec(wire_name="auth_domain"),
-        "code_bucket": ubx.FieldSpec(wire_name="code_bucket"),
         "database_type": ubx.FieldSpec(wire_name="database_type"),
-        "default_bucket": ubx.FieldSpec(wire_name="default_bucket"),
         "default_cookie_expiration": ubx.FieldSpec(wire_name="default_cookie_expiration"),
-        "default_hostname": ubx.FieldSpec(wire_name="default_hostname"),
         "dispatch_rules": ubx.FieldSpec(
             wire_name="dispatch_rules",
             kind="list",
@@ -139,7 +127,6 @@ App = ubx.ResourceBinding(
             kind="object",
             fields=_App_FeatureSettingsFields,
         ),
-        "gcr_domain": ubx.FieldSpec(wire_name="gcr_domain"),
         "generated_customer_metadata": ubx.FieldSpec(wire_name="generated_customer_metadata"),
         "iap": ubx.FieldSpec(
             wire_name="iap",
@@ -148,7 +135,6 @@ App = ubx.ResourceBinding(
         ),
         "id": ubx.FieldSpec(wire_name="id"),
         "location_id": ubx.FieldSpec(wire_name="location_id"),
-        "name": ubx.FieldSpec(wire_name="name"),
         "service_account": ubx.FieldSpec(wire_name="service_account"),
         "serving_status": ubx.FieldSpec(wire_name="serving_status"),
         "ssl_policy": ubx.FieldSpec(wire_name="ssl_policy"),

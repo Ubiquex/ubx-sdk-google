@@ -10,14 +10,8 @@ import ubx_sdk as ubx
 class MaterializedView_ClusterStates:
     replication_state: Any = None
 
-_MaterializedView_ClusterStatesFields = {
-    "replication_state": ubx.FieldSpec(wire_name="replication_state"),
-}
-
 @dataclasses.dataclass
 class MaterializedViewConfig:
-    # Output only. Map from cluster ID to per-cluster materialized view state. If it could not be determined whether or not the materialized view has data in a particular cluster (for example, if its zone is unavailable), then there will be an entry for the cluster with `STATE_NOT_KNOWN` state. Views: `REPLICATION_VIEW`, `FULL`.
-    cluster_states: Any = None
     # Set to true to make the MaterializedView protected against deletion. Views: `SCHEMA_VIEW`, `REPLICATION_VIEW`, `FULL`.
     deletion_protection: Any = None
     # Optional. The etag for this materialized view. This may be sent on update requests to ensure that the client has an up-to-date value before proceeding. The server returns an ABORTED error on a mismatched etag. Views: `SCHEMA_VIEW`, `REPLICATION_VIEW`, `FULL`.
@@ -43,11 +37,6 @@ class MaterializedViewAttrs:
 MaterializedView = ubx.ResourceBinding(
     wire_type="google_bigtableadmin_materialized_view",
     fields={
-        "cluster_states": ubx.FieldSpec(
-            wire_name="cluster_states",
-            kind="map",
-            fields=_MaterializedView_ClusterStatesFields,
-        ),
         "deletion_protection": ubx.FieldSpec(wire_name="deletion_protection"),
         "etag": ubx.FieldSpec(wire_name="etag"),
         "name": ubx.FieldSpec(wire_name="name"),

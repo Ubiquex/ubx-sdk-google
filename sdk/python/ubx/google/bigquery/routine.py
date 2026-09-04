@@ -278,8 +278,6 @@ class RoutineConfig:
     arguments: Any = None
     # The status of a routine build.
     build_status: Any = None
-    # Output only. The time when this routine was created, in milliseconds since the epoch.
-    creation_time: Any = None
     # Optional. If set to `DATA_MASKING`, the function is validated and made available as a masking function. For more information, see [Create custom masking routines](https://cloud.google.com/bigquery/docs/user-defined-functions#custom-mask).
     data_governance_type: Any = None
     # Required. The body of the routine. For functions, this is the expression in the AS clause. If `language = "SQL"`, it is the substring inside (but excluding) the parentheses. For example, for the function created with the following statement: `CREATE FUNCTION JoinLines(x string, y string) as (concat(x, "\n", y))` The definition_body is `concat(x, "\n", y)` (\n is not replaced with linebreak). If `language="JAVASCRIPT"`, it is the evaluated string in the AS clause. For example, for the function created with the following statement: `CREATE FUNCTION f() RETURNS STRING LANGUAGE js AS 'return "\n";\n'` The definition_body is `return "\n";\n` Note that both \n are replaced with linebreaks. If `definition_body` references another routine, then that routine must be fully qualified with its project ID.
@@ -288,16 +286,12 @@ class RoutineConfig:
     description: Any = None
     # Optional. The determinism level of the JavaScript UDF, if defined.
     determinism_level: Any = None
-    # Output only. A hash of this resource.
-    etag: Any = None
     # Options for the runtime of the external system.
     external_runtime_options: Any = None
     # Optional. If language = "JAVASCRIPT", this field stores the path of the imported JAVASCRIPT libraries.
     imported_libraries: Any = None
     # Optional. Defaults to "SQL" if remote_function_options field is absent, not set otherwise.
     language: Any = None
-    # Output only. The time when this routine was last modified, in milliseconds since the epoch.
-    last_modified_time: Any = None
     # Options for a user-defined Python function.
     python_options: Any = None
     # Options for a remote user-defined function.
@@ -375,12 +369,10 @@ Routine = ubx.ResourceBinding(
             kind="object",
             fields=_Routine_BuildStatusFields,
         ),
-        "creation_time": ubx.FieldSpec(wire_name="creation_time"),
         "data_governance_type": ubx.FieldSpec(wire_name="data_governance_type"),
         "definition_body": ubx.FieldSpec(wire_name="definition_body"),
         "description": ubx.FieldSpec(wire_name="description"),
         "determinism_level": ubx.FieldSpec(wire_name="determinism_level"),
-        "etag": ubx.FieldSpec(wire_name="etag"),
         "external_runtime_options": ubx.FieldSpec(
             wire_name="external_runtime_options",
             kind="object",
@@ -388,7 +380,6 @@ Routine = ubx.ResourceBinding(
         ),
         "imported_libraries": ubx.FieldSpec(wire_name="imported_libraries"),
         "language": ubx.FieldSpec(wire_name="language"),
-        "last_modified_time": ubx.FieldSpec(wire_name="last_modified_time"),
         "python_options": ubx.FieldSpec(
             wire_name="python_options",
             kind="object",

@@ -8,8 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class PolicyTagConfig:
-    # Output only. Resource names of child policy tags of this policy tag.
-    child_policy_tags: Any = None
     # Description of this policy tag. If not set, defaults to empty. The description must contain only Unicode characters, tabs, newlines, carriage returns and page breaks, and be at most 2000 bytes long when encoded in UTF-8.
     description: Any = None
     # Required. User-defined name of this policy tag. The name can't start or end with spaces and must be unique within the parent taxonomy, contain only Unicode letters, numbers, underscores, dashes and spaces, and be at most 200 bytes long when encoded in UTF-8.
@@ -35,7 +33,6 @@ class PolicyTagAttrs:
 PolicyTag = ubx.ResourceBinding(
     wire_type="google_datacatalog_policy_tag",
     fields={
-        "child_policy_tags": ubx.FieldSpec(wire_name="child_policy_tags"),
         "description": ubx.FieldSpec(wire_name="description"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "name": ubx.FieldSpec(wire_name="name"),

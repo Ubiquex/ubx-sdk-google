@@ -5,19 +5,15 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type UserDataMapping_ResourceAttributes struct {
 	AttributeDefinitionId any
-	Values any
+	Values                any
 }
 
 var UserDataMapping_ResourceAttributesFields = ubx.FieldMap{
-		"AttributeDefinitionId": ubx.FieldSpec{WireName: "attribute_definition_id"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"AttributeDefinitionId": ubx.FieldSpec{WireName: "attribute_definition_id"},
+	"Values":                ubx.FieldSpec{WireName: "values"},
+}
 
 type UserDataMappingConfig struct {
-	// Output only. Indicates the time when this mapping was archived.
-	ArchiveTime any
-	// Output only. Indicates whether this mapping is archived.
-	Archived any
 	// Required. A unique identifier for the mapped resource.
 	DataId any
 	// Resource name of the User data mapping, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/consentStores/{consent_store_id}/userDataMappings/{user_data_mapping_id}`.
@@ -46,14 +42,12 @@ type UserDataMappingAttrs struct {
 var UserDataMapping = ubx.ResourceBinding{
 	WireType: "google_healthcare_user_data_mapping",
 	Fields: ubx.FieldMap{
-		"ArchiveTime": ubx.FieldSpec{WireName: "archive_time"},
-		"Archived": ubx.FieldSpec{WireName: "archived"},
 		"DataId": ubx.FieldSpec{WireName: "data_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":   ubx.FieldSpec{WireName: "name"},
 		"ResourceAttributes": ubx.FieldSpec{
 			WireName: "resource_attributes",
-			Kind: "list",
-			Fields: UserDataMapping_ResourceAttributesFields,
+			Kind:     "list",
+			Fields:   UserDataMapping_ResourceAttributesFields,
 		},
 		"UserId": ubx.FieldSpec{WireName: "user_id"},
 	},

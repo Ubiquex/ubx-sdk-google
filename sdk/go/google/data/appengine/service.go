@@ -16,7 +16,7 @@ type Service_Split struct {
 }
 
 type ServiceConfig struct {
-	AppsId any
+	AppsId     any
 	ServicesId any
 }
 
@@ -32,7 +32,7 @@ type ServiceAttrs struct {
 	Name any
 	// A NetworkSettings resource is a container for ingress settings for a version or service.
 	NetworkSettings any
-	ServicesId any
+	ServicesId      any
 	// Traffic routing configuration for versions within a single service. Traffic splits define how traffic directed to the service is assigned to versions.
 	Split any
 }
@@ -40,7 +40,7 @@ type ServiceAttrs struct {
 var Service = ubx.DataSourceBinding{
 	WireType: "google_appengine_service",
 	Fields: ubx.FieldMap{
-		"AppsId": ubx.FieldSpec{WireName: "apps_id"},
+		"AppsId":     ubx.FieldSpec{WireName: "apps_id"},
 		"ServicesId": ubx.FieldSpec{WireName: "services_id"},
 	},
 }

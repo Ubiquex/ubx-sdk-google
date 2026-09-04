@@ -15,23 +15,17 @@ type Comment_Creator struct {
 }
 
 var Comment_CreatorFields = ubx.FieldMap{
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Email": ubx.FieldSpec{WireName: "email"},
-		"GoogleSupport": ubx.FieldSpec{WireName: "google_support"},
-		"Username": ubx.FieldSpec{WireName: "username"},
-	}
+	"DisplayName":   ubx.FieldSpec{WireName: "display_name"},
+	"Email":         ubx.FieldSpec{WireName: "email"},
+	"GoogleSupport": ubx.FieldSpec{WireName: "google_support"},
+	"Username":      ubx.FieldSpec{WireName: "username"},
+}
 
 type CommentConfig struct {
 	// The full comment body. Maximum of 12800 characters.
 	Body any
-	// Output only. The time when the comment was created.
-	CreateTime any
 	// An Actor represents an entity that performed an action. For example, an actor could be a user who posted a comment on a support case, a user who uploaded an attachment, or a service account that created a support case.
 	Creator any
-	// Output only. Identifier. The resource name of the comment.
-	Name any
-	// Output only. DEPRECATED. DO NOT USE. A duplicate of the `body` field. This field is only present for legacy reasons.
-	PlainTextBody any
 }
 
 type CommentAttrs struct {
@@ -51,13 +45,10 @@ var Comment = ubx.ResourceBinding{
 	WireType: "google_cloudsupport_comment",
 	Fields: ubx.FieldMap{
 		"Body": ubx.FieldSpec{WireName: "body"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Creator": ubx.FieldSpec{
 			WireName: "creator",
-			Kind: "object",
-			Fields: Comment_CreatorFields,
+			Kind:     "object",
+			Fields:   Comment_CreatorFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PlainTextBody": ubx.FieldSpec{WireName: "plain_text_body"},
 	},
 }

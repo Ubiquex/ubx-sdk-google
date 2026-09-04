@@ -936,8 +936,6 @@ class EntryConfig:
     gcs_fileset_spec: Any = None
     # Specification that applies to a graph.
     graph_spec: Any = None
-    # Output only. Indicates the entry's source system that Data Catalog integrates with, such as BigQuery, Pub/Sub, or Dataproc Metastore.
-    integrated_system: Any = None
     # Cloud labels attached to the entry. In Data Catalog, you can create and modify labels attached only to custom entries. Synced entries have unmodifiable labels that come from the source system.
     labels: Any = None
     # The resource this metadata entry refers to. For Google Cloud Platform resources, `linked_resource` is the [Full Resource Name] (https://cloud.google.com/apis/design/resource_names#full_resource_name). For example, the `linked_resource` for a table resource from BigQuery is: `//bigquery.googleapis.com/projects/{PROJECT_ID}/datasets/{DATASET_ID}/tables/{TABLE_ID}` Output only when the entry is one of the types in the `EntryType` enum. For entries with a `user_specified_type`, this field is optional and defaults to an empty string. The resource string must contain only letters (a-z, A-Z), numbers (0-9), underscores (_), periods (.), colons (:), slashes (/), dashes (-), and hashes (#). The maximum size is 200 bytes when encoded in UTF-8.
@@ -946,8 +944,6 @@ class EntryConfig:
     looker_system_spec: Any = None
     # Specification that applies to a model. Valid only for entries with the `MODEL` type.
     model_spec: Any = None
-    # Output only. Identifier. The resource name of an entry in URL format. Note: The entry itself and its child resources might not be stored in the location specified in its name.
-    name: Any = None
     # Entry metadata relevant only to the user and private to them.
     personal_details: Any = None
     # Specification that applies to a routine. Valid only for entries with the `ROUTINE` type.
@@ -1104,7 +1100,6 @@ Entry = ubx.ResourceBinding(
             kind="object",
             fields=_Entry_GraphSpecFields,
         ),
-        "integrated_system": ubx.FieldSpec(wire_name="integrated_system"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "linked_resource": ubx.FieldSpec(wire_name="linked_resource"),
         "looker_system_spec": ubx.FieldSpec(
@@ -1117,7 +1112,6 @@ Entry = ubx.ResourceBinding(
             kind="object",
             fields=_Entry_ModelSpecFields,
         ),
-        "name": ubx.FieldSpec(wire_name="name"),
         "personal_details": ubx.FieldSpec(
             wire_name="personal_details",
             kind="object",

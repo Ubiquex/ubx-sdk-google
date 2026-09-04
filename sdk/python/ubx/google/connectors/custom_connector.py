@@ -8,14 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CustomConnectorConfig:
-    # Output only. Active connector versions.
-    active_connector_versions: Any = None
-    # Output only. All connector versions.
-    all_connector_versions: Any = None
-    # Output only. All marketplace versions.
-    all_marketplace_versions: Any = None
-    # Output only. Created time.
-    create_time: Any = None
     # Required. Type of the custom connector.
     custom_connector_type: Any = None
     # Optional. Description of the resource.
@@ -28,10 +20,6 @@ class CustomConnectorConfig:
     logo: Any = None
     # Identifier. Resource name of the CustomConnector. Format: projects/{project}/locations/{location}/customConnectors/{connector}
     name: Any = None
-    # Output only. Published marketplace versions.
-    published_marketplace_versions: Any = None
-    # Output only. Updated time.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class CustomConnectorAttrs:
@@ -63,17 +51,11 @@ class CustomConnectorAttrs:
 CustomConnector = ubx.ResourceBinding(
     wire_type="google_connectors_custom_connector",
     fields={
-        "active_connector_versions": ubx.FieldSpec(wire_name="active_connector_versions"),
-        "all_connector_versions": ubx.FieldSpec(wire_name="all_connector_versions"),
-        "all_marketplace_versions": ubx.FieldSpec(wire_name="all_marketplace_versions"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "custom_connector_type": ubx.FieldSpec(wire_name="custom_connector_type"),
         "description": ubx.FieldSpec(wire_name="description"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "logo": ubx.FieldSpec(wire_name="logo"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "published_marketplace_versions": ubx.FieldSpec(wire_name="published_marketplace_versions"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

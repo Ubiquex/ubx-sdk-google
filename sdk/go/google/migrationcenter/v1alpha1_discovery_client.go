@@ -4,60 +4,31 @@ package migrationcenter
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1alpha1DiscoveryClient_Errors struct {
-	Code any
+	Code    any
 	Details any
 	Message any
 }
 
 type V1alpha1DiscoveryClient_RecommendedVersions struct {
-	Uri any
+	Uri     any
 	Version any
 }
 
-var V1alpha1DiscoveryClient_ErrorsFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
-
-var V1alpha1DiscoveryClient_RecommendedVersionsFields = ubx.FieldMap{
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
-
 type V1alpha1DiscoveryClientConfig struct {
-	// Output only. Time when the discovery client was first created.
-	CreateTime any
 	// Optional. Free text description. Maximum length is 1000 characters.
 	Description any
 	// Optional. Free text display name. Maximum length is 63 characters.
 	DisplayName any
-	// Output only. Errors affecting client functionality.
-	Errors any
 	// Optional. Client expiration time in UTC. If specified, the backend will not accept new frames after this time.
 	ExpireTime any
-	// Output only. Last heartbeat time. Healthy clients are expected to send heartbeats regularly (normally every few minutes).
-	HeartbeatTime any
 	// Optional. Labels as key value pairs.
 	Labels any
-	// Output only. Identifier. Full name of this discovery client.
-	Name any
-	// Output only. The recommended versions of the discovery client.
-	RecommendedVersions any
 	// Required. Service account used by the discovery client for various operation.
 	ServiceAccount any
-	// Output only. This field is intended for internal use.
-	SignalsEndpoint any
 	// Required. Full name of the source object associated with this discovery client.
 	Source any
-	// Output only. Current state of the discovery client.
-	State any
 	// Optional. Input only. Client time-to-live. If specified, the backend will not accept new frames after this time. This field is input only. The derived expiration time is provided as output through the `expire_time` field.
 	Ttl any
-	// Output only. Time when the discovery client was last updated. This value is not updated by heartbeats, to view the last heartbeat time please refer to the `heartbeat_time` field.
-	UpdateTime any
-	// Output only. Client version, as reported in recent heartbeat.
-	Version any
 }
 
 type V1alpha1DiscoveryClientAttrs struct {
@@ -98,29 +69,12 @@ type V1alpha1DiscoveryClientAttrs struct {
 var V1alpha1DiscoveryClient = ubx.ResourceBinding{
 	WireType: "google_migrationcenter_v1alpha1_discovery_client",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Errors": ubx.FieldSpec{
-			WireName: "errors",
-			Kind: "list",
-			Fields: V1alpha1DiscoveryClient_ErrorsFields,
-		},
-		"ExpireTime": ubx.FieldSpec{WireName: "expire_time"},
-		"HeartbeatTime": ubx.FieldSpec{WireName: "heartbeat_time"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"RecommendedVersions": ubx.FieldSpec{
-			WireName: "recommended_versions",
-			Kind: "list",
-			Fields: V1alpha1DiscoveryClient_RecommendedVersionsFields,
-		},
+		"Description":    ubx.FieldSpec{WireName: "description"},
+		"DisplayName":    ubx.FieldSpec{WireName: "display_name"},
+		"ExpireTime":     ubx.FieldSpec{WireName: "expire_time"},
+		"Labels":         ubx.FieldSpec{WireName: "labels"},
 		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-		"SignalsEndpoint": ubx.FieldSpec{WireName: "signals_endpoint"},
-		"Source": ubx.FieldSpec{WireName: "source"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"Ttl": ubx.FieldSpec{WireName: "ttl"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-		"Version": ubx.FieldSpec{WireName: "version"},
+		"Source":         ubx.FieldSpec{WireName: "source"},
+		"Ttl":            ubx.FieldSpec{WireName: "ttl"},
 	},
 }

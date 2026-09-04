@@ -4,16 +4,10 @@ package apigee
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EnvgroupConfig struct {
-	// Output only. The time at which the environment group was created as milliseconds since epoch.
-	CreatedAt any
 	// Required. Host names for this environment group.
 	Hostnames any
-	// Output only. The time at which the environment group was last updated as milliseconds since epoch.
-	LastModifiedAt any
 	// ID of the environment group.
 	Name any
-	// Output only. State of the environment group. Values other than ACTIVE means the resource is not ready to use.
-	State any
 }
 
 type EnvgroupAttrs struct {
@@ -32,10 +26,7 @@ type EnvgroupAttrs struct {
 var Envgroup = ubx.ResourceBinding{
 	WireType: "google_apigee_envgroup",
 	Fields: ubx.FieldMap{
-		"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
 		"Hostnames": ubx.FieldSpec{WireName: "hostnames"},
-		"LastModifiedAt": ubx.FieldSpec{WireName: "last_modified_at"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"State": ubx.FieldSpec{WireName: "state"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
 	},
 }

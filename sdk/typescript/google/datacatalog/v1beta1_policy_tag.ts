@@ -2,8 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface V1beta1PolicyTagConfig {
-  /** Output only. Resource names of child policy tags of this policy tag. */
-  childPolicyTags?: string[] | Computed<string[]>;
   /** Description of this policy tag. It must: contain only unicode characters, tabs, newlines, carriage returns and page breaks; and be at most 2000 bytes long when encoded in UTF-8. If not set, defaults to an empty description. If not set, defaults to an empty description. */
   description?: string | Computed<string>;
   /** Required. User defined name of this policy tag. It must: be unique within the parent taxonomy; contain only unicode letters, numbers, underscores, dashes and spaces; not start or end with spaces; and be at most 200 bytes long when encoded in UTF-8. */
@@ -30,7 +28,6 @@ export interface V1beta1PolicyTagAttrs {
 export const V1beta1PolicyTag: ResourceBinding<V1beta1PolicyTagConfig, V1beta1PolicyTagAttrs> = {
   wireType: "google_datacatalog_v1beta1_policy_tag",
   fields: {
-    childPolicyTags: "child_policy_tags",
     description: "description",
     displayName: "display_name",
     name: "name",

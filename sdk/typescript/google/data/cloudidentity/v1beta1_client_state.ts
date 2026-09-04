@@ -9,7 +9,6 @@ export interface V1beta1ClientState_KeyValuePairs {
 
 export interface V1beta1ClientStateConfig {
   customer?: string | Computed<string>;
-  name: string | Computed<string>;
 }
 
 export interface V1beta1ClientStateAttrs {
@@ -43,6 +42,5 @@ export const V1beta1ClientState: DataSourceBinding<V1beta1ClientStateConfig, V1b
   wireType: "google_cloudidentity_v1beta1_client_state",
   fields: {
     customer: "customer",
-    name: "name",
   },
 };

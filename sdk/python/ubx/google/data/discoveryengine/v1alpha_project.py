@@ -84,7 +84,7 @@ class V1alphaProject_ServiceTermsMap:
 
 @dataclasses.dataclass
 class V1alphaProjectConfig:
-    name: Any = None
+    pass
 
 @dataclasses.dataclass
 class V1alphaProjectAttrs:
@@ -103,6 +103,5 @@ class V1alphaProjectAttrs:
 V1alphaProject = ubx.DataSourceBinding(
     wire_type="google_discoveryengine_v1alpha_project",
     fields={
-        "name": ubx.FieldSpec(wire_name="name"),
     },
 )

@@ -9,70 +9,69 @@ type Conversation_Messages_Chunks_AgentTransfer struct {
 }
 
 type Conversation_Messages_Chunks_Blob struct {
-	Data any
+	Data     any
 	MimeType any
 }
 
 type Conversation_Messages_Chunks_ToolCall_ToolsetTool struct {
-	ToolId any
+	ToolId  any
 	Toolset any
 }
 
 type Conversation_Messages_Chunks_ToolCall struct {
-	Args any
+	Args        any
 	DisplayName any
-	Id any
-	Tool any
+	Id          any
+	Tool        any
 	ToolsetTool any
 }
 
 type Conversation_Messages_Chunks_ToolResponse struct {
 	DisplayName any
-	Id any
-	Response any
-	Tool any
+	Id          any
+	Response    any
+	Tool        any
 	ToolsetTool any
 }
 
 type Conversation_Messages_Chunks struct {
-	AgentTransfer any
-	Blob any
+	AgentTransfer    any
+	Blob             any
 	DefaultVariables any
-	Image any
-	Payload any
-	Text any
-	ToolCall any
-	ToolResponse any
-	Transcript any
+	Image            any
+	Payload          any
+	Text             any
+	ToolCall         any
+	ToolResponse     any
+	Transcript       any
 	UpdatedVariables any
 }
 
 type Conversation_Messages struct {
-	Chunks any
+	Chunks    any
 	EventTime any
-	Role any
+	Role      any
 }
 
 type Conversation_Turns_RootSpan struct {
 	Attributes any
 	ChildSpans any
-	Duration any
-	EndTime any
-	Name any
-	StartTime any
+	Duration   any
+	EndTime    any
+	Name       any
+	StartTime  any
 }
 
 type Conversation_Turns struct {
-	Messages any
+	Messages                     any
 	ResolvedDeveloperInstruction any
-	RootSpan any
-	TemplateAttributes any
-	UserIntendedText any
+	RootSpan                     any
+	TemplateAttributes           any
+	UserIntendedText             any
 }
 
 type ConversationConfig struct {
 	Name any
-	Source any
 	View any
 }
 
@@ -93,22 +92,21 @@ type ConversationAttrs struct {
 	LanguageCode any
 	// Deprecated. Use turns instead.
 	Messages any
-	Name any
-	Source any
+	Name     any
+	Source   any
 	// Output only. Timestamp when the conversation was created.
 	StartTime any
 	// Output only. The number of turns in the conversation.
 	TurnCount any
 	// Required. The turns in the conversation.
 	Turns any
-	View any
+	View  any
 }
 
 var Conversation = ubx.DataSourceBinding{
 	WireType: "google_ces_conversation",
 	Fields: ubx.FieldMap{
 		"Name": ubx.FieldSpec{WireName: "name"},
-		"Source": ubx.FieldSpec{WireName: "source"},
 		"View": ubx.FieldSpec{WireName: "view"},
 	},
 }

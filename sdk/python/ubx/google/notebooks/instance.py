@@ -283,24 +283,8 @@ _Instance_GceSetupFields = {
     ),
 }
 
-_Instance_UpgradeHistoryFields = {
-    "action": ubx.FieldSpec(wire_name="action"),
-    "container_image": ubx.FieldSpec(wire_name="container_image"),
-    "create_time": ubx.FieldSpec(wire_name="create_time"),
-    "framework": ubx.FieldSpec(wire_name="framework"),
-    "snapshot": ubx.FieldSpec(wire_name="snapshot"),
-    "state": ubx.FieldSpec(wire_name="state"),
-    "target_version": ubx.FieldSpec(wire_name="target_version"),
-    "version": ubx.FieldSpec(wire_name="version"),
-    "vm_image": ubx.FieldSpec(wire_name="vm_image"),
-}
-
 @dataclasses.dataclass
 class InstanceConfig:
-    # Output only. Instance creation time.
-    create_time: Any = None
-    # Output only. Email address of entity that sent original CreateInstance request.
-    creator: Any = None
     # Optional. If true, the notebook instance will not register with the proxy.
     disable_proxy_access: Any = None
     # Optional. If true, deletion protection will be enabled for this Workbench Instance. If false, deletion protection will be disabled for this Workbench Instance.
@@ -311,32 +295,10 @@ class InstanceConfig:
     enable_third_party_identity: Any = None
     # The definition of how to configure a VM instance outside of Resources and Identity.
     gce_setup: Any = None
-    # Output only. Additional information about instance health. Example: healthInfo": { "docker_proxy_agent_status": "1", "docker_status": "1", "jupyterlab_api_status": "-1", "jupyterlab_status": "-1", "updated": "2020-10-18 09:40:03.573409" }
-    health_info: Any = None
-    # Output only. Instance health_state.
-    health_state: Any = None
-    # Output only. Unique ID of the resource.
-    id: Any = None
     # Optional. The owner of this instance after creation. Format: `alias@example.com` Currently supports one owner only. If not specified, all of the service account users of your VM instance's service account can use the instance.
     instance_owners: Any = None
     # Optional. Labels to apply to this instance. These can be later modified by the UpdateInstance method.
     labels: Any = None
-    # Output only. Identifier. The name of this notebook instance. Format: `projects/{project_id}/locations/{location}/instances/{instance_id}`
-    name: Any = None
-    # Output only. The proxy endpoint that is used to access the Jupyter notebook.
-    proxy_uri: Any = None
-    # Output only. Reserved for future use for Zone Isolation.
-    satisfies_pzi: Any = None
-    # Output only. Reserved for future use for Zone Separation.
-    satisfies_pzs: Any = None
-    # Output only. The state of this instance.
-    state: Any = None
-    # Output only. The workforce pools proxy endpoint that is used to access the Jupyter notebook.
-    third_party_proxy_url: Any = None
-    # Output only. Instance update time.
-    update_time: Any = None
-    # Output only. The upgrade history of this instance.
-    upgrade_history: Any = None
 
 @dataclasses.dataclass
 class InstanceAttrs:
@@ -384,8 +346,6 @@ class InstanceAttrs:
 Instance = ubx.ResourceBinding(
     wire_type="google_notebooks_instance",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
-        "creator": ubx.FieldSpec(wire_name="creator"),
         "disable_proxy_access": ubx.FieldSpec(wire_name="disable_proxy_access"),
         "enable_deletion_protection": ubx.FieldSpec(wire_name="enable_deletion_protection"),
         "enable_managed_euc": ubx.FieldSpec(wire_name="enable_managed_euc"),
@@ -395,22 +355,7 @@ Instance = ubx.ResourceBinding(
             kind="object",
             fields=_Instance_GceSetupFields,
         ),
-        "health_info": ubx.FieldSpec(wire_name="health_info"),
-        "health_state": ubx.FieldSpec(wire_name="health_state"),
-        "id": ubx.FieldSpec(wire_name="id"),
         "instance_owners": ubx.FieldSpec(wire_name="instance_owners"),
         "labels": ubx.FieldSpec(wire_name="labels"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "proxy_uri": ubx.FieldSpec(wire_name="proxy_uri"),
-        "satisfies_pzi": ubx.FieldSpec(wire_name="satisfies_pzi"),
-        "satisfies_pzs": ubx.FieldSpec(wire_name="satisfies_pzs"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "third_party_proxy_url": ubx.FieldSpec(wire_name="third_party_proxy_url"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
-        "upgrade_history": ubx.FieldSpec(
-            wire_name="upgrade_history",
-            kind="list",
-            fields=_Instance_UpgradeHistoryFields,
-        ),
     },
 )

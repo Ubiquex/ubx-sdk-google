@@ -21,6 +21,6 @@ var Service = ubx.ResourceBinding{
 	WireType: "google_servicemanagement_service",
 	Fields: ubx.FieldMap{
 		"ProducerProjectId": ubx.FieldSpec{WireName: "producer_project_id"},
-		"ServiceName": ubx.FieldSpec{WireName: "service_name"},
+		"ServiceName":       ubx.FieldSpec{WireName: "service_name"},
 	},
 }

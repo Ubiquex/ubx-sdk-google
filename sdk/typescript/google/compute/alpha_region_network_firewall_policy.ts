@@ -229,8 +229,6 @@ export interface AlphaRegionNetworkFirewallPolicyConfig {
   applySecurityProfileFallbackAction?: string | Computed<string>;
   /** A list of associations that belong to this firewall policy. */
   associations?: AlphaRegionNetworkFirewallPolicy_Associations[] | Computed<AlphaRegionNetworkFirewallPolicy_Associations[]>;
-  /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
-  creationTimestamp?: string | Computed<string>;
   /** An optional description of this resource. Provide this property when you create the resource. */
   description?: string | Computed<string>;
   /** Deprecated, please use short name instead. User-provided name of the Organization firewall policy. The name should be unique in the organization in which the firewall policy is created. This field is not applicable to network firewall policies. This name must be set on creation and cannot be changed. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
@@ -239,30 +237,20 @@ export interface AlphaRegionNetworkFirewallPolicyConfig {
   fingerprint?: string | Computed<string>;
   /** [Output Only] The unique identifier for the resource. This identifier is defined by the server. */
   id?: string | Computed<string>;
-  /** Output only. [Output only] Type of the resource. Alwayscompute#firewallPolicyfor firewall policies */
-  kind?: string | Computed<string>;
   /** Name of the resource. For Organization Firewall Policies it's a [Output Only] numeric ID allocated by Google Cloud which uniquely identifies the Organization Firewall Policy. */
   name?: string | Computed<string>;
   /** A list of packet mirroring rules that belong to this policy. */
   packetMirroringRules?: AlphaRegionNetworkFirewallPolicy_PacketMirroringRules[] | Computed<AlphaRegionNetworkFirewallPolicy_PacketMirroringRules[]>;
-  /** Output only. [Output Only] The parent of the firewall policy. This field is not applicable to network firewall policies. */
-  parent?: string | Computed<string>;
   /** Indicates the source of this Firewall Policy. This field is optional on creation and defaults to USER_DEFINED. The USER_DEFINED value indicates a regular firewall policy. The SYSTEM value indicates a system-level policy managed by an internal service like GKE. This SYSTEM value is reserved for internal services and cannot be set by users during policy creation. Policies with a SYSTEM source cannot be modified or deleted by users. */
   policySource?: string | Computed<string>;
   /** The type of the firewall policy. This field can be one of VPC_POLICY, RDMA_ROCE_POLICY or ULL_POLICY. Note: if not specified then VPC_POLICY will be used. */
   policyType?: string | Computed<string>;
-  /** Output only. [Output Only] URL of the region where the regional firewall policy resides. This field is not applicable to global firewall policies. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body. */
-  region?: string | Computed<string>;
   /** Represents progressive rollout input parameters and current status. */
   rolloutOperation?: AlphaRegionNetworkFirewallPolicy_RolloutOperation | Computed<AlphaRegionNetworkFirewallPolicy_RolloutOperation>;
-  /** Output only. [Output Only] Total count of all firewall policy rule tuples. A firewall policy can not exceed a set number of tuples. */
-  ruleTupleCount?: number | Computed<number>;
   /** A list of rules that belong to this policy. There must always be a default rule (rule with priority 2147483647 and match "*"). If no rules are provided when creating a firewall policy, a default rule with action "allow" will be added. */
   rules?: AlphaRegionNetworkFirewallPolicy_PacketMirroringRules[] | Computed<AlphaRegionNetworkFirewallPolicy_PacketMirroringRules[]>;
   /** [Output Only] Server-defined URL for the resource. */
   selfLink?: string | Computed<string>;
-  /** Output only. [Output Only] Server-defined URL for this resource with the resource id. */
-  selfLinkWithId?: string | Computed<string>;
   /** User-provided name of the Organization firewall policy. The name should be unique in the organization in which the firewall policy is created. This field is not applicable to network firewall policies. This name must be set on creation and cannot be changed. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
   shortName?: string | Computed<string>;
   /** The scope of networks allowed to be associated with the firewall policy. This field can be either GLOBAL_VPC_NETWORK orREGIONAL_VPC_NETWORK. A firewall policy with the VPC scope set to GLOBAL_VPC_NETWORK is allowed to be attached only to global networks. When the VPC scope is set to REGIONAL_VPC_NETWORK the firewall policy is allowed to be attached only to regional networks in the same scope as the firewall policy. Note: if not specified then GLOBAL_VPC_NETWORK will be used. */
@@ -323,35 +311,29 @@ export const AlphaRegionNetworkFirewallPolicy: ResourceBinding<AlphaRegionNetwor
       kind: "list",
       fields: AlphaRegionNetworkFirewallPolicy_AssociationsFields,
     },
-    creationTimestamp: "creation_timestamp",
     description: "description",
     displayName: "display_name",
     fingerprint: "fingerprint",
     id: "id",
-    kind: "kind",
     name: "name",
     packetMirroringRules: {
       wireName: "packet_mirroring_rules",
       kind: "list",
       fields: AlphaRegionNetworkFirewallPolicy_PacketMirroringRulesFields,
     },
-    parent: "parent",
     policySource: "policy_source",
     policyType: "policy_type",
-    region: "region",
     rolloutOperation: {
       wireName: "rollout_operation",
       kind: "object",
       fields: AlphaRegionNetworkFirewallPolicy_RolloutOperationFields,
     },
-    ruleTupleCount: "rule_tuple_count",
     rules: {
       wireName: "rules",
       kind: "list",
       fields: AlphaRegionNetworkFirewallPolicy_PacketMirroringRulesFields,
     },
     selfLink: "self_link",
-    selfLinkWithId: "self_link_with_id",
     shortName: "short_name",
     vpcNetworkScope: "vpc_network_scope",
   },

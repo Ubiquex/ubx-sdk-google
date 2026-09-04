@@ -57,8 +57,6 @@ export interface AttestorConfig {
   etag?: string | Computed<string>;
   /** Required. The resource name, in the format: `projects/* /attestors/*`. This field may not be updated. */
   name?: string | Computed<string>;
-  /** Output only. Time when the attestor was last updated. */
-  updateTime?: string | Computed<string>;
   /** An user owned Grafeas note references a Grafeas Attestation.Authority Note created by the user. */
   userOwnedGrafeasNote?: Attestor_UserOwnedGrafeasNote | Computed<Attestor_UserOwnedGrafeasNote>;
 }
@@ -82,7 +80,6 @@ export const Attestor: ResourceBinding<AttestorConfig, AttestorAttrs> = {
     description: "description",
     etag: "etag",
     name: "name",
-    updateTime: "update_time",
     userOwnedGrafeasNote: {
       wireName: "user_owned_grafeas_note",
       kind: "object",

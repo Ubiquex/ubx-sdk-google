@@ -16,8 +16,6 @@ class V1betaResourcePolicyConfig:
     name: Any = None
     # Required. Service specific name of the resource object to which this policy applies, in the format: * **iOS OAuth clients** (Google Identity for iOS): `//oauth2.googleapis.com/projects/{project_number}/oauthClients/{oauth_client_id}` Note that the resource must belong to the service specified in the `name` and be from the same project as this policy, but the resource is allowed to be missing at the time of creation of this policy; in that case, we make a best-effort attempt at respecting this policy, but it may not have any effect until the resource is fully created.
     target_resource: Any = None
-    # Output only. Timestamp when this resource policy configuration object was most recently updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V1betaResourcePolicyAttrs:
@@ -39,6 +37,5 @@ V1betaResourcePolicy = ubx.ResourceBinding(
         "etag": ubx.FieldSpec(wire_name="etag"),
         "name": ubx.FieldSpec(wire_name="name"),
         "target_resource": ubx.FieldSpec(wire_name="target_resource"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

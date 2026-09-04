@@ -4,16 +4,12 @@ package documentai
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta3SchemaConfig struct {
-	// Output only. The time when the Schema was created.
-	CreateTime any
 	// Required. The user-defined name of the Schema.
 	DisplayName any
 	// Optional. The {{gcp_name_short}} labels for the Schema.
 	Labels any
 	// Identifier. The resource name of the Schema. Format: `projects/{project}/locations/{location}/schemas/{schema}`
 	Name any
-	// Output only. The time when the Schema was last updated.
-	UpdateTime any
 }
 
 type V1beta3SchemaAttrs struct {
@@ -32,10 +28,8 @@ type V1beta3SchemaAttrs struct {
 var V1beta3Schema = ubx.ResourceBinding{
 	WireType: "google_documentai_v1beta3_schema",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 	},
 }

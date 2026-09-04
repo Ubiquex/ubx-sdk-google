@@ -40,8 +40,6 @@ _V1beta1FeatureMonitor_ScheduleConfigFields = {
 
 @dataclasses.dataclass
 class V1beta1FeatureMonitorConfig:
-    # Output only. Timestamp when this FeatureMonitor was created.
-    create_time: Any = None
     # Optional. Description of the FeatureMonitor.
     description: Any = None
     # Optional. Used to perform consistent read-modify-write updates. If not set, a blind "overwrite" update happens.
@@ -54,8 +52,6 @@ class V1beta1FeatureMonitorConfig:
     name: Any = None
     # Schedule configuration for the FeatureMonitor.
     schedule_config: Any = None
-    # Output only. Timestamp when this FeatureMonitor was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V1beta1FeatureMonitorAttrs:
@@ -79,7 +75,6 @@ class V1beta1FeatureMonitorAttrs:
 V1beta1FeatureMonitor = ubx.ResourceBinding(
     wire_type="google_aiplatform_v1beta1_feature_monitor",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "etag": ubx.FieldSpec(wire_name="etag"),
         "feature_selection_config": ubx.FieldSpec(
@@ -94,6 +89,5 @@ V1beta1FeatureMonitor = ubx.ResourceBinding(
             kind="object",
             fields=_V1beta1FeatureMonitor_ScheduleConfigFields,
         ),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

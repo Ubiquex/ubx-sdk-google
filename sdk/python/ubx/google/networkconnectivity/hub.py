@@ -35,11 +35,6 @@ class Hub_SpokeSummary:
     # Output only. Counts the number of spokes of each type that are associated with a specific hub.
     spoke_type_counts: Any = None
 
-_Hub_RoutingVpcsFields = {
-    "required_for_new_site_to_site_data_transfer_spokes": ubx.FieldSpec(wire_name="required_for_new_site_to_site_data_transfer_spokes"),
-    "uri": ubx.FieldSpec(wire_name="uri"),
-}
-
 _Hub_SpokeSummary_SpokeStateCountsFields = {
     "count": ubx.FieldSpec(wire_name="count"),
     "state": ubx.FieldSpec(wire_name="state"),
@@ -75,8 +70,6 @@ _Hub_SpokeSummaryFields = {
 
 @dataclasses.dataclass
 class HubConfig:
-    # Output only. The time the hub was created.
-    create_time: Any = None
     # Optional. An optional description of the hub.
     description: Any = None
     # Optional. Whether Private Service Connect connection propagation is enabled for the hub. If true, Private Service Connect endpoints in VPC spokes attached to the hub are made accessible to other VPC spokes attached to the hub. The default value is false.
@@ -89,18 +82,8 @@ class HubConfig:
     policy_mode: Any = None
     # Optional. The topology implemented in this hub. Currently, this field is only used when policy_mode = PRESET. The available preset topologies are MESH and STAR. If preset_topology is unspecified and policy_mode = PRESET, the preset_topology defaults to MESH. When policy_mode = CUSTOM, the preset_topology is set to PRESET_TOPOLOGY_UNSPECIFIED.
     preset_topology: Any = None
-    # Output only. The route tables that belong to this hub. They use the following form: `projects/{project_number}/locations/global/hubs/{hub_id}/routeTables/{route_table_id}` This field is read-only. Network Connectivity Center automatically populates it based on the route tables nested under the hub.
-    route_tables: Any = None
-    # Output only. The VPC networks associated with this hub's spokes. This field is read-only. Network Connectivity Center automatically populates it based on the set of spokes attached to the hub.
-    routing_vpcs: Any = None
     # Summarizes information about the spokes associated with a hub. The summary includes a count of spokes according to type and according to state. If any spokes are inactive, the summary also lists the reasons they are inactive, including a count for each reason.
     spoke_summary: Any = None
-    # Output only. The current lifecycle state of this hub.
-    state: Any = None
-    # Output only. The Google-generated UUID for the hub. This value is unique across all hub resources. If a hub is deleted and another with the same name is created, the new hub is assigned a different unique_id.
-    unique_id: Any = None
-    # Output only. The time the hub was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class HubAttrs:
@@ -134,26 +117,16 @@ class HubAttrs:
 Hub = ubx.ResourceBinding(
     wire_type="google_networkconnectivity_hub",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "export_psc": ubx.FieldSpec(wire_name="export_psc"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "name": ubx.FieldSpec(wire_name="name"),
         "policy_mode": ubx.FieldSpec(wire_name="policy_mode"),
         "preset_topology": ubx.FieldSpec(wire_name="preset_topology"),
-        "route_tables": ubx.FieldSpec(wire_name="route_tables"),
-        "routing_vpcs": ubx.FieldSpec(
-            wire_name="routing_vpcs",
-            kind="list",
-            fields=_Hub_RoutingVpcsFields,
-        ),
         "spoke_summary": ubx.FieldSpec(
             wire_name="spoke_summary",
             kind="object",
             fields=_Hub_SpokeSummaryFields,
         ),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "unique_id": ubx.FieldSpec(wire_name="unique_id"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

@@ -15,19 +15,19 @@ type ProcessorVersion_DocumentSchema_EntityTypes_EnumValues struct {
 }
 
 type ProcessorVersion_DocumentSchema_EntityTypes_Properties struct {
-	DisplayName any
-	Method any
-	Name any
+	DisplayName    any
+	Method         any
+	Name           any
 	OccurrenceType any
-	ValueType any
+	ValueType      any
 }
 
 type ProcessorVersion_DocumentSchema_EntityTypes struct {
-	BaseTypes any
+	BaseTypes   any
 	DisplayName any
-	EnumValues any
-	Name any
-	Properties any
+	EnumValues  any
+	Name        any
+	Properties  any
 }
 
 type ProcessorVersion_DocumentSchema_Metadata struct {
@@ -136,7 +136,7 @@ type ProcessorVersionAttrs struct {
 	LatestEvaluation any
 	// Output only. The model type of this processor version.
 	ModelType any
-	Name any
+	Name      any
 	// Output only. Reserved for future use.
 	SatisfiesPzi any
 	// Output only. Reserved for future use.

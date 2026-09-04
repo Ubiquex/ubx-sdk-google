@@ -12,7 +12,7 @@ type FeedbackReportAttrs struct {
 	CreateTime any
 	// Output only. A link to the Firebase console displaying the feedback report.
 	FirebaseConsoleUri any
-	Name any
+	Name               any
 	// Output only. A signed link (which expires in one hour) that lets you directly download the screenshot.
 	ScreenshotUri any
 	// Output only. The resource name of the tester who submitted the feedback report.

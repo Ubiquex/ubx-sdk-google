@@ -11,25 +11,15 @@ type Database_HiveOptions struct {
 }
 
 var Database_HiveOptionsFields = ubx.FieldMap{
-		"LocationUri": ubx.FieldSpec{WireName: "location_uri"},
-		"Parameters": ubx.FieldSpec{WireName: "parameters"},
-	}
+	"LocationUri": ubx.FieldSpec{WireName: "location_uri"},
+	"Parameters":  ubx.FieldSpec{WireName: "parameters"},
+}
 
 type DatabaseConfig struct {
-	// Output only. The creation time of the database.
-	CreateTime any
-	// Output only. The deletion time of the database. Only set after the database is deleted.
-	DeleteTime any
-	// Output only. The time when this database is considered expired. Only set after the database is deleted.
-	ExpireTime any
 	// Options of a Hive database.
 	HiveOptions any
-	// Output only. The resource name. Format: projects/{project_id_or_number}/locations/{location_id}/catalogs/{catalog_id}/databases/{database_id}
-	Name any
 	// The database type.
 	Type any
-	// Output only. The last modification time of the database.
-	UpdateTime any
 }
 
 type DatabaseAttrs struct {
@@ -52,16 +42,11 @@ type DatabaseAttrs struct {
 var Database = ubx.ResourceBinding{
 	WireType: "google_biglake_database",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DeleteTime": ubx.FieldSpec{WireName: "delete_time"},
-		"ExpireTime": ubx.FieldSpec{WireName: "expire_time"},
 		"HiveOptions": ubx.FieldSpec{
 			WireName: "hive_options",
-			Kind: "object",
-			Fields: Database_HiveOptionsFields,
+			Kind:     "object",
+			Fields:   Database_HiveOptionsFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
 		"Type": ubx.FieldSpec{WireName: "type"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

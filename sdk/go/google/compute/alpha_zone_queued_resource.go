@@ -4,11 +4,11 @@ package compute
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceFlexibilityPolicy_InstanceSelections_Disks_DiskEncryptionKey struct {
-	KmsKeyName any
+	KmsKeyName           any
 	KmsKeyServiceAccount any
-	RawKey any
-	RsaEncryptedKey any
-	Sha256 any
+	RawKey               any
+	RsaEncryptedKey      any
+	Sha256               any
 }
 
 type AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceFlexibilityPolicy_InstanceSelections_Disks_GuestOsFeatures struct {
@@ -16,71 +16,71 @@ type AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceFlexibilityPolic
 }
 
 type AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceFlexibilityPolicy_InstanceSelections_Disks_InitializeParams struct {
-	Architecture any
-	Description any
-	DiskName any
-	DiskSizeGb any
-	DiskType any
-	EnableConfidentialCompute any
-	GuestOsFeatures any
-	Interface any
-	Labels any
-	LicenseCodes any
-	Licenses any
-	MultiWriter any
-	OnUpdateAction any
-	ProvisionedIops any
-	ProvisionedThroughput any
-	ReplicaZones any
-	ResourceManagerTags any
-	ResourcePolicies any
-	SourceImage any
-	SourceImageEncryptionKey any
-	SourceInstantSnapshot any
-	SourceSnapshot any
+	Architecture                any
+	Description                 any
+	DiskName                    any
+	DiskSizeGb                  any
+	DiskType                    any
+	EnableConfidentialCompute   any
+	GuestOsFeatures             any
+	Interface                   any
+	Labels                      any
+	LicenseCodes                any
+	Licenses                    any
+	MultiWriter                 any
+	OnUpdateAction              any
+	ProvisionedIops             any
+	ProvisionedThroughput       any
+	ReplicaZones                any
+	ResourceManagerTags         any
+	ResourcePolicies            any
+	SourceImage                 any
+	SourceImageEncryptionKey    any
+	SourceInstantSnapshot       any
+	SourceSnapshot              any
 	SourceSnapshotEncryptionKey any
-	StoragePool any
+	StoragePool                 any
 }
 
 type AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceFlexibilityPolicy_InstanceSelections_Disks_ShieldedInstanceInitialState_Dbs struct {
-	Content any
+	Content  any
 	FileType any
 }
 
 type AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceFlexibilityPolicy_InstanceSelections_Disks_ShieldedInstanceInitialState struct {
-	Dbs any
+	Dbs  any
 	Dbxs any
 	Keks any
-	Pk any
+	Pk   any
 }
 
 type AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceFlexibilityPolicy_InstanceSelections_Disks struct {
-	Architecture any
-	AutoDelete any
-	Boot any
-	DeviceName any
-	DiskEncryptionKey any
-	DiskSizeGb any
-	ForceAttach any
-	GuestOsFeatures any
-	Index any
-	InitializeParams any
-	Interface any
-	Kind any
-	Licenses any
-	Locked any
-	Mode any
-	SavedState any
+	Architecture                 any
+	AutoDelete                   any
+	Boot                         any
+	DeviceName                   any
+	DiskEncryptionKey            any
+	DiskSizeGb                   any
+	ForceAttach                  any
+	GuestOsFeatures              any
+	Index                        any
+	InitializeParams             any
+	Interface                    any
+	Kind                         any
+	Licenses                     any
+	Locked                       any
+	Mode                         any
+	SavedState                   any
 	ShieldedInstanceInitialState any
-	Source any
-	Type any
+	Source                       any
+	Type                         any
 }
 
 type AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceFlexibilityPolicy_InstanceSelections struct {
-	Disks any
-	MachineTypes any
+	Disks          any
+	MachineTypes   any
 	MinCpuPlatform any
-	Rank any
+	Rank           any
 }
 
 type AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceFlexibilityPolicy struct {
@@ -109,7 +109,7 @@ type AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_Advan
 
 type AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_ConfidentialInstanceConfig_ConfidentialParavisorConfig struct {
 	ConfidentialTpmType any
-	SevSnpIrqMode any
+	SevSnpIrqMode       any
 }
 
 type AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_ConfidentialInstanceConfig struct {
@@ -128,11 +128,11 @@ type AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_Displ
 
 type AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_GuestAccelerators struct {
 	AcceleratorCount any
-	AcceleratorType any
+	AcceleratorType  any
 }
 
 type AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_Metadata_Items struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -146,68 +146,68 @@ type AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_Metad
 }
 
 type AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_NetworkInterfaces_AccessConfigs struct {
-	ExternalIpv6 any
+	ExternalIpv6             any
 	ExternalIpv6PrefixLength any
-	Kind any
-	Name any
-	NatIp any
-	NetworkTier any
-	PublicDnsName any
-	PublicPtrDomainName any
-	SecurityPolicy any
-	SetPublicDns any
-	SetPublicPtr any
-	Type any
+	Kind                     any
+	Name                     any
+	NatIp                    any
+	NetworkTier              any
+	PublicDnsName            any
+	PublicPtrDomainName      any
+	SecurityPolicy           any
+	SetPublicDns             any
+	SetPublicPtr             any
+	Type                     any
 }
 
 type AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_NetworkInterfaces_AliasIpRanges struct {
 	CandidateSubnetworkRangeNames any
-	EffectiveSubnetworkRangeName any
-	IpCidrRange any
-	SubnetworkRangeName any
+	EffectiveSubnetworkRangeName  any
+	IpCidrRange                   any
+	SubnetworkRangeName           any
 }
 
 type AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_NetworkInterfaces_Subinterfaces struct {
-	IpAddress any
+	IpAddress        any
 	IpAllocationMode any
-	Subnetwork any
-	Vlan any
+	Subnetwork       any
+	Vlan             any
 }
 
 type AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_NetworkInterfaces struct {
-	AccessConfigs any
-	AliasIpRanges any
-	AliasIpv6Ranges any
-	Dns64Eligible any
-	EnableVpcScopedDns any
-	Fingerprint any
-	IgmpQuery any
-	InternalIpv6PrefixLength any
-	InternalNicLoadBalancingIpv6Address any
+	AccessConfigs                            any
+	AliasIpRanges                            any
+	AliasIpv6Ranges                          any
+	Dns64Eligible                            any
+	EnableVpcScopedDns                       any
+	Fingerprint                              any
+	IgmpQuery                                any
+	InternalIpv6PrefixLength                 any
+	InternalNicLoadBalancingIpv6Address      any
 	InternalNicLoadBalancingIpv6PrefixLength any
-	Ipv6AccessConfigs any
-	Ipv6AccessType any
-	Ipv6Address any
-	Kind any
-	MacAddress any
-	Name any
-	Nat64Eligible any
-	Network any
-	NetworkAttachment any
-	NetworkIp any
-	NicType any
-	ParentNicName any
-	QueueCount any
-	ServiceClassId any
-	StackType any
-	Subinterfaces any
-	Subnetwork any
-	Vlan any
+	Ipv6AccessConfigs                        any
+	Ipv6AccessType                           any
+	Ipv6Address                              any
+	Kind                                     any
+	MacAddress                               any
+	Name                                     any
+	Nat64Eligible                            any
+	Network                                  any
+	NetworkAttachment                        any
+	NetworkIp                                any
+	NicType                                  any
+	ParentNicName                            any
+	QueueCount                               any
+	ServiceClassId                           any
+	StackType                                any
+	Subinterfaces                            any
+	Subnetwork                               any
+	Vlan                                     any
 }
 
 type AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_NetworkPerformanceConfig struct {
 	ExternalIpEgressBandwidthTier any
-	TotalEgressBandwidthTier any
+	TotalEgressBandwidthTier      any
 }
 
 type AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_PartnerMetadata struct {
@@ -238,9 +238,9 @@ type AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_Sched
 }
 
 type AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_Scheduling_NodeAffinities struct {
-	Key any
+	Key      any
 	Operator any
-	Values any
+	Values   any
 }
 
 type AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_Scheduling_OnInstanceStopAction struct {
@@ -308,7 +308,7 @@ type AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_Sched
 }
 
 type AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_ServiceAccounts struct {
-	Email any
+	Email  any
 	Scopes any
 }
 
@@ -337,9 +337,9 @@ type AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_Tags 
 }
 
 type AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_WorkloadIdentityConfig struct {
-	Identity any
+	Identity                   any
 	IdentityCertificateEnabled any
-	IdentityType any
+	IdentityType               any
 }
 
 type AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties struct {
@@ -356,8 +356,8 @@ type AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties struc
 	// A set of Display Device options
 	DisplayDevice any
 	// A list of guest accelerator cards' type and count to use for instances created from these properties.
-	GuestAccelerators any
-	Identity any
+	GuestAccelerators   any
+	Identity            any
 	IdentityCertificate any
 	// KeyRevocationActionType of the instance. Supported options are "STOP" and "NONE". The default value is "NONE" if it is not specified.
 	KeyRevocationActionType any
@@ -372,7 +372,7 @@ type AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties struc
 	// Minimum cpu/platform to be used by instances. The instance may be scheduled on the specified or newer cpu/platform. Applicable values are the friendly names of CPU platforms, such asminCpuPlatform: "Intel Haswell" orminCpuPlatform: "Intel Sandy Bridge". For more information, read Specifying a Minimum CPU Platform.
 	MinCpuPlatform any
 	// An array of network access configurations for this interface.
-	NetworkInterfaces any
+	NetworkInterfaces        any
 	NetworkPerformanceConfig any
 	// Partner Metadata assigned to the instance properties. A map from a subdomain (namespace) to entries map.
 	PartnerMetadata any
@@ -399,7 +399,7 @@ type AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties struc
 	// A set of Shielded VM options.
 	ShieldedVmConfig any
 	// A set of instance tags.
-	Tags any
+	Tags                   any
 	WorkloadIdentityConfig any
 }
 
@@ -409,8 +409,8 @@ type AlphaZoneQueuedResource_BulkInsertInstanceResource_LocationPolicy_Locations
 
 type AlphaZoneQueuedResource_BulkInsertInstanceResource_LocationPolicy_Locations struct {
 	Constraints any
-	Names any
-	Preference any
+	Names       any
+	Preference  any
 }
 
 type AlphaZoneQueuedResource_BulkInsertInstanceResource_LocationPolicy_Zones struct {
@@ -428,7 +428,7 @@ type AlphaZoneQueuedResource_BulkInsertInstanceResource_LocationPolicy struct {
 
 type AlphaZoneQueuedResource_BulkInsertInstanceResource_PerInstanceProperties struct {
 	Hostname any
-	Name any
+	Name     any
 }
 
 type AlphaZoneQueuedResource_BulkInsertInstanceResource struct {
@@ -436,7 +436,7 @@ type AlphaZoneQueuedResource_BulkInsertInstanceResource struct {
 	Count any
 	// A flexible specification of machine types for instances to create.
 	InstanceFlexibilityPolicy any
-	InstanceProperties any
+	InstanceProperties        any
 	// Configuration for location policy among multiple possible locations (e.g. preferences for zone selection among zones in a single region).
 	LocationPolicy any
 	// The minimum number of instances to create. If no min_count is specified then count is used as the default value. Ifmin_count instances cannot be created, then no instances will be created and instances already created will be deleted.
@@ -457,14 +457,14 @@ type AlphaZoneQueuedResource_QueuingPolicy struct {
 }
 
 type AlphaZoneQueuedResource_Status_FailedData_Error_Errors_ErrorDetails_ErrorInfo struct {
-	Domain any
+	Domain    any
 	Metadatas any
-	Reason any
+	Reason    any
 }
 
 type AlphaZoneQueuedResource_Status_FailedData_Error_Errors_ErrorDetails_Help_Links struct {
 	Description any
-	Url any
+	Url         any
 }
 
 type AlphaZoneQueuedResource_Status_FailedData_Error_Errors_ErrorDetails_Help struct {
@@ -472,31 +472,31 @@ type AlphaZoneQueuedResource_Status_FailedData_Error_Errors_ErrorDetails_Help st
 }
 
 type AlphaZoneQueuedResource_Status_FailedData_Error_Errors_ErrorDetails_LocalizedMessage struct {
-	Locale any
+	Locale  any
 	Message any
 }
 
 type AlphaZoneQueuedResource_Status_FailedData_Error_Errors_ErrorDetails_QuotaInfo struct {
-	Dimensions any
-	FutureLimit any
-	Limit any
-	LimitName any
-	MetricName any
+	Dimensions    any
+	FutureLimit   any
+	Limit         any
+	LimitName     any
+	MetricName    any
 	RolloutStatus any
 }
 
 type AlphaZoneQueuedResource_Status_FailedData_Error_Errors_ErrorDetails struct {
-	ErrorInfo any
-	Help any
+	ErrorInfo        any
+	Help             any
 	LocalizedMessage any
-	QuotaInfo any
+	QuotaInfo        any
 }
 
 type AlphaZoneQueuedResource_Status_FailedData_Error_Errors struct {
-	Code any
+	Code         any
 	ErrorDetails any
-	Location any
-	Message any
+	Location     any
+	Message      any
 }
 
 type AlphaZoneQueuedResource_Status_FailedData_Error struct {
@@ -519,706 +519,692 @@ type AlphaZoneQueuedResource_Status struct {
 }
 
 var AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceFlexibilityPolicy_InstanceSelections_Disks_DiskEncryptionKeyFields = ubx.FieldMap{
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-		"KmsKeyServiceAccount": ubx.FieldSpec{WireName: "kms_key_service_account"},
-		"RawKey": ubx.FieldSpec{WireName: "raw_key"},
-		"RsaEncryptedKey": ubx.FieldSpec{WireName: "rsa_encrypted_key"},
-		"Sha256": ubx.FieldSpec{WireName: "sha256"},
-	}
+	"KmsKeyName":           ubx.FieldSpec{WireName: "kms_key_name"},
+	"KmsKeyServiceAccount": ubx.FieldSpec{WireName: "kms_key_service_account"},
+	"RawKey":               ubx.FieldSpec{WireName: "raw_key"},
+	"RsaEncryptedKey":      ubx.FieldSpec{WireName: "rsa_encrypted_key"},
+	"Sha256":               ubx.FieldSpec{WireName: "sha256"},
+}
 
 var AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceFlexibilityPolicy_InstanceSelections_Disks_GuestOsFeaturesFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceFlexibilityPolicy_InstanceSelections_Disks_InitializeParamsFields = ubx.FieldMap{
-		"Architecture": ubx.FieldSpec{WireName: "architecture"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DiskName": ubx.FieldSpec{WireName: "disk_name"},
-		"DiskSizeGb": ubx.FieldSpec{WireName: "disk_size_gb"},
-		"DiskType": ubx.FieldSpec{WireName: "disk_type"},
-		"EnableConfidentialCompute": ubx.FieldSpec{WireName: "enable_confidential_compute"},
-		"GuestOsFeatures": ubx.FieldSpec{
-			WireName: "guest_os_features",
-			Kind: "list",
-			Fields: AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceFlexibilityPolicy_InstanceSelections_Disks_GuestOsFeaturesFields,
-		},
-		"Interface": ubx.FieldSpec{WireName: "interface"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"LicenseCodes": ubx.FieldSpec{WireName: "license_codes"},
-		"Licenses": ubx.FieldSpec{WireName: "licenses"},
-		"MultiWriter": ubx.FieldSpec{WireName: "multi_writer"},
-		"OnUpdateAction": ubx.FieldSpec{WireName: "on_update_action"},
-		"ProvisionedIops": ubx.FieldSpec{WireName: "provisioned_iops"},
-		"ProvisionedThroughput": ubx.FieldSpec{WireName: "provisioned_throughput"},
-		"ReplicaZones": ubx.FieldSpec{WireName: "replica_zones"},
-		"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
-		"ResourcePolicies": ubx.FieldSpec{WireName: "resource_policies"},
-		"SourceImage": ubx.FieldSpec{WireName: "source_image"},
-		"SourceImageEncryptionKey": ubx.FieldSpec{
-			WireName: "source_image_encryption_key",
-			Kind: "object",
-			Fields: AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceFlexibilityPolicy_InstanceSelections_Disks_DiskEncryptionKeyFields,
-		},
-		"SourceInstantSnapshot": ubx.FieldSpec{WireName: "source_instant_snapshot"},
-		"SourceSnapshot": ubx.FieldSpec{WireName: "source_snapshot"},
-		"SourceSnapshotEncryptionKey": ubx.FieldSpec{
-			WireName: "source_snapshot_encryption_key",
-			Kind: "object",
-			Fields: AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceFlexibilityPolicy_InstanceSelections_Disks_DiskEncryptionKeyFields,
-		},
-		"StoragePool": ubx.FieldSpec{WireName: "storage_pool"},
-	}
+	"Architecture":              ubx.FieldSpec{WireName: "architecture"},
+	"Description":               ubx.FieldSpec{WireName: "description"},
+	"DiskName":                  ubx.FieldSpec{WireName: "disk_name"},
+	"DiskSizeGb":                ubx.FieldSpec{WireName: "disk_size_gb"},
+	"DiskType":                  ubx.FieldSpec{WireName: "disk_type"},
+	"EnableConfidentialCompute": ubx.FieldSpec{WireName: "enable_confidential_compute"},
+	"GuestOsFeatures": ubx.FieldSpec{
+		WireName: "guest_os_features",
+		Kind:     "list",
+		Fields:   AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceFlexibilityPolicy_InstanceSelections_Disks_GuestOsFeaturesFields,
+	},
+	"Interface":             ubx.FieldSpec{WireName: "interface"},
+	"Labels":                ubx.FieldSpec{WireName: "labels"},
+	"LicenseCodes":          ubx.FieldSpec{WireName: "license_codes"},
+	"Licenses":              ubx.FieldSpec{WireName: "licenses"},
+	"MultiWriter":           ubx.FieldSpec{WireName: "multi_writer"},
+	"OnUpdateAction":        ubx.FieldSpec{WireName: "on_update_action"},
+	"ProvisionedIops":       ubx.FieldSpec{WireName: "provisioned_iops"},
+	"ProvisionedThroughput": ubx.FieldSpec{WireName: "provisioned_throughput"},
+	"ReplicaZones":          ubx.FieldSpec{WireName: "replica_zones"},
+	"ResourceManagerTags":   ubx.FieldSpec{WireName: "resource_manager_tags"},
+	"ResourcePolicies":      ubx.FieldSpec{WireName: "resource_policies"},
+	"SourceImage":           ubx.FieldSpec{WireName: "source_image"},
+	"SourceImageEncryptionKey": ubx.FieldSpec{
+		WireName: "source_image_encryption_key",
+		Kind:     "object",
+		Fields:   AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceFlexibilityPolicy_InstanceSelections_Disks_DiskEncryptionKeyFields,
+	},
+	"SourceInstantSnapshot": ubx.FieldSpec{WireName: "source_instant_snapshot"},
+	"SourceSnapshot":        ubx.FieldSpec{WireName: "source_snapshot"},
+	"SourceSnapshotEncryptionKey": ubx.FieldSpec{
+		WireName: "source_snapshot_encryption_key",
+		Kind:     "object",
+		Fields:   AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceFlexibilityPolicy_InstanceSelections_Disks_DiskEncryptionKeyFields,
+	},
+	"StoragePool": ubx.FieldSpec{WireName: "storage_pool"},
+}
 
 var AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceFlexibilityPolicy_InstanceSelections_Disks_ShieldedInstanceInitialState_DbsFields = ubx.FieldMap{
-		"Content": ubx.FieldSpec{WireName: "content"},
-		"FileType": ubx.FieldSpec{WireName: "file_type"},
-	}
+	"Content":  ubx.FieldSpec{WireName: "content"},
+	"FileType": ubx.FieldSpec{WireName: "file_type"},
+}
 
 var AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceFlexibilityPolicy_InstanceSelections_Disks_ShieldedInstanceInitialStateFields = ubx.FieldMap{
-		"Dbs": ubx.FieldSpec{
-			WireName: "dbs",
-			Kind: "list",
-			Fields: AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceFlexibilityPolicy_InstanceSelections_Disks_ShieldedInstanceInitialState_DbsFields,
-		},
-		"Dbxs": ubx.FieldSpec{
-			WireName: "dbxs",
-			Kind: "list",
-			Fields: AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceFlexibilityPolicy_InstanceSelections_Disks_ShieldedInstanceInitialState_DbsFields,
-		},
-		"Keks": ubx.FieldSpec{
-			WireName: "keks",
-			Kind: "list",
-			Fields: AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceFlexibilityPolicy_InstanceSelections_Disks_ShieldedInstanceInitialState_DbsFields,
-		},
-		"Pk": ubx.FieldSpec{
-			WireName: "pk",
-			Kind: "object",
-			Fields: AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceFlexibilityPolicy_InstanceSelections_Disks_ShieldedInstanceInitialState_DbsFields,
-		},
-	}
+	"Dbs": ubx.FieldSpec{
+		WireName: "dbs",
+		Kind:     "list",
+		Fields:   AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceFlexibilityPolicy_InstanceSelections_Disks_ShieldedInstanceInitialState_DbsFields,
+	},
+	"Dbxs": ubx.FieldSpec{
+		WireName: "dbxs",
+		Kind:     "list",
+		Fields:   AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceFlexibilityPolicy_InstanceSelections_Disks_ShieldedInstanceInitialState_DbsFields,
+	},
+	"Keks": ubx.FieldSpec{
+		WireName: "keks",
+		Kind:     "list",
+		Fields:   AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceFlexibilityPolicy_InstanceSelections_Disks_ShieldedInstanceInitialState_DbsFields,
+	},
+	"Pk": ubx.FieldSpec{
+		WireName: "pk",
+		Kind:     "object",
+		Fields:   AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceFlexibilityPolicy_InstanceSelections_Disks_ShieldedInstanceInitialState_DbsFields,
+	},
+}
 
 var AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceFlexibilityPolicy_InstanceSelections_DisksFields = ubx.FieldMap{
-		"Architecture": ubx.FieldSpec{WireName: "architecture"},
-		"AutoDelete": ubx.FieldSpec{WireName: "auto_delete"},
-		"Boot": ubx.FieldSpec{WireName: "boot"},
-		"DeviceName": ubx.FieldSpec{WireName: "device_name"},
-		"DiskEncryptionKey": ubx.FieldSpec{
-			WireName: "disk_encryption_key",
-			Kind: "object",
-			Fields: AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceFlexibilityPolicy_InstanceSelections_Disks_DiskEncryptionKeyFields,
-		},
-		"DiskSizeGb": ubx.FieldSpec{WireName: "disk_size_gb"},
-		"ForceAttach": ubx.FieldSpec{WireName: "force_attach"},
-		"GuestOsFeatures": ubx.FieldSpec{
-			WireName: "guest_os_features",
-			Kind: "list",
-			Fields: AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceFlexibilityPolicy_InstanceSelections_Disks_GuestOsFeaturesFields,
-		},
-		"Index": ubx.FieldSpec{WireName: "index"},
-		"InitializeParams": ubx.FieldSpec{
-			WireName: "initialize_params",
-			Kind: "object",
-			Fields: AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceFlexibilityPolicy_InstanceSelections_Disks_InitializeParamsFields,
-		},
-		"Interface": ubx.FieldSpec{WireName: "interface"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Licenses": ubx.FieldSpec{WireName: "licenses"},
-		"Locked": ubx.FieldSpec{WireName: "locked"},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"SavedState": ubx.FieldSpec{WireName: "saved_state"},
-		"ShieldedInstanceInitialState": ubx.FieldSpec{
-			WireName: "shielded_instance_initial_state",
-			Kind: "object",
-			Fields: AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceFlexibilityPolicy_InstanceSelections_Disks_ShieldedInstanceInitialStateFields,
-		},
-		"Source": ubx.FieldSpec{WireName: "source"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Architecture": ubx.FieldSpec{WireName: "architecture"},
+	"AutoDelete":   ubx.FieldSpec{WireName: "auto_delete"},
+	"Boot":         ubx.FieldSpec{WireName: "boot"},
+	"DeviceName":   ubx.FieldSpec{WireName: "device_name"},
+	"DiskEncryptionKey": ubx.FieldSpec{
+		WireName: "disk_encryption_key",
+		Kind:     "object",
+		Fields:   AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceFlexibilityPolicy_InstanceSelections_Disks_DiskEncryptionKeyFields,
+	},
+	"DiskSizeGb":  ubx.FieldSpec{WireName: "disk_size_gb"},
+	"ForceAttach": ubx.FieldSpec{WireName: "force_attach"},
+	"GuestOsFeatures": ubx.FieldSpec{
+		WireName: "guest_os_features",
+		Kind:     "list",
+		Fields:   AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceFlexibilityPolicy_InstanceSelections_Disks_GuestOsFeaturesFields,
+	},
+	"Index": ubx.FieldSpec{WireName: "index"},
+	"InitializeParams": ubx.FieldSpec{
+		WireName: "initialize_params",
+		Kind:     "object",
+		Fields:   AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceFlexibilityPolicy_InstanceSelections_Disks_InitializeParamsFields,
+	},
+	"Interface":  ubx.FieldSpec{WireName: "interface"},
+	"Kind":       ubx.FieldSpec{WireName: "kind"},
+	"Licenses":   ubx.FieldSpec{WireName: "licenses"},
+	"Locked":     ubx.FieldSpec{WireName: "locked"},
+	"Mode":       ubx.FieldSpec{WireName: "mode"},
+	"SavedState": ubx.FieldSpec{WireName: "saved_state"},
+	"ShieldedInstanceInitialState": ubx.FieldSpec{
+		WireName: "shielded_instance_initial_state",
+		Kind:     "object",
+		Fields:   AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceFlexibilityPolicy_InstanceSelections_Disks_ShieldedInstanceInitialStateFields,
+	},
+	"Source": ubx.FieldSpec{WireName: "source"},
+	"Type":   ubx.FieldSpec{WireName: "type"},
+}
 
 var AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceFlexibilityPolicy_InstanceSelectionsFields = ubx.FieldMap{
-		"Disks": ubx.FieldSpec{
-			WireName: "disks",
-			Kind: "list",
-			Fields: AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceFlexibilityPolicy_InstanceSelections_DisksFields,
-		},
-		"MachineTypes": ubx.FieldSpec{WireName: "machine_types"},
-		"MinCpuPlatform": ubx.FieldSpec{WireName: "min_cpu_platform"},
-		"Rank": ubx.FieldSpec{WireName: "rank"},
-	}
+	"Disks": ubx.FieldSpec{
+		WireName: "disks",
+		Kind:     "list",
+		Fields:   AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceFlexibilityPolicy_InstanceSelections_DisksFields,
+	},
+	"MachineTypes":   ubx.FieldSpec{WireName: "machine_types"},
+	"MinCpuPlatform": ubx.FieldSpec{WireName: "min_cpu_platform"},
+	"Rank":           ubx.FieldSpec{WireName: "rank"},
+}
 
 var AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceFlexibilityPolicyFields = ubx.FieldMap{
-		"InstanceSelections": ubx.FieldSpec{
-			WireName: "instance_selections",
-			Kind: "map",
-			Fields: AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceFlexibilityPolicy_InstanceSelectionsFields,
-		},
-	}
+	"InstanceSelections": ubx.FieldSpec{
+		WireName: "instance_selections",
+		Kind:     "map",
+		Fields:   AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceFlexibilityPolicy_InstanceSelectionsFields,
+	},
+}
 
 var AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_AdvancedMachineFeaturesFields = ubx.FieldMap{
-		"EnableNestedVirtualization": ubx.FieldSpec{WireName: "enable_nested_virtualization"},
-		"EnableUefiNetworking": ubx.FieldSpec{WireName: "enable_uefi_networking"},
-		"EnableWatchdogTimer": ubx.FieldSpec{WireName: "enable_watchdog_timer"},
-		"NumaNodeCount": ubx.FieldSpec{WireName: "numa_node_count"},
-		"PerformanceMonitoringUnit": ubx.FieldSpec{WireName: "performance_monitoring_unit"},
-		"ThreadsPerCore": ubx.FieldSpec{WireName: "threads_per_core"},
-		"TurboMode": ubx.FieldSpec{WireName: "turbo_mode"},
-		"VisibleCoreCount": ubx.FieldSpec{WireName: "visible_core_count"},
-	}
+	"EnableNestedVirtualization": ubx.FieldSpec{WireName: "enable_nested_virtualization"},
+	"EnableUefiNetworking":       ubx.FieldSpec{WireName: "enable_uefi_networking"},
+	"EnableWatchdogTimer":        ubx.FieldSpec{WireName: "enable_watchdog_timer"},
+	"NumaNodeCount":              ubx.FieldSpec{WireName: "numa_node_count"},
+	"PerformanceMonitoringUnit":  ubx.FieldSpec{WireName: "performance_monitoring_unit"},
+	"ThreadsPerCore":             ubx.FieldSpec{WireName: "threads_per_core"},
+	"TurboMode":                  ubx.FieldSpec{WireName: "turbo_mode"},
+	"VisibleCoreCount":           ubx.FieldSpec{WireName: "visible_core_count"},
+}
 
 var AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_ConfidentialInstanceConfig_ConfidentialParavisorConfigFields = ubx.FieldMap{
-		"ConfidentialTpmType": ubx.FieldSpec{WireName: "confidential_tpm_type"},
-		"SevSnpIrqMode": ubx.FieldSpec{WireName: "sev_snp_irq_mode"},
-	}
+	"ConfidentialTpmType": ubx.FieldSpec{WireName: "confidential_tpm_type"},
+	"SevSnpIrqMode":       ubx.FieldSpec{WireName: "sev_snp_irq_mode"},
+}
 
 var AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_ConfidentialInstanceConfigFields = ubx.FieldMap{
-		"ConfidentialInstanceType": ubx.FieldSpec{WireName: "confidential_instance_type"},
-		"ConfidentialParavisorConfig": ubx.FieldSpec{
-			WireName: "confidential_paravisor_config",
-			Kind: "object",
-			Fields: AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_ConfidentialInstanceConfig_ConfidentialParavisorConfigFields,
-		},
-		"EnableConfidentialCompute": ubx.FieldSpec{WireName: "enable_confidential_compute"},
-	}
+	"ConfidentialInstanceType": ubx.FieldSpec{WireName: "confidential_instance_type"},
+	"ConfidentialParavisorConfig": ubx.FieldSpec{
+		WireName: "confidential_paravisor_config",
+		Kind:     "object",
+		Fields:   AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_ConfidentialInstanceConfig_ConfidentialParavisorConfigFields,
+	},
+	"EnableConfidentialCompute": ubx.FieldSpec{WireName: "enable_confidential_compute"},
+}
 
 var AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_DisplayDeviceFields = ubx.FieldMap{
-		"EnableDisplay": ubx.FieldSpec{WireName: "enable_display"},
-	}
+	"EnableDisplay": ubx.FieldSpec{WireName: "enable_display"},
+}
 
 var AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_GuestAcceleratorsFields = ubx.FieldMap{
-		"AcceleratorCount": ubx.FieldSpec{WireName: "accelerator_count"},
-		"AcceleratorType": ubx.FieldSpec{WireName: "accelerator_type"},
-	}
+	"AcceleratorCount": ubx.FieldSpec{WireName: "accelerator_count"},
+	"AcceleratorType":  ubx.FieldSpec{WireName: "accelerator_type"},
+}
 
 var AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_Metadata_ItemsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_MetadataFields = ubx.FieldMap{
-		"Fingerprint": ubx.FieldSpec{WireName: "fingerprint"},
-		"Items": ubx.FieldSpec{
-			WireName: "items",
-			Kind: "list",
-			Fields: AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_Metadata_ItemsFields,
-		},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-	}
+	"Fingerprint": ubx.FieldSpec{WireName: "fingerprint"},
+	"Items": ubx.FieldSpec{
+		WireName: "items",
+		Kind:     "list",
+		Fields:   AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_Metadata_ItemsFields,
+	},
+	"Kind": ubx.FieldSpec{WireName: "kind"},
+}
 
 var AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_NetworkInterfaces_AccessConfigsFields = ubx.FieldMap{
-		"ExternalIpv6": ubx.FieldSpec{WireName: "external_ipv6"},
-		"ExternalIpv6PrefixLength": ubx.FieldSpec{WireName: "external_ipv6_prefix_length"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NatIp": ubx.FieldSpec{WireName: "nat_ip"},
-		"NetworkTier": ubx.FieldSpec{WireName: "network_tier"},
-		"PublicDnsName": ubx.FieldSpec{WireName: "public_dns_name"},
-		"PublicPtrDomainName": ubx.FieldSpec{WireName: "public_ptr_domain_name"},
-		"SecurityPolicy": ubx.FieldSpec{WireName: "security_policy"},
-		"SetPublicDns": ubx.FieldSpec{WireName: "set_public_dns"},
-		"SetPublicPtr": ubx.FieldSpec{WireName: "set_public_ptr"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"ExternalIpv6":             ubx.FieldSpec{WireName: "external_ipv6"},
+	"ExternalIpv6PrefixLength": ubx.FieldSpec{WireName: "external_ipv6_prefix_length"},
+	"Kind":                     ubx.FieldSpec{WireName: "kind"},
+	"Name":                     ubx.FieldSpec{WireName: "name"},
+	"NatIp":                    ubx.FieldSpec{WireName: "nat_ip"},
+	"NetworkTier":              ubx.FieldSpec{WireName: "network_tier"},
+	"PublicDnsName":            ubx.FieldSpec{WireName: "public_dns_name"},
+	"PublicPtrDomainName":      ubx.FieldSpec{WireName: "public_ptr_domain_name"},
+	"SecurityPolicy":           ubx.FieldSpec{WireName: "security_policy"},
+	"SetPublicDns":             ubx.FieldSpec{WireName: "set_public_dns"},
+	"SetPublicPtr":             ubx.FieldSpec{WireName: "set_public_ptr"},
+	"Type":                     ubx.FieldSpec{WireName: "type"},
+}
 
 var AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_NetworkInterfaces_AliasIpRangesFields = ubx.FieldMap{
-		"CandidateSubnetworkRangeNames": ubx.FieldSpec{WireName: "candidate_subnetwork_range_names"},
-		"EffectiveSubnetworkRangeName": ubx.FieldSpec{WireName: "effective_subnetwork_range_name"},
-		"IpCidrRange": ubx.FieldSpec{WireName: "ip_cidr_range"},
-		"SubnetworkRangeName": ubx.FieldSpec{WireName: "subnetwork_range_name"},
-	}
+	"CandidateSubnetworkRangeNames": ubx.FieldSpec{WireName: "candidate_subnetwork_range_names"},
+	"EffectiveSubnetworkRangeName":  ubx.FieldSpec{WireName: "effective_subnetwork_range_name"},
+	"IpCidrRange":                   ubx.FieldSpec{WireName: "ip_cidr_range"},
+	"SubnetworkRangeName":           ubx.FieldSpec{WireName: "subnetwork_range_name"},
+}
 
 var AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_NetworkInterfaces_SubinterfacesFields = ubx.FieldMap{
-		"IpAddress": ubx.FieldSpec{WireName: "ip_address"},
-		"IpAllocationMode": ubx.FieldSpec{WireName: "ip_allocation_mode"},
-		"Subnetwork": ubx.FieldSpec{WireName: "subnetwork"},
-		"Vlan": ubx.FieldSpec{WireName: "vlan"},
-	}
+	"IpAddress":        ubx.FieldSpec{WireName: "ip_address"},
+	"IpAllocationMode": ubx.FieldSpec{WireName: "ip_allocation_mode"},
+	"Subnetwork":       ubx.FieldSpec{WireName: "subnetwork"},
+	"Vlan":             ubx.FieldSpec{WireName: "vlan"},
+}
 
 var AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_NetworkInterfacesFields = ubx.FieldMap{
-		"AccessConfigs": ubx.FieldSpec{
-			WireName: "access_configs",
-			Kind: "list",
-			Fields: AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_NetworkInterfaces_AccessConfigsFields,
-		},
-		"AliasIpRanges": ubx.FieldSpec{
-			WireName: "alias_ip_ranges",
-			Kind: "list",
-			Fields: AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_NetworkInterfaces_AliasIpRangesFields,
-		},
-		"AliasIpv6Ranges": ubx.FieldSpec{
-			WireName: "alias_ipv6_ranges",
-			Kind: "list",
-			Fields: AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_NetworkInterfaces_AliasIpRangesFields,
-		},
-		"Dns64Eligible": ubx.FieldSpec{WireName: "dns64_eligible"},
-		"EnableVpcScopedDns": ubx.FieldSpec{WireName: "enable_vpc_scoped_dns"},
-		"Fingerprint": ubx.FieldSpec{WireName: "fingerprint"},
-		"IgmpQuery": ubx.FieldSpec{WireName: "igmp_query"},
-		"InternalIpv6PrefixLength": ubx.FieldSpec{WireName: "internal_ipv6_prefix_length"},
-		"InternalNicLoadBalancingIpv6Address": ubx.FieldSpec{WireName: "internal_nic_load_balancing_ipv6_address"},
-		"InternalNicLoadBalancingIpv6PrefixLength": ubx.FieldSpec{WireName: "internal_nic_load_balancing_ipv6_prefix_length"},
-		"Ipv6AccessConfigs": ubx.FieldSpec{
-			WireName: "ipv6_access_configs",
-			Kind: "list",
-			Fields: AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_NetworkInterfaces_AccessConfigsFields,
-		},
-		"Ipv6AccessType": ubx.FieldSpec{WireName: "ipv6_access_type"},
-		"Ipv6Address": ubx.FieldSpec{WireName: "ipv6_address"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"MacAddress": ubx.FieldSpec{WireName: "mac_address"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Nat64Eligible": ubx.FieldSpec{WireName: "nat64_eligible"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"NetworkAttachment": ubx.FieldSpec{WireName: "network_attachment"},
-		"NetworkIp": ubx.FieldSpec{WireName: "network_ip"},
-		"NicType": ubx.FieldSpec{WireName: "nic_type"},
-		"ParentNicName": ubx.FieldSpec{WireName: "parent_nic_name"},
-		"QueueCount": ubx.FieldSpec{WireName: "queue_count"},
-		"ServiceClassId": ubx.FieldSpec{WireName: "service_class_id"},
-		"StackType": ubx.FieldSpec{WireName: "stack_type"},
-		"Subinterfaces": ubx.FieldSpec{
-			WireName: "subinterfaces",
-			Kind: "list",
-			Fields: AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_NetworkInterfaces_SubinterfacesFields,
-		},
-		"Subnetwork": ubx.FieldSpec{WireName: "subnetwork"},
-		"Vlan": ubx.FieldSpec{WireName: "vlan"},
-	}
+	"AccessConfigs": ubx.FieldSpec{
+		WireName: "access_configs",
+		Kind:     "list",
+		Fields:   AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_NetworkInterfaces_AccessConfigsFields,
+	},
+	"AliasIpRanges": ubx.FieldSpec{
+		WireName: "alias_ip_ranges",
+		Kind:     "list",
+		Fields:   AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_NetworkInterfaces_AliasIpRangesFields,
+	},
+	"AliasIpv6Ranges": ubx.FieldSpec{
+		WireName: "alias_ipv6_ranges",
+		Kind:     "list",
+		Fields:   AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_NetworkInterfaces_AliasIpRangesFields,
+	},
+	"Dns64Eligible":                            ubx.FieldSpec{WireName: "dns64_eligible"},
+	"EnableVpcScopedDns":                       ubx.FieldSpec{WireName: "enable_vpc_scoped_dns"},
+	"Fingerprint":                              ubx.FieldSpec{WireName: "fingerprint"},
+	"IgmpQuery":                                ubx.FieldSpec{WireName: "igmp_query"},
+	"InternalIpv6PrefixLength":                 ubx.FieldSpec{WireName: "internal_ipv6_prefix_length"},
+	"InternalNicLoadBalancingIpv6Address":      ubx.FieldSpec{WireName: "internal_nic_load_balancing_ipv6_address"},
+	"InternalNicLoadBalancingIpv6PrefixLength": ubx.FieldSpec{WireName: "internal_nic_load_balancing_ipv6_prefix_length"},
+	"Ipv6AccessConfigs": ubx.FieldSpec{
+		WireName: "ipv6_access_configs",
+		Kind:     "list",
+		Fields:   AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_NetworkInterfaces_AccessConfigsFields,
+	},
+	"Ipv6AccessType":    ubx.FieldSpec{WireName: "ipv6_access_type"},
+	"Ipv6Address":       ubx.FieldSpec{WireName: "ipv6_address"},
+	"Kind":              ubx.FieldSpec{WireName: "kind"},
+	"MacAddress":        ubx.FieldSpec{WireName: "mac_address"},
+	"Name":              ubx.FieldSpec{WireName: "name"},
+	"Nat64Eligible":     ubx.FieldSpec{WireName: "nat64_eligible"},
+	"Network":           ubx.FieldSpec{WireName: "network"},
+	"NetworkAttachment": ubx.FieldSpec{WireName: "network_attachment"},
+	"NetworkIp":         ubx.FieldSpec{WireName: "network_ip"},
+	"NicType":           ubx.FieldSpec{WireName: "nic_type"},
+	"ParentNicName":     ubx.FieldSpec{WireName: "parent_nic_name"},
+	"QueueCount":        ubx.FieldSpec{WireName: "queue_count"},
+	"ServiceClassId":    ubx.FieldSpec{WireName: "service_class_id"},
+	"StackType":         ubx.FieldSpec{WireName: "stack_type"},
+	"Subinterfaces": ubx.FieldSpec{
+		WireName: "subinterfaces",
+		Kind:     "list",
+		Fields:   AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_NetworkInterfaces_SubinterfacesFields,
+	},
+	"Subnetwork": ubx.FieldSpec{WireName: "subnetwork"},
+	"Vlan":       ubx.FieldSpec{WireName: "vlan"},
+}
 
 var AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_NetworkPerformanceConfigFields = ubx.FieldMap{
-		"ExternalIpEgressBandwidthTier": ubx.FieldSpec{WireName: "external_ip_egress_bandwidth_tier"},
-		"TotalEgressBandwidthTier": ubx.FieldSpec{WireName: "total_egress_bandwidth_tier"},
-	}
+	"ExternalIpEgressBandwidthTier": ubx.FieldSpec{WireName: "external_ip_egress_bandwidth_tier"},
+	"TotalEgressBandwidthTier":      ubx.FieldSpec{WireName: "total_egress_bandwidth_tier"},
+}
 
 var AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_PartnerMetadataFields = ubx.FieldMap{
-		"Entries": ubx.FieldSpec{WireName: "entries"},
-	}
+	"Entries": ubx.FieldSpec{WireName: "entries"},
+}
 
 var AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_ReservationAffinityFields = ubx.FieldMap{
-		"ConsumeReservationType": ubx.FieldSpec{WireName: "consume_reservation_type"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"ConsumeReservationType": ubx.FieldSpec{WireName: "consume_reservation_type"},
+	"Key":                    ubx.FieldSpec{WireName: "key"},
+	"Values":                 ubx.FieldSpec{WireName: "values"},
+}
 
 var AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_Scheduling_GracefulShutdown_MaxDurationFields = ubx.FieldMap{
-		"Nanos": ubx.FieldSpec{WireName: "nanos"},
-		"Seconds": ubx.FieldSpec{WireName: "seconds"},
-	}
+	"Nanos":   ubx.FieldSpec{WireName: "nanos"},
+	"Seconds": ubx.FieldSpec{WireName: "seconds"},
+}
 
 var AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_Scheduling_GracefulShutdownFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"MaxDuration": ubx.FieldSpec{
-			WireName: "max_duration",
-			Kind: "object",
-			Fields: AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_Scheduling_GracefulShutdown_MaxDurationFields,
-		},
-	}
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+	"MaxDuration": ubx.FieldSpec{
+		WireName: "max_duration",
+		Kind:     "object",
+		Fields:   AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_Scheduling_GracefulShutdown_MaxDurationFields,
+	},
+}
 
 var AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_Scheduling_NodeAffinitiesFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Key":      ubx.FieldSpec{WireName: "key"},
+	"Operator": ubx.FieldSpec{WireName: "operator"},
+	"Values":   ubx.FieldSpec{WireName: "values"},
+}
 
 var AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_Scheduling_OnInstanceStopActionFields = ubx.FieldMap{
-		"DiscardLocalSsd": ubx.FieldSpec{WireName: "discard_local_ssd"},
-	}
+	"DiscardLocalSsd": ubx.FieldSpec{WireName: "discard_local_ssd"},
+}
 
 var AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_Scheduling_VsockModeFields = ubx.FieldMap{
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-	}
+	"Mode": ubx.FieldSpec{WireName: "mode"},
+}
 
 var AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_SchedulingFields = ubx.FieldMap{
-		"AutomaticRestart": ubx.FieldSpec{WireName: "automatic_restart"},
-		"AvailabilityDomain": ubx.FieldSpec{WireName: "availability_domain"},
-		"CurrentCpus": ubx.FieldSpec{WireName: "current_cpus"},
-		"CurrentMemoryMb": ubx.FieldSpec{WireName: "current_memory_mb"},
-		"ExposeHostTopology": ubx.FieldSpec{WireName: "expose_host_topology"},
-		"GracefulShutdown": ubx.FieldSpec{
-			WireName: "graceful_shutdown",
-			Kind: "object",
-			Fields: AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_Scheduling_GracefulShutdownFields,
-		},
-		"HostErrorTimeoutSeconds": ubx.FieldSpec{WireName: "host_error_timeout_seconds"},
-		"InstanceTerminationAction": ubx.FieldSpec{WireName: "instance_termination_action"},
-		"LatencyTolerant": ubx.FieldSpec{WireName: "latency_tolerant"},
-		"LocalSsdRecoveryTimeout": ubx.FieldSpec{
-			WireName: "local_ssd_recovery_timeout",
-			Kind: "object",
-			Fields: AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_Scheduling_GracefulShutdown_MaxDurationFields,
-		},
-		"LocationHint": ubx.FieldSpec{WireName: "location_hint"},
-		"MaintenanceFreezeDurationHours": ubx.FieldSpec{WireName: "maintenance_freeze_duration_hours"},
-		"MaintenanceInterval": ubx.FieldSpec{WireName: "maintenance_interval"},
-		"MaxRunDuration": ubx.FieldSpec{
-			WireName: "max_run_duration",
-			Kind: "object",
-			Fields: AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_Scheduling_GracefulShutdown_MaxDurationFields,
-		},
-		"MinNodeCpus": ubx.FieldSpec{WireName: "min_node_cpus"},
-		"NodeAffinities": ubx.FieldSpec{
-			WireName: "node_affinities",
-			Kind: "list",
-			Fields: AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_Scheduling_NodeAffinitiesFields,
-		},
-		"OnHostMaintenance": ubx.FieldSpec{WireName: "on_host_maintenance"},
-		"OnInstanceStopAction": ubx.FieldSpec{
-			WireName: "on_instance_stop_action",
-			Kind: "object",
-			Fields: AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_Scheduling_OnInstanceStopActionFields,
-		},
-		"Preemptible": ubx.FieldSpec{WireName: "preemptible"},
-		"PreemptionNoticeDuration": ubx.FieldSpec{
-			WireName: "preemption_notice_duration",
-			Kind: "object",
-			Fields: AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_Scheduling_GracefulShutdown_MaxDurationFields,
-		},
-		"ProvisioningModel": ubx.FieldSpec{WireName: "provisioning_model"},
-		"ShutdownTimeout": ubx.FieldSpec{
-			WireName: "shutdown_timeout",
-			Kind: "object",
-			Fields: AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_Scheduling_GracefulShutdown_MaxDurationFields,
-		},
-		"SkipGuestOsShutdown": ubx.FieldSpec{WireName: "skip_guest_os_shutdown"},
-		"TerminationTime": ubx.FieldSpec{WireName: "termination_time"},
-		"VsockMode": ubx.FieldSpec{
-			WireName: "vsock_mode",
-			Kind: "object",
-			Fields: AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_Scheduling_VsockModeFields,
-		},
-		"WindowsLicenseOptimizationMode": ubx.FieldSpec{WireName: "windows_license_optimization_mode"},
-	}
+	"AutomaticRestart":   ubx.FieldSpec{WireName: "automatic_restart"},
+	"AvailabilityDomain": ubx.FieldSpec{WireName: "availability_domain"},
+	"CurrentCpus":        ubx.FieldSpec{WireName: "current_cpus"},
+	"CurrentMemoryMb":    ubx.FieldSpec{WireName: "current_memory_mb"},
+	"ExposeHostTopology": ubx.FieldSpec{WireName: "expose_host_topology"},
+	"GracefulShutdown": ubx.FieldSpec{
+		WireName: "graceful_shutdown",
+		Kind:     "object",
+		Fields:   AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_Scheduling_GracefulShutdownFields,
+	},
+	"HostErrorTimeoutSeconds":   ubx.FieldSpec{WireName: "host_error_timeout_seconds"},
+	"InstanceTerminationAction": ubx.FieldSpec{WireName: "instance_termination_action"},
+	"LatencyTolerant":           ubx.FieldSpec{WireName: "latency_tolerant"},
+	"LocalSsdRecoveryTimeout": ubx.FieldSpec{
+		WireName: "local_ssd_recovery_timeout",
+		Kind:     "object",
+		Fields:   AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_Scheduling_GracefulShutdown_MaxDurationFields,
+	},
+	"LocationHint":                   ubx.FieldSpec{WireName: "location_hint"},
+	"MaintenanceFreezeDurationHours": ubx.FieldSpec{WireName: "maintenance_freeze_duration_hours"},
+	"MaintenanceInterval":            ubx.FieldSpec{WireName: "maintenance_interval"},
+	"MaxRunDuration": ubx.FieldSpec{
+		WireName: "max_run_duration",
+		Kind:     "object",
+		Fields:   AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_Scheduling_GracefulShutdown_MaxDurationFields,
+	},
+	"MinNodeCpus": ubx.FieldSpec{WireName: "min_node_cpus"},
+	"NodeAffinities": ubx.FieldSpec{
+		WireName: "node_affinities",
+		Kind:     "list",
+		Fields:   AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_Scheduling_NodeAffinitiesFields,
+	},
+	"OnHostMaintenance": ubx.FieldSpec{WireName: "on_host_maintenance"},
+	"OnInstanceStopAction": ubx.FieldSpec{
+		WireName: "on_instance_stop_action",
+		Kind:     "object",
+		Fields:   AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_Scheduling_OnInstanceStopActionFields,
+	},
+	"Preemptible": ubx.FieldSpec{WireName: "preemptible"},
+	"PreemptionNoticeDuration": ubx.FieldSpec{
+		WireName: "preemption_notice_duration",
+		Kind:     "object",
+		Fields:   AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_Scheduling_GracefulShutdown_MaxDurationFields,
+	},
+	"ProvisioningModel": ubx.FieldSpec{WireName: "provisioning_model"},
+	"ShutdownTimeout": ubx.FieldSpec{
+		WireName: "shutdown_timeout",
+		Kind:     "object",
+		Fields:   AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_Scheduling_GracefulShutdown_MaxDurationFields,
+	},
+	"SkipGuestOsShutdown": ubx.FieldSpec{WireName: "skip_guest_os_shutdown"},
+	"TerminationTime":     ubx.FieldSpec{WireName: "termination_time"},
+	"VsockMode": ubx.FieldSpec{
+		WireName: "vsock_mode",
+		Kind:     "object",
+		Fields:   AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_Scheduling_VsockModeFields,
+	},
+	"WindowsLicenseOptimizationMode": ubx.FieldSpec{WireName: "windows_license_optimization_mode"},
+}
 
 var AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_ServiceAccountsFields = ubx.FieldMap{
-		"Email": ubx.FieldSpec{WireName: "email"},
-		"Scopes": ubx.FieldSpec{WireName: "scopes"},
-	}
+	"Email":  ubx.FieldSpec{WireName: "email"},
+	"Scopes": ubx.FieldSpec{WireName: "scopes"},
+}
 
 var AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_ServiceIntegrationSpecs_BackupDrFields = ubx.FieldMap{
-		"Plan": ubx.FieldSpec{WireName: "plan"},
-	}
+	"Plan": ubx.FieldSpec{WireName: "plan"},
+}
 
 var AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_ServiceIntegrationSpecsFields = ubx.FieldMap{
-		"BackupDr": ubx.FieldSpec{
-			WireName: "backup_dr",
-			Kind: "object",
-			Fields: AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_ServiceIntegrationSpecs_BackupDrFields,
-		},
-	}
+	"BackupDr": ubx.FieldSpec{
+		WireName: "backup_dr",
+		Kind:     "object",
+		Fields:   AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_ServiceIntegrationSpecs_BackupDrFields,
+	},
+}
 
 var AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_ShieldedInstanceConfigFields = ubx.FieldMap{
-		"EnableIntegrityMonitoring": ubx.FieldSpec{WireName: "enable_integrity_monitoring"},
-		"EnableSecureBoot": ubx.FieldSpec{WireName: "enable_secure_boot"},
-		"EnableVtpm": ubx.FieldSpec{WireName: "enable_vtpm"},
-	}
+	"EnableIntegrityMonitoring": ubx.FieldSpec{WireName: "enable_integrity_monitoring"},
+	"EnableSecureBoot":          ubx.FieldSpec{WireName: "enable_secure_boot"},
+	"EnableVtpm":                ubx.FieldSpec{WireName: "enable_vtpm"},
+}
 
 var AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_TagsFields = ubx.FieldMap{
-		"Fingerprint": ubx.FieldSpec{WireName: "fingerprint"},
-		"Items": ubx.FieldSpec{WireName: "items"},
-	}
+	"Fingerprint": ubx.FieldSpec{WireName: "fingerprint"},
+	"Items":       ubx.FieldSpec{WireName: "items"},
+}
 
 var AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_WorkloadIdentityConfigFields = ubx.FieldMap{
-		"Identity": ubx.FieldSpec{WireName: "identity"},
-		"IdentityCertificateEnabled": ubx.FieldSpec{WireName: "identity_certificate_enabled"},
-		"IdentityType": ubx.FieldSpec{WireName: "identity_type"},
-	}
+	"Identity":                   ubx.FieldSpec{WireName: "identity"},
+	"IdentityCertificateEnabled": ubx.FieldSpec{WireName: "identity_certificate_enabled"},
+	"IdentityType":               ubx.FieldSpec{WireName: "identity_type"},
+}
 
 var AlphaZoneQueuedResource_BulkInsertInstanceResource_InstancePropertiesFields = ubx.FieldMap{
-		"AdvancedMachineFeatures": ubx.FieldSpec{
-			WireName: "advanced_machine_features",
-			Kind: "object",
-			Fields: AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_AdvancedMachineFeaturesFields,
-		},
-		"CanIpForward": ubx.FieldSpec{WireName: "can_ip_forward"},
-		"ConfidentialInstanceConfig": ubx.FieldSpec{
-			WireName: "confidential_instance_config",
-			Kind: "object",
-			Fields: AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_ConfidentialInstanceConfigFields,
-		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Disks": ubx.FieldSpec{
-			WireName: "disks",
-			Kind: "list",
-			Fields: AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceFlexibilityPolicy_InstanceSelections_DisksFields,
-		},
-		"DisplayDevice": ubx.FieldSpec{
-			WireName: "display_device",
-			Kind: "object",
-			Fields: AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_DisplayDeviceFields,
-		},
-		"GuestAccelerators": ubx.FieldSpec{
-			WireName: "guest_accelerators",
-			Kind: "list",
-			Fields: AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_GuestAcceleratorsFields,
-		},
-		"Identity": ubx.FieldSpec{WireName: "identity"},
-		"IdentityCertificate": ubx.FieldSpec{WireName: "identity_certificate"},
-		"KeyRevocationActionType": ubx.FieldSpec{WireName: "key_revocation_action_type"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"LocalSsdEncryptionMode": ubx.FieldSpec{WireName: "local_ssd_encryption_mode"},
-		"MachineType": ubx.FieldSpec{WireName: "machine_type"},
-		"Metadata": ubx.FieldSpec{
-			WireName: "metadata",
-			Kind: "object",
-			Fields: AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_MetadataFields,
-		},
-		"MinCpuPlatform": ubx.FieldSpec{WireName: "min_cpu_platform"},
-		"NetworkInterfaces": ubx.FieldSpec{
-			WireName: "network_interfaces",
-			Kind: "list",
-			Fields: AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_NetworkInterfacesFields,
-		},
-		"NetworkPerformanceConfig": ubx.FieldSpec{
-			WireName: "network_performance_config",
-			Kind: "object",
-			Fields: AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_NetworkPerformanceConfigFields,
-		},
-		"PartnerMetadata": ubx.FieldSpec{
-			WireName: "partner_metadata",
-			Kind: "map",
-			Fields: AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_PartnerMetadataFields,
-		},
-		"PostKeyRevocationActionType": ubx.FieldSpec{WireName: "post_key_revocation_action_type"},
-		"PrivateIpv6GoogleAccess": ubx.FieldSpec{WireName: "private_ipv6_google_access"},
-		"ReservationAffinity": ubx.FieldSpec{
-			WireName: "reservation_affinity",
-			Kind: "object",
-			Fields: AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_ReservationAffinityFields,
-		},
-		"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
-		"ResourcePolicies": ubx.FieldSpec{WireName: "resource_policies"},
-		"Scheduling": ubx.FieldSpec{
-			WireName: "scheduling",
-			Kind: "object",
-			Fields: AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_SchedulingFields,
-		},
-		"SecureTags": ubx.FieldSpec{WireName: "secure_tags"},
-		"ServiceAccounts": ubx.FieldSpec{
-			WireName: "service_accounts",
-			Kind: "list",
-			Fields: AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_ServiceAccountsFields,
-		},
-		"ServiceIntegrationSpecs": ubx.FieldSpec{
-			WireName: "service_integration_specs",
-			Kind: "map",
-			Fields: AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_ServiceIntegrationSpecsFields,
-		},
-		"ShieldedInstanceConfig": ubx.FieldSpec{
-			WireName: "shielded_instance_config",
-			Kind: "object",
-			Fields: AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_ShieldedInstanceConfigFields,
-		},
-		"ShieldedVmConfig": ubx.FieldSpec{
-			WireName: "shielded_vm_config",
-			Kind: "object",
-			Fields: AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_ShieldedInstanceConfigFields,
-		},
-		"Tags": ubx.FieldSpec{
-			WireName: "tags",
-			Kind: "object",
-			Fields: AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_TagsFields,
-		},
-		"WorkloadIdentityConfig": ubx.FieldSpec{
-			WireName: "workload_identity_config",
-			Kind: "object",
-			Fields: AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_WorkloadIdentityConfigFields,
-		},
-	}
+	"AdvancedMachineFeatures": ubx.FieldSpec{
+		WireName: "advanced_machine_features",
+		Kind:     "object",
+		Fields:   AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_AdvancedMachineFeaturesFields,
+	},
+	"CanIpForward": ubx.FieldSpec{WireName: "can_ip_forward"},
+	"ConfidentialInstanceConfig": ubx.FieldSpec{
+		WireName: "confidential_instance_config",
+		Kind:     "object",
+		Fields:   AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_ConfidentialInstanceConfigFields,
+	},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Disks": ubx.FieldSpec{
+		WireName: "disks",
+		Kind:     "list",
+		Fields:   AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceFlexibilityPolicy_InstanceSelections_DisksFields,
+	},
+	"DisplayDevice": ubx.FieldSpec{
+		WireName: "display_device",
+		Kind:     "object",
+		Fields:   AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_DisplayDeviceFields,
+	},
+	"GuestAccelerators": ubx.FieldSpec{
+		WireName: "guest_accelerators",
+		Kind:     "list",
+		Fields:   AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_GuestAcceleratorsFields,
+	},
+	"Identity":                ubx.FieldSpec{WireName: "identity"},
+	"IdentityCertificate":     ubx.FieldSpec{WireName: "identity_certificate"},
+	"KeyRevocationActionType": ubx.FieldSpec{WireName: "key_revocation_action_type"},
+	"Labels":                  ubx.FieldSpec{WireName: "labels"},
+	"LocalSsdEncryptionMode":  ubx.FieldSpec{WireName: "local_ssd_encryption_mode"},
+	"MachineType":             ubx.FieldSpec{WireName: "machine_type"},
+	"Metadata": ubx.FieldSpec{
+		WireName: "metadata",
+		Kind:     "object",
+		Fields:   AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_MetadataFields,
+	},
+	"MinCpuPlatform": ubx.FieldSpec{WireName: "min_cpu_platform"},
+	"NetworkInterfaces": ubx.FieldSpec{
+		WireName: "network_interfaces",
+		Kind:     "list",
+		Fields:   AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_NetworkInterfacesFields,
+	},
+	"NetworkPerformanceConfig": ubx.FieldSpec{
+		WireName: "network_performance_config",
+		Kind:     "object",
+		Fields:   AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_NetworkPerformanceConfigFields,
+	},
+	"PartnerMetadata": ubx.FieldSpec{
+		WireName: "partner_metadata",
+		Kind:     "map",
+		Fields:   AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_PartnerMetadataFields,
+	},
+	"PostKeyRevocationActionType": ubx.FieldSpec{WireName: "post_key_revocation_action_type"},
+	"PrivateIpv6GoogleAccess":     ubx.FieldSpec{WireName: "private_ipv6_google_access"},
+	"ReservationAffinity": ubx.FieldSpec{
+		WireName: "reservation_affinity",
+		Kind:     "object",
+		Fields:   AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_ReservationAffinityFields,
+	},
+	"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
+	"ResourcePolicies":    ubx.FieldSpec{WireName: "resource_policies"},
+	"Scheduling": ubx.FieldSpec{
+		WireName: "scheduling",
+		Kind:     "object",
+		Fields:   AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_SchedulingFields,
+	},
+	"SecureTags": ubx.FieldSpec{WireName: "secure_tags"},
+	"ServiceAccounts": ubx.FieldSpec{
+		WireName: "service_accounts",
+		Kind:     "list",
+		Fields:   AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_ServiceAccountsFields,
+	},
+	"ServiceIntegrationSpecs": ubx.FieldSpec{
+		WireName: "service_integration_specs",
+		Kind:     "map",
+		Fields:   AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_ServiceIntegrationSpecsFields,
+	},
+	"ShieldedInstanceConfig": ubx.FieldSpec{
+		WireName: "shielded_instance_config",
+		Kind:     "object",
+		Fields:   AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_ShieldedInstanceConfigFields,
+	},
+	"ShieldedVmConfig": ubx.FieldSpec{
+		WireName: "shielded_vm_config",
+		Kind:     "object",
+		Fields:   AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_ShieldedInstanceConfigFields,
+	},
+	"Tags": ubx.FieldSpec{
+		WireName: "tags",
+		Kind:     "object",
+		Fields:   AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_TagsFields,
+	},
+	"WorkloadIdentityConfig": ubx.FieldSpec{
+		WireName: "workload_identity_config",
+		Kind:     "object",
+		Fields:   AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_WorkloadIdentityConfigFields,
+	},
+}
 
 var AlphaZoneQueuedResource_BulkInsertInstanceResource_LocationPolicy_Locations_ConstraintsFields = ubx.FieldMap{
-		"MaxCount": ubx.FieldSpec{WireName: "max_count"},
-	}
+	"MaxCount": ubx.FieldSpec{WireName: "max_count"},
+}
 
 var AlphaZoneQueuedResource_BulkInsertInstanceResource_LocationPolicy_LocationsFields = ubx.FieldMap{
-		"Constraints": ubx.FieldSpec{
-			WireName: "constraints",
-			Kind: "object",
-			Fields: AlphaZoneQueuedResource_BulkInsertInstanceResource_LocationPolicy_Locations_ConstraintsFields,
-		},
-		"Names": ubx.FieldSpec{WireName: "names"},
-		"Preference": ubx.FieldSpec{WireName: "preference"},
-	}
+	"Constraints": ubx.FieldSpec{
+		WireName: "constraints",
+		Kind:     "object",
+		Fields:   AlphaZoneQueuedResource_BulkInsertInstanceResource_LocationPolicy_Locations_ConstraintsFields,
+	},
+	"Names":      ubx.FieldSpec{WireName: "names"},
+	"Preference": ubx.FieldSpec{WireName: "preference"},
+}
 
 var AlphaZoneQueuedResource_BulkInsertInstanceResource_LocationPolicy_ZonesFields = ubx.FieldMap{
-		"Zone": ubx.FieldSpec{WireName: "zone"},
-	}
+	"Zone": ubx.FieldSpec{WireName: "zone"},
+}
 
 var AlphaZoneQueuedResource_BulkInsertInstanceResource_LocationPolicyFields = ubx.FieldMap{
-		"Locations": ubx.FieldSpec{
-			WireName: "locations",
-			Kind: "map",
-			Fields: AlphaZoneQueuedResource_BulkInsertInstanceResource_LocationPolicy_LocationsFields,
-		},
-		"TargetShape": ubx.FieldSpec{WireName: "target_shape"},
-		"Zones": ubx.FieldSpec{
-			WireName: "zones",
-			Kind: "list",
-			Fields: AlphaZoneQueuedResource_BulkInsertInstanceResource_LocationPolicy_ZonesFields,
-		},
-	}
+	"Locations": ubx.FieldSpec{
+		WireName: "locations",
+		Kind:     "map",
+		Fields:   AlphaZoneQueuedResource_BulkInsertInstanceResource_LocationPolicy_LocationsFields,
+	},
+	"TargetShape": ubx.FieldSpec{WireName: "target_shape"},
+	"Zones": ubx.FieldSpec{
+		WireName: "zones",
+		Kind:     "list",
+		Fields:   AlphaZoneQueuedResource_BulkInsertInstanceResource_LocationPolicy_ZonesFields,
+	},
+}
 
 var AlphaZoneQueuedResource_BulkInsertInstanceResource_PerInstancePropertiesFields = ubx.FieldMap{
-		"Hostname": ubx.FieldSpec{WireName: "hostname"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Hostname": ubx.FieldSpec{WireName: "hostname"},
+	"Name":     ubx.FieldSpec{WireName: "name"},
+}
 
 var AlphaZoneQueuedResource_BulkInsertInstanceResourceFields = ubx.FieldMap{
-		"Count": ubx.FieldSpec{WireName: "count"},
-		"InstanceFlexibilityPolicy": ubx.FieldSpec{
-			WireName: "instance_flexibility_policy",
-			Kind: "object",
-			Fields: AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceFlexibilityPolicyFields,
-		},
-		"InstanceProperties": ubx.FieldSpec{
-			WireName: "instance_properties",
-			Kind: "object",
-			Fields: AlphaZoneQueuedResource_BulkInsertInstanceResource_InstancePropertiesFields,
-		},
-		"LocationPolicy": ubx.FieldSpec{
-			WireName: "location_policy",
-			Kind: "object",
-			Fields: AlphaZoneQueuedResource_BulkInsertInstanceResource_LocationPolicyFields,
-		},
-		"MinCount": ubx.FieldSpec{WireName: "min_count"},
-		"NamePattern": ubx.FieldSpec{WireName: "name_pattern"},
-		"PerInstanceProperties": ubx.FieldSpec{
-			WireName: "per_instance_properties",
-			Kind: "map",
-			Fields: AlphaZoneQueuedResource_BulkInsertInstanceResource_PerInstancePropertiesFields,
-		},
-		"SourceInstanceTemplate": ubx.FieldSpec{WireName: "source_instance_template"},
-	}
+	"Count": ubx.FieldSpec{WireName: "count"},
+	"InstanceFlexibilityPolicy": ubx.FieldSpec{
+		WireName: "instance_flexibility_policy",
+		Kind:     "object",
+		Fields:   AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceFlexibilityPolicyFields,
+	},
+	"InstanceProperties": ubx.FieldSpec{
+		WireName: "instance_properties",
+		Kind:     "object",
+		Fields:   AlphaZoneQueuedResource_BulkInsertInstanceResource_InstancePropertiesFields,
+	},
+	"LocationPolicy": ubx.FieldSpec{
+		WireName: "location_policy",
+		Kind:     "object",
+		Fields:   AlphaZoneQueuedResource_BulkInsertInstanceResource_LocationPolicyFields,
+	},
+	"MinCount":    ubx.FieldSpec{WireName: "min_count"},
+	"NamePattern": ubx.FieldSpec{WireName: "name_pattern"},
+	"PerInstanceProperties": ubx.FieldSpec{
+		WireName: "per_instance_properties",
+		Kind:     "map",
+		Fields:   AlphaZoneQueuedResource_BulkInsertInstanceResource_PerInstancePropertiesFields,
+	},
+	"SourceInstanceTemplate": ubx.FieldSpec{WireName: "source_instance_template"},
+}
 
 var AlphaZoneQueuedResource_QueuingPolicyFields = ubx.FieldMap{
-		"ValidUntilDuration": ubx.FieldSpec{
-			WireName: "valid_until_duration",
-			Kind: "object",
-			Fields: AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_Scheduling_GracefulShutdown_MaxDurationFields,
-		},
-		"ValidUntilTime": ubx.FieldSpec{WireName: "valid_until_time"},
-	}
+	"ValidUntilDuration": ubx.FieldSpec{
+		WireName: "valid_until_duration",
+		Kind:     "object",
+		Fields:   AlphaZoneQueuedResource_BulkInsertInstanceResource_InstanceProperties_Scheduling_GracefulShutdown_MaxDurationFields,
+	},
+	"ValidUntilTime": ubx.FieldSpec{WireName: "valid_until_time"},
+}
 
 var AlphaZoneQueuedResource_Status_FailedData_Error_Errors_ErrorDetails_ErrorInfoFields = ubx.FieldMap{
-		"Domain": ubx.FieldSpec{WireName: "domain"},
-		"Metadatas": ubx.FieldSpec{WireName: "metadatas"},
-		"Reason": ubx.FieldSpec{WireName: "reason"},
-	}
+	"Domain":    ubx.FieldSpec{WireName: "domain"},
+	"Metadatas": ubx.FieldSpec{WireName: "metadatas"},
+	"Reason":    ubx.FieldSpec{WireName: "reason"},
+}
 
 var AlphaZoneQueuedResource_Status_FailedData_Error_Errors_ErrorDetails_Help_LinksFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Url": ubx.FieldSpec{WireName: "url"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Url":         ubx.FieldSpec{WireName: "url"},
+}
 
 var AlphaZoneQueuedResource_Status_FailedData_Error_Errors_ErrorDetails_HelpFields = ubx.FieldMap{
-		"Links": ubx.FieldSpec{
-			WireName: "links",
-			Kind: "list",
-			Fields: AlphaZoneQueuedResource_Status_FailedData_Error_Errors_ErrorDetails_Help_LinksFields,
-		},
-	}
+	"Links": ubx.FieldSpec{
+		WireName: "links",
+		Kind:     "list",
+		Fields:   AlphaZoneQueuedResource_Status_FailedData_Error_Errors_ErrorDetails_Help_LinksFields,
+	},
+}
 
 var AlphaZoneQueuedResource_Status_FailedData_Error_Errors_ErrorDetails_LocalizedMessageFields = ubx.FieldMap{
-		"Locale": ubx.FieldSpec{WireName: "locale"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"Locale":  ubx.FieldSpec{WireName: "locale"},
+	"Message": ubx.FieldSpec{WireName: "message"},
+}
 
 var AlphaZoneQueuedResource_Status_FailedData_Error_Errors_ErrorDetails_QuotaInfoFields = ubx.FieldMap{
-		"Dimensions": ubx.FieldSpec{WireName: "dimensions"},
-		"FutureLimit": ubx.FieldSpec{WireName: "future_limit"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"LimitName": ubx.FieldSpec{WireName: "limit_name"},
-		"MetricName": ubx.FieldSpec{WireName: "metric_name"},
-		"RolloutStatus": ubx.FieldSpec{WireName: "rollout_status"},
-	}
+	"Dimensions":    ubx.FieldSpec{WireName: "dimensions"},
+	"FutureLimit":   ubx.FieldSpec{WireName: "future_limit"},
+	"Limit":         ubx.FieldSpec{WireName: "limit"},
+	"LimitName":     ubx.FieldSpec{WireName: "limit_name"},
+	"MetricName":    ubx.FieldSpec{WireName: "metric_name"},
+	"RolloutStatus": ubx.FieldSpec{WireName: "rollout_status"},
+}
 
 var AlphaZoneQueuedResource_Status_FailedData_Error_Errors_ErrorDetailsFields = ubx.FieldMap{
-		"ErrorInfo": ubx.FieldSpec{
-			WireName: "error_info",
-			Kind: "object",
-			Fields: AlphaZoneQueuedResource_Status_FailedData_Error_Errors_ErrorDetails_ErrorInfoFields,
-		},
-		"Help": ubx.FieldSpec{
-			WireName: "help",
-			Kind: "object",
-			Fields: AlphaZoneQueuedResource_Status_FailedData_Error_Errors_ErrorDetails_HelpFields,
-		},
-		"LocalizedMessage": ubx.FieldSpec{
-			WireName: "localized_message",
-			Kind: "object",
-			Fields: AlphaZoneQueuedResource_Status_FailedData_Error_Errors_ErrorDetails_LocalizedMessageFields,
-		},
-		"QuotaInfo": ubx.FieldSpec{
-			WireName: "quota_info",
-			Kind: "object",
-			Fields: AlphaZoneQueuedResource_Status_FailedData_Error_Errors_ErrorDetails_QuotaInfoFields,
-		},
-	}
+	"ErrorInfo": ubx.FieldSpec{
+		WireName: "error_info",
+		Kind:     "object",
+		Fields:   AlphaZoneQueuedResource_Status_FailedData_Error_Errors_ErrorDetails_ErrorInfoFields,
+	},
+	"Help": ubx.FieldSpec{
+		WireName: "help",
+		Kind:     "object",
+		Fields:   AlphaZoneQueuedResource_Status_FailedData_Error_Errors_ErrorDetails_HelpFields,
+	},
+	"LocalizedMessage": ubx.FieldSpec{
+		WireName: "localized_message",
+		Kind:     "object",
+		Fields:   AlphaZoneQueuedResource_Status_FailedData_Error_Errors_ErrorDetails_LocalizedMessageFields,
+	},
+	"QuotaInfo": ubx.FieldSpec{
+		WireName: "quota_info",
+		Kind:     "object",
+		Fields:   AlphaZoneQueuedResource_Status_FailedData_Error_Errors_ErrorDetails_QuotaInfoFields,
+	},
+}
 
 var AlphaZoneQueuedResource_Status_FailedData_Error_ErrorsFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"ErrorDetails": ubx.FieldSpec{
-			WireName: "error_details",
-			Kind: "list",
-			Fields: AlphaZoneQueuedResource_Status_FailedData_Error_Errors_ErrorDetailsFields,
-		},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"Code": ubx.FieldSpec{WireName: "code"},
+	"ErrorDetails": ubx.FieldSpec{
+		WireName: "error_details",
+		Kind:     "list",
+		Fields:   AlphaZoneQueuedResource_Status_FailedData_Error_Errors_ErrorDetailsFields,
+	},
+	"Location": ubx.FieldSpec{WireName: "location"},
+	"Message":  ubx.FieldSpec{WireName: "message"},
+}
 
 var AlphaZoneQueuedResource_Status_FailedData_ErrorFields = ubx.FieldMap{
-		"Errors": ubx.FieldSpec{
-			WireName: "errors",
-			Kind: "list",
-			Fields: AlphaZoneQueuedResource_Status_FailedData_Error_ErrorsFields,
-		},
-	}
+	"Errors": ubx.FieldSpec{
+		WireName: "errors",
+		Kind:     "list",
+		Fields:   AlphaZoneQueuedResource_Status_FailedData_Error_ErrorsFields,
+	},
+}
 
 var AlphaZoneQueuedResource_Status_FailedDataFields = ubx.FieldMap{
-		"Error": ubx.FieldSpec{
-			WireName: "error",
-			Kind: "object",
-			Fields: AlphaZoneQueuedResource_Status_FailedData_ErrorFields,
-		},
-	}
+	"Error": ubx.FieldSpec{
+		WireName: "error",
+		Kind:     "object",
+		Fields:   AlphaZoneQueuedResource_Status_FailedData_ErrorFields,
+	},
+}
 
 var AlphaZoneQueuedResource_StatusFields = ubx.FieldMap{
-		"FailedData": ubx.FieldSpec{
-			WireName: "failed_data",
-			Kind: "object",
-			Fields: AlphaZoneQueuedResource_Status_FailedDataFields,
-		},
-		"ProvisioningOperations": ubx.FieldSpec{WireName: "provisioning_operations"},
-		"QueuingPolicy": ubx.FieldSpec{
-			WireName: "queuing_policy",
-			Kind: "object",
-			Fields: AlphaZoneQueuedResource_QueuingPolicyFields,
-		},
-	}
+	"FailedData": ubx.FieldSpec{
+		WireName: "failed_data",
+		Kind:     "object",
+		Fields:   AlphaZoneQueuedResource_Status_FailedDataFields,
+	},
+	"ProvisioningOperations": ubx.FieldSpec{WireName: "provisioning_operations"},
+	"QueuingPolicy": ubx.FieldSpec{
+		WireName: "queuing_policy",
+		Kind:     "object",
+		Fields:   AlphaZoneQueuedResource_QueuingPolicyFields,
+	},
+}
 
 type AlphaZoneQueuedResourceConfig struct {
 	// A transient resource used in compute.instances.bulkInsert and compute.regionInstances.bulkInsert . This resource is not persisted anywhere, it is used only for processing the requests.
 	BulkInsertInstanceResource any
-	// Output only. [Output Only] Creation timestamp in RFC3339 text format.
-	CreationTimestamp any
 	// An optional description of this resource. Provide this property when you create the resource.
 	Description any
-	// Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-	Id any
-	// Output only. [Output Only] Type of the resource. Alwayscompute#queuedResource for QueuedResources.
-	Kind any
 	// Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
 	Name any
 	// Queuing parameters for the requested deferred capacity.
 	QueuingPolicy any
-	// Output only. [Output only] Server-defined URL for the resource.
-	SelfLink any
-	// Output only. [Output Only] Server-defined URL for this resource with the resource id.
-	SelfLinkWithId any
-	// Output only. [Output only] High-level status of the request.
-	State any
 	// [Output only] Result of queuing and provisioning based on deferred capacity.
 	Status any
-	// Output only. [Output Only] URL of the zone where the resource resides. Only applicable for zonal resources. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
-	Zone any
 }
 
 type AlphaZoneQueuedResourceAttrs struct {
@@ -1253,27 +1239,20 @@ var AlphaZoneQueuedResource = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"BulkInsertInstanceResource": ubx.FieldSpec{
 			WireName: "bulk_insert_instance_resource",
-			Kind: "object",
-			Fields: AlphaZoneQueuedResource_BulkInsertInstanceResourceFields,
+			Kind:     "object",
+			Fields:   AlphaZoneQueuedResource_BulkInsertInstanceResourceFields,
 		},
-		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"QueuingPolicy": ubx.FieldSpec{
 			WireName: "queuing_policy",
-			Kind: "object",
-			Fields: AlphaZoneQueuedResource_QueuingPolicyFields,
+			Kind:     "object",
+			Fields:   AlphaZoneQueuedResource_QueuingPolicyFields,
 		},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"SelfLinkWithId": ubx.FieldSpec{WireName: "self_link_with_id"},
-		"State": ubx.FieldSpec{WireName: "state"},
 		"Status": ubx.FieldSpec{
 			WireName: "status",
-			Kind: "object",
-			Fields: AlphaZoneQueuedResource_StatusFields,
+			Kind:     "object",
+			Fields:   AlphaZoneQueuedResource_StatusFields,
 		},
-		"Zone": ubx.FieldSpec{WireName: "zone"},
 	},
 }

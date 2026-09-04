@@ -587,7 +587,6 @@ class Job_UnstructuredDataProfileSpec:
 
 @dataclasses.dataclass
 class JobConfig:
-    name: Any = None
     view: Any = None
 
 @dataclasses.dataclass
@@ -634,7 +633,6 @@ class JobAttrs:
 Job = ubx.DataSourceBinding(
     wire_type="google_dataplex_job",
     fields={
-        "name": ubx.FieldSpec(wire_name="name"),
         "view": ubx.FieldSpec(wire_name="view"),
     },
 )

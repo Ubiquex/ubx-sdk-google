@@ -254,14 +254,8 @@ _Pipeline_WorkloadFields = {
 
 @dataclasses.dataclass
 class PipelineConfig:
-    # Output only. Immutable. The timestamp when the pipeline was initially created. Set by the Data Pipelines service.
-    create_time: Any = None
     # Required. The display name of the pipeline. It can contain only letters ([A-Za-z]), numbers ([0-9]), hyphens (-), and underscores (_).
     display_name: Any = None
-    # Output only. Number of jobs.
-    job_count: Any = None
-    # Output only. Immutable. The timestamp when the pipeline was last modified. Set by the Data Pipelines service.
-    last_update_time: Any = None
     # The pipeline name. For example: `projects/PROJECT_ID/locations/LOCATION_ID/pipelines/PIPELINE_ID`. * `PROJECT_ID` can contain letters ([A-Za-z]), numbers ([0-9]), hyphens (-), colons (:), and periods (.). For more information, see [Identifying projects](https://cloud.google.com/resource-manager/docs/creating-managing-projects#identifying_projects). * `LOCATION_ID` is the canonical ID for the pipeline's location. The list of available locations can be obtained by calling `google.cloud.location.Locations.ListLocations`. Note that the Data Pipelines service is not available in all regions. It depends on Cloud Scheduler, an App Engine application, so it's only available in [App Engine regions](https://cloud.google.com/about/locations#region). * `PIPELINE_ID` is the ID of the pipeline. Must be unique for the selected project and location.
     name: Any = None
     # Immutable. The sources of the pipeline (for example, Knowledge Catalog). The keys and values are set by the corresponding sources during pipeline creation.
@@ -305,10 +299,7 @@ class PipelineAttrs:
 Pipeline = ubx.ResourceBinding(
     wire_type="google_datapipelines_pipeline",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
-        "job_count": ubx.FieldSpec(wire_name="job_count"),
-        "last_update_time": ubx.FieldSpec(wire_name="last_update_time"),
         "name": ubx.FieldSpec(wire_name="name"),
         "pipeline_sources": ubx.FieldSpec(wire_name="pipeline_sources"),
         "schedule_info": ubx.FieldSpec(

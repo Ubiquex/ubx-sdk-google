@@ -85,8 +85,6 @@ _ExternalApi_DocumentationFields = {
 class ExternalApiConfig:
     # Optional. The list of user defined attributes associated with the Version resource. The key is the attribute name. It will be of the format: `projects/{project}/locations/{location}/attributes/{attribute}`. The value is the attribute values associated with the resource.
     attributes: Any = None
-    # Output only. Creation timestamp.
-    create_time: Any = None
     # Optional. Description of the external API. Max length is 2000 characters (Unicode Code Points).
     description: Any = None
     # Required. Display name of the external API. Max length is 63 characters (Unicode Code Points).
@@ -99,8 +97,6 @@ class ExternalApiConfig:
     name: Any = None
     # Optional. List of paths served by this API.
     paths: Any = None
-    # Output only. Last update timestamp.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class ExternalApiAttrs:
@@ -131,7 +127,6 @@ ExternalApi = ubx.ResourceBinding(
             kind="map",
             fields=_ExternalApi_AttributesFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "documentation": ubx.FieldSpec(
@@ -142,6 +137,5 @@ ExternalApi = ubx.ResourceBinding(
         "endpoints": ubx.FieldSpec(wire_name="endpoints"),
         "name": ubx.FieldSpec(wire_name="name"),
         "paths": ubx.FieldSpec(wire_name="paths"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

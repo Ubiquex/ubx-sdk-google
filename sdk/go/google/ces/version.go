@@ -4,24 +4,24 @@ package ces
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Version_Snapshot_Agents_AfterAgentCallbacks struct {
-	Description any
-	Disabled any
+	Description               any
+	Disabled                  any
 	ProactiveExecutionEnabled any
-	PythonCode any
+	PythonCode                any
 }
 
 type Version_Snapshot_Agents_ModelSettings struct {
-	Model any
+	Model       any
 	Temperature any
 }
 
 type Version_Snapshot_Agents_RemoteDialogflowAgent struct {
-	Agent any
-	EnvironmentId any
-	FlowId any
-	InputVariableMapping any
-	LanguageCodeVariable any
-	OutputVariableMapping any
+	Agent                               any
+	EnvironmentId                       any
+	FlowId                              any
+	InputVariableMapping                any
+	LanguageCodeVariable                any
+	OutputVariableMapping               any
 	RespectResponseInterruptionSettings any
 }
 
@@ -48,36 +48,36 @@ type Version_Snapshot_Agents_TransferRules_DisablePlannerTransfer struct {
 }
 
 type Version_Snapshot_Agents_TransferRules struct {
-	ChildAgent any
-	DeterministicTransfer any
-	Direction any
+	ChildAgent             any
+	DeterministicTransfer  any
+	Direction              any
 	DisablePlannerTransfer any
 }
 
 type Version_Snapshot_Agents struct {
-	AfterAgentCallbacks any
-	AfterModelCallbacks any
-	AfterToolCallbacks any
-	BeforeAgentCallbacks any
-	BeforeModelCallbacks any
-	BeforeToolCallbacks any
-	ChildAgents any
-	CreateTime any
-	Description any
-	DisplayName any
-	Etag any
-	GeneratedSummary any
-	Guardrails any
-	Instruction any
-	LlmAgent any
-	ModelSettings any
-	Name any
+	AfterAgentCallbacks   any
+	AfterModelCallbacks   any
+	AfterToolCallbacks    any
+	BeforeAgentCallbacks  any
+	BeforeModelCallbacks  any
+	BeforeToolCallbacks   any
+	ChildAgents           any
+	CreateTime            any
+	Description           any
+	DisplayName           any
+	Etag                  any
+	GeneratedSummary      any
+	Guardrails            any
+	Instruction           any
+	LlmAgent              any
+	ModelSettings         any
+	Name                  any
 	RemoteDialogflowAgent any
-	Tools any
-	Toolsets any
-	TransferRules any
-	UpdateTime any
-	ValidationErrors any
+	Tools                 any
+	Toolsets              any
+	TransferRules         any
+	UpdateTime            any
+	ValidationErrors      any
 }
 
 type Version_Snapshot_App_AudioProcessingConfig_AmbientSoundConfig struct {
@@ -100,11 +100,11 @@ type Version_Snapshot_App_AudioProcessingConfig_BargeInConfig struct {
 
 type Version_Snapshot_App_AudioProcessingConfig_SynthesizeSpeechConfigs struct {
 	ConsentAudioGcsUri any
-	Instruction any
-	Model any
-	SpeakingRate any
-	Voice any
-	VoiceSampleGcsUri any
+	Instruction        any
+	Model              any
+	SpeakingRate       any
+	Voice              any
+	VoiceSampleGcsUri  any
 }
 
 type Version_Snapshot_App_AudioProcessingConfig struct {
@@ -347,30 +347,30 @@ type Version_Snapshot_App_LoggingSettings struct {
 
 type Version_Snapshot_App_PredefinedVariableDeclarations_Schema struct {
 	AdditionalProperties any
-	AnyOf any
-	Default any
-	Defs any
-	Description any
-	Enum any
-	Items any
-	MaxItems any
-	Maximum any
-	MinItems any
-	Minimum any
-	Nullable any
-	PrefixItems any
-	Properties any
-	Ref any
-	Required any
-	Title any
-	Type any
-	UniqueItems any
+	AnyOf                any
+	Default              any
+	Defs                 any
+	Description          any
+	Enum                 any
+	Items                any
+	MaxItems             any
+	Maximum              any
+	MinItems             any
+	Minimum              any
+	Nullable             any
+	PrefixItems          any
+	Properties           any
+	Ref                  any
+	Required             any
+	Title                any
+	Type                 any
+	UniqueItems          any
 }
 
 type Version_Snapshot_App_PredefinedVariableDeclarations struct {
 	Description any
-	Name any
-	Schema any
+	Name        any
+	Schema      any
 }
 
 type Version_Snapshot_App_TimeZoneSettings struct {
@@ -448,60 +448,60 @@ type Version_Snapshot_Examples_Messages_Chunks_AgentTransfer struct {
 }
 
 type Version_Snapshot_Examples_Messages_Chunks_Blob struct {
-	Data any
+	Data     any
 	MimeType any
 }
 
 type Version_Snapshot_Examples_Messages_Chunks_ToolCall_ToolsetTool struct {
-	ToolId any
+	ToolId  any
 	Toolset any
 }
 
 type Version_Snapshot_Examples_Messages_Chunks_ToolCall struct {
-	Args any
+	Args        any
 	DisplayName any
-	Id any
-	Tool any
+	Id          any
+	Tool        any
 	ToolsetTool any
 }
 
 type Version_Snapshot_Examples_Messages_Chunks_ToolResponse struct {
 	DisplayName any
-	Id any
-	Response any
-	Tool any
+	Id          any
+	Response    any
+	Tool        any
 	ToolsetTool any
 }
 
 type Version_Snapshot_Examples_Messages_Chunks struct {
-	AgentTransfer any
-	Blob any
+	AgentTransfer    any
+	Blob             any
 	DefaultVariables any
-	Image any
-	Payload any
-	Text any
-	ToolCall any
-	ToolResponse any
-	Transcript any
+	Image            any
+	Payload          any
+	Text             any
+	ToolCall         any
+	ToolResponse     any
+	Transcript       any
 	UpdatedVariables any
 }
 
 type Version_Snapshot_Examples_Messages struct {
-	Chunks any
+	Chunks    any
 	EventTime any
-	Role any
+	Role      any
 }
 
 type Version_Snapshot_Examples struct {
-	CreateTime any
+	CreateTime  any
 	Description any
 	DisplayName any
-	EntryAgent any
-	Etag any
-	Invalid any
-	Messages any
-	Name any
-	UpdateTime any
+	EntryAgent  any
+	Etag        any
+	Invalid     any
+	Messages    any
+	Name        any
+	UpdateTime  any
 }
 
 type Version_Snapshot_Guardrails_Action_GenerativeAnswer struct {
@@ -510,7 +510,7 @@ type Version_Snapshot_Guardrails_Action_GenerativeAnswer struct {
 
 type Version_Snapshot_Guardrails_Action_RespondImmediately_Responses struct {
 	Disabled any
-	Text any
+	Text     any
 }
 
 type Version_Snapshot_Guardrails_Action_RespondImmediately struct {
@@ -522,33 +522,33 @@ type Version_Snapshot_Guardrails_Action_TransferAgent struct {
 }
 
 type Version_Snapshot_Guardrails_Action struct {
-	GenerativeAnswer any
+	GenerativeAnswer   any
 	RespondImmediately any
-	TransferAgent any
+	TransferAgent      any
 }
 
 type Version_Snapshot_Guardrails_CodeCallback struct {
-	AfterAgentCallback any
-	AfterModelCallback any
+	AfterAgentCallback  any
+	AfterModelCallback  any
 	BeforeAgentCallback any
 	BeforeModelCallback any
 }
 
 type Version_Snapshot_Guardrails_ContentFilter struct {
-	BannedContents any
+	BannedContents                any
 	BannedContentsInAgentResponse any
-	BannedContentsInUserInput any
-	DisregardDiacritics any
-	MatchType any
+	BannedContentsInUserInput     any
+	DisregardDiacritics           any
+	MatchType                     any
 }
 
 type Version_Snapshot_Guardrails_LlmPolicy struct {
-	AllowShortUtterance any
-	FailOpen any
+	AllowShortUtterance     any
+	FailOpen                any
 	MaxConversationMessages any
-	ModelSettings any
-	PolicyScope any
-	Prompt any
+	ModelSettings           any
+	PolicyScope             any
+	Prompt                  any
 }
 
 type Version_Snapshot_Guardrails_LlmPromptSecurity_DefaultSettings struct {
@@ -556,13 +556,13 @@ type Version_Snapshot_Guardrails_LlmPromptSecurity_DefaultSettings struct {
 }
 
 type Version_Snapshot_Guardrails_LlmPromptSecurity struct {
-	CustomPolicy any
+	CustomPolicy    any
 	DefaultSettings any
-	FailOpen any
+	FailOpen        any
 }
 
 type Version_Snapshot_Guardrails_ModelSafety_SafetySettings struct {
-	Category any
+	Category  any
 	Threshold any
 }
 
@@ -571,44 +571,44 @@ type Version_Snapshot_Guardrails_ModelSafety struct {
 }
 
 type Version_Snapshot_Guardrails struct {
-	Action any
-	CodeCallback any
-	ContentFilter any
-	CreateTime any
-	Description any
-	DisplayName any
-	Enabled any
-	Etag any
-	LlmPolicy any
+	Action            any
+	CodeCallback      any
+	ContentFilter     any
+	CreateTime        any
+	Description       any
+	DisplayName       any
+	Enabled           any
+	Etag              any
+	LlmPolicy         any
 	LlmPromptSecurity any
-	ModelSafety any
-	Name any
-	UpdateTime any
+	ModelSafety       any
+	Name              any
+	UpdateTime        any
 }
 
 type Version_Snapshot_Tools_AgentTool struct {
-	Agent any
+	Agent       any
 	Description any
-	Name any
+	Name        any
 }
 
 type Version_Snapshot_Tools_ClientFunction struct {
 	Description any
-	Name any
-	Parameters any
-	Response any
+	Name        any
+	Parameters  any
+	Response    any
 }
 
 type Version_Snapshot_Tools_ConnectorTool_Action_EntityOperation struct {
-	EntityId any
+	EntityId  any
 	Operation any
 }
 
 type Version_Snapshot_Tools_ConnectorTool_Action struct {
 	ConnectionActionId any
-	EntityOperation any
-	InputFields any
-	OutputFields any
+	EntityOperation    any
+	InputFields        any
+	OutputFields       any
 }
 
 type Version_Snapshot_Tools_ConnectorTool_AuthConfig_Oauth2AuthCodeConfig struct {
@@ -617,39 +617,39 @@ type Version_Snapshot_Tools_ConnectorTool_AuthConfig_Oauth2AuthCodeConfig struct
 
 type Version_Snapshot_Tools_ConnectorTool_AuthConfig_Oauth2JwtBearerConfig struct {
 	ClientKey any
-	Issuer any
-	Subject any
+	Issuer    any
+	Subject   any
 }
 
 type Version_Snapshot_Tools_ConnectorTool_AuthConfig struct {
-	Oauth2AuthCodeConfig any
+	Oauth2AuthCodeConfig  any
 	Oauth2JwtBearerConfig any
 }
 
 type Version_Snapshot_Tools_ConnectorTool struct {
-	Action any
-	AuthConfig any
-	Connection any
+	Action      any
+	AuthConfig  any
+	Connection  any
 	Description any
-	Name any
+	Name        any
 }
 
 type Version_Snapshot_Tools_DataStoreTool_BoostSpecs_Spec_ConditionBoostSpecs_BoostControlSpec_ControlPoints struct {
 	AttributeValue any
-	BoostAmount any
+	BoostAmount    any
 }
 
 type Version_Snapshot_Tools_DataStoreTool_BoostSpecs_Spec_ConditionBoostSpecs_BoostControlSpec struct {
-	AttributeType any
-	ControlPoints any
-	FieldName any
+	AttributeType     any
+	ControlPoints     any
+	FieldName         any
 	InterpolationType any
 }
 
 type Version_Snapshot_Tools_DataStoreTool_BoostSpecs_Spec_ConditionBoostSpecs struct {
-	Boost any
+	Boost            any
 	BoostControlSpec any
-	Condition any
+	Condition        any
 }
 
 type Version_Snapshot_Tools_DataStoreTool_BoostSpecs_Spec struct {
@@ -658,44 +658,44 @@ type Version_Snapshot_Tools_DataStoreTool_BoostSpecs_Spec struct {
 
 type Version_Snapshot_Tools_DataStoreTool_BoostSpecs struct {
 	DataStores any
-	Spec any
+	Spec       any
 }
 
 type Version_Snapshot_Tools_DataStoreTool_DataStoreSource_DataStore_ConnectorConfig struct {
-	Collection any
+	Collection            any
 	CollectionDisplayName any
-	DataSource any
+	DataSource            any
 }
 
 type Version_Snapshot_Tools_DataStoreTool_DataStoreSource_DataStore struct {
-	ConnectorConfig any
-	CreateTime any
-	DisplayName any
+	ConnectorConfig        any
+	CreateTime             any
+	DisplayName            any
 	DocumentProcessingMode any
-	Name any
-	Type any
+	Name                   any
+	Type                   any
 }
 
 type Version_Snapshot_Tools_DataStoreTool_DataStoreSource struct {
 	DataStore any
-	Filter any
+	Filter    any
 }
 
 type Version_Snapshot_Tools_DataStoreTool_EngineSource struct {
 	DataStoreSources any
-	Engine any
-	Filter any
+	Engine           any
+	Filter           any
 }
 
 type Version_Snapshot_Tools_DataStoreTool_ModalityConfigs_GroundingConfig struct {
-	Disabled any
+	Disabled       any
 	GroundingLevel any
 }
 
 type Version_Snapshot_Tools_DataStoreTool_ModalityConfigs_RewriterConfig struct {
-	Disabled any
+	Disabled      any
 	ModelSettings any
-	Prompt any
+	Prompt        any
 }
 
 type Version_Snapshot_Tools_DataStoreTool_ModalityConfigs_SnippetsConfig struct {
@@ -703,48 +703,48 @@ type Version_Snapshot_Tools_DataStoreTool_ModalityConfigs_SnippetsConfig struct 
 }
 
 type Version_Snapshot_Tools_DataStoreTool_ModalityConfigs struct {
-	GroundingConfig any
-	ModalityType any
-	RewriterConfig any
-	SnippetsConfig any
+	GroundingConfig     any
+	ModalityType        any
+	RewriterConfig      any
+	SnippetsConfig      any
 	SummarizationConfig any
 }
 
 type Version_Snapshot_Tools_DataStoreTool struct {
-	BoostSpecs any
-	DataStoreSource any
-	Description any
-	EngineSource any
+	BoostSpecs              any
+	DataStoreSource         any
+	Description             any
+	EngineSource            any
 	FilterParameterBehavior any
-	ModalityConfigs any
-	Name any
+	ModalityConfigs         any
+	Name                    any
 }
 
 type Version_Snapshot_Tools_FileSearchTool struct {
-	CorpusType any
+	CorpusType  any
 	Description any
-	FileCorpus any
-	Name any
+	FileCorpus  any
+	Name        any
 }
 
 type Version_Snapshot_Tools_GoogleSearchTool_PromptConfig struct {
-	TextPrompt any
+	TextPrompt  any
 	VoicePrompt any
 }
 
 type Version_Snapshot_Tools_GoogleSearchTool struct {
-	ContextUrls any
-	Description any
-	ExcludeDomains any
-	Name any
+	ContextUrls      any
+	Description      any
+	ExcludeDomains   any
+	Name             any
 	PreferredDomains any
-	PromptConfig any
+	PromptConfig     any
 }
 
 type Version_Snapshot_Tools_McpTool_ApiAuthentication_ApiKeyConfig struct {
 	ApiKeySecretVersion any
-	KeyName any
-	RequestLocation any
+	KeyName             any
+	RequestLocation     any
 }
 
 type Version_Snapshot_Tools_McpTool_ApiAuthentication_BearerTokenConfig struct {
@@ -752,23 +752,23 @@ type Version_Snapshot_Tools_McpTool_ApiAuthentication_BearerTokenConfig struct {
 }
 
 type Version_Snapshot_Tools_McpTool_ApiAuthentication_OauthConfig struct {
-	ClientId any
+	ClientId            any
 	ClientSecretVersion any
-	OauthGrantType any
-	Scopes any
-	TokenEndpoint any
+	OauthGrantType      any
+	Scopes              any
+	TokenEndpoint       any
 }
 
 type Version_Snapshot_Tools_McpTool_ApiAuthentication_ServiceAccountAuthConfig struct {
-	Scopes any
+	Scopes         any
 	ServiceAccount any
 }
 
 type Version_Snapshot_Tools_McpTool_ApiAuthentication struct {
-	ApiKeyConfig any
-	BearerTokenConfig any
-	OauthConfig any
-	ServiceAccountAuthConfig any
+	ApiKeyConfig                  any
+	BearerTokenConfig             any
+	OauthConfig                   any
+	ServiceAccountAuthConfig      any
 	ServiceAgentIdTokenAuthConfig any
 }
 
@@ -777,7 +777,7 @@ type Version_Snapshot_Tools_McpTool_ServiceDirectoryConfig struct {
 }
 
 type Version_Snapshot_Tools_McpTool_TlsConfig_CaCerts struct {
-	Cert any
+	Cert        any
 	DisplayName any
 }
 
@@ -786,176 +786,176 @@ type Version_Snapshot_Tools_McpTool_TlsConfig struct {
 }
 
 type Version_Snapshot_Tools_McpTool struct {
-	ApiAuthentication any
-	CustomHeaders any
-	Description any
-	InputSchema any
-	Name any
-	NameOverride any
-	OutputSchema any
-	ServerAddress any
+	ApiAuthentication      any
+	CustomHeaders          any
+	Description            any
+	InputSchema            any
+	Name                   any
+	NameOverride           any
+	OutputSchema           any
+	ServerAddress          any
 	ServiceDirectoryConfig any
-	State any
-	TlsConfig any
+	State                  any
+	TlsConfig              any
 }
 
 type Version_Snapshot_Tools_OpenApiTool struct {
-	ApiAuthentication any
-	Description any
-	IgnoreUnknownFields any
-	Name any
-	OpenApiSchema any
+	ApiAuthentication      any
+	Description            any
+	IgnoreUnknownFields    any
+	Name                   any
+	OpenApiSchema          any
 	ServiceDirectoryConfig any
-	TlsConfig any
-	Url any
+	TlsConfig              any
+	Url                    any
 }
 
 type Version_Snapshot_Tools_PythonFunction struct {
-	Description any
-	Name any
-	PythonCode any
+	Description            any
+	Name                   any
+	PythonCode             any
 	ServiceDirectoryConfig any
 }
 
 type Version_Snapshot_Tools_RemoteAgentTool_AgentCard_Skills struct {
 	Description any
-	Examples any
-	Id any
-	InputModes any
-	Name any
+	Examples    any
+	Id          any
+	InputModes  any
+	Name        any
 	OutputModes any
-	Tags any
+	Tags        any
 }
 
 type Version_Snapshot_Tools_RemoteAgentTool_AgentCard_SupportedInterfaces struct {
 	ProtocolBinding any
 	ProtocolVersion any
-	Tenant any
-	Url any
+	Tenant          any
+	Url             any
 }
 
 type Version_Snapshot_Tools_RemoteAgentTool_AgentCard struct {
-	Description any
-	Name any
-	Skills any
+	Description         any
+	Name                any
+	Skills              any
 	SupportedInterfaces any
-	Version any
+	Version             any
 }
 
 type Version_Snapshot_Tools_RemoteAgentTool struct {
-	AgentCard any
+	AgentCard   any
 	Description any
-	Name any
+	Name        any
 }
 
 type Version_Snapshot_Tools_SystemTool struct {
 	Description any
-	Name any
+	Name        any
 }
 
 type Version_Snapshot_Tools_ToolFakeConfig struct {
-	CodeBlock any
+	CodeBlock      any
 	EnableFakeMode any
 }
 
 type Version_Snapshot_Tools_WidgetTool_DataMapping struct {
-	FieldMappings any
-	Mode any
+	FieldMappings  any
+	Mode           any
 	PythonFunction any
-	PythonScript any
+	PythonScript   any
 	SourceToolName any
 }
 
 type Version_Snapshot_Tools_WidgetTool_TextResponseConfig struct {
-	StaticText any
+	StaticText              any
 	TextResponseInstruction any
-	Type any
+	Type                    any
 }
 
 type Version_Snapshot_Tools_WidgetTool struct {
-	DataMapping any
-	Description any
-	Name any
-	Parameters any
+	DataMapping        any
+	Description        any
+	Name               any
+	Parameters         any
 	TextResponseConfig any
-	UiConfig any
-	WidgetType any
+	UiConfig           any
+	WidgetType         any
 }
 
 type Version_Snapshot_Tools struct {
-	AgentTool any
-	ClientFunction any
-	ConnectorTool any
-	CreateTime any
-	DataStoreTool any
-	DisplayName any
-	Etag any
-	ExecutionType any
-	FileSearchTool any
+	AgentTool        any
+	ClientFunction   any
+	ConnectorTool    any
+	CreateTime       any
+	DataStoreTool    any
+	DisplayName      any
+	Etag             any
+	ExecutionType    any
+	FileSearchTool   any
 	GeneratedSummary any
 	GoogleSearchTool any
-	McpTool any
-	Name any
-	OpenApiTool any
-	PythonFunction any
-	RemoteAgentTool any
-	SystemTool any
-	Timeout any
-	ToolFakeConfig any
-	UpdateTime any
-	WidgetTool any
+	McpTool          any
+	Name             any
+	OpenApiTool      any
+	PythonFunction   any
+	RemoteAgentTool  any
+	SystemTool       any
+	Timeout          any
+	ToolFakeConfig   any
+	UpdateTime       any
+	WidgetTool       any
 }
 
 type Version_Snapshot_Toolsets_ConnectorToolset struct {
-	AuthConfig any
-	Connection any
+	AuthConfig       any
+	Connection       any
 	ConnectorActions any
 }
 
 type Version_Snapshot_Toolsets_McpToolset_ToolOverrides_Snapshot struct {
-	Description any
-	InputSchema any
+	Description  any
+	InputSchema  any
 	OutputSchema any
 }
 
 type Version_Snapshot_Toolsets_McpToolset_ToolOverrides struct {
 	DescriptionOverride any
-	NameOverride any
-	Snapshot any
-	Tool any
+	NameOverride        any
+	Snapshot            any
+	Tool                any
 }
 
 type Version_Snapshot_Toolsets_McpToolset struct {
-	ApiAuthentication any
-	CustomHeaders any
-	ServerAddress any
+	ApiAuthentication      any
+	CustomHeaders          any
+	ServerAddress          any
 	ServiceDirectoryConfig any
-	TlsConfig any
-	ToolOverrides any
+	TlsConfig              any
+	ToolOverrides          any
 }
 
 type Version_Snapshot_Toolsets_OpenApiToolset struct {
-	ApiAuthentication any
-	IgnoreUnknownFields any
-	OpenApiSchema any
+	ApiAuthentication      any
+	IgnoreUnknownFields    any
+	OpenApiSchema          any
 	ServiceDirectoryConfig any
-	TlsConfig any
-	Url any
+	TlsConfig              any
+	Url                    any
 }
 
 type Version_Snapshot_Toolsets struct {
 	ConnectorToolset any
-	CreateTime any
-	Description any
-	DisplayName any
-	Etag any
-	ExecutionType any
-	McpToolset any
-	Name any
-	OpenApiToolset any
-	Timeout any
-	ToolFakeConfig any
-	UpdateTime any
+	CreateTime       any
+	Description      any
+	DisplayName      any
+	Etag             any
+	ExecutionType    any
+	McpToolset       any
+	Name             any
+	OpenApiToolset   any
+	Timeout          any
+	ToolFakeConfig   any
+	UpdateTime       any
 }
 
 type Version_Snapshot struct {
@@ -974,1509 +974,1503 @@ type Version_Snapshot struct {
 }
 
 var Version_Snapshot_Agents_AfterAgentCallbacksFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Disabled": ubx.FieldSpec{WireName: "disabled"},
-		"ProactiveExecutionEnabled": ubx.FieldSpec{WireName: "proactive_execution_enabled"},
-		"PythonCode": ubx.FieldSpec{WireName: "python_code"},
-	}
+	"Description":               ubx.FieldSpec{WireName: "description"},
+	"Disabled":                  ubx.FieldSpec{WireName: "disabled"},
+	"ProactiveExecutionEnabled": ubx.FieldSpec{WireName: "proactive_execution_enabled"},
+	"PythonCode":                ubx.FieldSpec{WireName: "python_code"},
+}
 
 var Version_Snapshot_Agents_ModelSettingsFields = ubx.FieldMap{
-		"Model": ubx.FieldSpec{WireName: "model"},
-		"Temperature": ubx.FieldSpec{WireName: "temperature"},
-	}
+	"Model":       ubx.FieldSpec{WireName: "model"},
+	"Temperature": ubx.FieldSpec{WireName: "temperature"},
+}
 
 var Version_Snapshot_Agents_RemoteDialogflowAgentFields = ubx.FieldMap{
-		"Agent": ubx.FieldSpec{WireName: "agent"},
-		"EnvironmentId": ubx.FieldSpec{WireName: "environment_id"},
-		"FlowId": ubx.FieldSpec{WireName: "flow_id"},
-		"InputVariableMapping": ubx.FieldSpec{WireName: "input_variable_mapping"},
-		"LanguageCodeVariable": ubx.FieldSpec{WireName: "language_code_variable"},
-		"OutputVariableMapping": ubx.FieldSpec{WireName: "output_variable_mapping"},
-		"RespectResponseInterruptionSettings": ubx.FieldSpec{WireName: "respect_response_interruption_settings"},
-	}
+	"Agent":                               ubx.FieldSpec{WireName: "agent"},
+	"EnvironmentId":                       ubx.FieldSpec{WireName: "environment_id"},
+	"FlowId":                              ubx.FieldSpec{WireName: "flow_id"},
+	"InputVariableMapping":                ubx.FieldSpec{WireName: "input_variable_mapping"},
+	"LanguageCodeVariable":                ubx.FieldSpec{WireName: "language_code_variable"},
+	"OutputVariableMapping":               ubx.FieldSpec{WireName: "output_variable_mapping"},
+	"RespectResponseInterruptionSettings": ubx.FieldSpec{WireName: "respect_response_interruption_settings"},
+}
 
 var Version_Snapshot_Agents_ToolsetsFields = ubx.FieldMap{
-		"ToolIds": ubx.FieldSpec{WireName: "tool_ids"},
-		"Toolset": ubx.FieldSpec{WireName: "toolset"},
-	}
+	"ToolIds": ubx.FieldSpec{WireName: "tool_ids"},
+	"Toolset": ubx.FieldSpec{WireName: "toolset"},
+}
 
 var Version_Snapshot_Agents_TransferRules_DeterministicTransfer_ExpressionConditionFields = ubx.FieldMap{
-		"Expression": ubx.FieldSpec{WireName: "expression"},
-	}
+	"Expression": ubx.FieldSpec{WireName: "expression"},
+}
 
 var Version_Snapshot_Agents_TransferRules_DeterministicTransfer_PythonCodeConditionFields = ubx.FieldMap{
-		"PythonCode": ubx.FieldSpec{WireName: "python_code"},
-	}
+	"PythonCode": ubx.FieldSpec{WireName: "python_code"},
+}
 
 var Version_Snapshot_Agents_TransferRules_DeterministicTransferFields = ubx.FieldMap{
-		"ExpressionCondition": ubx.FieldSpec{
-			WireName: "expression_condition",
-			Kind: "object",
-			Fields: Version_Snapshot_Agents_TransferRules_DeterministicTransfer_ExpressionConditionFields,
-		},
-		"PythonCodeCondition": ubx.FieldSpec{
-			WireName: "python_code_condition",
-			Kind: "object",
-			Fields: Version_Snapshot_Agents_TransferRules_DeterministicTransfer_PythonCodeConditionFields,
-		},
-	}
+	"ExpressionCondition": ubx.FieldSpec{
+		WireName: "expression_condition",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Agents_TransferRules_DeterministicTransfer_ExpressionConditionFields,
+	},
+	"PythonCodeCondition": ubx.FieldSpec{
+		WireName: "python_code_condition",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Agents_TransferRules_DeterministicTransfer_PythonCodeConditionFields,
+	},
+}
 
 var Version_Snapshot_Agents_TransferRules_DisablePlannerTransferFields = ubx.FieldMap{
-		"ExpressionCondition": ubx.FieldSpec{
-			WireName: "expression_condition",
-			Kind: "object",
-			Fields: Version_Snapshot_Agents_TransferRules_DeterministicTransfer_ExpressionConditionFields,
-		},
-	}
+	"ExpressionCondition": ubx.FieldSpec{
+		WireName: "expression_condition",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Agents_TransferRules_DeterministicTransfer_ExpressionConditionFields,
+	},
+}
 
 var Version_Snapshot_Agents_TransferRulesFields = ubx.FieldMap{
-		"ChildAgent": ubx.FieldSpec{WireName: "child_agent"},
-		"DeterministicTransfer": ubx.FieldSpec{
-			WireName: "deterministic_transfer",
-			Kind: "object",
-			Fields: Version_Snapshot_Agents_TransferRules_DeterministicTransferFields,
-		},
-		"Direction": ubx.FieldSpec{WireName: "direction"},
-		"DisablePlannerTransfer": ubx.FieldSpec{
-			WireName: "disable_planner_transfer",
-			Kind: "object",
-			Fields: Version_Snapshot_Agents_TransferRules_DisablePlannerTransferFields,
-		},
-	}
+	"ChildAgent": ubx.FieldSpec{WireName: "child_agent"},
+	"DeterministicTransfer": ubx.FieldSpec{
+		WireName: "deterministic_transfer",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Agents_TransferRules_DeterministicTransferFields,
+	},
+	"Direction": ubx.FieldSpec{WireName: "direction"},
+	"DisablePlannerTransfer": ubx.FieldSpec{
+		WireName: "disable_planner_transfer",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Agents_TransferRules_DisablePlannerTransferFields,
+	},
+}
 
 var Version_Snapshot_AgentsFields = ubx.FieldMap{
-		"AfterAgentCallbacks": ubx.FieldSpec{
-			WireName: "after_agent_callbacks",
-			Kind: "list",
-			Fields: Version_Snapshot_Agents_AfterAgentCallbacksFields,
-		},
-		"AfterModelCallbacks": ubx.FieldSpec{
-			WireName: "after_model_callbacks",
-			Kind: "list",
-			Fields: Version_Snapshot_Agents_AfterAgentCallbacksFields,
-		},
-		"AfterToolCallbacks": ubx.FieldSpec{
-			WireName: "after_tool_callbacks",
-			Kind: "list",
-			Fields: Version_Snapshot_Agents_AfterAgentCallbacksFields,
-		},
-		"BeforeAgentCallbacks": ubx.FieldSpec{
-			WireName: "before_agent_callbacks",
-			Kind: "list",
-			Fields: Version_Snapshot_Agents_AfterAgentCallbacksFields,
-		},
-		"BeforeModelCallbacks": ubx.FieldSpec{
-			WireName: "before_model_callbacks",
-			Kind: "list",
-			Fields: Version_Snapshot_Agents_AfterAgentCallbacksFields,
-		},
-		"BeforeToolCallbacks": ubx.FieldSpec{
-			WireName: "before_tool_callbacks",
-			Kind: "list",
-			Fields: Version_Snapshot_Agents_AfterAgentCallbacksFields,
-		},
-		"ChildAgents": ubx.FieldSpec{WireName: "child_agents"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"GeneratedSummary": ubx.FieldSpec{WireName: "generated_summary"},
-		"Guardrails": ubx.FieldSpec{WireName: "guardrails"},
-		"Instruction": ubx.FieldSpec{WireName: "instruction"},
-		"LlmAgent": ubx.FieldSpec{WireName: "llm_agent"},
-		"ModelSettings": ubx.FieldSpec{
-			WireName: "model_settings",
-			Kind: "object",
-			Fields: Version_Snapshot_Agents_ModelSettingsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"RemoteDialogflowAgent": ubx.FieldSpec{
-			WireName: "remote_dialogflow_agent",
-			Kind: "object",
-			Fields: Version_Snapshot_Agents_RemoteDialogflowAgentFields,
-		},
-		"Tools": ubx.FieldSpec{WireName: "tools"},
-		"Toolsets": ubx.FieldSpec{
-			WireName: "toolsets",
-			Kind: "list",
-			Fields: Version_Snapshot_Agents_ToolsetsFields,
-		},
-		"TransferRules": ubx.FieldSpec{
-			WireName: "transfer_rules",
-			Kind: "list",
-			Fields: Version_Snapshot_Agents_TransferRulesFields,
-		},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-		"ValidationErrors": ubx.FieldSpec{WireName: "validation_errors"},
-	}
+	"AfterAgentCallbacks": ubx.FieldSpec{
+		WireName: "after_agent_callbacks",
+		Kind:     "list",
+		Fields:   Version_Snapshot_Agents_AfterAgentCallbacksFields,
+	},
+	"AfterModelCallbacks": ubx.FieldSpec{
+		WireName: "after_model_callbacks",
+		Kind:     "list",
+		Fields:   Version_Snapshot_Agents_AfterAgentCallbacksFields,
+	},
+	"AfterToolCallbacks": ubx.FieldSpec{
+		WireName: "after_tool_callbacks",
+		Kind:     "list",
+		Fields:   Version_Snapshot_Agents_AfterAgentCallbacksFields,
+	},
+	"BeforeAgentCallbacks": ubx.FieldSpec{
+		WireName: "before_agent_callbacks",
+		Kind:     "list",
+		Fields:   Version_Snapshot_Agents_AfterAgentCallbacksFields,
+	},
+	"BeforeModelCallbacks": ubx.FieldSpec{
+		WireName: "before_model_callbacks",
+		Kind:     "list",
+		Fields:   Version_Snapshot_Agents_AfterAgentCallbacksFields,
+	},
+	"BeforeToolCallbacks": ubx.FieldSpec{
+		WireName: "before_tool_callbacks",
+		Kind:     "list",
+		Fields:   Version_Snapshot_Agents_AfterAgentCallbacksFields,
+	},
+	"ChildAgents":      ubx.FieldSpec{WireName: "child_agents"},
+	"CreateTime":       ubx.FieldSpec{WireName: "create_time"},
+	"Description":      ubx.FieldSpec{WireName: "description"},
+	"DisplayName":      ubx.FieldSpec{WireName: "display_name"},
+	"Etag":             ubx.FieldSpec{WireName: "etag"},
+	"GeneratedSummary": ubx.FieldSpec{WireName: "generated_summary"},
+	"Guardrails":       ubx.FieldSpec{WireName: "guardrails"},
+	"Instruction":      ubx.FieldSpec{WireName: "instruction"},
+	"LlmAgent":         ubx.FieldSpec{WireName: "llm_agent"},
+	"ModelSettings": ubx.FieldSpec{
+		WireName: "model_settings",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Agents_ModelSettingsFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"RemoteDialogflowAgent": ubx.FieldSpec{
+		WireName: "remote_dialogflow_agent",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Agents_RemoteDialogflowAgentFields,
+	},
+	"Tools": ubx.FieldSpec{WireName: "tools"},
+	"Toolsets": ubx.FieldSpec{
+		WireName: "toolsets",
+		Kind:     "list",
+		Fields:   Version_Snapshot_Agents_ToolsetsFields,
+	},
+	"TransferRules": ubx.FieldSpec{
+		WireName: "transfer_rules",
+		Kind:     "list",
+		Fields:   Version_Snapshot_Agents_TransferRulesFields,
+	},
+	"UpdateTime":       ubx.FieldSpec{WireName: "update_time"},
+	"ValidationErrors": ubx.FieldSpec{WireName: "validation_errors"},
+}
 
 var Version_Snapshot_App_AudioProcessingConfig_AmbientSoundConfigFields = ubx.FieldMap{
-		"GcsUri": ubx.FieldSpec{WireName: "gcs_uri"},
-		"PrebuiltAmbientNoise": ubx.FieldSpec{WireName: "prebuilt_ambient_noise"},
-		"PrebuiltAmbientSound": ubx.FieldSpec{WireName: "prebuilt_ambient_sound"},
-		"VolumeGainDb": ubx.FieldSpec{WireName: "volume_gain_db"},
-	}
+	"GcsUri":               ubx.FieldSpec{WireName: "gcs_uri"},
+	"PrebuiltAmbientNoise": ubx.FieldSpec{WireName: "prebuilt_ambient_noise"},
+	"PrebuiltAmbientSound": ubx.FieldSpec{WireName: "prebuilt_ambient_sound"},
+	"VolumeGainDb":         ubx.FieldSpec{WireName: "volume_gain_db"},
+}
 
 var Version_Snapshot_App_AudioProcessingConfig_BargeInConfigFields = ubx.FieldMap{
-		"BargeInAwareness": ubx.FieldSpec{WireName: "barge_in_awareness"},
-		"DisableBargeIn": ubx.FieldSpec{WireName: "disable_barge_in"},
-	}
+	"BargeInAwareness": ubx.FieldSpec{WireName: "barge_in_awareness"},
+	"DisableBargeIn":   ubx.FieldSpec{WireName: "disable_barge_in"},
+}
 
 var Version_Snapshot_App_AudioProcessingConfig_SynthesizeSpeechConfigsFields = ubx.FieldMap{
-		"ConsentAudioGcsUri": ubx.FieldSpec{WireName: "consent_audio_gcs_uri"},
-		"Instruction": ubx.FieldSpec{WireName: "instruction"},
-		"Model": ubx.FieldSpec{WireName: "model"},
-		"SpeakingRate": ubx.FieldSpec{WireName: "speaking_rate"},
-		"Voice": ubx.FieldSpec{WireName: "voice"},
-		"VoiceSampleGcsUri": ubx.FieldSpec{WireName: "voice_sample_gcs_uri"},
-	}
+	"ConsentAudioGcsUri": ubx.FieldSpec{WireName: "consent_audio_gcs_uri"},
+	"Instruction":        ubx.FieldSpec{WireName: "instruction"},
+	"Model":              ubx.FieldSpec{WireName: "model"},
+	"SpeakingRate":       ubx.FieldSpec{WireName: "speaking_rate"},
+	"Voice":              ubx.FieldSpec{WireName: "voice"},
+	"VoiceSampleGcsUri":  ubx.FieldSpec{WireName: "voice_sample_gcs_uri"},
+}
 
 var Version_Snapshot_App_AudioProcessingConfigFields = ubx.FieldMap{
-		"AmbientSoundConfig": ubx.FieldSpec{
-			WireName: "ambient_sound_config",
-			Kind: "object",
-			Fields: Version_Snapshot_App_AudioProcessingConfig_AmbientSoundConfigFields,
-		},
-		"BargeInConfig": ubx.FieldSpec{
-			WireName: "barge_in_config",
-			Kind: "object",
-			Fields: Version_Snapshot_App_AudioProcessingConfig_BargeInConfigFields,
-		},
-		"InactivityTimeout": ubx.FieldSpec{WireName: "inactivity_timeout"},
-		"SynthesizeSpeechConfigs": ubx.FieldSpec{
-			WireName: "synthesize_speech_configs",
-			Kind: "map",
-			Fields: Version_Snapshot_App_AudioProcessingConfig_SynthesizeSpeechConfigsFields,
-		},
-	}
+	"AmbientSoundConfig": ubx.FieldSpec{
+		WireName: "ambient_sound_config",
+		Kind:     "object",
+		Fields:   Version_Snapshot_App_AudioProcessingConfig_AmbientSoundConfigFields,
+	},
+	"BargeInConfig": ubx.FieldSpec{
+		WireName: "barge_in_config",
+		Kind:     "object",
+		Fields:   Version_Snapshot_App_AudioProcessingConfig_BargeInConfigFields,
+	},
+	"InactivityTimeout": ubx.FieldSpec{WireName: "inactivity_timeout"},
+	"SynthesizeSpeechConfigs": ubx.FieldSpec{
+		WireName: "synthesize_speech_configs",
+		Kind:     "map",
+		Fields:   Version_Snapshot_App_AudioProcessingConfig_SynthesizeSpeechConfigsFields,
+	},
+}
 
 var Version_Snapshot_App_ClientCertificateSettingsFields = ubx.FieldMap{
-		"Passphrase": ubx.FieldSpec{WireName: "passphrase"},
-		"PrivateKey": ubx.FieldSpec{WireName: "private_key"},
-		"TlsCertificate": ubx.FieldSpec{WireName: "tls_certificate"},
-	}
+	"Passphrase":     ubx.FieldSpec{WireName: "passphrase"},
+	"PrivateKey":     ubx.FieldSpec{WireName: "private_key"},
+	"TlsCertificate": ubx.FieldSpec{WireName: "tls_certificate"},
+}
 
 var Version_Snapshot_App_DataStoreSettings_EnginesFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var Version_Snapshot_App_DataStoreSettingsFields = ubx.FieldMap{
-		"Engines": ubx.FieldSpec{
-			WireName: "engines",
-			Kind: "list",
-			Fields: Version_Snapshot_App_DataStoreSettings_EnginesFields,
-		},
-	}
+	"Engines": ubx.FieldSpec{
+		WireName: "engines",
+		Kind:     "list",
+		Fields:   Version_Snapshot_App_DataStoreSettings_EnginesFields,
+	},
+}
 
 var Version_Snapshot_App_DefaultChannelProfile_InstagramConfigFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"InstagramAccountId": ubx.FieldSpec{WireName: "instagram_account_id"},
-		"ThumbnailUrl": ubx.FieldSpec{WireName: "thumbnail_url"},
-	}
+	"Description":        ubx.FieldSpec{WireName: "description"},
+	"DisplayName":        ubx.FieldSpec{WireName: "display_name"},
+	"InstagramAccountId": ubx.FieldSpec{WireName: "instagram_account_id"},
+	"ThumbnailUrl":       ubx.FieldSpec{WireName: "thumbnail_url"},
+}
 
 var Version_Snapshot_App_DefaultChannelProfile_PersonaPropertyFields = ubx.FieldMap{
-		"Persona": ubx.FieldSpec{WireName: "persona"},
-	}
+	"Persona": ubx.FieldSpec{WireName: "persona"},
+}
 
 var Version_Snapshot_App_DefaultChannelProfile_WebWidgetConfig_SecuritySettingsFields = ubx.FieldMap{
-		"AllowedOrigins": ubx.FieldSpec{WireName: "allowed_origins"},
-		"EnableOriginCheck": ubx.FieldSpec{WireName: "enable_origin_check"},
-		"EnablePublicAccess": ubx.FieldSpec{WireName: "enable_public_access"},
-		"EnableRecaptcha": ubx.FieldSpec{WireName: "enable_recaptcha"},
-	}
+	"AllowedOrigins":     ubx.FieldSpec{WireName: "allowed_origins"},
+	"EnableOriginCheck":  ubx.FieldSpec{WireName: "enable_origin_check"},
+	"EnablePublicAccess": ubx.FieldSpec{WireName: "enable_public_access"},
+	"EnableRecaptcha":    ubx.FieldSpec{WireName: "enable_recaptcha"},
+}
 
 var Version_Snapshot_App_DefaultChannelProfile_WebWidgetConfigFields = ubx.FieldMap{
-		"Modality": ubx.FieldSpec{WireName: "modality"},
-		"SecuritySettings": ubx.FieldSpec{
-			WireName: "security_settings",
-			Kind: "object",
-			Fields: Version_Snapshot_App_DefaultChannelProfile_WebWidgetConfig_SecuritySettingsFields,
-		},
-		"Theme": ubx.FieldSpec{WireName: "theme"},
-		"WebWidgetTitle": ubx.FieldSpec{WireName: "web_widget_title"},
-	}
+	"Modality": ubx.FieldSpec{WireName: "modality"},
+	"SecuritySettings": ubx.FieldSpec{
+		WireName: "security_settings",
+		Kind:     "object",
+		Fields:   Version_Snapshot_App_DefaultChannelProfile_WebWidgetConfig_SecuritySettingsFields,
+	},
+	"Theme":          ubx.FieldSpec{WireName: "theme"},
+	"WebWidgetTitle": ubx.FieldSpec{WireName: "web_widget_title"},
+}
 
 var Version_Snapshot_App_DefaultChannelProfile_WhatsappConfigFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"PhoneNumber": ubx.FieldSpec{WireName: "phone_number"},
-		"PhoneNumberId": ubx.FieldSpec{WireName: "phone_number_id"},
-		"ThumbnailUrl": ubx.FieldSpec{WireName: "thumbnail_url"},
-		"WabaId": ubx.FieldSpec{WireName: "waba_id"},
-	}
+	"Description":   ubx.FieldSpec{WireName: "description"},
+	"DisplayName":   ubx.FieldSpec{WireName: "display_name"},
+	"PhoneNumber":   ubx.FieldSpec{WireName: "phone_number"},
+	"PhoneNumberId": ubx.FieldSpec{WireName: "phone_number_id"},
+	"ThumbnailUrl":  ubx.FieldSpec{WireName: "thumbnail_url"},
+	"WabaId":        ubx.FieldSpec{WireName: "waba_id"},
+}
 
 var Version_Snapshot_App_DefaultChannelProfileFields = ubx.FieldMap{
-		"ChannelType": ubx.FieldSpec{WireName: "channel_type"},
-		"DisableBargeInControl": ubx.FieldSpec{WireName: "disable_barge_in_control"},
-		"DisableDtmf": ubx.FieldSpec{WireName: "disable_dtmf"},
-		"InstagramConfig": ubx.FieldSpec{
-			WireName: "instagram_config",
-			Kind: "object",
-			Fields: Version_Snapshot_App_DefaultChannelProfile_InstagramConfigFields,
-		},
-		"NoiseSuppressionLevel": ubx.FieldSpec{WireName: "noise_suppression_level"},
-		"PersonaProperty": ubx.FieldSpec{
-			WireName: "persona_property",
-			Kind: "object",
-			Fields: Version_Snapshot_App_DefaultChannelProfile_PersonaPropertyFields,
-		},
-		"ProfileId": ubx.FieldSpec{WireName: "profile_id"},
-		"WebWidgetConfig": ubx.FieldSpec{
-			WireName: "web_widget_config",
-			Kind: "object",
-			Fields: Version_Snapshot_App_DefaultChannelProfile_WebWidgetConfigFields,
-		},
-		"WhatsappConfig": ubx.FieldSpec{
-			WireName: "whatsapp_config",
-			Kind: "object",
-			Fields: Version_Snapshot_App_DefaultChannelProfile_WhatsappConfigFields,
-		},
-	}
+	"ChannelType":           ubx.FieldSpec{WireName: "channel_type"},
+	"DisableBargeInControl": ubx.FieldSpec{WireName: "disable_barge_in_control"},
+	"DisableDtmf":           ubx.FieldSpec{WireName: "disable_dtmf"},
+	"InstagramConfig": ubx.FieldSpec{
+		WireName: "instagram_config",
+		Kind:     "object",
+		Fields:   Version_Snapshot_App_DefaultChannelProfile_InstagramConfigFields,
+	},
+	"NoiseSuppressionLevel": ubx.FieldSpec{WireName: "noise_suppression_level"},
+	"PersonaProperty": ubx.FieldSpec{
+		WireName: "persona_property",
+		Kind:     "object",
+		Fields:   Version_Snapshot_App_DefaultChannelProfile_PersonaPropertyFields,
+	},
+	"ProfileId": ubx.FieldSpec{WireName: "profile_id"},
+	"WebWidgetConfig": ubx.FieldSpec{
+		WireName: "web_widget_config",
+		Kind:     "object",
+		Fields:   Version_Snapshot_App_DefaultChannelProfile_WebWidgetConfigFields,
+	},
+	"WhatsappConfig": ubx.FieldSpec{
+		WireName: "whatsapp_config",
+		Kind:     "object",
+		Fields:   Version_Snapshot_App_DefaultChannelProfile_WhatsappConfigFields,
+	},
+}
 
 var Version_Snapshot_App_ErrorHandlingSettings_EndSessionConfigFields = ubx.FieldMap{
-		"EscalateSession": ubx.FieldSpec{WireName: "escalate_session"},
-	}
+	"EscalateSession": ubx.FieldSpec{WireName: "escalate_session"},
+}
 
 var Version_Snapshot_App_ErrorHandlingSettings_FallbackResponseConfigFields = ubx.FieldMap{
-		"CustomFallbackMessages": ubx.FieldSpec{WireName: "custom_fallback_messages"},
-		"MaxFallbackAttempts": ubx.FieldSpec{WireName: "max_fallback_attempts"},
-	}
+	"CustomFallbackMessages": ubx.FieldSpec{WireName: "custom_fallback_messages"},
+	"MaxFallbackAttempts":    ubx.FieldSpec{WireName: "max_fallback_attempts"},
+}
 
 var Version_Snapshot_App_ErrorHandlingSettingsFields = ubx.FieldMap{
-		"EndSessionConfig": ubx.FieldSpec{
-			WireName: "end_session_config",
-			Kind: "object",
-			Fields: Version_Snapshot_App_ErrorHandlingSettings_EndSessionConfigFields,
-		},
-		"ErrorHandlingStrategy": ubx.FieldSpec{WireName: "error_handling_strategy"},
-		"FallbackResponseConfig": ubx.FieldSpec{
-			WireName: "fallback_response_config",
-			Kind: "object",
-			Fields: Version_Snapshot_App_ErrorHandlingSettings_FallbackResponseConfigFields,
-		},
-	}
+	"EndSessionConfig": ubx.FieldSpec{
+		WireName: "end_session_config",
+		Kind:     "object",
+		Fields:   Version_Snapshot_App_ErrorHandlingSettings_EndSessionConfigFields,
+	},
+	"ErrorHandlingStrategy": ubx.FieldSpec{WireName: "error_handling_strategy"},
+	"FallbackResponseConfig": ubx.FieldSpec{
+		WireName: "fallback_response_config",
+		Kind:     "object",
+		Fields:   Version_Snapshot_App_ErrorHandlingSettings_FallbackResponseConfigFields,
+	},
+}
 
 var Version_Snapshot_App_EvaluationMetricsThresholds_GoldenEvaluationMetricsThresholds_ExpectationLevelMetricsThresholdsFields = ubx.FieldMap{
-		"ToolInvocationParameterCorrectnessThreshold": ubx.FieldSpec{WireName: "tool_invocation_parameter_correctness_threshold"},
-	}
+	"ToolInvocationParameterCorrectnessThreshold": ubx.FieldSpec{WireName: "tool_invocation_parameter_correctness_threshold"},
+}
 
 var Version_Snapshot_App_EvaluationMetricsThresholds_GoldenEvaluationMetricsThresholds_ToolMatchingSettingsFields = ubx.FieldMap{
-		"ExtraToolCallBehavior": ubx.FieldSpec{WireName: "extra_tool_call_behavior"},
-	}
+	"ExtraToolCallBehavior": ubx.FieldSpec{WireName: "extra_tool_call_behavior"},
+}
 
 var Version_Snapshot_App_EvaluationMetricsThresholds_GoldenEvaluationMetricsThresholds_TurnLevelMetricsThresholdsFields = ubx.FieldMap{
-		"OverallToolInvocationCorrectnessThreshold": ubx.FieldSpec{WireName: "overall_tool_invocation_correctness_threshold"},
-		"SemanticSimilarityChannel": ubx.FieldSpec{WireName: "semantic_similarity_channel"},
-		"SemanticSimilaritySuccessThreshold": ubx.FieldSpec{WireName: "semantic_similarity_success_threshold"},
-	}
+	"OverallToolInvocationCorrectnessThreshold": ubx.FieldSpec{WireName: "overall_tool_invocation_correctness_threshold"},
+	"SemanticSimilarityChannel":                 ubx.FieldSpec{WireName: "semantic_similarity_channel"},
+	"SemanticSimilaritySuccessThreshold":        ubx.FieldSpec{WireName: "semantic_similarity_success_threshold"},
+}
 
 var Version_Snapshot_App_EvaluationMetricsThresholds_GoldenEvaluationMetricsThresholdsFields = ubx.FieldMap{
-		"ExpectationLevelMetricsThresholds": ubx.FieldSpec{
-			WireName: "expectation_level_metrics_thresholds",
-			Kind: "object",
-			Fields: Version_Snapshot_App_EvaluationMetricsThresholds_GoldenEvaluationMetricsThresholds_ExpectationLevelMetricsThresholdsFields,
-		},
-		"ToolMatchingSettings": ubx.FieldSpec{
-			WireName: "tool_matching_settings",
-			Kind: "object",
-			Fields: Version_Snapshot_App_EvaluationMetricsThresholds_GoldenEvaluationMetricsThresholds_ToolMatchingSettingsFields,
-		},
-		"TurnLevelMetricsThresholds": ubx.FieldSpec{
-			WireName: "turn_level_metrics_thresholds",
-			Kind: "object",
-			Fields: Version_Snapshot_App_EvaluationMetricsThresholds_GoldenEvaluationMetricsThresholds_TurnLevelMetricsThresholdsFields,
-		},
-	}
+	"ExpectationLevelMetricsThresholds": ubx.FieldSpec{
+		WireName: "expectation_level_metrics_thresholds",
+		Kind:     "object",
+		Fields:   Version_Snapshot_App_EvaluationMetricsThresholds_GoldenEvaluationMetricsThresholds_ExpectationLevelMetricsThresholdsFields,
+	},
+	"ToolMatchingSettings": ubx.FieldSpec{
+		WireName: "tool_matching_settings",
+		Kind:     "object",
+		Fields:   Version_Snapshot_App_EvaluationMetricsThresholds_GoldenEvaluationMetricsThresholds_ToolMatchingSettingsFields,
+	},
+	"TurnLevelMetricsThresholds": ubx.FieldSpec{
+		WireName: "turn_level_metrics_thresholds",
+		Kind:     "object",
+		Fields:   Version_Snapshot_App_EvaluationMetricsThresholds_GoldenEvaluationMetricsThresholds_TurnLevelMetricsThresholdsFields,
+	},
+}
 
 var Version_Snapshot_App_EvaluationMetricsThresholdsFields = ubx.FieldMap{
-		"GoldenEvaluationMetricsThresholds": ubx.FieldSpec{
-			WireName: "golden_evaluation_metrics_thresholds",
-			Kind: "object",
-			Fields: Version_Snapshot_App_EvaluationMetricsThresholds_GoldenEvaluationMetricsThresholdsFields,
-		},
-		"GoldenHallucinationMetricBehavior": ubx.FieldSpec{WireName: "golden_hallucination_metric_behavior"},
-		"HallucinationMetricBehavior": ubx.FieldSpec{WireName: "hallucination_metric_behavior"},
-		"ScenarioHallucinationMetricBehavior": ubx.FieldSpec{WireName: "scenario_hallucination_metric_behavior"},
-	}
+	"GoldenEvaluationMetricsThresholds": ubx.FieldSpec{
+		WireName: "golden_evaluation_metrics_thresholds",
+		Kind:     "object",
+		Fields:   Version_Snapshot_App_EvaluationMetricsThresholds_GoldenEvaluationMetricsThresholdsFields,
+	},
+	"GoldenHallucinationMetricBehavior":   ubx.FieldSpec{WireName: "golden_hallucination_metric_behavior"},
+	"HallucinationMetricBehavior":         ubx.FieldSpec{WireName: "hallucination_metric_behavior"},
+	"ScenarioHallucinationMetricBehavior": ubx.FieldSpec{WireName: "scenario_hallucination_metric_behavior"},
+}
 
 var Version_Snapshot_App_LanguageSettingsFields = ubx.FieldMap{
-		"DefaultLanguageCode": ubx.FieldSpec{WireName: "default_language_code"},
-		"EnableMultilingualSupport": ubx.FieldSpec{WireName: "enable_multilingual_support"},
-		"FallbackAction": ubx.FieldSpec{WireName: "fallback_action"},
-		"SupportedLanguageCodes": ubx.FieldSpec{WireName: "supported_language_codes"},
-	}
+	"DefaultLanguageCode":       ubx.FieldSpec{WireName: "default_language_code"},
+	"EnableMultilingualSupport": ubx.FieldSpec{WireName: "enable_multilingual_support"},
+	"FallbackAction":            ubx.FieldSpec{WireName: "fallback_action"},
+	"SupportedLanguageCodes":    ubx.FieldSpec{WireName: "supported_language_codes"},
+}
 
 var Version_Snapshot_App_LoggingSettings_AudioRecordingConfigFields = ubx.FieldMap{
-		"GcsBucket": ubx.FieldSpec{WireName: "gcs_bucket"},
-		"GcsPathPrefix": ubx.FieldSpec{WireName: "gcs_path_prefix"},
-	}
+	"GcsBucket":     ubx.FieldSpec{WireName: "gcs_bucket"},
+	"GcsPathPrefix": ubx.FieldSpec{WireName: "gcs_path_prefix"},
+}
 
 var Version_Snapshot_App_LoggingSettings_BigqueryExportSettingsFields = ubx.FieldMap{
-		"Dataset": ubx.FieldSpec{WireName: "dataset"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Project": ubx.FieldSpec{WireName: "project"},
-	}
+	"Dataset": ubx.FieldSpec{WireName: "dataset"},
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+	"Project": ubx.FieldSpec{WireName: "project"},
+}
 
 var Version_Snapshot_App_LoggingSettings_CloudLoggingSettingsFields = ubx.FieldMap{
-		"EnableCloudLogging": ubx.FieldSpec{WireName: "enable_cloud_logging"},
-	}
+	"EnableCloudLogging": ubx.FieldSpec{WireName: "enable_cloud_logging"},
+}
 
 var Version_Snapshot_App_LoggingSettings_ConversationLoggingSettingsFields = ubx.FieldMap{
-		"DisableConversationLogging": ubx.FieldSpec{WireName: "disable_conversation_logging"},
-		"RetentionWindow": ubx.FieldSpec{WireName: "retention_window"},
-	}
+	"DisableConversationLogging": ubx.FieldSpec{WireName: "disable_conversation_logging"},
+	"RetentionWindow":            ubx.FieldSpec{WireName: "retention_window"},
+}
 
 var Version_Snapshot_App_LoggingSettings_MetricAnalysisSettingsFields = ubx.FieldMap{
-		"LlmMetricsOptedOut": ubx.FieldSpec{WireName: "llm_metrics_opted_out"},
-	}
+	"LlmMetricsOptedOut": ubx.FieldSpec{WireName: "llm_metrics_opted_out"},
+}
 
 var Version_Snapshot_App_LoggingSettings_RedactionConfigFields = ubx.FieldMap{
-		"DeidentifyTemplate": ubx.FieldSpec{WireName: "deidentify_template"},
-		"EnableRedaction": ubx.FieldSpec{WireName: "enable_redaction"},
-		"InspectTemplate": ubx.FieldSpec{WireName: "inspect_template"},
-	}
+	"DeidentifyTemplate": ubx.FieldSpec{WireName: "deidentify_template"},
+	"EnableRedaction":    ubx.FieldSpec{WireName: "enable_redaction"},
+	"InspectTemplate":    ubx.FieldSpec{WireName: "inspect_template"},
+}
 
 var Version_Snapshot_App_LoggingSettingsFields = ubx.FieldMap{
-		"AudioRecordingConfig": ubx.FieldSpec{
-			WireName: "audio_recording_config",
-			Kind: "object",
-			Fields: Version_Snapshot_App_LoggingSettings_AudioRecordingConfigFields,
-		},
-		"BigqueryExportSettings": ubx.FieldSpec{
-			WireName: "bigquery_export_settings",
-			Kind: "object",
-			Fields: Version_Snapshot_App_LoggingSettings_BigqueryExportSettingsFields,
-		},
-		"CloudLoggingSettings": ubx.FieldSpec{
-			WireName: "cloud_logging_settings",
-			Kind: "object",
-			Fields: Version_Snapshot_App_LoggingSettings_CloudLoggingSettingsFields,
-		},
-		"ConversationLoggingSettings": ubx.FieldSpec{
-			WireName: "conversation_logging_settings",
-			Kind: "object",
-			Fields: Version_Snapshot_App_LoggingSettings_ConversationLoggingSettingsFields,
-		},
-		"EvaluationAudioRecordingConfig": ubx.FieldSpec{
-			WireName: "evaluation_audio_recording_config",
-			Kind: "object",
-			Fields: Version_Snapshot_App_LoggingSettings_AudioRecordingConfigFields,
-		},
-		"MetricAnalysisSettings": ubx.FieldSpec{
-			WireName: "metric_analysis_settings",
-			Kind: "object",
-			Fields: Version_Snapshot_App_LoggingSettings_MetricAnalysisSettingsFields,
-		},
-		"RedactionConfig": ubx.FieldSpec{
-			WireName: "redaction_config",
-			Kind: "object",
-			Fields: Version_Snapshot_App_LoggingSettings_RedactionConfigFields,
-		},
-		"UnredactedAudioRecordingConfig": ubx.FieldSpec{
-			WireName: "unredacted_audio_recording_config",
-			Kind: "object",
-			Fields: Version_Snapshot_App_LoggingSettings_AudioRecordingConfigFields,
-		},
-		"UnredactedBigqueryExportSettings": ubx.FieldSpec{
-			WireName: "unredacted_bigquery_export_settings",
-			Kind: "object",
-			Fields: Version_Snapshot_App_LoggingSettings_BigqueryExportSettingsFields,
-		},
-	}
+	"AudioRecordingConfig": ubx.FieldSpec{
+		WireName: "audio_recording_config",
+		Kind:     "object",
+		Fields:   Version_Snapshot_App_LoggingSettings_AudioRecordingConfigFields,
+	},
+	"BigqueryExportSettings": ubx.FieldSpec{
+		WireName: "bigquery_export_settings",
+		Kind:     "object",
+		Fields:   Version_Snapshot_App_LoggingSettings_BigqueryExportSettingsFields,
+	},
+	"CloudLoggingSettings": ubx.FieldSpec{
+		WireName: "cloud_logging_settings",
+		Kind:     "object",
+		Fields:   Version_Snapshot_App_LoggingSettings_CloudLoggingSettingsFields,
+	},
+	"ConversationLoggingSettings": ubx.FieldSpec{
+		WireName: "conversation_logging_settings",
+		Kind:     "object",
+		Fields:   Version_Snapshot_App_LoggingSettings_ConversationLoggingSettingsFields,
+	},
+	"EvaluationAudioRecordingConfig": ubx.FieldSpec{
+		WireName: "evaluation_audio_recording_config",
+		Kind:     "object",
+		Fields:   Version_Snapshot_App_LoggingSettings_AudioRecordingConfigFields,
+	},
+	"MetricAnalysisSettings": ubx.FieldSpec{
+		WireName: "metric_analysis_settings",
+		Kind:     "object",
+		Fields:   Version_Snapshot_App_LoggingSettings_MetricAnalysisSettingsFields,
+	},
+	"RedactionConfig": ubx.FieldSpec{
+		WireName: "redaction_config",
+		Kind:     "object",
+		Fields:   Version_Snapshot_App_LoggingSettings_RedactionConfigFields,
+	},
+	"UnredactedAudioRecordingConfig": ubx.FieldSpec{
+		WireName: "unredacted_audio_recording_config",
+		Kind:     "object",
+		Fields:   Version_Snapshot_App_LoggingSettings_AudioRecordingConfigFields,
+	},
+	"UnredactedBigqueryExportSettings": ubx.FieldSpec{
+		WireName: "unredacted_bigquery_export_settings",
+		Kind:     "object",
+		Fields:   Version_Snapshot_App_LoggingSettings_BigqueryExportSettingsFields,
+	},
+}
 
 var Version_Snapshot_App_PredefinedVariableDeclarations_SchemaFields = ubx.FieldMap{
-		"AdditionalProperties": ubx.FieldSpec{WireName: "additional_properties"},
-		"AnyOf": ubx.FieldSpec{WireName: "any_of"},
-		"Default": ubx.FieldSpec{WireName: "default"},
-		"Defs": ubx.FieldSpec{WireName: "defs"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Enum": ubx.FieldSpec{WireName: "enum"},
-		"Items": ubx.FieldSpec{WireName: "items"},
-		"MaxItems": ubx.FieldSpec{WireName: "max_items"},
-		"Maximum": ubx.FieldSpec{WireName: "maximum"},
-		"MinItems": ubx.FieldSpec{WireName: "min_items"},
-		"Minimum": ubx.FieldSpec{WireName: "minimum"},
-		"Nullable": ubx.FieldSpec{WireName: "nullable"},
-		"PrefixItems": ubx.FieldSpec{WireName: "prefix_items"},
-		"Properties": ubx.FieldSpec{WireName: "properties"},
-		"Ref": ubx.FieldSpec{WireName: "ref"},
-		"Required": ubx.FieldSpec{WireName: "required"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"UniqueItems": ubx.FieldSpec{WireName: "unique_items"},
-	}
+	"AdditionalProperties": ubx.FieldSpec{WireName: "additional_properties"},
+	"AnyOf":                ubx.FieldSpec{WireName: "any_of"},
+	"Default":              ubx.FieldSpec{WireName: "default"},
+	"Defs":                 ubx.FieldSpec{WireName: "defs"},
+	"Description":          ubx.FieldSpec{WireName: "description"},
+	"Enum":                 ubx.FieldSpec{WireName: "enum"},
+	"Items":                ubx.FieldSpec{WireName: "items"},
+	"MaxItems":             ubx.FieldSpec{WireName: "max_items"},
+	"Maximum":              ubx.FieldSpec{WireName: "maximum"},
+	"MinItems":             ubx.FieldSpec{WireName: "min_items"},
+	"Minimum":              ubx.FieldSpec{WireName: "minimum"},
+	"Nullable":             ubx.FieldSpec{WireName: "nullable"},
+	"PrefixItems":          ubx.FieldSpec{WireName: "prefix_items"},
+	"Properties":           ubx.FieldSpec{WireName: "properties"},
+	"Ref":                  ubx.FieldSpec{WireName: "ref"},
+	"Required":             ubx.FieldSpec{WireName: "required"},
+	"Title":                ubx.FieldSpec{WireName: "title"},
+	"Type":                 ubx.FieldSpec{WireName: "type"},
+	"UniqueItems":          ubx.FieldSpec{WireName: "unique_items"},
+}
 
 var Version_Snapshot_App_PredefinedVariableDeclarationsFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Schema": ubx.FieldSpec{
-			WireName: "schema",
-			Kind: "object",
-			Fields: Version_Snapshot_App_PredefinedVariableDeclarations_SchemaFields,
-		},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"Schema": ubx.FieldSpec{
+		WireName: "schema",
+		Kind:     "object",
+		Fields:   Version_Snapshot_App_PredefinedVariableDeclarations_SchemaFields,
+	},
+}
 
 var Version_Snapshot_App_TimeZoneSettingsFields = ubx.FieldMap{
-		"TimeZone": ubx.FieldSpec{WireName: "time_zone"},
-	}
+	"TimeZone": ubx.FieldSpec{WireName: "time_zone"},
+}
 
 var Version_Snapshot_App_VpcScSettingsFields = ubx.FieldMap{
-		"AllowedOrigins": ubx.FieldSpec{WireName: "allowed_origins"},
-	}
+	"AllowedOrigins": ubx.FieldSpec{WireName: "allowed_origins"},
+}
 
 var Version_Snapshot_AppFields = ubx.FieldMap{
-		"AudioProcessingConfig": ubx.FieldSpec{
-			WireName: "audio_processing_config",
-			Kind: "object",
-			Fields: Version_Snapshot_App_AudioProcessingConfigFields,
-		},
-		"ClientCertificateSettings": ubx.FieldSpec{
-			WireName: "client_certificate_settings",
-			Kind: "object",
-			Fields: Version_Snapshot_App_ClientCertificateSettingsFields,
-		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DataStoreSettings": ubx.FieldSpec{
-			WireName: "data_store_settings",
-			Kind: "object",
-			Fields: Version_Snapshot_App_DataStoreSettingsFields,
-		},
-		"DefaultChannelProfile": ubx.FieldSpec{
-			WireName: "default_channel_profile",
-			Kind: "object",
-			Fields: Version_Snapshot_App_DefaultChannelProfileFields,
-		},
-		"DeploymentCount": ubx.FieldSpec{WireName: "deployment_count"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"ErrorHandlingSettings": ubx.FieldSpec{
-			WireName: "error_handling_settings",
-			Kind: "object",
-			Fields: Version_Snapshot_App_ErrorHandlingSettingsFields,
-		},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"EvaluationMetricsThresholds": ubx.FieldSpec{
-			WireName: "evaluation_metrics_thresholds",
-			Kind: "object",
-			Fields: Version_Snapshot_App_EvaluationMetricsThresholdsFields,
-		},
-		"GlobalInstruction": ubx.FieldSpec{WireName: "global_instruction"},
-		"Guardrails": ubx.FieldSpec{WireName: "guardrails"},
-		"LanguageSettings": ubx.FieldSpec{
-			WireName: "language_settings",
-			Kind: "object",
-			Fields: Version_Snapshot_App_LanguageSettingsFields,
-		},
-		"Locked": ubx.FieldSpec{WireName: "locked"},
-		"LoggingSettings": ubx.FieldSpec{
-			WireName: "logging_settings",
-			Kind: "object",
-			Fields: Version_Snapshot_App_LoggingSettingsFields,
-		},
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-		"ModelSettings": ubx.FieldSpec{
-			WireName: "model_settings",
-			Kind: "object",
-			Fields: Version_Snapshot_Agents_ModelSettingsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Pinned": ubx.FieldSpec{WireName: "pinned"},
-		"PredefinedVariableDeclarations": ubx.FieldSpec{
-			WireName: "predefined_variable_declarations",
-			Kind: "list",
-			Fields: Version_Snapshot_App_PredefinedVariableDeclarationsFields,
-		},
-		"RootAgent": ubx.FieldSpec{WireName: "root_agent"},
-		"TimeZoneSettings": ubx.FieldSpec{
-			WireName: "time_zone_settings",
-			Kind: "object",
-			Fields: Version_Snapshot_App_TimeZoneSettingsFields,
-		},
-		"ToolExecutionMode": ubx.FieldSpec{WireName: "tool_execution_mode"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-		"ValidationErrors": ubx.FieldSpec{WireName: "validation_errors"},
-		"VariableDeclarations": ubx.FieldSpec{
-			WireName: "variable_declarations",
-			Kind: "list",
-			Fields: Version_Snapshot_App_PredefinedVariableDeclarationsFields,
-		},
-		"VpcScSettings": ubx.FieldSpec{
-			WireName: "vpc_sc_settings",
-			Kind: "object",
-			Fields: Version_Snapshot_App_VpcScSettingsFields,
-		},
-	}
+	"AudioProcessingConfig": ubx.FieldSpec{
+		WireName: "audio_processing_config",
+		Kind:     "object",
+		Fields:   Version_Snapshot_App_AudioProcessingConfigFields,
+	},
+	"ClientCertificateSettings": ubx.FieldSpec{
+		WireName: "client_certificate_settings",
+		Kind:     "object",
+		Fields:   Version_Snapshot_App_ClientCertificateSettingsFields,
+	},
+	"CreateTime": ubx.FieldSpec{WireName: "create_time"},
+	"DataStoreSettings": ubx.FieldSpec{
+		WireName: "data_store_settings",
+		Kind:     "object",
+		Fields:   Version_Snapshot_App_DataStoreSettingsFields,
+	},
+	"DefaultChannelProfile": ubx.FieldSpec{
+		WireName: "default_channel_profile",
+		Kind:     "object",
+		Fields:   Version_Snapshot_App_DefaultChannelProfileFields,
+	},
+	"DeploymentCount": ubx.FieldSpec{WireName: "deployment_count"},
+	"Description":     ubx.FieldSpec{WireName: "description"},
+	"DisplayName":     ubx.FieldSpec{WireName: "display_name"},
+	"ErrorHandlingSettings": ubx.FieldSpec{
+		WireName: "error_handling_settings",
+		Kind:     "object",
+		Fields:   Version_Snapshot_App_ErrorHandlingSettingsFields,
+	},
+	"Etag": ubx.FieldSpec{WireName: "etag"},
+	"EvaluationMetricsThresholds": ubx.FieldSpec{
+		WireName: "evaluation_metrics_thresholds",
+		Kind:     "object",
+		Fields:   Version_Snapshot_App_EvaluationMetricsThresholdsFields,
+	},
+	"GlobalInstruction": ubx.FieldSpec{WireName: "global_instruction"},
+	"Guardrails":        ubx.FieldSpec{WireName: "guardrails"},
+	"LanguageSettings": ubx.FieldSpec{
+		WireName: "language_settings",
+		Kind:     "object",
+		Fields:   Version_Snapshot_App_LanguageSettingsFields,
+	},
+	"Locked": ubx.FieldSpec{WireName: "locked"},
+	"LoggingSettings": ubx.FieldSpec{
+		WireName: "logging_settings",
+		Kind:     "object",
+		Fields:   Version_Snapshot_App_LoggingSettingsFields,
+	},
+	"Metadata": ubx.FieldSpec{WireName: "metadata"},
+	"ModelSettings": ubx.FieldSpec{
+		WireName: "model_settings",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Agents_ModelSettingsFields,
+	},
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Pinned": ubx.FieldSpec{WireName: "pinned"},
+	"PredefinedVariableDeclarations": ubx.FieldSpec{
+		WireName: "predefined_variable_declarations",
+		Kind:     "list",
+		Fields:   Version_Snapshot_App_PredefinedVariableDeclarationsFields,
+	},
+	"RootAgent": ubx.FieldSpec{WireName: "root_agent"},
+	"TimeZoneSettings": ubx.FieldSpec{
+		WireName: "time_zone_settings",
+		Kind:     "object",
+		Fields:   Version_Snapshot_App_TimeZoneSettingsFields,
+	},
+	"ToolExecutionMode": ubx.FieldSpec{WireName: "tool_execution_mode"},
+	"UpdateTime":        ubx.FieldSpec{WireName: "update_time"},
+	"ValidationErrors":  ubx.FieldSpec{WireName: "validation_errors"},
+	"VariableDeclarations": ubx.FieldSpec{
+		WireName: "variable_declarations",
+		Kind:     "list",
+		Fields:   Version_Snapshot_App_PredefinedVariableDeclarationsFields,
+	},
+	"VpcScSettings": ubx.FieldSpec{
+		WireName: "vpc_sc_settings",
+		Kind:     "object",
+		Fields:   Version_Snapshot_App_VpcScSettingsFields,
+	},
+}
 
 var Version_Snapshot_Examples_Messages_Chunks_AgentTransferFields = ubx.FieldMap{
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"TargetAgent": ubx.FieldSpec{WireName: "target_agent"},
-	}
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"TargetAgent": ubx.FieldSpec{WireName: "target_agent"},
+}
 
 var Version_Snapshot_Examples_Messages_Chunks_BlobFields = ubx.FieldMap{
-		"Data": ubx.FieldSpec{WireName: "data"},
-		"MimeType": ubx.FieldSpec{WireName: "mime_type"},
-	}
+	"Data":     ubx.FieldSpec{WireName: "data"},
+	"MimeType": ubx.FieldSpec{WireName: "mime_type"},
+}
 
 var Version_Snapshot_Examples_Messages_Chunks_ToolCall_ToolsetToolFields = ubx.FieldMap{
-		"ToolId": ubx.FieldSpec{WireName: "tool_id"},
-		"Toolset": ubx.FieldSpec{WireName: "toolset"},
-	}
+	"ToolId":  ubx.FieldSpec{WireName: "tool_id"},
+	"Toolset": ubx.FieldSpec{WireName: "toolset"},
+}
 
 var Version_Snapshot_Examples_Messages_Chunks_ToolCallFields = ubx.FieldMap{
-		"Args": ubx.FieldSpec{WireName: "args"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Tool": ubx.FieldSpec{WireName: "tool"},
-		"ToolsetTool": ubx.FieldSpec{
-			WireName: "toolset_tool",
-			Kind: "object",
-			Fields: Version_Snapshot_Examples_Messages_Chunks_ToolCall_ToolsetToolFields,
-		},
-	}
+	"Args":        ubx.FieldSpec{WireName: "args"},
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"Id":          ubx.FieldSpec{WireName: "id"},
+	"Tool":        ubx.FieldSpec{WireName: "tool"},
+	"ToolsetTool": ubx.FieldSpec{
+		WireName: "toolset_tool",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Examples_Messages_Chunks_ToolCall_ToolsetToolFields,
+	},
+}
 
 var Version_Snapshot_Examples_Messages_Chunks_ToolResponseFields = ubx.FieldMap{
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Response": ubx.FieldSpec{WireName: "response"},
-		"Tool": ubx.FieldSpec{WireName: "tool"},
-		"ToolsetTool": ubx.FieldSpec{
-			WireName: "toolset_tool",
-			Kind: "object",
-			Fields: Version_Snapshot_Examples_Messages_Chunks_ToolCall_ToolsetToolFields,
-		},
-	}
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"Id":          ubx.FieldSpec{WireName: "id"},
+	"Response":    ubx.FieldSpec{WireName: "response"},
+	"Tool":        ubx.FieldSpec{WireName: "tool"},
+	"ToolsetTool": ubx.FieldSpec{
+		WireName: "toolset_tool",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Examples_Messages_Chunks_ToolCall_ToolsetToolFields,
+	},
+}
 
 var Version_Snapshot_Examples_Messages_ChunksFields = ubx.FieldMap{
-		"AgentTransfer": ubx.FieldSpec{
-			WireName: "agent_transfer",
-			Kind: "object",
-			Fields: Version_Snapshot_Examples_Messages_Chunks_AgentTransferFields,
-		},
-		"Blob": ubx.FieldSpec{
-			WireName: "blob",
-			Kind: "object",
-			Fields: Version_Snapshot_Examples_Messages_Chunks_BlobFields,
-		},
-		"DefaultVariables": ubx.FieldSpec{WireName: "default_variables"},
-		"Image": ubx.FieldSpec{
-			WireName: "image",
-			Kind: "object",
-			Fields: Version_Snapshot_Examples_Messages_Chunks_BlobFields,
-		},
-		"Payload": ubx.FieldSpec{WireName: "payload"},
-		"Text": ubx.FieldSpec{WireName: "text"},
-		"ToolCall": ubx.FieldSpec{
-			WireName: "tool_call",
-			Kind: "object",
-			Fields: Version_Snapshot_Examples_Messages_Chunks_ToolCallFields,
-		},
-		"ToolResponse": ubx.FieldSpec{
-			WireName: "tool_response",
-			Kind: "object",
-			Fields: Version_Snapshot_Examples_Messages_Chunks_ToolResponseFields,
-		},
-		"Transcript": ubx.FieldSpec{WireName: "transcript"},
-		"UpdatedVariables": ubx.FieldSpec{WireName: "updated_variables"},
-	}
+	"AgentTransfer": ubx.FieldSpec{
+		WireName: "agent_transfer",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Examples_Messages_Chunks_AgentTransferFields,
+	},
+	"Blob": ubx.FieldSpec{
+		WireName: "blob",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Examples_Messages_Chunks_BlobFields,
+	},
+	"DefaultVariables": ubx.FieldSpec{WireName: "default_variables"},
+	"Image": ubx.FieldSpec{
+		WireName: "image",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Examples_Messages_Chunks_BlobFields,
+	},
+	"Payload": ubx.FieldSpec{WireName: "payload"},
+	"Text":    ubx.FieldSpec{WireName: "text"},
+	"ToolCall": ubx.FieldSpec{
+		WireName: "tool_call",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Examples_Messages_Chunks_ToolCallFields,
+	},
+	"ToolResponse": ubx.FieldSpec{
+		WireName: "tool_response",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Examples_Messages_Chunks_ToolResponseFields,
+	},
+	"Transcript":       ubx.FieldSpec{WireName: "transcript"},
+	"UpdatedVariables": ubx.FieldSpec{WireName: "updated_variables"},
+}
 
 var Version_Snapshot_Examples_MessagesFields = ubx.FieldMap{
-		"Chunks": ubx.FieldSpec{
-			WireName: "chunks",
-			Kind: "list",
-			Fields: Version_Snapshot_Examples_Messages_ChunksFields,
-		},
-		"EventTime": ubx.FieldSpec{WireName: "event_time"},
-		"Role": ubx.FieldSpec{WireName: "role"},
-	}
+	"Chunks": ubx.FieldSpec{
+		WireName: "chunks",
+		Kind:     "list",
+		Fields:   Version_Snapshot_Examples_Messages_ChunksFields,
+	},
+	"EventTime": ubx.FieldSpec{WireName: "event_time"},
+	"Role":      ubx.FieldSpec{WireName: "role"},
+}
 
 var Version_Snapshot_ExamplesFields = ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"EntryAgent": ubx.FieldSpec{WireName: "entry_agent"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Invalid": ubx.FieldSpec{WireName: "invalid"},
-		"Messages": ubx.FieldSpec{
-			WireName: "messages",
-			Kind: "list",
-			Fields: Version_Snapshot_Examples_MessagesFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-	}
+	"CreateTime":  ubx.FieldSpec{WireName: "create_time"},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"EntryAgent":  ubx.FieldSpec{WireName: "entry_agent"},
+	"Etag":        ubx.FieldSpec{WireName: "etag"},
+	"Invalid":     ubx.FieldSpec{WireName: "invalid"},
+	"Messages": ubx.FieldSpec{
+		WireName: "messages",
+		Kind:     "list",
+		Fields:   Version_Snapshot_Examples_MessagesFields,
+	},
+	"Name":       ubx.FieldSpec{WireName: "name"},
+	"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+}
 
 var Version_Snapshot_Guardrails_Action_GenerativeAnswerFields = ubx.FieldMap{
-		"Prompt": ubx.FieldSpec{WireName: "prompt"},
-	}
+	"Prompt": ubx.FieldSpec{WireName: "prompt"},
+}
 
 var Version_Snapshot_Guardrails_Action_RespondImmediately_ResponsesFields = ubx.FieldMap{
-		"Disabled": ubx.FieldSpec{WireName: "disabled"},
-		"Text": ubx.FieldSpec{WireName: "text"},
-	}
+	"Disabled": ubx.FieldSpec{WireName: "disabled"},
+	"Text":     ubx.FieldSpec{WireName: "text"},
+}
 
 var Version_Snapshot_Guardrails_Action_RespondImmediatelyFields = ubx.FieldMap{
-		"Responses": ubx.FieldSpec{
-			WireName: "responses",
-			Kind: "list",
-			Fields: Version_Snapshot_Guardrails_Action_RespondImmediately_ResponsesFields,
-		},
-	}
+	"Responses": ubx.FieldSpec{
+		WireName: "responses",
+		Kind:     "list",
+		Fields:   Version_Snapshot_Guardrails_Action_RespondImmediately_ResponsesFields,
+	},
+}
 
 var Version_Snapshot_Guardrails_Action_TransferAgentFields = ubx.FieldMap{
-		"Agent": ubx.FieldSpec{WireName: "agent"},
-	}
+	"Agent": ubx.FieldSpec{WireName: "agent"},
+}
 
 var Version_Snapshot_Guardrails_ActionFields = ubx.FieldMap{
-		"GenerativeAnswer": ubx.FieldSpec{
-			WireName: "generative_answer",
-			Kind: "object",
-			Fields: Version_Snapshot_Guardrails_Action_GenerativeAnswerFields,
-		},
-		"RespondImmediately": ubx.FieldSpec{
-			WireName: "respond_immediately",
-			Kind: "object",
-			Fields: Version_Snapshot_Guardrails_Action_RespondImmediatelyFields,
-		},
-		"TransferAgent": ubx.FieldSpec{
-			WireName: "transfer_agent",
-			Kind: "object",
-			Fields: Version_Snapshot_Guardrails_Action_TransferAgentFields,
-		},
-	}
+	"GenerativeAnswer": ubx.FieldSpec{
+		WireName: "generative_answer",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Guardrails_Action_GenerativeAnswerFields,
+	},
+	"RespondImmediately": ubx.FieldSpec{
+		WireName: "respond_immediately",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Guardrails_Action_RespondImmediatelyFields,
+	},
+	"TransferAgent": ubx.FieldSpec{
+		WireName: "transfer_agent",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Guardrails_Action_TransferAgentFields,
+	},
+}
 
 var Version_Snapshot_Guardrails_CodeCallbackFields = ubx.FieldMap{
-		"AfterAgentCallback": ubx.FieldSpec{
-			WireName: "after_agent_callback",
-			Kind: "object",
-			Fields: Version_Snapshot_Agents_AfterAgentCallbacksFields,
-		},
-		"AfterModelCallback": ubx.FieldSpec{
-			WireName: "after_model_callback",
-			Kind: "object",
-			Fields: Version_Snapshot_Agents_AfterAgentCallbacksFields,
-		},
-		"BeforeAgentCallback": ubx.FieldSpec{
-			WireName: "before_agent_callback",
-			Kind: "object",
-			Fields: Version_Snapshot_Agents_AfterAgentCallbacksFields,
-		},
-		"BeforeModelCallback": ubx.FieldSpec{
-			WireName: "before_model_callback",
-			Kind: "object",
-			Fields: Version_Snapshot_Agents_AfterAgentCallbacksFields,
-		},
-	}
+	"AfterAgentCallback": ubx.FieldSpec{
+		WireName: "after_agent_callback",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Agents_AfterAgentCallbacksFields,
+	},
+	"AfterModelCallback": ubx.FieldSpec{
+		WireName: "after_model_callback",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Agents_AfterAgentCallbacksFields,
+	},
+	"BeforeAgentCallback": ubx.FieldSpec{
+		WireName: "before_agent_callback",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Agents_AfterAgentCallbacksFields,
+	},
+	"BeforeModelCallback": ubx.FieldSpec{
+		WireName: "before_model_callback",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Agents_AfterAgentCallbacksFields,
+	},
+}
 
 var Version_Snapshot_Guardrails_ContentFilterFields = ubx.FieldMap{
-		"BannedContents": ubx.FieldSpec{WireName: "banned_contents"},
-		"BannedContentsInAgentResponse": ubx.FieldSpec{WireName: "banned_contents_in_agent_response"},
-		"BannedContentsInUserInput": ubx.FieldSpec{WireName: "banned_contents_in_user_input"},
-		"DisregardDiacritics": ubx.FieldSpec{WireName: "disregard_diacritics"},
-		"MatchType": ubx.FieldSpec{WireName: "match_type"},
-	}
+	"BannedContents":                ubx.FieldSpec{WireName: "banned_contents"},
+	"BannedContentsInAgentResponse": ubx.FieldSpec{WireName: "banned_contents_in_agent_response"},
+	"BannedContentsInUserInput":     ubx.FieldSpec{WireName: "banned_contents_in_user_input"},
+	"DisregardDiacritics":           ubx.FieldSpec{WireName: "disregard_diacritics"},
+	"MatchType":                     ubx.FieldSpec{WireName: "match_type"},
+}
 
 var Version_Snapshot_Guardrails_LlmPolicyFields = ubx.FieldMap{
-		"AllowShortUtterance": ubx.FieldSpec{WireName: "allow_short_utterance"},
-		"FailOpen": ubx.FieldSpec{WireName: "fail_open"},
-		"MaxConversationMessages": ubx.FieldSpec{WireName: "max_conversation_messages"},
-		"ModelSettings": ubx.FieldSpec{
-			WireName: "model_settings",
-			Kind: "object",
-			Fields: Version_Snapshot_Agents_ModelSettingsFields,
-		},
-		"PolicyScope": ubx.FieldSpec{WireName: "policy_scope"},
-		"Prompt": ubx.FieldSpec{WireName: "prompt"},
-	}
+	"AllowShortUtterance":     ubx.FieldSpec{WireName: "allow_short_utterance"},
+	"FailOpen":                ubx.FieldSpec{WireName: "fail_open"},
+	"MaxConversationMessages": ubx.FieldSpec{WireName: "max_conversation_messages"},
+	"ModelSettings": ubx.FieldSpec{
+		WireName: "model_settings",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Agents_ModelSettingsFields,
+	},
+	"PolicyScope": ubx.FieldSpec{WireName: "policy_scope"},
+	"Prompt":      ubx.FieldSpec{WireName: "prompt"},
+}
 
 var Version_Snapshot_Guardrails_LlmPromptSecurity_DefaultSettingsFields = ubx.FieldMap{
-		"DefaultPromptTemplate": ubx.FieldSpec{WireName: "default_prompt_template"},
-	}
+	"DefaultPromptTemplate": ubx.FieldSpec{WireName: "default_prompt_template"},
+}
 
 var Version_Snapshot_Guardrails_LlmPromptSecurityFields = ubx.FieldMap{
-		"CustomPolicy": ubx.FieldSpec{
-			WireName: "custom_policy",
-			Kind: "object",
-			Fields: Version_Snapshot_Guardrails_LlmPolicyFields,
-		},
-		"DefaultSettings": ubx.FieldSpec{
-			WireName: "default_settings",
-			Kind: "object",
-			Fields: Version_Snapshot_Guardrails_LlmPromptSecurity_DefaultSettingsFields,
-		},
-		"FailOpen": ubx.FieldSpec{WireName: "fail_open"},
-	}
+	"CustomPolicy": ubx.FieldSpec{
+		WireName: "custom_policy",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Guardrails_LlmPolicyFields,
+	},
+	"DefaultSettings": ubx.FieldSpec{
+		WireName: "default_settings",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Guardrails_LlmPromptSecurity_DefaultSettingsFields,
+	},
+	"FailOpen": ubx.FieldSpec{WireName: "fail_open"},
+}
 
 var Version_Snapshot_Guardrails_ModelSafety_SafetySettingsFields = ubx.FieldMap{
-		"Category": ubx.FieldSpec{WireName: "category"},
-		"Threshold": ubx.FieldSpec{WireName: "threshold"},
-	}
+	"Category":  ubx.FieldSpec{WireName: "category"},
+	"Threshold": ubx.FieldSpec{WireName: "threshold"},
+}
 
 var Version_Snapshot_Guardrails_ModelSafetyFields = ubx.FieldMap{
-		"SafetySettings": ubx.FieldSpec{
-			WireName: "safety_settings",
-			Kind: "list",
-			Fields: Version_Snapshot_Guardrails_ModelSafety_SafetySettingsFields,
-		},
-	}
+	"SafetySettings": ubx.FieldSpec{
+		WireName: "safety_settings",
+		Kind:     "list",
+		Fields:   Version_Snapshot_Guardrails_ModelSafety_SafetySettingsFields,
+	},
+}
 
 var Version_Snapshot_GuardrailsFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{
-			WireName: "action",
-			Kind: "object",
-			Fields: Version_Snapshot_Guardrails_ActionFields,
-		},
-		"CodeCallback": ubx.FieldSpec{
-			WireName: "code_callback",
-			Kind: "object",
-			Fields: Version_Snapshot_Guardrails_CodeCallbackFields,
-		},
-		"ContentFilter": ubx.FieldSpec{
-			WireName: "content_filter",
-			Kind: "object",
-			Fields: Version_Snapshot_Guardrails_ContentFilterFields,
-		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"LlmPolicy": ubx.FieldSpec{
-			WireName: "llm_policy",
-			Kind: "object",
-			Fields: Version_Snapshot_Guardrails_LlmPolicyFields,
-		},
-		"LlmPromptSecurity": ubx.FieldSpec{
-			WireName: "llm_prompt_security",
-			Kind: "object",
-			Fields: Version_Snapshot_Guardrails_LlmPromptSecurityFields,
-		},
-		"ModelSafety": ubx.FieldSpec{
-			WireName: "model_safety",
-			Kind: "object",
-			Fields: Version_Snapshot_Guardrails_ModelSafetyFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-	}
+	"Action": ubx.FieldSpec{
+		WireName: "action",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Guardrails_ActionFields,
+	},
+	"CodeCallback": ubx.FieldSpec{
+		WireName: "code_callback",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Guardrails_CodeCallbackFields,
+	},
+	"ContentFilter": ubx.FieldSpec{
+		WireName: "content_filter",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Guardrails_ContentFilterFields,
+	},
+	"CreateTime":  ubx.FieldSpec{WireName: "create_time"},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"Enabled":     ubx.FieldSpec{WireName: "enabled"},
+	"Etag":        ubx.FieldSpec{WireName: "etag"},
+	"LlmPolicy": ubx.FieldSpec{
+		WireName: "llm_policy",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Guardrails_LlmPolicyFields,
+	},
+	"LlmPromptSecurity": ubx.FieldSpec{
+		WireName: "llm_prompt_security",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Guardrails_LlmPromptSecurityFields,
+	},
+	"ModelSafety": ubx.FieldSpec{
+		WireName: "model_safety",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Guardrails_ModelSafetyFields,
+	},
+	"Name":       ubx.FieldSpec{WireName: "name"},
+	"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+}
 
 var Version_Snapshot_Tools_AgentToolFields = ubx.FieldMap{
-		"Agent": ubx.FieldSpec{WireName: "agent"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Agent":       ubx.FieldSpec{WireName: "agent"},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+}
 
 var Version_Snapshot_Tools_ClientFunctionFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Parameters": ubx.FieldSpec{
-			WireName: "parameters",
-			Kind: "object",
-			Fields: Version_Snapshot_App_PredefinedVariableDeclarations_SchemaFields,
-		},
-		"Response": ubx.FieldSpec{
-			WireName: "response",
-			Kind: "object",
-			Fields: Version_Snapshot_App_PredefinedVariableDeclarations_SchemaFields,
-		},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"Parameters": ubx.FieldSpec{
+		WireName: "parameters",
+		Kind:     "object",
+		Fields:   Version_Snapshot_App_PredefinedVariableDeclarations_SchemaFields,
+	},
+	"Response": ubx.FieldSpec{
+		WireName: "response",
+		Kind:     "object",
+		Fields:   Version_Snapshot_App_PredefinedVariableDeclarations_SchemaFields,
+	},
+}
 
 var Version_Snapshot_Tools_ConnectorTool_Action_EntityOperationFields = ubx.FieldMap{
-		"EntityId": ubx.FieldSpec{WireName: "entity_id"},
-		"Operation": ubx.FieldSpec{WireName: "operation"},
-	}
+	"EntityId":  ubx.FieldSpec{WireName: "entity_id"},
+	"Operation": ubx.FieldSpec{WireName: "operation"},
+}
 
 var Version_Snapshot_Tools_ConnectorTool_ActionFields = ubx.FieldMap{
-		"ConnectionActionId": ubx.FieldSpec{WireName: "connection_action_id"},
-		"EntityOperation": ubx.FieldSpec{
-			WireName: "entity_operation",
-			Kind: "object",
-			Fields: Version_Snapshot_Tools_ConnectorTool_Action_EntityOperationFields,
-		},
-		"InputFields": ubx.FieldSpec{WireName: "input_fields"},
-		"OutputFields": ubx.FieldSpec{WireName: "output_fields"},
-	}
+	"ConnectionActionId": ubx.FieldSpec{WireName: "connection_action_id"},
+	"EntityOperation": ubx.FieldSpec{
+		WireName: "entity_operation",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Tools_ConnectorTool_Action_EntityOperationFields,
+	},
+	"InputFields":  ubx.FieldSpec{WireName: "input_fields"},
+	"OutputFields": ubx.FieldSpec{WireName: "output_fields"},
+}
 
 var Version_Snapshot_Tools_ConnectorTool_AuthConfig_Oauth2AuthCodeConfigFields = ubx.FieldMap{
-		"OauthToken": ubx.FieldSpec{WireName: "oauth_token"},
-	}
+	"OauthToken": ubx.FieldSpec{WireName: "oauth_token"},
+}
 
 var Version_Snapshot_Tools_ConnectorTool_AuthConfig_Oauth2JwtBearerConfigFields = ubx.FieldMap{
-		"ClientKey": ubx.FieldSpec{WireName: "client_key"},
-		"Issuer": ubx.FieldSpec{WireName: "issuer"},
-		"Subject": ubx.FieldSpec{WireName: "subject"},
-	}
+	"ClientKey": ubx.FieldSpec{WireName: "client_key"},
+	"Issuer":    ubx.FieldSpec{WireName: "issuer"},
+	"Subject":   ubx.FieldSpec{WireName: "subject"},
+}
 
 var Version_Snapshot_Tools_ConnectorTool_AuthConfigFields = ubx.FieldMap{
-		"Oauth2AuthCodeConfig": ubx.FieldSpec{
-			WireName: "oauth2_auth_code_config",
-			Kind: "object",
-			Fields: Version_Snapshot_Tools_ConnectorTool_AuthConfig_Oauth2AuthCodeConfigFields,
-		},
-		"Oauth2JwtBearerConfig": ubx.FieldSpec{
-			WireName: "oauth2_jwt_bearer_config",
-			Kind: "object",
-			Fields: Version_Snapshot_Tools_ConnectorTool_AuthConfig_Oauth2JwtBearerConfigFields,
-		},
-	}
+	"Oauth2AuthCodeConfig": ubx.FieldSpec{
+		WireName: "oauth2_auth_code_config",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Tools_ConnectorTool_AuthConfig_Oauth2AuthCodeConfigFields,
+	},
+	"Oauth2JwtBearerConfig": ubx.FieldSpec{
+		WireName: "oauth2_jwt_bearer_config",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Tools_ConnectorTool_AuthConfig_Oauth2JwtBearerConfigFields,
+	},
+}
 
 var Version_Snapshot_Tools_ConnectorToolFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{
-			WireName: "action",
-			Kind: "object",
-			Fields: Version_Snapshot_Tools_ConnectorTool_ActionFields,
-		},
-		"AuthConfig": ubx.FieldSpec{
-			WireName: "auth_config",
-			Kind: "object",
-			Fields: Version_Snapshot_Tools_ConnectorTool_AuthConfigFields,
-		},
-		"Connection": ubx.FieldSpec{WireName: "connection"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Action": ubx.FieldSpec{
+		WireName: "action",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Tools_ConnectorTool_ActionFields,
+	},
+	"AuthConfig": ubx.FieldSpec{
+		WireName: "auth_config",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Tools_ConnectorTool_AuthConfigFields,
+	},
+	"Connection":  ubx.FieldSpec{WireName: "connection"},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+}
 
 var Version_Snapshot_Tools_DataStoreTool_BoostSpecs_Spec_ConditionBoostSpecs_BoostControlSpec_ControlPointsFields = ubx.FieldMap{
-		"AttributeValue": ubx.FieldSpec{WireName: "attribute_value"},
-		"BoostAmount": ubx.FieldSpec{WireName: "boost_amount"},
-	}
+	"AttributeValue": ubx.FieldSpec{WireName: "attribute_value"},
+	"BoostAmount":    ubx.FieldSpec{WireName: "boost_amount"},
+}
 
 var Version_Snapshot_Tools_DataStoreTool_BoostSpecs_Spec_ConditionBoostSpecs_BoostControlSpecFields = ubx.FieldMap{
-		"AttributeType": ubx.FieldSpec{WireName: "attribute_type"},
-		"ControlPoints": ubx.FieldSpec{
-			WireName: "control_points",
-			Kind: "list",
-			Fields: Version_Snapshot_Tools_DataStoreTool_BoostSpecs_Spec_ConditionBoostSpecs_BoostControlSpec_ControlPointsFields,
-		},
-		"FieldName": ubx.FieldSpec{WireName: "field_name"},
-		"InterpolationType": ubx.FieldSpec{WireName: "interpolation_type"},
-	}
+	"AttributeType": ubx.FieldSpec{WireName: "attribute_type"},
+	"ControlPoints": ubx.FieldSpec{
+		WireName: "control_points",
+		Kind:     "list",
+		Fields:   Version_Snapshot_Tools_DataStoreTool_BoostSpecs_Spec_ConditionBoostSpecs_BoostControlSpec_ControlPointsFields,
+	},
+	"FieldName":         ubx.FieldSpec{WireName: "field_name"},
+	"InterpolationType": ubx.FieldSpec{WireName: "interpolation_type"},
+}
 
 var Version_Snapshot_Tools_DataStoreTool_BoostSpecs_Spec_ConditionBoostSpecsFields = ubx.FieldMap{
-		"Boost": ubx.FieldSpec{WireName: "boost"},
-		"BoostControlSpec": ubx.FieldSpec{
-			WireName: "boost_control_spec",
-			Kind: "object",
-			Fields: Version_Snapshot_Tools_DataStoreTool_BoostSpecs_Spec_ConditionBoostSpecs_BoostControlSpecFields,
-		},
-		"Condition": ubx.FieldSpec{WireName: "condition"},
-	}
+	"Boost": ubx.FieldSpec{WireName: "boost"},
+	"BoostControlSpec": ubx.FieldSpec{
+		WireName: "boost_control_spec",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Tools_DataStoreTool_BoostSpecs_Spec_ConditionBoostSpecs_BoostControlSpecFields,
+	},
+	"Condition": ubx.FieldSpec{WireName: "condition"},
+}
 
 var Version_Snapshot_Tools_DataStoreTool_BoostSpecs_SpecFields = ubx.FieldMap{
-		"ConditionBoostSpecs": ubx.FieldSpec{
-			WireName: "condition_boost_specs",
-			Kind: "list",
-			Fields: Version_Snapshot_Tools_DataStoreTool_BoostSpecs_Spec_ConditionBoostSpecsFields,
-		},
-	}
+	"ConditionBoostSpecs": ubx.FieldSpec{
+		WireName: "condition_boost_specs",
+		Kind:     "list",
+		Fields:   Version_Snapshot_Tools_DataStoreTool_BoostSpecs_Spec_ConditionBoostSpecsFields,
+	},
+}
 
 var Version_Snapshot_Tools_DataStoreTool_BoostSpecsFields = ubx.FieldMap{
-		"DataStores": ubx.FieldSpec{WireName: "data_stores"},
-		"Spec": ubx.FieldSpec{
-			WireName: "spec",
-			Kind: "list",
-			Fields: Version_Snapshot_Tools_DataStoreTool_BoostSpecs_SpecFields,
-		},
-	}
+	"DataStores": ubx.FieldSpec{WireName: "data_stores"},
+	"Spec": ubx.FieldSpec{
+		WireName: "spec",
+		Kind:     "list",
+		Fields:   Version_Snapshot_Tools_DataStoreTool_BoostSpecs_SpecFields,
+	},
+}
 
 var Version_Snapshot_Tools_DataStoreTool_DataStoreSource_DataStore_ConnectorConfigFields = ubx.FieldMap{
-		"Collection": ubx.FieldSpec{WireName: "collection"},
-		"CollectionDisplayName": ubx.FieldSpec{WireName: "collection_display_name"},
-		"DataSource": ubx.FieldSpec{WireName: "data_source"},
-	}
+	"Collection":            ubx.FieldSpec{WireName: "collection"},
+	"CollectionDisplayName": ubx.FieldSpec{WireName: "collection_display_name"},
+	"DataSource":            ubx.FieldSpec{WireName: "data_source"},
+}
 
 var Version_Snapshot_Tools_DataStoreTool_DataStoreSource_DataStoreFields = ubx.FieldMap{
-		"ConnectorConfig": ubx.FieldSpec{
-			WireName: "connector_config",
-			Kind: "object",
-			Fields: Version_Snapshot_Tools_DataStoreTool_DataStoreSource_DataStore_ConnectorConfigFields,
-		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"DocumentProcessingMode": ubx.FieldSpec{WireName: "document_processing_mode"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"ConnectorConfig": ubx.FieldSpec{
+		WireName: "connector_config",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Tools_DataStoreTool_DataStoreSource_DataStore_ConnectorConfigFields,
+	},
+	"CreateTime":             ubx.FieldSpec{WireName: "create_time"},
+	"DisplayName":            ubx.FieldSpec{WireName: "display_name"},
+	"DocumentProcessingMode": ubx.FieldSpec{WireName: "document_processing_mode"},
+	"Name":                   ubx.FieldSpec{WireName: "name"},
+	"Type":                   ubx.FieldSpec{WireName: "type"},
+}
 
 var Version_Snapshot_Tools_DataStoreTool_DataStoreSourceFields = ubx.FieldMap{
-		"DataStore": ubx.FieldSpec{
-			WireName: "data_store",
-			Kind: "object",
-			Fields: Version_Snapshot_Tools_DataStoreTool_DataStoreSource_DataStoreFields,
-		},
-		"Filter": ubx.FieldSpec{WireName: "filter"},
-	}
+	"DataStore": ubx.FieldSpec{
+		WireName: "data_store",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Tools_DataStoreTool_DataStoreSource_DataStoreFields,
+	},
+	"Filter": ubx.FieldSpec{WireName: "filter"},
+}
 
 var Version_Snapshot_Tools_DataStoreTool_EngineSourceFields = ubx.FieldMap{
-		"DataStoreSources": ubx.FieldSpec{
-			WireName: "data_store_sources",
-			Kind: "list",
-			Fields: Version_Snapshot_Tools_DataStoreTool_DataStoreSourceFields,
-		},
-		"Engine": ubx.FieldSpec{WireName: "engine"},
-		"Filter": ubx.FieldSpec{WireName: "filter"},
-	}
+	"DataStoreSources": ubx.FieldSpec{
+		WireName: "data_store_sources",
+		Kind:     "list",
+		Fields:   Version_Snapshot_Tools_DataStoreTool_DataStoreSourceFields,
+	},
+	"Engine": ubx.FieldSpec{WireName: "engine"},
+	"Filter": ubx.FieldSpec{WireName: "filter"},
+}
 
 var Version_Snapshot_Tools_DataStoreTool_ModalityConfigs_GroundingConfigFields = ubx.FieldMap{
-		"Disabled": ubx.FieldSpec{WireName: "disabled"},
-		"GroundingLevel": ubx.FieldSpec{WireName: "grounding_level"},
-	}
+	"Disabled":       ubx.FieldSpec{WireName: "disabled"},
+	"GroundingLevel": ubx.FieldSpec{WireName: "grounding_level"},
+}
 
 var Version_Snapshot_Tools_DataStoreTool_ModalityConfigs_RewriterConfigFields = ubx.FieldMap{
-		"Disabled": ubx.FieldSpec{WireName: "disabled"},
-		"ModelSettings": ubx.FieldSpec{
-			WireName: "model_settings",
-			Kind: "object",
-			Fields: Version_Snapshot_Agents_ModelSettingsFields,
-		},
-		"Prompt": ubx.FieldSpec{WireName: "prompt"},
-	}
+	"Disabled": ubx.FieldSpec{WireName: "disabled"},
+	"ModelSettings": ubx.FieldSpec{
+		WireName: "model_settings",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Agents_ModelSettingsFields,
+	},
+	"Prompt": ubx.FieldSpec{WireName: "prompt"},
+}
 
 var Version_Snapshot_Tools_DataStoreTool_ModalityConfigs_SnippetsConfigFields = ubx.FieldMap{
-		"EnableSnippets": ubx.FieldSpec{WireName: "enable_snippets"},
-	}
+	"EnableSnippets": ubx.FieldSpec{WireName: "enable_snippets"},
+}
 
 var Version_Snapshot_Tools_DataStoreTool_ModalityConfigsFields = ubx.FieldMap{
-		"GroundingConfig": ubx.FieldSpec{
-			WireName: "grounding_config",
-			Kind: "object",
-			Fields: Version_Snapshot_Tools_DataStoreTool_ModalityConfigs_GroundingConfigFields,
-		},
-		"ModalityType": ubx.FieldSpec{WireName: "modality_type"},
-		"RewriterConfig": ubx.FieldSpec{
-			WireName: "rewriter_config",
-			Kind: "object",
-			Fields: Version_Snapshot_Tools_DataStoreTool_ModalityConfigs_RewriterConfigFields,
-		},
-		"SnippetsConfig": ubx.FieldSpec{
-			WireName: "snippets_config",
-			Kind: "object",
-			Fields: Version_Snapshot_Tools_DataStoreTool_ModalityConfigs_SnippetsConfigFields,
-		},
-		"SummarizationConfig": ubx.FieldSpec{
-			WireName: "summarization_config",
-			Kind: "object",
-			Fields: Version_Snapshot_Tools_DataStoreTool_ModalityConfigs_RewriterConfigFields,
-		},
-	}
+	"GroundingConfig": ubx.FieldSpec{
+		WireName: "grounding_config",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Tools_DataStoreTool_ModalityConfigs_GroundingConfigFields,
+	},
+	"ModalityType": ubx.FieldSpec{WireName: "modality_type"},
+	"RewriterConfig": ubx.FieldSpec{
+		WireName: "rewriter_config",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Tools_DataStoreTool_ModalityConfigs_RewriterConfigFields,
+	},
+	"SnippetsConfig": ubx.FieldSpec{
+		WireName: "snippets_config",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Tools_DataStoreTool_ModalityConfigs_SnippetsConfigFields,
+	},
+	"SummarizationConfig": ubx.FieldSpec{
+		WireName: "summarization_config",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Tools_DataStoreTool_ModalityConfigs_RewriterConfigFields,
+	},
+}
 
 var Version_Snapshot_Tools_DataStoreToolFields = ubx.FieldMap{
-		"BoostSpecs": ubx.FieldSpec{
-			WireName: "boost_specs",
-			Kind: "list",
-			Fields: Version_Snapshot_Tools_DataStoreTool_BoostSpecsFields,
-		},
-		"DataStoreSource": ubx.FieldSpec{
-			WireName: "data_store_source",
-			Kind: "object",
-			Fields: Version_Snapshot_Tools_DataStoreTool_DataStoreSourceFields,
-		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"EngineSource": ubx.FieldSpec{
-			WireName: "engine_source",
-			Kind: "object",
-			Fields: Version_Snapshot_Tools_DataStoreTool_EngineSourceFields,
-		},
-		"FilterParameterBehavior": ubx.FieldSpec{WireName: "filter_parameter_behavior"},
-		"ModalityConfigs": ubx.FieldSpec{
-			WireName: "modality_configs",
-			Kind: "list",
-			Fields: Version_Snapshot_Tools_DataStoreTool_ModalityConfigsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"BoostSpecs": ubx.FieldSpec{
+		WireName: "boost_specs",
+		Kind:     "list",
+		Fields:   Version_Snapshot_Tools_DataStoreTool_BoostSpecsFields,
+	},
+	"DataStoreSource": ubx.FieldSpec{
+		WireName: "data_store_source",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Tools_DataStoreTool_DataStoreSourceFields,
+	},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"EngineSource": ubx.FieldSpec{
+		WireName: "engine_source",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Tools_DataStoreTool_EngineSourceFields,
+	},
+	"FilterParameterBehavior": ubx.FieldSpec{WireName: "filter_parameter_behavior"},
+	"ModalityConfigs": ubx.FieldSpec{
+		WireName: "modality_configs",
+		Kind:     "list",
+		Fields:   Version_Snapshot_Tools_DataStoreTool_ModalityConfigsFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var Version_Snapshot_Tools_FileSearchToolFields = ubx.FieldMap{
-		"CorpusType": ubx.FieldSpec{WireName: "corpus_type"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"FileCorpus": ubx.FieldSpec{WireName: "file_corpus"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"CorpusType":  ubx.FieldSpec{WireName: "corpus_type"},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"FileCorpus":  ubx.FieldSpec{WireName: "file_corpus"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+}
 
 var Version_Snapshot_Tools_GoogleSearchTool_PromptConfigFields = ubx.FieldMap{
-		"TextPrompt": ubx.FieldSpec{WireName: "text_prompt"},
-		"VoicePrompt": ubx.FieldSpec{WireName: "voice_prompt"},
-	}
+	"TextPrompt":  ubx.FieldSpec{WireName: "text_prompt"},
+	"VoicePrompt": ubx.FieldSpec{WireName: "voice_prompt"},
+}
 
 var Version_Snapshot_Tools_GoogleSearchToolFields = ubx.FieldMap{
-		"ContextUrls": ubx.FieldSpec{WireName: "context_urls"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"ExcludeDomains": ubx.FieldSpec{WireName: "exclude_domains"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PreferredDomains": ubx.FieldSpec{WireName: "preferred_domains"},
-		"PromptConfig": ubx.FieldSpec{
-			WireName: "prompt_config",
-			Kind: "object",
-			Fields: Version_Snapshot_Tools_GoogleSearchTool_PromptConfigFields,
-		},
-	}
+	"ContextUrls":      ubx.FieldSpec{WireName: "context_urls"},
+	"Description":      ubx.FieldSpec{WireName: "description"},
+	"ExcludeDomains":   ubx.FieldSpec{WireName: "exclude_domains"},
+	"Name":             ubx.FieldSpec{WireName: "name"},
+	"PreferredDomains": ubx.FieldSpec{WireName: "preferred_domains"},
+	"PromptConfig": ubx.FieldSpec{
+		WireName: "prompt_config",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Tools_GoogleSearchTool_PromptConfigFields,
+	},
+}
 
 var Version_Snapshot_Tools_McpTool_ApiAuthentication_ApiKeyConfigFields = ubx.FieldMap{
-		"ApiKeySecretVersion": ubx.FieldSpec{WireName: "api_key_secret_version"},
-		"KeyName": ubx.FieldSpec{WireName: "key_name"},
-		"RequestLocation": ubx.FieldSpec{WireName: "request_location"},
-	}
+	"ApiKeySecretVersion": ubx.FieldSpec{WireName: "api_key_secret_version"},
+	"KeyName":             ubx.FieldSpec{WireName: "key_name"},
+	"RequestLocation":     ubx.FieldSpec{WireName: "request_location"},
+}
 
 var Version_Snapshot_Tools_McpTool_ApiAuthentication_BearerTokenConfigFields = ubx.FieldMap{
-		"Token": ubx.FieldSpec{WireName: "token"},
-	}
+	"Token": ubx.FieldSpec{WireName: "token"},
+}
 
 var Version_Snapshot_Tools_McpTool_ApiAuthentication_OauthConfigFields = ubx.FieldMap{
-		"ClientId": ubx.FieldSpec{WireName: "client_id"},
-		"ClientSecretVersion": ubx.FieldSpec{WireName: "client_secret_version"},
-		"OauthGrantType": ubx.FieldSpec{WireName: "oauth_grant_type"},
-		"Scopes": ubx.FieldSpec{WireName: "scopes"},
-		"TokenEndpoint": ubx.FieldSpec{WireName: "token_endpoint"},
-	}
+	"ClientId":            ubx.FieldSpec{WireName: "client_id"},
+	"ClientSecretVersion": ubx.FieldSpec{WireName: "client_secret_version"},
+	"OauthGrantType":      ubx.FieldSpec{WireName: "oauth_grant_type"},
+	"Scopes":              ubx.FieldSpec{WireName: "scopes"},
+	"TokenEndpoint":       ubx.FieldSpec{WireName: "token_endpoint"},
+}
 
 var Version_Snapshot_Tools_McpTool_ApiAuthentication_ServiceAccountAuthConfigFields = ubx.FieldMap{
-		"Scopes": ubx.FieldSpec{WireName: "scopes"},
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-	}
+	"Scopes":         ubx.FieldSpec{WireName: "scopes"},
+	"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
+}
 
 var Version_Snapshot_Tools_McpTool_ApiAuthenticationFields = ubx.FieldMap{
-		"ApiKeyConfig": ubx.FieldSpec{
-			WireName: "api_key_config",
-			Kind: "object",
-			Fields: Version_Snapshot_Tools_McpTool_ApiAuthentication_ApiKeyConfigFields,
-		},
-		"BearerTokenConfig": ubx.FieldSpec{
-			WireName: "bearer_token_config",
-			Kind: "object",
-			Fields: Version_Snapshot_Tools_McpTool_ApiAuthentication_BearerTokenConfigFields,
-		},
-		"OauthConfig": ubx.FieldSpec{
-			WireName: "oauth_config",
-			Kind: "object",
-			Fields: Version_Snapshot_Tools_McpTool_ApiAuthentication_OauthConfigFields,
-		},
-		"ServiceAccountAuthConfig": ubx.FieldSpec{
-			WireName: "service_account_auth_config",
-			Kind: "object",
-			Fields: Version_Snapshot_Tools_McpTool_ApiAuthentication_ServiceAccountAuthConfigFields,
-		},
-		"ServiceAgentIdTokenAuthConfig": ubx.FieldSpec{WireName: "service_agent_id_token_auth_config"},
-	}
+	"ApiKeyConfig": ubx.FieldSpec{
+		WireName: "api_key_config",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Tools_McpTool_ApiAuthentication_ApiKeyConfigFields,
+	},
+	"BearerTokenConfig": ubx.FieldSpec{
+		WireName: "bearer_token_config",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Tools_McpTool_ApiAuthentication_BearerTokenConfigFields,
+	},
+	"OauthConfig": ubx.FieldSpec{
+		WireName: "oauth_config",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Tools_McpTool_ApiAuthentication_OauthConfigFields,
+	},
+	"ServiceAccountAuthConfig": ubx.FieldSpec{
+		WireName: "service_account_auth_config",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Tools_McpTool_ApiAuthentication_ServiceAccountAuthConfigFields,
+	},
+	"ServiceAgentIdTokenAuthConfig": ubx.FieldSpec{WireName: "service_agent_id_token_auth_config"},
+}
 
 var Version_Snapshot_Tools_McpTool_ServiceDirectoryConfigFields = ubx.FieldMap{
-		"Service": ubx.FieldSpec{WireName: "service"},
-	}
+	"Service": ubx.FieldSpec{WireName: "service"},
+}
 
 var Version_Snapshot_Tools_McpTool_TlsConfig_CaCertsFields = ubx.FieldMap{
-		"Cert": ubx.FieldSpec{WireName: "cert"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-	}
+	"Cert":        ubx.FieldSpec{WireName: "cert"},
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+}
 
 var Version_Snapshot_Tools_McpTool_TlsConfigFields = ubx.FieldMap{
-		"CaCerts": ubx.FieldSpec{
-			WireName: "ca_certs",
-			Kind: "list",
-			Fields: Version_Snapshot_Tools_McpTool_TlsConfig_CaCertsFields,
-		},
-	}
+	"CaCerts": ubx.FieldSpec{
+		WireName: "ca_certs",
+		Kind:     "list",
+		Fields:   Version_Snapshot_Tools_McpTool_TlsConfig_CaCertsFields,
+	},
+}
 
 var Version_Snapshot_Tools_McpToolFields = ubx.FieldMap{
-		"ApiAuthentication": ubx.FieldSpec{
-			WireName: "api_authentication",
-			Kind: "object",
-			Fields: Version_Snapshot_Tools_McpTool_ApiAuthenticationFields,
-		},
-		"CustomHeaders": ubx.FieldSpec{WireName: "custom_headers"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"InputSchema": ubx.FieldSpec{
-			WireName: "input_schema",
-			Kind: "object",
-			Fields: Version_Snapshot_App_PredefinedVariableDeclarations_SchemaFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NameOverride": ubx.FieldSpec{WireName: "name_override"},
-		"OutputSchema": ubx.FieldSpec{
-			WireName: "output_schema",
-			Kind: "object",
-			Fields: Version_Snapshot_App_PredefinedVariableDeclarations_SchemaFields,
-		},
-		"ServerAddress": ubx.FieldSpec{WireName: "server_address"},
-		"ServiceDirectoryConfig": ubx.FieldSpec{
-			WireName: "service_directory_config",
-			Kind: "object",
-			Fields: Version_Snapshot_Tools_McpTool_ServiceDirectoryConfigFields,
-		},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"TlsConfig": ubx.FieldSpec{
-			WireName: "tls_config",
-			Kind: "object",
-			Fields: Version_Snapshot_Tools_McpTool_TlsConfigFields,
-		},
-	}
+	"ApiAuthentication": ubx.FieldSpec{
+		WireName: "api_authentication",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Tools_McpTool_ApiAuthenticationFields,
+	},
+	"CustomHeaders": ubx.FieldSpec{WireName: "custom_headers"},
+	"Description":   ubx.FieldSpec{WireName: "description"},
+	"InputSchema": ubx.FieldSpec{
+		WireName: "input_schema",
+		Kind:     "object",
+		Fields:   Version_Snapshot_App_PredefinedVariableDeclarations_SchemaFields,
+	},
+	"Name":         ubx.FieldSpec{WireName: "name"},
+	"NameOverride": ubx.FieldSpec{WireName: "name_override"},
+	"OutputSchema": ubx.FieldSpec{
+		WireName: "output_schema",
+		Kind:     "object",
+		Fields:   Version_Snapshot_App_PredefinedVariableDeclarations_SchemaFields,
+	},
+	"ServerAddress": ubx.FieldSpec{WireName: "server_address"},
+	"ServiceDirectoryConfig": ubx.FieldSpec{
+		WireName: "service_directory_config",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Tools_McpTool_ServiceDirectoryConfigFields,
+	},
+	"State": ubx.FieldSpec{WireName: "state"},
+	"TlsConfig": ubx.FieldSpec{
+		WireName: "tls_config",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Tools_McpTool_TlsConfigFields,
+	},
+}
 
 var Version_Snapshot_Tools_OpenApiToolFields = ubx.FieldMap{
-		"ApiAuthentication": ubx.FieldSpec{
-			WireName: "api_authentication",
-			Kind: "object",
-			Fields: Version_Snapshot_Tools_McpTool_ApiAuthenticationFields,
-		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"IgnoreUnknownFields": ubx.FieldSpec{WireName: "ignore_unknown_fields"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"OpenApiSchema": ubx.FieldSpec{WireName: "open_api_schema"},
-		"ServiceDirectoryConfig": ubx.FieldSpec{
-			WireName: "service_directory_config",
-			Kind: "object",
-			Fields: Version_Snapshot_Tools_McpTool_ServiceDirectoryConfigFields,
-		},
-		"TlsConfig": ubx.FieldSpec{
-			WireName: "tls_config",
-			Kind: "object",
-			Fields: Version_Snapshot_Tools_McpTool_TlsConfigFields,
-		},
-		"Url": ubx.FieldSpec{WireName: "url"},
-	}
+	"ApiAuthentication": ubx.FieldSpec{
+		WireName: "api_authentication",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Tools_McpTool_ApiAuthenticationFields,
+	},
+	"Description":         ubx.FieldSpec{WireName: "description"},
+	"IgnoreUnknownFields": ubx.FieldSpec{WireName: "ignore_unknown_fields"},
+	"Name":                ubx.FieldSpec{WireName: "name"},
+	"OpenApiSchema":       ubx.FieldSpec{WireName: "open_api_schema"},
+	"ServiceDirectoryConfig": ubx.FieldSpec{
+		WireName: "service_directory_config",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Tools_McpTool_ServiceDirectoryConfigFields,
+	},
+	"TlsConfig": ubx.FieldSpec{
+		WireName: "tls_config",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Tools_McpTool_TlsConfigFields,
+	},
+	"Url": ubx.FieldSpec{WireName: "url"},
+}
 
 var Version_Snapshot_Tools_PythonFunctionFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PythonCode": ubx.FieldSpec{WireName: "python_code"},
-		"ServiceDirectoryConfig": ubx.FieldSpec{
-			WireName: "service_directory_config",
-			Kind: "object",
-			Fields: Version_Snapshot_Tools_McpTool_ServiceDirectoryConfigFields,
-		},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"PythonCode":  ubx.FieldSpec{WireName: "python_code"},
+	"ServiceDirectoryConfig": ubx.FieldSpec{
+		WireName: "service_directory_config",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Tools_McpTool_ServiceDirectoryConfigFields,
+	},
+}
 
 var Version_Snapshot_Tools_RemoteAgentTool_AgentCard_SkillsFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Examples": ubx.FieldSpec{WireName: "examples"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"InputModes": ubx.FieldSpec{WireName: "input_modes"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"OutputModes": ubx.FieldSpec{WireName: "output_modes"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Examples":    ubx.FieldSpec{WireName: "examples"},
+	"Id":          ubx.FieldSpec{WireName: "id"},
+	"InputModes":  ubx.FieldSpec{WireName: "input_modes"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"OutputModes": ubx.FieldSpec{WireName: "output_modes"},
+	"Tags":        ubx.FieldSpec{WireName: "tags"},
+}
 
 var Version_Snapshot_Tools_RemoteAgentTool_AgentCard_SupportedInterfacesFields = ubx.FieldMap{
-		"ProtocolBinding": ubx.FieldSpec{WireName: "protocol_binding"},
-		"ProtocolVersion": ubx.FieldSpec{WireName: "protocol_version"},
-		"Tenant": ubx.FieldSpec{WireName: "tenant"},
-		"Url": ubx.FieldSpec{WireName: "url"},
-	}
+	"ProtocolBinding": ubx.FieldSpec{WireName: "protocol_binding"},
+	"ProtocolVersion": ubx.FieldSpec{WireName: "protocol_version"},
+	"Tenant":          ubx.FieldSpec{WireName: "tenant"},
+	"Url":             ubx.FieldSpec{WireName: "url"},
+}
 
 var Version_Snapshot_Tools_RemoteAgentTool_AgentCardFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Skills": ubx.FieldSpec{
-			WireName: "skills",
-			Kind: "list",
-			Fields: Version_Snapshot_Tools_RemoteAgentTool_AgentCard_SkillsFields,
-		},
-		"SupportedInterfaces": ubx.FieldSpec{
-			WireName: "supported_interfaces",
-			Kind: "list",
-			Fields: Version_Snapshot_Tools_RemoteAgentTool_AgentCard_SupportedInterfacesFields,
-		},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"Skills": ubx.FieldSpec{
+		WireName: "skills",
+		Kind:     "list",
+		Fields:   Version_Snapshot_Tools_RemoteAgentTool_AgentCard_SkillsFields,
+	},
+	"SupportedInterfaces": ubx.FieldSpec{
+		WireName: "supported_interfaces",
+		Kind:     "list",
+		Fields:   Version_Snapshot_Tools_RemoteAgentTool_AgentCard_SupportedInterfacesFields,
+	},
+	"Version": ubx.FieldSpec{WireName: "version"},
+}
 
 var Version_Snapshot_Tools_RemoteAgentToolFields = ubx.FieldMap{
-		"AgentCard": ubx.FieldSpec{
-			WireName: "agent_card",
-			Kind: "object",
-			Fields: Version_Snapshot_Tools_RemoteAgentTool_AgentCardFields,
-		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"AgentCard": ubx.FieldSpec{
+		WireName: "agent_card",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Tools_RemoteAgentTool_AgentCardFields,
+	},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+}
 
 var Version_Snapshot_Tools_SystemToolFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+}
 
 var Version_Snapshot_Tools_ToolFakeConfigFields = ubx.FieldMap{
-		"CodeBlock": ubx.FieldSpec{
-			WireName: "code_block",
-			Kind: "object",
-			Fields: Version_Snapshot_Agents_TransferRules_DeterministicTransfer_PythonCodeConditionFields,
-		},
-		"EnableFakeMode": ubx.FieldSpec{WireName: "enable_fake_mode"},
-	}
+	"CodeBlock": ubx.FieldSpec{
+		WireName: "code_block",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Agents_TransferRules_DeterministicTransfer_PythonCodeConditionFields,
+	},
+	"EnableFakeMode": ubx.FieldSpec{WireName: "enable_fake_mode"},
+}
 
 var Version_Snapshot_Tools_WidgetTool_DataMappingFields = ubx.FieldMap{
-		"FieldMappings": ubx.FieldSpec{WireName: "field_mappings"},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"PythonFunction": ubx.FieldSpec{
-			WireName: "python_function",
-			Kind: "object",
-			Fields: Version_Snapshot_Tools_PythonFunctionFields,
-		},
-		"PythonScript": ubx.FieldSpec{WireName: "python_script"},
-		"SourceToolName": ubx.FieldSpec{WireName: "source_tool_name"},
-	}
+	"FieldMappings": ubx.FieldSpec{WireName: "field_mappings"},
+	"Mode":          ubx.FieldSpec{WireName: "mode"},
+	"PythonFunction": ubx.FieldSpec{
+		WireName: "python_function",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Tools_PythonFunctionFields,
+	},
+	"PythonScript":   ubx.FieldSpec{WireName: "python_script"},
+	"SourceToolName": ubx.FieldSpec{WireName: "source_tool_name"},
+}
 
 var Version_Snapshot_Tools_WidgetTool_TextResponseConfigFields = ubx.FieldMap{
-		"StaticText": ubx.FieldSpec{WireName: "static_text"},
-		"TextResponseInstruction": ubx.FieldSpec{WireName: "text_response_instruction"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"StaticText":              ubx.FieldSpec{WireName: "static_text"},
+	"TextResponseInstruction": ubx.FieldSpec{WireName: "text_response_instruction"},
+	"Type":                    ubx.FieldSpec{WireName: "type"},
+}
 
 var Version_Snapshot_Tools_WidgetToolFields = ubx.FieldMap{
-		"DataMapping": ubx.FieldSpec{
-			WireName: "data_mapping",
-			Kind: "object",
-			Fields: Version_Snapshot_Tools_WidgetTool_DataMappingFields,
-		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Parameters": ubx.FieldSpec{
-			WireName: "parameters",
-			Kind: "object",
-			Fields: Version_Snapshot_App_PredefinedVariableDeclarations_SchemaFields,
-		},
-		"TextResponseConfig": ubx.FieldSpec{
-			WireName: "text_response_config",
-			Kind: "object",
-			Fields: Version_Snapshot_Tools_WidgetTool_TextResponseConfigFields,
-		},
-		"UiConfig": ubx.FieldSpec{WireName: "ui_config"},
-		"WidgetType": ubx.FieldSpec{WireName: "widget_type"},
-	}
+	"DataMapping": ubx.FieldSpec{
+		WireName: "data_mapping",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Tools_WidgetTool_DataMappingFields,
+	},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"Parameters": ubx.FieldSpec{
+		WireName: "parameters",
+		Kind:     "object",
+		Fields:   Version_Snapshot_App_PredefinedVariableDeclarations_SchemaFields,
+	},
+	"TextResponseConfig": ubx.FieldSpec{
+		WireName: "text_response_config",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Tools_WidgetTool_TextResponseConfigFields,
+	},
+	"UiConfig":   ubx.FieldSpec{WireName: "ui_config"},
+	"WidgetType": ubx.FieldSpec{WireName: "widget_type"},
+}
 
 var Version_Snapshot_ToolsFields = ubx.FieldMap{
-		"AgentTool": ubx.FieldSpec{
-			WireName: "agent_tool",
-			Kind: "object",
-			Fields: Version_Snapshot_Tools_AgentToolFields,
-		},
-		"ClientFunction": ubx.FieldSpec{
-			WireName: "client_function",
-			Kind: "object",
-			Fields: Version_Snapshot_Tools_ClientFunctionFields,
-		},
-		"ConnectorTool": ubx.FieldSpec{
-			WireName: "connector_tool",
-			Kind: "object",
-			Fields: Version_Snapshot_Tools_ConnectorToolFields,
-		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DataStoreTool": ubx.FieldSpec{
-			WireName: "data_store_tool",
-			Kind: "object",
-			Fields: Version_Snapshot_Tools_DataStoreToolFields,
-		},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"ExecutionType": ubx.FieldSpec{WireName: "execution_type"},
-		"FileSearchTool": ubx.FieldSpec{
-			WireName: "file_search_tool",
-			Kind: "object",
-			Fields: Version_Snapshot_Tools_FileSearchToolFields,
-		},
-		"GeneratedSummary": ubx.FieldSpec{WireName: "generated_summary"},
-		"GoogleSearchTool": ubx.FieldSpec{
-			WireName: "google_search_tool",
-			Kind: "object",
-			Fields: Version_Snapshot_Tools_GoogleSearchToolFields,
-		},
-		"McpTool": ubx.FieldSpec{
-			WireName: "mcp_tool",
-			Kind: "object",
-			Fields: Version_Snapshot_Tools_McpToolFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"OpenApiTool": ubx.FieldSpec{
-			WireName: "open_api_tool",
-			Kind: "object",
-			Fields: Version_Snapshot_Tools_OpenApiToolFields,
-		},
-		"PythonFunction": ubx.FieldSpec{
-			WireName: "python_function",
-			Kind: "object",
-			Fields: Version_Snapshot_Tools_PythonFunctionFields,
-		},
-		"RemoteAgentTool": ubx.FieldSpec{
-			WireName: "remote_agent_tool",
-			Kind: "object",
-			Fields: Version_Snapshot_Tools_RemoteAgentToolFields,
-		},
-		"SystemTool": ubx.FieldSpec{
-			WireName: "system_tool",
-			Kind: "object",
-			Fields: Version_Snapshot_Tools_SystemToolFields,
-		},
-		"Timeout": ubx.FieldSpec{WireName: "timeout"},
-		"ToolFakeConfig": ubx.FieldSpec{
-			WireName: "tool_fake_config",
-			Kind: "object",
-			Fields: Version_Snapshot_Tools_ToolFakeConfigFields,
-		},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-		"WidgetTool": ubx.FieldSpec{
-			WireName: "widget_tool",
-			Kind: "object",
-			Fields: Version_Snapshot_Tools_WidgetToolFields,
-		},
-	}
+	"AgentTool": ubx.FieldSpec{
+		WireName: "agent_tool",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Tools_AgentToolFields,
+	},
+	"ClientFunction": ubx.FieldSpec{
+		WireName: "client_function",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Tools_ClientFunctionFields,
+	},
+	"ConnectorTool": ubx.FieldSpec{
+		WireName: "connector_tool",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Tools_ConnectorToolFields,
+	},
+	"CreateTime": ubx.FieldSpec{WireName: "create_time"},
+	"DataStoreTool": ubx.FieldSpec{
+		WireName: "data_store_tool",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Tools_DataStoreToolFields,
+	},
+	"DisplayName":   ubx.FieldSpec{WireName: "display_name"},
+	"Etag":          ubx.FieldSpec{WireName: "etag"},
+	"ExecutionType": ubx.FieldSpec{WireName: "execution_type"},
+	"FileSearchTool": ubx.FieldSpec{
+		WireName: "file_search_tool",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Tools_FileSearchToolFields,
+	},
+	"GeneratedSummary": ubx.FieldSpec{WireName: "generated_summary"},
+	"GoogleSearchTool": ubx.FieldSpec{
+		WireName: "google_search_tool",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Tools_GoogleSearchToolFields,
+	},
+	"McpTool": ubx.FieldSpec{
+		WireName: "mcp_tool",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Tools_McpToolFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"OpenApiTool": ubx.FieldSpec{
+		WireName: "open_api_tool",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Tools_OpenApiToolFields,
+	},
+	"PythonFunction": ubx.FieldSpec{
+		WireName: "python_function",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Tools_PythonFunctionFields,
+	},
+	"RemoteAgentTool": ubx.FieldSpec{
+		WireName: "remote_agent_tool",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Tools_RemoteAgentToolFields,
+	},
+	"SystemTool": ubx.FieldSpec{
+		WireName: "system_tool",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Tools_SystemToolFields,
+	},
+	"Timeout": ubx.FieldSpec{WireName: "timeout"},
+	"ToolFakeConfig": ubx.FieldSpec{
+		WireName: "tool_fake_config",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Tools_ToolFakeConfigFields,
+	},
+	"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+	"WidgetTool": ubx.FieldSpec{
+		WireName: "widget_tool",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Tools_WidgetToolFields,
+	},
+}
 
 var Version_Snapshot_Toolsets_ConnectorToolsetFields = ubx.FieldMap{
-		"AuthConfig": ubx.FieldSpec{
-			WireName: "auth_config",
-			Kind: "object",
-			Fields: Version_Snapshot_Tools_ConnectorTool_AuthConfigFields,
-		},
-		"Connection": ubx.FieldSpec{WireName: "connection"},
-		"ConnectorActions": ubx.FieldSpec{
-			WireName: "connector_actions",
-			Kind: "list",
-			Fields: Version_Snapshot_Tools_ConnectorTool_ActionFields,
-		},
-	}
+	"AuthConfig": ubx.FieldSpec{
+		WireName: "auth_config",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Tools_ConnectorTool_AuthConfigFields,
+	},
+	"Connection": ubx.FieldSpec{WireName: "connection"},
+	"ConnectorActions": ubx.FieldSpec{
+		WireName: "connector_actions",
+		Kind:     "list",
+		Fields:   Version_Snapshot_Tools_ConnectorTool_ActionFields,
+	},
+}
 
 var Version_Snapshot_Toolsets_McpToolset_ToolOverrides_SnapshotFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"InputSchema": ubx.FieldSpec{
-			WireName: "input_schema",
-			Kind: "object",
-			Fields: Version_Snapshot_App_PredefinedVariableDeclarations_SchemaFields,
-		},
-		"OutputSchema": ubx.FieldSpec{
-			WireName: "output_schema",
-			Kind: "object",
-			Fields: Version_Snapshot_App_PredefinedVariableDeclarations_SchemaFields,
-		},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"InputSchema": ubx.FieldSpec{
+		WireName: "input_schema",
+		Kind:     "object",
+		Fields:   Version_Snapshot_App_PredefinedVariableDeclarations_SchemaFields,
+	},
+	"OutputSchema": ubx.FieldSpec{
+		WireName: "output_schema",
+		Kind:     "object",
+		Fields:   Version_Snapshot_App_PredefinedVariableDeclarations_SchemaFields,
+	},
+}
 
 var Version_Snapshot_Toolsets_McpToolset_ToolOverridesFields = ubx.FieldMap{
-		"DescriptionOverride": ubx.FieldSpec{WireName: "description_override"},
-		"NameOverride": ubx.FieldSpec{WireName: "name_override"},
-		"Snapshot": ubx.FieldSpec{
-			WireName: "snapshot",
-			Kind: "object",
-			Fields: Version_Snapshot_Toolsets_McpToolset_ToolOverrides_SnapshotFields,
-		},
-		"Tool": ubx.FieldSpec{WireName: "tool"},
-	}
+	"DescriptionOverride": ubx.FieldSpec{WireName: "description_override"},
+	"NameOverride":        ubx.FieldSpec{WireName: "name_override"},
+	"Snapshot": ubx.FieldSpec{
+		WireName: "snapshot",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Toolsets_McpToolset_ToolOverrides_SnapshotFields,
+	},
+	"Tool": ubx.FieldSpec{WireName: "tool"},
+}
 
 var Version_Snapshot_Toolsets_McpToolsetFields = ubx.FieldMap{
-		"ApiAuthentication": ubx.FieldSpec{
-			WireName: "api_authentication",
-			Kind: "object",
-			Fields: Version_Snapshot_Tools_McpTool_ApiAuthenticationFields,
-		},
-		"CustomHeaders": ubx.FieldSpec{WireName: "custom_headers"},
-		"ServerAddress": ubx.FieldSpec{WireName: "server_address"},
-		"ServiceDirectoryConfig": ubx.FieldSpec{
-			WireName: "service_directory_config",
-			Kind: "object",
-			Fields: Version_Snapshot_Tools_McpTool_ServiceDirectoryConfigFields,
-		},
-		"TlsConfig": ubx.FieldSpec{
-			WireName: "tls_config",
-			Kind: "object",
-			Fields: Version_Snapshot_Tools_McpTool_TlsConfigFields,
-		},
-		"ToolOverrides": ubx.FieldSpec{
-			WireName: "tool_overrides",
-			Kind: "list",
-			Fields: Version_Snapshot_Toolsets_McpToolset_ToolOverridesFields,
-		},
-	}
+	"ApiAuthentication": ubx.FieldSpec{
+		WireName: "api_authentication",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Tools_McpTool_ApiAuthenticationFields,
+	},
+	"CustomHeaders": ubx.FieldSpec{WireName: "custom_headers"},
+	"ServerAddress": ubx.FieldSpec{WireName: "server_address"},
+	"ServiceDirectoryConfig": ubx.FieldSpec{
+		WireName: "service_directory_config",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Tools_McpTool_ServiceDirectoryConfigFields,
+	},
+	"TlsConfig": ubx.FieldSpec{
+		WireName: "tls_config",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Tools_McpTool_TlsConfigFields,
+	},
+	"ToolOverrides": ubx.FieldSpec{
+		WireName: "tool_overrides",
+		Kind:     "list",
+		Fields:   Version_Snapshot_Toolsets_McpToolset_ToolOverridesFields,
+	},
+}
 
 var Version_Snapshot_Toolsets_OpenApiToolsetFields = ubx.FieldMap{
-		"ApiAuthentication": ubx.FieldSpec{
-			WireName: "api_authentication",
-			Kind: "object",
-			Fields: Version_Snapshot_Tools_McpTool_ApiAuthenticationFields,
-		},
-		"IgnoreUnknownFields": ubx.FieldSpec{WireName: "ignore_unknown_fields"},
-		"OpenApiSchema": ubx.FieldSpec{WireName: "open_api_schema"},
-		"ServiceDirectoryConfig": ubx.FieldSpec{
-			WireName: "service_directory_config",
-			Kind: "object",
-			Fields: Version_Snapshot_Tools_McpTool_ServiceDirectoryConfigFields,
-		},
-		"TlsConfig": ubx.FieldSpec{
-			WireName: "tls_config",
-			Kind: "object",
-			Fields: Version_Snapshot_Tools_McpTool_TlsConfigFields,
-		},
-		"Url": ubx.FieldSpec{WireName: "url"},
-	}
+	"ApiAuthentication": ubx.FieldSpec{
+		WireName: "api_authentication",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Tools_McpTool_ApiAuthenticationFields,
+	},
+	"IgnoreUnknownFields": ubx.FieldSpec{WireName: "ignore_unknown_fields"},
+	"OpenApiSchema":       ubx.FieldSpec{WireName: "open_api_schema"},
+	"ServiceDirectoryConfig": ubx.FieldSpec{
+		WireName: "service_directory_config",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Tools_McpTool_ServiceDirectoryConfigFields,
+	},
+	"TlsConfig": ubx.FieldSpec{
+		WireName: "tls_config",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Tools_McpTool_TlsConfigFields,
+	},
+	"Url": ubx.FieldSpec{WireName: "url"},
+}
 
 var Version_Snapshot_ToolsetsFields = ubx.FieldMap{
-		"ConnectorToolset": ubx.FieldSpec{
-			WireName: "connector_toolset",
-			Kind: "object",
-			Fields: Version_Snapshot_Toolsets_ConnectorToolsetFields,
-		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"ExecutionType": ubx.FieldSpec{WireName: "execution_type"},
-		"McpToolset": ubx.FieldSpec{
-			WireName: "mcp_toolset",
-			Kind: "object",
-			Fields: Version_Snapshot_Toolsets_McpToolsetFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"OpenApiToolset": ubx.FieldSpec{
-			WireName: "open_api_toolset",
-			Kind: "object",
-			Fields: Version_Snapshot_Toolsets_OpenApiToolsetFields,
-		},
-		"Timeout": ubx.FieldSpec{WireName: "timeout"},
-		"ToolFakeConfig": ubx.FieldSpec{
-			WireName: "tool_fake_config",
-			Kind: "object",
-			Fields: Version_Snapshot_Tools_ToolFakeConfigFields,
-		},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-	}
+	"ConnectorToolset": ubx.FieldSpec{
+		WireName: "connector_toolset",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Toolsets_ConnectorToolsetFields,
+	},
+	"CreateTime":    ubx.FieldSpec{WireName: "create_time"},
+	"Description":   ubx.FieldSpec{WireName: "description"},
+	"DisplayName":   ubx.FieldSpec{WireName: "display_name"},
+	"Etag":          ubx.FieldSpec{WireName: "etag"},
+	"ExecutionType": ubx.FieldSpec{WireName: "execution_type"},
+	"McpToolset": ubx.FieldSpec{
+		WireName: "mcp_toolset",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Toolsets_McpToolsetFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"OpenApiToolset": ubx.FieldSpec{
+		WireName: "open_api_toolset",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Toolsets_OpenApiToolsetFields,
+	},
+	"Timeout": ubx.FieldSpec{WireName: "timeout"},
+	"ToolFakeConfig": ubx.FieldSpec{
+		WireName: "tool_fake_config",
+		Kind:     "object",
+		Fields:   Version_Snapshot_Tools_ToolFakeConfigFields,
+	},
+	"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+}
 
 var Version_SnapshotFields = ubx.FieldMap{
-		"Agents": ubx.FieldSpec{
-			WireName: "agents",
-			Kind: "list",
-			Fields: Version_Snapshot_AgentsFields,
-		},
-		"App": ubx.FieldSpec{
-			WireName: "app",
-			Kind: "object",
-			Fields: Version_Snapshot_AppFields,
-		},
-		"Examples": ubx.FieldSpec{
-			WireName: "examples",
-			Kind: "list",
-			Fields: Version_Snapshot_ExamplesFields,
-		},
-		"Guardrails": ubx.FieldSpec{
-			WireName: "guardrails",
-			Kind: "list",
-			Fields: Version_Snapshot_GuardrailsFields,
-		},
-		"Tools": ubx.FieldSpec{
-			WireName: "tools",
-			Kind: "list",
-			Fields: Version_Snapshot_ToolsFields,
-		},
-		"Toolsets": ubx.FieldSpec{
-			WireName: "toolsets",
-			Kind: "list",
-			Fields: Version_Snapshot_ToolsetsFields,
-		},
-	}
+	"Agents": ubx.FieldSpec{
+		WireName: "agents",
+		Kind:     "list",
+		Fields:   Version_Snapshot_AgentsFields,
+	},
+	"App": ubx.FieldSpec{
+		WireName: "app",
+		Kind:     "object",
+		Fields:   Version_Snapshot_AppFields,
+	},
+	"Examples": ubx.FieldSpec{
+		WireName: "examples",
+		Kind:     "list",
+		Fields:   Version_Snapshot_ExamplesFields,
+	},
+	"Guardrails": ubx.FieldSpec{
+		WireName: "guardrails",
+		Kind:     "list",
+		Fields:   Version_Snapshot_GuardrailsFields,
+	},
+	"Tools": ubx.FieldSpec{
+		WireName: "tools",
+		Kind:     "list",
+		Fields:   Version_Snapshot_ToolsFields,
+	},
+	"Toolsets": ubx.FieldSpec{
+		WireName: "toolsets",
+		Kind:     "list",
+		Fields:   Version_Snapshot_ToolsetsFields,
+	},
+}
 
 type VersionConfig struct {
-	// Output only. Timestamp when the app version was created.
-	CreateTime any
-	// Output only. Email of the user who created the app version.
-	Creator any
 	// Optional. The description of the app version.
 	Description any
 	// Optional. The display name of the app version.
 	DisplayName any
-	// Output only. Etag used to ensure the object hasn't changed during a read-modify-write operation. If the etag is empty, the update will overwrite any concurrent changes.
-	Etag any
 	// Identifier. The unique identifier of the app version. Format: `projects/{project}/locations/{location}/apps/{app}/versions/{version}`
 	Name any
 	// A snapshot of the app.
@@ -2503,16 +2497,13 @@ type VersionAttrs struct {
 var Version = ubx.ResourceBinding{
 	WireType: "google_ces_version",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Creator": ubx.FieldSpec{WireName: "creator"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"Snapshot": ubx.FieldSpec{
 			WireName: "snapshot",
-			Kind: "object",
-			Fields: Version_SnapshotFields,
+			Kind:     "object",
+			Fields:   Version_SnapshotFields,
 		},
 	},
 }

@@ -16,85 +16,85 @@ type Job_Environment_DebugOptions struct {
 }
 
 type Job_Environment_WorkerPools_AutoscalingSettings struct {
-	Algorithm any
+	Algorithm     any
 	MaxNumWorkers any
 }
 
 type Job_Environment_WorkerPools_DataDisks struct {
-	DiskType any
+	DiskType   any
 	MountPoint any
-	SizeGb any
+	SizeGb     any
 }
 
 type Job_Environment_WorkerPools_Packages struct {
 	Location any
-	Name any
-	Sha256 any
+	Name     any
+	Sha256   any
 }
 
 type Job_Environment_WorkerPools_SdkHarnessContainerImages struct {
-	Capabilities any
-	ContainerImage any
-	EnvironmentId any
+	Capabilities              any
+	ContainerImage            any
+	EnvironmentId             any
 	UseSingleCorePerContainer any
 }
 
 type Job_Environment_WorkerPools_TaskrunnerSettings_ParallelWorkerSettings struct {
-	BaseUrl any
-	ReportingEnabled any
-	ServicePath any
+	BaseUrl            any
+	ReportingEnabled   any
+	ServicePath        any
 	ShuffleServicePath any
-	TempStoragePrefix any
-	WorkerId any
+	TempStoragePrefix  any
+	WorkerId           any
 }
 
 type Job_Environment_WorkerPools_TaskrunnerSettings struct {
-	Alsologtostderr any
-	BaseTaskDir any
-	BaseUrl any
-	CommandlinesFileName any
-	ContinueOnException any
-	DataflowApiVersion any
-	HarnessCommand any
-	LanguageHint any
-	LogDir any
-	LogToSerialconsole any
-	LogUploadLocation any
-	OauthScopes any
-	ParallelWorkerSettings any
+	Alsologtostderr          any
+	BaseTaskDir              any
+	BaseUrl                  any
+	CommandlinesFileName     any
+	ContinueOnException      any
+	DataflowApiVersion       any
+	HarnessCommand           any
+	LanguageHint             any
+	LogDir                   any
+	LogToSerialconsole       any
+	LogUploadLocation        any
+	OauthScopes              any
+	ParallelWorkerSettings   any
 	StreamingWorkerMainClass any
-	TaskGroup any
-	TaskUser any
-	TempStoragePrefix any
-	VmId any
-	WorkflowFileName any
+	TaskGroup                any
+	TaskUser                 any
+	TempStoragePrefix        any
+	VmId                     any
+	WorkflowFileName         any
 }
 
 type Job_Environment_WorkerPools struct {
-	AutoscalingSettings any
-	DataDisks any
-	DefaultPackageSet any
-	DiskProvisionedIops any
+	AutoscalingSettings            any
+	DataDisks                      any
+	DefaultPackageSet              any
+	DiskProvisionedIops            any
 	DiskProvisionedThroughputMibps any
-	DiskSizeGb any
-	DiskSourceImage any
-	DiskType any
-	IpConfiguration any
-	Kind any
-	MachineType any
-	Metadata any
-	Network any
-	NumThreadsPerWorker any
-	NumWorkers any
-	OnHostMaintenance any
-	Packages any
-	PoolArgs any
-	SdkHarnessContainerImages any
-	Subnetwork any
-	TaskrunnerSettings any
-	TeardownPolicy any
-	WorkerHarnessContainerImage any
-	Zone any
+	DiskSizeGb                     any
+	DiskSourceImage                any
+	DiskType                       any
+	IpConfiguration                any
+	Kind                           any
+	MachineType                    any
+	Metadata                       any
+	Network                        any
+	NumThreadsPerWorker            any
+	NumWorkers                     any
+	OnHostMaintenance              any
+	Packages                       any
+	PoolArgs                       any
+	SdkHarnessContainerImages      any
+	Subnetwork                     any
+	TaskrunnerSettings             any
+	TeardownPolicy                 any
+	WorkerHarnessContainerImage    any
+	Zone                           any
 }
 
 type Job_Environment struct {
@@ -151,15 +151,15 @@ type Job_ExecutionInfo struct {
 
 type Job_JobMetadata_BigTableDetails struct {
 	InstanceId any
-	ProjectId any
-	TableId any
+	ProjectId  any
+	TableId    any
 }
 
 type Job_JobMetadata_BigqueryDetails struct {
-	Dataset any
+	Dataset   any
 	ProjectId any
-	Query any
-	Table any
+	Query     any
+	Table     any
 }
 
 type Job_JobMetadata_DatastoreDetails struct {
@@ -173,13 +173,13 @@ type Job_JobMetadata_FileDetails struct {
 
 type Job_JobMetadata_PubsubDetails struct {
 	Subscription any
-	Topic any
+	Topic        any
 }
 
 type Job_JobMetadata_SdkVersion_Bugs struct {
 	Severity any
-	Type any
-	Uri any
+	Type     any
+	Uri      any
 }
 
 type Job_JobMetadata_SdkVersion struct {
@@ -196,7 +196,7 @@ type Job_JobMetadata_SdkVersion struct {
 type Job_JobMetadata_SpannerDetails struct {
 	DatabaseId any
 	InstanceId any
-	ProjectId any
+	ProjectId  any
 }
 
 type Job_JobMetadata struct {
@@ -219,56 +219,56 @@ type Job_JobMetadata struct {
 }
 
 type Job_PipelineDescription_DisplayData struct {
-	BoolValue any
-	DurationValue any
-	FloatValue any
-	Int64Value any
+	BoolValue      any
+	DurationValue  any
+	FloatValue     any
+	Int64Value     any
 	JavaClassValue any
-	Key any
-	Label any
-	Namespace any
-	ShortStrValue any
-	StrValue any
+	Key            any
+	Label          any
+	Namespace      any
+	ShortStrValue  any
+	StrValue       any
 	TimestampValue any
-	Url any
+	Url            any
 }
 
 type Job_PipelineDescription_ExecutionPipelineStage_ComponentSource struct {
-	Name any
+	Name                          any
 	OriginalTransformOrCollection any
-	UserName any
+	UserName                      any
 }
 
 type Job_PipelineDescription_ExecutionPipelineStage_ComponentTransform struct {
-	Name any
+	Name              any
 	OriginalTransform any
-	UserName any
+	UserName          any
 }
 
 type Job_PipelineDescription_ExecutionPipelineStage_InputSource struct {
-	Name any
+	Name                          any
 	OriginalTransformOrCollection any
-	SizeBytes any
-	UserName any
+	SizeBytes                     any
+	UserName                      any
 }
 
 type Job_PipelineDescription_ExecutionPipelineStage struct {
-	ComponentSource any
+	ComponentSource    any
 	ComponentTransform any
-	Id any
-	InputSource any
-	Kind any
-	Name any
-	OutputSource any
-	PrerequisiteStage any
+	Id                 any
+	InputSource        any
+	Kind               any
+	Name               any
+	OutputSource       any
+	PrerequisiteStage  any
 }
 
 type Job_PipelineDescription_OriginalPipelineTransform struct {
-	DisplayData any
-	Id any
-	InputCollectionName any
-	Kind any
-	Name any
+	DisplayData          any
+	Id                   any
+	InputCollectionName  any
+	Kind                 any
+	Name                 any
 	OutputCollectionName any
 }
 
@@ -285,18 +285,18 @@ type Job_PipelineDescription struct {
 
 type Job_RuntimeUpdatableParams_Schedules_Parameters struct {
 	CpuUtilizationTarget any
-	LatencyTarget any
-	MaxWorkerCount any
-	MinWorkerCount any
+	LatencyTarget        any
+	MaxWorkerCount       any
+	MinWorkerCount       any
 }
 
 type Job_RuntimeUpdatableParams_Schedules struct {
-	Crontab any
-	Duration any
-	Name any
+	Crontab    any
+	Duration   any
+	Name       any
 	Parameters any
-	Priority any
-	TimeZone any
+	Priority   any
+	TimeZone   any
 	UpdateTime any
 }
 
@@ -323,411 +323,411 @@ type Job_ServiceResources struct {
 }
 
 type Job_StageStates struct {
-	CurrentStateTime any
-	ExecutionStageName any
+	CurrentStateTime    any
+	ExecutionStageName  any
 	ExecutionStageState any
 }
 
 type Job_Steps struct {
-	Kind any
-	Name any
+	Kind       any
+	Name       any
 	Properties any
 }
 
 var Job_Environment_DebugOptions_DataSamplingFields = ubx.FieldMap{
-		"Behaviors": ubx.FieldSpec{WireName: "behaviors"},
-	}
+	"Behaviors": ubx.FieldSpec{WireName: "behaviors"},
+}
 
 var Job_Environment_DebugOptionsFields = ubx.FieldMap{
-		"DataSampling": ubx.FieldSpec{
-			WireName: "data_sampling",
-			Kind: "object",
-			Fields: Job_Environment_DebugOptions_DataSamplingFields,
-		},
-		"EnableHotKeyLogging": ubx.FieldSpec{WireName: "enable_hot_key_logging"},
-	}
+	"DataSampling": ubx.FieldSpec{
+		WireName: "data_sampling",
+		Kind:     "object",
+		Fields:   Job_Environment_DebugOptions_DataSamplingFields,
+	},
+	"EnableHotKeyLogging": ubx.FieldSpec{WireName: "enable_hot_key_logging"},
+}
 
 var Job_Environment_WorkerPools_AutoscalingSettingsFields = ubx.FieldMap{
-		"Algorithm": ubx.FieldSpec{WireName: "algorithm"},
-		"MaxNumWorkers": ubx.FieldSpec{WireName: "max_num_workers"},
-	}
+	"Algorithm":     ubx.FieldSpec{WireName: "algorithm"},
+	"MaxNumWorkers": ubx.FieldSpec{WireName: "max_num_workers"},
+}
 
 var Job_Environment_WorkerPools_DataDisksFields = ubx.FieldMap{
-		"DiskType": ubx.FieldSpec{WireName: "disk_type"},
-		"MountPoint": ubx.FieldSpec{WireName: "mount_point"},
-		"SizeGb": ubx.FieldSpec{WireName: "size_gb"},
-	}
+	"DiskType":   ubx.FieldSpec{WireName: "disk_type"},
+	"MountPoint": ubx.FieldSpec{WireName: "mount_point"},
+	"SizeGb":     ubx.FieldSpec{WireName: "size_gb"},
+}
 
 var Job_Environment_WorkerPools_PackagesFields = ubx.FieldMap{
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Sha256": ubx.FieldSpec{WireName: "sha256"},
-	}
+	"Location": ubx.FieldSpec{WireName: "location"},
+	"Name":     ubx.FieldSpec{WireName: "name"},
+	"Sha256":   ubx.FieldSpec{WireName: "sha256"},
+}
 
 var Job_Environment_WorkerPools_SdkHarnessContainerImagesFields = ubx.FieldMap{
-		"Capabilities": ubx.FieldSpec{WireName: "capabilities"},
-		"ContainerImage": ubx.FieldSpec{WireName: "container_image"},
-		"EnvironmentId": ubx.FieldSpec{WireName: "environment_id"},
-		"UseSingleCorePerContainer": ubx.FieldSpec{WireName: "use_single_core_per_container"},
-	}
+	"Capabilities":              ubx.FieldSpec{WireName: "capabilities"},
+	"ContainerImage":            ubx.FieldSpec{WireName: "container_image"},
+	"EnvironmentId":             ubx.FieldSpec{WireName: "environment_id"},
+	"UseSingleCorePerContainer": ubx.FieldSpec{WireName: "use_single_core_per_container"},
+}
 
 var Job_Environment_WorkerPools_TaskrunnerSettings_ParallelWorkerSettingsFields = ubx.FieldMap{
-		"BaseUrl": ubx.FieldSpec{WireName: "base_url"},
-		"ReportingEnabled": ubx.FieldSpec{WireName: "reporting_enabled"},
-		"ServicePath": ubx.FieldSpec{WireName: "service_path"},
-		"ShuffleServicePath": ubx.FieldSpec{WireName: "shuffle_service_path"},
-		"TempStoragePrefix": ubx.FieldSpec{WireName: "temp_storage_prefix"},
-		"WorkerId": ubx.FieldSpec{WireName: "worker_id"},
-	}
+	"BaseUrl":            ubx.FieldSpec{WireName: "base_url"},
+	"ReportingEnabled":   ubx.FieldSpec{WireName: "reporting_enabled"},
+	"ServicePath":        ubx.FieldSpec{WireName: "service_path"},
+	"ShuffleServicePath": ubx.FieldSpec{WireName: "shuffle_service_path"},
+	"TempStoragePrefix":  ubx.FieldSpec{WireName: "temp_storage_prefix"},
+	"WorkerId":           ubx.FieldSpec{WireName: "worker_id"},
+}
 
 var Job_Environment_WorkerPools_TaskrunnerSettingsFields = ubx.FieldMap{
-		"Alsologtostderr": ubx.FieldSpec{WireName: "alsologtostderr"},
-		"BaseTaskDir": ubx.FieldSpec{WireName: "base_task_dir"},
-		"BaseUrl": ubx.FieldSpec{WireName: "base_url"},
-		"CommandlinesFileName": ubx.FieldSpec{WireName: "commandlines_file_name"},
-		"ContinueOnException": ubx.FieldSpec{WireName: "continue_on_exception"},
-		"DataflowApiVersion": ubx.FieldSpec{WireName: "dataflow_api_version"},
-		"HarnessCommand": ubx.FieldSpec{WireName: "harness_command"},
-		"LanguageHint": ubx.FieldSpec{WireName: "language_hint"},
-		"LogDir": ubx.FieldSpec{WireName: "log_dir"},
-		"LogToSerialconsole": ubx.FieldSpec{WireName: "log_to_serialconsole"},
-		"LogUploadLocation": ubx.FieldSpec{WireName: "log_upload_location"},
-		"OauthScopes": ubx.FieldSpec{WireName: "oauth_scopes"},
-		"ParallelWorkerSettings": ubx.FieldSpec{
-			WireName: "parallel_worker_settings",
-			Kind: "object",
-			Fields: Job_Environment_WorkerPools_TaskrunnerSettings_ParallelWorkerSettingsFields,
-		},
-		"StreamingWorkerMainClass": ubx.FieldSpec{WireName: "streaming_worker_main_class"},
-		"TaskGroup": ubx.FieldSpec{WireName: "task_group"},
-		"TaskUser": ubx.FieldSpec{WireName: "task_user"},
-		"TempStoragePrefix": ubx.FieldSpec{WireName: "temp_storage_prefix"},
-		"VmId": ubx.FieldSpec{WireName: "vm_id"},
-		"WorkflowFileName": ubx.FieldSpec{WireName: "workflow_file_name"},
-	}
+	"Alsologtostderr":      ubx.FieldSpec{WireName: "alsologtostderr"},
+	"BaseTaskDir":          ubx.FieldSpec{WireName: "base_task_dir"},
+	"BaseUrl":              ubx.FieldSpec{WireName: "base_url"},
+	"CommandlinesFileName": ubx.FieldSpec{WireName: "commandlines_file_name"},
+	"ContinueOnException":  ubx.FieldSpec{WireName: "continue_on_exception"},
+	"DataflowApiVersion":   ubx.FieldSpec{WireName: "dataflow_api_version"},
+	"HarnessCommand":       ubx.FieldSpec{WireName: "harness_command"},
+	"LanguageHint":         ubx.FieldSpec{WireName: "language_hint"},
+	"LogDir":               ubx.FieldSpec{WireName: "log_dir"},
+	"LogToSerialconsole":   ubx.FieldSpec{WireName: "log_to_serialconsole"},
+	"LogUploadLocation":    ubx.FieldSpec{WireName: "log_upload_location"},
+	"OauthScopes":          ubx.FieldSpec{WireName: "oauth_scopes"},
+	"ParallelWorkerSettings": ubx.FieldSpec{
+		WireName: "parallel_worker_settings",
+		Kind:     "object",
+		Fields:   Job_Environment_WorkerPools_TaskrunnerSettings_ParallelWorkerSettingsFields,
+	},
+	"StreamingWorkerMainClass": ubx.FieldSpec{WireName: "streaming_worker_main_class"},
+	"TaskGroup":                ubx.FieldSpec{WireName: "task_group"},
+	"TaskUser":                 ubx.FieldSpec{WireName: "task_user"},
+	"TempStoragePrefix":        ubx.FieldSpec{WireName: "temp_storage_prefix"},
+	"VmId":                     ubx.FieldSpec{WireName: "vm_id"},
+	"WorkflowFileName":         ubx.FieldSpec{WireName: "workflow_file_name"},
+}
 
 var Job_Environment_WorkerPoolsFields = ubx.FieldMap{
-		"AutoscalingSettings": ubx.FieldSpec{
-			WireName: "autoscaling_settings",
-			Kind: "object",
-			Fields: Job_Environment_WorkerPools_AutoscalingSettingsFields,
-		},
-		"DataDisks": ubx.FieldSpec{
-			WireName: "data_disks",
-			Kind: "list",
-			Fields: Job_Environment_WorkerPools_DataDisksFields,
-		},
-		"DefaultPackageSet": ubx.FieldSpec{WireName: "default_package_set"},
-		"DiskProvisionedIops": ubx.FieldSpec{WireName: "disk_provisioned_iops"},
-		"DiskProvisionedThroughputMibps": ubx.FieldSpec{WireName: "disk_provisioned_throughput_mibps"},
-		"DiskSizeGb": ubx.FieldSpec{WireName: "disk_size_gb"},
-		"DiskSourceImage": ubx.FieldSpec{WireName: "disk_source_image"},
-		"DiskType": ubx.FieldSpec{WireName: "disk_type"},
-		"IpConfiguration": ubx.FieldSpec{WireName: "ip_configuration"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"MachineType": ubx.FieldSpec{WireName: "machine_type"},
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"NumThreadsPerWorker": ubx.FieldSpec{WireName: "num_threads_per_worker"},
-		"NumWorkers": ubx.FieldSpec{WireName: "num_workers"},
-		"OnHostMaintenance": ubx.FieldSpec{WireName: "on_host_maintenance"},
-		"Packages": ubx.FieldSpec{
-			WireName: "packages",
-			Kind: "list",
-			Fields: Job_Environment_WorkerPools_PackagesFields,
-		},
-		"PoolArgs": ubx.FieldSpec{WireName: "pool_args"},
-		"SdkHarnessContainerImages": ubx.FieldSpec{
-			WireName: "sdk_harness_container_images",
-			Kind: "list",
-			Fields: Job_Environment_WorkerPools_SdkHarnessContainerImagesFields,
-		},
-		"Subnetwork": ubx.FieldSpec{WireName: "subnetwork"},
-		"TaskrunnerSettings": ubx.FieldSpec{
-			WireName: "taskrunner_settings",
-			Kind: "object",
-			Fields: Job_Environment_WorkerPools_TaskrunnerSettingsFields,
-		},
-		"TeardownPolicy": ubx.FieldSpec{WireName: "teardown_policy"},
-		"WorkerHarnessContainerImage": ubx.FieldSpec{WireName: "worker_harness_container_image"},
-		"Zone": ubx.FieldSpec{WireName: "zone"},
-	}
+	"AutoscalingSettings": ubx.FieldSpec{
+		WireName: "autoscaling_settings",
+		Kind:     "object",
+		Fields:   Job_Environment_WorkerPools_AutoscalingSettingsFields,
+	},
+	"DataDisks": ubx.FieldSpec{
+		WireName: "data_disks",
+		Kind:     "list",
+		Fields:   Job_Environment_WorkerPools_DataDisksFields,
+	},
+	"DefaultPackageSet":              ubx.FieldSpec{WireName: "default_package_set"},
+	"DiskProvisionedIops":            ubx.FieldSpec{WireName: "disk_provisioned_iops"},
+	"DiskProvisionedThroughputMibps": ubx.FieldSpec{WireName: "disk_provisioned_throughput_mibps"},
+	"DiskSizeGb":                     ubx.FieldSpec{WireName: "disk_size_gb"},
+	"DiskSourceImage":                ubx.FieldSpec{WireName: "disk_source_image"},
+	"DiskType":                       ubx.FieldSpec{WireName: "disk_type"},
+	"IpConfiguration":                ubx.FieldSpec{WireName: "ip_configuration"},
+	"Kind":                           ubx.FieldSpec{WireName: "kind"},
+	"MachineType":                    ubx.FieldSpec{WireName: "machine_type"},
+	"Metadata":                       ubx.FieldSpec{WireName: "metadata"},
+	"Network":                        ubx.FieldSpec{WireName: "network"},
+	"NumThreadsPerWorker":            ubx.FieldSpec{WireName: "num_threads_per_worker"},
+	"NumWorkers":                     ubx.FieldSpec{WireName: "num_workers"},
+	"OnHostMaintenance":              ubx.FieldSpec{WireName: "on_host_maintenance"},
+	"Packages": ubx.FieldSpec{
+		WireName: "packages",
+		Kind:     "list",
+		Fields:   Job_Environment_WorkerPools_PackagesFields,
+	},
+	"PoolArgs": ubx.FieldSpec{WireName: "pool_args"},
+	"SdkHarnessContainerImages": ubx.FieldSpec{
+		WireName: "sdk_harness_container_images",
+		Kind:     "list",
+		Fields:   Job_Environment_WorkerPools_SdkHarnessContainerImagesFields,
+	},
+	"Subnetwork": ubx.FieldSpec{WireName: "subnetwork"},
+	"TaskrunnerSettings": ubx.FieldSpec{
+		WireName: "taskrunner_settings",
+		Kind:     "object",
+		Fields:   Job_Environment_WorkerPools_TaskrunnerSettingsFields,
+	},
+	"TeardownPolicy":              ubx.FieldSpec{WireName: "teardown_policy"},
+	"WorkerHarnessContainerImage": ubx.FieldSpec{WireName: "worker_harness_container_image"},
+	"Zone":                        ubx.FieldSpec{WireName: "zone"},
+}
 
 var Job_EnvironmentFields = ubx.FieldMap{
-		"ClusterManagerApiService": ubx.FieldSpec{WireName: "cluster_manager_api_service"},
-		"Dataset": ubx.FieldSpec{WireName: "dataset"},
-		"DebugOptions": ubx.FieldSpec{
-			WireName: "debug_options",
-			Kind: "object",
-			Fields: Job_Environment_DebugOptionsFields,
-		},
-		"Experiments": ubx.FieldSpec{WireName: "experiments"},
-		"FlexResourceSchedulingGoal": ubx.FieldSpec{WireName: "flex_resource_scheduling_goal"},
-		"InternalExperiments": ubx.FieldSpec{WireName: "internal_experiments"},
-		"SdkPipelineOptions": ubx.FieldSpec{WireName: "sdk_pipeline_options"},
-		"ServiceAccountEmail": ubx.FieldSpec{WireName: "service_account_email"},
-		"ServiceKmsKeyName": ubx.FieldSpec{WireName: "service_kms_key_name"},
-		"ServiceOptions": ubx.FieldSpec{WireName: "service_options"},
-		"ShuffleMode": ubx.FieldSpec{WireName: "shuffle_mode"},
-		"StreamingMode": ubx.FieldSpec{WireName: "streaming_mode"},
-		"TempStoragePrefix": ubx.FieldSpec{WireName: "temp_storage_prefix"},
-		"UsePublicIps": ubx.FieldSpec{WireName: "use_public_ips"},
-		"UseStreamingEngineResourceBasedBilling": ubx.FieldSpec{WireName: "use_streaming_engine_resource_based_billing"},
-		"UserAgent": ubx.FieldSpec{WireName: "user_agent"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-		"WorkerPools": ubx.FieldSpec{
-			WireName: "worker_pools",
-			Kind: "list",
-			Fields: Job_Environment_WorkerPoolsFields,
-		},
-		"WorkerRegion": ubx.FieldSpec{WireName: "worker_region"},
-		"WorkerZone": ubx.FieldSpec{WireName: "worker_zone"},
-	}
+	"ClusterManagerApiService": ubx.FieldSpec{WireName: "cluster_manager_api_service"},
+	"Dataset":                  ubx.FieldSpec{WireName: "dataset"},
+	"DebugOptions": ubx.FieldSpec{
+		WireName: "debug_options",
+		Kind:     "object",
+		Fields:   Job_Environment_DebugOptionsFields,
+	},
+	"Experiments":                            ubx.FieldSpec{WireName: "experiments"},
+	"FlexResourceSchedulingGoal":             ubx.FieldSpec{WireName: "flex_resource_scheduling_goal"},
+	"InternalExperiments":                    ubx.FieldSpec{WireName: "internal_experiments"},
+	"SdkPipelineOptions":                     ubx.FieldSpec{WireName: "sdk_pipeline_options"},
+	"ServiceAccountEmail":                    ubx.FieldSpec{WireName: "service_account_email"},
+	"ServiceKmsKeyName":                      ubx.FieldSpec{WireName: "service_kms_key_name"},
+	"ServiceOptions":                         ubx.FieldSpec{WireName: "service_options"},
+	"ShuffleMode":                            ubx.FieldSpec{WireName: "shuffle_mode"},
+	"StreamingMode":                          ubx.FieldSpec{WireName: "streaming_mode"},
+	"TempStoragePrefix":                      ubx.FieldSpec{WireName: "temp_storage_prefix"},
+	"UsePublicIps":                           ubx.FieldSpec{WireName: "use_public_ips"},
+	"UseStreamingEngineResourceBasedBilling": ubx.FieldSpec{WireName: "use_streaming_engine_resource_based_billing"},
+	"UserAgent":                              ubx.FieldSpec{WireName: "user_agent"},
+	"Version":                                ubx.FieldSpec{WireName: "version"},
+	"WorkerPools": ubx.FieldSpec{
+		WireName: "worker_pools",
+		Kind:     "list",
+		Fields:   Job_Environment_WorkerPoolsFields,
+	},
+	"WorkerRegion": ubx.FieldSpec{WireName: "worker_region"},
+	"WorkerZone":   ubx.FieldSpec{WireName: "worker_zone"},
+}
 
 var Job_ExecutionInfo_StagesFields = ubx.FieldMap{
-		"StepName": ubx.FieldSpec{WireName: "step_name"},
-	}
+	"StepName": ubx.FieldSpec{WireName: "step_name"},
+}
 
 var Job_ExecutionInfoFields = ubx.FieldMap{
-		"Stages": ubx.FieldSpec{
-			WireName: "stages",
-			Kind: "map",
-			Fields: Job_ExecutionInfo_StagesFields,
-		},
-	}
+	"Stages": ubx.FieldSpec{
+		WireName: "stages",
+		Kind:     "map",
+		Fields:   Job_ExecutionInfo_StagesFields,
+	},
+}
 
 var Job_JobMetadata_BigTableDetailsFields = ubx.FieldMap{
-		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-		"TableId": ubx.FieldSpec{WireName: "table_id"},
-	}
+	"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
+	"ProjectId":  ubx.FieldSpec{WireName: "project_id"},
+	"TableId":    ubx.FieldSpec{WireName: "table_id"},
+}
 
 var Job_JobMetadata_BigqueryDetailsFields = ubx.FieldMap{
-		"Dataset": ubx.FieldSpec{WireName: "dataset"},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-		"Query": ubx.FieldSpec{WireName: "query"},
-		"Table": ubx.FieldSpec{WireName: "table"},
-	}
+	"Dataset":   ubx.FieldSpec{WireName: "dataset"},
+	"ProjectId": ubx.FieldSpec{WireName: "project_id"},
+	"Query":     ubx.FieldSpec{WireName: "query"},
+	"Table":     ubx.FieldSpec{WireName: "table"},
+}
 
 var Job_JobMetadata_DatastoreDetailsFields = ubx.FieldMap{
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-	}
+	"Namespace": ubx.FieldSpec{WireName: "namespace"},
+	"ProjectId": ubx.FieldSpec{WireName: "project_id"},
+}
 
 var Job_JobMetadata_FileDetailsFields = ubx.FieldMap{
-		"FilePattern": ubx.FieldSpec{WireName: "file_pattern"},
-	}
+	"FilePattern": ubx.FieldSpec{WireName: "file_pattern"},
+}
 
 var Job_JobMetadata_PubsubDetailsFields = ubx.FieldMap{
-		"Subscription": ubx.FieldSpec{WireName: "subscription"},
-		"Topic": ubx.FieldSpec{WireName: "topic"},
-	}
+	"Subscription": ubx.FieldSpec{WireName: "subscription"},
+	"Topic":        ubx.FieldSpec{WireName: "topic"},
+}
 
 var Job_JobMetadata_SdkVersion_BugsFields = ubx.FieldMap{
-		"Severity": ubx.FieldSpec{WireName: "severity"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"Severity": ubx.FieldSpec{WireName: "severity"},
+	"Type":     ubx.FieldSpec{WireName: "type"},
+	"Uri":      ubx.FieldSpec{WireName: "uri"},
+}
 
 var Job_JobMetadata_SdkVersionFields = ubx.FieldMap{
-		"Bugs": ubx.FieldSpec{
-			WireName: "bugs",
-			Kind: "list",
-			Fields: Job_JobMetadata_SdkVersion_BugsFields,
-		},
-		"SdkSupportStatus": ubx.FieldSpec{WireName: "sdk_support_status"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-		"VersionDisplayName": ubx.FieldSpec{WireName: "version_display_name"},
-	}
+	"Bugs": ubx.FieldSpec{
+		WireName: "bugs",
+		Kind:     "list",
+		Fields:   Job_JobMetadata_SdkVersion_BugsFields,
+	},
+	"SdkSupportStatus":   ubx.FieldSpec{WireName: "sdk_support_status"},
+	"Version":            ubx.FieldSpec{WireName: "version"},
+	"VersionDisplayName": ubx.FieldSpec{WireName: "version_display_name"},
+}
 
 var Job_JobMetadata_SpannerDetailsFields = ubx.FieldMap{
-		"DatabaseId": ubx.FieldSpec{WireName: "database_id"},
-		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-	}
+	"DatabaseId": ubx.FieldSpec{WireName: "database_id"},
+	"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
+	"ProjectId":  ubx.FieldSpec{WireName: "project_id"},
+}
 
 var Job_JobMetadataFields = ubx.FieldMap{
-		"BigTableDetails": ubx.FieldSpec{
-			WireName: "big_table_details",
-			Kind: "list",
-			Fields: Job_JobMetadata_BigTableDetailsFields,
-		},
-		"BigqueryDetails": ubx.FieldSpec{
-			WireName: "bigquery_details",
-			Kind: "list",
-			Fields: Job_JobMetadata_BigqueryDetailsFields,
-		},
-		"DatastoreDetails": ubx.FieldSpec{
-			WireName: "datastore_details",
-			Kind: "list",
-			Fields: Job_JobMetadata_DatastoreDetailsFields,
-		},
-		"FileDetails": ubx.FieldSpec{
-			WireName: "file_details",
-			Kind: "list",
-			Fields: Job_JobMetadata_FileDetailsFields,
-		},
-		"PubsubDetails": ubx.FieldSpec{
-			WireName: "pubsub_details",
-			Kind: "list",
-			Fields: Job_JobMetadata_PubsubDetailsFields,
-		},
-		"SdkVersion": ubx.FieldSpec{
-			WireName: "sdk_version",
-			Kind: "object",
-			Fields: Job_JobMetadata_SdkVersionFields,
-		},
-		"SpannerDetails": ubx.FieldSpec{
-			WireName: "spanner_details",
-			Kind: "list",
-			Fields: Job_JobMetadata_SpannerDetailsFields,
-		},
-		"UserDisplayProperties": ubx.FieldSpec{WireName: "user_display_properties"},
-	}
+	"BigTableDetails": ubx.FieldSpec{
+		WireName: "big_table_details",
+		Kind:     "list",
+		Fields:   Job_JobMetadata_BigTableDetailsFields,
+	},
+	"BigqueryDetails": ubx.FieldSpec{
+		WireName: "bigquery_details",
+		Kind:     "list",
+		Fields:   Job_JobMetadata_BigqueryDetailsFields,
+	},
+	"DatastoreDetails": ubx.FieldSpec{
+		WireName: "datastore_details",
+		Kind:     "list",
+		Fields:   Job_JobMetadata_DatastoreDetailsFields,
+	},
+	"FileDetails": ubx.FieldSpec{
+		WireName: "file_details",
+		Kind:     "list",
+		Fields:   Job_JobMetadata_FileDetailsFields,
+	},
+	"PubsubDetails": ubx.FieldSpec{
+		WireName: "pubsub_details",
+		Kind:     "list",
+		Fields:   Job_JobMetadata_PubsubDetailsFields,
+	},
+	"SdkVersion": ubx.FieldSpec{
+		WireName: "sdk_version",
+		Kind:     "object",
+		Fields:   Job_JobMetadata_SdkVersionFields,
+	},
+	"SpannerDetails": ubx.FieldSpec{
+		WireName: "spanner_details",
+		Kind:     "list",
+		Fields:   Job_JobMetadata_SpannerDetailsFields,
+	},
+	"UserDisplayProperties": ubx.FieldSpec{WireName: "user_display_properties"},
+}
 
 var Job_PipelineDescription_DisplayDataFields = ubx.FieldMap{
-		"BoolValue": ubx.FieldSpec{WireName: "bool_value"},
-		"DurationValue": ubx.FieldSpec{WireName: "duration_value"},
-		"FloatValue": ubx.FieldSpec{WireName: "float_value"},
-		"Int64Value": ubx.FieldSpec{WireName: "int64_value"},
-		"JavaClassValue": ubx.FieldSpec{WireName: "java_class_value"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Label": ubx.FieldSpec{WireName: "label"},
-		"Namespace": ubx.FieldSpec{WireName: "namespace"},
-		"ShortStrValue": ubx.FieldSpec{WireName: "short_str_value"},
-		"StrValue": ubx.FieldSpec{WireName: "str_value"},
-		"TimestampValue": ubx.FieldSpec{WireName: "timestamp_value"},
-		"Url": ubx.FieldSpec{WireName: "url"},
-	}
+	"BoolValue":      ubx.FieldSpec{WireName: "bool_value"},
+	"DurationValue":  ubx.FieldSpec{WireName: "duration_value"},
+	"FloatValue":     ubx.FieldSpec{WireName: "float_value"},
+	"Int64Value":     ubx.FieldSpec{WireName: "int64_value"},
+	"JavaClassValue": ubx.FieldSpec{WireName: "java_class_value"},
+	"Key":            ubx.FieldSpec{WireName: "key"},
+	"Label":          ubx.FieldSpec{WireName: "label"},
+	"Namespace":      ubx.FieldSpec{WireName: "namespace"},
+	"ShortStrValue":  ubx.FieldSpec{WireName: "short_str_value"},
+	"StrValue":       ubx.FieldSpec{WireName: "str_value"},
+	"TimestampValue": ubx.FieldSpec{WireName: "timestamp_value"},
+	"Url":            ubx.FieldSpec{WireName: "url"},
+}
 
 var Job_PipelineDescription_ExecutionPipelineStage_ComponentSourceFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"OriginalTransformOrCollection": ubx.FieldSpec{WireName: "original_transform_or_collection"},
-		"UserName": ubx.FieldSpec{WireName: "user_name"},
-	}
+	"Name":                          ubx.FieldSpec{WireName: "name"},
+	"OriginalTransformOrCollection": ubx.FieldSpec{WireName: "original_transform_or_collection"},
+	"UserName":                      ubx.FieldSpec{WireName: "user_name"},
+}
 
 var Job_PipelineDescription_ExecutionPipelineStage_ComponentTransformFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"OriginalTransform": ubx.FieldSpec{WireName: "original_transform"},
-		"UserName": ubx.FieldSpec{WireName: "user_name"},
-	}
+	"Name":              ubx.FieldSpec{WireName: "name"},
+	"OriginalTransform": ubx.FieldSpec{WireName: "original_transform"},
+	"UserName":          ubx.FieldSpec{WireName: "user_name"},
+}
 
 var Job_PipelineDescription_ExecutionPipelineStage_InputSourceFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"OriginalTransformOrCollection": ubx.FieldSpec{WireName: "original_transform_or_collection"},
-		"SizeBytes": ubx.FieldSpec{WireName: "size_bytes"},
-		"UserName": ubx.FieldSpec{WireName: "user_name"},
-	}
+	"Name":                          ubx.FieldSpec{WireName: "name"},
+	"OriginalTransformOrCollection": ubx.FieldSpec{WireName: "original_transform_or_collection"},
+	"SizeBytes":                     ubx.FieldSpec{WireName: "size_bytes"},
+	"UserName":                      ubx.FieldSpec{WireName: "user_name"},
+}
 
 var Job_PipelineDescription_ExecutionPipelineStageFields = ubx.FieldMap{
-		"ComponentSource": ubx.FieldSpec{
-			WireName: "component_source",
-			Kind: "list",
-			Fields: Job_PipelineDescription_ExecutionPipelineStage_ComponentSourceFields,
-		},
-		"ComponentTransform": ubx.FieldSpec{
-			WireName: "component_transform",
-			Kind: "list",
-			Fields: Job_PipelineDescription_ExecutionPipelineStage_ComponentTransformFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"InputSource": ubx.FieldSpec{
-			WireName: "input_source",
-			Kind: "list",
-			Fields: Job_PipelineDescription_ExecutionPipelineStage_InputSourceFields,
-		},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"OutputSource": ubx.FieldSpec{
-			WireName: "output_source",
-			Kind: "list",
-			Fields: Job_PipelineDescription_ExecutionPipelineStage_InputSourceFields,
-		},
-		"PrerequisiteStage": ubx.FieldSpec{WireName: "prerequisite_stage"},
-	}
+	"ComponentSource": ubx.FieldSpec{
+		WireName: "component_source",
+		Kind:     "list",
+		Fields:   Job_PipelineDescription_ExecutionPipelineStage_ComponentSourceFields,
+	},
+	"ComponentTransform": ubx.FieldSpec{
+		WireName: "component_transform",
+		Kind:     "list",
+		Fields:   Job_PipelineDescription_ExecutionPipelineStage_ComponentTransformFields,
+	},
+	"Id": ubx.FieldSpec{WireName: "id"},
+	"InputSource": ubx.FieldSpec{
+		WireName: "input_source",
+		Kind:     "list",
+		Fields:   Job_PipelineDescription_ExecutionPipelineStage_InputSourceFields,
+	},
+	"Kind": ubx.FieldSpec{WireName: "kind"},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"OutputSource": ubx.FieldSpec{
+		WireName: "output_source",
+		Kind:     "list",
+		Fields:   Job_PipelineDescription_ExecutionPipelineStage_InputSourceFields,
+	},
+	"PrerequisiteStage": ubx.FieldSpec{WireName: "prerequisite_stage"},
+}
 
 var Job_PipelineDescription_OriginalPipelineTransformFields = ubx.FieldMap{
-		"DisplayData": ubx.FieldSpec{
-			WireName: "display_data",
-			Kind: "list",
-			Fields: Job_PipelineDescription_DisplayDataFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"InputCollectionName": ubx.FieldSpec{WireName: "input_collection_name"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"OutputCollectionName": ubx.FieldSpec{WireName: "output_collection_name"},
-	}
+	"DisplayData": ubx.FieldSpec{
+		WireName: "display_data",
+		Kind:     "list",
+		Fields:   Job_PipelineDescription_DisplayDataFields,
+	},
+	"Id":                   ubx.FieldSpec{WireName: "id"},
+	"InputCollectionName":  ubx.FieldSpec{WireName: "input_collection_name"},
+	"Kind":                 ubx.FieldSpec{WireName: "kind"},
+	"Name":                 ubx.FieldSpec{WireName: "name"},
+	"OutputCollectionName": ubx.FieldSpec{WireName: "output_collection_name"},
+}
 
 var Job_PipelineDescriptionFields = ubx.FieldMap{
-		"DisplayData": ubx.FieldSpec{
-			WireName: "display_data",
-			Kind: "list",
-			Fields: Job_PipelineDescription_DisplayDataFields,
-		},
-		"ExecutionPipelineStage": ubx.FieldSpec{
-			WireName: "execution_pipeline_stage",
-			Kind: "list",
-			Fields: Job_PipelineDescription_ExecutionPipelineStageFields,
-		},
-		"OriginalPipelineTransform": ubx.FieldSpec{
-			WireName: "original_pipeline_transform",
-			Kind: "list",
-			Fields: Job_PipelineDescription_OriginalPipelineTransformFields,
-		},
-		"StepNamesHash": ubx.FieldSpec{WireName: "step_names_hash"},
-	}
+	"DisplayData": ubx.FieldSpec{
+		WireName: "display_data",
+		Kind:     "list",
+		Fields:   Job_PipelineDescription_DisplayDataFields,
+	},
+	"ExecutionPipelineStage": ubx.FieldSpec{
+		WireName: "execution_pipeline_stage",
+		Kind:     "list",
+		Fields:   Job_PipelineDescription_ExecutionPipelineStageFields,
+	},
+	"OriginalPipelineTransform": ubx.FieldSpec{
+		WireName: "original_pipeline_transform",
+		Kind:     "list",
+		Fields:   Job_PipelineDescription_OriginalPipelineTransformFields,
+	},
+	"StepNamesHash": ubx.FieldSpec{WireName: "step_names_hash"},
+}
 
 var Job_RuntimeUpdatableParams_Schedules_ParametersFields = ubx.FieldMap{
-		"CpuUtilizationTarget": ubx.FieldSpec{WireName: "cpu_utilization_target"},
-		"LatencyTarget": ubx.FieldSpec{WireName: "latency_target"},
-		"MaxWorkerCount": ubx.FieldSpec{WireName: "max_worker_count"},
-		"MinWorkerCount": ubx.FieldSpec{WireName: "min_worker_count"},
-	}
+	"CpuUtilizationTarget": ubx.FieldSpec{WireName: "cpu_utilization_target"},
+	"LatencyTarget":        ubx.FieldSpec{WireName: "latency_target"},
+	"MaxWorkerCount":       ubx.FieldSpec{WireName: "max_worker_count"},
+	"MinWorkerCount":       ubx.FieldSpec{WireName: "min_worker_count"},
+}
 
 var Job_RuntimeUpdatableParams_SchedulesFields = ubx.FieldMap{
-		"Crontab": ubx.FieldSpec{WireName: "crontab"},
-		"Duration": ubx.FieldSpec{WireName: "duration"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Parameters": ubx.FieldSpec{
-			WireName: "parameters",
-			Kind: "object",
-			Fields: Job_RuntimeUpdatableParams_Schedules_ParametersFields,
-		},
-		"Priority": ubx.FieldSpec{WireName: "priority"},
-		"TimeZone": ubx.FieldSpec{WireName: "time_zone"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-	}
+	"Crontab":  ubx.FieldSpec{WireName: "crontab"},
+	"Duration": ubx.FieldSpec{WireName: "duration"},
+	"Name":     ubx.FieldSpec{WireName: "name"},
+	"Parameters": ubx.FieldSpec{
+		WireName: "parameters",
+		Kind:     "object",
+		Fields:   Job_RuntimeUpdatableParams_Schedules_ParametersFields,
+	},
+	"Priority":   ubx.FieldSpec{WireName: "priority"},
+	"TimeZone":   ubx.FieldSpec{WireName: "time_zone"},
+	"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+}
 
 var Job_RuntimeUpdatableParamsFields = ubx.FieldMap{
-		"AcceptableBacklogDuration": ubx.FieldSpec{WireName: "acceptable_backlog_duration"},
-		"AutoscalingTier": ubx.FieldSpec{WireName: "autoscaling_tier"},
-		"LatencyTier": ubx.FieldSpec{WireName: "latency_tier"},
-		"MaxNumWorkers": ubx.FieldSpec{WireName: "max_num_workers"},
-		"MinNumWorkers": ubx.FieldSpec{WireName: "min_num_workers"},
-		"Schedules": ubx.FieldSpec{
-			WireName: "schedules",
-			Kind: "list",
-			Fields: Job_RuntimeUpdatableParams_SchedulesFields,
-		},
-		"WorkerUtilizationHint": ubx.FieldSpec{WireName: "worker_utilization_hint"},
-	}
+	"AcceptableBacklogDuration": ubx.FieldSpec{WireName: "acceptable_backlog_duration"},
+	"AutoscalingTier":           ubx.FieldSpec{WireName: "autoscaling_tier"},
+	"LatencyTier":               ubx.FieldSpec{WireName: "latency_tier"},
+	"MaxNumWorkers":             ubx.FieldSpec{WireName: "max_num_workers"},
+	"MinNumWorkers":             ubx.FieldSpec{WireName: "min_num_workers"},
+	"Schedules": ubx.FieldSpec{
+		WireName: "schedules",
+		Kind:     "list",
+		Fields:   Job_RuntimeUpdatableParams_SchedulesFields,
+	},
+	"WorkerUtilizationHint": ubx.FieldSpec{WireName: "worker_utilization_hint"},
+}
 
 var Job_ServiceResourcesFields = ubx.FieldMap{
-		"Zones": ubx.FieldSpec{WireName: "zones"},
-	}
+	"Zones": ubx.FieldSpec{WireName: "zones"},
+}
 
 var Job_StageStatesFields = ubx.FieldMap{
-		"CurrentStateTime": ubx.FieldSpec{WireName: "current_state_time"},
-		"ExecutionStageName": ubx.FieldSpec{WireName: "execution_stage_name"},
-		"ExecutionStageState": ubx.FieldSpec{WireName: "execution_stage_state"},
-	}
+	"CurrentStateTime":    ubx.FieldSpec{WireName: "current_state_time"},
+	"ExecutionStageName":  ubx.FieldSpec{WireName: "execution_stage_name"},
+	"ExecutionStageState": ubx.FieldSpec{WireName: "execution_stage_state"},
+}
 
 var Job_StepsFields = ubx.FieldMap{
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Properties": ubx.FieldSpec{WireName: "properties"},
-	}
+	"Kind":       ubx.FieldSpec{WireName: "kind"},
+	"Name":       ubx.FieldSpec{WireName: "name"},
+	"Properties": ubx.FieldSpec{WireName: "properties"},
+}
 
 type JobConfig struct {
 	// The client's unique identifier of the job, re-used across retried attempts. If this field is set, the service will ensure its uniqueness. The request to create a job will fail if the service has knowledge of a previously submitted job with the same client's ID and job name. The caller may use this field to ensure idempotence of job creation across retried attempts to create a job. By default, the field is empty and, in that case, the service ignores it.
@@ -754,8 +754,6 @@ type JobConfig struct {
 	Location any
 	// Optional. The user-specified Dataflow job name. Only one active job with a given name can exist in a project within one region at any given time. Jobs in different regions can have the same name. If a caller attempts to create a job with the same name as an active job that already exists, the attempt returns the existing job. The name must match the regular expression `[a-z]([-a-z0-9]{0,1022}[a-z0-9])?`
 	Name any
-	// Output only. Indicates whether the job can be paused.
-	Pausable any
 	// A descriptive representation of submitted pipeline as well as the executed form. This data is provided by the Dataflow service for ease of visualizing the pipeline and interpreting Dataflow provided metrics.
 	PipelineDescription any
 	// The ID of the Google Cloud project that the job belongs to.
@@ -768,8 +766,6 @@ type JobConfig struct {
 	RequestedState any
 	// Additional job parameters that can only be updated during runtime using the projects.jobs.update method. These fields have no effect when specified during job creation.
 	RuntimeUpdatableParams any
-	// Output only. Reserved for future use. This field is set only in responses from the server; it is ignored if it is set in any requests.
-	SatisfiesPzi any
 	// Reserved for future use. This field is set only in responses from the server; it is ignored if it is set in any requests.
 	SatisfiesPzs any
 	// Resources used by the Dataflow Service to run the job.
@@ -854,66 +850,64 @@ type JobAttrs struct {
 var Job = ubx.ResourceBinding{
 	WireType: "google_dataflow_job",
 	Fields: ubx.FieldMap{
-		"ClientRequestId": ubx.FieldSpec{WireName: "client_request_id"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
+		"ClientRequestId":       ubx.FieldSpec{WireName: "client_request_id"},
+		"CreateTime":            ubx.FieldSpec{WireName: "create_time"},
 		"CreatedFromSnapshotId": ubx.FieldSpec{WireName: "created_from_snapshot_id"},
-		"CurrentState": ubx.FieldSpec{WireName: "current_state"},
-		"CurrentStateTime": ubx.FieldSpec{WireName: "current_state_time"},
+		"CurrentState":          ubx.FieldSpec{WireName: "current_state"},
+		"CurrentStateTime":      ubx.FieldSpec{WireName: "current_state_time"},
 		"Environment": ubx.FieldSpec{
 			WireName: "environment",
-			Kind: "object",
-			Fields: Job_EnvironmentFields,
+			Kind:     "object",
+			Fields:   Job_EnvironmentFields,
 		},
 		"ExecutionInfo": ubx.FieldSpec{
 			WireName: "execution_info",
-			Kind: "object",
-			Fields: Job_ExecutionInfoFields,
+			Kind:     "object",
+			Fields:   Job_ExecutionInfoFields,
 		},
 		"Id": ubx.FieldSpec{WireName: "id"},
 		"JobMetadata": ubx.FieldSpec{
 			WireName: "job_metadata",
-			Kind: "object",
-			Fields: Job_JobMetadataFields,
+			Kind:     "object",
+			Fields:   Job_JobMetadataFields,
 		},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Labels":   ubx.FieldSpec{WireName: "labels"},
 		"Location": ubx.FieldSpec{WireName: "location"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Pausable": ubx.FieldSpec{WireName: "pausable"},
+		"Name":     ubx.FieldSpec{WireName: "name"},
 		"PipelineDescription": ubx.FieldSpec{
 			WireName: "pipeline_description",
-			Kind: "object",
-			Fields: Job_PipelineDescriptionFields,
+			Kind:     "object",
+			Fields:   Job_PipelineDescriptionFields,
 		},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-		"ReplaceJobId": ubx.FieldSpec{WireName: "replace_job_id"},
+		"ProjectId":       ubx.FieldSpec{WireName: "project_id"},
+		"ReplaceJobId":    ubx.FieldSpec{WireName: "replace_job_id"},
 		"ReplacedByJobId": ubx.FieldSpec{WireName: "replaced_by_job_id"},
-		"RequestedState": ubx.FieldSpec{WireName: "requested_state"},
+		"RequestedState":  ubx.FieldSpec{WireName: "requested_state"},
 		"RuntimeUpdatableParams": ubx.FieldSpec{
 			WireName: "runtime_updatable_params",
-			Kind: "object",
-			Fields: Job_RuntimeUpdatableParamsFields,
+			Kind:     "object",
+			Fields:   Job_RuntimeUpdatableParamsFields,
 		},
-		"SatisfiesPzi": ubx.FieldSpec{WireName: "satisfies_pzi"},
 		"SatisfiesPzs": ubx.FieldSpec{WireName: "satisfies_pzs"},
 		"ServiceResources": ubx.FieldSpec{
 			WireName: "service_resources",
-			Kind: "object",
-			Fields: Job_ServiceResourcesFields,
+			Kind:     "object",
+			Fields:   Job_ServiceResourcesFields,
 		},
 		"StageStates": ubx.FieldSpec{
 			WireName: "stage_states",
-			Kind: "list",
-			Fields: Job_StageStatesFields,
+			Kind:     "list",
+			Fields:   Job_StageStatesFields,
 		},
 		"StartTime": ubx.FieldSpec{WireName: "start_time"},
 		"Steps": ubx.FieldSpec{
 			WireName: "steps",
-			Kind: "list",
-			Fields: Job_StepsFields,
+			Kind:     "list",
+			Fields:   Job_StepsFields,
 		},
-		"StepsLocation": ubx.FieldSpec{WireName: "steps_location"},
-		"TempFiles": ubx.FieldSpec{WireName: "temp_files"},
+		"StepsLocation":        ubx.FieldSpec{WireName: "steps_location"},
+		"TempFiles":            ubx.FieldSpec{WireName: "temp_files"},
 		"TransformNameMapping": ubx.FieldSpec{WireName: "transform_name_mapping"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"Type":                 ubx.FieldSpec{WireName: "type"},
 	},
 }

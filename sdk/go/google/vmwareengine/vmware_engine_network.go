@@ -5,33 +5,16 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type VmwareEngineNetwork_VpcNetworks struct {
 	Network any
-	Type any
+	Type    any
 }
 
-var VmwareEngineNetwork_VpcNetworksFields = ubx.FieldMap{
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
-
 type VmwareEngineNetworkConfig struct {
-	// Output only. Creation time of this resource.
-	CreateTime any
 	// User-provided description for this VMware Engine network.
 	Description any
 	// Checksum that may be sent on update and delete requests to ensure that the user-provided value is up to date before the server processes a request. The server computes checksums based on the value of other fields in the request.
 	Etag any
-	// Output only. Identifier. The resource name of the VMware Engine network. Resource names are schemeless URIs that follow the conventions in https://cloud.google.com/apis/design/resource_names. For example: `projects/my-project/locations/global/vmwareEngineNetworks/my-network`
-	Name any
-	// Output only. State of the VMware Engine network.
-	State any
 	// Required. VMware Engine network type.
 	Type any
-	// Output only. System-generated unique identifier for the resource.
-	Uid any
-	// Output only. Last update time of this resource.
-	UpdateTime any
-	// Output only. VMware Engine service VPC networks that provide connectivity from a private cloud to customer projects, the internet, and other Google Cloud services.
-	VpcNetworks any
 }
 
 type VmwareEngineNetworkAttrs struct {
@@ -58,18 +41,8 @@ type VmwareEngineNetworkAttrs struct {
 var VmwareEngineNetwork = ubx.ResourceBinding{
 	WireType: "google_vmwareengine_vmware_engine_network",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-		"VpcNetworks": ubx.FieldSpec{
-			WireName: "vpc_networks",
-			Kind: "list",
-			Fields: VmwareEngineNetwork_VpcNetworksFields,
-		},
+		"Etag":        ubx.FieldSpec{WireName: "etag"},
+		"Type":        ubx.FieldSpec{WireName: "type"},
 	},
 }

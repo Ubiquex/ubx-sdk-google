@@ -14,8 +14,6 @@ export interface BranchRuleConfig {
   allowStaleReviews?: boolean | Computed<boolean>;
   /** Optional. User annotations. These attributes can only be set and used by the user. See https://google.aip.dev/128#annotations for more details such as format and size limitations. */
   annotations?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. Create timestamp. */
-  createTime?: string | Computed<string>;
   /** Optional. Determines if the branch rule is disabled or not. */
   disabled?: boolean | Computed<boolean>;
   /** Optional. This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding. */
@@ -38,10 +36,6 @@ export interface BranchRuleConfig {
   requirePullRequest?: boolean | Computed<boolean>;
   /** Optional. List of required status checks before merging to the branch. */
   requiredStatusChecks?: BranchRule_RequiredStatusChecks[] | Computed<BranchRule_RequiredStatusChecks[]>;
-  /** Output only. Unique identifier of the repository. */
-  uid?: string | Computed<string>;
-  /** Output only. Update timestamp. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface BranchRuleAttrs {
@@ -84,7 +78,6 @@ export const BranchRule: ResourceBinding<BranchRuleConfig, BranchRuleAttrs> = {
   fields: {
     allowStaleReviews: "allow_stale_reviews",
     annotations: "annotations",
-    createTime: "create_time",
     disabled: "disabled",
     etag: "etag",
     includePattern: "include_pattern",
@@ -100,7 +93,5 @@ export const BranchRule: ResourceBinding<BranchRuleConfig, BranchRuleAttrs> = {
       kind: "list",
       fields: BranchRule_RequiredStatusChecksFields,
     },
-    uid: "uid",
-    updateTime: "update_time",
   },
 };

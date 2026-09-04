@@ -27,8 +27,7 @@ type AlphaNodeType_Deprecated struct {
 
 type AlphaNodeTypeConfig struct {
 	NodeType any
-	Project any
-	Zone any
+	Project  any
 }
 
 type AlphaNodeTypeAttrs struct {
@@ -53,21 +52,20 @@ type AlphaNodeTypeAttrs struct {
 	// [Output Only] The amount of physical memory available to the node type, defined in MB.
 	MemoryMb any
 	// [Output Only] Name of the resource.
-	Name any
+	Name     any
 	NodeType any
-	Project any
+	Project  any
 	// Output only. [Output Only] Server-defined URL for the resource.
 	SelfLink any
 	// Output only. [Output Only] Server-defined URL for this resource with the resource id.
 	SelfLinkWithId any
-	Zone any
+	Zone           any
 }
 
 var AlphaNodeType = ubx.DataSourceBinding{
 	WireType: "google_compute_alpha_node_type",
 	Fields: ubx.FieldMap{
 		"NodeType": ubx.FieldSpec{WireName: "node_type"},
-		"Project": ubx.FieldSpec{WireName: "project"},
-		"Zone": ubx.FieldSpec{WireName: "zone"},
+		"Project":  ubx.FieldSpec{WireName: "project"},
 	},
 }

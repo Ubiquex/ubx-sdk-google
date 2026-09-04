@@ -4,12 +4,8 @@ package aiplatform
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MetadataSchemaConfig struct {
-	// Output only. Timestamp when this MetadataSchema was created.
-	CreateTime any
 	// Description of the Metadata Schema
 	Description any
-	// Output only. The resource name of the MetadataSchema.
-	Name any
 	// Required. The raw YAML string representation of the MetadataSchema. The combination of [MetadataSchema.version] and the schema name given by `title` in [MetadataSchema.schema] must be unique within a MetadataStore. The schema is defined as an OpenAPI 3.0.2 [MetadataSchema Object](https://github.com/OAI/OpenAPI-Specification/blob/master/versions/3.0.2.md#schemaObject)
 	Schema any
 	// The type of the MetadataSchema. This is a property that identifies which metadata types will use the MetadataSchema.
@@ -36,11 +32,9 @@ type MetadataSchemaAttrs struct {
 var MetadataSchema = ubx.ResourceBinding{
 	WireType: "google_aiplatform_metadata_schema",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Schema": ubx.FieldSpec{WireName: "schema"},
-		"SchemaType": ubx.FieldSpec{WireName: "schema_type"},
+		"Description":   ubx.FieldSpec{WireName: "description"},
+		"Schema":        ubx.FieldSpec{WireName: "schema"},
+		"SchemaType":    ubx.FieldSpec{WireName: "schema_type"},
 		"SchemaVersion": ubx.FieldSpec{WireName: "schema_version"},
 	},
 }

@@ -298,10 +298,6 @@ _Posture_PolicySetsFields = {
 class PostureConfig:
     # Optional. The user-specified annotations for the posture. For details about the values you can use in an annotation, see [AIP-148: Standard fields](https://google.aip.dev/148#annotations).
     annotations: Any = None
-    # Output only. The categories that the posture belongs to, as determined by the Security Posture API.
-    categories: Any = None
-    # Output only. The time at which the posture was created.
-    create_time: Any = None
     # Optional. A description of the posture.
     description: Any = None
     # Optional. An opaque identifier for the current version of the posture at the specified `revision_id`. To prevent concurrent updates from overwriting each other, always provide the `etag` when you update a posture. You can also provide the `etag` when you delete a posture, to help ensure that you're deleting the intended version of the posture.
@@ -310,14 +306,8 @@ class PostureConfig:
     name: Any = None
     # Required. The PolicySet resources that the posture includes.
     policy_sets: Any = None
-    # Output only. Whether the posture is in the process of being updated.
-    reconciling: Any = None
-    # Output only. Immutable. An opaque eight-character string that identifies the revision of the posture. A posture can have multiple revisions; when you deploy a posture, you deploy a specific revision of the posture.
-    revision_id: Any = None
     # Required. The state of the posture at the specified `revision_id`.
     state: Any = None
-    # Output only. The time at which the posture was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class PostureAttrs:
@@ -348,8 +338,6 @@ Posture = ubx.ResourceBinding(
     wire_type="google_securityposture_posture",
     fields={
         "annotations": ubx.FieldSpec(wire_name="annotations"),
-        "categories": ubx.FieldSpec(wire_name="categories"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "etag": ubx.FieldSpec(wire_name="etag"),
         "name": ubx.FieldSpec(wire_name="name"),
@@ -358,9 +346,6 @@ Posture = ubx.ResourceBinding(
             kind="list",
             fields=_Posture_PolicySetsFields,
         ),
-        "reconciling": ubx.FieldSpec(wire_name="reconciling"),
-        "revision_id": ubx.FieldSpec(wire_name="revision_id"),
         "state": ubx.FieldSpec(wire_name="state"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

@@ -80,143 +80,120 @@ type AlphaRegionSslPolicy_TlsSettings struct {
 }
 
 type AlphaRegionSslPolicy_Warnings_Data struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type AlphaRegionSslPolicy_Warnings struct {
-	Code any
-	Data any
+	Code    any
+	Data    any
 	Message any
 }
 
 var AlphaRegionSslPolicy_TlsSettings_ProxyTlsContext_CertificateContext_CertificatePathsFields = ubx.FieldMap{
-		"CertificatePath": ubx.FieldSpec{WireName: "certificate_path"},
-		"PrivateKeyPath": ubx.FieldSpec{WireName: "private_key_path"},
-	}
+	"CertificatePath": ubx.FieldSpec{WireName: "certificate_path"},
+	"PrivateKeyPath":  ubx.FieldSpec{WireName: "private_key_path"},
+}
 
 var AlphaRegionSslPolicy_TlsSettings_ProxyTlsContext_CertificateContext_SdsConfig_GrpcServiceConfig_CallCredentials_FromPluginFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"StructConfig": ubx.FieldSpec{WireName: "struct_config"},
-	}
+	"Name":         ubx.FieldSpec{WireName: "name"},
+	"StructConfig": ubx.FieldSpec{WireName: "struct_config"},
+}
 
 var AlphaRegionSslPolicy_TlsSettings_ProxyTlsContext_CertificateContext_SdsConfig_GrpcServiceConfig_CallCredentialsFields = ubx.FieldMap{
-		"CallCredentialType": ubx.FieldSpec{WireName: "call_credential_type"},
-		"FromPlugin": ubx.FieldSpec{
-			WireName: "from_plugin",
-			Kind: "object",
-			Fields: AlphaRegionSslPolicy_TlsSettings_ProxyTlsContext_CertificateContext_SdsConfig_GrpcServiceConfig_CallCredentials_FromPluginFields,
-		},
-	}
+	"CallCredentialType": ubx.FieldSpec{WireName: "call_credential_type"},
+	"FromPlugin": ubx.FieldSpec{
+		WireName: "from_plugin",
+		Kind:     "object",
+		Fields:   AlphaRegionSslPolicy_TlsSettings_ProxyTlsContext_CertificateContext_SdsConfig_GrpcServiceConfig_CallCredentials_FromPluginFields,
+	},
+}
 
 var AlphaRegionSslPolicy_TlsSettings_ProxyTlsContext_CertificateContext_SdsConfig_GrpcServiceConfig_ChannelCredentialsFields = ubx.FieldMap{
-		"Certificates": ubx.FieldSpec{
-			WireName: "certificates",
-			Kind: "object",
-			Fields: AlphaRegionSslPolicy_TlsSettings_ProxyTlsContext_CertificateContext_CertificatePathsFields,
-		},
-		"ChannelCredentialType": ubx.FieldSpec{WireName: "channel_credential_type"},
-	}
+	"Certificates": ubx.FieldSpec{
+		WireName: "certificates",
+		Kind:     "object",
+		Fields:   AlphaRegionSslPolicy_TlsSettings_ProxyTlsContext_CertificateContext_CertificatePathsFields,
+	},
+	"ChannelCredentialType": ubx.FieldSpec{WireName: "channel_credential_type"},
+}
 
 var AlphaRegionSslPolicy_TlsSettings_ProxyTlsContext_CertificateContext_SdsConfig_GrpcServiceConfigFields = ubx.FieldMap{
-		"CallCredentials": ubx.FieldSpec{
-			WireName: "call_credentials",
-			Kind: "object",
-			Fields: AlphaRegionSslPolicy_TlsSettings_ProxyTlsContext_CertificateContext_SdsConfig_GrpcServiceConfig_CallCredentialsFields,
-		},
-		"ChannelCredentials": ubx.FieldSpec{
-			WireName: "channel_credentials",
-			Kind: "object",
-			Fields: AlphaRegionSslPolicy_TlsSettings_ProxyTlsContext_CertificateContext_SdsConfig_GrpcServiceConfig_ChannelCredentialsFields,
-		},
-		"TargetUri": ubx.FieldSpec{WireName: "target_uri"},
-	}
+	"CallCredentials": ubx.FieldSpec{
+		WireName: "call_credentials",
+		Kind:     "object",
+		Fields:   AlphaRegionSslPolicy_TlsSettings_ProxyTlsContext_CertificateContext_SdsConfig_GrpcServiceConfig_CallCredentialsFields,
+	},
+	"ChannelCredentials": ubx.FieldSpec{
+		WireName: "channel_credentials",
+		Kind:     "object",
+		Fields:   AlphaRegionSslPolicy_TlsSettings_ProxyTlsContext_CertificateContext_SdsConfig_GrpcServiceConfig_ChannelCredentialsFields,
+	},
+	"TargetUri": ubx.FieldSpec{WireName: "target_uri"},
+}
 
 var AlphaRegionSslPolicy_TlsSettings_ProxyTlsContext_CertificateContext_SdsConfigFields = ubx.FieldMap{
-		"GrpcServiceConfig": ubx.FieldSpec{
-			WireName: "grpc_service_config",
-			Kind: "object",
-			Fields: AlphaRegionSslPolicy_TlsSettings_ProxyTlsContext_CertificateContext_SdsConfig_GrpcServiceConfigFields,
-		},
-	}
+	"GrpcServiceConfig": ubx.FieldSpec{
+		WireName: "grpc_service_config",
+		Kind:     "object",
+		Fields:   AlphaRegionSslPolicy_TlsSettings_ProxyTlsContext_CertificateContext_SdsConfig_GrpcServiceConfigFields,
+	},
+}
 
 var AlphaRegionSslPolicy_TlsSettings_ProxyTlsContext_CertificateContextFields = ubx.FieldMap{
-		"CertificatePaths": ubx.FieldSpec{
-			WireName: "certificate_paths",
-			Kind: "object",
-			Fields: AlphaRegionSslPolicy_TlsSettings_ProxyTlsContext_CertificateContext_CertificatePathsFields,
-		},
-		"CertificateSource": ubx.FieldSpec{WireName: "certificate_source"},
-		"SdsConfig": ubx.FieldSpec{
-			WireName: "sds_config",
-			Kind: "object",
-			Fields: AlphaRegionSslPolicy_TlsSettings_ProxyTlsContext_CertificateContext_SdsConfigFields,
-		},
-	}
+	"CertificatePaths": ubx.FieldSpec{
+		WireName: "certificate_paths",
+		Kind:     "object",
+		Fields:   AlphaRegionSslPolicy_TlsSettings_ProxyTlsContext_CertificateContext_CertificatePathsFields,
+	},
+	"CertificateSource": ubx.FieldSpec{WireName: "certificate_source"},
+	"SdsConfig": ubx.FieldSpec{
+		WireName: "sds_config",
+		Kind:     "object",
+		Fields:   AlphaRegionSslPolicy_TlsSettings_ProxyTlsContext_CertificateContext_SdsConfigFields,
+	},
+}
 
 var AlphaRegionSslPolicy_TlsSettings_ProxyTlsContext_ValidationContextFields = ubx.FieldMap{
-		"CertificatePath": ubx.FieldSpec{WireName: "certificate_path"},
-		"SdsConfig": ubx.FieldSpec{
-			WireName: "sds_config",
-			Kind: "object",
-			Fields: AlphaRegionSslPolicy_TlsSettings_ProxyTlsContext_CertificateContext_SdsConfigFields,
-		},
-		"ValidationSource": ubx.FieldSpec{WireName: "validation_source"},
-	}
+	"CertificatePath": ubx.FieldSpec{WireName: "certificate_path"},
+	"SdsConfig": ubx.FieldSpec{
+		WireName: "sds_config",
+		Kind:     "object",
+		Fields:   AlphaRegionSslPolicy_TlsSettings_ProxyTlsContext_CertificateContext_SdsConfigFields,
+	},
+	"ValidationSource": ubx.FieldSpec{WireName: "validation_source"},
+}
 
 var AlphaRegionSslPolicy_TlsSettings_ProxyTlsContextFields = ubx.FieldMap{
-		"CertificateContext": ubx.FieldSpec{
-			WireName: "certificate_context",
-			Kind: "object",
-			Fields: AlphaRegionSslPolicy_TlsSettings_ProxyTlsContext_CertificateContextFields,
-		},
-		"ValidationContext": ubx.FieldSpec{
-			WireName: "validation_context",
-			Kind: "object",
-			Fields: AlphaRegionSslPolicy_TlsSettings_ProxyTlsContext_ValidationContextFields,
-		},
-	}
+	"CertificateContext": ubx.FieldSpec{
+		WireName: "certificate_context",
+		Kind:     "object",
+		Fields:   AlphaRegionSslPolicy_TlsSettings_ProxyTlsContext_CertificateContextFields,
+	},
+	"ValidationContext": ubx.FieldSpec{
+		WireName: "validation_context",
+		Kind:     "object",
+		Fields:   AlphaRegionSslPolicy_TlsSettings_ProxyTlsContext_ValidationContextFields,
+	},
+}
 
 var AlphaRegionSslPolicy_TlsSettingsFields = ubx.FieldMap{
-		"ProxyTlsContext": ubx.FieldSpec{
-			WireName: "proxy_tls_context",
-			Kind: "object",
-			Fields: AlphaRegionSslPolicy_TlsSettings_ProxyTlsContextFields,
-		},
-		"SubjectAltNames": ubx.FieldSpec{WireName: "subject_alt_names"},
-		"TlsMode": ubx.FieldSpec{WireName: "tls_mode"},
-	}
-
-var AlphaRegionSslPolicy_Warnings_DataFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
-
-var AlphaRegionSslPolicy_WarningsFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Data": ubx.FieldSpec{
-			WireName: "data",
-			Kind: "list",
-			Fields: AlphaRegionSslPolicy_Warnings_DataFields,
-		},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"ProxyTlsContext": ubx.FieldSpec{
+		WireName: "proxy_tls_context",
+		Kind:     "object",
+		Fields:   AlphaRegionSslPolicy_TlsSettings_ProxyTlsContextFields,
+	},
+	"SubjectAltNames": ubx.FieldSpec{WireName: "subject_alt_names"},
+	"TlsMode":         ubx.FieldSpec{WireName: "tls_mode"},
+}
 
 type AlphaRegionSslPolicyConfig struct {
-	// Output only. [Output Only] Creation timestamp inRFC3339 text format.
-	CreationTimestamp any
 	// A list of features enabled when the selected profile is CUSTOM. The method returns the set of features that can be specified in this list. This field must be empty if the profile is notCUSTOM.
 	CustomFeatures any
 	// An optional description of this resource. Provide this property when you create the resource.
 	Description any
-	// Output only. [Output Only] The list of features enabled in the SSL policy.
-	EnabledFeatures any
 	// Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a SslPolicy. An up-to-date fingerprint must be provided in order to update the SslPolicy, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an SslPolicy.
 	Fingerprint any
-	// Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-	Id any
-	// Output only. [Output only] Type of the resource. Alwayscompute#sslPolicyfor SSL policies.
-	Kind any
 	// The minimum version of SSL protocol that can be used by the clients to establish a connection with the load balancer. This can be one ofTLS_1_0, TLS_1_1, TLS_1_2,TLS_1_3. When set to TLS_1_3, the profile field must be set to RESTRICTED.
 	MinTlsVersion any
 	// Name of the resource. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
@@ -225,16 +202,8 @@ type AlphaRegionSslPolicyConfig struct {
 	PostQuantumKeyExchange any
 	// Profile specifies the set of SSL features that can be used by the load balancer when negotiating SSL with clients. This can be one ofCOMPATIBLE, MODERN, RESTRICTED,FIPS_202205, or CUSTOM. If usingCUSTOM, the set of SSL features to enable must be specified in the customFeatures field. If using FIPS_202205, the min_tls_version field must be set to TLS_1_2.
 	Profile any
-	// Output only. [Output Only] URL of the region where the regional SSL policy resides. This field is not applicable to global SSL policies.
-	Region any
-	// Output only. [Output Only] Server-defined URL for the resource.
-	SelfLink any
-	// Output only. [Output Only] Server-defined URL for this resource with the resource id.
-	SelfLinkWithId any
 	// The TLS settings for the server.
 	TlsSettings any
-	// Output only. [Output Only] If potential misconfigurations are detected for this SSL policy, this field will be populated with warning messages.
-	Warnings any
 }
 
 type AlphaRegionSslPolicyAttrs struct {
@@ -275,29 +244,17 @@ type AlphaRegionSslPolicyAttrs struct {
 var AlphaRegionSslPolicy = ubx.ResourceBinding{
 	WireType: "google_compute_alpha_region_ssl_policy",
 	Fields: ubx.FieldMap{
-		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
-		"CustomFeatures": ubx.FieldSpec{WireName: "custom_features"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"EnabledFeatures": ubx.FieldSpec{WireName: "enabled_features"},
-		"Fingerprint": ubx.FieldSpec{WireName: "fingerprint"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"MinTlsVersion": ubx.FieldSpec{WireName: "min_tls_version"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"CustomFeatures":         ubx.FieldSpec{WireName: "custom_features"},
+		"Description":            ubx.FieldSpec{WireName: "description"},
+		"Fingerprint":            ubx.FieldSpec{WireName: "fingerprint"},
+		"MinTlsVersion":          ubx.FieldSpec{WireName: "min_tls_version"},
+		"Name":                   ubx.FieldSpec{WireName: "name"},
 		"PostQuantumKeyExchange": ubx.FieldSpec{WireName: "post_quantum_key_exchange"},
-		"Profile": ubx.FieldSpec{WireName: "profile"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"SelfLinkWithId": ubx.FieldSpec{WireName: "self_link_with_id"},
+		"Profile":                ubx.FieldSpec{WireName: "profile"},
 		"TlsSettings": ubx.FieldSpec{
 			WireName: "tls_settings",
-			Kind: "object",
-			Fields: AlphaRegionSslPolicy_TlsSettingsFields,
-		},
-		"Warnings": ubx.FieldSpec{
-			WireName: "warnings",
-			Kind: "list",
-			Fields: AlphaRegionSslPolicy_WarningsFields,
+			Kind:     "object",
+			Fields:   AlphaRegionSslPolicy_TlsSettingsFields,
 		},
 	},
 }

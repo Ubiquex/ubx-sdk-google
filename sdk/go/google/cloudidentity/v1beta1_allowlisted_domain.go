@@ -6,8 +6,6 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type V1beta1AllowlistedDomainConfig struct {
 	// Required. Immutable. Name of the domain that is in the allowlist. e.g. "google.com"
 	Domain any
-	// Output only. Identifier. Resource name of the domain in the allowlist e.g. "allowlistedDomains/0184mhaj1smlusv"
-	Name any
 }
 
 type V1beta1AllowlistedDomainAttrs struct {
@@ -21,6 +19,5 @@ var V1beta1AllowlistedDomain = ubx.ResourceBinding{
 	WireType: "google_cloudidentity_v1beta1_allowlisted_domain",
 	Fields: ubx.FieldMap{
 		"Domain": ubx.FieldSpec{WireName: "domain"},
-		"Name": ubx.FieldSpec{WireName: "name"},
 	},
 }

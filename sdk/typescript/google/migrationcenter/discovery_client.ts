@@ -7,43 +7,21 @@ export interface DiscoveryClient_Errors {
   message?: string | Computed<string>;
 }
 
-const DiscoveryClient_ErrorsFields: FieldMap = {
-  code: "code",
-  details: "details",
-  message: "message",
-};
-
 export interface DiscoveryClientConfig {
-  /** Output only. Time when the discovery client was first created. */
-  createTime?: string | Computed<string>;
   /** Optional. Free text description. Maximum length is 1000 characters. */
   description?: string | Computed<string>;
   /** Optional. Free text display name. Maximum length is 63 characters. */
   displayName?: string | Computed<string>;
-  /** Output only. Errors affecting client functionality. */
-  errors?: DiscoveryClient_Errors[] | Computed<DiscoveryClient_Errors[]>;
   /** Optional. Client expiration time in UTC. If specified, the backend will not accept new frames after this time. */
   expireTime?: string | Computed<string>;
-  /** Output only. Last heartbeat time. Healthy clients are expected to send heartbeats regularly (normally every few minutes). */
-  heartbeatTime?: string | Computed<string>;
   /** Optional. Labels as key value pairs. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. Identifier. Full name of this discovery client. */
-  name?: string | Computed<string>;
   /** Required. Service account used by the discovery client for various operation. */
   serviceAccount?: string | Computed<string>;
-  /** Output only. This field is intended for internal use. */
-  signalsEndpoint?: string | Computed<string>;
   /** Required. Immutable. Full name of the source object associated with this discovery client. */
   source?: string | Computed<string>;
-  /** Output only. Current state of the discovery client. */
-  state?: string | Computed<string>;
   /** Optional. Input only. Client time-to-live. If specified, the backend will not accept new frames after this time. This field is input only. The derived expiration time is provided as output through the `expire_time` field. */
   ttl?: string | Computed<string>;
-  /** Output only. Time when the discovery client was last updated. This value is not updated by heartbeats, to view the last heartbeat time please refer to the `heartbeat_time` field. */
-  updateTime?: string | Computed<string>;
-  /** Output only. Client version, as reported in recent heartbeat. */
-  version?: string | Computed<string>;
 }
 
 export interface DiscoveryClientAttrs {
@@ -82,24 +60,12 @@ export interface DiscoveryClientAttrs {
 export const DiscoveryClient: ResourceBinding<DiscoveryClientConfig, DiscoveryClientAttrs> = {
   wireType: "google_migrationcenter_discovery_client",
   fields: {
-    createTime: "create_time",
     description: "description",
     displayName: "display_name",
-    errors: {
-      wireName: "errors",
-      kind: "list",
-      fields: DiscoveryClient_ErrorsFields,
-    },
     expireTime: "expire_time",
-    heartbeatTime: "heartbeat_time",
     labels: "labels",
-    name: "name",
     serviceAccount: "service_account",
-    signalsEndpoint: "signals_endpoint",
     source: "source",
-    state: "state",
     ttl: "ttl",
-    updateTime: "update_time",
-    version: "version",
   },
 };

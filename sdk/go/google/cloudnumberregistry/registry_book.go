@@ -17,28 +17,22 @@ type RegistryBook_AggregatedData struct {
 }
 
 var RegistryBook_AggregatedDataFields = ubx.FieldMap{
-		"CustomRangesCount": ubx.FieldSpec{WireName: "custom_ranges_count"},
-		"CustomRealmsCount": ubx.FieldSpec{WireName: "custom_realms_count"},
-		"DiscoveredRangesCount": ubx.FieldSpec{WireName: "discovered_ranges_count"},
-		"DiscoveredRealmsCount": ubx.FieldSpec{WireName: "discovered_realms_count"},
-		"UniqueScopesCount": ubx.FieldSpec{WireName: "unique_scopes_count"},
-	}
+	"CustomRangesCount":     ubx.FieldSpec{WireName: "custom_ranges_count"},
+	"CustomRealmsCount":     ubx.FieldSpec{WireName: "custom_realms_count"},
+	"DiscoveredRangesCount": ubx.FieldSpec{WireName: "discovered_ranges_count"},
+	"DiscoveredRealmsCount": ubx.FieldSpec{WireName: "discovered_realms_count"},
+	"UniqueScopesCount":     ubx.FieldSpec{WireName: "unique_scopes_count"},
+}
 
 type RegistryBookConfig struct {
 	// Aggregated data for the RegistryBook.
 	AggregatedData any
 	// Optional. List of scopes claimed by the RegistryBook. In Preview, Only project scope is supported. Each scope is in the format of projects/{project}. Each scope can only be claimed once.
 	ClaimedScopes any
-	// Output only. The time at which the RegistryBook was created.
-	CreateTime any
-	// Output only. Whether the RegistryBook is the default one.
-	IsDefault any
 	// Optional. User-defined labels.
 	Labels any
 	// Required. Identifier. The resource name of the RegistryBook.
 	Name any
-	// Output only. The time at which the RegistryBook was last updated.
-	UpdateTime any
 }
 
 type RegistryBookAttrs struct {
@@ -63,14 +57,11 @@ var RegistryBook = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AggregatedData": ubx.FieldSpec{
 			WireName: "aggregated_data",
-			Kind: "object",
-			Fields: RegistryBook_AggregatedDataFields,
+			Kind:     "object",
+			Fields:   RegistryBook_AggregatedDataFields,
 		},
 		"ClaimedScopes": ubx.FieldSpec{WireName: "claimed_scopes"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"IsDefault": ubx.FieldSpec{WireName: "is_default"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"Labels":        ubx.FieldSpec{WireName: "labels"},
+		"Name":          ubx.FieldSpec{WireName: "name"},
 	},
 }

@@ -780,8 +780,6 @@ const V1beta1ModelMonitor_TrainingDatasetFields: FieldMap = {
 };
 
 export interface V1beta1ModelMonitorConfig {
-  /** Output only. Timestamp when this ModelMonitor was created. */
-  createTime?: string | Computed<string>;
   /** The display name of the ModelMonitor. The name can be up to 128 characters long and can consist of any UTF-8. */
   displayName?: string | Computed<string>;
   /** Represents a customer-managed encryption key specification that can be applied to a Vertex AI resource. */
@@ -798,16 +796,10 @@ export interface V1beta1ModelMonitorConfig {
   notificationSpec?: V1beta1ModelMonitor_NotificationSpec | Computed<V1beta1ModelMonitor_NotificationSpec>;
   /** Specification for the export destination of monitoring results, including metrics, logs, etc. */
   outputSpec?: V1beta1ModelMonitor_OutputSpec | Computed<V1beta1ModelMonitor_OutputSpec>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzi?: boolean | Computed<boolean>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzs?: boolean | Computed<boolean>;
   /** Tabular monitoring objective. */
   tabularObjective?: V1beta1ModelMonitor_TabularObjective | Computed<V1beta1ModelMonitor_TabularObjective>;
   /** Model monitoring data input spec. */
   trainingDataset?: V1beta1ModelMonitor_TrainingDataset | Computed<V1beta1ModelMonitor_TrainingDataset>;
-  /** Output only. Timestamp when this ModelMonitor was updated most recently. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1beta1ModelMonitorAttrs {
@@ -844,7 +836,6 @@ export interface V1beta1ModelMonitorAttrs {
 export const V1beta1ModelMonitor: ResourceBinding<V1beta1ModelMonitorConfig, V1beta1ModelMonitorAttrs> = {
   wireType: "google_aiplatform_v1beta1_model_monitor",
   fields: {
-    createTime: "create_time",
     displayName: "display_name",
     encryptionSpec: {
       wireName: "encryption_spec",
@@ -877,8 +868,6 @@ export const V1beta1ModelMonitor: ResourceBinding<V1beta1ModelMonitorConfig, V1b
       kind: "object",
       fields: V1beta1ModelMonitor_OutputSpecFields,
     },
-    satisfiesPzi: "satisfies_pzi",
-    satisfiesPzs: "satisfies_pzs",
     tabularObjective: {
       wireName: "tabular_objective",
       kind: "object",
@@ -889,6 +878,5 @@ export const V1beta1ModelMonitor: ResourceBinding<V1beta1ModelMonitorConfig, V1b
       kind: "object",
       fields: V1beta1ModelMonitor_TrainingDatasetFields,
     },
-    updateTime: "update_time",
   },
 };

@@ -43,8 +43,6 @@ class TaxonomyConfig:
     display_name: Any = None
     # Identifier. Resource name of this taxonomy in URL format. Note: Policy tag manager generates unique taxonomy IDs.
     name: Any = None
-    # Output only. Number of policy tags in this taxonomy.
-    policy_tag_count: Any = None
     # The source system of the Taxonomy.
     service: Any = None
     # Timestamps associated with this resource in a particular system.
@@ -74,7 +72,6 @@ Taxonomy = ubx.ResourceBinding(
         "description": ubx.FieldSpec(wire_name="description"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "policy_tag_count": ubx.FieldSpec(wire_name="policy_tag_count"),
         "service": ubx.FieldSpec(
             wire_name="service",
             kind="object",

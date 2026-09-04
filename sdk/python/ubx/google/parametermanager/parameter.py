@@ -20,8 +20,6 @@ _Parameter_PolicyMemberFields = {
 
 @dataclasses.dataclass
 class ParameterConfig:
-    # Output only. [Output only] Create time stamp
-    create_time: Any = None
     # Optional. Specifies the format of a Parameter.
     format: Any = None
     # Optional. Customer managed encryption key (CMEK) to use for encrypting the Parameter Versions. If not set, the default Google-managed encryption key will be used. Cloud KMS CryptoKeys must reside in the same location as the Parameter. The expected format is `projects/*/locations/*/keyRings/*/cryptoKeys/*`.
@@ -32,8 +30,6 @@ class ParameterConfig:
     name: Any = None
     # Output-only policy member strings of a Google Cloud resource's built-in identity.
     policy_member: Any = None
-    # Output only. [Output only] Update time stamp
-    update_time: Any = None
 
 @dataclasses.dataclass
 class ParameterAttrs:
@@ -55,7 +51,6 @@ class ParameterAttrs:
 Parameter = ubx.ResourceBinding(
     wire_type="google_parametermanager_parameter",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "format": ubx.FieldSpec(wire_name="format"),
         "kms_key": ubx.FieldSpec(wire_name="kms_key"),
         "labels": ubx.FieldSpec(wire_name="labels"),
@@ -65,6 +60,5 @@ Parameter = ubx.ResourceBinding(
             kind="object",
             fields=_Parameter_PolicyMemberFields,
         ),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

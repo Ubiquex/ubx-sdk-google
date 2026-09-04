@@ -183,8 +183,6 @@ const Template_TemplateMetadataFields: FieldMap = {
 };
 
 export interface TemplateConfig {
-  /** Output only. [Output only] Create time stamp */
-  createTime?: string | Computed<string>;
   /** Filters configuration. */
   filterConfig?: Template_FilterConfig | Computed<Template_FilterConfig>;
   /** Optional. Labels as key value pairs */
@@ -193,8 +191,6 @@ export interface TemplateConfig {
   name?: string | Computed<string>;
   /** Message describing TemplateMetadata */
   templateMetadata?: Template_TemplateMetadata | Computed<Template_TemplateMetadata>;
-  /** Output only. [Output only] Update time stamp */
-  updateTime?: string | Computed<string>;
 }
 
 export interface TemplateAttrs {
@@ -215,7 +211,6 @@ export interface TemplateAttrs {
 export const Template: ResourceBinding<TemplateConfig, TemplateAttrs> = {
   wireType: "google_modelarmor_template",
   fields: {
-    createTime: "create_time",
     filterConfig: {
       wireName: "filter_config",
       kind: "object",
@@ -228,6 +223,5 @@ export const Template: ResourceBinding<TemplateConfig, TemplateAttrs> = {
       kind: "object",
       fields: Template_TemplateMetadataFields,
     },
-    updateTime: "update_time",
   },
 };

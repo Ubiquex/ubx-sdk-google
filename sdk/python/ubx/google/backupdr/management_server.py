@@ -54,10 +54,6 @@ _ManagementServer_WorkforceIdentityBasedOauth2ClientIdFields = {
 
 @dataclasses.dataclass
 class ManagementServerConfig:
-    # Output only. The hostname or ip address of the exposed AGM endpoints, used by BAs to connect to BA proxy.
-    ba_proxy_uri: Any = None
-    # Output only. The time when the instance was created.
-    create_time: Any = None
     # Optional. The description of the ManagementServer instance (2048 characters or less).
     description: Any = None
     # Optional. Server specified ETag for the ManagementServer resource to prevent simultaneous updates from overwiting each other.
@@ -66,22 +62,10 @@ class ManagementServerConfig:
     labels: Any = None
     # ManagementURI for the Management Server resource.
     management_uri: Any = None
-    # Output only. Identifier. The resource name.
-    name: Any = None
     # Optional. VPC networks to which the ManagementServer instance is connected. For this version, only a single network is supported. This field is optional if MS is created without PSA
     networks: Any = None
-    # Output only. The OAuth 2.0 client id is required to make API calls to the Backup and DR instance API of this ManagementServer. This is the value that should be provided in the 'aud' field of the OIDC ID Token (see openid specification https://openid.net/specs/openid-connect-core-1_0.html#IDToken).
-    oauth2_client_id: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzi: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzs: Any = None
-    # Output only. The ManagementServer state.
-    state: Any = None
     # Optional. The type of the ManagementServer resource.
     type: Any = None
-    # Output only. The time when the instance was updated.
-    update_time: Any = None
     # ManagementURI depending on the Workforce Identity i.e. either 1p or 3p.
     workforce_identity_based_management_uri: Any = None
     # OAuth Client ID depending on the Workforce Identity i.e. either 1p or 3p,
@@ -125,8 +109,6 @@ class ManagementServerAttrs:
 ManagementServer = ubx.ResourceBinding(
     wire_type="google_backupdr_management_server",
     fields={
-        "ba_proxy_uri": ubx.FieldSpec(wire_name="ba_proxy_uri"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "etag": ubx.FieldSpec(wire_name="etag"),
         "labels": ubx.FieldSpec(wire_name="labels"),
@@ -135,18 +117,12 @@ ManagementServer = ubx.ResourceBinding(
             kind="object",
             fields=_ManagementServer_ManagementUriFields,
         ),
-        "name": ubx.FieldSpec(wire_name="name"),
         "networks": ubx.FieldSpec(
             wire_name="networks",
             kind="list",
             fields=_ManagementServer_NetworksFields,
         ),
-        "oauth2_client_id": ubx.FieldSpec(wire_name="oauth2_client_id"),
-        "satisfies_pzi": ubx.FieldSpec(wire_name="satisfies_pzi"),
-        "satisfies_pzs": ubx.FieldSpec(wire_name="satisfies_pzs"),
-        "state": ubx.FieldSpec(wire_name="state"),
         "type": ubx.FieldSpec(wire_name="type"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
         "workforce_identity_based_management_uri": ubx.FieldSpec(
             wire_name="workforce_identity_based_management_uri",
             kind="object",

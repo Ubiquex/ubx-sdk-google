@@ -8,22 +8,14 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class LoggingServerConfig:
-    # Output only. Creation time of this resource.
-    create_time: Any = None
     # Required. Fully-qualified domain name (FQDN) or IP Address of the logging server.
     hostname: Any = None
-    # Output only. The resource name of this logging server. Resource names are schemeless URIs that follow the conventions in https://cloud.google.com/apis/design/resource_names. For example: `projects/my-project/locations/us-central1-a/privateClouds/my-cloud/loggingServers/my-logging-server`
-    name: Any = None
     # Required. Port number at which the logging server receives logs.
     port: Any = None
     # Required. Protocol used by vCenter to send logs to a logging server.
     protocol: Any = None
     # Required. The type of component that produces logs that will be forwarded to this logging server.
     source_type: Any = None
-    # Output only. System-generated unique identifier for the resource.
-    uid: Any = None
-    # Output only. Last update time of this resource.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class LoggingServerAttrs:
@@ -47,13 +39,9 @@ class LoggingServerAttrs:
 LoggingServer = ubx.ResourceBinding(
     wire_type="google_vmwareengine_logging_server",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "hostname": ubx.FieldSpec(wire_name="hostname"),
-        "name": ubx.FieldSpec(wire_name="name"),
         "port": ubx.FieldSpec(wire_name="port"),
         "protocol": ubx.FieldSpec(wire_name="protocol"),
         "source_type": ubx.FieldSpec(wire_name="source_type"),
-        "uid": ubx.FieldSpec(wire_name="uid"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

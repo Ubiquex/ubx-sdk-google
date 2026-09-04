@@ -4,43 +4,37 @@ package securitycenter
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type CustomModuleConfig struct {
-	AncestorModule any
-	CloudProvider any
-	Config any
-	Description any
-	DisplayName any
+	CloudProvider   any
+	Config          any
+	Description     any
+	DisplayName     any
 	EnablementState any
-	LastEditor any
-	Name any
-	Type any
-	UpdateTime any
+	Name            any
+	Type            any
 }
 
 type CustomModuleAttrs struct {
-	AncestorModule any
-	CloudProvider any
-	Config any
-	Description any
-	DisplayName any
+	AncestorModule  any
+	CloudProvider   any
+	Config          any
+	Description     any
+	DisplayName     any
 	EnablementState any
-	LastEditor any
-	Name any
-	Type any
-	UpdateTime any
+	LastEditor      any
+	Name            any
+	Type            any
+	UpdateTime      any
 }
 
 var CustomModule = ubx.ResourceBinding{
 	WireType: "google_securitycenter_custom_module",
 	Fields: ubx.FieldMap{
-		"AncestorModule": ubx.FieldSpec{WireName: "ancestor_module"},
-		"CloudProvider": ubx.FieldSpec{WireName: "cloud_provider"},
-		"Config": ubx.FieldSpec{WireName: "config"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"CloudProvider":   ubx.FieldSpec{WireName: "cloud_provider"},
+		"Config":          ubx.FieldSpec{WireName: "config"},
+		"Description":     ubx.FieldSpec{WireName: "description"},
+		"DisplayName":     ubx.FieldSpec{WireName: "display_name"},
 		"EnablementState": ubx.FieldSpec{WireName: "enablement_state"},
-		"LastEditor": ubx.FieldSpec{WireName: "last_editor"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"Name":            ubx.FieldSpec{WireName: "name"},
+		"Type":            ubx.FieldSpec{WireName: "type"},
 	},
 }

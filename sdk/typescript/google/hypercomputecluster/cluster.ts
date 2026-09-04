@@ -505,8 +505,6 @@ const Cluster_StorageResourcesFields: FieldMap = {
 export interface ClusterConfig {
   /** Optional. Compute resources available to the cluster. Keys specify the ID of the compute resource by which it can be referenced elsewhere, and must conform to [RFC-1034](https://datatracker.ietf.org/doc/html/rfc1034) (lower-case, alphanumeric, and at most 63 characters). */
   computeResources?: Record<string, Cluster_ComputeResources> | Computed<Record<string, Cluster_ComputeResources>>;
-  /** Output only. Time that the cluster was originally created. */
-  createTime?: string | Computed<string>;
   /** Optional. A description for your cluster. You can use up to 2,048 characters. */
   description?: string | Computed<string>;
   /** Optional. [Labels](https://cloud.google.com/compute/docs/labeling-resources) applied to the cluster. Labels can be used to organize clusters and to filter them in queries. */
@@ -517,12 +515,8 @@ export interface ClusterConfig {
   networkResources?: Record<string, Cluster_NetworkResources> | Computed<Record<string, Cluster_NetworkResources>>;
   /** The component responsible for scheduling and running workloads on the cluster as well as providing the user interface for interacting with the cluster at runtime. */
   orchestrator?: Cluster_Orchestrator | Computed<Cluster_Orchestrator>;
-  /** Output only. Indicates whether changes to the cluster are currently in flight. If this is `true`, then the current state might not match the cluster's intended state. */
-  reconciling?: boolean | Computed<boolean>;
   /** Optional. Storage resources available to the cluster. Keys specify the ID of the storage resource by which it can be referenced elsewhere, and must conform to [RFC-1034](https://datatracker.ietf.org/doc/html/rfc1034) (lower-case, alphanumeric, and at most 63 characters). */
   storageResources?: Record<string, Cluster_StorageResources> | Computed<Record<string, Cluster_StorageResources>>;
-  /** Output only. Time that the cluster was most recently updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface ClusterAttrs {
@@ -556,7 +550,6 @@ export const Cluster: ResourceBinding<ClusterConfig, ClusterAttrs> = {
       kind: "map",
       fields: Cluster_ComputeResourcesFields,
     },
-    createTime: "create_time",
     description: "description",
     labels: "labels",
     name: "name",
@@ -570,12 +563,10 @@ export const Cluster: ResourceBinding<ClusterConfig, ClusterAttrs> = {
       kind: "object",
       fields: Cluster_OrchestratorFields,
     },
-    reconciling: "reconciling",
     storageResources: {
       wireName: "storage_resources",
       kind: "map",
       fields: Cluster_StorageResourcesFields,
     },
-    updateTime: "update_time",
   },
 };

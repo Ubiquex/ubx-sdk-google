@@ -23,7 +23,7 @@ type V1betaTool_ClientFunction_Parameters struct {
 	// Optional. The description of the data.
 	Description any
 	// Optional. Possible values of the element of primitive type with enum format. Examples: 1. We can define direction as : {type:STRING, format:enum, enum:["EAST", NORTH", "SOUTH", "WEST"]} 2. We can define apartment number as : {type:INTEGER, format:enum, enum:["101", "201", "301"]}
-	Enum any
+	Enum  any
 	Items any
 	// Optional. Maximum number of the elements for Type.ARRAY.
 	MaxItems any
@@ -116,20 +116,20 @@ type V1betaTool_ConnectorTool struct {
 
 type V1betaTool_DataStoreTool_BoostSpecs_Spec_ConditionBoostSpecs_BoostControlSpec_ControlPoints struct {
 	AttributeValue any
-	BoostAmount any
+	BoostAmount    any
 }
 
 type V1betaTool_DataStoreTool_BoostSpecs_Spec_ConditionBoostSpecs_BoostControlSpec struct {
-	AttributeType any
-	ControlPoints any
-	FieldName any
+	AttributeType     any
+	ControlPoints     any
+	FieldName         any
 	InterpolationType any
 }
 
 type V1betaTool_DataStoreTool_BoostSpecs_Spec_ConditionBoostSpecs struct {
-	Boost any
+	Boost            any
 	BoostControlSpec any
-	Condition any
+	Condition        any
 }
 
 type V1betaTool_DataStoreTool_BoostSpecs_Spec struct {
@@ -138,7 +138,7 @@ type V1betaTool_DataStoreTool_BoostSpecs_Spec struct {
 
 type V1betaTool_DataStoreTool_BoostSpecs struct {
 	DataStores any
-	Spec any
+	Spec       any
 }
 
 type V1betaTool_DataStoreTool_DataStoreSource_DataStore_ConnectorConfig struct {
@@ -182,19 +182,19 @@ type V1betaTool_DataStoreTool_EngineSource struct {
 }
 
 type V1betaTool_DataStoreTool_ModalityConfigs_GroundingConfig struct {
-	Disabled any
+	Disabled       any
 	GroundingLevel any
 }
 
 type V1betaTool_DataStoreTool_ModalityConfigs_RewriterConfig_ModelSettings struct {
-	Model any
+	Model       any
 	Temperature any
 }
 
 type V1betaTool_DataStoreTool_ModalityConfigs_RewriterConfig struct {
-	Disabled any
+	Disabled      any
 	ModelSettings any
-	Prompt any
+	Prompt        any
 }
 
 type V1betaTool_DataStoreTool_ModalityConfigs_SnippetsConfig struct {
@@ -202,10 +202,10 @@ type V1betaTool_DataStoreTool_ModalityConfigs_SnippetsConfig struct {
 }
 
 type V1betaTool_DataStoreTool_ModalityConfigs struct {
-	GroundingConfig any
-	ModalityType any
-	RewriterConfig any
-	SnippetsConfig any
+	GroundingConfig     any
+	ModalityType        any
+	RewriterConfig      any
+	SnippetsConfig      any
 	SummarizationConfig any
 }
 
@@ -312,7 +312,7 @@ type V1betaTool_McpTool_ServiceDirectoryConfig struct {
 }
 
 type V1betaTool_McpTool_TlsConfig_CaCerts struct {
-	Cert any
+	Cert        any
 	DisplayName any
 }
 
@@ -378,19 +378,19 @@ type V1betaTool_PythonFunction struct {
 
 type V1betaTool_RemoteAgentTool_AgentCard_Skills struct {
 	Description any
-	Examples any
-	Id any
-	InputModes any
-	Name any
+	Examples    any
+	Id          any
+	InputModes  any
+	Name        any
 	OutputModes any
-	Tags any
+	Tags        any
 }
 
 type V1betaTool_RemoteAgentTool_AgentCard_SupportedInterfaces struct {
 	ProtocolBinding any
 	ProtocolVersion any
-	Tenant any
-	Url any
+	Tenant          any
+	Url             any
 }
 
 type V1betaTool_RemoteAgentTool_AgentCard struct {
@@ -474,515 +474,515 @@ type V1betaTool_WidgetTool struct {
 }
 
 var V1betaTool_AgentToolFields = ubx.FieldMap{
-		"Agent": ubx.FieldSpec{WireName: "agent"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Agent":       ubx.FieldSpec{WireName: "agent"},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+}
 
 var V1betaTool_ClientFunction_ParametersFields = ubx.FieldMap{
-		"AdditionalProperties": ubx.FieldSpec{WireName: "additional_properties"},
-		"AnyOf": ubx.FieldSpec{WireName: "any_of"},
-		"Default": ubx.FieldSpec{WireName: "default"},
-		"Defs": ubx.FieldSpec{WireName: "defs"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Enum": ubx.FieldSpec{WireName: "enum"},
-		"Items": ubx.FieldSpec{WireName: "items"},
-		"MaxItems": ubx.FieldSpec{WireName: "max_items"},
-		"Maximum": ubx.FieldSpec{WireName: "maximum"},
-		"MinItems": ubx.FieldSpec{WireName: "min_items"},
-		"Minimum": ubx.FieldSpec{WireName: "minimum"},
-		"Nullable": ubx.FieldSpec{WireName: "nullable"},
-		"PrefixItems": ubx.FieldSpec{WireName: "prefix_items"},
-		"Properties": ubx.FieldSpec{WireName: "properties"},
-		"Ref": ubx.FieldSpec{WireName: "ref"},
-		"Required": ubx.FieldSpec{WireName: "required"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"UniqueItems": ubx.FieldSpec{WireName: "unique_items"},
-	}
+	"AdditionalProperties": ubx.FieldSpec{WireName: "additional_properties"},
+	"AnyOf":                ubx.FieldSpec{WireName: "any_of"},
+	"Default":              ubx.FieldSpec{WireName: "default"},
+	"Defs":                 ubx.FieldSpec{WireName: "defs"},
+	"Description":          ubx.FieldSpec{WireName: "description"},
+	"Enum":                 ubx.FieldSpec{WireName: "enum"},
+	"Items":                ubx.FieldSpec{WireName: "items"},
+	"MaxItems":             ubx.FieldSpec{WireName: "max_items"},
+	"Maximum":              ubx.FieldSpec{WireName: "maximum"},
+	"MinItems":             ubx.FieldSpec{WireName: "min_items"},
+	"Minimum":              ubx.FieldSpec{WireName: "minimum"},
+	"Nullable":             ubx.FieldSpec{WireName: "nullable"},
+	"PrefixItems":          ubx.FieldSpec{WireName: "prefix_items"},
+	"Properties":           ubx.FieldSpec{WireName: "properties"},
+	"Ref":                  ubx.FieldSpec{WireName: "ref"},
+	"Required":             ubx.FieldSpec{WireName: "required"},
+	"Title":                ubx.FieldSpec{WireName: "title"},
+	"Type":                 ubx.FieldSpec{WireName: "type"},
+	"UniqueItems":          ubx.FieldSpec{WireName: "unique_items"},
+}
 
 var V1betaTool_ClientFunctionFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Parameters": ubx.FieldSpec{
-			WireName: "parameters",
-			Kind: "object",
-			Fields: V1betaTool_ClientFunction_ParametersFields,
-		},
-		"Response": ubx.FieldSpec{
-			WireName: "response",
-			Kind: "object",
-			Fields: V1betaTool_ClientFunction_ParametersFields,
-		},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"Parameters": ubx.FieldSpec{
+		WireName: "parameters",
+		Kind:     "object",
+		Fields:   V1betaTool_ClientFunction_ParametersFields,
+	},
+	"Response": ubx.FieldSpec{
+		WireName: "response",
+		Kind:     "object",
+		Fields:   V1betaTool_ClientFunction_ParametersFields,
+	},
+}
 
 var V1betaTool_ConnectorTool_Action_EntityOperationFields = ubx.FieldMap{
-		"EntityId": ubx.FieldSpec{WireName: "entity_id"},
-		"Operation": ubx.FieldSpec{WireName: "operation"},
-	}
+	"EntityId":  ubx.FieldSpec{WireName: "entity_id"},
+	"Operation": ubx.FieldSpec{WireName: "operation"},
+}
 
 var V1betaTool_ConnectorTool_ActionFields = ubx.FieldMap{
-		"ConnectionActionId": ubx.FieldSpec{WireName: "connection_action_id"},
-		"EntityOperation": ubx.FieldSpec{
-			WireName: "entity_operation",
-			Kind: "object",
-			Fields: V1betaTool_ConnectorTool_Action_EntityOperationFields,
-		},
-		"InputFields": ubx.FieldSpec{WireName: "input_fields"},
-		"OutputFields": ubx.FieldSpec{WireName: "output_fields"},
-	}
+	"ConnectionActionId": ubx.FieldSpec{WireName: "connection_action_id"},
+	"EntityOperation": ubx.FieldSpec{
+		WireName: "entity_operation",
+		Kind:     "object",
+		Fields:   V1betaTool_ConnectorTool_Action_EntityOperationFields,
+	},
+	"InputFields":  ubx.FieldSpec{WireName: "input_fields"},
+	"OutputFields": ubx.FieldSpec{WireName: "output_fields"},
+}
 
 var V1betaTool_ConnectorTool_AuthConfig_Oauth2AuthCodeConfigFields = ubx.FieldMap{
-		"OauthToken": ubx.FieldSpec{WireName: "oauth_token"},
-	}
+	"OauthToken": ubx.FieldSpec{WireName: "oauth_token"},
+}
 
 var V1betaTool_ConnectorTool_AuthConfig_Oauth2JwtBearerConfigFields = ubx.FieldMap{
-		"ClientKey": ubx.FieldSpec{WireName: "client_key"},
-		"Issuer": ubx.FieldSpec{WireName: "issuer"},
-		"Subject": ubx.FieldSpec{WireName: "subject"},
-	}
+	"ClientKey": ubx.FieldSpec{WireName: "client_key"},
+	"Issuer":    ubx.FieldSpec{WireName: "issuer"},
+	"Subject":   ubx.FieldSpec{WireName: "subject"},
+}
 
 var V1betaTool_ConnectorTool_AuthConfigFields = ubx.FieldMap{
-		"Oauth2AuthCodeConfig": ubx.FieldSpec{
-			WireName: "oauth2_auth_code_config",
-			Kind: "object",
-			Fields: V1betaTool_ConnectorTool_AuthConfig_Oauth2AuthCodeConfigFields,
-		},
-		"Oauth2JwtBearerConfig": ubx.FieldSpec{
-			WireName: "oauth2_jwt_bearer_config",
-			Kind: "object",
-			Fields: V1betaTool_ConnectorTool_AuthConfig_Oauth2JwtBearerConfigFields,
-		},
-	}
+	"Oauth2AuthCodeConfig": ubx.FieldSpec{
+		WireName: "oauth2_auth_code_config",
+		Kind:     "object",
+		Fields:   V1betaTool_ConnectorTool_AuthConfig_Oauth2AuthCodeConfigFields,
+	},
+	"Oauth2JwtBearerConfig": ubx.FieldSpec{
+		WireName: "oauth2_jwt_bearer_config",
+		Kind:     "object",
+		Fields:   V1betaTool_ConnectorTool_AuthConfig_Oauth2JwtBearerConfigFields,
+	},
+}
 
 var V1betaTool_ConnectorToolFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{
-			WireName: "action",
-			Kind: "object",
-			Fields: V1betaTool_ConnectorTool_ActionFields,
-		},
-		"AuthConfig": ubx.FieldSpec{
-			WireName: "auth_config",
-			Kind: "object",
-			Fields: V1betaTool_ConnectorTool_AuthConfigFields,
-		},
-		"Connection": ubx.FieldSpec{WireName: "connection"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Action": ubx.FieldSpec{
+		WireName: "action",
+		Kind:     "object",
+		Fields:   V1betaTool_ConnectorTool_ActionFields,
+	},
+	"AuthConfig": ubx.FieldSpec{
+		WireName: "auth_config",
+		Kind:     "object",
+		Fields:   V1betaTool_ConnectorTool_AuthConfigFields,
+	},
+	"Connection":  ubx.FieldSpec{WireName: "connection"},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+}
 
 var V1betaTool_DataStoreTool_BoostSpecs_Spec_ConditionBoostSpecs_BoostControlSpec_ControlPointsFields = ubx.FieldMap{
-		"AttributeValue": ubx.FieldSpec{WireName: "attribute_value"},
-		"BoostAmount": ubx.FieldSpec{WireName: "boost_amount"},
-	}
+	"AttributeValue": ubx.FieldSpec{WireName: "attribute_value"},
+	"BoostAmount":    ubx.FieldSpec{WireName: "boost_amount"},
+}
 
 var V1betaTool_DataStoreTool_BoostSpecs_Spec_ConditionBoostSpecs_BoostControlSpecFields = ubx.FieldMap{
-		"AttributeType": ubx.FieldSpec{WireName: "attribute_type"},
-		"ControlPoints": ubx.FieldSpec{
-			WireName: "control_points",
-			Kind: "list",
-			Fields: V1betaTool_DataStoreTool_BoostSpecs_Spec_ConditionBoostSpecs_BoostControlSpec_ControlPointsFields,
-		},
-		"FieldName": ubx.FieldSpec{WireName: "field_name"},
-		"InterpolationType": ubx.FieldSpec{WireName: "interpolation_type"},
-	}
+	"AttributeType": ubx.FieldSpec{WireName: "attribute_type"},
+	"ControlPoints": ubx.FieldSpec{
+		WireName: "control_points",
+		Kind:     "list",
+		Fields:   V1betaTool_DataStoreTool_BoostSpecs_Spec_ConditionBoostSpecs_BoostControlSpec_ControlPointsFields,
+	},
+	"FieldName":         ubx.FieldSpec{WireName: "field_name"},
+	"InterpolationType": ubx.FieldSpec{WireName: "interpolation_type"},
+}
 
 var V1betaTool_DataStoreTool_BoostSpecs_Spec_ConditionBoostSpecsFields = ubx.FieldMap{
-		"Boost": ubx.FieldSpec{WireName: "boost"},
-		"BoostControlSpec": ubx.FieldSpec{
-			WireName: "boost_control_spec",
-			Kind: "object",
-			Fields: V1betaTool_DataStoreTool_BoostSpecs_Spec_ConditionBoostSpecs_BoostControlSpecFields,
-		},
-		"Condition": ubx.FieldSpec{WireName: "condition"},
-	}
+	"Boost": ubx.FieldSpec{WireName: "boost"},
+	"BoostControlSpec": ubx.FieldSpec{
+		WireName: "boost_control_spec",
+		Kind:     "object",
+		Fields:   V1betaTool_DataStoreTool_BoostSpecs_Spec_ConditionBoostSpecs_BoostControlSpecFields,
+	},
+	"Condition": ubx.FieldSpec{WireName: "condition"},
+}
 
 var V1betaTool_DataStoreTool_BoostSpecs_SpecFields = ubx.FieldMap{
-		"ConditionBoostSpecs": ubx.FieldSpec{
-			WireName: "condition_boost_specs",
-			Kind: "list",
-			Fields: V1betaTool_DataStoreTool_BoostSpecs_Spec_ConditionBoostSpecsFields,
-		},
-	}
+	"ConditionBoostSpecs": ubx.FieldSpec{
+		WireName: "condition_boost_specs",
+		Kind:     "list",
+		Fields:   V1betaTool_DataStoreTool_BoostSpecs_Spec_ConditionBoostSpecsFields,
+	},
+}
 
 var V1betaTool_DataStoreTool_BoostSpecsFields = ubx.FieldMap{
-		"DataStores": ubx.FieldSpec{WireName: "data_stores"},
-		"Spec": ubx.FieldSpec{
-			WireName: "spec",
-			Kind: "list",
-			Fields: V1betaTool_DataStoreTool_BoostSpecs_SpecFields,
-		},
-	}
+	"DataStores": ubx.FieldSpec{WireName: "data_stores"},
+	"Spec": ubx.FieldSpec{
+		WireName: "spec",
+		Kind:     "list",
+		Fields:   V1betaTool_DataStoreTool_BoostSpecs_SpecFields,
+	},
+}
 
 var V1betaTool_DataStoreTool_DataStoreSource_DataStore_ConnectorConfigFields = ubx.FieldMap{
-		"Collection": ubx.FieldSpec{WireName: "collection"},
-		"CollectionDisplayName": ubx.FieldSpec{WireName: "collection_display_name"},
-		"DataSource": ubx.FieldSpec{WireName: "data_source"},
-	}
+	"Collection":            ubx.FieldSpec{WireName: "collection"},
+	"CollectionDisplayName": ubx.FieldSpec{WireName: "collection_display_name"},
+	"DataSource":            ubx.FieldSpec{WireName: "data_source"},
+}
 
 var V1betaTool_DataStoreTool_DataStoreSource_DataStoreFields = ubx.FieldMap{
-		"ConnectorConfig": ubx.FieldSpec{
-			WireName: "connector_config",
-			Kind: "object",
-			Fields: V1betaTool_DataStoreTool_DataStoreSource_DataStore_ConnectorConfigFields,
-		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"DocumentProcessingMode": ubx.FieldSpec{WireName: "document_processing_mode"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"ConnectorConfig": ubx.FieldSpec{
+		WireName: "connector_config",
+		Kind:     "object",
+		Fields:   V1betaTool_DataStoreTool_DataStoreSource_DataStore_ConnectorConfigFields,
+	},
+	"CreateTime":             ubx.FieldSpec{WireName: "create_time"},
+	"DisplayName":            ubx.FieldSpec{WireName: "display_name"},
+	"DocumentProcessingMode": ubx.FieldSpec{WireName: "document_processing_mode"},
+	"Name":                   ubx.FieldSpec{WireName: "name"},
+	"Type":                   ubx.FieldSpec{WireName: "type"},
+}
 
 var V1betaTool_DataStoreTool_DataStoreSourceFields = ubx.FieldMap{
-		"DataStore": ubx.FieldSpec{
-			WireName: "data_store",
-			Kind: "object",
-			Fields: V1betaTool_DataStoreTool_DataStoreSource_DataStoreFields,
-		},
-		"Filter": ubx.FieldSpec{WireName: "filter"},
-	}
+	"DataStore": ubx.FieldSpec{
+		WireName: "data_store",
+		Kind:     "object",
+		Fields:   V1betaTool_DataStoreTool_DataStoreSource_DataStoreFields,
+	},
+	"Filter": ubx.FieldSpec{WireName: "filter"},
+}
 
 var V1betaTool_DataStoreTool_EngineSourceFields = ubx.FieldMap{
-		"DataStoreSources": ubx.FieldSpec{
-			WireName: "data_store_sources",
-			Kind: "list",
-			Fields: V1betaTool_DataStoreTool_DataStoreSourceFields,
-		},
-		"Engine": ubx.FieldSpec{WireName: "engine"},
-		"Filter": ubx.FieldSpec{WireName: "filter"},
-	}
+	"DataStoreSources": ubx.FieldSpec{
+		WireName: "data_store_sources",
+		Kind:     "list",
+		Fields:   V1betaTool_DataStoreTool_DataStoreSourceFields,
+	},
+	"Engine": ubx.FieldSpec{WireName: "engine"},
+	"Filter": ubx.FieldSpec{WireName: "filter"},
+}
 
 var V1betaTool_DataStoreTool_ModalityConfigs_GroundingConfigFields = ubx.FieldMap{
-		"Disabled": ubx.FieldSpec{WireName: "disabled"},
-		"GroundingLevel": ubx.FieldSpec{WireName: "grounding_level"},
-	}
+	"Disabled":       ubx.FieldSpec{WireName: "disabled"},
+	"GroundingLevel": ubx.FieldSpec{WireName: "grounding_level"},
+}
 
 var V1betaTool_DataStoreTool_ModalityConfigs_RewriterConfig_ModelSettingsFields = ubx.FieldMap{
-		"Model": ubx.FieldSpec{WireName: "model"},
-		"Temperature": ubx.FieldSpec{WireName: "temperature"},
-	}
+	"Model":       ubx.FieldSpec{WireName: "model"},
+	"Temperature": ubx.FieldSpec{WireName: "temperature"},
+}
 
 var V1betaTool_DataStoreTool_ModalityConfigs_RewriterConfigFields = ubx.FieldMap{
-		"Disabled": ubx.FieldSpec{WireName: "disabled"},
-		"ModelSettings": ubx.FieldSpec{
-			WireName: "model_settings",
-			Kind: "object",
-			Fields: V1betaTool_DataStoreTool_ModalityConfigs_RewriterConfig_ModelSettingsFields,
-		},
-		"Prompt": ubx.FieldSpec{WireName: "prompt"},
-	}
+	"Disabled": ubx.FieldSpec{WireName: "disabled"},
+	"ModelSettings": ubx.FieldSpec{
+		WireName: "model_settings",
+		Kind:     "object",
+		Fields:   V1betaTool_DataStoreTool_ModalityConfigs_RewriterConfig_ModelSettingsFields,
+	},
+	"Prompt": ubx.FieldSpec{WireName: "prompt"},
+}
 
 var V1betaTool_DataStoreTool_ModalityConfigs_SnippetsConfigFields = ubx.FieldMap{
-		"EnableSnippets": ubx.FieldSpec{WireName: "enable_snippets"},
-	}
+	"EnableSnippets": ubx.FieldSpec{WireName: "enable_snippets"},
+}
 
 var V1betaTool_DataStoreTool_ModalityConfigsFields = ubx.FieldMap{
-		"GroundingConfig": ubx.FieldSpec{
-			WireName: "grounding_config",
-			Kind: "object",
-			Fields: V1betaTool_DataStoreTool_ModalityConfigs_GroundingConfigFields,
-		},
-		"ModalityType": ubx.FieldSpec{WireName: "modality_type"},
-		"RewriterConfig": ubx.FieldSpec{
-			WireName: "rewriter_config",
-			Kind: "object",
-			Fields: V1betaTool_DataStoreTool_ModalityConfigs_RewriterConfigFields,
-		},
-		"SnippetsConfig": ubx.FieldSpec{
-			WireName: "snippets_config",
-			Kind: "object",
-			Fields: V1betaTool_DataStoreTool_ModalityConfigs_SnippetsConfigFields,
-		},
-		"SummarizationConfig": ubx.FieldSpec{
-			WireName: "summarization_config",
-			Kind: "object",
-			Fields: V1betaTool_DataStoreTool_ModalityConfigs_RewriterConfigFields,
-		},
-	}
+	"GroundingConfig": ubx.FieldSpec{
+		WireName: "grounding_config",
+		Kind:     "object",
+		Fields:   V1betaTool_DataStoreTool_ModalityConfigs_GroundingConfigFields,
+	},
+	"ModalityType": ubx.FieldSpec{WireName: "modality_type"},
+	"RewriterConfig": ubx.FieldSpec{
+		WireName: "rewriter_config",
+		Kind:     "object",
+		Fields:   V1betaTool_DataStoreTool_ModalityConfigs_RewriterConfigFields,
+	},
+	"SnippetsConfig": ubx.FieldSpec{
+		WireName: "snippets_config",
+		Kind:     "object",
+		Fields:   V1betaTool_DataStoreTool_ModalityConfigs_SnippetsConfigFields,
+	},
+	"SummarizationConfig": ubx.FieldSpec{
+		WireName: "summarization_config",
+		Kind:     "object",
+		Fields:   V1betaTool_DataStoreTool_ModalityConfigs_RewriterConfigFields,
+	},
+}
 
 var V1betaTool_DataStoreToolFields = ubx.FieldMap{
-		"BoostSpecs": ubx.FieldSpec{
-			WireName: "boost_specs",
-			Kind: "list",
-			Fields: V1betaTool_DataStoreTool_BoostSpecsFields,
-		},
-		"DataStoreSource": ubx.FieldSpec{
-			WireName: "data_store_source",
-			Kind: "object",
-			Fields: V1betaTool_DataStoreTool_DataStoreSourceFields,
-		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"EngineSource": ubx.FieldSpec{
-			WireName: "engine_source",
-			Kind: "object",
-			Fields: V1betaTool_DataStoreTool_EngineSourceFields,
-		},
-		"FilterParameterBehavior": ubx.FieldSpec{WireName: "filter_parameter_behavior"},
-		"ModalityConfigs": ubx.FieldSpec{
-			WireName: "modality_configs",
-			Kind: "list",
-			Fields: V1betaTool_DataStoreTool_ModalityConfigsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"BoostSpecs": ubx.FieldSpec{
+		WireName: "boost_specs",
+		Kind:     "list",
+		Fields:   V1betaTool_DataStoreTool_BoostSpecsFields,
+	},
+	"DataStoreSource": ubx.FieldSpec{
+		WireName: "data_store_source",
+		Kind:     "object",
+		Fields:   V1betaTool_DataStoreTool_DataStoreSourceFields,
+	},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"EngineSource": ubx.FieldSpec{
+		WireName: "engine_source",
+		Kind:     "object",
+		Fields:   V1betaTool_DataStoreTool_EngineSourceFields,
+	},
+	"FilterParameterBehavior": ubx.FieldSpec{WireName: "filter_parameter_behavior"},
+	"ModalityConfigs": ubx.FieldSpec{
+		WireName: "modality_configs",
+		Kind:     "list",
+		Fields:   V1betaTool_DataStoreTool_ModalityConfigsFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var V1betaTool_FileSearchToolFields = ubx.FieldMap{
-		"CorpusType": ubx.FieldSpec{WireName: "corpus_type"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"FileCorpus": ubx.FieldSpec{WireName: "file_corpus"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"CorpusType":  ubx.FieldSpec{WireName: "corpus_type"},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"FileCorpus":  ubx.FieldSpec{WireName: "file_corpus"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+}
 
 var V1betaTool_GoogleSearchTool_PromptConfigFields = ubx.FieldMap{
-		"TextPrompt": ubx.FieldSpec{WireName: "text_prompt"},
-		"VoicePrompt": ubx.FieldSpec{WireName: "voice_prompt"},
-	}
+	"TextPrompt":  ubx.FieldSpec{WireName: "text_prompt"},
+	"VoicePrompt": ubx.FieldSpec{WireName: "voice_prompt"},
+}
 
 var V1betaTool_GoogleSearchToolFields = ubx.FieldMap{
-		"ContextUrls": ubx.FieldSpec{WireName: "context_urls"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"ExcludeDomains": ubx.FieldSpec{WireName: "exclude_domains"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PreferredDomains": ubx.FieldSpec{WireName: "preferred_domains"},
-		"PromptConfig": ubx.FieldSpec{
-			WireName: "prompt_config",
-			Kind: "object",
-			Fields: V1betaTool_GoogleSearchTool_PromptConfigFields,
-		},
-	}
+	"ContextUrls":      ubx.FieldSpec{WireName: "context_urls"},
+	"Description":      ubx.FieldSpec{WireName: "description"},
+	"ExcludeDomains":   ubx.FieldSpec{WireName: "exclude_domains"},
+	"Name":             ubx.FieldSpec{WireName: "name"},
+	"PreferredDomains": ubx.FieldSpec{WireName: "preferred_domains"},
+	"PromptConfig": ubx.FieldSpec{
+		WireName: "prompt_config",
+		Kind:     "object",
+		Fields:   V1betaTool_GoogleSearchTool_PromptConfigFields,
+	},
+}
 
 var V1betaTool_McpTool_ApiAuthentication_ApiKeyConfigFields = ubx.FieldMap{
-		"ApiKeySecretVersion": ubx.FieldSpec{WireName: "api_key_secret_version"},
-		"KeyName": ubx.FieldSpec{WireName: "key_name"},
-		"RequestLocation": ubx.FieldSpec{WireName: "request_location"},
-	}
+	"ApiKeySecretVersion": ubx.FieldSpec{WireName: "api_key_secret_version"},
+	"KeyName":             ubx.FieldSpec{WireName: "key_name"},
+	"RequestLocation":     ubx.FieldSpec{WireName: "request_location"},
+}
 
 var V1betaTool_McpTool_ApiAuthentication_BearerTokenConfigFields = ubx.FieldMap{
-		"Token": ubx.FieldSpec{WireName: "token"},
-	}
+	"Token": ubx.FieldSpec{WireName: "token"},
+}
 
 var V1betaTool_McpTool_ApiAuthentication_OauthConfigFields = ubx.FieldMap{
-		"ClientId": ubx.FieldSpec{WireName: "client_id"},
-		"ClientSecretVersion": ubx.FieldSpec{WireName: "client_secret_version"},
-		"OauthGrantType": ubx.FieldSpec{WireName: "oauth_grant_type"},
-		"Scopes": ubx.FieldSpec{WireName: "scopes"},
-		"TokenEndpoint": ubx.FieldSpec{WireName: "token_endpoint"},
-	}
+	"ClientId":            ubx.FieldSpec{WireName: "client_id"},
+	"ClientSecretVersion": ubx.FieldSpec{WireName: "client_secret_version"},
+	"OauthGrantType":      ubx.FieldSpec{WireName: "oauth_grant_type"},
+	"Scopes":              ubx.FieldSpec{WireName: "scopes"},
+	"TokenEndpoint":       ubx.FieldSpec{WireName: "token_endpoint"},
+}
 
 var V1betaTool_McpTool_ApiAuthentication_ServiceAccountAuthConfigFields = ubx.FieldMap{
-		"Scopes": ubx.FieldSpec{WireName: "scopes"},
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-	}
+	"Scopes":         ubx.FieldSpec{WireName: "scopes"},
+	"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
+}
 
 var V1betaTool_McpTool_ApiAuthenticationFields = ubx.FieldMap{
-		"ApiKeyConfig": ubx.FieldSpec{
-			WireName: "api_key_config",
-			Kind: "object",
-			Fields: V1betaTool_McpTool_ApiAuthentication_ApiKeyConfigFields,
-		},
-		"BearerTokenConfig": ubx.FieldSpec{
-			WireName: "bearer_token_config",
-			Kind: "object",
-			Fields: V1betaTool_McpTool_ApiAuthentication_BearerTokenConfigFields,
-		},
-		"OauthConfig": ubx.FieldSpec{
-			WireName: "oauth_config",
-			Kind: "object",
-			Fields: V1betaTool_McpTool_ApiAuthentication_OauthConfigFields,
-		},
-		"ServiceAccountAuthConfig": ubx.FieldSpec{
-			WireName: "service_account_auth_config",
-			Kind: "object",
-			Fields: V1betaTool_McpTool_ApiAuthentication_ServiceAccountAuthConfigFields,
-		},
-		"ServiceAgentIdTokenAuthConfig": ubx.FieldSpec{WireName: "service_agent_id_token_auth_config"},
-	}
+	"ApiKeyConfig": ubx.FieldSpec{
+		WireName: "api_key_config",
+		Kind:     "object",
+		Fields:   V1betaTool_McpTool_ApiAuthentication_ApiKeyConfigFields,
+	},
+	"BearerTokenConfig": ubx.FieldSpec{
+		WireName: "bearer_token_config",
+		Kind:     "object",
+		Fields:   V1betaTool_McpTool_ApiAuthentication_BearerTokenConfigFields,
+	},
+	"OauthConfig": ubx.FieldSpec{
+		WireName: "oauth_config",
+		Kind:     "object",
+		Fields:   V1betaTool_McpTool_ApiAuthentication_OauthConfigFields,
+	},
+	"ServiceAccountAuthConfig": ubx.FieldSpec{
+		WireName: "service_account_auth_config",
+		Kind:     "object",
+		Fields:   V1betaTool_McpTool_ApiAuthentication_ServiceAccountAuthConfigFields,
+	},
+	"ServiceAgentIdTokenAuthConfig": ubx.FieldSpec{WireName: "service_agent_id_token_auth_config"},
+}
 
 var V1betaTool_McpTool_ServiceDirectoryConfigFields = ubx.FieldMap{
-		"Service": ubx.FieldSpec{WireName: "service"},
-	}
+	"Service": ubx.FieldSpec{WireName: "service"},
+}
 
 var V1betaTool_McpTool_TlsConfig_CaCertsFields = ubx.FieldMap{
-		"Cert": ubx.FieldSpec{WireName: "cert"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-	}
+	"Cert":        ubx.FieldSpec{WireName: "cert"},
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+}
 
 var V1betaTool_McpTool_TlsConfigFields = ubx.FieldMap{
-		"CaCerts": ubx.FieldSpec{
-			WireName: "ca_certs",
-			Kind: "list",
-			Fields: V1betaTool_McpTool_TlsConfig_CaCertsFields,
-		},
-	}
+	"CaCerts": ubx.FieldSpec{
+		WireName: "ca_certs",
+		Kind:     "list",
+		Fields:   V1betaTool_McpTool_TlsConfig_CaCertsFields,
+	},
+}
 
 var V1betaTool_McpToolFields = ubx.FieldMap{
-		"ApiAuthentication": ubx.FieldSpec{
-			WireName: "api_authentication",
-			Kind: "object",
-			Fields: V1betaTool_McpTool_ApiAuthenticationFields,
-		},
-		"CustomHeaders": ubx.FieldSpec{WireName: "custom_headers"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"InputSchema": ubx.FieldSpec{
-			WireName: "input_schema",
-			Kind: "object",
-			Fields: V1betaTool_ClientFunction_ParametersFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NameOverride": ubx.FieldSpec{WireName: "name_override"},
-		"OutputSchema": ubx.FieldSpec{
-			WireName: "output_schema",
-			Kind: "object",
-			Fields: V1betaTool_ClientFunction_ParametersFields,
-		},
-		"ServerAddress": ubx.FieldSpec{WireName: "server_address"},
-		"ServiceDirectoryConfig": ubx.FieldSpec{
-			WireName: "service_directory_config",
-			Kind: "object",
-			Fields: V1betaTool_McpTool_ServiceDirectoryConfigFields,
-		},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"TlsConfig": ubx.FieldSpec{
-			WireName: "tls_config",
-			Kind: "object",
-			Fields: V1betaTool_McpTool_TlsConfigFields,
-		},
-	}
+	"ApiAuthentication": ubx.FieldSpec{
+		WireName: "api_authentication",
+		Kind:     "object",
+		Fields:   V1betaTool_McpTool_ApiAuthenticationFields,
+	},
+	"CustomHeaders": ubx.FieldSpec{WireName: "custom_headers"},
+	"Description":   ubx.FieldSpec{WireName: "description"},
+	"InputSchema": ubx.FieldSpec{
+		WireName: "input_schema",
+		Kind:     "object",
+		Fields:   V1betaTool_ClientFunction_ParametersFields,
+	},
+	"Name":         ubx.FieldSpec{WireName: "name"},
+	"NameOverride": ubx.FieldSpec{WireName: "name_override"},
+	"OutputSchema": ubx.FieldSpec{
+		WireName: "output_schema",
+		Kind:     "object",
+		Fields:   V1betaTool_ClientFunction_ParametersFields,
+	},
+	"ServerAddress": ubx.FieldSpec{WireName: "server_address"},
+	"ServiceDirectoryConfig": ubx.FieldSpec{
+		WireName: "service_directory_config",
+		Kind:     "object",
+		Fields:   V1betaTool_McpTool_ServiceDirectoryConfigFields,
+	},
+	"State": ubx.FieldSpec{WireName: "state"},
+	"TlsConfig": ubx.FieldSpec{
+		WireName: "tls_config",
+		Kind:     "object",
+		Fields:   V1betaTool_McpTool_TlsConfigFields,
+	},
+}
 
 var V1betaTool_OpenApiToolFields = ubx.FieldMap{
-		"ApiAuthentication": ubx.FieldSpec{
-			WireName: "api_authentication",
-			Kind: "object",
-			Fields: V1betaTool_McpTool_ApiAuthenticationFields,
-		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"IgnoreUnknownFields": ubx.FieldSpec{WireName: "ignore_unknown_fields"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"OpenApiSchema": ubx.FieldSpec{WireName: "open_api_schema"},
-		"ServiceDirectoryConfig": ubx.FieldSpec{
-			WireName: "service_directory_config",
-			Kind: "object",
-			Fields: V1betaTool_McpTool_ServiceDirectoryConfigFields,
-		},
-		"TlsConfig": ubx.FieldSpec{
-			WireName: "tls_config",
-			Kind: "object",
-			Fields: V1betaTool_McpTool_TlsConfigFields,
-		},
-		"Url": ubx.FieldSpec{WireName: "url"},
-	}
+	"ApiAuthentication": ubx.FieldSpec{
+		WireName: "api_authentication",
+		Kind:     "object",
+		Fields:   V1betaTool_McpTool_ApiAuthenticationFields,
+	},
+	"Description":         ubx.FieldSpec{WireName: "description"},
+	"IgnoreUnknownFields": ubx.FieldSpec{WireName: "ignore_unknown_fields"},
+	"Name":                ubx.FieldSpec{WireName: "name"},
+	"OpenApiSchema":       ubx.FieldSpec{WireName: "open_api_schema"},
+	"ServiceDirectoryConfig": ubx.FieldSpec{
+		WireName: "service_directory_config",
+		Kind:     "object",
+		Fields:   V1betaTool_McpTool_ServiceDirectoryConfigFields,
+	},
+	"TlsConfig": ubx.FieldSpec{
+		WireName: "tls_config",
+		Kind:     "object",
+		Fields:   V1betaTool_McpTool_TlsConfigFields,
+	},
+	"Url": ubx.FieldSpec{WireName: "url"},
+}
 
 var V1betaTool_PythonFunctionFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PythonCode": ubx.FieldSpec{WireName: "python_code"},
-		"ServiceDirectoryConfig": ubx.FieldSpec{
-			WireName: "service_directory_config",
-			Kind: "object",
-			Fields: V1betaTool_McpTool_ServiceDirectoryConfigFields,
-		},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"PythonCode":  ubx.FieldSpec{WireName: "python_code"},
+	"ServiceDirectoryConfig": ubx.FieldSpec{
+		WireName: "service_directory_config",
+		Kind:     "object",
+		Fields:   V1betaTool_McpTool_ServiceDirectoryConfigFields,
+	},
+}
 
 var V1betaTool_RemoteAgentTool_AgentCard_SkillsFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Examples": ubx.FieldSpec{WireName: "examples"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"InputModes": ubx.FieldSpec{WireName: "input_modes"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"OutputModes": ubx.FieldSpec{WireName: "output_modes"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Examples":    ubx.FieldSpec{WireName: "examples"},
+	"Id":          ubx.FieldSpec{WireName: "id"},
+	"InputModes":  ubx.FieldSpec{WireName: "input_modes"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"OutputModes": ubx.FieldSpec{WireName: "output_modes"},
+	"Tags":        ubx.FieldSpec{WireName: "tags"},
+}
 
 var V1betaTool_RemoteAgentTool_AgentCard_SupportedInterfacesFields = ubx.FieldMap{
-		"ProtocolBinding": ubx.FieldSpec{WireName: "protocol_binding"},
-		"ProtocolVersion": ubx.FieldSpec{WireName: "protocol_version"},
-		"Tenant": ubx.FieldSpec{WireName: "tenant"},
-		"Url": ubx.FieldSpec{WireName: "url"},
-	}
+	"ProtocolBinding": ubx.FieldSpec{WireName: "protocol_binding"},
+	"ProtocolVersion": ubx.FieldSpec{WireName: "protocol_version"},
+	"Tenant":          ubx.FieldSpec{WireName: "tenant"},
+	"Url":             ubx.FieldSpec{WireName: "url"},
+}
 
 var V1betaTool_RemoteAgentTool_AgentCardFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Skills": ubx.FieldSpec{
-			WireName: "skills",
-			Kind: "list",
-			Fields: V1betaTool_RemoteAgentTool_AgentCard_SkillsFields,
-		},
-		"SupportedInterfaces": ubx.FieldSpec{
-			WireName: "supported_interfaces",
-			Kind: "list",
-			Fields: V1betaTool_RemoteAgentTool_AgentCard_SupportedInterfacesFields,
-		},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"Skills": ubx.FieldSpec{
+		WireName: "skills",
+		Kind:     "list",
+		Fields:   V1betaTool_RemoteAgentTool_AgentCard_SkillsFields,
+	},
+	"SupportedInterfaces": ubx.FieldSpec{
+		WireName: "supported_interfaces",
+		Kind:     "list",
+		Fields:   V1betaTool_RemoteAgentTool_AgentCard_SupportedInterfacesFields,
+	},
+	"Version": ubx.FieldSpec{WireName: "version"},
+}
 
 var V1betaTool_RemoteAgentToolFields = ubx.FieldMap{
-		"AgentCard": ubx.FieldSpec{
-			WireName: "agent_card",
-			Kind: "object",
-			Fields: V1betaTool_RemoteAgentTool_AgentCardFields,
-		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"AgentCard": ubx.FieldSpec{
+		WireName: "agent_card",
+		Kind:     "object",
+		Fields:   V1betaTool_RemoteAgentTool_AgentCardFields,
+	},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+}
 
 var V1betaTool_SystemToolFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+}
 
 var V1betaTool_ToolFakeConfig_CodeBlockFields = ubx.FieldMap{
-		"PythonCode": ubx.FieldSpec{WireName: "python_code"},
-	}
+	"PythonCode": ubx.FieldSpec{WireName: "python_code"},
+}
 
 var V1betaTool_ToolFakeConfigFields = ubx.FieldMap{
-		"CodeBlock": ubx.FieldSpec{
-			WireName: "code_block",
-			Kind: "object",
-			Fields: V1betaTool_ToolFakeConfig_CodeBlockFields,
-		},
-		"EnableFakeMode": ubx.FieldSpec{WireName: "enable_fake_mode"},
-	}
+	"CodeBlock": ubx.FieldSpec{
+		WireName: "code_block",
+		Kind:     "object",
+		Fields:   V1betaTool_ToolFakeConfig_CodeBlockFields,
+	},
+	"EnableFakeMode": ubx.FieldSpec{WireName: "enable_fake_mode"},
+}
 
 var V1betaTool_WidgetTool_DataMappingFields = ubx.FieldMap{
-		"FieldMappings": ubx.FieldSpec{WireName: "field_mappings"},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"PythonFunction": ubx.FieldSpec{
-			WireName: "python_function",
-			Kind: "object",
-			Fields: V1betaTool_PythonFunctionFields,
-		},
-		"PythonScript": ubx.FieldSpec{WireName: "python_script"},
-		"SourceToolName": ubx.FieldSpec{WireName: "source_tool_name"},
-	}
+	"FieldMappings": ubx.FieldSpec{WireName: "field_mappings"},
+	"Mode":          ubx.FieldSpec{WireName: "mode"},
+	"PythonFunction": ubx.FieldSpec{
+		WireName: "python_function",
+		Kind:     "object",
+		Fields:   V1betaTool_PythonFunctionFields,
+	},
+	"PythonScript":   ubx.FieldSpec{WireName: "python_script"},
+	"SourceToolName": ubx.FieldSpec{WireName: "source_tool_name"},
+}
 
 var V1betaTool_WidgetTool_TextResponseConfigFields = ubx.FieldMap{
-		"StaticText": ubx.FieldSpec{WireName: "static_text"},
-		"TextResponseInstruction": ubx.FieldSpec{WireName: "text_response_instruction"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"StaticText":              ubx.FieldSpec{WireName: "static_text"},
+	"TextResponseInstruction": ubx.FieldSpec{WireName: "text_response_instruction"},
+	"Type":                    ubx.FieldSpec{WireName: "type"},
+}
 
 var V1betaTool_WidgetToolFields = ubx.FieldMap{
-		"DataMapping": ubx.FieldSpec{
-			WireName: "data_mapping",
-			Kind: "object",
-			Fields: V1betaTool_WidgetTool_DataMappingFields,
-		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Parameters": ubx.FieldSpec{
-			WireName: "parameters",
-			Kind: "object",
-			Fields: V1betaTool_ClientFunction_ParametersFields,
-		},
-		"TextResponseConfig": ubx.FieldSpec{
-			WireName: "text_response_config",
-			Kind: "object",
-			Fields: V1betaTool_WidgetTool_TextResponseConfigFields,
-		},
-		"UiConfig": ubx.FieldSpec{WireName: "ui_config"},
-		"WidgetType": ubx.FieldSpec{WireName: "widget_type"},
-	}
+	"DataMapping": ubx.FieldSpec{
+		WireName: "data_mapping",
+		Kind:     "object",
+		Fields:   V1betaTool_WidgetTool_DataMappingFields,
+	},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"Parameters": ubx.FieldSpec{
+		WireName: "parameters",
+		Kind:     "object",
+		Fields:   V1betaTool_ClientFunction_ParametersFields,
+	},
+	"TextResponseConfig": ubx.FieldSpec{
+		WireName: "text_response_config",
+		Kind:     "object",
+		Fields:   V1betaTool_WidgetTool_TextResponseConfigFields,
+	},
+	"UiConfig":   ubx.FieldSpec{WireName: "ui_config"},
+	"WidgetType": ubx.FieldSpec{WireName: "widget_type"},
+}
 
 type V1betaToolConfig struct {
 	// Represents a tool that allows the agent to call another agent.
@@ -991,20 +991,14 @@ type V1betaToolConfig struct {
 	ClientFunction any
 	// A ConnectorTool allows connections to different integrations. See: https://cloud.google.com/integration-connectors/docs/overview.
 	ConnectorTool any
-	// Output only. Timestamp when the tool was created.
-	CreateTime any
 	// Tool to retrieve from Vertex AI Search datastore or engine for grounding. Accepts either a datastore or an engine, but not both. See Vertex AI Search: https://cloud.google.com/generative-ai-app-builder/docs/enterprise-search-introduction.
 	DataStoreTool any
-	// Output only. The display name of the tool, derived based on the tool's type. For example, display name of a ClientFunction is derived from its `name` property.
-	DisplayName any
 	// Etag used to ensure the object hasn't changed during a read-modify-write operation. If the etag is empty, the update will overwrite any concurrent changes.
 	Etag any
 	// Optional. The execution type of the tool.
 	ExecutionType any
 	// The file search tool allows the agent to search across the files uploaded by the app/agent developer. It has presets to give relatively good quality search over the uploaded files and summarization of the retrieved results.
 	FileSearchTool any
-	// Output only. If the tool is generated by the LLM assistant, this field contains a descriptive summary of the generation.
-	GeneratedSummary any
 	// Represents a tool to perform Google web searches for grounding. See https://cloud.google.com/customer-engagement-ai/conversational-agents/ps/tool#google-search.
 	GoogleSearchTool any
 	// An MCP tool. See https://modelcontextprotocol.io/specification/2025-06-18/server/tools for more details.
@@ -1023,8 +1017,6 @@ type V1betaToolConfig struct {
 	Timeout any
 	// Configuration for tool behavior in fake mode.
 	ToolFakeConfig any
-	// Output only. Timestamp when the tool was last updated.
-	UpdateTime any
 	// Represents a widget tool that the agent can invoke. When the tool is chosen by the agent, agent will return the widget to the client. The client is responsible for processing the widget and generating the next user query to continue the interaction with the agent.
 	WidgetTool any
 }
@@ -1079,76 +1071,72 @@ var V1betaTool = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AgentTool": ubx.FieldSpec{
 			WireName: "agent_tool",
-			Kind: "object",
-			Fields: V1betaTool_AgentToolFields,
+			Kind:     "object",
+			Fields:   V1betaTool_AgentToolFields,
 		},
 		"ClientFunction": ubx.FieldSpec{
 			WireName: "client_function",
-			Kind: "object",
-			Fields: V1betaTool_ClientFunctionFields,
+			Kind:     "object",
+			Fields:   V1betaTool_ClientFunctionFields,
 		},
 		"ConnectorTool": ubx.FieldSpec{
 			WireName: "connector_tool",
-			Kind: "object",
-			Fields: V1betaTool_ConnectorToolFields,
+			Kind:     "object",
+			Fields:   V1betaTool_ConnectorToolFields,
 		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"DataStoreTool": ubx.FieldSpec{
 			WireName: "data_store_tool",
-			Kind: "object",
-			Fields: V1betaTool_DataStoreToolFields,
+			Kind:     "object",
+			Fields:   V1betaTool_DataStoreToolFields,
 		},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
+		"Etag":          ubx.FieldSpec{WireName: "etag"},
 		"ExecutionType": ubx.FieldSpec{WireName: "execution_type"},
 		"FileSearchTool": ubx.FieldSpec{
 			WireName: "file_search_tool",
-			Kind: "object",
-			Fields: V1betaTool_FileSearchToolFields,
+			Kind:     "object",
+			Fields:   V1betaTool_FileSearchToolFields,
 		},
-		"GeneratedSummary": ubx.FieldSpec{WireName: "generated_summary"},
 		"GoogleSearchTool": ubx.FieldSpec{
 			WireName: "google_search_tool",
-			Kind: "object",
-			Fields: V1betaTool_GoogleSearchToolFields,
+			Kind:     "object",
+			Fields:   V1betaTool_GoogleSearchToolFields,
 		},
 		"McpTool": ubx.FieldSpec{
 			WireName: "mcp_tool",
-			Kind: "object",
-			Fields: V1betaTool_McpToolFields,
+			Kind:     "object",
+			Fields:   V1betaTool_McpToolFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"OpenApiTool": ubx.FieldSpec{
 			WireName: "open_api_tool",
-			Kind: "object",
-			Fields: V1betaTool_OpenApiToolFields,
+			Kind:     "object",
+			Fields:   V1betaTool_OpenApiToolFields,
 		},
 		"PythonFunction": ubx.FieldSpec{
 			WireName: "python_function",
-			Kind: "object",
-			Fields: V1betaTool_PythonFunctionFields,
+			Kind:     "object",
+			Fields:   V1betaTool_PythonFunctionFields,
 		},
 		"RemoteAgentTool": ubx.FieldSpec{
 			WireName: "remote_agent_tool",
-			Kind: "object",
-			Fields: V1betaTool_RemoteAgentToolFields,
+			Kind:     "object",
+			Fields:   V1betaTool_RemoteAgentToolFields,
 		},
 		"SystemTool": ubx.FieldSpec{
 			WireName: "system_tool",
-			Kind: "object",
-			Fields: V1betaTool_SystemToolFields,
+			Kind:     "object",
+			Fields:   V1betaTool_SystemToolFields,
 		},
 		"Timeout": ubx.FieldSpec{WireName: "timeout"},
 		"ToolFakeConfig": ubx.FieldSpec{
 			WireName: "tool_fake_config",
-			Kind: "object",
-			Fields: V1betaTool_ToolFakeConfigFields,
+			Kind:     "object",
+			Fields:   V1betaTool_ToolFakeConfigFields,
 		},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 		"WidgetTool": ubx.FieldSpec{
 			WireName: "widget_tool",
-			Kind: "object",
-			Fields: V1betaTool_WidgetToolFields,
+			Kind:     "object",
+			Fields:   V1betaTool_WidgetToolFields,
 		},
 	},
 }

@@ -23,12 +23,8 @@ const GoldengateConnectionAssignment_PropertiesFields: FieldMap = {
 };
 
 export interface GoldengateConnectionAssignmentConfig {
-  /** Output only. The time when the connection assignment was created. */
-  createTime?: string | Computed<string>;
   /** Optional. The display name for the GoldengateConnectionAssignment. */
   displayName?: string | Computed<string>;
-  /** Output only. The OCID of the entitlement linked to this resource. */
-  entitlementId?: string | Computed<string>;
   /** Optional. The labels or tags associated with the GoldengateConnectionAssignment. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Identifier. The name of the GoldengateConnectionAssignment resource in the following format: projects/{project}/locations/{region}/goldengateConnectionAssignments/{goldengate_connection_assignment} */
@@ -55,9 +51,7 @@ export interface GoldengateConnectionAssignmentAttrs {
 export const GoldengateConnectionAssignment: ResourceBinding<GoldengateConnectionAssignmentConfig, GoldengateConnectionAssignmentAttrs> = {
   wireType: "google_oracledatabase_goldengate_connection_assignment",
   fields: {
-    createTime: "create_time",
     displayName: "display_name",
-    entitlementId: "entitlement_id",
     labels: "labels",
     name: "name",
     properties: {

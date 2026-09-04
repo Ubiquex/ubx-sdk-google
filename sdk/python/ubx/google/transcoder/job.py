@@ -868,10 +868,6 @@ class JobConfig:
     batch_mode_priority: Any = None
     # Job configuration
     config: Any = None
-    # Output only. The time the job was created.
-    create_time: Any = None
-    # Output only. The time the transcoding finished.
-    end_time: Any = None
     # The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
     error: Any = None
     # Optional. Insert silence and duplicate frames when timestamp gaps are detected in a given stream.
@@ -888,10 +884,6 @@ class JobConfig:
     optimization: Any = None
     # Input only. Specify the `output_uri` to populate an empty `Job.config.output.uri` or `JobTemplate.config.output.uri` when using template. URI for the output file(s). For example, `gs://my-bucket/outputs/`. See [Supported input and output formats](https://cloud.google.com/transcoder/docs/concepts/supported-input-and-output-formats).
     output_uri: Any = None
-    # Output only. The time the transcoding started.
-    start_time: Any = None
-    # Output only. The current state of the job.
-    state: Any = None
     # Input only. Specify the `template_id` to use for populating `Job.config`. The default is `preset/web-hd`, which is the only supported preset. User defined JobTemplate: `{job_template_id}`
     template_id: Any = None
     # Job time to live value in days, which will be effective after job completion. Job should be deleted automatically after the given TTL. Enter a value between 1 and 90. The default is 30.
@@ -941,8 +933,6 @@ Job = ubx.ResourceBinding(
             kind="object",
             fields=_Job_ConfigFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
-        "end_time": ubx.FieldSpec(wire_name="end_time"),
         "error": ubx.FieldSpec(
             wire_name="error",
             kind="object",
@@ -955,8 +945,6 @@ Job = ubx.ResourceBinding(
         "name": ubx.FieldSpec(wire_name="name"),
         "optimization": ubx.FieldSpec(wire_name="optimization"),
         "output_uri": ubx.FieldSpec(wire_name="output_uri"),
-        "start_time": ubx.FieldSpec(wire_name="start_time"),
-        "state": ubx.FieldSpec(wire_name="state"),
         "template_id": ubx.FieldSpec(wire_name="template_id"),
         "ttl_after_completion_days": ubx.FieldSpec(wire_name="ttl_after_completion_days"),
     },

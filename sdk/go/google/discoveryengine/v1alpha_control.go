@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1alphaControl_BoostAction_InterpolationBoostSpec_ControlPoints struct {
 	AttributeValue any
-	BoostAmount any
+	BoostAmount    any
 }
 
 type V1alphaControl_BoostAction_InterpolationBoostSpec struct {
@@ -33,19 +33,19 @@ type V1alphaControl_BoostAction struct {
 }
 
 type V1alphaControl_Conditions_ActiveTimeRange struct {
-	EndTime any
+	EndTime   any
 	StartTime any
 }
 
 type V1alphaControl_Conditions_QueryTerms struct {
 	FullMatch any
-	Value any
+	Value     any
 }
 
 type V1alphaControl_Conditions struct {
 	ActiveTimeRange any
-	QueryRegex any
-	QueryTerms any
+	QueryRegex      any
+	QueryTerms      any
 }
 
 type V1alphaControl_FilterAction struct {
@@ -88,91 +88,89 @@ type V1alphaControl_SynonymsAction struct {
 }
 
 var V1alphaControl_BoostAction_InterpolationBoostSpec_ControlPointsFields = ubx.FieldMap{
-		"AttributeValue": ubx.FieldSpec{WireName: "attribute_value"},
-		"BoostAmount": ubx.FieldSpec{WireName: "boost_amount"},
-	}
+	"AttributeValue": ubx.FieldSpec{WireName: "attribute_value"},
+	"BoostAmount":    ubx.FieldSpec{WireName: "boost_amount"},
+}
 
 var V1alphaControl_BoostAction_InterpolationBoostSpecFields = ubx.FieldMap{
-		"AttributeType": ubx.FieldSpec{WireName: "attribute_type"},
-		"ControlPoints": ubx.FieldSpec{
-			WireName: "control_points",
-			Kind: "list",
-			Fields: V1alphaControl_BoostAction_InterpolationBoostSpec_ControlPointsFields,
-		},
-		"FieldName": ubx.FieldSpec{WireName: "field_name"},
-		"InterpolationType": ubx.FieldSpec{WireName: "interpolation_type"},
-	}
+	"AttributeType": ubx.FieldSpec{WireName: "attribute_type"},
+	"ControlPoints": ubx.FieldSpec{
+		WireName: "control_points",
+		Kind:     "list",
+		Fields:   V1alphaControl_BoostAction_InterpolationBoostSpec_ControlPointsFields,
+	},
+	"FieldName":         ubx.FieldSpec{WireName: "field_name"},
+	"InterpolationType": ubx.FieldSpec{WireName: "interpolation_type"},
+}
 
 var V1alphaControl_BoostActionFields = ubx.FieldMap{
-		"Boost": ubx.FieldSpec{WireName: "boost"},
-		"DataStore": ubx.FieldSpec{WireName: "data_store"},
-		"Filter": ubx.FieldSpec{WireName: "filter"},
-		"FixedBoost": ubx.FieldSpec{WireName: "fixed_boost"},
-		"InterpolationBoostSpec": ubx.FieldSpec{
-			WireName: "interpolation_boost_spec",
-			Kind: "object",
-			Fields: V1alphaControl_BoostAction_InterpolationBoostSpecFields,
-		},
-	}
+	"Boost":      ubx.FieldSpec{WireName: "boost"},
+	"DataStore":  ubx.FieldSpec{WireName: "data_store"},
+	"Filter":     ubx.FieldSpec{WireName: "filter"},
+	"FixedBoost": ubx.FieldSpec{WireName: "fixed_boost"},
+	"InterpolationBoostSpec": ubx.FieldSpec{
+		WireName: "interpolation_boost_spec",
+		Kind:     "object",
+		Fields:   V1alphaControl_BoostAction_InterpolationBoostSpecFields,
+	},
+}
 
 var V1alphaControl_Conditions_ActiveTimeRangeFields = ubx.FieldMap{
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-	}
+	"EndTime":   ubx.FieldSpec{WireName: "end_time"},
+	"StartTime": ubx.FieldSpec{WireName: "start_time"},
+}
 
 var V1alphaControl_Conditions_QueryTermsFields = ubx.FieldMap{
-		"FullMatch": ubx.FieldSpec{WireName: "full_match"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"FullMatch": ubx.FieldSpec{WireName: "full_match"},
+	"Value":     ubx.FieldSpec{WireName: "value"},
+}
 
 var V1alphaControl_ConditionsFields = ubx.FieldMap{
-		"ActiveTimeRange": ubx.FieldSpec{
-			WireName: "active_time_range",
-			Kind: "list",
-			Fields: V1alphaControl_Conditions_ActiveTimeRangeFields,
-		},
-		"QueryRegex": ubx.FieldSpec{WireName: "query_regex"},
-		"QueryTerms": ubx.FieldSpec{
-			WireName: "query_terms",
-			Kind: "list",
-			Fields: V1alphaControl_Conditions_QueryTermsFields,
-		},
-	}
+	"ActiveTimeRange": ubx.FieldSpec{
+		WireName: "active_time_range",
+		Kind:     "list",
+		Fields:   V1alphaControl_Conditions_ActiveTimeRangeFields,
+	},
+	"QueryRegex": ubx.FieldSpec{WireName: "query_regex"},
+	"QueryTerms": ubx.FieldSpec{
+		WireName: "query_terms",
+		Kind:     "list",
+		Fields:   V1alphaControl_Conditions_QueryTermsFields,
+	},
+}
 
 var V1alphaControl_FilterActionFields = ubx.FieldMap{
-		"DataStore": ubx.FieldSpec{WireName: "data_store"},
-		"Filter": ubx.FieldSpec{WireName: "filter"},
-	}
+	"DataStore": ubx.FieldSpec{WireName: "data_store"},
+	"Filter":    ubx.FieldSpec{WireName: "filter"},
+}
 
 var V1alphaControl_PromoteAction_SearchLinkPromotionFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Document": ubx.FieldSpec{WireName: "document"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"ImageUri": ubx.FieldSpec{WireName: "image_uri"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Document":    ubx.FieldSpec{WireName: "document"},
+	"Enabled":     ubx.FieldSpec{WireName: "enabled"},
+	"ImageUri":    ubx.FieldSpec{WireName: "image_uri"},
+	"Title":       ubx.FieldSpec{WireName: "title"},
+	"Uri":         ubx.FieldSpec{WireName: "uri"},
+}
 
 var V1alphaControl_PromoteActionFields = ubx.FieldMap{
-		"DataStore": ubx.FieldSpec{WireName: "data_store"},
-		"SearchLinkPromotion": ubx.FieldSpec{
-			WireName: "search_link_promotion",
-			Kind: "object",
-			Fields: V1alphaControl_PromoteAction_SearchLinkPromotionFields,
-		},
-	}
+	"DataStore": ubx.FieldSpec{WireName: "data_store"},
+	"SearchLinkPromotion": ubx.FieldSpec{
+		WireName: "search_link_promotion",
+		Kind:     "object",
+		Fields:   V1alphaControl_PromoteAction_SearchLinkPromotionFields,
+	},
+}
 
 var V1alphaControl_RedirectActionFields = ubx.FieldMap{
-		"RedirectUri": ubx.FieldSpec{WireName: "redirect_uri"},
-	}
+	"RedirectUri": ubx.FieldSpec{WireName: "redirect_uri"},
+}
 
 var V1alphaControl_SynonymsActionFields = ubx.FieldMap{
-		"Synonyms": ubx.FieldSpec{WireName: "synonyms"},
-	}
+	"Synonyms": ubx.FieldSpec{WireName: "synonyms"},
+}
 
 type V1alphaControlConfig struct {
-	// Output only. List of all ServingConfig IDs this control is attached to. May take up to 10 minutes to update after changes.
-	AssociatedServingConfigIds any
 	// Adjusts order of products in returned list.
 	BoostAction any
 	// Determines when the associated action will trigger. Omit to always apply the action. Currently only a single condition may be specified. Otherwise an INVALID ARGUMENT error is thrown.
@@ -223,39 +221,38 @@ type V1alphaControlAttrs struct {
 var V1alphaControl = ubx.ResourceBinding{
 	WireType: "google_discoveryengine_v1alpha_control",
 	Fields: ubx.FieldMap{
-		"AssociatedServingConfigIds": ubx.FieldSpec{WireName: "associated_serving_config_ids"},
 		"BoostAction": ubx.FieldSpec{
 			WireName: "boost_action",
-			Kind: "object",
-			Fields: V1alphaControl_BoostActionFields,
+			Kind:     "object",
+			Fields:   V1alphaControl_BoostActionFields,
 		},
 		"Conditions": ubx.FieldSpec{
 			WireName: "conditions",
-			Kind: "list",
-			Fields: V1alphaControl_ConditionsFields,
+			Kind:     "list",
+			Fields:   V1alphaControl_ConditionsFields,
 		},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"FilterAction": ubx.FieldSpec{
 			WireName: "filter_action",
-			Kind: "object",
-			Fields: V1alphaControl_FilterActionFields,
+			Kind:     "object",
+			Fields:   V1alphaControl_FilterActionFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"PromoteAction": ubx.FieldSpec{
 			WireName: "promote_action",
-			Kind: "object",
-			Fields: V1alphaControl_PromoteActionFields,
+			Kind:     "object",
+			Fields:   V1alphaControl_PromoteActionFields,
 		},
 		"RedirectAction": ubx.FieldSpec{
 			WireName: "redirect_action",
-			Kind: "object",
-			Fields: V1alphaControl_RedirectActionFields,
+			Kind:     "object",
+			Fields:   V1alphaControl_RedirectActionFields,
 		},
 		"SolutionType": ubx.FieldSpec{WireName: "solution_type"},
 		"SynonymsAction": ubx.FieldSpec{
 			WireName: "synonyms_action",
-			Kind: "object",
-			Fields: V1alphaControl_SynonymsActionFields,
+			Kind:     "object",
+			Fields:   V1alphaControl_SynonymsActionFields,
 		},
 		"UseCases": ubx.FieldSpec{WireName: "use_cases"},
 	},

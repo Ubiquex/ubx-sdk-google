@@ -60,10 +60,10 @@ type Entity_Format struct {
 
 type Entity_Schema_Fields struct {
 	Description any
-	Fields any
-	Mode any
-	Name any
-	Type any
+	Fields      any
+	Mode        any
+	Name        any
+	Type        any
 }
 
 type Entity_Schema_PartitionFields struct {
@@ -83,102 +83,98 @@ type Entity_Schema struct {
 }
 
 var Entity_AccessFields = ubx.FieldMap{
-		"Read": ubx.FieldSpec{WireName: "read"},
-	}
+	"Read": ubx.FieldSpec{WireName: "read"},
+}
 
 var Entity_Compatibility_BigqueryFields = ubx.FieldMap{
-		"Compatible": ubx.FieldSpec{WireName: "compatible"},
-		"Reason": ubx.FieldSpec{WireName: "reason"},
-	}
+	"Compatible": ubx.FieldSpec{WireName: "compatible"},
+	"Reason":     ubx.FieldSpec{WireName: "reason"},
+}
 
 var Entity_CompatibilityFields = ubx.FieldMap{
-		"Bigquery": ubx.FieldSpec{
-			WireName: "bigquery",
-			Kind: "object",
-			Fields: Entity_Compatibility_BigqueryFields,
-		},
-		"HiveMetastore": ubx.FieldSpec{
-			WireName: "hive_metastore",
-			Kind: "object",
-			Fields: Entity_Compatibility_BigqueryFields,
-		},
-	}
+	"Bigquery": ubx.FieldSpec{
+		WireName: "bigquery",
+		Kind:     "object",
+		Fields:   Entity_Compatibility_BigqueryFields,
+	},
+	"HiveMetastore": ubx.FieldSpec{
+		WireName: "hive_metastore",
+		Kind:     "object",
+		Fields:   Entity_Compatibility_BigqueryFields,
+	},
+}
 
 var Entity_Format_CsvFields = ubx.FieldMap{
-		"Delimiter": ubx.FieldSpec{WireName: "delimiter"},
-		"Encoding": ubx.FieldSpec{WireName: "encoding"},
-		"HeaderRows": ubx.FieldSpec{WireName: "header_rows"},
-		"Quote": ubx.FieldSpec{WireName: "quote"},
-	}
+	"Delimiter":  ubx.FieldSpec{WireName: "delimiter"},
+	"Encoding":   ubx.FieldSpec{WireName: "encoding"},
+	"HeaderRows": ubx.FieldSpec{WireName: "header_rows"},
+	"Quote":      ubx.FieldSpec{WireName: "quote"},
+}
 
 var Entity_Format_IcebergFields = ubx.FieldMap{
-		"MetadataLocation": ubx.FieldSpec{WireName: "metadata_location"},
-	}
+	"MetadataLocation": ubx.FieldSpec{WireName: "metadata_location"},
+}
 
 var Entity_Format_JsonFields = ubx.FieldMap{
-		"Encoding": ubx.FieldSpec{WireName: "encoding"},
-	}
+	"Encoding": ubx.FieldSpec{WireName: "encoding"},
+}
 
 var Entity_FormatFields = ubx.FieldMap{
-		"CompressionFormat": ubx.FieldSpec{WireName: "compression_format"},
-		"Csv": ubx.FieldSpec{
-			WireName: "csv",
-			Kind: "object",
-			Fields: Entity_Format_CsvFields,
-		},
-		"Format": ubx.FieldSpec{WireName: "format"},
-		"Iceberg": ubx.FieldSpec{
-			WireName: "iceberg",
-			Kind: "object",
-			Fields: Entity_Format_IcebergFields,
-		},
-		"Json": ubx.FieldSpec{
-			WireName: "json",
-			Kind: "object",
-			Fields: Entity_Format_JsonFields,
-		},
-		"MimeType": ubx.FieldSpec{WireName: "mime_type"},
-	}
+	"CompressionFormat": ubx.FieldSpec{WireName: "compression_format"},
+	"Csv": ubx.FieldSpec{
+		WireName: "csv",
+		Kind:     "object",
+		Fields:   Entity_Format_CsvFields,
+	},
+	"Format": ubx.FieldSpec{WireName: "format"},
+	"Iceberg": ubx.FieldSpec{
+		WireName: "iceberg",
+		Kind:     "object",
+		Fields:   Entity_Format_IcebergFields,
+	},
+	"Json": ubx.FieldSpec{
+		WireName: "json",
+		Kind:     "object",
+		Fields:   Entity_Format_JsonFields,
+	},
+	"MimeType": ubx.FieldSpec{WireName: "mime_type"},
+}
 
 var Entity_Schema_FieldsFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Fields": ubx.FieldSpec{WireName: "fields"},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Fields":      ubx.FieldSpec{WireName: "fields"},
+	"Mode":        ubx.FieldSpec{WireName: "mode"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"Type":        ubx.FieldSpec{WireName: "type"},
+}
 
 var Entity_Schema_PartitionFieldsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var Entity_SchemaFields = ubx.FieldMap{
-		"Fields": ubx.FieldSpec{
-			WireName: "fields",
-			Kind: "list",
-			Fields: Entity_Schema_FieldsFields,
-		},
-		"PartitionFields": ubx.FieldSpec{
-			WireName: "partition_fields",
-			Kind: "list",
-			Fields: Entity_Schema_PartitionFieldsFields,
-		},
-		"PartitionStyle": ubx.FieldSpec{WireName: "partition_style"},
-		"UserManaged": ubx.FieldSpec{WireName: "user_managed"},
-	}
+	"Fields": ubx.FieldSpec{
+		WireName: "fields",
+		Kind:     "list",
+		Fields:   Entity_Schema_FieldsFields,
+	},
+	"PartitionFields": ubx.FieldSpec{
+		WireName: "partition_fields",
+		Kind:     "list",
+		Fields:   Entity_Schema_PartitionFieldsFields,
+	},
+	"PartitionStyle": ubx.FieldSpec{WireName: "partition_style"},
+	"UserManaged":    ubx.FieldSpec{WireName: "user_managed"},
+}
 
 type EntityConfig struct {
 	// Describes the access mechanism of the data within its storage location.
 	Access any
 	// Required. Immutable. The ID of the asset associated with the storage location containing the entity data. The entity must be with in the same zone with the asset.
 	Asset any
-	// Output only. The name of the associated Data Catalog entry.
-	CatalogEntry any
 	// Provides compatibility information for various metadata stores.
 	Compatibility any
-	// Output only. The time when the entity was created.
-	CreateTime any
 	// Required. Immutable. The storage path of the entity data. For Cloud Storage data, this is the fully-qualified path to the entity, such as gs://bucket/path/to/data. For BigQuery data, this is the name of the table resource, such as projects/project_id/datasets/dataset_id/tables/table_id.
 	DataPath any
 	// Optional. The set of items within the data path constituting the data in the entity, represented as a glob path. Example: gs://bucket/path/to/data/**/*.csv.
@@ -193,18 +189,12 @@ type EntityConfig struct {
 	Format any
 	// Required. A user-provided entity ID. It is mutable, and will be used as the published table name. Specifying a new ID in an update entity request will override the existing value. The ID must contain only letters (a-z, A-Z), numbers (0-9), and underscores, and consist of 256 or fewer characters.
 	Id any
-	// Output only. The resource name of the entity, of the form: projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}/entities/{id}.
-	Name any
 	// Schema information describing the structure and layout of the data.
 	Schema any
 	// Required. Immutable. Identifies the storage system of the entity data.
 	System any
 	// Required. Immutable. The type of entity.
 	Type any
-	// Output only. System generated unique ID for the Entity. This ID will be different if the Entity is deleted and re-created with the same name.
-	Uid any
-	// Output only. The time when the entity was last updated.
-	UpdateTime any
 }
 
 type EntityAttrs struct {
@@ -251,37 +241,32 @@ var Entity = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Access": ubx.FieldSpec{
 			WireName: "access",
-			Kind: "object",
-			Fields: Entity_AccessFields,
+			Kind:     "object",
+			Fields:   Entity_AccessFields,
 		},
 		"Asset": ubx.FieldSpec{WireName: "asset"},
-		"CatalogEntry": ubx.FieldSpec{WireName: "catalog_entry"},
 		"Compatibility": ubx.FieldSpec{
 			WireName: "compatibility",
-			Kind: "object",
-			Fields: Entity_CompatibilityFields,
+			Kind:     "object",
+			Fields:   Entity_CompatibilityFields,
 		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DataPath": ubx.FieldSpec{WireName: "data_path"},
+		"DataPath":        ubx.FieldSpec{WireName: "data_path"},
 		"DataPathPattern": ubx.FieldSpec{WireName: "data_path_pattern"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
+		"Description":     ubx.FieldSpec{WireName: "description"},
+		"DisplayName":     ubx.FieldSpec{WireName: "display_name"},
+		"Etag":            ubx.FieldSpec{WireName: "etag"},
 		"Format": ubx.FieldSpec{
 			WireName: "format",
-			Kind: "object",
-			Fields: Entity_FormatFields,
+			Kind:     "object",
+			Fields:   Entity_FormatFields,
 		},
 		"Id": ubx.FieldSpec{WireName: "id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
 		"Schema": ubx.FieldSpec{
 			WireName: "schema",
-			Kind: "object",
-			Fields: Entity_SchemaFields,
+			Kind:     "object",
+			Fields:   Entity_SchemaFields,
 		},
 		"System": ubx.FieldSpec{WireName: "system"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"Type":   ubx.FieldSpec{WireName: "type"},
 	},
 }

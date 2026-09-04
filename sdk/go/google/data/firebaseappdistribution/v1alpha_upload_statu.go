@@ -30,19 +30,19 @@ type V1alphaUploadStatu_Release struct {
 
 type V1alphaUploadStatuConfig struct {
 	MobilesdkAppId any
-	UploadToken any
+	UploadToken    any
 }
 
 type V1alphaUploadStatuAttrs struct {
 	// The error code associated with (only set on "FAILURE")
 	ErrorCode any
 	// Any additional context for the given upload status (e.g. error message) Meant to be displayed to the client
-	Message any
+	Message        any
 	MobilesdkAppId any
 	// Proto defining a release object
 	Release any
 	// The status of the upload
-	Status any
+	Status      any
 	UploadToken any
 }
 
@@ -50,6 +50,6 @@ var V1alphaUploadStatu = ubx.DataSourceBinding{
 	WireType: "google_firebaseappdistribution_v1alpha_upload_statu",
 	Fields: ubx.FieldMap{
 		"MobilesdkAppId": ubx.FieldSpec{WireName: "mobilesdk_app_id"},
-		"UploadToken": ubx.FieldSpec{WireName: "upload_token"},
+		"UploadToken":    ubx.FieldSpec{WireName: "upload_token"},
 	},
 }

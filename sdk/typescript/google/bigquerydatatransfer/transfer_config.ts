@@ -132,8 +132,6 @@ export interface TransferConfigConfig {
   dataRefreshWindowDays?: number | Computed<number>;
   /** Data source ID. This cannot be changed once data transfer is created. The full list of available data source IDs can be returned through an API call: https://cloud.google.com/bigquery-transfer/docs/reference/datatransfer/rest/v1/projects.locations.dataSources/list */
   dataSourceId?: string | Computed<string>;
-  /** Output only. Region in which BigQuery dataset is located. */
-  datasetRegion?: string | Computed<string>;
   /** The BigQuery target dataset id. */
   destinationDatasetId?: string | Computed<string>;
   /** Is this config disabled. When set to true, no runs will be scheduled for this transfer config. */
@@ -152,8 +150,6 @@ export interface TransferConfigConfig {
   metadataDestination?: TransferConfig_MetadataDestination | Computed<TransferConfig_MetadataDestination>;
   /** Identifier. The resource name of the transfer config. Transfer config names have the form either `projects/{project_id}/locations/{region}/transferConfigs/{config_id}` or `projects/{project_id}/transferConfigs/{config_id}`, where `config_id` is usually a UUID, even though it is not guaranteed or required. The name is ignored when creating a transfer config. */
   name?: string | Computed<string>;
-  /** Output only. Next time when data transfer will run. */
-  nextRunTime?: string | Computed<string>;
   /** Pub/Sub topic where notifications will be sent after transfer runs associated with this transfer config finish. The format for specifying a pubsub topic is: `projects/{project_id}/topics/{topic_id}` */
   notificationPubsubTopic?: string | Computed<string>;
   /** Information about a user. */
@@ -166,10 +162,6 @@ export interface TransferConfigConfig {
   scheduleOptions?: TransferConfig_ScheduleOptions | Computed<TransferConfig_ScheduleOptions>;
   /** V2 options customizing different types of data transfer schedule. This field supports existing time-based and manual transfer schedule. Also supports Event-Driven transfer schedule. ScheduleOptionsV2 cannot be used together with ScheduleOptions/Schedule. */
   scheduleOptionsV2?: TransferConfig_ScheduleOptionsV2 | Computed<TransferConfig_ScheduleOptionsV2>;
-  /** Output only. State of the most recently updated transfer run. */
-  state?: string | Computed<string>;
-  /** Output only. Data transfer modification time. Ignored by server on input. */
-  updateTime?: string | Computed<string>;
   /** Deprecated. Unique ID of the user on whose behalf transfer is done. */
   userId?: string | Computed<string>;
 }
@@ -226,7 +218,6 @@ export const TransferConfig: ResourceBinding<TransferConfigConfig, TransferConfi
   fields: {
     dataRefreshWindowDays: "data_refresh_window_days",
     dataSourceId: "data_source_id",
-    datasetRegion: "dataset_region",
     destinationDatasetId: "destination_dataset_id",
     disabled: "disabled",
     displayName: "display_name",
@@ -252,7 +243,6 @@ export const TransferConfig: ResourceBinding<TransferConfigConfig, TransferConfi
       fields: TransferConfig_MetadataDestinationFields,
     },
     name: "name",
-    nextRunTime: "next_run_time",
     notificationPubsubTopic: "notification_pubsub_topic",
     ownerInfo: {
       wireName: "owner_info",
@@ -271,8 +261,6 @@ export const TransferConfig: ResourceBinding<TransferConfigConfig, TransferConfi
       kind: "object",
       fields: TransferConfig_ScheduleOptionsV2Fields,
     },
-    state: "state",
-    updateTime: "update_time",
     userId: "user_id",
   },
 };

@@ -862,10 +862,6 @@ export interface JobConfig {
   batchModePriority?: number | Computed<number>;
   /** Job configuration */
   config?: Job_Config | Computed<Job_Config>;
-  /** Output only. The time the job was created. */
-  createTime?: string | Computed<string>;
-  /** Output only. The time the transcoding finished. */
-  endTime?: string | Computed<string>;
   /** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
   error?: Job_Error | Computed<Job_Error>;
   /** Optional. Insert silence and duplicate frames when timestamp gaps are detected in a given stream. */
@@ -882,10 +878,6 @@ export interface JobConfig {
   optimization?: string | Computed<string>;
   /** Input only. Specify the `output_uri` to populate an empty `Job.config.output.uri` or `JobTemplate.config.output.uri` when using template. URI for the output file(s). For example, `gs://my-bucket/outputs/`. See [Supported input and output formats](https://cloud.google.com/transcoder/docs/concepts/supported-input-and-output-formats). */
   outputUri?: string | Computed<string>;
-  /** Output only. The time the transcoding started. */
-  startTime?: string | Computed<string>;
-  /** Output only. The current state of the job. */
-  state?: string | Computed<string>;
   /** Input only. Specify the `template_id` to use for populating `Job.config`. The default is `preset/web-hd`, which is the only supported preset. User defined JobTemplate: `{job_template_id}` */
   templateId?: string | Computed<string>;
   /** Job time to live value in days, which will be effective after job completion. Job should be deleted automatically after the given TTL. Enter a value between 1 and 90. The default is 30. */
@@ -936,8 +928,6 @@ export const Job: ResourceBinding<JobConfig, JobAttrs> = {
       kind: "object",
       fields: Job_ConfigFields,
     },
-    createTime: "create_time",
-    endTime: "end_time",
     error: {
       wireName: "error",
       kind: "object",
@@ -950,8 +940,6 @@ export const Job: ResourceBinding<JobConfig, JobAttrs> = {
     name: "name",
     optimization: "optimization",
     outputUri: "output_uri",
-    startTime: "start_time",
-    state: "state",
     templateId: "template_id",
     ttlAfterCompletionDays: "ttl_after_completion_days",
   },

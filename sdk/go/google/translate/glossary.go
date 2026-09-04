@@ -26,33 +26,29 @@ type Glossary_LanguagePair struct {
 }
 
 var Glossary_InputConfig_GcsSourceFields = ubx.FieldMap{
-		"InputUri": ubx.FieldSpec{WireName: "input_uri"},
-	}
+	"InputUri": ubx.FieldSpec{WireName: "input_uri"},
+}
 
 var Glossary_InputConfigFields = ubx.FieldMap{
-		"GcsSource": ubx.FieldSpec{
-			WireName: "gcs_source",
-			Kind: "object",
-			Fields: Glossary_InputConfig_GcsSourceFields,
-		},
-	}
+	"GcsSource": ubx.FieldSpec{
+		WireName: "gcs_source",
+		Kind:     "object",
+		Fields:   Glossary_InputConfig_GcsSourceFields,
+	},
+}
 
 var Glossary_LanguageCodesSetFields = ubx.FieldMap{
-		"LanguageCodes": ubx.FieldSpec{WireName: "language_codes"},
-	}
+	"LanguageCodes": ubx.FieldSpec{WireName: "language_codes"},
+}
 
 var Glossary_LanguagePairFields = ubx.FieldMap{
-		"SourceLanguageCode": ubx.FieldSpec{WireName: "source_language_code"},
-		"TargetLanguageCode": ubx.FieldSpec{WireName: "target_language_code"},
-	}
+	"SourceLanguageCode": ubx.FieldSpec{WireName: "source_language_code"},
+	"TargetLanguageCode": ubx.FieldSpec{WireName: "target_language_code"},
+}
 
 type GlossaryConfig struct {
 	// Optional. The display name of the glossary.
 	DisplayName any
-	// Output only. When the glossary creation was finished.
-	EndTime any
-	// Output only. The number of entries defined in the glossary.
-	EntryCount any
 	// Input configuration for glossaries.
 	InputConfig any
 	// Used with equivalent term set glossaries.
@@ -61,8 +57,6 @@ type GlossaryConfig struct {
 	LanguagePair any
 	// Identifier. The resource name of the glossary. Glossary names have the form `projects/{project-number-or-id}/locations/{location-id}/glossaries/{glossary-id}`.
 	Name any
-	// Output only. When CreateGlossary was called.
-	SubmitTime any
 }
 
 type GlossaryAttrs struct {
@@ -88,24 +82,21 @@ var Glossary = ubx.ResourceBinding{
 	WireType: "google_translate_glossary",
 	Fields: ubx.FieldMap{
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"EntryCount": ubx.FieldSpec{WireName: "entry_count"},
 		"InputConfig": ubx.FieldSpec{
 			WireName: "input_config",
-			Kind: "object",
-			Fields: Glossary_InputConfigFields,
+			Kind:     "object",
+			Fields:   Glossary_InputConfigFields,
 		},
 		"LanguageCodesSet": ubx.FieldSpec{
 			WireName: "language_codes_set",
-			Kind: "object",
-			Fields: Glossary_LanguageCodesSetFields,
+			Kind:     "object",
+			Fields:   Glossary_LanguageCodesSetFields,
 		},
 		"LanguagePair": ubx.FieldSpec{
 			WireName: "language_pair",
-			Kind: "object",
-			Fields: Glossary_LanguagePairFields,
+			Kind:     "object",
+			Fields:   Glossary_LanguagePairFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
-		"SubmitTime": ubx.FieldSpec{WireName: "submit_time"},
 	},
 }

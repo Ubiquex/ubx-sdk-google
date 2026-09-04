@@ -22,34 +22,8 @@ class V1beta1MirroringEndpointGroup_ConnectedDeploymentGroups:
     locations: Any = None
     name: Any = None
 
-_V1beta1MirroringEndpointGroup_AssociationsFields = {
-    "name": ubx.FieldSpec(wire_name="name"),
-    "network": ubx.FieldSpec(wire_name="network"),
-    "state": ubx.FieldSpec(wire_name="state"),
-}
-
-_V1beta1MirroringEndpointGroup_ConnectedDeploymentGroups_LocationsFields = {
-    "location": ubx.FieldSpec(wire_name="location"),
-    "state": ubx.FieldSpec(wire_name="state"),
-}
-
-_V1beta1MirroringEndpointGroup_ConnectedDeploymentGroupsFields = {
-    "locations": ubx.FieldSpec(
-        wire_name="locations",
-        kind="list",
-        fields=_V1beta1MirroringEndpointGroup_ConnectedDeploymentGroups_LocationsFields,
-    ),
-    "name": ubx.FieldSpec(wire_name="name"),
-}
-
 @dataclasses.dataclass
 class V1beta1MirroringEndpointGroupConfig:
-    # Output only. List of associations to this endpoint group.
-    associations: Any = None
-    # Output only. List of details about the connected deployment groups to this endpoint group.
-    connected_deployment_groups: Any = None
-    # Output only. The timestamp when the resource was created. See https://google.aip.dev/148#timestamps.
-    create_time: Any = None
     # Optional. User-provided description of the endpoint group. Used as additional context for the endpoint group.
     description: Any = None
     # Optional. Labels are key/value pairs that help to organize and filter resources.
@@ -58,14 +32,8 @@ class V1beta1MirroringEndpointGroupConfig:
     mirroring_deployment_group: Any = None
     # Immutable. Identifier. The resource name of this endpoint group, for example: `projects/123456789/locations/global/mirroringEndpointGroups/my-eg`. See https://google.aip.dev/122 for more details.
     name: Any = None
-    # Output only. The current state of the resource does not match the user's intended state, and the system is working to reconcile them. This is part of the normal operation (e.g. adding a new association to the group). See https://google.aip.dev/128.
-    reconciling: Any = None
-    # Output only. The current state of the endpoint group. See https://google.aip.dev/216.
-    state: Any = None
     # Immutable. The type of the endpoint group. If left unspecified, defaults to DIRECT.
     type: Any = None
-    # Output only. The timestamp when the resource was most recently updated. See https://google.aip.dev/148#timestamps.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V1beta1MirroringEndpointGroupAttrs:
@@ -95,24 +63,10 @@ class V1beta1MirroringEndpointGroupAttrs:
 V1beta1MirroringEndpointGroup = ubx.ResourceBinding(
     wire_type="google_networksecurity_v1beta1_mirroring_endpoint_group",
     fields={
-        "associations": ubx.FieldSpec(
-            wire_name="associations",
-            kind="list",
-            fields=_V1beta1MirroringEndpointGroup_AssociationsFields,
-        ),
-        "connected_deployment_groups": ubx.FieldSpec(
-            wire_name="connected_deployment_groups",
-            kind="list",
-            fields=_V1beta1MirroringEndpointGroup_ConnectedDeploymentGroupsFields,
-        ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "mirroring_deployment_group": ubx.FieldSpec(wire_name="mirroring_deployment_group"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "reconciling": ubx.FieldSpec(wire_name="reconciling"),
-        "state": ubx.FieldSpec(wire_name="state"),
         "type": ubx.FieldSpec(wire_name="type"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

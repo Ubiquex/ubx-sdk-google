@@ -10,8 +10,8 @@ type Backup_ServiceRevision_EncryptionConfig struct {
 
 type Backup_ServiceRevision_HiveMetastoreConfig_AuxiliaryVersions_NetworkConfig_Consumers struct {
 	EndpointLocation any
-	EndpointUri any
-	Subnetwork any
+	EndpointUri      any
+	Subnetwork       any
 }
 
 type Backup_ServiceRevision_HiveMetastoreConfig_AuxiliaryVersions_NetworkConfig struct {
@@ -20,8 +20,8 @@ type Backup_ServiceRevision_HiveMetastoreConfig_AuxiliaryVersions_NetworkConfig 
 
 type Backup_ServiceRevision_HiveMetastoreConfig_AuxiliaryVersions struct {
 	ConfigOverrides any
-	NetworkConfig any
-	Version any
+	NetworkConfig   any
+	Version         any
 }
 
 type Backup_ServiceRevision_HiveMetastoreConfig_KerberosConfig_Keytab struct {
@@ -69,21 +69,21 @@ type Backup_ServiceRevision_MetadataIntegration struct {
 }
 
 type Backup_ServiceRevision_MetadataManagementActivity_MetadataExports struct {
-	DatabaseDumpType any
+	DatabaseDumpType  any
 	DestinationGcsUri any
-	EndTime any
-	StartTime any
-	State any
+	EndTime           any
+	StartTime         any
+	State             any
 }
 
 type Backup_ServiceRevision_MetadataManagementActivity_Restores struct {
-	Backup any
+	Backup         any
 	BackupLocation any
-	Details any
-	EndTime any
-	StartTime any
-	State any
-	Type any
+	Details        any
+	EndTime        any
+	StartTime      any
+	State          any
+	Type           any
 }
 
 type Backup_ServiceRevision_MetadataManagementActivity struct {
@@ -203,239 +203,231 @@ type Backup_ServiceRevision struct {
 }
 
 var Backup_ServiceRevision_EncryptionConfigFields = ubx.FieldMap{
-		"KmsKey": ubx.FieldSpec{WireName: "kms_key"},
-	}
+	"KmsKey": ubx.FieldSpec{WireName: "kms_key"},
+}
 
 var Backup_ServiceRevision_HiveMetastoreConfig_AuxiliaryVersions_NetworkConfig_ConsumersFields = ubx.FieldMap{
-		"EndpointLocation": ubx.FieldSpec{WireName: "endpoint_location"},
-		"EndpointUri": ubx.FieldSpec{WireName: "endpoint_uri"},
-		"Subnetwork": ubx.FieldSpec{WireName: "subnetwork"},
-	}
+	"EndpointLocation": ubx.FieldSpec{WireName: "endpoint_location"},
+	"EndpointUri":      ubx.FieldSpec{WireName: "endpoint_uri"},
+	"Subnetwork":       ubx.FieldSpec{WireName: "subnetwork"},
+}
 
 var Backup_ServiceRevision_HiveMetastoreConfig_AuxiliaryVersions_NetworkConfigFields = ubx.FieldMap{
-		"Consumers": ubx.FieldSpec{
-			WireName: "consumers",
-			Kind: "list",
-			Fields: Backup_ServiceRevision_HiveMetastoreConfig_AuxiliaryVersions_NetworkConfig_ConsumersFields,
-		},
-	}
+	"Consumers": ubx.FieldSpec{
+		WireName: "consumers",
+		Kind:     "list",
+		Fields:   Backup_ServiceRevision_HiveMetastoreConfig_AuxiliaryVersions_NetworkConfig_ConsumersFields,
+	},
+}
 
 var Backup_ServiceRevision_HiveMetastoreConfig_AuxiliaryVersionsFields = ubx.FieldMap{
-		"ConfigOverrides": ubx.FieldSpec{WireName: "config_overrides"},
-		"NetworkConfig": ubx.FieldSpec{
-			WireName: "network_config",
-			Kind: "object",
-			Fields: Backup_ServiceRevision_HiveMetastoreConfig_AuxiliaryVersions_NetworkConfigFields,
-		},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"ConfigOverrides": ubx.FieldSpec{WireName: "config_overrides"},
+	"NetworkConfig": ubx.FieldSpec{
+		WireName: "network_config",
+		Kind:     "object",
+		Fields:   Backup_ServiceRevision_HiveMetastoreConfig_AuxiliaryVersions_NetworkConfigFields,
+	},
+	"Version": ubx.FieldSpec{WireName: "version"},
+}
 
 var Backup_ServiceRevision_HiveMetastoreConfig_KerberosConfig_KeytabFields = ubx.FieldMap{
-		"CloudSecret": ubx.FieldSpec{WireName: "cloud_secret"},
-	}
+	"CloudSecret": ubx.FieldSpec{WireName: "cloud_secret"},
+}
 
 var Backup_ServiceRevision_HiveMetastoreConfig_KerberosConfigFields = ubx.FieldMap{
-		"Keytab": ubx.FieldSpec{
-			WireName: "keytab",
-			Kind: "object",
-			Fields: Backup_ServiceRevision_HiveMetastoreConfig_KerberosConfig_KeytabFields,
-		},
-		"Krb5ConfigGcsUri": ubx.FieldSpec{WireName: "krb5_config_gcs_uri"},
-		"Principal": ubx.FieldSpec{WireName: "principal"},
-	}
+	"Keytab": ubx.FieldSpec{
+		WireName: "keytab",
+		Kind:     "object",
+		Fields:   Backup_ServiceRevision_HiveMetastoreConfig_KerberosConfig_KeytabFields,
+	},
+	"Krb5ConfigGcsUri": ubx.FieldSpec{WireName: "krb5_config_gcs_uri"},
+	"Principal":        ubx.FieldSpec{WireName: "principal"},
+}
 
 var Backup_ServiceRevision_HiveMetastoreConfigFields = ubx.FieldMap{
-		"AuxiliaryVersions": ubx.FieldSpec{
-			WireName: "auxiliary_versions",
-			Kind: "map",
-			Fields: Backup_ServiceRevision_HiveMetastoreConfig_AuxiliaryVersionsFields,
-		},
-		"ConfigOverrides": ubx.FieldSpec{WireName: "config_overrides"},
-		"EndpointProtocol": ubx.FieldSpec{WireName: "endpoint_protocol"},
-		"KerberosConfig": ubx.FieldSpec{
-			WireName: "kerberos_config",
-			Kind: "object",
-			Fields: Backup_ServiceRevision_HiveMetastoreConfig_KerberosConfigFields,
-		},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"AuxiliaryVersions": ubx.FieldSpec{
+		WireName: "auxiliary_versions",
+		Kind:     "map",
+		Fields:   Backup_ServiceRevision_HiveMetastoreConfig_AuxiliaryVersionsFields,
+	},
+	"ConfigOverrides":  ubx.FieldSpec{WireName: "config_overrides"},
+	"EndpointProtocol": ubx.FieldSpec{WireName: "endpoint_protocol"},
+	"KerberosConfig": ubx.FieldSpec{
+		WireName: "kerberos_config",
+		Kind:     "object",
+		Fields:   Backup_ServiceRevision_HiveMetastoreConfig_KerberosConfigFields,
+	},
+	"Version": ubx.FieldSpec{WireName: "version"},
+}
 
 var Backup_ServiceRevision_MaintenanceWindowFields = ubx.FieldMap{
-		"DayOfWeek": ubx.FieldSpec{WireName: "day_of_week"},
-		"HourOfDay": ubx.FieldSpec{WireName: "hour_of_day"},
-	}
+	"DayOfWeek": ubx.FieldSpec{WireName: "day_of_week"},
+	"HourOfDay": ubx.FieldSpec{WireName: "hour_of_day"},
+}
 
 var Backup_ServiceRevision_MetadataIntegration_DataCatalogConfigFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+}
 
 var Backup_ServiceRevision_MetadataIntegrationFields = ubx.FieldMap{
-		"DataCatalogConfig": ubx.FieldSpec{
-			WireName: "data_catalog_config",
-			Kind: "object",
-			Fields: Backup_ServiceRevision_MetadataIntegration_DataCatalogConfigFields,
-		},
-	}
+	"DataCatalogConfig": ubx.FieldSpec{
+		WireName: "data_catalog_config",
+		Kind:     "object",
+		Fields:   Backup_ServiceRevision_MetadataIntegration_DataCatalogConfigFields,
+	},
+}
 
 var Backup_ServiceRevision_MetadataManagementActivity_MetadataExportsFields = ubx.FieldMap{
-		"DatabaseDumpType": ubx.FieldSpec{WireName: "database_dump_type"},
-		"DestinationGcsUri": ubx.FieldSpec{WireName: "destination_gcs_uri"},
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"DatabaseDumpType":  ubx.FieldSpec{WireName: "database_dump_type"},
+	"DestinationGcsUri": ubx.FieldSpec{WireName: "destination_gcs_uri"},
+	"EndTime":           ubx.FieldSpec{WireName: "end_time"},
+	"StartTime":         ubx.FieldSpec{WireName: "start_time"},
+	"State":             ubx.FieldSpec{WireName: "state"},
+}
 
 var Backup_ServiceRevision_MetadataManagementActivity_RestoresFields = ubx.FieldMap{
-		"Backup": ubx.FieldSpec{WireName: "backup"},
-		"BackupLocation": ubx.FieldSpec{WireName: "backup_location"},
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Backup":         ubx.FieldSpec{WireName: "backup"},
+	"BackupLocation": ubx.FieldSpec{WireName: "backup_location"},
+	"Details":        ubx.FieldSpec{WireName: "details"},
+	"EndTime":        ubx.FieldSpec{WireName: "end_time"},
+	"StartTime":      ubx.FieldSpec{WireName: "start_time"},
+	"State":          ubx.FieldSpec{WireName: "state"},
+	"Type":           ubx.FieldSpec{WireName: "type"},
+}
 
 var Backup_ServiceRevision_MetadataManagementActivityFields = ubx.FieldMap{
-		"MetadataExports": ubx.FieldSpec{
-			WireName: "metadata_exports",
-			Kind: "list",
-			Fields: Backup_ServiceRevision_MetadataManagementActivity_MetadataExportsFields,
-		},
-		"Restores": ubx.FieldSpec{
-			WireName: "restores",
-			Kind: "list",
-			Fields: Backup_ServiceRevision_MetadataManagementActivity_RestoresFields,
-		},
-	}
+	"MetadataExports": ubx.FieldSpec{
+		WireName: "metadata_exports",
+		Kind:     "list",
+		Fields:   Backup_ServiceRevision_MetadataManagementActivity_MetadataExportsFields,
+	},
+	"Restores": ubx.FieldSpec{
+		WireName: "restores",
+		Kind:     "list",
+		Fields:   Backup_ServiceRevision_MetadataManagementActivity_RestoresFields,
+	},
+}
 
 var Backup_ServiceRevision_ScalingConfig_AutoscalingConfig_LimitConfigFields = ubx.FieldMap{
-		"MaxScalingFactor": ubx.FieldSpec{WireName: "max_scaling_factor"},
-		"MinScalingFactor": ubx.FieldSpec{WireName: "min_scaling_factor"},
-	}
+	"MaxScalingFactor": ubx.FieldSpec{WireName: "max_scaling_factor"},
+	"MinScalingFactor": ubx.FieldSpec{WireName: "min_scaling_factor"},
+}
 
 var Backup_ServiceRevision_ScalingConfig_AutoscalingConfigFields = ubx.FieldMap{
-		"AutoscalingEnabled": ubx.FieldSpec{WireName: "autoscaling_enabled"},
-		"AutoscalingFactor": ubx.FieldSpec{WireName: "autoscaling_factor"},
-		"LimitConfig": ubx.FieldSpec{
-			WireName: "limit_config",
-			Kind: "object",
-			Fields: Backup_ServiceRevision_ScalingConfig_AutoscalingConfig_LimitConfigFields,
-		},
-	}
+	"AutoscalingEnabled": ubx.FieldSpec{WireName: "autoscaling_enabled"},
+	"AutoscalingFactor":  ubx.FieldSpec{WireName: "autoscaling_factor"},
+	"LimitConfig": ubx.FieldSpec{
+		WireName: "limit_config",
+		Kind:     "object",
+		Fields:   Backup_ServiceRevision_ScalingConfig_AutoscalingConfig_LimitConfigFields,
+	},
+}
 
 var Backup_ServiceRevision_ScalingConfigFields = ubx.FieldMap{
-		"AutoscalingConfig": ubx.FieldSpec{
-			WireName: "autoscaling_config",
-			Kind: "object",
-			Fields: Backup_ServiceRevision_ScalingConfig_AutoscalingConfigFields,
-		},
-		"InstanceSize": ubx.FieldSpec{WireName: "instance_size"},
-		"ScalingFactor": ubx.FieldSpec{WireName: "scaling_factor"},
-	}
+	"AutoscalingConfig": ubx.FieldSpec{
+		WireName: "autoscaling_config",
+		Kind:     "object",
+		Fields:   Backup_ServiceRevision_ScalingConfig_AutoscalingConfigFields,
+	},
+	"InstanceSize":  ubx.FieldSpec{WireName: "instance_size"},
+	"ScalingFactor": ubx.FieldSpec{WireName: "scaling_factor"},
+}
 
 var Backup_ServiceRevision_ScheduledBackup_LatestBackupFields = ubx.FieldMap{
-		"BackupId": ubx.FieldSpec{WireName: "backup_id"},
-		"Duration": ubx.FieldSpec{WireName: "duration"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"BackupId":  ubx.FieldSpec{WireName: "backup_id"},
+	"Duration":  ubx.FieldSpec{WireName: "duration"},
+	"StartTime": ubx.FieldSpec{WireName: "start_time"},
+	"State":     ubx.FieldSpec{WireName: "state"},
+}
 
 var Backup_ServiceRevision_ScheduledBackupFields = ubx.FieldMap{
-		"BackupLocation": ubx.FieldSpec{WireName: "backup_location"},
-		"CronSchedule": ubx.FieldSpec{WireName: "cron_schedule"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"LatestBackup": ubx.FieldSpec{
-			WireName: "latest_backup",
-			Kind: "object",
-			Fields: Backup_ServiceRevision_ScheduledBackup_LatestBackupFields,
-		},
-		"NextScheduledTime": ubx.FieldSpec{WireName: "next_scheduled_time"},
-		"TimeZone": ubx.FieldSpec{WireName: "time_zone"},
-	}
+	"BackupLocation": ubx.FieldSpec{WireName: "backup_location"},
+	"CronSchedule":   ubx.FieldSpec{WireName: "cron_schedule"},
+	"Enabled":        ubx.FieldSpec{WireName: "enabled"},
+	"LatestBackup": ubx.FieldSpec{
+		WireName: "latest_backup",
+		Kind:     "object",
+		Fields:   Backup_ServiceRevision_ScheduledBackup_LatestBackupFields,
+	},
+	"NextScheduledTime": ubx.FieldSpec{WireName: "next_scheduled_time"},
+	"TimeZone":          ubx.FieldSpec{WireName: "time_zone"},
+}
 
 var Backup_ServiceRevision_TelemetryConfigFields = ubx.FieldMap{
-		"LogFormat": ubx.FieldSpec{WireName: "log_format"},
-	}
+	"LogFormat": ubx.FieldSpec{WireName: "log_format"},
+}
 
 var Backup_ServiceRevisionFields = ubx.FieldMap{
-		"ArtifactGcsUri": ubx.FieldSpec{WireName: "artifact_gcs_uri"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DatabaseType": ubx.FieldSpec{WireName: "database_type"},
-		"DeletionProtection": ubx.FieldSpec{WireName: "deletion_protection"},
-		"EncryptionConfig": ubx.FieldSpec{
-			WireName: "encryption_config",
-			Kind: "object",
-			Fields: Backup_ServiceRevision_EncryptionConfigFields,
-		},
-		"EndpointUri": ubx.FieldSpec{WireName: "endpoint_uri"},
-		"HiveMetastoreConfig": ubx.FieldSpec{
-			WireName: "hive_metastore_config",
-			Kind: "object",
-			Fields: Backup_ServiceRevision_HiveMetastoreConfigFields,
-		},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"MaintenanceWindow": ubx.FieldSpec{
-			WireName: "maintenance_window",
-			Kind: "object",
-			Fields: Backup_ServiceRevision_MaintenanceWindowFields,
-		},
-		"MetadataIntegration": ubx.FieldSpec{
-			WireName: "metadata_integration",
-			Kind: "object",
-			Fields: Backup_ServiceRevision_MetadataIntegrationFields,
-		},
-		"MetadataManagementActivity": ubx.FieldSpec{
-			WireName: "metadata_management_activity",
-			Kind: "object",
-			Fields: Backup_ServiceRevision_MetadataManagementActivityFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"NetworkConfig": ubx.FieldSpec{
-			WireName: "network_config",
-			Kind: "object",
-			Fields: Backup_ServiceRevision_HiveMetastoreConfig_AuxiliaryVersions_NetworkConfigFields,
-		},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"ReleaseChannel": ubx.FieldSpec{WireName: "release_channel"},
-		"ScalingConfig": ubx.FieldSpec{
-			WireName: "scaling_config",
-			Kind: "object",
-			Fields: Backup_ServiceRevision_ScalingConfigFields,
-		},
-		"ScheduledBackup": ubx.FieldSpec{
-			WireName: "scheduled_backup",
-			Kind: "object",
-			Fields: Backup_ServiceRevision_ScheduledBackupFields,
-		},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"StateMessage": ubx.FieldSpec{WireName: "state_message"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TelemetryConfig": ubx.FieldSpec{
-			WireName: "telemetry_config",
-			Kind: "object",
-			Fields: Backup_ServiceRevision_TelemetryConfigFields,
-		},
-		"Tier": ubx.FieldSpec{WireName: "tier"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-	}
+	"ArtifactGcsUri":     ubx.FieldSpec{WireName: "artifact_gcs_uri"},
+	"CreateTime":         ubx.FieldSpec{WireName: "create_time"},
+	"DatabaseType":       ubx.FieldSpec{WireName: "database_type"},
+	"DeletionProtection": ubx.FieldSpec{WireName: "deletion_protection"},
+	"EncryptionConfig": ubx.FieldSpec{
+		WireName: "encryption_config",
+		Kind:     "object",
+		Fields:   Backup_ServiceRevision_EncryptionConfigFields,
+	},
+	"EndpointUri": ubx.FieldSpec{WireName: "endpoint_uri"},
+	"HiveMetastoreConfig": ubx.FieldSpec{
+		WireName: "hive_metastore_config",
+		Kind:     "object",
+		Fields:   Backup_ServiceRevision_HiveMetastoreConfigFields,
+	},
+	"Labels": ubx.FieldSpec{WireName: "labels"},
+	"MaintenanceWindow": ubx.FieldSpec{
+		WireName: "maintenance_window",
+		Kind:     "object",
+		Fields:   Backup_ServiceRevision_MaintenanceWindowFields,
+	},
+	"MetadataIntegration": ubx.FieldSpec{
+		WireName: "metadata_integration",
+		Kind:     "object",
+		Fields:   Backup_ServiceRevision_MetadataIntegrationFields,
+	},
+	"MetadataManagementActivity": ubx.FieldSpec{
+		WireName: "metadata_management_activity",
+		Kind:     "object",
+		Fields:   Backup_ServiceRevision_MetadataManagementActivityFields,
+	},
+	"Name":    ubx.FieldSpec{WireName: "name"},
+	"Network": ubx.FieldSpec{WireName: "network"},
+	"NetworkConfig": ubx.FieldSpec{
+		WireName: "network_config",
+		Kind:     "object",
+		Fields:   Backup_ServiceRevision_HiveMetastoreConfig_AuxiliaryVersions_NetworkConfigFields,
+	},
+	"Port":           ubx.FieldSpec{WireName: "port"},
+	"ReleaseChannel": ubx.FieldSpec{WireName: "release_channel"},
+	"ScalingConfig": ubx.FieldSpec{
+		WireName: "scaling_config",
+		Kind:     "object",
+		Fields:   Backup_ServiceRevision_ScalingConfigFields,
+	},
+	"ScheduledBackup": ubx.FieldSpec{
+		WireName: "scheduled_backup",
+		Kind:     "object",
+		Fields:   Backup_ServiceRevision_ScheduledBackupFields,
+	},
+	"State":        ubx.FieldSpec{WireName: "state"},
+	"StateMessage": ubx.FieldSpec{WireName: "state_message"},
+	"Tags":         ubx.FieldSpec{WireName: "tags"},
+	"TelemetryConfig": ubx.FieldSpec{
+		WireName: "telemetry_config",
+		Kind:     "object",
+		Fields:   Backup_ServiceRevision_TelemetryConfigFields,
+	},
+	"Tier":       ubx.FieldSpec{WireName: "tier"},
+	"Uid":        ubx.FieldSpec{WireName: "uid"},
+	"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+}
 
 type BackupConfig struct {
-	// Output only. The time when the backup was started.
-	CreateTime any
 	// Optional. The description of the backup.
 	Description any
-	// Output only. The time when the backup finished creating.
-	EndTime any
 	// Immutable. Identifier. The relative resource name of the backup, in the following form:projects/{project_number}/locations/{location_id}/services/{service_id}/backups/{backup_id}
 	Name any
-	// Output only. Services that are restoring from the backup.
-	RestoringServices any
 	// A managed metastore service that serves metadata queries.
 	ServiceRevision any
-	// Output only. The current state of the backup.
-	State any
 }
 
 type BackupAttrs struct {
@@ -458,16 +450,12 @@ type BackupAttrs struct {
 var Backup = ubx.ResourceBinding{
 	WireType: "google_metastore_backup",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"RestoringServices": ubx.FieldSpec{WireName: "restoring_services"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"ServiceRevision": ubx.FieldSpec{
 			WireName: "service_revision",
-			Kind: "object",
-			Fields: Backup_ServiceRevisionFields,
+			Kind:     "object",
+			Fields:   Backup_ServiceRevisionFields,
 		},
-		"State": ubx.FieldSpec{WireName: "state"},
 	},
 }

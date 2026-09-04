@@ -4,16 +4,10 @@ package logging
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LogScopeConfig struct {
-	// Output only. The creation timestamp of the log scope.
-	CreateTime any
 	// Optional. Describes this log scope.The maximum length of the description is 8000 characters.
 	Description any
-	// Output only. The resource name of the log scope.Log scopes are only available in the global location. For example:projects/my-project/locations/global/logScopes/my-log-scope
-	Name any
 	// Required. Names of one or more parent resources (organizations and folders are not supported.): projects/[PROJECT_ID]May alternatively be one or more views: projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]A log scope can include a maximum of 5 projects and a maximum of 100 resources in total.
 	ResourceNames any
-	// Output only. The last update timestamp of the log scope.
-	UpdateTime any
 }
 
 type LogScopeAttrs struct {
@@ -32,10 +26,7 @@ type LogScopeAttrs struct {
 var LogScope = ubx.ResourceBinding{
 	WireType: "google_logging_log_scope",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Description":   ubx.FieldSpec{WireName: "description"},
 		"ResourceNames": ubx.FieldSpec{WireName: "resource_names"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

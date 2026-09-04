@@ -8,18 +8,12 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class IssueConfig:
-    # Output only. The time at which this issue was created.
-    create_time: Any = None
     # Representative description of the issue.
     display_description: Any = None
     # The representative name for the issue.
     display_name: Any = None
     # Immutable. The resource name of the issue. Format: projects/{project}/locations/{location}/issueModels/{issue_model}/issues/{issue}
     name: Any = None
-    # Output only. Resource names of the sample representative utterances that match to this issue.
-    sample_utterances: Any = None
-    # Output only. The most recent time that this issue was updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class IssueAttrs:
@@ -39,11 +33,8 @@ class IssueAttrs:
 Issue = ubx.ResourceBinding(
     wire_type="google_contactcenterinsights_issue",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "display_description": ubx.FieldSpec(wire_name="display_description"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "sample_utterances": ubx.FieldSpec(wire_name="sample_utterances"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

@@ -30,8 +30,8 @@ type AlphaSnapshotSettingConfig struct {
 }
 
 type AlphaSnapshotSettingAttrs struct {
-	AccessLocation any
-	Project any
+	AccessLocation  any
+	Project         any
 	StorageLocation any
 }
 

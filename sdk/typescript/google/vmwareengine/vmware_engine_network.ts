@@ -6,30 +6,13 @@ export interface VmwareEngineNetwork_VpcNetworks {
   type?: string | Computed<string>;
 }
 
-const VmwareEngineNetwork_VpcNetworksFields: FieldMap = {
-  network: "network",
-  type: "type",
-};
-
 export interface VmwareEngineNetworkConfig {
-  /** Output only. Creation time of this resource. */
-  createTime?: string | Computed<string>;
   /** User-provided description for this VMware Engine network. */
   description?: string | Computed<string>;
   /** Checksum that may be sent on update and delete requests to ensure that the user-provided value is up to date before the server processes a request. The server computes checksums based on the value of other fields in the request. */
   etag?: string | Computed<string>;
-  /** Output only. Identifier. The resource name of the VMware Engine network. Resource names are schemeless URIs that follow the conventions in https://cloud.google.com/apis/design/resource_names. For example: `projects/my-project/locations/global/vmwareEngineNetworks/my-network` */
-  name?: string | Computed<string>;
-  /** Output only. State of the VMware Engine network. */
-  state?: string | Computed<string>;
   /** Required. VMware Engine network type. */
   type?: string | Computed<string>;
-  /** Output only. System-generated unique identifier for the resource. */
-  uid?: string | Computed<string>;
-  /** Output only. Last update time of this resource. */
-  updateTime?: string | Computed<string>;
-  /** Output only. VMware Engine service VPC networks that provide connectivity from a private cloud to customer projects, the internet, and other Google Cloud services. */
-  vpcNetworks?: VmwareEngineNetwork_VpcNetworks[] | Computed<VmwareEngineNetwork_VpcNetworks[]>;
 }
 
 export interface VmwareEngineNetworkAttrs {
@@ -56,18 +39,8 @@ export interface VmwareEngineNetworkAttrs {
 export const VmwareEngineNetwork: ResourceBinding<VmwareEngineNetworkConfig, VmwareEngineNetworkAttrs> = {
   wireType: "google_vmwareengine_vmware_engine_network",
   fields: {
-    createTime: "create_time",
     description: "description",
     etag: "etag",
-    name: "name",
-    state: "state",
     type: "type",
-    uid: "uid",
-    updateTime: "update_time",
-    vpcNetworks: {
-      wireName: "vpc_networks",
-      kind: "list",
-      fields: VmwareEngineNetwork_VpcNetworksFields,
-    },
   },
 };

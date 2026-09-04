@@ -46,8 +46,6 @@ const Realm_DiscoveryMetadataFields: FieldMap = {
 export interface RealmConfig {
   /** Aggregated data for the Realm. */
   aggregatedData?: Realm_AggregatedData | Computed<Realm_AggregatedData>;
-  /** Output only. The time at which the Realm was created. */
-  createTime?: string | Computed<string>;
   /** Metadata about a discovered resource, tracking event times, state, and source information. */
   discoveryMetadata?: Realm_DiscoveryMetadata | Computed<Realm_DiscoveryMetadata>;
   /** Optional. IP version of the Realm. */
@@ -62,8 +60,6 @@ export interface RealmConfig {
   registryBook?: string | Computed<string>;
   /** Required. Traffic type of the Realm. */
   trafficType?: string | Computed<string>;
-  /** Output only. The time at which the Realm was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface RealmAttrs {
@@ -97,7 +93,6 @@ export const Realm: ResourceBinding<RealmConfig, RealmAttrs> = {
       kind: "object",
       fields: Realm_AggregatedDataFields,
     },
-    createTime: "create_time",
     discoveryMetadata: {
       wireName: "discovery_metadata",
       kind: "object",
@@ -109,6 +104,5 @@ export const Realm: ResourceBinding<RealmConfig, RealmAttrs> = {
     name: "name",
     registryBook: "registry_book",
     trafficType: "traffic_type",
-    updateTime: "update_time",
   },
 };

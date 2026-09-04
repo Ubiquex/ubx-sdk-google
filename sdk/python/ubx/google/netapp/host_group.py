@@ -8,8 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class HostGroupConfig:
-    # Output only. Create time of the host group.
-    create_time: Any = None
     # Optional. Description of the host group.
     description: Any = None
     # Required. The list of hosts associated with the host group.
@@ -20,8 +18,6 @@ class HostGroupConfig:
     name: Any = None
     # Required. The OS type of the host group. It indicates the type of operating system used by all of the hosts in the HostGroup. All hosts in a HostGroup must be of the same OS type. This can be set only when creating a HostGroup.
     os_type: Any = None
-    # Output only. State of the host group.
-    state: Any = None
     # Required. Type of the host group.
     type: Any = None
 
@@ -47,13 +43,11 @@ class HostGroupAttrs:
 HostGroup = ubx.ResourceBinding(
     wire_type="google_netapp_host_group",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "hosts": ubx.FieldSpec(wire_name="hosts"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "name": ubx.FieldSpec(wire_name="name"),
         "os_type": ubx.FieldSpec(wire_name="os_type"),
-        "state": ubx.FieldSpec(wire_name="state"),
         "type": ubx.FieldSpec(wire_name="type"),
     },
 )

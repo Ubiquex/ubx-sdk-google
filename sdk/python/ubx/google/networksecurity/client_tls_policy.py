@@ -48,8 +48,6 @@ _ClientTlsPolicy_ClientCertificateFields = {
 class ClientTlsPolicyConfig:
     # Specification of certificate provider. Defines the mechanism to obtain the certificate and private key for peer to peer authentication.
     client_certificate: Any = None
-    # Output only. The timestamp when the resource was created.
-    create_time: Any = None
     # Optional. Free-text description of the resource.
     description: Any = None
     # Optional. Set of label tags associated with the resource.
@@ -60,8 +58,6 @@ class ClientTlsPolicyConfig:
     server_validation_ca: Any = None
     # Optional. Server Name Indication string to present to the server during TLS handshake. E.g: "secure.example.com".
     sni: Any = None
-    # Output only. The timestamp when the resource was updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class ClientTlsPolicyAttrs:
@@ -90,7 +86,6 @@ ClientTlsPolicy = ubx.ResourceBinding(
             kind="object",
             fields=_ClientTlsPolicy_ClientCertificateFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "name": ubx.FieldSpec(wire_name="name"),
@@ -100,6 +95,5 @@ ClientTlsPolicy = ubx.ResourceBinding(
             fields=_ClientTlsPolicy_ClientCertificateFields,
         ),
         "sni": ubx.FieldSpec(wire_name="sni"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

@@ -4,54 +4,30 @@ package apigee
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type App_Attributes struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type App_Credentials_ApiProducts struct {
 	Apiproduct any
-	Status any
+	Status     any
 }
 
 type App_Credentials struct {
-	ApiProducts any
-	Attributes any
-	ConsumerKey any
+	ApiProducts    any
+	Attributes     any
+	ConsumerKey    any
 	ConsumerSecret any
-	ExpiresAt any
-	IssuedAt any
-	Scopes any
-	Status any
+	ExpiresAt      any
+	IssuedAt       any
+	Scopes         any
+	Status         any
 }
 
 var App_AttributesFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
-
-var App_Credentials_ApiProductsFields = ubx.FieldMap{
-		"Apiproduct": ubx.FieldSpec{WireName: "apiproduct"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-	}
-
-var App_CredentialsFields = ubx.FieldMap{
-		"ApiProducts": ubx.FieldSpec{
-			WireName: "api_products",
-			Kind: "list",
-			Fields: App_Credentials_ApiProductsFields,
-		},
-		"Attributes": ubx.FieldSpec{
-			WireName: "attributes",
-			Kind: "list",
-			Fields: App_AttributesFields,
-		},
-		"ConsumerKey": ubx.FieldSpec{WireName: "consumer_key"},
-		"ConsumerSecret": ubx.FieldSpec{WireName: "consumer_secret"},
-		"ExpiresAt": ubx.FieldSpec{WireName: "expires_at"},
-		"IssuedAt": ubx.FieldSpec{WireName: "issued_at"},
-		"Scopes": ubx.FieldSpec{WireName: "scopes"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type AppConfig struct {
 	// List of API products associated with the AppGroup app.
@@ -64,14 +40,8 @@ type AppConfig struct {
 	Attributes any
 	// Callback URL used by OAuth 2.0 authorization servers to communicate authorization codes back to AppGroup apps.
 	CallbackUrl any
-	// Output only. Time the AppGroup app was created in milliseconds since epoch.
-	CreatedAt any
-	// Output only. Set of credentials for the AppGroup app consisting of the consumer key/secret pairs associated with the API products.
-	Credentials any
 	// Immutable. Expiration time, in seconds, for the consumer key that is generated for the AppGroup app. If not set or left to the default value of `-1`, the API key never expires. The expiration time can't be updated after it is set.
 	KeyExpiresIn any
-	// Output only. Time the AppGroup app was modified in milliseconds since epoch.
-	LastModifiedAt any
 	// Immutable. Name of the AppGroup app whose resource name format is of syntax (organizations/*/appgroups/*/apps/*).
 	Name any
 	// Scopes to apply to the AppGroup app. The specified scopes must already exist for the API product that you associate with the AppGroup app.
@@ -111,24 +81,17 @@ var App = ubx.ResourceBinding{
 	WireType: "google_apigee_app",
 	Fields: ubx.FieldMap{
 		"ApiProducts": ubx.FieldSpec{WireName: "api_products"},
-		"AppGroup": ubx.FieldSpec{WireName: "app_group"},
-		"AppId": ubx.FieldSpec{WireName: "app_id"},
+		"AppGroup":    ubx.FieldSpec{WireName: "app_group"},
+		"AppId":       ubx.FieldSpec{WireName: "app_id"},
 		"Attributes": ubx.FieldSpec{
 			WireName: "attributes",
-			Kind: "list",
-			Fields: App_AttributesFields,
+			Kind:     "list",
+			Fields:   App_AttributesFields,
 		},
-		"CallbackUrl": ubx.FieldSpec{WireName: "callback_url"},
-		"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
-		"Credentials": ubx.FieldSpec{
-			WireName: "credentials",
-			Kind: "list",
-			Fields: App_CredentialsFields,
-		},
+		"CallbackUrl":  ubx.FieldSpec{WireName: "callback_url"},
 		"KeyExpiresIn": ubx.FieldSpec{WireName: "key_expires_in"},
-		"LastModifiedAt": ubx.FieldSpec{WireName: "last_modified_at"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Scopes": ubx.FieldSpec{WireName: "scopes"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"Name":         ubx.FieldSpec{WireName: "name"},
+		"Scopes":       ubx.FieldSpec{WireName: "scopes"},
+		"Status":       ubx.FieldSpec{WireName: "status"},
 	},
 }

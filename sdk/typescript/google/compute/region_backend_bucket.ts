@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface RegionBackendBucket_CdnPolicy_BypassCacheOnRequestHeaders {
-  /** The name of the request header to match. If this header is present in a request, the CDN bypasses the cache for that request. (AI-inferred) */
   headerName?: string | Computed<string>;
 }
 
@@ -14,9 +13,7 @@ export interface RegionBackendBucket_CdnPolicy_CacheKeyPolicy {
 }
 
 export interface RegionBackendBucket_CdnPolicy_NegativeCachingPolicy {
-  /** The HTTP status code for which the negative caching TTL applies. This defines which response status codes will be cached negatively with the specified TTL. (AI-inferred) */
   code?: number | Computed<number>;
-  /** The TTL (in seconds) for caching responses with the corresponding status code. (AI-inferred) */
   ttl?: number | Computed<number>;
 }
 
@@ -53,7 +50,6 @@ export interface RegionBackendBucket_Params {
 }
 
 export interface RegionBackendBucket_UsedBy {
-  /** The URL of the resource that is currently using this backend bucket. This is the full reference to the using resource, such as a URL map or load balancer. (AI-inferred) */
   reference?: string | Computed<string>;
 }
 
@@ -102,10 +98,6 @@ const RegionBackendBucket_ParamsFields: FieldMap = {
   resourceManagerTags: "resource_manager_tags",
 };
 
-const RegionBackendBucket_UsedByFields: FieldMap = {
-  reference: "reference",
-};
-
 export interface RegionBackendBucketConfig {
   /** Cloud Storage bucket name. */
   bucketName?: string | Computed<string>;
@@ -125,20 +117,14 @@ export interface RegionBackendBucketConfig {
   enableCdn?: boolean | Computed<boolean>;
   /** [Output Only] Unique identifier for the resource; defined by the server. */
   id?: string | Computed<string>;
-  /** Output only. Type of the resource. */
-  kind?: string | Computed<string>;
   /** The value can only be INTERNAL_MANAGED for cross-region internal layer 7 load balancer. If loadBalancingScheme is not specified, the backend bucket can be used by classic global external load balancers, or global application external load balancers, or both. */
   loadBalancingScheme?: string | Computed<string>;
   /** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
   name?: string | Computed<string>;
   /** Additional Backend Bucket parameters. */
   params?: RegionBackendBucket_Params | Computed<RegionBackendBucket_Params>;
-  /** Output only. [Output Only] URL of the region where the regional backend bucket resides. This field is not applicable to global backend buckets. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body. */
-  region?: string | Computed<string>;
   /** [Output Only] Server-defined URL for the resource. */
   selfLink?: string | Computed<string>;
-  /** Output only. [Output Only] List of resources referencing that backend bucket. */
-  usedBy?: RegionBackendBucket_UsedBy[] | Computed<RegionBackendBucket_UsedBy[]>;
 }
 
 export interface RegionBackendBucketAttrs {
@@ -192,7 +178,6 @@ export const RegionBackendBucket: ResourceBinding<RegionBackendBucketConfig, Reg
     edgeSecurityPolicy: "edge_security_policy",
     enableCdn: "enable_cdn",
     id: "id",
-    kind: "kind",
     loadBalancingScheme: "load_balancing_scheme",
     name: "name",
     params: {
@@ -200,12 +185,6 @@ export const RegionBackendBucket: ResourceBinding<RegionBackendBucketConfig, Reg
       kind: "object",
       fields: RegionBackendBucket_ParamsFields,
     },
-    region: "region",
     selfLink: "self_link",
-    usedBy: {
-      wireName: "used_by",
-      kind: "list",
-      fields: RegionBackendBucket_UsedByFields,
-    },
   },
 };

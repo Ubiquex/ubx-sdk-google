@@ -646,10 +646,6 @@ const Conversation_DataSourceFields: FieldMap = {
   },
 };
 
-const Conversation_DialogflowIntentsFields: FieldMap = {
-  displayName: "display_name",
-};
-
 const Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Annotations_AnnotationEndBoundaryFields: FieldMap = {
   transcriptIndex: "transcript_index",
   wordIndex: "word_index",
@@ -1024,240 +1020,6 @@ const Conversation_QualityMetadataFields: FieldMap = {
   waitDuration: "wait_duration",
 };
 
-const Conversation_RuntimeAnnotations_AnswerFeedbackFields: FieldMap = {
-  clicked: "clicked",
-  correctnessLevel: "correctness_level",
-  displayed: "displayed",
-};
-
-const Conversation_RuntimeAnnotations_ArticleSuggestionFields: FieldMap = {
-  confidenceScore: "confidence_score",
-  metadata: "metadata",
-  queryRecord: "query_record",
-  source: "source",
-  title: "title",
-  uri: "uri",
-};
-
-const Conversation_RuntimeAnnotations_CesEndSessionAnnotation_EndSessionFields: FieldMap = {
-  metadata: "metadata",
-};
-
-const Conversation_RuntimeAnnotations_CesEndSessionAnnotationFields: FieldMap = {
-  endSession: {
-    wireName: "end_session",
-    kind: "object",
-    fields: Conversation_RuntimeAnnotations_CesEndSessionAnnotation_EndSessionFields,
-  },
-};
-
-const Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks_AgentTransferFields: FieldMap = {
-  displayName: "display_name",
-  targetAgent: "target_agent",
-};
-
-const Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks_BlobFields: FieldMap = {
-  data: "data",
-  mimeType: "mime_type",
-};
-
-const Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks_ToolCall_ToolsetToolFields: FieldMap = {
-  toolId: "tool_id",
-  toolset: "toolset",
-};
-
-const Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks_ToolCallFields: FieldMap = {
-  agentName: "agent_name",
-  args: "args",
-  displayName: "display_name",
-  id: "id",
-  parentToolCallId: "parent_tool_call_id",
-  tool: "tool",
-  toolsetTool: {
-    wireName: "toolset_tool",
-    kind: "object",
-    fields: Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks_ToolCall_ToolsetToolFields,
-  },
-};
-
-const Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks_ToolResponseFields: FieldMap = {
-  agentName: "agent_name",
-  displayName: "display_name",
-  id: "id",
-  parentToolCallId: "parent_tool_call_id",
-  response: "response",
-  tool: "tool",
-  toolsetTool: {
-    wireName: "toolset_tool",
-    kind: "object",
-    fields: Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks_ToolCall_ToolsetToolFields,
-  },
-};
-
-const Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_ChunksFields: FieldMap = {
-  agentTransfer: {
-    wireName: "agent_transfer",
-    kind: "object",
-    fields: Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks_AgentTransferFields,
-  },
-  blob: {
-    wireName: "blob",
-    kind: "object",
-    fields: Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks_BlobFields,
-  },
-  defaultVariables: "default_variables",
-  image: {
-    wireName: "image",
-    kind: "object",
-    fields: Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks_BlobFields,
-  },
-  payload: "payload",
-  text: "text",
-  toolCall: {
-    wireName: "tool_call",
-    kind: "object",
-    fields: Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks_ToolCallFields,
-  },
-  toolResponse: {
-    wireName: "tool_response",
-    kind: "object",
-    fields: Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks_ToolResponseFields,
-  },
-  transcript: "transcript",
-  updatedVariables: "updated_variables",
-};
-
-const Conversation_RuntimeAnnotations_CesTurnAnnotation_MessagesFields: FieldMap = {
-  chunks: {
-    wireName: "chunks",
-    kind: "list",
-    fields: Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_ChunksFields,
-  },
-  eventTime: "event_time",
-  role: "role",
-};
-
-const Conversation_RuntimeAnnotations_CesTurnAnnotation_RootSpanFields: FieldMap = {
-  attributes: "attributes",
-  childSpans: "child_spans",
-  duration: "duration",
-  endTime: "end_time",
-  name: "name",
-  startTime: "start_time",
-};
-
-const Conversation_RuntimeAnnotations_CesTurnAnnotationFields: FieldMap = {
-  messages: {
-    wireName: "messages",
-    kind: "list",
-    fields: Conversation_RuntimeAnnotations_CesTurnAnnotation_MessagesFields,
-  },
-  rootSpan: {
-    wireName: "root_span",
-    kind: "object",
-    fields: Conversation_RuntimeAnnotations_CesTurnAnnotation_RootSpanFields,
-  },
-};
-
-const Conversation_RuntimeAnnotations_DialogflowInteractionFields: FieldMap = {
-  confidence: "confidence",
-  dialogflowIntentId: "dialogflow_intent_id",
-};
-
-const Conversation_RuntimeAnnotations_FaqAnswerFields: FieldMap = {
-  answer: "answer",
-  confidenceScore: "confidence_score",
-  metadata: "metadata",
-  queryRecord: "query_record",
-  question: "question",
-  source: "source",
-};
-
-const Conversation_RuntimeAnnotations_SmartComposeSuggestionFields: FieldMap = {
-  confidenceScore: "confidence_score",
-  metadata: "metadata",
-  queryRecord: "query_record",
-  suggestion: "suggestion",
-};
-
-const Conversation_RuntimeAnnotations_SmartReplyFields: FieldMap = {
-  confidenceScore: "confidence_score",
-  metadata: "metadata",
-  queryRecord: "query_record",
-  reply: "reply",
-};
-
-const Conversation_RuntimeAnnotations_UserInputFields: FieldMap = {
-  generatorName: "generator_name",
-  query: "query",
-  querySource: "query_source",
-};
-
-const Conversation_RuntimeAnnotationsFields: FieldMap = {
-  annotationId: "annotation_id",
-  answerFeedback: {
-    wireName: "answer_feedback",
-    kind: "object",
-    fields: Conversation_RuntimeAnnotations_AnswerFeedbackFields,
-  },
-  articleSuggestion: {
-    wireName: "article_suggestion",
-    kind: "object",
-    fields: Conversation_RuntimeAnnotations_ArticleSuggestionFields,
-  },
-  cesEndSessionAnnotation: {
-    wireName: "ces_end_session_annotation",
-    kind: "object",
-    fields: Conversation_RuntimeAnnotations_CesEndSessionAnnotationFields,
-  },
-  cesTurnAnnotation: {
-    wireName: "ces_turn_annotation",
-    kind: "object",
-    fields: Conversation_RuntimeAnnotations_CesTurnAnnotationFields,
-  },
-  conversationSummarizationSuggestion: {
-    wireName: "conversation_summarization_suggestion",
-    kind: "object",
-    fields: Conversation_LatestSummaryFields,
-  },
-  createTime: "create_time",
-  dialogflowInteraction: {
-    wireName: "dialogflow_interaction",
-    kind: "object",
-    fields: Conversation_RuntimeAnnotations_DialogflowInteractionFields,
-  },
-  endBoundary: {
-    wireName: "end_boundary",
-    kind: "object",
-    fields: Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Annotations_AnnotationEndBoundaryFields,
-  },
-  faqAnswer: {
-    wireName: "faq_answer",
-    kind: "object",
-    fields: Conversation_RuntimeAnnotations_FaqAnswerFields,
-  },
-  smartComposeSuggestion: {
-    wireName: "smart_compose_suggestion",
-    kind: "object",
-    fields: Conversation_RuntimeAnnotations_SmartComposeSuggestionFields,
-  },
-  smartReply: {
-    wireName: "smart_reply",
-    kind: "object",
-    fields: Conversation_RuntimeAnnotations_SmartReplyFields,
-  },
-  startBoundary: {
-    wireName: "start_boundary",
-    kind: "object",
-    fields: Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Annotations_AnnotationEndBoundaryFields,
-  },
-  userInput: {
-    wireName: "user_input",
-    kind: "object",
-    fields: Conversation_RuntimeAnnotations_UserInputFields,
-  },
-};
-
 const Conversation_Transcript_TranscriptSegments_DialogflowSegmentMetadataFields: FieldMap = {
   smartReplyAllowlistCovered: "smart_reply_allowlist_covered",
 };
@@ -1481,14 +1243,8 @@ export interface ConversationConfig {
   callMetadata?: Conversation_CallMetadata | Computed<Conversation_CallMetadata>;
   /** Info for correlating across conversations. */
   correlationInfo?: Conversation_CorrelationInfo | Computed<Conversation_CorrelationInfo>;
-  /** Output only. The time at which the conversation was created. */
-  createTime?: string | Computed<string>;
   /** The conversation source, which is a combination of transcript and audio. */
   dataSource?: Conversation_DataSource | Computed<Conversation_DataSource>;
-  /** Output only. All the matched Dialogflow intents in the call. The key corresponds to a Dialogflow intent, format: projects/{project}/agent/{agent}/intents/{intent} */
-  dialogflowIntents?: Record<string, Conversation_DialogflowIntents> | Computed<Record<string, Conversation_DialogflowIntents>>;
-  /** Output only. The duration of the conversation. */
-  duration?: string | Computed<string>;
   /** The time at which this conversation should expire. After this time, the conversation data and any associated analyses will be deleted. */
   expireTime?: string | Computed<string>;
   /** A map for the user to specify any custom fields. A maximum of 100 labels per conversation is allowed, with a maximum of 256 characters per entry. */
@@ -1509,18 +1265,12 @@ export interface ConversationConfig {
   obfuscatedUserId?: string | Computed<string>;
   /** Conversation metadata related to quality management. */
   qualityMetadata?: Conversation_QualityMetadata | Computed<Conversation_QualityMetadata>;
-  /** Output only. The annotations that were generated during the customer and agent interaction. */
-  runtimeAnnotations?: Conversation_RuntimeAnnotations[] | Computed<Conversation_RuntimeAnnotations[]>;
   /** The time at which the conversation started. */
   startTime?: string | Computed<string>;
   /** A message representing the transcript of a conversation. */
   transcript?: Conversation_Transcript | Computed<Conversation_Transcript>;
   /** Input only. The TTL for this resource. If specified, then this TTL will be used to calculate the expire time. */
   ttl?: string | Computed<string>;
-  /** Output only. The number of turns in the conversation. */
-  turnCount?: number | Computed<number>;
-  /** Output only. The most recent time at which the conversation was updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface ConversationAttrs {
@@ -1586,18 +1336,11 @@ export const Conversation: ResourceBinding<ConversationConfig, ConversationAttrs
       kind: "object",
       fields: Conversation_CorrelationInfoFields,
     },
-    createTime: "create_time",
     dataSource: {
       wireName: "data_source",
       kind: "object",
       fields: Conversation_DataSourceFields,
     },
-    dialogflowIntents: {
-      wireName: "dialogflow_intents",
-      kind: "map",
-      fields: Conversation_DialogflowIntentsFields,
-    },
-    duration: "duration",
     expireTime: "expire_time",
     labels: "labels",
     languageCode: "language_code",
@@ -1620,11 +1363,6 @@ export const Conversation: ResourceBinding<ConversationConfig, ConversationAttrs
       kind: "object",
       fields: Conversation_QualityMetadataFields,
     },
-    runtimeAnnotations: {
-      wireName: "runtime_annotations",
-      kind: "list",
-      fields: Conversation_RuntimeAnnotationsFields,
-    },
     startTime: "start_time",
     transcript: {
       wireName: "transcript",
@@ -1632,7 +1370,5 @@ export const Conversation: ResourceBinding<ConversationConfig, ConversationAttrs
       fields: Conversation_TranscriptFields,
     },
     ttl: "ttl",
-    turnCount: "turn_count",
-    updateTime: "update_time",
   },
 };

@@ -23,16 +23,10 @@ _Backup_EncryptionConfigFields = {
 
 @dataclasses.dataclass
 class BackupConfig:
-    # Output only. The time when the backup was started.
-    create_time: Any = None
     # Encryption configuration (i.e. CMEK).
     encryption_config: Any = None
-    # Output only. The time when the backup will be deleted.
-    expire_time: Any = None
     # Immutable. The relative resource name of the backup, in the following form: `projects/{project_number}/locations/{location_id}/instances/{instance_id}/backups/{backup}`
     name: Any = None
-    # Output only. The current state of the backup.
-    state: Any = None
 
 @dataclasses.dataclass
 class BackupAttrs:
@@ -50,14 +44,11 @@ class BackupAttrs:
 Backup = ubx.ResourceBinding(
     wire_type="google_looker_backup",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "encryption_config": ubx.FieldSpec(
             wire_name="encryption_config",
             kind="object",
             fields=_Backup_EncryptionConfigFields,
         ),
-        "expire_time": ubx.FieldSpec(wire_name="expire_time"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "state": ubx.FieldSpec(wire_name="state"),
     },
 )

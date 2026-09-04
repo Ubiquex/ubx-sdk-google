@@ -15,7 +15,7 @@ type V1alpha1ErrorFrame_OriginalFrame_AwsS3BucketDetails_ObjectsMetadata struct 
 
 type V1alpha1ErrorFrame_OriginalFrame_AwsS3BucketDetails_StorageClasses struct {
 	TotalBytes any
-	Type any
+	Type       any
 }
 
 type V1alpha1ErrorFrame_OriginalFrame_AwsS3BucketDetails_Versioning struct {
@@ -39,19 +39,19 @@ type V1alpha1ErrorFrame_OriginalFrame_DatabaseDeploymentDetails_AggregatedStats 
 
 type V1alpha1ErrorFrame_OriginalFrame_DatabaseDeploymentDetails_Mysql_Plugins struct {
 	Enabled any
-	Plugin any
+	Plugin  any
 	Version any
 }
 
 type V1alpha1ErrorFrame_OriginalFrame_DatabaseDeploymentDetails_Mysql_Properties struct {
-	Enabled any
+	Enabled      any
 	NumericValue any
-	Property any
+	Property     any
 }
 
 type V1alpha1ErrorFrame_OriginalFrame_DatabaseDeploymentDetails_Mysql_Variables struct {
 	Category any
-	Value any
+	Value    any
 	Variable any
 }
 
@@ -67,13 +67,13 @@ type V1alpha1ErrorFrame_OriginalFrame_DatabaseDeploymentDetails_Mysql struct {
 }
 
 type V1alpha1ErrorFrame_OriginalFrame_DatabaseDeploymentDetails_Postgresql_Settings struct {
-	BoolValue any
-	IntValue any
-	RealValue any
-	Setting any
-	Source any
+	BoolValue   any
+	IntValue    any
+	RealValue   any
+	Setting     any
+	Source      any
 	StringValue any
-	Unit any
+	Unit        any
 }
 
 type V1alpha1ErrorFrame_OriginalFrame_DatabaseDeploymentDetails_Postgresql struct {
@@ -84,18 +84,18 @@ type V1alpha1ErrorFrame_OriginalFrame_DatabaseDeploymentDetails_Postgresql struc
 }
 
 type V1alpha1ErrorFrame_OriginalFrame_DatabaseDeploymentDetails_SqlServer_Features struct {
-	Enabled any
+	Enabled     any
 	FeatureName any
 }
 
 type V1alpha1ErrorFrame_OriginalFrame_DatabaseDeploymentDetails_SqlServer_ServerFlags struct {
 	ServerFlagName any
-	Value any
-	ValueInUse any
+	Value          any
+	ValueInUse     any
 }
 
 type V1alpha1ErrorFrame_OriginalFrame_DatabaseDeploymentDetails_SqlServer_TraceFlags struct {
-	Scope any
+	Scope         any
 	TraceFlagName any
 }
 
@@ -109,15 +109,15 @@ type V1alpha1ErrorFrame_OriginalFrame_DatabaseDeploymentDetails_SqlServer struct
 }
 
 type V1alpha1ErrorFrame_OriginalFrame_DatabaseDeploymentDetails_Topology_Instances_Network struct {
-	HostNames any
-	IpAddresses any
+	HostNames         any
+	IpAddresses       any
 	PrimaryMacAddress any
 }
 
 type V1alpha1ErrorFrame_OriginalFrame_DatabaseDeploymentDetails_Topology_Instances struct {
 	InstanceName any
-	Network any
-	Role any
+	Network      any
+	Role         any
 }
 
 type V1alpha1ErrorFrame_OriginalFrame_DatabaseDeploymentDetails_Topology struct {
@@ -173,8 +173,8 @@ type V1alpha1ErrorFrame_OriginalFrame_DatabaseDetails_ParentDatabaseDeployment s
 
 type V1alpha1ErrorFrame_OriginalFrame_DatabaseDetails_Schemas_Mysql_StorageEngines struct {
 	EncryptedTableCount any
-	Engine any
-	TableCount any
+	Engine              any
+	TableCount          any
 }
 
 type V1alpha1ErrorFrame_OriginalFrame_DatabaseDetails_Schemas_Mysql struct {
@@ -183,16 +183,16 @@ type V1alpha1ErrorFrame_OriginalFrame_DatabaseDetails_Schemas_Mysql struct {
 
 type V1alpha1ErrorFrame_OriginalFrame_DatabaseDetails_Schemas_Objects struct {
 	Category any
-	Count any
+	Count    any
 }
 
 type V1alpha1ErrorFrame_OriginalFrame_DatabaseDetails_Schemas_Postgresql_PostgresqlExtensions struct {
 	Extension any
-	Version any
+	Version   any
 }
 
 type V1alpha1ErrorFrame_OriginalFrame_DatabaseDetails_Schemas_Postgresql struct {
-	ForeignTablesCount any
+	ForeignTablesCount   any
 	PostgresqlExtensions any
 }
 
@@ -201,11 +201,11 @@ type V1alpha1ErrorFrame_OriginalFrame_DatabaseDetails_Schemas_SqlServer struct {
 }
 
 type V1alpha1ErrorFrame_OriginalFrame_DatabaseDetails_Schemas struct {
-	Mysql any
-	Objects any
-	Postgresql any
-	SchemaName any
-	SqlServer any
+	Mysql           any
+	Objects         any
+	Postgresql      any
+	SchemaName      any
+	SqlServer       any
 	TablesSizeBytes any
 }
 
@@ -285,12 +285,12 @@ type V1alpha1ErrorFrame_OriginalFrame_MachineDetails_Architecture struct {
 
 type V1alpha1ErrorFrame_OriginalFrame_MachineDetails_DiskPartitions_Partitions_Entries struct {
 	CapacityBytes any
-	FileSystem any
-	FreeBytes any
-	MountPoint any
+	FileSystem    any
+	FreeBytes     any
+	MountPoint    any
 	SubPartitions any
-	Type any
-	Uuid any
+	Type          any
+	Uuid          any
 }
 
 type V1alpha1ErrorFrame_OriginalFrame_MachineDetails_DiskPartitions_Partitions struct {
@@ -308,16 +308,16 @@ type V1alpha1ErrorFrame_OriginalFrame_MachineDetails_DiskPartitions struct {
 }
 
 type V1alpha1ErrorFrame_OriginalFrame_MachineDetails_Disks_Disks_Entries struct {
-	CapacityBytes any
-	DiskLabel any
-	DiskLabelType any
-	FreeSpaceBytes any
-	HwAddress any
-	InterfaceType any
-	Partitions any
-	Status any
+	CapacityBytes      any
+	DiskLabel          any
+	DiskLabelType      any
+	FreeSpaceBytes     any
+	HwAddress          any
+	InterfaceType      any
+	Partitions         any
+	Status             any
 	TotalCapacityBytes any
-	TotalFreeBytes any
+	TotalFreeBytes     any
 }
 
 type V1alpha1ErrorFrame_OriginalFrame_MachineDetails_Disks_Disks struct {
@@ -337,11 +337,11 @@ type V1alpha1ErrorFrame_OriginalFrame_MachineDetails_Disks struct {
 }
 
 type V1alpha1ErrorFrame_OriginalFrame_MachineDetails_GuestOs_Config_Fstab_Entries struct {
-	File any
-	Freq any
-	Mntops any
-	Passno any
-	Spec any
+	File    any
+	Freq    any
+	Mntops  any
+	Passno  any
+	Spec    any
 	Vfstype any
 }
 
@@ -352,7 +352,7 @@ type V1alpha1ErrorFrame_OriginalFrame_MachineDetails_GuestOs_Config_Fstab struct
 
 type V1alpha1ErrorFrame_OriginalFrame_MachineDetails_GuestOs_Config_Hosts_Entries struct {
 	HostNames any
-	Ip any
+	Ip        any
 }
 
 type V1alpha1ErrorFrame_OriginalFrame_MachineDetails_GuestOs_Config_Hosts struct {
@@ -362,7 +362,7 @@ type V1alpha1ErrorFrame_OriginalFrame_MachineDetails_GuestOs_Config_Hosts struct
 
 type V1alpha1ErrorFrame_OriginalFrame_MachineDetails_GuestOs_Config_NfsExports_Entries struct {
 	ExportDirectory any
-	Hosts any
+	Hosts           any
 }
 
 type V1alpha1ErrorFrame_OriginalFrame_MachineDetails_GuestOs_Config_NfsExports struct {
@@ -394,13 +394,13 @@ type V1alpha1ErrorFrame_OriginalFrame_MachineDetails_GuestOs_Config struct {
 
 type V1alpha1ErrorFrame_OriginalFrame_MachineDetails_GuestOs_Runtime_InstalledApps_Entries struct {
 	ApplicationName any
-	InstallTime any
-	Licenses any
-	Name any
-	Path any
-	Time any
-	Vendor any
-	Version any
+	InstallTime     any
+	Licenses        any
+	Name            any
+	Path            any
+	Time            any
+	Vendor          any
+	Version         any
 }
 
 type V1alpha1ErrorFrame_OriginalFrame_MachineDetails_GuestOs_Runtime_InstalledApps struct {
@@ -418,14 +418,14 @@ type V1alpha1ErrorFrame_OriginalFrame_MachineDetails_GuestOs_Runtime_LastUptime 
 }
 
 type V1alpha1ErrorFrame_OriginalFrame_MachineDetails_GuestOs_Runtime_NetworkInfo_Connections_Entries struct {
-	LocalIpAddress any
-	LocalPort any
-	Pid any
-	ProcessName any
-	Protocol any
+	LocalIpAddress  any
+	LocalPort       any
+	Pid             any
+	ProcessName     any
+	Protocol        any
 	RemoteIpAddress any
-	RemotePort any
-	State any
+	RemotePort      any
+	State           any
 }
 
 type V1alpha1ErrorFrame_OriginalFrame_MachineDetails_GuestOs_Runtime_NetworkInfo_Connections struct {
@@ -475,10 +475,10 @@ type V1alpha1ErrorFrame_OriginalFrame_MachineDetails_GuestOs_Runtime_NetworkInfo
 }
 
 type V1alpha1ErrorFrame_OriginalFrame_MachineDetails_GuestOs_Runtime_OpenFileList_Entries struct {
-	Command any
+	Command  any
 	FilePath any
 	FileType any
-	User any
+	User     any
 }
 
 type V1alpha1ErrorFrame_OriginalFrame_MachineDetails_GuestOs_Runtime_OpenFileList struct {
@@ -488,10 +488,10 @@ type V1alpha1ErrorFrame_OriginalFrame_MachineDetails_GuestOs_Runtime_OpenFileLis
 
 type V1alpha1ErrorFrame_OriginalFrame_MachineDetails_GuestOs_Runtime_Processes_Entries struct {
 	Attributes any
-	Cmdline any
-	ExePath any
-	Pid any
-	User any
+	Cmdline    any
+	ExePath    any
+	Pid        any
+	User       any
 }
 
 type V1alpha1ErrorFrame_OriginalFrame_MachineDetails_GuestOs_Runtime_Processes struct {
@@ -502,14 +502,14 @@ type V1alpha1ErrorFrame_OriginalFrame_MachineDetails_GuestOs_Runtime_Processes s
 }
 
 type V1alpha1ErrorFrame_OriginalFrame_MachineDetails_GuestOs_Runtime_Services_Entries struct {
-	Cmdline any
-	ExePath any
-	Name any
-	Pid any
+	Cmdline     any
+	ExePath     any
+	Name        any
+	Pid         any
 	ServiceName any
-	StartMode any
-	State any
-	Status any
+	StartMode   any
+	State       any
+	Status      any
 }
 
 type V1alpha1ErrorFrame_OriginalFrame_MachineDetails_GuestOs_Runtime_Services struct {
@@ -555,21 +555,21 @@ type V1alpha1ErrorFrame_OriginalFrame_MachineDetails_GuestOs struct {
 
 type V1alpha1ErrorFrame_OriginalFrame_MachineDetails_Network_NetworkAdapters_Entries_Addresses_Addresses struct {
 	Assignment any
-	Bcast any
-	Fqdn any
-	IpAddress any
+	Bcast      any
+	Fqdn       any
+	IpAddress  any
 	SubnetMask any
 }
 
 type V1alpha1ErrorFrame_OriginalFrame_MachineDetails_Network_NetworkAdapters_Entries_Addresses struct {
 	Addresses any
-	Entries any
+	Entries   any
 }
 
 type V1alpha1ErrorFrame_OriginalFrame_MachineDetails_Network_NetworkAdapters_Entries struct {
 	AdapterType any
-	Addresses any
-	MacAddress any
+	Addresses   any
+	MacAddress  any
 }
 
 type V1alpha1ErrorFrame_OriginalFrame_MachineDetails_Network_NetworkAdapters struct {
@@ -681,21 +681,21 @@ type V1alpha1ErrorFrame_OriginalFrame_PerformanceSamples_Cpu struct {
 }
 
 type V1alpha1ErrorFrame_OriginalFrame_PerformanceSamples_Disk struct {
-	AverageIops any
-	AverageReadIops any
+	AverageIops      any
+	AverageReadIops  any
 	AverageWriteIops any
 }
 
 type V1alpha1ErrorFrame_OriginalFrame_PerformanceSamples_Network struct {
-	AverageEgressBps any
+	AverageEgressBps  any
 	AverageIngressBps any
 }
 
 type V1alpha1ErrorFrame_OriginalFrame_PerformanceSamples struct {
-	Cpu any
-	Disk any
-	Memory any
-	Network any
+	Cpu        any
+	Disk       any
+	Memory     any
+	Network    any
 	SampleTime any
 }
 
@@ -869,22 +869,21 @@ type V1alpha1ErrorFrame_OriginalFrame struct {
 }
 
 type V1alpha1ErrorFrame_Violations struct {
-	Field any
+	Field     any
 	Violation any
 }
 
 type V1alpha1ErrorFrameConfig struct {
-	Name any
 	View any
 }
 
 type V1alpha1ErrorFrameAttrs struct {
 	// Output only. Frame ingestion time.
 	IngestionTime any
-	Name any
+	Name          any
 	// Contains data reported from an inventory source on an asset.
 	OriginalFrame any
-	View any
+	View          any
 	// Output only. All the violations that were detected for the frame.
 	Violations any
 }
@@ -892,7 +891,6 @@ type V1alpha1ErrorFrameAttrs struct {
 var V1alpha1ErrorFrame = ubx.DataSourceBinding{
 	WireType: "google_migrationcenter_v1alpha1_error_frame",
 	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
 		"View": ubx.FieldSpec{WireName: "view"},
 	},
 }

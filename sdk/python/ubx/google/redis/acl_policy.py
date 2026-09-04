@@ -23,22 +23,6 @@ class AclPolicy_Rules:
     rule: Any = None
     username: Any = None
 
-_AclPolicy_ClusterAclPolicyAttachments_AclPolicyRevisionStatusesFields = {
-    "acl_policy_revision": ubx.FieldSpec(wire_name="acl_policy_revision"),
-    "acl_policy_revision_number": ubx.FieldSpec(wire_name="acl_policy_revision_number"),
-    "error_message": ubx.FieldSpec(wire_name="error_message"),
-    "state": ubx.FieldSpec(wire_name="state"),
-}
-
-_AclPolicy_ClusterAclPolicyAttachmentsFields = {
-    "acl_policy_revision_statuses": ubx.FieldSpec(
-        wire_name="acl_policy_revision_statuses",
-        kind="list",
-        fields=_AclPolicy_ClusterAclPolicyAttachments_AclPolicyRevisionStatusesFields,
-    ),
-    "cluster": ubx.FieldSpec(wire_name="cluster"),
-}
-
 _AclPolicy_RulesFields = {
     "rule": ubx.FieldSpec(wire_name="rule"),
     "username": ubx.FieldSpec(wire_name="username"),
@@ -46,22 +30,10 @@ _AclPolicy_RulesFields = {
 
 @dataclasses.dataclass
 class AclPolicyConfig:
-    # Output only. The ACL policy attachment status for each attached cluster.
-    cluster_acl_policy_attachments: Any = None
-    # Output only. The timestamp that the ACL policy was created.
-    create_time: Any = None
-    # Output only. Etag for the ACL policy.
-    etag: Any = None
     # Identifier. Full resource path of the ACL policy.
     name: Any = None
     # Required. The ACL rules within the ACL policy.
     rules: Any = None
-    # Output only. The state of the ACL policy.
-    state: Any = None
-    # Output only. The timestamp that the ACL policy was last updated.
-    update_time: Any = None
-    # Output only. Deprecated: Used in drift resolution.
-    version: Any = None
 
 @dataclasses.dataclass
 class AclPolicyAttrs:
@@ -85,21 +57,11 @@ class AclPolicyAttrs:
 AclPolicy = ubx.ResourceBinding(
     wire_type="google_redis_acl_policy",
     fields={
-        "cluster_acl_policy_attachments": ubx.FieldSpec(
-            wire_name="cluster_acl_policy_attachments",
-            kind="list",
-            fields=_AclPolicy_ClusterAclPolicyAttachmentsFields,
-        ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
-        "etag": ubx.FieldSpec(wire_name="etag"),
         "name": ubx.FieldSpec(wire_name="name"),
         "rules": ubx.FieldSpec(
             wire_name="rules",
             kind="list",
             fields=_AclPolicy_RulesFields,
         ),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
-        "version": ubx.FieldSpec(wire_name="version"),
     },
 )

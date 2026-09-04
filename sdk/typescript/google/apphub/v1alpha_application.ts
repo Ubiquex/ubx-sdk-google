@@ -105,8 +105,6 @@ const V1alphaApplication_ScopeFields: FieldMap = {
 export interface V1alphaApplicationConfig {
   /** Consumer provided attributes. */
   attributes?: V1alphaApplication_Attributes | Computed<V1alphaApplication_Attributes>;
-  /** Output only. Create time. */
-  createTime?: string | Computed<string>;
   /** Optional. User-defined description of an Application. Can have a maximum length of 2048 characters. */
   description?: string | Computed<string>;
   /** Optional. User-defined name for the Application. Can have a maximum length of 63 characters. */
@@ -115,12 +113,6 @@ export interface V1alphaApplicationConfig {
   name?: string | Computed<string>;
   /** Scope of an application. */
   scope?: V1alphaApplication_Scope | Computed<V1alphaApplication_Scope>;
-  /** Output only. Application state. */
-  state?: string | Computed<string>;
-  /** Output only. A universally unique identifier (in UUID4 format) for the `Application`. */
-  uid?: string | Computed<string>;
-  /** Output only. Update time. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1alphaApplicationAttrs {
@@ -152,7 +144,6 @@ export const V1alphaApplication: ResourceBinding<V1alphaApplicationConfig, V1alp
       kind: "object",
       fields: V1alphaApplication_AttributesFields,
     },
-    createTime: "create_time",
     description: "description",
     displayName: "display_name",
     name: "name",
@@ -161,8 +152,5 @@ export const V1alphaApplication: ResourceBinding<V1alphaApplicationConfig, V1alp
       kind: "object",
       fields: V1alphaApplication_ScopeFields,
     },
-    state: "state",
-    uid: "uid",
-    updateTime: "update_time",
   },
 };

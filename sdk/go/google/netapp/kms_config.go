@@ -4,24 +4,14 @@ package netapp
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type KmsConfigConfig struct {
-	// Output only. Create time of the KmsConfig.
-	CreateTime any
 	// Required. Customer-managed crypto key resource full name. Format: `projects/{project}/locations/{location}/keyRings/{key_ring}/cryptoKeys/{crypto_key}`
 	CryptoKeyName any
 	// Description of the KmsConfig.
 	Description any
-	// Output only. Instructions to provide the access to the customer provided encryption key.
-	Instructions any
 	// Labels as key value pairs
 	Labels any
 	// Identifier. Name of the `KmsConfig`. Format: `projects/{project}/locations/{location}/kmsConfigs/{kms_config}`
 	Name any
-	// Output only. The Service account which will have access to the customer provided encryption key.
-	ServiceAccount any
-	// Output only. State of the KmsConfig.
-	State any
-	// Output only. State details of the KmsConfig.
-	StateDetails any
 }
 
 type KmsConfigAttrs struct {
@@ -48,14 +38,9 @@ type KmsConfigAttrs struct {
 var KmsConfig = ubx.ResourceBinding{
 	WireType: "google_netapp_kms_config",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"CryptoKeyName": ubx.FieldSpec{WireName: "crypto_key_name"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Instructions": ubx.FieldSpec{WireName: "instructions"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"StateDetails": ubx.FieldSpec{WireName: "state_details"},
+		"Description":   ubx.FieldSpec{WireName: "description"},
+		"Labels":        ubx.FieldSpec{WireName: "labels"},
+		"Name":          ubx.FieldSpec{WireName: "name"},
 	},
 }

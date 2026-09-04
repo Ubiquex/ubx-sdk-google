@@ -78,8 +78,6 @@ _EntityType_MonitoringConfigFields = {
 
 @dataclasses.dataclass
 class EntityTypeConfig:
-    # Output only. Timestamp when this EntityType was created.
-    create_time: Any = None
     # Optional. Description of the EntityType.
     description: Any = None
     # Optional. Used to perform a consistent read-modify-write updates. If not set, a blind "overwrite" update happens.
@@ -92,12 +90,6 @@ class EntityTypeConfig:
     name: Any = None
     # Optional. Config for data retention policy in offline storage. TTL in days for feature values that will be stored in offline storage. The Feature Store offline storage periodically removes obsolete feature values older than `offline_storage_ttl_days` since the feature generation time. If unset (or explicitly set to 0), default to 4000 days TTL.
     offline_storage_ttl_days: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzi: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzs: Any = None
-    # Output only. Timestamp when this EntityType was most recently updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class EntityTypeAttrs:
@@ -125,7 +117,6 @@ class EntityTypeAttrs:
 EntityType = ubx.ResourceBinding(
     wire_type="google_aiplatform_entity_type",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "etag": ubx.FieldSpec(wire_name="etag"),
         "labels": ubx.FieldSpec(wire_name="labels"),
@@ -136,8 +127,5 @@ EntityType = ubx.ResourceBinding(
         ),
         "name": ubx.FieldSpec(wire_name="name"),
         "offline_storage_ttl_days": ubx.FieldSpec(wire_name="offline_storage_ttl_days"),
-        "satisfies_pzi": ubx.FieldSpec(wire_name="satisfies_pzi"),
-        "satisfies_pzs": ubx.FieldSpec(wire_name="satisfies_pzs"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

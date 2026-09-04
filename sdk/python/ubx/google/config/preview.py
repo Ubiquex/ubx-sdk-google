@@ -124,39 +124,18 @@ _Preview_TerraformBlueprintFields = {
     ),
 }
 
-_Preview_TfErrorsFields = {
-    "error": ubx.FieldSpec(
-        wire_name="error",
-        kind="object",
-        fields=_Preview_ErrorStatusFields,
-    ),
-    "error_description": ubx.FieldSpec(wire_name="error_description"),
-    "http_response_code": ubx.FieldSpec(wire_name="http_response_code"),
-    "resource_address": ubx.FieldSpec(wire_name="resource_address"),
-}
-
 @dataclasses.dataclass
 class PreviewConfig:
     # Optional. Arbitrary key-value metadata storage e.g. to help client tools identify preview during automation. See https://google.aip.dev/148#annotations for details on format and size limitations.
     annotations: Any = None
     # User-defined location of Cloud Build logs, artifacts, and in Google Cloud Storage. Format: `gs://{bucket}/{folder}` A default bucket will be bootstrapped if the field is not set or empty Default Bucket Format: `gs://--blueprint-config` Constraints: - The bucket needs to be in the same project as the deployment - The path cannot be within the path of `gcs_source` If omitted and deployment resource ref provided has artifacts_gcs_bucket defined, that artifact bucket is used.
     artifacts_gcs_bucket: Any = None
-    # Output only. Cloud Build instance UUID associated with this preview.
-    build: Any = None
-    # Output only. Time the preview was created.
-    create_time: Any = None
     # Optional. Deployment reference. If specified, the preview will be performed using the provided deployment's current state and use any relevant fields from the deployment unless explicitly specified in the preview create request.
     deployment: Any = None
-    # Output only. Code describing any errors that may have occurred.
-    error_code: Any = None
-    # Output only. Link to tf-error.ndjson file, which contains the full list of the errors encountered during a Terraform preview. Format: `gs://{bucket}/{object}`.
-    error_logs: Any = None
     # The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
     error_status: Any = None
     # Optional. User-defined labels for the preview.
     labels: Any = None
-    # Output only. Location of preview logs in `gs://{bucket}/{object}` format.
-    logs: Any = None
     # Identifier. Resource name of the preview. Resource name can be user provided or server generated ID if unspecified. Format: `projects/{project}/locations/{location}/previews/{preview}`
     name: Any = None
     # Artifacts created by preview.
@@ -167,14 +146,8 @@ class PreviewConfig:
     provider_config: Any = None
     # Required. User-specified Service Account (SA) credentials to be used when previewing resources. Format: `projects/{projectID}/serviceAccounts/{serviceAccount}`
     service_account: Any = None
-    # Output only. Current state of the preview.
-    state: Any = None
     # TerraformBlueprint describes the source of a Terraform root module which describes the resources and configs to be deployed.
     terraform_blueprint: Any = None
-    # Output only. Summary of errors encountered during Terraform preview. It has a size limit of 10, i.e. only top 10 errors will be summarized here.
-    tf_errors: Any = None
-    # Output only. The current Terraform version set on the preview. It is in the format of "Major.Minor.Patch", for example, "1.3.10".
-    tf_version: Any = None
     # The user-specified Terraform version constraint. Example: "=1.3.10".
     tf_version_constraint: Any = None
     # The user-specified Worker Pool resource in which the Cloud Build job will execute. Format projects/{project}/locations/{location}/workerPools/{workerPoolId} If this field is unspecified, the default Cloud Build worker pool will be used. If omitted and deployment resource ref provided has worker_pool defined, that worker pool is used.
@@ -230,18 +203,13 @@ Preview = ubx.ResourceBinding(
     fields={
         "annotations": ubx.FieldSpec(wire_name="annotations"),
         "artifacts_gcs_bucket": ubx.FieldSpec(wire_name="artifacts_gcs_bucket"),
-        "build": ubx.FieldSpec(wire_name="build"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "deployment": ubx.FieldSpec(wire_name="deployment"),
-        "error_code": ubx.FieldSpec(wire_name="error_code"),
-        "error_logs": ubx.FieldSpec(wire_name="error_logs"),
         "error_status": ubx.FieldSpec(
             wire_name="error_status",
             kind="object",
             fields=_Preview_ErrorStatusFields,
         ),
         "labels": ubx.FieldSpec(wire_name="labels"),
-        "logs": ubx.FieldSpec(wire_name="logs"),
         "name": ubx.FieldSpec(wire_name="name"),
         "preview_artifacts": ubx.FieldSpec(
             wire_name="preview_artifacts",
@@ -255,18 +223,11 @@ Preview = ubx.ResourceBinding(
             fields=_Preview_ProviderConfigFields,
         ),
         "service_account": ubx.FieldSpec(wire_name="service_account"),
-        "state": ubx.FieldSpec(wire_name="state"),
         "terraform_blueprint": ubx.FieldSpec(
             wire_name="terraform_blueprint",
             kind="object",
             fields=_Preview_TerraformBlueprintFields,
         ),
-        "tf_errors": ubx.FieldSpec(
-            wire_name="tf_errors",
-            kind="list",
-            fields=_Preview_TfErrorsFields,
-        ),
-        "tf_version": ubx.FieldSpec(wire_name="tf_version"),
         "tf_version_constraint": ubx.FieldSpec(wire_name="tf_version_constraint"),
         "worker_pool": ubx.FieldSpec(wire_name="worker_pool"),
     },

@@ -82,8 +82,6 @@ export interface ClusterConfig {
   nodeScalingFactor?: string | Computed<string>;
   /** The number of nodes in the cluster. If no value is set, Cloud Bigtable automatically allocates nodes based on your data footprint and optimized for 50% storage utilization. */
   serveNodes?: number | Computed<number>;
-  /** Output only. The current state of the cluster. */
-  state?: string | Computed<string>;
 }
 
 export interface ClusterAttrs {
@@ -123,6 +121,5 @@ export const Cluster: ResourceBinding<ClusterConfig, ClusterAttrs> = {
     name: "name",
     nodeScalingFactor: "node_scaling_factor",
     serveNodes: "serve_nodes",
-    state: "state",
   },
 };

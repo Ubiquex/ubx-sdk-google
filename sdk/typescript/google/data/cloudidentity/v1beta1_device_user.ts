@@ -3,7 +3,6 @@ import type { Computed, FieldMap, DataSourceBinding } from "@ubx/sdk";
 
 export interface V1beta1DeviceUserConfig {
   customer?: string | Computed<string>;
-  name: string | Computed<string>;
 }
 
 export interface V1beta1DeviceUserAttrs {
@@ -33,6 +32,5 @@ export const V1beta1DeviceUser: DataSourceBinding<V1beta1DeviceUserConfig, V1bet
   wireType: "google_cloudidentity_v1beta1_device_user",
   fields: {
     customer: "customer",
-    name: "name",
   },
 };

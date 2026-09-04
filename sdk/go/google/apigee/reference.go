@@ -28,9 +28,9 @@ type ReferenceAttrs struct {
 var Reference = ubx.ResourceBinding{
 	WireType: "google_apigee_reference",
 	Fields: ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Refers": ubx.FieldSpec{WireName: "refers"},
+		"Description":  ubx.FieldSpec{WireName: "description"},
+		"Name":         ubx.FieldSpec{WireName: "name"},
+		"Refers":       ubx.FieldSpec{WireName: "refers"},
 		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
 	},
 }

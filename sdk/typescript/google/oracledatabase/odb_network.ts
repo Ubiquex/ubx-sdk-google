@@ -2,10 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface OdbNetworkConfig {
-  /** Output only. The date and time that the OdbNetwork was created. */
-  createTime?: string | Computed<string>;
-  /** Output only. The ID of the subscription entitlement associated with the OdbNetwork. */
-  entitlementId?: string | Computed<string>;
   /** Optional. The GCP Oracle zone where OdbNetwork is hosted. Example: us-east4-b-r2. If not specified, the system will pick a zone based on availability. */
   gcpOracleZone?: string | Computed<string>;
   /** Optional. Labels or tags associated with the resource. */
@@ -14,8 +10,6 @@ export interface OdbNetworkConfig {
   name?: string | Computed<string>;
   /** Required. The name of the VPC network in the following format: projects/{project}/global/networks/{network} */
   network?: string | Computed<string>;
-  /** Output only. State of the ODB Network. */
-  state?: string | Computed<string>;
 }
 
 export interface OdbNetworkAttrs {
@@ -38,12 +32,9 @@ export interface OdbNetworkAttrs {
 export const OdbNetwork: ResourceBinding<OdbNetworkConfig, OdbNetworkAttrs> = {
   wireType: "google_oracledatabase_odb_network",
   fields: {
-    createTime: "create_time",
-    entitlementId: "entitlement_id",
     gcpOracleZone: "gcp_oracle_zone",
     labels: "labels",
     name: "name",
     network: "network",
-    state: "state",
   },
 };

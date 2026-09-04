@@ -103,10 +103,6 @@ _AlphaBackendBucket_ParamsFields = {
     "resource_manager_tags": ubx.FieldSpec(wire_name="resource_manager_tags"),
 }
 
-_AlphaBackendBucket_UsedByFields = {
-    "reference": ubx.FieldSpec(wire_name="reference"),
-}
-
 @dataclasses.dataclass
 class AlphaBackendBucketConfig:
     # Cloud Storage bucket name.
@@ -127,22 +123,14 @@ class AlphaBackendBucketConfig:
     enable_cdn: Any = None
     # [Output Only] Unique identifier for the resource; defined by the server.
     id: Any = None
-    # Output only. Type of the resource.
-    kind: Any = None
     # The value can only be INTERNAL_MANAGED for cross-region internal layer 7 load balancer. If loadBalancingScheme is not specified, the backend bucket can be used by classic global external load balancers, or global application external load balancers, or both.
     load_balancing_scheme: Any = None
     # Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
     name: Any = None
     # Additional Backend Bucket parameters.
     params: Any = None
-    # Output only. [Output Only] URL of the region where the regional backend bucket resides. This field is not applicable to global backend buckets. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
-    region: Any = None
     # [Output Only] Server-defined URL for the resource.
     self_link: Any = None
-    # Output only. [Output Only] Server-defined URL for this resource with the resource id.
-    self_link_with_id: Any = None
-    # Output only. [Output Only] List of resources referencing that backend bucket.
-    used_by: Any = None
 
 @dataclasses.dataclass
 class AlphaBackendBucketAttrs:
@@ -197,7 +185,6 @@ AlphaBackendBucket = ubx.ResourceBinding(
         "edge_security_policy": ubx.FieldSpec(wire_name="edge_security_policy"),
         "enable_cdn": ubx.FieldSpec(wire_name="enable_cdn"),
         "id": ubx.FieldSpec(wire_name="id"),
-        "kind": ubx.FieldSpec(wire_name="kind"),
         "load_balancing_scheme": ubx.FieldSpec(wire_name="load_balancing_scheme"),
         "name": ubx.FieldSpec(wire_name="name"),
         "params": ubx.FieldSpec(
@@ -205,13 +192,6 @@ AlphaBackendBucket = ubx.ResourceBinding(
             kind="object",
             fields=_AlphaBackendBucket_ParamsFields,
         ),
-        "region": ubx.FieldSpec(wire_name="region"),
         "self_link": ubx.FieldSpec(wire_name="self_link"),
-        "self_link_with_id": ubx.FieldSpec(wire_name="self_link_with_id"),
-        "used_by": ubx.FieldSpec(
-            wire_name="used_by",
-            kind="list",
-            fields=_AlphaBackendBucket_UsedByFields,
-        ),
     },
 )

@@ -26,6 +26,6 @@ var DestGroup = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Cidrs": ubx.FieldSpec{WireName: "cidrs"},
 		"Fqdns": ubx.FieldSpec{WireName: "fqdns"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":  ubx.FieldSpec{WireName: "name"},
 	},
 }

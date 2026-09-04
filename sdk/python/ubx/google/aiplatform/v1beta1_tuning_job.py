@@ -1139,143 +1139,6 @@ _V1beta1TuningJob_ErrorFields = {
     "message": ubx.FieldSpec(wire_name="message"),
 }
 
-_V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults_BleuMetricValueFields = {
-    "score": ubx.FieldSpec(wire_name="score"),
-}
-
-_V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults_PairwiseMetricResult_CustomOutput_RawOutputsFields = {
-    "raw_output": ubx.FieldSpec(wire_name="raw_output"),
-}
-
-_V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults_PairwiseMetricResult_CustomOutputFields = {
-    "raw_outputs": ubx.FieldSpec(
-        wire_name="raw_outputs",
-        kind="object",
-        fields=_V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults_PairwiseMetricResult_CustomOutput_RawOutputsFields,
-    ),
-}
-
-_V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults_PairwiseMetricResultFields = {
-    "custom_output": ubx.FieldSpec(
-        wire_name="custom_output",
-        kind="object",
-        fields=_V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults_PairwiseMetricResult_CustomOutputFields,
-    ),
-    "explanation": ubx.FieldSpec(wire_name="explanation"),
-    "pairwise_choice": ubx.FieldSpec(wire_name="pairwise_choice"),
-}
-
-_V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults_PointwiseMetricResultFields = {
-    "custom_output": ubx.FieldSpec(
-        wire_name="custom_output",
-        kind="object",
-        fields=_V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults_PairwiseMetricResult_CustomOutputFields,
-    ),
-    "explanation": ubx.FieldSpec(wire_name="explanation"),
-    "score": ubx.FieldSpec(wire_name="score"),
-}
-
-_V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResultsFields = {
-    "aggregation_metric": ubx.FieldSpec(wire_name="aggregation_metric"),
-    "bleu_metric_value": ubx.FieldSpec(
-        wire_name="bleu_metric_value",
-        kind="object",
-        fields=_V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults_BleuMetricValueFields,
-    ),
-    "custom_code_execution_result": ubx.FieldSpec(
-        wire_name="custom_code_execution_result",
-        kind="object",
-        fields=_V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults_BleuMetricValueFields,
-    ),
-    "exact_match_metric_value": ubx.FieldSpec(
-        wire_name="exact_match_metric_value",
-        kind="object",
-        fields=_V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults_BleuMetricValueFields,
-    ),
-    "pairwise_metric_result": ubx.FieldSpec(
-        wire_name="pairwise_metric_result",
-        kind="object",
-        fields=_V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults_PairwiseMetricResultFields,
-    ),
-    "pointwise_metric_result": ubx.FieldSpec(
-        wire_name="pointwise_metric_result",
-        kind="object",
-        fields=_V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults_PointwiseMetricResultFields,
-    ),
-    "rouge_metric_value": ubx.FieldSpec(
-        wire_name="rouge_metric_value",
-        kind="object",
-        fields=_V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResults_BleuMetricValueFields,
-    ),
-}
-
-_V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_Dataset_BigquerySourceFields = {
-    "input_uri": ubx.FieldSpec(wire_name="input_uri"),
-}
-
-_V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_Dataset_GcsSourceFields = {
-    "uris": ubx.FieldSpec(wire_name="uris"),
-}
-
-_V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_DatasetFields = {
-    "bigquery_source": ubx.FieldSpec(
-        wire_name="bigquery_source",
-        kind="object",
-        fields=_V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_Dataset_BigquerySourceFields,
-    ),
-    "gcs_source": ubx.FieldSpec(
-        wire_name="gcs_source",
-        kind="object",
-        fields=_V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_Dataset_GcsSourceFields,
-    ),
-}
-
-_V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutputFields = {
-    "aggregation_results": ubx.FieldSpec(
-        wire_name="aggregation_results",
-        kind="list",
-        fields=_V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_AggregationResultsFields,
-    ),
-    "dataset": ubx.FieldSpec(
-        wire_name="dataset",
-        kind="object",
-        fields=_V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutput_DatasetFields,
-    ),
-}
-
-_V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_OutputInfoFields = {
-    "gcs_output_directory": ubx.FieldSpec(wire_name="gcs_output_directory"),
-}
-
-_V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponseFields = {
-    "aggregation_output": ubx.FieldSpec(
-        wire_name="aggregation_output",
-        kind="object",
-        fields=_V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_AggregationOutputFields,
-    ),
-    "output_info": ubx.FieldSpec(
-        wire_name="output_info",
-        kind="object",
-        fields=_V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponse_OutputInfoFields,
-    ),
-}
-
-_V1beta1TuningJob_EvaluateDatasetRunsFields = {
-    "checkpoint_id": ubx.FieldSpec(wire_name="checkpoint_id"),
-    "error": ubx.FieldSpec(
-        wire_name="error",
-        kind="object",
-        fields=_V1beta1TuningJob_ErrorFields,
-    ),
-    "evaluate_dataset_response": ubx.FieldSpec(
-        wire_name="evaluate_dataset_response",
-        kind="object",
-        fields=_V1beta1TuningJob_EvaluateDatasetRuns_EvaluateDatasetResponseFields,
-    ),
-    "evaluation_run": ubx.FieldSpec(wire_name="evaluation_run"),
-    "operation_name": ubx.FieldSpec(wire_name="operation_name"),
-}
-
 _V1beta1TuningJob_FullFineTuningSpecFields = {
     "hyper_parameters": ubx.FieldSpec(
         wire_name="hyper_parameters",
@@ -2731,8 +2594,6 @@ _V1beta1TuningJob_VeoTuningSpecFields = {
 class V1beta1TuningJobConfig:
     # The base model that is being tuned. See [Supported models](https://cloud.google.com/vertex-ai/generative-ai/docs/model-reference/tuning#supported_models).
     base_model: Any = None
-    # Output only. Time when the TuningJob was created.
-    create_time: Any = None
     # Optional. The user-provided path to custom model weights. Set this field to tune a custom model. The path must be a Cloud Storage directory that contains the model weights in .safetensors format along with associated model metadata files. If this field is set, the base_model field must still be set to indicate which base model the custom model is derived from. This feature is only available for open source models.
     custom_base_model: Any = None
     # Optional. The description of the TuningJob.
@@ -2741,42 +2602,24 @@ class V1beta1TuningJobConfig:
     distillation_spec: Any = None
     # Represents a customer-managed encryption key specification that can be applied to a Vertex AI resource.
     encryption_spec: Any = None
-    # Output only. Time when the TuningJob entered any of the following JobStates: `JOB_STATE_SUCCEEDED`, `JOB_STATE_FAILED`, `JOB_STATE_CANCELLED`, `JOB_STATE_EXPIRED`.
-    end_time: Any = None
     # The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
     error: Any = None
-    # Output only. Evaluation runs for the Tuning Job.
-    evaluate_dataset_runs: Any = None
-    # Output only. The Experiment associated with this TuningJob.
-    experiment: Any = None
     # Tuning Spec for Full Fine Tuning.
     full_fine_tuning_spec: Any = None
     # Optional. The labels with user-defined metadata to organize TuningJob and generated resources such as Model and Endpoint. Label keys and values can be no longer than 64 characters (Unicode codepoints), can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. See https://goo.gl/xmQnxf for more information and examples of labels.
     labels: Any = None
-    # Output only. Identifier. Resource name of a TuningJob. Format: `projects/{project}/locations/{location}/tuningJobs/{tuning_job}`
-    name: Any = None
     # Optional. Cloud Storage path to the directory where tuning job outputs are written to. This field is only available and required for open source models.
     output_uri: Any = None
     # Tuning spec for Partner models.
     partner_model_tuning_spec: Any = None
-    # Output only. The resource name of the PipelineJob associated with the TuningJob. Format: `projects/{project}/locations/{location}/pipelineJobs/{pipeline_job}`.
-    pipeline_job: Any = None
     # A pre-tuned model for continuous tuning.
     pre_tuned_model: Any = None
     # Tuning Spec for Preference Optimization.
     preference_optimization_spec: Any = None
     # Tuning spec for Reinforcement Tuning.
     reinforcement_tuning_spec: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzi: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzs: Any = None
     # The service account that the tuningJob workload runs as. If not specified, the Vertex AI Secure Fine-Tuned Service Agent in the project will be used. See https://cloud.google.com/iam/docs/service-agents#vertex-ai-secure-fine-tuning-service-agent Users starting the pipeline must have the `iam.serviceAccounts.actAs` permission on this service account.
     service_account: Any = None
-    # Output only. Time when the TuningJob for the first time entered the `JOB_STATE_RUNNING` state.
-    start_time: Any = None
-    # Output only. The detailed state of the job.
-    state: Any = None
     # Tuning Spec for Supervised Tuning for first party models.
     supervised_tuning_spec: Any = None
     # The Model Registry Model and Online Prediction Endpoint associated with this TuningJob.
@@ -2787,10 +2630,6 @@ class V1beta1TuningJobConfig:
     tuning_data_stats: Any = None
     # Tuning job metadata.
     tuning_job_metadata: Any = None
-    # Output only. The detail state of the tuning job (while the overall `JobState` is running).
-    tuning_job_state: Any = None
-    # Output only. Time when the TuningJob was most recently updated.
-    update_time: Any = None
     # Tuning Spec for Veo LoRA Model Tuning.
     veo_lora_tuning_spec: Any = None
     # Tuning Spec for Veo Model Tuning.
@@ -2869,7 +2708,6 @@ V1beta1TuningJob = ubx.ResourceBinding(
     wire_type="google_aiplatform_v1beta1_tuning_job",
     fields={
         "base_model": ubx.FieldSpec(wire_name="base_model"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "custom_base_model": ubx.FieldSpec(wire_name="custom_base_model"),
         "description": ubx.FieldSpec(wire_name="description"),
         "distillation_spec": ubx.FieldSpec(
@@ -2882,32 +2720,23 @@ V1beta1TuningJob = ubx.ResourceBinding(
             kind="object",
             fields=_V1beta1TuningJob_EncryptionSpecFields,
         ),
-        "end_time": ubx.FieldSpec(wire_name="end_time"),
         "error": ubx.FieldSpec(
             wire_name="error",
             kind="object",
             fields=_V1beta1TuningJob_ErrorFields,
         ),
-        "evaluate_dataset_runs": ubx.FieldSpec(
-            wire_name="evaluate_dataset_runs",
-            kind="list",
-            fields=_V1beta1TuningJob_EvaluateDatasetRunsFields,
-        ),
-        "experiment": ubx.FieldSpec(wire_name="experiment"),
         "full_fine_tuning_spec": ubx.FieldSpec(
             wire_name="full_fine_tuning_spec",
             kind="object",
             fields=_V1beta1TuningJob_FullFineTuningSpecFields,
         ),
         "labels": ubx.FieldSpec(wire_name="labels"),
-        "name": ubx.FieldSpec(wire_name="name"),
         "output_uri": ubx.FieldSpec(wire_name="output_uri"),
         "partner_model_tuning_spec": ubx.FieldSpec(
             wire_name="partner_model_tuning_spec",
             kind="object",
             fields=_V1beta1TuningJob_PartnerModelTuningSpecFields,
         ),
-        "pipeline_job": ubx.FieldSpec(wire_name="pipeline_job"),
         "pre_tuned_model": ubx.FieldSpec(
             wire_name="pre_tuned_model",
             kind="object",
@@ -2923,11 +2752,7 @@ V1beta1TuningJob = ubx.ResourceBinding(
             kind="object",
             fields=_V1beta1TuningJob_ReinforcementTuningSpecFields,
         ),
-        "satisfies_pzi": ubx.FieldSpec(wire_name="satisfies_pzi"),
-        "satisfies_pzs": ubx.FieldSpec(wire_name="satisfies_pzs"),
         "service_account": ubx.FieldSpec(wire_name="service_account"),
-        "start_time": ubx.FieldSpec(wire_name="start_time"),
-        "state": ubx.FieldSpec(wire_name="state"),
         "supervised_tuning_spec": ubx.FieldSpec(
             wire_name="supervised_tuning_spec",
             kind="object",
@@ -2949,8 +2774,6 @@ V1beta1TuningJob = ubx.ResourceBinding(
             kind="object",
             fields=_V1beta1TuningJob_TuningJobMetadataFields,
         ),
-        "tuning_job_state": ubx.FieldSpec(wire_name="tuning_job_state"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
         "veo_lora_tuning_spec": ubx.FieldSpec(
             wire_name="veo_lora_tuning_spec",
             kind="object",

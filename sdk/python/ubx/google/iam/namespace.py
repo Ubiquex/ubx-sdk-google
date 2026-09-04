@@ -21,14 +21,10 @@ class NamespaceConfig:
     description: Any = None
     # Optional. Whether the namespace is disabled. If disabled, credentials may no longer be issued for identities within this namespace, however existing credentials will still be accepted until they expire.
     disabled: Any = None
-    # Output only. Time after which the namespace will be permanently purged and cannot be recovered.
-    expire_time: Any = None
     # Identifier. The resource name of the namespace.
     name: Any = None
     # The Google Cloud service that owns this namespace.
     owner_service: Any = None
-    # Output only. The state of the namespace.
-    state: Any = None
 
 @dataclasses.dataclass
 class NamespaceAttrs:
@@ -50,13 +46,11 @@ Namespace = ubx.ResourceBinding(
     fields={
         "description": ubx.FieldSpec(wire_name="description"),
         "disabled": ubx.FieldSpec(wire_name="disabled"),
-        "expire_time": ubx.FieldSpec(wire_name="expire_time"),
         "name": ubx.FieldSpec(wire_name="name"),
         "owner_service": ubx.FieldSpec(
             wire_name="owner_service",
             kind="object",
             fields=_Namespace_OwnerServiceFields,
         ),
-        "state": ubx.FieldSpec(wire_name="state"),
     },
 )

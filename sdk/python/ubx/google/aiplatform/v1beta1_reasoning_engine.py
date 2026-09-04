@@ -1097,8 +1097,6 @@ _V1beta1ReasoningEngine_TrafficConfigFields = {
 class V1beta1ReasoningEngineConfig:
     # Configuration for how Agent Engine sub-resources should manage context.
     context_spec: Any = None
-    # Output only. Timestamp when this ReasoningEngine was created.
-    create_time: Any = None
     # Optional. The description of the ReasoningEngine.
     description: Any = None
     # Required. The display name of the ReasoningEngine.
@@ -1115,8 +1113,6 @@ class V1beta1ReasoningEngineConfig:
     spec: Any = None
     # Traffic distribution configuration.
     traffic_config: Any = None
-    # Output only. Timestamp when this ReasoningEngine was most recently updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V1beta1ReasoningEngineAttrs:
@@ -1151,7 +1147,6 @@ V1beta1ReasoningEngine = ubx.ResourceBinding(
             kind="object",
             fields=_V1beta1ReasoningEngine_ContextSpecFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "encryption_spec": ubx.FieldSpec(
@@ -1172,6 +1167,5 @@ V1beta1ReasoningEngine = ubx.ResourceBinding(
             kind="object",
             fields=_V1beta1ReasoningEngine_TrafficConfigFields,
         ),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

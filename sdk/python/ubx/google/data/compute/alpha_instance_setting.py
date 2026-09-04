@@ -16,7 +16,6 @@ class AlphaInstanceSetting_Metadata:
 @dataclasses.dataclass
 class AlphaInstanceSettingConfig:
     project: Any = None
-    zone: Any = None
 
 @dataclasses.dataclass
 class AlphaInstanceSettingAttrs:
@@ -34,6 +33,5 @@ AlphaInstanceSetting = ubx.DataSourceBinding(
     wire_type="google_compute_alpha_instance_setting",
     fields={
         "project": ubx.FieldSpec(wire_name="project"),
-        "zone": ubx.FieldSpec(wire_name="zone"),
     },
 )

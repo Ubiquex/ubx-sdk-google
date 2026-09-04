@@ -292,10 +292,6 @@ const Posture_PolicySetsFields: FieldMap = {
 export interface PostureConfig {
   /** Optional. The user-specified annotations for the posture. For details about the values you can use in an annotation, see [AIP-148: Standard fields](https://google.aip.dev/148#annotations). */
   annotations?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. The categories that the posture belongs to, as determined by the Security Posture API. */
-  categories?: string[] | Computed<string[]>;
-  /** Output only. The time at which the posture was created. */
-  createTime?: string | Computed<string>;
   /** Optional. A description of the posture. */
   description?: string | Computed<string>;
   /** Optional. An opaque identifier for the current version of the posture at the specified `revision_id`. To prevent concurrent updates from overwriting each other, always provide the `etag` when you update a posture. You can also provide the `etag` when you delete a posture, to help ensure that you're deleting the intended version of the posture. */
@@ -304,14 +300,8 @@ export interface PostureConfig {
   name?: string | Computed<string>;
   /** Required. The PolicySet resources that the posture includes. */
   policySets?: Posture_PolicySets[] | Computed<Posture_PolicySets[]>;
-  /** Output only. Whether the posture is in the process of being updated. */
-  reconciling?: boolean | Computed<boolean>;
-  /** Output only. Immutable. An opaque eight-character string that identifies the revision of the posture. A posture can have multiple revisions; when you deploy a posture, you deploy a specific revision of the posture. */
-  revisionId?: string | Computed<string>;
   /** Required. The state of the posture at the specified `revision_id`. */
   state?: string | Computed<string>;
-  /** Output only. The time at which the posture was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface PostureAttrs {
@@ -343,8 +333,6 @@ export const Posture: ResourceBinding<PostureConfig, PostureAttrs> = {
   wireType: "google_securityposture_posture",
   fields: {
     annotations: "annotations",
-    categories: "categories",
-    createTime: "create_time",
     description: "description",
     etag: "etag",
     name: "name",
@@ -353,9 +341,6 @@ export const Posture: ResourceBinding<PostureConfig, PostureAttrs> = {
       kind: "list",
       fields: Posture_PolicySetsFields,
     },
-    reconciling: "reconciling",
-    revisionId: "revision_id",
     state: "state",
-    updateTime: "update_time",
   },
 };

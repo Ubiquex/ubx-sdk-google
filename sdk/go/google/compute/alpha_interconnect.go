@@ -4,7 +4,7 @@ package compute
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AlphaInterconnect_ApplicationAwareInterconnect_BandwidthPercentagePolicy_BandwidthPercentages struct {
-	Percentage any
+	Percentage   any
 	TrafficClass any
 }
 
@@ -25,23 +25,23 @@ type AlphaInterconnect_ApplicationAwareInterconnect struct {
 
 type AlphaInterconnect_CircuitInfos struct {
 	CustomerDemarcId any
-	GoogleCircuitId any
-	GoogleDemarcId any
+	GoogleCircuitId  any
+	GoogleDemarcId   any
 }
 
 type AlphaInterconnect_ExpectedOutages struct {
 	AffectedCircuits any
-	Description any
-	EndTime any
-	IssueType any
-	Name any
-	Source any
-	StartTime any
-	State any
+	Description      any
+	EndTime          any
+	IssueType        any
+	Name             any
+	Source           any
+	StartTime        any
+	State            any
 }
 
 type AlphaInterconnect_Macsec_PreSharedKeys struct {
-	Name any
+	Name      any
 	StartTime any
 }
 
@@ -60,68 +60,51 @@ type AlphaInterconnect_Params struct {
 }
 
 var AlphaInterconnect_ApplicationAwareInterconnect_BandwidthPercentagePolicy_BandwidthPercentagesFields = ubx.FieldMap{
-		"Percentage": ubx.FieldSpec{WireName: "percentage"},
-		"TrafficClass": ubx.FieldSpec{WireName: "traffic_class"},
-	}
+	"Percentage":   ubx.FieldSpec{WireName: "percentage"},
+	"TrafficClass": ubx.FieldSpec{WireName: "traffic_class"},
+}
 
 var AlphaInterconnect_ApplicationAwareInterconnect_BandwidthPercentagePolicyFields = ubx.FieldMap{
-		"BandwidthPercentages": ubx.FieldSpec{
-			WireName: "bandwidth_percentages",
-			Kind: "list",
-			Fields: AlphaInterconnect_ApplicationAwareInterconnect_BandwidthPercentagePolicy_BandwidthPercentagesFields,
-		},
-	}
+	"BandwidthPercentages": ubx.FieldSpec{
+		WireName: "bandwidth_percentages",
+		Kind:     "list",
+		Fields:   AlphaInterconnect_ApplicationAwareInterconnect_BandwidthPercentagePolicy_BandwidthPercentagesFields,
+	},
+}
 
 var AlphaInterconnect_ApplicationAwareInterconnectFields = ubx.FieldMap{
-		"BandwidthPercentagePolicy": ubx.FieldSpec{
-			WireName: "bandwidth_percentage_policy",
-			Kind: "object",
-			Fields: AlphaInterconnect_ApplicationAwareInterconnect_BandwidthPercentagePolicyFields,
-		},
-		"ProfileDescription": ubx.FieldSpec{WireName: "profile_description"},
-		"ShapeAveragePercentages": ubx.FieldSpec{
-			WireName: "shape_average_percentages",
-			Kind: "list",
-			Fields: AlphaInterconnect_ApplicationAwareInterconnect_BandwidthPercentagePolicy_BandwidthPercentagesFields,
-		},
-		"StrictPriorityPolicy": ubx.FieldSpec{WireName: "strict_priority_policy"},
-	}
-
-var AlphaInterconnect_CircuitInfosFields = ubx.FieldMap{
-		"CustomerDemarcId": ubx.FieldSpec{WireName: "customer_demarc_id"},
-		"GoogleCircuitId": ubx.FieldSpec{WireName: "google_circuit_id"},
-		"GoogleDemarcId": ubx.FieldSpec{WireName: "google_demarc_id"},
-	}
-
-var AlphaInterconnect_ExpectedOutagesFields = ubx.FieldMap{
-		"AffectedCircuits": ubx.FieldSpec{WireName: "affected_circuits"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"IssueType": ubx.FieldSpec{WireName: "issue_type"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Source": ubx.FieldSpec{WireName: "source"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"BandwidthPercentagePolicy": ubx.FieldSpec{
+		WireName: "bandwidth_percentage_policy",
+		Kind:     "object",
+		Fields:   AlphaInterconnect_ApplicationAwareInterconnect_BandwidthPercentagePolicyFields,
+	},
+	"ProfileDescription": ubx.FieldSpec{WireName: "profile_description"},
+	"ShapeAveragePercentages": ubx.FieldSpec{
+		WireName: "shape_average_percentages",
+		Kind:     "list",
+		Fields:   AlphaInterconnect_ApplicationAwareInterconnect_BandwidthPercentagePolicy_BandwidthPercentagesFields,
+	},
+	"StrictPriorityPolicy": ubx.FieldSpec{WireName: "strict_priority_policy"},
+}
 
 var AlphaInterconnect_Macsec_PreSharedKeysFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-	}
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"StartTime": ubx.FieldSpec{WireName: "start_time"},
+}
 
 var AlphaInterconnect_MacsecFields = ubx.FieldMap{
-		"FailOpen": ubx.FieldSpec{WireName: "fail_open"},
-		"InterconnectKeyGroup": ubx.FieldSpec{WireName: "interconnect_key_group"},
-		"PreSharedKeys": ubx.FieldSpec{
-			WireName: "pre_shared_keys",
-			Kind: "list",
-			Fields: AlphaInterconnect_Macsec_PreSharedKeysFields,
-		},
-	}
+	"FailOpen":             ubx.FieldSpec{WireName: "fail_open"},
+	"InterconnectKeyGroup": ubx.FieldSpec{WireName: "interconnect_key_group"},
+	"PreSharedKeys": ubx.FieldSpec{
+		WireName: "pre_shared_keys",
+		Kind:     "list",
+		Fields:   AlphaInterconnect_Macsec_PreSharedKeysFields,
+	},
+}
 
 var AlphaInterconnect_ParamsFields = ubx.FieldMap{
-		"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
-	}
+	"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
+}
 
 type AlphaInterconnectConfig struct {
 	// Enable or disable the application awareness feature on this Cloud Interconnect.
@@ -132,32 +115,12 @@ type AlphaInterconnectConfig struct {
 	ApplicationAwareInterconnect any
 	// [Output only] List of features available for this Interconnect connection, which can take one of the following values: - IF_MACSEC: If present, then the Interconnect connection is provisioned on MACsec capable hardware ports. If not present, then the Interconnect connection is provisioned on non-MACsec capable ports. Any attempt to enable MACsec will fail. - IF_CROSS_SITE_NETWORK: If present, then the Interconnect connection is provisioned exclusively for Cross-Site Networking. Any attempt to configure VLAN attachments will fail. If not present, then the Interconnect connection is not provisioned for Cross-Site Networking. Any attempt to use it for Cross-Site Networking will fail.
 	AvailableFeatures any
-	// Output only. [Output Only] A list of CircuitInfo objects, that describe the individual circuits in this LAG.
-	CircuitInfos any
-	// Output only. [Output Only] Creation timestamp inRFC3339 text format.
-	CreationTimestamp any
 	// Customer name, to put in the Letter of Authorization as the party authorized to request a crossconnect.
 	CustomerName any
 	// An optional description of this resource. Provide this property when you create the resource.
 	Description any
-	// Output only. URL of the InterconnectLocation object that represents where this connection is to be provisioned. By default it will be the same as the location field.
-	EffectiveLocation any
-	// Output only. [Output Only] A list of outages expected for this Interconnect.
-	ExpectedOutages any
-	// Output only. [Output Only] IP address configured on the Google side of the Interconnect link. This can be used only for ping tests.
-	GoogleIpAddress any
-	// Output only. [Output Only] Google reference ID to be used when raising support tickets with Google or otherwise to debug backend connectivity issues.
-	GoogleReferenceId any
-	// Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-	Id any
-	// Output only. [Output Only] A list of the URLs of all InterconnectAttachments configured to use this Interconnect.
-	InterconnectAttachments any
-	// Output only. [Output Only] URLs of InterconnectGroups that include this Interconnect. Order is arbitrary and items are unique.
-	InterconnectGroups any
 	// Type of interconnect, which can take one of the following values: - PARTNER: A partner-managed interconnection shared between customers though a partner. - DEDICATED: A dedicated physical interconnection with the customer. Note that a value IT_PRIVATE has been deprecated in favor of DEDICATED.
 	InterconnectType any
-	// Output only. [Output Only] Type of the resource. Alwayscompute#interconnect for interconnects.
-	Kind any
 	// A fingerprint for the labels being applied to this Interconnect, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an Interconnect.
 	LabelFingerprint any
 	// Labels for this resource. These can only be added or modified by thesetLabels method. Each label key/value pair must comply withRFC1035. Label values may be empty.
@@ -174,32 +137,16 @@ type AlphaInterconnectConfig struct {
 	Name any
 	// Email address to contact the customer NOC for operations and maintenance notifications regarding this Interconnect. If specified, this will be used for notifications in addition to all other forms described, such as Cloud Monitoring logs alerting and Cloud Notifications. This field is required for users who sign up for Cloud Interconnect using workforce identity federation.
 	NocContactEmail any
-	// Output only. [Output Only] The current status of this Interconnect's functionality, which can take one of the following values: - OS_ACTIVE: A valid Interconnect, which is turned up and is ready to use. Attachments may be provisioned on this Interconnect. - OS_UNPROVISIONED: An Interconnect that has not completed turnup. No attachments may be provisioned on this Interconnect. - OS_UNDER_MAINTENANCE: An Interconnect that is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect.
-	OperationalStatus any
 	// Additional interconnect parameters.
 	Params any
-	// Output only. [Output Only] IP address configured on the customer side of the Interconnect link. The customer should configure this IP address during turnup when prompted by Google NOC. This can be used only for ping tests.
-	PeerIpAddress any
-	// Output only. [Output Only] Number of links actually provisioned in this interconnect.
-	ProvisionedLinkCount any
 	// Indicates that this is a Cross-Cloud Interconnect. This field specifies the location outside of Google's network that the interconnect is connected to.
 	RemoteLocation any
 	// Optional. This parameter can be provided only with Interconnect INSERT. It isn't valid for Interconnect PATCH. List of features requested for this Interconnect connection, which can take one of the following values: - IF_MACSEC: If specified, then the connection is created on MACsec capable hardware ports. If not specified, non-MACsec capable ports will also be considered. - IF_CROSS_SITE_NETWORK: If specified, then the connection is created exclusively for Cross-Site Networking. The connection can not be used for Cross-Site Networking unless this feature is specified.
 	RequestedFeatures any
 	// Target number of physical links in the link bundle, as requested by the customer.
 	RequestedLinkCount any
-	// Output only. [Output Only] Reserved for future use.
-	SatisfiesPzs any
-	// Output only. [Output Only] Server-defined URL for the resource.
-	SelfLink any
-	// Output only. Server-defined URL for this resource with the resource id.
-	SelfLinkWithId any
-	// Output only. [Output Only] The current state of Interconnect functionality, which can take one of the following values: - ACTIVE: The Interconnect is valid, turned up and ready to use. Attachments may be provisioned on this Interconnect. - UNPROVISIONED: The Interconnect has not completed turnup. No attachments may be provisioned on this Interconnect. - UNDER_MAINTENANCE: The Interconnect is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect.
-	State any
 	// To be deprecated.
 	Subzone any
-	// Output only. [Output Only] A list of the URLs of all CrossSiteNetwork WireGroups configured to use this Interconnect. The Interconnect cannot be deleted if this list is non-empty.
-	WireGroups any
 }
 
 type AlphaInterconnectAttrs struct {
@@ -284,63 +231,37 @@ type AlphaInterconnectAttrs struct {
 var AlphaInterconnect = ubx.ResourceBinding{
 	WireType: "google_compute_alpha_interconnect",
 	Fields: ubx.FieldMap{
-		"AaiEnabled": ubx.FieldSpec{WireName: "aai_enabled"},
+		"AaiEnabled":   ubx.FieldSpec{WireName: "aai_enabled"},
 		"AdminEnabled": ubx.FieldSpec{WireName: "admin_enabled"},
 		"ApplicationAwareInterconnect": ubx.FieldSpec{
 			WireName: "application_aware_interconnect",
-			Kind: "object",
-			Fields: AlphaInterconnect_ApplicationAwareInterconnectFields,
+			Kind:     "object",
+			Fields:   AlphaInterconnect_ApplicationAwareInterconnectFields,
 		},
 		"AvailableFeatures": ubx.FieldSpec{WireName: "available_features"},
-		"CircuitInfos": ubx.FieldSpec{
-			WireName: "circuit_infos",
-			Kind: "list",
-			Fields: AlphaInterconnect_CircuitInfosFields,
-		},
-		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
-		"CustomerName": ubx.FieldSpec{WireName: "customer_name"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"EffectiveLocation": ubx.FieldSpec{WireName: "effective_location"},
-		"ExpectedOutages": ubx.FieldSpec{
-			WireName: "expected_outages",
-			Kind: "list",
-			Fields: AlphaInterconnect_ExpectedOutagesFields,
-		},
-		"GoogleIpAddress": ubx.FieldSpec{WireName: "google_ip_address"},
-		"GoogleReferenceId": ubx.FieldSpec{WireName: "google_reference_id"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"InterconnectAttachments": ubx.FieldSpec{WireName: "interconnect_attachments"},
-		"InterconnectGroups": ubx.FieldSpec{WireName: "interconnect_groups"},
-		"InterconnectType": ubx.FieldSpec{WireName: "interconnect_type"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"LabelFingerprint": ubx.FieldSpec{WireName: "label_fingerprint"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"LinkType": ubx.FieldSpec{WireName: "link_type"},
-		"Location": ubx.FieldSpec{WireName: "location"},
+		"CustomerName":      ubx.FieldSpec{WireName: "customer_name"},
+		"Description":       ubx.FieldSpec{WireName: "description"},
+		"InterconnectType":  ubx.FieldSpec{WireName: "interconnect_type"},
+		"LabelFingerprint":  ubx.FieldSpec{WireName: "label_fingerprint"},
+		"Labels":            ubx.FieldSpec{WireName: "labels"},
+		"LinkType":          ubx.FieldSpec{WireName: "link_type"},
+		"Location":          ubx.FieldSpec{WireName: "location"},
 		"Macsec": ubx.FieldSpec{
 			WireName: "macsec",
-			Kind: "object",
-			Fields: AlphaInterconnect_MacsecFields,
+			Kind:     "object",
+			Fields:   AlphaInterconnect_MacsecFields,
 		},
-		"MacsecEnabled": ubx.FieldSpec{WireName: "macsec_enabled"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"MacsecEnabled":   ubx.FieldSpec{WireName: "macsec_enabled"},
+		"Name":            ubx.FieldSpec{WireName: "name"},
 		"NocContactEmail": ubx.FieldSpec{WireName: "noc_contact_email"},
-		"OperationalStatus": ubx.FieldSpec{WireName: "operational_status"},
 		"Params": ubx.FieldSpec{
 			WireName: "params",
-			Kind: "object",
-			Fields: AlphaInterconnect_ParamsFields,
+			Kind:     "object",
+			Fields:   AlphaInterconnect_ParamsFields,
 		},
-		"PeerIpAddress": ubx.FieldSpec{WireName: "peer_ip_address"},
-		"ProvisionedLinkCount": ubx.FieldSpec{WireName: "provisioned_link_count"},
-		"RemoteLocation": ubx.FieldSpec{WireName: "remote_location"},
-		"RequestedFeatures": ubx.FieldSpec{WireName: "requested_features"},
+		"RemoteLocation":     ubx.FieldSpec{WireName: "remote_location"},
+		"RequestedFeatures":  ubx.FieldSpec{WireName: "requested_features"},
 		"RequestedLinkCount": ubx.FieldSpec{WireName: "requested_link_count"},
-		"SatisfiesPzs": ubx.FieldSpec{WireName: "satisfies_pzs"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"SelfLinkWithId": ubx.FieldSpec{WireName: "self_link_with_id"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"Subzone": ubx.FieldSpec{WireName: "subzone"},
-		"WireGroups": ubx.FieldSpec{WireName: "wire_groups"},
+		"Subzone":            ubx.FieldSpec{WireName: "subzone"},
 	},
 }

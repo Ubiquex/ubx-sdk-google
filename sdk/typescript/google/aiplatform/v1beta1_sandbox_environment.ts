@@ -56,14 +56,10 @@ const V1beta1SandboxEnvironment_SpecFields: FieldMap = {
 export interface V1beta1SandboxEnvironmentConfig {
   /** The connection information of the SandboxEnvironment. */
   connectionInfo?: V1beta1SandboxEnvironment_ConnectionInfo | Computed<V1beta1SandboxEnvironment_ConnectionInfo>;
-  /** Output only. The timestamp when this SandboxEnvironment was created. */
-  createTime?: string | Computed<string>;
   /** Required. The display name of the SandboxEnvironment. */
   displayName?: string | Computed<string>;
   /** Optional. Timestamp in UTC of when this SandboxEnvironment is considered expired. This is *always* provided on output, regardless of what `expiration` was sent on input. */
   expireTime?: string | Computed<string>;
-  /** Output only. The resource name of the latest snapshot taken for this SandboxEnvironment. */
-  latestSandboxEnvironmentSnapshot?: string | Computed<string>;
   /** Identifier. The name of the SandboxEnvironment. */
   name?: string | Computed<string>;
   /** Optional. Owner information for this sandbox environment. A Sandbox can only be restored from a snapshot that belongs to the same owner. If not set, sandbox will be created as the default owner. */
@@ -74,12 +70,8 @@ export interface V1beta1SandboxEnvironmentConfig {
   sandboxEnvironmentTemplate?: string | Computed<string>;
   /** The specification of a SandboxEnvironment. */
   spec?: V1beta1SandboxEnvironment_Spec | Computed<V1beta1SandboxEnvironment_Spec>;
-  /** Output only. The runtime state of the SandboxEnvironment. */
-  state?: string | Computed<string>;
   /** Optional. Input only. The TTL for the sandbox environment. The expiration time is computed: now + TTL. */
   ttl?: string | Computed<string>;
-  /** Output only. The timestamp when this SandboxEnvironment was most recently updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1beta1SandboxEnvironmentAttrs {
@@ -119,10 +111,8 @@ export const V1beta1SandboxEnvironment: ResourceBinding<V1beta1SandboxEnvironmen
       kind: "object",
       fields: V1beta1SandboxEnvironment_ConnectionInfoFields,
     },
-    createTime: "create_time",
     displayName: "display_name",
     expireTime: "expire_time",
-    latestSandboxEnvironmentSnapshot: "latest_sandbox_environment_snapshot",
     name: "name",
     owner: "owner",
     sandboxEnvironmentSnapshot: "sandbox_environment_snapshot",
@@ -132,8 +122,6 @@ export const V1beta1SandboxEnvironment: ResourceBinding<V1beta1SandboxEnvironmen
       kind: "object",
       fields: V1beta1SandboxEnvironment_SpecFields,
     },
-    state: "state",
     ttl: "ttl",
-    updateTime: "update_time",
   },
 };

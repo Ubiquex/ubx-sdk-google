@@ -4,15 +4,15 @@ package securityposture
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PostureTemplate_PolicySets_Policies_ComplianceStandards struct {
-	Control any
+	Control  any
 	Standard any
 }
 
 type PostureTemplate_PolicySets_Policies_Constraint_OrgPolicyConstraint_PolicyRules_Condition struct {
 	Description any
-	Expression any
-	Location any
-	Title any
+	Expression  any
+	Location    any
+	Title       any
 }
 
 type PostureTemplate_PolicySets_Policies_Constraint_OrgPolicyConstraint_PolicyRules_ResourceTypes struct {
@@ -21,42 +21,42 @@ type PostureTemplate_PolicySets_Policies_Constraint_OrgPolicyConstraint_PolicyRu
 
 type PostureTemplate_PolicySets_Policies_Constraint_OrgPolicyConstraint_PolicyRules_Values struct {
 	AllowedValues any
-	DeniedValues any
+	DeniedValues  any
 }
 
 type PostureTemplate_PolicySets_Policies_Constraint_OrgPolicyConstraint_PolicyRules struct {
-	AllowAll any
-	Condition any
-	DenyAll any
-	Enforce any
-	Parameters any
+	AllowAll      any
+	Condition     any
+	DenyAll       any
+	Enforce       any
+	Parameters    any
 	ResourceTypes any
-	Values any
+	Values        any
 }
 
 type PostureTemplate_PolicySets_Policies_Constraint_OrgPolicyConstraint struct {
 	CannedConstraintId any
-	PolicyRules any
+	PolicyRules        any
 }
 
 type PostureTemplate_PolicySets_Policies_Constraint_OrgPolicyConstraintCustom_CustomConstraint struct {
-	ActionType any
-	Condition any
-	Description any
-	DisplayName any
-	MethodTypes any
-	Name any
+	ActionType    any
+	Condition     any
+	Description   any
+	DisplayName   any
+	MethodTypes   any
+	Name          any
 	ResourceTypes any
-	UpdateTime any
+	UpdateTime    any
 }
 
 type PostureTemplate_PolicySets_Policies_Constraint_OrgPolicyConstraintCustom struct {
 	CustomConstraint any
-	PolicyRules any
+	PolicyRules      any
 }
 
 type PostureTemplate_PolicySets_Policies_Constraint_SecurityHealthAnalyticsCustomModule_Config_CustomOutput_Properties struct {
-	Name any
+	Name            any
 	ValueExpression any
 }
 
@@ -69,49 +69,47 @@ type PostureTemplate_PolicySets_Policies_Constraint_SecurityHealthAnalyticsCusto
 }
 
 type PostureTemplate_PolicySets_Policies_Constraint_SecurityHealthAnalyticsCustomModule_Config struct {
-	CustomOutput any
-	Description any
-	Predicate any
-	Recommendation any
+	CustomOutput     any
+	Description      any
+	Predicate        any
+	Recommendation   any
 	ResourceSelector any
-	Severity any
+	Severity         any
 }
 
 type PostureTemplate_PolicySets_Policies_Constraint_SecurityHealthAnalyticsCustomModule struct {
-	Config any
-	DisplayName any
-	Id any
+	Config                any
+	DisplayName           any
+	Id                    any
 	ModuleEnablementState any
 }
 
 type PostureTemplate_PolicySets_Policies_Constraint_SecurityHealthAnalyticsModule struct {
 	ModuleEnablementState any
-	ModuleName any
+	ModuleName            any
 }
 
 type PostureTemplate_PolicySets_Policies_Constraint struct {
-	OrgPolicyConstraint any
-	OrgPolicyConstraintCustom any
+	OrgPolicyConstraint                 any
+	OrgPolicyConstraintCustom           any
 	SecurityHealthAnalyticsCustomModule any
-	SecurityHealthAnalyticsModule any
+	SecurityHealthAnalyticsModule       any
 }
 
 type PostureTemplate_PolicySets_Policies struct {
 	ComplianceStandards any
-	Constraint any
-	Description any
-	PolicyId any
+	Constraint          any
+	Description         any
+	PolicyId            any
 }
 
 type PostureTemplate_PolicySets struct {
 	Description any
-	Policies any
+	Policies    any
 	PolicySetId any
 }
 
 type PostureTemplateConfig struct {
-	Name any
-	RevisionId any
 }
 
 type PostureTemplateAttrs struct {
@@ -119,7 +117,7 @@ type PostureTemplateAttrs struct {
 	Categories any
 	// Output only. A description of the posture template.
 	Description any
-	Name any
+	Name        any
 	// Output only. The PolicySet resources that the posture template includes.
 	PolicySets any
 	RevisionId any
@@ -129,8 +127,5 @@ type PostureTemplateAttrs struct {
 
 var PostureTemplate = ubx.DataSourceBinding{
 	WireType: "google_securityposture_posture_template",
-	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"RevisionId": ubx.FieldSpec{WireName: "revision_id"},
-	},
+	Fields:   ubx.FieldMap{},
 }

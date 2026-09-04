@@ -2,26 +2,18 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface SecurityProfileGroupConfig {
-  /** Output only. Resource creation timestamp. */
-  createTime?: string | Computed<string>;
   /** Optional. Reference to a SecurityProfile with the CustomIntercept configuration. */
   customInterceptProfile?: string | Computed<string>;
   /** Optional. Reference to a SecurityProfile with the CustomMirroring configuration. */
   customMirroringProfile?: string | Computed<string>;
-  /** Output only. Identifier used by the data-path. Unique within `{container, location}`. */
-  dataPathId?: string | Computed<string>;
   /** Optional. An optional description of the profile group. Max length 2048 characters. */
   description?: string | Computed<string>;
-  /** Output only. This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding. */
-  etag?: string | Computed<string>;
   /** Optional. Labels as key value pairs. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Immutable. Identifier. Name of the SecurityProfileGroup resource. It matches pattern `projects|organizations/* /locations/{location}/securityProfileGroups/{security_profile_group}`. */
   name?: string | Computed<string>;
   /** Optional. Reference to a SecurityProfile with the ThreatPrevention configuration. */
   threatPreventionProfile?: string | Computed<string>;
-  /** Output only. Last resource update timestamp. */
-  updateTime?: string | Computed<string>;
   /** Optional. Reference to a SecurityProfile with the UrlFiltering configuration. */
   urlFilteringProfile?: string | Computed<string>;
 }
@@ -54,16 +46,12 @@ export interface SecurityProfileGroupAttrs {
 export const SecurityProfileGroup: ResourceBinding<SecurityProfileGroupConfig, SecurityProfileGroupAttrs> = {
   wireType: "google_networksecurity_security_profile_group",
   fields: {
-    createTime: "create_time",
     customInterceptProfile: "custom_intercept_profile",
     customMirroringProfile: "custom_mirroring_profile",
-    dataPathId: "data_path_id",
     description: "description",
-    etag: "etag",
     labels: "labels",
     name: "name",
     threatPreventionProfile: "threat_prevention_profile",
-    updateTime: "update_time",
     urlFilteringProfile: "url_filtering_profile",
   },
 };

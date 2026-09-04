@@ -4,13 +4,13 @@ package aiplatform
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta1Slice_ModelExplanation_MeanAttributions struct {
-	ApproximationError any
+	ApproximationError  any
 	BaselineOutputValue any
 	FeatureAttributions any
 	InstanceOutputValue any
-	OutputDisplayName any
-	OutputIndex any
-	OutputName any
+	OutputDisplayName   any
+	OutputIndex         any
+	OutputName          any
 }
 
 type V1beta1Slice_ModelExplanation struct {
@@ -20,18 +20,18 @@ type V1beta1Slice_ModelExplanation struct {
 
 type V1beta1Slice_Slice_SliceSpec_Configs_Range struct {
 	High any
-	Low any
+	Low  any
 }
 
 type V1beta1Slice_Slice_SliceSpec_Configs_Value struct {
-	FloatValue any
+	FloatValue  any
 	StringValue any
 }
 
 type V1beta1Slice_Slice_SliceSpec_Configs struct {
 	AllValues any
-	Range any
-	Value any
+	Range     any
+	Value     any
 }
 
 type V1beta1Slice_Slice_SliceSpec struct {
@@ -49,7 +49,6 @@ type V1beta1Slice_Slice struct {
 }
 
 type V1beta1SliceConfig struct {
-	Name any
 }
 
 type V1beta1SliceAttrs struct {
@@ -61,14 +60,12 @@ type V1beta1SliceAttrs struct {
 	MetricsSchemaUri any
 	// Aggregated explanation metrics for a Model over a set of instances.
 	ModelExplanation any
-	Name any
+	Name             any
 	// Definition of a slice.
 	Slice any
 }
 
 var V1beta1Slice = ubx.DataSourceBinding{
 	WireType: "google_aiplatform_v1beta1_slice",
-	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	},
+	Fields:   ubx.FieldMap{},
 }

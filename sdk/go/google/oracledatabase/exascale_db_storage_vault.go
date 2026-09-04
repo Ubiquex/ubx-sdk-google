@@ -43,44 +43,40 @@ type ExascaleDbStorageVault_Properties struct {
 }
 
 var ExascaleDbStorageVault_Properties_ExascaleDbStorageDetailsFields = ubx.FieldMap{
-		"AvailableSizeGbs": ubx.FieldSpec{WireName: "available_size_gbs"},
-		"TotalSizeGbs": ubx.FieldSpec{WireName: "total_size_gbs"},
-	}
+	"AvailableSizeGbs": ubx.FieldSpec{WireName: "available_size_gbs"},
+	"TotalSizeGbs":     ubx.FieldSpec{WireName: "total_size_gbs"},
+}
 
 var ExascaleDbStorageVault_Properties_TimeZoneFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"Id":      ubx.FieldSpec{WireName: "id"},
+	"Version": ubx.FieldSpec{WireName: "version"},
+}
 
 var ExascaleDbStorageVault_PropertiesFields = ubx.FieldMap{
-		"AdditionalFlashCachePercent": ubx.FieldSpec{WireName: "additional_flash_cache_percent"},
-		"AttachedShapeAttributes": ubx.FieldSpec{WireName: "attached_shape_attributes"},
-		"AvailableShapeAttributes": ubx.FieldSpec{WireName: "available_shape_attributes"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"ExascaleDbStorageDetails": ubx.FieldSpec{
-			WireName: "exascale_db_storage_details",
-			Kind: "object",
-			Fields: ExascaleDbStorageVault_Properties_ExascaleDbStorageDetailsFields,
-		},
-		"OciUri": ubx.FieldSpec{WireName: "oci_uri"},
-		"Ocid": ubx.FieldSpec{WireName: "ocid"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"TimeZone": ubx.FieldSpec{
-			WireName: "time_zone",
-			Kind: "object",
-			Fields: ExascaleDbStorageVault_Properties_TimeZoneFields,
-		},
-		"VmClusterCount": ubx.FieldSpec{WireName: "vm_cluster_count"},
-		"VmClusterIds": ubx.FieldSpec{WireName: "vm_cluster_ids"},
-	}
+	"AdditionalFlashCachePercent": ubx.FieldSpec{WireName: "additional_flash_cache_percent"},
+	"AttachedShapeAttributes":     ubx.FieldSpec{WireName: "attached_shape_attributes"},
+	"AvailableShapeAttributes":    ubx.FieldSpec{WireName: "available_shape_attributes"},
+	"Description":                 ubx.FieldSpec{WireName: "description"},
+	"ExascaleDbStorageDetails": ubx.FieldSpec{
+		WireName: "exascale_db_storage_details",
+		Kind:     "object",
+		Fields:   ExascaleDbStorageVault_Properties_ExascaleDbStorageDetailsFields,
+	},
+	"OciUri": ubx.FieldSpec{WireName: "oci_uri"},
+	"Ocid":   ubx.FieldSpec{WireName: "ocid"},
+	"State":  ubx.FieldSpec{WireName: "state"},
+	"TimeZone": ubx.FieldSpec{
+		WireName: "time_zone",
+		Kind:     "object",
+		Fields:   ExascaleDbStorageVault_Properties_TimeZoneFields,
+	},
+	"VmClusterCount": ubx.FieldSpec{WireName: "vm_cluster_count"},
+	"VmClusterIds":   ubx.FieldSpec{WireName: "vm_cluster_ids"},
+}
 
 type ExascaleDbStorageVaultConfig struct {
-	// Output only. The date and time when the ExascaleDbStorageVault was created.
-	CreateTime any
 	// Required. The display name for the ExascaleDbStorageVault. The name does not have to be unique within your project. The name must be 1-255 characters long and can only contain alphanumeric characters.
 	DisplayName any
-	// Output only. The ID of the subscription entitlement associated with the ExascaleDbStorageVault.
-	EntitlementId any
 	// Optional. The Exadata Infrastructure resource on which ExascaleDbStorageVault resource is created, in the following format: projects/{project}/locations/{region}/cloudExadataInfrastuctures/{cloud_extradata_infrastructure}
 	ExadataInfrastructure any
 	// Optional. The GCP Oracle zone where Oracle ExascaleDbStorageVault is hosted. Example: us-east4-b-r2. If not specified, the system will pick a zone based on availability.
@@ -115,17 +111,15 @@ type ExascaleDbStorageVaultAttrs struct {
 var ExascaleDbStorageVault = ubx.ResourceBinding{
 	WireType: "google_oracledatabase_exascale_db_storage_vault",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"EntitlementId": ubx.FieldSpec{WireName: "entitlement_id"},
+		"DisplayName":           ubx.FieldSpec{WireName: "display_name"},
 		"ExadataInfrastructure": ubx.FieldSpec{WireName: "exadata_infrastructure"},
-		"GcpOracleZone": ubx.FieldSpec{WireName: "gcp_oracle_zone"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"GcpOracleZone":         ubx.FieldSpec{WireName: "gcp_oracle_zone"},
+		"Labels":                ubx.FieldSpec{WireName: "labels"},
+		"Name":                  ubx.FieldSpec{WireName: "name"},
 		"Properties": ubx.FieldSpec{
 			WireName: "properties",
-			Kind: "object",
-			Fields: ExascaleDbStorageVault_PropertiesFields,
+			Kind:     "object",
+			Fields:   ExascaleDbStorageVault_PropertiesFields,
 		},
 	},
 }

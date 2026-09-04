@@ -307,22 +307,14 @@ export interface InstanceConfig {
   additionalConfig?: Record<string, Instance_AdditionalConfig> | Computed<Record<string, Instance_AdditionalConfig>>;
   /** AuthConfig represents the authentication information. */
   authConfig?: Instance_AuthConfig | Computed<Instance_AuthConfig>;
-  /** Output only. Timestamp indicating when the plugin instance was created. */
-  createTime?: string | Computed<string>;
   /** Required. The display name for this plugin instance. Max length is 255 characters. */
   displayName?: string | Computed<string>;
-  /** Output only. Error message describing the failure, if any, during Create, Delete or ApplyConfig operation corresponding to the plugin instance.This field will only be populated if the plugin instance is in the ERROR or FAILED state. */
-  errorMessage?: string | Computed<string>;
   /** Identifier. The unique name of the plugin instance resource. Format: `projects/{project}/locations/{location}/plugins/{plugin}/instances/{instance}` */
   name?: string | Computed<string>;
   /** Optional. The source environment's config present in the gateway instance linked to the plugin instance. The key is the `source_environment` name from the SourceEnvironment message. */
   sourceEnvironmentsConfig?: Record<string, Instance_SourceEnvironmentsConfig> | Computed<Record<string, Instance_SourceEnvironmentsConfig>>;
   /** Optional. The source project id of the plugin instance. This will be the id of runtime project in case of Google Cloud based plugins and org id in case of non-Google Cloud based plugins. This field will be a required field for Google provided on-ramp plugins. */
   sourceProjectId?: string | Computed<string>;
-  /** Output only. The current state of the plugin instance (e.g., enabled, disabled, provisioning). */
-  state?: string | Computed<string>;
-  /** Output only. Timestamp indicating when the plugin instance was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface InstanceAttrs {
@@ -368,9 +360,7 @@ export const Instance: ResourceBinding<InstanceConfig, InstanceAttrs> = {
       kind: "object",
       fields: Instance_AuthConfigFields,
     },
-    createTime: "create_time",
     displayName: "display_name",
-    errorMessage: "error_message",
     name: "name",
     sourceEnvironmentsConfig: {
       wireName: "source_environments_config",
@@ -378,7 +368,5 @@ export const Instance: ResourceBinding<InstanceConfig, InstanceAttrs> = {
       fields: Instance_SourceEnvironmentsConfigFields,
     },
     sourceProjectId: "source_project_id",
-    state: "state",
-    updateTime: "update_time",
   },
 };

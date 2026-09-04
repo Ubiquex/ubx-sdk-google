@@ -75,8 +75,6 @@ class EnvironmentConfig:
     api_proxy_type: Any = None
     # Configuration for resolving the client ip.
     client_ip_resolution_config: Any = None
-    # Output only. Creation time of this environment as milliseconds since epoch.
-    created_at: Any = None
     # Optional. Deployment type supported by the environment. The deployment type can be set when creating the environment and cannot be changed. When you enable archive deployment, you will be **prevented from performing** a [subset of actions](/apigee/docs/api-platform/local-development/overview#prevented-actions) within the environment, including: * Managing the deployment of API proxy or shared flow revisions * Creating, updating, or deleting resource files * Creating, updating, or deleting target servers
     deployment_type: Any = None
     # Optional. Description of the environment.
@@ -86,16 +84,12 @@ class EnvironmentConfig:
     # Optional. URI of the forward proxy to be applied to the runtime instances in this environment. Must be in the format of {scheme}://{hostname}:{port}. Note that the only supported scheme is "http". The port must be supplied. To remove a forward proxy setting, update the field to an empty value. Note: At this time, PUT operations to add forwardProxyUri to an existing environment fail if the environment has nodeConfig set up. To successfully add the forwardProxyUri setting in this case, include the NodeConfig details with the request.
     forward_proxy_uri: Any = None
     has_attached_flow_hooks: Any = None
-    # Output only. Last modification time of this environment as milliseconds since epoch.
-    last_modified_at: Any = None
     # Required. Name of the environment. Values must match the regular expression `^[.\\p{Alnum}-_]{1,255}$`
     name: Any = None
     # NodeConfig for setting the min/max number of nodes associated with the environment.
     node_config: Any = None
     # Message for compatibility with legacy Edge specification for Java Properties object in JSON.
     properties: Any = None
-    # Output only. State of the environment. Values other than ACTIVE means the resource is not ready to use.
-    state: Any = None
     # Optional. EnvironmentType selected for the environment.
     type: Any = None
 
@@ -138,13 +132,11 @@ Environment = ubx.ResourceBinding(
             kind="object",
             fields=_Environment_ClientIpResolutionConfigFields,
         ),
-        "created_at": ubx.FieldSpec(wire_name="created_at"),
         "deployment_type": ubx.FieldSpec(wire_name="deployment_type"),
         "description": ubx.FieldSpec(wire_name="description"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "forward_proxy_uri": ubx.FieldSpec(wire_name="forward_proxy_uri"),
         "has_attached_flow_hooks": ubx.FieldSpec(wire_name="has_attached_flow_hooks"),
-        "last_modified_at": ubx.FieldSpec(wire_name="last_modified_at"),
         "name": ubx.FieldSpec(wire_name="name"),
         "node_config": ubx.FieldSpec(
             wire_name="node_config",
@@ -156,7 +148,6 @@ Environment = ubx.ResourceBinding(
             kind="object",
             fields=_Environment_PropertiesFields,
         ),
-        "state": ubx.FieldSpec(wire_name="state"),
         "type": ubx.FieldSpec(wire_name="type"),
     },
 )

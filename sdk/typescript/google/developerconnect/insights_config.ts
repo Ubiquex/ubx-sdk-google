@@ -80,60 +80,8 @@ const InsightsConfig_ArtifactConfigsFields: FieldMap = {
   uri: "uri",
 };
 
-const InsightsConfig_ErrorsFields: FieldMap = {
-  code: "code",
-  details: "details",
-  message: "message",
-};
-
 const InsightsConfig_ProjectsFields: FieldMap = {
   projectIds: "project_ids",
-};
-
-const InsightsConfig_RuntimeConfigs_AppHubServiceFields: FieldMap = {
-  apphubService: "apphub_service",
-  criticality: "criticality",
-  environment: "environment",
-};
-
-const InsightsConfig_RuntimeConfigs_AppHubWorkloadFields: FieldMap = {
-  criticality: "criticality",
-  environment: "environment",
-  workload: "workload",
-};
-
-const InsightsConfig_RuntimeConfigs_GkeWorkloadFields: FieldMap = {
-  cluster: "cluster",
-  deployment: "deployment",
-};
-
-const InsightsConfig_RuntimeConfigs_GoogleCloudRunFields: FieldMap = {
-  serviceUri: "service_uri",
-};
-
-const InsightsConfig_RuntimeConfigsFields: FieldMap = {
-  appHubService: {
-    wireName: "app_hub_service",
-    kind: "object",
-    fields: InsightsConfig_RuntimeConfigs_AppHubServiceFields,
-  },
-  appHubWorkload: {
-    wireName: "app_hub_workload",
-    kind: "object",
-    fields: InsightsConfig_RuntimeConfigs_AppHubWorkloadFields,
-  },
-  gkeWorkload: {
-    wireName: "gke_workload",
-    kind: "object",
-    fields: InsightsConfig_RuntimeConfigs_GkeWorkloadFields,
-  },
-  googleCloudRun: {
-    wireName: "google_cloud_run",
-    kind: "object",
-    fields: InsightsConfig_RuntimeConfigs_GoogleCloudRunFields,
-  },
-  state: "state",
-  uri: "uri",
 };
 
 export interface InsightsConfigConfig {
@@ -143,24 +91,14 @@ export interface InsightsConfigConfig {
   appHubApplication?: string | Computed<string>;
   /** Optional. The artifact configurations of the artifacts that are deployed. */
   artifactConfigs?: InsightsConfig_ArtifactConfigs[] | Computed<InsightsConfig_ArtifactConfigs[]>;
-  /** Output only. Create timestamp. */
-  createTime?: string | Computed<string>;
-  /** Output only. Any errors that occurred while setting up the InsightsConfig. Each error will be in the format: `field_name: error_message`, e.g. GetAppHubApplication: Permission denied while getting App Hub application. Please grant permissions to the P4SA. */
-  errors?: InsightsConfig_Errors[] | Computed<InsightsConfig_Errors[]>;
   /** Optional. Set of labels associated with an InsightsConfig. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Identifier. The name of the InsightsConfig. Format: projects/{project}/locations/{location}/insightsConfigs/{insightsConfig} */
   name?: string | Computed<string>;
   /** Projects represents the projects to track with the InsightsConfig. */
   projects?: InsightsConfig_Projects | Computed<InsightsConfig_Projects>;
-  /** Output only. Reconciling (https://google.aip.dev/128#reconciliation). Set to true if the current state of InsightsConfig does not match the user's intended state, and the service is actively updating the resource to reconcile them. This can happen due to user-triggered updates or system actions like failover or maintenance. */
-  reconciling?: boolean | Computed<boolean>;
-  /** Output only. The runtime configurations where the application is deployed. */
-  runtimeConfigs?: InsightsConfig_RuntimeConfigs[] | Computed<InsightsConfig_RuntimeConfigs[]>;
   /** Optional. Output only. The state of the InsightsConfig. */
   state?: string | Computed<string>;
-  /** Output only. Update timestamp. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface InsightsConfigAttrs {
@@ -200,12 +138,6 @@ export const InsightsConfig: ResourceBinding<InsightsConfigConfig, InsightsConfi
       kind: "list",
       fields: InsightsConfig_ArtifactConfigsFields,
     },
-    createTime: "create_time",
-    errors: {
-      wireName: "errors",
-      kind: "list",
-      fields: InsightsConfig_ErrorsFields,
-    },
     labels: "labels",
     name: "name",
     projects: {
@@ -213,13 +145,6 @@ export const InsightsConfig: ResourceBinding<InsightsConfigConfig, InsightsConfi
       kind: "object",
       fields: InsightsConfig_ProjectsFields,
     },
-    reconciling: "reconciling",
-    runtimeConfigs: {
-      wireName: "runtime_configs",
-      kind: "list",
-      fields: InsightsConfig_RuntimeConfigsFields,
-    },
     state: "state",
-    updateTime: "update_time",
   },
 };

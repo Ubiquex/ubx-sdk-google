@@ -131,128 +131,128 @@ type V2beta2Task_Task struct {
 }
 
 var V2beta2Task_AppEngineHttpRequest_AppEngineRoutingFields = ubx.FieldMap{
-		"Host": ubx.FieldSpec{WireName: "host"},
-		"Instance": ubx.FieldSpec{WireName: "instance"},
-		"Service": ubx.FieldSpec{WireName: "service"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"Host":     ubx.FieldSpec{WireName: "host"},
+	"Instance": ubx.FieldSpec{WireName: "instance"},
+	"Service":  ubx.FieldSpec{WireName: "service"},
+	"Version":  ubx.FieldSpec{WireName: "version"},
+}
 
 var V2beta2Task_AppEngineHttpRequestFields = ubx.FieldMap{
-		"AppEngineRouting": ubx.FieldSpec{
-			WireName: "app_engine_routing",
-			Kind: "object",
-			Fields: V2beta2Task_AppEngineHttpRequest_AppEngineRoutingFields,
-		},
-		"Headers": ubx.FieldSpec{WireName: "headers"},
-		"HttpMethod": ubx.FieldSpec{WireName: "http_method"},
-		"Payload": ubx.FieldSpec{WireName: "payload"},
-		"RelativeUrl": ubx.FieldSpec{WireName: "relative_url"},
-	}
+	"AppEngineRouting": ubx.FieldSpec{
+		WireName: "app_engine_routing",
+		Kind:     "object",
+		Fields:   V2beta2Task_AppEngineHttpRequest_AppEngineRoutingFields,
+	},
+	"Headers":     ubx.FieldSpec{WireName: "headers"},
+	"HttpMethod":  ubx.FieldSpec{WireName: "http_method"},
+	"Payload":     ubx.FieldSpec{WireName: "payload"},
+	"RelativeUrl": ubx.FieldSpec{WireName: "relative_url"},
+}
 
 var V2beta2Task_HttpRequest_OauthTokenFields = ubx.FieldMap{
-		"Scope": ubx.FieldSpec{WireName: "scope"},
-		"ServiceAccountEmail": ubx.FieldSpec{WireName: "service_account_email"},
-	}
+	"Scope":               ubx.FieldSpec{WireName: "scope"},
+	"ServiceAccountEmail": ubx.FieldSpec{WireName: "service_account_email"},
+}
 
 var V2beta2Task_HttpRequest_OidcTokenFields = ubx.FieldMap{
-		"Audience": ubx.FieldSpec{WireName: "audience"},
-		"ServiceAccountEmail": ubx.FieldSpec{WireName: "service_account_email"},
-	}
+	"Audience":            ubx.FieldSpec{WireName: "audience"},
+	"ServiceAccountEmail": ubx.FieldSpec{WireName: "service_account_email"},
+}
 
 var V2beta2Task_HttpRequestFields = ubx.FieldMap{
-		"Body": ubx.FieldSpec{WireName: "body"},
-		"Headers": ubx.FieldSpec{WireName: "headers"},
-		"HttpMethod": ubx.FieldSpec{WireName: "http_method"},
-		"OauthToken": ubx.FieldSpec{
-			WireName: "oauth_token",
-			Kind: "object",
-			Fields: V2beta2Task_HttpRequest_OauthTokenFields,
-		},
-		"OidcToken": ubx.FieldSpec{
-			WireName: "oidc_token",
-			Kind: "object",
-			Fields: V2beta2Task_HttpRequest_OidcTokenFields,
-		},
-		"Url": ubx.FieldSpec{WireName: "url"},
-	}
+	"Body":       ubx.FieldSpec{WireName: "body"},
+	"Headers":    ubx.FieldSpec{WireName: "headers"},
+	"HttpMethod": ubx.FieldSpec{WireName: "http_method"},
+	"OauthToken": ubx.FieldSpec{
+		WireName: "oauth_token",
+		Kind:     "object",
+		Fields:   V2beta2Task_HttpRequest_OauthTokenFields,
+	},
+	"OidcToken": ubx.FieldSpec{
+		WireName: "oidc_token",
+		Kind:     "object",
+		Fields:   V2beta2Task_HttpRequest_OidcTokenFields,
+	},
+	"Url": ubx.FieldSpec{WireName: "url"},
+}
 
 var V2beta2Task_PullMessageFields = ubx.FieldMap{
-		"Payload": ubx.FieldSpec{WireName: "payload"},
-		"Tag": ubx.FieldSpec{WireName: "tag"},
-	}
+	"Payload": ubx.FieldSpec{WireName: "payload"},
+	"Tag":     ubx.FieldSpec{WireName: "tag"},
+}
 
 var V2beta2Task_RetryConfigFields = ubx.FieldMap{
-		"MaxAttempts": ubx.FieldSpec{WireName: "max_attempts"},
-		"MaxBackoff": ubx.FieldSpec{WireName: "max_backoff"},
-		"MaxDoublings": ubx.FieldSpec{WireName: "max_doublings"},
-		"MaxRetryDuration": ubx.FieldSpec{WireName: "max_retry_duration"},
-		"MinBackoff": ubx.FieldSpec{WireName: "min_backoff"},
-		"UnlimitedAttempts": ubx.FieldSpec{WireName: "unlimited_attempts"},
-	}
+	"MaxAttempts":       ubx.FieldSpec{WireName: "max_attempts"},
+	"MaxBackoff":        ubx.FieldSpec{WireName: "max_backoff"},
+	"MaxDoublings":      ubx.FieldSpec{WireName: "max_doublings"},
+	"MaxRetryDuration":  ubx.FieldSpec{WireName: "max_retry_duration"},
+	"MinBackoff":        ubx.FieldSpec{WireName: "min_backoff"},
+	"UnlimitedAttempts": ubx.FieldSpec{WireName: "unlimited_attempts"},
+}
 
 var V2beta2Task_Status_FirstAttemptStatus_ResponseStatusFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"Code":    ubx.FieldSpec{WireName: "code"},
+	"Details": ubx.FieldSpec{WireName: "details"},
+	"Message": ubx.FieldSpec{WireName: "message"},
+}
 
 var V2beta2Task_Status_FirstAttemptStatusFields = ubx.FieldMap{
-		"DispatchTime": ubx.FieldSpec{WireName: "dispatch_time"},
-		"ResponseStatus": ubx.FieldSpec{
-			WireName: "response_status",
-			Kind: "object",
-			Fields: V2beta2Task_Status_FirstAttemptStatus_ResponseStatusFields,
-		},
-		"ResponseTime": ubx.FieldSpec{WireName: "response_time"},
-		"ScheduleTime": ubx.FieldSpec{WireName: "schedule_time"},
-	}
+	"DispatchTime": ubx.FieldSpec{WireName: "dispatch_time"},
+	"ResponseStatus": ubx.FieldSpec{
+		WireName: "response_status",
+		Kind:     "object",
+		Fields:   V2beta2Task_Status_FirstAttemptStatus_ResponseStatusFields,
+	},
+	"ResponseTime": ubx.FieldSpec{WireName: "response_time"},
+	"ScheduleTime": ubx.FieldSpec{WireName: "schedule_time"},
+}
 
 var V2beta2Task_StatusFields = ubx.FieldMap{
-		"AttemptDispatchCount": ubx.FieldSpec{WireName: "attempt_dispatch_count"},
-		"AttemptResponseCount": ubx.FieldSpec{WireName: "attempt_response_count"},
-		"FirstAttemptStatus": ubx.FieldSpec{
-			WireName: "first_attempt_status",
-			Kind: "object",
-			Fields: V2beta2Task_Status_FirstAttemptStatusFields,
-		},
-		"LastAttemptStatus": ubx.FieldSpec{
-			WireName: "last_attempt_status",
-			Kind: "object",
-			Fields: V2beta2Task_Status_FirstAttemptStatusFields,
-		},
-	}
+	"AttemptDispatchCount": ubx.FieldSpec{WireName: "attempt_dispatch_count"},
+	"AttemptResponseCount": ubx.FieldSpec{WireName: "attempt_response_count"},
+	"FirstAttemptStatus": ubx.FieldSpec{
+		WireName: "first_attempt_status",
+		Kind:     "object",
+		Fields:   V2beta2Task_Status_FirstAttemptStatusFields,
+	},
+	"LastAttemptStatus": ubx.FieldSpec{
+		WireName: "last_attempt_status",
+		Kind:     "object",
+		Fields:   V2beta2Task_Status_FirstAttemptStatusFields,
+	},
+}
 
 var V2beta2Task_TaskFields = ubx.FieldMap{
-		"AppEngineHttpRequest": ubx.FieldSpec{
-			WireName: "app_engine_http_request",
-			Kind: "object",
-			Fields: V2beta2Task_AppEngineHttpRequestFields,
-		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"HttpRequest": ubx.FieldSpec{
-			WireName: "http_request",
-			Kind: "object",
-			Fields: V2beta2Task_HttpRequestFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PullMessage": ubx.FieldSpec{
-			WireName: "pull_message",
-			Kind: "object",
-			Fields: V2beta2Task_PullMessageFields,
-		},
-		"RetryConfig": ubx.FieldSpec{
-			WireName: "retry_config",
-			Kind: "object",
-			Fields: V2beta2Task_RetryConfigFields,
-		},
-		"ScheduleTime": ubx.FieldSpec{WireName: "schedule_time"},
-		"Status": ubx.FieldSpec{
-			WireName: "status",
-			Kind: "object",
-			Fields: V2beta2Task_StatusFields,
-		},
-		"View": ubx.FieldSpec{WireName: "view"},
-	}
+	"AppEngineHttpRequest": ubx.FieldSpec{
+		WireName: "app_engine_http_request",
+		Kind:     "object",
+		Fields:   V2beta2Task_AppEngineHttpRequestFields,
+	},
+	"CreateTime": ubx.FieldSpec{WireName: "create_time"},
+	"HttpRequest": ubx.FieldSpec{
+		WireName: "http_request",
+		Kind:     "object",
+		Fields:   V2beta2Task_HttpRequestFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"PullMessage": ubx.FieldSpec{
+		WireName: "pull_message",
+		Kind:     "object",
+		Fields:   V2beta2Task_PullMessageFields,
+	},
+	"RetryConfig": ubx.FieldSpec{
+		WireName: "retry_config",
+		Kind:     "object",
+		Fields:   V2beta2Task_RetryConfigFields,
+	},
+	"ScheduleTime": ubx.FieldSpec{WireName: "schedule_time"},
+	"Status": ubx.FieldSpec{
+		WireName: "status",
+		Kind:     "object",
+		Fields:   V2beta2Task_StatusFields,
+	},
+	"View": ubx.FieldSpec{WireName: "view"},
+}
 
 type V2beta2TaskConfig struct {
 	// Required. The queue name. For example: `projects/PROJECT_ID/locations/LOCATION_ID/queues/QUEUE_ID` The queue must already exist.
@@ -293,12 +293,12 @@ type V2beta2TaskAttrs struct {
 var V2beta2Task = ubx.ResourceBinding{
 	WireType: "google_cloudtasks_v2beta2_task",
 	Fields: ubx.FieldMap{
-		"Parent": ubx.FieldSpec{WireName: "parent"},
+		"Parent":       ubx.FieldSpec{WireName: "parent"},
 		"ResponseView": ubx.FieldSpec{WireName: "response_view"},
 		"Task": ubx.FieldSpec{
 			WireName: "task",
-			Kind: "object",
-			Fields: V2beta2Task_TaskFields,
+			Kind:     "object",
+			Fields:   V2beta2Task_TaskFields,
 		},
 	},
 }

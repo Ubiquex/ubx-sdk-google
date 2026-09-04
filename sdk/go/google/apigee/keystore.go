@@ -4,8 +4,6 @@ package apigee
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type KeystoreConfig struct {
-	// Output only. Aliases in this keystore.
-	Aliases any
 	// Required. Resource ID for this keystore. Values must match the regular expression `[\w[:space:].-]{1,255}`.
 	Name any
 }
@@ -20,7 +18,6 @@ type KeystoreAttrs struct {
 var Keystore = ubx.ResourceBinding{
 	WireType: "google_apigee_keystore",
 	Fields: ubx.FieldMap{
-		"Aliases": ubx.FieldSpec{WireName: "aliases"},
 		"Name": ubx.FieldSpec{WireName: "name"},
 	},
 }

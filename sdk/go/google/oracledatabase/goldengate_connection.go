@@ -98,7 +98,7 @@ type GoldengateConnection_Properties_DatabricksConnectionProperties struct {
 }
 
 type GoldengateConnection_Properties_Db2ConnectionProperties_AdditionalAttributes struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -334,8 +334,8 @@ type GoldengateConnection_Properties_JavaMessageServiceConnectionProperties stru
 }
 
 type GoldengateConnection_Properties_KafkaConnectionProperties_BootstrapServers struct {
-	Host any
-	Port any
+	Host             any
+	Port             any
 	PrivateIpAddress any
 }
 
@@ -698,591 +698,585 @@ type GoldengateConnection_Properties struct {
 }
 
 var GoldengateConnection_Properties_AmazonKinesisConnectionPropertiesFields = ubx.FieldMap{
-		"AccessKeyId": ubx.FieldSpec{WireName: "access_key_id"},
-		"AwsRegion": ubx.FieldSpec{WireName: "aws_region"},
-		"Endpoint": ubx.FieldSpec{WireName: "endpoint"},
-		"SecretAccessKeySecret": ubx.FieldSpec{WireName: "secret_access_key_secret"},
-		"TechnologyType": ubx.FieldSpec{WireName: "technology_type"},
-	}
+	"AccessKeyId":           ubx.FieldSpec{WireName: "access_key_id"},
+	"AwsRegion":             ubx.FieldSpec{WireName: "aws_region"},
+	"Endpoint":              ubx.FieldSpec{WireName: "endpoint"},
+	"SecretAccessKeySecret": ubx.FieldSpec{WireName: "secret_access_key_secret"},
+	"TechnologyType":        ubx.FieldSpec{WireName: "technology_type"},
+}
 
 var GoldengateConnection_Properties_AmazonRedshiftConnectionPropertiesFields = ubx.FieldMap{
-		"ConnectionUrl": ubx.FieldSpec{WireName: "connection_url"},
-		"Password": ubx.FieldSpec{WireName: "password"},
-		"PasswordSecretVersion": ubx.FieldSpec{WireName: "password_secret_version"},
-		"TechnologyType": ubx.FieldSpec{WireName: "technology_type"},
-		"Username": ubx.FieldSpec{WireName: "username"},
-	}
+	"ConnectionUrl":         ubx.FieldSpec{WireName: "connection_url"},
+	"Password":              ubx.FieldSpec{WireName: "password"},
+	"PasswordSecretVersion": ubx.FieldSpec{WireName: "password_secret_version"},
+	"TechnologyType":        ubx.FieldSpec{WireName: "technology_type"},
+	"Username":              ubx.FieldSpec{WireName: "username"},
+}
 
 var GoldengateConnection_Properties_AmazonS3ConnectionPropertiesFields = ubx.FieldMap{
-		"AccessKeyId": ubx.FieldSpec{WireName: "access_key_id"},
-		"Endpoint": ubx.FieldSpec{WireName: "endpoint"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"SecretAccessKeySecret": ubx.FieldSpec{WireName: "secret_access_key_secret"},
-		"TechnologyType": ubx.FieldSpec{WireName: "technology_type"},
-	}
+	"AccessKeyId":           ubx.FieldSpec{WireName: "access_key_id"},
+	"Endpoint":              ubx.FieldSpec{WireName: "endpoint"},
+	"Region":                ubx.FieldSpec{WireName: "region"},
+	"SecretAccessKeySecret": ubx.FieldSpec{WireName: "secret_access_key_secret"},
+	"TechnologyType":        ubx.FieldSpec{WireName: "technology_type"},
+}
 
 var GoldengateConnection_Properties_AzureDataLakeStorageConnectionPropertiesFields = ubx.FieldMap{
-		"Account": ubx.FieldSpec{WireName: "account"},
-		"AccountKeySecret": ubx.FieldSpec{WireName: "account_key_secret"},
-		"AuthenticationType": ubx.FieldSpec{WireName: "authentication_type"},
-		"AzureAuthorityHost": ubx.FieldSpec{WireName: "azure_authority_host"},
-		"AzureTenantId": ubx.FieldSpec{WireName: "azure_tenant_id"},
-		"ClientId": ubx.FieldSpec{WireName: "client_id"},
-		"ClientSecret": ubx.FieldSpec{WireName: "client_secret"},
-		"Endpoint": ubx.FieldSpec{WireName: "endpoint"},
-		"SasTokenSecret": ubx.FieldSpec{WireName: "sas_token_secret"},
-		"TechnologyType": ubx.FieldSpec{WireName: "technology_type"},
-	}
+	"Account":            ubx.FieldSpec{WireName: "account"},
+	"AccountKeySecret":   ubx.FieldSpec{WireName: "account_key_secret"},
+	"AuthenticationType": ubx.FieldSpec{WireName: "authentication_type"},
+	"AzureAuthorityHost": ubx.FieldSpec{WireName: "azure_authority_host"},
+	"AzureTenantId":      ubx.FieldSpec{WireName: "azure_tenant_id"},
+	"ClientId":           ubx.FieldSpec{WireName: "client_id"},
+	"ClientSecret":       ubx.FieldSpec{WireName: "client_secret"},
+	"Endpoint":           ubx.FieldSpec{WireName: "endpoint"},
+	"SasTokenSecret":     ubx.FieldSpec{WireName: "sas_token_secret"},
+	"TechnologyType":     ubx.FieldSpec{WireName: "technology_type"},
+}
 
 var GoldengateConnection_Properties_AzureSynapseAnalyticsConnectionPropertiesFields = ubx.FieldMap{
-		"ConnectionString": ubx.FieldSpec{WireName: "connection_string"},
-		"Password": ubx.FieldSpec{WireName: "password"},
-		"PasswordSecretVersion": ubx.FieldSpec{WireName: "password_secret_version"},
-		"TechnologyType": ubx.FieldSpec{WireName: "technology_type"},
-		"Username": ubx.FieldSpec{WireName: "username"},
-	}
+	"ConnectionString":      ubx.FieldSpec{WireName: "connection_string"},
+	"Password":              ubx.FieldSpec{WireName: "password"},
+	"PasswordSecretVersion": ubx.FieldSpec{WireName: "password_secret_version"},
+	"TechnologyType":        ubx.FieldSpec{WireName: "technology_type"},
+	"Username":              ubx.FieldSpec{WireName: "username"},
+}
 
 var GoldengateConnection_Properties_DatabricksConnectionPropertiesFields = ubx.FieldMap{
-		"AuthenticationType": ubx.FieldSpec{WireName: "authentication_type"},
-		"ClientId": ubx.FieldSpec{WireName: "client_id"},
-		"ClientSecret": ubx.FieldSpec{WireName: "client_secret"},
-		"ConnectionUrl": ubx.FieldSpec{WireName: "connection_url"},
-		"Password": ubx.FieldSpec{WireName: "password"},
-		"PasswordSecretVersion": ubx.FieldSpec{WireName: "password_secret_version"},
-		"StorageCredential": ubx.FieldSpec{WireName: "storage_credential"},
-		"TechnologyType": ubx.FieldSpec{WireName: "technology_type"},
-	}
+	"AuthenticationType":    ubx.FieldSpec{WireName: "authentication_type"},
+	"ClientId":              ubx.FieldSpec{WireName: "client_id"},
+	"ClientSecret":          ubx.FieldSpec{WireName: "client_secret"},
+	"ConnectionUrl":         ubx.FieldSpec{WireName: "connection_url"},
+	"Password":              ubx.FieldSpec{WireName: "password"},
+	"PasswordSecretVersion": ubx.FieldSpec{WireName: "password_secret_version"},
+	"StorageCredential":     ubx.FieldSpec{WireName: "storage_credential"},
+	"TechnologyType":        ubx.FieldSpec{WireName: "technology_type"},
+}
 
 var GoldengateConnection_Properties_Db2ConnectionProperties_AdditionalAttributesFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var GoldengateConnection_Properties_Db2ConnectionPropertiesFields = ubx.FieldMap{
-		"AdditionalAttributes": ubx.FieldSpec{
-			WireName: "additional_attributes",
-			Kind: "list",
-			Fields: GoldengateConnection_Properties_Db2ConnectionProperties_AdditionalAttributesFields,
-		},
-		"Database": ubx.FieldSpec{WireName: "database"},
-		"Host": ubx.FieldSpec{WireName: "host"},
-		"Password": ubx.FieldSpec{WireName: "password"},
-		"PasswordSecretVersion": ubx.FieldSpec{WireName: "password_secret_version"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"SecurityProtocol": ubx.FieldSpec{WireName: "security_protocol"},
-		"SslClientKeystashFile": ubx.FieldSpec{WireName: "ssl_client_keystash_file"},
-		"SslClientKeystoredbFile": ubx.FieldSpec{WireName: "ssl_client_keystoredb_file"},
-		"SslServerCertificateFile": ubx.FieldSpec{WireName: "ssl_server_certificate_file"},
-		"TechnologyType": ubx.FieldSpec{WireName: "technology_type"},
-		"Username": ubx.FieldSpec{WireName: "username"},
-	}
+	"AdditionalAttributes": ubx.FieldSpec{
+		WireName: "additional_attributes",
+		Kind:     "list",
+		Fields:   GoldengateConnection_Properties_Db2ConnectionProperties_AdditionalAttributesFields,
+	},
+	"Database":                 ubx.FieldSpec{WireName: "database"},
+	"Host":                     ubx.FieldSpec{WireName: "host"},
+	"Password":                 ubx.FieldSpec{WireName: "password"},
+	"PasswordSecretVersion":    ubx.FieldSpec{WireName: "password_secret_version"},
+	"Port":                     ubx.FieldSpec{WireName: "port"},
+	"SecurityProtocol":         ubx.FieldSpec{WireName: "security_protocol"},
+	"SslClientKeystashFile":    ubx.FieldSpec{WireName: "ssl_client_keystash_file"},
+	"SslClientKeystoredbFile":  ubx.FieldSpec{WireName: "ssl_client_keystoredb_file"},
+	"SslServerCertificateFile": ubx.FieldSpec{WireName: "ssl_server_certificate_file"},
+	"TechnologyType":           ubx.FieldSpec{WireName: "technology_type"},
+	"Username":                 ubx.FieldSpec{WireName: "username"},
+}
 
 var GoldengateConnection_Properties_ElasticsearchConnectionPropertiesFields = ubx.FieldMap{
-		"AuthenticationType": ubx.FieldSpec{WireName: "authentication_type"},
-		"Fingerprint": ubx.FieldSpec{WireName: "fingerprint"},
-		"Password": ubx.FieldSpec{WireName: "password"},
-		"PasswordSecretVersion": ubx.FieldSpec{WireName: "password_secret_version"},
-		"SecurityProtocol": ubx.FieldSpec{WireName: "security_protocol"},
-		"Servers": ubx.FieldSpec{WireName: "servers"},
-		"TechnologyType": ubx.FieldSpec{WireName: "technology_type"},
-		"Username": ubx.FieldSpec{WireName: "username"},
-	}
+	"AuthenticationType":    ubx.FieldSpec{WireName: "authentication_type"},
+	"Fingerprint":           ubx.FieldSpec{WireName: "fingerprint"},
+	"Password":              ubx.FieldSpec{WireName: "password"},
+	"PasswordSecretVersion": ubx.FieldSpec{WireName: "password_secret_version"},
+	"SecurityProtocol":      ubx.FieldSpec{WireName: "security_protocol"},
+	"Servers":               ubx.FieldSpec{WireName: "servers"},
+	"TechnologyType":        ubx.FieldSpec{WireName: "technology_type"},
+	"Username":              ubx.FieldSpec{WireName: "username"},
+}
 
 var GoldengateConnection_Properties_GenericConnectionPropertiesFields = ubx.FieldMap{
-		"Host": ubx.FieldSpec{WireName: "host"},
-		"TechnologyType": ubx.FieldSpec{WireName: "technology_type"},
-	}
+	"Host":           ubx.FieldSpec{WireName: "host"},
+	"TechnologyType": ubx.FieldSpec{WireName: "technology_type"},
+}
 
 var GoldengateConnection_Properties_GoldengateConnectionPropertiesFields = ubx.FieldMap{
-		"GoldengateDeploymentId": ubx.FieldSpec{WireName: "goldengate_deployment_id"},
-		"Host": ubx.FieldSpec{WireName: "host"},
-		"Password": ubx.FieldSpec{WireName: "password"},
-		"PasswordSecretVersion": ubx.FieldSpec{WireName: "password_secret_version"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"TechnologyType": ubx.FieldSpec{WireName: "technology_type"},
-		"Username": ubx.FieldSpec{WireName: "username"},
-	}
+	"GoldengateDeploymentId": ubx.FieldSpec{WireName: "goldengate_deployment_id"},
+	"Host":                   ubx.FieldSpec{WireName: "host"},
+	"Password":               ubx.FieldSpec{WireName: "password"},
+	"PasswordSecretVersion":  ubx.FieldSpec{WireName: "password_secret_version"},
+	"Port":                   ubx.FieldSpec{WireName: "port"},
+	"TechnologyType":         ubx.FieldSpec{WireName: "technology_type"},
+	"Username":               ubx.FieldSpec{WireName: "username"},
+}
 
 var GoldengateConnection_Properties_GoogleBigQueryConnectionPropertiesFields = ubx.FieldMap{
-		"ServiceAccountKeyFile": ubx.FieldSpec{WireName: "service_account_key_file"},
-		"TechnologyType": ubx.FieldSpec{WireName: "technology_type"},
-	}
+	"ServiceAccountKeyFile": ubx.FieldSpec{WireName: "service_account_key_file"},
+	"TechnologyType":        ubx.FieldSpec{WireName: "technology_type"},
+}
 
 var GoldengateConnection_Properties_HdfsConnectionPropertiesFields = ubx.FieldMap{
-		"CoreSiteXml": ubx.FieldSpec{WireName: "core_site_xml"},
-		"TechnologyType": ubx.FieldSpec{WireName: "technology_type"},
-	}
+	"CoreSiteXml":    ubx.FieldSpec{WireName: "core_site_xml"},
+	"TechnologyType": ubx.FieldSpec{WireName: "technology_type"},
+}
 
 var GoldengateConnection_Properties_IcebergConnectionProperties_Catalog_GlueIcebergCatalogFields = ubx.FieldMap{
-		"GlueId": ubx.FieldSpec{WireName: "glue_id"},
-	}
+	"GlueId": ubx.FieldSpec{WireName: "glue_id"},
+}
 
 var GoldengateConnection_Properties_IcebergConnectionProperties_Catalog_NessieIcebergCatalogFields = ubx.FieldMap{
-		"Branch": ubx.FieldSpec{WireName: "branch"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"Branch": ubx.FieldSpec{WireName: "branch"},
+	"Uri":    ubx.FieldSpec{WireName: "uri"},
+}
 
 var GoldengateConnection_Properties_IcebergConnectionProperties_Catalog_PolarisIcebergCatalogFields = ubx.FieldMap{
-		"ClientId": ubx.FieldSpec{WireName: "client_id"},
-		"ClientSecret": ubx.FieldSpec{WireName: "client_secret"},
-		"PolarisCatalog": ubx.FieldSpec{WireName: "polaris_catalog"},
-		"PrincipalRole": ubx.FieldSpec{WireName: "principal_role"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"ClientId":       ubx.FieldSpec{WireName: "client_id"},
+	"ClientSecret":   ubx.FieldSpec{WireName: "client_secret"},
+	"PolarisCatalog": ubx.FieldSpec{WireName: "polaris_catalog"},
+	"PrincipalRole":  ubx.FieldSpec{WireName: "principal_role"},
+	"Uri":            ubx.FieldSpec{WireName: "uri"},
+}
 
 var GoldengateConnection_Properties_IcebergConnectionProperties_Catalog_RestIcebergCatalogFields = ubx.FieldMap{
-		"Properties": ubx.FieldSpec{WireName: "properties"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"Properties": ubx.FieldSpec{WireName: "properties"},
+	"Uri":        ubx.FieldSpec{WireName: "uri"},
+}
 
 var GoldengateConnection_Properties_IcebergConnectionProperties_CatalogFields = ubx.FieldMap{
-		"CatalogType": ubx.FieldSpec{WireName: "catalog_type"},
-		"GlueIcebergCatalog": ubx.FieldSpec{
-			WireName: "glue_iceberg_catalog",
-			Kind: "object",
-			Fields: GoldengateConnection_Properties_IcebergConnectionProperties_Catalog_GlueIcebergCatalogFields,
-		},
-		"NessieIcebergCatalog": ubx.FieldSpec{
-			WireName: "nessie_iceberg_catalog",
-			Kind: "object",
-			Fields: GoldengateConnection_Properties_IcebergConnectionProperties_Catalog_NessieIcebergCatalogFields,
-		},
-		"PolarisIcebergCatalog": ubx.FieldSpec{
-			WireName: "polaris_iceberg_catalog",
-			Kind: "object",
-			Fields: GoldengateConnection_Properties_IcebergConnectionProperties_Catalog_PolarisIcebergCatalogFields,
-		},
-		"RestIcebergCatalog": ubx.FieldSpec{
-			WireName: "rest_iceberg_catalog",
-			Kind: "object",
-			Fields: GoldengateConnection_Properties_IcebergConnectionProperties_Catalog_RestIcebergCatalogFields,
-		},
-	}
+	"CatalogType": ubx.FieldSpec{WireName: "catalog_type"},
+	"GlueIcebergCatalog": ubx.FieldSpec{
+		WireName: "glue_iceberg_catalog",
+		Kind:     "object",
+		Fields:   GoldengateConnection_Properties_IcebergConnectionProperties_Catalog_GlueIcebergCatalogFields,
+	},
+	"NessieIcebergCatalog": ubx.FieldSpec{
+		WireName: "nessie_iceberg_catalog",
+		Kind:     "object",
+		Fields:   GoldengateConnection_Properties_IcebergConnectionProperties_Catalog_NessieIcebergCatalogFields,
+	},
+	"PolarisIcebergCatalog": ubx.FieldSpec{
+		WireName: "polaris_iceberg_catalog",
+		Kind:     "object",
+		Fields:   GoldengateConnection_Properties_IcebergConnectionProperties_Catalog_PolarisIcebergCatalogFields,
+	},
+	"RestIcebergCatalog": ubx.FieldSpec{
+		WireName: "rest_iceberg_catalog",
+		Kind:     "object",
+		Fields:   GoldengateConnection_Properties_IcebergConnectionProperties_Catalog_RestIcebergCatalogFields,
+	},
+}
 
 var GoldengateConnection_Properties_IcebergConnectionProperties_Storage_AmazonS3IcebergStorageFields = ubx.FieldMap{
-		"AccessKeyId": ubx.FieldSpec{WireName: "access_key_id"},
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"Endpoint": ubx.FieldSpec{WireName: "endpoint"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"SchemeType": ubx.FieldSpec{WireName: "scheme_type"},
-		"SecretAccessKeySecret": ubx.FieldSpec{WireName: "secret_access_key_secret"},
-	}
+	"AccessKeyId":           ubx.FieldSpec{WireName: "access_key_id"},
+	"Bucket":                ubx.FieldSpec{WireName: "bucket"},
+	"Endpoint":              ubx.FieldSpec{WireName: "endpoint"},
+	"Region":                ubx.FieldSpec{WireName: "region"},
+	"SchemeType":            ubx.FieldSpec{WireName: "scheme_type"},
+	"SecretAccessKeySecret": ubx.FieldSpec{WireName: "secret_access_key_secret"},
+}
 
 var GoldengateConnection_Properties_IcebergConnectionProperties_Storage_AzureDataLakeStorageIcebergStorageFields = ubx.FieldMap{
-		"AccountKeySecret": ubx.FieldSpec{WireName: "account_key_secret"},
-		"AzureAccount": ubx.FieldSpec{WireName: "azure_account"},
-		"Container": ubx.FieldSpec{WireName: "container"},
-		"Endpoint": ubx.FieldSpec{WireName: "endpoint"},
-	}
+	"AccountKeySecret": ubx.FieldSpec{WireName: "account_key_secret"},
+	"AzureAccount":     ubx.FieldSpec{WireName: "azure_account"},
+	"Container":        ubx.FieldSpec{WireName: "container"},
+	"Endpoint":         ubx.FieldSpec{WireName: "endpoint"},
+}
 
 var GoldengateConnection_Properties_IcebergConnectionProperties_Storage_GoogleCloudStorageIcebergStorageFields = ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-		"ServiceAccountKeyFile": ubx.FieldSpec{WireName: "service_account_key_file"},
-	}
+	"Bucket":                ubx.FieldSpec{WireName: "bucket"},
+	"ProjectId":             ubx.FieldSpec{WireName: "project_id"},
+	"ServiceAccountKeyFile": ubx.FieldSpec{WireName: "service_account_key_file"},
+}
 
 var GoldengateConnection_Properties_IcebergConnectionProperties_StorageFields = ubx.FieldMap{
-		"AmazonS3IcebergStorage": ubx.FieldSpec{
-			WireName: "amazon_s3_iceberg_storage",
-			Kind: "object",
-			Fields: GoldengateConnection_Properties_IcebergConnectionProperties_Storage_AmazonS3IcebergStorageFields,
-		},
-		"AzureDataLakeStorageIcebergStorage": ubx.FieldSpec{
-			WireName: "azure_data_lake_storage_iceberg_storage",
-			Kind: "object",
-			Fields: GoldengateConnection_Properties_IcebergConnectionProperties_Storage_AzureDataLakeStorageIcebergStorageFields,
-		},
-		"GoogleCloudStorageIcebergStorage": ubx.FieldSpec{
-			WireName: "google_cloud_storage_iceberg_storage",
-			Kind: "object",
-			Fields: GoldengateConnection_Properties_IcebergConnectionProperties_Storage_GoogleCloudStorageIcebergStorageFields,
-		},
-		"StorageType": ubx.FieldSpec{WireName: "storage_type"},
-	}
+	"AmazonS3IcebergStorage": ubx.FieldSpec{
+		WireName: "amazon_s3_iceberg_storage",
+		Kind:     "object",
+		Fields:   GoldengateConnection_Properties_IcebergConnectionProperties_Storage_AmazonS3IcebergStorageFields,
+	},
+	"AzureDataLakeStorageIcebergStorage": ubx.FieldSpec{
+		WireName: "azure_data_lake_storage_iceberg_storage",
+		Kind:     "object",
+		Fields:   GoldengateConnection_Properties_IcebergConnectionProperties_Storage_AzureDataLakeStorageIcebergStorageFields,
+	},
+	"GoogleCloudStorageIcebergStorage": ubx.FieldSpec{
+		WireName: "google_cloud_storage_iceberg_storage",
+		Kind:     "object",
+		Fields:   GoldengateConnection_Properties_IcebergConnectionProperties_Storage_GoogleCloudStorageIcebergStorageFields,
+	},
+	"StorageType": ubx.FieldSpec{WireName: "storage_type"},
+}
 
 var GoldengateConnection_Properties_IcebergConnectionPropertiesFields = ubx.FieldMap{
-		"Catalog": ubx.FieldSpec{
-			WireName: "catalog",
-			Kind: "object",
-			Fields: GoldengateConnection_Properties_IcebergConnectionProperties_CatalogFields,
-		},
-		"Storage": ubx.FieldSpec{
-			WireName: "storage",
-			Kind: "object",
-			Fields: GoldengateConnection_Properties_IcebergConnectionProperties_StorageFields,
-		},
-		"TechnologyType": ubx.FieldSpec{WireName: "technology_type"},
-	}
+	"Catalog": ubx.FieldSpec{
+		WireName: "catalog",
+		Kind:     "object",
+		Fields:   GoldengateConnection_Properties_IcebergConnectionProperties_CatalogFields,
+	},
+	"Storage": ubx.FieldSpec{
+		WireName: "storage",
+		Kind:     "object",
+		Fields:   GoldengateConnection_Properties_IcebergConnectionProperties_StorageFields,
+	},
+	"TechnologyType": ubx.FieldSpec{WireName: "technology_type"},
+}
 
 var GoldengateConnection_Properties_JavaMessageServiceConnectionPropertiesFields = ubx.FieldMap{
-		"AuthenticationType": ubx.FieldSpec{WireName: "authentication_type"},
-		"ConnectionFactory": ubx.FieldSpec{WireName: "connection_factory"},
-		"ConnectionUrl": ubx.FieldSpec{WireName: "connection_url"},
-		"JndiConnectionFactory": ubx.FieldSpec{WireName: "jndi_connection_factory"},
-		"JndiInitialContextFactory": ubx.FieldSpec{WireName: "jndi_initial_context_factory"},
-		"JndiProviderUrl": ubx.FieldSpec{WireName: "jndi_provider_url"},
-		"JndiSecurityCredentialsSecret": ubx.FieldSpec{WireName: "jndi_security_credentials_secret"},
-		"JndiSecurityPrincipal": ubx.FieldSpec{WireName: "jndi_security_principal"},
-		"KeyStoreFile": ubx.FieldSpec{WireName: "key_store_file"},
-		"KeyStorePassword": ubx.FieldSpec{WireName: "key_store_password"},
-		"KeyStorePasswordSecretVersion": ubx.FieldSpec{WireName: "key_store_password_secret_version"},
-		"Password": ubx.FieldSpec{WireName: "password"},
-		"PasswordSecretVersion": ubx.FieldSpec{WireName: "password_secret_version"},
-		"SecurityProtocol": ubx.FieldSpec{WireName: "security_protocol"},
-		"SslKeyPassword": ubx.FieldSpec{WireName: "ssl_key_password"},
-		"SslKeyPasswordSecretVersion": ubx.FieldSpec{WireName: "ssl_key_password_secret_version"},
-		"TechnologyType": ubx.FieldSpec{WireName: "technology_type"},
-		"TrustStoreFile": ubx.FieldSpec{WireName: "trust_store_file"},
-		"TrustStorePassword": ubx.FieldSpec{WireName: "trust_store_password"},
-		"TrustStorePasswordSecretVersion": ubx.FieldSpec{WireName: "trust_store_password_secret_version"},
-		"UseJndi": ubx.FieldSpec{WireName: "use_jndi"},
-		"Username": ubx.FieldSpec{WireName: "username"},
-	}
+	"AuthenticationType":              ubx.FieldSpec{WireName: "authentication_type"},
+	"ConnectionFactory":               ubx.FieldSpec{WireName: "connection_factory"},
+	"ConnectionUrl":                   ubx.FieldSpec{WireName: "connection_url"},
+	"JndiConnectionFactory":           ubx.FieldSpec{WireName: "jndi_connection_factory"},
+	"JndiInitialContextFactory":       ubx.FieldSpec{WireName: "jndi_initial_context_factory"},
+	"JndiProviderUrl":                 ubx.FieldSpec{WireName: "jndi_provider_url"},
+	"JndiSecurityCredentialsSecret":   ubx.FieldSpec{WireName: "jndi_security_credentials_secret"},
+	"JndiSecurityPrincipal":           ubx.FieldSpec{WireName: "jndi_security_principal"},
+	"KeyStoreFile":                    ubx.FieldSpec{WireName: "key_store_file"},
+	"KeyStorePassword":                ubx.FieldSpec{WireName: "key_store_password"},
+	"KeyStorePasswordSecretVersion":   ubx.FieldSpec{WireName: "key_store_password_secret_version"},
+	"Password":                        ubx.FieldSpec{WireName: "password"},
+	"PasswordSecretVersion":           ubx.FieldSpec{WireName: "password_secret_version"},
+	"SecurityProtocol":                ubx.FieldSpec{WireName: "security_protocol"},
+	"SslKeyPassword":                  ubx.FieldSpec{WireName: "ssl_key_password"},
+	"SslKeyPasswordSecretVersion":     ubx.FieldSpec{WireName: "ssl_key_password_secret_version"},
+	"TechnologyType":                  ubx.FieldSpec{WireName: "technology_type"},
+	"TrustStoreFile":                  ubx.FieldSpec{WireName: "trust_store_file"},
+	"TrustStorePassword":              ubx.FieldSpec{WireName: "trust_store_password"},
+	"TrustStorePasswordSecretVersion": ubx.FieldSpec{WireName: "trust_store_password_secret_version"},
+	"UseJndi":                         ubx.FieldSpec{WireName: "use_jndi"},
+	"Username":                        ubx.FieldSpec{WireName: "username"},
+}
 
 var GoldengateConnection_Properties_KafkaConnectionProperties_BootstrapServersFields = ubx.FieldMap{
-		"Host": ubx.FieldSpec{WireName: "host"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"PrivateIpAddress": ubx.FieldSpec{WireName: "private_ip_address"},
-	}
+	"Host":             ubx.FieldSpec{WireName: "host"},
+	"Port":             ubx.FieldSpec{WireName: "port"},
+	"PrivateIpAddress": ubx.FieldSpec{WireName: "private_ip_address"},
+}
 
 var GoldengateConnection_Properties_KafkaConnectionPropertiesFields = ubx.FieldMap{
-		"BootstrapServers": ubx.FieldSpec{
-			WireName: "bootstrap_servers",
-			Kind: "list",
-			Fields: GoldengateConnection_Properties_KafkaConnectionProperties_BootstrapServersFields,
-		},
-		"ClusterId": ubx.FieldSpec{WireName: "cluster_id"},
-		"ConsumerPropertiesFile": ubx.FieldSpec{WireName: "consumer_properties_file"},
-		"KeyStoreFile": ubx.FieldSpec{WireName: "key_store_file"},
-		"KeyStorePassword": ubx.FieldSpec{WireName: "key_store_password"},
-		"KeyStorePasswordSecretVersion": ubx.FieldSpec{WireName: "key_store_password_secret_version"},
-		"Password": ubx.FieldSpec{WireName: "password"},
-		"PasswordSecretVersion": ubx.FieldSpec{WireName: "password_secret_version"},
-		"ProducerPropertiesFile": ubx.FieldSpec{WireName: "producer_properties_file"},
-		"SecurityProtocol": ubx.FieldSpec{WireName: "security_protocol"},
-		"SslKeyPassword": ubx.FieldSpec{WireName: "ssl_key_password"},
-		"SslKeyPasswordSecretVersion": ubx.FieldSpec{WireName: "ssl_key_password_secret_version"},
-		"StreamPoolId": ubx.FieldSpec{WireName: "stream_pool_id"},
-		"TechnologyType": ubx.FieldSpec{WireName: "technology_type"},
-		"TrustStoreFile": ubx.FieldSpec{WireName: "trust_store_file"},
-		"TrustStorePassword": ubx.FieldSpec{WireName: "trust_store_password"},
-		"TrustStorePasswordSecretVersion": ubx.FieldSpec{WireName: "trust_store_password_secret_version"},
-		"UseResourcePrincipal": ubx.FieldSpec{WireName: "use_resource_principal"},
-		"Username": ubx.FieldSpec{WireName: "username"},
-	}
+	"BootstrapServers": ubx.FieldSpec{
+		WireName: "bootstrap_servers",
+		Kind:     "list",
+		Fields:   GoldengateConnection_Properties_KafkaConnectionProperties_BootstrapServersFields,
+	},
+	"ClusterId":                       ubx.FieldSpec{WireName: "cluster_id"},
+	"ConsumerPropertiesFile":          ubx.FieldSpec{WireName: "consumer_properties_file"},
+	"KeyStoreFile":                    ubx.FieldSpec{WireName: "key_store_file"},
+	"KeyStorePassword":                ubx.FieldSpec{WireName: "key_store_password"},
+	"KeyStorePasswordSecretVersion":   ubx.FieldSpec{WireName: "key_store_password_secret_version"},
+	"Password":                        ubx.FieldSpec{WireName: "password"},
+	"PasswordSecretVersion":           ubx.FieldSpec{WireName: "password_secret_version"},
+	"ProducerPropertiesFile":          ubx.FieldSpec{WireName: "producer_properties_file"},
+	"SecurityProtocol":                ubx.FieldSpec{WireName: "security_protocol"},
+	"SslKeyPassword":                  ubx.FieldSpec{WireName: "ssl_key_password"},
+	"SslKeyPasswordSecretVersion":     ubx.FieldSpec{WireName: "ssl_key_password_secret_version"},
+	"StreamPoolId":                    ubx.FieldSpec{WireName: "stream_pool_id"},
+	"TechnologyType":                  ubx.FieldSpec{WireName: "technology_type"},
+	"TrustStoreFile":                  ubx.FieldSpec{WireName: "trust_store_file"},
+	"TrustStorePassword":              ubx.FieldSpec{WireName: "trust_store_password"},
+	"TrustStorePasswordSecretVersion": ubx.FieldSpec{WireName: "trust_store_password_secret_version"},
+	"UseResourcePrincipal":            ubx.FieldSpec{WireName: "use_resource_principal"},
+	"Username":                        ubx.FieldSpec{WireName: "username"},
+}
 
 var GoldengateConnection_Properties_KafkaSchemaRegistryConnectionPropertiesFields = ubx.FieldMap{
-		"AuthenticationType": ubx.FieldSpec{WireName: "authentication_type"},
-		"KeyStoreFile": ubx.FieldSpec{WireName: "key_store_file"},
-		"KeyStorePassword": ubx.FieldSpec{WireName: "key_store_password"},
-		"KeyStorePasswordSecretVersion": ubx.FieldSpec{WireName: "key_store_password_secret_version"},
-		"Password": ubx.FieldSpec{WireName: "password"},
-		"PasswordSecretVersion": ubx.FieldSpec{WireName: "password_secret_version"},
-		"SslKeyPassword": ubx.FieldSpec{WireName: "ssl_key_password"},
-		"SslKeyPasswordSecretVersion": ubx.FieldSpec{WireName: "ssl_key_password_secret_version"},
-		"TechnologyType": ubx.FieldSpec{WireName: "technology_type"},
-		"TrustStoreFile": ubx.FieldSpec{WireName: "trust_store_file"},
-		"TrustStorePassword": ubx.FieldSpec{WireName: "trust_store_password"},
-		"TrustStorePasswordSecretVersion": ubx.FieldSpec{WireName: "trust_store_password_secret_version"},
-		"Url": ubx.FieldSpec{WireName: "url"},
-		"Username": ubx.FieldSpec{WireName: "username"},
-	}
+	"AuthenticationType":              ubx.FieldSpec{WireName: "authentication_type"},
+	"KeyStoreFile":                    ubx.FieldSpec{WireName: "key_store_file"},
+	"KeyStorePassword":                ubx.FieldSpec{WireName: "key_store_password"},
+	"KeyStorePasswordSecretVersion":   ubx.FieldSpec{WireName: "key_store_password_secret_version"},
+	"Password":                        ubx.FieldSpec{WireName: "password"},
+	"PasswordSecretVersion":           ubx.FieldSpec{WireName: "password_secret_version"},
+	"SslKeyPassword":                  ubx.FieldSpec{WireName: "ssl_key_password"},
+	"SslKeyPasswordSecretVersion":     ubx.FieldSpec{WireName: "ssl_key_password_secret_version"},
+	"TechnologyType":                  ubx.FieldSpec{WireName: "technology_type"},
+	"TrustStoreFile":                  ubx.FieldSpec{WireName: "trust_store_file"},
+	"TrustStorePassword":              ubx.FieldSpec{WireName: "trust_store_password"},
+	"TrustStorePasswordSecretVersion": ubx.FieldSpec{WireName: "trust_store_password_secret_version"},
+	"Url":                             ubx.FieldSpec{WireName: "url"},
+	"Username":                        ubx.FieldSpec{WireName: "username"},
+}
 
 var GoldengateConnection_Properties_MicrosoftFabricConnectionPropertiesFields = ubx.FieldMap{
-		"ClientId": ubx.FieldSpec{WireName: "client_id"},
-		"ClientSecret": ubx.FieldSpec{WireName: "client_secret"},
-		"Endpoint": ubx.FieldSpec{WireName: "endpoint"},
-		"TechnologyType": ubx.FieldSpec{WireName: "technology_type"},
-		"TenantId": ubx.FieldSpec{WireName: "tenant_id"},
-	}
+	"ClientId":       ubx.FieldSpec{WireName: "client_id"},
+	"ClientSecret":   ubx.FieldSpec{WireName: "client_secret"},
+	"Endpoint":       ubx.FieldSpec{WireName: "endpoint"},
+	"TechnologyType": ubx.FieldSpec{WireName: "technology_type"},
+	"TenantId":       ubx.FieldSpec{WireName: "tenant_id"},
+}
 
 var GoldengateConnection_Properties_MicrosoftSqlserverConnectionPropertiesFields = ubx.FieldMap{
-		"AdditionalAttributes": ubx.FieldSpec{
-			WireName: "additional_attributes",
-			Kind: "list",
-			Fields: GoldengateConnection_Properties_Db2ConnectionProperties_AdditionalAttributesFields,
-		},
-		"Database": ubx.FieldSpec{WireName: "database"},
-		"Host": ubx.FieldSpec{WireName: "host"},
-		"Password": ubx.FieldSpec{WireName: "password"},
-		"PasswordSecretVersion": ubx.FieldSpec{WireName: "password_secret_version"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"SecurityProtocol": ubx.FieldSpec{WireName: "security_protocol"},
-		"ServerCertificateValidationRequired": ubx.FieldSpec{WireName: "server_certificate_validation_required"},
-		"SslCaFile": ubx.FieldSpec{WireName: "ssl_ca_file"},
-		"TechnologyType": ubx.FieldSpec{WireName: "technology_type"},
-		"Username": ubx.FieldSpec{WireName: "username"},
-	}
+	"AdditionalAttributes": ubx.FieldSpec{
+		WireName: "additional_attributes",
+		Kind:     "list",
+		Fields:   GoldengateConnection_Properties_Db2ConnectionProperties_AdditionalAttributesFields,
+	},
+	"Database":                            ubx.FieldSpec{WireName: "database"},
+	"Host":                                ubx.FieldSpec{WireName: "host"},
+	"Password":                            ubx.FieldSpec{WireName: "password"},
+	"PasswordSecretVersion":               ubx.FieldSpec{WireName: "password_secret_version"},
+	"Port":                                ubx.FieldSpec{WireName: "port"},
+	"SecurityProtocol":                    ubx.FieldSpec{WireName: "security_protocol"},
+	"ServerCertificateValidationRequired": ubx.FieldSpec{WireName: "server_certificate_validation_required"},
+	"SslCaFile":                           ubx.FieldSpec{WireName: "ssl_ca_file"},
+	"TechnologyType":                      ubx.FieldSpec{WireName: "technology_type"},
+	"Username":                            ubx.FieldSpec{WireName: "username"},
+}
 
 var GoldengateConnection_Properties_MongodbConnectionPropertiesFields = ubx.FieldMap{
-		"ConnectionString": ubx.FieldSpec{WireName: "connection_string"},
-		"DatabaseId": ubx.FieldSpec{WireName: "database_id"},
-		"Password": ubx.FieldSpec{WireName: "password"},
-		"PasswordSecretVersion": ubx.FieldSpec{WireName: "password_secret_version"},
-		"SecurityProtocol": ubx.FieldSpec{WireName: "security_protocol"},
-		"TechnologyType": ubx.FieldSpec{WireName: "technology_type"},
-		"TlsCaFile": ubx.FieldSpec{WireName: "tls_ca_file"},
-		"TlsCertificateKeyFile": ubx.FieldSpec{WireName: "tls_certificate_key_file"},
-		"TlsCertificateKeyFilePassword": ubx.FieldSpec{WireName: "tls_certificate_key_file_password"},
-		"TlsCertificateKeyFilePasswordSecretVersion": ubx.FieldSpec{WireName: "tls_certificate_key_file_password_secret_version"},
-		"Username": ubx.FieldSpec{WireName: "username"},
-	}
+	"ConnectionString":              ubx.FieldSpec{WireName: "connection_string"},
+	"DatabaseId":                    ubx.FieldSpec{WireName: "database_id"},
+	"Password":                      ubx.FieldSpec{WireName: "password"},
+	"PasswordSecretVersion":         ubx.FieldSpec{WireName: "password_secret_version"},
+	"SecurityProtocol":              ubx.FieldSpec{WireName: "security_protocol"},
+	"TechnologyType":                ubx.FieldSpec{WireName: "technology_type"},
+	"TlsCaFile":                     ubx.FieldSpec{WireName: "tls_ca_file"},
+	"TlsCertificateKeyFile":         ubx.FieldSpec{WireName: "tls_certificate_key_file"},
+	"TlsCertificateKeyFilePassword": ubx.FieldSpec{WireName: "tls_certificate_key_file_password"},
+	"TlsCertificateKeyFilePasswordSecretVersion": ubx.FieldSpec{WireName: "tls_certificate_key_file_password_secret_version"},
+	"Username": ubx.FieldSpec{WireName: "username"},
+}
 
 var GoldengateConnection_Properties_MysqlConnectionPropertiesFields = ubx.FieldMap{
-		"AdditionalAttributes": ubx.FieldSpec{
-			WireName: "additional_attributes",
-			Kind: "list",
-			Fields: GoldengateConnection_Properties_Db2ConnectionProperties_AdditionalAttributesFields,
-		},
-		"Database": ubx.FieldSpec{WireName: "database"},
-		"DbSystemId": ubx.FieldSpec{WireName: "db_system_id"},
-		"Host": ubx.FieldSpec{WireName: "host"},
-		"Password": ubx.FieldSpec{WireName: "password"},
-		"PasswordSecretVersion": ubx.FieldSpec{WireName: "password_secret_version"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"SecurityProtocol": ubx.FieldSpec{WireName: "security_protocol"},
-		"SslCaFile": ubx.FieldSpec{WireName: "ssl_ca_file"},
-		"SslCertFile": ubx.FieldSpec{WireName: "ssl_cert_file"},
-		"SslCrlFile": ubx.FieldSpec{WireName: "ssl_crl_file"},
-		"SslKeyFile": ubx.FieldSpec{WireName: "ssl_key_file"},
-		"SslMode": ubx.FieldSpec{WireName: "ssl_mode"},
-		"TechnologyType": ubx.FieldSpec{WireName: "technology_type"},
-		"Username": ubx.FieldSpec{WireName: "username"},
-	}
+	"AdditionalAttributes": ubx.FieldSpec{
+		WireName: "additional_attributes",
+		Kind:     "list",
+		Fields:   GoldengateConnection_Properties_Db2ConnectionProperties_AdditionalAttributesFields,
+	},
+	"Database":              ubx.FieldSpec{WireName: "database"},
+	"DbSystemId":            ubx.FieldSpec{WireName: "db_system_id"},
+	"Host":                  ubx.FieldSpec{WireName: "host"},
+	"Password":              ubx.FieldSpec{WireName: "password"},
+	"PasswordSecretVersion": ubx.FieldSpec{WireName: "password_secret_version"},
+	"Port":                  ubx.FieldSpec{WireName: "port"},
+	"SecurityProtocol":      ubx.FieldSpec{WireName: "security_protocol"},
+	"SslCaFile":             ubx.FieldSpec{WireName: "ssl_ca_file"},
+	"SslCertFile":           ubx.FieldSpec{WireName: "ssl_cert_file"},
+	"SslCrlFile":            ubx.FieldSpec{WireName: "ssl_crl_file"},
+	"SslKeyFile":            ubx.FieldSpec{WireName: "ssl_key_file"},
+	"SslMode":               ubx.FieldSpec{WireName: "ssl_mode"},
+	"TechnologyType":        ubx.FieldSpec{WireName: "technology_type"},
+	"Username":              ubx.FieldSpec{WireName: "username"},
+}
 
 var GoldengateConnection_Properties_OciObjectStorageConnectionPropertiesFields = ubx.FieldMap{
-		"PrivateKeyFile": ubx.FieldSpec{WireName: "private_key_file"},
-		"PrivateKeyPassphraseSecret": ubx.FieldSpec{WireName: "private_key_passphrase_secret"},
-		"PublicKeyFingerprint": ubx.FieldSpec{WireName: "public_key_fingerprint"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"TechnologyType": ubx.FieldSpec{WireName: "technology_type"},
-		"TenancyId": ubx.FieldSpec{WireName: "tenancy_id"},
-		"UseResourcePrincipal": ubx.FieldSpec{WireName: "use_resource_principal"},
-		"UserId": ubx.FieldSpec{WireName: "user_id"},
-	}
+	"PrivateKeyFile":             ubx.FieldSpec{WireName: "private_key_file"},
+	"PrivateKeyPassphraseSecret": ubx.FieldSpec{WireName: "private_key_passphrase_secret"},
+	"PublicKeyFingerprint":       ubx.FieldSpec{WireName: "public_key_fingerprint"},
+	"Region":                     ubx.FieldSpec{WireName: "region"},
+	"TechnologyType":             ubx.FieldSpec{WireName: "technology_type"},
+	"TenancyId":                  ubx.FieldSpec{WireName: "tenancy_id"},
+	"UseResourcePrincipal":       ubx.FieldSpec{WireName: "use_resource_principal"},
+	"UserId":                     ubx.FieldSpec{WireName: "user_id"},
+}
 
 var GoldengateConnection_Properties_OracleAiDataPlatformConnectionPropertiesFields = ubx.FieldMap{
-		"ConnectionUrl": ubx.FieldSpec{WireName: "connection_url"},
-		"PrivateKeyFile": ubx.FieldSpec{WireName: "private_key_file"},
-		"PrivateKeyPassphraseSecret": ubx.FieldSpec{WireName: "private_key_passphrase_secret"},
-		"PublicKeyFingerprint": ubx.FieldSpec{WireName: "public_key_fingerprint"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"TechnologyType": ubx.FieldSpec{WireName: "technology_type"},
-		"TenancyId": ubx.FieldSpec{WireName: "tenancy_id"},
-		"UseResourcePrincipal": ubx.FieldSpec{WireName: "use_resource_principal"},
-		"UserId": ubx.FieldSpec{WireName: "user_id"},
-	}
+	"ConnectionUrl":              ubx.FieldSpec{WireName: "connection_url"},
+	"PrivateKeyFile":             ubx.FieldSpec{WireName: "private_key_file"},
+	"PrivateKeyPassphraseSecret": ubx.FieldSpec{WireName: "private_key_passphrase_secret"},
+	"PublicKeyFingerprint":       ubx.FieldSpec{WireName: "public_key_fingerprint"},
+	"Region":                     ubx.FieldSpec{WireName: "region"},
+	"TechnologyType":             ubx.FieldSpec{WireName: "technology_type"},
+	"TenancyId":                  ubx.FieldSpec{WireName: "tenancy_id"},
+	"UseResourcePrincipal":       ubx.FieldSpec{WireName: "use_resource_principal"},
+	"UserId":                     ubx.FieldSpec{WireName: "user_id"},
+}
 
 var GoldengateConnection_Properties_OracleConnectionPropertiesFields = ubx.FieldMap{
-		"AuthenticationMode": ubx.FieldSpec{WireName: "authentication_mode"},
-		"ConnectionString": ubx.FieldSpec{WireName: "connection_string"},
-		"GcpOracleDatabaseId": ubx.FieldSpec{WireName: "gcp_oracle_database_id"},
-		"Password": ubx.FieldSpec{WireName: "password"},
-		"PasswordSecretVersion": ubx.FieldSpec{WireName: "password_secret_version"},
-		"SessionMode": ubx.FieldSpec{WireName: "session_mode"},
-		"TechnologyType": ubx.FieldSpec{WireName: "technology_type"},
-		"Username": ubx.FieldSpec{WireName: "username"},
-		"WalletFile": ubx.FieldSpec{WireName: "wallet_file"},
-	}
+	"AuthenticationMode":    ubx.FieldSpec{WireName: "authentication_mode"},
+	"ConnectionString":      ubx.FieldSpec{WireName: "connection_string"},
+	"GcpOracleDatabaseId":   ubx.FieldSpec{WireName: "gcp_oracle_database_id"},
+	"Password":              ubx.FieldSpec{WireName: "password"},
+	"PasswordSecretVersion": ubx.FieldSpec{WireName: "password_secret_version"},
+	"SessionMode":           ubx.FieldSpec{WireName: "session_mode"},
+	"TechnologyType":        ubx.FieldSpec{WireName: "technology_type"},
+	"Username":              ubx.FieldSpec{WireName: "username"},
+	"WalletFile":            ubx.FieldSpec{WireName: "wallet_file"},
+}
 
 var GoldengateConnection_Properties_RedisConnectionPropertiesFields = ubx.FieldMap{
-		"AuthenticationType": ubx.FieldSpec{WireName: "authentication_type"},
-		"KeyStoreFile": ubx.FieldSpec{WireName: "key_store_file"},
-		"KeyStorePassword": ubx.FieldSpec{WireName: "key_store_password"},
-		"KeyStorePasswordSecretVersion": ubx.FieldSpec{WireName: "key_store_password_secret_version"},
-		"Password": ubx.FieldSpec{WireName: "password"},
-		"PasswordSecretVersion": ubx.FieldSpec{WireName: "password_secret_version"},
-		"RedisClusterId": ubx.FieldSpec{WireName: "redis_cluster_id"},
-		"SecurityProtocol": ubx.FieldSpec{WireName: "security_protocol"},
-		"Servers": ubx.FieldSpec{WireName: "servers"},
-		"TechnologyType": ubx.FieldSpec{WireName: "technology_type"},
-		"TrustStoreFile": ubx.FieldSpec{WireName: "trust_store_file"},
-		"TrustStorePassword": ubx.FieldSpec{WireName: "trust_store_password"},
-		"TrustStorePasswordSecretVersion": ubx.FieldSpec{WireName: "trust_store_password_secret_version"},
-		"Username": ubx.FieldSpec{WireName: "username"},
-	}
+	"AuthenticationType":              ubx.FieldSpec{WireName: "authentication_type"},
+	"KeyStoreFile":                    ubx.FieldSpec{WireName: "key_store_file"},
+	"KeyStorePassword":                ubx.FieldSpec{WireName: "key_store_password"},
+	"KeyStorePasswordSecretVersion":   ubx.FieldSpec{WireName: "key_store_password_secret_version"},
+	"Password":                        ubx.FieldSpec{WireName: "password"},
+	"PasswordSecretVersion":           ubx.FieldSpec{WireName: "password_secret_version"},
+	"RedisClusterId":                  ubx.FieldSpec{WireName: "redis_cluster_id"},
+	"SecurityProtocol":                ubx.FieldSpec{WireName: "security_protocol"},
+	"Servers":                         ubx.FieldSpec{WireName: "servers"},
+	"TechnologyType":                  ubx.FieldSpec{WireName: "technology_type"},
+	"TrustStoreFile":                  ubx.FieldSpec{WireName: "trust_store_file"},
+	"TrustStorePassword":              ubx.FieldSpec{WireName: "trust_store_password"},
+	"TrustStorePasswordSecretVersion": ubx.FieldSpec{WireName: "trust_store_password_secret_version"},
+	"Username":                        ubx.FieldSpec{WireName: "username"},
+}
 
 var GoldengateConnection_Properties_SnowflakeConnectionPropertiesFields = ubx.FieldMap{
-		"AuthenticationType": ubx.FieldSpec{WireName: "authentication_type"},
-		"ConnectionUrl": ubx.FieldSpec{WireName: "connection_url"},
-		"Password": ubx.FieldSpec{WireName: "password"},
-		"PasswordSecretVersion": ubx.FieldSpec{WireName: "password_secret_version"},
-		"PrivateKeyFile": ubx.FieldSpec{WireName: "private_key_file"},
-		"PrivateKeyPassphraseSecret": ubx.FieldSpec{WireName: "private_key_passphrase_secret"},
-		"TechnologyType": ubx.FieldSpec{WireName: "technology_type"},
-		"Username": ubx.FieldSpec{WireName: "username"},
-	}
+	"AuthenticationType":         ubx.FieldSpec{WireName: "authentication_type"},
+	"ConnectionUrl":              ubx.FieldSpec{WireName: "connection_url"},
+	"Password":                   ubx.FieldSpec{WireName: "password"},
+	"PasswordSecretVersion":      ubx.FieldSpec{WireName: "password_secret_version"},
+	"PrivateKeyFile":             ubx.FieldSpec{WireName: "private_key_file"},
+	"PrivateKeyPassphraseSecret": ubx.FieldSpec{WireName: "private_key_passphrase_secret"},
+	"TechnologyType":             ubx.FieldSpec{WireName: "technology_type"},
+	"Username":                   ubx.FieldSpec{WireName: "username"},
+}
 
 var GoldengateConnection_PropertiesFields = ubx.FieldMap{
-		"AmazonKinesisConnectionProperties": ubx.FieldSpec{
-			WireName: "amazon_kinesis_connection_properties",
-			Kind: "object",
-			Fields: GoldengateConnection_Properties_AmazonKinesisConnectionPropertiesFields,
-		},
-		"AmazonRedshiftConnectionProperties": ubx.FieldSpec{
-			WireName: "amazon_redshift_connection_properties",
-			Kind: "object",
-			Fields: GoldengateConnection_Properties_AmazonRedshiftConnectionPropertiesFields,
-		},
-		"AmazonS3ConnectionProperties": ubx.FieldSpec{
-			WireName: "amazon_s3_connection_properties",
-			Kind: "object",
-			Fields: GoldengateConnection_Properties_AmazonS3ConnectionPropertiesFields,
-		},
-		"AzureDataLakeStorageConnectionProperties": ubx.FieldSpec{
-			WireName: "azure_data_lake_storage_connection_properties",
-			Kind: "object",
-			Fields: GoldengateConnection_Properties_AzureDataLakeStorageConnectionPropertiesFields,
-		},
-		"AzureSynapseAnalyticsConnectionProperties": ubx.FieldSpec{
-			WireName: "azure_synapse_analytics_connection_properties",
-			Kind: "object",
-			Fields: GoldengateConnection_Properties_AzureSynapseAnalyticsConnectionPropertiesFields,
-		},
-		"ConnectionType": ubx.FieldSpec{WireName: "connection_type"},
-		"DatabricksConnectionProperties": ubx.FieldSpec{
-			WireName: "databricks_connection_properties",
-			Kind: "object",
-			Fields: GoldengateConnection_Properties_DatabricksConnectionPropertiesFields,
-		},
-		"Db2ConnectionProperties": ubx.FieldSpec{
-			WireName: "db2_connection_properties",
-			Kind: "object",
-			Fields: GoldengateConnection_Properties_Db2ConnectionPropertiesFields,
-		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"ElasticsearchConnectionProperties": ubx.FieldSpec{
-			WireName: "elasticsearch_connection_properties",
-			Kind: "object",
-			Fields: GoldengateConnection_Properties_ElasticsearchConnectionPropertiesFields,
-		},
-		"GenericConnectionProperties": ubx.FieldSpec{
-			WireName: "generic_connection_properties",
-			Kind: "object",
-			Fields: GoldengateConnection_Properties_GenericConnectionPropertiesFields,
-		},
-		"GoldengateConnectionProperties": ubx.FieldSpec{
-			WireName: "goldengate_connection_properties",
-			Kind: "object",
-			Fields: GoldengateConnection_Properties_GoldengateConnectionPropertiesFields,
-		},
-		"GoogleBigQueryConnectionProperties": ubx.FieldSpec{
-			WireName: "google_big_query_connection_properties",
-			Kind: "object",
-			Fields: GoldengateConnection_Properties_GoogleBigQueryConnectionPropertiesFields,
-		},
-		"GoogleCloudStorageConnectionProperties": ubx.FieldSpec{
-			WireName: "google_cloud_storage_connection_properties",
-			Kind: "object",
-			Fields: GoldengateConnection_Properties_GoogleBigQueryConnectionPropertiesFields,
-		},
-		"GooglePubsubConnectionProperties": ubx.FieldSpec{
-			WireName: "google_pubsub_connection_properties",
-			Kind: "object",
-			Fields: GoldengateConnection_Properties_GoogleBigQueryConnectionPropertiesFields,
-		},
-		"HdfsConnectionProperties": ubx.FieldSpec{
-			WireName: "hdfs_connection_properties",
-			Kind: "object",
-			Fields: GoldengateConnection_Properties_HdfsConnectionPropertiesFields,
-		},
-		"IcebergConnectionProperties": ubx.FieldSpec{
-			WireName: "iceberg_connection_properties",
-			Kind: "object",
-			Fields: GoldengateConnection_Properties_IcebergConnectionPropertiesFields,
-		},
-		"IngressIpAddresses": ubx.FieldSpec{WireName: "ingress_ip_addresses"},
-		"JavaMessageServiceConnectionProperties": ubx.FieldSpec{
-			WireName: "java_message_service_connection_properties",
-			Kind: "object",
-			Fields: GoldengateConnection_Properties_JavaMessageServiceConnectionPropertiesFields,
-		},
-		"KafkaConnectionProperties": ubx.FieldSpec{
-			WireName: "kafka_connection_properties",
-			Kind: "object",
-			Fields: GoldengateConnection_Properties_KafkaConnectionPropertiesFields,
-		},
-		"KafkaSchemaRegistryConnectionProperties": ubx.FieldSpec{
-			WireName: "kafka_schema_registry_connection_properties",
-			Kind: "object",
-			Fields: GoldengateConnection_Properties_KafkaSchemaRegistryConnectionPropertiesFields,
-		},
-		"LifecycleDetails": ubx.FieldSpec{WireName: "lifecycle_details"},
-		"LifecycleState": ubx.FieldSpec{WireName: "lifecycle_state"},
-		"MicrosoftFabricConnectionProperties": ubx.FieldSpec{
-			WireName: "microsoft_fabric_connection_properties",
-			Kind: "object",
-			Fields: GoldengateConnection_Properties_MicrosoftFabricConnectionPropertiesFields,
-		},
-		"MicrosoftSqlserverConnectionProperties": ubx.FieldSpec{
-			WireName: "microsoft_sqlserver_connection_properties",
-			Kind: "object",
-			Fields: GoldengateConnection_Properties_MicrosoftSqlserverConnectionPropertiesFields,
-		},
-		"MongodbConnectionProperties": ubx.FieldSpec{
-			WireName: "mongodb_connection_properties",
-			Kind: "object",
-			Fields: GoldengateConnection_Properties_MongodbConnectionPropertiesFields,
-		},
-		"MysqlConnectionProperties": ubx.FieldSpec{
-			WireName: "mysql_connection_properties",
-			Kind: "object",
-			Fields: GoldengateConnection_Properties_MysqlConnectionPropertiesFields,
-		},
-		"OciObjectStorageConnectionProperties": ubx.FieldSpec{
-			WireName: "oci_object_storage_connection_properties",
-			Kind: "object",
-			Fields: GoldengateConnection_Properties_OciObjectStorageConnectionPropertiesFields,
-		},
-		"Ocid": ubx.FieldSpec{WireName: "ocid"},
-		"OracleAiDataPlatformConnectionProperties": ubx.FieldSpec{
-			WireName: "oracle_ai_data_platform_connection_properties",
-			Kind: "object",
-			Fields: GoldengateConnection_Properties_OracleAiDataPlatformConnectionPropertiesFields,
-		},
-		"OracleConnectionProperties": ubx.FieldSpec{
-			WireName: "oracle_connection_properties",
-			Kind: "object",
-			Fields: GoldengateConnection_Properties_OracleConnectionPropertiesFields,
-		},
-		"OracleNosqlConnectionProperties": ubx.FieldSpec{
-			WireName: "oracle_nosql_connection_properties",
-			Kind: "object",
-			Fields: GoldengateConnection_Properties_OciObjectStorageConnectionPropertiesFields,
-		},
-		"PostgresqlConnectionProperties": ubx.FieldSpec{
-			WireName: "postgresql_connection_properties",
-			Kind: "object",
-			Fields: GoldengateConnection_Properties_MysqlConnectionPropertiesFields,
-		},
-		"RedisConnectionProperties": ubx.FieldSpec{
-			WireName: "redis_connection_properties",
-			Kind: "object",
-			Fields: GoldengateConnection_Properties_RedisConnectionPropertiesFields,
-		},
-		"RoutingMethod": ubx.FieldSpec{WireName: "routing_method"},
-		"SnowflakeConnectionProperties": ubx.FieldSpec{
-			WireName: "snowflake_connection_properties",
-			Kind: "object",
-			Fields: GoldengateConnection_Properties_SnowflakeConnectionPropertiesFields,
-		},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-	}
+	"AmazonKinesisConnectionProperties": ubx.FieldSpec{
+		WireName: "amazon_kinesis_connection_properties",
+		Kind:     "object",
+		Fields:   GoldengateConnection_Properties_AmazonKinesisConnectionPropertiesFields,
+	},
+	"AmazonRedshiftConnectionProperties": ubx.FieldSpec{
+		WireName: "amazon_redshift_connection_properties",
+		Kind:     "object",
+		Fields:   GoldengateConnection_Properties_AmazonRedshiftConnectionPropertiesFields,
+	},
+	"AmazonS3ConnectionProperties": ubx.FieldSpec{
+		WireName: "amazon_s3_connection_properties",
+		Kind:     "object",
+		Fields:   GoldengateConnection_Properties_AmazonS3ConnectionPropertiesFields,
+	},
+	"AzureDataLakeStorageConnectionProperties": ubx.FieldSpec{
+		WireName: "azure_data_lake_storage_connection_properties",
+		Kind:     "object",
+		Fields:   GoldengateConnection_Properties_AzureDataLakeStorageConnectionPropertiesFields,
+	},
+	"AzureSynapseAnalyticsConnectionProperties": ubx.FieldSpec{
+		WireName: "azure_synapse_analytics_connection_properties",
+		Kind:     "object",
+		Fields:   GoldengateConnection_Properties_AzureSynapseAnalyticsConnectionPropertiesFields,
+	},
+	"ConnectionType": ubx.FieldSpec{WireName: "connection_type"},
+	"DatabricksConnectionProperties": ubx.FieldSpec{
+		WireName: "databricks_connection_properties",
+		Kind:     "object",
+		Fields:   GoldengateConnection_Properties_DatabricksConnectionPropertiesFields,
+	},
+	"Db2ConnectionProperties": ubx.FieldSpec{
+		WireName: "db2_connection_properties",
+		Kind:     "object",
+		Fields:   GoldengateConnection_Properties_Db2ConnectionPropertiesFields,
+	},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"ElasticsearchConnectionProperties": ubx.FieldSpec{
+		WireName: "elasticsearch_connection_properties",
+		Kind:     "object",
+		Fields:   GoldengateConnection_Properties_ElasticsearchConnectionPropertiesFields,
+	},
+	"GenericConnectionProperties": ubx.FieldSpec{
+		WireName: "generic_connection_properties",
+		Kind:     "object",
+		Fields:   GoldengateConnection_Properties_GenericConnectionPropertiesFields,
+	},
+	"GoldengateConnectionProperties": ubx.FieldSpec{
+		WireName: "goldengate_connection_properties",
+		Kind:     "object",
+		Fields:   GoldengateConnection_Properties_GoldengateConnectionPropertiesFields,
+	},
+	"GoogleBigQueryConnectionProperties": ubx.FieldSpec{
+		WireName: "google_big_query_connection_properties",
+		Kind:     "object",
+		Fields:   GoldengateConnection_Properties_GoogleBigQueryConnectionPropertiesFields,
+	},
+	"GoogleCloudStorageConnectionProperties": ubx.FieldSpec{
+		WireName: "google_cloud_storage_connection_properties",
+		Kind:     "object",
+		Fields:   GoldengateConnection_Properties_GoogleBigQueryConnectionPropertiesFields,
+	},
+	"GooglePubsubConnectionProperties": ubx.FieldSpec{
+		WireName: "google_pubsub_connection_properties",
+		Kind:     "object",
+		Fields:   GoldengateConnection_Properties_GoogleBigQueryConnectionPropertiesFields,
+	},
+	"HdfsConnectionProperties": ubx.FieldSpec{
+		WireName: "hdfs_connection_properties",
+		Kind:     "object",
+		Fields:   GoldengateConnection_Properties_HdfsConnectionPropertiesFields,
+	},
+	"IcebergConnectionProperties": ubx.FieldSpec{
+		WireName: "iceberg_connection_properties",
+		Kind:     "object",
+		Fields:   GoldengateConnection_Properties_IcebergConnectionPropertiesFields,
+	},
+	"IngressIpAddresses": ubx.FieldSpec{WireName: "ingress_ip_addresses"},
+	"JavaMessageServiceConnectionProperties": ubx.FieldSpec{
+		WireName: "java_message_service_connection_properties",
+		Kind:     "object",
+		Fields:   GoldengateConnection_Properties_JavaMessageServiceConnectionPropertiesFields,
+	},
+	"KafkaConnectionProperties": ubx.FieldSpec{
+		WireName: "kafka_connection_properties",
+		Kind:     "object",
+		Fields:   GoldengateConnection_Properties_KafkaConnectionPropertiesFields,
+	},
+	"KafkaSchemaRegistryConnectionProperties": ubx.FieldSpec{
+		WireName: "kafka_schema_registry_connection_properties",
+		Kind:     "object",
+		Fields:   GoldengateConnection_Properties_KafkaSchemaRegistryConnectionPropertiesFields,
+	},
+	"LifecycleDetails": ubx.FieldSpec{WireName: "lifecycle_details"},
+	"LifecycleState":   ubx.FieldSpec{WireName: "lifecycle_state"},
+	"MicrosoftFabricConnectionProperties": ubx.FieldSpec{
+		WireName: "microsoft_fabric_connection_properties",
+		Kind:     "object",
+		Fields:   GoldengateConnection_Properties_MicrosoftFabricConnectionPropertiesFields,
+	},
+	"MicrosoftSqlserverConnectionProperties": ubx.FieldSpec{
+		WireName: "microsoft_sqlserver_connection_properties",
+		Kind:     "object",
+		Fields:   GoldengateConnection_Properties_MicrosoftSqlserverConnectionPropertiesFields,
+	},
+	"MongodbConnectionProperties": ubx.FieldSpec{
+		WireName: "mongodb_connection_properties",
+		Kind:     "object",
+		Fields:   GoldengateConnection_Properties_MongodbConnectionPropertiesFields,
+	},
+	"MysqlConnectionProperties": ubx.FieldSpec{
+		WireName: "mysql_connection_properties",
+		Kind:     "object",
+		Fields:   GoldengateConnection_Properties_MysqlConnectionPropertiesFields,
+	},
+	"OciObjectStorageConnectionProperties": ubx.FieldSpec{
+		WireName: "oci_object_storage_connection_properties",
+		Kind:     "object",
+		Fields:   GoldengateConnection_Properties_OciObjectStorageConnectionPropertiesFields,
+	},
+	"Ocid": ubx.FieldSpec{WireName: "ocid"},
+	"OracleAiDataPlatformConnectionProperties": ubx.FieldSpec{
+		WireName: "oracle_ai_data_platform_connection_properties",
+		Kind:     "object",
+		Fields:   GoldengateConnection_Properties_OracleAiDataPlatformConnectionPropertiesFields,
+	},
+	"OracleConnectionProperties": ubx.FieldSpec{
+		WireName: "oracle_connection_properties",
+		Kind:     "object",
+		Fields:   GoldengateConnection_Properties_OracleConnectionPropertiesFields,
+	},
+	"OracleNosqlConnectionProperties": ubx.FieldSpec{
+		WireName: "oracle_nosql_connection_properties",
+		Kind:     "object",
+		Fields:   GoldengateConnection_Properties_OciObjectStorageConnectionPropertiesFields,
+	},
+	"PostgresqlConnectionProperties": ubx.FieldSpec{
+		WireName: "postgresql_connection_properties",
+		Kind:     "object",
+		Fields:   GoldengateConnection_Properties_MysqlConnectionPropertiesFields,
+	},
+	"RedisConnectionProperties": ubx.FieldSpec{
+		WireName: "redis_connection_properties",
+		Kind:     "object",
+		Fields:   GoldengateConnection_Properties_RedisConnectionPropertiesFields,
+	},
+	"RoutingMethod": ubx.FieldSpec{WireName: "routing_method"},
+	"SnowflakeConnectionProperties": ubx.FieldSpec{
+		WireName: "snowflake_connection_properties",
+		Kind:     "object",
+		Fields:   GoldengateConnection_Properties_SnowflakeConnectionPropertiesFields,
+	},
+	"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+}
 
 type GoldengateConnectionConfig struct {
-	// Output only. The date and time that the GoldengateConnection was created.
-	CreateTime any
-	// Output only. The ID of the subscription entitlement associated with the GoldengateConnection.
-	EntitlementId any
 	// Optional. The GCP Oracle zone where Oracle GoldengateConnection is hosted. Example: us-east4-b-r2. If not specified, the system will pick a zone based on availability.
 	GcpOracleZone any
 	// Optional. The labels or tags associated with the GoldengateConnection.
 	Labels any
 	// Identifier. The name of the GoldengateConnection resource in the following format: projects/{project}/locations/{region}/goldengateConnections/{goldengate_connection}
 	Name any
-	// Output only. HTTPS link to OCI resources exposed to Customer via UI Interface.
-	OciUrl any
 	// Optional. The name of the OdbNetwork associated with the GoldengateConnection. The format is projects/{project}/locations/{location}/odbNetworks/{odb_network}. It is optional but if specified, this should match the parent ODBNetwork of the OdbSubnet.
 	OdbNetwork any
 	// Optional. The name of the OdbSubnet associated with the GoldengateConnection for IP allocation. Format: projects/{project}/locations/{location}/odbNetworks/{odb_network}/odbSubnets/{odb_subnet}
@@ -1315,18 +1309,15 @@ type GoldengateConnectionAttrs struct {
 var GoldengateConnection = ubx.ResourceBinding{
 	WireType: "google_oracledatabase_goldengate_connection",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"EntitlementId": ubx.FieldSpec{WireName: "entitlement_id"},
 		"GcpOracleZone": ubx.FieldSpec{WireName: "gcp_oracle_zone"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"OciUrl": ubx.FieldSpec{WireName: "oci_url"},
-		"OdbNetwork": ubx.FieldSpec{WireName: "odb_network"},
-		"OdbSubnet": ubx.FieldSpec{WireName: "odb_subnet"},
+		"Labels":        ubx.FieldSpec{WireName: "labels"},
+		"Name":          ubx.FieldSpec{WireName: "name"},
+		"OdbNetwork":    ubx.FieldSpec{WireName: "odb_network"},
+		"OdbSubnet":     ubx.FieldSpec{WireName: "odb_subnet"},
 		"Properties": ubx.FieldSpec{
 			WireName: "properties",
-			Kind: "object",
-			Fields: GoldengateConnection_PropertiesFields,
+			Kind:     "object",
+			Fields:   GoldengateConnection_PropertiesFields,
 		},
 	},
 }

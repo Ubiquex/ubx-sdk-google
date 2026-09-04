@@ -25,20 +25,12 @@ _Bucket_CmekSettingsFields = {
 class BucketConfig:
     # Settings for configuring CMEK for a bucket.
     cmek_settings: Any = None
-    # Output only. Create timestamp.
-    create_time: Any = None
-    # Output only. Delete timestamp.
-    delete_time: Any = None
     # Optional. Description of the bucket.
     description: Any = None
     # Optional. User friendly display name.
     display_name: Any = None
     # Identifier. Name of the bucket. The format is: projects/[PROJECT_ID]/locations/[LOCATION]/buckets/[BUCKET_ID]
     name: Any = None
-    # Output only. Timestamp when the bucket in soft-deleted state is purged.
-    purge_time: Any = None
-    # Output only. Update timestamp.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class BucketAttrs:
@@ -67,12 +59,8 @@ Bucket = ubx.ResourceBinding(
             kind="object",
             fields=_Bucket_CmekSettingsFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
-        "delete_time": ubx.FieldSpec(wire_name="delete_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "purge_time": ubx.FieldSpec(wire_name="purge_time"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

@@ -8,9 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class Interconnect_ApplicationAwareInterconnect_BandwidthPercentagePolicy_BandwidthPercentages:
-    # Percentage of the interconnect's total bandwidth allocated to the associated VLAN attachment. All percentages in the bandwidth_percentages block must sum to 100. (AI-inferred)
     percentage: Any = None
-    # The traffic class to which this bandwidth percentage applies. Allowed values are TC1, TC2, TC3, TC4, TC5, and TC6. (AI-inferred)
     traffic_class: Any = None
 
 @dataclasses.dataclass
@@ -20,7 +18,6 @@ class Interconnect_ApplicationAwareInterconnect_BandwidthPercentagePolicy:
 
 @dataclasses.dataclass
 class Interconnect_ApplicationAwareInterconnect:
-    # The bandwidth_percentage_policy block configures the bandwidth percentage allocation for an application-aware interconnect. (AI-inferred)
     bandwidth_percentage_policy: Any = None
     # Description for the application awareness profile on this Cloud Interconnect.
     profile_description: Any = None
@@ -31,34 +28,24 @@ class Interconnect_ApplicationAwareInterconnect:
 
 @dataclasses.dataclass
 class Interconnect_CircuitInfos:
-    # The customer-side demarcation ID for the interconnect circuit. (AI-inferred)
     customer_demarc_id: Any = None
     google_circuit_id: Any = None
-    # The Google-assigned demarcation point ID for this interconnect circuit. (AI-inferred)
     google_demarc_id: Any = None
 
 @dataclasses.dataclass
 class Interconnect_ExpectedOutages:
-    # The list of circuit names that are affected by this outage. (AI-inferred)
     affected_circuits: Any = None
     description: Any = None
-    # The time at which the expected outage is scheduled to end. (AI-inferred)
     end_time: Any = None
-    # The type of issue causing the expected outage. Possible values are IT_OUTAGE, IT_PARTIAL_OUTAGE, OUTAGE, and PARTIAL_OUTAGE. (AI-inferred)
     issue_type: Any = None
     name: Any = None
-    # The source of the expected outage. Allowed values are GOOGLE for outages initiated by Google, and NSRC_GOOGLE for outages reported by the Network Service Reliability Center. (AI-inferred)
     source: Any = None
-    # The start time of the outage, in RFC3339 format. (AI-inferred)
     start_time: Any = None
-    # The current state of the expected outage. Possible values are: ACTIVE, CANCELLED, COMPLETED, NS_ACTIVE, NS_CANCELED. (AI-inferred)
     state: Any = None
 
 @dataclasses.dataclass
 class Interconnect_Macsec_PreSharedKeys:
-    # A user-defined name for this pre-shared key. Must be unique within the interconnect. (AI-inferred)
     name: Any = None
-    # The start time for this pre-shared key, in RFC3339 UTC timestamp format. The key becomes active at this time; if omitted, it becomes active immediately. (AI-inferred)
     start_time: Any = None
 
 @dataclasses.dataclass
@@ -101,23 +88,6 @@ _Interconnect_ApplicationAwareInterconnectFields = {
     "strict_priority_policy": ubx.FieldSpec(wire_name="strict_priority_policy"),
 }
 
-_Interconnect_CircuitInfosFields = {
-    "customer_demarc_id": ubx.FieldSpec(wire_name="customer_demarc_id"),
-    "google_circuit_id": ubx.FieldSpec(wire_name="google_circuit_id"),
-    "google_demarc_id": ubx.FieldSpec(wire_name="google_demarc_id"),
-}
-
-_Interconnect_ExpectedOutagesFields = {
-    "affected_circuits": ubx.FieldSpec(wire_name="affected_circuits"),
-    "description": ubx.FieldSpec(wire_name="description"),
-    "end_time": ubx.FieldSpec(wire_name="end_time"),
-    "issue_type": ubx.FieldSpec(wire_name="issue_type"),
-    "name": ubx.FieldSpec(wire_name="name"),
-    "source": ubx.FieldSpec(wire_name="source"),
-    "start_time": ubx.FieldSpec(wire_name="start_time"),
-    "state": ubx.FieldSpec(wire_name="state"),
-}
-
 _Interconnect_Macsec_PreSharedKeysFields = {
     "name": ubx.FieldSpec(wire_name="name"),
     "start_time": ubx.FieldSpec(wire_name="start_time"),
@@ -146,32 +116,12 @@ class InterconnectConfig:
     application_aware_interconnect: Any = None
     # [Output only] List of features available for this Interconnect connection, which can take one of the following values: - IF_MACSEC: If present, then the Interconnect connection is provisioned on MACsec capable hardware ports. If not present, then the Interconnect connection is provisioned on non-MACsec capable ports. Any attempt to enable MACsec will fail. - IF_CROSS_SITE_NETWORK: If present, then the Interconnect connection is provisioned exclusively for Cross-Site Networking. Any attempt to configure VLAN attachments will fail. If not present, then the Interconnect connection is not provisioned for Cross-Site Networking. Any attempt to use it for Cross-Site Networking will fail.
     available_features: Any = None
-    # Output only. [Output Only] A list of CircuitInfo objects, that describe the individual circuits in this LAG.
-    circuit_infos: Any = None
-    # Output only. [Output Only] Creation timestamp inRFC3339 text format.
-    creation_timestamp: Any = None
     # Customer name, to put in the Letter of Authorization as the party authorized to request a crossconnect.
     customer_name: Any = None
     # An optional description of this resource. Provide this property when you create the resource.
     description: Any = None
-    # Output only. URL of the InterconnectLocation object that represents where this connection is to be provisioned. By default it will be the same as the location field.
-    effective_location: Any = None
-    # Output only. [Output Only] A list of outages expected for this Interconnect.
-    expected_outages: Any = None
-    # Output only. [Output Only] IP address configured on the Google side of the Interconnect link. This can be used only for ping tests.
-    google_ip_address: Any = None
-    # Output only. [Output Only] Google reference ID to be used when raising support tickets with Google or otherwise to debug backend connectivity issues.
-    google_reference_id: Any = None
-    # Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-    id: Any = None
-    # Output only. [Output Only] A list of the URLs of all InterconnectAttachments configured to use this Interconnect.
-    interconnect_attachments: Any = None
-    # Output only. [Output Only] URLs of InterconnectGroups that include this Interconnect. Order is arbitrary and items are unique.
-    interconnect_groups: Any = None
     # Type of interconnect, which can take one of the following values: - PARTNER: A partner-managed interconnection shared between customers though a partner. - DEDICATED: A dedicated physical interconnection with the customer. Note that a value IT_PRIVATE has been deprecated in favor of DEDICATED.
     interconnect_type: Any = None
-    # Output only. [Output Only] Type of the resource. Alwayscompute#interconnect for interconnects.
-    kind: Any = None
     # A fingerprint for the labels being applied to this Interconnect, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an Interconnect.
     label_fingerprint: Any = None
     # Labels for this resource. These can only be added or modified by thesetLabels method. Each label key/value pair must comply withRFC1035. Label values may be empty.
@@ -188,32 +138,16 @@ class InterconnectConfig:
     name: Any = None
     # Email address to contact the customer NOC for operations and maintenance notifications regarding this Interconnect. If specified, this will be used for notifications in addition to all other forms described, such as Cloud Monitoring logs alerting and Cloud Notifications. This field is required for users who sign up for Cloud Interconnect using workforce identity federation.
     noc_contact_email: Any = None
-    # Output only. [Output Only] The current status of this Interconnect's functionality, which can take one of the following values: - OS_ACTIVE: A valid Interconnect, which is turned up and is ready to use. Attachments may be provisioned on this Interconnect. - OS_UNPROVISIONED: An Interconnect that has not completed turnup. No attachments may be provisioned on this Interconnect. - OS_UNDER_MAINTENANCE: An Interconnect that is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect.
-    operational_status: Any = None
     # Additional interconnect parameters.
     params: Any = None
-    # Output only. [Output Only] IP address configured on the customer side of the Interconnect link. The customer should configure this IP address during turnup when prompted by Google NOC. This can be used only for ping tests.
-    peer_ip_address: Any = None
-    # Output only. [Output Only] Number of links actually provisioned in this interconnect.
-    provisioned_link_count: Any = None
     # Indicates that this is a Cross-Cloud Interconnect. This field specifies the location outside of Google's network that the interconnect is connected to.
     remote_location: Any = None
     # Optional. This parameter can be provided only with Interconnect INSERT. It isn't valid for Interconnect PATCH. List of features requested for this Interconnect connection, which can take one of the following values: - IF_MACSEC: If specified, then the connection is created on MACsec capable hardware ports. If not specified, non-MACsec capable ports will also be considered. - IF_CROSS_SITE_NETWORK: If specified, then the connection is created exclusively for Cross-Site Networking. The connection can not be used for Cross-Site Networking unless this feature is specified.
     requested_features: Any = None
     # Target number of physical links in the link bundle, as requested by the customer.
     requested_link_count: Any = None
-    # Output only. [Output Only] Reserved for future use.
-    satisfies_pzs: Any = None
-    # Output only. [Output Only] Server-defined URL for the resource.
-    self_link: Any = None
-    # Output only. Server-defined URL for this resource with the resource id.
-    self_link_with_id: Any = None
-    # Output only. [Output Only] The current state of Interconnect functionality, which can take one of the following values: - ACTIVE: The Interconnect is valid, turned up and ready to use. Attachments may be provisioned on this Interconnect. - UNPROVISIONED: The Interconnect has not completed turnup. No attachments may be provisioned on this Interconnect. - UNDER_MAINTENANCE: The Interconnect is undergoing internal maintenance. No attachments may be provisioned or updated on this Interconnect.
-    state: Any = None
     # To be deprecated.
     subzone: Any = None
-    # Output only. [Output Only] A list of the URLs of all CrossSiteNetwork WireGroups configured to use this Interconnect. The Interconnect cannot be deleted if this list is non-empty.
-    wire_groups: Any = None
 
 @dataclasses.dataclass
 class InterconnectAttrs:
@@ -305,27 +239,9 @@ Interconnect = ubx.ResourceBinding(
             fields=_Interconnect_ApplicationAwareInterconnectFields,
         ),
         "available_features": ubx.FieldSpec(wire_name="available_features"),
-        "circuit_infos": ubx.FieldSpec(
-            wire_name="circuit_infos",
-            kind="list",
-            fields=_Interconnect_CircuitInfosFields,
-        ),
-        "creation_timestamp": ubx.FieldSpec(wire_name="creation_timestamp"),
         "customer_name": ubx.FieldSpec(wire_name="customer_name"),
         "description": ubx.FieldSpec(wire_name="description"),
-        "effective_location": ubx.FieldSpec(wire_name="effective_location"),
-        "expected_outages": ubx.FieldSpec(
-            wire_name="expected_outages",
-            kind="list",
-            fields=_Interconnect_ExpectedOutagesFields,
-        ),
-        "google_ip_address": ubx.FieldSpec(wire_name="google_ip_address"),
-        "google_reference_id": ubx.FieldSpec(wire_name="google_reference_id"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "interconnect_attachments": ubx.FieldSpec(wire_name="interconnect_attachments"),
-        "interconnect_groups": ubx.FieldSpec(wire_name="interconnect_groups"),
         "interconnect_type": ubx.FieldSpec(wire_name="interconnect_type"),
-        "kind": ubx.FieldSpec(wire_name="kind"),
         "label_fingerprint": ubx.FieldSpec(wire_name="label_fingerprint"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "link_type": ubx.FieldSpec(wire_name="link_type"),
@@ -338,22 +254,14 @@ Interconnect = ubx.ResourceBinding(
         "macsec_enabled": ubx.FieldSpec(wire_name="macsec_enabled"),
         "name": ubx.FieldSpec(wire_name="name"),
         "noc_contact_email": ubx.FieldSpec(wire_name="noc_contact_email"),
-        "operational_status": ubx.FieldSpec(wire_name="operational_status"),
         "params": ubx.FieldSpec(
             wire_name="params",
             kind="object",
             fields=_Interconnect_ParamsFields,
         ),
-        "peer_ip_address": ubx.FieldSpec(wire_name="peer_ip_address"),
-        "provisioned_link_count": ubx.FieldSpec(wire_name="provisioned_link_count"),
         "remote_location": ubx.FieldSpec(wire_name="remote_location"),
         "requested_features": ubx.FieldSpec(wire_name="requested_features"),
         "requested_link_count": ubx.FieldSpec(wire_name="requested_link_count"),
-        "satisfies_pzs": ubx.FieldSpec(wire_name="satisfies_pzs"),
-        "self_link": ubx.FieldSpec(wire_name="self_link"),
-        "self_link_with_id": ubx.FieldSpec(wire_name="self_link_with_id"),
-        "state": ubx.FieldSpec(wire_name="state"),
         "subzone": ubx.FieldSpec(wire_name="subzone"),
-        "wire_groups": ubx.FieldSpec(wire_name="wire_groups"),
     },
 )

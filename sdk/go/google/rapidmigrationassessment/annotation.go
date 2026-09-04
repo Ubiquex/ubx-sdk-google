@@ -4,16 +4,12 @@ package rapidmigrationassessment
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AnnotationConfig struct {
-	// Output only. Create time stamp.
-	CreateTime any
 	// Labels as key value pairs.
 	Labels any
 	// name of resource.
 	Name any
 	// Type of an annotation.
 	Type any
-	// Output only. Update time stamp.
-	UpdateTime any
 }
 
 type AnnotationAttrs struct {
@@ -32,10 +28,8 @@ type AnnotationAttrs struct {
 var Annotation = ubx.ResourceBinding{
 	WireType: "google_rapidmigrationassessment_annotation",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"Name":   ubx.FieldSpec{WireName: "name"},
+		"Type":   ubx.FieldSpec{WireName: "type"},
 	},
 }

@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Deployment_DeleteResults_Outputs struct {
 	Sensitive any
-	Value any
+	Value     any
 }
 
 type Deployment_DeleteResults struct {
@@ -56,121 +56,90 @@ type Deployment_TerraformBlueprint struct {
 }
 
 type Deployment_TfErrors_Error struct {
-	Code any
+	Code    any
 	Details any
 	Message any
 }
 
 type Deployment_TfErrors struct {
-	Error any
+	Error            any
 	ErrorDescription any
 	HttpResponseCode any
-	ResourceAddress any
+	ResourceAddress  any
 }
 
 var Deployment_DeleteResults_OutputsFields = ubx.FieldMap{
-		"Sensitive": ubx.FieldSpec{WireName: "sensitive"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Sensitive": ubx.FieldSpec{WireName: "sensitive"},
+	"Value":     ubx.FieldSpec{WireName: "value"},
+}
 
 var Deployment_DeleteResultsFields = ubx.FieldMap{
-		"Artifacts": ubx.FieldSpec{WireName: "artifacts"},
-		"Content": ubx.FieldSpec{WireName: "content"},
-		"Outputs": ubx.FieldSpec{
-			WireName: "outputs",
-			Kind: "map",
-			Fields: Deployment_DeleteResults_OutputsFields,
-		},
-	}
+	"Artifacts": ubx.FieldSpec{WireName: "artifacts"},
+	"Content":   ubx.FieldSpec{WireName: "content"},
+	"Outputs": ubx.FieldSpec{
+		WireName: "outputs",
+		Kind:     "map",
+		Fields:   Deployment_DeleteResults_OutputsFields,
+	},
+}
 
 var Deployment_ProviderConfigFields = ubx.FieldMap{
-		"SourceType": ubx.FieldSpec{WireName: "source_type"},
-	}
+	"SourceType": ubx.FieldSpec{WireName: "source_type"},
+}
 
 var Deployment_TerraformBlueprint_ExternalValues_DeploymentSourceFields = ubx.FieldMap{
-		"Deployment": ubx.FieldSpec{WireName: "deployment"},
-		"OutputName": ubx.FieldSpec{WireName: "output_name"},
-	}
+	"Deployment": ubx.FieldSpec{WireName: "deployment"},
+	"OutputName": ubx.FieldSpec{WireName: "output_name"},
+}
 
 var Deployment_TerraformBlueprint_ExternalValuesFields = ubx.FieldMap{
-		"DeploymentSource": ubx.FieldSpec{
-			WireName: "deployment_source",
-			Kind: "object",
-			Fields: Deployment_TerraformBlueprint_ExternalValues_DeploymentSourceFields,
-		},
-	}
+	"DeploymentSource": ubx.FieldSpec{
+		WireName: "deployment_source",
+		Kind:     "object",
+		Fields:   Deployment_TerraformBlueprint_ExternalValues_DeploymentSourceFields,
+	},
+}
 
 var Deployment_TerraformBlueprint_GitSourceFields = ubx.FieldMap{
-		"Directory": ubx.FieldSpec{WireName: "directory"},
-		"Ref": ubx.FieldSpec{WireName: "ref"},
-		"Repo": ubx.FieldSpec{WireName: "repo"},
-	}
+	"Directory": ubx.FieldSpec{WireName: "directory"},
+	"Ref":       ubx.FieldSpec{WireName: "ref"},
+	"Repo":      ubx.FieldSpec{WireName: "repo"},
+}
 
 var Deployment_TerraformBlueprint_InputValuesFields = ubx.FieldMap{
-		"InputValue": ubx.FieldSpec{WireName: "input_value"},
-	}
+	"InputValue": ubx.FieldSpec{WireName: "input_value"},
+}
 
 var Deployment_TerraformBlueprintFields = ubx.FieldMap{
-		"ExternalValues": ubx.FieldSpec{
-			WireName: "external_values",
-			Kind: "map",
-			Fields: Deployment_TerraformBlueprint_ExternalValuesFields,
-		},
-		"GcsSource": ubx.FieldSpec{WireName: "gcs_source"},
-		"GitSource": ubx.FieldSpec{
-			WireName: "git_source",
-			Kind: "object",
-			Fields: Deployment_TerraformBlueprint_GitSourceFields,
-		},
-		"InputValues": ubx.FieldSpec{
-			WireName: "input_values",
-			Kind: "map",
-			Fields: Deployment_TerraformBlueprint_InputValuesFields,
-		},
-	}
-
-var Deployment_TfErrors_ErrorFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
-
-var Deployment_TfErrorsFields = ubx.FieldMap{
-		"Error": ubx.FieldSpec{
-			WireName: "error",
-			Kind: "object",
-			Fields: Deployment_TfErrors_ErrorFields,
-		},
-		"ErrorDescription": ubx.FieldSpec{WireName: "error_description"},
-		"HttpResponseCode": ubx.FieldSpec{WireName: "http_response_code"},
-		"ResourceAddress": ubx.FieldSpec{WireName: "resource_address"},
-	}
+	"ExternalValues": ubx.FieldSpec{
+		WireName: "external_values",
+		Kind:     "map",
+		Fields:   Deployment_TerraformBlueprint_ExternalValuesFields,
+	},
+	"GcsSource": ubx.FieldSpec{WireName: "gcs_source"},
+	"GitSource": ubx.FieldSpec{
+		WireName: "git_source",
+		Kind:     "object",
+		Fields:   Deployment_TerraformBlueprint_GitSourceFields,
+	},
+	"InputValues": ubx.FieldSpec{
+		WireName: "input_values",
+		Kind:     "map",
+		Fields:   Deployment_TerraformBlueprint_InputValuesFields,
+	},
+}
 
 type DeploymentConfig struct {
 	// Optional. Arbitrary key-value metadata storage e.g. to help client tools identify deployments during automation. See https://google.aip.dev/148#annotations for details on format and size limitations.
 	Annotations any
 	// User-defined location of Cloud Build logs and artifacts in Google Cloud Storage. Format: `gs://{bucket}/{folder}` A default bucket will be bootstrapped if the field is not set or empty. Default bucket format: `gs://--blueprint-config` Constraints: - The bucket needs to be in the same project as the deployment - The path cannot be within the path of `gcs_source` - The field cannot be updated, including changing its presence
 	ArtifactsGcsBucket any
-	// Output only. Time when the deployment was created.
-	CreateTime any
-	// Output only. Cloud Build instance UUID associated with deleting this deployment.
-	DeleteBuild any
-	// Output only. Location of Cloud Build logs in Google Cloud Storage, populated when deleting this deployment. Format: `gs://{bucket}/{object}`.
-	DeleteLogs any
 	// Outputs and artifacts from applying a deployment.
 	DeleteResults any
-	// Output only. Error code describing errors that may have occurred.
-	ErrorCode any
-	// Output only. Location of Terraform error logs in Google Cloud Storage. Format: `gs://{bucket}/{object}`.
-	ErrorLogs any
 	// By default, Infra Manager will return a failure when Terraform encounters a 409 code (resource conflict error) during actuation. If this flag is set to true, Infra Manager will instead attempt to automatically import the resource into the Terraform state (for supported resource types) and continue actuation. Not all resource types are supported, refer to documentation.
 	ImportExistingResources any
 	// Optional. User-defined metadata for the deployment.
 	Labels any
-	// Output only. Revision name that was most recently applied. Format: `projects/{project}/locations/{location}/deployments/{deployment}/ revisions/{revision}`
-	LatestRevision any
-	// Output only. Current lock state of the deployment.
-	LockState any
 	// Identifier. Resource name of the deployment. Format: `projects/{project}/locations/{location}/deployments/{deployment}`
 	Name any
 	// ProviderConfig contains the provider configurations.
@@ -179,20 +148,10 @@ type DeploymentConfig struct {
 	QuotaValidation any
 	// Required. User-specified Service Account (SA) credentials to be used when actuating resources. Format: `projects/{projectID}/serviceAccounts/{serviceAccount}`
 	ServiceAccount any
-	// Output only. Current state of the deployment.
-	State any
-	// Output only. Additional information regarding the current state.
-	StateDetail any
 	// TerraformBlueprint describes the source of a Terraform root module which describes the resources and configs to be deployed.
 	TerraformBlueprint any
-	// Output only. Errors encountered when deleting this deployment. Errors are truncated to 10 entries, see `delete_results` and `error_logs` for full details.
-	TfErrors any
-	// Output only. The current Terraform version set on the deployment. It is in the format of "Major.Minor.Patch", for example, "1.3.10".
-	TfVersion any
 	// The user-specified Terraform version constraint. Example: "=1.3.10".
 	TfVersionConstraint any
-	// Output only. Time when the deployment was last modified.
-	UpdateTime any
 	// The user-specified Cloud Build worker pool resource in which the Cloud Build job will execute. Format: `projects/{project}/locations/{location}/workerPools/{workerPoolId}`. If this field is unspecified, the default Cloud Build worker pool will be used.
 	WorkerPool any
 }
@@ -251,45 +210,29 @@ type DeploymentAttrs struct {
 var Deployment = ubx.ResourceBinding{
 	WireType: "google_config_deployment",
 	Fields: ubx.FieldMap{
-		"Annotations": ubx.FieldSpec{WireName: "annotations"},
+		"Annotations":        ubx.FieldSpec{WireName: "annotations"},
 		"ArtifactsGcsBucket": ubx.FieldSpec{WireName: "artifacts_gcs_bucket"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DeleteBuild": ubx.FieldSpec{WireName: "delete_build"},
-		"DeleteLogs": ubx.FieldSpec{WireName: "delete_logs"},
 		"DeleteResults": ubx.FieldSpec{
 			WireName: "delete_results",
-			Kind: "object",
-			Fields: Deployment_DeleteResultsFields,
+			Kind:     "object",
+			Fields:   Deployment_DeleteResultsFields,
 		},
-		"ErrorCode": ubx.FieldSpec{WireName: "error_code"},
-		"ErrorLogs": ubx.FieldSpec{WireName: "error_logs"},
 		"ImportExistingResources": ubx.FieldSpec{WireName: "import_existing_resources"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"LatestRevision": ubx.FieldSpec{WireName: "latest_revision"},
-		"LockState": ubx.FieldSpec{WireName: "lock_state"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Labels":                  ubx.FieldSpec{WireName: "labels"},
+		"Name":                    ubx.FieldSpec{WireName: "name"},
 		"ProviderConfig": ubx.FieldSpec{
 			WireName: "provider_config",
-			Kind: "object",
-			Fields: Deployment_ProviderConfigFields,
+			Kind:     "object",
+			Fields:   Deployment_ProviderConfigFields,
 		},
 		"QuotaValidation": ubx.FieldSpec{WireName: "quota_validation"},
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"StateDetail": ubx.FieldSpec{WireName: "state_detail"},
+		"ServiceAccount":  ubx.FieldSpec{WireName: "service_account"},
 		"TerraformBlueprint": ubx.FieldSpec{
 			WireName: "terraform_blueprint",
-			Kind: "object",
-			Fields: Deployment_TerraformBlueprintFields,
+			Kind:     "object",
+			Fields:   Deployment_TerraformBlueprintFields,
 		},
-		"TfErrors": ubx.FieldSpec{
-			WireName: "tf_errors",
-			Kind: "list",
-			Fields: Deployment_TfErrorsFields,
-		},
-		"TfVersion": ubx.FieldSpec{WireName: "tf_version"},
 		"TfVersionConstraint": ubx.FieldSpec{WireName: "tf_version_constraint"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-		"WorkerPool": ubx.FieldSpec{WireName: "worker_pool"},
+		"WorkerPool":          ubx.FieldSpec{WireName: "worker_pool"},
 	},
 }

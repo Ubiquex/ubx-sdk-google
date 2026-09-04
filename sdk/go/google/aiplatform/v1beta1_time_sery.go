@@ -13,14 +13,12 @@ type V1beta1TimeSery_Metadata struct {
 }
 
 var V1beta1TimeSery_MetadataFields = ubx.FieldMap{
-		"MaxBlobSequenceLength": ubx.FieldSpec{WireName: "max_blob_sequence_length"},
-		"MaxStep": ubx.FieldSpec{WireName: "max_step"},
-		"MaxWallTime": ubx.FieldSpec{WireName: "max_wall_time"},
-	}
+	"MaxBlobSequenceLength": ubx.FieldSpec{WireName: "max_blob_sequence_length"},
+	"MaxStep":               ubx.FieldSpec{WireName: "max_step"},
+	"MaxWallTime":           ubx.FieldSpec{WireName: "max_wall_time"},
+}
 
 type V1beta1TimeSeryConfig struct {
-	// Output only. Timestamp when this TensorboardTimeSeries was created.
-	CreateTime any
 	// Description of this TensorboardTimeSeries.
 	Description any
 	// Required. User provided name of this TensorboardTimeSeries. This value should be unique among all TensorboardTimeSeries resources belonging to the same TensorboardRun resource (parent resource).
@@ -29,14 +27,10 @@ type V1beta1TimeSeryConfig struct {
 	Etag any
 	// Describes metadata for a TensorboardTimeSeries.
 	Metadata any
-	// Output only. Name of the TensorboardTimeSeries.
-	Name any
 	// Data of the current plugin, with the size limited to 65KB.
 	PluginData any
 	// Immutable. Name of the plugin this time series pertain to. Such as Scalar, Tensor, Blob
 	PluginName any
-	// Output only. Timestamp when this TensorboardTimeSeries was last updated.
-	UpdateTime any
 	// Required. Immutable. Type of TensorboardTimeSeries value.
 	ValueType any
 }
@@ -67,19 +61,16 @@ type V1beta1TimeSeryAttrs struct {
 var V1beta1TimeSery = ubx.ResourceBinding{
 	WireType: "google_aiplatform_v1beta1_time_sery",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
+		"Etag":        ubx.FieldSpec{WireName: "etag"},
 		"Metadata": ubx.FieldSpec{
 			WireName: "metadata",
-			Kind: "object",
-			Fields: V1beta1TimeSery_MetadataFields,
+			Kind:     "object",
+			Fields:   V1beta1TimeSery_MetadataFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
 		"PluginData": ubx.FieldSpec{WireName: "plugin_data"},
 		"PluginName": ubx.FieldSpec{WireName: "plugin_name"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-		"ValueType": ubx.FieldSpec{WireName: "value_type"},
+		"ValueType":  ubx.FieldSpec{WireName: "value_type"},
 	},
 }

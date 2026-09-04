@@ -15,7 +15,7 @@ type V1alpha1Asset_AwsS3BucketDetails_ObjectsMetadata struct {
 
 type V1alpha1Asset_AwsS3BucketDetails_StorageClasses struct {
 	TotalBytes any
-	Type any
+	Type       any
 }
 
 type V1alpha1Asset_AwsS3BucketDetails_Versioning struct {
@@ -39,19 +39,19 @@ type V1alpha1Asset_DatabaseDeploymentDetails_AggregatedStats struct {
 
 type V1alpha1Asset_DatabaseDeploymentDetails_Mysql_Plugins struct {
 	Enabled any
-	Plugin any
+	Plugin  any
 	Version any
 }
 
 type V1alpha1Asset_DatabaseDeploymentDetails_Mysql_Properties struct {
-	Enabled any
+	Enabled      any
 	NumericValue any
-	Property any
+	Property     any
 }
 
 type V1alpha1Asset_DatabaseDeploymentDetails_Mysql_Variables struct {
 	Category any
-	Value any
+	Value    any
 	Variable any
 }
 
@@ -67,13 +67,13 @@ type V1alpha1Asset_DatabaseDeploymentDetails_Mysql struct {
 }
 
 type V1alpha1Asset_DatabaseDeploymentDetails_Postgresql_Settings struct {
-	BoolValue any
-	IntValue any
-	RealValue any
-	Setting any
-	Source any
+	BoolValue   any
+	IntValue    any
+	RealValue   any
+	Setting     any
+	Source      any
 	StringValue any
-	Unit any
+	Unit        any
 }
 
 type V1alpha1Asset_DatabaseDeploymentDetails_Postgresql struct {
@@ -84,18 +84,18 @@ type V1alpha1Asset_DatabaseDeploymentDetails_Postgresql struct {
 }
 
 type V1alpha1Asset_DatabaseDeploymentDetails_SqlServer_Features struct {
-	Enabled any
+	Enabled     any
 	FeatureName any
 }
 
 type V1alpha1Asset_DatabaseDeploymentDetails_SqlServer_ServerFlags struct {
 	ServerFlagName any
-	Value any
-	ValueInUse any
+	Value          any
+	ValueInUse     any
 }
 
 type V1alpha1Asset_DatabaseDeploymentDetails_SqlServer_TraceFlags struct {
-	Scope any
+	Scope         any
 	TraceFlagName any
 }
 
@@ -109,15 +109,15 @@ type V1alpha1Asset_DatabaseDeploymentDetails_SqlServer struct {
 }
 
 type V1alpha1Asset_DatabaseDeploymentDetails_Topology_Instances_Network struct {
-	HostNames any
-	IpAddresses any
+	HostNames         any
+	IpAddresses       any
 	PrimaryMacAddress any
 }
 
 type V1alpha1Asset_DatabaseDeploymentDetails_Topology_Instances struct {
 	InstanceName any
-	Network any
-	Role any
+	Network      any
+	Role         any
 }
 
 type V1alpha1Asset_DatabaseDeploymentDetails_Topology struct {
@@ -173,8 +173,8 @@ type V1alpha1Asset_DatabaseDetails_ParentDatabaseDeployment struct {
 
 type V1alpha1Asset_DatabaseDetails_Schemas_Mysql_StorageEngines struct {
 	EncryptedTableCount any
-	Engine any
-	TableCount any
+	Engine              any
+	TableCount          any
 }
 
 type V1alpha1Asset_DatabaseDetails_Schemas_Mysql struct {
@@ -183,16 +183,16 @@ type V1alpha1Asset_DatabaseDetails_Schemas_Mysql struct {
 
 type V1alpha1Asset_DatabaseDetails_Schemas_Objects struct {
 	Category any
-	Count any
+	Count    any
 }
 
 type V1alpha1Asset_DatabaseDetails_Schemas_Postgresql_PostgresqlExtensions struct {
 	Extension any
-	Version any
+	Version   any
 }
 
 type V1alpha1Asset_DatabaseDetails_Schemas_Postgresql struct {
-	ForeignTablesCount any
+	ForeignTablesCount   any
 	PostgresqlExtensions any
 }
 
@@ -201,11 +201,11 @@ type V1alpha1Asset_DatabaseDetails_Schemas_SqlServer struct {
 }
 
 type V1alpha1Asset_DatabaseDetails_Schemas struct {
-	Mysql any
-	Objects any
-	Postgresql any
-	SchemaName any
-	SqlServer any
+	Mysql           any
+	Objects         any
+	Postgresql      any
+	SchemaName      any
+	SqlServer       any
 	TablesSizeBytes any
 }
 
@@ -245,52 +245,52 @@ type V1alpha1Asset_HostingProviderDetails struct {
 
 type V1alpha1Asset_InsightList_Insights_GenericInsight struct {
 	AdditionalInformation any
-	DefaultMessage any
-	MessageId any
+	DefaultMessage        any
+	MessageId             any
 }
 
 type V1alpha1Asset_InsightList_Insights_MigrationInsight_CloudDatabaseTarget_CloudSqlForMysqlShape_Storage struct {
 	SizeGb any
-	Type any
+	Type   any
 }
 
 type V1alpha1Asset_InsightList_Insights_MigrationInsight_CloudDatabaseTarget_CloudSqlForMysqlShape struct {
-	BackupStorageGb any
-	Edition any
+	BackupStorageGb  any
+	Edition          any
 	EgressGbPerMonth any
 	LogicalCoreCount any
-	MemoryMb any
-	Storage any
-	Version any
+	MemoryMb         any
+	Storage          any
+	Version          any
 	ZoneAvailability any
 }
 
 type V1alpha1Asset_InsightList_Insights_MigrationInsight_CloudDatabaseTarget_CloudSqlShape struct {
-	BackupStorageGb any
-	Edition any
+	BackupStorageGb  any
+	Edition          any
 	EgressGbPerMonth any
 	LogicalCoreCount any
-	MemoryMb any
-	SmtEnabled any
-	Storage any
-	Version any
+	MemoryMb         any
+	SmtEnabled       any
+	Storage          any
+	Version          any
 	ZoneAvailability any
 }
 
 type V1alpha1Asset_InsightList_Insights_MigrationInsight_CloudDatabaseTarget struct {
-	CloudSqlForMysqlShape any
+	CloudSqlForMysqlShape      any
 	CloudSqlForPostgresqlShape any
-	CloudSqlShape any
+	CloudSqlShape              any
 }
 
 type V1alpha1Asset_InsightList_Insights_MigrationInsight_ComputeEngineTarget_Shape struct {
-	LogicalCoreCount any
-	MachineType any
-	MemoryMb any
+	LogicalCoreCount  any
+	MachineType       any
+	MemoryMb          any
 	PhysicalCoreCount any
-	Series any
-	SmtEnabled any
-	Storage any
+	Series            any
+	SmtEnabled        any
+	Storage           any
 }
 
 type V1alpha1Asset_InsightList_Insights_MigrationInsight_ComputeEngineTarget struct {
@@ -302,31 +302,31 @@ type V1alpha1Asset_InsightList_Insights_MigrationInsight_Fit struct {
 }
 
 type V1alpha1Asset_InsightList_Insights_MigrationInsight_Issues_CompatibilityIssue struct {
-	AssociatedObject any
+	AssociatedObject     any
 	AssociatedObjectType any
-	AssociatedValue any
-	Category any
+	AssociatedValue      any
+	Category             any
 }
 
 type V1alpha1Asset_InsightList_Insights_MigrationInsight_Issues struct {
 	CompatibilityIssue any
-	Description any
-	IssueCode any
+	Description        any
+	IssueCode          any
 }
 
 type V1alpha1Asset_InsightList_Insights_MigrationInsight struct {
-	CloudDatabaseTarget any
+	CloudDatabaseTarget           any
 	ComputeEngineSoleTenantTarget any
-	ComputeEngineTarget any
-	Fit any
-	GkeTarget any
-	Issues any
-	VmwareEngineTarget any
+	ComputeEngineTarget           any
+	Fit                           any
+	GkeTarget                     any
+	Issues                        any
+	VmwareEngineTarget            any
 }
 
 type V1alpha1Asset_InsightList_Insights_SoftwareInsight_DetectedSoftware struct {
 	SoftwareFamily any
-	SoftwareName any
+	SoftwareName   any
 }
 
 type V1alpha1Asset_InsightList_Insights_SoftwareInsight struct {
@@ -334,9 +334,9 @@ type V1alpha1Asset_InsightList_Insights_SoftwareInsight struct {
 }
 
 type V1alpha1Asset_InsightList_Insights struct {
-	GenericInsight any
+	GenericInsight   any
 	MigrationInsight any
-	SoftwareInsight any
+	SoftwareInsight  any
 }
 
 type V1alpha1Asset_InsightList struct {
@@ -388,12 +388,12 @@ type V1alpha1Asset_MachineDetails_Architecture struct {
 
 type V1alpha1Asset_MachineDetails_DiskPartitions_Partitions_Entries struct {
 	CapacityBytes any
-	FileSystem any
-	FreeBytes any
-	MountPoint any
+	FileSystem    any
+	FreeBytes     any
+	MountPoint    any
 	SubPartitions any
-	Type any
-	Uuid any
+	Type          any
+	Uuid          any
 }
 
 type V1alpha1Asset_MachineDetails_DiskPartitions_Partitions struct {
@@ -411,16 +411,16 @@ type V1alpha1Asset_MachineDetails_DiskPartitions struct {
 }
 
 type V1alpha1Asset_MachineDetails_Disks_Disks_Entries struct {
-	CapacityBytes any
-	DiskLabel any
-	DiskLabelType any
-	FreeSpaceBytes any
-	HwAddress any
-	InterfaceType any
-	Partitions any
-	Status any
+	CapacityBytes      any
+	DiskLabel          any
+	DiskLabelType      any
+	FreeSpaceBytes     any
+	HwAddress          any
+	InterfaceType      any
+	Partitions         any
+	Status             any
 	TotalCapacityBytes any
-	TotalFreeBytes any
+	TotalFreeBytes     any
 }
 
 type V1alpha1Asset_MachineDetails_Disks_Disks struct {
@@ -440,11 +440,11 @@ type V1alpha1Asset_MachineDetails_Disks struct {
 }
 
 type V1alpha1Asset_MachineDetails_GuestOs_Config_Fstab_Entries struct {
-	File any
-	Freq any
-	Mntops any
-	Passno any
-	Spec any
+	File    any
+	Freq    any
+	Mntops  any
+	Passno  any
+	Spec    any
 	Vfstype any
 }
 
@@ -455,7 +455,7 @@ type V1alpha1Asset_MachineDetails_GuestOs_Config_Fstab struct {
 
 type V1alpha1Asset_MachineDetails_GuestOs_Config_Hosts_Entries struct {
 	HostNames any
-	Ip any
+	Ip        any
 }
 
 type V1alpha1Asset_MachineDetails_GuestOs_Config_Hosts struct {
@@ -465,7 +465,7 @@ type V1alpha1Asset_MachineDetails_GuestOs_Config_Hosts struct {
 
 type V1alpha1Asset_MachineDetails_GuestOs_Config_NfsExports_Entries struct {
 	ExportDirectory any
-	Hosts any
+	Hosts           any
 }
 
 type V1alpha1Asset_MachineDetails_GuestOs_Config_NfsExports struct {
@@ -497,13 +497,13 @@ type V1alpha1Asset_MachineDetails_GuestOs_Config struct {
 
 type V1alpha1Asset_MachineDetails_GuestOs_Runtime_InstalledApps_Entries struct {
 	ApplicationName any
-	InstallTime any
-	Licenses any
-	Name any
-	Path any
-	Time any
-	Vendor any
-	Version any
+	InstallTime     any
+	Licenses        any
+	Name            any
+	Path            any
+	Time            any
+	Vendor          any
+	Version         any
 }
 
 type V1alpha1Asset_MachineDetails_GuestOs_Runtime_InstalledApps struct {
@@ -521,14 +521,14 @@ type V1alpha1Asset_MachineDetails_GuestOs_Runtime_LastUptime struct {
 }
 
 type V1alpha1Asset_MachineDetails_GuestOs_Runtime_NetworkInfo_Connections_Entries struct {
-	LocalIpAddress any
-	LocalPort any
-	Pid any
-	ProcessName any
-	Protocol any
+	LocalIpAddress  any
+	LocalPort       any
+	Pid             any
+	ProcessName     any
+	Protocol        any
 	RemoteIpAddress any
-	RemotePort any
-	State any
+	RemotePort      any
+	State           any
 }
 
 type V1alpha1Asset_MachineDetails_GuestOs_Runtime_NetworkInfo_Connections struct {
@@ -578,10 +578,10 @@ type V1alpha1Asset_MachineDetails_GuestOs_Runtime_NetworkInfo struct {
 }
 
 type V1alpha1Asset_MachineDetails_GuestOs_Runtime_OpenFileList_Entries struct {
-	Command any
+	Command  any
 	FilePath any
 	FileType any
-	User any
+	User     any
 }
 
 type V1alpha1Asset_MachineDetails_GuestOs_Runtime_OpenFileList struct {
@@ -591,10 +591,10 @@ type V1alpha1Asset_MachineDetails_GuestOs_Runtime_OpenFileList struct {
 
 type V1alpha1Asset_MachineDetails_GuestOs_Runtime_Processes_Entries struct {
 	Attributes any
-	Cmdline any
-	ExePath any
-	Pid any
-	User any
+	Cmdline    any
+	ExePath    any
+	Pid        any
+	User       any
 }
 
 type V1alpha1Asset_MachineDetails_GuestOs_Runtime_Processes struct {
@@ -605,14 +605,14 @@ type V1alpha1Asset_MachineDetails_GuestOs_Runtime_Processes struct {
 }
 
 type V1alpha1Asset_MachineDetails_GuestOs_Runtime_Services_Entries struct {
-	Cmdline any
-	ExePath any
-	Name any
-	Pid any
+	Cmdline     any
+	ExePath     any
+	Name        any
+	Pid         any
 	ServiceName any
-	StartMode any
-	State any
-	Status any
+	StartMode   any
+	State       any
+	Status      any
 }
 
 type V1alpha1Asset_MachineDetails_GuestOs_Runtime_Services struct {
@@ -658,21 +658,21 @@ type V1alpha1Asset_MachineDetails_GuestOs struct {
 
 type V1alpha1Asset_MachineDetails_Network_NetworkAdapters_Entries_Addresses_Addresses struct {
 	Assignment any
-	Bcast any
-	Fqdn any
-	IpAddress any
+	Bcast      any
+	Fqdn       any
+	IpAddress  any
 	SubnetMask any
 }
 
 type V1alpha1Asset_MachineDetails_Network_NetworkAdapters_Entries_Addresses struct {
 	Addresses any
-	Entries any
+	Entries   any
 }
 
 type V1alpha1Asset_MachineDetails_Network_NetworkAdapters_Entries struct {
 	AdapterType any
-	Addresses any
-	MacAddress any
+	Addresses   any
+	MacAddress  any
 }
 
 type V1alpha1Asset_MachineDetails_Network_NetworkAdapters struct {
@@ -780,10 +780,10 @@ type V1alpha1Asset_MachineDetails struct {
 }
 
 type V1alpha1Asset_PerformanceData_DailyResourceUsageAggregations_Cpu_UtilizationPercentage struct {
-	Average any
-	Median any
+	Average               any
+	Median                any
 	NinteyFifthPercentile any
-	Peak any
+	Peak                  any
 }
 
 type V1alpha1Asset_PerformanceData_DailyResourceUsageAggregations_Cpu struct {
@@ -791,21 +791,21 @@ type V1alpha1Asset_PerformanceData_DailyResourceUsageAggregations_Cpu struct {
 }
 
 type V1alpha1Asset_PerformanceData_DailyResourceUsageAggregations_Disk struct {
-	Iops any
-	ReadIops any
+	Iops      any
+	ReadIops  any
 	WriteIops any
 }
 
 type V1alpha1Asset_PerformanceData_DailyResourceUsageAggregations_Network struct {
-	EgressBps any
+	EgressBps  any
 	IngressBps any
 }
 
 type V1alpha1Asset_PerformanceData_DailyResourceUsageAggregations struct {
-	Cpu any
-	Date any
-	Disk any
-	Memory any
+	Cpu     any
+	Date    any
+	Disk    any
+	Memory  any
 	Network any
 }
 
@@ -899,7 +899,6 @@ type V1alpha1Asset_VirtualMachineDetails struct {
 }
 
 type V1alpha1AssetConfig struct {
-	Name any
 	View any
 }
 
@@ -986,7 +985,7 @@ type V1alpha1AssetAttrs struct {
 	Labels any
 	// Details of a machine.
 	MachineDetails any
-	Name any
+	Name           any
 	// Performance data for an asset.
 	PerformanceData any
 	// Output only. The list of sources contributing to the asset.
@@ -997,7 +996,7 @@ type V1alpha1AssetAttrs struct {
 	Title any
 	// Output only. The timestamp when the asset was last updated.
 	UpdateTime any
-	View any
+	View       any
 	// Details of a VirtualMachine.
 	VirtualMachineDetails any
 }
@@ -1005,7 +1004,6 @@ type V1alpha1AssetAttrs struct {
 var V1alpha1Asset = ubx.DataSourceBinding{
 	WireType: "google_migrationcenter_v1alpha1_asset",
 	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
 		"View": ubx.FieldSpec{WireName: "view"},
 	},
 }

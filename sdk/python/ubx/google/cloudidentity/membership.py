@@ -68,20 +68,10 @@ _Membership_RolesFields = {
 
 @dataclasses.dataclass
 class MembershipConfig:
-    # Output only. The time when the `Membership` was created.
-    create_time: Any = None
-    # Output only. Delivery setting associated with the membership.
-    delivery_setting: Any = None
-    # Output only. The [resource name](https://cloud.google.com/apis/design/resource_names) of the `Membership`. Shall be of the form `groups/{group}/memberships/{membership}`.
-    name: Any = None
     # A unique identifier for an entity in the Cloud Identity Groups API. An entity can represent either a group with an optional `namespace` or a user without a `namespace`. The combination of `id` and `namespace` must be unique; however, the same `id` can be used with different `namespace`s.
     preferred_member_key: Any = None
     # The `MembershipRole`s that apply to the `Membership`. If unspecified, defaults to a single `MembershipRole` with `name` `MEMBER`. Must not contain duplicate `MembershipRole`s with the same `name`.
     roles: Any = None
-    # Output only. The type of the membership.
-    type: Any = None
-    # Output only. The time when the `Membership` was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class MembershipAttrs:
@@ -103,9 +93,6 @@ class MembershipAttrs:
 Membership = ubx.ResourceBinding(
     wire_type="google_cloudidentity_membership",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
-        "delivery_setting": ubx.FieldSpec(wire_name="delivery_setting"),
-        "name": ubx.FieldSpec(wire_name="name"),
         "preferred_member_key": ubx.FieldSpec(
             wire_name="preferred_member_key",
             kind="object",
@@ -116,7 +103,5 @@ Membership = ubx.ResourceBinding(
             kind="list",
             fields=_Membership_RolesFields,
         ),
-        "type": ubx.FieldSpec(wire_name="type"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

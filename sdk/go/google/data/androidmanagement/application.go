@@ -5,40 +5,40 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Application_AppTracks struct {
 	TrackAlias any
-	TrackId any
+	TrackId    any
 }
 
 type Application_AppVersions struct {
-	Production any
-	TrackIds any
-	VersionCode any
+	Production    any
+	TrackIds      any
+	VersionCode   any
 	VersionString any
 }
 
 type Application_ManagedProperties_Entries struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type Application_ManagedProperties struct {
-	DefaultValue any
-	Description any
-	Entries any
-	Key any
+	DefaultValue     any
+	Description      any
+	Entries          any
+	Key              any
 	NestedProperties any
-	Title any
-	Type any
+	Title            any
+	Type             any
 }
 
 type Application_Permissions struct {
-	Description any
-	Name any
+	Description  any
+	Name         any
 	PermissionId any
 }
 
 type ApplicationConfig struct {
 	LanguageCode any
-	Name any
+	Name         any
 }
 
 type ApplicationAttrs struct {
@@ -65,13 +65,13 @@ type ApplicationAttrs struct {
 	// Full app description, if available.
 	FullDescription any
 	// A link to an image that can be used as an icon for the app. This image is suitable for use up to a pixel size of 512 x 512.
-	IconUrl any
+	IconUrl      any
 	LanguageCode any
 	// The set of managed properties available to be pre-configured for the app.
 	ManagedProperties any
 	// The minimum Android SDK necessary to run the app.
 	MinAndroidSdkVersion any
-	Name any
+	Name                 any
 	// The permissions required by the app.
 	Permissions any
 	// A link to the (consumer) Google Play details page for the app.
@@ -92,6 +92,6 @@ var Application = ubx.DataSourceBinding{
 	WireType: "google_androidmanagement_application",
 	Fields: ubx.FieldMap{
 		"LanguageCode": ubx.FieldSpec{WireName: "language_code"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":         ubx.FieldSpec{WireName: "name"},
 	},
 }

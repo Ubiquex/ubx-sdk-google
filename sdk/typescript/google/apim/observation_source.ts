@@ -25,16 +25,10 @@ const ObservationSource_GclbObservationSourceFields: FieldMap = {
 };
 
 export interface ObservationSourceConfig {
-  /** Output only. [Output only] Create time stamp */
-  createTime?: string | Computed<string>;
   /** The GCLB observation source. */
   gclbObservationSource?: ObservationSource_GclbObservationSource | Computed<ObservationSource_GclbObservationSource>;
   /** Identifier. name of resource For MVP, each region can only have 1 source. */
   name?: string | Computed<string>;
-  /** Output only. The observation source state */
-  state?: string | Computed<string>;
-  /** Output only. [Output only] Update time stamp */
-  updateTime?: string | Computed<string>;
 }
 
 export interface ObservationSourceAttrs {
@@ -53,14 +47,11 @@ export interface ObservationSourceAttrs {
 export const ObservationSource: ResourceBinding<ObservationSourceConfig, ObservationSourceAttrs> = {
   wireType: "google_apim_observation_source",
   fields: {
-    createTime: "create_time",
     gclbObservationSource: {
       wireName: "gclb_observation_source",
       kind: "object",
       fields: ObservationSource_GclbObservationSourceFields,
     },
     name: "name",
-    state: "state",
-    updateTime: "update_time",
   },
 };

@@ -26,24 +26,16 @@ class AttributeConfig:
     allowed_values: Any = None
     # Optional. The maximum number of values that the attribute can have when associated with an API Hub resource. Cardinality 1 would represent a single-valued attribute. It must not be less than 1 or greater than 20. If not specified, the cardinality would be set to 1 by default and represent a single-valued attribute.
     cardinality: Any = None
-    # Output only. The time at which the attribute was created.
-    create_time: Any = None
     # Required. The type of the data of the attribute.
     data_type: Any = None
-    # Output only. The definition type of the attribute.
-    definition_type: Any = None
     # Optional. The description of the attribute.
     description: Any = None
     # Required. The display name of the attribute.
     display_name: Any = None
-    # Output only. When mandatory is true, the attribute is mandatory for the resource specified in the scope. Only System defined attributes can be mandatory.
-    mandatory: Any = None
     # Identifier. The name of the attribute in the API Hub. Format: `projects/{project}/locations/{location}/attributes/{attribute}`
     name: Any = None
     # Required. The scope of the attribute. It represents the resource in the API Hub to which the attribute can be linked.
     scope: Any = None
-    # Output only. The time at which the attribute was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class AttributeAttrs:
@@ -79,14 +71,10 @@ Attribute = ubx.ResourceBinding(
             fields=_Attribute_AllowedValuesFields,
         ),
         "cardinality": ubx.FieldSpec(wire_name="cardinality"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "data_type": ubx.FieldSpec(wire_name="data_type"),
-        "definition_type": ubx.FieldSpec(wire_name="definition_type"),
         "description": ubx.FieldSpec(wire_name="description"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
-        "mandatory": ubx.FieldSpec(wire_name="mandatory"),
         "name": ubx.FieldSpec(wire_name="name"),
         "scope": ubx.FieldSpec(wire_name="scope"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

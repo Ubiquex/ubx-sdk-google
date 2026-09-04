@@ -194,204 +194,200 @@ type V1betaPatchDeployment_Rollout struct {
 }
 
 var V1betaPatchDeployment_InstanceFilter_GroupLabelsFields = ubx.FieldMap{
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-	}
+	"Labels": ubx.FieldSpec{WireName: "labels"},
+}
 
 var V1betaPatchDeployment_InstanceFilterFields = ubx.FieldMap{
-		"All": ubx.FieldSpec{WireName: "all"},
-		"GroupLabels": ubx.FieldSpec{
-			WireName: "group_labels",
-			Kind: "list",
-			Fields: V1betaPatchDeployment_InstanceFilter_GroupLabelsFields,
-		},
-		"InstanceNamePrefixes": ubx.FieldSpec{WireName: "instance_name_prefixes"},
-		"Instances": ubx.FieldSpec{WireName: "instances"},
-		"Zones": ubx.FieldSpec{WireName: "zones"},
-	}
+	"All": ubx.FieldSpec{WireName: "all"},
+	"GroupLabels": ubx.FieldSpec{
+		WireName: "group_labels",
+		Kind:     "list",
+		Fields:   V1betaPatchDeployment_InstanceFilter_GroupLabelsFields,
+	},
+	"InstanceNamePrefixes": ubx.FieldSpec{WireName: "instance_name_prefixes"},
+	"Instances":            ubx.FieldSpec{WireName: "instances"},
+	"Zones":                ubx.FieldSpec{WireName: "zones"},
+}
 
 var V1betaPatchDeployment_OneTimeScheduleFields = ubx.FieldMap{
-		"ExecuteTime": ubx.FieldSpec{WireName: "execute_time"},
-	}
+	"ExecuteTime": ubx.FieldSpec{WireName: "execute_time"},
+}
 
 var V1betaPatchDeployment_PatchConfig_AptFields = ubx.FieldMap{
-		"Excludes": ubx.FieldSpec{WireName: "excludes"},
-		"ExclusivePackages": ubx.FieldSpec{WireName: "exclusive_packages"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Excludes":          ubx.FieldSpec{WireName: "excludes"},
+	"ExclusivePackages": ubx.FieldSpec{WireName: "exclusive_packages"},
+	"Type":              ubx.FieldSpec{WireName: "type"},
+}
 
 var V1betaPatchDeployment_PatchConfig_PostStep_LinuxExecStepConfig_GcsObjectFields = ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"GenerationNumber": ubx.FieldSpec{WireName: "generation_number"},
-		"Object": ubx.FieldSpec{WireName: "object"},
-	}
+	"Bucket":           ubx.FieldSpec{WireName: "bucket"},
+	"GenerationNumber": ubx.FieldSpec{WireName: "generation_number"},
+	"Object":           ubx.FieldSpec{WireName: "object"},
+}
 
 var V1betaPatchDeployment_PatchConfig_PostStep_LinuxExecStepConfigFields = ubx.FieldMap{
-		"AllowedSuccessCodes": ubx.FieldSpec{WireName: "allowed_success_codes"},
-		"GcsObject": ubx.FieldSpec{
-			WireName: "gcs_object",
-			Kind: "object",
-			Fields: V1betaPatchDeployment_PatchConfig_PostStep_LinuxExecStepConfig_GcsObjectFields,
-		},
-		"Interpreter": ubx.FieldSpec{WireName: "interpreter"},
-		"LocalPath": ubx.FieldSpec{WireName: "local_path"},
-	}
+	"AllowedSuccessCodes": ubx.FieldSpec{WireName: "allowed_success_codes"},
+	"GcsObject": ubx.FieldSpec{
+		WireName: "gcs_object",
+		Kind:     "object",
+		Fields:   V1betaPatchDeployment_PatchConfig_PostStep_LinuxExecStepConfig_GcsObjectFields,
+	},
+	"Interpreter": ubx.FieldSpec{WireName: "interpreter"},
+	"LocalPath":   ubx.FieldSpec{WireName: "local_path"},
+}
 
 var V1betaPatchDeployment_PatchConfig_PostStepFields = ubx.FieldMap{
-		"LinuxExecStepConfig": ubx.FieldSpec{
-			WireName: "linux_exec_step_config",
-			Kind: "object",
-			Fields: V1betaPatchDeployment_PatchConfig_PostStep_LinuxExecStepConfigFields,
-		},
-		"WindowsExecStepConfig": ubx.FieldSpec{
-			WireName: "windows_exec_step_config",
-			Kind: "object",
-			Fields: V1betaPatchDeployment_PatchConfig_PostStep_LinuxExecStepConfigFields,
-		},
-	}
+	"LinuxExecStepConfig": ubx.FieldSpec{
+		WireName: "linux_exec_step_config",
+		Kind:     "object",
+		Fields:   V1betaPatchDeployment_PatchConfig_PostStep_LinuxExecStepConfigFields,
+	},
+	"WindowsExecStepConfig": ubx.FieldSpec{
+		WireName: "windows_exec_step_config",
+		Kind:     "object",
+		Fields:   V1betaPatchDeployment_PatchConfig_PostStep_LinuxExecStepConfigFields,
+	},
+}
 
 var V1betaPatchDeployment_PatchConfig_WindowsUpdateFields = ubx.FieldMap{
-		"Classifications": ubx.FieldSpec{WireName: "classifications"},
-		"Excludes": ubx.FieldSpec{WireName: "excludes"},
-		"ExclusivePatches": ubx.FieldSpec{WireName: "exclusive_patches"},
-	}
+	"Classifications":  ubx.FieldSpec{WireName: "classifications"},
+	"Excludes":         ubx.FieldSpec{WireName: "excludes"},
+	"ExclusivePatches": ubx.FieldSpec{WireName: "exclusive_patches"},
+}
 
 var V1betaPatchDeployment_PatchConfig_YumFields = ubx.FieldMap{
-		"Excludes": ubx.FieldSpec{WireName: "excludes"},
-		"ExclusivePackages": ubx.FieldSpec{WireName: "exclusive_packages"},
-		"Minimal": ubx.FieldSpec{WireName: "minimal"},
-		"Security": ubx.FieldSpec{WireName: "security"},
-	}
+	"Excludes":          ubx.FieldSpec{WireName: "excludes"},
+	"ExclusivePackages": ubx.FieldSpec{WireName: "exclusive_packages"},
+	"Minimal":           ubx.FieldSpec{WireName: "minimal"},
+	"Security":          ubx.FieldSpec{WireName: "security"},
+}
 
 var V1betaPatchDeployment_PatchConfig_ZypperFields = ubx.FieldMap{
-		"Categories": ubx.FieldSpec{WireName: "categories"},
-		"Excludes": ubx.FieldSpec{WireName: "excludes"},
-		"ExclusivePatches": ubx.FieldSpec{WireName: "exclusive_patches"},
-		"Severities": ubx.FieldSpec{WireName: "severities"},
-		"WithOptional": ubx.FieldSpec{WireName: "with_optional"},
-		"WithUpdate": ubx.FieldSpec{WireName: "with_update"},
-	}
+	"Categories":       ubx.FieldSpec{WireName: "categories"},
+	"Excludes":         ubx.FieldSpec{WireName: "excludes"},
+	"ExclusivePatches": ubx.FieldSpec{WireName: "exclusive_patches"},
+	"Severities":       ubx.FieldSpec{WireName: "severities"},
+	"WithOptional":     ubx.FieldSpec{WireName: "with_optional"},
+	"WithUpdate":       ubx.FieldSpec{WireName: "with_update"},
+}
 
 var V1betaPatchDeployment_PatchConfigFields = ubx.FieldMap{
-		"Apt": ubx.FieldSpec{
-			WireName: "apt",
-			Kind: "object",
-			Fields: V1betaPatchDeployment_PatchConfig_AptFields,
-		},
-		"Goo": ubx.FieldSpec{WireName: "goo"},
-		"MigInstancesAllowed": ubx.FieldSpec{WireName: "mig_instances_allowed"},
-		"PostStep": ubx.FieldSpec{
-			WireName: "post_step",
-			Kind: "object",
-			Fields: V1betaPatchDeployment_PatchConfig_PostStepFields,
-		},
-		"PreStep": ubx.FieldSpec{
-			WireName: "pre_step",
-			Kind: "object",
-			Fields: V1betaPatchDeployment_PatchConfig_PostStepFields,
-		},
-		"RebootConfig": ubx.FieldSpec{WireName: "reboot_config"},
-		"SkipUnpatchableVms": ubx.FieldSpec{WireName: "skip_unpatchable_vms"},
-		"WindowsUpdate": ubx.FieldSpec{
-			WireName: "windows_update",
-			Kind: "object",
-			Fields: V1betaPatchDeployment_PatchConfig_WindowsUpdateFields,
-		},
-		"Yum": ubx.FieldSpec{
-			WireName: "yum",
-			Kind: "object",
-			Fields: V1betaPatchDeployment_PatchConfig_YumFields,
-		},
-		"Zypper": ubx.FieldSpec{
-			WireName: "zypper",
-			Kind: "object",
-			Fields: V1betaPatchDeployment_PatchConfig_ZypperFields,
-		},
-	}
+	"Apt": ubx.FieldSpec{
+		WireName: "apt",
+		Kind:     "object",
+		Fields:   V1betaPatchDeployment_PatchConfig_AptFields,
+	},
+	"Goo":                 ubx.FieldSpec{WireName: "goo"},
+	"MigInstancesAllowed": ubx.FieldSpec{WireName: "mig_instances_allowed"},
+	"PostStep": ubx.FieldSpec{
+		WireName: "post_step",
+		Kind:     "object",
+		Fields:   V1betaPatchDeployment_PatchConfig_PostStepFields,
+	},
+	"PreStep": ubx.FieldSpec{
+		WireName: "pre_step",
+		Kind:     "object",
+		Fields:   V1betaPatchDeployment_PatchConfig_PostStepFields,
+	},
+	"RebootConfig":       ubx.FieldSpec{WireName: "reboot_config"},
+	"SkipUnpatchableVms": ubx.FieldSpec{WireName: "skip_unpatchable_vms"},
+	"WindowsUpdate": ubx.FieldSpec{
+		WireName: "windows_update",
+		Kind:     "object",
+		Fields:   V1betaPatchDeployment_PatchConfig_WindowsUpdateFields,
+	},
+	"Yum": ubx.FieldSpec{
+		WireName: "yum",
+		Kind:     "object",
+		Fields:   V1betaPatchDeployment_PatchConfig_YumFields,
+	},
+	"Zypper": ubx.FieldSpec{
+		WireName: "zypper",
+		Kind:     "object",
+		Fields:   V1betaPatchDeployment_PatchConfig_ZypperFields,
+	},
+}
 
 var V1betaPatchDeployment_RecurringSchedule_Monthly_WeekDayOfMonthFields = ubx.FieldMap{
-		"DayOfWeek": ubx.FieldSpec{WireName: "day_of_week"},
-		"DayOffset": ubx.FieldSpec{WireName: "day_offset"},
-		"WeekOrdinal": ubx.FieldSpec{WireName: "week_ordinal"},
-	}
+	"DayOfWeek":   ubx.FieldSpec{WireName: "day_of_week"},
+	"DayOffset":   ubx.FieldSpec{WireName: "day_offset"},
+	"WeekOrdinal": ubx.FieldSpec{WireName: "week_ordinal"},
+}
 
 var V1betaPatchDeployment_RecurringSchedule_MonthlyFields = ubx.FieldMap{
-		"MonthDay": ubx.FieldSpec{WireName: "month_day"},
-		"WeekDayOfMonth": ubx.FieldSpec{
-			WireName: "week_day_of_month",
-			Kind: "object",
-			Fields: V1betaPatchDeployment_RecurringSchedule_Monthly_WeekDayOfMonthFields,
-		},
-	}
+	"MonthDay": ubx.FieldSpec{WireName: "month_day"},
+	"WeekDayOfMonth": ubx.FieldSpec{
+		WireName: "week_day_of_month",
+		Kind:     "object",
+		Fields:   V1betaPatchDeployment_RecurringSchedule_Monthly_WeekDayOfMonthFields,
+	},
+}
 
 var V1betaPatchDeployment_RecurringSchedule_TimeOfDayFields = ubx.FieldMap{
-		"Hours": ubx.FieldSpec{WireName: "hours"},
-		"Minutes": ubx.FieldSpec{WireName: "minutes"},
-		"Nanos": ubx.FieldSpec{WireName: "nanos"},
-		"Seconds": ubx.FieldSpec{WireName: "seconds"},
-	}
+	"Hours":   ubx.FieldSpec{WireName: "hours"},
+	"Minutes": ubx.FieldSpec{WireName: "minutes"},
+	"Nanos":   ubx.FieldSpec{WireName: "nanos"},
+	"Seconds": ubx.FieldSpec{WireName: "seconds"},
+}
 
 var V1betaPatchDeployment_RecurringSchedule_TimeZoneFields = ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"Id":      ubx.FieldSpec{WireName: "id"},
+	"Version": ubx.FieldSpec{WireName: "version"},
+}
 
 var V1betaPatchDeployment_RecurringSchedule_WeeklyFields = ubx.FieldMap{
-		"DayOfWeek": ubx.FieldSpec{WireName: "day_of_week"},
-	}
+	"DayOfWeek": ubx.FieldSpec{WireName: "day_of_week"},
+}
 
 var V1betaPatchDeployment_RecurringScheduleFields = ubx.FieldMap{
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"Frequency": ubx.FieldSpec{WireName: "frequency"},
-		"LastExecuteTime": ubx.FieldSpec{WireName: "last_execute_time"},
-		"Monthly": ubx.FieldSpec{
-			WireName: "monthly",
-			Kind: "object",
-			Fields: V1betaPatchDeployment_RecurringSchedule_MonthlyFields,
-		},
-		"NextExecuteTime": ubx.FieldSpec{WireName: "next_execute_time"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"TimeOfDay": ubx.FieldSpec{
-			WireName: "time_of_day",
-			Kind: "object",
-			Fields: V1betaPatchDeployment_RecurringSchedule_TimeOfDayFields,
-		},
-		"TimeZone": ubx.FieldSpec{
-			WireName: "time_zone",
-			Kind: "object",
-			Fields: V1betaPatchDeployment_RecurringSchedule_TimeZoneFields,
-		},
-		"Weekly": ubx.FieldSpec{
-			WireName: "weekly",
-			Kind: "object",
-			Fields: V1betaPatchDeployment_RecurringSchedule_WeeklyFields,
-		},
-	}
+	"EndTime":         ubx.FieldSpec{WireName: "end_time"},
+	"Frequency":       ubx.FieldSpec{WireName: "frequency"},
+	"LastExecuteTime": ubx.FieldSpec{WireName: "last_execute_time"},
+	"Monthly": ubx.FieldSpec{
+		WireName: "monthly",
+		Kind:     "object",
+		Fields:   V1betaPatchDeployment_RecurringSchedule_MonthlyFields,
+	},
+	"NextExecuteTime": ubx.FieldSpec{WireName: "next_execute_time"},
+	"StartTime":       ubx.FieldSpec{WireName: "start_time"},
+	"TimeOfDay": ubx.FieldSpec{
+		WireName: "time_of_day",
+		Kind:     "object",
+		Fields:   V1betaPatchDeployment_RecurringSchedule_TimeOfDayFields,
+	},
+	"TimeZone": ubx.FieldSpec{
+		WireName: "time_zone",
+		Kind:     "object",
+		Fields:   V1betaPatchDeployment_RecurringSchedule_TimeZoneFields,
+	},
+	"Weekly": ubx.FieldSpec{
+		WireName: "weekly",
+		Kind:     "object",
+		Fields:   V1betaPatchDeployment_RecurringSchedule_WeeklyFields,
+	},
+}
 
 var V1betaPatchDeployment_Rollout_DisruptionBudgetFields = ubx.FieldMap{
-		"Fixed": ubx.FieldSpec{WireName: "fixed"},
-		"Percent": ubx.FieldSpec{WireName: "percent"},
-	}
+	"Fixed":   ubx.FieldSpec{WireName: "fixed"},
+	"Percent": ubx.FieldSpec{WireName: "percent"},
+}
 
 var V1betaPatchDeployment_RolloutFields = ubx.FieldMap{
-		"DisruptionBudget": ubx.FieldSpec{
-			WireName: "disruption_budget",
-			Kind: "object",
-			Fields: V1betaPatchDeployment_Rollout_DisruptionBudgetFields,
-		},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-	}
+	"DisruptionBudget": ubx.FieldSpec{
+		WireName: "disruption_budget",
+		Kind:     "object",
+		Fields:   V1betaPatchDeployment_Rollout_DisruptionBudgetFields,
+	},
+	"Mode": ubx.FieldSpec{WireName: "mode"},
+}
 
 type V1betaPatchDeploymentConfig struct {
-	// Output only. Time the patch deployment was created. Timestamp is in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
-	CreateTime any
 	// Optional. Description of the patch deployment. Length of the description is limited to 1024 characters.
 	Description any
 	// Optional. Duration of the patch. After the duration ends, the patch times out.
 	Duration any
 	// A filter to target VM instances for patching. The targeted VMs must meet all criteria specified. So if both labels and zones are specified, the patch job targets only VMs with those labels and in those zones.
 	InstanceFilter any
-	// Output only. The last time a patch job was started by this deployment. Timestamp is in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
-	LastExecuteTime any
 	// Unique name for the patch deployment resource in a project. The patch deployment name is in the form: `projects/{project_id}/patchDeployments/{patch_deployment_id}`. This field is ignored when you create a new patch deployment.
 	Name any
 	// Sets the time for a one time patch deployment. Timestamp is in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
@@ -402,10 +398,6 @@ type V1betaPatchDeploymentConfig struct {
 	RecurringSchedule any
 	// Patch rollout configuration specifications. Contains details on the concurrency control when applying patch(es) to all targeted VMs.
 	Rollout any
-	// Output only. Current state of the patch deployment.
-	State any
-	// Output only. Time the patch deployment was last updated. Timestamp is in [RFC3339](https://www.ietf.org/rfc/rfc3339.txt) text format.
-	UpdateTime any
 }
 
 type V1betaPatchDeploymentAttrs struct {
@@ -438,37 +430,33 @@ type V1betaPatchDeploymentAttrs struct {
 var V1betaPatchDeployment = ubx.ResourceBinding{
 	WireType: "google_osconfig_v1beta_patch_deployment",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Duration": ubx.FieldSpec{WireName: "duration"},
+		"Duration":    ubx.FieldSpec{WireName: "duration"},
 		"InstanceFilter": ubx.FieldSpec{
 			WireName: "instance_filter",
-			Kind: "object",
-			Fields: V1betaPatchDeployment_InstanceFilterFields,
+			Kind:     "object",
+			Fields:   V1betaPatchDeployment_InstanceFilterFields,
 		},
-		"LastExecuteTime": ubx.FieldSpec{WireName: "last_execute_time"},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"OneTimeSchedule": ubx.FieldSpec{
 			WireName: "one_time_schedule",
-			Kind: "object",
-			Fields: V1betaPatchDeployment_OneTimeScheduleFields,
+			Kind:     "object",
+			Fields:   V1betaPatchDeployment_OneTimeScheduleFields,
 		},
 		"PatchConfig": ubx.FieldSpec{
 			WireName: "patch_config",
-			Kind: "object",
-			Fields: V1betaPatchDeployment_PatchConfigFields,
+			Kind:     "object",
+			Fields:   V1betaPatchDeployment_PatchConfigFields,
 		},
 		"RecurringSchedule": ubx.FieldSpec{
 			WireName: "recurring_schedule",
-			Kind: "object",
-			Fields: V1betaPatchDeployment_RecurringScheduleFields,
+			Kind:     "object",
+			Fields:   V1betaPatchDeployment_RecurringScheduleFields,
 		},
 		"Rollout": ubx.FieldSpec{
 			WireName: "rollout",
-			Kind: "object",
-			Fields: V1betaPatchDeployment_RolloutFields,
+			Kind:     "object",
+			Fields:   V1betaPatchDeployment_RolloutFields,
 		},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

@@ -14,7 +14,7 @@ type MavenArtifactAttrs struct {
 	CreateTime any
 	// Group ID for the artifact. Example: com.google.guava
 	GroupId any
-	Name any
+	Name    any
 	// Required. URL to access the pom file of the artifact. Example: us-west4-maven.pkg.dev/test-project/test-repo/com/google/guava/guava/31.0/guava-31.0.pom
 	PomUri any
 	// Output only. Time the artifact was updated.

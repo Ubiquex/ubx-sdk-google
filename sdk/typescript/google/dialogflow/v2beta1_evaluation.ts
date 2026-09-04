@@ -890,15 +890,10 @@ const V2beta1Evaluation_SummarizationMetricsFields: FieldMap = {
 };
 
 export interface V2beta1EvaluationConfig {
-  completeTime?: string | Computed<string>;
-  createTime?: string | Computed<string>;
   displayName?: string | Computed<string>;
   evaluationStatus?: V2beta1Evaluation_EvaluationStatus | Computed<V2beta1Evaluation_EvaluationStatus>;
   generatorEvaluationConfig?: V2beta1Evaluation_GeneratorEvaluationConfig | Computed<V2beta1Evaluation_GeneratorEvaluationConfig>;
   initialGenerator?: V2beta1Evaluation_InitialGenerator | Computed<V2beta1Evaluation_InitialGenerator>;
-  name?: string | Computed<string>;
-  satisfiesPzi?: boolean | Computed<boolean>;
-  satisfiesPzs?: boolean | Computed<boolean>;
   summarizationMetrics?: V2beta1Evaluation_SummarizationMetrics | Computed<V2beta1Evaluation_SummarizationMetrics>;
 }
 
@@ -918,8 +913,6 @@ export interface V2beta1EvaluationAttrs {
 export const V2beta1Evaluation: ResourceBinding<V2beta1EvaluationConfig, V2beta1EvaluationAttrs> = {
   wireType: "google_dialogflow_v2beta1_evaluation",
   fields: {
-    completeTime: "complete_time",
-    createTime: "create_time",
     displayName: "display_name",
     evaluationStatus: {
       wireName: "evaluation_status",
@@ -936,9 +929,6 @@ export const V2beta1Evaluation: ResourceBinding<V2beta1EvaluationConfig, V2beta1
       kind: "object",
       fields: V2beta1Evaluation_InitialGeneratorFields,
     },
-    name: "name",
-    satisfiesPzi: "satisfies_pzi",
-    satisfiesPzs: "satisfies_pzs",
     summarizationMetrics: {
       wireName: "summarization_metrics",
       kind: "object",

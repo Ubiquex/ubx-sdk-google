@@ -118,30 +118,22 @@ export interface CustomerConfig {
   alternateEmail?: string | Computed<string>;
   /** Cloud Identity ID of the customer's channel partner. Populated only if a channel partner exists for this customer. */
   channelPartnerId?: string | Computed<string>;
-  /** Output only. The customer's Cloud Identity ID if the customer has a Cloud Identity resource. */
-  cloudIdentityId?: string | Computed<string>;
   /** Cloud Identity information for the Cloud Channel Customer. */
   cloudIdentityInfo?: Customer_CloudIdentityInfo | Computed<Customer_CloudIdentityInfo>;
   /** Optional. External CRM ID for the customer. Populated only if a CRM ID exists for this customer. */
   correlationId?: string | Computed<string>;
-  /** Output only. Time when the customer was created. */
-  createTime?: string | Computed<string>;
   /** Optional. Indicate if a customer is attesting about the correctness of provided information. Only required if creating a GCP Entitlement. NOTE: This field will be mandatory for all new GCP customers starting Aug 31st, 2026 and this field will also be required for all existing customers purchasing new GCP Entitlements. */
   customerAttestationState?: string | Computed<string>;
   /** Required. The customer's primary domain. Must match the primary contact email's domain. */
   domain?: string | Computed<string>;
   /** Optional. The BCP-47 language code, such as "en-US" or "sr-Latn". For more information, see https://www.unicode.org/reports/tr35/#Unicode_locale_identifier. */
   languageCode?: string | Computed<string>;
-  /** Output only. Resource name of the customer. Format: accounts/{account_id}/customers/{customer_id} */
-  name?: string | Computed<string>;
   /** Required. Name of the organization that the customer entity represents. */
   orgDisplayName?: string | Computed<string>;
   /** Represents a postal address, such as for postal delivery or payments addresses. With a postal address, a postal service can deliver items to a premise, P.O. box, or similar. A postal address is not intended to model geographical locations like roads, towns, or mountains. In typical usage, an address would be created by user input or from importing existing data, depending on the type of process. Advice on address input or editing: - Use an internationalization-ready address widget such as https://github.com/google/libaddressinput. - Users should not be presented with UI elements for input or editing of fields outside countries where that field is used. For more guidance on how to use this schema, see: https://support.google.com/business/answer/6397478. */
   orgPostalAddress?: Customer_OrgPostalAddress | Computed<Customer_OrgPostalAddress>;
   /** Contact information for a customer account. */
   primaryContactInfo?: Customer_PrimaryContactInfo | Computed<Customer_PrimaryContactInfo>;
-  /** Output only. Time when the customer was updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface CustomerAttrs {
@@ -180,18 +172,15 @@ export const Customer: ResourceBinding<CustomerConfig, CustomerAttrs> = {
   fields: {
     alternateEmail: "alternate_email",
     channelPartnerId: "channel_partner_id",
-    cloudIdentityId: "cloud_identity_id",
     cloudIdentityInfo: {
       wireName: "cloud_identity_info",
       kind: "object",
       fields: Customer_CloudIdentityInfoFields,
     },
     correlationId: "correlation_id",
-    createTime: "create_time",
     customerAttestationState: "customer_attestation_state",
     domain: "domain",
     languageCode: "language_code",
-    name: "name",
     orgDisplayName: "org_display_name",
     orgPostalAddress: {
       wireName: "org_postal_address",
@@ -203,6 +192,5 @@ export const Customer: ResourceBinding<CustomerConfig, CustomerAttrs> = {
       kind: "object",
       fields: Customer_PrimaryContactInfoFields,
     },
-    updateTime: "update_time",
   },
 };

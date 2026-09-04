@@ -202,23 +202,6 @@ const Instance_BinaryAuthorizationFields: FieldMap = {
   useDefault: "use_default",
 };
 
-const Instance_ConditionsFields: FieldMap = {
-  executionReason: "execution_reason",
-  instanceReason: "instance_reason",
-  lastTransitionTime: "last_transition_time",
-  message: "message",
-  reason: "reason",
-  revisionReason: "revision_reason",
-  severity: "severity",
-  state: "state",
-  type: "type",
-};
-
-const Instance_ContainerStatusesFields: FieldMap = {
-  imageDigest: "image_digest",
-  name: "name",
-};
-
 const Instance_Containers_BuildInfoFields: FieldMap = {
   functionTarget: "function_target",
   sourceLocation: "source_location",
@@ -402,6 +385,18 @@ const Instance_NodeSelectorFields: FieldMap = {
   accelerator: "accelerator",
 };
 
+const Instance_ConditionsFields: FieldMap = {
+  executionReason: "execution_reason",
+  instanceReason: "instance_reason",
+  lastTransitionTime: "last_transition_time",
+  message: "message",
+  reason: "reason",
+  revisionReason: "revision_reason",
+  severity: "severity",
+  state: "state",
+  type: "type",
+};
+
 const Instance_Volumes_CloudSqlInstanceFields: FieldMap = {
   instances: "instances",
 };
@@ -492,20 +487,10 @@ export interface InstanceConfig {
   client?: string | Computed<string>;
   /** Arbitrary version identifier for the API client. */
   clientVersion?: string | Computed<string>;
-  /** Output only. The Conditions of all other associated sub-resources. They contain additional diagnostics information in case the Instance does not reach its Serving state. See comments in `reconciling` for additional information on reconciliation process in Cloud Run. */
-  conditions?: Instance_Conditions[] | Computed<Instance_Conditions[]>;
-  /** Output only. Status information for each of the specified containers. The status includes the resolved digest for specified images. */
-  containerStatuses?: Instance_ContainerStatuses[] | Computed<Instance_ContainerStatuses[]>;
   /** Required. Holds the single container that defines the unit of execution for this Instance. */
   containers?: Instance_Containers[] | Computed<Instance_Containers[]>;
-  /** Output only. The creation time. */
-  createTime?: string | Computed<string>;
-  /** Output only. Email address of the authenticated creator. */
-  creator?: string | Computed<string>;
   /** Optional. Disables public resolution of the default URI of this Instance. */
   defaultUriDisabled?: boolean | Computed<boolean>;
-  /** Output only. The deletion time. */
-  deleteTime?: string | Computed<string>;
   /** User-provided description of the Instance. This field currently has a 512-character limit. */
   description?: string | Computed<string>;
   /** A reference to a customer managed encryption key (CMEK) to use to encrypt this container image. For more information, go to https://cloud.google.com/run/docs/securing/using-cmek */
@@ -516,10 +501,6 @@ export interface InstanceConfig {
   encryptionKeyShutdownDuration?: string | Computed<string>;
   /** Optional. A system-generated fingerprint for this version of the resource. May be used to detect modification conflict during updates. */
   etag?: string | Computed<string>;
-  /** Output only. For a deleted resource, the time after which it will be permamently deleted. */
-  expireTime?: string | Computed<string>;
-  /** Output only. A number that monotonically increases every time the user modifies the desired state. Please note that unlike v1, this is an `int64` value. As with most Google APIs, its JSON representation will be a `string` instead of an `integer`. */
-  generation?: string | Computed<string>;
   /** Optional. True if GPU zonal redundancy is disabled on this instance. */
   gpuZonalRedundancyDisabled?: boolean | Computed<boolean>;
   /** Optional. IAP settings on the Instance. */
@@ -529,33 +510,17 @@ export interface InstanceConfig {
   /** Optional. Disables IAM permission check for `run.routes.invoke` for callers of this Instance. For more information, visit https://cloud.google.com/run/docs/securing/managing-access#invoker_check. */
   invokerIamDisabled?: boolean | Computed<boolean>;
   labels?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. Email address of the last authenticated modifier. */
-  lastModifier?: string | Computed<string>;
   /** The launch stage as defined by [Google Cloud Platform Launch Stages](https://cloud.google.com/terms/launch-stages). Cloud Run supports `ALPHA`, `BETA`, and `GA`. If no value is specified, `GA` is assumed. Set the launch stage to a preview stage on input to allow use of preview features in that stage. On read (or output), describes whether the resource uses preview features. For example, if `ALPHA` is provided as input, but only `BETA` and `GA`-level features are used, this field will be `BETA` on output. */
   launchStage?: string | Computed<string>;
-  /** Output only. The Google Console URI to obtain logs for the Instance. */
-  logUri?: string | Computed<string>;
   /** The fully qualified name of this Instance. In `CreateInstanceRequest`, this field is ignored, and instead composed from `CreateInstanceRequest.parent` and `CreateInstanceRequest.instance_id`. */
   name?: string | Computed<string>;
   /** Hardware constraints configuration. */
   nodeSelector?: Instance_NodeSelector | Computed<Instance_NodeSelector>;
-  /** Output only. The generation of this Instance currently serving traffic. See comments in `reconciling` for additional information on reconciliation process in Cloud Run. Please note that unlike v1, this is an `int64` value. As with most Google APIs, its JSON representation will be a `string` instead of an `integer`. */
-  observedGeneration?: string | Computed<string>;
-  /** Output only. Returns `true` if the Instance is currently being acted upon by the system to bring it into the desired state. When a new Instance is created, or an existing one is updated, Cloud Run will asynchronously perform all necessary steps to bring the Instance to the desired serving state. This process is called reconciliation. While reconciliation is in process, `observed_generation` will have a transient value that might mismatch the intended state. Once reconciliation is over (and this field is `false`), there are two possible outcomes: reconciliation succeeded and the serving state matches the Instance, or there was an error, and reconciliation failed. This state can be found in `terminal_condition.state`. */
-  reconciling?: boolean | Computed<boolean>;
   /** Optional. Restart policy for the Instance. */
   restartPolicy?: string | Computed<string>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzs?: boolean | Computed<boolean>;
   serviceAccount?: string | Computed<string>;
   /** Defines a status condition for a resource. */
   terminalCondition?: Instance_Conditions | Computed<Instance_Conditions>;
-  /** Output only. Server assigned unique identifier for the trigger. The value is a UUID4 string and guaranteed to remain unchanged until the resource is deleted. */
-  uid?: string | Computed<string>;
-  /** Output only. The last-modified time. */
-  updateTime?: string | Computed<string>;
-  /** Output only. All URLs serving traffic for this Instance. */
-  urls?: string[] | Computed<string[]>;
   /** A list of Volumes to make available to containers. */
   volumes?: Instance_Volumes[] | Computed<Instance_Volumes[]>;
   /** VPC Access settings. For more information on sending traffic to a VPC network, visit https://cloud.google.com/run/docs/configuring/connecting-vpc. */
@@ -651,59 +616,36 @@ export const Instance: ResourceBinding<InstanceConfig, InstanceAttrs> = {
     },
     client: "client",
     clientVersion: "client_version",
-    conditions: {
-      wireName: "conditions",
-      kind: "list",
-      fields: Instance_ConditionsFields,
-    },
-    containerStatuses: {
-      wireName: "container_statuses",
-      kind: "list",
-      fields: Instance_ContainerStatusesFields,
-    },
     containers: {
       wireName: "containers",
       kind: "list",
       fields: Instance_ContainersFields,
     },
-    createTime: "create_time",
-    creator: "creator",
     defaultUriDisabled: "default_uri_disabled",
-    deleteTime: "delete_time",
     description: "description",
     encryptionKey: "encryption_key",
     encryptionKeyRevocationAction: "encryption_key_revocation_action",
     encryptionKeyShutdownDuration: "encryption_key_shutdown_duration",
     etag: "etag",
-    expireTime: "expire_time",
-    generation: "generation",
     gpuZonalRedundancyDisabled: "gpu_zonal_redundancy_disabled",
     iapEnabled: "iap_enabled",
     ingress: "ingress",
     invokerIamDisabled: "invoker_iam_disabled",
     labels: "labels",
-    lastModifier: "last_modifier",
     launchStage: "launch_stage",
-    logUri: "log_uri",
     name: "name",
     nodeSelector: {
       wireName: "node_selector",
       kind: "object",
       fields: Instance_NodeSelectorFields,
     },
-    observedGeneration: "observed_generation",
-    reconciling: "reconciling",
     restartPolicy: "restart_policy",
-    satisfiesPzs: "satisfies_pzs",
     serviceAccount: "service_account",
     terminalCondition: {
       wireName: "terminal_condition",
       kind: "object",
       fields: Instance_ConditionsFields,
     },
-    uid: "uid",
-    updateTime: "update_time",
-    urls: "urls",
     volumes: {
       wireName: "volumes",
       kind: "list",

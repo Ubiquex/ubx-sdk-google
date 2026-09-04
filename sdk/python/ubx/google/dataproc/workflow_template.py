@@ -1226,8 +1226,6 @@ _WorkflowTemplate_PlacementFields = {
 
 @dataclasses.dataclass
 class WorkflowTemplateConfig:
-    # Output only. The time template was created.
-    create_time: Any = None
     # Optional. Timeout duration for the DAG of jobs, expressed in seconds (see JSON representation of duration (https://developers.google.com/protocol-buffers/docs/proto3#json)). The timeout duration must be from 10 minutes ("600s") to 24 hours ("86400s"). The timer begins when the first job is submitted. If the workflow is running at the end of the timeout period, any remaining jobs are cancelled, the workflow is ended, and if the workflow was running on a managed cluster, the cluster is deleted.
     dag_timeout: Any = None
     # Encryption settings for encrypting workflow template job arguments.
@@ -1237,14 +1235,10 @@ class WorkflowTemplateConfig:
     jobs: Any = None
     # Optional. The labels to associate with this template. These labels will be propagated to all jobs and clusters created by the workflow instance.Label keys must contain 1 to 63 characters, and must conform to RFC 1035 (https://www.ietf.org/rfc/rfc1035.txt).Label values may be empty, but, if present, must contain 1 to 63 characters, and must conform to RFC 1035 (https://www.ietf.org/rfc/rfc1035.txt).No more than 32 labels can be associated with a template.
     labels: Any = None
-    # Output only. The resource name of the workflow template, as described in https://cloud.google.com/apis/design/resource_names. For projects.regions.workflowTemplates, the resource name of the template has the following format: projects/{project_id}/regions/{region}/workflowTemplates/{template_id} For projects.locations.workflowTemplates, the resource name of the template has the following format: projects/{project_id}/locations/{location}/workflowTemplates/{template_id}
-    name: Any = None
     # Optional. Template parameters whose values are substituted into the template. Values for parameters must be provided when the template is instantiated.
     parameters: Any = None
     # Specifies workflow execution target.Either managed_cluster or cluster_selector is required.
     placement: Any = None
-    # Output only. The time template was last updated.
-    update_time: Any = None
     # Optional. Used to perform a consistent read-modify-write.This field should be left blank for a CreateWorkflowTemplate request. It is required for an UpdateWorkflowTemplate request, and must match the current server version. A typical update template flow would fetch the current template with a GetWorkflowTemplate request, which will return the current template with the version field filled in with the current server version. The user updates other fields in the template, then returns it as part of the UpdateWorkflowTemplate request.
     version: Any = None
 
@@ -1275,7 +1269,6 @@ class WorkflowTemplateAttrs:
 WorkflowTemplate = ubx.ResourceBinding(
     wire_type="google_dataproc_workflow_template",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "dag_timeout": ubx.FieldSpec(wire_name="dag_timeout"),
         "encryption_config": ubx.FieldSpec(
             wire_name="encryption_config",
@@ -1289,7 +1282,6 @@ WorkflowTemplate = ubx.ResourceBinding(
             fields=_WorkflowTemplate_JobsFields,
         ),
         "labels": ubx.FieldSpec(wire_name="labels"),
-        "name": ubx.FieldSpec(wire_name="name"),
         "parameters": ubx.FieldSpec(
             wire_name="parameters",
             kind="list",
@@ -1300,7 +1292,6 @@ WorkflowTemplate = ubx.ResourceBinding(
             kind="object",
             fields=_WorkflowTemplate_PlacementFields,
         ),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
         "version": ubx.FieldSpec(wire_name="version"),
     },
 )

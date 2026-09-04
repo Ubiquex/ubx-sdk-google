@@ -23,7 +23,7 @@ type V1beta1CustomJob_JobSpec_BaseOutputDirectory struct {
 }
 
 type V1beta1CustomJob_JobSpec_PscInterfaceConfig_DnsPeeringConfigs struct {
-	Domain any
+	Domain        any
 	TargetNetwork any
 	TargetProject any
 }
@@ -49,68 +49,68 @@ type V1beta1CustomJob_JobSpec_Scheduling struct {
 }
 
 type V1beta1CustomJob_JobSpec_WorkerPoolSpecs_ContainerSpec_Env struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type V1beta1CustomJob_JobSpec_WorkerPoolSpecs_ContainerSpec struct {
-	Args any
-	Command any
-	Env any
+	Args     any
+	Command  any
+	Env      any
 	ImageUri any
 }
 
 type V1beta1CustomJob_JobSpec_WorkerPoolSpecs_DiskSpec struct {
 	BootDiskSizeGb any
-	BootDiskType any
+	BootDiskType   any
 }
 
 type V1beta1CustomJob_JobSpec_WorkerPoolSpecs_LustreMounts struct {
-	Filesystem any
-	InstanceIp any
-	MountPoint any
+	Filesystem   any
+	InstanceIp   any
+	MountPoint   any
 	VolumeHandle any
 }
 
 type V1beta1CustomJob_JobSpec_WorkerPoolSpecs_MachineSpec_ReservationAffinity struct {
-	Key any
+	Key                     any
 	ReservationAffinityType any
-	Values any
+	Values                  any
 }
 
 type V1beta1CustomJob_JobSpec_WorkerPoolSpecs_MachineSpec struct {
-	AcceleratorCount any
-	AcceleratorType any
-	GpuPartitionSize any
-	MachineType any
-	MinGpuDriverVersion any
+	AcceleratorCount      any
+	AcceleratorType       any
+	GpuPartitionSize      any
+	MachineType           any
+	MinGpuDriverVersion   any
 	MultihostGpuNodeCount any
-	ReservationAffinity any
-	TpuTopology any
+	ReservationAffinity   any
+	TpuTopology           any
 }
 
 type V1beta1CustomJob_JobSpec_WorkerPoolSpecs_NfsMounts struct {
 	MountPoint any
-	Path any
-	Server any
+	Path       any
+	Server     any
 }
 
 type V1beta1CustomJob_JobSpec_WorkerPoolSpecs_PythonPackageSpec struct {
-	Args any
-	Env any
+	Args             any
+	Env              any
 	ExecutorImageUri any
-	PackageUris any
-	PythonModule any
+	PackageUris      any
+	PythonModule     any
 }
 
 type V1beta1CustomJob_JobSpec_WorkerPoolSpecs struct {
-	ContainerSpec any
-	DiskSpec any
-	LustreMounts any
-	MachineSpec any
-	NfsMounts any
+	ContainerSpec     any
+	DiskSpec          any
+	LustreMounts      any
+	MachineSpec       any
+	NfsMounts         any
 	PythonPackageSpec any
-	ReplicaCount any
+	ReplicaCount      any
 }
 
 type V1beta1CustomJob_JobSpec struct {
@@ -147,206 +147,188 @@ type V1beta1CustomJob_JobSpec struct {
 }
 
 var V1beta1CustomJob_EncryptionSpecFields = ubx.FieldMap{
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-	}
+	"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
+}
 
 var V1beta1CustomJob_ErrorFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"Code":    ubx.FieldSpec{WireName: "code"},
+	"Details": ubx.FieldSpec{WireName: "details"},
+	"Message": ubx.FieldSpec{WireName: "message"},
+}
 
 var V1beta1CustomJob_JobSpec_BaseOutputDirectoryFields = ubx.FieldMap{
-		"OutputUriPrefix": ubx.FieldSpec{WireName: "output_uri_prefix"},
-	}
+	"OutputUriPrefix": ubx.FieldSpec{WireName: "output_uri_prefix"},
+}
 
 var V1beta1CustomJob_JobSpec_PscInterfaceConfig_DnsPeeringConfigsFields = ubx.FieldMap{
-		"Domain": ubx.FieldSpec{WireName: "domain"},
-		"TargetNetwork": ubx.FieldSpec{WireName: "target_network"},
-		"TargetProject": ubx.FieldSpec{WireName: "target_project"},
-	}
+	"Domain":        ubx.FieldSpec{WireName: "domain"},
+	"TargetNetwork": ubx.FieldSpec{WireName: "target_network"},
+	"TargetProject": ubx.FieldSpec{WireName: "target_project"},
+}
 
 var V1beta1CustomJob_JobSpec_PscInterfaceConfigFields = ubx.FieldMap{
-		"DnsPeeringConfigs": ubx.FieldSpec{
-			WireName: "dns_peering_configs",
-			Kind: "list",
-			Fields: V1beta1CustomJob_JobSpec_PscInterfaceConfig_DnsPeeringConfigsFields,
-		},
-		"NetworkAttachment": ubx.FieldSpec{WireName: "network_attachment"},
-	}
+	"DnsPeeringConfigs": ubx.FieldSpec{
+		WireName: "dns_peering_configs",
+		Kind:     "list",
+		Fields:   V1beta1CustomJob_JobSpec_PscInterfaceConfig_DnsPeeringConfigsFields,
+	},
+	"NetworkAttachment": ubx.FieldSpec{WireName: "network_attachment"},
+}
 
 var V1beta1CustomJob_JobSpec_SchedulingFields = ubx.FieldMap{
-		"DisableRetries": ubx.FieldSpec{WireName: "disable_retries"},
-		"MaxWaitDuration": ubx.FieldSpec{WireName: "max_wait_duration"},
-		"RestartJobOnWorkerRestart": ubx.FieldSpec{WireName: "restart_job_on_worker_restart"},
-		"Strategy": ubx.FieldSpec{WireName: "strategy"},
-		"Timeout": ubx.FieldSpec{WireName: "timeout"},
-	}
+	"DisableRetries":            ubx.FieldSpec{WireName: "disable_retries"},
+	"MaxWaitDuration":           ubx.FieldSpec{WireName: "max_wait_duration"},
+	"RestartJobOnWorkerRestart": ubx.FieldSpec{WireName: "restart_job_on_worker_restart"},
+	"Strategy":                  ubx.FieldSpec{WireName: "strategy"},
+	"Timeout":                   ubx.FieldSpec{WireName: "timeout"},
+}
 
 var V1beta1CustomJob_JobSpec_WorkerPoolSpecs_ContainerSpec_EnvFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var V1beta1CustomJob_JobSpec_WorkerPoolSpecs_ContainerSpecFields = ubx.FieldMap{
-		"Args": ubx.FieldSpec{WireName: "args"},
-		"Command": ubx.FieldSpec{WireName: "command"},
-		"Env": ubx.FieldSpec{
-			WireName: "env",
-			Kind: "list",
-			Fields: V1beta1CustomJob_JobSpec_WorkerPoolSpecs_ContainerSpec_EnvFields,
-		},
-		"ImageUri": ubx.FieldSpec{WireName: "image_uri"},
-	}
+	"Args":    ubx.FieldSpec{WireName: "args"},
+	"Command": ubx.FieldSpec{WireName: "command"},
+	"Env": ubx.FieldSpec{
+		WireName: "env",
+		Kind:     "list",
+		Fields:   V1beta1CustomJob_JobSpec_WorkerPoolSpecs_ContainerSpec_EnvFields,
+	},
+	"ImageUri": ubx.FieldSpec{WireName: "image_uri"},
+}
 
 var V1beta1CustomJob_JobSpec_WorkerPoolSpecs_DiskSpecFields = ubx.FieldMap{
-		"BootDiskSizeGb": ubx.FieldSpec{WireName: "boot_disk_size_gb"},
-		"BootDiskType": ubx.FieldSpec{WireName: "boot_disk_type"},
-	}
+	"BootDiskSizeGb": ubx.FieldSpec{WireName: "boot_disk_size_gb"},
+	"BootDiskType":   ubx.FieldSpec{WireName: "boot_disk_type"},
+}
 
 var V1beta1CustomJob_JobSpec_WorkerPoolSpecs_LustreMountsFields = ubx.FieldMap{
-		"Filesystem": ubx.FieldSpec{WireName: "filesystem"},
-		"InstanceIp": ubx.FieldSpec{WireName: "instance_ip"},
-		"MountPoint": ubx.FieldSpec{WireName: "mount_point"},
-		"VolumeHandle": ubx.FieldSpec{WireName: "volume_handle"},
-	}
+	"Filesystem":   ubx.FieldSpec{WireName: "filesystem"},
+	"InstanceIp":   ubx.FieldSpec{WireName: "instance_ip"},
+	"MountPoint":   ubx.FieldSpec{WireName: "mount_point"},
+	"VolumeHandle": ubx.FieldSpec{WireName: "volume_handle"},
+}
 
 var V1beta1CustomJob_JobSpec_WorkerPoolSpecs_MachineSpec_ReservationAffinityFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"ReservationAffinityType": ubx.FieldSpec{WireName: "reservation_affinity_type"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Key":                     ubx.FieldSpec{WireName: "key"},
+	"ReservationAffinityType": ubx.FieldSpec{WireName: "reservation_affinity_type"},
+	"Values":                  ubx.FieldSpec{WireName: "values"},
+}
 
 var V1beta1CustomJob_JobSpec_WorkerPoolSpecs_MachineSpecFields = ubx.FieldMap{
-		"AcceleratorCount": ubx.FieldSpec{WireName: "accelerator_count"},
-		"AcceleratorType": ubx.FieldSpec{WireName: "accelerator_type"},
-		"GpuPartitionSize": ubx.FieldSpec{WireName: "gpu_partition_size"},
-		"MachineType": ubx.FieldSpec{WireName: "machine_type"},
-		"MinGpuDriverVersion": ubx.FieldSpec{WireName: "min_gpu_driver_version"},
-		"MultihostGpuNodeCount": ubx.FieldSpec{WireName: "multihost_gpu_node_count"},
-		"ReservationAffinity": ubx.FieldSpec{
-			WireName: "reservation_affinity",
-			Kind: "object",
-			Fields: V1beta1CustomJob_JobSpec_WorkerPoolSpecs_MachineSpec_ReservationAffinityFields,
-		},
-		"TpuTopology": ubx.FieldSpec{WireName: "tpu_topology"},
-	}
+	"AcceleratorCount":      ubx.FieldSpec{WireName: "accelerator_count"},
+	"AcceleratorType":       ubx.FieldSpec{WireName: "accelerator_type"},
+	"GpuPartitionSize":      ubx.FieldSpec{WireName: "gpu_partition_size"},
+	"MachineType":           ubx.FieldSpec{WireName: "machine_type"},
+	"MinGpuDriverVersion":   ubx.FieldSpec{WireName: "min_gpu_driver_version"},
+	"MultihostGpuNodeCount": ubx.FieldSpec{WireName: "multihost_gpu_node_count"},
+	"ReservationAffinity": ubx.FieldSpec{
+		WireName: "reservation_affinity",
+		Kind:     "object",
+		Fields:   V1beta1CustomJob_JobSpec_WorkerPoolSpecs_MachineSpec_ReservationAffinityFields,
+	},
+	"TpuTopology": ubx.FieldSpec{WireName: "tpu_topology"},
+}
 
 var V1beta1CustomJob_JobSpec_WorkerPoolSpecs_NfsMountsFields = ubx.FieldMap{
-		"MountPoint": ubx.FieldSpec{WireName: "mount_point"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"Server": ubx.FieldSpec{WireName: "server"},
-	}
+	"MountPoint": ubx.FieldSpec{WireName: "mount_point"},
+	"Path":       ubx.FieldSpec{WireName: "path"},
+	"Server":     ubx.FieldSpec{WireName: "server"},
+}
 
 var V1beta1CustomJob_JobSpec_WorkerPoolSpecs_PythonPackageSpecFields = ubx.FieldMap{
-		"Args": ubx.FieldSpec{WireName: "args"},
-		"Env": ubx.FieldSpec{
-			WireName: "env",
-			Kind: "list",
-			Fields: V1beta1CustomJob_JobSpec_WorkerPoolSpecs_ContainerSpec_EnvFields,
-		},
-		"ExecutorImageUri": ubx.FieldSpec{WireName: "executor_image_uri"},
-		"PackageUris": ubx.FieldSpec{WireName: "package_uris"},
-		"PythonModule": ubx.FieldSpec{WireName: "python_module"},
-	}
+	"Args": ubx.FieldSpec{WireName: "args"},
+	"Env": ubx.FieldSpec{
+		WireName: "env",
+		Kind:     "list",
+		Fields:   V1beta1CustomJob_JobSpec_WorkerPoolSpecs_ContainerSpec_EnvFields,
+	},
+	"ExecutorImageUri": ubx.FieldSpec{WireName: "executor_image_uri"},
+	"PackageUris":      ubx.FieldSpec{WireName: "package_uris"},
+	"PythonModule":     ubx.FieldSpec{WireName: "python_module"},
+}
 
 var V1beta1CustomJob_JobSpec_WorkerPoolSpecsFields = ubx.FieldMap{
-		"ContainerSpec": ubx.FieldSpec{
-			WireName: "container_spec",
-			Kind: "object",
-			Fields: V1beta1CustomJob_JobSpec_WorkerPoolSpecs_ContainerSpecFields,
-		},
-		"DiskSpec": ubx.FieldSpec{
-			WireName: "disk_spec",
-			Kind: "object",
-			Fields: V1beta1CustomJob_JobSpec_WorkerPoolSpecs_DiskSpecFields,
-		},
-		"LustreMounts": ubx.FieldSpec{
-			WireName: "lustre_mounts",
-			Kind: "list",
-			Fields: V1beta1CustomJob_JobSpec_WorkerPoolSpecs_LustreMountsFields,
-		},
-		"MachineSpec": ubx.FieldSpec{
-			WireName: "machine_spec",
-			Kind: "object",
-			Fields: V1beta1CustomJob_JobSpec_WorkerPoolSpecs_MachineSpecFields,
-		},
-		"NfsMounts": ubx.FieldSpec{
-			WireName: "nfs_mounts",
-			Kind: "list",
-			Fields: V1beta1CustomJob_JobSpec_WorkerPoolSpecs_NfsMountsFields,
-		},
-		"PythonPackageSpec": ubx.FieldSpec{
-			WireName: "python_package_spec",
-			Kind: "object",
-			Fields: V1beta1CustomJob_JobSpec_WorkerPoolSpecs_PythonPackageSpecFields,
-		},
-		"ReplicaCount": ubx.FieldSpec{WireName: "replica_count"},
-	}
+	"ContainerSpec": ubx.FieldSpec{
+		WireName: "container_spec",
+		Kind:     "object",
+		Fields:   V1beta1CustomJob_JobSpec_WorkerPoolSpecs_ContainerSpecFields,
+	},
+	"DiskSpec": ubx.FieldSpec{
+		WireName: "disk_spec",
+		Kind:     "object",
+		Fields:   V1beta1CustomJob_JobSpec_WorkerPoolSpecs_DiskSpecFields,
+	},
+	"LustreMounts": ubx.FieldSpec{
+		WireName: "lustre_mounts",
+		Kind:     "list",
+		Fields:   V1beta1CustomJob_JobSpec_WorkerPoolSpecs_LustreMountsFields,
+	},
+	"MachineSpec": ubx.FieldSpec{
+		WireName: "machine_spec",
+		Kind:     "object",
+		Fields:   V1beta1CustomJob_JobSpec_WorkerPoolSpecs_MachineSpecFields,
+	},
+	"NfsMounts": ubx.FieldSpec{
+		WireName: "nfs_mounts",
+		Kind:     "list",
+		Fields:   V1beta1CustomJob_JobSpec_WorkerPoolSpecs_NfsMountsFields,
+	},
+	"PythonPackageSpec": ubx.FieldSpec{
+		WireName: "python_package_spec",
+		Kind:     "object",
+		Fields:   V1beta1CustomJob_JobSpec_WorkerPoolSpecs_PythonPackageSpecFields,
+	},
+	"ReplicaCount": ubx.FieldSpec{WireName: "replica_count"},
+}
 
 var V1beta1CustomJob_JobSpecFields = ubx.FieldMap{
-		"BaseOutputDirectory": ubx.FieldSpec{
-			WireName: "base_output_directory",
-			Kind: "object",
-			Fields: V1beta1CustomJob_JobSpec_BaseOutputDirectoryFields,
-		},
-		"EnableDashboardAccess": ubx.FieldSpec{WireName: "enable_dashboard_access"},
-		"EnableWebAccess": ubx.FieldSpec{WireName: "enable_web_access"},
-		"Experiment": ubx.FieldSpec{WireName: "experiment"},
-		"ExperimentRun": ubx.FieldSpec{WireName: "experiment_run"},
-		"Models": ubx.FieldSpec{WireName: "models"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"PersistentResourceId": ubx.FieldSpec{WireName: "persistent_resource_id"},
-		"ProtectedArtifactLocationId": ubx.FieldSpec{WireName: "protected_artifact_location_id"},
-		"PscInterfaceConfig": ubx.FieldSpec{
-			WireName: "psc_interface_config",
-			Kind: "object",
-			Fields: V1beta1CustomJob_JobSpec_PscInterfaceConfigFields,
-		},
-		"ReservedIpRanges": ubx.FieldSpec{WireName: "reserved_ip_ranges"},
-		"Scheduling": ubx.FieldSpec{
-			WireName: "scheduling",
-			Kind: "object",
-			Fields: V1beta1CustomJob_JobSpec_SchedulingFields,
-		},
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-		"Tensorboard": ubx.FieldSpec{WireName: "tensorboard"},
-		"WorkerPoolSpecs": ubx.FieldSpec{
-			WireName: "worker_pool_specs",
-			Kind: "list",
-			Fields: V1beta1CustomJob_JobSpec_WorkerPoolSpecsFields,
-		},
-	}
+	"BaseOutputDirectory": ubx.FieldSpec{
+		WireName: "base_output_directory",
+		Kind:     "object",
+		Fields:   V1beta1CustomJob_JobSpec_BaseOutputDirectoryFields,
+	},
+	"EnableDashboardAccess":       ubx.FieldSpec{WireName: "enable_dashboard_access"},
+	"EnableWebAccess":             ubx.FieldSpec{WireName: "enable_web_access"},
+	"Experiment":                  ubx.FieldSpec{WireName: "experiment"},
+	"ExperimentRun":               ubx.FieldSpec{WireName: "experiment_run"},
+	"Models":                      ubx.FieldSpec{WireName: "models"},
+	"Network":                     ubx.FieldSpec{WireName: "network"},
+	"PersistentResourceId":        ubx.FieldSpec{WireName: "persistent_resource_id"},
+	"ProtectedArtifactLocationId": ubx.FieldSpec{WireName: "protected_artifact_location_id"},
+	"PscInterfaceConfig": ubx.FieldSpec{
+		WireName: "psc_interface_config",
+		Kind:     "object",
+		Fields:   V1beta1CustomJob_JobSpec_PscInterfaceConfigFields,
+	},
+	"ReservedIpRanges": ubx.FieldSpec{WireName: "reserved_ip_ranges"},
+	"Scheduling": ubx.FieldSpec{
+		WireName: "scheduling",
+		Kind:     "object",
+		Fields:   V1beta1CustomJob_JobSpec_SchedulingFields,
+	},
+	"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
+	"Tensorboard":    ubx.FieldSpec{WireName: "tensorboard"},
+	"WorkerPoolSpecs": ubx.FieldSpec{
+		WireName: "worker_pool_specs",
+		Kind:     "list",
+		Fields:   V1beta1CustomJob_JobSpec_WorkerPoolSpecsFields,
+	},
+}
 
 type V1beta1CustomJobConfig struct {
-	// Output only. Time when the CustomJob was created.
-	CreateTime any
 	// Required. The display name of the CustomJob. The name can be up to 128 characters long and can consist of any UTF-8 characters.
 	DisplayName any
 	// Represents a customer-managed encryption key specification that can be applied to a Vertex AI resource.
 	EncryptionSpec any
-	// Output only. Time when the CustomJob entered any of the following states: `JOB_STATE_SUCCEEDED`, `JOB_STATE_FAILED`, `JOB_STATE_CANCELLED`.
-	EndTime any
 	// The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
 	Error any
 	// Represents the spec of a CustomJob.
 	JobSpec any
 	// The labels with user-defined metadata to organize CustomJobs. Label keys and values can be no longer than 64 characters (Unicode codepoints), can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. See https://goo.gl/xmQnxf for more information and examples of labels.
 	Labels any
-	// Output only. Resource name of a CustomJob.
-	Name any
-	// Output only. Reserved for future use.
-	SatisfiesPzi any
-	// Output only. Reserved for future use.
-	SatisfiesPzs any
-	// Output only. Time when the CustomJob for the first time entered the `JOB_STATE_RUNNING` state.
-	StartTime any
-	// Output only. The detailed state of the job.
-	State any
-	// Output only. Time when the CustomJob was most recently updated.
-	UpdateTime any
-	// Output only. URIs for accessing [interactive shells](https://cloud.google.com/vertex-ai/docs/training/monitor-debug-interactive-shell) (one URI for each training node). Only available if job_spec.enable_web_access is `true`. The keys are names of each node in the training job; for example, `workerpool0-0` for the primary node, `workerpool1-0` for the first node in the second worker pool, and `workerpool1-1` for the second node in the second worker pool. The values are the URIs for each node's interactive shell.
-	WebAccessUris any
 }
 
 type V1beta1CustomJobAttrs struct {
@@ -383,31 +365,22 @@ type V1beta1CustomJobAttrs struct {
 var V1beta1CustomJob = ubx.ResourceBinding{
 	WireType: "google_aiplatform_v1beta1_custom_job",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"EncryptionSpec": ubx.FieldSpec{
 			WireName: "encryption_spec",
-			Kind: "object",
-			Fields: V1beta1CustomJob_EncryptionSpecFields,
+			Kind:     "object",
+			Fields:   V1beta1CustomJob_EncryptionSpecFields,
 		},
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
 		"Error": ubx.FieldSpec{
 			WireName: "error",
-			Kind: "object",
-			Fields: V1beta1CustomJob_ErrorFields,
+			Kind:     "object",
+			Fields:   V1beta1CustomJob_ErrorFields,
 		},
 		"JobSpec": ubx.FieldSpec{
 			WireName: "job_spec",
-			Kind: "object",
-			Fields: V1beta1CustomJob_JobSpecFields,
+			Kind:     "object",
+			Fields:   V1beta1CustomJob_JobSpecFields,
 		},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SatisfiesPzi": ubx.FieldSpec{WireName: "satisfies_pzi"},
-		"SatisfiesPzs": ubx.FieldSpec{WireName: "satisfies_pzs"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-		"WebAccessUris": ubx.FieldSpec{WireName: "web_access_uris"},
 	},
 }

@@ -4,7 +4,6 @@ package secretmanager
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta1VersionConfig struct {
-	Name any
 }
 
 type V1beta1VersionAttrs struct {
@@ -12,14 +11,12 @@ type V1beta1VersionAttrs struct {
 	CreateTime any
 	// Output only. The time this SecretVersion was destroyed. Only present if state is DESTROYED.
 	DestroyTime any
-	Name any
+	Name        any
 	// Output only. The current state of the SecretVersion.
 	State any
 }
 
 var V1beta1Version = ubx.DataSourceBinding{
 	WireType: "google_secretmanager_v1beta1_version",
-	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	},
+	Fields:   ubx.FieldMap{},
 }

@@ -17,14 +17,8 @@ _Collector_GuestOsScanFields = {
 
 @dataclasses.dataclass
 class CollectorConfig:
-    # Output only. Store cloud storage bucket name (which is a guid) created with this Collector.
-    bucket: Any = None
-    # Output only. Client version.
-    client_version: Any = None
     # How many days to collect data.
     collection_days: Any = None
-    # Output only. Create time stamp.
-    create_time: Any = None
     # User specified description of the Collector.
     description: Any = None
     # User specified name of the Collector.
@@ -41,10 +35,6 @@ class CollectorConfig:
     name: Any = None
     # Service Account email used to ingest data to this Collector.
     service_account: Any = None
-    # Output only. State of the Collector.
-    state: Any = None
-    # Output only. Update time stamp.
-    update_time: Any = None
     # Message describing a MC Source of type VSphere Scan.
     vsphere_scan: Any = None
 
@@ -84,10 +74,7 @@ class CollectorAttrs:
 Collector = ubx.ResourceBinding(
     wire_type="google_rapidmigrationassessment_collector",
     fields={
-        "bucket": ubx.FieldSpec(wire_name="bucket"),
-        "client_version": ubx.FieldSpec(wire_name="client_version"),
         "collection_days": ubx.FieldSpec(wire_name="collection_days"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "eula_uri": ubx.FieldSpec(wire_name="eula_uri"),
@@ -100,8 +87,6 @@ Collector = ubx.ResourceBinding(
         "labels": ubx.FieldSpec(wire_name="labels"),
         "name": ubx.FieldSpec(wire_name="name"),
         "service_account": ubx.FieldSpec(wire_name="service_account"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
         "vsphere_scan": ubx.FieldSpec(
             wire_name="vsphere_scan",
             kind="object",

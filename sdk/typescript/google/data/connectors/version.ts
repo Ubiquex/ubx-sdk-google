@@ -263,7 +263,6 @@ export interface Version_VpcscConfig {
 }
 
 export interface VersionConfig {
-  name: string | Computed<string>;
   view?: string | Computed<string>;
 }
 
@@ -323,7 +322,6 @@ export interface VersionAttrs {
 export const Version: DataSourceBinding<VersionConfig, VersionAttrs> = {
   wireType: "google_connectors_version",
   fields: {
-    name: "name",
     view: "view",
   },
 };

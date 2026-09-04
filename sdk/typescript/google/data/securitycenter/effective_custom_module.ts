@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, DataSourceBinding } from "@ubx/sdk";
 
 export interface EffectiveCustomModuleConfig {
-  name: string | Computed<string>;
 }
 
 export interface EffectiveCustomModuleAttrs {
@@ -18,6 +17,5 @@ export interface EffectiveCustomModuleAttrs {
 export const EffectiveCustomModule: DataSourceBinding<EffectiveCustomModuleConfig, EffectiveCustomModuleAttrs> = {
   wireType: "google_securitycenter_effective_custom_module",
   fields: {
-    name: "name",
   },
 };

@@ -132,8 +132,6 @@ _FeatureOnlineStore_EncryptionSpecFields = {
 @dataclasses.dataclass
 class FeatureOnlineStoreConfig:
     bigtable: Any = None
-    # Output only. Timestamp when this FeatureOnlineStore was created.
-    create_time: Any = None
     # The dedicated serving endpoint for this FeatureOnlineStore. Only need to set when you choose Optimized storage type. Public endpoint is provisioned by default.
     dedicated_serving_endpoint: Any = None
     # Represents a customer-managed encryption key specification that can be applied to a Vertex AI resource.
@@ -146,14 +144,6 @@ class FeatureOnlineStoreConfig:
     name: Any = None
     # Optimized storage type
     optimized: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzi: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzs: Any = None
-    # Output only. State of the featureOnlineStore.
-    state: Any = None
-    # Output only. Timestamp when this FeatureOnlineStore was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class FeatureOnlineStoreAttrs:
@@ -189,7 +179,6 @@ FeatureOnlineStore = ubx.ResourceBinding(
             kind="object",
             fields=_FeatureOnlineStore_BigtableFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "dedicated_serving_endpoint": ubx.FieldSpec(
             wire_name="dedicated_serving_endpoint",
             kind="object",
@@ -204,9 +193,5 @@ FeatureOnlineStore = ubx.ResourceBinding(
         "labels": ubx.FieldSpec(wire_name="labels"),
         "name": ubx.FieldSpec(wire_name="name"),
         "optimized": ubx.FieldSpec(wire_name="optimized"),
-        "satisfies_pzi": ubx.FieldSpec(wire_name="satisfies_pzi"),
-        "satisfies_pzs": ubx.FieldSpec(wire_name="satisfies_pzs"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

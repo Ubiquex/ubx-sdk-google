@@ -4,16 +4,16 @@ package toolresults
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PerfSampleSery_BasicPerfSampleSeries struct {
-	PerfMetricType any
-	PerfUnit any
+	PerfMetricType    any
+	PerfUnit          any
 	SampleSeriesLabel any
 }
 
 var PerfSampleSery_BasicPerfSampleSeriesFields = ubx.FieldMap{
-		"PerfMetricType": ubx.FieldSpec{WireName: "perf_metric_type"},
-		"PerfUnit": ubx.FieldSpec{WireName: "perf_unit"},
-		"SampleSeriesLabel": ubx.FieldSpec{WireName: "sample_series_label"},
-	}
+	"PerfMetricType":    ubx.FieldSpec{WireName: "perf_metric_type"},
+	"PerfUnit":          ubx.FieldSpec{WireName: "perf_unit"},
+	"SampleSeriesLabel": ubx.FieldSpec{WireName: "sample_series_label"},
+}
 
 type PerfSampleSeryConfig struct {
 	// Encapsulates the metadata for basic sample series represented by a line chart
@@ -50,13 +50,13 @@ var PerfSampleSery = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"BasicPerfSampleSeries": ubx.FieldSpec{
 			WireName: "basic_perf_sample_series",
-			Kind: "object",
-			Fields: PerfSampleSery_BasicPerfSampleSeriesFields,
+			Kind:     "object",
+			Fields:   PerfSampleSery_BasicPerfSampleSeriesFields,
 		},
-		"ExecutionId": ubx.FieldSpec{WireName: "execution_id"},
-		"HistoryId": ubx.FieldSpec{WireName: "history_id"},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
+		"ExecutionId":    ubx.FieldSpec{WireName: "execution_id"},
+		"HistoryId":      ubx.FieldSpec{WireName: "history_id"},
+		"ProjectId":      ubx.FieldSpec{WireName: "project_id"},
 		"SampleSeriesId": ubx.FieldSpec{WireName: "sample_series_id"},
-		"StepId": ubx.FieldSpec{WireName: "step_id"},
+		"StepId":         ubx.FieldSpec{WireName: "step_id"},
 	},
 }

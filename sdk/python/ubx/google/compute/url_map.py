@@ -8,11 +8,8 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class UrlMap_DefaultCustomErrorResponsePolicy_ErrorResponseRules:
-    # A list of HTTP response codes (as strings) that this error response rule applies to. When a backend returns one of these codes, the corresponding custom error response is served. For example, '404' or '503'. (AI-inferred)
     match_response_codes: Any = None
-    # The HTTP status code that will be returned to the client instead of the original error code when this error response rule is matched. (AI-inferred)
     override_response_code: Any = None
-    # The full path to the file to use as the custom error page, for example /errors/my-error.html. (AI-inferred)
     path: Any = None
 
 @dataclasses.dataclass
@@ -48,7 +45,6 @@ class UrlMap_DefaultRouteAction_CachePolicy_ClientTtl:
 
 @dataclasses.dataclass
 class UrlMap_DefaultRouteAction_CachePolicy_NegativeCachingPolicy:
-    # The HTTP status code to cache as a negative response. For example, 404 or 500. (AI-inferred)
     code: Any = None
     ttl: Any = None
 
@@ -151,31 +147,21 @@ class UrlMap_DefaultRouteAction_UrlRewrite:
 
 @dataclasses.dataclass
 class UrlMap_DefaultRouteAction_WeightedBackendServices_HeaderAction_RequestHeadersToAdd:
-    # The name of the request header to add to the request before forwarding it to the backend service. (AI-inferred)
     header_name: Any = None
-    # The value to assign to the request header specified by header_name. (AI-inferred)
     header_value: Any = None
-    # If set to true, the header value replaces any existing value for the header; if false, the value is appended to existing values. (AI-inferred)
     replace: Any = None
 
 @dataclasses.dataclass
 class UrlMap_DefaultRouteAction_WeightedBackendServices_HeaderAction:
-    # List of request headers to add or override before the request is forwarded to the backend service. Each object in the list specifies a header name and a header value. (AI-inferred)
     request_headers_to_add: Any = None
-    # Specifies a list of HTTP header names that will be removed from the request before it is forwarded to the backend service. These headers are stripped from the incoming request headers. (AI-inferred)
     request_headers_to_remove: Any = None
-    # Configures the response headers to add. Each object defines a header name and value to be appended to the response before it is sent to the client. (AI-inferred)
     response_headers_to_add: Any = None
-    # List of response header names to remove. These headers are stripped from the response before it is returned to the client. (AI-inferred)
     response_headers_to_remove: Any = None
 
 @dataclasses.dataclass
 class UrlMap_DefaultRouteAction_WeightedBackendServices:
-    # The name or full URL of the backend service to which traffic is routed for this weighted entry. (AI-inferred)
     backend_service: Any = None
-    # The header_action block configures request and response header modifications for this weighted backend service. It allows adding or removing custom headers on requests to and responses from the backend service. (AI-inferred)
     header_action: Any = None
-    # The weight of this backend service, used to determine the proportion of traffic that it receives relative to other weighted backend services. Must be an integer between 0 and 1000. (AI-inferred)
     weight: Any = None
 
 @dataclasses.dataclass
@@ -216,147 +202,93 @@ class UrlMap_DefaultUrlRedirect:
 
 @dataclasses.dataclass
 class UrlMap_HostRules:
-    # An optional description for this host rule. (AI-inferred)
     description: Any = None
-    # The list of host patterns to match against the Host header of incoming requests. Each host must be a fully qualified domain name (FQDN), optionally starting with a wildcard `*.` to match subdomains. (AI-inferred)
     hosts: Any = None
-    # The name of the PathMatcher to use for this host rule. This must reference a path matcher defined in the url_map's path_matcher block. (AI-inferred)
     path_matcher: Any = None
 
 @dataclasses.dataclass
 class UrlMap_PathMatchers_PathRules:
-    # Defines a custom error response policy for this path rule. It includes error response rules that map specific HTTP status codes to custom error pages, and optionally specifies an error service to serve those responses. (AI-inferred)
     custom_error_response_policy: Any = None
-    # A list of URL path patterns (e.g., '/home', '/static/*') that this path rule matches. Requests whose paths match any pattern in this list are handled according to this rule. (AI-inferred)
     paths: Any = None
-    # The route action for this path rule, specifying how matching requests are handled, including backend service, timeout, retry policy, request mirroring, CORS, and other settings. (AI-inferred)
     route_action: Any = None
-    # A reference (URL) to the backend service that will receive requests matching this path rule. If routeAction is configured, advanced routing actions are applied before forwarding the request to this service. (AI-inferred)
     service: Any = None
-    # Specifies a URL redirect for requests matching this path rule. When set, requests are redirected to the configured target instead of being sent to a backend service. (AI-inferred)
     url_redirect: Any = None
 
 @dataclasses.dataclass
 class UrlMap_PathMatchers_RouteRules_MatchRules_HeaderMatches_RangeMatch:
-    # The end of the range for the header value to match. Used together with range_start. (AI-inferred)
     range_end: Any = None
-    # The start of the range (inclusive) to match against the header value. The header value must be a number within the specified range. (AI-inferred)
     range_start: Any = None
 
 @dataclasses.dataclass
 class UrlMap_PathMatchers_RouteRules_MatchRules_HeaderMatches:
-    # The exact value that the request header must match for this header match rule to apply. (AI-inferred)
     exact_match: Any = None
-    # The name of the HTTP header to match. For example, to match the `User-Agent` header, set this field to `User-Agent`. (AI-inferred)
     header_name: Any = None
-    # When set to true, the header match condition is inverted. A request matches this rule if the header does NOT satisfy the specified header match criteria. (AI-inferred)
     invert_match: Any = None
-    # The prefix of the header value to match. Only one of exact_match, prefix_match, suffix_match, regex_match, or present_match can be set. (AI-inferred)
     prefix_match: Any = None
-    # If set to true, the match is satisfied when the request header is present, regardless of its value. (AI-inferred)
     present_match: Any = None
-    # Defines a range of integer values that a numeric header value must fall within for the header match to apply. The object contains rangeStart and rangeEnd fields specifying the inclusive lower and upper bounds. (AI-inferred)
     range_match: Any = None
-    # The regular expression (RE2 syntax) to match against the header value. Only one of exactMatch, regexMatch, prefixMatch, suffixMatch, or rangeMatch can be set. (AI-inferred)
     regex_match: Any = None
-    # Specifies a suffix match for the value of a request header. The header value must end with the given string for the match to succeed. (AI-inferred)
     suffix_match: Any = None
 
 @dataclasses.dataclass
 class UrlMap_PathMatchers_RouteRules_MatchRules_MetadataFilters_FilterLabels:
-    # The name (key) of the metadata filter label, used as the key in a key-value pair for request filtering. (AI-inferred)
     name: Any = None
-    # The value part of a metadata filter label key-value pair. This is used to specify the value of the label that metadata must match for the filter to apply. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class UrlMap_PathMatchers_RouteRules_MatchRules_MetadataFilters:
-    # A list of label filters used to match request metadata. Each label filter defines a key-value pair that must match the request's metadata for the metadata_filters condition to be true. (AI-inferred)
     filter_labels: Any = None
-    # Specifies the match criteria for applying the metadata filters. MATCH_ALL requires all filter criteria to match, MATCH_ANY requires at least one to match, and NOT_SET indicates no criteria is set. (AI-inferred)
     filter_match_criteria: Any = None
 
 @dataclasses.dataclass
 class UrlMap_PathMatchers_RouteRules_MatchRules_QueryParameterMatches:
     exact_match: Any = None
-    # The name of the query parameter to match. (AI-inferred)
     name: Any = None
-    # Indicates whether the query parameter must be present for the match to succeed. Set to true to match when the parameter is present, and false to match when it is absent. (AI-inferred)
     present_match: Any = None
-    # The regular expression to match the query parameter value against. If set, the query parameter value must satisfy this regex for the match rule to apply. Cannot be set together with value_match; exactly one of the two must be specified. (AI-inferred)
     regex_match: Any = None
 
 @dataclasses.dataclass
 class UrlMap_PathMatchers_RouteRules_MatchRules:
-    # Specifies a full path that must exactly match the request path for the match rule to apply. (AI-inferred)
     full_path_match: Any = None
-    # A list of header match criteria. Each element specifies a header name and a value (exact match or regular expression) to match against the request headers. (AI-inferred)
     header_matches: Any = None
-    # Whether to ignore case when matching the URL path. When set to true, case differences are ignored; when false, matching is case-sensitive. Defaults to false. (AI-inferred)
     ignore_case: Any = None
-    # A list of metadata filters that the request metadata (headers) must satisfy for the route rule match to apply. Each filter defines a matching criterion and a set of label name/value pairs to match against. (AI-inferred)
     metadata_filters: Any = None
-    # The path template to match against the request path, using a template syntax with variables (e.g., '/foo/{bar}') for dynamic segment matching. (AI-inferred)
     path_template_match: Any = None
-    # Matches requests whose URL path begins with this string. For example, a prefix_match of '/foo' matches '/foo' and '/foo/bar'. (AI-inferred)
     prefix_match: Any = None
-    # Defines the query parameters that must be present and match in the request URL for the match rule to apply. Each object in the list specifies a query parameter name and a value or regular expression to match against. (AI-inferred)
     query_parameter_matches: Any = None
-    # A regular expression (RE2) to match against the request path. When set, this match rule applies if the path matches the regex. It is mutually exclusive with full_path_match and prefix_match. (AI-inferred)
     regex_match: Any = None
 
 @dataclasses.dataclass
 class UrlMap_PathMatchers_RouteRules:
-    # Specifies the custom error response policy for the route rule. When configured, this policy defines custom error responses that replace the default error responses for the rule. (AI-inferred)
     custom_error_response_policy: Any = None
-    # An optional, human-readable description of this route rule. (AI-inferred)
     description: Any = None
-    # Configures the request and response headers to add or remove for the matched route. (AI-inferred)
     header_action: Any = None
-    # Specifies a list of match rules that determine whether a request applies to this route rule. Each match rule can define path-based matching (e.g., prefix, exact, regex) and additional header or query parameter conditions. (AI-inferred)
     match_rules: Any = None
-    # The priority of this route rule, used to determine the order in which rules are evaluated. Lower values have higher precedence; rules are matched in increasing priority order. This value must be unique within the path matcher. (AI-inferred)
     priority: Any = None
     route_action: Any = None
-    # The name or URL of a BackendService or BackendBucket that defines where traffic matching this route rule should be sent. In a URL map, this service is used as the destination for requests that match the rule's match conditions. (AI-inferred)
     service: Any = None
-    # The url_redirect block configures the redirect behavior for this route rule. It defines where and how requests are redirected, including settings for host, path, prefix, response code, and query string handling. (AI-inferred)
     url_redirect: Any = None
 
 @dataclasses.dataclass
 class UrlMap_PathMatchers:
-    # The default custom error response policy for the path matcher's default service. This policy defines custom error response rules that override the default HTTP error responses for requests routed to the default service. (AI-inferred)
     default_custom_error_response_policy: Any = None
-    # The default route action to apply when no path rule matches in this path matcher. This object can define actions such as URL rewrites, header modifications, and redirects. (AI-inferred)
     default_route_action: Any = None
-    # The default backend service or backend bucket to use if no path rules match. This must be a full or partial URL to a backend service or backend bucket. (AI-inferred)
     default_service: Any = None
-    # Defines a default URL redirect for the path matcher. When a request does not match any route rule, this redirect action is applied, allowing configuration of host, path, prefix, HTTPS redirect, response code, and query string handling. (AI-inferred)
     default_url_redirect: Any = None
     description: Any = None
-    # The header_action block configures header transformations (both request and response) for this path matcher. (AI-inferred)
     header_action: Any = None
-    # The name of the path matcher. This must be a unique identifier within the URL map and is referenced by host rules. (AI-inferred)
     name: Any = None
-    # The list of path rules that map URL paths to backend services or backend buckets. (AI-inferred)
     path_rules: Any = None
-    # A list of route rules that define how requests are matched and routed for this path matcher. Each rule includes match conditions and the corresponding action. (AI-inferred)
     route_rules: Any = None
 
 @dataclasses.dataclass
 class UrlMap_Tests:
-    # An optional description of this test. (AI-inferred)
     description: Any = None
-    # The expected URL that the host and path specified in the test case should resolve to, used to verify URL map routing behavior. (AI-inferred)
     expected_output_url: Any = None
     expected_redirect_response_code: Any = None
-    # A list of headers to include in the test request, where each header is an object with 'name' and 'value' fields. (AI-inferred)
     headers: Any = None
-    # The hostname used in the test request to match against the URL map's host rules. (AI-inferred)
     host: Any = None
-    # The request path to test against the URL map's routing rules. (AI-inferred)
     path: Any = None
-    # The backend service that the test expects the request to be routed to, validating the URL map's routing configuration. (AI-inferred)
     service: Any = None
 
 _UrlMap_DefaultCustomErrorResponsePolicy_ErrorResponseRulesFields = {
@@ -765,11 +697,8 @@ _UrlMap_TestsFields = {
 
 @dataclasses.dataclass
 class UrlMapConfig:
-    # Output only. [Output Only] Creation timestamp inRFC3339 text format.
-    creation_timestamp: Any = None
     # Specifies the custom error response policy that must be applied when the backend service or backend bucket responds with an error.
     default_custom_error_response_policy: Any = None
-    # The default route action for the URL map, applied to traffic that does not match any host or path rules. This computed field is populated by the API with the actual default action configuration. (AI-inferred)
     default_route_action: Any = None
     # The full or partial URL of the defaultService resource to which traffic is directed if none of the hostRules match. If defaultRouteAction is also specified, advanced routing actions, such as URL rewrites, take effect before sending the request to the backend. Only one of defaultUrlRedirect, defaultService or defaultRouteAction.weightedBackendService can be set. defaultService has no effect when the URL map is bound to a target gRPC proxy that has the validateForProxyless field set to true.
     default_service: Any = None
@@ -785,14 +714,10 @@ class UrlMapConfig:
     host_rules: Any = None
     # [Output Only] The unique identifier for the resource. This identifier is defined by the server.
     id: Any = None
-    # Output only. [Output Only] Type of the resource. Always compute#urlMaps for url maps.
-    kind: Any = None
     # Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
     name: Any = None
     # The list of named PathMatchers to use against the URL.
     path_matchers: Any = None
-    # Output only. [Output Only] URL of the region where the regional URL map resides. This field is not applicable to global URL maps. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
-    region: Any = None
     # [Output Only] Server-defined URL for the resource.
     self_link: Any = None
     # The list of expected URL mapping tests. Request to update theUrlMap succeeds only if all test cases pass. You can specify a maximum of 100 tests per UrlMap. Not supported when the URL map is bound to a target gRPC proxy that has validateForProxyless field set to true.
@@ -804,7 +729,6 @@ class UrlMapAttrs:
     creation_timestamp: Any = None
     # Specifies the custom error response policy that must be applied when the backend service or backend bucket responds with an error.
     default_custom_error_response_policy: Any = None
-    # The default route action for the URL map, applied to traffic that does not match any host or path rules. This computed field is populated by the API with the actual default action configuration. (AI-inferred)
     default_route_action: Any = None
     # The full or partial URL of the defaultService resource to which traffic is directed if none of the hostRules match. If defaultRouteAction is also specified, advanced routing actions, such as URL rewrites, take effect before sending the request to the backend. Only one of defaultUrlRedirect, defaultService or defaultRouteAction.weightedBackendService can be set. defaultService has no effect when the URL map is bound to a target gRPC proxy that has the validateForProxyless field set to true.
     default_service: Any = None
@@ -836,7 +760,6 @@ class UrlMapAttrs:
 UrlMap = ubx.ResourceBinding(
     wire_type="google_compute_url_map",
     fields={
-        "creation_timestamp": ubx.FieldSpec(wire_name="creation_timestamp"),
         "default_custom_error_response_policy": ubx.FieldSpec(
             wire_name="default_custom_error_response_policy",
             kind="object",
@@ -866,14 +789,12 @@ UrlMap = ubx.ResourceBinding(
             fields=_UrlMap_HostRulesFields,
         ),
         "id": ubx.FieldSpec(wire_name="id"),
-        "kind": ubx.FieldSpec(wire_name="kind"),
         "name": ubx.FieldSpec(wire_name="name"),
         "path_matchers": ubx.FieldSpec(
             wire_name="path_matchers",
             kind="list",
             fields=_UrlMap_PathMatchersFields,
         ),
-        "region": ubx.FieldSpec(wire_name="region"),
         "self_link": ubx.FieldSpec(wire_name="self_link"),
         "tests": ubx.FieldSpec(
             wire_name="tests",

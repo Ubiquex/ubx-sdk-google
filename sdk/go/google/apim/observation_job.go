@@ -4,16 +4,10 @@ package apim
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ObservationJobConfig struct {
-	// Output only. [Output only] Create time stamp
-	CreateTime any
 	// Identifier. name of resource Format: projects/{project}/locations/{location}/observationJobs/{observation_job}
 	Name any
 	// Optional. These should be of the same kind of source.
 	Sources any
-	// Output only. The observation job state
-	State any
-	// Output only. [Output only] Update time stamp
-	UpdateTime any
 }
 
 type ObservationJobAttrs struct {
@@ -32,10 +26,7 @@ type ObservationJobAttrs struct {
 var ObservationJob = ubx.ResourceBinding{
 	WireType: "google_apim_observation_job",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":    ubx.FieldSpec{WireName: "name"},
 		"Sources": ubx.FieldSpec{WireName: "sources"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

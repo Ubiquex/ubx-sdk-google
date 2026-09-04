@@ -8,16 +8,12 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class V1beta1GatewaySecurityPolicyConfig:
-    # Output only. The timestamp when the resource was created.
-    create_time: Any = None
     # Optional. Free-text description of the resource.
     description: Any = None
     # Required. Name of the resource. Name is of the form projects/{project}/locations/{location}/gatewaySecurityPolicies/{gateway_security_policy} gateway_security_policy should match the pattern:(^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$).
     name: Any = None
     # Optional. Name of a TLS Inspection Policy resource that defines how TLS inspection will be performed for any rule(s) which enables it.
     tls_inspection_policy: Any = None
-    # Output only. The timestamp when the resource was updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V1beta1GatewaySecurityPolicyAttrs:
@@ -35,10 +31,8 @@ class V1beta1GatewaySecurityPolicyAttrs:
 V1beta1GatewaySecurityPolicy = ubx.ResourceBinding(
     wire_type="google_networksecurity_v1beta1_gateway_security_policy",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "name": ubx.FieldSpec(wire_name="name"),
         "tls_inspection_policy": ubx.FieldSpec(wire_name="tls_inspection_policy"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

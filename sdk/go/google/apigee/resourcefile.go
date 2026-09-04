@@ -25,7 +25,7 @@ var Resourcefile = ubx.ResourceBinding{
 	WireType: "google_apigee_resourcefile",
 	Fields: ubx.FieldMap{
 		"ContentType": ubx.FieldSpec{WireName: "content_type"},
-		"Data": ubx.FieldSpec{WireName: "data"},
-		"Extensions": ubx.FieldSpec{WireName: "extensions"},
+		"Data":        ubx.FieldSpec{WireName: "data"},
+		"Extensions":  ubx.FieldSpec{WireName: "extensions"},
 	},
 }

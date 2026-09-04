@@ -111,12 +111,12 @@ type TrainingPipeline_ModelToUpload_BaseModelSource struct {
 
 type TrainingPipeline_ModelToUpload_Checkpoints struct {
 	CheckpointId any
-	Epoch any
-	Step any
+	Epoch        any
+	Step         any
 }
 
 type TrainingPipeline_ModelToUpload_ContainerSpec_Env struct {
-	Name any
+	Name  any
 	Value any
 }
 
@@ -224,46 +224,46 @@ type TrainingPipeline_ModelToUpload_DataStats struct {
 }
 
 type TrainingPipeline_ModelToUpload_DeployedModels struct {
-	CheckpointId any
+	CheckpointId    any
 	DeployedModelId any
-	Endpoint any
+	Endpoint        any
 }
 
 type TrainingPipeline_ModelToUpload_ExplanationSpec_Metadata_Inputs_FeatureValueDomain struct {
-	MaxValue any
-	MinValue any
-	OriginalMean any
+	MaxValue       any
+	MinValue       any
+	OriginalMean   any
 	OriginalStddev any
 }
 
 type TrainingPipeline_ModelToUpload_ExplanationSpec_Metadata_Inputs_Visualization struct {
 	ClipPercentLowerbound any
 	ClipPercentUpperbound any
-	ColorMap any
-	OverlayType any
-	Polarity any
-	Type any
+	ColorMap              any
+	OverlayType           any
+	Polarity              any
+	Type                  any
 }
 
 type TrainingPipeline_ModelToUpload_ExplanationSpec_Metadata_Inputs struct {
 	DenseShapeTensorName any
-	EncodedBaselines any
-	EncodedTensorName any
-	Encoding any
-	FeatureValueDomain any
-	GroupName any
-	IndexFeatureMapping any
-	IndicesTensorName any
-	InputBaselines any
-	InputTensorName any
-	Modality any
-	Visualization any
+	EncodedBaselines     any
+	EncodedTensorName    any
+	Encoding             any
+	FeatureValueDomain   any
+	GroupName            any
+	IndexFeatureMapping  any
+	IndicesTensorName    any
+	InputBaselines       any
+	InputTensorName      any
+	Modality             any
+	Visualization        any
 }
 
 type TrainingPipeline_ModelToUpload_ExplanationSpec_Metadata_Outputs struct {
-	DisplayNameMappingKey any
+	DisplayNameMappingKey   any
 	IndexDisplayNameMapping any
-	OutputTensorName any
+	OutputTensorName        any
 }
 
 type TrainingPipeline_ModelToUpload_ExplanationSpec_Metadata struct {
@@ -313,7 +313,7 @@ type TrainingPipeline_ModelToUpload_ExplanationSpec_Parameters_IntegratedGradien
 }
 
 type TrainingPipeline_ModelToUpload_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfig_FeatureNoiseSigma_NoiseSigma struct {
-	Name any
+	Name  any
 	Sigma any
 }
 
@@ -390,7 +390,7 @@ type TrainingPipeline_ModelToUpload_PredictSchemata struct {
 
 type TrainingPipeline_ModelToUpload_SupportedExportFormats struct {
 	ExportableContents any
-	Id any
+	Id                 any
 }
 
 type TrainingPipeline_ModelToUpload struct {
@@ -467,524 +467,520 @@ type TrainingPipeline_ModelToUpload struct {
 }
 
 var TrainingPipeline_EncryptionSpecFields = ubx.FieldMap{
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-	}
+	"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
+}
 
 var TrainingPipeline_ErrorFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"Code":    ubx.FieldSpec{WireName: "code"},
+	"Details": ubx.FieldSpec{WireName: "details"},
+	"Message": ubx.FieldSpec{WireName: "message"},
+}
 
 var TrainingPipeline_InputDataConfig_BigqueryDestinationFields = ubx.FieldMap{
-		"OutputUri": ubx.FieldSpec{WireName: "output_uri"},
-	}
+	"OutputUri": ubx.FieldSpec{WireName: "output_uri"},
+}
 
 var TrainingPipeline_InputDataConfig_FilterSplitFields = ubx.FieldMap{
-		"TestFilter": ubx.FieldSpec{WireName: "test_filter"},
-		"TrainingFilter": ubx.FieldSpec{WireName: "training_filter"},
-		"ValidationFilter": ubx.FieldSpec{WireName: "validation_filter"},
-	}
+	"TestFilter":       ubx.FieldSpec{WireName: "test_filter"},
+	"TrainingFilter":   ubx.FieldSpec{WireName: "training_filter"},
+	"ValidationFilter": ubx.FieldSpec{WireName: "validation_filter"},
+}
 
 var TrainingPipeline_InputDataConfig_FractionSplitFields = ubx.FieldMap{
-		"TestFraction": ubx.FieldSpec{WireName: "test_fraction"},
-		"TrainingFraction": ubx.FieldSpec{WireName: "training_fraction"},
-		"ValidationFraction": ubx.FieldSpec{WireName: "validation_fraction"},
-	}
+	"TestFraction":       ubx.FieldSpec{WireName: "test_fraction"},
+	"TrainingFraction":   ubx.FieldSpec{WireName: "training_fraction"},
+	"ValidationFraction": ubx.FieldSpec{WireName: "validation_fraction"},
+}
 
 var TrainingPipeline_InputDataConfig_GcsDestinationFields = ubx.FieldMap{
-		"OutputUriPrefix": ubx.FieldSpec{WireName: "output_uri_prefix"},
-	}
+	"OutputUriPrefix": ubx.FieldSpec{WireName: "output_uri_prefix"},
+}
 
 var TrainingPipeline_InputDataConfig_PredefinedSplitFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-	}
+	"Key": ubx.FieldSpec{WireName: "key"},
+}
 
 var TrainingPipeline_InputDataConfig_StratifiedSplitFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"TestFraction": ubx.FieldSpec{WireName: "test_fraction"},
-		"TrainingFraction": ubx.FieldSpec{WireName: "training_fraction"},
-		"ValidationFraction": ubx.FieldSpec{WireName: "validation_fraction"},
-	}
+	"Key":                ubx.FieldSpec{WireName: "key"},
+	"TestFraction":       ubx.FieldSpec{WireName: "test_fraction"},
+	"TrainingFraction":   ubx.FieldSpec{WireName: "training_fraction"},
+	"ValidationFraction": ubx.FieldSpec{WireName: "validation_fraction"},
+}
 
 var TrainingPipeline_InputDataConfigFields = ubx.FieldMap{
-		"AnnotationSchemaUri": ubx.FieldSpec{WireName: "annotation_schema_uri"},
-		"AnnotationsFilter": ubx.FieldSpec{WireName: "annotations_filter"},
-		"BigqueryDestination": ubx.FieldSpec{
-			WireName: "bigquery_destination",
-			Kind: "object",
-			Fields: TrainingPipeline_InputDataConfig_BigqueryDestinationFields,
-		},
-		"DatasetId": ubx.FieldSpec{WireName: "dataset_id"},
-		"FilterSplit": ubx.FieldSpec{
-			WireName: "filter_split",
-			Kind: "object",
-			Fields: TrainingPipeline_InputDataConfig_FilterSplitFields,
-		},
-		"FractionSplit": ubx.FieldSpec{
-			WireName: "fraction_split",
-			Kind: "object",
-			Fields: TrainingPipeline_InputDataConfig_FractionSplitFields,
-		},
-		"GcsDestination": ubx.FieldSpec{
-			WireName: "gcs_destination",
-			Kind: "object",
-			Fields: TrainingPipeline_InputDataConfig_GcsDestinationFields,
-		},
-		"PersistMlUseAssignment": ubx.FieldSpec{WireName: "persist_ml_use_assignment"},
-		"PredefinedSplit": ubx.FieldSpec{
-			WireName: "predefined_split",
-			Kind: "object",
-			Fields: TrainingPipeline_InputDataConfig_PredefinedSplitFields,
-		},
-		"SavedQueryId": ubx.FieldSpec{WireName: "saved_query_id"},
-		"StratifiedSplit": ubx.FieldSpec{
-			WireName: "stratified_split",
-			Kind: "object",
-			Fields: TrainingPipeline_InputDataConfig_StratifiedSplitFields,
-		},
-		"TimestampSplit": ubx.FieldSpec{
-			WireName: "timestamp_split",
-			Kind: "object",
-			Fields: TrainingPipeline_InputDataConfig_StratifiedSplitFields,
-		},
-	}
+	"AnnotationSchemaUri": ubx.FieldSpec{WireName: "annotation_schema_uri"},
+	"AnnotationsFilter":   ubx.FieldSpec{WireName: "annotations_filter"},
+	"BigqueryDestination": ubx.FieldSpec{
+		WireName: "bigquery_destination",
+		Kind:     "object",
+		Fields:   TrainingPipeline_InputDataConfig_BigqueryDestinationFields,
+	},
+	"DatasetId": ubx.FieldSpec{WireName: "dataset_id"},
+	"FilterSplit": ubx.FieldSpec{
+		WireName: "filter_split",
+		Kind:     "object",
+		Fields:   TrainingPipeline_InputDataConfig_FilterSplitFields,
+	},
+	"FractionSplit": ubx.FieldSpec{
+		WireName: "fraction_split",
+		Kind:     "object",
+		Fields:   TrainingPipeline_InputDataConfig_FractionSplitFields,
+	},
+	"GcsDestination": ubx.FieldSpec{
+		WireName: "gcs_destination",
+		Kind:     "object",
+		Fields:   TrainingPipeline_InputDataConfig_GcsDestinationFields,
+	},
+	"PersistMlUseAssignment": ubx.FieldSpec{WireName: "persist_ml_use_assignment"},
+	"PredefinedSplit": ubx.FieldSpec{
+		WireName: "predefined_split",
+		Kind:     "object",
+		Fields:   TrainingPipeline_InputDataConfig_PredefinedSplitFields,
+	},
+	"SavedQueryId": ubx.FieldSpec{WireName: "saved_query_id"},
+	"StratifiedSplit": ubx.FieldSpec{
+		WireName: "stratified_split",
+		Kind:     "object",
+		Fields:   TrainingPipeline_InputDataConfig_StratifiedSplitFields,
+	},
+	"TimestampSplit": ubx.FieldSpec{
+		WireName: "timestamp_split",
+		Kind:     "object",
+		Fields:   TrainingPipeline_InputDataConfig_StratifiedSplitFields,
+	},
+}
 
 var TrainingPipeline_ModelToUpload_BaseModelSource_GenieSourceFields = ubx.FieldMap{
-		"BaseModelUri": ubx.FieldSpec{WireName: "base_model_uri"},
-	}
+	"BaseModelUri": ubx.FieldSpec{WireName: "base_model_uri"},
+}
 
 var TrainingPipeline_ModelToUpload_BaseModelSource_ModelGardenSourceFields = ubx.FieldMap{
-		"PublicModelName": ubx.FieldSpec{WireName: "public_model_name"},
-		"SkipHfModelCache": ubx.FieldSpec{WireName: "skip_hf_model_cache"},
-		"VersionId": ubx.FieldSpec{WireName: "version_id"},
-	}
+	"PublicModelName":  ubx.FieldSpec{WireName: "public_model_name"},
+	"SkipHfModelCache": ubx.FieldSpec{WireName: "skip_hf_model_cache"},
+	"VersionId":        ubx.FieldSpec{WireName: "version_id"},
+}
 
 var TrainingPipeline_ModelToUpload_BaseModelSourceFields = ubx.FieldMap{
-		"GenieSource": ubx.FieldSpec{
-			WireName: "genie_source",
-			Kind: "object",
-			Fields: TrainingPipeline_ModelToUpload_BaseModelSource_GenieSourceFields,
-		},
-		"ModelGardenSource": ubx.FieldSpec{
-			WireName: "model_garden_source",
-			Kind: "object",
-			Fields: TrainingPipeline_ModelToUpload_BaseModelSource_ModelGardenSourceFields,
-		},
-	}
+	"GenieSource": ubx.FieldSpec{
+		WireName: "genie_source",
+		Kind:     "object",
+		Fields:   TrainingPipeline_ModelToUpload_BaseModelSource_GenieSourceFields,
+	},
+	"ModelGardenSource": ubx.FieldSpec{
+		WireName: "model_garden_source",
+		Kind:     "object",
+		Fields:   TrainingPipeline_ModelToUpload_BaseModelSource_ModelGardenSourceFields,
+	},
+}
 
 var TrainingPipeline_ModelToUpload_CheckpointsFields = ubx.FieldMap{
-		"CheckpointId": ubx.FieldSpec{WireName: "checkpoint_id"},
-		"Epoch": ubx.FieldSpec{WireName: "epoch"},
-		"Step": ubx.FieldSpec{WireName: "step"},
-	}
+	"CheckpointId": ubx.FieldSpec{WireName: "checkpoint_id"},
+	"Epoch":        ubx.FieldSpec{WireName: "epoch"},
+	"Step":         ubx.FieldSpec{WireName: "step"},
+}
 
 var TrainingPipeline_ModelToUpload_ContainerSpec_EnvFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var TrainingPipeline_ModelToUpload_ContainerSpec_GrpcPortsFields = ubx.FieldMap{
-		"ContainerPort": ubx.FieldSpec{WireName: "container_port"},
-	}
+	"ContainerPort": ubx.FieldSpec{WireName: "container_port"},
+}
 
 var TrainingPipeline_ModelToUpload_ContainerSpec_HealthProbe_ExecFields = ubx.FieldMap{
-		"Command": ubx.FieldSpec{WireName: "command"},
-	}
+	"Command": ubx.FieldSpec{WireName: "command"},
+}
 
 var TrainingPipeline_ModelToUpload_ContainerSpec_HealthProbe_GrpcFields = ubx.FieldMap{
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"Service": ubx.FieldSpec{WireName: "service"},
-	}
+	"Port":    ubx.FieldSpec{WireName: "port"},
+	"Service": ubx.FieldSpec{WireName: "service"},
+}
 
 var TrainingPipeline_ModelToUpload_ContainerSpec_HealthProbe_HttpGetFields = ubx.FieldMap{
-		"Host": ubx.FieldSpec{WireName: "host"},
-		"HttpHeaders": ubx.FieldSpec{
-			WireName: "http_headers",
-			Kind: "list",
-			Fields: TrainingPipeline_ModelToUpload_ContainerSpec_EnvFields,
-		},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"Scheme": ubx.FieldSpec{WireName: "scheme"},
-	}
+	"Host": ubx.FieldSpec{WireName: "host"},
+	"HttpHeaders": ubx.FieldSpec{
+		WireName: "http_headers",
+		Kind:     "list",
+		Fields:   TrainingPipeline_ModelToUpload_ContainerSpec_EnvFields,
+	},
+	"Path":   ubx.FieldSpec{WireName: "path"},
+	"Port":   ubx.FieldSpec{WireName: "port"},
+	"Scheme": ubx.FieldSpec{WireName: "scheme"},
+}
 
 var TrainingPipeline_ModelToUpload_ContainerSpec_HealthProbe_TcpSocketFields = ubx.FieldMap{
-		"Host": ubx.FieldSpec{WireName: "host"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-	}
+	"Host": ubx.FieldSpec{WireName: "host"},
+	"Port": ubx.FieldSpec{WireName: "port"},
+}
 
 var TrainingPipeline_ModelToUpload_ContainerSpec_HealthProbeFields = ubx.FieldMap{
-		"Exec": ubx.FieldSpec{
-			WireName: "exec",
-			Kind: "object",
-			Fields: TrainingPipeline_ModelToUpload_ContainerSpec_HealthProbe_ExecFields,
-		},
-		"FailureThreshold": ubx.FieldSpec{WireName: "failure_threshold"},
-		"Grpc": ubx.FieldSpec{
-			WireName: "grpc",
-			Kind: "object",
-			Fields: TrainingPipeline_ModelToUpload_ContainerSpec_HealthProbe_GrpcFields,
-		},
-		"HttpGet": ubx.FieldSpec{
-			WireName: "http_get",
-			Kind: "object",
-			Fields: TrainingPipeline_ModelToUpload_ContainerSpec_HealthProbe_HttpGetFields,
-		},
-		"InitialDelaySeconds": ubx.FieldSpec{WireName: "initial_delay_seconds"},
-		"PeriodSeconds": ubx.FieldSpec{WireName: "period_seconds"},
-		"SuccessThreshold": ubx.FieldSpec{WireName: "success_threshold"},
-		"TcpSocket": ubx.FieldSpec{
-			WireName: "tcp_socket",
-			Kind: "object",
-			Fields: TrainingPipeline_ModelToUpload_ContainerSpec_HealthProbe_TcpSocketFields,
-		},
-		"TimeoutSeconds": ubx.FieldSpec{WireName: "timeout_seconds"},
-	}
+	"Exec": ubx.FieldSpec{
+		WireName: "exec",
+		Kind:     "object",
+		Fields:   TrainingPipeline_ModelToUpload_ContainerSpec_HealthProbe_ExecFields,
+	},
+	"FailureThreshold": ubx.FieldSpec{WireName: "failure_threshold"},
+	"Grpc": ubx.FieldSpec{
+		WireName: "grpc",
+		Kind:     "object",
+		Fields:   TrainingPipeline_ModelToUpload_ContainerSpec_HealthProbe_GrpcFields,
+	},
+	"HttpGet": ubx.FieldSpec{
+		WireName: "http_get",
+		Kind:     "object",
+		Fields:   TrainingPipeline_ModelToUpload_ContainerSpec_HealthProbe_HttpGetFields,
+	},
+	"InitialDelaySeconds": ubx.FieldSpec{WireName: "initial_delay_seconds"},
+	"PeriodSeconds":       ubx.FieldSpec{WireName: "period_seconds"},
+	"SuccessThreshold":    ubx.FieldSpec{WireName: "success_threshold"},
+	"TcpSocket": ubx.FieldSpec{
+		WireName: "tcp_socket",
+		Kind:     "object",
+		Fields:   TrainingPipeline_ModelToUpload_ContainerSpec_HealthProbe_TcpSocketFields,
+	},
+	"TimeoutSeconds": ubx.FieldSpec{WireName: "timeout_seconds"},
+}
 
 var TrainingPipeline_ModelToUpload_ContainerSpecFields = ubx.FieldMap{
-		"Args": ubx.FieldSpec{WireName: "args"},
-		"Command": ubx.FieldSpec{WireName: "command"},
-		"DeploymentTimeout": ubx.FieldSpec{WireName: "deployment_timeout"},
-		"Env": ubx.FieldSpec{
-			WireName: "env",
-			Kind: "list",
-			Fields: TrainingPipeline_ModelToUpload_ContainerSpec_EnvFields,
-		},
-		"GrpcPorts": ubx.FieldSpec{
-			WireName: "grpc_ports",
-			Kind: "list",
-			Fields: TrainingPipeline_ModelToUpload_ContainerSpec_GrpcPortsFields,
-		},
-		"HealthProbe": ubx.FieldSpec{
-			WireName: "health_probe",
-			Kind: "object",
-			Fields: TrainingPipeline_ModelToUpload_ContainerSpec_HealthProbeFields,
-		},
-		"HealthRoute": ubx.FieldSpec{WireName: "health_route"},
-		"ImageUri": ubx.FieldSpec{WireName: "image_uri"},
-		"InvokeRoutePrefix": ubx.FieldSpec{WireName: "invoke_route_prefix"},
-		"LivenessProbe": ubx.FieldSpec{
-			WireName: "liveness_probe",
-			Kind: "object",
-			Fields: TrainingPipeline_ModelToUpload_ContainerSpec_HealthProbeFields,
-		},
-		"Ports": ubx.FieldSpec{
-			WireName: "ports",
-			Kind: "list",
-			Fields: TrainingPipeline_ModelToUpload_ContainerSpec_GrpcPortsFields,
-		},
-		"PredictRoute": ubx.FieldSpec{WireName: "predict_route"},
-		"SharedMemorySizeMb": ubx.FieldSpec{WireName: "shared_memory_size_mb"},
-		"StartupProbe": ubx.FieldSpec{
-			WireName: "startup_probe",
-			Kind: "object",
-			Fields: TrainingPipeline_ModelToUpload_ContainerSpec_HealthProbeFields,
-		},
-	}
+	"Args":              ubx.FieldSpec{WireName: "args"},
+	"Command":           ubx.FieldSpec{WireName: "command"},
+	"DeploymentTimeout": ubx.FieldSpec{WireName: "deployment_timeout"},
+	"Env": ubx.FieldSpec{
+		WireName: "env",
+		Kind:     "list",
+		Fields:   TrainingPipeline_ModelToUpload_ContainerSpec_EnvFields,
+	},
+	"GrpcPorts": ubx.FieldSpec{
+		WireName: "grpc_ports",
+		Kind:     "list",
+		Fields:   TrainingPipeline_ModelToUpload_ContainerSpec_GrpcPortsFields,
+	},
+	"HealthProbe": ubx.FieldSpec{
+		WireName: "health_probe",
+		Kind:     "object",
+		Fields:   TrainingPipeline_ModelToUpload_ContainerSpec_HealthProbeFields,
+	},
+	"HealthRoute":       ubx.FieldSpec{WireName: "health_route"},
+	"ImageUri":          ubx.FieldSpec{WireName: "image_uri"},
+	"InvokeRoutePrefix": ubx.FieldSpec{WireName: "invoke_route_prefix"},
+	"LivenessProbe": ubx.FieldSpec{
+		WireName: "liveness_probe",
+		Kind:     "object",
+		Fields:   TrainingPipeline_ModelToUpload_ContainerSpec_HealthProbeFields,
+	},
+	"Ports": ubx.FieldSpec{
+		WireName: "ports",
+		Kind:     "list",
+		Fields:   TrainingPipeline_ModelToUpload_ContainerSpec_GrpcPortsFields,
+	},
+	"PredictRoute":       ubx.FieldSpec{WireName: "predict_route"},
+	"SharedMemorySizeMb": ubx.FieldSpec{WireName: "shared_memory_size_mb"},
+	"StartupProbe": ubx.FieldSpec{
+		WireName: "startup_probe",
+		Kind:     "object",
+		Fields:   TrainingPipeline_ModelToUpload_ContainerSpec_HealthProbeFields,
+	},
+}
 
 var TrainingPipeline_ModelToUpload_DataStatsFields = ubx.FieldMap{
-		"TestAnnotationsCount": ubx.FieldSpec{WireName: "test_annotations_count"},
-		"TestDataItemsCount": ubx.FieldSpec{WireName: "test_data_items_count"},
-		"TrainingAnnotationsCount": ubx.FieldSpec{WireName: "training_annotations_count"},
-		"TrainingDataItemsCount": ubx.FieldSpec{WireName: "training_data_items_count"},
-		"ValidationAnnotationsCount": ubx.FieldSpec{WireName: "validation_annotations_count"},
-		"ValidationDataItemsCount": ubx.FieldSpec{WireName: "validation_data_items_count"},
-	}
+	"TestAnnotationsCount":       ubx.FieldSpec{WireName: "test_annotations_count"},
+	"TestDataItemsCount":         ubx.FieldSpec{WireName: "test_data_items_count"},
+	"TrainingAnnotationsCount":   ubx.FieldSpec{WireName: "training_annotations_count"},
+	"TrainingDataItemsCount":     ubx.FieldSpec{WireName: "training_data_items_count"},
+	"ValidationAnnotationsCount": ubx.FieldSpec{WireName: "validation_annotations_count"},
+	"ValidationDataItemsCount":   ubx.FieldSpec{WireName: "validation_data_items_count"},
+}
 
 var TrainingPipeline_ModelToUpload_DeployedModelsFields = ubx.FieldMap{
-		"CheckpointId": ubx.FieldSpec{WireName: "checkpoint_id"},
-		"DeployedModelId": ubx.FieldSpec{WireName: "deployed_model_id"},
-		"Endpoint": ubx.FieldSpec{WireName: "endpoint"},
-	}
+	"CheckpointId":    ubx.FieldSpec{WireName: "checkpoint_id"},
+	"DeployedModelId": ubx.FieldSpec{WireName: "deployed_model_id"},
+	"Endpoint":        ubx.FieldSpec{WireName: "endpoint"},
+}
 
 var TrainingPipeline_ModelToUpload_ExplanationSpec_Metadata_Inputs_FeatureValueDomainFields = ubx.FieldMap{
-		"MaxValue": ubx.FieldSpec{WireName: "max_value"},
-		"MinValue": ubx.FieldSpec{WireName: "min_value"},
-		"OriginalMean": ubx.FieldSpec{WireName: "original_mean"},
-		"OriginalStddev": ubx.FieldSpec{WireName: "original_stddev"},
-	}
+	"MaxValue":       ubx.FieldSpec{WireName: "max_value"},
+	"MinValue":       ubx.FieldSpec{WireName: "min_value"},
+	"OriginalMean":   ubx.FieldSpec{WireName: "original_mean"},
+	"OriginalStddev": ubx.FieldSpec{WireName: "original_stddev"},
+}
 
 var TrainingPipeline_ModelToUpload_ExplanationSpec_Metadata_Inputs_VisualizationFields = ubx.FieldMap{
-		"ClipPercentLowerbound": ubx.FieldSpec{WireName: "clip_percent_lowerbound"},
-		"ClipPercentUpperbound": ubx.FieldSpec{WireName: "clip_percent_upperbound"},
-		"ColorMap": ubx.FieldSpec{WireName: "color_map"},
-		"OverlayType": ubx.FieldSpec{WireName: "overlay_type"},
-		"Polarity": ubx.FieldSpec{WireName: "polarity"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"ClipPercentLowerbound": ubx.FieldSpec{WireName: "clip_percent_lowerbound"},
+	"ClipPercentUpperbound": ubx.FieldSpec{WireName: "clip_percent_upperbound"},
+	"ColorMap":              ubx.FieldSpec{WireName: "color_map"},
+	"OverlayType":           ubx.FieldSpec{WireName: "overlay_type"},
+	"Polarity":              ubx.FieldSpec{WireName: "polarity"},
+	"Type":                  ubx.FieldSpec{WireName: "type"},
+}
 
 var TrainingPipeline_ModelToUpload_ExplanationSpec_Metadata_InputsFields = ubx.FieldMap{
-		"DenseShapeTensorName": ubx.FieldSpec{WireName: "dense_shape_tensor_name"},
-		"EncodedBaselines": ubx.FieldSpec{WireName: "encoded_baselines"},
-		"EncodedTensorName": ubx.FieldSpec{WireName: "encoded_tensor_name"},
-		"Encoding": ubx.FieldSpec{WireName: "encoding"},
-		"FeatureValueDomain": ubx.FieldSpec{
-			WireName: "feature_value_domain",
-			Kind: "object",
-			Fields: TrainingPipeline_ModelToUpload_ExplanationSpec_Metadata_Inputs_FeatureValueDomainFields,
-		},
-		"GroupName": ubx.FieldSpec{WireName: "group_name"},
-		"IndexFeatureMapping": ubx.FieldSpec{WireName: "index_feature_mapping"},
-		"IndicesTensorName": ubx.FieldSpec{WireName: "indices_tensor_name"},
-		"InputBaselines": ubx.FieldSpec{WireName: "input_baselines"},
-		"InputTensorName": ubx.FieldSpec{WireName: "input_tensor_name"},
-		"Modality": ubx.FieldSpec{WireName: "modality"},
-		"Visualization": ubx.FieldSpec{
-			WireName: "visualization",
-			Kind: "object",
-			Fields: TrainingPipeline_ModelToUpload_ExplanationSpec_Metadata_Inputs_VisualizationFields,
-		},
-	}
+	"DenseShapeTensorName": ubx.FieldSpec{WireName: "dense_shape_tensor_name"},
+	"EncodedBaselines":     ubx.FieldSpec{WireName: "encoded_baselines"},
+	"EncodedTensorName":    ubx.FieldSpec{WireName: "encoded_tensor_name"},
+	"Encoding":             ubx.FieldSpec{WireName: "encoding"},
+	"FeatureValueDomain": ubx.FieldSpec{
+		WireName: "feature_value_domain",
+		Kind:     "object",
+		Fields:   TrainingPipeline_ModelToUpload_ExplanationSpec_Metadata_Inputs_FeatureValueDomainFields,
+	},
+	"GroupName":           ubx.FieldSpec{WireName: "group_name"},
+	"IndexFeatureMapping": ubx.FieldSpec{WireName: "index_feature_mapping"},
+	"IndicesTensorName":   ubx.FieldSpec{WireName: "indices_tensor_name"},
+	"InputBaselines":      ubx.FieldSpec{WireName: "input_baselines"},
+	"InputTensorName":     ubx.FieldSpec{WireName: "input_tensor_name"},
+	"Modality":            ubx.FieldSpec{WireName: "modality"},
+	"Visualization": ubx.FieldSpec{
+		WireName: "visualization",
+		Kind:     "object",
+		Fields:   TrainingPipeline_ModelToUpload_ExplanationSpec_Metadata_Inputs_VisualizationFields,
+	},
+}
 
 var TrainingPipeline_ModelToUpload_ExplanationSpec_Metadata_OutputsFields = ubx.FieldMap{
-		"DisplayNameMappingKey": ubx.FieldSpec{WireName: "display_name_mapping_key"},
-		"IndexDisplayNameMapping": ubx.FieldSpec{WireName: "index_display_name_mapping"},
-		"OutputTensorName": ubx.FieldSpec{WireName: "output_tensor_name"},
-	}
+	"DisplayNameMappingKey":   ubx.FieldSpec{WireName: "display_name_mapping_key"},
+	"IndexDisplayNameMapping": ubx.FieldSpec{WireName: "index_display_name_mapping"},
+	"OutputTensorName":        ubx.FieldSpec{WireName: "output_tensor_name"},
+}
 
 var TrainingPipeline_ModelToUpload_ExplanationSpec_MetadataFields = ubx.FieldMap{
-		"FeatureAttributionsSchemaUri": ubx.FieldSpec{WireName: "feature_attributions_schema_uri"},
-		"Inputs": ubx.FieldSpec{
-			WireName: "inputs",
-			Kind: "map",
-			Fields: TrainingPipeline_ModelToUpload_ExplanationSpec_Metadata_InputsFields,
-		},
-		"LatentSpaceSource": ubx.FieldSpec{WireName: "latent_space_source"},
-		"Outputs": ubx.FieldSpec{
-			WireName: "outputs",
-			Kind: "map",
-			Fields: TrainingPipeline_ModelToUpload_ExplanationSpec_Metadata_OutputsFields,
-		},
-	}
+	"FeatureAttributionsSchemaUri": ubx.FieldSpec{WireName: "feature_attributions_schema_uri"},
+	"Inputs": ubx.FieldSpec{
+		WireName: "inputs",
+		Kind:     "map",
+		Fields:   TrainingPipeline_ModelToUpload_ExplanationSpec_Metadata_InputsFields,
+	},
+	"LatentSpaceSource": ubx.FieldSpec{WireName: "latent_space_source"},
+	"Outputs": ubx.FieldSpec{
+		WireName: "outputs",
+		Kind:     "map",
+		Fields:   TrainingPipeline_ModelToUpload_ExplanationSpec_Metadata_OutputsFields,
+	},
+}
 
 var TrainingPipeline_ModelToUpload_ExplanationSpec_Parameters_Examples_ExampleGcsSource_GcsSourceFields = ubx.FieldMap{
-		"Uris": ubx.FieldSpec{WireName: "uris"},
-	}
+	"Uris": ubx.FieldSpec{WireName: "uris"},
+}
 
 var TrainingPipeline_ModelToUpload_ExplanationSpec_Parameters_Examples_ExampleGcsSourceFields = ubx.FieldMap{
-		"DataFormat": ubx.FieldSpec{WireName: "data_format"},
-		"GcsSource": ubx.FieldSpec{
-			WireName: "gcs_source",
-			Kind: "object",
-			Fields: TrainingPipeline_ModelToUpload_ExplanationSpec_Parameters_Examples_ExampleGcsSource_GcsSourceFields,
-		},
-	}
+	"DataFormat": ubx.FieldSpec{WireName: "data_format"},
+	"GcsSource": ubx.FieldSpec{
+		WireName: "gcs_source",
+		Kind:     "object",
+		Fields:   TrainingPipeline_ModelToUpload_ExplanationSpec_Parameters_Examples_ExampleGcsSource_GcsSourceFields,
+	},
+}
 
 var TrainingPipeline_ModelToUpload_ExplanationSpec_Parameters_Examples_PresetsFields = ubx.FieldMap{
-		"Modality": ubx.FieldSpec{WireName: "modality"},
-		"Query": ubx.FieldSpec{WireName: "query"},
-	}
+	"Modality": ubx.FieldSpec{WireName: "modality"},
+	"Query":    ubx.FieldSpec{WireName: "query"},
+}
 
 var TrainingPipeline_ModelToUpload_ExplanationSpec_Parameters_ExamplesFields = ubx.FieldMap{
-		"ExampleGcsSource": ubx.FieldSpec{
-			WireName: "example_gcs_source",
-			Kind: "object",
-			Fields: TrainingPipeline_ModelToUpload_ExplanationSpec_Parameters_Examples_ExampleGcsSourceFields,
-		},
-		"NearestNeighborSearchConfig": ubx.FieldSpec{WireName: "nearest_neighbor_search_config"},
-		"NeighborCount": ubx.FieldSpec{WireName: "neighbor_count"},
-		"Presets": ubx.FieldSpec{
-			WireName: "presets",
-			Kind: "object",
-			Fields: TrainingPipeline_ModelToUpload_ExplanationSpec_Parameters_Examples_PresetsFields,
-		},
-	}
+	"ExampleGcsSource": ubx.FieldSpec{
+		WireName: "example_gcs_source",
+		Kind:     "object",
+		Fields:   TrainingPipeline_ModelToUpload_ExplanationSpec_Parameters_Examples_ExampleGcsSourceFields,
+	},
+	"NearestNeighborSearchConfig": ubx.FieldSpec{WireName: "nearest_neighbor_search_config"},
+	"NeighborCount":               ubx.FieldSpec{WireName: "neighbor_count"},
+	"Presets": ubx.FieldSpec{
+		WireName: "presets",
+		Kind:     "object",
+		Fields:   TrainingPipeline_ModelToUpload_ExplanationSpec_Parameters_Examples_PresetsFields,
+	},
+}
 
 var TrainingPipeline_ModelToUpload_ExplanationSpec_Parameters_IntegratedGradientsAttribution_BlurBaselineConfigFields = ubx.FieldMap{
-		"MaxBlurSigma": ubx.FieldSpec{WireName: "max_blur_sigma"},
-	}
+	"MaxBlurSigma": ubx.FieldSpec{WireName: "max_blur_sigma"},
+}
 
 var TrainingPipeline_ModelToUpload_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfig_FeatureNoiseSigma_NoiseSigmaFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Sigma": ubx.FieldSpec{WireName: "sigma"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Sigma": ubx.FieldSpec{WireName: "sigma"},
+}
 
 var TrainingPipeline_ModelToUpload_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfig_FeatureNoiseSigmaFields = ubx.FieldMap{
-		"NoiseSigma": ubx.FieldSpec{
-			WireName: "noise_sigma",
-			Kind: "list",
-			Fields: TrainingPipeline_ModelToUpload_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfig_FeatureNoiseSigma_NoiseSigmaFields,
-		},
-	}
+	"NoiseSigma": ubx.FieldSpec{
+		WireName: "noise_sigma",
+		Kind:     "list",
+		Fields:   TrainingPipeline_ModelToUpload_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfig_FeatureNoiseSigma_NoiseSigmaFields,
+	},
+}
 
 var TrainingPipeline_ModelToUpload_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfigFields = ubx.FieldMap{
-		"FeatureNoiseSigma": ubx.FieldSpec{
-			WireName: "feature_noise_sigma",
-			Kind: "object",
-			Fields: TrainingPipeline_ModelToUpload_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfig_FeatureNoiseSigmaFields,
-		},
-		"NoiseSigma": ubx.FieldSpec{WireName: "noise_sigma"},
-		"NoisySampleCount": ubx.FieldSpec{WireName: "noisy_sample_count"},
-	}
+	"FeatureNoiseSigma": ubx.FieldSpec{
+		WireName: "feature_noise_sigma",
+		Kind:     "object",
+		Fields:   TrainingPipeline_ModelToUpload_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfig_FeatureNoiseSigmaFields,
+	},
+	"NoiseSigma":       ubx.FieldSpec{WireName: "noise_sigma"},
+	"NoisySampleCount": ubx.FieldSpec{WireName: "noisy_sample_count"},
+}
 
 var TrainingPipeline_ModelToUpload_ExplanationSpec_Parameters_IntegratedGradientsAttributionFields = ubx.FieldMap{
-		"BlurBaselineConfig": ubx.FieldSpec{
-			WireName: "blur_baseline_config",
-			Kind: "object",
-			Fields: TrainingPipeline_ModelToUpload_ExplanationSpec_Parameters_IntegratedGradientsAttribution_BlurBaselineConfigFields,
-		},
-		"SmoothGradConfig": ubx.FieldSpec{
-			WireName: "smooth_grad_config",
-			Kind: "object",
-			Fields: TrainingPipeline_ModelToUpload_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfigFields,
-		},
-		"StepCount": ubx.FieldSpec{WireName: "step_count"},
-	}
+	"BlurBaselineConfig": ubx.FieldSpec{
+		WireName: "blur_baseline_config",
+		Kind:     "object",
+		Fields:   TrainingPipeline_ModelToUpload_ExplanationSpec_Parameters_IntegratedGradientsAttribution_BlurBaselineConfigFields,
+	},
+	"SmoothGradConfig": ubx.FieldSpec{
+		WireName: "smooth_grad_config",
+		Kind:     "object",
+		Fields:   TrainingPipeline_ModelToUpload_ExplanationSpec_Parameters_IntegratedGradientsAttribution_SmoothGradConfigFields,
+	},
+	"StepCount": ubx.FieldSpec{WireName: "step_count"},
+}
 
 var TrainingPipeline_ModelToUpload_ExplanationSpec_Parameters_SampledShapleyAttributionFields = ubx.FieldMap{
-		"PathCount": ubx.FieldSpec{WireName: "path_count"},
-	}
+	"PathCount": ubx.FieldSpec{WireName: "path_count"},
+}
 
 var TrainingPipeline_ModelToUpload_ExplanationSpec_ParametersFields = ubx.FieldMap{
-		"Examples": ubx.FieldSpec{
-			WireName: "examples",
-			Kind: "object",
-			Fields: TrainingPipeline_ModelToUpload_ExplanationSpec_Parameters_ExamplesFields,
-		},
-		"IntegratedGradientsAttribution": ubx.FieldSpec{
-			WireName: "integrated_gradients_attribution",
-			Kind: "object",
-			Fields: TrainingPipeline_ModelToUpload_ExplanationSpec_Parameters_IntegratedGradientsAttributionFields,
-		},
-		"OutputIndices": ubx.FieldSpec{WireName: "output_indices"},
-		"SampledShapleyAttribution": ubx.FieldSpec{
-			WireName: "sampled_shapley_attribution",
-			Kind: "object",
-			Fields: TrainingPipeline_ModelToUpload_ExplanationSpec_Parameters_SampledShapleyAttributionFields,
-		},
-		"TopK": ubx.FieldSpec{WireName: "top_k"},
-		"XraiAttribution": ubx.FieldSpec{
-			WireName: "xrai_attribution",
-			Kind: "object",
-			Fields: TrainingPipeline_ModelToUpload_ExplanationSpec_Parameters_IntegratedGradientsAttributionFields,
-		},
-	}
+	"Examples": ubx.FieldSpec{
+		WireName: "examples",
+		Kind:     "object",
+		Fields:   TrainingPipeline_ModelToUpload_ExplanationSpec_Parameters_ExamplesFields,
+	},
+	"IntegratedGradientsAttribution": ubx.FieldSpec{
+		WireName: "integrated_gradients_attribution",
+		Kind:     "object",
+		Fields:   TrainingPipeline_ModelToUpload_ExplanationSpec_Parameters_IntegratedGradientsAttributionFields,
+	},
+	"OutputIndices": ubx.FieldSpec{WireName: "output_indices"},
+	"SampledShapleyAttribution": ubx.FieldSpec{
+		WireName: "sampled_shapley_attribution",
+		Kind:     "object",
+		Fields:   TrainingPipeline_ModelToUpload_ExplanationSpec_Parameters_SampledShapleyAttributionFields,
+	},
+	"TopK": ubx.FieldSpec{WireName: "top_k"},
+	"XraiAttribution": ubx.FieldSpec{
+		WireName: "xrai_attribution",
+		Kind:     "object",
+		Fields:   TrainingPipeline_ModelToUpload_ExplanationSpec_Parameters_IntegratedGradientsAttributionFields,
+	},
+}
 
 var TrainingPipeline_ModelToUpload_ExplanationSpecFields = ubx.FieldMap{
-		"Metadata": ubx.FieldSpec{
-			WireName: "metadata",
-			Kind: "object",
-			Fields: TrainingPipeline_ModelToUpload_ExplanationSpec_MetadataFields,
-		},
-		"Parameters": ubx.FieldSpec{
-			WireName: "parameters",
-			Kind: "object",
-			Fields: TrainingPipeline_ModelToUpload_ExplanationSpec_ParametersFields,
-		},
-	}
+	"Metadata": ubx.FieldSpec{
+		WireName: "metadata",
+		Kind:     "object",
+		Fields:   TrainingPipeline_ModelToUpload_ExplanationSpec_MetadataFields,
+	},
+	"Parameters": ubx.FieldSpec{
+		WireName: "parameters",
+		Kind:     "object",
+		Fields:   TrainingPipeline_ModelToUpload_ExplanationSpec_ParametersFields,
+	},
+}
 
 var TrainingPipeline_ModelToUpload_ModelSourceInfoFields = ubx.FieldMap{
-		"Copy": ubx.FieldSpec{WireName: "copy"},
-		"SourceType": ubx.FieldSpec{WireName: "source_type"},
-	}
+	"Copy":       ubx.FieldSpec{WireName: "copy"},
+	"SourceType": ubx.FieldSpec{WireName: "source_type"},
+}
 
 var TrainingPipeline_ModelToUpload_OriginalModelInfoFields = ubx.FieldMap{
-		"Model": ubx.FieldSpec{WireName: "model"},
-	}
+	"Model": ubx.FieldSpec{WireName: "model"},
+}
 
 var TrainingPipeline_ModelToUpload_PredictSchemataFields = ubx.FieldMap{
-		"InstanceSchemaUri": ubx.FieldSpec{WireName: "instance_schema_uri"},
-		"ParametersSchemaUri": ubx.FieldSpec{WireName: "parameters_schema_uri"},
-		"PredictionSchemaUri": ubx.FieldSpec{WireName: "prediction_schema_uri"},
-	}
+	"InstanceSchemaUri":   ubx.FieldSpec{WireName: "instance_schema_uri"},
+	"ParametersSchemaUri": ubx.FieldSpec{WireName: "parameters_schema_uri"},
+	"PredictionSchemaUri": ubx.FieldSpec{WireName: "prediction_schema_uri"},
+}
 
 var TrainingPipeline_ModelToUpload_SupportedExportFormatsFields = ubx.FieldMap{
-		"ExportableContents": ubx.FieldSpec{WireName: "exportable_contents"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-	}
+	"ExportableContents": ubx.FieldSpec{WireName: "exportable_contents"},
+	"Id":                 ubx.FieldSpec{WireName: "id"},
+}
 
 var TrainingPipeline_ModelToUploadFields = ubx.FieldMap{
-		"ArtifactUri": ubx.FieldSpec{WireName: "artifact_uri"},
-		"BaseModelSource": ubx.FieldSpec{
-			WireName: "base_model_source",
-			Kind: "object",
-			Fields: TrainingPipeline_ModelToUpload_BaseModelSourceFields,
-		},
-		"Checkpoints": ubx.FieldSpec{
-			WireName: "checkpoints",
-			Kind: "list",
-			Fields: TrainingPipeline_ModelToUpload_CheckpointsFields,
-		},
-		"ContainerSpec": ubx.FieldSpec{
-			WireName: "container_spec",
-			Kind: "object",
-			Fields: TrainingPipeline_ModelToUpload_ContainerSpecFields,
-		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DataStats": ubx.FieldSpec{
-			WireName: "data_stats",
-			Kind: "object",
-			Fields: TrainingPipeline_ModelToUpload_DataStatsFields,
-		},
-		"DefaultCheckpointId": ubx.FieldSpec{WireName: "default_checkpoint_id"},
-		"DeployedModels": ubx.FieldSpec{
-			WireName: "deployed_models",
-			Kind: "list",
-			Fields: TrainingPipeline_ModelToUpload_DeployedModelsFields,
-		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"EncryptionSpec": ubx.FieldSpec{
-			WireName: "encryption_spec",
-			Kind: "object",
-			Fields: TrainingPipeline_EncryptionSpecFields,
-		},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"ExplanationSpec": ubx.FieldSpec{
-			WireName: "explanation_spec",
-			Kind: "object",
-			Fields: TrainingPipeline_ModelToUpload_ExplanationSpecFields,
-		},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-		"MetadataArtifact": ubx.FieldSpec{WireName: "metadata_artifact"},
-		"MetadataSchemaUri": ubx.FieldSpec{WireName: "metadata_schema_uri"},
-		"ModelSourceInfo": ubx.FieldSpec{
-			WireName: "model_source_info",
-			Kind: "object",
-			Fields: TrainingPipeline_ModelToUpload_ModelSourceInfoFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"OriginalModelInfo": ubx.FieldSpec{
-			WireName: "original_model_info",
-			Kind: "object",
-			Fields: TrainingPipeline_ModelToUpload_OriginalModelInfoFields,
-		},
-		"PipelineJob": ubx.FieldSpec{WireName: "pipeline_job"},
-		"PredictSchemata": ubx.FieldSpec{
-			WireName: "predict_schemata",
-			Kind: "object",
-			Fields: TrainingPipeline_ModelToUpload_PredictSchemataFields,
-		},
-		"SatisfiesPzi": ubx.FieldSpec{WireName: "satisfies_pzi"},
-		"SatisfiesPzs": ubx.FieldSpec{WireName: "satisfies_pzs"},
-		"SupportedDeploymentResourcesTypes": ubx.FieldSpec{WireName: "supported_deployment_resources_types"},
-		"SupportedExportFormats": ubx.FieldSpec{
-			WireName: "supported_export_formats",
-			Kind: "list",
-			Fields: TrainingPipeline_ModelToUpload_SupportedExportFormatsFields,
-		},
-		"SupportedInputStorageFormats": ubx.FieldSpec{WireName: "supported_input_storage_formats"},
-		"SupportedOutputStorageFormats": ubx.FieldSpec{WireName: "supported_output_storage_formats"},
-		"TrainingPipeline": ubx.FieldSpec{WireName: "training_pipeline"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-		"VersionAliases": ubx.FieldSpec{WireName: "version_aliases"},
-		"VersionCreateTime": ubx.FieldSpec{WireName: "version_create_time"},
-		"VersionDescription": ubx.FieldSpec{WireName: "version_description"},
-		"VersionId": ubx.FieldSpec{WireName: "version_id"},
-		"VersionUpdateTime": ubx.FieldSpec{WireName: "version_update_time"},
-	}
+	"ArtifactUri": ubx.FieldSpec{WireName: "artifact_uri"},
+	"BaseModelSource": ubx.FieldSpec{
+		WireName: "base_model_source",
+		Kind:     "object",
+		Fields:   TrainingPipeline_ModelToUpload_BaseModelSourceFields,
+	},
+	"Checkpoints": ubx.FieldSpec{
+		WireName: "checkpoints",
+		Kind:     "list",
+		Fields:   TrainingPipeline_ModelToUpload_CheckpointsFields,
+	},
+	"ContainerSpec": ubx.FieldSpec{
+		WireName: "container_spec",
+		Kind:     "object",
+		Fields:   TrainingPipeline_ModelToUpload_ContainerSpecFields,
+	},
+	"CreateTime": ubx.FieldSpec{WireName: "create_time"},
+	"DataStats": ubx.FieldSpec{
+		WireName: "data_stats",
+		Kind:     "object",
+		Fields:   TrainingPipeline_ModelToUpload_DataStatsFields,
+	},
+	"DefaultCheckpointId": ubx.FieldSpec{WireName: "default_checkpoint_id"},
+	"DeployedModels": ubx.FieldSpec{
+		WireName: "deployed_models",
+		Kind:     "list",
+		Fields:   TrainingPipeline_ModelToUpload_DeployedModelsFields,
+	},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"EncryptionSpec": ubx.FieldSpec{
+		WireName: "encryption_spec",
+		Kind:     "object",
+		Fields:   TrainingPipeline_EncryptionSpecFields,
+	},
+	"Etag": ubx.FieldSpec{WireName: "etag"},
+	"ExplanationSpec": ubx.FieldSpec{
+		WireName: "explanation_spec",
+		Kind:     "object",
+		Fields:   TrainingPipeline_ModelToUpload_ExplanationSpecFields,
+	},
+	"Labels":            ubx.FieldSpec{WireName: "labels"},
+	"Metadata":          ubx.FieldSpec{WireName: "metadata"},
+	"MetadataArtifact":  ubx.FieldSpec{WireName: "metadata_artifact"},
+	"MetadataSchemaUri": ubx.FieldSpec{WireName: "metadata_schema_uri"},
+	"ModelSourceInfo": ubx.FieldSpec{
+		WireName: "model_source_info",
+		Kind:     "object",
+		Fields:   TrainingPipeline_ModelToUpload_ModelSourceInfoFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"OriginalModelInfo": ubx.FieldSpec{
+		WireName: "original_model_info",
+		Kind:     "object",
+		Fields:   TrainingPipeline_ModelToUpload_OriginalModelInfoFields,
+	},
+	"PipelineJob": ubx.FieldSpec{WireName: "pipeline_job"},
+	"PredictSchemata": ubx.FieldSpec{
+		WireName: "predict_schemata",
+		Kind:     "object",
+		Fields:   TrainingPipeline_ModelToUpload_PredictSchemataFields,
+	},
+	"SatisfiesPzi":                      ubx.FieldSpec{WireName: "satisfies_pzi"},
+	"SatisfiesPzs":                      ubx.FieldSpec{WireName: "satisfies_pzs"},
+	"SupportedDeploymentResourcesTypes": ubx.FieldSpec{WireName: "supported_deployment_resources_types"},
+	"SupportedExportFormats": ubx.FieldSpec{
+		WireName: "supported_export_formats",
+		Kind:     "list",
+		Fields:   TrainingPipeline_ModelToUpload_SupportedExportFormatsFields,
+	},
+	"SupportedInputStorageFormats":  ubx.FieldSpec{WireName: "supported_input_storage_formats"},
+	"SupportedOutputStorageFormats": ubx.FieldSpec{WireName: "supported_output_storage_formats"},
+	"TrainingPipeline":              ubx.FieldSpec{WireName: "training_pipeline"},
+	"UpdateTime":                    ubx.FieldSpec{WireName: "update_time"},
+	"VersionAliases":                ubx.FieldSpec{WireName: "version_aliases"},
+	"VersionCreateTime":             ubx.FieldSpec{WireName: "version_create_time"},
+	"VersionDescription":            ubx.FieldSpec{WireName: "version_description"},
+	"VersionId":                     ubx.FieldSpec{WireName: "version_id"},
+	"VersionUpdateTime":             ubx.FieldSpec{WireName: "version_update_time"},
+}
 
 type TrainingPipelineConfig struct {
-	// Output only. Time when the TrainingPipeline was created.
-	CreateTime any
 	// Required. The user-defined name of this TrainingPipeline.
 	DisplayName any
 	// Represents a customer-managed encryption key specification that can be applied to a Vertex AI resource.
 	EncryptionSpec any
-	// Output only. Time when the TrainingPipeline entered any of the following states: `PIPELINE_STATE_SUCCEEDED`, `PIPELINE_STATE_FAILED`, `PIPELINE_STATE_CANCELLED`.
-	EndTime any
 	// The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
 	Error any
 	// Specifies Vertex AI owned input data to be used for training, and possibly evaluating, the Model.
@@ -995,22 +991,12 @@ type TrainingPipelineConfig struct {
 	ModelId any
 	// A trained machine learning Model.
 	ModelToUpload any
-	// Output only. Resource name of the TrainingPipeline.
-	Name any
 	// Optional. When specify this field, the `model_to_upload` will not be uploaded as a new model, instead, it will become a new version of this `parent_model`.
 	ParentModel any
-	// Output only. Time when the TrainingPipeline for the first time entered the `PIPELINE_STATE_RUNNING` state.
-	StartTime any
-	// Output only. The detailed state of the pipeline.
-	State any
 	// Required. A Google Cloud Storage path to the YAML file that defines the training task which is responsible for producing the model artifact, and may also include additional auxiliary work. The definition files that can be used here are found in gs://google-cloud-aiplatform/schema/trainingjob/definition/. Note: The URI given on output will be immutable and probably different, including the URI scheme, than the one given on input. The output URI will point to a location where the user only has a read access.
 	TrainingTaskDefinition any
 	// Required. The training task's parameter(s), as specified in the training_task_definition's `inputs`.
 	TrainingTaskInputs any
-	// Output only. The metadata information as specified in the training_task_definition's `metadata`. This metadata is an auxiliary runtime and final information about the training task. While the pipeline is running this information is populated only at a best effort basis. Only present if the pipeline's training_task_definition contains `metadata` object.
-	TrainingTaskMetadata any
-	// Output only. Time when the TrainingPipeline was most recently updated.
-	UpdateTime any
 }
 
 type TrainingPipelineAttrs struct {
@@ -1053,38 +1039,31 @@ type TrainingPipelineAttrs struct {
 var TrainingPipeline = ubx.ResourceBinding{
 	WireType: "google_aiplatform_training_pipeline",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"EncryptionSpec": ubx.FieldSpec{
 			WireName: "encryption_spec",
-			Kind: "object",
-			Fields: TrainingPipeline_EncryptionSpecFields,
+			Kind:     "object",
+			Fields:   TrainingPipeline_EncryptionSpecFields,
 		},
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
 		"Error": ubx.FieldSpec{
 			WireName: "error",
-			Kind: "object",
-			Fields: TrainingPipeline_ErrorFields,
+			Kind:     "object",
+			Fields:   TrainingPipeline_ErrorFields,
 		},
 		"InputDataConfig": ubx.FieldSpec{
 			WireName: "input_data_config",
-			Kind: "object",
-			Fields: TrainingPipeline_InputDataConfigFields,
+			Kind:     "object",
+			Fields:   TrainingPipeline_InputDataConfigFields,
 		},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Labels":  ubx.FieldSpec{WireName: "labels"},
 		"ModelId": ubx.FieldSpec{WireName: "model_id"},
 		"ModelToUpload": ubx.FieldSpec{
 			WireName: "model_to_upload",
-			Kind: "object",
-			Fields: TrainingPipeline_ModelToUploadFields,
+			Kind:     "object",
+			Fields:   TrainingPipeline_ModelToUploadFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ParentModel": ubx.FieldSpec{WireName: "parent_model"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"State": ubx.FieldSpec{WireName: "state"},
+		"ParentModel":            ubx.FieldSpec{WireName: "parent_model"},
 		"TrainingTaskDefinition": ubx.FieldSpec{WireName: "training_task_definition"},
-		"TrainingTaskInputs": ubx.FieldSpec{WireName: "training_task_inputs"},
-		"TrainingTaskMetadata": ubx.FieldSpec{WireName: "training_task_metadata"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"TrainingTaskInputs":     ubx.FieldSpec{WireName: "training_task_inputs"},
 	},
 }

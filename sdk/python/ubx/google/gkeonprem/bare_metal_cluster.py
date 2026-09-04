@@ -648,8 +648,6 @@ _BareMetalCluster_ValidationCheckFields = {
 class BareMetalClusterConfig:
     # Required. The admin cluster this bare metal user cluster belongs to. This is the full resource name of the admin cluster's fleet membership.
     admin_cluster_membership: Any = None
-    # Output only. The resource name of the bare metal admin cluster managing this user cluster.
-    admin_cluster_name: Any = None
     # Annotations on the bare metal user cluster. This field has the same restrictions as Kubernetes annotations. The total size of all keys and values combined is limited to 256k. Key can have 2 segments: prefix (optional) and name (required), separated by a slash (/). Prefix must be a DNS subdomain. Name must be 63 characters or less, begin and end with alphanumerics, with dashes (-), underscores (_), dots (.), and alphanumerics between.
     annotations: Any = None
     # Required. The Anthos clusters on bare metal version for your user cluster.
@@ -660,24 +658,12 @@ class BareMetalClusterConfig:
     cluster_operations: Any = None
     # Specifies the control plane configuration.
     control_plane: Any = None
-    # Output only. The time when the bare metal user cluster was created.
-    create_time: Any = None
-    # Output only. The time when the bare metal user cluster was deleted. If the resource is not deleted, this must be empty
-    delete_time: Any = None
     # A human readable description of this bare metal user cluster.
     description: Any = None
-    # Output only. The IP address of the bare metal user cluster's API server.
-    endpoint: Any = None
-    # Output only. This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding. Allows clients to perform consistent read-modify-writes through optimistic concurrency control.
-    etag: Any = None
     # Fleet related configuration. Fleets are a Google Cloud concept for logically organizing clusters, letting you use and manage multi-cluster capabilities and apply consistent policies across your systems. See [Anthos Fleets](`https://cloud.google.com/anthos/multicluster-management/fleets`) for more details on Anthos multi-cluster capabilities using Fleets. ##
     fleet: Any = None
     # Specifies the load balancer configuration.
     load_balancer: Any = None
-    # Output only. The object name of the bare metal user cluster custom resource on the associated admin cluster. This field is used to support conflicting names when enrolling existing clusters to the API. When used as a part of cluster enrollment, this field will differ from the name in the resource name. For new clusters, this field will match the user provided cluster name and be visible in the last component of the resource name. It is not modifiable. When the local name and cluster name differ, the local name is used in the admin cluster controller logs. You use the cluster name when accessing the cluster using bmctl and kubectl.
-    local_name: Any = None
-    # Output only. The namespace of the cluster.
-    local_namespace: Any = None
     # Specifies configurations to put bare metal nodes in and out of maintenance.
     maintenance_config: Any = None
     # Represents the maintenance status of the bare metal user cluster.
@@ -694,20 +680,12 @@ class BareMetalClusterConfig:
     os_environment_config: Any = None
     # Specifies the cluster proxy configuration.
     proxy: Any = None
-    # Output only. If set, there are currently changes in flight to the bare metal user cluster.
-    reconciling: Any = None
     # Specifies the security related settings for the bare metal user cluster.
     security_config: Any = None
-    # Output only. The current state of the bare metal user cluster.
-    state: Any = None
     # ResourceStatus describes why a cluster or node pool has a certain status. (e.g., ERROR or DEGRADED).
     status: Any = None
     # BareMetalStorageConfig specifies the cluster storage configuration.
     storage: Any = None
-    # Output only. The unique identifier of the bare metal user cluster.
-    uid: Any = None
-    # Output only. The time when the bare metal user cluster was last updated.
-    update_time: Any = None
     # BareMetalClusterUpgradePolicy defines the cluster upgrade policy.
     upgrade_policy: Any = None
     # ValidationCheck represents the result of preflight check.
@@ -786,7 +764,6 @@ BareMetalCluster = ubx.ResourceBinding(
     wire_type="google_gkeonprem_bare_metal_cluster",
     fields={
         "admin_cluster_membership": ubx.FieldSpec(wire_name="admin_cluster_membership"),
-        "admin_cluster_name": ubx.FieldSpec(wire_name="admin_cluster_name"),
         "annotations": ubx.FieldSpec(wire_name="annotations"),
         "bare_metal_version": ubx.FieldSpec(wire_name="bare_metal_version"),
         "binary_authorization": ubx.FieldSpec(
@@ -804,11 +781,7 @@ BareMetalCluster = ubx.ResourceBinding(
             kind="object",
             fields=_BareMetalCluster_ControlPlaneFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
-        "delete_time": ubx.FieldSpec(wire_name="delete_time"),
         "description": ubx.FieldSpec(wire_name="description"),
-        "endpoint": ubx.FieldSpec(wire_name="endpoint"),
-        "etag": ubx.FieldSpec(wire_name="etag"),
         "fleet": ubx.FieldSpec(
             wire_name="fleet",
             kind="object",
@@ -819,8 +792,6 @@ BareMetalCluster = ubx.ResourceBinding(
             kind="object",
             fields=_BareMetalCluster_LoadBalancerFields,
         ),
-        "local_name": ubx.FieldSpec(wire_name="local_name"),
-        "local_namespace": ubx.FieldSpec(wire_name="local_namespace"),
         "maintenance_config": ubx.FieldSpec(
             wire_name="maintenance_config",
             kind="object",
@@ -857,13 +828,11 @@ BareMetalCluster = ubx.ResourceBinding(
             kind="object",
             fields=_BareMetalCluster_ProxyFields,
         ),
-        "reconciling": ubx.FieldSpec(wire_name="reconciling"),
         "security_config": ubx.FieldSpec(
             wire_name="security_config",
             kind="object",
             fields=_BareMetalCluster_SecurityConfigFields,
         ),
-        "state": ubx.FieldSpec(wire_name="state"),
         "status": ubx.FieldSpec(
             wire_name="status",
             kind="object",
@@ -874,8 +843,6 @@ BareMetalCluster = ubx.ResourceBinding(
             kind="object",
             fields=_BareMetalCluster_StorageFields,
         ),
-        "uid": ubx.FieldSpec(wire_name="uid"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
         "upgrade_policy": ubx.FieldSpec(
             wire_name="upgrade_policy",
             kind="object",

@@ -4,7 +4,6 @@ package agentidentity
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AccessSummaryConfig struct {
-	Name any
 }
 
 type AccessSummaryAttrs struct {
@@ -18,7 +17,7 @@ type AccessSummaryAttrs struct {
 	Labels any
 	// Output only. The most recent time this user interacted with this workload, rounded to the previous hour.
 	LastAccessTime any
-	Name any
+	Name           any
 	// Output only. The time when this access summary is permanently deleted.
 	PurgeTime any
 	// Output only. All scopes that have been used by this user with this workload. The number of scopes is limited to 200.
@@ -33,7 +32,5 @@ type AccessSummaryAttrs struct {
 
 var AccessSummary = ubx.DataSourceBinding{
 	WireType: "google_agentidentity_access_summary",
-	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	},
+	Fields:   ubx.FieldMap{},
 }

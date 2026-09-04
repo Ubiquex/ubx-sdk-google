@@ -29,7 +29,6 @@ export interface NasTrialDetail_SearchTrial {
 }
 
 export interface NasTrialDetailConfig {
-  name: string | Computed<string>;
 }
 
 export interface NasTrialDetailAttrs {
@@ -45,6 +44,5 @@ export interface NasTrialDetailAttrs {
 export const NasTrialDetail: DataSourceBinding<NasTrialDetailConfig, NasTrialDetailAttrs> = {
   wireType: "google_aiplatform_nas_trial_detail",
   fields: {
-    name: "name",
   },
 };

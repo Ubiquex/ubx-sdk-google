@@ -19,7 +19,7 @@ type InboundSamlConfig_IdpConfig struct {
 }
 
 type InboundSamlConfig_SpConfig_SpCertificates struct {
-	ExpiresAt any
+	ExpiresAt       any
 	X509Certificate any
 }
 
@@ -33,34 +33,34 @@ type InboundSamlConfig_SpConfig struct {
 }
 
 var InboundSamlConfig_IdpConfig_IdpCertificatesFields = ubx.FieldMap{
-		"X509Certificate": ubx.FieldSpec{WireName: "x509_certificate"},
-	}
+	"X509Certificate": ubx.FieldSpec{WireName: "x509_certificate"},
+}
 
 var InboundSamlConfig_IdpConfigFields = ubx.FieldMap{
-		"IdpCertificates": ubx.FieldSpec{
-			WireName: "idp_certificates",
-			Kind: "list",
-			Fields: InboundSamlConfig_IdpConfig_IdpCertificatesFields,
-		},
-		"IdpEntityId": ubx.FieldSpec{WireName: "idp_entity_id"},
-		"SignRequest": ubx.FieldSpec{WireName: "sign_request"},
-		"SsoUrl": ubx.FieldSpec{WireName: "sso_url"},
-	}
+	"IdpCertificates": ubx.FieldSpec{
+		WireName: "idp_certificates",
+		Kind:     "list",
+		Fields:   InboundSamlConfig_IdpConfig_IdpCertificatesFields,
+	},
+	"IdpEntityId": ubx.FieldSpec{WireName: "idp_entity_id"},
+	"SignRequest": ubx.FieldSpec{WireName: "sign_request"},
+	"SsoUrl":      ubx.FieldSpec{WireName: "sso_url"},
+}
 
 var InboundSamlConfig_SpConfig_SpCertificatesFields = ubx.FieldMap{
-		"ExpiresAt": ubx.FieldSpec{WireName: "expires_at"},
-		"X509Certificate": ubx.FieldSpec{WireName: "x509_certificate"},
-	}
+	"ExpiresAt":       ubx.FieldSpec{WireName: "expires_at"},
+	"X509Certificate": ubx.FieldSpec{WireName: "x509_certificate"},
+}
 
 var InboundSamlConfig_SpConfigFields = ubx.FieldMap{
-		"CallbackUri": ubx.FieldSpec{WireName: "callback_uri"},
-		"SpCertificates": ubx.FieldSpec{
-			WireName: "sp_certificates",
-			Kind: "list",
-			Fields: InboundSamlConfig_SpConfig_SpCertificatesFields,
-		},
-		"SpEntityId": ubx.FieldSpec{WireName: "sp_entity_id"},
-	}
+	"CallbackUri": ubx.FieldSpec{WireName: "callback_uri"},
+	"SpCertificates": ubx.FieldSpec{
+		WireName: "sp_certificates",
+		Kind:     "list",
+		Fields:   InboundSamlConfig_SpConfig_SpCertificatesFields,
+	},
+	"SpEntityId": ubx.FieldSpec{WireName: "sp_entity_id"},
+}
 
 type InboundSamlConfigConfig struct {
 	// The config's display name set by developers.
@@ -92,17 +92,17 @@ var InboundSamlConfig = ubx.ResourceBinding{
 	WireType: "google_identitytoolkit_inbound_saml_config",
 	Fields: ubx.FieldMap{
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
+		"Enabled":     ubx.FieldSpec{WireName: "enabled"},
 		"IdpConfig": ubx.FieldSpec{
 			WireName: "idp_config",
-			Kind: "object",
-			Fields: InboundSamlConfig_IdpConfigFields,
+			Kind:     "object",
+			Fields:   InboundSamlConfig_IdpConfigFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"SpConfig": ubx.FieldSpec{
 			WireName: "sp_config",
-			Kind: "object",
-			Fields: InboundSamlConfig_SpConfigFields,
+			Kind:     "object",
+			Fields:   InboundSamlConfig_SpConfigFields,
 		},
 	},
 }

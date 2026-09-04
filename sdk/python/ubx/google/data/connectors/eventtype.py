@@ -8,7 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class EventtypeConfig:
-    name: Any = None
+    pass
 
 @dataclasses.dataclass
 class EventtypeAttrs:
@@ -31,6 +31,5 @@ class EventtypeAttrs:
 Eventtype = ubx.DataSourceBinding(
     wire_type="google_connectors_eventtype",
     fields={
-        "name": ubx.FieldSpec(wire_name="name"),
     },
 )

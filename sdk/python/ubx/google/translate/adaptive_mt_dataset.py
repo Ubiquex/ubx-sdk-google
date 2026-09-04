@@ -8,8 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AdaptiveMtDatasetConfig:
-    # Output only. Timestamp when this dataset was created.
-    create_time: Any = None
     # The name of the dataset to show in the interface. The name can be up to 32 characters long and can consist only of ASCII Latin letters A-Z and a-z, underscores (_), and ASCII digits 0-9.
     display_name: Any = None
     # The number of examples in the dataset.
@@ -20,8 +18,6 @@ class AdaptiveMtDatasetConfig:
     source_language_code: Any = None
     # The BCP-47 language code of the target language.
     target_language_code: Any = None
-    # Output only. Timestamp when this dataset was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class AdaptiveMtDatasetAttrs:
@@ -43,12 +39,10 @@ class AdaptiveMtDatasetAttrs:
 AdaptiveMtDataset = ubx.ResourceBinding(
     wire_type="google_translate_adaptive_mt_dataset",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "example_count": ubx.FieldSpec(wire_name="example_count"),
         "name": ubx.FieldSpec(wire_name="name"),
         "source_language_code": ubx.FieldSpec(wire_name="source_language_code"),
         "target_language_code": ubx.FieldSpec(wire_name="target_language_code"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

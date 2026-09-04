@@ -210,7 +210,7 @@ class Revision_VpcAccess:
 
 @dataclasses.dataclass
 class RevisionConfig:
-    name: Any = None
+    pass
 
 @dataclasses.dataclass
 class RevisionAttrs:
@@ -289,6 +289,5 @@ class RevisionAttrs:
 Revision = ubx.DataSourceBinding(
     wire_type="google_run_revision",
     fields={
-        "name": ubx.FieldSpec(wire_name="name"),
     },
 )

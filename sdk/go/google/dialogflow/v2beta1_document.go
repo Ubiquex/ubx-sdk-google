@@ -4,76 +4,74 @@ package dialogflow
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V2beta1Document_LatestReloadStatus_Status struct {
-	Code any
+	Code    any
 	Details any
 	Message any
 }
 
 type V2beta1Document_LatestReloadStatus struct {
 	Status any
-	Time any
+	Time   any
 }
 
 var V2beta1Document_LatestReloadStatus_StatusFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"Code":    ubx.FieldSpec{WireName: "code"},
+	"Details": ubx.FieldSpec{WireName: "details"},
+	"Message": ubx.FieldSpec{WireName: "message"},
+}
 
 var V2beta1Document_LatestReloadStatusFields = ubx.FieldMap{
-		"Status": ubx.FieldSpec{
-			WireName: "status",
-			Kind: "object",
-			Fields: V2beta1Document_LatestReloadStatus_StatusFields,
-		},
-		"Time": ubx.FieldSpec{WireName: "time"},
-	}
+	"Status": ubx.FieldSpec{
+		WireName: "status",
+		Kind:     "object",
+		Fields:   V2beta1Document_LatestReloadStatus_StatusFields,
+	},
+	"Time": ubx.FieldSpec{WireName: "time"},
+}
 
 type V2beta1DocumentConfig struct {
-	Content any
-	ContentUri any
-	DisplayName any
-	EnableAutoReload any
-	KnowledgeTypes any
+	Content            any
+	ContentUri         any
+	DisplayName        any
+	EnableAutoReload   any
+	KnowledgeTypes     any
 	LatestReloadStatus any
-	Metadata any
-	MimeType any
-	Name any
-	RawContent any
-	State any
+	Metadata           any
+	MimeType           any
+	Name               any
+	RawContent         any
 }
 
 type V2beta1DocumentAttrs struct {
-	Content any
-	ContentUri any
-	DisplayName any
-	EnableAutoReload any
-	KnowledgeTypes any
+	Content            any
+	ContentUri         any
+	DisplayName        any
+	EnableAutoReload   any
+	KnowledgeTypes     any
 	LatestReloadStatus any
-	Metadata any
-	MimeType any
-	Name any
-	RawContent any
-	State any
+	Metadata           any
+	MimeType           any
+	Name               any
+	RawContent         any
+	State              any
 }
 
 var V2beta1Document = ubx.ResourceBinding{
 	WireType: "google_dialogflow_v2beta1_document",
 	Fields: ubx.FieldMap{
-		"Content": ubx.FieldSpec{WireName: "content"},
-		"ContentUri": ubx.FieldSpec{WireName: "content_uri"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"Content":          ubx.FieldSpec{WireName: "content"},
+		"ContentUri":       ubx.FieldSpec{WireName: "content_uri"},
+		"DisplayName":      ubx.FieldSpec{WireName: "display_name"},
 		"EnableAutoReload": ubx.FieldSpec{WireName: "enable_auto_reload"},
-		"KnowledgeTypes": ubx.FieldSpec{WireName: "knowledge_types"},
+		"KnowledgeTypes":   ubx.FieldSpec{WireName: "knowledge_types"},
 		"LatestReloadStatus": ubx.FieldSpec{
 			WireName: "latest_reload_status",
-			Kind: "object",
-			Fields: V2beta1Document_LatestReloadStatusFields,
+			Kind:     "object",
+			Fields:   V2beta1Document_LatestReloadStatusFields,
 		},
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-		"MimeType": ubx.FieldSpec{WireName: "mime_type"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Metadata":   ubx.FieldSpec{WireName: "metadata"},
+		"MimeType":   ubx.FieldSpec{WireName: "mime_type"},
+		"Name":       ubx.FieldSpec{WireName: "name"},
 		"RawContent": ubx.FieldSpec{WireName: "raw_content"},
-		"State": ubx.FieldSpec{WireName: "state"},
 	},
 }

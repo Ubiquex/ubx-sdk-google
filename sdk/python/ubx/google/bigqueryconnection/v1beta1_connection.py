@@ -47,16 +47,10 @@ _V1beta1Connection_CloudSqlFields = {
 class V1beta1ConnectionConfig:
     # Connection properties specific to the Cloud SQL.
     cloud_sql: Any = None
-    # Output only. The creation timestamp of the connection.
-    creation_time: Any = None
     # User provided description.
     description: Any = None
     # User provided display name for the connection.
     friendly_name: Any = None
-    # Output only. True, if credential is configured for this connection.
-    has_credential: Any = None
-    # Output only. The last update timestamp of the connection.
-    last_modified_time: Any = None
     # The resource name of the connection in the form of: `projects/{project_id}/locations/{location_id}/connections/{connection_id}`
     name: Any = None
 
@@ -85,11 +79,8 @@ V1beta1Connection = ubx.ResourceBinding(
             kind="object",
             fields=_V1beta1Connection_CloudSqlFields,
         ),
-        "creation_time": ubx.FieldSpec(wire_name="creation_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "friendly_name": ubx.FieldSpec(wire_name="friendly_name"),
-        "has_credential": ubx.FieldSpec(wire_name="has_credential"),
-        "last_modified_time": ubx.FieldSpec(wire_name="last_modified_time"),
         "name": ubx.FieldSpec(wire_name="name"),
     },
 )

@@ -8,14 +8,10 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ReleaseConfig:
-    # Output only. Time the release was created.
-    create_time: Any = None
     # Required. Format: `projects/{project_id}/releases/{release_id}`
     name: Any = None
     # Required. Name of the `Ruleset` referred to by this `Release`. The `Ruleset` must exist for the `Release` to be created.
     ruleset_name: Any = None
-    # Output only. Time the release was updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class ReleaseAttrs:
@@ -31,9 +27,7 @@ class ReleaseAttrs:
 Release = ubx.ResourceBinding(
     wire_type="google_firebaserules_release",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "name": ubx.FieldSpec(wire_name="name"),
         "ruleset_name": ubx.FieldSpec(wire_name="ruleset_name"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

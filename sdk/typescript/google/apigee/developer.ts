@@ -22,22 +22,14 @@ export interface DeveloperConfig {
   attributes?: Developer_Attributes[] | Computed<Developer_Attributes[]>;
   /** List of companies associated with the developer. */
   companies?: string[] | Computed<string[]>;
-  /** Output only. Time at which the developer was created in milliseconds since epoch. */
-  createdAt?: string | Computed<string>;
   /** ID of the developer. **Note**: IDs are generated internally by Apigee and are not guaranteed to stay the same over time. */
   developerId?: string | Computed<string>;
   /** Required. Email address of the developer. This value is used to uniquely identify the developer in Apigee hybrid. Note that the email address has to be in lowercase only. */
   email?: string | Computed<string>;
   /** Required. First name of the developer. */
   firstName?: string | Computed<string>;
-  /** Output only. Time at which the developer was last modified in milliseconds since epoch. */
-  lastModifiedAt?: string | Computed<string>;
   /** Required. Last name of the developer. */
   lastName?: string | Computed<string>;
-  /** Output only. Name of the Apigee organization in which the developer resides. */
-  organizationName?: string | Computed<string>;
-  /** Output only. Status of the developer. Valid values are `active` and `inactive`. */
-  status?: string | Computed<string>;
   /** Required. User name of the developer. Not used by Apigee hybrid. */
   userName?: string | Computed<string>;
 }
@@ -85,14 +77,10 @@ export const Developer: ResourceBinding<DeveloperConfig, DeveloperAttrs> = {
       fields: Developer_AttributesFields,
     },
     companies: "companies",
-    createdAt: "created_at",
     developerId: "developer_id",
     email: "email",
     firstName: "first_name",
-    lastModifiedAt: "last_modified_at",
     lastName: "last_name",
-    organizationName: "organization_name",
-    status: "status",
     userName: "user_name",
   },
 };

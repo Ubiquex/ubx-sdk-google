@@ -9,14 +9,12 @@ type ChangeStream_CollectionGroupScope struct {
 }
 
 var ChangeStream_CollectionGroupScopeFields = ubx.FieldMap{
-		"CollectionGroupId": ubx.FieldSpec{WireName: "collection_group_id"},
-	}
+	"CollectionGroupId": ubx.FieldSpec{WireName: "collection_group_id"},
+}
 
 type ChangeStreamConfig struct {
 	// The change stream is scoped to a collection group. Only events associated with the given collection group are visible to the Change Stream. Only a single change stream can be enabled per collection group.
 	CollectionGroupScope any
-	// Output only. The time the Change Stream was created.
-	CreateTime any
 	// The change stream is scoped to the entire database. All events in the database are visible to the Change Stream. One Database scope Change Stream is allowed per database.
 	DatabaseScope any
 	// Optional. An etag used to determine which version of the configuration is being edited.
@@ -25,10 +23,6 @@ type ChangeStreamConfig struct {
 	Name any
 	// Required. The retention period of the change stream. This is the amount of time a change event is available on the change stream. Must be from 1 to 7 days, inclusive. The retention_period must be in day granularity, i.e. it must be a multiple of 24 hours.
 	RetentionPeriod any
-	// Output only. The time the Change Stream started recording events.
-	StartTime any
-	// Output only. The time the Change Stream was last updated.
-	UpdateTime any
 }
 
 type ChangeStreamAttrs struct {
@@ -55,15 +49,12 @@ var ChangeStream = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"CollectionGroupScope": ubx.FieldSpec{
 			WireName: "collection_group_scope",
-			Kind: "object",
-			Fields: ChangeStream_CollectionGroupScopeFields,
+			Kind:     "object",
+			Fields:   ChangeStream_CollectionGroupScopeFields,
 		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DatabaseScope": ubx.FieldSpec{WireName: "database_scope"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"DatabaseScope":   ubx.FieldSpec{WireName: "database_scope"},
+		"Etag":            ubx.FieldSpec{WireName: "etag"},
+		"Name":            ubx.FieldSpec{WireName: "name"},
 		"RetentionPeriod": ubx.FieldSpec{WireName: "retention_period"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

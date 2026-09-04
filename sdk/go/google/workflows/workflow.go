@@ -11,23 +11,15 @@ type Workflow_StateError struct {
 }
 
 var Workflow_StateErrorFields = ubx.FieldMap{
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Details": ubx.FieldSpec{WireName: "details"},
+	"Type":    ubx.FieldSpec{WireName: "type"},
+}
 
 type WorkflowConfig struct {
-	// Output only. A list of all KMS crypto keys used to encrypt or decrypt the data associated with the workflow.
-	AllKmsKeys any
-	// Output only. A list of all KMS crypto key versions used to encrypt or decrypt the data associated with the workflow.
-	AllKmsKeysVersions any
 	// Optional. Describes the level of platform logging to apply to calls and call responses during executions of this workflow. If both the workflow and the execution specify a logging level, the execution level takes precedence.
 	CallLogLevel any
-	// Output only. The timestamp for when the workflow was created. This is a workflow-wide field and is not tied to a specific revision.
-	CreateTime any
 	// Optional. The resource name of a KMS crypto key used to encrypt or decrypt the data associated with the workflow. Format: projects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{cryptoKey} Using `-` as a wildcard for the `{project}` or not providing one at all will infer the project from the account. If not provided, data associated with the workflow will not be CMEK-encrypted.
 	CryptoKeyName any
-	// Output only. The resource name of a KMS crypto key version used to encrypt or decrypt the data associated with the workflow. Format: projects/{project}/locations/{location}/keyRings/{keyRing}/cryptoKeys/{cryptoKey}/cryptoKeyVersions/{cryptoKeyVersion}
-	CryptoKeyVersion any
 	// Description of the workflow provided by the user. Must be at most 1000 Unicode characters long. This is a workflow-wide field and is not tied to a specific revision.
 	Description any
 	// Optional. Describes the execution history level to apply to this workflow.
@@ -36,22 +28,14 @@ type WorkflowConfig struct {
 	Labels any
 	// The resource name of the workflow. Format: projects/{project}/locations/{location}/workflows/{workflow}. This is a workflow-wide field and is not tied to a specific revision.
 	Name any
-	// Output only. The timestamp for the latest revision of the workflow's creation.
-	RevisionCreateTime any
-	// Output only. The revision of the workflow. A new revision of a workflow is created as a result of updating the following properties of a workflow: - Service account - Workflow code to be executed The format is "000001-a4d", where the first six characters define the zero-padded revision ordinal number. They are followed by a hyphen and three hexadecimal random characters.
-	RevisionId any
 	// The service account associated with the latest workflow version. This service account represents the identity of the workflow and determines what permissions the workflow has. Format: projects/{project}/serviceAccounts/{account} or {account} Using `-` as a wildcard for the `{project}` or not providing one at all will infer the project from the account. The `{account}` value can be the `email` address or the `unique_id` of the service account. If not provided, workflow will use the project's default service account. Modifying this field for an existing workflow results in a new workflow revision.
 	ServiceAccount any
 	// Workflow code to be executed. The size limit is 128KB.
 	SourceContents any
-	// Output only. State of the workflow deployment.
-	State any
 	// Describes an error related to the current state of the workflow.
 	StateError any
 	// Optional. Input only. Immutable. Tags associated with this workflow.
 	Tags any
-	// Output only. The timestamp for when the workflow was last updated. This is a workflow-wide field and is not tied to a specific revision.
-	UpdateTime any
 	// Optional. User-defined environment variables associated with this workflow revision. This map has a maximum length of 20. Each string can take up to 4KiB. Keys cannot be empty strings and cannot start with "GOOGLE" or "WORKFLOWS".
 	UserEnvVars any
 }
@@ -100,28 +84,20 @@ type WorkflowAttrs struct {
 var Workflow = ubx.ResourceBinding{
 	WireType: "google_workflows_workflow",
 	Fields: ubx.FieldMap{
-		"AllKmsKeys": ubx.FieldSpec{WireName: "all_kms_keys"},
-		"AllKmsKeysVersions": ubx.FieldSpec{WireName: "all_kms_keys_versions"},
-		"CallLogLevel": ubx.FieldSpec{WireName: "call_log_level"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"CryptoKeyName": ubx.FieldSpec{WireName: "crypto_key_name"},
-		"CryptoKeyVersion": ubx.FieldSpec{WireName: "crypto_key_version"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"CallLogLevel":          ubx.FieldSpec{WireName: "call_log_level"},
+		"CryptoKeyName":         ubx.FieldSpec{WireName: "crypto_key_name"},
+		"Description":           ubx.FieldSpec{WireName: "description"},
 		"ExecutionHistoryLevel": ubx.FieldSpec{WireName: "execution_history_level"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"RevisionCreateTime": ubx.FieldSpec{WireName: "revision_create_time"},
-		"RevisionId": ubx.FieldSpec{WireName: "revision_id"},
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-		"SourceContents": ubx.FieldSpec{WireName: "source_contents"},
-		"State": ubx.FieldSpec{WireName: "state"},
+		"Labels":                ubx.FieldSpec{WireName: "labels"},
+		"Name":                  ubx.FieldSpec{WireName: "name"},
+		"ServiceAccount":        ubx.FieldSpec{WireName: "service_account"},
+		"SourceContents":        ubx.FieldSpec{WireName: "source_contents"},
 		"StateError": ubx.FieldSpec{
 			WireName: "state_error",
-			Kind: "object",
-			Fields: Workflow_StateErrorFields,
+			Kind:     "object",
+			Fields:   Workflow_StateErrorFields,
 		},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"Tags":        ubx.FieldSpec{WireName: "tags"},
 		"UserEnvVars": ubx.FieldSpec{WireName: "user_env_vars"},
 	},
 }

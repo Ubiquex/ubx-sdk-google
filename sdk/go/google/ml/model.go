@@ -11,7 +11,7 @@ type Model_DefaultVersion_AcceleratorConfig struct {
 }
 
 type Model_DefaultVersion_AutoScaling_Metrics struct {
-	Name any
+	Name   any
 	Target any
 }
 
@@ -25,7 +25,7 @@ type Model_DefaultVersion_AutoScaling struct {
 }
 
 type Model_DefaultVersion_Container_Env struct {
-	Name any
+	Name  any
 	Value any
 }
 
@@ -140,146 +140,146 @@ type Model_DefaultVersion struct {
 }
 
 var Model_DefaultVersion_AcceleratorConfigFields = ubx.FieldMap{
-		"Count": ubx.FieldSpec{WireName: "count"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Count": ubx.FieldSpec{WireName: "count"},
+	"Type":  ubx.FieldSpec{WireName: "type"},
+}
 
 var Model_DefaultVersion_AutoScaling_MetricsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Target": ubx.FieldSpec{WireName: "target"},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Target": ubx.FieldSpec{WireName: "target"},
+}
 
 var Model_DefaultVersion_AutoScalingFields = ubx.FieldMap{
-		"MaxNodes": ubx.FieldSpec{WireName: "max_nodes"},
-		"Metrics": ubx.FieldSpec{
-			WireName: "metrics",
-			Kind: "list",
-			Fields: Model_DefaultVersion_AutoScaling_MetricsFields,
-		},
-		"MinNodes": ubx.FieldSpec{WireName: "min_nodes"},
-	}
+	"MaxNodes": ubx.FieldSpec{WireName: "max_nodes"},
+	"Metrics": ubx.FieldSpec{
+		WireName: "metrics",
+		Kind:     "list",
+		Fields:   Model_DefaultVersion_AutoScaling_MetricsFields,
+	},
+	"MinNodes": ubx.FieldSpec{WireName: "min_nodes"},
+}
 
 var Model_DefaultVersion_Container_EnvFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Model_DefaultVersion_Container_PortsFields = ubx.FieldMap{
-		"ContainerPort": ubx.FieldSpec{WireName: "container_port"},
-	}
+	"ContainerPort": ubx.FieldSpec{WireName: "container_port"},
+}
 
 var Model_DefaultVersion_ContainerFields = ubx.FieldMap{
-		"Args": ubx.FieldSpec{WireName: "args"},
-		"Command": ubx.FieldSpec{WireName: "command"},
-		"Env": ubx.FieldSpec{
-			WireName: "env",
-			Kind: "list",
-			Fields: Model_DefaultVersion_Container_EnvFields,
-		},
-		"Image": ubx.FieldSpec{WireName: "image"},
-		"Ports": ubx.FieldSpec{
-			WireName: "ports",
-			Kind: "list",
-			Fields: Model_DefaultVersion_Container_PortsFields,
-		},
-	}
+	"Args":    ubx.FieldSpec{WireName: "args"},
+	"Command": ubx.FieldSpec{WireName: "command"},
+	"Env": ubx.FieldSpec{
+		WireName: "env",
+		Kind:     "list",
+		Fields:   Model_DefaultVersion_Container_EnvFields,
+	},
+	"Image": ubx.FieldSpec{WireName: "image"},
+	"Ports": ubx.FieldSpec{
+		WireName: "ports",
+		Kind:     "list",
+		Fields:   Model_DefaultVersion_Container_PortsFields,
+	},
+}
 
 var Model_DefaultVersion_ExplanationConfig_IntegratedGradientsAttributionFields = ubx.FieldMap{
-		"NumIntegralSteps": ubx.FieldSpec{WireName: "num_integral_steps"},
-	}
+	"NumIntegralSteps": ubx.FieldSpec{WireName: "num_integral_steps"},
+}
 
 var Model_DefaultVersion_ExplanationConfig_SampledShapleyAttributionFields = ubx.FieldMap{
-		"NumPaths": ubx.FieldSpec{WireName: "num_paths"},
-	}
+	"NumPaths": ubx.FieldSpec{WireName: "num_paths"},
+}
 
 var Model_DefaultVersion_ExplanationConfigFields = ubx.FieldMap{
-		"IntegratedGradientsAttribution": ubx.FieldSpec{
-			WireName: "integrated_gradients_attribution",
-			Kind: "object",
-			Fields: Model_DefaultVersion_ExplanationConfig_IntegratedGradientsAttributionFields,
-		},
-		"SampledShapleyAttribution": ubx.FieldSpec{
-			WireName: "sampled_shapley_attribution",
-			Kind: "object",
-			Fields: Model_DefaultVersion_ExplanationConfig_SampledShapleyAttributionFields,
-		},
-		"XraiAttribution": ubx.FieldSpec{
-			WireName: "xrai_attribution",
-			Kind: "object",
-			Fields: Model_DefaultVersion_ExplanationConfig_IntegratedGradientsAttributionFields,
-		},
-	}
+	"IntegratedGradientsAttribution": ubx.FieldSpec{
+		WireName: "integrated_gradients_attribution",
+		Kind:     "object",
+		Fields:   Model_DefaultVersion_ExplanationConfig_IntegratedGradientsAttributionFields,
+	},
+	"SampledShapleyAttribution": ubx.FieldSpec{
+		WireName: "sampled_shapley_attribution",
+		Kind:     "object",
+		Fields:   Model_DefaultVersion_ExplanationConfig_SampledShapleyAttributionFields,
+	},
+	"XraiAttribution": ubx.FieldSpec{
+		WireName: "xrai_attribution",
+		Kind:     "object",
+		Fields:   Model_DefaultVersion_ExplanationConfig_IntegratedGradientsAttributionFields,
+	},
+}
 
 var Model_DefaultVersion_ManualScalingFields = ubx.FieldMap{
-		"Nodes": ubx.FieldSpec{WireName: "nodes"},
-	}
+	"Nodes": ubx.FieldSpec{WireName: "nodes"},
+}
 
 var Model_DefaultVersion_RequestLoggingConfigFields = ubx.FieldMap{
-		"BigqueryTableName": ubx.FieldSpec{WireName: "bigquery_table_name"},
-		"SamplingPercentage": ubx.FieldSpec{WireName: "sampling_percentage"},
-	}
+	"BigqueryTableName":  ubx.FieldSpec{WireName: "bigquery_table_name"},
+	"SamplingPercentage": ubx.FieldSpec{WireName: "sampling_percentage"},
+}
 
 var Model_DefaultVersion_RoutesFields = ubx.FieldMap{
-		"Health": ubx.FieldSpec{WireName: "health"},
-		"Predict": ubx.FieldSpec{WireName: "predict"},
-	}
+	"Health":  ubx.FieldSpec{WireName: "health"},
+	"Predict": ubx.FieldSpec{WireName: "predict"},
+}
 
 var Model_DefaultVersionFields = ubx.FieldMap{
-		"AcceleratorConfig": ubx.FieldSpec{
-			WireName: "accelerator_config",
-			Kind: "object",
-			Fields: Model_DefaultVersion_AcceleratorConfigFields,
-		},
-		"AutoScaling": ubx.FieldSpec{
-			WireName: "auto_scaling",
-			Kind: "object",
-			Fields: Model_DefaultVersion_AutoScalingFields,
-		},
-		"Container": ubx.FieldSpec{
-			WireName: "container",
-			Kind: "object",
-			Fields: Model_DefaultVersion_ContainerFields,
-		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DeploymentUri": ubx.FieldSpec{WireName: "deployment_uri"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"ErrorMessage": ubx.FieldSpec{WireName: "error_message"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"ExplanationConfig": ubx.FieldSpec{
-			WireName: "explanation_config",
-			Kind: "object",
-			Fields: Model_DefaultVersion_ExplanationConfigFields,
-		},
-		"Framework": ubx.FieldSpec{WireName: "framework"},
-		"IsDefault": ubx.FieldSpec{WireName: "is_default"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"LastMigrationModelId": ubx.FieldSpec{WireName: "last_migration_model_id"},
-		"LastMigrationTime": ubx.FieldSpec{WireName: "last_migration_time"},
-		"LastUseTime": ubx.FieldSpec{WireName: "last_use_time"},
-		"MachineType": ubx.FieldSpec{WireName: "machine_type"},
-		"ManualScaling": ubx.FieldSpec{
-			WireName: "manual_scaling",
-			Kind: "object",
-			Fields: Model_DefaultVersion_ManualScalingFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PackageUris": ubx.FieldSpec{WireName: "package_uris"},
-		"PredictionClass": ubx.FieldSpec{WireName: "prediction_class"},
-		"PythonVersion": ubx.FieldSpec{WireName: "python_version"},
-		"RequestLoggingConfig": ubx.FieldSpec{
-			WireName: "request_logging_config",
-			Kind: "object",
-			Fields: Model_DefaultVersion_RequestLoggingConfigFields,
-		},
-		"Routes": ubx.FieldSpec{
-			WireName: "routes",
-			Kind: "object",
-			Fields: Model_DefaultVersion_RoutesFields,
-		},
-		"RuntimeVersion": ubx.FieldSpec{WireName: "runtime_version"},
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"AcceleratorConfig": ubx.FieldSpec{
+		WireName: "accelerator_config",
+		Kind:     "object",
+		Fields:   Model_DefaultVersion_AcceleratorConfigFields,
+	},
+	"AutoScaling": ubx.FieldSpec{
+		WireName: "auto_scaling",
+		Kind:     "object",
+		Fields:   Model_DefaultVersion_AutoScalingFields,
+	},
+	"Container": ubx.FieldSpec{
+		WireName: "container",
+		Kind:     "object",
+		Fields:   Model_DefaultVersion_ContainerFields,
+	},
+	"CreateTime":    ubx.FieldSpec{WireName: "create_time"},
+	"DeploymentUri": ubx.FieldSpec{WireName: "deployment_uri"},
+	"Description":   ubx.FieldSpec{WireName: "description"},
+	"ErrorMessage":  ubx.FieldSpec{WireName: "error_message"},
+	"Etag":          ubx.FieldSpec{WireName: "etag"},
+	"ExplanationConfig": ubx.FieldSpec{
+		WireName: "explanation_config",
+		Kind:     "object",
+		Fields:   Model_DefaultVersion_ExplanationConfigFields,
+	},
+	"Framework":            ubx.FieldSpec{WireName: "framework"},
+	"IsDefault":            ubx.FieldSpec{WireName: "is_default"},
+	"Labels":               ubx.FieldSpec{WireName: "labels"},
+	"LastMigrationModelId": ubx.FieldSpec{WireName: "last_migration_model_id"},
+	"LastMigrationTime":    ubx.FieldSpec{WireName: "last_migration_time"},
+	"LastUseTime":          ubx.FieldSpec{WireName: "last_use_time"},
+	"MachineType":          ubx.FieldSpec{WireName: "machine_type"},
+	"ManualScaling": ubx.FieldSpec{
+		WireName: "manual_scaling",
+		Kind:     "object",
+		Fields:   Model_DefaultVersion_ManualScalingFields,
+	},
+	"Name":            ubx.FieldSpec{WireName: "name"},
+	"PackageUris":     ubx.FieldSpec{WireName: "package_uris"},
+	"PredictionClass": ubx.FieldSpec{WireName: "prediction_class"},
+	"PythonVersion":   ubx.FieldSpec{WireName: "python_version"},
+	"RequestLoggingConfig": ubx.FieldSpec{
+		WireName: "request_logging_config",
+		Kind:     "object",
+		Fields:   Model_DefaultVersion_RequestLoggingConfigFields,
+	},
+	"Routes": ubx.FieldSpec{
+		WireName: "routes",
+		Kind:     "object",
+		Fields:   Model_DefaultVersion_RoutesFields,
+	},
+	"RuntimeVersion": ubx.FieldSpec{WireName: "runtime_version"},
+	"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
+	"State":          ubx.FieldSpec{WireName: "state"},
+}
 
 type ModelConfig struct {
 	// Represents a version of the model. Each version is a trained model deployed in the cloud, ready to handle prediction requests. A model can have multiple versions. You can get information about all of the versions of a given model by calling projects.models.versions.list.
@@ -324,15 +324,15 @@ var Model = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"DefaultVersion": ubx.FieldSpec{
 			WireName: "default_version",
-			Kind: "object",
-			Fields: Model_DefaultVersionFields,
+			Kind:     "object",
+			Fields:   Model_DefaultVersionFields,
 		},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Description":                    ubx.FieldSpec{WireName: "description"},
+		"Etag":                           ubx.FieldSpec{WireName: "etag"},
+		"Labels":                         ubx.FieldSpec{WireName: "labels"},
+		"Name":                           ubx.FieldSpec{WireName: "name"},
 		"OnlinePredictionConsoleLogging": ubx.FieldSpec{WireName: "online_prediction_console_logging"},
-		"OnlinePredictionLogging": ubx.FieldSpec{WireName: "online_prediction_logging"},
-		"Regions": ubx.FieldSpec{WireName: "regions"},
+		"OnlinePredictionLogging":        ubx.FieldSpec{WireName: "online_prediction_logging"},
+		"Regions":                        ubx.FieldSpec{WireName: "regions"},
 	},
 }

@@ -207,7 +207,7 @@ class Task_VpcAccess:
 
 @dataclasses.dataclass
 class TaskConfig:
-    name: Any = None
+    pass
 
 @dataclasses.dataclass
 class TaskAttrs:
@@ -280,6 +280,5 @@ class TaskAttrs:
 Task = ubx.DataSourceBinding(
     wire_type="google_run_task",
     fields={
-        "name": ubx.FieldSpec(wire_name="name"),
     },
 )

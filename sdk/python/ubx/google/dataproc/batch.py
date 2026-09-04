@@ -420,26 +420,12 @@ _Batch_SparkSqlBatchFields = {
     "query_variables": ubx.FieldSpec(wire_name="query_variables"),
 }
 
-_Batch_StateHistoryFields = {
-    "state": ubx.FieldSpec(wire_name="state"),
-    "state_message": ubx.FieldSpec(wire_name="state_message"),
-    "state_start_time": ubx.FieldSpec(wire_name="state_start_time"),
-}
-
 @dataclasses.dataclass
 class BatchConfig:
-    # Output only. The time when the batch was created.
-    create_time: Any = None
-    # Output only. The email address of the user who created the batch.
-    creator: Any = None
     # Environment configuration for a workload.
     environment_config: Any = None
     # Optional. The labels to associate with this batch. Label keys must contain 1 to 63 characters, and must conform to RFC 1035 (https://www.ietf.org/rfc/rfc1035.txt). Label values may be empty, but, if present, must contain 1 to 63 characters, and must conform to RFC 1035 (https://www.ietf.org/rfc/rfc1035.txt). No more than 32 labels can be associated with a batch.
     labels: Any = None
-    # Output only. The resource name of the batch.
-    name: Any = None
-    # Output only. The resource name of the operation associated with this batch.
-    operation: Any = None
     # A configuration for running an Apache PySpark (https://spark.apache.org/docs/latest/api/python/getting_started/quickstart.html) batch workload.
     pyspark_batch: Any = None
     # A configuration for running a PySpark Notebook batch workload.
@@ -454,16 +440,6 @@ class BatchConfig:
     spark_rbatch: Any = None
     # A configuration for running Apache Spark SQL (https://spark.apache.org/sql/) queries as a batch workload.
     spark_sql_batch: Any = None
-    # Output only. The state of the batch.
-    state: Any = None
-    # Output only. Historical state information for the batch.
-    state_history: Any = None
-    # Output only. Batch state details, such as a failure description if the state is FAILED.
-    state_message: Any = None
-    # Output only. The time when the batch entered a current state.
-    state_time: Any = None
-    # Output only. A batch UUID (Unique Universal Identifier). The service generates this value when it creates the batch.
-    uuid: Any = None
 
 @dataclasses.dataclass
 class BatchAttrs:
@@ -507,16 +483,12 @@ class BatchAttrs:
 Batch = ubx.ResourceBinding(
     wire_type="google_dataproc_batch",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
-        "creator": ubx.FieldSpec(wire_name="creator"),
         "environment_config": ubx.FieldSpec(
             wire_name="environment_config",
             kind="object",
             fields=_Batch_EnvironmentConfigFields,
         ),
         "labels": ubx.FieldSpec(wire_name="labels"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "operation": ubx.FieldSpec(wire_name="operation"),
         "pyspark_batch": ubx.FieldSpec(
             wire_name="pyspark_batch",
             kind="object",
@@ -552,14 +524,5 @@ Batch = ubx.ResourceBinding(
             kind="object",
             fields=_Batch_SparkSqlBatchFields,
         ),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "state_history": ubx.FieldSpec(
-            wire_name="state_history",
-            kind="list",
-            fields=_Batch_StateHistoryFields,
-        ),
-        "state_message": ubx.FieldSpec(wire_name="state_message"),
-        "state_time": ubx.FieldSpec(wire_name="state_time"),
-        "uuid": ubx.FieldSpec(wire_name="uuid"),
     },
 )

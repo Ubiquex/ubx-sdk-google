@@ -14,19 +14,19 @@ type V1beta1SecurityProfile_CustomMirroringProfile struct {
 }
 
 type V1beta1SecurityProfile_ThreatPreventionProfile_AntivirusOverrides struct {
-	Action any
+	Action   any
 	Protocol any
 }
 
 type V1beta1SecurityProfile_ThreatPreventionProfile_SeverityOverrides struct {
-	Action any
+	Action   any
 	Severity any
 }
 
 type V1beta1SecurityProfile_ThreatPreventionProfile_ThreatOverrides struct {
-	Action any
+	Action   any
 	ThreatId any
-	Type any
+	Type     any
 }
 
 type V1beta1SecurityProfile_ThreatPreventionProfile struct {
@@ -40,8 +40,8 @@ type V1beta1SecurityProfile_ThreatPreventionProfile struct {
 
 type V1beta1SecurityProfile_UrlFilteringProfile_UrlFilters struct {
 	FilteringAction any
-	Priority any
-	Urls any
+	Priority        any
+	Urls            any
 }
 
 type V1beta1SecurityProfile_UrlFilteringProfile struct {
@@ -54,19 +54,19 @@ type V1beta1SecurityProfile_WildfireAnalysisProfile_WildfireInlineCloudAnalysisR
 }
 
 type V1beta1SecurityProfile_WildfireAnalysisProfile_WildfireInlineCloudAnalysisRules struct {
-	Action any
-	CustomFileTypes any
-	Direction any
+	Action            any
+	CustomFileTypes   any
+	Direction         any
 	FileSelectionMode any
 }
 
 type V1beta1SecurityProfile_WildfireAnalysisProfile_WildfireInlineMlSetting_FileExceptions struct {
-	Filename any
+	Filename    any
 	PartialHash any
 }
 
 type V1beta1SecurityProfile_WildfireAnalysisProfile_WildfireInlineMlSetting_InlineMlConfigs struct {
-	Action any
+	Action   any
 	FileType any
 }
 
@@ -78,13 +78,13 @@ type V1beta1SecurityProfile_WildfireAnalysisProfile_WildfireInlineMlSetting stru
 }
 
 type V1beta1SecurityProfile_WildfireAnalysisProfile_WildfireSubmissionRules struct {
-	CustomFileTypes any
-	Direction any
+	CustomFileTypes   any
+	Direction         any
 	FileSelectionMode any
 }
 
 type V1beta1SecurityProfile_WildfireAnalysisProfile_WildfireThreatOverrides struct {
-	Action any
+	Action   any
 	ThreatId any
 }
 
@@ -108,164 +108,160 @@ type V1beta1SecurityProfile_WildfireAnalysisProfile struct {
 }
 
 var V1beta1SecurityProfile_CustomInterceptProfileFields = ubx.FieldMap{
-		"InterceptEndpointGroup": ubx.FieldSpec{WireName: "intercept_endpoint_group"},
-	}
+	"InterceptEndpointGroup": ubx.FieldSpec{WireName: "intercept_endpoint_group"},
+}
 
 var V1beta1SecurityProfile_CustomMirroringProfileFields = ubx.FieldMap{
-		"MirroringEndpointGroup": ubx.FieldSpec{WireName: "mirroring_endpoint_group"},
-	}
+	"MirroringEndpointGroup": ubx.FieldSpec{WireName: "mirroring_endpoint_group"},
+}
 
 var V1beta1SecurityProfile_ThreatPreventionProfile_AntivirusOverridesFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
-		"Protocol": ubx.FieldSpec{WireName: "protocol"},
-	}
+	"Action":   ubx.FieldSpec{WireName: "action"},
+	"Protocol": ubx.FieldSpec{WireName: "protocol"},
+}
 
 var V1beta1SecurityProfile_ThreatPreventionProfile_SeverityOverridesFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
-		"Severity": ubx.FieldSpec{WireName: "severity"},
-	}
+	"Action":   ubx.FieldSpec{WireName: "action"},
+	"Severity": ubx.FieldSpec{WireName: "severity"},
+}
 
 var V1beta1SecurityProfile_ThreatPreventionProfile_ThreatOverridesFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
-		"ThreatId": ubx.FieldSpec{WireName: "threat_id"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Action":   ubx.FieldSpec{WireName: "action"},
+	"ThreatId": ubx.FieldSpec{WireName: "threat_id"},
+	"Type":     ubx.FieldSpec{WireName: "type"},
+}
 
 var V1beta1SecurityProfile_ThreatPreventionProfileFields = ubx.FieldMap{
-		"AntivirusOverrides": ubx.FieldSpec{
-			WireName: "antivirus_overrides",
-			Kind: "list",
-			Fields: V1beta1SecurityProfile_ThreatPreventionProfile_AntivirusOverridesFields,
-		},
-		"SeverityOverrides": ubx.FieldSpec{
-			WireName: "severity_overrides",
-			Kind: "list",
-			Fields: V1beta1SecurityProfile_ThreatPreventionProfile_SeverityOverridesFields,
-		},
-		"ThreatOverrides": ubx.FieldSpec{
-			WireName: "threat_overrides",
-			Kind: "list",
-			Fields: V1beta1SecurityProfile_ThreatPreventionProfile_ThreatOverridesFields,
-		},
-	}
+	"AntivirusOverrides": ubx.FieldSpec{
+		WireName: "antivirus_overrides",
+		Kind:     "list",
+		Fields:   V1beta1SecurityProfile_ThreatPreventionProfile_AntivirusOverridesFields,
+	},
+	"SeverityOverrides": ubx.FieldSpec{
+		WireName: "severity_overrides",
+		Kind:     "list",
+		Fields:   V1beta1SecurityProfile_ThreatPreventionProfile_SeverityOverridesFields,
+	},
+	"ThreatOverrides": ubx.FieldSpec{
+		WireName: "threat_overrides",
+		Kind:     "list",
+		Fields:   V1beta1SecurityProfile_ThreatPreventionProfile_ThreatOverridesFields,
+	},
+}
 
 var V1beta1SecurityProfile_UrlFilteringProfile_UrlFiltersFields = ubx.FieldMap{
-		"FilteringAction": ubx.FieldSpec{WireName: "filtering_action"},
-		"Priority": ubx.FieldSpec{WireName: "priority"},
-		"Urls": ubx.FieldSpec{WireName: "urls"},
-	}
+	"FilteringAction": ubx.FieldSpec{WireName: "filtering_action"},
+	"Priority":        ubx.FieldSpec{WireName: "priority"},
+	"Urls":            ubx.FieldSpec{WireName: "urls"},
+}
 
 var V1beta1SecurityProfile_UrlFilteringProfileFields = ubx.FieldMap{
-		"UrlFilters": ubx.FieldSpec{
-			WireName: "url_filters",
-			Kind: "list",
-			Fields: V1beta1SecurityProfile_UrlFilteringProfile_UrlFiltersFields,
-		},
-	}
+	"UrlFilters": ubx.FieldSpec{
+		WireName: "url_filters",
+		Kind:     "list",
+		Fields:   V1beta1SecurityProfile_UrlFilteringProfile_UrlFiltersFields,
+	},
+}
 
 var V1beta1SecurityProfile_WildfireAnalysisProfile_WildfireInlineCloudAnalysisRules_CustomFileTypesFields = ubx.FieldMap{
-		"FileTypes": ubx.FieldSpec{WireName: "file_types"},
-	}
+	"FileTypes": ubx.FieldSpec{WireName: "file_types"},
+}
 
 var V1beta1SecurityProfile_WildfireAnalysisProfile_WildfireInlineCloudAnalysisRulesFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
-		"CustomFileTypes": ubx.FieldSpec{
-			WireName: "custom_file_types",
-			Kind: "object",
-			Fields: V1beta1SecurityProfile_WildfireAnalysisProfile_WildfireInlineCloudAnalysisRules_CustomFileTypesFields,
-		},
-		"Direction": ubx.FieldSpec{WireName: "direction"},
-		"FileSelectionMode": ubx.FieldSpec{WireName: "file_selection_mode"},
-	}
+	"Action": ubx.FieldSpec{WireName: "action"},
+	"CustomFileTypes": ubx.FieldSpec{
+		WireName: "custom_file_types",
+		Kind:     "object",
+		Fields:   V1beta1SecurityProfile_WildfireAnalysisProfile_WildfireInlineCloudAnalysisRules_CustomFileTypesFields,
+	},
+	"Direction":         ubx.FieldSpec{WireName: "direction"},
+	"FileSelectionMode": ubx.FieldSpec{WireName: "file_selection_mode"},
+}
 
 var V1beta1SecurityProfile_WildfireAnalysisProfile_WildfireInlineMlSetting_FileExceptionsFields = ubx.FieldMap{
-		"Filename": ubx.FieldSpec{WireName: "filename"},
-		"PartialHash": ubx.FieldSpec{WireName: "partial_hash"},
-	}
+	"Filename":    ubx.FieldSpec{WireName: "filename"},
+	"PartialHash": ubx.FieldSpec{WireName: "partial_hash"},
+}
 
 var V1beta1SecurityProfile_WildfireAnalysisProfile_WildfireInlineMlSetting_InlineMlConfigsFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
-		"FileType": ubx.FieldSpec{WireName: "file_type"},
-	}
+	"Action":   ubx.FieldSpec{WireName: "action"},
+	"FileType": ubx.FieldSpec{WireName: "file_type"},
+}
 
 var V1beta1SecurityProfile_WildfireAnalysisProfile_WildfireInlineMlSettingFields = ubx.FieldMap{
-		"FileExceptions": ubx.FieldSpec{
-			WireName: "file_exceptions",
-			Kind: "list",
-			Fields: V1beta1SecurityProfile_WildfireAnalysisProfile_WildfireInlineMlSetting_FileExceptionsFields,
-		},
-		"InlineMlConfigs": ubx.FieldSpec{
-			WireName: "inline_ml_configs",
-			Kind: "list",
-			Fields: V1beta1SecurityProfile_WildfireAnalysisProfile_WildfireInlineMlSetting_InlineMlConfigsFields,
-		},
-	}
+	"FileExceptions": ubx.FieldSpec{
+		WireName: "file_exceptions",
+		Kind:     "list",
+		Fields:   V1beta1SecurityProfile_WildfireAnalysisProfile_WildfireInlineMlSetting_FileExceptionsFields,
+	},
+	"InlineMlConfigs": ubx.FieldSpec{
+		WireName: "inline_ml_configs",
+		Kind:     "list",
+		Fields:   V1beta1SecurityProfile_WildfireAnalysisProfile_WildfireInlineMlSetting_InlineMlConfigsFields,
+	},
+}
 
 var V1beta1SecurityProfile_WildfireAnalysisProfile_WildfireSubmissionRulesFields = ubx.FieldMap{
-		"CustomFileTypes": ubx.FieldSpec{
-			WireName: "custom_file_types",
-			Kind: "object",
-			Fields: V1beta1SecurityProfile_WildfireAnalysisProfile_WildfireInlineCloudAnalysisRules_CustomFileTypesFields,
-		},
-		"Direction": ubx.FieldSpec{WireName: "direction"},
-		"FileSelectionMode": ubx.FieldSpec{WireName: "file_selection_mode"},
-	}
+	"CustomFileTypes": ubx.FieldSpec{
+		WireName: "custom_file_types",
+		Kind:     "object",
+		Fields:   V1beta1SecurityProfile_WildfireAnalysisProfile_WildfireInlineCloudAnalysisRules_CustomFileTypesFields,
+	},
+	"Direction":         ubx.FieldSpec{WireName: "direction"},
+	"FileSelectionMode": ubx.FieldSpec{WireName: "file_selection_mode"},
+}
 
 var V1beta1SecurityProfile_WildfireAnalysisProfile_WildfireThreatOverridesFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
-		"ThreatId": ubx.FieldSpec{WireName: "threat_id"},
-	}
+	"Action":   ubx.FieldSpec{WireName: "action"},
+	"ThreatId": ubx.FieldSpec{WireName: "threat_id"},
+}
 
 var V1beta1SecurityProfile_WildfireAnalysisProfileFields = ubx.FieldMap{
-		"WildfireInlineCloudAnalysisRules": ubx.FieldSpec{
-			WireName: "wildfire_inline_cloud_analysis_rules",
-			Kind: "list",
-			Fields: V1beta1SecurityProfile_WildfireAnalysisProfile_WildfireInlineCloudAnalysisRulesFields,
-		},
-		"WildfireInlineMlOverrides": ubx.FieldSpec{
-			WireName: "wildfire_inline_ml_overrides",
-			Kind: "list",
-			Fields: V1beta1SecurityProfile_ThreatPreventionProfile_AntivirusOverridesFields,
-		},
-		"WildfireInlineMlSetting": ubx.FieldSpec{
-			WireName: "wildfire_inline_ml_setting",
-			Kind: "object",
-			Fields: V1beta1SecurityProfile_WildfireAnalysisProfile_WildfireInlineMlSettingFields,
-		},
-		"WildfireInlineMlSettings": ubx.FieldSpec{
-			WireName: "wildfire_inline_ml_settings",
-			Kind: "list",
-			Fields: V1beta1SecurityProfile_WildfireAnalysisProfile_WildfireInlineMlSettingFields,
-		},
-		"WildfireOverrides": ubx.FieldSpec{
-			WireName: "wildfire_overrides",
-			Kind: "list",
-			Fields: V1beta1SecurityProfile_ThreatPreventionProfile_AntivirusOverridesFields,
-		},
-		"WildfireRealtimeLookup": ubx.FieldSpec{WireName: "wildfire_realtime_lookup"},
-		"WildfireSubmissionRules": ubx.FieldSpec{
-			WireName: "wildfire_submission_rules",
-			Kind: "list",
-			Fields: V1beta1SecurityProfile_WildfireAnalysisProfile_WildfireSubmissionRulesFields,
-		},
-		"WildfireThreatOverrides": ubx.FieldSpec{
-			WireName: "wildfire_threat_overrides",
-			Kind: "list",
-			Fields: V1beta1SecurityProfile_WildfireAnalysisProfile_WildfireThreatOverridesFields,
-		},
-	}
+	"WildfireInlineCloudAnalysisRules": ubx.FieldSpec{
+		WireName: "wildfire_inline_cloud_analysis_rules",
+		Kind:     "list",
+		Fields:   V1beta1SecurityProfile_WildfireAnalysisProfile_WildfireInlineCloudAnalysisRulesFields,
+	},
+	"WildfireInlineMlOverrides": ubx.FieldSpec{
+		WireName: "wildfire_inline_ml_overrides",
+		Kind:     "list",
+		Fields:   V1beta1SecurityProfile_ThreatPreventionProfile_AntivirusOverridesFields,
+	},
+	"WildfireInlineMlSetting": ubx.FieldSpec{
+		WireName: "wildfire_inline_ml_setting",
+		Kind:     "object",
+		Fields:   V1beta1SecurityProfile_WildfireAnalysisProfile_WildfireInlineMlSettingFields,
+	},
+	"WildfireInlineMlSettings": ubx.FieldSpec{
+		WireName: "wildfire_inline_ml_settings",
+		Kind:     "list",
+		Fields:   V1beta1SecurityProfile_WildfireAnalysisProfile_WildfireInlineMlSettingFields,
+	},
+	"WildfireOverrides": ubx.FieldSpec{
+		WireName: "wildfire_overrides",
+		Kind:     "list",
+		Fields:   V1beta1SecurityProfile_ThreatPreventionProfile_AntivirusOverridesFields,
+	},
+	"WildfireRealtimeLookup": ubx.FieldSpec{WireName: "wildfire_realtime_lookup"},
+	"WildfireSubmissionRules": ubx.FieldSpec{
+		WireName: "wildfire_submission_rules",
+		Kind:     "list",
+		Fields:   V1beta1SecurityProfile_WildfireAnalysisProfile_WildfireSubmissionRulesFields,
+	},
+	"WildfireThreatOverrides": ubx.FieldSpec{
+		WireName: "wildfire_threat_overrides",
+		Kind:     "list",
+		Fields:   V1beta1SecurityProfile_WildfireAnalysisProfile_WildfireThreatOverridesFields,
+	},
+}
 
 type V1beta1SecurityProfileConfig struct {
-	// Output only. Resource creation timestamp.
-	CreateTime any
 	// CustomInterceptProfile defines in-band integration behavior (intercept). It is used by firewall rules with an APPLY_SECURITY_PROFILE_GROUP action.
 	CustomInterceptProfile any
 	// CustomMirroringProfile defines out-of-band integration behavior (mirroring). It is used by mirroring rules with a MIRROR action.
 	CustomMirroringProfile any
 	// Optional. An optional description of the profile. Max length 512 characters.
 	Description any
-	// Output only. This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding.
-	Etag any
 	// Optional. Labels as key value pairs.
 	Labels any
 	// Immutable. Identifier. Name of the SecurityProfile resource. It matches pattern `projects|organizations/*/locations/{location}/securityProfiles/{security_profile}`.
@@ -274,8 +270,6 @@ type V1beta1SecurityProfileConfig struct {
 	ThreatPreventionProfile any
 	// Immutable. The single ProfileType that the SecurityProfile resource configures.
 	Type any
-	// Output only. Last resource update timestamp.
-	UpdateTime any
 	// UrlFilteringProfile defines filters based on URL.
 	UrlFilteringProfile any
 	// WildfireAnalysisProfile defines Palo Alto Networks WildFire behavior.
@@ -312,37 +306,34 @@ type V1beta1SecurityProfileAttrs struct {
 var V1beta1SecurityProfile = ubx.ResourceBinding{
 	WireType: "google_networksecurity_v1beta1_security_profile",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"CustomInterceptProfile": ubx.FieldSpec{
 			WireName: "custom_intercept_profile",
-			Kind: "object",
-			Fields: V1beta1SecurityProfile_CustomInterceptProfileFields,
+			Kind:     "object",
+			Fields:   V1beta1SecurityProfile_CustomInterceptProfileFields,
 		},
 		"CustomMirroringProfile": ubx.FieldSpec{
 			WireName: "custom_mirroring_profile",
-			Kind: "object",
-			Fields: V1beta1SecurityProfile_CustomMirroringProfileFields,
+			Kind:     "object",
+			Fields:   V1beta1SecurityProfile_CustomMirroringProfileFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"ThreatPreventionProfile": ubx.FieldSpec{
 			WireName: "threat_prevention_profile",
-			Kind: "object",
-			Fields: V1beta1SecurityProfile_ThreatPreventionProfileFields,
+			Kind:     "object",
+			Fields:   V1beta1SecurityProfile_ThreatPreventionProfileFields,
 		},
 		"Type": ubx.FieldSpec{WireName: "type"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 		"UrlFilteringProfile": ubx.FieldSpec{
 			WireName: "url_filtering_profile",
-			Kind: "object",
-			Fields: V1beta1SecurityProfile_UrlFilteringProfileFields,
+			Kind:     "object",
+			Fields:   V1beta1SecurityProfile_UrlFilteringProfileFields,
 		},
 		"WildfireAnalysisProfile": ubx.FieldSpec{
 			WireName: "wildfire_analysis_profile",
-			Kind: "object",
-			Fields: V1beta1SecurityProfile_WildfireAnalysisProfileFields,
+			Kind:     "object",
+			Fields:   V1beta1SecurityProfile_WildfireAnalysisProfileFields,
 		},
 	},
 }

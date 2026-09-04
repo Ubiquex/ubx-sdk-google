@@ -2,15 +2,12 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface MuteConfigConfig {
-  createTime?: string | Computed<string>;
   description?: string | Computed<string>;
   displayName?: string | Computed<string>;
   expiryTime?: string | Computed<string>;
   filter?: string | Computed<string>;
-  mostRecentEditor?: string | Computed<string>;
   name?: string | Computed<string>;
   type?: string | Computed<string>;
-  updateTime?: string | Computed<string>;
 }
 
 export interface MuteConfigAttrs {
@@ -28,14 +25,11 @@ export interface MuteConfigAttrs {
 export const MuteConfig: ResourceBinding<MuteConfigConfig, MuteConfigAttrs> = {
   wireType: "google_securitycenter_mute_config",
   fields: {
-    createTime: "create_time",
     description: "description",
     displayName: "display_name",
     expiryTime: "expiry_time",
     filter: "filter",
-    mostRecentEditor: "most_recent_editor",
     name: "name",
     type: "type",
-    updateTime: "update_time",
   },
 };

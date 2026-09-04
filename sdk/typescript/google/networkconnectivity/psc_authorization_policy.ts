@@ -6,8 +6,6 @@ export interface PscAuthorizationPolicyConfig {
   authorizationMode?: string | Computed<string>;
   /** Required. List of authorized consumer resources allowed to connect. Supported values are: 1. Project resource name (e.g., `projects/{project_id}`) 2. Wildcard `"*"` (grants global ingress authorization to the target). */
   authorizedClientResources?: string[] | Computed<string[]>;
-  /** Output only. The time when the PscAuthorizationPolicy was created. */
-  createTime?: string | Computed<string>;
   /** Optional. A description of this resource. */
   description?: string | Computed<string>;
   /** Output only. The etag of the PscAuthorizationPolicy. */
@@ -18,10 +16,6 @@ export interface PscAuthorizationPolicyConfig {
   name?: string | Computed<string>;
   /** Required. The full absolute URI of the targeted resource governed by this policy. For example, for an AgentRegistry resource, the format is: `//agentregistry.googleapis.com/projects/{project}/locations/{location}` */
   targetResourceUri?: string | Computed<string>;
-  /** Output only. The unique identifier of the PscAuthorizationPolicy. */
-  uid?: string | Computed<string>;
-  /** Output only. The time when the PscAuthorizationPolicy was updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface PscAuthorizationPolicyAttrs {
@@ -52,13 +46,10 @@ export const PscAuthorizationPolicy: ResourceBinding<PscAuthorizationPolicyConfi
   fields: {
     authorizationMode: "authorization_mode",
     authorizedClientResources: "authorized_client_resources",
-    createTime: "create_time",
     description: "description",
     etag: "etag",
     labels: "labels",
     name: "name",
     targetResourceUri: "target_resource_uri",
-    uid: "uid",
-    updateTime: "update_time",
   },
 };

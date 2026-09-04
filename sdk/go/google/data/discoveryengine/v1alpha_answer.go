@@ -4,13 +4,13 @@ package discoveryengine
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1alphaAnswer_BlobAttachments_Data struct {
-	Data any
+	Data     any
 	MimeType any
 }
 
 type V1alphaAnswer_BlobAttachments struct {
 	AttributionType any
-	Data any
+	Data            any
 }
 
 type V1alphaAnswer_Citations_Sources struct {
@@ -18,22 +18,22 @@ type V1alphaAnswer_Citations_Sources struct {
 }
 
 type V1alphaAnswer_Citations struct {
-	EndIndex any
-	Sources any
+	EndIndex   any
+	Sources    any
 	StartIndex any
 }
 
 type V1alphaAnswer_GroundingSupports struct {
-	EndIndex any
+	EndIndex               any
 	GroundingCheckRequired any
-	GroundingScore any
-	Sources any
-	StartIndex any
+	GroundingScore         any
+	Sources                any
+	StartIndex             any
 }
 
 type V1alphaAnswer_QueryUnderstandingInfo_QueryClassificationInfo struct {
 	Positive any
-	Type any
+	Type     any
 }
 
 type V1alphaAnswer_QueryUnderstandingInfo struct {
@@ -42,76 +42,76 @@ type V1alphaAnswer_QueryUnderstandingInfo struct {
 }
 
 type V1alphaAnswer_References_ChunkInfo_DocumentMetadata struct {
-	Document any
+	Document       any
 	PageIdentifier any
-	StructData any
-	Title any
-	Uri any
+	StructData     any
+	Title          any
+	Uri            any
 }
 
 type V1alphaAnswer_References_ChunkInfo struct {
 	BlobAttachmentIndexes any
-	Chunk any
-	Content any
-	DocumentMetadata any
-	RelevanceScore any
+	Chunk                 any
+	Content               any
+	DocumentMetadata      any
+	RelevanceScore        any
 }
 
 type V1alphaAnswer_References_StructuredDocumentInfo struct {
-	Document any
+	Document   any
 	StructData any
-	Title any
-	Uri any
+	Title      any
+	Uri        any
 }
 
 type V1alphaAnswer_References_UnstructuredDocumentInfo_ChunkContents struct {
 	BlobAttachmentIndexes any
-	Content any
-	PageIdentifier any
-	RelevanceScore any
+	Content               any
+	PageIdentifier        any
+	RelevanceScore        any
 }
 
 type V1alphaAnswer_References_UnstructuredDocumentInfo struct {
 	ChunkContents any
-	Document any
-	StructData any
-	Title any
-	Uri any
+	Document      any
+	StructData    any
+	Title         any
+	Uri           any
 }
 
 type V1alphaAnswer_References struct {
-	ChunkInfo any
-	StructuredDocumentInfo any
+	ChunkInfo                any
+	StructuredDocumentInfo   any
 	UnstructuredDocumentInfo any
 }
 
 type V1alphaAnswer_SafetyRatings struct {
-	Blocked any
-	Category any
-	Probability any
+	Blocked          any
+	Category         any
+	Probability      any
 	ProbabilityScore any
-	Severity any
-	SeverityScore any
+	Severity         any
+	SeverityScore    any
 }
 
 type V1alphaAnswer_Steps_Actions_Observation_SearchResults_ChunkInfo struct {
-	Chunk any
-	Content any
+	Chunk          any
+	Content        any
 	RelevanceScore any
 }
 
 type V1alphaAnswer_Steps_Actions_Observation_SearchResults_SnippetInfo struct {
-	Snippet any
+	Snippet       any
 	SnippetStatus any
 }
 
 type V1alphaAnswer_Steps_Actions_Observation_SearchResults struct {
-	ChunkInfo any
-	Document any
+	ChunkInfo   any
+	Document    any
 	SnippetInfo any
-	StructData any
-	Title any
-	Uri any
+	StructData  any
+	Title       any
+	Uri         any
 }
 
 type V1alphaAnswer_Steps_Actions_Observation struct {
@@ -123,15 +123,15 @@ type V1alphaAnswer_Steps_Actions_SearchAction struct {
 }
 
 type V1alphaAnswer_Steps_Actions struct {
-	Observation any
+	Observation  any
 	SearchAction any
 }
 
 type V1alphaAnswer_Steps struct {
-	Actions any
+	Actions     any
 	Description any
-	State any
-	Thought any
+	State       any
+	Thought     any
 }
 
 type V1alphaAnswerConfig struct {
@@ -155,7 +155,7 @@ type V1alphaAnswerAttrs struct {
 	GroundingScore any
 	// Optional. Grounding supports.
 	GroundingSupports any
-	Name any
+	Name              any
 	// Query understanding information.
 	QueryUnderstandingInfo any
 	// References.

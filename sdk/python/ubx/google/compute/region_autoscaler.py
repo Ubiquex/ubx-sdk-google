@@ -15,15 +15,10 @@ class RegionAutoscaler_AutoscalingPolicy_CpuUtilization:
 
 @dataclasses.dataclass
 class RegionAutoscaler_AutoscalingPolicy_CustomMetricUtilizations:
-    # A filter string that selects which time series (resources) contribute to the metric for autoscaling decisions, applied using the Cloud Monitoring API syntax. (AI-inferred)
     filter: Any = None
-    # The name of the metric to use for autoscaling. This corresponds to the Cloud Monitoring metric identifier, typically in the form 'custom.googleapis.com/[metric_name]'. (AI-inferred)
     metric: Any = None
-    # The number of instances used to calculate the custom metric utilization. If omitted, the metric is calculated across all instances in the group. (AI-inferred)
     single_instance_assignment: Any = None
-    # The target value for the custom metric that the autoscaler aims to maintain. When the metric value exceeds or falls below this target, the autoscaler adjusts the number of instances accordingly. (AI-inferred)
     utilization_target: Any = None
-    # Specifies the type of utilization target for the custom metric: GAUGE for instantaneous values, DELTA_PER_MINUTE for the rate per minute, or DELTA_PER_SECOND for the rate per second. (AI-inferred)
     utilization_target_type: Any = None
 
 @dataclasses.dataclass
@@ -49,17 +44,11 @@ class RegionAutoscaler_AutoscalingPolicy_ScaleInControl:
 
 @dataclasses.dataclass
 class RegionAutoscaler_AutoscalingPolicy_ScalingSchedules:
-    # An optional description of this scaling schedule. (AI-inferred)
     description: Any = None
-    # Whether the scaling schedule is disabled. When set to true, the autoscaler does not apply this schedule. Defaults to false. (AI-inferred)
     disabled: Any = None
-    # The duration of the scaling schedule in seconds. After the scheduled start time (defined by the cron expression in the 'schedule' field), the scaling parameters are applied for this length of time. (AI-inferred)
     duration_sec: Any = None
-    # The minimum number of replicas that must be running during the scheduled time period. This value is used by the autoscaler to ensure capacity during the schedule. (AI-inferred)
     min_required_replicas: Any = None
-    # A cron-style schedule string that specifies when the autoscaling policy's scaling schedule takes effect (e.g., '0 9 * * *' means daily at 09:00). (AI-inferred)
     schedule: Any = None
-    # The time zone to use for the scaling schedule, specified as a string from the IANA time zone database (e.g., "UTC", "America/New_York"). This determines how the schedule's start time and duration are interpreted. (AI-inferred)
     time_zone: Any = None
 
 @dataclasses.dataclass
@@ -87,18 +76,13 @@ class RegionAutoscaler_AutoscalingPolicy:
 
 @dataclasses.dataclass
 class RegionAutoscaler_ScalingScheduleStatus:
-    # The last time the scaling schedule started, in RFC3339 UTC format. (AI-inferred)
     last_start_time: Any = None
-    # The next time this scaling schedule is scheduled to become active, in RFC3339 timestamp format. (AI-inferred)
     next_start_time: Any = None
-    # The current state of the scaling schedule. Valid values are `ACTIVE` (schedule is active and will be used for autoscaling) and `OBSOLETE` (schedule is no longer active, e.g., due to expiration or deletion). (AI-inferred)
     state: Any = None
 
 @dataclasses.dataclass
 class RegionAutoscaler_StatusDetails:
-    # The human-readable message describing the status detail, typically containing information about an error or warning condition. (AI-inferred)
     message: Any = None
-    # The type of the autoscaler status detail, indicating a specific condition or reason for the current scaling state. Possible values are: ALL_INSTANCES_UNHEALTHY, BACKEND_SERVICE_DOES_NOT_EXIST, CAPPED_AT_MAX_NUM_REPLICAS, CUSTOM_METRIC_DATA_POINTS_TOO_SPARSE, CUSTOM_METRIC_INVALID, MIN_EQUALS_MAX, MISSING_CUSTOM_METRIC_DATA_POINTS, MISSING_LOAD_BALANCING_DATA_POINTS, MODE_OFF, MODE_ONLY_SCALE_OUT, MODE_ONLY_UP, MORE_THAN_ONE_BACKEND_SERVICE, NOT_ENOUGH_QUOTA_AVAILABLE, REGION_RESOURCE_STOCKOUT, SCALING_TARGET_DOES_NOT_EXIST, SCHEDULED_INSTANCES_GREATER_THAN_AUTOSCALER_MAX, SCHEDULED_INSTANCES_LESS_THAN_AUTOSCALER_MIN, UNKNOWN, UNSUPPORTED_MAX_RATE_LOAD_BALANCING_CONFIGURATION, ZONE_RESOURCE_STOCKOUT. (AI-inferred)
     type: Any = None
 
 _RegionAutoscaler_AutoscalingPolicy_CpuUtilizationFields = {
@@ -175,12 +159,6 @@ _RegionAutoscaler_AutoscalingPolicyFields = {
     "stabilization_period_sec": ubx.FieldSpec(wire_name="stabilization_period_sec"),
 }
 
-_RegionAutoscaler_ScalingScheduleStatusFields = {
-    "last_start_time": ubx.FieldSpec(wire_name="last_start_time"),
-    "next_start_time": ubx.FieldSpec(wire_name="next_start_time"),
-    "state": ubx.FieldSpec(wire_name="state"),
-}
-
 _RegionAutoscaler_StatusDetailsFields = {
     "message": ubx.FieldSpec(wire_name="message"),
     "type": ubx.FieldSpec(wire_name="type"),
@@ -190,22 +168,10 @@ _RegionAutoscaler_StatusDetailsFields = {
 class RegionAutoscalerConfig:
     # Cloud Autoscaler policy.
     autoscaling_policy: Any = None
-    # Output only. [Output Only] Creation timestamp inRFC3339 text format.
-    creation_timestamp: Any = None
     # An optional description of this resource. Provide this property when you create the resource.
     description: Any = None
-    # Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-    id: Any = None
-    # Output only. [Output Only] Type of the resource. Always compute#autoscaler for autoscalers.
-    kind: Any = None
     # Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
     name: Any = None
-    # Output only. [Output Only] Target recommended MIG size (number of instances) computed by autoscaler. Autoscaler calculates the recommended MIG size even when the autoscaling policy mode is different from ON. This field is empty when autoscaler is not connected to an existing managed instance group or autoscaler did not generate its prediction.
-    recommended_size: Any = None
-    # Output only. [Output Only] URL of theregion where the instance group resides (for autoscalers living in regional scope).
-    region: Any = None
-    # Output only. [Output Only] Status information of existing scaling schedules.
-    scaling_schedule_status: Any = None
     # [Output Only] Server-defined URL for the resource.
     self_link: Any = None
     # [Output Only] The status of the autoscaler configuration. Current set of possible values: - PENDING: Autoscaler backend hasn't read new/updated configuration. - DELETING: Configuration is being deleted. - ACTIVE: Configuration is acknowledged to be effective. Some warnings might be present in the statusDetails field. - ERROR: Configuration has errors. Actionable for users. Details are present in the statusDetails field. New values might be added in the future.
@@ -214,8 +180,6 @@ class RegionAutoscalerConfig:
     status_details: Any = None
     # URL of the managed instance group that this autoscaler will scale. This field is required when creating an autoscaler.
     target: Any = None
-    # Output only. [Output Only] URL of thezone where the instance group resides (for autoscalers living in zonal scope).
-    zone: Any = None
 
 @dataclasses.dataclass
 class RegionAutoscalerAttrs:
@@ -256,18 +220,8 @@ RegionAutoscaler = ubx.ResourceBinding(
             kind="object",
             fields=_RegionAutoscaler_AutoscalingPolicyFields,
         ),
-        "creation_timestamp": ubx.FieldSpec(wire_name="creation_timestamp"),
         "description": ubx.FieldSpec(wire_name="description"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "kind": ubx.FieldSpec(wire_name="kind"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "recommended_size": ubx.FieldSpec(wire_name="recommended_size"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "scaling_schedule_status": ubx.FieldSpec(
-            wire_name="scaling_schedule_status",
-            kind="map",
-            fields=_RegionAutoscaler_ScalingScheduleStatusFields,
-        ),
         "self_link": ubx.FieldSpec(wire_name="self_link"),
         "status": ubx.FieldSpec(wire_name="status"),
         "status_details": ubx.FieldSpec(
@@ -276,6 +230,5 @@ RegionAutoscaler = ubx.ResourceBinding(
             fields=_RegionAutoscaler_StatusDetailsFields,
         ),
         "target": ubx.FieldSpec(wire_name="target"),
-        "zone": ubx.FieldSpec(wire_name="zone"),
     },
 )

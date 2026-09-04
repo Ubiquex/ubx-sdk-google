@@ -4,46 +4,23 @@ package compute
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RegionSslPolicy_Warnings_Data struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type RegionSslPolicy_Warnings struct {
-	Code any
-	Data any
+	Code    any
+	Data    any
 	Message any
 }
 
-var RegionSslPolicy_Warnings_DataFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
-
-var RegionSslPolicy_WarningsFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Data": ubx.FieldSpec{
-			WireName: "data",
-			Kind: "list",
-			Fields: RegionSslPolicy_Warnings_DataFields,
-		},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
-
 type RegionSslPolicyConfig struct {
-	// Output only. [Output Only] Creation timestamp inRFC3339 text format.
-	CreationTimestamp any
 	// A list of features enabled when the selected profile is CUSTOM. The method returns the set of features that can be specified in this list. This field must be empty if the profile is notCUSTOM.
 	CustomFeatures any
 	// An optional description of this resource. Provide this property when you create the resource.
 	Description any
-	// Output only. [Output Only] The list of features enabled in the SSL policy.
-	EnabledFeatures any
 	// Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a SslPolicy. An up-to-date fingerprint must be provided in order to update the SslPolicy, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an SslPolicy.
 	Fingerprint any
-	// Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-	Id any
-	// Output only. [Output only] Type of the resource. Alwayscompute#sslPolicyfor SSL policies.
-	Kind any
 	// The minimum version of SSL protocol that can be used by the clients to establish a connection with the load balancer. This can be one ofTLS_1_0, TLS_1_1, TLS_1_2,TLS_1_3. When set to TLS_1_3, the profile field must be set to RESTRICTED.
 	MinTlsVersion any
 	// Name of the resource. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
@@ -52,12 +29,6 @@ type RegionSslPolicyConfig struct {
 	PostQuantumKeyExchange any
 	// Profile specifies the set of SSL features that can be used by the load balancer when negotiating SSL with clients. This can be one ofCOMPATIBLE, MODERN, RESTRICTED,FIPS_202205, or CUSTOM. If usingCUSTOM, the set of SSL features to enable must be specified in the customFeatures field. If using FIPS_202205, the min_tls_version field must be set to TLS_1_2.
 	Profile any
-	// Output only. [Output Only] URL of the region where the regional SSL policy resides. This field is not applicable to global SSL policies.
-	Region any
-	// Output only. [Output Only] Server-defined URL for the resource.
-	SelfLink any
-	// Output only. [Output Only] If potential misconfigurations are detected for this SSL policy, this field will be populated with warning messages.
-	Warnings any
 }
 
 type RegionSslPolicyAttrs struct {
@@ -94,23 +65,12 @@ type RegionSslPolicyAttrs struct {
 var RegionSslPolicy = ubx.ResourceBinding{
 	WireType: "google_compute_region_ssl_policy",
 	Fields: ubx.FieldMap{
-		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
-		"CustomFeatures": ubx.FieldSpec{WireName: "custom_features"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"EnabledFeatures": ubx.FieldSpec{WireName: "enabled_features"},
-		"Fingerprint": ubx.FieldSpec{WireName: "fingerprint"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"MinTlsVersion": ubx.FieldSpec{WireName: "min_tls_version"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"CustomFeatures":         ubx.FieldSpec{WireName: "custom_features"},
+		"Description":            ubx.FieldSpec{WireName: "description"},
+		"Fingerprint":            ubx.FieldSpec{WireName: "fingerprint"},
+		"MinTlsVersion":          ubx.FieldSpec{WireName: "min_tls_version"},
+		"Name":                   ubx.FieldSpec{WireName: "name"},
 		"PostQuantumKeyExchange": ubx.FieldSpec{WireName: "post_quantum_key_exchange"},
-		"Profile": ubx.FieldSpec{WireName: "profile"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"Warnings": ubx.FieldSpec{
-			WireName: "warnings",
-			Kind: "list",
-			Fields: RegionSslPolicy_WarningsFields,
-		},
+		"Profile":                ubx.FieldSpec{WireName: "profile"},
 	},
 }

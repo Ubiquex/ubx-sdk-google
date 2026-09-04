@@ -97,22 +97,14 @@ class WorkflowInvocationConfig:
     compilation_result: Any = None
     # Describes encryption state of a resource.
     data_encryption_state: Any = None
-    # Output only. All the metadata information that is used internally to serve the resource. For example: timestamps, flags, status fields, etc. The format of this field is a JSON string.
-    internal_metadata: Any = None
     # Includes various configuration options for a workflow invocation. If both `included_targets` and `included_tags` are unset, all actions will be included.
     invocation_config: Any = None
     # Represents a time interval, encoded as a Timestamp start (inclusive) and a Timestamp end (exclusive). The start must be less than or equal to the end. When the start equals the end, the interval is empty (matches no time). When both start and end are unspecified, the interval matches any time.
     invocation_timing: Any = None
-    # Output only. The workflow invocation's name.
-    name: Any = None
     # Defines the pipeline type and path within the Git repository.
     pipeline_config: Any = None
     # Metadata used to identify if a resource is user scoped.
     private_resource_metadata: Any = None
-    # Output only. The resolved compilation result that was used to create this invocation. Will be in the format `projects/*/locations/*/repositories/*/compilationResults/*`.
-    resolved_compilation_result: Any = None
-    # Output only. This workflow invocation's current state.
-    state: Any = None
     # Immutable. The name of the workflow config to invoke. Must be in the format `projects/*/locations/*/repositories/*/workflowConfigs/*`.
     workflow_config: Any = None
 
@@ -150,7 +142,6 @@ WorkflowInvocation = ubx.ResourceBinding(
             kind="object",
             fields=_WorkflowInvocation_DataEncryptionStateFields,
         ),
-        "internal_metadata": ubx.FieldSpec(wire_name="internal_metadata"),
         "invocation_config": ubx.FieldSpec(
             wire_name="invocation_config",
             kind="object",
@@ -161,7 +152,6 @@ WorkflowInvocation = ubx.ResourceBinding(
             kind="object",
             fields=_WorkflowInvocation_InvocationTimingFields,
         ),
-        "name": ubx.FieldSpec(wire_name="name"),
         "pipeline_config": ubx.FieldSpec(
             wire_name="pipeline_config",
             kind="object",
@@ -172,8 +162,6 @@ WorkflowInvocation = ubx.ResourceBinding(
             kind="object",
             fields=_WorkflowInvocation_PrivateResourceMetadataFields,
         ),
-        "resolved_compilation_result": ubx.FieldSpec(wire_name="resolved_compilation_result"),
-        "state": ubx.FieldSpec(wire_name="state"),
         "workflow_config": ubx.FieldSpec(wire_name="workflow_config"),
     },
 )

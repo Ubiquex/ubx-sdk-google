@@ -4,10 +4,6 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 export interface DeploymentConfig {
   /** The deployment's display name. */
   displayName?: string | Computed<string>;
-  /** Output only. The FCC Registration Numbers (FRNs) copied from its direct parent. */
-  frns?: string[] | Computed<string[]>;
-  /** Output only. Resource name. */
-  name?: string | Computed<string>;
   /** User ID used by the devices belonging to this deployment. Each deployment should be associated with one unique user ID. */
   sasUserIds?: string[] | Computed<string[]>;
 }
@@ -27,8 +23,6 @@ export const Deployment: ResourceBinding<DeploymentConfig, DeploymentAttrs> = {
   wireType: "google_sasportal_deployment",
   fields: {
     displayName: "display_name",
-    frns: "frns",
-    name: "name",
     sasUserIds: "sas_user_ids",
   },
 };

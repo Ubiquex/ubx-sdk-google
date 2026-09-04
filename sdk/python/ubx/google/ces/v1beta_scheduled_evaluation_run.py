@@ -185,32 +185,16 @@ _V1betaScheduledEvaluationRun_SchedulingConfigFields = {
 class V1betaScheduledEvaluationRunConfig:
     # Optional. Whether this config is active
     active: Any = None
-    # Output only. Timestamp when the scheduled evaluation run was created.
-    create_time: Any = None
-    # Output only. The user who created the scheduled evaluation run.
-    created_by: Any = None
     # Optional. User-defined description of the scheduled evaluation run.
     description: Any = None
     # Required. User-defined display name of the scheduled evaluation run config.
     display_name: Any = None
-    # Output only. Etag used to ensure the object hasn't changed during a read-modify-write operation. If the etag is empty, the update will overwrite any concurrent changes.
-    etag: Any = None
-    # Output only. The last successful EvaluationRun of this scheduled execution. Format: `projects/{project}/locations/{location}/apps/{app}/evaluationRuns/{evaluationRun}`
-    last_completed_run: Any = None
-    # Output only. The user who last updated the evaluation.
-    last_updated_by: Any = None
     # Identifier. The unique identifier of the scheduled evaluation run config. Format: projects/{projectId}/locations/{locationId}/apps/{appId}/scheduledEvaluationRuns/{scheduledEvaluationRunId}
     name: Any = None
-    # Output only. The next time this is scheduled to execute
-    next_scheduled_execution_time: Any = None
     # Request message for EvaluationService.RunEvaluation.
     request: Any = None
     # Eval scheduling configuration details
     scheduling_config: Any = None
-    # Output only. The total number of times this run has been executed
-    total_executions: Any = None
-    # Output only. Timestamp when the evaluation was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V1betaScheduledEvaluationRunAttrs:
@@ -247,15 +231,9 @@ V1betaScheduledEvaluationRun = ubx.ResourceBinding(
     wire_type="google_ces_v1beta_scheduled_evaluation_run",
     fields={
         "active": ubx.FieldSpec(wire_name="active"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
-        "created_by": ubx.FieldSpec(wire_name="created_by"),
         "description": ubx.FieldSpec(wire_name="description"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
-        "etag": ubx.FieldSpec(wire_name="etag"),
-        "last_completed_run": ubx.FieldSpec(wire_name="last_completed_run"),
-        "last_updated_by": ubx.FieldSpec(wire_name="last_updated_by"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "next_scheduled_execution_time": ubx.FieldSpec(wire_name="next_scheduled_execution_time"),
         "request": ubx.FieldSpec(
             wire_name="request",
             kind="object",
@@ -266,7 +244,5 @@ V1betaScheduledEvaluationRun = ubx.ResourceBinding(
             kind="object",
             fields=_V1betaScheduledEvaluationRun_SchedulingConfigFields,
         ),
-        "total_executions": ubx.FieldSpec(wire_name="total_executions"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

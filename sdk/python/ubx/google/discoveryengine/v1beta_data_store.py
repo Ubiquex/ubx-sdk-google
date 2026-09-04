@@ -404,14 +404,8 @@ class V1betaDataStoreConfig:
     cmek_config: Any = None
     # Optional. Configuration for configurable billing approach. See
     configurable_billing_approach: Any = None
-    # Output only. The timestamp when configurable_billing_approach was last updated.
-    configurable_billing_approach_update_time: Any = None
     # Immutable. The content config of the data store. If this field is unset, the server behavior defaults to ContentConfig.NO_CONTENT.
     content_config: Any = None
-    # Output only. Timestamp the DataStore was created at.
-    create_time: Any = None
-    # Output only. The id of the default Schema associated to this data store.
-    default_schema_id: Any = None
     # Required. The data store display name. This field must be a UTF-8 encoded string with a length limit of 128 characters. Otherwise, an INVALID_ARGUMENT error is returned.
     display_name: Any = None
     # A singleton resource of DataStore. If it's empty when DataStore is created and DataStore is set to DataStore.ContentConfig.CONTENT_REQUIRED, the default parser will default to digital parser.
@@ -514,10 +508,7 @@ V1betaDataStore = ubx.ResourceBinding(
             fields=_V1betaDataStore_CmekConfigFields,
         ),
         "configurable_billing_approach": ubx.FieldSpec(wire_name="configurable_billing_approach"),
-        "configurable_billing_approach_update_time": ubx.FieldSpec(wire_name="configurable_billing_approach_update_time"),
         "content_config": ubx.FieldSpec(wire_name="content_config"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
-        "default_schema_id": ubx.FieldSpec(wire_name="default_schema_id"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "document_processing_config": ubx.FieldSpec(
             wire_name="document_processing_config",

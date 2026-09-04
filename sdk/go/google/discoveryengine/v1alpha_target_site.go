@@ -21,43 +21,33 @@ type V1alphaTargetSite_SiteVerificationInfo struct {
 }
 
 var V1alphaTargetSite_FailureReason_QuotaFailureFields = ubx.FieldMap{
-		"TotalRequiredQuota": ubx.FieldSpec{WireName: "total_required_quota"},
-	}
+	"TotalRequiredQuota": ubx.FieldSpec{WireName: "total_required_quota"},
+}
 
 var V1alphaTargetSite_FailureReasonFields = ubx.FieldMap{
-		"QuotaFailure": ubx.FieldSpec{
-			WireName: "quota_failure",
-			Kind: "object",
-			Fields: V1alphaTargetSite_FailureReason_QuotaFailureFields,
-		},
-	}
+	"QuotaFailure": ubx.FieldSpec{
+		WireName: "quota_failure",
+		Kind:     "object",
+		Fields:   V1alphaTargetSite_FailureReason_QuotaFailureFields,
+	},
+}
 
 var V1alphaTargetSite_SiteVerificationInfoFields = ubx.FieldMap{
-		"SiteVerificationState": ubx.FieldSpec{WireName: "site_verification_state"},
-		"VerifyTime": ubx.FieldSpec{WireName: "verify_time"},
-	}
+	"SiteVerificationState": ubx.FieldSpec{WireName: "site_verification_state"},
+	"VerifyTime":            ubx.FieldSpec{WireName: "verify_time"},
+}
 
 type V1alphaTargetSiteConfig struct {
 	// Immutable. If set to false, a uri_pattern is generated to include all pages whose address contains the provided_uri_pattern. If set to true, an uri_pattern is generated to try to be an exact match of the provided_uri_pattern or just the specific page if the provided_uri_pattern is a specific one. provided_uri_pattern is always normalized to generate the URI pattern to be used by the search engine.
 	ExactMatch any
 	// Site search indexing failure reasons.
 	FailureReason any
-	// Output only. This is system-generated based on the provided_uri_pattern.
-	GeneratedUriPattern any
-	// Output only. Indexing status.
-	IndexingStatus any
-	// Output only. The fully qualified resource name of the target site. `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/siteSearchEngine/targetSites/{target_site}` The `target_site_id` is system-generated.
-	Name any
 	// Required. Input only. The user provided URI pattern from which the `generated_uri_pattern` is generated.
 	ProvidedUriPattern any
-	// Output only. Root domain of the provided_uri_pattern.
-	RootDomainUri any
 	// Verification information for target sites in advanced site search.
 	SiteVerificationInfo any
 	// The type of the target site, e.g., whether the site is to be included or excluded.
 	Type any
-	// Output only. The target site's last updated time.
-	UpdateTime any
 }
 
 type V1alphaTargetSiteAttrs struct {
@@ -89,20 +79,15 @@ var V1alphaTargetSite = ubx.ResourceBinding{
 		"ExactMatch": ubx.FieldSpec{WireName: "exact_match"},
 		"FailureReason": ubx.FieldSpec{
 			WireName: "failure_reason",
-			Kind: "object",
-			Fields: V1alphaTargetSite_FailureReasonFields,
+			Kind:     "object",
+			Fields:   V1alphaTargetSite_FailureReasonFields,
 		},
-		"GeneratedUriPattern": ubx.FieldSpec{WireName: "generated_uri_pattern"},
-		"IndexingStatus": ubx.FieldSpec{WireName: "indexing_status"},
-		"Name": ubx.FieldSpec{WireName: "name"},
 		"ProvidedUriPattern": ubx.FieldSpec{WireName: "provided_uri_pattern"},
-		"RootDomainUri": ubx.FieldSpec{WireName: "root_domain_uri"},
 		"SiteVerificationInfo": ubx.FieldSpec{
 			WireName: "site_verification_info",
-			Kind: "object",
-			Fields: V1alphaTargetSite_SiteVerificationInfoFields,
+			Kind:     "object",
+			Fields:   V1alphaTargetSite_SiteVerificationInfoFields,
 		},
 		"Type": ubx.FieldSpec{WireName: "type"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

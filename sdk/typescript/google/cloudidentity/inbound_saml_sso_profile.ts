@@ -38,8 +38,6 @@ export interface InboundSamlSsoProfileConfig {
   displayName?: string | Computed<string>;
   /** SAML IDP (identity provider) configuration. */
   idpConfig?: InboundSamlSsoProfile_IdpConfig | Computed<InboundSamlSsoProfile_IdpConfig>;
-  /** Output only. [Resource name](https://cloud.google.com/apis/design/resource_names) of the SAML SSO profile. */
-  name?: string | Computed<string>;
   /** SAML SP (service provider) configuration. */
   spConfig?: InboundSamlSsoProfile_SpConfig | Computed<InboundSamlSsoProfile_SpConfig>;
 }
@@ -67,7 +65,6 @@ export const InboundSamlSsoProfile: ResourceBinding<InboundSamlSsoProfileConfig,
       kind: "object",
       fields: InboundSamlSsoProfile_IdpConfigFields,
     },
-    name: "name",
     spConfig: {
       wireName: "sp_config",
       kind: "object",

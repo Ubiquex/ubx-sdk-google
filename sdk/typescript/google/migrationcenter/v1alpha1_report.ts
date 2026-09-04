@@ -838,22 +838,16 @@ const V1alpha1Report_SummaryFields: FieldMap = {
 };
 
 export interface V1alpha1ReportConfig {
-  /** Output only. Creation timestamp. */
-  createTime?: string | Computed<string>;
   /** Free-text description. */
   description?: string | Computed<string>;
   /** User-friendly display name. Maximum length is 63 characters. */
   displayName?: string | Computed<string>;
-  /** Output only. Name of resource. */
-  name?: string | Computed<string>;
   /** Report creation state. */
   state?: string | Computed<string>;
   /** Describes the Summary view of a Report, which contains aggregated values for all the groups and preference sets included in this Report. */
   summary?: V1alpha1Report_Summary | Computed<V1alpha1Report_Summary>;
   /** Report type. */
   type?: string | Computed<string>;
-  /** Output only. Last update timestamp. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1alpha1ReportAttrs {
@@ -878,10 +872,8 @@ export interface V1alpha1ReportAttrs {
 export const V1alpha1Report: ResourceBinding<V1alpha1ReportConfig, V1alpha1ReportAttrs> = {
   wireType: "google_migrationcenter_v1alpha1_report",
   fields: {
-    createTime: "create_time",
     description: "description",
     displayName: "display_name",
-    name: "name",
     state: "state",
     summary: {
       wireName: "summary",
@@ -889,6 +881,5 @@ export const V1alpha1Report: ResourceBinding<V1alpha1ReportConfig, V1alpha1Repor
       fields: V1alpha1Report_SummaryFields,
     },
     type: "type",
-    updateTime: "update_time",
   },
 };

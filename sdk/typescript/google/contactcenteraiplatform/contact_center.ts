@@ -178,20 +178,14 @@ export interface ContactCenterConfig {
   advancedReportingEnabled?: boolean | Computed<boolean>;
   /** Optional. Whether to enable users to be created in the CCAIP-instance concurrently to having users in Cloud identity */
   ccaipManagedUsers?: boolean | Computed<boolean>;
-  /** Output only. [Output only] Create time stamp */
-  createTime?: string | Computed<string>;
   /** Instances in this Channel will receive updates after all instances in `Normal` were updated. They also will only be updated outside of their peak hours. */
   critical?: ContactCenter_Critical | Computed<ContactCenter_Critical>;
   /** Required. Immutable. At least 2 and max 16 char long, must conform to [RFC 1035](https://www.ietf.org/rfc/rfc1035.txt). */
   customerDomainPrefix?: string | Computed<string>;
-  /** Output only. Timestamp in UTC of when this resource was soft-deleted. */
-  deleteTime?: string | Computed<string>;
   /** Required. A user friendly name for the ContactCenter. */
   displayName?: string | Computed<string>;
   /** LINT.IfChange First Channel to receive the updates. Meant to dev/test instances */
   early?: unknown | Computed<unknown>;
-  /** Output only. Timestamp in UTC of when this resource is considered expired. */
-  expireTime?: string | Computed<string>;
   featureConfig?: ContactCenter_FeatureConfig | Computed<ContactCenter_FeatureConfig>;
   /** Message storing the instance configuration. */
   instanceConfig?: ContactCenter_InstanceConfig | Computed<ContactCenter_InstanceConfig>;
@@ -205,18 +199,8 @@ export interface ContactCenterConfig {
   normal?: unknown | Computed<unknown>;
   /** Defines ingress and egress private traffic settings for CCAIP instances. */
   privateAccess?: ContactCenter_PrivateAccess | Computed<ContactCenter_PrivateAccess>;
-  /** Output only. TODO(b/283407860) Deprecate this field. */
-  privateComponents?: string[] | Computed<string[]>;
-  /** Output only. Timestamp in UTC of when this resource is going to be hard-deleted. */
-  purgeTime?: string | Computed<string>;
-  /** Output only. UJET release version, unique for each new release. */
-  releaseVersion?: string | Computed<string>;
   /** Message storing SAML params to enable Google as IDP. */
   samlParams?: ContactCenter_SamlParams | Computed<ContactCenter_SamlParams>;
-  /** Output only. The state of this contact center. */
-  state?: string | Computed<string>;
-  /** Output only. [Output only] Update time stamp */
-  updateTime?: string | Computed<string>;
   /** Message storing the URIs of the ContactCenter. */
   uris?: ContactCenter_Uris | Computed<ContactCenter_Uris>;
   /** Optional. Email address of the first admin user. */
@@ -285,17 +269,14 @@ export const ContactCenter: ResourceBinding<ContactCenterConfig, ContactCenterAt
     },
     advancedReportingEnabled: "advanced_reporting_enabled",
     ccaipManagedUsers: "ccaip_managed_users",
-    createTime: "create_time",
     critical: {
       wireName: "critical",
       kind: "object",
       fields: ContactCenter_CriticalFields,
     },
     customerDomainPrefix: "customer_domain_prefix",
-    deleteTime: "delete_time",
     displayName: "display_name",
     early: "early",
-    expireTime: "expire_time",
     featureConfig: {
       wireName: "feature_config",
       kind: "object",
@@ -315,16 +296,11 @@ export const ContactCenter: ResourceBinding<ContactCenterConfig, ContactCenterAt
       kind: "object",
       fields: ContactCenter_PrivateAccessFields,
     },
-    privateComponents: "private_components",
-    purgeTime: "purge_time",
-    releaseVersion: "release_version",
     samlParams: {
       wireName: "saml_params",
       kind: "object",
       fields: ContactCenter_SamlParamsFields,
     },
-    state: "state",
-    updateTime: "update_time",
     uris: {
       wireName: "uris",
       kind: "object",

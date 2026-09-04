@@ -15,10 +15,6 @@ export interface V1beta1DatasetConfig {
   encryptionSpec?: V1beta1Dataset_EncryptionSpec | Computed<V1beta1Dataset_EncryptionSpec>;
   /** Identifier. Resource name of the dataset, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}`. */
   name?: string | Computed<string>;
-  /** Output only. Whether the dataset satisfies zone isolation. */
-  satisfiesPzi?: boolean | Computed<boolean>;
-  /** Output only. Whether the dataset satisfies zone separation. */
-  satisfiesPzs?: boolean | Computed<boolean>;
   /** The default timezone used by this dataset. Must be a either a valid IANA time zone name such as "America/New_York" or empty, which defaults to UTC. This is used for parsing times in resources, such as HL7 messages, where no explicit timezone is specified. */
   timeZone?: string | Computed<string>;
 }
@@ -45,8 +41,6 @@ export const V1beta1Dataset: ResourceBinding<V1beta1DatasetConfig, V1beta1Datase
       fields: V1beta1Dataset_EncryptionSpecFields,
     },
     name: "name",
-    satisfiesPzi: "satisfies_pzi",
-    satisfiesPzs: "satisfies_pzs",
     timeZone: "time_zone",
   },
 };

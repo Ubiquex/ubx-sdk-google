@@ -14,16 +14,14 @@ type MulticastGroupConsumerActivation_State struct {
 }
 
 var MulticastGroupConsumerActivation_LogConfigFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+}
 
 var MulticastGroupConsumerActivation_StateFields = ubx.FieldMap{
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"State": ubx.FieldSpec{WireName: "state"},
+}
 
 type MulticastGroupConsumerActivationConfig struct {
-	// Output only. [Output only] The timestamp when the multicast group consumer activation was created.
-	CreateTime any
 	// Optional. An optional text description of the multicast group consumer activation.
 	Description any
 	// Optional. Labels as key-value pairs
@@ -38,14 +36,8 @@ type MulticastGroupConsumerActivationConfig struct {
 	MulticastGroupRangeActivation any
 	// Identifier. The resource name of the multicast group consumer activation. Use the following format: `projects/*/locations/*/multicastGroupConsumerActivations/*`.
 	Name any
-	// Output only. [Deprecated] The resource state of the multicast group consumer activation. Use the state field instead.
-	ResourceState any
 	// The multicast resource's state.
 	State any
-	// Output only. [Output only] The Google-generated UUID for the resource. This value is unique across all multicast group consumer activation resources. If a group consumer activation is deleted and another with the same name is created, the new group consumer activation is assigned a different unique_id.
-	UniqueId any
-	// Output only. [Output only] The timestamp when the multicast group consumer activation was most recently updated.
-	UpdateTime any
 }
 
 type MulticastGroupConsumerActivationAttrs struct {
@@ -78,25 +70,21 @@ type MulticastGroupConsumerActivationAttrs struct {
 var MulticastGroupConsumerActivation = ubx.ResourceBinding{
 	WireType: "google_networkservices_multicast_group_consumer_activation",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
 		"LogConfig": ubx.FieldSpec{
 			WireName: "log_config",
-			Kind: "object",
-			Fields: MulticastGroupConsumerActivation_LogConfigFields,
+			Kind:     "object",
+			Fields:   MulticastGroupConsumerActivation_LogConfigFields,
 		},
-		"MulticastConsumerAssociation": ubx.FieldSpec{WireName: "multicast_consumer_association"},
-		"MulticastGroup": ubx.FieldSpec{WireName: "multicast_group"},
+		"MulticastConsumerAssociation":  ubx.FieldSpec{WireName: "multicast_consumer_association"},
+		"MulticastGroup":                ubx.FieldSpec{WireName: "multicast_group"},
 		"MulticastGroupRangeActivation": ubx.FieldSpec{WireName: "multicast_group_range_activation"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ResourceState": ubx.FieldSpec{WireName: "resource_state"},
+		"Name":                          ubx.FieldSpec{WireName: "name"},
 		"State": ubx.FieldSpec{
 			WireName: "state",
-			Kind: "object",
-			Fields: MulticastGroupConsumerActivation_StateFields,
+			Kind:     "object",
+			Fields:   MulticastGroupConsumerActivation_StateFields,
 		},
-		"UniqueId": ubx.FieldSpec{WireName: "unique_id"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

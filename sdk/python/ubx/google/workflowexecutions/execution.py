@@ -107,34 +107,18 @@ class ExecutionConfig:
     argument: Any = None
     # The call logging level associated to this execution.
     call_log_level: Any = None
-    # Output only. Marks the creation of the execution.
-    create_time: Any = None
     # Optional. If set to true, the execution will not be backlogged when the concurrency quota is exhausted. The backlog execution starts when the concurrency quota becomes available.
     disable_concurrency_quota_overflow_buffering: Any = None
-    # Output only. Measures the duration of the execution.
-    duration: Any = None
-    # Output only. Marks the end of execution, successful or not.
-    end_time: Any = None
     # Error describes why the execution was abnormally terminated.
     error: Any = None
     # Optional. Describes the execution history level to apply to this execution. If not specified, the execution history level is determined by its workflow's execution history level. If the levels are different, the executionHistoryLevel overrides the workflow's execution history level for this execution.
     execution_history_level: Any = None
     # Labels associated with this execution. Labels can contain at most 64 entries. Keys and values can be no longer than 63 characters and can only contain lowercase letters, numeric characters, underscores, and dashes. Label keys must start with a letter. International characters are allowed. By default, labels are inherited from the workflow but are overridden by any labels associated with the execution.
     labels: Any = None
-    # Output only. The resource name of the execution. Format: projects/{project}/locations/{location}/workflows/{workflow}/executions/{execution}
-    name: Any = None
-    # Output only. Output of the execution represented as a JSON string. The value can only be present if the execution's state is `SUCCEEDED`.
-    result: Any = None
-    # Output only. Marks the beginning of execution. Note that this will be the same as `createTime` for executions that start immediately.
-    start_time: Any = None
-    # Output only. Current state of the execution.
-    state: Any = None
     # Describes an error related to the current state of the Execution resource.
     state_error: Any = None
     # Represents the current status of this execution.
     status: Any = None
-    # Output only. Revision of the workflow this execution is using.
-    workflow_revision_id: Any = None
 
 @dataclasses.dataclass
 class ExecutionAttrs:
@@ -176,10 +160,7 @@ Execution = ubx.ResourceBinding(
     fields={
         "argument": ubx.FieldSpec(wire_name="argument"),
         "call_log_level": ubx.FieldSpec(wire_name="call_log_level"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "disable_concurrency_quota_overflow_buffering": ubx.FieldSpec(wire_name="disable_concurrency_quota_overflow_buffering"),
-        "duration": ubx.FieldSpec(wire_name="duration"),
-        "end_time": ubx.FieldSpec(wire_name="end_time"),
         "error": ubx.FieldSpec(
             wire_name="error",
             kind="object",
@@ -187,10 +168,6 @@ Execution = ubx.ResourceBinding(
         ),
         "execution_history_level": ubx.FieldSpec(wire_name="execution_history_level"),
         "labels": ubx.FieldSpec(wire_name="labels"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "result": ubx.FieldSpec(wire_name="result"),
-        "start_time": ubx.FieldSpec(wire_name="start_time"),
-        "state": ubx.FieldSpec(wire_name="state"),
         "state_error": ubx.FieldSpec(
             wire_name="state_error",
             kind="object",
@@ -201,6 +178,5 @@ Execution = ubx.ResourceBinding(
             kind="object",
             fields=_Execution_StatusFields,
         ),
-        "workflow_revision_id": ubx.FieldSpec(wire_name="workflow_revision_id"),
     },
 )

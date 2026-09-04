@@ -336,14 +336,6 @@ _V1alpha1CloneJob_ErrorFields = {
     "message": ubx.FieldSpec(wire_name="message"),
 }
 
-_V1alpha1CloneJob_StepsFields = {
-    "adapting_os": ubx.FieldSpec(wire_name="adapting_os"),
-    "end_time": ubx.FieldSpec(wire_name="end_time"),
-    "instantiating_migrated_vm": ubx.FieldSpec(wire_name="instantiating_migrated_vm"),
-    "preparing_vm_disks": ubx.FieldSpec(wire_name="preparing_vm_disks"),
-    "start_time": ubx.FieldSpec(wire_name="start_time"),
-}
-
 @dataclasses.dataclass
 class V1alpha1CloneJobConfig:
     # ComputeEngineDisksTargetDetails is a collection of created Persistent Disks details.
@@ -352,20 +344,8 @@ class V1alpha1CloneJobConfig:
     compute_engine_target_details: Any = None
     # TargetVMDetails is a collection of details for creating a VM in a target Compute Engine project.
     compute_engine_vm_details: Any = None
-    # Output only. The time the clone job was created (as an API call, not when it was actually created in the target).
-    create_time: Any = None
-    # Output only. The time the clone job was ended.
-    end_time: Any = None
     # The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
     error: Any = None
-    # Output only. The name of the clone.
-    name: Any = None
-    # Output only. State of the clone job.
-    state: Any = None
-    # Output only. The time the state was last updated.
-    state_time: Any = None
-    # Output only. The clone steps list representing its progress.
-    steps: Any = None
     # TargetVMDetails is a collection of details for creating a VM in a target Compute Engine project.
     target_details: Any = None
 
@@ -412,20 +392,10 @@ V1alpha1CloneJob = ubx.ResourceBinding(
             kind="object",
             fields=_V1alpha1CloneJob_ComputeEngineVmDetailsFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
-        "end_time": ubx.FieldSpec(wire_name="end_time"),
         "error": ubx.FieldSpec(
             wire_name="error",
             kind="object",
             fields=_V1alpha1CloneJob_ErrorFields,
-        ),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "state_time": ubx.FieldSpec(wire_name="state_time"),
-        "steps": ubx.FieldSpec(
-            wire_name="steps",
-            kind="list",
-            fields=_V1alpha1CloneJob_StepsFields,
         ),
         "target_details": ubx.FieldSpec(
             wire_name="target_details",

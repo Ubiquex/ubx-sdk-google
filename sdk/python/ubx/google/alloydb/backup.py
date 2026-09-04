@@ -45,16 +45,6 @@ class BackupConfig:
     annotations: Any = None
     # Required. The full resource name of the backup source cluster (e.g., projects/{project}/locations/{region}/clusters/{cluster_id}).
     cluster_name: Any = None
-    # Output only. The system-generated UID of the cluster which was used to create this resource.
-    cluster_uid: Any = None
-    # Output only. Timestamp when the resource finished being created.
-    create_completion_time: Any = None
-    # Output only. Create time stamp
-    create_time: Any = None
-    # Output only. The database engine major version of the cluster this backup was created from. Any restored cluster created from this backup will have the same database version.
-    database_version: Any = None
-    # Output only. Delete time stamp
-    delete_time: Any = None
     # User-provided description of the backup.
     description: Any = None
     # User-settable and human-readable display name for the Backup.
@@ -67,28 +57,12 @@ class BackupConfig:
     etag: Any = None
     # A backup's position in a quantity-based retention queue, of backups with the same source cluster and type, with length, retention, specified by the backup's retention policy. Once the position is greater than the retention, the backup is eligible to be garbage collected. Example: 5 backups from the same source cluster and type with a quantity-based retention of 3 and denoted by backup_id (position, retention). Safe: backup_5 (1, 3), backup_4, (2, 3), backup_3 (3, 3). Awaiting garbage collection: backup_2 (4, 3), backup_1 (5, 3)
     expiry_quantity: Any = None
-    # Output only. The time at which after the backup is eligible to be garbage collected. It is the duration specified by the backup's retention policy, added to the backup's create_time.
-    expiry_time: Any = None
     # Labels as key value pairs
     labels: Any = None
-    # Output only. The name of the backup resource with the format: * projects/{project}/locations/{region}/backups/{backup_id} where the cluster and backup ID segments should satisfy the regex expression `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`, e.g. 1-63 characters of lowercase letters, numbers, and dashes, starting with a letter, and ending with a letter or number. For more details see https://google.aip.dev/122. The prefix of the backup resource name is the name of the parent resource: * projects/{project}/locations/{region}
-    name: Any = None
-    # Output only. Reconciling (https://google.aip.dev/128#reconciliation), if true, indicates that the service is actively updating the resource. This can happen due to user-triggered updates or system actions like failover or maintenance.
-    reconciling: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzs: Any = None
-    # Output only. The size of the backup in bytes.
-    size_bytes: Any = None
-    # Output only. The current state of the backup.
-    state: Any = None
     # Optional. Input only. Immutable. Tag keys/values directly bound to this resource. For example: ``` "123/environment": "production", "123/costCenter": "marketing" ```
     tags: Any = None
     # The backup type, which suggests the trigger for the backup.
     type: Any = None
-    # Output only. The system-generated UID of the resource. The UID is assigned when the resource is created, and it is retained until it is deleted.
-    uid: Any = None
-    # Output only. Update time stamp Users should not infer any meaning from this field. Its value is generally unrelated to the timing of the backup creation operation.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class BackupAttrs:
@@ -146,11 +120,6 @@ Backup = ubx.ResourceBinding(
     fields={
         "annotations": ubx.FieldSpec(wire_name="annotations"),
         "cluster_name": ubx.FieldSpec(wire_name="cluster_name"),
-        "cluster_uid": ubx.FieldSpec(wire_name="cluster_uid"),
-        "create_completion_time": ubx.FieldSpec(wire_name="create_completion_time"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
-        "database_version": ubx.FieldSpec(wire_name="database_version"),
-        "delete_time": ubx.FieldSpec(wire_name="delete_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "encryption_config": ubx.FieldSpec(
@@ -169,16 +138,8 @@ Backup = ubx.ResourceBinding(
             kind="object",
             fields=_Backup_ExpiryQuantityFields,
         ),
-        "expiry_time": ubx.FieldSpec(wire_name="expiry_time"),
         "labels": ubx.FieldSpec(wire_name="labels"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "reconciling": ubx.FieldSpec(wire_name="reconciling"),
-        "satisfies_pzs": ubx.FieldSpec(wire_name="satisfies_pzs"),
-        "size_bytes": ubx.FieldSpec(wire_name="size_bytes"),
-        "state": ubx.FieldSpec(wire_name="state"),
         "tags": ubx.FieldSpec(wire_name="tags"),
         "type": ubx.FieldSpec(wire_name="type"),
-        "uid": ubx.FieldSpec(wire_name="uid"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

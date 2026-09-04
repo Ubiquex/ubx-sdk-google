@@ -10,10 +10,6 @@ import ubx_sdk as ubx
 class IdentityAwareProxyClientConfig:
     # Human-friendly name given to the OAuth client.
     display_name: Any = None
-    # Output only. Unique identifier of the OAuth client.
-    name: Any = None
-    # Output only. Client secret of the OAuth client.
-    secret: Any = None
 
 @dataclasses.dataclass
 class IdentityAwareProxyClientAttrs:
@@ -28,7 +24,5 @@ IdentityAwareProxyClient = ubx.ResourceBinding(
     wire_type="google_iap_identity_aware_proxy_client",
     fields={
         "display_name": ubx.FieldSpec(wire_name="display_name"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "secret": ubx.FieldSpec(wire_name="secret"),
     },
 )

@@ -23,11 +23,11 @@ type V1betaApp_AudioProcessingConfig_BargeInConfig struct {
 
 type V1betaApp_AudioProcessingConfig_SynthesizeSpeechConfigs struct {
 	ConsentAudioGcsUri any
-	Instruction any
-	Model any
-	SpeakingRate any
-	Voice any
-	VoiceSampleGcsUri any
+	Instruction        any
+	Model              any
+	SpeakingRate       any
+	Voice              any
+	VoiceSampleGcsUri  any
 }
 
 type V1betaApp_AudioProcessingConfig struct {
@@ -195,16 +195,16 @@ type V1betaApp_EvaluationMetricsThresholds struct {
 }
 
 type V1betaApp_EvaluationPersonas_SpeechConfig struct {
-	Environment any
+	Environment  any
 	SpeakingRate any
-	VoiceId any
+	VoiceId      any
 }
 
 type V1betaApp_EvaluationPersonas struct {
-	Description any
-	DisplayName any
-	Name any
-	Personality any
+	Description  any
+	DisplayName  any
+	Name         any
+	Personality  any
 	SpeechConfig any
 }
 
@@ -356,30 +356,30 @@ type V1betaApp_ModelSettings struct {
 
 type V1betaApp_PredefinedVariableDeclarations_Schema struct {
 	AdditionalProperties any
-	AnyOf any
-	Default any
-	Defs any
-	Description any
-	Enum any
-	Items any
-	MaxItems any
-	Maximum any
-	MinItems any
-	Minimum any
-	Nullable any
-	PrefixItems any
-	Properties any
-	Ref any
-	Required any
-	Title any
-	Type any
-	UniqueItems any
+	AnyOf                any
+	Default              any
+	Defs                 any
+	Description          any
+	Enum                 any
+	Items                any
+	MaxItems             any
+	Maximum              any
+	MinItems             any
+	Minimum              any
+	Nullable             any
+	PrefixItems          any
+	Properties           any
+	Ref                  any
+	Required             any
+	Title                any
+	Type                 any
+	UniqueItems          any
 }
 
 type V1betaApp_PredefinedVariableDeclarations struct {
 	Description any
-	Name any
-	Schema any
+	Name        any
+	Schema      any
 }
 
 type V1betaApp_TimeZoneSettings struct {
@@ -393,447 +393,441 @@ type V1betaApp_VpcScSettings struct {
 }
 
 var V1betaApp_AudioProcessingConfig_AmbientSoundConfigFields = ubx.FieldMap{
-		"GcsUri": ubx.FieldSpec{WireName: "gcs_uri"},
-		"PrebuiltAmbientNoise": ubx.FieldSpec{WireName: "prebuilt_ambient_noise"},
-		"PrebuiltAmbientSound": ubx.FieldSpec{WireName: "prebuilt_ambient_sound"},
-		"VolumeGainDb": ubx.FieldSpec{WireName: "volume_gain_db"},
-	}
+	"GcsUri":               ubx.FieldSpec{WireName: "gcs_uri"},
+	"PrebuiltAmbientNoise": ubx.FieldSpec{WireName: "prebuilt_ambient_noise"},
+	"PrebuiltAmbientSound": ubx.FieldSpec{WireName: "prebuilt_ambient_sound"},
+	"VolumeGainDb":         ubx.FieldSpec{WireName: "volume_gain_db"},
+}
 
 var V1betaApp_AudioProcessingConfig_BargeInConfigFields = ubx.FieldMap{
-		"BargeInAwareness": ubx.FieldSpec{WireName: "barge_in_awareness"},
-		"DisableBargeIn": ubx.FieldSpec{WireName: "disable_barge_in"},
-	}
+	"BargeInAwareness": ubx.FieldSpec{WireName: "barge_in_awareness"},
+	"DisableBargeIn":   ubx.FieldSpec{WireName: "disable_barge_in"},
+}
 
 var V1betaApp_AudioProcessingConfig_SynthesizeSpeechConfigsFields = ubx.FieldMap{
-		"ConsentAudioGcsUri": ubx.FieldSpec{WireName: "consent_audio_gcs_uri"},
-		"Instruction": ubx.FieldSpec{WireName: "instruction"},
-		"Model": ubx.FieldSpec{WireName: "model"},
-		"SpeakingRate": ubx.FieldSpec{WireName: "speaking_rate"},
-		"Voice": ubx.FieldSpec{WireName: "voice"},
-		"VoiceSampleGcsUri": ubx.FieldSpec{WireName: "voice_sample_gcs_uri"},
-	}
+	"ConsentAudioGcsUri": ubx.FieldSpec{WireName: "consent_audio_gcs_uri"},
+	"Instruction":        ubx.FieldSpec{WireName: "instruction"},
+	"Model":              ubx.FieldSpec{WireName: "model"},
+	"SpeakingRate":       ubx.FieldSpec{WireName: "speaking_rate"},
+	"Voice":              ubx.FieldSpec{WireName: "voice"},
+	"VoiceSampleGcsUri":  ubx.FieldSpec{WireName: "voice_sample_gcs_uri"},
+}
 
 var V1betaApp_AudioProcessingConfigFields = ubx.FieldMap{
-		"AmbientSoundConfig": ubx.FieldSpec{
-			WireName: "ambient_sound_config",
-			Kind: "object",
-			Fields: V1betaApp_AudioProcessingConfig_AmbientSoundConfigFields,
-		},
-		"BargeInConfig": ubx.FieldSpec{
-			WireName: "barge_in_config",
-			Kind: "object",
-			Fields: V1betaApp_AudioProcessingConfig_BargeInConfigFields,
-		},
-		"InactivityTimeout": ubx.FieldSpec{WireName: "inactivity_timeout"},
-		"SynthesizeSpeechConfigs": ubx.FieldSpec{
-			WireName: "synthesize_speech_configs",
-			Kind: "map",
-			Fields: V1betaApp_AudioProcessingConfig_SynthesizeSpeechConfigsFields,
-		},
-	}
+	"AmbientSoundConfig": ubx.FieldSpec{
+		WireName: "ambient_sound_config",
+		Kind:     "object",
+		Fields:   V1betaApp_AudioProcessingConfig_AmbientSoundConfigFields,
+	},
+	"BargeInConfig": ubx.FieldSpec{
+		WireName: "barge_in_config",
+		Kind:     "object",
+		Fields:   V1betaApp_AudioProcessingConfig_BargeInConfigFields,
+	},
+	"InactivityTimeout": ubx.FieldSpec{WireName: "inactivity_timeout"},
+	"SynthesizeSpeechConfigs": ubx.FieldSpec{
+		WireName: "synthesize_speech_configs",
+		Kind:     "map",
+		Fields:   V1betaApp_AudioProcessingConfig_SynthesizeSpeechConfigsFields,
+	},
+}
 
 var V1betaApp_ClientCertificateSettingsFields = ubx.FieldMap{
-		"Passphrase": ubx.FieldSpec{WireName: "passphrase"},
-		"PrivateKey": ubx.FieldSpec{WireName: "private_key"},
-		"TlsCertificate": ubx.FieldSpec{WireName: "tls_certificate"},
-	}
+	"Passphrase":     ubx.FieldSpec{WireName: "passphrase"},
+	"PrivateKey":     ubx.FieldSpec{WireName: "private_key"},
+	"TlsCertificate": ubx.FieldSpec{WireName: "tls_certificate"},
+}
 
 var V1betaApp_DataStoreSettings_EnginesFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var V1betaApp_DataStoreSettingsFields = ubx.FieldMap{
-		"Engines": ubx.FieldSpec{
-			WireName: "engines",
-			Kind: "list",
-			Fields: V1betaApp_DataStoreSettings_EnginesFields,
-		},
-	}
+	"Engines": ubx.FieldSpec{
+		WireName: "engines",
+		Kind:     "list",
+		Fields:   V1betaApp_DataStoreSettings_EnginesFields,
+	},
+}
 
 var V1betaApp_DefaultChannelProfile_InstagramConfigFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"InstagramAccountId": ubx.FieldSpec{WireName: "instagram_account_id"},
-		"ThumbnailUrl": ubx.FieldSpec{WireName: "thumbnail_url"},
-	}
+	"Description":        ubx.FieldSpec{WireName: "description"},
+	"DisplayName":        ubx.FieldSpec{WireName: "display_name"},
+	"InstagramAccountId": ubx.FieldSpec{WireName: "instagram_account_id"},
+	"ThumbnailUrl":       ubx.FieldSpec{WireName: "thumbnail_url"},
+}
 
 var V1betaApp_DefaultChannelProfile_PersonaPropertyFields = ubx.FieldMap{
-		"Persona": ubx.FieldSpec{WireName: "persona"},
-	}
+	"Persona": ubx.FieldSpec{WireName: "persona"},
+}
 
 var V1betaApp_DefaultChannelProfile_WebWidgetConfig_SecuritySettingsFields = ubx.FieldMap{
-		"AllowedOrigins": ubx.FieldSpec{WireName: "allowed_origins"},
-		"EnableOriginCheck": ubx.FieldSpec{WireName: "enable_origin_check"},
-		"EnablePublicAccess": ubx.FieldSpec{WireName: "enable_public_access"},
-		"EnableRecaptcha": ubx.FieldSpec{WireName: "enable_recaptcha"},
-	}
+	"AllowedOrigins":     ubx.FieldSpec{WireName: "allowed_origins"},
+	"EnableOriginCheck":  ubx.FieldSpec{WireName: "enable_origin_check"},
+	"EnablePublicAccess": ubx.FieldSpec{WireName: "enable_public_access"},
+	"EnableRecaptcha":    ubx.FieldSpec{WireName: "enable_recaptcha"},
+}
 
 var V1betaApp_DefaultChannelProfile_WebWidgetConfigFields = ubx.FieldMap{
-		"Modality": ubx.FieldSpec{WireName: "modality"},
-		"SecuritySettings": ubx.FieldSpec{
-			WireName: "security_settings",
-			Kind: "object",
-			Fields: V1betaApp_DefaultChannelProfile_WebWidgetConfig_SecuritySettingsFields,
-		},
-		"Theme": ubx.FieldSpec{WireName: "theme"},
-		"WebWidgetTitle": ubx.FieldSpec{WireName: "web_widget_title"},
-	}
+	"Modality": ubx.FieldSpec{WireName: "modality"},
+	"SecuritySettings": ubx.FieldSpec{
+		WireName: "security_settings",
+		Kind:     "object",
+		Fields:   V1betaApp_DefaultChannelProfile_WebWidgetConfig_SecuritySettingsFields,
+	},
+	"Theme":          ubx.FieldSpec{WireName: "theme"},
+	"WebWidgetTitle": ubx.FieldSpec{WireName: "web_widget_title"},
+}
 
 var V1betaApp_DefaultChannelProfile_WhatsappConfigFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"PhoneNumber": ubx.FieldSpec{WireName: "phone_number"},
-		"PhoneNumberId": ubx.FieldSpec{WireName: "phone_number_id"},
-		"ThumbnailUrl": ubx.FieldSpec{WireName: "thumbnail_url"},
-		"WabaId": ubx.FieldSpec{WireName: "waba_id"},
-	}
+	"Description":   ubx.FieldSpec{WireName: "description"},
+	"DisplayName":   ubx.FieldSpec{WireName: "display_name"},
+	"PhoneNumber":   ubx.FieldSpec{WireName: "phone_number"},
+	"PhoneNumberId": ubx.FieldSpec{WireName: "phone_number_id"},
+	"ThumbnailUrl":  ubx.FieldSpec{WireName: "thumbnail_url"},
+	"WabaId":        ubx.FieldSpec{WireName: "waba_id"},
+}
 
 var V1betaApp_DefaultChannelProfileFields = ubx.FieldMap{
-		"ChannelType": ubx.FieldSpec{WireName: "channel_type"},
-		"DisableBargeInControl": ubx.FieldSpec{WireName: "disable_barge_in_control"},
-		"DisableDtmf": ubx.FieldSpec{WireName: "disable_dtmf"},
-		"InstagramConfig": ubx.FieldSpec{
-			WireName: "instagram_config",
-			Kind: "object",
-			Fields: V1betaApp_DefaultChannelProfile_InstagramConfigFields,
-		},
-		"NoiseSuppressionLevel": ubx.FieldSpec{WireName: "noise_suppression_level"},
-		"PersonaProperty": ubx.FieldSpec{
-			WireName: "persona_property",
-			Kind: "object",
-			Fields: V1betaApp_DefaultChannelProfile_PersonaPropertyFields,
-		},
-		"ProfileId": ubx.FieldSpec{WireName: "profile_id"},
-		"WebWidgetConfig": ubx.FieldSpec{
-			WireName: "web_widget_config",
-			Kind: "object",
-			Fields: V1betaApp_DefaultChannelProfile_WebWidgetConfigFields,
-		},
-		"WhatsappConfig": ubx.FieldSpec{
-			WireName: "whatsapp_config",
-			Kind: "object",
-			Fields: V1betaApp_DefaultChannelProfile_WhatsappConfigFields,
-		},
-	}
+	"ChannelType":           ubx.FieldSpec{WireName: "channel_type"},
+	"DisableBargeInControl": ubx.FieldSpec{WireName: "disable_barge_in_control"},
+	"DisableDtmf":           ubx.FieldSpec{WireName: "disable_dtmf"},
+	"InstagramConfig": ubx.FieldSpec{
+		WireName: "instagram_config",
+		Kind:     "object",
+		Fields:   V1betaApp_DefaultChannelProfile_InstagramConfigFields,
+	},
+	"NoiseSuppressionLevel": ubx.FieldSpec{WireName: "noise_suppression_level"},
+	"PersonaProperty": ubx.FieldSpec{
+		WireName: "persona_property",
+		Kind:     "object",
+		Fields:   V1betaApp_DefaultChannelProfile_PersonaPropertyFields,
+	},
+	"ProfileId": ubx.FieldSpec{WireName: "profile_id"},
+	"WebWidgetConfig": ubx.FieldSpec{
+		WireName: "web_widget_config",
+		Kind:     "object",
+		Fields:   V1betaApp_DefaultChannelProfile_WebWidgetConfigFields,
+	},
+	"WhatsappConfig": ubx.FieldSpec{
+		WireName: "whatsapp_config",
+		Kind:     "object",
+		Fields:   V1betaApp_DefaultChannelProfile_WhatsappConfigFields,
+	},
+}
 
 var V1betaApp_ErrorHandlingSettings_EndSessionConfigFields = ubx.FieldMap{
-		"EscalateSession": ubx.FieldSpec{WireName: "escalate_session"},
-	}
+	"EscalateSession": ubx.FieldSpec{WireName: "escalate_session"},
+}
 
 var V1betaApp_ErrorHandlingSettings_FallbackResponseConfigFields = ubx.FieldMap{
-		"CustomFallbackMessages": ubx.FieldSpec{WireName: "custom_fallback_messages"},
-		"MaxFallbackAttempts": ubx.FieldSpec{WireName: "max_fallback_attempts"},
-	}
+	"CustomFallbackMessages": ubx.FieldSpec{WireName: "custom_fallback_messages"},
+	"MaxFallbackAttempts":    ubx.FieldSpec{WireName: "max_fallback_attempts"},
+}
 
 var V1betaApp_ErrorHandlingSettingsFields = ubx.FieldMap{
-		"EndSessionConfig": ubx.FieldSpec{
-			WireName: "end_session_config",
-			Kind: "object",
-			Fields: V1betaApp_ErrorHandlingSettings_EndSessionConfigFields,
-		},
-		"ErrorHandlingStrategy": ubx.FieldSpec{WireName: "error_handling_strategy"},
-		"FallbackResponseConfig": ubx.FieldSpec{
-			WireName: "fallback_response_config",
-			Kind: "object",
-			Fields: V1betaApp_ErrorHandlingSettings_FallbackResponseConfigFields,
-		},
-	}
+	"EndSessionConfig": ubx.FieldSpec{
+		WireName: "end_session_config",
+		Kind:     "object",
+		Fields:   V1betaApp_ErrorHandlingSettings_EndSessionConfigFields,
+	},
+	"ErrorHandlingStrategy": ubx.FieldSpec{WireName: "error_handling_strategy"},
+	"FallbackResponseConfig": ubx.FieldSpec{
+		WireName: "fallback_response_config",
+		Kind:     "object",
+		Fields:   V1betaApp_ErrorHandlingSettings_FallbackResponseConfigFields,
+	},
+}
 
 var V1betaApp_EvaluationMetricsThresholds_GoldenEvaluationMetricsThresholds_ExpectationLevelMetricsThresholdsFields = ubx.FieldMap{
-		"ToolInvocationParameterCorrectnessThreshold": ubx.FieldSpec{WireName: "tool_invocation_parameter_correctness_threshold"},
-	}
+	"ToolInvocationParameterCorrectnessThreshold": ubx.FieldSpec{WireName: "tool_invocation_parameter_correctness_threshold"},
+}
 
 var V1betaApp_EvaluationMetricsThresholds_GoldenEvaluationMetricsThresholds_ToolMatchingSettingsFields = ubx.FieldMap{
-		"ExtraToolCallBehavior": ubx.FieldSpec{WireName: "extra_tool_call_behavior"},
-	}
+	"ExtraToolCallBehavior": ubx.FieldSpec{WireName: "extra_tool_call_behavior"},
+}
 
 var V1betaApp_EvaluationMetricsThresholds_GoldenEvaluationMetricsThresholds_TurnLevelMetricsThresholdsFields = ubx.FieldMap{
-		"OverallToolInvocationCorrectnessThreshold": ubx.FieldSpec{WireName: "overall_tool_invocation_correctness_threshold"},
-		"SemanticSimilarityChannel": ubx.FieldSpec{WireName: "semantic_similarity_channel"},
-		"SemanticSimilaritySuccessThreshold": ubx.FieldSpec{WireName: "semantic_similarity_success_threshold"},
-	}
+	"OverallToolInvocationCorrectnessThreshold": ubx.FieldSpec{WireName: "overall_tool_invocation_correctness_threshold"},
+	"SemanticSimilarityChannel":                 ubx.FieldSpec{WireName: "semantic_similarity_channel"},
+	"SemanticSimilaritySuccessThreshold":        ubx.FieldSpec{WireName: "semantic_similarity_success_threshold"},
+}
 
 var V1betaApp_EvaluationMetricsThresholds_GoldenEvaluationMetricsThresholdsFields = ubx.FieldMap{
-		"ExpectationLevelMetricsThresholds": ubx.FieldSpec{
-			WireName: "expectation_level_metrics_thresholds",
-			Kind: "object",
-			Fields: V1betaApp_EvaluationMetricsThresholds_GoldenEvaluationMetricsThresholds_ExpectationLevelMetricsThresholdsFields,
-		},
-		"ToolMatchingSettings": ubx.FieldSpec{
-			WireName: "tool_matching_settings",
-			Kind: "object",
-			Fields: V1betaApp_EvaluationMetricsThresholds_GoldenEvaluationMetricsThresholds_ToolMatchingSettingsFields,
-		},
-		"TurnLevelMetricsThresholds": ubx.FieldSpec{
-			WireName: "turn_level_metrics_thresholds",
-			Kind: "object",
-			Fields: V1betaApp_EvaluationMetricsThresholds_GoldenEvaluationMetricsThresholds_TurnLevelMetricsThresholdsFields,
-		},
-	}
+	"ExpectationLevelMetricsThresholds": ubx.FieldSpec{
+		WireName: "expectation_level_metrics_thresholds",
+		Kind:     "object",
+		Fields:   V1betaApp_EvaluationMetricsThresholds_GoldenEvaluationMetricsThresholds_ExpectationLevelMetricsThresholdsFields,
+	},
+	"ToolMatchingSettings": ubx.FieldSpec{
+		WireName: "tool_matching_settings",
+		Kind:     "object",
+		Fields:   V1betaApp_EvaluationMetricsThresholds_GoldenEvaluationMetricsThresholds_ToolMatchingSettingsFields,
+	},
+	"TurnLevelMetricsThresholds": ubx.FieldSpec{
+		WireName: "turn_level_metrics_thresholds",
+		Kind:     "object",
+		Fields:   V1betaApp_EvaluationMetricsThresholds_GoldenEvaluationMetricsThresholds_TurnLevelMetricsThresholdsFields,
+	},
+}
 
 var V1betaApp_EvaluationMetricsThresholdsFields = ubx.FieldMap{
-		"GoldenEvaluationMetricsThresholds": ubx.FieldSpec{
-			WireName: "golden_evaluation_metrics_thresholds",
-			Kind: "object",
-			Fields: V1betaApp_EvaluationMetricsThresholds_GoldenEvaluationMetricsThresholdsFields,
-		},
-		"GoldenHallucinationMetricBehavior": ubx.FieldSpec{WireName: "golden_hallucination_metric_behavior"},
-		"HallucinationMetricBehavior": ubx.FieldSpec{WireName: "hallucination_metric_behavior"},
-		"ScenarioHallucinationMetricBehavior": ubx.FieldSpec{WireName: "scenario_hallucination_metric_behavior"},
-	}
+	"GoldenEvaluationMetricsThresholds": ubx.FieldSpec{
+		WireName: "golden_evaluation_metrics_thresholds",
+		Kind:     "object",
+		Fields:   V1betaApp_EvaluationMetricsThresholds_GoldenEvaluationMetricsThresholdsFields,
+	},
+	"GoldenHallucinationMetricBehavior":   ubx.FieldSpec{WireName: "golden_hallucination_metric_behavior"},
+	"HallucinationMetricBehavior":         ubx.FieldSpec{WireName: "hallucination_metric_behavior"},
+	"ScenarioHallucinationMetricBehavior": ubx.FieldSpec{WireName: "scenario_hallucination_metric_behavior"},
+}
 
 var V1betaApp_EvaluationPersonas_SpeechConfigFields = ubx.FieldMap{
-		"Environment": ubx.FieldSpec{WireName: "environment"},
-		"SpeakingRate": ubx.FieldSpec{WireName: "speaking_rate"},
-		"VoiceId": ubx.FieldSpec{WireName: "voice_id"},
-	}
+	"Environment":  ubx.FieldSpec{WireName: "environment"},
+	"SpeakingRate": ubx.FieldSpec{WireName: "speaking_rate"},
+	"VoiceId":      ubx.FieldSpec{WireName: "voice_id"},
+}
 
 var V1betaApp_EvaluationPersonasFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Personality": ubx.FieldSpec{WireName: "personality"},
-		"SpeechConfig": ubx.FieldSpec{
-			WireName: "speech_config",
-			Kind: "object",
-			Fields: V1betaApp_EvaluationPersonas_SpeechConfigFields,
-		},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"Personality": ubx.FieldSpec{WireName: "personality"},
+	"SpeechConfig": ubx.FieldSpec{
+		WireName: "speech_config",
+		Kind:     "object",
+		Fields:   V1betaApp_EvaluationPersonas_SpeechConfigFields,
+	},
+}
 
 var V1betaApp_EvaluationSettings_EvaluationRunCachingSettingsFields = ubx.FieldMap{
-		"RunCachingMode": ubx.FieldSpec{WireName: "run_caching_mode"},
-	}
+	"RunCachingMode": ubx.FieldSpec{WireName: "run_caching_mode"},
+}
 
 var V1betaApp_EvaluationSettings_MetricsConfig_GoldenMetricsConfig_SemanticSimilarityMetricsConfigFields = ubx.FieldMap{
-		"EnableSemanticSimilarityMetrics": ubx.FieldSpec{WireName: "enable_semantic_similarity_metrics"},
-	}
+	"EnableSemanticSimilarityMetrics": ubx.FieldSpec{WireName: "enable_semantic_similarity_metrics"},
+}
 
 var V1betaApp_EvaluationSettings_MetricsConfig_GoldenMetricsConfig_StepToolCorrectnessMetricsConfigFields = ubx.FieldMap{
-		"EnableToolCorrectnessMetrics": ubx.FieldSpec{WireName: "enable_tool_correctness_metrics"},
-	}
+	"EnableToolCorrectnessMetrics": ubx.FieldSpec{WireName: "enable_tool_correctness_metrics"},
+}
 
 var V1betaApp_EvaluationSettings_MetricsConfig_GoldenMetricsConfigFields = ubx.FieldMap{
-		"SemanticSimilarityMetricsConfig": ubx.FieldSpec{
-			WireName: "semantic_similarity_metrics_config",
-			Kind: "object",
-			Fields: V1betaApp_EvaluationSettings_MetricsConfig_GoldenMetricsConfig_SemanticSimilarityMetricsConfigFields,
-		},
-		"StepToolCorrectnessMetricsConfig": ubx.FieldSpec{
-			WireName: "step_tool_correctness_metrics_config",
-			Kind: "object",
-			Fields: V1betaApp_EvaluationSettings_MetricsConfig_GoldenMetricsConfig_StepToolCorrectnessMetricsConfigFields,
-		},
-		"ToolCorrectnessMetricsConfig": ubx.FieldSpec{
-			WireName: "tool_correctness_metrics_config",
-			Kind: "object",
-			Fields: V1betaApp_EvaluationSettings_MetricsConfig_GoldenMetricsConfig_StepToolCorrectnessMetricsConfigFields,
-		},
-	}
+	"SemanticSimilarityMetricsConfig": ubx.FieldSpec{
+		WireName: "semantic_similarity_metrics_config",
+		Kind:     "object",
+		Fields:   V1betaApp_EvaluationSettings_MetricsConfig_GoldenMetricsConfig_SemanticSimilarityMetricsConfigFields,
+	},
+	"StepToolCorrectnessMetricsConfig": ubx.FieldSpec{
+		WireName: "step_tool_correctness_metrics_config",
+		Kind:     "object",
+		Fields:   V1betaApp_EvaluationSettings_MetricsConfig_GoldenMetricsConfig_StepToolCorrectnessMetricsConfigFields,
+	},
+	"ToolCorrectnessMetricsConfig": ubx.FieldSpec{
+		WireName: "tool_correctness_metrics_config",
+		Kind:     "object",
+		Fields:   V1betaApp_EvaluationSettings_MetricsConfig_GoldenMetricsConfig_StepToolCorrectnessMetricsConfigFields,
+	},
+}
 
 var V1betaApp_EvaluationSettings_MetricsConfig_ScenarioMetricsConfig_ExpectationsMetMetricsConfigFields = ubx.FieldMap{
-		"EnableExpectationsMetMetrics": ubx.FieldSpec{WireName: "enable_expectations_met_metrics"},
-	}
+	"EnableExpectationsMetMetrics": ubx.FieldSpec{WireName: "enable_expectations_met_metrics"},
+}
 
 var V1betaApp_EvaluationSettings_MetricsConfig_ScenarioMetricsConfig_UserGoalMetMetricsConfigFields = ubx.FieldMap{
-		"EnableUserGoalMetMetrics": ubx.FieldSpec{WireName: "enable_user_goal_met_metrics"},
-	}
+	"EnableUserGoalMetMetrics": ubx.FieldSpec{WireName: "enable_user_goal_met_metrics"},
+}
 
 var V1betaApp_EvaluationSettings_MetricsConfig_ScenarioMetricsConfigFields = ubx.FieldMap{
-		"ExpectationsMetMetricsConfig": ubx.FieldSpec{
-			WireName: "expectations_met_metrics_config",
-			Kind: "object",
-			Fields: V1betaApp_EvaluationSettings_MetricsConfig_ScenarioMetricsConfig_ExpectationsMetMetricsConfigFields,
-		},
-		"UserGoalMetMetricsConfig": ubx.FieldSpec{
-			WireName: "user_goal_met_metrics_config",
-			Kind: "object",
-			Fields: V1betaApp_EvaluationSettings_MetricsConfig_ScenarioMetricsConfig_UserGoalMetMetricsConfigFields,
-		},
-	}
+	"ExpectationsMetMetricsConfig": ubx.FieldSpec{
+		WireName: "expectations_met_metrics_config",
+		Kind:     "object",
+		Fields:   V1betaApp_EvaluationSettings_MetricsConfig_ScenarioMetricsConfig_ExpectationsMetMetricsConfigFields,
+	},
+	"UserGoalMetMetricsConfig": ubx.FieldSpec{
+		WireName: "user_goal_met_metrics_config",
+		Kind:     "object",
+		Fields:   V1betaApp_EvaluationSettings_MetricsConfig_ScenarioMetricsConfig_UserGoalMetMetricsConfigFields,
+	},
+}
 
 var V1betaApp_EvaluationSettings_MetricsConfigFields = ubx.FieldMap{
-		"GoldenMetricsConfig": ubx.FieldSpec{
-			WireName: "golden_metrics_config",
-			Kind: "object",
-			Fields: V1betaApp_EvaluationSettings_MetricsConfig_GoldenMetricsConfigFields,
-		},
-		"ScenarioMetricsConfig": ubx.FieldSpec{
-			WireName: "scenario_metrics_config",
-			Kind: "object",
-			Fields: V1betaApp_EvaluationSettings_MetricsConfig_ScenarioMetricsConfigFields,
-		},
-	}
+	"GoldenMetricsConfig": ubx.FieldSpec{
+		WireName: "golden_metrics_config",
+		Kind:     "object",
+		Fields:   V1betaApp_EvaluationSettings_MetricsConfig_GoldenMetricsConfigFields,
+	},
+	"ScenarioMetricsConfig": ubx.FieldSpec{
+		WireName: "scenario_metrics_config",
+		Kind:     "object",
+		Fields:   V1betaApp_EvaluationSettings_MetricsConfig_ScenarioMetricsConfigFields,
+	},
+}
 
 var V1betaApp_EvaluationSettingsFields = ubx.FieldMap{
-		"EvaluationRunCachingSettings": ubx.FieldSpec{
-			WireName: "evaluation_run_caching_settings",
-			Kind: "object",
-			Fields: V1betaApp_EvaluationSettings_EvaluationRunCachingSettingsFields,
-		},
-		"GoldenEvaluationToolCallBehaviour": ubx.FieldSpec{WireName: "golden_evaluation_tool_call_behaviour"},
-		"GoldenRunMethod": ubx.FieldSpec{WireName: "golden_run_method"},
-		"MetricsConfig": ubx.FieldSpec{
-			WireName: "metrics_config",
-			Kind: "object",
-			Fields: V1betaApp_EvaluationSettings_MetricsConfigFields,
-		},
-		"ScenarioConversationInitiator": ubx.FieldSpec{WireName: "scenario_conversation_initiator"},
-		"ScenarioEvaluationToolCallBehaviour": ubx.FieldSpec{WireName: "scenario_evaluation_tool_call_behaviour"},
-		"ScenarioExecutionMode": ubx.FieldSpec{WireName: "scenario_execution_mode"},
-	}
+	"EvaluationRunCachingSettings": ubx.FieldSpec{
+		WireName: "evaluation_run_caching_settings",
+		Kind:     "object",
+		Fields:   V1betaApp_EvaluationSettings_EvaluationRunCachingSettingsFields,
+	},
+	"GoldenEvaluationToolCallBehaviour": ubx.FieldSpec{WireName: "golden_evaluation_tool_call_behaviour"},
+	"GoldenRunMethod":                   ubx.FieldSpec{WireName: "golden_run_method"},
+	"MetricsConfig": ubx.FieldSpec{
+		WireName: "metrics_config",
+		Kind:     "object",
+		Fields:   V1betaApp_EvaluationSettings_MetricsConfigFields,
+	},
+	"ScenarioConversationInitiator":       ubx.FieldSpec{WireName: "scenario_conversation_initiator"},
+	"ScenarioEvaluationToolCallBehaviour": ubx.FieldSpec{WireName: "scenario_evaluation_tool_call_behaviour"},
+	"ScenarioExecutionMode":               ubx.FieldSpec{WireName: "scenario_execution_mode"},
+}
 
 var V1betaApp_LanguageSettingsFields = ubx.FieldMap{
-		"DefaultLanguageCode": ubx.FieldSpec{WireName: "default_language_code"},
-		"EnableMultilingualSupport": ubx.FieldSpec{WireName: "enable_multilingual_support"},
-		"FallbackAction": ubx.FieldSpec{WireName: "fallback_action"},
-		"SupportedLanguageCodes": ubx.FieldSpec{WireName: "supported_language_codes"},
-	}
+	"DefaultLanguageCode":       ubx.FieldSpec{WireName: "default_language_code"},
+	"EnableMultilingualSupport": ubx.FieldSpec{WireName: "enable_multilingual_support"},
+	"FallbackAction":            ubx.FieldSpec{WireName: "fallback_action"},
+	"SupportedLanguageCodes":    ubx.FieldSpec{WireName: "supported_language_codes"},
+}
 
 var V1betaApp_LoggingSettings_AudioRecordingConfigFields = ubx.FieldMap{
-		"GcsBucket": ubx.FieldSpec{WireName: "gcs_bucket"},
-		"GcsPathPrefix": ubx.FieldSpec{WireName: "gcs_path_prefix"},
-	}
+	"GcsBucket":     ubx.FieldSpec{WireName: "gcs_bucket"},
+	"GcsPathPrefix": ubx.FieldSpec{WireName: "gcs_path_prefix"},
+}
 
 var V1betaApp_LoggingSettings_BigqueryExportSettingsFields = ubx.FieldMap{
-		"Dataset": ubx.FieldSpec{WireName: "dataset"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Project": ubx.FieldSpec{WireName: "project"},
-	}
+	"Dataset": ubx.FieldSpec{WireName: "dataset"},
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+	"Project": ubx.FieldSpec{WireName: "project"},
+}
 
 var V1betaApp_LoggingSettings_CloudLoggingSettingsFields = ubx.FieldMap{
-		"EnableCloudLogging": ubx.FieldSpec{WireName: "enable_cloud_logging"},
-	}
+	"EnableCloudLogging": ubx.FieldSpec{WireName: "enable_cloud_logging"},
+}
 
 var V1betaApp_LoggingSettings_ConversationLoggingSettingsFields = ubx.FieldMap{
-		"DisableConversationLogging": ubx.FieldSpec{WireName: "disable_conversation_logging"},
-		"RetentionWindow": ubx.FieldSpec{WireName: "retention_window"},
-	}
+	"DisableConversationLogging": ubx.FieldSpec{WireName: "disable_conversation_logging"},
+	"RetentionWindow":            ubx.FieldSpec{WireName: "retention_window"},
+}
 
 var V1betaApp_LoggingSettings_MetricAnalysisSettingsFields = ubx.FieldMap{
-		"LlmMetricsOptedOut": ubx.FieldSpec{WireName: "llm_metrics_opted_out"},
-	}
+	"LlmMetricsOptedOut": ubx.FieldSpec{WireName: "llm_metrics_opted_out"},
+}
 
 var V1betaApp_LoggingSettings_RedactionConfigFields = ubx.FieldMap{
-		"DeidentifyTemplate": ubx.FieldSpec{WireName: "deidentify_template"},
-		"EnableRedaction": ubx.FieldSpec{WireName: "enable_redaction"},
-		"InspectTemplate": ubx.FieldSpec{WireName: "inspect_template"},
-	}
+	"DeidentifyTemplate": ubx.FieldSpec{WireName: "deidentify_template"},
+	"EnableRedaction":    ubx.FieldSpec{WireName: "enable_redaction"},
+	"InspectTemplate":    ubx.FieldSpec{WireName: "inspect_template"},
+}
 
 var V1betaApp_LoggingSettingsFields = ubx.FieldMap{
-		"AudioRecordingConfig": ubx.FieldSpec{
-			WireName: "audio_recording_config",
-			Kind: "object",
-			Fields: V1betaApp_LoggingSettings_AudioRecordingConfigFields,
-		},
-		"BigqueryExportSettings": ubx.FieldSpec{
-			WireName: "bigquery_export_settings",
-			Kind: "object",
-			Fields: V1betaApp_LoggingSettings_BigqueryExportSettingsFields,
-		},
-		"CloudLoggingSettings": ubx.FieldSpec{
-			WireName: "cloud_logging_settings",
-			Kind: "object",
-			Fields: V1betaApp_LoggingSettings_CloudLoggingSettingsFields,
-		},
-		"ConversationLoggingSettings": ubx.FieldSpec{
-			WireName: "conversation_logging_settings",
-			Kind: "object",
-			Fields: V1betaApp_LoggingSettings_ConversationLoggingSettingsFields,
-		},
-		"EvaluationAudioRecordingConfig": ubx.FieldSpec{
-			WireName: "evaluation_audio_recording_config",
-			Kind: "object",
-			Fields: V1betaApp_LoggingSettings_AudioRecordingConfigFields,
-		},
-		"MetricAnalysisSettings": ubx.FieldSpec{
-			WireName: "metric_analysis_settings",
-			Kind: "object",
-			Fields: V1betaApp_LoggingSettings_MetricAnalysisSettingsFields,
-		},
-		"RedactionConfig": ubx.FieldSpec{
-			WireName: "redaction_config",
-			Kind: "object",
-			Fields: V1betaApp_LoggingSettings_RedactionConfigFields,
-		},
-		"UnredactedAudioRecordingConfig": ubx.FieldSpec{
-			WireName: "unredacted_audio_recording_config",
-			Kind: "object",
-			Fields: V1betaApp_LoggingSettings_AudioRecordingConfigFields,
-		},
-		"UnredactedBigqueryExportSettings": ubx.FieldSpec{
-			WireName: "unredacted_bigquery_export_settings",
-			Kind: "object",
-			Fields: V1betaApp_LoggingSettings_BigqueryExportSettingsFields,
-		},
-	}
+	"AudioRecordingConfig": ubx.FieldSpec{
+		WireName: "audio_recording_config",
+		Kind:     "object",
+		Fields:   V1betaApp_LoggingSettings_AudioRecordingConfigFields,
+	},
+	"BigqueryExportSettings": ubx.FieldSpec{
+		WireName: "bigquery_export_settings",
+		Kind:     "object",
+		Fields:   V1betaApp_LoggingSettings_BigqueryExportSettingsFields,
+	},
+	"CloudLoggingSettings": ubx.FieldSpec{
+		WireName: "cloud_logging_settings",
+		Kind:     "object",
+		Fields:   V1betaApp_LoggingSettings_CloudLoggingSettingsFields,
+	},
+	"ConversationLoggingSettings": ubx.FieldSpec{
+		WireName: "conversation_logging_settings",
+		Kind:     "object",
+		Fields:   V1betaApp_LoggingSettings_ConversationLoggingSettingsFields,
+	},
+	"EvaluationAudioRecordingConfig": ubx.FieldSpec{
+		WireName: "evaluation_audio_recording_config",
+		Kind:     "object",
+		Fields:   V1betaApp_LoggingSettings_AudioRecordingConfigFields,
+	},
+	"MetricAnalysisSettings": ubx.FieldSpec{
+		WireName: "metric_analysis_settings",
+		Kind:     "object",
+		Fields:   V1betaApp_LoggingSettings_MetricAnalysisSettingsFields,
+	},
+	"RedactionConfig": ubx.FieldSpec{
+		WireName: "redaction_config",
+		Kind:     "object",
+		Fields:   V1betaApp_LoggingSettings_RedactionConfigFields,
+	},
+	"UnredactedAudioRecordingConfig": ubx.FieldSpec{
+		WireName: "unredacted_audio_recording_config",
+		Kind:     "object",
+		Fields:   V1betaApp_LoggingSettings_AudioRecordingConfigFields,
+	},
+	"UnredactedBigqueryExportSettings": ubx.FieldSpec{
+		WireName: "unredacted_bigquery_export_settings",
+		Kind:     "object",
+		Fields:   V1betaApp_LoggingSettings_BigqueryExportSettingsFields,
+	},
+}
 
 var V1betaApp_ModelSettingsFields = ubx.FieldMap{
-		"Model": ubx.FieldSpec{WireName: "model"},
-		"Temperature": ubx.FieldSpec{WireName: "temperature"},
-	}
-
-var V1betaApp_PredefinedVariableDeclarations_SchemaFields = ubx.FieldMap{
-		"AdditionalProperties": ubx.FieldSpec{WireName: "additional_properties"},
-		"AnyOf": ubx.FieldSpec{WireName: "any_of"},
-		"Default": ubx.FieldSpec{WireName: "default"},
-		"Defs": ubx.FieldSpec{WireName: "defs"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Enum": ubx.FieldSpec{WireName: "enum"},
-		"Items": ubx.FieldSpec{WireName: "items"},
-		"MaxItems": ubx.FieldSpec{WireName: "max_items"},
-		"Maximum": ubx.FieldSpec{WireName: "maximum"},
-		"MinItems": ubx.FieldSpec{WireName: "min_items"},
-		"Minimum": ubx.FieldSpec{WireName: "minimum"},
-		"Nullable": ubx.FieldSpec{WireName: "nullable"},
-		"PrefixItems": ubx.FieldSpec{WireName: "prefix_items"},
-		"Properties": ubx.FieldSpec{WireName: "properties"},
-		"Ref": ubx.FieldSpec{WireName: "ref"},
-		"Required": ubx.FieldSpec{WireName: "required"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"UniqueItems": ubx.FieldSpec{WireName: "unique_items"},
-	}
-
-var V1betaApp_PredefinedVariableDeclarationsFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Schema": ubx.FieldSpec{
-			WireName: "schema",
-			Kind: "object",
-			Fields: V1betaApp_PredefinedVariableDeclarations_SchemaFields,
-		},
-	}
+	"Model":       ubx.FieldSpec{WireName: "model"},
+	"Temperature": ubx.FieldSpec{WireName: "temperature"},
+}
 
 var V1betaApp_TimeZoneSettingsFields = ubx.FieldMap{
-		"TimeZone": ubx.FieldSpec{WireName: "time_zone"},
-	}
+	"TimeZone": ubx.FieldSpec{WireName: "time_zone"},
+}
+
+var V1betaApp_PredefinedVariableDeclarations_SchemaFields = ubx.FieldMap{
+	"AdditionalProperties": ubx.FieldSpec{WireName: "additional_properties"},
+	"AnyOf":                ubx.FieldSpec{WireName: "any_of"},
+	"Default":              ubx.FieldSpec{WireName: "default"},
+	"Defs":                 ubx.FieldSpec{WireName: "defs"},
+	"Description":          ubx.FieldSpec{WireName: "description"},
+	"Enum":                 ubx.FieldSpec{WireName: "enum"},
+	"Items":                ubx.FieldSpec{WireName: "items"},
+	"MaxItems":             ubx.FieldSpec{WireName: "max_items"},
+	"Maximum":              ubx.FieldSpec{WireName: "maximum"},
+	"MinItems":             ubx.FieldSpec{WireName: "min_items"},
+	"Minimum":              ubx.FieldSpec{WireName: "minimum"},
+	"Nullable":             ubx.FieldSpec{WireName: "nullable"},
+	"PrefixItems":          ubx.FieldSpec{WireName: "prefix_items"},
+	"Properties":           ubx.FieldSpec{WireName: "properties"},
+	"Ref":                  ubx.FieldSpec{WireName: "ref"},
+	"Required":             ubx.FieldSpec{WireName: "required"},
+	"Title":                ubx.FieldSpec{WireName: "title"},
+	"Type":                 ubx.FieldSpec{WireName: "type"},
+	"UniqueItems":          ubx.FieldSpec{WireName: "unique_items"},
+}
+
+var V1betaApp_PredefinedVariableDeclarationsFields = ubx.FieldMap{
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"Schema": ubx.FieldSpec{
+		WireName: "schema",
+		Kind:     "object",
+		Fields:   V1betaApp_PredefinedVariableDeclarations_SchemaFields,
+	},
+}
 
 var V1betaApp_VpcScSettingsFields = ubx.FieldMap{
-		"AllowedOrigins": ubx.FieldSpec{WireName: "allowed_origins"},
-	}
+	"AllowedOrigins": ubx.FieldSpec{WireName: "allowed_origins"},
+}
 
 type V1betaAppConfig struct {
 	// Configuration for how the input and output audio should be processed and delivered.
 	AudioProcessingConfig any
 	// Settings for custom client certificates.
 	ClientCertificateSettings any
-	// Output only. Timestamp when the app was created.
-	CreateTime any
 	// Data store related settings for the app.
 	DataStoreSettings any
 	// A ChannelProfile configures the agent's behavior for a specific communication channel, such as web UI or telephony.
 	DefaultChannelProfile any
-	// Output only. Number of deployments in the app.
-	DeploymentCount any
 	// Optional. Human-readable description of the app.
 	Description any
 	// Required. Display name of the app.
 	DisplayName any
 	// Settings to describe how errors should be handled in the app.
 	ErrorHandlingSettings any
-	// Output only. Etag used to ensure the object hasn't changed during a read-modify-write operation. If the etag is empty, the update will overwrite any concurrent changes.
-	Etag any
 	// Threshold settings for metrics in an Evaluation.
 	EvaluationMetricsThresholds any
 	// Optional. The evaluation personas for the app. This field is used to define the personas that can be used for evaluation. Maximum of 30 personas can be defined.
@@ -858,18 +852,12 @@ type V1betaAppConfig struct {
 	Name any
 	// Optional. Whether the app is pinned in the app list.
 	Pinned any
-	// Output only. The declarations of predefined variables for the app.
-	PredefinedVariableDeclarations any
 	// Optional. The root agent is the entry point of the app. Format: `projects/{project}/locations/{location}/apps/{app}/agents/{agent}`
 	RootAgent any
 	// TimeZone settings of the app.
 	TimeZoneSettings any
 	// Optional. The tool execution mode for the app. If not provided, will default to PARALLEL.
 	ToolExecutionMode any
-	// Output only. Timestamp when the app was last updated.
-	UpdateTime any
-	// Output only. Misconfigurations or warnings in the app.
-	ValidationErrors any
 	// Optional. The declarations of the variables.
 	VariableDeclarations any
 	// VPC-SC settings for the app.
@@ -944,93 +932,83 @@ var V1betaApp = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AudioProcessingConfig": ubx.FieldSpec{
 			WireName: "audio_processing_config",
-			Kind: "object",
-			Fields: V1betaApp_AudioProcessingConfigFields,
+			Kind:     "object",
+			Fields:   V1betaApp_AudioProcessingConfigFields,
 		},
 		"ClientCertificateSettings": ubx.FieldSpec{
 			WireName: "client_certificate_settings",
-			Kind: "object",
-			Fields: V1betaApp_ClientCertificateSettingsFields,
+			Kind:     "object",
+			Fields:   V1betaApp_ClientCertificateSettingsFields,
 		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"DataStoreSettings": ubx.FieldSpec{
 			WireName: "data_store_settings",
-			Kind: "object",
-			Fields: V1betaApp_DataStoreSettingsFields,
+			Kind:     "object",
+			Fields:   V1betaApp_DataStoreSettingsFields,
 		},
 		"DefaultChannelProfile": ubx.FieldSpec{
 			WireName: "default_channel_profile",
-			Kind: "object",
-			Fields: V1betaApp_DefaultChannelProfileFields,
+			Kind:     "object",
+			Fields:   V1betaApp_DefaultChannelProfileFields,
 		},
-		"DeploymentCount": ubx.FieldSpec{WireName: "deployment_count"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"ErrorHandlingSettings": ubx.FieldSpec{
 			WireName: "error_handling_settings",
-			Kind: "object",
-			Fields: V1betaApp_ErrorHandlingSettingsFields,
+			Kind:     "object",
+			Fields:   V1betaApp_ErrorHandlingSettingsFields,
 		},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
 		"EvaluationMetricsThresholds": ubx.FieldSpec{
 			WireName: "evaluation_metrics_thresholds",
-			Kind: "object",
-			Fields: V1betaApp_EvaluationMetricsThresholdsFields,
+			Kind:     "object",
+			Fields:   V1betaApp_EvaluationMetricsThresholdsFields,
 		},
 		"EvaluationPersonas": ubx.FieldSpec{
 			WireName: "evaluation_personas",
-			Kind: "list",
-			Fields: V1betaApp_EvaluationPersonasFields,
+			Kind:     "list",
+			Fields:   V1betaApp_EvaluationPersonasFields,
 		},
 		"EvaluationSettings": ubx.FieldSpec{
 			WireName: "evaluation_settings",
-			Kind: "object",
-			Fields: V1betaApp_EvaluationSettingsFields,
+			Kind:     "object",
+			Fields:   V1betaApp_EvaluationSettingsFields,
 		},
 		"GlobalInstruction": ubx.FieldSpec{WireName: "global_instruction"},
-		"Guardrails": ubx.FieldSpec{WireName: "guardrails"},
+		"Guardrails":        ubx.FieldSpec{WireName: "guardrails"},
 		"LanguageSettings": ubx.FieldSpec{
 			WireName: "language_settings",
-			Kind: "object",
-			Fields: V1betaApp_LanguageSettingsFields,
+			Kind:     "object",
+			Fields:   V1betaApp_LanguageSettingsFields,
 		},
 		"Locked": ubx.FieldSpec{WireName: "locked"},
 		"LoggingSettings": ubx.FieldSpec{
 			WireName: "logging_settings",
-			Kind: "object",
-			Fields: V1betaApp_LoggingSettingsFields,
+			Kind:     "object",
+			Fields:   V1betaApp_LoggingSettingsFields,
 		},
 		"Metadata": ubx.FieldSpec{WireName: "metadata"},
 		"ModelSettings": ubx.FieldSpec{
 			WireName: "model_settings",
-			Kind: "object",
-			Fields: V1betaApp_ModelSettingsFields,
+			Kind:     "object",
+			Fields:   V1betaApp_ModelSettingsFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Pinned": ubx.FieldSpec{WireName: "pinned"},
-		"PredefinedVariableDeclarations": ubx.FieldSpec{
-			WireName: "predefined_variable_declarations",
-			Kind: "list",
-			Fields: V1betaApp_PredefinedVariableDeclarationsFields,
-		},
+		"Name":      ubx.FieldSpec{WireName: "name"},
+		"Pinned":    ubx.FieldSpec{WireName: "pinned"},
 		"RootAgent": ubx.FieldSpec{WireName: "root_agent"},
 		"TimeZoneSettings": ubx.FieldSpec{
 			WireName: "time_zone_settings",
-			Kind: "object",
-			Fields: V1betaApp_TimeZoneSettingsFields,
+			Kind:     "object",
+			Fields:   V1betaApp_TimeZoneSettingsFields,
 		},
 		"ToolExecutionMode": ubx.FieldSpec{WireName: "tool_execution_mode"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-		"ValidationErrors": ubx.FieldSpec{WireName: "validation_errors"},
 		"VariableDeclarations": ubx.FieldSpec{
 			WireName: "variable_declarations",
-			Kind: "list",
-			Fields: V1betaApp_PredefinedVariableDeclarationsFields,
+			Kind:     "list",
+			Fields:   V1betaApp_PredefinedVariableDeclarationsFields,
 		},
 		"VpcScSettings": ubx.FieldSpec{
 			WireName: "vpc_sc_settings",
-			Kind: "object",
-			Fields: V1betaApp_VpcScSettingsFields,
+			Kind:     "object",
+			Fields:   V1betaApp_VpcScSettingsFields,
 		},
 	},
 }

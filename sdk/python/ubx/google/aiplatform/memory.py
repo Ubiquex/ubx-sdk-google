@@ -32,8 +32,6 @@ _Memory_TopicsFields = {
 
 @dataclasses.dataclass
 class MemoryConfig:
-    # Output only. Represents the timestamp when this Memory was created.
-    create_time: Any = None
     # Optional. Represents the description of the Memory.
     description: Any = None
     # Optional. Input only. Indicates whether no revision will be created for this request.
@@ -60,8 +58,6 @@ class MemoryConfig:
     topics: Any = None
     # Optional. Input only. Represents the TTL for this resource. The expiration time is computed: now + TTL.
     ttl: Any = None
-    # Output only. Represents the timestamp when this Memory was most recently updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class MemoryAttrs:
@@ -99,7 +95,6 @@ class MemoryAttrs:
 Memory = ubx.ResourceBinding(
     wire_type="google_aiplatform_memory",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "disable_memory_revisions": ubx.FieldSpec(wire_name="disable_memory_revisions"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
@@ -121,6 +116,5 @@ Memory = ubx.ResourceBinding(
             fields=_Memory_TopicsFields,
         ),
         "ttl": ubx.FieldSpec(wire_name="ttl"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

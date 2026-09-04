@@ -205,20 +205,10 @@ const V1betaOrgPolicyViolationsPreview_ResourceCountsFields: FieldMap = {
 };
 
 export interface V1betaOrgPolicyViolationsPreviewConfig {
-  /** Output only. Time when this `OrgPolicyViolationsPreview` was created. */
-  createTime?: string | Computed<string>;
-  /** Output only. The names of the constraints against which all `OrgPolicyViolations` were evaluated. If `OrgPolicyOverlay` only contains `PolicyOverlay` then it contains the name of the configured custom constraint, applicable to the specified policies. Otherwise it contains the name of the constraint specified in `CustomConstraintOverlay`. Format: `organizations/{organization_id}/customConstraints/{custom_constraint_id}` Example: `organizations/123/customConstraints/custom.createOnlyE2TypeVms` */
-  customConstraints?: string[] | Computed<string[]>;
-  /** Output only. The resource name of the `OrgPolicyViolationsPreview`. It has the following format: `organizations/{organization}/locations/{location}/orgPolicyViolationsPreviews/{orgPolicyViolationsPreview}` Example: `organizations/my-example-org/locations/global/orgPolicyViolationsPreviews/506a5f7f` */
-  name?: string | Computed<string>;
   /** The proposed changes to OrgPolicy. */
   overlay?: V1betaOrgPolicyViolationsPreview_Overlay | Computed<V1betaOrgPolicyViolationsPreview_Overlay>;
   /** A summary of the state of all resources scanned for compliance with the changed OrgPolicy. */
   resourceCounts?: V1betaOrgPolicyViolationsPreview_ResourceCounts | Computed<V1betaOrgPolicyViolationsPreview_ResourceCounts>;
-  /** Output only. The state of the `OrgPolicyViolationsPreview`. */
-  state?: string | Computed<string>;
-  /** Output only. The number of OrgPolicyViolations in this `OrgPolicyViolationsPreview`. This count may differ from `resource_summary.noncompliant_count` because each OrgPolicyViolation is specific to a resource **and** constraint. If there are multiple constraints being evaluated (i.e. multiple policies in the overlay), a single resource may violate multiple constraints. */
-  violationsCount?: number | Computed<number>;
 }
 
 export interface V1betaOrgPolicyViolationsPreviewAttrs {
@@ -241,9 +231,6 @@ export interface V1betaOrgPolicyViolationsPreviewAttrs {
 export const V1betaOrgPolicyViolationsPreview: ResourceBinding<V1betaOrgPolicyViolationsPreviewConfig, V1betaOrgPolicyViolationsPreviewAttrs> = {
   wireType: "google_policysimulator_v1beta_org_policy_violations_preview",
   fields: {
-    createTime: "create_time",
-    customConstraints: "custom_constraints",
-    name: "name",
     overlay: {
       wireName: "overlay",
       kind: "object",
@@ -254,7 +241,5 @@ export const V1betaOrgPolicyViolationsPreview: ResourceBinding<V1betaOrgPolicyVi
       kind: "object",
       fields: V1betaOrgPolicyViolationsPreview_ResourceCountsFields,
     },
-    state: "state",
-    violationsCount: "violations_count",
   },
 };

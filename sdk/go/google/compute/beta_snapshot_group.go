@@ -4,46 +4,34 @@ package compute
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BetaSnapshotGroup_SourceInfo struct {
-	ConsistencyGroup any
+	ConsistencyGroup   any
 	ConsistencyGroupId any
 }
 
 type BetaSnapshotGroup_SourceInstantSnapshotGroupInfo struct {
-	InstantSnapshotGroup any
+	InstantSnapshotGroup   any
 	InstantSnapshotGroupId any
 }
 
 var BetaSnapshotGroup_SourceInfoFields = ubx.FieldMap{
-		"ConsistencyGroup": ubx.FieldSpec{WireName: "consistency_group"},
-		"ConsistencyGroupId": ubx.FieldSpec{WireName: "consistency_group_id"},
-	}
+	"ConsistencyGroup":   ubx.FieldSpec{WireName: "consistency_group"},
+	"ConsistencyGroupId": ubx.FieldSpec{WireName: "consistency_group_id"},
+}
 
 var BetaSnapshotGroup_SourceInstantSnapshotGroupInfoFields = ubx.FieldMap{
-		"InstantSnapshotGroup": ubx.FieldSpec{WireName: "instant_snapshot_group"},
-		"InstantSnapshotGroupId": ubx.FieldSpec{WireName: "instant_snapshot_group_id"},
-	}
+	"InstantSnapshotGroup":   ubx.FieldSpec{WireName: "instant_snapshot_group"},
+	"InstantSnapshotGroupId": ubx.FieldSpec{WireName: "instant_snapshot_group_id"},
+}
 
 type BetaSnapshotGroupConfig struct {
-	// Output only. [Output Only] Creation timestamp inRFC3339 text format.
-	CreationTimestamp any
 	// Optional. An optional description of this resource. Provide this property when you create the resource.
 	Description any
-	// Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-	Id any
-	// Output only. [Output Only] Type of the resource. Alwayscompute#snapshotGroup for SnapshotGroup resources.
-	Kind any
 	// Identifier. Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-	Name any
-	// Output only. [Output Only] Server-defined URL for the resource.
-	SelfLink any
-	// Output only. [Output Only] Server-defined URL for this resource's resource id.
-	SelfLinkWithId any
+	Name       any
 	SourceInfo any
 	// Input field for the source instant snapshot group.
-	SourceInstantSnapshotGroup any
+	SourceInstantSnapshotGroup     any
 	SourceInstantSnapshotGroupInfo any
-	// Output only. [Output Only]
-	Status any
 }
 
 type BetaSnapshotGroupAttrs struct {
@@ -61,9 +49,9 @@ type BetaSnapshotGroupAttrs struct {
 	SelfLink any
 	// Output only. [Output Only] Server-defined URL for this resource's resource id.
 	SelfLinkWithId any
-	SourceInfo any
+	SourceInfo     any
 	// Input field for the source instant snapshot group.
-	SourceInstantSnapshotGroup any
+	SourceInstantSnapshotGroup     any
 	SourceInstantSnapshotGroupInfo any
 	// Output only. [Output Only]
 	Status any
@@ -72,24 +60,18 @@ type BetaSnapshotGroupAttrs struct {
 var BetaSnapshotGroup = ubx.ResourceBinding{
 	WireType: "google_compute_beta_snapshot_group",
 	Fields: ubx.FieldMap{
-		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"SelfLinkWithId": ubx.FieldSpec{WireName: "self_link_with_id"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"SourceInfo": ubx.FieldSpec{
 			WireName: "source_info",
-			Kind: "object",
-			Fields: BetaSnapshotGroup_SourceInfoFields,
+			Kind:     "object",
+			Fields:   BetaSnapshotGroup_SourceInfoFields,
 		},
 		"SourceInstantSnapshotGroup": ubx.FieldSpec{WireName: "source_instant_snapshot_group"},
 		"SourceInstantSnapshotGroupInfo": ubx.FieldSpec{
 			WireName: "source_instant_snapshot_group_info",
-			Kind: "object",
-			Fields: BetaSnapshotGroup_SourceInstantSnapshotGroupInfoFields,
+			Kind:     "object",
+			Fields:   BetaSnapshotGroup_SourceInstantSnapshotGroupInfoFields,
 		},
-		"Status": ubx.FieldSpec{WireName: "status"},
 	},
 }

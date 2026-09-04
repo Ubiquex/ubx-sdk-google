@@ -64,8 +64,6 @@ _V1beta1TagTemplate_FieldsFields = {
 
 @dataclasses.dataclass
 class V1beta1TagTemplateConfig:
-    # Output only. Transfer status of the TagTemplate
-    dataplex_transfer_status: Any = None
     # The display name for this template. Defaults to an empty string.
     display_name: Any = None
     # Required. Map of tag template field IDs to the settings for the field. This map is an exhaustive list of the allowed fields. This map must contain at least one field and at most 500 fields. The keys to this map are tag template field IDs. Field IDs can contain letters (both uppercase and lowercase), numbers (0-9) and underscores (_). Field IDs must be at least 1 character long and at most 64 characters long. Field IDs must start with a letter or underscore.
@@ -87,7 +85,6 @@ class V1beta1TagTemplateAttrs:
 V1beta1TagTemplate = ubx.ResourceBinding(
     wire_type="google_datacatalog_v1beta1_tag_template",
     fields={
-        "dataplex_transfer_status": ubx.FieldSpec(wire_name="dataplex_transfer_status"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "fields": ubx.FieldSpec(
             wire_name="fields",

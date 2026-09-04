@@ -244,8 +244,6 @@ export interface V1betaGuardrailConfig {
   codeCallback?: V1betaGuardrail_CodeCallback | Computed<V1betaGuardrail_CodeCallback>;
   /** Guardrail that bans certain content from being used in the conversation. */
   contentFilter?: V1betaGuardrail_ContentFilter | Computed<V1betaGuardrail_ContentFilter>;
-  /** Output only. Timestamp when the guardrail was created. */
-  createTime?: string | Computed<string>;
   /** Optional. Description of the guardrail. */
   description?: string | Computed<string>;
   /** Required. Display name of the guardrail. */
@@ -262,8 +260,6 @@ export interface V1betaGuardrailConfig {
   modelSafety?: V1betaGuardrail_ModelSafety | Computed<V1betaGuardrail_ModelSafety>;
   /** Identifier. The unique identifier of the guardrail. Format: `projects/{project}/locations/{location}/apps/{app}/guardrails/{guardrail}` */
   name?: string | Computed<string>;
-  /** Output only. Timestamp when the guardrail was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1betaGuardrailAttrs {
@@ -313,7 +309,6 @@ export const V1betaGuardrail: ResourceBinding<V1betaGuardrailConfig, V1betaGuard
       kind: "object",
       fields: V1betaGuardrail_ContentFilterFields,
     },
-    createTime: "create_time",
     description: "description",
     displayName: "display_name",
     enabled: "enabled",
@@ -334,6 +329,5 @@ export const V1betaGuardrail: ResourceBinding<V1betaGuardrailConfig, V1betaGuard
       fields: V1betaGuardrail_ModelSafetyFields,
     },
     name: "name",
-    updateTime: "update_time",
   },
 };

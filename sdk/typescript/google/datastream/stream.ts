@@ -876,14 +876,6 @@ const Stream_DestinationConfigFields: FieldMap = {
   },
 };
 
-const Stream_ErrorsFields: FieldMap = {
-  details: "details",
-  errorTime: "error_time",
-  errorUuid: "error_uuid",
-  message: "message",
-  reason: "reason",
-};
-
 const Stream_RuleSets_CustomizationRules_BigqueryClusteringFields: FieldMap = {
   columns: "columns",
 };
@@ -1242,34 +1234,20 @@ export interface StreamConfig {
   backfillAll?: Stream_BackfillAll | Computed<Stream_BackfillAll>;
   /** Backfill strategy to disable automatic backfill for the Stream's objects. */
   backfillNone?: unknown | Computed<unknown>;
-  /** Output only. The creation time of the stream. */
-  createTime?: string | Computed<string>;
   /** Immutable. A reference to a KMS encryption key. If provided, it will be used to encrypt the data. If left blank, data will be encrypted using an internal Stream-specific encryption key provisioned through KMS. */
   customerManagedEncryptionKey?: string | Computed<string>;
   /** The configuration of the stream destination. */
   destinationConfig?: Stream_DestinationConfig | Computed<Stream_DestinationConfig>;
   /** Required. Display name. */
   displayName?: string | Computed<string>;
-  /** Output only. Errors on the Stream. */
-  errors?: Stream_Errors[] | Computed<Stream_Errors[]>;
   /** Labels. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. If the stream was recovered, the time of the last recovery. Note: This field is currently experimental. */
-  lastRecoveryTime?: string | Computed<string>;
-  /** Output only. Identifier. The stream's name. */
-  name?: string | Computed<string>;
   /** Optional. Rule sets to apply to the stream. */
   ruleSets?: Stream_RuleSets[] | Computed<Stream_RuleSets[]>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzi?: boolean | Computed<boolean>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzs?: boolean | Computed<boolean>;
   /** The configuration of the stream source. */
   sourceConfig?: Stream_SourceConfig | Computed<Stream_SourceConfig>;
   /** The state of the stream. */
   state?: string | Computed<string>;
-  /** Output only. The last update time of the stream. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface StreamAttrs {
@@ -1316,7 +1294,6 @@ export const Stream: ResourceBinding<StreamConfig, StreamAttrs> = {
       fields: Stream_BackfillAllFields,
     },
     backfillNone: "backfill_none",
-    createTime: "create_time",
     customerManagedEncryptionKey: "customer_managed_encryption_key",
     destinationConfig: {
       wireName: "destination_config",
@@ -1324,27 +1301,17 @@ export const Stream: ResourceBinding<StreamConfig, StreamAttrs> = {
       fields: Stream_DestinationConfigFields,
     },
     displayName: "display_name",
-    errors: {
-      wireName: "errors",
-      kind: "list",
-      fields: Stream_ErrorsFields,
-    },
     labels: "labels",
-    lastRecoveryTime: "last_recovery_time",
-    name: "name",
     ruleSets: {
       wireName: "rule_sets",
       kind: "list",
       fields: Stream_RuleSetsFields,
     },
-    satisfiesPzi: "satisfies_pzi",
-    satisfiesPzs: "satisfies_pzs",
     sourceConfig: {
       wireName: "source_config",
       kind: "object",
       fields: Stream_SourceConfigFields,
     },
     state: "state",
-    updateTime: "update_time",
   },
 };

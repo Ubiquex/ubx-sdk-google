@@ -15,7 +15,6 @@ export interface Resource_TerraformInfo {
 }
 
 export interface ResourceConfig {
-  name: string | Computed<string>;
 }
 
 export interface ResourceAttrs {
@@ -33,6 +32,5 @@ export interface ResourceAttrs {
 export const Resource: DataSourceBinding<ResourceConfig, ResourceAttrs> = {
   wireType: "google_config_resource",
   fields: {
-    name: "name",
   },
 };

@@ -4,32 +4,30 @@ package aiplatform
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Memory_Metadata struct {
-	BoolValue any
-	DoubleValue any
-	StringValue any
+	BoolValue      any
+	DoubleValue    any
+	StringValue    any
 	TimestampValue any
 }
 
 type Memory_Topics struct {
 	CustomMemoryTopicLabel any
-	ManagedMemoryTopic any
+	ManagedMemoryTopic     any
 }
 
 var Memory_MetadataFields = ubx.FieldMap{
-		"BoolValue": ubx.FieldSpec{WireName: "bool_value"},
-		"DoubleValue": ubx.FieldSpec{WireName: "double_value"},
-		"StringValue": ubx.FieldSpec{WireName: "string_value"},
-		"TimestampValue": ubx.FieldSpec{WireName: "timestamp_value"},
-	}
+	"BoolValue":      ubx.FieldSpec{WireName: "bool_value"},
+	"DoubleValue":    ubx.FieldSpec{WireName: "double_value"},
+	"StringValue":    ubx.FieldSpec{WireName: "string_value"},
+	"TimestampValue": ubx.FieldSpec{WireName: "timestamp_value"},
+}
 
 var Memory_TopicsFields = ubx.FieldMap{
-		"CustomMemoryTopicLabel": ubx.FieldSpec{WireName: "custom_memory_topic_label"},
-		"ManagedMemoryTopic": ubx.FieldSpec{WireName: "managed_memory_topic"},
-	}
+	"CustomMemoryTopicLabel": ubx.FieldSpec{WireName: "custom_memory_topic_label"},
+	"ManagedMemoryTopic":     ubx.FieldSpec{WireName: "managed_memory_topic"},
+}
 
 type MemoryConfig struct {
-	// Output only. Represents the timestamp when this Memory was created.
-	CreateTime any
 	// Optional. Represents the description of the Memory.
 	Description any
 	// Optional. Input only. Indicates whether no revision will be created for this request.
@@ -56,8 +54,6 @@ type MemoryConfig struct {
 	Topics any
 	// Optional. Input only. Represents the TTL for this resource. The expiration time is computed: now + TTL.
 	Ttl any
-	// Output only. Represents the timestamp when this Memory was most recently updated.
-	UpdateTime any
 }
 
 type MemoryAttrs struct {
@@ -96,28 +92,26 @@ type MemoryAttrs struct {
 var Memory = ubx.ResourceBinding{
 	WireType: "google_aiplatform_memory",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":            ubx.FieldSpec{WireName: "description"},
 		"DisableMemoryRevisions": ubx.FieldSpec{WireName: "disable_memory_revisions"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"ExpireTime": ubx.FieldSpec{WireName: "expire_time"},
-		"Fact": ubx.FieldSpec{WireName: "fact"},
+		"DisplayName":            ubx.FieldSpec{WireName: "display_name"},
+		"ExpireTime":             ubx.FieldSpec{WireName: "expire_time"},
+		"Fact":                   ubx.FieldSpec{WireName: "fact"},
 		"Metadata": ubx.FieldSpec{
 			WireName: "metadata",
-			Kind: "map",
-			Fields: Memory_MetadataFields,
+			Kind:     "map",
+			Fields:   Memory_MetadataFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":               ubx.FieldSpec{WireName: "name"},
 		"RevisionExpireTime": ubx.FieldSpec{WireName: "revision_expire_time"},
-		"RevisionLabels": ubx.FieldSpec{WireName: "revision_labels"},
-		"RevisionTtl": ubx.FieldSpec{WireName: "revision_ttl"},
-		"Scope": ubx.FieldSpec{WireName: "scope"},
+		"RevisionLabels":     ubx.FieldSpec{WireName: "revision_labels"},
+		"RevisionTtl":        ubx.FieldSpec{WireName: "revision_ttl"},
+		"Scope":              ubx.FieldSpec{WireName: "scope"},
 		"Topics": ubx.FieldSpec{
 			WireName: "topics",
-			Kind: "list",
-			Fields: Memory_TopicsFields,
+			Kind:     "list",
+			Fields:   Memory_TopicsFields,
 		},
 		"Ttl": ubx.FieldSpec{WireName: "ttl"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

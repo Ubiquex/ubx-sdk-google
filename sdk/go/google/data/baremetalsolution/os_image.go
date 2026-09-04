@@ -4,7 +4,6 @@ package baremetalsolution
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type OsImageConfig struct {
-	Name any
 }
 
 type OsImageAttrs struct {
@@ -14,14 +13,12 @@ type OsImageAttrs struct {
 	Code any
 	// OS Image description.
 	Description any
-	Name any
+	Name        any
 	// Network templates that can be used with this OS Image.
 	SupportedNetworkTemplates any
 }
 
 var OsImage = ubx.DataSourceBinding{
 	WireType: "google_baremetalsolution_os_image",
-	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	},
+	Fields:   ubx.FieldMap{},
 }

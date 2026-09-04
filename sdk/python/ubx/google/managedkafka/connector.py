@@ -27,8 +27,6 @@ class ConnectorConfig:
     configs: Any = None
     # Identifier. The name of the connector. Structured like: projects/{project}/locations/{location}/connectClusters/{connect_cluster}/connectors/{connector}
     name: Any = None
-    # Output only. The current state of the connector.
-    state: Any = None
     # Task Retry Policy is implemented on a best-effort basis. The default policy retries tasks with a minimum_backoff of 60 seconds, and a maximum_backoff of 12 hours. You can disable the policy by setting the task_retry_disabled field to true. Retry delay will be exponential based on provided minimum and maximum backoffs. https://en.wikipedia.org/wiki/Exponential_backoff. Note that the delay between consecutive task restarts may not always precisely match the configured settings. This can happen when the ConnectCluster is in rebalancing state or if the ConnectCluster is unresponsive etc. The default values for minimum and maximum backoffs are 60 seconds and 12 hours respectively.
     task_restart_policy: Any = None
 
@@ -48,7 +46,6 @@ Connector = ubx.ResourceBinding(
     fields={
         "configs": ubx.FieldSpec(wire_name="configs"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "state": ubx.FieldSpec(wire_name="state"),
         "task_restart_policy": ubx.FieldSpec(
             wire_name="task_restart_policy",
             kind="object",

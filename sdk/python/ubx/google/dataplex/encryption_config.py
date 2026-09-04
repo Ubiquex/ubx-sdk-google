@@ -20,12 +20,8 @@ _EncryptionConfig_FailureDetailsFields = {
 
 @dataclasses.dataclass
 class EncryptionConfigConfig:
-    # Output only. The time when the Encryption configuration was created.
-    create_time: Any = None
     # Optional. Represent the state of CMEK opt-in for metastore.
     enable_metastore_encryption: Any = None
-    # Output only. The state of encryption of the databases.
-    encryption_state: Any = None
     # Etag of the EncryptionConfig. This is a strong etag.
     etag: Any = None
     # Details of the failure if anything related to Cmek db fails.
@@ -34,8 +30,6 @@ class EncryptionConfigConfig:
     key: Any = None
     # Identifier. The resource name of the EncryptionConfig. Format: organizations/{organization}/locations/{location}/encryptionConfigs/{encryption_config} Global location is not supported.
     name: Any = None
-    # Output only. The time when the Encryption configuration was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class EncryptionConfigAttrs:
@@ -59,9 +53,7 @@ class EncryptionConfigAttrs:
 EncryptionConfig = ubx.ResourceBinding(
     wire_type="google_dataplex_encryption_config",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "enable_metastore_encryption": ubx.FieldSpec(wire_name="enable_metastore_encryption"),
-        "encryption_state": ubx.FieldSpec(wire_name="encryption_state"),
         "etag": ubx.FieldSpec(wire_name="etag"),
         "failure_details": ubx.FieldSpec(
             wire_name="failure_details",
@@ -70,6 +62,5 @@ EncryptionConfig = ubx.ResourceBinding(
         ),
         "key": ubx.FieldSpec(wire_name="key"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

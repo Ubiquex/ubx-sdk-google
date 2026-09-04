@@ -99,22 +99,14 @@ export interface DependencyConfig {
   attributes?: Record<string, Dependency_Attributes> | Computed<Record<string, Dependency_Attributes>>;
   /** Reference to an entity participating in a dependency. */
   consumer?: Dependency_Consumer | Computed<Dependency_Consumer>;
-  /** Output only. The time at which the dependency was created. */
-  createTime?: string | Computed<string>;
   /** Optional. Human readable description corresponding of the dependency. */
   description?: string | Computed<string>;
-  /** Output only. Discovery mode of the dependency. */
-  discoveryMode?: string | Computed<string>;
   /** Details describing error condition of a dependency. */
   errorDetail?: Dependency_ErrorDetail | Computed<Dependency_ErrorDetail>;
   /** Identifier. The name of the dependency in the API Hub. Format: `projects/{project}/locations/{location}/dependencies/{dependency}` */
   name?: string | Computed<string>;
-  /** Output only. State of the dependency. */
-  state?: string | Computed<string>;
   /** Reference to an entity participating in a dependency. */
   supplier?: Dependency_Consumer | Computed<Dependency_Consumer>;
-  /** Output only. The time at which the dependency was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface DependencyAttrs {
@@ -153,21 +145,17 @@ export const Dependency: ResourceBinding<DependencyConfig, DependencyAttrs> = {
       kind: "object",
       fields: Dependency_ConsumerFields,
     },
-    createTime: "create_time",
     description: "description",
-    discoveryMode: "discovery_mode",
     errorDetail: {
       wireName: "error_detail",
       kind: "object",
       fields: Dependency_ErrorDetailFields,
     },
     name: "name",
-    state: "state",
     supplier: {
       wireName: "supplier",
       kind: "object",
       fields: Dependency_ConsumerFields,
     },
-    updateTime: "update_time",
   },
 };

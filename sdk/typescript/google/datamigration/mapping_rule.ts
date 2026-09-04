@@ -406,10 +406,6 @@ export interface MappingRuleConfig {
   multiEntityRename?: MappingRule_MultiEntityRename | Computed<MappingRule_MultiEntityRename>;
   /** Full name of the mapping rule resource, in the form of: projects/{project}/locations/{location}/conversionWorkspaces/{set}/mappingRule/{rule}. */
   name?: string | Computed<string>;
-  /** Output only. The timestamp that the revision was created. */
-  revisionCreateTime?: string | Computed<string>;
-  /** Output only. The revision ID of the mapping rule. A new revision is committed whenever the mapping rule is changed in any way. The format is an 8-character hexadecimal string. */
-  revisionId?: string | Computed<string>;
   /** Required. The order in which the rule is applied. Lower order rules are applied before higher value rules so they may end up being overridden. */
   ruleOrder?: string | Computed<string>;
   /** Required. The rule scope */
@@ -509,8 +505,6 @@ export const MappingRule: ResourceBinding<MappingRuleConfig, MappingRuleAttrs> =
       fields: MappingRule_MultiEntityRenameFields,
     },
     name: "name",
-    revisionCreateTime: "revision_create_time",
-    revisionId: "revision_id",
     ruleOrder: "rule_order",
     ruleScope: "rule_scope",
     setTablePrimaryKey: {

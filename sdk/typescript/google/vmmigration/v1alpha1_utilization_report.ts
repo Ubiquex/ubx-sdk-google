@@ -109,28 +109,14 @@ const V1alpha1UtilizationReport_VmsFields: FieldMap = {
 };
 
 export interface V1alpha1UtilizationReportConfig {
-  /** Output only. The time the report was created (this refers to the time of the request, not the time the report creation completed). */
-  createTime?: string | Computed<string>;
   /** The report display name, as assigned by the user. */
   displayName?: string | Computed<string>;
   /** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
   error?: V1alpha1UtilizationReport_Error | Computed<V1alpha1UtilizationReport_Error>;
-  /** Output only. The point in time when the time frame ends. Notice that the time frame is counted backwards. For instance if the "frame_end_time" value is 2021/01/20 and the time frame is WEEK then the report covers the week between 2021/01/20 and 2021/01/14. */
-  frameEndTime?: string | Computed<string>;
-  /** Output only. The report unique name. */
-  name?: string | Computed<string>;
-  /** Output only. Current state of the report. */
-  state?: string | Computed<string>;
-  /** Output only. The time the state was last set. */
-  stateTime?: string | Computed<string>;
   /** Time frame of the report. */
   timeFrame?: string | Computed<string>;
-  /** Output only. Total number of VMs included in the report. */
-  vmCount?: number | Computed<number>;
   /** List of utilization information per VM. When sent as part of the request, the "vm_id" field is used in order to specify which VMs to include in the report. In that case all other fields are ignored. */
   vms?: V1alpha1UtilizationReport_Vms[] | Computed<V1alpha1UtilizationReport_Vms[]>;
-  /** Output only. Total number of VMs included in the report. */
-  vmsCount?: number | Computed<number>;
 }
 
 export interface V1alpha1UtilizationReportAttrs {
@@ -161,24 +147,17 @@ export interface V1alpha1UtilizationReportAttrs {
 export const V1alpha1UtilizationReport: ResourceBinding<V1alpha1UtilizationReportConfig, V1alpha1UtilizationReportAttrs> = {
   wireType: "google_vmmigration_v1alpha1_utilization_report",
   fields: {
-    createTime: "create_time",
     displayName: "display_name",
     error: {
       wireName: "error",
       kind: "object",
       fields: V1alpha1UtilizationReport_ErrorFields,
     },
-    frameEndTime: "frame_end_time",
-    name: "name",
-    state: "state",
-    stateTime: "state_time",
     timeFrame: "time_frame",
-    vmCount: "vm_count",
     vms: {
       wireName: "vms",
       kind: "list",
       fields: V1alpha1UtilizationReport_VmsFields,
     },
-    vmsCount: "vms_count",
   },
 };

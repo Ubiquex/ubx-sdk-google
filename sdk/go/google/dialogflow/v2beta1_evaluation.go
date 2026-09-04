@@ -4,18 +4,18 @@ package dialogflow
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V2beta1Evaluation_EvaluationStatus_PipelineStatus struct {
-	Code any
+	Code    any
 	Details any
 	Message any
 }
 
 type V2beta1Evaluation_EvaluationStatus struct {
-	Done any
+	Done           any
 	PipelineStatus any
 }
 
 type V2beta1Evaluation_GeneratorEvaluationConfig_InputDataConfig_AgentAssistInputDataConfig struct {
-	EndTime any
+	EndTime   any
 	StartTime any
 }
 
@@ -25,31 +25,31 @@ type V2beta1Evaluation_GeneratorEvaluationConfig_InputDataConfig_DatasetInputDat
 
 type V2beta1Evaluation_GeneratorEvaluationConfig_InputDataConfig struct {
 	AgentAssistInputDataConfig any
-	DatasetInputDataConfig any
-	EndTime any
-	InputDataSourceType any
+	DatasetInputDataConfig     any
+	EndTime                    any
+	InputDataSourceType        any
 	IsSummaryGenerationAllowed any
-	SampleSize any
-	StartTime any
-	SummaryGenerationOption any
+	SampleSize                 any
+	StartTime                  any
+	SummaryGenerationOption    any
 }
 
 type V2beta1Evaluation_GeneratorEvaluationConfig_SummarizationConfig struct {
-	AccuracyEvaluationVersion any
+	AccuracyEvaluationVersion     any
 	CompletenessEvaluationVersion any
-	EnableAccuracyEvaluation any
-	EnableCompletenessEvaluation any
-	EvaluatorVersion any
+	EnableAccuracyEvaluation      any
+	EnableCompletenessEvaluation  any
+	EvaluatorVersion              any
 }
 
 type V2beta1Evaluation_GeneratorEvaluationConfig struct {
-	InputDataConfig any
+	InputDataConfig     any
 	OutputGcsBucketPath any
 	SummarizationConfig any
 }
 
 type V2beta1Evaluation_InitialGenerator_AgentCoachingContext_Instructions_DuplicateCheckResult_DuplicateSuggestions struct {
-	AnswerRecord any
+	AnswerRecord    any
 	SimilarityScore any
 	SuggestionIndex any
 }
@@ -59,31 +59,31 @@ type V2beta1Evaluation_InitialGenerator_AgentCoachingContext_Instructions_Duplic
 }
 
 type V2beta1Evaluation_InitialGenerator_AgentCoachingContext_Instructions struct {
-	AgentAction any
-	Condition any
-	DisplayDetails any
-	DisplayName any
+	AgentAction          any
+	Condition            any
+	DisplayDetails       any
+	DisplayName          any
 	DuplicateCheckResult any
-	SystemAction any
-	TriggeringEvent any
+	SystemAction         any
+	TriggeringEvent      any
 }
 
 type V2beta1Evaluation_InitialGenerator_AgentCoachingContext struct {
-	Instructions any
-	OutputLanguageCode any
+	Instructions        any
+	OutputLanguageCode  any
 	OverarchingGuidance any
-	Version any
+	Version             any
 }
 
 type V2beta1Evaluation_InitialGenerator_CesAppSpecs struct {
-	CesApp any
+	CesApp                  any
 	ConfirmationRequirement any
-	ProactiveEnabled any
-	ReactiveEnabled any
+	ProactiveEnabled        any
+	ReactiveEnabled         any
 }
 
 type V2beta1Evaluation_InitialGenerator_CesToolSpecs struct {
-	CesTool any
+	CesTool                 any
 	ConfirmationRequirement any
 }
 
@@ -93,21 +93,21 @@ type V2beta1Evaluation_InitialGenerator_FreeFormContext struct {
 
 type V2beta1Evaluation_InitialGenerator_InferenceParameter struct {
 	MaxOutputTokens any
-	Temperature any
-	TopK any
-	TopP any
+	Temperature     any
+	TopK            any
+	TopP            any
 }
 
 type V2beta1Evaluation_InitialGenerator_SuggestionDedupingConfig struct {
-	EnableDeduping any
+	EnableDeduping      any
 	SimilarityThreshold any
 }
 
 type V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_ConversationContext_MessageEntries struct {
-	CreateTime any
+	CreateTime   any
 	LanguageCode any
-	Role any
-	Text any
+	Role         any
+	Text         any
 }
 
 type V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_ConversationContext struct {
@@ -119,9 +119,9 @@ type V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_Out
 }
 
 type V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_Output_AgentCoachingSuggestion_AgentActionSuggestions_DuplicateCheckResult_DuplicateSuggestions struct {
-	AnswerRecord any
+	AnswerRecord    any
 	SimilarityScore any
-	Sources any
+	Sources         any
 	SuggestionIndex any
 }
 
@@ -130,21 +130,21 @@ type V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_Out
 }
 
 type V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_Output_AgentCoachingSuggestion_AgentActionSuggestions struct {
-	AgentAction any
+	AgentAction          any
 	DuplicateCheckResult any
-	Sources any
+	Sources              any
 }
 
 type V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_Output_AgentCoachingSuggestion_SampleResponses struct {
 	DuplicateCheckResult any
-	ResponseText any
-	Sources any
+	ResponseText         any
+	Sources              any
 }
 
 type V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_Output_AgentCoachingSuggestion struct {
 	AgentActionSuggestions any
 	ApplicableInstructions any
-	SampleResponses any
+	SampleResponses        any
 }
 
 type V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_Output_FreeFormSuggestion struct {
@@ -161,53 +161,53 @@ type V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_Out
 }
 
 type V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_Output_ToolCallInfo_ToolCall struct {
-	Action any
-	AnswerRecord any
-	CesApp any
-	CesTool any
-	CesToolset any
-	CreateTime any
-	InputParameters any
-	State any
-	Tool any
+	Action             any
+	AnswerRecord       any
+	CesApp             any
+	CesTool            any
+	CesToolset         any
+	CreateTime         any
+	InputParameters    any
+	State              any
+	Tool               any
 	ToolDisplayDetails any
-	ToolDisplayName any
+	ToolDisplayName    any
 }
 
 type V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_Output_ToolCallInfo_ToolCallResult_Error struct {
-	Message any
+	Message   any
 	Retryable any
 }
 
 type V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_Output_ToolCallInfo_ToolCallResult struct {
-	Action any
+	Action       any
 	AnswerRecord any
-	CesApp any
-	CesTool any
-	CesToolset any
-	Content any
-	CreateTime any
-	Error any
-	RawContent any
-	Tool any
+	CesApp       any
+	CesTool      any
+	CesToolset   any
+	Content      any
+	CreateTime   any
+	Error        any
+	RawContent   any
+	Tool         any
 }
 
 type V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_Output_ToolCallInfo struct {
-	ToolCall any
+	ToolCall       any
 	ToolCallResult any
 }
 
 type V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_Output struct {
 	AgentCoachingSuggestion any
-	FreeFormSuggestion any
-	SummarySuggestion any
-	ToolCallInfo any
+	FreeFormSuggestion      any
+	SummarySuggestion       any
+	ToolCallInfo            any
 }
 
 type V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_SummarizationSectionList_SummarizationSections struct {
 	Definition any
-	Key any
-	Type any
+	Key        any
+	Type       any
 }
 
 type V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_SummarizationSectionList struct {
@@ -215,88 +215,88 @@ type V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_Sum
 }
 
 type V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples struct {
-	ConversationContext any
-	ExtraInfo any
-	Output any
+	ConversationContext      any
+	ExtraInfo                any
+	Output                   any
 	SummarizationSectionList any
 }
 
 type V2beta1Evaluation_InitialGenerator_SummarizationContext struct {
-	FewShotExamples any
-	OutputLanguageCode any
+	FewShotExamples       any
+	OutputLanguageCode    any
 	SummarizationSections any
-	Version any
+	Version               any
 }
 
 type V2beta1Evaluation_InitialGenerator_ToolsetTools struct {
 	ConfirmationRequirement any
-	OperationId any
-	Toolset any
+	OperationId             any
+	Toolset                 any
 }
 
 type V2beta1Evaluation_InitialGenerator struct {
-	AgentCoachingContext any
-	CesAppSpecs any
-	CesToolSpecs any
-	CreateTime any
-	Description any
-	FreeFormContext any
-	InferenceParameter any
-	Name any
-	PublishedModel any
+	AgentCoachingContext     any
+	CesAppSpecs              any
+	CesToolSpecs             any
+	CreateTime               any
+	Description              any
+	FreeFormContext          any
+	InferenceParameter       any
+	Name                     any
+	PublishedModel           any
 	SuggestionDedupingConfig any
-	SummarizationContext any
-	Tools any
-	ToolsetTools any
-	TriggerEvent any
-	UpdateTime any
+	SummarizationContext     any
+	Tools                    any
+	ToolsetTools             any
+	TriggerEvent             any
+	UpdateTime               any
 }
 
 type V2beta1Evaluation_SummarizationMetrics_ConversationDetails_MetricDetails_SectionDetails_EvaluationResults_AccuracyDecomposition struct {
 	AccuracyReasoning any
-	IsAccurate any
-	Point any
+	IsAccurate        any
+	Point             any
 }
 
 type V2beta1Evaluation_SummarizationMetrics_ConversationDetails_MetricDetails_SectionDetails_EvaluationResults_AdherenceRubric struct {
 	IsAddressed any
-	Question any
-	Reasoning any
+	Question    any
+	Reasoning   any
 }
 
 type V2beta1Evaluation_SummarizationMetrics_ConversationDetails_MetricDetails_SectionDetails_EvaluationResults_CompletenessRubric struct {
 	IsAddressed any
-	Question any
+	Question    any
 }
 
 type V2beta1Evaluation_SummarizationMetrics_ConversationDetails_MetricDetails_SectionDetails_EvaluationResults struct {
 	AccuracyDecomposition any
-	AdherenceRubric any
-	CompletenessRubric any
+	AdherenceRubric       any
+	CompletenessRubric    any
 }
 
 type V2beta1Evaluation_SummarizationMetrics_ConversationDetails_MetricDetails_SectionDetails struct {
 	EvaluationResults any
-	Score any
-	Section any
-	SectionSummary any
+	Score             any
+	Section           any
+	SectionSummary    any
 }
 
 type V2beta1Evaluation_SummarizationMetrics_ConversationDetails_MetricDetails struct {
-	Metric any
-	Score any
+	Metric         any
+	Score          any
 	SectionDetails any
 }
 
 type V2beta1Evaluation_SummarizationMetrics_ConversationDetails_SectionTokens struct {
-	Section any
+	Section    any
 	TokenCount any
 }
 
 type V2beta1Evaluation_SummarizationMetrics_ConversationDetails struct {
-	MessageEntries any
-	MetricDetails any
-	SectionTokens any
+	MessageEntries  any
+	MetricDetails   any
+	SectionTokens   any
 	SummarySections any
 }
 
@@ -306,645 +306,635 @@ type V2beta1Evaluation_SummarizationMetrics_OverallMetrics struct {
 
 type V2beta1Evaluation_SummarizationMetrics_SummarizationEvaluationResults_Decompositions_AdherenceDecomposition struct {
 	AdherenceReasoning any
-	IsAdherent any
-	Point any
+	IsAdherent         any
+	Point              any
 }
 
 type V2beta1Evaluation_SummarizationMetrics_SummarizationEvaluationResults_Decompositions struct {
-	AccuracyDecomposition any
+	AccuracyDecomposition  any
 	AdherenceDecomposition any
 }
 
 type V2beta1Evaluation_SummarizationMetrics_SummarizationEvaluationResults struct {
-	Decompositions any
+	Decompositions    any
 	EvaluationResults any
-	Metric any
-	Score any
-	Section any
-	SectionSummary any
-	SessionId any
+	Metric            any
+	Score             any
+	Section           any
+	SectionSummary    any
+	SessionId         any
 }
 
 type V2beta1Evaluation_SummarizationMetrics struct {
-	ConversationDetails any
-	OverallMetrics any
-	OverallSectionTokens any
+	ConversationDetails                     any
+	OverallMetrics                          any
+	OverallSectionTokens                    any
 	SummarizationEvaluationMergedResultsUri any
-	SummarizationEvaluationResults any
+	SummarizationEvaluationResults          any
 }
 
 var V2beta1Evaluation_EvaluationStatus_PipelineStatusFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"Code":    ubx.FieldSpec{WireName: "code"},
+	"Details": ubx.FieldSpec{WireName: "details"},
+	"Message": ubx.FieldSpec{WireName: "message"},
+}
 
 var V2beta1Evaluation_EvaluationStatusFields = ubx.FieldMap{
-		"Done": ubx.FieldSpec{WireName: "done"},
-		"PipelineStatus": ubx.FieldSpec{
-			WireName: "pipeline_status",
-			Kind: "object",
-			Fields: V2beta1Evaluation_EvaluationStatus_PipelineStatusFields,
-		},
-	}
+	"Done": ubx.FieldSpec{WireName: "done"},
+	"PipelineStatus": ubx.FieldSpec{
+		WireName: "pipeline_status",
+		Kind:     "object",
+		Fields:   V2beta1Evaluation_EvaluationStatus_PipelineStatusFields,
+	},
+}
 
 var V2beta1Evaluation_GeneratorEvaluationConfig_InputDataConfig_AgentAssistInputDataConfigFields = ubx.FieldMap{
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-	}
+	"EndTime":   ubx.FieldSpec{WireName: "end_time"},
+	"StartTime": ubx.FieldSpec{WireName: "start_time"},
+}
 
 var V2beta1Evaluation_GeneratorEvaluationConfig_InputDataConfig_DatasetInputDataConfigFields = ubx.FieldMap{
-		"Dataset": ubx.FieldSpec{WireName: "dataset"},
-	}
+	"Dataset": ubx.FieldSpec{WireName: "dataset"},
+}
 
 var V2beta1Evaluation_GeneratorEvaluationConfig_InputDataConfigFields = ubx.FieldMap{
-		"AgentAssistInputDataConfig": ubx.FieldSpec{
-			WireName: "agent_assist_input_data_config",
-			Kind: "object",
-			Fields: V2beta1Evaluation_GeneratorEvaluationConfig_InputDataConfig_AgentAssistInputDataConfigFields,
-		},
-		"DatasetInputDataConfig": ubx.FieldSpec{
-			WireName: "dataset_input_data_config",
-			Kind: "object",
-			Fields: V2beta1Evaluation_GeneratorEvaluationConfig_InputDataConfig_DatasetInputDataConfigFields,
-		},
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"InputDataSourceType": ubx.FieldSpec{WireName: "input_data_source_type"},
-		"IsSummaryGenerationAllowed": ubx.FieldSpec{WireName: "is_summary_generation_allowed"},
-		"SampleSize": ubx.FieldSpec{WireName: "sample_size"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"SummaryGenerationOption": ubx.FieldSpec{WireName: "summary_generation_option"},
-	}
+	"AgentAssistInputDataConfig": ubx.FieldSpec{
+		WireName: "agent_assist_input_data_config",
+		Kind:     "object",
+		Fields:   V2beta1Evaluation_GeneratorEvaluationConfig_InputDataConfig_AgentAssistInputDataConfigFields,
+	},
+	"DatasetInputDataConfig": ubx.FieldSpec{
+		WireName: "dataset_input_data_config",
+		Kind:     "object",
+		Fields:   V2beta1Evaluation_GeneratorEvaluationConfig_InputDataConfig_DatasetInputDataConfigFields,
+	},
+	"EndTime":                    ubx.FieldSpec{WireName: "end_time"},
+	"InputDataSourceType":        ubx.FieldSpec{WireName: "input_data_source_type"},
+	"IsSummaryGenerationAllowed": ubx.FieldSpec{WireName: "is_summary_generation_allowed"},
+	"SampleSize":                 ubx.FieldSpec{WireName: "sample_size"},
+	"StartTime":                  ubx.FieldSpec{WireName: "start_time"},
+	"SummaryGenerationOption":    ubx.FieldSpec{WireName: "summary_generation_option"},
+}
 
 var V2beta1Evaluation_GeneratorEvaluationConfig_SummarizationConfigFields = ubx.FieldMap{
-		"AccuracyEvaluationVersion": ubx.FieldSpec{WireName: "accuracy_evaluation_version"},
-		"CompletenessEvaluationVersion": ubx.FieldSpec{WireName: "completeness_evaluation_version"},
-		"EnableAccuracyEvaluation": ubx.FieldSpec{WireName: "enable_accuracy_evaluation"},
-		"EnableCompletenessEvaluation": ubx.FieldSpec{WireName: "enable_completeness_evaluation"},
-		"EvaluatorVersion": ubx.FieldSpec{WireName: "evaluator_version"},
-	}
+	"AccuracyEvaluationVersion":     ubx.FieldSpec{WireName: "accuracy_evaluation_version"},
+	"CompletenessEvaluationVersion": ubx.FieldSpec{WireName: "completeness_evaluation_version"},
+	"EnableAccuracyEvaluation":      ubx.FieldSpec{WireName: "enable_accuracy_evaluation"},
+	"EnableCompletenessEvaluation":  ubx.FieldSpec{WireName: "enable_completeness_evaluation"},
+	"EvaluatorVersion":              ubx.FieldSpec{WireName: "evaluator_version"},
+}
 
 var V2beta1Evaluation_GeneratorEvaluationConfigFields = ubx.FieldMap{
-		"InputDataConfig": ubx.FieldSpec{
-			WireName: "input_data_config",
-			Kind: "object",
-			Fields: V2beta1Evaluation_GeneratorEvaluationConfig_InputDataConfigFields,
-		},
-		"OutputGcsBucketPath": ubx.FieldSpec{WireName: "output_gcs_bucket_path"},
-		"SummarizationConfig": ubx.FieldSpec{
-			WireName: "summarization_config",
-			Kind: "object",
-			Fields: V2beta1Evaluation_GeneratorEvaluationConfig_SummarizationConfigFields,
-		},
-	}
+	"InputDataConfig": ubx.FieldSpec{
+		WireName: "input_data_config",
+		Kind:     "object",
+		Fields:   V2beta1Evaluation_GeneratorEvaluationConfig_InputDataConfigFields,
+	},
+	"OutputGcsBucketPath": ubx.FieldSpec{WireName: "output_gcs_bucket_path"},
+	"SummarizationConfig": ubx.FieldSpec{
+		WireName: "summarization_config",
+		Kind:     "object",
+		Fields:   V2beta1Evaluation_GeneratorEvaluationConfig_SummarizationConfigFields,
+	},
+}
 
 var V2beta1Evaluation_InitialGenerator_AgentCoachingContext_Instructions_DuplicateCheckResult_DuplicateSuggestionsFields = ubx.FieldMap{
-		"AnswerRecord": ubx.FieldSpec{WireName: "answer_record"},
-		"SimilarityScore": ubx.FieldSpec{WireName: "similarity_score"},
-		"SuggestionIndex": ubx.FieldSpec{WireName: "suggestion_index"},
-	}
+	"AnswerRecord":    ubx.FieldSpec{WireName: "answer_record"},
+	"SimilarityScore": ubx.FieldSpec{WireName: "similarity_score"},
+	"SuggestionIndex": ubx.FieldSpec{WireName: "suggestion_index"},
+}
 
 var V2beta1Evaluation_InitialGenerator_AgentCoachingContext_Instructions_DuplicateCheckResultFields = ubx.FieldMap{
-		"DuplicateSuggestions": ubx.FieldSpec{
-			WireName: "duplicate_suggestions",
-			Kind: "list",
-			Fields: V2beta1Evaluation_InitialGenerator_AgentCoachingContext_Instructions_DuplicateCheckResult_DuplicateSuggestionsFields,
-		},
-	}
+	"DuplicateSuggestions": ubx.FieldSpec{
+		WireName: "duplicate_suggestions",
+		Kind:     "list",
+		Fields:   V2beta1Evaluation_InitialGenerator_AgentCoachingContext_Instructions_DuplicateCheckResult_DuplicateSuggestionsFields,
+	},
+}
 
 var V2beta1Evaluation_InitialGenerator_AgentCoachingContext_InstructionsFields = ubx.FieldMap{
-		"AgentAction": ubx.FieldSpec{WireName: "agent_action"},
-		"Condition": ubx.FieldSpec{WireName: "condition"},
-		"DisplayDetails": ubx.FieldSpec{WireName: "display_details"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"DuplicateCheckResult": ubx.FieldSpec{
-			WireName: "duplicate_check_result",
-			Kind: "object",
-			Fields: V2beta1Evaluation_InitialGenerator_AgentCoachingContext_Instructions_DuplicateCheckResultFields,
-		},
-		"SystemAction": ubx.FieldSpec{WireName: "system_action"},
-		"TriggeringEvent": ubx.FieldSpec{WireName: "triggering_event"},
-	}
+	"AgentAction":    ubx.FieldSpec{WireName: "agent_action"},
+	"Condition":      ubx.FieldSpec{WireName: "condition"},
+	"DisplayDetails": ubx.FieldSpec{WireName: "display_details"},
+	"DisplayName":    ubx.FieldSpec{WireName: "display_name"},
+	"DuplicateCheckResult": ubx.FieldSpec{
+		WireName: "duplicate_check_result",
+		Kind:     "object",
+		Fields:   V2beta1Evaluation_InitialGenerator_AgentCoachingContext_Instructions_DuplicateCheckResultFields,
+	},
+	"SystemAction":    ubx.FieldSpec{WireName: "system_action"},
+	"TriggeringEvent": ubx.FieldSpec{WireName: "triggering_event"},
+}
 
 var V2beta1Evaluation_InitialGenerator_AgentCoachingContextFields = ubx.FieldMap{
-		"Instructions": ubx.FieldSpec{
-			WireName: "instructions",
-			Kind: "list",
-			Fields: V2beta1Evaluation_InitialGenerator_AgentCoachingContext_InstructionsFields,
-		},
-		"OutputLanguageCode": ubx.FieldSpec{WireName: "output_language_code"},
-		"OverarchingGuidance": ubx.FieldSpec{WireName: "overarching_guidance"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"Instructions": ubx.FieldSpec{
+		WireName: "instructions",
+		Kind:     "list",
+		Fields:   V2beta1Evaluation_InitialGenerator_AgentCoachingContext_InstructionsFields,
+	},
+	"OutputLanguageCode":  ubx.FieldSpec{WireName: "output_language_code"},
+	"OverarchingGuidance": ubx.FieldSpec{WireName: "overarching_guidance"},
+	"Version":             ubx.FieldSpec{WireName: "version"},
+}
 
 var V2beta1Evaluation_InitialGenerator_CesAppSpecsFields = ubx.FieldMap{
-		"CesApp": ubx.FieldSpec{WireName: "ces_app"},
-		"ConfirmationRequirement": ubx.FieldSpec{WireName: "confirmation_requirement"},
-		"ProactiveEnabled": ubx.FieldSpec{WireName: "proactive_enabled"},
-		"ReactiveEnabled": ubx.FieldSpec{WireName: "reactive_enabled"},
-	}
+	"CesApp":                  ubx.FieldSpec{WireName: "ces_app"},
+	"ConfirmationRequirement": ubx.FieldSpec{WireName: "confirmation_requirement"},
+	"ProactiveEnabled":        ubx.FieldSpec{WireName: "proactive_enabled"},
+	"ReactiveEnabled":         ubx.FieldSpec{WireName: "reactive_enabled"},
+}
 
 var V2beta1Evaluation_InitialGenerator_CesToolSpecsFields = ubx.FieldMap{
-		"CesTool": ubx.FieldSpec{WireName: "ces_tool"},
-		"ConfirmationRequirement": ubx.FieldSpec{WireName: "confirmation_requirement"},
-	}
+	"CesTool":                 ubx.FieldSpec{WireName: "ces_tool"},
+	"ConfirmationRequirement": ubx.FieldSpec{WireName: "confirmation_requirement"},
+}
 
 var V2beta1Evaluation_InitialGenerator_FreeFormContextFields = ubx.FieldMap{
-		"Text": ubx.FieldSpec{WireName: "text"},
-	}
+	"Text": ubx.FieldSpec{WireName: "text"},
+}
 
 var V2beta1Evaluation_InitialGenerator_InferenceParameterFields = ubx.FieldMap{
-		"MaxOutputTokens": ubx.FieldSpec{WireName: "max_output_tokens"},
-		"Temperature": ubx.FieldSpec{WireName: "temperature"},
-		"TopK": ubx.FieldSpec{WireName: "top_k"},
-		"TopP": ubx.FieldSpec{WireName: "top_p"},
-	}
+	"MaxOutputTokens": ubx.FieldSpec{WireName: "max_output_tokens"},
+	"Temperature":     ubx.FieldSpec{WireName: "temperature"},
+	"TopK":            ubx.FieldSpec{WireName: "top_k"},
+	"TopP":            ubx.FieldSpec{WireName: "top_p"},
+}
 
 var V2beta1Evaluation_InitialGenerator_SuggestionDedupingConfigFields = ubx.FieldMap{
-		"EnableDeduping": ubx.FieldSpec{WireName: "enable_deduping"},
-		"SimilarityThreshold": ubx.FieldSpec{WireName: "similarity_threshold"},
-	}
+	"EnableDeduping":      ubx.FieldSpec{WireName: "enable_deduping"},
+	"SimilarityThreshold": ubx.FieldSpec{WireName: "similarity_threshold"},
+}
 
 var V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_ConversationContext_MessageEntriesFields = ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"LanguageCode": ubx.FieldSpec{WireName: "language_code"},
-		"Role": ubx.FieldSpec{WireName: "role"},
-		"Text": ubx.FieldSpec{WireName: "text"},
-	}
+	"CreateTime":   ubx.FieldSpec{WireName: "create_time"},
+	"LanguageCode": ubx.FieldSpec{WireName: "language_code"},
+	"Role":         ubx.FieldSpec{WireName: "role"},
+	"Text":         ubx.FieldSpec{WireName: "text"},
+}
 
 var V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_ConversationContextFields = ubx.FieldMap{
-		"MessageEntries": ubx.FieldSpec{
-			WireName: "message_entries",
-			Kind: "list",
-			Fields: V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_ConversationContext_MessageEntriesFields,
-		},
-	}
+	"MessageEntries": ubx.FieldSpec{
+		WireName: "message_entries",
+		Kind:     "list",
+		Fields:   V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_ConversationContext_MessageEntriesFields,
+	},
+}
 
 var V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_Output_AgentCoachingSuggestion_AgentActionSuggestions_DuplicateCheckResult_DuplicateSuggestions_SourcesFields = ubx.FieldMap{
-		"InstructionIndexes": ubx.FieldSpec{WireName: "instruction_indexes"},
-	}
+	"InstructionIndexes": ubx.FieldSpec{WireName: "instruction_indexes"},
+}
 
 var V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_Output_AgentCoachingSuggestion_AgentActionSuggestions_DuplicateCheckResult_DuplicateSuggestionsFields = ubx.FieldMap{
-		"AnswerRecord": ubx.FieldSpec{WireName: "answer_record"},
-		"SimilarityScore": ubx.FieldSpec{WireName: "similarity_score"},
-		"Sources": ubx.FieldSpec{
-			WireName: "sources",
-			Kind: "object",
-			Fields: V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_Output_AgentCoachingSuggestion_AgentActionSuggestions_DuplicateCheckResult_DuplicateSuggestions_SourcesFields,
-		},
-		"SuggestionIndex": ubx.FieldSpec{WireName: "suggestion_index"},
-	}
+	"AnswerRecord":    ubx.FieldSpec{WireName: "answer_record"},
+	"SimilarityScore": ubx.FieldSpec{WireName: "similarity_score"},
+	"Sources": ubx.FieldSpec{
+		WireName: "sources",
+		Kind:     "object",
+		Fields:   V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_Output_AgentCoachingSuggestion_AgentActionSuggestions_DuplicateCheckResult_DuplicateSuggestions_SourcesFields,
+	},
+	"SuggestionIndex": ubx.FieldSpec{WireName: "suggestion_index"},
+}
 
 var V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_Output_AgentCoachingSuggestion_AgentActionSuggestions_DuplicateCheckResultFields = ubx.FieldMap{
-		"DuplicateSuggestions": ubx.FieldSpec{
-			WireName: "duplicate_suggestions",
-			Kind: "list",
-			Fields: V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_Output_AgentCoachingSuggestion_AgentActionSuggestions_DuplicateCheckResult_DuplicateSuggestionsFields,
-		},
-	}
+	"DuplicateSuggestions": ubx.FieldSpec{
+		WireName: "duplicate_suggestions",
+		Kind:     "list",
+		Fields:   V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_Output_AgentCoachingSuggestion_AgentActionSuggestions_DuplicateCheckResult_DuplicateSuggestionsFields,
+	},
+}
 
 var V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_Output_AgentCoachingSuggestion_AgentActionSuggestionsFields = ubx.FieldMap{
-		"AgentAction": ubx.FieldSpec{WireName: "agent_action"},
-		"DuplicateCheckResult": ubx.FieldSpec{
-			WireName: "duplicate_check_result",
-			Kind: "object",
-			Fields: V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_Output_AgentCoachingSuggestion_AgentActionSuggestions_DuplicateCheckResultFields,
-		},
-		"Sources": ubx.FieldSpec{
-			WireName: "sources",
-			Kind: "object",
-			Fields: V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_Output_AgentCoachingSuggestion_AgentActionSuggestions_DuplicateCheckResult_DuplicateSuggestions_SourcesFields,
-		},
-	}
+	"AgentAction": ubx.FieldSpec{WireName: "agent_action"},
+	"DuplicateCheckResult": ubx.FieldSpec{
+		WireName: "duplicate_check_result",
+		Kind:     "object",
+		Fields:   V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_Output_AgentCoachingSuggestion_AgentActionSuggestions_DuplicateCheckResultFields,
+	},
+	"Sources": ubx.FieldSpec{
+		WireName: "sources",
+		Kind:     "object",
+		Fields:   V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_Output_AgentCoachingSuggestion_AgentActionSuggestions_DuplicateCheckResult_DuplicateSuggestions_SourcesFields,
+	},
+}
 
 var V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_Output_AgentCoachingSuggestion_SampleResponsesFields = ubx.FieldMap{
-		"DuplicateCheckResult": ubx.FieldSpec{
-			WireName: "duplicate_check_result",
-			Kind: "object",
-			Fields: V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_Output_AgentCoachingSuggestion_AgentActionSuggestions_DuplicateCheckResultFields,
-		},
-		"ResponseText": ubx.FieldSpec{WireName: "response_text"},
-		"Sources": ubx.FieldSpec{
-			WireName: "sources",
-			Kind: "object",
-			Fields: V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_Output_AgentCoachingSuggestion_AgentActionSuggestions_DuplicateCheckResult_DuplicateSuggestions_SourcesFields,
-		},
-	}
+	"DuplicateCheckResult": ubx.FieldSpec{
+		WireName: "duplicate_check_result",
+		Kind:     "object",
+		Fields:   V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_Output_AgentCoachingSuggestion_AgentActionSuggestions_DuplicateCheckResultFields,
+	},
+	"ResponseText": ubx.FieldSpec{WireName: "response_text"},
+	"Sources": ubx.FieldSpec{
+		WireName: "sources",
+		Kind:     "object",
+		Fields:   V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_Output_AgentCoachingSuggestion_AgentActionSuggestions_DuplicateCheckResult_DuplicateSuggestions_SourcesFields,
+	},
+}
 
 var V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_Output_AgentCoachingSuggestionFields = ubx.FieldMap{
-		"AgentActionSuggestions": ubx.FieldSpec{
-			WireName: "agent_action_suggestions",
-			Kind: "list",
-			Fields: V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_Output_AgentCoachingSuggestion_AgentActionSuggestionsFields,
-		},
-		"ApplicableInstructions": ubx.FieldSpec{
-			WireName: "applicable_instructions",
-			Kind: "list",
-			Fields: V2beta1Evaluation_InitialGenerator_AgentCoachingContext_InstructionsFields,
-		},
-		"SampleResponses": ubx.FieldSpec{
-			WireName: "sample_responses",
-			Kind: "list",
-			Fields: V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_Output_AgentCoachingSuggestion_SampleResponsesFields,
-		},
-	}
+	"AgentActionSuggestions": ubx.FieldSpec{
+		WireName: "agent_action_suggestions",
+		Kind:     "list",
+		Fields:   V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_Output_AgentCoachingSuggestion_AgentActionSuggestionsFields,
+	},
+	"ApplicableInstructions": ubx.FieldSpec{
+		WireName: "applicable_instructions",
+		Kind:     "list",
+		Fields:   V2beta1Evaluation_InitialGenerator_AgentCoachingContext_InstructionsFields,
+	},
+	"SampleResponses": ubx.FieldSpec{
+		WireName: "sample_responses",
+		Kind:     "list",
+		Fields:   V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_Output_AgentCoachingSuggestion_SampleResponsesFields,
+	},
+}
 
 var V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_Output_FreeFormSuggestionFields = ubx.FieldMap{
-		"Response": ubx.FieldSpec{WireName: "response"},
-	}
+	"Response": ubx.FieldSpec{WireName: "response"},
+}
 
 var V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_Output_SummarySuggestion_SummarySectionsFields = ubx.FieldMap{
-		"Section": ubx.FieldSpec{WireName: "section"},
-		"Summary": ubx.FieldSpec{WireName: "summary"},
-	}
+	"Section": ubx.FieldSpec{WireName: "section"},
+	"Summary": ubx.FieldSpec{WireName: "summary"},
+}
 
 var V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_Output_SummarySuggestionFields = ubx.FieldMap{
-		"SummarySections": ubx.FieldSpec{
-			WireName: "summary_sections",
-			Kind: "list",
-			Fields: V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_Output_SummarySuggestion_SummarySectionsFields,
-		},
-	}
+	"SummarySections": ubx.FieldSpec{
+		WireName: "summary_sections",
+		Kind:     "list",
+		Fields:   V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_Output_SummarySuggestion_SummarySectionsFields,
+	},
+}
 
 var V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_Output_ToolCallInfo_ToolCallFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
-		"AnswerRecord": ubx.FieldSpec{WireName: "answer_record"},
-		"CesApp": ubx.FieldSpec{WireName: "ces_app"},
-		"CesTool": ubx.FieldSpec{WireName: "ces_tool"},
-		"CesToolset": ubx.FieldSpec{WireName: "ces_toolset"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"InputParameters": ubx.FieldSpec{WireName: "input_parameters"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"Tool": ubx.FieldSpec{WireName: "tool"},
-		"ToolDisplayDetails": ubx.FieldSpec{WireName: "tool_display_details"},
-		"ToolDisplayName": ubx.FieldSpec{WireName: "tool_display_name"},
-	}
+	"Action":             ubx.FieldSpec{WireName: "action"},
+	"AnswerRecord":       ubx.FieldSpec{WireName: "answer_record"},
+	"CesApp":             ubx.FieldSpec{WireName: "ces_app"},
+	"CesTool":            ubx.FieldSpec{WireName: "ces_tool"},
+	"CesToolset":         ubx.FieldSpec{WireName: "ces_toolset"},
+	"CreateTime":         ubx.FieldSpec{WireName: "create_time"},
+	"InputParameters":    ubx.FieldSpec{WireName: "input_parameters"},
+	"State":              ubx.FieldSpec{WireName: "state"},
+	"Tool":               ubx.FieldSpec{WireName: "tool"},
+	"ToolDisplayDetails": ubx.FieldSpec{WireName: "tool_display_details"},
+	"ToolDisplayName":    ubx.FieldSpec{WireName: "tool_display_name"},
+}
 
 var V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_Output_ToolCallInfo_ToolCallResult_ErrorFields = ubx.FieldMap{
-		"Message": ubx.FieldSpec{WireName: "message"},
-		"Retryable": ubx.FieldSpec{WireName: "retryable"},
-	}
+	"Message":   ubx.FieldSpec{WireName: "message"},
+	"Retryable": ubx.FieldSpec{WireName: "retryable"},
+}
 
 var V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_Output_ToolCallInfo_ToolCallResultFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
-		"AnswerRecord": ubx.FieldSpec{WireName: "answer_record"},
-		"CesApp": ubx.FieldSpec{WireName: "ces_app"},
-		"CesTool": ubx.FieldSpec{WireName: "ces_tool"},
-		"CesToolset": ubx.FieldSpec{WireName: "ces_toolset"},
-		"Content": ubx.FieldSpec{WireName: "content"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Error": ubx.FieldSpec{
-			WireName: "error",
-			Kind: "object",
-			Fields: V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_Output_ToolCallInfo_ToolCallResult_ErrorFields,
-		},
-		"RawContent": ubx.FieldSpec{WireName: "raw_content"},
-		"Tool": ubx.FieldSpec{WireName: "tool"},
-	}
+	"Action":       ubx.FieldSpec{WireName: "action"},
+	"AnswerRecord": ubx.FieldSpec{WireName: "answer_record"},
+	"CesApp":       ubx.FieldSpec{WireName: "ces_app"},
+	"CesTool":      ubx.FieldSpec{WireName: "ces_tool"},
+	"CesToolset":   ubx.FieldSpec{WireName: "ces_toolset"},
+	"Content":      ubx.FieldSpec{WireName: "content"},
+	"CreateTime":   ubx.FieldSpec{WireName: "create_time"},
+	"Error": ubx.FieldSpec{
+		WireName: "error",
+		Kind:     "object",
+		Fields:   V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_Output_ToolCallInfo_ToolCallResult_ErrorFields,
+	},
+	"RawContent": ubx.FieldSpec{WireName: "raw_content"},
+	"Tool":       ubx.FieldSpec{WireName: "tool"},
+}
 
 var V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_Output_ToolCallInfoFields = ubx.FieldMap{
-		"ToolCall": ubx.FieldSpec{
-			WireName: "tool_call",
-			Kind: "object",
-			Fields: V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_Output_ToolCallInfo_ToolCallFields,
-		},
-		"ToolCallResult": ubx.FieldSpec{
-			WireName: "tool_call_result",
-			Kind: "object",
-			Fields: V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_Output_ToolCallInfo_ToolCallResultFields,
-		},
-	}
+	"ToolCall": ubx.FieldSpec{
+		WireName: "tool_call",
+		Kind:     "object",
+		Fields:   V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_Output_ToolCallInfo_ToolCallFields,
+	},
+	"ToolCallResult": ubx.FieldSpec{
+		WireName: "tool_call_result",
+		Kind:     "object",
+		Fields:   V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_Output_ToolCallInfo_ToolCallResultFields,
+	},
+}
 
 var V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_OutputFields = ubx.FieldMap{
-		"AgentCoachingSuggestion": ubx.FieldSpec{
-			WireName: "agent_coaching_suggestion",
-			Kind: "object",
-			Fields: V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_Output_AgentCoachingSuggestionFields,
-		},
-		"FreeFormSuggestion": ubx.FieldSpec{
-			WireName: "free_form_suggestion",
-			Kind: "object",
-			Fields: V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_Output_FreeFormSuggestionFields,
-		},
-		"SummarySuggestion": ubx.FieldSpec{
-			WireName: "summary_suggestion",
-			Kind: "object",
-			Fields: V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_Output_SummarySuggestionFields,
-		},
-		"ToolCallInfo": ubx.FieldSpec{
-			WireName: "tool_call_info",
-			Kind: "list",
-			Fields: V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_Output_ToolCallInfoFields,
-		},
-	}
+	"AgentCoachingSuggestion": ubx.FieldSpec{
+		WireName: "agent_coaching_suggestion",
+		Kind:     "object",
+		Fields:   V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_Output_AgentCoachingSuggestionFields,
+	},
+	"FreeFormSuggestion": ubx.FieldSpec{
+		WireName: "free_form_suggestion",
+		Kind:     "object",
+		Fields:   V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_Output_FreeFormSuggestionFields,
+	},
+	"SummarySuggestion": ubx.FieldSpec{
+		WireName: "summary_suggestion",
+		Kind:     "object",
+		Fields:   V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_Output_SummarySuggestionFields,
+	},
+	"ToolCallInfo": ubx.FieldSpec{
+		WireName: "tool_call_info",
+		Kind:     "list",
+		Fields:   V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_Output_ToolCallInfoFields,
+	},
+}
 
 var V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_SummarizationSectionList_SummarizationSectionsFields = ubx.FieldMap{
-		"Definition": ubx.FieldSpec{WireName: "definition"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Definition": ubx.FieldSpec{WireName: "definition"},
+	"Key":        ubx.FieldSpec{WireName: "key"},
+	"Type":       ubx.FieldSpec{WireName: "type"},
+}
 
 var V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_SummarizationSectionListFields = ubx.FieldMap{
-		"SummarizationSections": ubx.FieldSpec{
-			WireName: "summarization_sections",
-			Kind: "list",
-			Fields: V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_SummarizationSectionList_SummarizationSectionsFields,
-		},
-	}
+	"SummarizationSections": ubx.FieldSpec{
+		WireName: "summarization_sections",
+		Kind:     "list",
+		Fields:   V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_SummarizationSectionList_SummarizationSectionsFields,
+	},
+}
 
 var V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamplesFields = ubx.FieldMap{
-		"ConversationContext": ubx.FieldSpec{
-			WireName: "conversation_context",
-			Kind: "object",
-			Fields: V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_ConversationContextFields,
-		},
-		"ExtraInfo": ubx.FieldSpec{WireName: "extra_info"},
-		"Output": ubx.FieldSpec{
-			WireName: "output",
-			Kind: "object",
-			Fields: V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_OutputFields,
-		},
-		"SummarizationSectionList": ubx.FieldSpec{
-			WireName: "summarization_section_list",
-			Kind: "object",
-			Fields: V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_SummarizationSectionListFields,
-		},
-	}
+	"ConversationContext": ubx.FieldSpec{
+		WireName: "conversation_context",
+		Kind:     "object",
+		Fields:   V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_ConversationContextFields,
+	},
+	"ExtraInfo": ubx.FieldSpec{WireName: "extra_info"},
+	"Output": ubx.FieldSpec{
+		WireName: "output",
+		Kind:     "object",
+		Fields:   V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_OutputFields,
+	},
+	"SummarizationSectionList": ubx.FieldSpec{
+		WireName: "summarization_section_list",
+		Kind:     "object",
+		Fields:   V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_SummarizationSectionListFields,
+	},
+}
 
 var V2beta1Evaluation_InitialGenerator_SummarizationContextFields = ubx.FieldMap{
-		"FewShotExamples": ubx.FieldSpec{
-			WireName: "few_shot_examples",
-			Kind: "list",
-			Fields: V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamplesFields,
-		},
-		"OutputLanguageCode": ubx.FieldSpec{WireName: "output_language_code"},
-		"SummarizationSections": ubx.FieldSpec{
-			WireName: "summarization_sections",
-			Kind: "list",
-			Fields: V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_SummarizationSectionList_SummarizationSectionsFields,
-		},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"FewShotExamples": ubx.FieldSpec{
+		WireName: "few_shot_examples",
+		Kind:     "list",
+		Fields:   V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamplesFields,
+	},
+	"OutputLanguageCode": ubx.FieldSpec{WireName: "output_language_code"},
+	"SummarizationSections": ubx.FieldSpec{
+		WireName: "summarization_sections",
+		Kind:     "list",
+		Fields:   V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_SummarizationSectionList_SummarizationSectionsFields,
+	},
+	"Version": ubx.FieldSpec{WireName: "version"},
+}
 
 var V2beta1Evaluation_InitialGenerator_ToolsetToolsFields = ubx.FieldMap{
-		"ConfirmationRequirement": ubx.FieldSpec{WireName: "confirmation_requirement"},
-		"OperationId": ubx.FieldSpec{WireName: "operation_id"},
-		"Toolset": ubx.FieldSpec{WireName: "toolset"},
-	}
+	"ConfirmationRequirement": ubx.FieldSpec{WireName: "confirmation_requirement"},
+	"OperationId":             ubx.FieldSpec{WireName: "operation_id"},
+	"Toolset":                 ubx.FieldSpec{WireName: "toolset"},
+}
 
 var V2beta1Evaluation_InitialGeneratorFields = ubx.FieldMap{
-		"AgentCoachingContext": ubx.FieldSpec{
-			WireName: "agent_coaching_context",
-			Kind: "object",
-			Fields: V2beta1Evaluation_InitialGenerator_AgentCoachingContextFields,
-		},
-		"CesAppSpecs": ubx.FieldSpec{
-			WireName: "ces_app_specs",
-			Kind: "list",
-			Fields: V2beta1Evaluation_InitialGenerator_CesAppSpecsFields,
-		},
-		"CesToolSpecs": ubx.FieldSpec{
-			WireName: "ces_tool_specs",
-			Kind: "list",
-			Fields: V2beta1Evaluation_InitialGenerator_CesToolSpecsFields,
-		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"FreeFormContext": ubx.FieldSpec{
-			WireName: "free_form_context",
-			Kind: "object",
-			Fields: V2beta1Evaluation_InitialGenerator_FreeFormContextFields,
-		},
-		"InferenceParameter": ubx.FieldSpec{
-			WireName: "inference_parameter",
-			Kind: "object",
-			Fields: V2beta1Evaluation_InitialGenerator_InferenceParameterFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PublishedModel": ubx.FieldSpec{WireName: "published_model"},
-		"SuggestionDedupingConfig": ubx.FieldSpec{
-			WireName: "suggestion_deduping_config",
-			Kind: "object",
-			Fields: V2beta1Evaluation_InitialGenerator_SuggestionDedupingConfigFields,
-		},
-		"SummarizationContext": ubx.FieldSpec{
-			WireName: "summarization_context",
-			Kind: "object",
-			Fields: V2beta1Evaluation_InitialGenerator_SummarizationContextFields,
-		},
-		"Tools": ubx.FieldSpec{WireName: "tools"},
-		"ToolsetTools": ubx.FieldSpec{
-			WireName: "toolset_tools",
-			Kind: "list",
-			Fields: V2beta1Evaluation_InitialGenerator_ToolsetToolsFields,
-		},
-		"TriggerEvent": ubx.FieldSpec{WireName: "trigger_event"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-	}
+	"AgentCoachingContext": ubx.FieldSpec{
+		WireName: "agent_coaching_context",
+		Kind:     "object",
+		Fields:   V2beta1Evaluation_InitialGenerator_AgentCoachingContextFields,
+	},
+	"CesAppSpecs": ubx.FieldSpec{
+		WireName: "ces_app_specs",
+		Kind:     "list",
+		Fields:   V2beta1Evaluation_InitialGenerator_CesAppSpecsFields,
+	},
+	"CesToolSpecs": ubx.FieldSpec{
+		WireName: "ces_tool_specs",
+		Kind:     "list",
+		Fields:   V2beta1Evaluation_InitialGenerator_CesToolSpecsFields,
+	},
+	"CreateTime":  ubx.FieldSpec{WireName: "create_time"},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"FreeFormContext": ubx.FieldSpec{
+		WireName: "free_form_context",
+		Kind:     "object",
+		Fields:   V2beta1Evaluation_InitialGenerator_FreeFormContextFields,
+	},
+	"InferenceParameter": ubx.FieldSpec{
+		WireName: "inference_parameter",
+		Kind:     "object",
+		Fields:   V2beta1Evaluation_InitialGenerator_InferenceParameterFields,
+	},
+	"Name":           ubx.FieldSpec{WireName: "name"},
+	"PublishedModel": ubx.FieldSpec{WireName: "published_model"},
+	"SuggestionDedupingConfig": ubx.FieldSpec{
+		WireName: "suggestion_deduping_config",
+		Kind:     "object",
+		Fields:   V2beta1Evaluation_InitialGenerator_SuggestionDedupingConfigFields,
+	},
+	"SummarizationContext": ubx.FieldSpec{
+		WireName: "summarization_context",
+		Kind:     "object",
+		Fields:   V2beta1Evaluation_InitialGenerator_SummarizationContextFields,
+	},
+	"Tools": ubx.FieldSpec{WireName: "tools"},
+	"ToolsetTools": ubx.FieldSpec{
+		WireName: "toolset_tools",
+		Kind:     "list",
+		Fields:   V2beta1Evaluation_InitialGenerator_ToolsetToolsFields,
+	},
+	"TriggerEvent": ubx.FieldSpec{WireName: "trigger_event"},
+	"UpdateTime":   ubx.FieldSpec{WireName: "update_time"},
+}
 
 var V2beta1Evaluation_SummarizationMetrics_ConversationDetails_MetricDetails_SectionDetails_EvaluationResults_AccuracyDecompositionFields = ubx.FieldMap{
-		"AccuracyReasoning": ubx.FieldSpec{WireName: "accuracy_reasoning"},
-		"IsAccurate": ubx.FieldSpec{WireName: "is_accurate"},
-		"Point": ubx.FieldSpec{WireName: "point"},
-	}
+	"AccuracyReasoning": ubx.FieldSpec{WireName: "accuracy_reasoning"},
+	"IsAccurate":        ubx.FieldSpec{WireName: "is_accurate"},
+	"Point":             ubx.FieldSpec{WireName: "point"},
+}
 
 var V2beta1Evaluation_SummarizationMetrics_ConversationDetails_MetricDetails_SectionDetails_EvaluationResults_AdherenceRubricFields = ubx.FieldMap{
-		"IsAddressed": ubx.FieldSpec{WireName: "is_addressed"},
-		"Question": ubx.FieldSpec{WireName: "question"},
-		"Reasoning": ubx.FieldSpec{WireName: "reasoning"},
-	}
+	"IsAddressed": ubx.FieldSpec{WireName: "is_addressed"},
+	"Question":    ubx.FieldSpec{WireName: "question"},
+	"Reasoning":   ubx.FieldSpec{WireName: "reasoning"},
+}
 
 var V2beta1Evaluation_SummarizationMetrics_ConversationDetails_MetricDetails_SectionDetails_EvaluationResults_CompletenessRubricFields = ubx.FieldMap{
-		"IsAddressed": ubx.FieldSpec{WireName: "is_addressed"},
-		"Question": ubx.FieldSpec{WireName: "question"},
-	}
+	"IsAddressed": ubx.FieldSpec{WireName: "is_addressed"},
+	"Question":    ubx.FieldSpec{WireName: "question"},
+}
 
 var V2beta1Evaluation_SummarizationMetrics_ConversationDetails_MetricDetails_SectionDetails_EvaluationResultsFields = ubx.FieldMap{
-		"AccuracyDecomposition": ubx.FieldSpec{
-			WireName: "accuracy_decomposition",
-			Kind: "object",
-			Fields: V2beta1Evaluation_SummarizationMetrics_ConversationDetails_MetricDetails_SectionDetails_EvaluationResults_AccuracyDecompositionFields,
-		},
-		"AdherenceRubric": ubx.FieldSpec{
-			WireName: "adherence_rubric",
-			Kind: "object",
-			Fields: V2beta1Evaluation_SummarizationMetrics_ConversationDetails_MetricDetails_SectionDetails_EvaluationResults_AdherenceRubricFields,
-		},
-		"CompletenessRubric": ubx.FieldSpec{
-			WireName: "completeness_rubric",
-			Kind: "object",
-			Fields: V2beta1Evaluation_SummarizationMetrics_ConversationDetails_MetricDetails_SectionDetails_EvaluationResults_CompletenessRubricFields,
-		},
-	}
+	"AccuracyDecomposition": ubx.FieldSpec{
+		WireName: "accuracy_decomposition",
+		Kind:     "object",
+		Fields:   V2beta1Evaluation_SummarizationMetrics_ConversationDetails_MetricDetails_SectionDetails_EvaluationResults_AccuracyDecompositionFields,
+	},
+	"AdherenceRubric": ubx.FieldSpec{
+		WireName: "adherence_rubric",
+		Kind:     "object",
+		Fields:   V2beta1Evaluation_SummarizationMetrics_ConversationDetails_MetricDetails_SectionDetails_EvaluationResults_AdherenceRubricFields,
+	},
+	"CompletenessRubric": ubx.FieldSpec{
+		WireName: "completeness_rubric",
+		Kind:     "object",
+		Fields:   V2beta1Evaluation_SummarizationMetrics_ConversationDetails_MetricDetails_SectionDetails_EvaluationResults_CompletenessRubricFields,
+	},
+}
 
 var V2beta1Evaluation_SummarizationMetrics_ConversationDetails_MetricDetails_SectionDetailsFields = ubx.FieldMap{
-		"EvaluationResults": ubx.FieldSpec{
-			WireName: "evaluation_results",
-			Kind: "list",
-			Fields: V2beta1Evaluation_SummarizationMetrics_ConversationDetails_MetricDetails_SectionDetails_EvaluationResultsFields,
-		},
-		"Score": ubx.FieldSpec{WireName: "score"},
-		"Section": ubx.FieldSpec{WireName: "section"},
-		"SectionSummary": ubx.FieldSpec{WireName: "section_summary"},
-	}
+	"EvaluationResults": ubx.FieldSpec{
+		WireName: "evaluation_results",
+		Kind:     "list",
+		Fields:   V2beta1Evaluation_SummarizationMetrics_ConversationDetails_MetricDetails_SectionDetails_EvaluationResultsFields,
+	},
+	"Score":          ubx.FieldSpec{WireName: "score"},
+	"Section":        ubx.FieldSpec{WireName: "section"},
+	"SectionSummary": ubx.FieldSpec{WireName: "section_summary"},
+}
 
 var V2beta1Evaluation_SummarizationMetrics_ConversationDetails_MetricDetailsFields = ubx.FieldMap{
-		"Metric": ubx.FieldSpec{WireName: "metric"},
-		"Score": ubx.FieldSpec{WireName: "score"},
-		"SectionDetails": ubx.FieldSpec{
-			WireName: "section_details",
-			Kind: "list",
-			Fields: V2beta1Evaluation_SummarizationMetrics_ConversationDetails_MetricDetails_SectionDetailsFields,
-		},
-	}
+	"Metric": ubx.FieldSpec{WireName: "metric"},
+	"Score":  ubx.FieldSpec{WireName: "score"},
+	"SectionDetails": ubx.FieldSpec{
+		WireName: "section_details",
+		Kind:     "list",
+		Fields:   V2beta1Evaluation_SummarizationMetrics_ConversationDetails_MetricDetails_SectionDetailsFields,
+	},
+}
 
 var V2beta1Evaluation_SummarizationMetrics_ConversationDetails_SectionTokensFields = ubx.FieldMap{
-		"Section": ubx.FieldSpec{WireName: "section"},
-		"TokenCount": ubx.FieldSpec{WireName: "token_count"},
-	}
+	"Section":    ubx.FieldSpec{WireName: "section"},
+	"TokenCount": ubx.FieldSpec{WireName: "token_count"},
+}
 
 var V2beta1Evaluation_SummarizationMetrics_ConversationDetailsFields = ubx.FieldMap{
-		"MessageEntries": ubx.FieldSpec{
-			WireName: "message_entries",
-			Kind: "list",
-			Fields: V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_ConversationContext_MessageEntriesFields,
-		},
-		"MetricDetails": ubx.FieldSpec{
-			WireName: "metric_details",
-			Kind: "list",
-			Fields: V2beta1Evaluation_SummarizationMetrics_ConversationDetails_MetricDetailsFields,
-		},
-		"SectionTokens": ubx.FieldSpec{
-			WireName: "section_tokens",
-			Kind: "list",
-			Fields: V2beta1Evaluation_SummarizationMetrics_ConversationDetails_SectionTokensFields,
-		},
-		"SummarySections": ubx.FieldSpec{
-			WireName: "summary_sections",
-			Kind: "list",
-			Fields: V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_Output_SummarySuggestion_SummarySectionsFields,
-		},
-	}
+	"MessageEntries": ubx.FieldSpec{
+		WireName: "message_entries",
+		Kind:     "list",
+		Fields:   V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_ConversationContext_MessageEntriesFields,
+	},
+	"MetricDetails": ubx.FieldSpec{
+		WireName: "metric_details",
+		Kind:     "list",
+		Fields:   V2beta1Evaluation_SummarizationMetrics_ConversationDetails_MetricDetailsFields,
+	},
+	"SectionTokens": ubx.FieldSpec{
+		WireName: "section_tokens",
+		Kind:     "list",
+		Fields:   V2beta1Evaluation_SummarizationMetrics_ConversationDetails_SectionTokensFields,
+	},
+	"SummarySections": ubx.FieldSpec{
+		WireName: "summary_sections",
+		Kind:     "list",
+		Fields:   V2beta1Evaluation_InitialGenerator_SummarizationContext_FewShotExamples_Output_SummarySuggestion_SummarySectionsFields,
+	},
+}
 
 var V2beta1Evaluation_SummarizationMetrics_OverallMetricsFields = ubx.FieldMap{
-		"Metric": ubx.FieldSpec{WireName: "metric"},
-	}
+	"Metric": ubx.FieldSpec{WireName: "metric"},
+}
 
 var V2beta1Evaluation_SummarizationMetrics_SummarizationEvaluationResults_Decompositions_AdherenceDecompositionFields = ubx.FieldMap{
-		"AdherenceReasoning": ubx.FieldSpec{WireName: "adherence_reasoning"},
-		"IsAdherent": ubx.FieldSpec{WireName: "is_adherent"},
-		"Point": ubx.FieldSpec{WireName: "point"},
-	}
+	"AdherenceReasoning": ubx.FieldSpec{WireName: "adherence_reasoning"},
+	"IsAdherent":         ubx.FieldSpec{WireName: "is_adherent"},
+	"Point":              ubx.FieldSpec{WireName: "point"},
+}
 
 var V2beta1Evaluation_SummarizationMetrics_SummarizationEvaluationResults_DecompositionsFields = ubx.FieldMap{
-		"AccuracyDecomposition": ubx.FieldSpec{
-			WireName: "accuracy_decomposition",
-			Kind: "object",
-			Fields: V2beta1Evaluation_SummarizationMetrics_ConversationDetails_MetricDetails_SectionDetails_EvaluationResults_AccuracyDecompositionFields,
-		},
-		"AdherenceDecomposition": ubx.FieldSpec{
-			WireName: "adherence_decomposition",
-			Kind: "object",
-			Fields: V2beta1Evaluation_SummarizationMetrics_SummarizationEvaluationResults_Decompositions_AdherenceDecompositionFields,
-		},
-	}
+	"AccuracyDecomposition": ubx.FieldSpec{
+		WireName: "accuracy_decomposition",
+		Kind:     "object",
+		Fields:   V2beta1Evaluation_SummarizationMetrics_ConversationDetails_MetricDetails_SectionDetails_EvaluationResults_AccuracyDecompositionFields,
+	},
+	"AdherenceDecomposition": ubx.FieldSpec{
+		WireName: "adherence_decomposition",
+		Kind:     "object",
+		Fields:   V2beta1Evaluation_SummarizationMetrics_SummarizationEvaluationResults_Decompositions_AdherenceDecompositionFields,
+	},
+}
 
 var V2beta1Evaluation_SummarizationMetrics_SummarizationEvaluationResultsFields = ubx.FieldMap{
-		"Decompositions": ubx.FieldSpec{
-			WireName: "decompositions",
-			Kind: "list",
-			Fields: V2beta1Evaluation_SummarizationMetrics_SummarizationEvaluationResults_DecompositionsFields,
-		},
-		"EvaluationResults": ubx.FieldSpec{
-			WireName: "evaluation_results",
-			Kind: "list",
-			Fields: V2beta1Evaluation_SummarizationMetrics_ConversationDetails_MetricDetails_SectionDetails_EvaluationResultsFields,
-		},
-		"Metric": ubx.FieldSpec{WireName: "metric"},
-		"Score": ubx.FieldSpec{WireName: "score"},
-		"Section": ubx.FieldSpec{WireName: "section"},
-		"SectionSummary": ubx.FieldSpec{WireName: "section_summary"},
-		"SessionId": ubx.FieldSpec{WireName: "session_id"},
-	}
+	"Decompositions": ubx.FieldSpec{
+		WireName: "decompositions",
+		Kind:     "list",
+		Fields:   V2beta1Evaluation_SummarizationMetrics_SummarizationEvaluationResults_DecompositionsFields,
+	},
+	"EvaluationResults": ubx.FieldSpec{
+		WireName: "evaluation_results",
+		Kind:     "list",
+		Fields:   V2beta1Evaluation_SummarizationMetrics_ConversationDetails_MetricDetails_SectionDetails_EvaluationResultsFields,
+	},
+	"Metric":         ubx.FieldSpec{WireName: "metric"},
+	"Score":          ubx.FieldSpec{WireName: "score"},
+	"Section":        ubx.FieldSpec{WireName: "section"},
+	"SectionSummary": ubx.FieldSpec{WireName: "section_summary"},
+	"SessionId":      ubx.FieldSpec{WireName: "session_id"},
+}
 
 var V2beta1Evaluation_SummarizationMetricsFields = ubx.FieldMap{
-		"ConversationDetails": ubx.FieldSpec{
-			WireName: "conversation_details",
-			Kind: "list",
-			Fields: V2beta1Evaluation_SummarizationMetrics_ConversationDetailsFields,
-		},
-		"OverallMetrics": ubx.FieldSpec{
-			WireName: "overall_metrics",
-			Kind: "list",
-			Fields: V2beta1Evaluation_SummarizationMetrics_OverallMetricsFields,
-		},
-		"OverallSectionTokens": ubx.FieldSpec{
-			WireName: "overall_section_tokens",
-			Kind: "list",
-			Fields: V2beta1Evaluation_SummarizationMetrics_ConversationDetails_SectionTokensFields,
-		},
-		"SummarizationEvaluationMergedResultsUri": ubx.FieldSpec{WireName: "summarization_evaluation_merged_results_uri"},
-		"SummarizationEvaluationResults": ubx.FieldSpec{
-			WireName: "summarization_evaluation_results",
-			Kind: "list",
-			Fields: V2beta1Evaluation_SummarizationMetrics_SummarizationEvaluationResultsFields,
-		},
-	}
+	"ConversationDetails": ubx.FieldSpec{
+		WireName: "conversation_details",
+		Kind:     "list",
+		Fields:   V2beta1Evaluation_SummarizationMetrics_ConversationDetailsFields,
+	},
+	"OverallMetrics": ubx.FieldSpec{
+		WireName: "overall_metrics",
+		Kind:     "list",
+		Fields:   V2beta1Evaluation_SummarizationMetrics_OverallMetricsFields,
+	},
+	"OverallSectionTokens": ubx.FieldSpec{
+		WireName: "overall_section_tokens",
+		Kind:     "list",
+		Fields:   V2beta1Evaluation_SummarizationMetrics_ConversationDetails_SectionTokensFields,
+	},
+	"SummarizationEvaluationMergedResultsUri": ubx.FieldSpec{WireName: "summarization_evaluation_merged_results_uri"},
+	"SummarizationEvaluationResults": ubx.FieldSpec{
+		WireName: "summarization_evaluation_results",
+		Kind:     "list",
+		Fields:   V2beta1Evaluation_SummarizationMetrics_SummarizationEvaluationResultsFields,
+	},
+}
 
 type V2beta1EvaluationConfig struct {
-	CompleteTime any
-	CreateTime any
-	DisplayName any
-	EvaluationStatus any
+	DisplayName               any
+	EvaluationStatus          any
 	GeneratorEvaluationConfig any
-	InitialGenerator any
-	Name any
-	SatisfiesPzi any
-	SatisfiesPzs any
-	SummarizationMetrics any
+	InitialGenerator          any
+	SummarizationMetrics      any
 }
 
 type V2beta1EvaluationAttrs struct {
-	CompleteTime any
-	CreateTime any
-	DisplayName any
-	EvaluationStatus any
+	CompleteTime              any
+	CreateTime                any
+	DisplayName               any
+	EvaluationStatus          any
 	GeneratorEvaluationConfig any
-	InitialGenerator any
-	Name any
-	SatisfiesPzi any
-	SatisfiesPzs any
-	SummarizationMetrics any
+	InitialGenerator          any
+	Name                      any
+	SatisfiesPzi              any
+	SatisfiesPzs              any
+	SummarizationMetrics      any
 }
 
 var V2beta1Evaluation = ubx.ResourceBinding{
 	WireType: "google_dialogflow_v2beta1_evaluation",
 	Fields: ubx.FieldMap{
-		"CompleteTime": ubx.FieldSpec{WireName: "complete_time"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"EvaluationStatus": ubx.FieldSpec{
 			WireName: "evaluation_status",
-			Kind: "object",
-			Fields: V2beta1Evaluation_EvaluationStatusFields,
+			Kind:     "object",
+			Fields:   V2beta1Evaluation_EvaluationStatusFields,
 		},
 		"GeneratorEvaluationConfig": ubx.FieldSpec{
 			WireName: "generator_evaluation_config",
-			Kind: "object",
-			Fields: V2beta1Evaluation_GeneratorEvaluationConfigFields,
+			Kind:     "object",
+			Fields:   V2beta1Evaluation_GeneratorEvaluationConfigFields,
 		},
 		"InitialGenerator": ubx.FieldSpec{
 			WireName: "initial_generator",
-			Kind: "object",
-			Fields: V2beta1Evaluation_InitialGeneratorFields,
+			Kind:     "object",
+			Fields:   V2beta1Evaluation_InitialGeneratorFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SatisfiesPzi": ubx.FieldSpec{WireName: "satisfies_pzi"},
-		"SatisfiesPzs": ubx.FieldSpec{WireName: "satisfies_pzs"},
 		"SummarizationMetrics": ubx.FieldSpec{
 			WireName: "summarization_metrics",
-			Kind: "object",
-			Fields: V2beta1Evaluation_SummarizationMetricsFields,
+			Kind:     "object",
+			Fields:   V2beta1Evaluation_SummarizationMetricsFields,
 		},
 	},
 }

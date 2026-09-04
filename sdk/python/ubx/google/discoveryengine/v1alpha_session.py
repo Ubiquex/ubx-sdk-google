@@ -858,18 +858,12 @@ _V1alphaSession_TurnsFields = {
 class V1alphaSessionConfig:
     # Optional. The display name of the session. This field is used to identify the session in the UI. By default, the display name is the first turn query text in the session.
     display_name: Any = None
-    # Output only. The time the session finished.
-    end_time: Any = None
     # Optional. Whether the session is pinned, pinned session will be displayed on the top of the session list.
     is_pinned: Any = None
     # Optional. The labels for the session. Can be set as filter in ListSessionsRequest.
     labels: Any = None
     # Immutable. Fully qualified name `projects/{project}/locations/global/collections/{collection}/engines/{engine}/sessions/*`
     name: Any = None
-    # Output only. Full resource name of an in-progress AsyncAssist operation for this session, e.g. `projects/*/locations/*/collections/*/engines/*/sessions/*/operations/*`. Set when the operation starts and cleared when it finishes.
-    pending_async_assist_operation_id: Any = None
-    # Output only. The time the session started.
-    start_time: Any = None
     # The state of the session.
     state: Any = None
     # Turns.
@@ -904,12 +898,9 @@ V1alphaSession = ubx.ResourceBinding(
     wire_type="google_discoveryengine_v1alpha_session",
     fields={
         "display_name": ubx.FieldSpec(wire_name="display_name"),
-        "end_time": ubx.FieldSpec(wire_name="end_time"),
         "is_pinned": ubx.FieldSpec(wire_name="is_pinned"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "pending_async_assist_operation_id": ubx.FieldSpec(wire_name="pending_async_assist_operation_id"),
-        "start_time": ubx.FieldSpec(wire_name="start_time"),
         "state": ubx.FieldSpec(wire_name="state"),
         "turns": ubx.FieldSpec(
             wire_name="turns",

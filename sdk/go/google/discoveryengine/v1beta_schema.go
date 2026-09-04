@@ -24,8 +24,8 @@ type V1betaSchemaAttrs struct {
 var V1betaSchema = ubx.ResourceBinding{
 	WireType: "google_discoveryengine_v1beta_schema",
 	Fields: ubx.FieldMap{
-		"JsonSchema": ubx.FieldSpec{WireName: "json_schema"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"JsonSchema":   ubx.FieldSpec{WireName: "json_schema"},
+		"Name":         ubx.FieldSpec{WireName: "name"},
 		"StructSchema": ubx.FieldSpec{WireName: "struct_schema"},
 	},
 }

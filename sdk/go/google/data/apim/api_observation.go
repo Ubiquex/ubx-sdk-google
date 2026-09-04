@@ -16,7 +16,7 @@ type ApiObservationAttrs struct {
 	Hostname any
 	// Last event detected time stamp
 	LastEventDetectedTime any
-	Name any
+	Name                  any
 	// The IP address (IPv4 or IPv6) of the origin server that the request was sent to. This field can include port information. Examples: `"192.168.1.1"`, `"10.0.0.1:80"`, `"FE80::0202:B3FF:FE1E:8329"`.
 	ServerIps any
 	// Location of the Observation Source, for example "us-central1" or "europe-west1."

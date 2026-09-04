@@ -309,18 +309,12 @@ _Service_TelemetryConfigFields = {
 
 @dataclasses.dataclass
 class ServiceConfig:
-    # Output only. A Cloud Storage URI (starting with gs://) that specifies where artifacts related to the metastore service are stored.
-    artifact_gcs_uri: Any = None
-    # Output only. The time when the metastore service was created.
-    create_time: Any = None
     # Immutable. The database type that the Metastore service stores its data.
     database_type: Any = None
     # Optional. Indicates if the dataproc metastore should be protected against accidental deletions.
     deletion_protection: Any = None
     # Encryption settings for the service.
     encryption_config: Any = None
-    # Output only. The URI of the endpoint used to access the metastore service.
-    endpoint_uri: Any = None
     # Specifies configuration information specific to running Hive metastore software as the metastore service.
     hive_metastore_config: Any = None
     # User-defined labels for the metastore service.
@@ -345,20 +339,12 @@ class ServiceConfig:
     scaling_config: Any = None
     # This specifies the configuration of scheduled backup.
     scheduled_backup: Any = None
-    # Output only. The current state of the metastore service.
-    state: Any = None
-    # Output only. Additional information about the current state of the metastore service, if available.
-    state_message: Any = None
     # Optional. Input only. Immutable. Tag keys/values directly bound to this resource. For example: "123/environment": "production", "123/costCenter": "marketing"
     tags: Any = None
     # Telemetry Configuration for the Dataproc Metastore service.
     telemetry_config: Any = None
     # Optional. The tier of the service.
     tier: Any = None
-    # Output only. The globally unique resource identifier of the metastore service.
-    uid: Any = None
-    # Output only. The time when the metastore service was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class ServiceAttrs:
@@ -416,8 +402,6 @@ class ServiceAttrs:
 Service = ubx.ResourceBinding(
     wire_type="google_metastore_service",
     fields={
-        "artifact_gcs_uri": ubx.FieldSpec(wire_name="artifact_gcs_uri"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "database_type": ubx.FieldSpec(wire_name="database_type"),
         "deletion_protection": ubx.FieldSpec(wire_name="deletion_protection"),
         "encryption_config": ubx.FieldSpec(
@@ -425,7 +409,6 @@ Service = ubx.ResourceBinding(
             kind="object",
             fields=_Service_EncryptionConfigFields,
         ),
-        "endpoint_uri": ubx.FieldSpec(wire_name="endpoint_uri"),
         "hive_metastore_config": ubx.FieldSpec(
             wire_name="hive_metastore_config",
             kind="object",
@@ -466,8 +449,6 @@ Service = ubx.ResourceBinding(
             kind="object",
             fields=_Service_ScheduledBackupFields,
         ),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "state_message": ubx.FieldSpec(wire_name="state_message"),
         "tags": ubx.FieldSpec(wire_name="tags"),
         "telemetry_config": ubx.FieldSpec(
             wire_name="telemetry_config",
@@ -475,7 +456,5 @@ Service = ubx.ResourceBinding(
             fields=_Service_TelemetryConfigFields,
         ),
         "tier": ubx.FieldSpec(wire_name="tier"),
-        "uid": ubx.FieldSpec(wire_name="uid"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

@@ -139,8 +139,6 @@ _Service_ServiceReferenceFields = {
 class ServiceConfig:
     # Consumer provided attributes.
     attributes: Any = None
-    # Output only. Create time.
-    create_time: Any = None
     # Optional. User-defined description of a Service. Can have a maximum length of 2048 characters.
     description: Any = None
     # Required. Immutable. The resource name of the original discovered service.
@@ -153,12 +151,6 @@ class ServiceConfig:
     service_properties: Any = None
     # Reference to an underlying networking resource that can comprise a Service.
     service_reference: Any = None
-    # Output only. Service state.
-    state: Any = None
-    # Output only. A universally unique identifier (UUID) for the `Service` in the UUID4 format.
-    uid: Any = None
-    # Output only. Update time.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class ServiceAttrs:
@@ -193,7 +185,6 @@ Service = ubx.ResourceBinding(
             kind="object",
             fields=_Service_AttributesFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "discovered_service": ubx.FieldSpec(wire_name="discovered_service"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
@@ -208,8 +199,5 @@ Service = ubx.ResourceBinding(
             kind="object",
             fields=_Service_ServiceReferenceFields,
         ),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "uid": ubx.FieldSpec(wire_name="uid"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

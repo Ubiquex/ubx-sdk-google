@@ -21,16 +21,10 @@ class BackupVaultConfig:
     access_restriction: Any = None
     # Optional. User annotations. See https://google.aip.dev/128#annotations Stores small amounts of arbitrary data.
     annotations: Any = None
-    # Output only. The number of backups in this backup vault.
-    backup_count: Any = None
     # Required. The default and minimum enforced retention for each backup within the backup vault. The enforced retention for each backup can be extended. Note: Longer minimum enforced retention period impacts potential storage costs post introductory trial. We recommend starting with a short duration of 3 days or less.
     backup_minimum_enforced_retention_duration: Any = None
     # Optional. Setting for how a backup's enforced retention end time is inherited.
     backup_retention_inheritance: Any = None
-    # Output only. The time when the instance was created.
-    create_time: Any = None
-    # Output only. Set to true when there are no backups nested under this resource.
-    deletable: Any = None
     # Optional. The description of the BackupVault instance (2048 characters or less).
     description: Any = None
     # Optional. Time after which the BackupVault resource is locked.
@@ -41,18 +35,6 @@ class BackupVaultConfig:
     etag: Any = None
     # Optional. Resource labels to represent user provided metadata. No labels currently defined:
     labels: Any = None
-    # Output only. Identifier. Name of the backup vault to create. It must have the format`"projects/{project}/locations/{location}/backupVaults/{backupvault}"`. `{backupvault}` cannot be changed after creation. It must be between 3-63 characters long and must be unique within the project and location.
-    name: Any = None
-    # Output only. Service account used by the BackupVault Service for this BackupVault. The user should grant this account permissions in their workload project to enable the service to run backups and restores there.
-    service_account: Any = None
-    # Output only. The BackupVault resource instance state.
-    state: Any = None
-    # Output only. Total size of the storage used by all backup resources.
-    total_stored_bytes: Any = None
-    # Output only. Immutable after resource creation until resource deletion.
-    uid: Any = None
-    # Output only. The time when the instance was updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class BackupVaultAttrs:
@@ -98,11 +80,8 @@ BackupVault = ubx.ResourceBinding(
     fields={
         "access_restriction": ubx.FieldSpec(wire_name="access_restriction"),
         "annotations": ubx.FieldSpec(wire_name="annotations"),
-        "backup_count": ubx.FieldSpec(wire_name="backup_count"),
         "backup_minimum_enforced_retention_duration": ubx.FieldSpec(wire_name="backup_minimum_enforced_retention_duration"),
         "backup_retention_inheritance": ubx.FieldSpec(wire_name="backup_retention_inheritance"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
-        "deletable": ubx.FieldSpec(wire_name="deletable"),
         "description": ubx.FieldSpec(wire_name="description"),
         "effective_time": ubx.FieldSpec(wire_name="effective_time"),
         "encryption_config": ubx.FieldSpec(
@@ -112,11 +91,5 @@ BackupVault = ubx.ResourceBinding(
         ),
         "etag": ubx.FieldSpec(wire_name="etag"),
         "labels": ubx.FieldSpec(wire_name="labels"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "service_account": ubx.FieldSpec(wire_name="service_account"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "total_stored_bytes": ubx.FieldSpec(wire_name="total_stored_bytes"),
-        "uid": ubx.FieldSpec(wire_name="uid"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

@@ -14,9 +14,7 @@ export interface InstanceGroupManager_AllInstancesConfig {
 }
 
 export interface InstanceGroupManager_AutoHealingPolicies {
-  /** The URL of the health check resource used to determine when to automatically recreate instances in the managed instance group. Must reference a health check of type HTTP, HTTPS, TCP, or SSL. (AI-inferred) */
   healthCheck?: string | Computed<string>;
-  /** The number of seconds to wait before the managed instance group applies autohealing policies to new instances. Must be between 0 and 3600 seconds. (AI-inferred) */
   initialDelaySec?: number | Computed<number>;
 }
 
@@ -50,7 +48,6 @@ export interface InstanceGroupManager_CurrentActions {
 }
 
 export interface InstanceGroupManager_DistributionPolicy_Zones {
-  /** The name of a zone where instances are distributed. Must be in the same region as the instance group manager. (AI-inferred) */
   zone?: string | Computed<string>;
 }
 
@@ -62,9 +59,7 @@ export interface InstanceGroupManager_DistributionPolicy {
 }
 
 export interface InstanceGroupManager_InstanceFlexibilityPolicy_InstanceSelections {
-  /** The list of machine types to include in the instance selection. At least one machine type must be specified, and all machine types must be available in the same region as the instance group manager. (AI-inferred) */
   machineTypes?: string[] | Computed<string[]>;
-  /** The rank of this instance selection, an integer from 0 to 100. Higher ranks indicate higher priority; Compute Engine uses the instance selection with the highest available rank. (AI-inferred) */
   rank?: number | Computed<number>;
 }
 
@@ -90,9 +85,7 @@ export interface InstanceGroupManager_InstanceLifecyclePolicy {
 }
 
 export interface InstanceGroupManager_NamedPorts {
-  /** The name of the named port. This name must be unique within the instance group. (AI-inferred) */
   name?: string | Computed<string>;
-  /** The TCP/UDP port number that this named port maps to. (AI-inferred) */
   port?: number | Computed<number>;
 }
 
@@ -109,7 +102,6 @@ export interface InstanceGroupManager_StandbyPolicy {
 }
 
 export interface InstanceGroupManager_StatefulPolicy_PreservedState_Disks {
-  /** Specifies whether the disk is automatically deleted when the instance is deleted. In a stateful policy, set this to 'false' to preserve the disk; set to 'true' to delete it with the instance. (AI-inferred) */
   autoDelete?: string | Computed<string>;
 }
 
@@ -135,56 +127,38 @@ export interface InstanceGroupManager_Status_AllInstancesConfig {
 }
 
 export interface InstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_ErrorInfo {
-  /** The domain in which the error occurred, identifying the Google API service that generated the error, such as 'compute.googleapis.com'. (AI-inferred) */
   domain?: string | Computed<string>;
-  /** A map of string keys to string values containing additional metadata about the error. This is part of the standard Google API ErrorInfo structure, providing extra context for the error. (AI-inferred) */
   metadatas?: Record<string, string> | Computed<Record<string, string>>;
-  /** The reason for the error, typically a stable identifier within the error domain that indicates the specific cause of the failure. (AI-inferred) */
   reason?: string | Computed<string>;
 }
 
 export interface InstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_Help_Links {
-  /** A human-readable description of the help link. (AI-inferred) */
   description?: string | Computed<string>;
-  /** The URL of the help link. It points to a web resource with additional information about the error. (AI-inferred) */
   url?: string | Computed<string>;
 }
 
 export interface InstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_Help {
-  /** A list of links providing additional documentation or resources related to the error, typically containing a description and URL for each link. (AI-inferred) */
   links?: InstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_Help_Links[] | Computed<InstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_Help_Links[]>;
 }
 
 export interface InstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_LocalizedMessage {
-  /** The BCP-47 language tag indicating the locale of the localized error message. (AI-inferred) */
   locale?: string | Computed<string>;
-  /** The localized error message text, providing details about the error in the user's locale. (AI-inferred) */
   message?: string | Computed<string>;
 }
 
 export interface InstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_QuotaInfo {
-  /** A map of quota dimensions (e.g., region, zone, or other qualifiers) that identify the specific quota limit that was exceeded. (AI-inferred) */
   dimensions?: Record<string, string> | Computed<Record<string, string>>;
-  /** The projected quota limit that will apply after the current operation completes, as reported in quota error details. (AI-inferred) */
   futureLimit?: number | Computed<number>;
-  /** The maximum allowed value for the quota metric. (AI-inferred) */
   limit?: number | Computed<number>;
-  /** The name of the quota limit that was exceeded. (AI-inferred) */
   limitName?: string | Computed<string>;
-  /** The name of the quota metric that was exceeded, identifying which quota limit was violated. (AI-inferred) */
   metricName?: string | Computed<string>;
-  /** The rollout status of a quota change, indicating whether the quota update is currently being rolled out. Possible values are IN_PROGRESS (the rollout is in progress) and ROLLOUT_STATUS_UNSPECIFIED (the rollout status is unspecified). (AI-inferred) */
   rolloutStatus?: string | Computed<string>;
 }
 
 export interface InstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails {
-  /** The ErrorInfo object within an error detail, containing structured fields such as reason, domain, and metadata to provide additional context about the error. (AI-inferred) */
   errorInfo?: InstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_ErrorInfo | Computed<InstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_ErrorInfo>;
-  /** The Help message for this error, which contains links to external documentation that can assist in resolving the issue. (AI-inferred) */
   help?: InstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_Help | Computed<InstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_Help>;
-  /** An object containing the localized error message, including the language code and the message in that language, used to show the error in a user-specific locale. (AI-inferred) */
   localizedMessage?: InstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_LocalizedMessage | Computed<InstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_LocalizedMessage>;
-  /** Quota information related to the error, providing context on the quota that was exceeded. (AI-inferred) */
   quotaInfo?: InstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_QuotaInfo | Computed<InstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails_QuotaInfo>;
 }
 
@@ -192,25 +166,20 @@ export interface InstanceGroupManager_Status_AppliedAcceleratorTopologies_StateD
   code?: string | Computed<string>;
   errorDetails?: InstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails[] | Computed<InstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors_ErrorDetails[]>;
   location?: string | Computed<string>;
-  /** The human-readable error message describing the issue with this accelerator topology state detail. (AI-inferred) */
   message?: string | Computed<string>;
 }
 
 export interface InstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error {
-  /** List of error details that occurred while applying the accelerator topology to the instance group manager. (AI-inferred) */
   errors?: InstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors[] | Computed<InstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error_Errors[]>;
 }
 
 export interface InstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails {
-  /** Details about an error encountered when applying an accelerator topology to the instance group manager, within the state details of that applied topology. (AI-inferred) */
   error?: InstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error | Computed<InstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails_Error>;
-  /** The timestamp when the state detail was last updated. (AI-inferred) */
   timestamp?: string | Computed<string>;
 }
 
 export interface InstanceGroupManager_Status_AppliedAcceleratorTopologies {
   acceleratorTopology?: string | Computed<string>;
-  /** The lifecycle state of the applied accelerator topology. Possible values are ACTIVATING, ACTIVE, DEACTIVATING, FAILED, INCOMPLETE, and REACTIVATING. (AI-inferred) */
   state?: string | Computed<string>;
   stateDetails?: InstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails | Computed<InstanceGroupManager_Status_AppliedAcceleratorTopologies_StateDetails>;
 }
@@ -258,7 +227,6 @@ export interface InstanceGroupManager_Status_Stateful_PerInstanceConfigs {
 export interface InstanceGroupManager_Status_Stateful {
   /** Output only. A bit indicating whether the managed instance group has stateful configuration, that is, if you have configured any items in a stateful policy or in per-instance configs. The group might report that it has no stateful configuration even when there is still some preserved state on a managed instance, for example, if you have deleted all PICs but not yet applied those deletions. */
   hasStatefulConfig?: boolean | Computed<boolean>;
-  /** A map of instance names to their stateful configuration status, reflecting the per-instance stateful configuration state. (AI-inferred) */
   perInstanceConfigs?: InstanceGroupManager_Status_Stateful_PerInstanceConfigs | Computed<InstanceGroupManager_Status_Stateful_PerInstanceConfigs>;
 }
 
@@ -268,7 +236,6 @@ export interface InstanceGroupManager_Status_VersionTarget {
 }
 
 export interface InstanceGroupManager_Status {
-  /** The effective all-instances configuration for the managed instance group, showing the properties (such as metadata) that are applied to all instances in the group. (AI-inferred) */
   allInstancesConfig?: InstanceGroupManager_Status_AllInstancesConfig | Computed<InstanceGroupManager_Status_AllInstancesConfig>;
   /** Output only. The accelerator topology applied to this MIG. Currently only one accelerator topology is supported. */
   appliedAcceleratorTopologies?: InstanceGroupManager_Status_AppliedAcceleratorTopologies[] | Computed<InstanceGroupManager_Status_AppliedAcceleratorTopologies[]>;
@@ -280,9 +247,7 @@ export interface InstanceGroupManager_Status {
   currentInstanceStatuses?: InstanceGroupManager_Status_CurrentInstanceStatuses | Computed<InstanceGroupManager_Status_CurrentInstanceStatuses>;
   /** Output only. A bit indicating whether the managed instance group is in a stable state. A stable state means that: none of the instances in the managed instance group is currently undergoing any type of change (for example, creation, restart, or deletion); no future changes are scheduled for instances in the managed instance group; and the managed instance group itself is not being modified. */
   isStable?: boolean | Computed<boolean>;
-  /** The stateful configuration status of the instance group manager, including whether a stateful configuration is present and the state of per-instance configurations. (AI-inferred) */
   stateful?: InstanceGroupManager_Status_Stateful | Computed<InstanceGroupManager_Status_Stateful>;
-  /** The version that this instance group manager is targeting. It exposes the instance template and version name that the group is currently aiming to match, used for versioned canary updates. (AI-inferred) */
   versionTarget?: InstanceGroupManager_Status_VersionTarget | Computed<InstanceGroupManager_Status_VersionTarget>;
 }
 
@@ -318,11 +283,8 @@ export interface InstanceGroupManager_UpdatePolicy {
 }
 
 export interface InstanceGroupManager_Versions {
-  /** The instance template to use for this version. Specify the self-link or name of the instance template. (AI-inferred) */
   instanceTemplate?: string | Computed<string>;
-  /** A unique name for this version within the instance group manager. It must be unique among all versions of the group. (AI-inferred) */
   name?: string | Computed<string>;
-  /** The target number of instances for this version. Configure the fixed subfield for a static count or percent subfield for a percentage of the group's total size. (AI-inferred) */
   targetSize?: InstanceGroupManager_UpdatePolicy_MaxSurge | Computed<InstanceGroupManager_UpdatePolicy_MaxSurge>;
 }
 
@@ -660,53 +622,29 @@ const InstanceGroupManager_VersionsFields: FieldMap = {
 };
 
 export interface InstanceGroupManagerConfig {
-  /** The all_instances_config block defines metadata and labels that are applied to every instance in the managed instance group. This computed value reflects the group's all-instances configuration. (AI-inferred) */
   allInstancesConfig?: InstanceGroupManager_AllInstancesConfig | Computed<InstanceGroupManager_AllInstancesConfig>;
   /** The autohealing policy for this managed instance group. You can specify only one value. */
   autoHealingPolicies?: InstanceGroupManager_AutoHealingPolicies[] | Computed<InstanceGroupManager_AutoHealingPolicies[]>;
   /** The base instance name is a prefix that you want to attach to the names of all VMs in a MIG. The maximum character length is 58 and the name must comply with RFC1035 format. When a VM is created in the group, the MIG appends a hyphen and a random four-character string to the base instance name. If you want the MIG to assign sequential numbers instead of a random string, then end the base instance name with a hyphen followed by one or more hash symbols. The hash symbols indicate the number of digits. For example, a base instance name of "vm-###" results in "vm-001" as a VM name. @pattern [a-z](([-a-z0-9]{0,57})|([-a-z0-9]{0,51}-#{1,10}(\\[[0-9]{1,10}\\])?)) */
   baseInstanceName?: string | Computed<string>;
-  /** Output only. The creation timestamp for this managed instance group inRFC3339 text format. */
-  creationTimestamp?: string | Computed<string>;
-  /** The current actions being performed on the instances in this instance group manager. This computed field, which is output only, provides visibility into the operations currently being executed on the group's instances. (AI-inferred) */
   currentActions?: InstanceGroupManager_CurrentActions | Computed<InstanceGroupManager_CurrentActions>;
   /** An optional description of this resource. */
   description?: string | Computed<string>;
-  /** The distribution policy for the managed instance group, specifying how instances are distributed across zones and the target shape. This is a computed attribute reflecting the effective policy. (AI-inferred) */
   distributionPolicy?: InstanceGroupManager_DistributionPolicy | Computed<InstanceGroupManager_DistributionPolicy>;
   /** Fingerprint of this resource. This field may be used in optimistic locking. It will be ignored when inserting an InstanceGroupManager. An up-to-date fingerprint must be provided in order to update the InstanceGroupManager, otherwise the request will fail with error412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an InstanceGroupManager. */
   fingerprint?: string | Computed<string>;
-  /** Output only. A unique identifier for this resource type. The server generates this identifier. */
-  id?: string | Computed<string>;
-  /** The instance flexibility policy for the managed instance group, which defines the set of machine types the group may use when creating instances. This computed field reflects the policy currently applied to the group. (AI-inferred) */
   instanceFlexibilityPolicy?: InstanceGroupManager_InstanceFlexibilityPolicy | Computed<InstanceGroupManager_InstanceFlexibilityPolicy>;
-  /** Output only. The URL of the Instance Group resource. */
-  instanceGroup?: string | Computed<string>;
-  /** The lifecycle policy for instances in the managed instance group. This policy controls how the group handles instance updates and repairs. (AI-inferred) */
   instanceLifecyclePolicy?: InstanceGroupManager_InstanceLifecyclePolicy | Computed<InstanceGroupManager_InstanceLifecyclePolicy>;
   /** The URL of the instance template that is specified for this managed instance group. The group uses this template to create all new instances in the managed instance group. The templates for existing instances in the group do not change unless you run recreateInstances, runapplyUpdatesToInstances, or set the group'supdatePolicy.type to PROACTIVE. */
   instanceTemplate?: string | Computed<string>;
-  /** Output only. The resource type, which is alwayscompute#instanceGroupManager for managed instance groups. */
-  kind?: string | Computed<string>;
   /** Pagination behavior of the listManagedInstances API method for this managed instance group. */
   listManagedInstancesResults?: string | Computed<string>;
   /** The name of the managed instance group. The name must be 1-63 characters long, and comply withRFC1035. */
   name?: string | Computed<string>;
   /** [Output Only] Named ports configured on the Instance Groups complementary to this Instance Group Manager. */
   namedPorts?: InstanceGroupManager_NamedPorts[] | Computed<InstanceGroupManager_NamedPorts[]>;
-  /** Output only. [Output Only] The URL of theregion where the managed instance group resides (for regional resources). */
-  region?: string | Computed<string>;
-  /** An object that lists the resource policies (such as instance schedule policies) currently attached to the instance group manager. This field is computed and output-only, so it reflects the live state of the group. (AI-inferred) */
   resourcePolicies?: InstanceGroupManager_ResourcePolicies | Computed<InstanceGroupManager_ResourcePolicies>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzi?: boolean | Computed<boolean>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzs?: boolean | Computed<boolean>;
-  /** Output only. The URL for this managed instance group. The server defines this URL. */
-  selfLink?: string | Computed<string>;
-  /** The standby policy for the managed instance group, which controls how instances are held in standby mode. This field is read-only (computed) and represents the effective standby configuration for the group. (AI-inferred) */
   standbyPolicy?: InstanceGroupManager_StandbyPolicy | Computed<InstanceGroupManager_StandbyPolicy>;
-  /** The stateful policy for the managed instance group, which defines the preserved state (such as disks) for instances in the group. This field is computed by the provider and is output only, reflecting the actual applied stateful configuration. (AI-inferred) */
   statefulPolicy?: InstanceGroupManager_StatefulPolicy | Computed<InstanceGroupManager_StatefulPolicy>;
   status?: InstanceGroupManager_Status | Computed<InstanceGroupManager_Status>;
   /** The URLs for all TargetPool resources to which instances in theinstanceGroup field are added. The target pools automatically apply to all of the instances in the managed instance group. */
@@ -718,16 +656,12 @@ export interface InstanceGroupManagerConfig {
   targetStoppedSize?: number | Computed<number>;
   /** The target number of suspended instances for this managed instance group. This number changes when you: - Suspend instance using the suspendInstances method or resume instances using the resumeInstances method. - Manually change the targetSuspendedSize using the update method. */
   targetSuspendedSize?: number | Computed<number>;
-  /** The update policy for the instance group manager, providing details about how rolling updates are applied to instances. This field is output-only and contains the effective update settings. (AI-inferred) */
   updatePolicy?: InstanceGroupManager_UpdatePolicy | Computed<InstanceGroupManager_UpdatePolicy>;
   /** Specifies the instance templates used by this managed instance group to create instances. Each version is defined by an instanceTemplate and aname. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about therelationships between these fields. Exactly one version must leave thetargetSize field unset. That version will be applied to all remaining instances. For more information, read aboutcanary updates. */
   versions?: InstanceGroupManager_Versions[] | Computed<InstanceGroupManager_Versions[]>;
-  /** Output only. The URL of azone where the managed instance group is located (for zonal resources). */
-  zone?: string | Computed<string>;
 }
 
 export interface InstanceGroupManagerAttrs {
-  /** The all_instances_config block defines metadata and labels that are applied to every instance in the managed instance group. This computed value reflects the group's all-instances configuration. (AI-inferred) */
   allInstancesConfig: InstanceGroupManager_AllInstancesConfig;
   /** The autohealing policy for this managed instance group. You can specify only one value. */
   autoHealingPolicies: InstanceGroupManager_AutoHealingPolicies[];
@@ -735,21 +669,17 @@ export interface InstanceGroupManagerAttrs {
   baseInstanceName: string;
   /** Output only. The creation timestamp for this managed instance group inRFC3339 text format. */
   creationTimestamp: string;
-  /** The current actions being performed on the instances in this instance group manager. This computed field, which is output only, provides visibility into the operations currently being executed on the group's instances. (AI-inferred) */
   currentActions: InstanceGroupManager_CurrentActions;
   /** An optional description of this resource. */
   description: string;
-  /** The distribution policy for the managed instance group, specifying how instances are distributed across zones and the target shape. This is a computed attribute reflecting the effective policy. (AI-inferred) */
   distributionPolicy: InstanceGroupManager_DistributionPolicy;
   /** Fingerprint of this resource. This field may be used in optimistic locking. It will be ignored when inserting an InstanceGroupManager. An up-to-date fingerprint must be provided in order to update the InstanceGroupManager, otherwise the request will fail with error412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an InstanceGroupManager. */
   fingerprint: string;
   /** Output only. A unique identifier for this resource type. The server generates this identifier. */
   id: string;
-  /** The instance flexibility policy for the managed instance group, which defines the set of machine types the group may use when creating instances. This computed field reflects the policy currently applied to the group. (AI-inferred) */
   instanceFlexibilityPolicy: InstanceGroupManager_InstanceFlexibilityPolicy;
   /** Output only. The URL of the Instance Group resource. */
   instanceGroup: string;
-  /** The lifecycle policy for instances in the managed instance group. This policy controls how the group handles instance updates and repairs. (AI-inferred) */
   instanceLifecyclePolicy: InstanceGroupManager_InstanceLifecyclePolicy;
   /** The URL of the instance template that is specified for this managed instance group. The group uses this template to create all new instances in the managed instance group. The templates for existing instances in the group do not change unless you run recreateInstances, runapplyUpdatesToInstances, or set the group'supdatePolicy.type to PROACTIVE. */
   instanceTemplate: string;
@@ -763,7 +693,6 @@ export interface InstanceGroupManagerAttrs {
   namedPorts: InstanceGroupManager_NamedPorts[];
   /** Output only. [Output Only] The URL of theregion where the managed instance group resides (for regional resources). */
   region: string;
-  /** An object that lists the resource policies (such as instance schedule policies) currently attached to the instance group manager. This field is computed and output-only, so it reflects the live state of the group. (AI-inferred) */
   resourcePolicies: InstanceGroupManager_ResourcePolicies;
   /** Output only. Reserved for future use. */
   satisfiesPzi: boolean;
@@ -771,9 +700,7 @@ export interface InstanceGroupManagerAttrs {
   satisfiesPzs: boolean;
   /** Output only. The URL for this managed instance group. The server defines this URL. */
   selfLink: string;
-  /** The standby policy for the managed instance group, which controls how instances are held in standby mode. This field is read-only (computed) and represents the effective standby configuration for the group. (AI-inferred) */
   standbyPolicy: InstanceGroupManager_StandbyPolicy;
-  /** The stateful policy for the managed instance group, which defines the preserved state (such as disks) for instances in the group. This field is computed by the provider and is output only, reflecting the actual applied stateful configuration. (AI-inferred) */
   statefulPolicy: InstanceGroupManager_StatefulPolicy;
   status: InstanceGroupManager_Status;
   /** The URLs for all TargetPool resources to which instances in theinstanceGroup field are added. The target pools automatically apply to all of the instances in the managed instance group. */
@@ -785,7 +712,6 @@ export interface InstanceGroupManagerAttrs {
   targetStoppedSize: number;
   /** The target number of suspended instances for this managed instance group. This number changes when you: - Suspend instance using the suspendInstances method or resume instances using the resumeInstances method. - Manually change the targetSuspendedSize using the update method. */
   targetSuspendedSize: number;
-  /** The update policy for the instance group manager, providing details about how rolling updates are applied to instances. This field is output-only and contains the effective update settings. (AI-inferred) */
   updatePolicy: InstanceGroupManager_UpdatePolicy;
   /** Specifies the instance templates used by this managed instance group to create instances. Each version is defined by an instanceTemplate and aname. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about therelationships between these fields. Exactly one version must leave thetargetSize field unset. That version will be applied to all remaining instances. For more information, read aboutcanary updates. */
   versions: InstanceGroupManager_Versions[];
@@ -807,7 +733,6 @@ export const InstanceGroupManager: ResourceBinding<InstanceGroupManagerConfig, I
       fields: InstanceGroupManager_AutoHealingPoliciesFields,
     },
     baseInstanceName: "base_instance_name",
-    creationTimestamp: "creation_timestamp",
     currentActions: {
       wireName: "current_actions",
       kind: "object",
@@ -820,20 +745,17 @@ export const InstanceGroupManager: ResourceBinding<InstanceGroupManagerConfig, I
       fields: InstanceGroupManager_DistributionPolicyFields,
     },
     fingerprint: "fingerprint",
-    id: "id",
     instanceFlexibilityPolicy: {
       wireName: "instance_flexibility_policy",
       kind: "object",
       fields: InstanceGroupManager_InstanceFlexibilityPolicyFields,
     },
-    instanceGroup: "instance_group",
     instanceLifecyclePolicy: {
       wireName: "instance_lifecycle_policy",
       kind: "object",
       fields: InstanceGroupManager_InstanceLifecyclePolicyFields,
     },
     instanceTemplate: "instance_template",
-    kind: "kind",
     listManagedInstancesResults: "list_managed_instances_results",
     name: "name",
     namedPorts: {
@@ -841,15 +763,11 @@ export const InstanceGroupManager: ResourceBinding<InstanceGroupManagerConfig, I
       kind: "list",
       fields: InstanceGroupManager_NamedPortsFields,
     },
-    region: "region",
     resourcePolicies: {
       wireName: "resource_policies",
       kind: "object",
       fields: InstanceGroupManager_ResourcePoliciesFields,
     },
-    satisfiesPzi: "satisfies_pzi",
-    satisfiesPzs: "satisfies_pzs",
-    selfLink: "self_link",
     standbyPolicy: {
       wireName: "standby_policy",
       kind: "object",
@@ -884,6 +802,5 @@ export const InstanceGroupManager: ResourceBinding<InstanceGroupManagerConfig, I
       kind: "list",
       fields: InstanceGroupManager_VersionsFields,
     },
-    zone: "zone",
   },
 };

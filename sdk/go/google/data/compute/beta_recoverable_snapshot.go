@@ -66,7 +66,7 @@ type BetaRecoverableSnapshot_OriginalResource struct {
 	// Output only. [Output Only] Server-defined URL for the resource.
 	SelfLink any
 	// Output only. [Output Only] Server-defined URL for this resource's resource id.
-	SelfLinkWithId any
+	SelfLinkWithId        any
 	SnapshotEncryptionKey any
 	// Output only. [Output Only] The unique ID of the snapshot group that this snapshot belongs to. The usage of snapshot group feature is restricted.
 	SnapshotGroupId any
@@ -75,14 +75,14 @@ type BetaRecoverableSnapshot_OriginalResource struct {
 	// Indicates the type of the snapshot.
 	SnapshotType any
 	// The source disk used to create this snapshot.
-	SourceDisk any
+	SourceDisk              any
 	SourceDiskEncryptionKey any
 	// The source disk whose recovery checkpoint will be used to create this snapshot.
 	SourceDiskForRecoveryCheckpoint any
 	// Output only. [Output Only] The ID value of the disk used to create this snapshot
 	SourceDiskId any
 	// The source instant snapshot used to create this snapshot.
-	SourceInstantSnapshot any
+	SourceInstantSnapshot              any
 	SourceInstantSnapshotEncryptionKey any
 	// Output only. [Output Only] The unique ID of the instant snapshot used to create this snapshot. This value identifies the exact instant snapshot that was used to create this persistent disk. For example, if you created the persistent disk from an instant snapshot that was later deleted and recreated under the same name, the source instant snapshot ID would identify the exact instant snapshot that was used.
 	SourceInstantSnapshotId any
@@ -99,7 +99,7 @@ type BetaRecoverableSnapshot_OriginalResource struct {
 }
 
 type BetaRecoverableSnapshotConfig struct {
-	Project any
+	Project             any
 	RecoverableSnapshot any
 }
 
@@ -113,11 +113,11 @@ type BetaRecoverableSnapshotAttrs struct {
 	// Output only. [Output Only] Type of the resource. Alwayscompute#recoverableSnapshot for RecoverableSnapshot resources.
 	Kind any
 	// Output only. Identifier. Name of the recoverable snapshot generated on the deletion of the snapshot. The name will be 1-63 characters long, and comply withRFC1035. Specifically, the name will be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character will be a lowercase letter, and all following characters can be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-	Name any
+	Name             any
 	OriginalResource any
-	Project any
+	Project          any
 	// Output only. [Output Only] Purge timestamp of recoverable snapshot inRFC3339 text format.
-	PurgeTimestamp any
+	PurgeTimestamp      any
 	RecoverableSnapshot any
 	// Output only. [Output Only] Reserved for future use.
 	SatisfiesPzi any
@@ -134,7 +134,7 @@ type BetaRecoverableSnapshotAttrs struct {
 var BetaRecoverableSnapshot = ubx.DataSourceBinding{
 	WireType: "google_compute_beta_recoverable_snapshot",
 	Fields: ubx.FieldMap{
-		"Project": ubx.FieldSpec{WireName: "project"},
+		"Project":             ubx.FieldSpec{WireName: "project"},
 		"RecoverableSnapshot": ubx.FieldSpec{WireName: "recoverable_snapshot"},
 	},
 }

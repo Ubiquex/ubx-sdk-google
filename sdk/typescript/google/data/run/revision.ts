@@ -204,7 +204,6 @@ export interface Revision_VpcAccess {
 }
 
 export interface RevisionConfig {
-  name: string | Computed<string>;
 }
 
 export interface RevisionAttrs {
@@ -284,6 +283,5 @@ export interface RevisionAttrs {
 export const Revision: DataSourceBinding<RevisionConfig, RevisionAttrs> = {
   wireType: "google_run_revision",
   fields: {
-    name: "name",
   },
 };

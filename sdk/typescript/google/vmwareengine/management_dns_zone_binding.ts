@@ -2,18 +2,8 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ManagementDnsZoneBindingConfig {
-  /** Output only. Creation time of this resource. */
-  createTime?: string | Computed<string>;
   /** User-provided description for this resource. */
   description?: string | Computed<string>;
-  /** Output only. The resource name of this binding. Resource names are schemeless URIs that follow the conventions in https://cloud.google.com/apis/design/resource_names. For example: `projects/my-project/locations/us-central1-a/privateClouds/my-cloud/managementDnsZoneBindings/my-management-dns-zone-binding` */
-  name?: string | Computed<string>;
-  /** Output only. The state of the resource. */
-  state?: string | Computed<string>;
-  /** Output only. System-generated unique identifier for the resource. */
-  uid?: string | Computed<string>;
-  /** Output only. Last update time of this resource. */
-  updateTime?: string | Computed<string>;
   /** Network to bind is a VMware Engine network. Specify the name in the following form for VMware engine network: `projects/{project}/locations/global/vmwareEngineNetworks/{vmware_engine_network_id}`. `{project}` can either be a project number or a project ID. */
   vmwareEngineNetwork?: string | Computed<string>;
   /** Network to bind is a standard consumer VPC. Specify the name in the following form for consumer VPC network: `projects/{project}/global/networks/{network_id}`. `{project}` can either be a project number or a project ID. */
@@ -42,12 +32,7 @@ export interface ManagementDnsZoneBindingAttrs {
 export const ManagementDnsZoneBinding: ResourceBinding<ManagementDnsZoneBindingConfig, ManagementDnsZoneBindingAttrs> = {
   wireType: "google_vmwareengine_management_dns_zone_binding",
   fields: {
-    createTime: "create_time",
     description: "description",
-    name: "name",
-    state: "state",
-    uid: "uid",
-    updateTime: "update_time",
     vmwareEngineNetwork: "vmware_engine_network",
     vpcNetwork: "vpc_network",
   },

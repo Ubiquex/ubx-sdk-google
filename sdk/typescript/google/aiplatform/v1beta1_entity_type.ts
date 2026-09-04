@@ -75,8 +75,6 @@ const V1beta1EntityType_MonitoringConfigFields: FieldMap = {
 };
 
 export interface V1beta1EntityTypeConfig {
-  /** Output only. Timestamp when this EntityType was created. */
-  createTime?: string | Computed<string>;
   /** Optional. Description of the EntityType. */
   description?: string | Computed<string>;
   /** Optional. Used to perform a consistent read-modify-write updates. If not set, a blind "overwrite" update happens. */
@@ -89,12 +87,6 @@ export interface V1beta1EntityTypeConfig {
   name?: string | Computed<string>;
   /** Optional. Config for data retention policy in offline storage. TTL in days for feature values that will be stored in offline storage. The Feature Store offline storage periodically removes obsolete feature values older than `offline_storage_ttl_days` since the feature generation time. If unset (or explicitly set to 0), default to 4000 days TTL. */
   offlineStorageTtlDays?: number | Computed<number>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzi?: boolean | Computed<boolean>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzs?: boolean | Computed<boolean>;
-  /** Output only. Timestamp when this EntityType was most recently updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1beta1EntityTypeAttrs {
@@ -123,7 +115,6 @@ export interface V1beta1EntityTypeAttrs {
 export const V1beta1EntityType: ResourceBinding<V1beta1EntityTypeConfig, V1beta1EntityTypeAttrs> = {
   wireType: "google_aiplatform_v1beta1_entity_type",
   fields: {
-    createTime: "create_time",
     description: "description",
     etag: "etag",
     labels: "labels",
@@ -134,8 +125,5 @@ export const V1beta1EntityType: ResourceBinding<V1beta1EntityTypeConfig, V1beta1
     },
     name: "name",
     offlineStorageTtlDays: "offline_storage_ttl_days",
-    satisfiesPzi: "satisfies_pzi",
-    satisfiesPzs: "satisfies_pzs",
-    updateTime: "update_time",
   },
 };

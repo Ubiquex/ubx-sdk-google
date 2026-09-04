@@ -12,10 +12,6 @@ const V1beta1UserDataMapping_ResourceAttributesFields: FieldMap = {
 };
 
 export interface V1beta1UserDataMappingConfig {
-  /** Output only. Indicates the time when this mapping was archived. */
-  archiveTime?: string | Computed<string>;
-  /** Output only. Indicates whether this mapping is archived. */
-  archived?: boolean | Computed<boolean>;
   /** Required. A unique identifier for the mapped resource. */
   dataId?: string | Computed<string>;
   /** Resource name of the User data mapping, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}/consentStores/{consent_store_id}/userDataMappings/{user_data_mapping_id}`. */
@@ -44,8 +40,6 @@ export interface V1beta1UserDataMappingAttrs {
 export const V1beta1UserDataMapping: ResourceBinding<V1beta1UserDataMappingConfig, V1beta1UserDataMappingAttrs> = {
   wireType: "google_healthcare_v1beta1_user_data_mapping",
   fields: {
-    archiveTime: "archive_time",
-    archived: "archived",
     dataId: "data_id",
     name: "name",
     resourceAttributes: {

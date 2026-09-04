@@ -14,7 +14,7 @@ type V1beta1ResponseAttrs struct {
 	Data any
 	// Application specific response metadata. Must be set in the first response for streaming APIs.
 	Extensions any
-	Name any
+	Name       any
 }
 
 var V1beta1Response = ubx.DataSourceBinding{

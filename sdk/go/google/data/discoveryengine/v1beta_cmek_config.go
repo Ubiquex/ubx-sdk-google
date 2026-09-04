@@ -20,7 +20,7 @@ type V1betaCmekConfigAttrs struct {
 	KmsKeyVersion any
 	// Output only. The timestamp of the last key rotation.
 	LastRotationTimestampMicros any
-	Name any
+	Name                        any
 	// Output only. Whether the NotebookLM Corpus is ready to be used.
 	NotebooklmState any
 	// Optional. Single-regional CMEKs that are required for some VAIS features.

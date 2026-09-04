@@ -19,21 +19,21 @@ type NasJob_Error struct {
 
 type NasJob_NasJobOutput_MultiTrialJobOutput_SearchTrials_FinalMeasurement_Metrics struct {
 	MetricId any
-	Value any
+	Value    any
 }
 
 type NasJob_NasJobOutput_MultiTrialJobOutput_SearchTrials_FinalMeasurement struct {
 	ElapsedDuration any
-	Metrics any
-	StepCount any
+	Metrics         any
+	StepCount       any
 }
 
 type NasJob_NasJobOutput_MultiTrialJobOutput_SearchTrials struct {
-	EndTime any
+	EndTime          any
 	FinalMeasurement any
-	Id any
-	StartTime any
-	State any
+	Id               any
+	StartTime        any
+	State            any
 }
 
 type NasJob_NasJobOutput_MultiTrialJobOutput struct {
@@ -61,7 +61,7 @@ type NasJob_NasJobSpec_MultiTrialAlgorithmSpec_SearchTrialSpec_SearchTrialJobSpe
 }
 
 type NasJob_NasJobSpec_MultiTrialAlgorithmSpec_SearchTrialSpec_SearchTrialJobSpec_PscInterfaceConfig_DnsPeeringConfigs struct {
-	Domain any
+	Domain        any
 	TargetNetwork any
 	TargetProject any
 }
@@ -87,66 +87,66 @@ type NasJob_NasJobSpec_MultiTrialAlgorithmSpec_SearchTrialSpec_SearchTrialJobSpe
 }
 
 type NasJob_NasJobSpec_MultiTrialAlgorithmSpec_SearchTrialSpec_SearchTrialJobSpec_WorkerPoolSpecs_ContainerSpec_Env struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type NasJob_NasJobSpec_MultiTrialAlgorithmSpec_SearchTrialSpec_SearchTrialJobSpec_WorkerPoolSpecs_ContainerSpec struct {
-	Args any
-	Command any
-	Env any
+	Args     any
+	Command  any
+	Env      any
 	ImageUri any
 }
 
 type NasJob_NasJobSpec_MultiTrialAlgorithmSpec_SearchTrialSpec_SearchTrialJobSpec_WorkerPoolSpecs_DiskSpec struct {
 	BootDiskSizeGb any
-	BootDiskType any
+	BootDiskType   any
 }
 
 type NasJob_NasJobSpec_MultiTrialAlgorithmSpec_SearchTrialSpec_SearchTrialJobSpec_WorkerPoolSpecs_LustreMounts struct {
-	Filesystem any
-	InstanceIp any
-	MountPoint any
+	Filesystem   any
+	InstanceIp   any
+	MountPoint   any
 	VolumeHandle any
 }
 
 type NasJob_NasJobSpec_MultiTrialAlgorithmSpec_SearchTrialSpec_SearchTrialJobSpec_WorkerPoolSpecs_MachineSpec_ReservationAffinity struct {
-	Key any
+	Key                     any
 	ReservationAffinityType any
-	Values any
+	Values                  any
 }
 
 type NasJob_NasJobSpec_MultiTrialAlgorithmSpec_SearchTrialSpec_SearchTrialJobSpec_WorkerPoolSpecs_MachineSpec struct {
-	AcceleratorCount any
-	AcceleratorType any
-	GpuPartitionSize any
-	MachineType any
+	AcceleratorCount    any
+	AcceleratorType     any
+	GpuPartitionSize    any
+	MachineType         any
 	ReservationAffinity any
-	TpuTopology any
+	TpuTopology         any
 }
 
 type NasJob_NasJobSpec_MultiTrialAlgorithmSpec_SearchTrialSpec_SearchTrialJobSpec_WorkerPoolSpecs_NfsMounts struct {
 	MountPoint any
-	Path any
-	Server any
+	Path       any
+	Server     any
 }
 
 type NasJob_NasJobSpec_MultiTrialAlgorithmSpec_SearchTrialSpec_SearchTrialJobSpec_WorkerPoolSpecs_PythonPackageSpec struct {
-	Args any
-	Env any
+	Args             any
+	Env              any
 	ExecutorImageUri any
-	PackageUris any
-	PythonModule any
+	PackageUris      any
+	PythonModule     any
 }
 
 type NasJob_NasJobSpec_MultiTrialAlgorithmSpec_SearchTrialSpec_SearchTrialJobSpec_WorkerPoolSpecs struct {
-	ContainerSpec any
-	DiskSpec any
-	LustreMounts any
-	MachineSpec any
-	NfsMounts any
+	ContainerSpec     any
+	DiskSpec          any
+	LustreMounts      any
+	MachineSpec       any
+	NfsMounts         any
 	PythonPackageSpec any
-	ReplicaCount any
+	ReplicaCount      any
 }
 
 type NasJob_NasJobSpec_MultiTrialAlgorithmSpec_SearchTrialSpec_SearchTrialJobSpec struct {
@@ -223,309 +223,293 @@ type NasJob_NasJobSpec struct {
 }
 
 var NasJob_EncryptionSpecFields = ubx.FieldMap{
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-	}
+	"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
+}
 
 var NasJob_ErrorFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"Code":    ubx.FieldSpec{WireName: "code"},
+	"Details": ubx.FieldSpec{WireName: "details"},
+	"Message": ubx.FieldSpec{WireName: "message"},
+}
 
 var NasJob_NasJobOutput_MultiTrialJobOutput_SearchTrials_FinalMeasurement_MetricsFields = ubx.FieldMap{
-		"MetricId": ubx.FieldSpec{WireName: "metric_id"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"MetricId": ubx.FieldSpec{WireName: "metric_id"},
+	"Value":    ubx.FieldSpec{WireName: "value"},
+}
 
 var NasJob_NasJobOutput_MultiTrialJobOutput_SearchTrials_FinalMeasurementFields = ubx.FieldMap{
-		"ElapsedDuration": ubx.FieldSpec{WireName: "elapsed_duration"},
-		"Metrics": ubx.FieldSpec{
-			WireName: "metrics",
-			Kind: "list",
-			Fields: NasJob_NasJobOutput_MultiTrialJobOutput_SearchTrials_FinalMeasurement_MetricsFields,
-		},
-		"StepCount": ubx.FieldSpec{WireName: "step_count"},
-	}
+	"ElapsedDuration": ubx.FieldSpec{WireName: "elapsed_duration"},
+	"Metrics": ubx.FieldSpec{
+		WireName: "metrics",
+		Kind:     "list",
+		Fields:   NasJob_NasJobOutput_MultiTrialJobOutput_SearchTrials_FinalMeasurement_MetricsFields,
+	},
+	"StepCount": ubx.FieldSpec{WireName: "step_count"},
+}
 
 var NasJob_NasJobOutput_MultiTrialJobOutput_SearchTrialsFields = ubx.FieldMap{
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"FinalMeasurement": ubx.FieldSpec{
-			WireName: "final_measurement",
-			Kind: "object",
-			Fields: NasJob_NasJobOutput_MultiTrialJobOutput_SearchTrials_FinalMeasurementFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"EndTime": ubx.FieldSpec{WireName: "end_time"},
+	"FinalMeasurement": ubx.FieldSpec{
+		WireName: "final_measurement",
+		Kind:     "object",
+		Fields:   NasJob_NasJobOutput_MultiTrialJobOutput_SearchTrials_FinalMeasurementFields,
+	},
+	"Id":        ubx.FieldSpec{WireName: "id"},
+	"StartTime": ubx.FieldSpec{WireName: "start_time"},
+	"State":     ubx.FieldSpec{WireName: "state"},
+}
 
 var NasJob_NasJobOutput_MultiTrialJobOutputFields = ubx.FieldMap{
-		"SearchTrials": ubx.FieldSpec{
-			WireName: "search_trials",
-			Kind: "list",
-			Fields: NasJob_NasJobOutput_MultiTrialJobOutput_SearchTrialsFields,
-		},
-		"TrainTrials": ubx.FieldSpec{
-			WireName: "train_trials",
-			Kind: "list",
-			Fields: NasJob_NasJobOutput_MultiTrialJobOutput_SearchTrialsFields,
-		},
-	}
+	"SearchTrials": ubx.FieldSpec{
+		WireName: "search_trials",
+		Kind:     "list",
+		Fields:   NasJob_NasJobOutput_MultiTrialJobOutput_SearchTrialsFields,
+	},
+	"TrainTrials": ubx.FieldSpec{
+		WireName: "train_trials",
+		Kind:     "list",
+		Fields:   NasJob_NasJobOutput_MultiTrialJobOutput_SearchTrialsFields,
+	},
+}
 
 var NasJob_NasJobOutputFields = ubx.FieldMap{
-		"MultiTrialJobOutput": ubx.FieldSpec{
-			WireName: "multi_trial_job_output",
-			Kind: "object",
-			Fields: NasJob_NasJobOutput_MultiTrialJobOutputFields,
-		},
-	}
+	"MultiTrialJobOutput": ubx.FieldSpec{
+		WireName: "multi_trial_job_output",
+		Kind:     "object",
+		Fields:   NasJob_NasJobOutput_MultiTrialJobOutputFields,
+	},
+}
 
 var NasJob_NasJobSpec_MultiTrialAlgorithmSpec_MetricFields = ubx.FieldMap{
-		"Goal": ubx.FieldSpec{WireName: "goal"},
-		"MetricId": ubx.FieldSpec{WireName: "metric_id"},
-	}
+	"Goal":     ubx.FieldSpec{WireName: "goal"},
+	"MetricId": ubx.FieldSpec{WireName: "metric_id"},
+}
 
 var NasJob_NasJobSpec_MultiTrialAlgorithmSpec_SearchTrialSpec_SearchTrialJobSpec_BaseOutputDirectoryFields = ubx.FieldMap{
-		"OutputUriPrefix": ubx.FieldSpec{WireName: "output_uri_prefix"},
-	}
+	"OutputUriPrefix": ubx.FieldSpec{WireName: "output_uri_prefix"},
+}
 
 var NasJob_NasJobSpec_MultiTrialAlgorithmSpec_SearchTrialSpec_SearchTrialJobSpec_PscInterfaceConfig_DnsPeeringConfigsFields = ubx.FieldMap{
-		"Domain": ubx.FieldSpec{WireName: "domain"},
-		"TargetNetwork": ubx.FieldSpec{WireName: "target_network"},
-		"TargetProject": ubx.FieldSpec{WireName: "target_project"},
-	}
+	"Domain":        ubx.FieldSpec{WireName: "domain"},
+	"TargetNetwork": ubx.FieldSpec{WireName: "target_network"},
+	"TargetProject": ubx.FieldSpec{WireName: "target_project"},
+}
 
 var NasJob_NasJobSpec_MultiTrialAlgorithmSpec_SearchTrialSpec_SearchTrialJobSpec_PscInterfaceConfigFields = ubx.FieldMap{
-		"DnsPeeringConfigs": ubx.FieldSpec{
-			WireName: "dns_peering_configs",
-			Kind: "list",
-			Fields: NasJob_NasJobSpec_MultiTrialAlgorithmSpec_SearchTrialSpec_SearchTrialJobSpec_PscInterfaceConfig_DnsPeeringConfigsFields,
-		},
-		"NetworkAttachment": ubx.FieldSpec{WireName: "network_attachment"},
-	}
+	"DnsPeeringConfigs": ubx.FieldSpec{
+		WireName: "dns_peering_configs",
+		Kind:     "list",
+		Fields:   NasJob_NasJobSpec_MultiTrialAlgorithmSpec_SearchTrialSpec_SearchTrialJobSpec_PscInterfaceConfig_DnsPeeringConfigsFields,
+	},
+	"NetworkAttachment": ubx.FieldSpec{WireName: "network_attachment"},
+}
 
 var NasJob_NasJobSpec_MultiTrialAlgorithmSpec_SearchTrialSpec_SearchTrialJobSpec_SchedulingFields = ubx.FieldMap{
-		"DisableRetries": ubx.FieldSpec{WireName: "disable_retries"},
-		"MaxWaitDuration": ubx.FieldSpec{WireName: "max_wait_duration"},
-		"RestartJobOnWorkerRestart": ubx.FieldSpec{WireName: "restart_job_on_worker_restart"},
-		"Strategy": ubx.FieldSpec{WireName: "strategy"},
-		"Timeout": ubx.FieldSpec{WireName: "timeout"},
-	}
+	"DisableRetries":            ubx.FieldSpec{WireName: "disable_retries"},
+	"MaxWaitDuration":           ubx.FieldSpec{WireName: "max_wait_duration"},
+	"RestartJobOnWorkerRestart": ubx.FieldSpec{WireName: "restart_job_on_worker_restart"},
+	"Strategy":                  ubx.FieldSpec{WireName: "strategy"},
+	"Timeout":                   ubx.FieldSpec{WireName: "timeout"},
+}
 
 var NasJob_NasJobSpec_MultiTrialAlgorithmSpec_SearchTrialSpec_SearchTrialJobSpec_WorkerPoolSpecs_ContainerSpec_EnvFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var NasJob_NasJobSpec_MultiTrialAlgorithmSpec_SearchTrialSpec_SearchTrialJobSpec_WorkerPoolSpecs_ContainerSpecFields = ubx.FieldMap{
-		"Args": ubx.FieldSpec{WireName: "args"},
-		"Command": ubx.FieldSpec{WireName: "command"},
-		"Env": ubx.FieldSpec{
-			WireName: "env",
-			Kind: "list",
-			Fields: NasJob_NasJobSpec_MultiTrialAlgorithmSpec_SearchTrialSpec_SearchTrialJobSpec_WorkerPoolSpecs_ContainerSpec_EnvFields,
-		},
-		"ImageUri": ubx.FieldSpec{WireName: "image_uri"},
-	}
+	"Args":    ubx.FieldSpec{WireName: "args"},
+	"Command": ubx.FieldSpec{WireName: "command"},
+	"Env": ubx.FieldSpec{
+		WireName: "env",
+		Kind:     "list",
+		Fields:   NasJob_NasJobSpec_MultiTrialAlgorithmSpec_SearchTrialSpec_SearchTrialJobSpec_WorkerPoolSpecs_ContainerSpec_EnvFields,
+	},
+	"ImageUri": ubx.FieldSpec{WireName: "image_uri"},
+}
 
 var NasJob_NasJobSpec_MultiTrialAlgorithmSpec_SearchTrialSpec_SearchTrialJobSpec_WorkerPoolSpecs_DiskSpecFields = ubx.FieldMap{
-		"BootDiskSizeGb": ubx.FieldSpec{WireName: "boot_disk_size_gb"},
-		"BootDiskType": ubx.FieldSpec{WireName: "boot_disk_type"},
-	}
+	"BootDiskSizeGb": ubx.FieldSpec{WireName: "boot_disk_size_gb"},
+	"BootDiskType":   ubx.FieldSpec{WireName: "boot_disk_type"},
+}
 
 var NasJob_NasJobSpec_MultiTrialAlgorithmSpec_SearchTrialSpec_SearchTrialJobSpec_WorkerPoolSpecs_LustreMountsFields = ubx.FieldMap{
-		"Filesystem": ubx.FieldSpec{WireName: "filesystem"},
-		"InstanceIp": ubx.FieldSpec{WireName: "instance_ip"},
-		"MountPoint": ubx.FieldSpec{WireName: "mount_point"},
-		"VolumeHandle": ubx.FieldSpec{WireName: "volume_handle"},
-	}
+	"Filesystem":   ubx.FieldSpec{WireName: "filesystem"},
+	"InstanceIp":   ubx.FieldSpec{WireName: "instance_ip"},
+	"MountPoint":   ubx.FieldSpec{WireName: "mount_point"},
+	"VolumeHandle": ubx.FieldSpec{WireName: "volume_handle"},
+}
 
 var NasJob_NasJobSpec_MultiTrialAlgorithmSpec_SearchTrialSpec_SearchTrialJobSpec_WorkerPoolSpecs_MachineSpec_ReservationAffinityFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"ReservationAffinityType": ubx.FieldSpec{WireName: "reservation_affinity_type"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Key":                     ubx.FieldSpec{WireName: "key"},
+	"ReservationAffinityType": ubx.FieldSpec{WireName: "reservation_affinity_type"},
+	"Values":                  ubx.FieldSpec{WireName: "values"},
+}
 
 var NasJob_NasJobSpec_MultiTrialAlgorithmSpec_SearchTrialSpec_SearchTrialJobSpec_WorkerPoolSpecs_MachineSpecFields = ubx.FieldMap{
-		"AcceleratorCount": ubx.FieldSpec{WireName: "accelerator_count"},
-		"AcceleratorType": ubx.FieldSpec{WireName: "accelerator_type"},
-		"GpuPartitionSize": ubx.FieldSpec{WireName: "gpu_partition_size"},
-		"MachineType": ubx.FieldSpec{WireName: "machine_type"},
-		"ReservationAffinity": ubx.FieldSpec{
-			WireName: "reservation_affinity",
-			Kind: "object",
-			Fields: NasJob_NasJobSpec_MultiTrialAlgorithmSpec_SearchTrialSpec_SearchTrialJobSpec_WorkerPoolSpecs_MachineSpec_ReservationAffinityFields,
-		},
-		"TpuTopology": ubx.FieldSpec{WireName: "tpu_topology"},
-	}
+	"AcceleratorCount": ubx.FieldSpec{WireName: "accelerator_count"},
+	"AcceleratorType":  ubx.FieldSpec{WireName: "accelerator_type"},
+	"GpuPartitionSize": ubx.FieldSpec{WireName: "gpu_partition_size"},
+	"MachineType":      ubx.FieldSpec{WireName: "machine_type"},
+	"ReservationAffinity": ubx.FieldSpec{
+		WireName: "reservation_affinity",
+		Kind:     "object",
+		Fields:   NasJob_NasJobSpec_MultiTrialAlgorithmSpec_SearchTrialSpec_SearchTrialJobSpec_WorkerPoolSpecs_MachineSpec_ReservationAffinityFields,
+	},
+	"TpuTopology": ubx.FieldSpec{WireName: "tpu_topology"},
+}
 
 var NasJob_NasJobSpec_MultiTrialAlgorithmSpec_SearchTrialSpec_SearchTrialJobSpec_WorkerPoolSpecs_NfsMountsFields = ubx.FieldMap{
-		"MountPoint": ubx.FieldSpec{WireName: "mount_point"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"Server": ubx.FieldSpec{WireName: "server"},
-	}
+	"MountPoint": ubx.FieldSpec{WireName: "mount_point"},
+	"Path":       ubx.FieldSpec{WireName: "path"},
+	"Server":     ubx.FieldSpec{WireName: "server"},
+}
 
 var NasJob_NasJobSpec_MultiTrialAlgorithmSpec_SearchTrialSpec_SearchTrialJobSpec_WorkerPoolSpecs_PythonPackageSpecFields = ubx.FieldMap{
-		"Args": ubx.FieldSpec{WireName: "args"},
-		"Env": ubx.FieldSpec{
-			WireName: "env",
-			Kind: "list",
-			Fields: NasJob_NasJobSpec_MultiTrialAlgorithmSpec_SearchTrialSpec_SearchTrialJobSpec_WorkerPoolSpecs_ContainerSpec_EnvFields,
-		},
-		"ExecutorImageUri": ubx.FieldSpec{WireName: "executor_image_uri"},
-		"PackageUris": ubx.FieldSpec{WireName: "package_uris"},
-		"PythonModule": ubx.FieldSpec{WireName: "python_module"},
-	}
+	"Args": ubx.FieldSpec{WireName: "args"},
+	"Env": ubx.FieldSpec{
+		WireName: "env",
+		Kind:     "list",
+		Fields:   NasJob_NasJobSpec_MultiTrialAlgorithmSpec_SearchTrialSpec_SearchTrialJobSpec_WorkerPoolSpecs_ContainerSpec_EnvFields,
+	},
+	"ExecutorImageUri": ubx.FieldSpec{WireName: "executor_image_uri"},
+	"PackageUris":      ubx.FieldSpec{WireName: "package_uris"},
+	"PythonModule":     ubx.FieldSpec{WireName: "python_module"},
+}
 
 var NasJob_NasJobSpec_MultiTrialAlgorithmSpec_SearchTrialSpec_SearchTrialJobSpec_WorkerPoolSpecsFields = ubx.FieldMap{
-		"ContainerSpec": ubx.FieldSpec{
-			WireName: "container_spec",
-			Kind: "object",
-			Fields: NasJob_NasJobSpec_MultiTrialAlgorithmSpec_SearchTrialSpec_SearchTrialJobSpec_WorkerPoolSpecs_ContainerSpecFields,
-		},
-		"DiskSpec": ubx.FieldSpec{
-			WireName: "disk_spec",
-			Kind: "object",
-			Fields: NasJob_NasJobSpec_MultiTrialAlgorithmSpec_SearchTrialSpec_SearchTrialJobSpec_WorkerPoolSpecs_DiskSpecFields,
-		},
-		"LustreMounts": ubx.FieldSpec{
-			WireName: "lustre_mounts",
-			Kind: "list",
-			Fields: NasJob_NasJobSpec_MultiTrialAlgorithmSpec_SearchTrialSpec_SearchTrialJobSpec_WorkerPoolSpecs_LustreMountsFields,
-		},
-		"MachineSpec": ubx.FieldSpec{
-			WireName: "machine_spec",
-			Kind: "object",
-			Fields: NasJob_NasJobSpec_MultiTrialAlgorithmSpec_SearchTrialSpec_SearchTrialJobSpec_WorkerPoolSpecs_MachineSpecFields,
-		},
-		"NfsMounts": ubx.FieldSpec{
-			WireName: "nfs_mounts",
-			Kind: "list",
-			Fields: NasJob_NasJobSpec_MultiTrialAlgorithmSpec_SearchTrialSpec_SearchTrialJobSpec_WorkerPoolSpecs_NfsMountsFields,
-		},
-		"PythonPackageSpec": ubx.FieldSpec{
-			WireName: "python_package_spec",
-			Kind: "object",
-			Fields: NasJob_NasJobSpec_MultiTrialAlgorithmSpec_SearchTrialSpec_SearchTrialJobSpec_WorkerPoolSpecs_PythonPackageSpecFields,
-		},
-		"ReplicaCount": ubx.FieldSpec{WireName: "replica_count"},
-	}
+	"ContainerSpec": ubx.FieldSpec{
+		WireName: "container_spec",
+		Kind:     "object",
+		Fields:   NasJob_NasJobSpec_MultiTrialAlgorithmSpec_SearchTrialSpec_SearchTrialJobSpec_WorkerPoolSpecs_ContainerSpecFields,
+	},
+	"DiskSpec": ubx.FieldSpec{
+		WireName: "disk_spec",
+		Kind:     "object",
+		Fields:   NasJob_NasJobSpec_MultiTrialAlgorithmSpec_SearchTrialSpec_SearchTrialJobSpec_WorkerPoolSpecs_DiskSpecFields,
+	},
+	"LustreMounts": ubx.FieldSpec{
+		WireName: "lustre_mounts",
+		Kind:     "list",
+		Fields:   NasJob_NasJobSpec_MultiTrialAlgorithmSpec_SearchTrialSpec_SearchTrialJobSpec_WorkerPoolSpecs_LustreMountsFields,
+	},
+	"MachineSpec": ubx.FieldSpec{
+		WireName: "machine_spec",
+		Kind:     "object",
+		Fields:   NasJob_NasJobSpec_MultiTrialAlgorithmSpec_SearchTrialSpec_SearchTrialJobSpec_WorkerPoolSpecs_MachineSpecFields,
+	},
+	"NfsMounts": ubx.FieldSpec{
+		WireName: "nfs_mounts",
+		Kind:     "list",
+		Fields:   NasJob_NasJobSpec_MultiTrialAlgorithmSpec_SearchTrialSpec_SearchTrialJobSpec_WorkerPoolSpecs_NfsMountsFields,
+	},
+	"PythonPackageSpec": ubx.FieldSpec{
+		WireName: "python_package_spec",
+		Kind:     "object",
+		Fields:   NasJob_NasJobSpec_MultiTrialAlgorithmSpec_SearchTrialSpec_SearchTrialJobSpec_WorkerPoolSpecs_PythonPackageSpecFields,
+	},
+	"ReplicaCount": ubx.FieldSpec{WireName: "replica_count"},
+}
 
 var NasJob_NasJobSpec_MultiTrialAlgorithmSpec_SearchTrialSpec_SearchTrialJobSpecFields = ubx.FieldMap{
-		"BaseOutputDirectory": ubx.FieldSpec{
-			WireName: "base_output_directory",
-			Kind: "object",
-			Fields: NasJob_NasJobSpec_MultiTrialAlgorithmSpec_SearchTrialSpec_SearchTrialJobSpec_BaseOutputDirectoryFields,
-		},
-		"EnableDashboardAccess": ubx.FieldSpec{WireName: "enable_dashboard_access"},
-		"EnableWebAccess": ubx.FieldSpec{WireName: "enable_web_access"},
-		"Experiment": ubx.FieldSpec{WireName: "experiment"},
-		"ExperimentRun": ubx.FieldSpec{WireName: "experiment_run"},
-		"Models": ubx.FieldSpec{WireName: "models"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"PersistentResourceId": ubx.FieldSpec{WireName: "persistent_resource_id"},
-		"ProtectedArtifactLocationId": ubx.FieldSpec{WireName: "protected_artifact_location_id"},
-		"PscInterfaceConfig": ubx.FieldSpec{
-			WireName: "psc_interface_config",
-			Kind: "object",
-			Fields: NasJob_NasJobSpec_MultiTrialAlgorithmSpec_SearchTrialSpec_SearchTrialJobSpec_PscInterfaceConfigFields,
-		},
-		"ReservedIpRanges": ubx.FieldSpec{WireName: "reserved_ip_ranges"},
-		"Scheduling": ubx.FieldSpec{
-			WireName: "scheduling",
-			Kind: "object",
-			Fields: NasJob_NasJobSpec_MultiTrialAlgorithmSpec_SearchTrialSpec_SearchTrialJobSpec_SchedulingFields,
-		},
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-		"Tensorboard": ubx.FieldSpec{WireName: "tensorboard"},
-		"WorkerPoolSpecs": ubx.FieldSpec{
-			WireName: "worker_pool_specs",
-			Kind: "list",
-			Fields: NasJob_NasJobSpec_MultiTrialAlgorithmSpec_SearchTrialSpec_SearchTrialJobSpec_WorkerPoolSpecsFields,
-		},
-	}
+	"BaseOutputDirectory": ubx.FieldSpec{
+		WireName: "base_output_directory",
+		Kind:     "object",
+		Fields:   NasJob_NasJobSpec_MultiTrialAlgorithmSpec_SearchTrialSpec_SearchTrialJobSpec_BaseOutputDirectoryFields,
+	},
+	"EnableDashboardAccess":       ubx.FieldSpec{WireName: "enable_dashboard_access"},
+	"EnableWebAccess":             ubx.FieldSpec{WireName: "enable_web_access"},
+	"Experiment":                  ubx.FieldSpec{WireName: "experiment"},
+	"ExperimentRun":               ubx.FieldSpec{WireName: "experiment_run"},
+	"Models":                      ubx.FieldSpec{WireName: "models"},
+	"Network":                     ubx.FieldSpec{WireName: "network"},
+	"PersistentResourceId":        ubx.FieldSpec{WireName: "persistent_resource_id"},
+	"ProtectedArtifactLocationId": ubx.FieldSpec{WireName: "protected_artifact_location_id"},
+	"PscInterfaceConfig": ubx.FieldSpec{
+		WireName: "psc_interface_config",
+		Kind:     "object",
+		Fields:   NasJob_NasJobSpec_MultiTrialAlgorithmSpec_SearchTrialSpec_SearchTrialJobSpec_PscInterfaceConfigFields,
+	},
+	"ReservedIpRanges": ubx.FieldSpec{WireName: "reserved_ip_ranges"},
+	"Scheduling": ubx.FieldSpec{
+		WireName: "scheduling",
+		Kind:     "object",
+		Fields:   NasJob_NasJobSpec_MultiTrialAlgorithmSpec_SearchTrialSpec_SearchTrialJobSpec_SchedulingFields,
+	},
+	"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
+	"Tensorboard":    ubx.FieldSpec{WireName: "tensorboard"},
+	"WorkerPoolSpecs": ubx.FieldSpec{
+		WireName: "worker_pool_specs",
+		Kind:     "list",
+		Fields:   NasJob_NasJobSpec_MultiTrialAlgorithmSpec_SearchTrialSpec_SearchTrialJobSpec_WorkerPoolSpecsFields,
+	},
+}
 
 var NasJob_NasJobSpec_MultiTrialAlgorithmSpec_SearchTrialSpecFields = ubx.FieldMap{
-		"MaxFailedTrialCount": ubx.FieldSpec{WireName: "max_failed_trial_count"},
-		"MaxParallelTrialCount": ubx.FieldSpec{WireName: "max_parallel_trial_count"},
-		"MaxTrialCount": ubx.FieldSpec{WireName: "max_trial_count"},
-		"SearchTrialJobSpec": ubx.FieldSpec{
-			WireName: "search_trial_job_spec",
-			Kind: "object",
-			Fields: NasJob_NasJobSpec_MultiTrialAlgorithmSpec_SearchTrialSpec_SearchTrialJobSpecFields,
-		},
-	}
+	"MaxFailedTrialCount":   ubx.FieldSpec{WireName: "max_failed_trial_count"},
+	"MaxParallelTrialCount": ubx.FieldSpec{WireName: "max_parallel_trial_count"},
+	"MaxTrialCount":         ubx.FieldSpec{WireName: "max_trial_count"},
+	"SearchTrialJobSpec": ubx.FieldSpec{
+		WireName: "search_trial_job_spec",
+		Kind:     "object",
+		Fields:   NasJob_NasJobSpec_MultiTrialAlgorithmSpec_SearchTrialSpec_SearchTrialJobSpecFields,
+	},
+}
 
 var NasJob_NasJobSpec_MultiTrialAlgorithmSpec_TrainTrialSpecFields = ubx.FieldMap{
-		"Frequency": ubx.FieldSpec{WireName: "frequency"},
-		"MaxParallelTrialCount": ubx.FieldSpec{WireName: "max_parallel_trial_count"},
-		"TrainTrialJobSpec": ubx.FieldSpec{
-			WireName: "train_trial_job_spec",
-			Kind: "object",
-			Fields: NasJob_NasJobSpec_MultiTrialAlgorithmSpec_SearchTrialSpec_SearchTrialJobSpecFields,
-		},
-	}
+	"Frequency":             ubx.FieldSpec{WireName: "frequency"},
+	"MaxParallelTrialCount": ubx.FieldSpec{WireName: "max_parallel_trial_count"},
+	"TrainTrialJobSpec": ubx.FieldSpec{
+		WireName: "train_trial_job_spec",
+		Kind:     "object",
+		Fields:   NasJob_NasJobSpec_MultiTrialAlgorithmSpec_SearchTrialSpec_SearchTrialJobSpecFields,
+	},
+}
 
 var NasJob_NasJobSpec_MultiTrialAlgorithmSpecFields = ubx.FieldMap{
-		"Metric": ubx.FieldSpec{
-			WireName: "metric",
-			Kind: "object",
-			Fields: NasJob_NasJobSpec_MultiTrialAlgorithmSpec_MetricFields,
-		},
-		"MultiTrialAlgorithm": ubx.FieldSpec{WireName: "multi_trial_algorithm"},
-		"SearchTrialSpec": ubx.FieldSpec{
-			WireName: "search_trial_spec",
-			Kind: "object",
-			Fields: NasJob_NasJobSpec_MultiTrialAlgorithmSpec_SearchTrialSpecFields,
-		},
-		"TrainTrialSpec": ubx.FieldSpec{
-			WireName: "train_trial_spec",
-			Kind: "object",
-			Fields: NasJob_NasJobSpec_MultiTrialAlgorithmSpec_TrainTrialSpecFields,
-		},
-	}
+	"Metric": ubx.FieldSpec{
+		WireName: "metric",
+		Kind:     "object",
+		Fields:   NasJob_NasJobSpec_MultiTrialAlgorithmSpec_MetricFields,
+	},
+	"MultiTrialAlgorithm": ubx.FieldSpec{WireName: "multi_trial_algorithm"},
+	"SearchTrialSpec": ubx.FieldSpec{
+		WireName: "search_trial_spec",
+		Kind:     "object",
+		Fields:   NasJob_NasJobSpec_MultiTrialAlgorithmSpec_SearchTrialSpecFields,
+	},
+	"TrainTrialSpec": ubx.FieldSpec{
+		WireName: "train_trial_spec",
+		Kind:     "object",
+		Fields:   NasJob_NasJobSpec_MultiTrialAlgorithmSpec_TrainTrialSpecFields,
+	},
+}
 
 var NasJob_NasJobSpecFields = ubx.FieldMap{
-		"MultiTrialAlgorithmSpec": ubx.FieldSpec{
-			WireName: "multi_trial_algorithm_spec",
-			Kind: "object",
-			Fields: NasJob_NasJobSpec_MultiTrialAlgorithmSpecFields,
-		},
-		"ResumeNasJobId": ubx.FieldSpec{WireName: "resume_nas_job_id"},
-		"SearchSpaceSpec": ubx.FieldSpec{WireName: "search_space_spec"},
-	}
+	"MultiTrialAlgorithmSpec": ubx.FieldSpec{
+		WireName: "multi_trial_algorithm_spec",
+		Kind:     "object",
+		Fields:   NasJob_NasJobSpec_MultiTrialAlgorithmSpecFields,
+	},
+	"ResumeNasJobId":  ubx.FieldSpec{WireName: "resume_nas_job_id"},
+	"SearchSpaceSpec": ubx.FieldSpec{WireName: "search_space_spec"},
+}
 
 type NasJobConfig struct {
-	// Output only. Time when the NasJob was created.
-	CreateTime any
 	// Required. The display name of the NasJob. The name can be up to 128 characters long and can consist of any UTF-8 characters.
 	DisplayName any
 	// Optional. Enable a separation of Custom model training and restricted image training for tenant project.
 	EnableRestrictedImageTraining any
 	// Represents a customer-managed encryption key specification that can be applied to a Vertex AI resource.
 	EncryptionSpec any
-	// Output only. Time when the NasJob entered any of the following states: `JOB_STATE_SUCCEEDED`, `JOB_STATE_FAILED`, `JOB_STATE_CANCELLED`.
-	EndTime any
 	// The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
 	Error any
 	// The labels with user-defined metadata to organize NasJobs. Label keys and values can be no longer than 64 characters (Unicode codepoints), can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. See https://goo.gl/xmQnxf for more information and examples of labels.
 	Labels any
-	// Output only. Resource name of the NasJob.
-	Name any
 	// Represents a uCAIP NasJob output.
 	NasJobOutput any
 	// Represents the spec of a NasJob.
 	NasJobSpec any
-	// Output only. Reserved for future use.
-	SatisfiesPzi any
-	// Output only. Reserved for future use.
-	SatisfiesPzs any
-	// Output only. Time when the NasJob for the first time entered the `JOB_STATE_RUNNING` state.
-	StartTime any
-	// Output only. The detailed state of the job.
-	State any
-	// Output only. Time when the NasJob was most recently updated.
-	UpdateTime any
 }
 
 type NasJobAttrs struct {
@@ -564,36 +548,28 @@ type NasJobAttrs struct {
 var NasJob = ubx.ResourceBinding{
 	WireType: "google_aiplatform_nas_job",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"DisplayName":                   ubx.FieldSpec{WireName: "display_name"},
 		"EnableRestrictedImageTraining": ubx.FieldSpec{WireName: "enable_restricted_image_training"},
 		"EncryptionSpec": ubx.FieldSpec{
 			WireName: "encryption_spec",
-			Kind: "object",
-			Fields: NasJob_EncryptionSpecFields,
+			Kind:     "object",
+			Fields:   NasJob_EncryptionSpecFields,
 		},
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
 		"Error": ubx.FieldSpec{
 			WireName: "error",
-			Kind: "object",
-			Fields: NasJob_ErrorFields,
+			Kind:     "object",
+			Fields:   NasJob_ErrorFields,
 		},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
 		"NasJobOutput": ubx.FieldSpec{
 			WireName: "nas_job_output",
-			Kind: "object",
-			Fields: NasJob_NasJobOutputFields,
+			Kind:     "object",
+			Fields:   NasJob_NasJobOutputFields,
 		},
 		"NasJobSpec": ubx.FieldSpec{
 			WireName: "nas_job_spec",
-			Kind: "object",
-			Fields: NasJob_NasJobSpecFields,
+			Kind:     "object",
+			Fields:   NasJob_NasJobSpecFields,
 		},
-		"SatisfiesPzi": ubx.FieldSpec{WireName: "satisfies_pzi"},
-		"SatisfiesPzs": ubx.FieldSpec{WireName: "satisfies_pzs"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

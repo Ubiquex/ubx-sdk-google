@@ -17,26 +17,18 @@ type Datastore_DatastoreConfig struct {
 }
 
 var Datastore_DatastoreConfigFields = ubx.FieldMap{
-		"BucketName": ubx.FieldSpec{WireName: "bucket_name"},
-		"DatasetName": ubx.FieldSpec{WireName: "dataset_name"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-		"TablePrefix": ubx.FieldSpec{WireName: "table_prefix"},
-	}
+	"BucketName":  ubx.FieldSpec{WireName: "bucket_name"},
+	"DatasetName": ubx.FieldSpec{WireName: "dataset_name"},
+	"Path":        ubx.FieldSpec{WireName: "path"},
+	"ProjectId":   ubx.FieldSpec{WireName: "project_id"},
+	"TablePrefix": ubx.FieldSpec{WireName: "table_prefix"},
+}
 
 type DatastoreConfig struct {
-	// Output only. Datastore create time, in milliseconds since the epoch of 1970-01-01T00:00:00Z
-	CreateTime any
 	// Configuration detail for datastore
 	DatastoreConfig any
 	// Required. Display name in UI
 	DisplayName any
-	// Output only. Datastore last update time, in milliseconds since the epoch of 1970-01-01T00:00:00Z
-	LastUpdateTime any
-	// Output only. Organization that the datastore belongs to
-	Org any
-	// Output only. Resource link of Datastore. Example: `/organizations/{org}/analytics/datastores/{uuid}`
-	Self any
 	// Destination storage type. Supported types `gcs` or `bigquery`.
 	TargetType any
 }
@@ -61,16 +53,12 @@ type DatastoreAttrs struct {
 var Datastore = ubx.ResourceBinding{
 	WireType: "google_apigee_datastore",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"DatastoreConfig": ubx.FieldSpec{
 			WireName: "datastore_config",
-			Kind: "object",
-			Fields: Datastore_DatastoreConfigFields,
+			Kind:     "object",
+			Fields:   Datastore_DatastoreConfigFields,
 		},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"LastUpdateTime": ubx.FieldSpec{WireName: "last_update_time"},
-		"Org": ubx.FieldSpec{WireName: "org"},
-		"Self": ubx.FieldSpec{WireName: "self"},
-		"TargetType": ubx.FieldSpec{WireName: "target_type"},
+		"TargetType":  ubx.FieldSpec{WireName: "target_type"},
 	},
 }

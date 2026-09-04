@@ -132,8 +132,6 @@ const ExtensionBinding_TargetFields: FieldMap = {
 };
 
 export interface ExtensionBindingConfig {
-  /** Output only. The timestamp when the resource was created. */
-  createTime?: string | Computed<string>;
   /** Optional. A human-readable description of the resource. */
   description?: string | Computed<string>;
   /** Optional. Etag of the resource. If provided, it must match the server's etag. If the provided etag does not match the server's etag, the request will fail with a 409 ABORTED error. */
@@ -154,8 +152,6 @@ export interface ExtensionBindingConfig {
   producerMetadata?: Record<string, string> | Computed<Record<string, string>>;
   /** Specifies a list of targets to which this `ExtensionBinding` should attach. */
   target?: ExtensionBinding_Target | Computed<ExtensionBinding_Target>;
-  /** Output only. The timestamp when the resource was updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface ExtensionBindingAttrs {
@@ -188,7 +184,6 @@ export interface ExtensionBindingAttrs {
 export const ExtensionBinding: ResourceBinding<ExtensionBindingConfig, ExtensionBindingAttrs> = {
   wireType: "google_networkservices_extension_binding",
   fields: {
-    createTime: "create_time",
     description: "description",
     etag: "etag",
     failOpen: "fail_open",
@@ -207,6 +202,5 @@ export const ExtensionBinding: ResourceBinding<ExtensionBindingConfig, Extension
       kind: "object",
       fields: ExtensionBinding_TargetFields,
     },
-    updateTime: "update_time",
   },
 };

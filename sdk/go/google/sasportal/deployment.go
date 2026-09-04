@@ -6,10 +6,6 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type DeploymentConfig struct {
 	// The deployment's display name.
 	DisplayName any
-	// Output only. The FCC Registration Numbers (FRNs) copied from its direct parent.
-	Frns any
-	// Output only. Resource name.
-	Name any
 	// User ID used by the devices belonging to this deployment. Each deployment should be associated with one unique user ID.
 	SasUserIds any
 }
@@ -29,8 +25,6 @@ var Deployment = ubx.ResourceBinding{
 	WireType: "google_sasportal_deployment",
 	Fields: ubx.FieldMap{
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Frns": ubx.FieldSpec{WireName: "frns"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SasUserIds": ubx.FieldSpec{WireName: "sas_user_ids"},
+		"SasUserIds":  ubx.FieldSpec{WireName: "sas_user_ids"},
 	},
 }

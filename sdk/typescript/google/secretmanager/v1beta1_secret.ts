@@ -39,12 +39,8 @@ const V1beta1Secret_ReplicationFields: FieldMap = {
 };
 
 export interface V1beta1SecretConfig {
-  /** Output only. The time at which the Secret was created. */
-  createTime?: string | Computed<string>;
   /** The labels assigned to this Secret. Label keys must be between 1 and 63 characters long, have a UTF-8 encoding of maximum 128 bytes, and must conform to the following PCRE regular expression: `\p{Ll}\p{Lo}{0,62}` Label values must be between 0 and 63 characters long, have a UTF-8 encoding of maximum 128 bytes, and must conform to the following PCRE regular expression: `[\p{Ll}\p{Lo}\p{N}_-]{0,63}` No more than 64 labels can be assigned to a given resource. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. The resource name of the Secret in the format `projects/* /secrets/*`. */
-  name?: string | Computed<string>;
   /** A policy that defines the replication configuration of data. */
   replication?: V1beta1Secret_Replication | Computed<V1beta1Secret_Replication>;
   /** Optional. Input only. Immutable. Mapping of Tag keys/values directly bound to this resource. For example: "123/environment": "production", "123/costCenter": "marketing" Tags are used to organize and group resources. Tags can be used to control policy evaluation for the resource. */
@@ -67,9 +63,7 @@ export interface V1beta1SecretAttrs {
 export const V1beta1Secret: ResourceBinding<V1beta1SecretConfig, V1beta1SecretAttrs> = {
   wireType: "google_secretmanager_v1beta1_secret",
   fields: {
-    createTime: "create_time",
     labels: "labels",
-    name: "name",
     replication: {
       wireName: "replication",
       kind: "object",

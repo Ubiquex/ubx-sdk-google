@@ -11,10 +11,6 @@ const V1betaNamespace_StateFields: FieldMap = {
 };
 
 export interface V1betaNamespaceConfig {
-  /** Output only. When the namespace was created. */
-  createTime?: string | Computed<string>;
-  /** Output only. When the namespace was deleted. */
-  deleteTime?: string | Computed<string>;
   /** Optional. Labels for this Namespace. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** The resource name for the namespace `projects/{project}/locations/{location}/namespaces/{namespace}` */
@@ -25,10 +21,6 @@ export interface V1betaNamespaceConfig {
   scope?: string | Computed<string>;
   /** NamespaceLifecycleState describes the state of a Namespace resource. */
   state?: V1betaNamespace_State | Computed<V1betaNamespace_State>;
-  /** Output only. Google-generated UUID for this resource. This is unique across all namespace resources. If a namespace resource is deleted and another resource with the same name is created, it gets a different uid. */
-  uid?: string | Computed<string>;
-  /** Output only. When the namespace was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1betaNamespaceAttrs {
@@ -55,8 +47,6 @@ export interface V1betaNamespaceAttrs {
 export const V1betaNamespace: ResourceBinding<V1betaNamespaceConfig, V1betaNamespaceAttrs> = {
   wireType: "google_gkehub_v1beta_namespace",
   fields: {
-    createTime: "create_time",
-    deleteTime: "delete_time",
     labels: "labels",
     name: "name",
     namespaceLabels: "namespace_labels",
@@ -66,7 +56,5 @@ export const V1betaNamespace: ResourceBinding<V1betaNamespaceConfig, V1betaNames
       kind: "object",
       fields: V1betaNamespace_StateFields,
     },
-    uid: "uid",
-    updateTime: "update_time",
   },
 };

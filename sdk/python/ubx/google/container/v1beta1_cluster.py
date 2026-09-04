@@ -3816,8 +3816,6 @@ class V1beta1ClusterConfig:
     parent: Any = None
     # Deprecated. The Google Developers Console [project ID or project number](https://cloud.google.com/resource-manager/docs/creating-managing-projects). This field has been deprecated and replaced by the parent field.
     project_id: Any = None
-    # Deprecated. The name of the Google Compute Engine [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster resides. This field has been deprecated and replaced by the parent field.
-    zone: Any = None
 
 @dataclasses.dataclass
 class V1beta1ClusterAttrs:
@@ -4032,6 +4030,5 @@ V1beta1Cluster = ubx.ResourceBinding(
         ),
         "parent": ubx.FieldSpec(wire_name="parent"),
         "project_id": ubx.FieldSpec(wire_name="project_id"),
-        "zone": ubx.FieldSpec(wire_name="zone"),
     },
 )

@@ -4,10 +4,10 @@ package redis
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Cluster_AclPolicyInfo_AclPolicyRevisionStatuses struct {
-	AclPolicyRevision any
+	AclPolicyRevision       any
 	AclPolicyRevisionNumber any
-	ErrorMessage any
-	State any
+	ErrorMessage            any
+	State                   any
 }
 
 type Cluster_AclPolicyInfo struct {
@@ -47,31 +47,31 @@ type Cluster_AutomatedBackupConfig struct {
 }
 
 type Cluster_ClusterEndpoints_Connections_PscAutoConnection struct {
-	Address any
-	ConnectionType any
-	ForwardingRule any
-	Network any
-	ProjectId any
-	PscConnectionId any
+	Address             any
+	ConnectionType      any
+	ForwardingRule      any
+	Network             any
+	ProjectId           any
+	PscConnectionId     any
 	PscConnectionStatus any
-	ServiceAttachment any
+	ServiceAttachment   any
 }
 
 type Cluster_ClusterEndpoints_Connections_PscConnection struct {
-	Address any
-	ConnectionType any
-	ForwardingRule any
-	Network any
-	Port any
-	ProjectId any
-	PscConnectionId any
+	Address             any
+	ConnectionType      any
+	ForwardingRule      any
+	Network             any
+	Port                any
+	ProjectId           any
+	PscConnectionId     any
 	PscConnectionStatus any
-	ServiceAttachment any
+	ServiceAttachment   any
 }
 
 type Cluster_ClusterEndpoints_Connections struct {
 	PscAutoConnection any
-	PscConnection any
+	PscConnection     any
 }
 
 type Cluster_ClusterEndpoints struct {
@@ -110,8 +110,8 @@ type Cluster_DiscoveryEndpoints_PscConfig struct {
 }
 
 type Cluster_DiscoveryEndpoints struct {
-	Address any
-	Port any
+	Address   any
+	Port      any
 	PscConfig any
 }
 
@@ -132,7 +132,7 @@ type Cluster_GcsSource struct {
 }
 
 type Cluster_MaintenancePolicy_WeeklyMaintenanceWindow struct {
-	Day any
+	Day       any
 	StartTime any
 }
 
@@ -179,7 +179,7 @@ type Cluster_PersistenceConfig struct {
 }
 
 type Cluster_PscServiceAttachments struct {
-	ConnectionType any
+	ConnectionType    any
 	ServiceAttachment any
 }
 
@@ -207,236 +207,219 @@ type Cluster_ZoneDistributionConfig struct {
 }
 
 var Cluster_AclPolicyInfo_AclPolicyRevisionStatusesFields = ubx.FieldMap{
-		"AclPolicyRevision": ubx.FieldSpec{WireName: "acl_policy_revision"},
-		"AclPolicyRevisionNumber": ubx.FieldSpec{WireName: "acl_policy_revision_number"},
-		"ErrorMessage": ubx.FieldSpec{WireName: "error_message"},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"AclPolicyRevision":       ubx.FieldSpec{WireName: "acl_policy_revision"},
+	"AclPolicyRevisionNumber": ubx.FieldSpec{WireName: "acl_policy_revision_number"},
+	"ErrorMessage":            ubx.FieldSpec{WireName: "error_message"},
+	"State":                   ubx.FieldSpec{WireName: "state"},
+}
 
 var Cluster_AclPolicyInfoFields = ubx.FieldMap{
-		"AclPolicyRevisionStatuses": ubx.FieldSpec{
-			WireName: "acl_policy_revision_statuses",
-			Kind: "list",
-			Fields: Cluster_AclPolicyInfo_AclPolicyRevisionStatusesFields,
-		},
-		"AppliedAclPolicy": ubx.FieldSpec{WireName: "applied_acl_policy"},
-		"AppliedAclPolicyRevision": ubx.FieldSpec{WireName: "applied_acl_policy_revision"},
-		"AppliedAclPolicyRevisionNumber": ubx.FieldSpec{WireName: "applied_acl_policy_revision_number"},
-	}
+	"AclPolicyRevisionStatuses": ubx.FieldSpec{
+		WireName: "acl_policy_revision_statuses",
+		Kind:     "list",
+		Fields:   Cluster_AclPolicyInfo_AclPolicyRevisionStatusesFields,
+	},
+	"AppliedAclPolicy":               ubx.FieldSpec{WireName: "applied_acl_policy"},
+	"AppliedAclPolicyRevision":       ubx.FieldSpec{WireName: "applied_acl_policy_revision"},
+	"AppliedAclPolicyRevisionNumber": ubx.FieldSpec{WireName: "applied_acl_policy_revision_number"},
+}
 
 var Cluster_AutomatedBackupConfig_FixedFrequencySchedule_StartTimeFields = ubx.FieldMap{
-		"Hours": ubx.FieldSpec{WireName: "hours"},
-		"Minutes": ubx.FieldSpec{WireName: "minutes"},
-		"Nanos": ubx.FieldSpec{WireName: "nanos"},
-		"Seconds": ubx.FieldSpec{WireName: "seconds"},
-	}
+	"Hours":   ubx.FieldSpec{WireName: "hours"},
+	"Minutes": ubx.FieldSpec{WireName: "minutes"},
+	"Nanos":   ubx.FieldSpec{WireName: "nanos"},
+	"Seconds": ubx.FieldSpec{WireName: "seconds"},
+}
 
 var Cluster_AutomatedBackupConfig_FixedFrequencyScheduleFields = ubx.FieldMap{
-		"StartTime": ubx.FieldSpec{
-			WireName: "start_time",
-			Kind: "object",
-			Fields: Cluster_AutomatedBackupConfig_FixedFrequencySchedule_StartTimeFields,
-		},
-	}
+	"StartTime": ubx.FieldSpec{
+		WireName: "start_time",
+		Kind:     "object",
+		Fields:   Cluster_AutomatedBackupConfig_FixedFrequencySchedule_StartTimeFields,
+	},
+}
 
 var Cluster_AutomatedBackupConfigFields = ubx.FieldMap{
-		"AutomatedBackupMode": ubx.FieldSpec{WireName: "automated_backup_mode"},
-		"FixedFrequencySchedule": ubx.FieldSpec{
-			WireName: "fixed_frequency_schedule",
-			Kind: "object",
-			Fields: Cluster_AutomatedBackupConfig_FixedFrequencyScheduleFields,
-		},
-		"Retention": ubx.FieldSpec{WireName: "retention"},
-	}
+	"AutomatedBackupMode": ubx.FieldSpec{WireName: "automated_backup_mode"},
+	"FixedFrequencySchedule": ubx.FieldSpec{
+		WireName: "fixed_frequency_schedule",
+		Kind:     "object",
+		Fields:   Cluster_AutomatedBackupConfig_FixedFrequencyScheduleFields,
+	},
+	"Retention": ubx.FieldSpec{WireName: "retention"},
+}
 
 var Cluster_ClusterEndpoints_Connections_PscAutoConnectionFields = ubx.FieldMap{
-		"Address": ubx.FieldSpec{WireName: "address"},
-		"ConnectionType": ubx.FieldSpec{WireName: "connection_type"},
-		"ForwardingRule": ubx.FieldSpec{WireName: "forwarding_rule"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-		"PscConnectionId": ubx.FieldSpec{WireName: "psc_connection_id"},
-		"PscConnectionStatus": ubx.FieldSpec{WireName: "psc_connection_status"},
-		"ServiceAttachment": ubx.FieldSpec{WireName: "service_attachment"},
-	}
+	"Address":             ubx.FieldSpec{WireName: "address"},
+	"ConnectionType":      ubx.FieldSpec{WireName: "connection_type"},
+	"ForwardingRule":      ubx.FieldSpec{WireName: "forwarding_rule"},
+	"Network":             ubx.FieldSpec{WireName: "network"},
+	"ProjectId":           ubx.FieldSpec{WireName: "project_id"},
+	"PscConnectionId":     ubx.FieldSpec{WireName: "psc_connection_id"},
+	"PscConnectionStatus": ubx.FieldSpec{WireName: "psc_connection_status"},
+	"ServiceAttachment":   ubx.FieldSpec{WireName: "service_attachment"},
+}
 
 var Cluster_ClusterEndpoints_Connections_PscConnectionFields = ubx.FieldMap{
-		"Address": ubx.FieldSpec{WireName: "address"},
-		"ConnectionType": ubx.FieldSpec{WireName: "connection_type"},
-		"ForwardingRule": ubx.FieldSpec{WireName: "forwarding_rule"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-		"PscConnectionId": ubx.FieldSpec{WireName: "psc_connection_id"},
-		"PscConnectionStatus": ubx.FieldSpec{WireName: "psc_connection_status"},
-		"ServiceAttachment": ubx.FieldSpec{WireName: "service_attachment"},
-	}
+	"Address":             ubx.FieldSpec{WireName: "address"},
+	"ConnectionType":      ubx.FieldSpec{WireName: "connection_type"},
+	"ForwardingRule":      ubx.FieldSpec{WireName: "forwarding_rule"},
+	"Network":             ubx.FieldSpec{WireName: "network"},
+	"Port":                ubx.FieldSpec{WireName: "port"},
+	"ProjectId":           ubx.FieldSpec{WireName: "project_id"},
+	"PscConnectionId":     ubx.FieldSpec{WireName: "psc_connection_id"},
+	"PscConnectionStatus": ubx.FieldSpec{WireName: "psc_connection_status"},
+	"ServiceAttachment":   ubx.FieldSpec{WireName: "service_attachment"},
+}
 
 var Cluster_ClusterEndpoints_ConnectionsFields = ubx.FieldMap{
-		"PscAutoConnection": ubx.FieldSpec{
-			WireName: "psc_auto_connection",
-			Kind: "object",
-			Fields: Cluster_ClusterEndpoints_Connections_PscAutoConnectionFields,
-		},
-		"PscConnection": ubx.FieldSpec{
-			WireName: "psc_connection",
-			Kind: "object",
-			Fields: Cluster_ClusterEndpoints_Connections_PscConnectionFields,
-		},
-	}
+	"PscAutoConnection": ubx.FieldSpec{
+		WireName: "psc_auto_connection",
+		Kind:     "object",
+		Fields:   Cluster_ClusterEndpoints_Connections_PscAutoConnectionFields,
+	},
+	"PscConnection": ubx.FieldSpec{
+		WireName: "psc_connection",
+		Kind:     "object",
+		Fields:   Cluster_ClusterEndpoints_Connections_PscConnectionFields,
+	},
+}
 
 var Cluster_ClusterEndpointsFields = ubx.FieldMap{
-		"Connections": ubx.FieldSpec{
-			WireName: "connections",
-			Kind: "list",
-			Fields: Cluster_ClusterEndpoints_ConnectionsFields,
-		},
-	}
+	"Connections": ubx.FieldSpec{
+		WireName: "connections",
+		Kind:     "list",
+		Fields:   Cluster_ClusterEndpoints_ConnectionsFields,
+	},
+}
 
 var Cluster_CrossClusterReplicationConfig_Membership_PrimaryClusterFields = ubx.FieldMap{
-		"Cluster": ubx.FieldSpec{WireName: "cluster"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-	}
+	"Cluster": ubx.FieldSpec{WireName: "cluster"},
+	"Uid":     ubx.FieldSpec{WireName: "uid"},
+}
 
 var Cluster_CrossClusterReplicationConfig_MembershipFields = ubx.FieldMap{
-		"PrimaryCluster": ubx.FieldSpec{
-			WireName: "primary_cluster",
-			Kind: "object",
-			Fields: Cluster_CrossClusterReplicationConfig_Membership_PrimaryClusterFields,
-		},
-		"SecondaryClusters": ubx.FieldSpec{
-			WireName: "secondary_clusters",
-			Kind: "list",
-			Fields: Cluster_CrossClusterReplicationConfig_Membership_PrimaryClusterFields,
-		},
-	}
+	"PrimaryCluster": ubx.FieldSpec{
+		WireName: "primary_cluster",
+		Kind:     "object",
+		Fields:   Cluster_CrossClusterReplicationConfig_Membership_PrimaryClusterFields,
+	},
+	"SecondaryClusters": ubx.FieldSpec{
+		WireName: "secondary_clusters",
+		Kind:     "list",
+		Fields:   Cluster_CrossClusterReplicationConfig_Membership_PrimaryClusterFields,
+	},
+}
 
 var Cluster_CrossClusterReplicationConfigFields = ubx.FieldMap{
-		"ClusterRole": ubx.FieldSpec{WireName: "cluster_role"},
-		"Membership": ubx.FieldSpec{
-			WireName: "membership",
-			Kind: "object",
-			Fields: Cluster_CrossClusterReplicationConfig_MembershipFields,
-		},
-		"PrimaryCluster": ubx.FieldSpec{
-			WireName: "primary_cluster",
-			Kind: "object",
-			Fields: Cluster_CrossClusterReplicationConfig_Membership_PrimaryClusterFields,
-		},
-		"SecondaryClusters": ubx.FieldSpec{
-			WireName: "secondary_clusters",
-			Kind: "list",
-			Fields: Cluster_CrossClusterReplicationConfig_Membership_PrimaryClusterFields,
-		},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-	}
-
-var Cluster_DiscoveryEndpoints_PscConfigFields = ubx.FieldMap{
-		"Network": ubx.FieldSpec{WireName: "network"},
-	}
-
-var Cluster_DiscoveryEndpointsFields = ubx.FieldMap{
-		"Address": ubx.FieldSpec{WireName: "address"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"PscConfig": ubx.FieldSpec{
-			WireName: "psc_config",
-			Kind: "object",
-			Fields: Cluster_DiscoveryEndpoints_PscConfigFields,
-		},
-	}
+	"ClusterRole": ubx.FieldSpec{WireName: "cluster_role"},
+	"Membership": ubx.FieldSpec{
+		WireName: "membership",
+		Kind:     "object",
+		Fields:   Cluster_CrossClusterReplicationConfig_MembershipFields,
+	},
+	"PrimaryCluster": ubx.FieldSpec{
+		WireName: "primary_cluster",
+		Kind:     "object",
+		Fields:   Cluster_CrossClusterReplicationConfig_Membership_PrimaryClusterFields,
+	},
+	"SecondaryClusters": ubx.FieldSpec{
+		WireName: "secondary_clusters",
+		Kind:     "list",
+		Fields:   Cluster_CrossClusterReplicationConfig_Membership_PrimaryClusterFields,
+	},
+	"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+}
 
 var Cluster_EncryptionInfoFields = ubx.FieldMap{
-		"EncryptionType": ubx.FieldSpec{WireName: "encryption_type"},
-		"KmsKeyPrimaryState": ubx.FieldSpec{WireName: "kms_key_primary_state"},
-		"KmsKeyVersions": ubx.FieldSpec{WireName: "kms_key_versions"},
-		"LastUpdateTime": ubx.FieldSpec{WireName: "last_update_time"},
-	}
+	"EncryptionType":     ubx.FieldSpec{WireName: "encryption_type"},
+	"KmsKeyPrimaryState": ubx.FieldSpec{WireName: "kms_key_primary_state"},
+	"KmsKeyVersions":     ubx.FieldSpec{WireName: "kms_key_versions"},
+	"LastUpdateTime":     ubx.FieldSpec{WireName: "last_update_time"},
+}
 
 var Cluster_GcsSourceFields = ubx.FieldMap{
-		"Uris": ubx.FieldSpec{WireName: "uris"},
-	}
+	"Uris": ubx.FieldSpec{WireName: "uris"},
+}
 
 var Cluster_MaintenancePolicy_WeeklyMaintenanceWindowFields = ubx.FieldMap{
-		"Day": ubx.FieldSpec{WireName: "day"},
-		"StartTime": ubx.FieldSpec{
-			WireName: "start_time",
-			Kind: "object",
-			Fields: Cluster_AutomatedBackupConfig_FixedFrequencySchedule_StartTimeFields,
-		},
-	}
+	"Day": ubx.FieldSpec{WireName: "day"},
+	"StartTime": ubx.FieldSpec{
+		WireName: "start_time",
+		Kind:     "object",
+		Fields:   Cluster_AutomatedBackupConfig_FixedFrequencySchedule_StartTimeFields,
+	},
+}
 
 var Cluster_MaintenancePolicyFields = ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-		"WeeklyMaintenanceWindow": ubx.FieldSpec{
-			WireName: "weekly_maintenance_window",
-			Kind: "list",
-			Fields: Cluster_MaintenancePolicy_WeeklyMaintenanceWindowFields,
-		},
-	}
+	"CreateTime": ubx.FieldSpec{WireName: "create_time"},
+	"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+	"WeeklyMaintenanceWindow": ubx.FieldSpec{
+		WireName: "weekly_maintenance_window",
+		Kind:     "list",
+		Fields:   Cluster_MaintenancePolicy_WeeklyMaintenanceWindowFields,
+	},
+}
 
 var Cluster_MaintenanceScheduleFields = ubx.FieldMap{
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-	}
+	"EndTime":   ubx.FieldSpec{WireName: "end_time"},
+	"StartTime": ubx.FieldSpec{WireName: "start_time"},
+}
 
 var Cluster_ManagedBackupSourceFields = ubx.FieldMap{
-		"Backup": ubx.FieldSpec{WireName: "backup"},
-	}
+	"Backup": ubx.FieldSpec{WireName: "backup"},
+}
 
 var Cluster_PersistenceConfig_AofConfigFields = ubx.FieldMap{
-		"AppendFsync": ubx.FieldSpec{WireName: "append_fsync"},
-	}
+	"AppendFsync": ubx.FieldSpec{WireName: "append_fsync"},
+}
 
 var Cluster_PersistenceConfig_RdbConfigFields = ubx.FieldMap{
-		"RdbSnapshotPeriod": ubx.FieldSpec{WireName: "rdb_snapshot_period"},
-		"RdbSnapshotStartTime": ubx.FieldSpec{WireName: "rdb_snapshot_start_time"},
-	}
+	"RdbSnapshotPeriod":    ubx.FieldSpec{WireName: "rdb_snapshot_period"},
+	"RdbSnapshotStartTime": ubx.FieldSpec{WireName: "rdb_snapshot_start_time"},
+}
 
 var Cluster_PersistenceConfigFields = ubx.FieldMap{
-		"AofConfig": ubx.FieldSpec{
-			WireName: "aof_config",
-			Kind: "object",
-			Fields: Cluster_PersistenceConfig_AofConfigFields,
-		},
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"RdbConfig": ubx.FieldSpec{
-			WireName: "rdb_config",
-			Kind: "object",
-			Fields: Cluster_PersistenceConfig_RdbConfigFields,
-		},
-	}
+	"AofConfig": ubx.FieldSpec{
+		WireName: "aof_config",
+		Kind:     "object",
+		Fields:   Cluster_PersistenceConfig_AofConfigFields,
+	},
+	"Mode": ubx.FieldSpec{WireName: "mode"},
+	"RdbConfig": ubx.FieldSpec{
+		WireName: "rdb_config",
+		Kind:     "object",
+		Fields:   Cluster_PersistenceConfig_RdbConfigFields,
+	},
+}
 
-var Cluster_PscServiceAttachmentsFields = ubx.FieldMap{
-		"ConnectionType": ubx.FieldSpec{WireName: "connection_type"},
-		"ServiceAttachment": ubx.FieldSpec{WireName: "service_attachment"},
-	}
+var Cluster_DiscoveryEndpoints_PscConfigFields = ubx.FieldMap{
+	"Network": ubx.FieldSpec{WireName: "network"},
+}
 
 var Cluster_StateInfo_UpdateInfoFields = ubx.FieldMap{
-		"TargetNodeType": ubx.FieldSpec{WireName: "target_node_type"},
-		"TargetReplicaCount": ubx.FieldSpec{WireName: "target_replica_count"},
-		"TargetShardCount": ubx.FieldSpec{WireName: "target_shard_count"},
-	}
+	"TargetNodeType":     ubx.FieldSpec{WireName: "target_node_type"},
+	"TargetReplicaCount": ubx.FieldSpec{WireName: "target_replica_count"},
+	"TargetShardCount":   ubx.FieldSpec{WireName: "target_shard_count"},
+}
 
 var Cluster_StateInfoFields = ubx.FieldMap{
-		"UpdateInfo": ubx.FieldSpec{
-			WireName: "update_info",
-			Kind: "object",
-			Fields: Cluster_StateInfo_UpdateInfoFields,
-		},
-	}
+	"UpdateInfo": ubx.FieldSpec{
+		WireName: "update_info",
+		Kind:     "object",
+		Fields:   Cluster_StateInfo_UpdateInfoFields,
+	},
+}
 
 var Cluster_ZoneDistributionConfigFields = ubx.FieldMap{
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-		"Zone": ubx.FieldSpec{WireName: "zone"},
-		"Zones": ubx.FieldSpec{WireName: "zones"},
-	}
+	"Mode":  ubx.FieldSpec{WireName: "mode"},
+	"Zone":  ubx.FieldSpec{WireName: "zone"},
+	"Zones": ubx.FieldSpec{WireName: "zones"},
+}
 
 type ClusterConfig struct {
 	// Optional. The ACL policy to be applied to the cluster.
 	AclPolicy any
-	// Optional. Output only. Deprecated: Indicates whether the ACL rules applied to the cluster are in sync.
-	AclPolicyInSync any
 	// Details of the applied ACL policy.
 	AclPolicyInfo any
 	// Optional. Immutable. Deprecated, do not use.
@@ -447,22 +430,12 @@ type ClusterConfig struct {
 	AuthorizationMode any
 	// The automated backup config for a cluster.
 	AutomatedBackupConfig any
-	// Output only. This field is used to determine the available maintenance versions for the self service update.
-	AvailableMaintenanceVersions any
-	// Optional. Output only. The backup collection full resource name. Example: projects/{project}/locations/{location}/backupCollections/{collection}
-	BackupCollection any
 	// Optional. A list of cluster endpoints.
 	ClusterEndpoints any
-	// Output only. The timestamp associated with the cluster creation request.
-	CreateTime any
 	// Cross cluster replication config.
 	CrossClusterReplicationConfig any
 	// Optional. The delete operation will fail when the value is set to true.
 	DeletionProtectionEnabled any
-	// Output only. Endpoints created on each given network, for Redis clients to connect to the cluster. Currently only one discovery endpoint is supported.
-	DiscoveryEndpoints any
-	// Output only. This field represents the actual maintenance version of the cluster.
-	EffectiveMaintenanceVersion any
 	// EncryptionInfo describes the encryption information of a cluster or a backup.
 	EncryptionInfo any
 	// Backups stored in Cloud Storage buckets. The Cloud Storage buckets need to be the same region as the clusters.
@@ -487,24 +460,14 @@ type ClusterConfig struct {
 	OndemandMaintenance any
 	// Configuration of the persistence functionality.
 	PersistenceConfig any
-	// Output only. Precise value of redis memory size in GB for the entire cluster.
-	PreciseSizeGb any
 	// Optional. Each PscConfig configures the consumer network where IPs will be designated to the cluster for client access through Private Service Connect Automation. Currently, only one PscConfig is supported.
 	PscConfigs any
-	// Output only. The list of PSC connections that are auto-created through service connectivity automation.
-	PscConnections any
-	// Output only. Service attachment details to configure Psc connections
-	PscServiceAttachments any
 	// Optional. Key/Value pairs of customer overrides for mutable Redis Configs
 	RedisConfigs any
 	// Optional. The number of replica nodes per shard.
 	ReplicaCount any
 	// Optional. Input only. Rotate the server certificates.
 	RotateServerCertificate any
-	// Optional. Output only. Reserved for future use.
-	SatisfiesPzi any
-	// Optional. Output only. Reserved for future use.
-	SatisfiesPzs any
 	// Optional. Server CA mode for the cluster.
 	ServerCaMode any
 	// Optional. Customer-managed CA pool for the cluster. Only applicable for BYOCA i.e. if server_ca_mode is SERVER_CA_MODE_CUSTOMER_MANAGED_CAS_CA. Format: "projects/{project}/locations/{region}/caPools/{ca_pool}".
@@ -513,16 +476,10 @@ type ClusterConfig struct {
 	ShardCount any
 	// Optional. Input only. Simulate a maintenance event.
 	SimulateMaintenanceEvent any
-	// Output only. Redis memory size in GB for the entire cluster rounded up to the next integer.
-	SizeGb any
-	// Output only. The current state of this cluster. Can be CREATING, READY, UPDATING, DELETING and SUSPENDED
-	State any
 	// Represents additional information about the state of the cluster.
 	StateInfo any
 	// Optional. The in-transit encryption for the Redis cluster. If not provided, encryption is disabled for the cluster.
 	TransitEncryptionMode any
-	// Output only. System assigned, unique identifier for the cluster.
-	Uid any
 	// Zone distribution config for allocation of cluster resources.
 	ZoneDistributionConfig any
 }
@@ -626,114 +583,88 @@ var Cluster = ubx.ResourceBinding{
 	WireType: "google_redis_cluster",
 	Fields: ubx.FieldMap{
 		"AclPolicy": ubx.FieldSpec{WireName: "acl_policy"},
-		"AclPolicyInSync": ubx.FieldSpec{WireName: "acl_policy_in_sync"},
 		"AclPolicyInfo": ubx.FieldSpec{
 			WireName: "acl_policy_info",
-			Kind: "object",
-			Fields: Cluster_AclPolicyInfoFields,
+			Kind:     "object",
+			Fields:   Cluster_AclPolicyInfoFields,
 		},
-		"AllowFewerZonesDeployment": ubx.FieldSpec{WireName: "allow_fewer_zones_deployment"},
+		"AllowFewerZonesDeployment":            ubx.FieldSpec{WireName: "allow_fewer_zones_deployment"},
 		"AsyncClusterEndpointsDeletionEnabled": ubx.FieldSpec{WireName: "async_cluster_endpoints_deletion_enabled"},
-		"AuthorizationMode": ubx.FieldSpec{WireName: "authorization_mode"},
+		"AuthorizationMode":                    ubx.FieldSpec{WireName: "authorization_mode"},
 		"AutomatedBackupConfig": ubx.FieldSpec{
 			WireName: "automated_backup_config",
-			Kind: "object",
-			Fields: Cluster_AutomatedBackupConfigFields,
+			Kind:     "object",
+			Fields:   Cluster_AutomatedBackupConfigFields,
 		},
-		"AvailableMaintenanceVersions": ubx.FieldSpec{WireName: "available_maintenance_versions"},
-		"BackupCollection": ubx.FieldSpec{WireName: "backup_collection"},
 		"ClusterEndpoints": ubx.FieldSpec{
 			WireName: "cluster_endpoints",
-			Kind: "list",
-			Fields: Cluster_ClusterEndpointsFields,
+			Kind:     "list",
+			Fields:   Cluster_ClusterEndpointsFields,
 		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"CrossClusterReplicationConfig": ubx.FieldSpec{
 			WireName: "cross_cluster_replication_config",
-			Kind: "object",
-			Fields: Cluster_CrossClusterReplicationConfigFields,
+			Kind:     "object",
+			Fields:   Cluster_CrossClusterReplicationConfigFields,
 		},
 		"DeletionProtectionEnabled": ubx.FieldSpec{WireName: "deletion_protection_enabled"},
-		"DiscoveryEndpoints": ubx.FieldSpec{
-			WireName: "discovery_endpoints",
-			Kind: "list",
-			Fields: Cluster_DiscoveryEndpointsFields,
-		},
-		"EffectiveMaintenanceVersion": ubx.FieldSpec{WireName: "effective_maintenance_version"},
 		"EncryptionInfo": ubx.FieldSpec{
 			WireName: "encryption_info",
-			Kind: "object",
-			Fields: Cluster_EncryptionInfoFields,
+			Kind:     "object",
+			Fields:   Cluster_EncryptionInfoFields,
 		},
 		"GcsSource": ubx.FieldSpec{
 			WireName: "gcs_source",
-			Kind: "object",
-			Fields: Cluster_GcsSourceFields,
+			Kind:     "object",
+			Fields:   Cluster_GcsSourceFields,
 		},
 		"KmsKey": ubx.FieldSpec{WireName: "kms_key"},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
 		"MaintenancePolicy": ubx.FieldSpec{
 			WireName: "maintenance_policy",
-			Kind: "object",
-			Fields: Cluster_MaintenancePolicyFields,
+			Kind:     "object",
+			Fields:   Cluster_MaintenancePolicyFields,
 		},
 		"MaintenanceSchedule": ubx.FieldSpec{
 			WireName: "maintenance_schedule",
-			Kind: "object",
-			Fields: Cluster_MaintenanceScheduleFields,
+			Kind:     "object",
+			Fields:   Cluster_MaintenanceScheduleFields,
 		},
 		"MaintenanceVersion": ubx.FieldSpec{WireName: "maintenance_version"},
 		"ManagedBackupSource": ubx.FieldSpec{
 			WireName: "managed_backup_source",
-			Kind: "object",
-			Fields: Cluster_ManagedBackupSourceFields,
+			Kind:     "object",
+			Fields:   Cluster_ManagedBackupSourceFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NodeType": ubx.FieldSpec{WireName: "node_type"},
+		"Name":                ubx.FieldSpec{WireName: "name"},
+		"NodeType":            ubx.FieldSpec{WireName: "node_type"},
 		"OndemandMaintenance": ubx.FieldSpec{WireName: "ondemand_maintenance"},
 		"PersistenceConfig": ubx.FieldSpec{
 			WireName: "persistence_config",
-			Kind: "object",
-			Fields: Cluster_PersistenceConfigFields,
+			Kind:     "object",
+			Fields:   Cluster_PersistenceConfigFields,
 		},
-		"PreciseSizeGb": ubx.FieldSpec{WireName: "precise_size_gb"},
 		"PscConfigs": ubx.FieldSpec{
 			WireName: "psc_configs",
-			Kind: "list",
-			Fields: Cluster_DiscoveryEndpoints_PscConfigFields,
+			Kind:     "list",
+			Fields:   Cluster_DiscoveryEndpoints_PscConfigFields,
 		},
-		"PscConnections": ubx.FieldSpec{
-			WireName: "psc_connections",
-			Kind: "list",
-			Fields: Cluster_ClusterEndpoints_Connections_PscConnectionFields,
-		},
-		"PscServiceAttachments": ubx.FieldSpec{
-			WireName: "psc_service_attachments",
-			Kind: "list",
-			Fields: Cluster_PscServiceAttachmentsFields,
-		},
-		"RedisConfigs": ubx.FieldSpec{WireName: "redis_configs"},
-		"ReplicaCount": ubx.FieldSpec{WireName: "replica_count"},
-		"RotateServerCertificate": ubx.FieldSpec{WireName: "rotate_server_certificate"},
-		"SatisfiesPzi": ubx.FieldSpec{WireName: "satisfies_pzi"},
-		"SatisfiesPzs": ubx.FieldSpec{WireName: "satisfies_pzs"},
-		"ServerCaMode": ubx.FieldSpec{WireName: "server_ca_mode"},
-		"ServerCaPool": ubx.FieldSpec{WireName: "server_ca_pool"},
-		"ShardCount": ubx.FieldSpec{WireName: "shard_count"},
+		"RedisConfigs":             ubx.FieldSpec{WireName: "redis_configs"},
+		"ReplicaCount":             ubx.FieldSpec{WireName: "replica_count"},
+		"RotateServerCertificate":  ubx.FieldSpec{WireName: "rotate_server_certificate"},
+		"ServerCaMode":             ubx.FieldSpec{WireName: "server_ca_mode"},
+		"ServerCaPool":             ubx.FieldSpec{WireName: "server_ca_pool"},
+		"ShardCount":               ubx.FieldSpec{WireName: "shard_count"},
 		"SimulateMaintenanceEvent": ubx.FieldSpec{WireName: "simulate_maintenance_event"},
-		"SizeGb": ubx.FieldSpec{WireName: "size_gb"},
-		"State": ubx.FieldSpec{WireName: "state"},
 		"StateInfo": ubx.FieldSpec{
 			WireName: "state_info",
-			Kind: "object",
-			Fields: Cluster_StateInfoFields,
+			Kind:     "object",
+			Fields:   Cluster_StateInfoFields,
 		},
 		"TransitEncryptionMode": ubx.FieldSpec{WireName: "transit_encryption_mode"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
 		"ZoneDistributionConfig": ubx.FieldSpec{
 			WireName: "zone_distribution_config",
-			Kind: "object",
-			Fields: Cluster_ZoneDistributionConfigFields,
+			Kind:     "object",
+			Fields:   Cluster_ZoneDistributionConfigFields,
 		},
 	},
 }

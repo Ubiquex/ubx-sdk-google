@@ -159,42 +159,6 @@ export interface V1beta1A2aTask_StatusDetails {
   taskMessage?: V1beta1A2aTask_StatusDetails_TaskMessage | Computed<V1beta1A2aTask_StatusDetails_TaskMessage>;
 }
 
-const V1beta1A2aTask_Artifacts_PartsFields: FieldMap = {
-  data: "data",
-  filename: "filename",
-  mediaType: "media_type",
-  metadata: "metadata",
-  raw: "raw",
-  text: "text",
-  url: "url",
-};
-
-const V1beta1A2aTask_ArtifactsFields: FieldMap = {
-  artifactId: "artifact_id",
-  description: "description",
-  displayName: "display_name",
-  extensions: "extensions",
-  metadata: "metadata",
-  parts: {
-    wireName: "parts",
-    kind: "list",
-    fields: V1beta1A2aTask_Artifacts_PartsFields,
-  },
-};
-
-const V1beta1A2aTask_HistoryFields: FieldMap = {
-  extensions: "extensions",
-  messageId: "message_id",
-  metadata: "metadata",
-  parts: {
-    wireName: "parts",
-    kind: "list",
-    fields: V1beta1A2aTask_Artifacts_PartsFields,
-  },
-  referenceTaskIds: "reference_task_ids",
-  role: "role",
-};
-
 const V1beta1A2aTask_Output_Artifacts_Parts_AudioTranscription_WordsFields: FieldMap = {
   endOffset: "end_offset",
   startOffset: "start_offset",
@@ -363,6 +327,29 @@ const V1beta1A2aTask_OutputFields: FieldMap = {
   },
 };
 
+const V1beta1A2aTask_Artifacts_PartsFields: FieldMap = {
+  data: "data",
+  filename: "filename",
+  mediaType: "media_type",
+  metadata: "metadata",
+  raw: "raw",
+  text: "text",
+  url: "url",
+};
+
+const V1beta1A2aTask_HistoryFields: FieldMap = {
+  extensions: "extensions",
+  messageId: "message_id",
+  metadata: "metadata",
+  parts: {
+    wireName: "parts",
+    kind: "list",
+    fields: V1beta1A2aTask_Artifacts_PartsFields,
+  },
+  referenceTaskIds: "reference_task_ids",
+  role: "role",
+};
+
 const V1beta1A2aTask_StatusFields: FieldMap = {
   message: {
     wireName: "message",
@@ -395,36 +382,22 @@ const V1beta1A2aTask_StatusDetailsFields: FieldMap = {
 export interface V1beta1A2aTaskConfig {
   /** Optional. Agent application which created the task. */
   appId?: string | Computed<string>;
-  /** Output only. The artifacts produced by the task. */
-  artifacts?: V1beta1A2aTask_Artifacts[] | Computed<V1beta1A2aTask_Artifacts[]>;
   /** Optional. A generic identifier for grouping related tasks (e.g., session_id, workflow_id). */
   contextId?: string | Computed<string>;
-  /** Output only. The creation timestamp of the task. */
-  createTime?: string | Computed<string>;
   /** Optional. Timestamp of when this task is considered expired. This is *always* provided on output, and is calculated based on the `ttl` if set on the request */
   expireTime?: string | Computed<string>;
-  /** Output only. The task generation number. */
-  generation?: string | Computed<string>;
-  /** Output only. The history of the task messages. */
-  history?: V1beta1A2aTask_History[] | Computed<V1beta1A2aTask_History[]>;
   /** Optional. Arbitrary, user-defined metadata. */
   metadata?: Record<string, unknown> | Computed<Record<string, unknown>>;
   /** Identifier. The resource name of the task. Format: `projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}/a2aTasks/{a2a_task}` or `projects/{project}/locations/{location}/taskStores/{task_store}/a2aTasks/{a2a_task}` */
   name?: string | Computed<string>;
-  /** Output only. The next event sequence number to be appended to the task. This value starts at 1 and is guaranteed to be monotonically increasing. */
-  nextEventSequenceNumber?: string | Computed<string>;
   /** Represents the final output of a task. */
   output?: V1beta1A2aTask_Output | Computed<V1beta1A2aTask_Output>;
-  /** Output only. The state of the task. The state of a new task is SUBMITTED by default. The state of a task can only be updated via AppendA2aTaskEvents API. */
-  state?: string | Computed<string>;
   /** Represents the status of an A2aTask. */
   status?: V1beta1A2aTask_Status | Computed<V1beta1A2aTask_Status>;
   /** Represents the additional status details of a task. */
   statusDetails?: V1beta1A2aTask_StatusDetails | Computed<V1beta1A2aTask_StatusDetails>;
   /** Optional. Input only. The TTL (Time To Live) for the task. If not set, the task will expire in 24 hours by default. Valid range: (0 seconds, 1000 days] */
   ttl?: string | Computed<string>;
-  /** Output only. The last update timestamp of the task. */
-  updateTime?: string | Computed<string>;
   /** Optional. Task owner user ID. */
   userId?: string | Computed<string>;
 }
@@ -470,29 +443,15 @@ export const V1beta1A2aTask: ResourceBinding<V1beta1A2aTaskConfig, V1beta1A2aTas
   wireType: "google_aiplatform_v1beta1_a2a_task",
   fields: {
     appId: "app_id",
-    artifacts: {
-      wireName: "artifacts",
-      kind: "list",
-      fields: V1beta1A2aTask_ArtifactsFields,
-    },
     contextId: "context_id",
-    createTime: "create_time",
     expireTime: "expire_time",
-    generation: "generation",
-    history: {
-      wireName: "history",
-      kind: "list",
-      fields: V1beta1A2aTask_HistoryFields,
-    },
     metadata: "metadata",
     name: "name",
-    nextEventSequenceNumber: "next_event_sequence_number",
     output: {
       wireName: "output",
       kind: "object",
       fields: V1beta1A2aTask_OutputFields,
     },
-    state: "state",
     status: {
       wireName: "status",
       kind: "object",
@@ -504,7 +463,6 @@ export const V1beta1A2aTask: ResourceBinding<V1beta1A2aTaskConfig, V1beta1A2aTas
       fields: V1beta1A2aTask_StatusDetailsFields,
     },
     ttl: "ttl",
-    updateTime: "update_time",
     userId: "user_id",
   },
 };

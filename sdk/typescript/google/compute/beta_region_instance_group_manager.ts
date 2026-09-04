@@ -863,8 +863,6 @@ export interface BetaRegionInstanceGroupManagerConfig {
   autoHealingPolicies?: BetaRegionInstanceGroupManager_AutoHealingPolicies[] | Computed<BetaRegionInstanceGroupManager_AutoHealingPolicies[]>;
   /** The base instance name is a prefix that you want to attach to the names of all VMs in a MIG. The maximum character length is 58 and the name must comply with RFC1035 format. When a VM is created in the group, the MIG appends a hyphen and a random four-character string to the base instance name. If you want the MIG to assign sequential numbers instead of a random string, then end the base instance name with a hyphen followed by one or more hash symbols. The hash symbols indicate the number of digits. For example, a base instance name of "vm-###" results in "vm-001" as a VM name. @pattern [a-z](([-a-z0-9]{0,57})|([-a-z0-9]{0,51}-#{1,10}(\\[[0-9]{1,10}\\])?)) */
   baseInstanceName?: string | Computed<string>;
-  /** Output only. The creation timestamp for this managed instance group inRFC3339 text format. */
-  creationTimestamp?: string | Computed<string>;
   currentActions?: BetaRegionInstanceGroupManager_CurrentActions | Computed<BetaRegionInstanceGroupManager_CurrentActions>;
   /** An optional description of this resource. */
   description?: string | Computed<string>;
@@ -873,16 +871,10 @@ export interface BetaRegionInstanceGroupManagerConfig {
   failoverAction?: string | Computed<string>;
   /** Fingerprint of this resource. This field may be used in optimistic locking. It will be ignored when inserting an InstanceGroupManager. An up-to-date fingerprint must be provided in order to update the InstanceGroupManager, otherwise the request will fail with error412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an InstanceGroupManager. */
   fingerprint?: string | Computed<string>;
-  /** Output only. A unique identifier for this resource type. The server generates this identifier. */
-  id?: string | Computed<string>;
   instanceFlexibilityPolicy?: BetaRegionInstanceGroupManager_InstanceFlexibilityPolicy | Computed<BetaRegionInstanceGroupManager_InstanceFlexibilityPolicy>;
-  /** Output only. The URL of the Instance Group resource. */
-  instanceGroup?: string | Computed<string>;
   instanceLifecyclePolicy?: BetaRegionInstanceGroupManager_InstanceLifecyclePolicy | Computed<BetaRegionInstanceGroupManager_InstanceLifecyclePolicy>;
   /** The URL of the instance template that is specified for this managed instance group. The group uses this template to create all new instances in the managed instance group. The templates for existing instances in the group do not change unless you run recreateInstances, runapplyUpdatesToInstances, or set the group'supdatePolicy.type to PROACTIVE. */
   instanceTemplate?: string | Computed<string>;
-  /** Output only. The resource type, which is alwayscompute#instanceGroupManager for managed instance groups. */
-  kind?: string | Computed<string>;
   /** Pagination behavior of the listManagedInstances API method for this managed instance group. */
   listManagedInstancesResults?: string | Computed<string>;
   /** URL to the multi-MIG that this Managed Instance Group belongs to. */
@@ -893,15 +885,7 @@ export interface BetaRegionInstanceGroupManagerConfig {
   namedPorts?: BetaRegionInstanceGroupManager_NamedPorts[] | Computed<BetaRegionInstanceGroupManager_NamedPorts[]>;
   /** Input only additional params for instance group manager creation. */
   params?: BetaRegionInstanceGroupManager_Params | Computed<BetaRegionInstanceGroupManager_Params>;
-  /** Output only. [Output Only] The URL of theregion where the managed instance group resides (for regional resources). */
-  region?: string | Computed<string>;
   resourcePolicies?: BetaRegionInstanceGroupManager_ResourcePolicies | Computed<BetaRegionInstanceGroupManager_ResourcePolicies>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzi?: boolean | Computed<boolean>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzs?: boolean | Computed<boolean>;
-  /** Output only. The URL for this managed instance group. The server defines this URL. */
-  selfLink?: string | Computed<string>;
   /** The service account to be used as credentials for all operations performed by the managed instance group on instances. The service accounts needs all permissions required to create and delete instances. By default, the service account {projectNumber}@cloudservices.gserviceaccount.com is used. */
   serviceAccount?: string | Computed<string>;
   standbyPolicy?: BetaRegionInstanceGroupManager_StandbyPolicy | Computed<BetaRegionInstanceGroupManager_StandbyPolicy>;
@@ -919,8 +903,6 @@ export interface BetaRegionInstanceGroupManagerConfig {
   updatePolicy?: BetaRegionInstanceGroupManager_UpdatePolicy | Computed<BetaRegionInstanceGroupManager_UpdatePolicy>;
   /** Specifies the instance templates used by this managed instance group to create instances. Each version is defined by an instanceTemplate and aname. Every version can appear at most once per instance group. This field overrides the top-level instanceTemplate field. Read more about therelationships between these fields. Exactly one version must leave thetargetSize field unset. That version will be applied to all remaining instances. For more information, read aboutcanary updates. */
   versions?: BetaRegionInstanceGroupManager_Versions[] | Computed<BetaRegionInstanceGroupManager_Versions[]>;
-  /** Output only. The URL of azone where the managed instance group is located (for zonal resources). */
-  zone?: string | Computed<string>;
 }
 
 export interface BetaRegionInstanceGroupManagerAttrs {
@@ -1003,7 +985,6 @@ export const BetaRegionInstanceGroupManager: ResourceBinding<BetaRegionInstanceG
       fields: BetaRegionInstanceGroupManager_AutoHealingPoliciesFields,
     },
     baseInstanceName: "base_instance_name",
-    creationTimestamp: "creation_timestamp",
     currentActions: {
       wireName: "current_actions",
       kind: "object",
@@ -1017,20 +998,17 @@ export const BetaRegionInstanceGroupManager: ResourceBinding<BetaRegionInstanceG
     },
     failoverAction: "failover_action",
     fingerprint: "fingerprint",
-    id: "id",
     instanceFlexibilityPolicy: {
       wireName: "instance_flexibility_policy",
       kind: "object",
       fields: BetaRegionInstanceGroupManager_InstanceFlexibilityPolicyFields,
     },
-    instanceGroup: "instance_group",
     instanceLifecyclePolicy: {
       wireName: "instance_lifecycle_policy",
       kind: "object",
       fields: BetaRegionInstanceGroupManager_InstanceLifecyclePolicyFields,
     },
     instanceTemplate: "instance_template",
-    kind: "kind",
     listManagedInstancesResults: "list_managed_instances_results",
     multiMig: "multi_mig",
     name: "name",
@@ -1044,15 +1022,11 @@ export const BetaRegionInstanceGroupManager: ResourceBinding<BetaRegionInstanceG
       kind: "object",
       fields: BetaRegionInstanceGroupManager_ParamsFields,
     },
-    region: "region",
     resourcePolicies: {
       wireName: "resource_policies",
       kind: "object",
       fields: BetaRegionInstanceGroupManager_ResourcePoliciesFields,
     },
-    satisfiesPzi: "satisfies_pzi",
-    satisfiesPzs: "satisfies_pzs",
-    selfLink: "self_link",
     serviceAccount: "service_account",
     standbyPolicy: {
       wireName: "standby_policy",
@@ -1088,6 +1062,5 @@ export const BetaRegionInstanceGroupManager: ResourceBinding<BetaRegionInstanceG
       kind: "list",
       fields: BetaRegionInstanceGroupManager_VersionsFields,
     },
-    zone: "zone",
   },
 };

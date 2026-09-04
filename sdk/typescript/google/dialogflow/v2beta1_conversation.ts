@@ -232,24 +232,6 @@ export interface V2beta1Conversation_TelephonyConnectionInfo {
   sipHeaders?: V2beta1Conversation_TelephonyConnectionInfo_SipHeaders[] | Computed<V2beta1Conversation_TelephonyConnectionInfo_SipHeaders[]>;
 }
 
-const V2beta1Conversation_IngestedContextReferences_ContextContentsFields: FieldMap = {
-  answerRecord: "answer_record",
-  content: "content",
-  contentFormat: "content_format",
-  ingestionTime: "ingestion_time",
-};
-
-const V2beta1Conversation_IngestedContextReferencesFields: FieldMap = {
-  contextContents: {
-    wireName: "context_contents",
-    kind: "list",
-    fields: V2beta1Conversation_IngestedContextReferences_ContextContentsFields,
-  },
-  createTime: "create_time",
-  languageCode: "language_code",
-  updateMode: "update_mode",
-};
-
 const V2beta1Conversation_InitialConversationProfile_AutomatedAgentConfigFields: FieldMap = {
   agent: "agent",
   sessionTtl: "session_ttl",
@@ -565,10 +547,6 @@ const V2beta1Conversation_InitialConversationProfileFields: FieldMap = {
   useBidiStreaming: "use_bidi_streaming",
 };
 
-const V2beta1Conversation_InitialGeneratorContextsFields: FieldMap = {
-  generatorType: "generator_type",
-};
-
 const V2beta1Conversation_PhoneNumberFields: FieldMap = {
   countryCode: "country_code",
   phoneNumber: "phone_number",
@@ -602,14 +580,8 @@ const V2beta1Conversation_TelephonyConnectionInfoFields: FieldMap = {
 export interface V2beta1ConversationConfig {
   conversationProfile?: string | Computed<string>;
   conversationStage?: string | Computed<string>;
-  endTime?: string | Computed<string>;
-  ingestedContextReferences?: Record<string, V2beta1Conversation_IngestedContextReferences> | Computed<Record<string, V2beta1Conversation_IngestedContextReferences>>;
   initialConversationProfile?: V2beta1Conversation_InitialConversationProfile | Computed<V2beta1Conversation_InitialConversationProfile>;
-  initialGeneratorContexts?: Record<string, V2beta1Conversation_InitialGeneratorContexts> | Computed<Record<string, V2beta1Conversation_InitialGeneratorContexts>>;
-  lifecycleState?: string | Computed<string>;
-  name?: string | Computed<string>;
   phoneNumber?: V2beta1Conversation_PhoneNumber | Computed<V2beta1Conversation_PhoneNumber>;
-  startTime?: string | Computed<string>;
   telephonyConnectionInfo?: V2beta1Conversation_TelephonyConnectionInfo | Computed<V2beta1Conversation_TelephonyConnectionInfo>;
 }
 
@@ -632,30 +604,16 @@ export const V2beta1Conversation: ResourceBinding<V2beta1ConversationConfig, V2b
   fields: {
     conversationProfile: "conversation_profile",
     conversationStage: "conversation_stage",
-    endTime: "end_time",
-    ingestedContextReferences: {
-      wireName: "ingested_context_references",
-      kind: "map",
-      fields: V2beta1Conversation_IngestedContextReferencesFields,
-    },
     initialConversationProfile: {
       wireName: "initial_conversation_profile",
       kind: "object",
       fields: V2beta1Conversation_InitialConversationProfileFields,
     },
-    initialGeneratorContexts: {
-      wireName: "initial_generator_contexts",
-      kind: "map",
-      fields: V2beta1Conversation_InitialGeneratorContextsFields,
-    },
-    lifecycleState: "lifecycle_state",
-    name: "name",
     phoneNumber: {
       wireName: "phone_number",
       kind: "object",
       fields: V2beta1Conversation_PhoneNumberFields,
     },
-    startTime: "start_time",
     telephonyConnectionInfo: {
       wireName: "telephony_connection_info",
       kind: "object",

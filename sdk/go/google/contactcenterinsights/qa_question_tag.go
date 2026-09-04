@@ -4,16 +4,12 @@ package contactcenterinsights
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type QaQuestionTagConfig struct {
-	// Output only. The time at which the question tag was created.
-	CreateTime any
 	// Required. A user-specified display name for the tag.
 	DisplayName any
 	// Identifier. Resource name for the QaQuestionTag Format projects/{project}/locations/{location}/qaQuestionTags/{qa_question_tag} In the above format, the last segment, i.e., qa_question_tag, is a server-generated ID corresponding to the tag resource.
 	Name any
 	// Optional. The list of Scorecard Question IDs that the tag applies to. Each QaQuestionId is represented as a full resource name containing the Question ID. Lastly, Since a tag may not necessarily be referenced by any Scorecard Questions, we treat this field as optional.
 	QaQuestionIds any
-	// Output only. The most recent time at which the question tag was updated.
-	UpdateTime any
 }
 
 type QaQuestionTagAttrs struct {
@@ -32,10 +28,8 @@ type QaQuestionTagAttrs struct {
 var QaQuestionTag = ubx.ResourceBinding{
 	WireType: "google_contactcenterinsights_qa_question_tag",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"DisplayName":   ubx.FieldSpec{WireName: "display_name"},
+		"Name":          ubx.FieldSpec{WireName: "name"},
 		"QaQuestionIds": ubx.FieldSpec{WireName: "qa_question_ids"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

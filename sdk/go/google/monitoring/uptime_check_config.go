@@ -5,13 +5,13 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type UptimeCheckConfig_ContentMatchers_JsonPathMatcher struct {
 	JsonMatcher any
-	JsonPath any
+	JsonPath    any
 }
 
 type UptimeCheckConfig_ContentMatchers struct {
-	Content any
+	Content         any
 	JsonPathMatcher any
-	Matcher any
+	Matcher         any
 }
 
 type UptimeCheckConfig_HttpCheck_AcceptedResponseStatusCodes struct {
@@ -68,12 +68,12 @@ type UptimeCheckConfig_HttpCheck struct {
 }
 
 type UptimeCheckConfig_InternalCheckers struct {
-	DisplayName any
-	GcpZone any
-	Name any
-	Network any
+	DisplayName   any
+	GcpZone       any
+	Name          any
+	Network       any
 	PeerProjectId any
-	State any
+	State         any
 }
 
 type UptimeCheckConfig_MonitoredResource struct {
@@ -110,115 +110,115 @@ type UptimeCheckConfig_TcpCheck struct {
 }
 
 var UptimeCheckConfig_ContentMatchers_JsonPathMatcherFields = ubx.FieldMap{
-		"JsonMatcher": ubx.FieldSpec{WireName: "json_matcher"},
-		"JsonPath": ubx.FieldSpec{WireName: "json_path"},
-	}
+	"JsonMatcher": ubx.FieldSpec{WireName: "json_matcher"},
+	"JsonPath":    ubx.FieldSpec{WireName: "json_path"},
+}
 
 var UptimeCheckConfig_ContentMatchersFields = ubx.FieldMap{
-		"Content": ubx.FieldSpec{WireName: "content"},
-		"JsonPathMatcher": ubx.FieldSpec{
-			WireName: "json_path_matcher",
-			Kind: "object",
-			Fields: UptimeCheckConfig_ContentMatchers_JsonPathMatcherFields,
-		},
-		"Matcher": ubx.FieldSpec{WireName: "matcher"},
-	}
+	"Content": ubx.FieldSpec{WireName: "content"},
+	"JsonPathMatcher": ubx.FieldSpec{
+		WireName: "json_path_matcher",
+		Kind:     "object",
+		Fields:   UptimeCheckConfig_ContentMatchers_JsonPathMatcherFields,
+	},
+	"Matcher": ubx.FieldSpec{WireName: "matcher"},
+}
 
 var UptimeCheckConfig_HttpCheck_AcceptedResponseStatusCodesFields = ubx.FieldMap{
-		"StatusClass": ubx.FieldSpec{WireName: "status_class"},
-		"StatusValue": ubx.FieldSpec{WireName: "status_value"},
-	}
+	"StatusClass": ubx.FieldSpec{WireName: "status_class"},
+	"StatusValue": ubx.FieldSpec{WireName: "status_value"},
+}
 
 var UptimeCheckConfig_HttpCheck_AuthInfoFields = ubx.FieldMap{
-		"Password": ubx.FieldSpec{WireName: "password"},
-		"Username": ubx.FieldSpec{WireName: "username"},
-	}
+	"Password": ubx.FieldSpec{WireName: "password"},
+	"Username": ubx.FieldSpec{WireName: "username"},
+}
 
 var UptimeCheckConfig_HttpCheck_PingConfigFields = ubx.FieldMap{
-		"PingsCount": ubx.FieldSpec{WireName: "pings_count"},
-	}
+	"PingsCount": ubx.FieldSpec{WireName: "pings_count"},
+}
 
 var UptimeCheckConfig_HttpCheck_ServiceAgentAuthenticationFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var UptimeCheckConfig_HttpCheckFields = ubx.FieldMap{
-		"AcceptedResponseStatusCodes": ubx.FieldSpec{
-			WireName: "accepted_response_status_codes",
-			Kind: "list",
-			Fields: UptimeCheckConfig_HttpCheck_AcceptedResponseStatusCodesFields,
-		},
-		"AuthInfo": ubx.FieldSpec{
-			WireName: "auth_info",
-			Kind: "object",
-			Fields: UptimeCheckConfig_HttpCheck_AuthInfoFields,
-		},
-		"Body": ubx.FieldSpec{WireName: "body"},
-		"ContentType": ubx.FieldSpec{WireName: "content_type"},
-		"CustomContentType": ubx.FieldSpec{WireName: "custom_content_type"},
-		"Headers": ubx.FieldSpec{WireName: "headers"},
-		"MaskHeaders": ubx.FieldSpec{WireName: "mask_headers"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"PingConfig": ubx.FieldSpec{
-			WireName: "ping_config",
-			Kind: "object",
-			Fields: UptimeCheckConfig_HttpCheck_PingConfigFields,
-		},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"RequestMethod": ubx.FieldSpec{WireName: "request_method"},
-		"ServiceAgentAuthentication": ubx.FieldSpec{
-			WireName: "service_agent_authentication",
-			Kind: "object",
-			Fields: UptimeCheckConfig_HttpCheck_ServiceAgentAuthenticationFields,
-		},
-		"UseSsl": ubx.FieldSpec{WireName: "use_ssl"},
-		"ValidateSsl": ubx.FieldSpec{WireName: "validate_ssl"},
-	}
+	"AcceptedResponseStatusCodes": ubx.FieldSpec{
+		WireName: "accepted_response_status_codes",
+		Kind:     "list",
+		Fields:   UptimeCheckConfig_HttpCheck_AcceptedResponseStatusCodesFields,
+	},
+	"AuthInfo": ubx.FieldSpec{
+		WireName: "auth_info",
+		Kind:     "object",
+		Fields:   UptimeCheckConfig_HttpCheck_AuthInfoFields,
+	},
+	"Body":              ubx.FieldSpec{WireName: "body"},
+	"ContentType":       ubx.FieldSpec{WireName: "content_type"},
+	"CustomContentType": ubx.FieldSpec{WireName: "custom_content_type"},
+	"Headers":           ubx.FieldSpec{WireName: "headers"},
+	"MaskHeaders":       ubx.FieldSpec{WireName: "mask_headers"},
+	"Path":              ubx.FieldSpec{WireName: "path"},
+	"PingConfig": ubx.FieldSpec{
+		WireName: "ping_config",
+		Kind:     "object",
+		Fields:   UptimeCheckConfig_HttpCheck_PingConfigFields,
+	},
+	"Port":          ubx.FieldSpec{WireName: "port"},
+	"RequestMethod": ubx.FieldSpec{WireName: "request_method"},
+	"ServiceAgentAuthentication": ubx.FieldSpec{
+		WireName: "service_agent_authentication",
+		Kind:     "object",
+		Fields:   UptimeCheckConfig_HttpCheck_ServiceAgentAuthenticationFields,
+	},
+	"UseSsl":      ubx.FieldSpec{WireName: "use_ssl"},
+	"ValidateSsl": ubx.FieldSpec{WireName: "validate_ssl"},
+}
 
 var UptimeCheckConfig_InternalCheckersFields = ubx.FieldMap{
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"GcpZone": ubx.FieldSpec{WireName: "gcp_zone"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"PeerProjectId": ubx.FieldSpec{WireName: "peer_project_id"},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"DisplayName":   ubx.FieldSpec{WireName: "display_name"},
+	"GcpZone":       ubx.FieldSpec{WireName: "gcp_zone"},
+	"Name":          ubx.FieldSpec{WireName: "name"},
+	"Network":       ubx.FieldSpec{WireName: "network"},
+	"PeerProjectId": ubx.FieldSpec{WireName: "peer_project_id"},
+	"State":         ubx.FieldSpec{WireName: "state"},
+}
 
 var UptimeCheckConfig_MonitoredResourceFields = ubx.FieldMap{
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Labels": ubx.FieldSpec{WireName: "labels"},
+	"Type":   ubx.FieldSpec{WireName: "type"},
+}
 
 var UptimeCheckConfig_ResourceGroupFields = ubx.FieldMap{
-		"GroupId": ubx.FieldSpec{WireName: "group_id"},
-		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
-	}
+	"GroupId":      ubx.FieldSpec{WireName: "group_id"},
+	"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
+}
 
 var UptimeCheckConfig_SyntheticMonitor_CloudFunctionV2Fields = ubx.FieldMap{
-		"CloudRunRevision": ubx.FieldSpec{
-			WireName: "cloud_run_revision",
-			Kind: "object",
-			Fields: UptimeCheckConfig_MonitoredResourceFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"CloudRunRevision": ubx.FieldSpec{
+		WireName: "cloud_run_revision",
+		Kind:     "object",
+		Fields:   UptimeCheckConfig_MonitoredResourceFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var UptimeCheckConfig_SyntheticMonitorFields = ubx.FieldMap{
-		"CloudFunctionV2": ubx.FieldSpec{
-			WireName: "cloud_function_v2",
-			Kind: "object",
-			Fields: UptimeCheckConfig_SyntheticMonitor_CloudFunctionV2Fields,
-		},
-	}
+	"CloudFunctionV2": ubx.FieldSpec{
+		WireName: "cloud_function_v2",
+		Kind:     "object",
+		Fields:   UptimeCheckConfig_SyntheticMonitor_CloudFunctionV2Fields,
+	},
+}
 
 var UptimeCheckConfig_TcpCheckFields = ubx.FieldMap{
-		"PingConfig": ubx.FieldSpec{
-			WireName: "ping_config",
-			Kind: "object",
-			Fields: UptimeCheckConfig_HttpCheck_PingConfigFields,
-		},
-		"Port": ubx.FieldSpec{WireName: "port"},
-	}
+	"PingConfig": ubx.FieldSpec{
+		WireName: "ping_config",
+		Kind:     "object",
+		Fields:   UptimeCheckConfig_HttpCheck_PingConfigFields,
+	},
+	"Port": ubx.FieldSpec{WireName: "port"},
+}
 
 type UptimeCheckConfigConfig struct {
 	// The type of checkers to use to execute the Uptime check.
@@ -300,47 +300,47 @@ var UptimeCheckConfig = ubx.ResourceBinding{
 		"CheckerType": ubx.FieldSpec{WireName: "checker_type"},
 		"ContentMatchers": ubx.FieldSpec{
 			WireName: "content_matchers",
-			Kind: "list",
-			Fields: UptimeCheckConfig_ContentMatchersFields,
+			Kind:     "list",
+			Fields:   UptimeCheckConfig_ContentMatchersFields,
 		},
-		"Disabled": ubx.FieldSpec{WireName: "disabled"},
+		"Disabled":    ubx.FieldSpec{WireName: "disabled"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"HttpCheck": ubx.FieldSpec{
 			WireName: "http_check",
-			Kind: "object",
-			Fields: UptimeCheckConfig_HttpCheckFields,
+			Kind:     "object",
+			Fields:   UptimeCheckConfig_HttpCheckFields,
 		},
 		"InternalCheckers": ubx.FieldSpec{
 			WireName: "internal_checkers",
-			Kind: "list",
-			Fields: UptimeCheckConfig_InternalCheckersFields,
+			Kind:     "list",
+			Fields:   UptimeCheckConfig_InternalCheckersFields,
 		},
-		"IsInternal": ubx.FieldSpec{WireName: "is_internal"},
+		"IsInternal":       ubx.FieldSpec{WireName: "is_internal"},
 		"LogCheckFailures": ubx.FieldSpec{WireName: "log_check_failures"},
 		"MonitoredResource": ubx.FieldSpec{
 			WireName: "monitored_resource",
-			Kind: "object",
-			Fields: UptimeCheckConfig_MonitoredResourceFields,
+			Kind:     "object",
+			Fields:   UptimeCheckConfig_MonitoredResourceFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":   ubx.FieldSpec{WireName: "name"},
 		"Period": ubx.FieldSpec{WireName: "period"},
 		"ResourceGroup": ubx.FieldSpec{
 			WireName: "resource_group",
-			Kind: "object",
-			Fields: UptimeCheckConfig_ResourceGroupFields,
+			Kind:     "object",
+			Fields:   UptimeCheckConfig_ResourceGroupFields,
 		},
 		"SelectedRegions": ubx.FieldSpec{WireName: "selected_regions"},
 		"SyntheticMonitor": ubx.FieldSpec{
 			WireName: "synthetic_monitor",
-			Kind: "object",
-			Fields: UptimeCheckConfig_SyntheticMonitorFields,
+			Kind:     "object",
+			Fields:   UptimeCheckConfig_SyntheticMonitorFields,
 		},
 		"TcpCheck": ubx.FieldSpec{
 			WireName: "tcp_check",
-			Kind: "object",
-			Fields: UptimeCheckConfig_TcpCheckFields,
+			Kind:     "object",
+			Fields:   UptimeCheckConfig_TcpCheckFields,
 		},
-		"Timeout": ubx.FieldSpec{WireName: "timeout"},
+		"Timeout":    ubx.FieldSpec{WireName: "timeout"},
 		"UserLabels": ubx.FieldSpec{WireName: "user_labels"},
 	},
 }

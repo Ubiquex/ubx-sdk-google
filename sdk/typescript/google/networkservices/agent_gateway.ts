@@ -86,8 +86,6 @@ export interface AgentGatewayConfig {
   agentConnectivityTemplate?: string | Computed<string>;
   /** AgentGatewayOutputCard contains informational output-only fields */
   agentGatewayCard?: AgentGateway_AgentGatewayCard | Computed<AgentGateway_AgentGatewayCard>;
-  /** Output only. The timestamp when the resource was created. */
-  createTime?: string | Computed<string>;
   /** Optional. A free-text description of the resource. Max length 1024 characters. */
   description?: string | Computed<string>;
   /** Optional. Etag of the resource. If this is provided, it must match the server's etag. If the provided etag does not match the server's etag, the request will fail with a 409 ABORTED error. */
@@ -106,8 +104,6 @@ export interface AgentGatewayConfig {
   registries?: string[] | Computed<string[]>;
   /** Configuration for Self Managed deployment mode. Attach to existing Application Load Balancers or Secure Web Proxies. */
   selfManaged?: AgentGateway_SelfManaged | Computed<AgentGateway_SelfManaged>;
-  /** Output only. The timestamp when the resource was updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface AgentGatewayAttrs {
@@ -148,7 +144,6 @@ export const AgentGateway: ResourceBinding<AgentGatewayConfig, AgentGatewayAttrs
       kind: "object",
       fields: AgentGateway_AgentGatewayCardFields,
     },
-    createTime: "create_time",
     description: "description",
     etag: "etag",
     googleManaged: {
@@ -170,6 +165,5 @@ export const AgentGateway: ResourceBinding<AgentGatewayConfig, AgentGatewayAttrs
       kind: "object",
       fields: AgentGateway_SelfManagedFields,
     },
-    updateTime: "update_time",
   },
 };

@@ -29,27 +29,25 @@ type Lake_MetastoreStatus struct {
 }
 
 var Lake_AssetStatusFields = ubx.FieldMap{
-		"ActiveAssets": ubx.FieldSpec{WireName: "active_assets"},
-		"SecurityPolicyApplyingAssets": ubx.FieldSpec{WireName: "security_policy_applying_assets"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-	}
+	"ActiveAssets":                 ubx.FieldSpec{WireName: "active_assets"},
+	"SecurityPolicyApplyingAssets": ubx.FieldSpec{WireName: "security_policy_applying_assets"},
+	"UpdateTime":                   ubx.FieldSpec{WireName: "update_time"},
+}
 
 var Lake_MetastoreFields = ubx.FieldMap{
-		"Service": ubx.FieldSpec{WireName: "service"},
-	}
+	"Service": ubx.FieldSpec{WireName: "service"},
+}
 
 var Lake_MetastoreStatusFields = ubx.FieldMap{
-		"Endpoint": ubx.FieldSpec{WireName: "endpoint"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-	}
+	"Endpoint":   ubx.FieldSpec{WireName: "endpoint"},
+	"Message":    ubx.FieldSpec{WireName: "message"},
+	"State":      ubx.FieldSpec{WireName: "state"},
+	"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+}
 
 type LakeConfig struct {
 	// Aggregated status of the underlying assets of a lake or zone.
 	AssetStatus any
-	// Output only. The time when the lake was created.
-	CreateTime any
 	// Optional. Description of the lake.
 	Description any
 	// Optional. User friendly display name.
@@ -60,16 +58,6 @@ type LakeConfig struct {
 	Metastore any
 	// Status of Lake and Dataproc Metastore service instance association.
 	MetastoreStatus any
-	// Output only. The relative resource name of the lake, of the form: projects/{project_number}/locations/{location_id}/lakes/{lake_id}.
-	Name any
-	// Output only. Service account associated with this lake. This service account must be authorized to access or operate on resources managed by the lake.
-	ServiceAccount any
-	// Output only. Current state of the lake.
-	State any
-	// Output only. System generated globally unique ID for the lake. This ID will be different if the lake is deleted and re-created with the same name.
-	Uid any
-	// Output only. The time when the lake was last updated.
-	UpdateTime any
 }
 
 type LakeAttrs struct {
@@ -104,27 +92,21 @@ var Lake = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AssetStatus": ubx.FieldSpec{
 			WireName: "asset_status",
-			Kind: "object",
-			Fields: Lake_AssetStatusFields,
+			Kind:     "object",
+			Fields:   Lake_AssetStatusFields,
 		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
 		"Metastore": ubx.FieldSpec{
 			WireName: "metastore",
-			Kind: "object",
-			Fields: Lake_MetastoreFields,
+			Kind:     "object",
+			Fields:   Lake_MetastoreFields,
 		},
 		"MetastoreStatus": ubx.FieldSpec{
 			WireName: "metastore_status",
-			Kind: "object",
-			Fields: Lake_MetastoreStatusFields,
+			Kind:     "object",
+			Fields:   Lake_MetastoreStatusFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

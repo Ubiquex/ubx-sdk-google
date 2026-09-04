@@ -297,30 +297,16 @@ _AlphaHaController_ZoneConfigurationsFields = {
 class AlphaHaControllerConfig:
     # Advanced configuration option. If specified, these Backend Services need to be pre-created. Currently, only one backend service can be specified, and it must be L4 Internal Load Balancer (ILB).
     backend_services: Any = None
-    # Output only. [Output Only] Creation timestamp in RFC3339 text format.
-    creation_timestamp: Any = None
     # An optional description of this resource. Provide this property when you create the resource.
     description: Any = None
     # Indicates how failover should be initiated.
     failover_initiation: Any = None
-    # Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-    id: Any = None
     # Name of the instance that HaController is in charge of. If not specified the HaController's resource name will be used instead. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
     instance_name: Any = None
-    # Output only. [Output Only] Type of the resource. Alwayscompute#haController for HaControllers.
-    kind: Any = None
     # Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
     name: Any = None
     # Basic networking configuration. Required backend services and forwarding rules will be automatically created with default parameters.
     networking_auto_configuration: Any = None
-    # Output only. [Output Only] URL of the region where the resource resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
-    region: Any = None
-    # Output only. [Output only] Server-defined URL for the resource.
-    self_link: Any = None
-    # Output only. [Output Only] Server-defined URL for this resource with the resource id.
-    self_link_with_id: Any = None
-    # Output only. The current state of the HA Controller.
-    state: Any = None
     # Contains information about current status of the HaController.
     status: Any = None
     # Map of zone configurations Key: name of the zone Value: ZoneConfiguration
@@ -363,22 +349,15 @@ AlphaHaController = ubx.ResourceBinding(
     wire_type="google_compute_alpha_ha_controller",
     fields={
         "backend_services": ubx.FieldSpec(wire_name="backend_services"),
-        "creation_timestamp": ubx.FieldSpec(wire_name="creation_timestamp"),
         "description": ubx.FieldSpec(wire_name="description"),
         "failover_initiation": ubx.FieldSpec(wire_name="failover_initiation"),
-        "id": ubx.FieldSpec(wire_name="id"),
         "instance_name": ubx.FieldSpec(wire_name="instance_name"),
-        "kind": ubx.FieldSpec(wire_name="kind"),
         "name": ubx.FieldSpec(wire_name="name"),
         "networking_auto_configuration": ubx.FieldSpec(
             wire_name="networking_auto_configuration",
             kind="object",
             fields=_AlphaHaController_NetworkingAutoConfigurationFields,
         ),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "self_link": ubx.FieldSpec(wire_name="self_link"),
-        "self_link_with_id": ubx.FieldSpec(wire_name="self_link_with_id"),
-        "state": ubx.FieldSpec(wire_name="state"),
         "status": ubx.FieldSpec(
             wire_name="status",
             kind="object",

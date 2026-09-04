@@ -65,8 +65,6 @@ class ConnectClusterConfig:
     capacity_config: Any = None
     # Optional. Reserved for future use. This field is meant for worker config overrides, but is unsupported for now.
     config: Any = None
-    # Output only. The time when the cluster was created.
-    create_time: Any = None
     # Configuration properties for a Kafka Connect cluster deployed to Google Cloud Platform.
     gcp_config: Any = None
     # Required. Immutable. The name of the Kafka cluster this Kafka Connect cluster is attached to. Structured like: projects/{project}/locations/{location}/clusters/{cluster}
@@ -75,14 +73,6 @@ class ConnectClusterConfig:
     labels: Any = None
     # Identifier. The name of the Kafka Connect cluster. Structured like: projects/{project_number}/locations/{location}/connectClusters/{connect_cluster_id}
     name: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzi: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzs: Any = None
-    # Output only. The current state of the Kafka Connect cluster.
-    state: Any = None
-    # Output only. The time when the cluster was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class ConnectClusterAttrs:
@@ -118,7 +108,6 @@ ConnectCluster = ubx.ResourceBinding(
             fields=_ConnectCluster_CapacityConfigFields,
         ),
         "config": ubx.FieldSpec(wire_name="config"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "gcp_config": ubx.FieldSpec(
             wire_name="gcp_config",
             kind="object",
@@ -127,9 +116,5 @@ ConnectCluster = ubx.ResourceBinding(
         "kafka_cluster": ubx.FieldSpec(wire_name="kafka_cluster"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "satisfies_pzi": ubx.FieldSpec(wire_name="satisfies_pzi"),
-        "satisfies_pzs": ubx.FieldSpec(wire_name="satisfies_pzs"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

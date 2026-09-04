@@ -4,27 +4,27 @@ package connectors
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EndUserAuthentication_ConfigVariables_SecretValue struct {
-	SecretValue any
+	SecretValue   any
 	SecretVersion any
 }
 
 type EndUserAuthentication_ConfigVariables struct {
-	BoolValue any
-	IntValue any
-	Key any
+	BoolValue   any
+	IntValue    any
+	Key         any
 	SecretValue any
 	StringValue any
 }
 
 type EndUserAuthentication_DestinationConfigs_Destinations struct {
-	Host any
-	Port any
+	Host              any
+	Port              any
 	ServiceAttachment any
 }
 
 type EndUserAuthentication_DestinationConfigs struct {
 	Destinations any
-	Key any
+	Key          any
 }
 
 type EndUserAuthentication_EndUserAuthenticationConfig_Oauth2AuthCodeFlow_OauthTokenData struct {
@@ -133,7 +133,7 @@ type EndUserAuthentication_EndUserAuthenticationConfig struct {
 }
 
 type EndUserAuthentication_NotifyEndpointDestination_Endpoint_Headers struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -161,209 +161,207 @@ type EndUserAuthentication_Status struct {
 }
 
 var EndUserAuthentication_ConfigVariables_SecretValueFields = ubx.FieldMap{
-		"SecretValue": ubx.FieldSpec{WireName: "secret_value"},
-		"SecretVersion": ubx.FieldSpec{WireName: "secret_version"},
-	}
+	"SecretValue":   ubx.FieldSpec{WireName: "secret_value"},
+	"SecretVersion": ubx.FieldSpec{WireName: "secret_version"},
+}
 
 var EndUserAuthentication_ConfigVariablesFields = ubx.FieldMap{
-		"BoolValue": ubx.FieldSpec{WireName: "bool_value"},
-		"IntValue": ubx.FieldSpec{WireName: "int_value"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"SecretValue": ubx.FieldSpec{
-			WireName: "secret_value",
-			Kind: "object",
-			Fields: EndUserAuthentication_ConfigVariables_SecretValueFields,
-		},
-		"StringValue": ubx.FieldSpec{WireName: "string_value"},
-	}
+	"BoolValue": ubx.FieldSpec{WireName: "bool_value"},
+	"IntValue":  ubx.FieldSpec{WireName: "int_value"},
+	"Key":       ubx.FieldSpec{WireName: "key"},
+	"SecretValue": ubx.FieldSpec{
+		WireName: "secret_value",
+		Kind:     "object",
+		Fields:   EndUserAuthentication_ConfigVariables_SecretValueFields,
+	},
+	"StringValue": ubx.FieldSpec{WireName: "string_value"},
+}
 
 var EndUserAuthentication_DestinationConfigs_DestinationsFields = ubx.FieldMap{
-		"Host": ubx.FieldSpec{WireName: "host"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"ServiceAttachment": ubx.FieldSpec{WireName: "service_attachment"},
-	}
+	"Host":              ubx.FieldSpec{WireName: "host"},
+	"Port":              ubx.FieldSpec{WireName: "port"},
+	"ServiceAttachment": ubx.FieldSpec{WireName: "service_attachment"},
+}
 
 var EndUserAuthentication_DestinationConfigsFields = ubx.FieldMap{
-		"Destinations": ubx.FieldSpec{
-			WireName: "destinations",
-			Kind: "list",
-			Fields: EndUserAuthentication_DestinationConfigs_DestinationsFields,
-		},
-		"Key": ubx.FieldSpec{WireName: "key"},
-	}
+	"Destinations": ubx.FieldSpec{
+		WireName: "destinations",
+		Kind:     "list",
+		Fields:   EndUserAuthentication_DestinationConfigs_DestinationsFields,
+	},
+	"Key": ubx.FieldSpec{WireName: "key"},
+}
 
 var EndUserAuthentication_EndUserAuthenticationConfig_Oauth2AuthCodeFlow_OauthTokenDataFields = ubx.FieldMap{
-		"AccessToken": ubx.FieldSpec{
-			WireName: "access_token",
-			Kind: "object",
-			Fields: EndUserAuthentication_ConfigVariables_SecretValueFields,
-		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Expiry": ubx.FieldSpec{WireName: "expiry"},
-		"RefreshToken": ubx.FieldSpec{
-			WireName: "refresh_token",
-			Kind: "object",
-			Fields: EndUserAuthentication_ConfigVariables_SecretValueFields,
-		},
-	}
+	"AccessToken": ubx.FieldSpec{
+		WireName: "access_token",
+		Kind:     "object",
+		Fields:   EndUserAuthentication_ConfigVariables_SecretValueFields,
+	},
+	"CreateTime": ubx.FieldSpec{WireName: "create_time"},
+	"Expiry":     ubx.FieldSpec{WireName: "expiry"},
+	"RefreshToken": ubx.FieldSpec{
+		WireName: "refresh_token",
+		Kind:     "object",
+		Fields:   EndUserAuthentication_ConfigVariables_SecretValueFields,
+	},
+}
 
 var EndUserAuthentication_EndUserAuthenticationConfig_Oauth2AuthCodeFlowFields = ubx.FieldMap{
-		"AuthCode": ubx.FieldSpec{WireName: "auth_code"},
-		"AuthUri": ubx.FieldSpec{WireName: "auth_uri"},
-		"ClientId": ubx.FieldSpec{WireName: "client_id"},
-		"ClientSecret": ubx.FieldSpec{
-			WireName: "client_secret",
-			Kind: "object",
-			Fields: EndUserAuthentication_ConfigVariables_SecretValueFields,
-		},
-		"EnablePkce": ubx.FieldSpec{WireName: "enable_pkce"},
-		"OauthTokenData": ubx.FieldSpec{
-			WireName: "oauth_token_data",
-			Kind: "object",
-			Fields: EndUserAuthentication_EndUserAuthenticationConfig_Oauth2AuthCodeFlow_OauthTokenDataFields,
-		},
-		"PkceVerifier": ubx.FieldSpec{WireName: "pkce_verifier"},
-		"RedirectUri": ubx.FieldSpec{WireName: "redirect_uri"},
-		"Scopes": ubx.FieldSpec{WireName: "scopes"},
-	}
+	"AuthCode": ubx.FieldSpec{WireName: "auth_code"},
+	"AuthUri":  ubx.FieldSpec{WireName: "auth_uri"},
+	"ClientId": ubx.FieldSpec{WireName: "client_id"},
+	"ClientSecret": ubx.FieldSpec{
+		WireName: "client_secret",
+		Kind:     "object",
+		Fields:   EndUserAuthentication_ConfigVariables_SecretValueFields,
+	},
+	"EnablePkce": ubx.FieldSpec{WireName: "enable_pkce"},
+	"OauthTokenData": ubx.FieldSpec{
+		WireName: "oauth_token_data",
+		Kind:     "object",
+		Fields:   EndUserAuthentication_EndUserAuthenticationConfig_Oauth2AuthCodeFlow_OauthTokenDataFields,
+	},
+	"PkceVerifier": ubx.FieldSpec{WireName: "pkce_verifier"},
+	"RedirectUri":  ubx.FieldSpec{WireName: "redirect_uri"},
+	"Scopes":       ubx.FieldSpec{WireName: "scopes"},
+}
 
 var EndUserAuthentication_EndUserAuthenticationConfig_Oauth2AuthCodeFlowGoogleManagedFields = ubx.FieldMap{
-		"AuthCode": ubx.FieldSpec{WireName: "auth_code"},
-		"OauthTokenData": ubx.FieldSpec{
-			WireName: "oauth_token_data",
-			Kind: "object",
-			Fields: EndUserAuthentication_EndUserAuthenticationConfig_Oauth2AuthCodeFlow_OauthTokenDataFields,
-		},
-		"RedirectUri": ubx.FieldSpec{WireName: "redirect_uri"},
-		"Scopes": ubx.FieldSpec{WireName: "scopes"},
-	}
+	"AuthCode": ubx.FieldSpec{WireName: "auth_code"},
+	"OauthTokenData": ubx.FieldSpec{
+		WireName: "oauth_token_data",
+		Kind:     "object",
+		Fields:   EndUserAuthentication_EndUserAuthenticationConfig_Oauth2AuthCodeFlow_OauthTokenDataFields,
+	},
+	"RedirectUri": ubx.FieldSpec{WireName: "redirect_uri"},
+	"Scopes":      ubx.FieldSpec{WireName: "scopes"},
+}
 
 var EndUserAuthentication_EndUserAuthenticationConfig_Oauth2ClientCredentialsFields = ubx.FieldMap{
-		"ClientId": ubx.FieldSpec{WireName: "client_id"},
-		"ClientSecret": ubx.FieldSpec{
-			WireName: "client_secret",
-			Kind: "object",
-			Fields: EndUserAuthentication_ConfigVariables_SecretValueFields,
-		},
-	}
+	"ClientId": ubx.FieldSpec{WireName: "client_id"},
+	"ClientSecret": ubx.FieldSpec{
+		WireName: "client_secret",
+		Kind:     "object",
+		Fields:   EndUserAuthentication_ConfigVariables_SecretValueFields,
+	},
+}
 
 var EndUserAuthentication_EndUserAuthenticationConfig_Oauth2JwtBearer_JwtClaimsFields = ubx.FieldMap{
-		"Audience": ubx.FieldSpec{WireName: "audience"},
-		"Issuer": ubx.FieldSpec{WireName: "issuer"},
-		"Subject": ubx.FieldSpec{WireName: "subject"},
-	}
+	"Audience": ubx.FieldSpec{WireName: "audience"},
+	"Issuer":   ubx.FieldSpec{WireName: "issuer"},
+	"Subject":  ubx.FieldSpec{WireName: "subject"},
+}
 
 var EndUserAuthentication_EndUserAuthenticationConfig_Oauth2JwtBearerFields = ubx.FieldMap{
-		"ClientKey": ubx.FieldSpec{
-			WireName: "client_key",
-			Kind: "object",
-			Fields: EndUserAuthentication_ConfigVariables_SecretValueFields,
-		},
-		"JwtClaims": ubx.FieldSpec{
-			WireName: "jwt_claims",
-			Kind: "object",
-			Fields: EndUserAuthentication_EndUserAuthenticationConfig_Oauth2JwtBearer_JwtClaimsFields,
-		},
-	}
+	"ClientKey": ubx.FieldSpec{
+		WireName: "client_key",
+		Kind:     "object",
+		Fields:   EndUserAuthentication_ConfigVariables_SecretValueFields,
+	},
+	"JwtClaims": ubx.FieldSpec{
+		WireName: "jwt_claims",
+		Kind:     "object",
+		Fields:   EndUserAuthentication_EndUserAuthenticationConfig_Oauth2JwtBearer_JwtClaimsFields,
+	},
+}
 
 var EndUserAuthentication_EndUserAuthenticationConfig_SshPublicKeyFields = ubx.FieldMap{
-		"CertType": ubx.FieldSpec{WireName: "cert_type"},
-		"SshClientCert": ubx.FieldSpec{
-			WireName: "ssh_client_cert",
-			Kind: "object",
-			Fields: EndUserAuthentication_ConfigVariables_SecretValueFields,
-		},
-		"SshClientCertPass": ubx.FieldSpec{
-			WireName: "ssh_client_cert_pass",
-			Kind: "object",
-			Fields: EndUserAuthentication_ConfigVariables_SecretValueFields,
-		},
-		"Username": ubx.FieldSpec{WireName: "username"},
-	}
+	"CertType": ubx.FieldSpec{WireName: "cert_type"},
+	"SshClientCert": ubx.FieldSpec{
+		WireName: "ssh_client_cert",
+		Kind:     "object",
+		Fields:   EndUserAuthentication_ConfigVariables_SecretValueFields,
+	},
+	"SshClientCertPass": ubx.FieldSpec{
+		WireName: "ssh_client_cert_pass",
+		Kind:     "object",
+		Fields:   EndUserAuthentication_ConfigVariables_SecretValueFields,
+	},
+	"Username": ubx.FieldSpec{WireName: "username"},
+}
 
 var EndUserAuthentication_EndUserAuthenticationConfig_UserPasswordFields = ubx.FieldMap{
-		"Password": ubx.FieldSpec{
-			WireName: "password",
-			Kind: "object",
-			Fields: EndUserAuthentication_ConfigVariables_SecretValueFields,
-		},
-		"Username": ubx.FieldSpec{WireName: "username"},
-	}
+	"Password": ubx.FieldSpec{
+		WireName: "password",
+		Kind:     "object",
+		Fields:   EndUserAuthentication_ConfigVariables_SecretValueFields,
+	},
+	"Username": ubx.FieldSpec{WireName: "username"},
+}
 
 var EndUserAuthentication_EndUserAuthenticationConfigFields = ubx.FieldMap{
-		"AdditionalVariables": ubx.FieldSpec{
-			WireName: "additional_variables",
-			Kind: "list",
-			Fields: EndUserAuthentication_ConfigVariablesFields,
-		},
-		"AuthKey": ubx.FieldSpec{WireName: "auth_key"},
-		"AuthType": ubx.FieldSpec{WireName: "auth_type"},
-		"Oauth2AuthCodeFlow": ubx.FieldSpec{
-			WireName: "oauth2_auth_code_flow",
-			Kind: "object",
-			Fields: EndUserAuthentication_EndUserAuthenticationConfig_Oauth2AuthCodeFlowFields,
-		},
-		"Oauth2AuthCodeFlowGoogleManaged": ubx.FieldSpec{
-			WireName: "oauth2_auth_code_flow_google_managed",
-			Kind: "object",
-			Fields: EndUserAuthentication_EndUserAuthenticationConfig_Oauth2AuthCodeFlowGoogleManagedFields,
-		},
-		"Oauth2ClientCredentials": ubx.FieldSpec{
-			WireName: "oauth2_client_credentials",
-			Kind: "object",
-			Fields: EndUserAuthentication_EndUserAuthenticationConfig_Oauth2ClientCredentialsFields,
-		},
-		"Oauth2JwtBearer": ubx.FieldSpec{
-			WireName: "oauth2_jwt_bearer",
-			Kind: "object",
-			Fields: EndUserAuthentication_EndUserAuthenticationConfig_Oauth2JwtBearerFields,
-		},
-		"SshPublicKey": ubx.FieldSpec{
-			WireName: "ssh_public_key",
-			Kind: "object",
-			Fields: EndUserAuthentication_EndUserAuthenticationConfig_SshPublicKeyFields,
-		},
-		"UserPassword": ubx.FieldSpec{
-			WireName: "user_password",
-			Kind: "object",
-			Fields: EndUserAuthentication_EndUserAuthenticationConfig_UserPasswordFields,
-		},
-	}
+	"AdditionalVariables": ubx.FieldSpec{
+		WireName: "additional_variables",
+		Kind:     "list",
+		Fields:   EndUserAuthentication_ConfigVariablesFields,
+	},
+	"AuthKey":  ubx.FieldSpec{WireName: "auth_key"},
+	"AuthType": ubx.FieldSpec{WireName: "auth_type"},
+	"Oauth2AuthCodeFlow": ubx.FieldSpec{
+		WireName: "oauth2_auth_code_flow",
+		Kind:     "object",
+		Fields:   EndUserAuthentication_EndUserAuthenticationConfig_Oauth2AuthCodeFlowFields,
+	},
+	"Oauth2AuthCodeFlowGoogleManaged": ubx.FieldSpec{
+		WireName: "oauth2_auth_code_flow_google_managed",
+		Kind:     "object",
+		Fields:   EndUserAuthentication_EndUserAuthenticationConfig_Oauth2AuthCodeFlowGoogleManagedFields,
+	},
+	"Oauth2ClientCredentials": ubx.FieldSpec{
+		WireName: "oauth2_client_credentials",
+		Kind:     "object",
+		Fields:   EndUserAuthentication_EndUserAuthenticationConfig_Oauth2ClientCredentialsFields,
+	},
+	"Oauth2JwtBearer": ubx.FieldSpec{
+		WireName: "oauth2_jwt_bearer",
+		Kind:     "object",
+		Fields:   EndUserAuthentication_EndUserAuthenticationConfig_Oauth2JwtBearerFields,
+	},
+	"SshPublicKey": ubx.FieldSpec{
+		WireName: "ssh_public_key",
+		Kind:     "object",
+		Fields:   EndUserAuthentication_EndUserAuthenticationConfig_SshPublicKeyFields,
+	},
+	"UserPassword": ubx.FieldSpec{
+		WireName: "user_password",
+		Kind:     "object",
+		Fields:   EndUserAuthentication_EndUserAuthenticationConfig_UserPasswordFields,
+	},
+}
 
 var EndUserAuthentication_NotifyEndpointDestination_Endpoint_HeadersFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var EndUserAuthentication_NotifyEndpointDestination_EndpointFields = ubx.FieldMap{
-		"EndpointUri": ubx.FieldSpec{WireName: "endpoint_uri"},
-		"Headers": ubx.FieldSpec{
-			WireName: "headers",
-			Kind: "list",
-			Fields: EndUserAuthentication_NotifyEndpointDestination_Endpoint_HeadersFields,
-		},
-	}
+	"EndpointUri": ubx.FieldSpec{WireName: "endpoint_uri"},
+	"Headers": ubx.FieldSpec{
+		WireName: "headers",
+		Kind:     "list",
+		Fields:   EndUserAuthentication_NotifyEndpointDestination_Endpoint_HeadersFields,
+	},
+}
 
 var EndUserAuthentication_NotifyEndpointDestinationFields = ubx.FieldMap{
-		"Endpoint": ubx.FieldSpec{
-			WireName: "endpoint",
-			Kind: "object",
-			Fields: EndUserAuthentication_NotifyEndpointDestination_EndpointFields,
-		},
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Endpoint": ubx.FieldSpec{
+		WireName: "endpoint",
+		Kind:     "object",
+		Fields:   EndUserAuthentication_NotifyEndpointDestination_EndpointFields,
+	},
+	"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
+	"Type":           ubx.FieldSpec{WireName: "type"},
+}
 
 var EndUserAuthentication_StatusFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"State":       ubx.FieldSpec{WireName: "state"},
+}
 
 type EndUserAuthenticationConfig struct {
 	// Optional. Config variables for the EndUserAuthentication.
 	ConfigVariables any
-	// Output only. Created time.
-	CreateTime any
 	// Optional. Destination configs for the EndUserAuthentication.
 	DestinationConfigs any
 	// EndUserAuthenticationConfig defines details of a authentication configuration for EUC
@@ -378,8 +376,6 @@ type EndUserAuthenticationConfig struct {
 	Roles any
 	// EndUserAuthentication Status denotes the status of the EndUserAuthentication resource.
 	Status any
-	// Output only. Updated time.
-	UpdateTime any
 	// Optional. The user id of the user.
 	UserId any
 }
@@ -414,34 +410,32 @@ var EndUserAuthentication = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ConfigVariables": ubx.FieldSpec{
 			WireName: "config_variables",
-			Kind: "list",
-			Fields: EndUserAuthentication_ConfigVariablesFields,
+			Kind:     "list",
+			Fields:   EndUserAuthentication_ConfigVariablesFields,
 		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"DestinationConfigs": ubx.FieldSpec{
 			WireName: "destination_configs",
-			Kind: "list",
-			Fields: EndUserAuthentication_DestinationConfigsFields,
+			Kind:     "list",
+			Fields:   EndUserAuthentication_DestinationConfigsFields,
 		},
 		"EndUserAuthenticationConfig": ubx.FieldSpec{
 			WireName: "end_user_authentication_config",
-			Kind: "object",
-			Fields: EndUserAuthentication_EndUserAuthenticationConfigFields,
+			Kind:     "object",
+			Fields:   EndUserAuthentication_EndUserAuthenticationConfigFields,
 		},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":   ubx.FieldSpec{WireName: "name"},
 		"NotifyEndpointDestination": ubx.FieldSpec{
 			WireName: "notify_endpoint_destination",
-			Kind: "object",
-			Fields: EndUserAuthentication_NotifyEndpointDestinationFields,
+			Kind:     "object",
+			Fields:   EndUserAuthentication_NotifyEndpointDestinationFields,
 		},
 		"Roles": ubx.FieldSpec{WireName: "roles"},
 		"Status": ubx.FieldSpec{
 			WireName: "status",
-			Kind: "object",
-			Fields: EndUserAuthentication_StatusFields,
+			Kind:     "object",
+			Fields:   EndUserAuthentication_StatusFields,
 		},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 		"UserId": ubx.FieldSpec{WireName: "user_id"},
 	},
 }

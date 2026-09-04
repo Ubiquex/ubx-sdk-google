@@ -4,14 +4,10 @@ package networksecurity
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta1UrlListConfig struct {
-	// Output only. Time when the security policy was created.
-	CreateTime any
 	// Optional. Free-text description of the resource.
 	Description any
 	// Required. Name of the resource provided by the user. Name is of the form projects/{project}/locations/{location}/urlLists/{url_list} url_list should match the pattern:(^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$).
 	Name any
-	// Output only. Time when the security policy was updated.
-	UpdateTime any
 	// Required. FQDNs and URLs.
 	Values any
 }
@@ -32,10 +28,8 @@ type V1beta1UrlListAttrs struct {
 var V1beta1UrlList = ubx.ResourceBinding{
 	WireType: "google_networksecurity_v1beta1_url_list",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-		"Values": ubx.FieldSpec{WireName: "values"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Values":      ubx.FieldSpec{WireName: "values"},
 	},
 }

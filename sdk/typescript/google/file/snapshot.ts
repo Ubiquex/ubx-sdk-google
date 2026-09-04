@@ -2,18 +2,10 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface SnapshotConfig {
-  /** Output only. The time when the snapshot was created. */
-  createTime?: string | Computed<string>;
   /** A description of the snapshot with 2048 characters or less. Requests with longer descriptions will be rejected. */
   description?: string | Computed<string>;
-  /** Output only. The amount of bytes needed to allocate a full copy of the snapshot content */
-  filesystemUsedBytes?: string | Computed<string>;
   /** Resource labels to represent user provided metadata. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. The resource name of the snapshot, in the format `projects/{project_id}/locations/{location_id}/instances/{instance_id}/snapshots/{snapshot_id}`. */
-  name?: string | Computed<string>;
-  /** Output only. The snapshot state. */
-  state?: string | Computed<string>;
   /** Optional. Input only. Immutable. Tag key-value pairs bound to this resource. Each key must be a namespaced name and each value a short name. Example: "123456789012/environment" : "production", "123456789013/costCenter" : "marketing" See the documentation for more information: - Namespaced name: https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_key - Short name: https://cloud.google.com/resource-manager/docs/tags/tags-creating-and-managing#retrieving_tag_value */
   tags?: Record<string, string> | Computed<Record<string, string>>;
 }
@@ -38,12 +30,8 @@ export interface SnapshotAttrs {
 export const Snapshot: ResourceBinding<SnapshotConfig, SnapshotAttrs> = {
   wireType: "google_file_snapshot",
   fields: {
-    createTime: "create_time",
     description: "description",
-    filesystemUsedBytes: "filesystem_used_bytes",
     labels: "labels",
-    name: "name",
-    state: "state",
     tags: "tags",
   },
 };

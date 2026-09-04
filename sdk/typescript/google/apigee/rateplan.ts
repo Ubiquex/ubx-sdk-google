@@ -50,8 +50,6 @@ export interface RateplanConfig {
   consumptionPricingRates?: Rateplan_ConsumptionPricingRates[] | Computed<Rateplan_ConsumptionPricingRates[]>;
   /** Pricing model used for consumption-based charges. */
   consumptionPricingType?: string | Computed<string>;
-  /** Output only. Time that the rate plan was created in milliseconds since epoch. */
-  createdAt?: string | Computed<string>;
   /** Currency to be used for billing. Consists of a three-letter code as defined by the [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) standard. */
   currencyCode?: string | Computed<string>;
   /** Description of the rate plan. */
@@ -64,10 +62,6 @@ export interface RateplanConfig {
   fixedFeeFrequency?: number | Computed<number>;
   /** Represents an amount of money with its currency type. */
   fixedRecurringFee?: Rateplan_ConsumptionPricingRates_Fee | Computed<Rateplan_ConsumptionPricingRates_Fee>;
-  /** Output only. Time the rate plan was last modified in milliseconds since epoch. */
-  lastModifiedAt?: string | Computed<string>;
-  /** Output only. Name of the rate plan. */
-  name?: string | Computed<string>;
   /** DEPRECATED: This field is no longer supported and will eventually be removed when Apigee Hybrid 1.5/1.6 is no longer supported. Instead, use the `billingType` field inside `DeveloperMonetizationConfig` resource. Flag that specifies the billing account type, prepaid or postpaid. */
   paymentFundingModel?: string | Computed<string>;
   /** Details of the revenue sharing model. */
@@ -134,7 +128,6 @@ export const Rateplan: ResourceBinding<RateplanConfig, RateplanAttrs> = {
       fields: Rateplan_ConsumptionPricingRatesFields,
     },
     consumptionPricingType: "consumption_pricing_type",
-    createdAt: "created_at",
     currencyCode: "currency_code",
     description: "description",
     displayName: "display_name",
@@ -145,8 +138,6 @@ export const Rateplan: ResourceBinding<RateplanConfig, RateplanAttrs> = {
       kind: "object",
       fields: Rateplan_ConsumptionPricingRates_FeeFields,
     },
-    lastModifiedAt: "last_modified_at",
-    name: "name",
     paymentFundingModel: "payment_funding_model",
     revenueShareRates: {
       wireName: "revenue_share_rates",

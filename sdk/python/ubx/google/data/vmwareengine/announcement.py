@@ -8,7 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AnnouncementConfig:
-    name: Any = None
+    pass
 
 @dataclasses.dataclass
 class AnnouncementAttrs:
@@ -37,6 +37,5 @@ class AnnouncementAttrs:
 Announcement = ubx.DataSourceBinding(
     wire_type="google_vmwareengine_announcement",
     fields={
-        "name": ubx.FieldSpec(wire_name="name"),
     },
 )

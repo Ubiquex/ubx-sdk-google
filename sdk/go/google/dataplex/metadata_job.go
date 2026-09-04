@@ -93,71 +93,69 @@ type MetadataJob_Status struct {
 }
 
 var MetadataJob_ExportResultFields = ubx.FieldMap{
-		"ErrorMessage": ubx.FieldSpec{WireName: "error_message"},
-		"ExportedEntries": ubx.FieldSpec{WireName: "exported_entries"},
-	}
+	"ErrorMessage":    ubx.FieldSpec{WireName: "error_message"},
+	"ExportedEntries": ubx.FieldSpec{WireName: "exported_entries"},
+}
 
 var MetadataJob_ExportSpec_ScopeFields = ubx.FieldMap{
-		"AspectTypes": ubx.FieldSpec{WireName: "aspect_types"},
-		"EntryGroups": ubx.FieldSpec{WireName: "entry_groups"},
-		"EntryTypes": ubx.FieldSpec{WireName: "entry_types"},
-		"OrganizationLevel": ubx.FieldSpec{WireName: "organization_level"},
-		"Projects": ubx.FieldSpec{WireName: "projects"},
-	}
+	"AspectTypes":       ubx.FieldSpec{WireName: "aspect_types"},
+	"EntryGroups":       ubx.FieldSpec{WireName: "entry_groups"},
+	"EntryTypes":        ubx.FieldSpec{WireName: "entry_types"},
+	"OrganizationLevel": ubx.FieldSpec{WireName: "organization_level"},
+	"Projects":          ubx.FieldSpec{WireName: "projects"},
+}
 
 var MetadataJob_ExportSpecFields = ubx.FieldMap{
-		"OutputPath": ubx.FieldSpec{WireName: "output_path"},
-		"Scope": ubx.FieldSpec{
-			WireName: "scope",
-			Kind: "object",
-			Fields: MetadataJob_ExportSpec_ScopeFields,
-		},
-	}
+	"OutputPath": ubx.FieldSpec{WireName: "output_path"},
+	"Scope": ubx.FieldSpec{
+		WireName: "scope",
+		Kind:     "object",
+		Fields:   MetadataJob_ExportSpec_ScopeFields,
+	},
+}
 
 var MetadataJob_ImportResultFields = ubx.FieldMap{
-		"CreatedEntries": ubx.FieldSpec{WireName: "created_entries"},
-		"CreatedEntryLinks": ubx.FieldSpec{WireName: "created_entry_links"},
-		"DeletedEntries": ubx.FieldSpec{WireName: "deleted_entries"},
-		"DeletedEntryLinks": ubx.FieldSpec{WireName: "deleted_entry_links"},
-		"RecreatedEntries": ubx.FieldSpec{WireName: "recreated_entries"},
-		"UnchangedEntries": ubx.FieldSpec{WireName: "unchanged_entries"},
-		"UnchangedEntryLinks": ubx.FieldSpec{WireName: "unchanged_entry_links"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-		"UpdatedEntries": ubx.FieldSpec{WireName: "updated_entries"},
-	}
+	"CreatedEntries":      ubx.FieldSpec{WireName: "created_entries"},
+	"CreatedEntryLinks":   ubx.FieldSpec{WireName: "created_entry_links"},
+	"DeletedEntries":      ubx.FieldSpec{WireName: "deleted_entries"},
+	"DeletedEntryLinks":   ubx.FieldSpec{WireName: "deleted_entry_links"},
+	"RecreatedEntries":    ubx.FieldSpec{WireName: "recreated_entries"},
+	"UnchangedEntries":    ubx.FieldSpec{WireName: "unchanged_entries"},
+	"UnchangedEntryLinks": ubx.FieldSpec{WireName: "unchanged_entry_links"},
+	"UpdateTime":          ubx.FieldSpec{WireName: "update_time"},
+	"UpdatedEntries":      ubx.FieldSpec{WireName: "updated_entries"},
+}
 
 var MetadataJob_ImportSpec_ScopeFields = ubx.FieldMap{
-		"AspectTypes": ubx.FieldSpec{WireName: "aspect_types"},
-		"EntryGroups": ubx.FieldSpec{WireName: "entry_groups"},
-		"EntryLinkTypes": ubx.FieldSpec{WireName: "entry_link_types"},
-		"EntryTypes": ubx.FieldSpec{WireName: "entry_types"},
-		"Glossaries": ubx.FieldSpec{WireName: "glossaries"},
-		"ReferencedEntryScopes": ubx.FieldSpec{WireName: "referenced_entry_scopes"},
-	}
+	"AspectTypes":           ubx.FieldSpec{WireName: "aspect_types"},
+	"EntryGroups":           ubx.FieldSpec{WireName: "entry_groups"},
+	"EntryLinkTypes":        ubx.FieldSpec{WireName: "entry_link_types"},
+	"EntryTypes":            ubx.FieldSpec{WireName: "entry_types"},
+	"Glossaries":            ubx.FieldSpec{WireName: "glossaries"},
+	"ReferencedEntryScopes": ubx.FieldSpec{WireName: "referenced_entry_scopes"},
+}
 
 var MetadataJob_ImportSpecFields = ubx.FieldMap{
-		"AspectSyncMode": ubx.FieldSpec{WireName: "aspect_sync_mode"},
-		"EntrySyncMode": ubx.FieldSpec{WireName: "entry_sync_mode"},
-		"LogLevel": ubx.FieldSpec{WireName: "log_level"},
-		"Scope": ubx.FieldSpec{
-			WireName: "scope",
-			Kind: "object",
-			Fields: MetadataJob_ImportSpec_ScopeFields,
-		},
-		"SourceCreateTime": ubx.FieldSpec{WireName: "source_create_time"},
-		"SourceStorageUri": ubx.FieldSpec{WireName: "source_storage_uri"},
-	}
+	"AspectSyncMode": ubx.FieldSpec{WireName: "aspect_sync_mode"},
+	"EntrySyncMode":  ubx.FieldSpec{WireName: "entry_sync_mode"},
+	"LogLevel":       ubx.FieldSpec{WireName: "log_level"},
+	"Scope": ubx.FieldSpec{
+		WireName: "scope",
+		Kind:     "object",
+		Fields:   MetadataJob_ImportSpec_ScopeFields,
+	},
+	"SourceCreateTime": ubx.FieldSpec{WireName: "source_create_time"},
+	"SourceStorageUri": ubx.FieldSpec{WireName: "source_storage_uri"},
+}
 
 var MetadataJob_StatusFields = ubx.FieldMap{
-		"CompletionPercent": ubx.FieldSpec{WireName: "completion_percent"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-	}
+	"CompletionPercent": ubx.FieldSpec{WireName: "completion_percent"},
+	"Message":           ubx.FieldSpec{WireName: "message"},
+	"State":             ubx.FieldSpec{WireName: "state"},
+	"UpdateTime":        ubx.FieldSpec{WireName: "update_time"},
+}
 
 type MetadataJobConfig struct {
-	// Output only. The time when the metadata job was created.
-	CreateTime any
 	// Summary results from a metadata export job. The results are a snapshot of the metadata at the time when the job was created. The exported entries are saved to a Cloud Storage bucket.
 	ExportResult any
 	// Job specification for a metadata export job.
@@ -168,16 +166,10 @@ type MetadataJobConfig struct {
 	ImportSpec any
 	// Optional. User-defined labels.
 	Labels any
-	// Output only. Identifier. The name of the resource that the configuration is applied to, in the format projects/{project_number}/locations/{location_id}/metadataJobs/{metadata_job_id}.
-	Name any
 	// Metadata job status.
 	Status any
 	// Required. Metadata job type.
 	Type any
-	// Output only. A system-generated, globally unique ID for the metadata job. If the metadata job is deleted and then re-created with the same name, this ID is different.
-	Uid any
-	// Output only. The time when the metadata job was updated.
-	UpdateTime any
 }
 
 type MetadataJobAttrs struct {
@@ -208,36 +200,32 @@ type MetadataJobAttrs struct {
 var MetadataJob = ubx.ResourceBinding{
 	WireType: "google_dataplex_metadata_job",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"ExportResult": ubx.FieldSpec{
 			WireName: "export_result",
-			Kind: "object",
-			Fields: MetadataJob_ExportResultFields,
+			Kind:     "object",
+			Fields:   MetadataJob_ExportResultFields,
 		},
 		"ExportSpec": ubx.FieldSpec{
 			WireName: "export_spec",
-			Kind: "object",
-			Fields: MetadataJob_ExportSpecFields,
+			Kind:     "object",
+			Fields:   MetadataJob_ExportSpecFields,
 		},
 		"ImportResult": ubx.FieldSpec{
 			WireName: "import_result",
-			Kind: "object",
-			Fields: MetadataJob_ImportResultFields,
+			Kind:     "object",
+			Fields:   MetadataJob_ImportResultFields,
 		},
 		"ImportSpec": ubx.FieldSpec{
 			WireName: "import_spec",
-			Kind: "object",
-			Fields: MetadataJob_ImportSpecFields,
+			Kind:     "object",
+			Fields:   MetadataJob_ImportSpecFields,
 		},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
 		"Status": ubx.FieldSpec{
 			WireName: "status",
-			Kind: "object",
-			Fields: MetadataJob_StatusFields,
+			Kind:     "object",
+			Fields:   MetadataJob_StatusFields,
 		},
 		"Type": ubx.FieldSpec{WireName: "type"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

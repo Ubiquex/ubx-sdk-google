@@ -9,22 +9,18 @@ type Namespace_OwnerService struct {
 }
 
 var Namespace_OwnerServiceFields = ubx.FieldMap{
-		"PrincipalSubject": ubx.FieldSpec{WireName: "principal_subject"},
-	}
+	"PrincipalSubject": ubx.FieldSpec{WireName: "principal_subject"},
+}
 
 type NamespaceConfig struct {
 	// Optional. A description of the namespace. Cannot exceed 256 characters.
 	Description any
 	// Optional. Whether the namespace is disabled. If disabled, credentials may no longer be issued for identities within this namespace, however existing credentials will still be accepted until they expire.
 	Disabled any
-	// Output only. Time after which the namespace will be permanently purged and cannot be recovered.
-	ExpireTime any
 	// Identifier. The resource name of the namespace.
 	Name any
 	// The Google Cloud service that owns this namespace.
 	OwnerService any
-	// Output only. The state of the namespace.
-	State any
 }
 
 type NamespaceAttrs struct {
@@ -46,14 +42,12 @@ var Namespace = ubx.ResourceBinding{
 	WireType: "google_iam_namespace",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Disabled": ubx.FieldSpec{WireName: "disabled"},
-		"ExpireTime": ubx.FieldSpec{WireName: "expire_time"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Disabled":    ubx.FieldSpec{WireName: "disabled"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"OwnerService": ubx.FieldSpec{
 			WireName: "owner_service",
-			Kind: "object",
-			Fields: Namespace_OwnerServiceFields,
+			Kind:     "object",
+			Fields:   Namespace_OwnerServiceFields,
 		},
-		"State": ubx.FieldSpec{WireName: "state"},
 	},
 }

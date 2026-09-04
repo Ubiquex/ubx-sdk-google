@@ -188,20 +188,6 @@ _Device_ActiveConfigFields = {
     "user_id": ubx.FieldSpec(wire_name="user_id"),
 }
 
-_Device_CurrentChannels_FrequencyRangeFields = {
-    "high_frequency_mhz": ubx.FieldSpec(wire_name="high_frequency_mhz"),
-    "low_frequency_mhz": ubx.FieldSpec(wire_name="low_frequency_mhz"),
-}
-
-_Device_CurrentChannelsFields = {
-    "frequency_range": ubx.FieldSpec(
-        wire_name="frequency_range",
-        kind="object",
-        fields=_Device_CurrentChannels_FrequencyRangeFields,
-    ),
-    "score": ubx.FieldSpec(wire_name="score"),
-}
-
 _Device_DeviceMetadata_NrqzValidationFields = {
     "case_id": ubx.FieldSpec(wire_name="case_id"),
     "cpi_id": ubx.FieldSpec(wire_name="cpi_id"),
@@ -220,6 +206,11 @@ _Device_DeviceMetadataFields = {
         kind="object",
         fields=_Device_DeviceMetadata_NrqzValidationFields,
     ),
+}
+
+_Device_CurrentChannels_FrequencyRangeFields = {
+    "high_frequency_mhz": ubx.FieldSpec(wire_name="high_frequency_mhz"),
+    "low_frequency_mhz": ubx.FieldSpec(wire_name="low_frequency_mhz"),
 }
 
 _Device_Grants_MoveListFields = {
@@ -255,8 +246,6 @@ _Device_GrantsFields = {
 class DeviceConfig:
     # Information about the device configuration.
     active_config: Any = None
-    # Output only. Current channels with scores.
-    current_channels: Any = None
     # Device data overridable by both SAS Portal and registration requests.
     device_metadata: Any = None
     # Device display name.
@@ -308,11 +297,6 @@ Device = ubx.ResourceBinding(
             wire_name="active_config",
             kind="object",
             fields=_Device_ActiveConfigFields,
-        ),
-        "current_channels": ubx.FieldSpec(
-            wire_name="current_channels",
-            kind="list",
-            fields=_Device_CurrentChannelsFields,
         ),
         "device_metadata": ubx.FieldSpec(
             wire_name="device_metadata",

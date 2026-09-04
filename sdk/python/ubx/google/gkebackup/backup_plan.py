@@ -233,46 +233,20 @@ _BackupPlan_RetentionPolicyFields = {
 
 @dataclasses.dataclass
 class BackupPlanConfig:
-    # Output only. The fully qualified name of the BackupChannel to be used to create a backup. This field is set only if the cluster being backed up is in a different project. `projects/*/locations/*/backupChannels/*`
-    backup_channel: Any = None
     # BackupConfig defines the configuration of Backups created via this BackupPlan.
     backup_config: Any = None
     # Defines scheduling parameters for automatically creating Backups via this BackupPlan.
     backup_schedule: Any = None
     # Required. Immutable. The source cluster from which Backups will be created via this BackupPlan. Valid formats: - `projects/*/locations/*/clusters/*` - `projects/*/zones/*/clusters/*`
     cluster: Any = None
-    # Output only. The timestamp when this BackupPlan resource was created.
-    create_time: Any = None
     # Optional. This flag indicates whether this BackupPlan has been deactivated. Setting this field to True locks the BackupPlan such that no further updates will be allowed (except deletes), including the deactivated field itself. It also prevents any new Backups from being created via this BackupPlan (including scheduled Backups). Default: False
     deactivated: Any = None
     # Optional. User specified descriptive string for this BackupPlan.
     description: Any = None
-    # Output only. `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a backup plan from overwriting each other. It is strongly suggested that systems make use of the 'etag' in the read-modify-write cycle to perform BackupPlan updates in order to avoid race conditions: An `etag` is returned in the response to `GetBackupPlan`, and systems are expected to put that etag in the request to `UpdateBackupPlan` or `DeleteBackupPlan` to ensure that their change will be applied to the same version of the resource.
-    etag: Any = None
     # Optional. A set of custom labels supplied by user.
     labels: Any = None
-    # Output only. Completion time of the last successful Backup. This is sourced from a successful Backup's complete_time field. This field is added to maintain consistency with BackupPlanBinding to display last successful backup time.
-    last_successful_backup_time: Any = None
-    # Output only. Identifier. The full name of the BackupPlan resource. Format: `projects/*/locations/*/backupPlans/*`
-    name: Any = None
-    # Output only. The number of user managed namespaces backed up in the last successful Backup created via this BackupPlan.
-    protected_namespace_count: Any = None
-    # Output only. The number of Kubernetes Pods backed up in the last successful Backup created via this BackupPlan.
-    protected_pod_count: Any = None
     # RetentionPolicy defines a Backup retention policy for a BackupPlan.
     retention_policy: Any = None
-    # Output only. A number that represents the current risk level of this BackupPlan from RPO perspective with 1 being no risk and 5 being highest risk.
-    rpo_risk_level: Any = None
-    # Output only. Human-readable description of why the BackupPlan is in the current rpo_risk_level and action items if any.
-    rpo_risk_reason: Any = None
-    # Output only. State of the BackupPlan. This State field reflects the various stages a BackupPlan can be in during the Create operation. It will be set to "DEACTIVATED" if the BackupPlan is deactivated on an Update
-    state: Any = None
-    # Output only. Human-readable description of why BackupPlan is in the current `state`. This field is only meant for human readability and should not be used programmatically as this field is not guaranteed to be consistent.
-    state_reason: Any = None
-    # Output only. Server generated global unique identifier of [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier) format.
-    uid: Any = None
-    # Output only. The timestamp when this BackupPlan resource was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class BackupPlanAttrs:
@@ -320,7 +294,6 @@ class BackupPlanAttrs:
 BackupPlan = ubx.ResourceBinding(
     wire_type="google_gkebackup_backup_plan",
     fields={
-        "backup_channel": ubx.FieldSpec(wire_name="backup_channel"),
         "backup_config": ubx.FieldSpec(
             wire_name="backup_config",
             kind="object",
@@ -332,25 +305,13 @@ BackupPlan = ubx.ResourceBinding(
             fields=_BackupPlan_BackupScheduleFields,
         ),
         "cluster": ubx.FieldSpec(wire_name="cluster"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "deactivated": ubx.FieldSpec(wire_name="deactivated"),
         "description": ubx.FieldSpec(wire_name="description"),
-        "etag": ubx.FieldSpec(wire_name="etag"),
         "labels": ubx.FieldSpec(wire_name="labels"),
-        "last_successful_backup_time": ubx.FieldSpec(wire_name="last_successful_backup_time"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "protected_namespace_count": ubx.FieldSpec(wire_name="protected_namespace_count"),
-        "protected_pod_count": ubx.FieldSpec(wire_name="protected_pod_count"),
         "retention_policy": ubx.FieldSpec(
             wire_name="retention_policy",
             kind="object",
             fields=_BackupPlan_RetentionPolicyFields,
         ),
-        "rpo_risk_level": ubx.FieldSpec(wire_name="rpo_risk_level"),
-        "rpo_risk_reason": ubx.FieldSpec(wire_name="rpo_risk_reason"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "state_reason": ubx.FieldSpec(wire_name="state_reason"),
-        "uid": ubx.FieldSpec(wire_name="uid"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

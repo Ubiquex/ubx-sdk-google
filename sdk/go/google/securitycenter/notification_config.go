@@ -8,22 +8,21 @@ type NotificationConfig_StreamingConfig struct {
 }
 
 var NotificationConfig_StreamingConfigFields = ubx.FieldMap{
-		"Filter": ubx.FieldSpec{WireName: "filter"},
-	}
+	"Filter": ubx.FieldSpec{WireName: "filter"},
+}
 
 type NotificationConfigConfig struct {
-	Description any
-	Name any
-	PubsubTopic any
-	ServiceAccount any
+	Description     any
+	Name            any
+	PubsubTopic     any
 	StreamingConfig any
 }
 
 type NotificationConfigAttrs struct {
-	Description any
-	Name any
-	PubsubTopic any
-	ServiceAccount any
+	Description     any
+	Name            any
+	PubsubTopic     any
+	ServiceAccount  any
 	StreamingConfig any
 }
 
@@ -31,13 +30,12 @@ var NotificationConfig = ubx.ResourceBinding{
 	WireType: "google_securitycenter_notification_config",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"PubsubTopic": ubx.FieldSpec{WireName: "pubsub_topic"},
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
 		"StreamingConfig": ubx.FieldSpec{
 			WireName: "streaming_config",
-			Kind: "object",
-			Fields: NotificationConfig_StreamingConfigFields,
+			Kind:     "object",
+			Fields:   NotificationConfig_StreamingConfigFields,
 		},
 	},
 }

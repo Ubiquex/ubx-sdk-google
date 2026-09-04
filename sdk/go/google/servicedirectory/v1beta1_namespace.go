@@ -4,16 +4,10 @@ package servicedirectory
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta1NamespaceConfig struct {
-	// Output only. The timestamp when the namespace was created.
-	CreateTime any
 	// Optional. Resource labels associated with this namespace. No more than 64 user labels can be associated with a given resource. Label keys and values can be no longer than 63 characters.
 	Labels any
 	// Immutable. The resource name for the namespace in the format `projects/*/locations/*/namespaces/*`.
 	Name any
-	// Output only. A globally unique identifier (in UUID4 format) for this namespace.
-	Uid any
-	// Output only. The timestamp when the namespace was last updated.
-	UpdateTime any
 }
 
 type V1beta1NamespaceAttrs struct {
@@ -32,10 +26,7 @@ type V1beta1NamespaceAttrs struct {
 var V1beta1Namespace = ubx.ResourceBinding{
 	WireType: "google_servicedirectory_v1beta1_namespace",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"Name":   ubx.FieldSpec{WireName: "name"},
 	},
 }

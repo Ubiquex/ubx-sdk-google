@@ -4,8 +4,6 @@ package observability
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LinkConfig struct {
-	// Output only. Create timestamp.
-	CreateTime any
 	// Optional. Description of the link.
 	Description any
 	// Optional. A user friendly display name.
@@ -28,9 +26,8 @@ type LinkAttrs struct {
 var Link = ubx.ResourceBinding{
 	WireType: "google_observability_link",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 	},
 }

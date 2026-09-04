@@ -2,16 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface CatalogConfig {
-  /** Output only. The creation time of the catalog. */
-  createTime?: string | Computed<string>;
-  /** Output only. The deletion time of the catalog. Only set after the catalog is deleted. */
-  deleteTime?: string | Computed<string>;
-  /** Output only. The time when this catalog is considered expired. Only set after the catalog is deleted. */
-  expireTime?: string | Computed<string>;
-  /** Output only. The resource name. Format: projects/{project_id_or_number}/locations/{location_id}/catalogs/{catalog_id} */
-  name?: string | Computed<string>;
-  /** Output only. The last modification time of the catalog. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface CatalogAttrs {
@@ -30,10 +20,5 @@ export interface CatalogAttrs {
 export const Catalog: ResourceBinding<CatalogConfig, CatalogAttrs> = {
   wireType: "google_biglake_catalog",
   fields: {
-    createTime: "create_time",
-    deleteTime: "delete_time",
-    expireTime: "expire_time",
-    name: "name",
-    updateTime: "update_time",
   },
 };

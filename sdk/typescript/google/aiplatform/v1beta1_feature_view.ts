@@ -141,8 +141,6 @@ export interface V1beta1FeatureViewConfig {
   bigQuerySource?: V1beta1FeatureView_BigQuerySource | Computed<V1beta1FeatureView_BigQuerySource>;
   /** Metadata for the Cloud Bigtable that supports directly interacting Bigtable instances. */
   bigtableMetadata?: V1beta1FeatureView_BigtableMetadata | Computed<V1beta1FeatureView_BigtableMetadata>;
-  /** Output only. Timestamp when this FeatureView was created. */
-  createTime?: string | Computed<string>;
   /** Optional. Used to perform consistent read-modify-write updates. If not set, a blind "overwrite" update happens. */
   etag?: string | Computed<string>;
   /** A Feature Registry source for features that need to be synced to Online Store. */
@@ -155,18 +153,10 @@ export interface V1beta1FeatureViewConfig {
   name?: string | Computed<string>;
   /** Configuration for FeatureViews created in Optimized FeatureOnlineStore. */
   optimizedConfig?: V1beta1FeatureView_OptimizedConfig | Computed<V1beta1FeatureView_OptimizedConfig>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzi?: boolean | Computed<boolean>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzs?: boolean | Computed<boolean>;
-  /** Output only. A Service Account unique to this FeatureView. The role bigquery.dataViewer should be granted to this service account to allow Vertex AI Feature Store to sync data to the online store. */
-  serviceAccountEmail?: string | Computed<string>;
   /** Optional. Service agent type used during data sync. By default, the Vertex AI Service Agent is used. When using an IAM Policy to isolate this FeatureView within a project, a separate service account should be provisioned by setting this field to `SERVICE_AGENT_TYPE_FEATURE_VIEW`. This will generate a separate service account to access the BigQuery source table. */
   serviceAgentType?: string | Computed<string>;
   /** Configuration for Sync. Only one option is set. */
   syncConfig?: V1beta1FeatureView_SyncConfig | Computed<V1beta1FeatureView_SyncConfig>;
-  /** Output only. Timestamp when this FeatureView was last updated. */
-  updateTime?: string | Computed<string>;
   /** Deprecated. Use IndexConfig instead. */
   vectorSearchConfig?: V1beta1FeatureView_IndexConfig | Computed<V1beta1FeatureView_IndexConfig>;
   /** A Vertex Rag source for features that need to be synced to Online Store. */
@@ -222,7 +212,6 @@ export const V1beta1FeatureView: ResourceBinding<V1beta1FeatureViewConfig, V1bet
       kind: "object",
       fields: V1beta1FeatureView_BigtableMetadataFields,
     },
-    createTime: "create_time",
     etag: "etag",
     featureRegistrySource: {
       wireName: "feature_registry_source",
@@ -241,16 +230,12 @@ export const V1beta1FeatureView: ResourceBinding<V1beta1FeatureViewConfig, V1bet
       kind: "object",
       fields: V1beta1FeatureView_OptimizedConfigFields,
     },
-    satisfiesPzi: "satisfies_pzi",
-    satisfiesPzs: "satisfies_pzs",
-    serviceAccountEmail: "service_account_email",
     serviceAgentType: "service_agent_type",
     syncConfig: {
       wireName: "sync_config",
       kind: "object",
       fields: V1beta1FeatureView_SyncConfigFields,
     },
-    updateTime: "update_time",
     vectorSearchConfig: {
       wireName: "vector_search_config",
       kind: "object",

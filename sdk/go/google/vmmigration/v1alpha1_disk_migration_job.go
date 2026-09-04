@@ -15,17 +15,17 @@ type V1alpha1DiskMigrationJob_AwsSourceDiskDetails struct {
 }
 
 type V1alpha1DiskMigrationJob_Errors struct {
-	Code any
+	Code    any
 	Details any
 	Message any
 }
 
 type V1alpha1DiskMigrationJob_Steps struct {
-	CopyingSourceDiskSnapshot any
+	CopyingSourceDiskSnapshot  any
 	CreatingSourceDiskSnapshot any
-	EndTime any
-	ProvisioningTargetDisk any
-	StartTime any
+	EndTime                    any
+	ProvisioningTargetDisk     any
+	StartTime                  any
 }
 
 type V1alpha1DiskMigrationJob_TargetDetails_Encryption struct {
@@ -56,69 +56,43 @@ type V1alpha1DiskMigrationJob_TargetDetails struct {
 }
 
 var V1alpha1DiskMigrationJob_AwsSourceDiskDetailsFields = ubx.FieldMap{
-		"DiskType": ubx.FieldSpec{WireName: "disk_type"},
-		"SizeGib": ubx.FieldSpec{WireName: "size_gib"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"VolumeId": ubx.FieldSpec{WireName: "volume_id"},
-	}
-
-var V1alpha1DiskMigrationJob_ErrorsFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
-
-var V1alpha1DiskMigrationJob_StepsFields = ubx.FieldMap{
-		"CopyingSourceDiskSnapshot": ubx.FieldSpec{WireName: "copying_source_disk_snapshot"},
-		"CreatingSourceDiskSnapshot": ubx.FieldSpec{WireName: "creating_source_disk_snapshot"},
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"ProvisioningTargetDisk": ubx.FieldSpec{WireName: "provisioning_target_disk"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-	}
+	"DiskType": ubx.FieldSpec{WireName: "disk_type"},
+	"SizeGib":  ubx.FieldSpec{WireName: "size_gib"},
+	"Tags":     ubx.FieldSpec{WireName: "tags"},
+	"VolumeId": ubx.FieldSpec{WireName: "volume_id"},
+}
 
 var V1alpha1DiskMigrationJob_TargetDetails_EncryptionFields = ubx.FieldMap{
-		"KmsKey": ubx.FieldSpec{WireName: "kms_key"},
-	}
+	"KmsKey": ubx.FieldSpec{WireName: "kms_key"},
+}
 
 var V1alpha1DiskMigrationJob_TargetDetails_TargetDiskFields = ubx.FieldMap{
-		"DiskId": ubx.FieldSpec{WireName: "disk_id"},
-		"DiskType": ubx.FieldSpec{WireName: "disk_type"},
-		"ReplicaZones": ubx.FieldSpec{WireName: "replica_zones"},
-		"Zone": ubx.FieldSpec{WireName: "zone"},
-	}
+	"DiskId":       ubx.FieldSpec{WireName: "disk_id"},
+	"DiskType":     ubx.FieldSpec{WireName: "disk_type"},
+	"ReplicaZones": ubx.FieldSpec{WireName: "replica_zones"},
+	"Zone":         ubx.FieldSpec{WireName: "zone"},
+}
 
 var V1alpha1DiskMigrationJob_TargetDetailsFields = ubx.FieldMap{
-		"Encryption": ubx.FieldSpec{
-			WireName: "encryption",
-			Kind: "object",
-			Fields: V1alpha1DiskMigrationJob_TargetDetails_EncryptionFields,
-		},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"TargetDisk": ubx.FieldSpec{
-			WireName: "target_disk",
-			Kind: "object",
-			Fields: V1alpha1DiskMigrationJob_TargetDetails_TargetDiskFields,
-		},
-		"TargetProject": ubx.FieldSpec{WireName: "target_project"},
-	}
+	"Encryption": ubx.FieldSpec{
+		WireName: "encryption",
+		Kind:     "object",
+		Fields:   V1alpha1DiskMigrationJob_TargetDetails_EncryptionFields,
+	},
+	"Labels": ubx.FieldSpec{WireName: "labels"},
+	"TargetDisk": ubx.FieldSpec{
+		WireName: "target_disk",
+		Kind:     "object",
+		Fields:   V1alpha1DiskMigrationJob_TargetDetails_TargetDiskFields,
+	},
+	"TargetProject": ubx.FieldSpec{WireName: "target_project"},
+}
 
 type V1alpha1DiskMigrationJobConfig struct {
 	// Represents the source AWS Disk details.
 	AwsSourceDiskDetails any
-	// Output only. The time the DiskMigrationJob resource was created.
-	CreateTime any
-	// Output only. Provides details on the errors that led to the disk migration job's state in case of an error.
-	Errors any
-	// Output only. Identifier. The identifier of the DiskMigrationJob.
-	Name any
-	// Output only. State of the DiskMigrationJob.
-	State any
-	// Output only. The disk migration steps list representing its progress.
-	Steps any
 	// Details of the target disk in Compute Engine.
 	TargetDetails any
-	// Output only. The last time the DiskMigrationJob resource was updated.
-	UpdateTime any
 }
 
 type V1alpha1DiskMigrationJobAttrs struct {
@@ -145,27 +119,13 @@ var V1alpha1DiskMigrationJob = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AwsSourceDiskDetails": ubx.FieldSpec{
 			WireName: "aws_source_disk_details",
-			Kind: "object",
-			Fields: V1alpha1DiskMigrationJob_AwsSourceDiskDetailsFields,
-		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Errors": ubx.FieldSpec{
-			WireName: "errors",
-			Kind: "list",
-			Fields: V1alpha1DiskMigrationJob_ErrorsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"Steps": ubx.FieldSpec{
-			WireName: "steps",
-			Kind: "list",
-			Fields: V1alpha1DiskMigrationJob_StepsFields,
+			Kind:     "object",
+			Fields:   V1alpha1DiskMigrationJob_AwsSourceDiskDetailsFields,
 		},
 		"TargetDetails": ubx.FieldSpec{
 			WireName: "target_details",
-			Kind: "object",
-			Fields: V1alpha1DiskMigrationJob_TargetDetailsFields,
+			Kind:     "object",
+			Fields:   V1alpha1DiskMigrationJob_TargetDetailsFields,
 		},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

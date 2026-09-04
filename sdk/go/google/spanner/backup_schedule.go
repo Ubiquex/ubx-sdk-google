@@ -27,24 +27,24 @@ type BackupSchedule_Spec struct {
 }
 
 var BackupSchedule_EncryptionConfigFields = ubx.FieldMap{
-		"EncryptionType": ubx.FieldSpec{WireName: "encryption_type"},
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-		"KmsKeyNames": ubx.FieldSpec{WireName: "kms_key_names"},
-	}
+	"EncryptionType": ubx.FieldSpec{WireName: "encryption_type"},
+	"KmsKeyName":     ubx.FieldSpec{WireName: "kms_key_name"},
+	"KmsKeyNames":    ubx.FieldSpec{WireName: "kms_key_names"},
+}
 
 var BackupSchedule_Spec_CronSpecFields = ubx.FieldMap{
-		"CreationWindow": ubx.FieldSpec{WireName: "creation_window"},
-		"Text": ubx.FieldSpec{WireName: "text"},
-		"TimeZone": ubx.FieldSpec{WireName: "time_zone"},
-	}
+	"CreationWindow": ubx.FieldSpec{WireName: "creation_window"},
+	"Text":           ubx.FieldSpec{WireName: "text"},
+	"TimeZone":       ubx.FieldSpec{WireName: "time_zone"},
+}
 
 var BackupSchedule_SpecFields = ubx.FieldMap{
-		"CronSpec": ubx.FieldSpec{
-			WireName: "cron_spec",
-			Kind: "object",
-			Fields: BackupSchedule_Spec_CronSpecFields,
-		},
-	}
+	"CronSpec": ubx.FieldSpec{
+		WireName: "cron_spec",
+		Kind:     "object",
+		Fields:   BackupSchedule_Spec_CronSpecFields,
+	},
+}
 
 type BackupScheduleConfig struct {
 	// Encryption configuration for the backup to create.
@@ -59,8 +59,6 @@ type BackupScheduleConfig struct {
 	RetentionDuration any
 	// Defines specifications of the backup schedule.
 	Spec any
-	// Output only. The timestamp at which the schedule was last updated. If the schedule has never been updated, this field contains the timestamp when the schedule was first created.
-	UpdateTime any
 }
 
 type BackupScheduleAttrs struct {
@@ -85,18 +83,17 @@ var BackupSchedule = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"EncryptionConfig": ubx.FieldSpec{
 			WireName: "encryption_config",
-			Kind: "object",
-			Fields: BackupSchedule_EncryptionConfigFields,
+			Kind:     "object",
+			Fields:   BackupSchedule_EncryptionConfigFields,
 		},
-		"FullBackupSpec": ubx.FieldSpec{WireName: "full_backup_spec"},
+		"FullBackupSpec":        ubx.FieldSpec{WireName: "full_backup_spec"},
 		"IncrementalBackupSpec": ubx.FieldSpec{WireName: "incremental_backup_spec"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"RetentionDuration": ubx.FieldSpec{WireName: "retention_duration"},
+		"Name":                  ubx.FieldSpec{WireName: "name"},
+		"RetentionDuration":     ubx.FieldSpec{WireName: "retention_duration"},
 		"Spec": ubx.FieldSpec{
 			WireName: "spec",
-			Kind: "object",
-			Fields: BackupSchedule_SpecFields,
+			Kind:     "object",
+			Fields:   BackupSchedule_SpecFields,
 		},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

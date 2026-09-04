@@ -26,8 +26,6 @@ _MulticastGroupConsumerActivation_StateFields = {
 
 @dataclasses.dataclass
 class MulticastGroupConsumerActivationConfig:
-    # Output only. [Output only] The timestamp when the multicast group consumer activation was created.
-    create_time: Any = None
     # Optional. An optional text description of the multicast group consumer activation.
     description: Any = None
     # Optional. Labels as key-value pairs
@@ -42,14 +40,8 @@ class MulticastGroupConsumerActivationConfig:
     multicast_group_range_activation: Any = None
     # Identifier. The resource name of the multicast group consumer activation. Use the following format: `projects/*/locations/*/multicastGroupConsumerActivations/*`.
     name: Any = None
-    # Output only. [Deprecated] The resource state of the multicast group consumer activation. Use the state field instead.
-    resource_state: Any = None
     # The multicast resource's state.
     state: Any = None
-    # Output only. [Output only] The Google-generated UUID for the resource. This value is unique across all multicast group consumer activation resources. If a group consumer activation is deleted and another with the same name is created, the new group consumer activation is assigned a different unique_id.
-    unique_id: Any = None
-    # Output only. [Output only] The timestamp when the multicast group consumer activation was most recently updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class MulticastGroupConsumerActivationAttrs:
@@ -81,7 +73,6 @@ class MulticastGroupConsumerActivationAttrs:
 MulticastGroupConsumerActivation = ubx.ResourceBinding(
     wire_type="google_networkservices_multicast_group_consumer_activation",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "log_config": ubx.FieldSpec(
@@ -93,13 +84,10 @@ MulticastGroupConsumerActivation = ubx.ResourceBinding(
         "multicast_group": ubx.FieldSpec(wire_name="multicast_group"),
         "multicast_group_range_activation": ubx.FieldSpec(wire_name="multicast_group_range_activation"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "resource_state": ubx.FieldSpec(wire_name="resource_state"),
         "state": ubx.FieldSpec(
             wire_name="state",
             kind="object",
             fields=_MulticastGroupConsumerActivation_StateFields,
         ),
-        "unique_id": ubx.FieldSpec(wire_name="unique_id"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

@@ -155,8 +155,6 @@ export interface ListingConfig {
   icon?: string | Computed<string>;
   /** Optional. By default, false. If true, the Listing has an email sharing mandate enabled. */
   logLinkedDatasetQueryUserEmail?: boolean | Computed<boolean>;
-  /** Output only. The resource name of the listing. e.g. `projects/myproject/locations/us/dataExchanges/123/listings/456` */
-  name?: string | Computed<string>;
   /** Optional. Email or URL of the primary point of contact of the listing. Max Length: 1000 bytes. */
   primaryContact?: string | Computed<string>;
   /** Contains details of the listing publisher. */
@@ -165,12 +163,8 @@ export interface ListingConfig {
   pubsubTopic?: Listing_PubsubTopic | Computed<Listing_PubsubTopic>;
   /** Optional. Email or URL of the request access of the listing. Subscribers can use this reference to request access. Max Length: 1000 bytes. */
   requestAccess?: string | Computed<string>;
-  /** Output only. Listing shared asset type. */
-  resourceType?: string | Computed<string>;
   /** Restricted export config, used to configure restricted export on linked dataset. */
   restrictedExportConfig?: Listing_BigqueryDataset_RestrictedExportPolicy | Computed<Listing_BigqueryDataset_RestrictedExportPolicy>;
-  /** Output only. Current state of the listing. */
-  state?: string | Computed<string>;
   /** Stored procedure configuration, used to configure stored procedure sharing on linked dataset. */
   storedProcedureConfig?: Listing_StoredProcedureConfig | Computed<Listing_StoredProcedureConfig>;
 }
@@ -244,7 +238,6 @@ export const Listing: ResourceBinding<ListingConfig, ListingAttrs> = {
     documentation: "documentation",
     icon: "icon",
     logLinkedDatasetQueryUserEmail: "log_linked_dataset_query_user_email",
-    name: "name",
     primaryContact: "primary_contact",
     publisher: {
       wireName: "publisher",
@@ -257,13 +250,11 @@ export const Listing: ResourceBinding<ListingConfig, ListingAttrs> = {
       fields: Listing_PubsubTopicFields,
     },
     requestAccess: "request_access",
-    resourceType: "resource_type",
     restrictedExportConfig: {
       wireName: "restricted_export_config",
       kind: "object",
       fields: Listing_BigqueryDataset_RestrictedExportPolicyFields,
     },
-    state: "state",
     storedProcedureConfig: {
       wireName: "stored_procedure_config",
       kind: "object",

@@ -29,10 +29,6 @@ _V1betaRbacrolebinding_StateFields = {
 
 @dataclasses.dataclass
 class V1betaRbacrolebindingConfig:
-    # Output only. When the rbacrolebinding was created.
-    create_time: Any = None
-    # Output only. When the rbacrolebinding was deleted.
-    delete_time: Any = None
     # group is the group, as seen by the kubernetes cluster.
     group: Any = None
     # Optional. Labels for this RBACRolebinding.
@@ -43,10 +39,6 @@ class V1betaRbacrolebindingConfig:
     role: Any = None
     # RBACRoleBindingLifecycleState describes the state of a RbacRoleBinding resource.
     state: Any = None
-    # Output only. Google-generated UUID for this resource. This is unique across all rbacrolebinding resources. If a rbacrolebinding resource is deleted and another resource with the same name is created, it gets a different uid.
-    uid: Any = None
-    # Output only. When the rbacrolebinding was last updated.
-    update_time: Any = None
     # user is the name of the user as seen by the kubernetes cluster, example "alice" or "alice@domain.tld"
     user: Any = None
 
@@ -76,8 +68,6 @@ class V1betaRbacrolebindingAttrs:
 V1betaRbacrolebinding = ubx.ResourceBinding(
     wire_type="google_gkehub_v1beta_rbacrolebinding",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
-        "delete_time": ubx.FieldSpec(wire_name="delete_time"),
         "group": ubx.FieldSpec(wire_name="group"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "name": ubx.FieldSpec(wire_name="name"),
@@ -91,8 +81,6 @@ V1betaRbacrolebinding = ubx.ResourceBinding(
             kind="object",
             fields=_V1betaRbacrolebinding_StateFields,
         ),
-        "uid": ubx.FieldSpec(wire_name="uid"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
         "user": ubx.FieldSpec(wire_name="user"),
     },
 )

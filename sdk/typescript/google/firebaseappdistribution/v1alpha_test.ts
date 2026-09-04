@@ -414,8 +414,6 @@ const V1alphaTest_LoginCredentialFields: FieldMap = {
 
 export interface V1alphaTestConfig {
   aiInstructions?: V1alphaTest_AiInstructions | Computed<V1alphaTest_AiInstructions>;
-  /** Output only. Timestamp when the test was run. */
-  createTime?: string | Computed<string>;
   /** Required. The results of the test on each device. */
   deviceExecutions?: V1alphaTest_DeviceExecutions[] | Computed<V1alphaTest_DeviceExecutions[]>;
   /** Optional. Display name of the release test. Required if the release test is created with multiple goals. */
@@ -428,8 +426,6 @@ export interface V1alphaTestConfig {
   resultsBucket?: string | Computed<string>;
   /** Optional. The test case that was used to generate this release test. Note: The test case may have changed or been deleted since the release test was created. Format: `projects/{project_number}/apps/{app}/testCases/{test_case}` */
   testCase?: string | Computed<string>;
-  /** Output only. The state of the release test. */
-  testState?: string | Computed<string>;
 }
 
 export interface V1alphaTestAttrs {
@@ -460,7 +456,6 @@ export const V1alphaTest: ResourceBinding<V1alphaTestConfig, V1alphaTestAttrs> =
       kind: "object",
       fields: V1alphaTest_AiInstructionsFields,
     },
-    createTime: "create_time",
     deviceExecutions: {
       wireName: "device_executions",
       kind: "list",
@@ -475,6 +470,5 @@ export const V1alphaTest: ResourceBinding<V1alphaTestConfig, V1alphaTestAttrs> =
     name: "name",
     resultsBucket: "results_bucket",
     testCase: "test_case",
-    testState: "test_state",
   },
 };

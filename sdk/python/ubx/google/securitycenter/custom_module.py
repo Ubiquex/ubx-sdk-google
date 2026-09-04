@@ -8,16 +8,13 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class CustomModuleConfig:
-    ancestor_module: Any = None
     cloud_provider: Any = None
     config: Any = None
     description: Any = None
     display_name: Any = None
     enablement_state: Any = None
-    last_editor: Any = None
     name: Any = None
     type: Any = None
-    update_time: Any = None
 
 @dataclasses.dataclass
 class CustomModuleAttrs:
@@ -35,15 +32,12 @@ class CustomModuleAttrs:
 CustomModule = ubx.ResourceBinding(
     wire_type="google_securitycenter_custom_module",
     fields={
-        "ancestor_module": ubx.FieldSpec(wire_name="ancestor_module"),
         "cloud_provider": ubx.FieldSpec(wire_name="cloud_provider"),
         "config": ubx.FieldSpec(wire_name="config"),
         "description": ubx.FieldSpec(wire_name="description"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "enablement_state": ubx.FieldSpec(wire_name="enablement_state"),
-        "last_editor": ubx.FieldSpec(wire_name="last_editor"),
         "name": ubx.FieldSpec(wire_name="name"),
         "type": ubx.FieldSpec(wire_name="type"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

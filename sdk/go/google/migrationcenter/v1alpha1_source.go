@@ -4,28 +4,16 @@ package migrationcenter
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1alpha1SourceConfig struct {
-	// Output only. The timestamp when the source was created.
-	CreateTime any
 	// Free-text description.
 	Description any
 	// User-friendly display name.
 	DisplayName any
-	// Output only. The number of frames that were reported by the source and contained errors.
-	ErrorFrameCount any
 	// If `true`, the source is managed by other service(s).
 	IsManaged any
-	// Output only. The full name of the source.
-	Name any
-	// Output only. Number of frames that are still being processed.
-	PendingFrameCount any
 	// The information confidence of the source. The higher the value, the higher the confidence.
 	Priority any
-	// Output only. The state of the source.
-	State any
 	// Data source type.
 	Type any
-	// Output only. The timestamp when the source was last updated.
-	UpdateTime any
 }
 
 type V1alpha1SourceAttrs struct {
@@ -56,16 +44,10 @@ type V1alpha1SourceAttrs struct {
 var V1alpha1Source = ubx.ResourceBinding{
 	WireType: "google_migrationcenter_v1alpha1_source",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"ErrorFrameCount": ubx.FieldSpec{WireName: "error_frame_count"},
-		"IsManaged": ubx.FieldSpec{WireName: "is_managed"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PendingFrameCount": ubx.FieldSpec{WireName: "pending_frame_count"},
-		"Priority": ubx.FieldSpec{WireName: "priority"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"IsManaged":   ubx.FieldSpec{WireName: "is_managed"},
+		"Priority":    ubx.FieldSpec{WireName: "priority"},
+		"Type":        ubx.FieldSpec{WireName: "type"},
 	},
 }

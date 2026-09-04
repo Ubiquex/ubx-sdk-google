@@ -4,23 +4,23 @@ package androidenterprise
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type PermissionConfig struct {
-	Language any
+	Language     any
 	PermissionId any
 }
 
 type PermissionAttrs struct {
 	// A longer description of the Permissions resource, giving more details of what it affects.
 	Description any
-	Language any
+	Language    any
 	// The name of the permission.
-	Name any
+	Name         any
 	PermissionId any
 }
 
 var Permission = ubx.DataSourceBinding{
 	WireType: "google_androidenterprise_permission",
 	Fields: ubx.FieldMap{
-		"Language": ubx.FieldSpec{WireName: "language"},
+		"Language":     ubx.FieldSpec{WireName: "language"},
 		"PermissionId": ubx.FieldSpec{WireName: "permission_id"},
 	},
 }

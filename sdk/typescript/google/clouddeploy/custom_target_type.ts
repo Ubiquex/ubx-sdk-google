@@ -134,12 +134,8 @@ const CustomTargetType_TasksFields: FieldMap = {
 export interface CustomTargetTypeConfig {
   /** Optional. User annotations. These attributes can only be set and used by the user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations for more details such as format and size limitations. */
   annotations?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. Time at which the `CustomTargetType` was created. */
-  createTime?: string | Computed<string>;
   /** CustomTargetSkaffoldActions represents the `CustomTargetType` configuration using Skaffold custom actions. */
   customActions?: CustomTargetType_CustomActions | Computed<CustomTargetType_CustomActions>;
-  /** Output only. Resource id of the `CustomTargetType`. */
-  customTargetTypeId?: string | Computed<string>;
   /** Optional. Description of the `CustomTargetType`. Max length is 255 characters. */
   description?: string | Computed<string>;
   /** Optional. This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding. */
@@ -150,10 +146,6 @@ export interface CustomTargetTypeConfig {
   name?: string | Computed<string>;
   /** CustomTargetTasks represents the `CustomTargetType` configuration using tasks. */
   tasks?: CustomTargetType_Tasks | Computed<CustomTargetType_Tasks>;
-  /** Output only. Unique identifier of the `CustomTargetType`. */
-  uid?: string | Computed<string>;
-  /** Output only. Most recent time at which the `CustomTargetType` was updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface CustomTargetTypeAttrs {
@@ -185,13 +177,11 @@ export const CustomTargetType: ResourceBinding<CustomTargetTypeConfig, CustomTar
   wireType: "google_clouddeploy_custom_target_type",
   fields: {
     annotations: "annotations",
-    createTime: "create_time",
     customActions: {
       wireName: "custom_actions",
       kind: "object",
       fields: CustomTargetType_CustomActionsFields,
     },
-    customTargetTypeId: "custom_target_type_id",
     description: "description",
     etag: "etag",
     labels: "labels",
@@ -201,7 +191,5 @@ export const CustomTargetType: ResourceBinding<CustomTargetTypeConfig, CustomTar
       kind: "object",
       fields: CustomTargetType_TasksFields,
     },
-    uid: "uid",
-    updateTime: "update_time",
   },
 };

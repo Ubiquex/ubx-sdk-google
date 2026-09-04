@@ -4,19 +4,19 @@ package servicemanagement
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Config_Apis_Methods_Options struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type Config_Apis_Methods struct {
-	Edition any
-	Name any
-	Options any
-	RequestStreaming any
-	RequestTypeUrl any
+	Edition           any
+	Name              any
+	Options           any
+	RequestStreaming  any
+	RequestTypeUrl    any
 	ResponseStreaming any
-	ResponseTypeUrl any
-	Syntax any
+	ResponseTypeUrl   any
+	Syntax            any
 }
 
 type Config_Apis_Mixins struct {
@@ -29,41 +29,41 @@ type Config_Apis_SourceContext struct {
 }
 
 type Config_Apis struct {
-	Edition any
-	Methods any
-	Mixins any
-	Name any
-	Options any
+	Edition       any
+	Methods       any
+	Mixins        any
+	Name          any
+	Options       any
 	SourceContext any
-	Syntax any
-	Version any
+	Syntax        any
+	Version       any
 }
 
 type Config_Aspects_Rules struct {
-	Config any
+	Config   any
 	Selector any
 }
 
 type Config_Aspects struct {
-	Kind any
+	Kind  any
 	Rules any
-	Spec any
+	Spec  any
 }
 
 type Config_Authentication_Providers_JwtLocations struct {
-	Cookie any
-	Header any
-	Query any
+	Cookie      any
+	Header      any
+	Query       any
 	ValuePrefix any
 }
 
 type Config_Authentication_Providers struct {
-	Audiences any
+	Audiences        any
 	AuthorizationUrl any
-	Id any
-	Issuer any
-	JwksUri any
-	JwtLocations any
+	Id               any
+	Issuer           any
+	JwksUri          any
+	JwtLocations     any
 }
 
 type Config_Authentication_Rules_Oauth struct {
@@ -71,15 +71,15 @@ type Config_Authentication_Rules_Oauth struct {
 }
 
 type Config_Authentication_Rules_Requirements struct {
-	Audiences any
+	Audiences  any
 	ProviderId any
 }
 
 type Config_Authentication_Rules struct {
 	AllowWithoutCredential any
-	Oauth any
-	Requirements any
-	Selector any
+	Oauth                  any
+	Requirements           any
+	Selector               any
 }
 
 type Config_Authentication struct {
@@ -90,17 +90,17 @@ type Config_Authentication struct {
 }
 
 type Config_Backend_Rules struct {
-	Address any
-	Deadline any
-	DisableAuth any
-	JwtAudience any
-	LoadBalancingPolicy any
-	MinDeadline any
-	OperationDeadline any
+	Address                    any
+	Deadline                   any
+	DisableAuth                any
+	JwtAudience                any
+	LoadBalancingPolicy        any
+	MinDeadline                any
+	OperationDeadline          any
 	OverridesByRequestProtocol any
-	PathTranslation any
-	Protocol any
-	Selector any
+	PathTranslation            any
+	Protocol                   any
+	Selector                   any
 }
 
 type Config_Backend struct {
@@ -109,7 +109,7 @@ type Config_Backend struct {
 }
 
 type Config_Billing_ConsumerDestinations struct {
-	Metrics any
+	Metrics           any
 	MonitoredResource any
 }
 
@@ -119,11 +119,11 @@ type Config_Billing struct {
 }
 
 type Config_Context_Rules struct {
-	AllowedRequestExtensions any
+	AllowedRequestExtensions  any
 	AllowedResponseExtensions any
-	Provided any
-	Requested any
-	Selector any
+	Provided                  any
+	Requested                 any
+	Selector                  any
 }
 
 type Config_Context struct {
@@ -133,13 +133,13 @@ type Config_Context struct {
 
 type Config_Control_MethodPolicies_RequestPolicies struct {
 	ResourcePermission any
-	ResourceType any
-	Selector any
+	ResourceType       any
+	Selector           any
 }
 
 type Config_Control_MethodPolicies struct {
 	RequestPolicies any
-	Selector any
+	Selector        any
 }
 
 type Config_Control struct {
@@ -151,7 +151,7 @@ type Config_Control struct {
 
 type Config_CustomError_Rules struct {
 	IsErrorType any
-	Selector any
+	Selector    any
 }
 
 type Config_CustomError struct {
@@ -162,16 +162,16 @@ type Config_CustomError struct {
 }
 
 type Config_Documentation_Pages struct {
-	Content any
-	Name any
+	Content  any
+	Name     any
 	Subpages any
 }
 
 type Config_Documentation_Rules struct {
-	DeprecationDescription any
-	Description any
+	DeprecationDescription  any
+	Description             any
 	DisableReplacementWords any
-	Selector any
+	Selector                any
 }
 
 type Config_Documentation struct {
@@ -194,25 +194,25 @@ type Config_Documentation struct {
 }
 
 type Config_Endpoints struct {
-	Aliases any
+	Aliases   any
 	AllowCors any
-	Name any
-	Target any
+	Name      any
+	Target    any
 }
 
 type Config_Enums_Enumvalue struct {
-	Name any
-	Number any
+	Name    any
+	Number  any
 	Options any
 }
 
 type Config_Enums struct {
-	Edition any
-	Enumvalue any
-	Name any
-	Options any
+	Edition       any
+	Enumvalue     any
+	Name          any
+	Options       any
 	SourceContext any
-	Syntax any
+	Syntax        any
 }
 
 type Config_Http_Rules_Custom struct {
@@ -222,15 +222,15 @@ type Config_Http_Rules_Custom struct {
 
 type Config_Http_Rules struct {
 	AdditionalBindings any
-	Body any
-	Custom any
-	Delete any
-	Get any
-	Patch any
-	Post any
-	Put any
-	ResponseBody any
-	Selector any
+	Body               any
+	Custom             any
+	Delete             any
+	Get                any
+	Patch              any
+	Post               any
+	Put                any
+	ResponseBody       any
+	Selector           any
 }
 
 type Config_Http struct {
@@ -241,7 +241,7 @@ type Config_Http struct {
 }
 
 type Config_Logging_ConsumerDestinations struct {
-	Logs any
+	Logs              any
 	MonitoredResource any
 }
 
@@ -254,45 +254,45 @@ type Config_Logging struct {
 
 type Config_Logs_Labels struct {
 	Description any
-	Key any
-	ValueType any
+	Key         any
+	ValueType   any
 }
 
 type Config_Logs struct {
 	Description any
 	DisplayName any
-	Labels any
-	Name any
+	Labels      any
+	Name        any
 }
 
 type Config_Metrics_Metadata struct {
-	IngestDelay any
-	LaunchStage any
-	SamplePeriod any
+	IngestDelay                      any
+	LaunchStage                      any
+	SamplePeriod                     any
 	TimeSeriesResourceHierarchyLevel any
 }
 
 type Config_Metrics struct {
-	Description any
-	DisplayName any
-	Labels any
-	LaunchStage any
-	Metadata any
-	MetricKind any
+	Description            any
+	DisplayName            any
+	Labels                 any
+	LaunchStage            any
+	Metadata               any
+	MetricKind             any
 	MonitoredResourceTypes any
-	Name any
-	Type any
-	Unit any
-	ValueType any
+	Name                   any
+	Type                   any
+	Unit                   any
+	ValueType              any
 }
 
 type Config_MonitoredResources struct {
 	Description any
 	DisplayName any
-	Labels any
+	Labels      any
 	LaunchStage any
-	Name any
-	Type any
+	Name        any
+	Type        any
 }
 
 type Config_Monitoring struct {
@@ -304,12 +304,12 @@ type Config_Monitoring struct {
 
 type Config_Publishing_LibrarySettings_CppSettings_Common_SelectiveGapicGeneration struct {
 	GenerateOmittedAsInternal any
-	Methods any
+	Methods                   any
 }
 
 type Config_Publishing_LibrarySettings_CppSettings_Common struct {
-	Destinations any
-	ReferenceDocsUri any
+	Destinations             any
+	ReferenceDocsUri         any
 	SelectiveGapicGeneration any
 }
 
@@ -318,89 +318,89 @@ type Config_Publishing_LibrarySettings_CppSettings struct {
 }
 
 type Config_Publishing_LibrarySettings_DotnetSettings struct {
-	Common any
+	Common                 any
 	ForcedNamespaceAliases any
-	HandwrittenSignatures any
-	IgnoredResources any
-	RenamedResources any
-	RenamedServices any
+	HandwrittenSignatures  any
+	IgnoredResources       any
+	RenamedResources       any
+	RenamedServices        any
 }
 
 type Config_Publishing_LibrarySettings_GoSettings struct {
-	Common any
+	Common          any
 	RenamedServices any
 }
 
 type Config_Publishing_LibrarySettings_JavaSettings struct {
-	Common any
-	LibraryPackage any
+	Common            any
+	LibraryPackage    any
 	ServiceClassNames any
 }
 
 type Config_Publishing_LibrarySettings_PhpSettings struct {
-	Common any
+	Common         any
 	LibraryPackage any
 }
 
 type Config_Publishing_LibrarySettings_PythonSettings_ExperimentalFeatures struct {
 	ProtobufPythonicTypesEnabled any
-	RestAsyncIoEnabled any
-	UnversionedPackageDisabled any
+	RestAsyncIoEnabled           any
+	UnversionedPackageDisabled   any
 }
 
 type Config_Publishing_LibrarySettings_PythonSettings struct {
-	Common any
+	Common               any
 	ExperimentalFeatures any
 }
 
 type Config_Publishing_LibrarySettings struct {
-	CppSettings any
-	DotnetSettings any
-	GoSettings any
-	JavaSettings any
-	LaunchStage any
-	NodeSettings any
-	PhpSettings any
-	PythonSettings any
+	CppSettings      any
+	DotnetSettings   any
+	GoSettings       any
+	JavaSettings     any
+	LaunchStage      any
+	NodeSettings     any
+	PhpSettings      any
+	PythonSettings   any
 	RestNumericEnums any
-	RubySettings any
-	Version any
+	RubySettings     any
+	Version          any
 }
 
 type Config_Publishing_MethodSettings_Batching_BatchDescriptor struct {
-	BatchedField any
+	BatchedField        any
 	DiscriminatorFields any
-	SubresponseField any
+	SubresponseField    any
 }
 
 type Config_Publishing_MethodSettings_Batching_Thresholds struct {
-	DelayThreshold any
-	ElementCountLimit any
-	ElementCountThreshold any
-	FlowControlByteLimit any
-	FlowControlElementLimit any
+	DelayThreshold                   any
+	ElementCountLimit                any
+	ElementCountThreshold            any
+	FlowControlByteLimit             any
+	FlowControlElementLimit          any
 	FlowControlLimitExceededBehavior any
-	RequestByteLimit any
-	RequestByteThreshold any
+	RequestByteLimit                 any
+	RequestByteThreshold             any
 }
 
 type Config_Publishing_MethodSettings_Batching struct {
 	BatchDescriptor any
-	Thresholds any
+	Thresholds      any
 }
 
 type Config_Publishing_MethodSettings_LongRunning struct {
-	InitialPollDelay any
-	MaxPollDelay any
+	InitialPollDelay    any
+	MaxPollDelay        any
 	PollDelayMultiplier any
-	TotalPollTimeout any
+	TotalPollTimeout    any
 }
 
 type Config_Publishing_MethodSettings struct {
 	AutoPopulatedFields any
-	Batching any
-	LongRunning any
-	Selector any
+	Batching            any
+	LongRunning         any
+	Selector            any
 }
 
 type Config_Publishing struct {
@@ -429,24 +429,24 @@ type Config_Publishing struct {
 }
 
 type Config_Quota_Limits struct {
-	DefaultLimit any
-	Description any
-	DisplayName any
-	Duration any
-	FreeTier any
-	MaxLimit any
-	Metric any
-	Name any
+	DefaultLimit  any
+	Description   any
+	DisplayName   any
+	Duration      any
+	FreeTier      any
+	MaxLimit      any
+	Metric        any
+	Name          any
 	TrafficSource any
-	Unit any
-	Values any
+	Unit          any
+	Values        any
 }
 
 type Config_Quota_MetricRules struct {
-	AgenticMetricCosts any
-	MetricCosts any
+	AgenticMetricCosts    any
+	MetricCosts           any
 	NonagenticMetricCosts any
-	Selector any
+	Selector              any
 }
 
 type Config_Quota struct {
@@ -462,14 +462,14 @@ type Config_SourceInfo struct {
 }
 
 type Config_SystemParameters_Rules_Parameters struct {
-	HttpHeader any
-	Name any
+	HttpHeader        any
+	Name              any
 	UrlQueryParameter any
 }
 
 type Config_SystemParameters_Rules struct {
 	Parameters any
-	Selector any
+	Selector   any
 }
 
 type Config_SystemParameters struct {
@@ -478,32 +478,32 @@ type Config_SystemParameters struct {
 }
 
 type Config_SystemTypes_Fields struct {
-	Cardinality any
+	Cardinality  any
 	DefaultValue any
-	JsonName any
-	Kind any
-	Name any
-	Number any
-	OneofIndex any
-	Options any
-	Packed any
-	TypeUrl any
+	JsonName     any
+	Kind         any
+	Name         any
+	Number       any
+	OneofIndex   any
+	Options      any
+	Packed       any
+	TypeUrl      any
 }
 
 type Config_SystemTypes struct {
-	Edition any
-	Fields any
-	Name any
-	Oneofs any
-	Options any
+	Edition       any
+	Fields        any
+	Name          any
+	Oneofs        any
+	Options       any
 	SourceContext any
-	Syntax any
+	Syntax        any
 }
 
 type Config_Usage_Rules struct {
 	AllowUnregisteredCalls any
-	Selector any
-	SkipServiceControl any
+	Selector               any
+	SkipServiceControl     any
 }
 
 type Config_Usage struct {
@@ -516,735 +516,735 @@ type Config_Usage struct {
 }
 
 var Config_Apis_Methods_OptionsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Config_Apis_MethodsFields = ubx.FieldMap{
-		"Edition": ubx.FieldSpec{WireName: "edition"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Options": ubx.FieldSpec{
-			WireName: "options",
-			Kind: "list",
-			Fields: Config_Apis_Methods_OptionsFields,
-		},
-		"RequestStreaming": ubx.FieldSpec{WireName: "request_streaming"},
-		"RequestTypeUrl": ubx.FieldSpec{WireName: "request_type_url"},
-		"ResponseStreaming": ubx.FieldSpec{WireName: "response_streaming"},
-		"ResponseTypeUrl": ubx.FieldSpec{WireName: "response_type_url"},
-		"Syntax": ubx.FieldSpec{WireName: "syntax"},
-	}
+	"Edition": ubx.FieldSpec{WireName: "edition"},
+	"Name":    ubx.FieldSpec{WireName: "name"},
+	"Options": ubx.FieldSpec{
+		WireName: "options",
+		Kind:     "list",
+		Fields:   Config_Apis_Methods_OptionsFields,
+	},
+	"RequestStreaming":  ubx.FieldSpec{WireName: "request_streaming"},
+	"RequestTypeUrl":    ubx.FieldSpec{WireName: "request_type_url"},
+	"ResponseStreaming": ubx.FieldSpec{WireName: "response_streaming"},
+	"ResponseTypeUrl":   ubx.FieldSpec{WireName: "response_type_url"},
+	"Syntax":            ubx.FieldSpec{WireName: "syntax"},
+}
 
 var Config_Apis_MixinsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Root": ubx.FieldSpec{WireName: "root"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Root": ubx.FieldSpec{WireName: "root"},
+}
 
 var Config_Apis_SourceContextFields = ubx.FieldMap{
-		"FileName": ubx.FieldSpec{WireName: "file_name"},
-	}
+	"FileName": ubx.FieldSpec{WireName: "file_name"},
+}
 
 var Config_ApisFields = ubx.FieldMap{
-		"Edition": ubx.FieldSpec{WireName: "edition"},
-		"Methods": ubx.FieldSpec{
-			WireName: "methods",
-			Kind: "list",
-			Fields: Config_Apis_MethodsFields,
-		},
-		"Mixins": ubx.FieldSpec{
-			WireName: "mixins",
-			Kind: "list",
-			Fields: Config_Apis_MixinsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Options": ubx.FieldSpec{
-			WireName: "options",
-			Kind: "list",
-			Fields: Config_Apis_Methods_OptionsFields,
-		},
-		"SourceContext": ubx.FieldSpec{
-			WireName: "source_context",
-			Kind: "object",
-			Fields: Config_Apis_SourceContextFields,
-		},
-		"Syntax": ubx.FieldSpec{WireName: "syntax"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"Edition": ubx.FieldSpec{WireName: "edition"},
+	"Methods": ubx.FieldSpec{
+		WireName: "methods",
+		Kind:     "list",
+		Fields:   Config_Apis_MethodsFields,
+	},
+	"Mixins": ubx.FieldSpec{
+		WireName: "mixins",
+		Kind:     "list",
+		Fields:   Config_Apis_MixinsFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Options": ubx.FieldSpec{
+		WireName: "options",
+		Kind:     "list",
+		Fields:   Config_Apis_Methods_OptionsFields,
+	},
+	"SourceContext": ubx.FieldSpec{
+		WireName: "source_context",
+		Kind:     "object",
+		Fields:   Config_Apis_SourceContextFields,
+	},
+	"Syntax":  ubx.FieldSpec{WireName: "syntax"},
+	"Version": ubx.FieldSpec{WireName: "version"},
+}
 
 var Config_Aspects_RulesFields = ubx.FieldMap{
-		"Config": ubx.FieldSpec{WireName: "config"},
-		"Selector": ubx.FieldSpec{WireName: "selector"},
-	}
+	"Config":   ubx.FieldSpec{WireName: "config"},
+	"Selector": ubx.FieldSpec{WireName: "selector"},
+}
 
 var Config_AspectsFields = ubx.FieldMap{
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Rules": ubx.FieldSpec{
-			WireName: "rules",
-			Kind: "list",
-			Fields: Config_Aspects_RulesFields,
-		},
-		"Spec": ubx.FieldSpec{WireName: "spec"},
-	}
+	"Kind": ubx.FieldSpec{WireName: "kind"},
+	"Rules": ubx.FieldSpec{
+		WireName: "rules",
+		Kind:     "list",
+		Fields:   Config_Aspects_RulesFields,
+	},
+	"Spec": ubx.FieldSpec{WireName: "spec"},
+}
 
 var Config_Authentication_Providers_JwtLocationsFields = ubx.FieldMap{
-		"Cookie": ubx.FieldSpec{WireName: "cookie"},
-		"Header": ubx.FieldSpec{WireName: "header"},
-		"Query": ubx.FieldSpec{WireName: "query"},
-		"ValuePrefix": ubx.FieldSpec{WireName: "value_prefix"},
-	}
+	"Cookie":      ubx.FieldSpec{WireName: "cookie"},
+	"Header":      ubx.FieldSpec{WireName: "header"},
+	"Query":       ubx.FieldSpec{WireName: "query"},
+	"ValuePrefix": ubx.FieldSpec{WireName: "value_prefix"},
+}
 
 var Config_Authentication_ProvidersFields = ubx.FieldMap{
-		"Audiences": ubx.FieldSpec{WireName: "audiences"},
-		"AuthorizationUrl": ubx.FieldSpec{WireName: "authorization_url"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Issuer": ubx.FieldSpec{WireName: "issuer"},
-		"JwksUri": ubx.FieldSpec{WireName: "jwks_uri"},
-		"JwtLocations": ubx.FieldSpec{
-			WireName: "jwt_locations",
-			Kind: "list",
-			Fields: Config_Authentication_Providers_JwtLocationsFields,
-		},
-	}
+	"Audiences":        ubx.FieldSpec{WireName: "audiences"},
+	"AuthorizationUrl": ubx.FieldSpec{WireName: "authorization_url"},
+	"Id":               ubx.FieldSpec{WireName: "id"},
+	"Issuer":           ubx.FieldSpec{WireName: "issuer"},
+	"JwksUri":          ubx.FieldSpec{WireName: "jwks_uri"},
+	"JwtLocations": ubx.FieldSpec{
+		WireName: "jwt_locations",
+		Kind:     "list",
+		Fields:   Config_Authentication_Providers_JwtLocationsFields,
+	},
+}
 
 var Config_Authentication_Rules_OauthFields = ubx.FieldMap{
-		"CanonicalScopes": ubx.FieldSpec{WireName: "canonical_scopes"},
-	}
+	"CanonicalScopes": ubx.FieldSpec{WireName: "canonical_scopes"},
+}
 
 var Config_Authentication_Rules_RequirementsFields = ubx.FieldMap{
-		"Audiences": ubx.FieldSpec{WireName: "audiences"},
-		"ProviderId": ubx.FieldSpec{WireName: "provider_id"},
-	}
+	"Audiences":  ubx.FieldSpec{WireName: "audiences"},
+	"ProviderId": ubx.FieldSpec{WireName: "provider_id"},
+}
 
 var Config_Authentication_RulesFields = ubx.FieldMap{
-		"AllowWithoutCredential": ubx.FieldSpec{WireName: "allow_without_credential"},
-		"Oauth": ubx.FieldSpec{
-			WireName: "oauth",
-			Kind: "object",
-			Fields: Config_Authentication_Rules_OauthFields,
-		},
-		"Requirements": ubx.FieldSpec{
-			WireName: "requirements",
-			Kind: "list",
-			Fields: Config_Authentication_Rules_RequirementsFields,
-		},
-		"Selector": ubx.FieldSpec{WireName: "selector"},
-	}
+	"AllowWithoutCredential": ubx.FieldSpec{WireName: "allow_without_credential"},
+	"Oauth": ubx.FieldSpec{
+		WireName: "oauth",
+		Kind:     "object",
+		Fields:   Config_Authentication_Rules_OauthFields,
+	},
+	"Requirements": ubx.FieldSpec{
+		WireName: "requirements",
+		Kind:     "list",
+		Fields:   Config_Authentication_Rules_RequirementsFields,
+	},
+	"Selector": ubx.FieldSpec{WireName: "selector"},
+}
 
 var Config_AuthenticationFields = ubx.FieldMap{
-		"Providers": ubx.FieldSpec{
-			WireName: "providers",
-			Kind: "list",
-			Fields: Config_Authentication_ProvidersFields,
-		},
-		"Rules": ubx.FieldSpec{
-			WireName: "rules",
-			Kind: "list",
-			Fields: Config_Authentication_RulesFields,
-		},
-	}
+	"Providers": ubx.FieldSpec{
+		WireName: "providers",
+		Kind:     "list",
+		Fields:   Config_Authentication_ProvidersFields,
+	},
+	"Rules": ubx.FieldSpec{
+		WireName: "rules",
+		Kind:     "list",
+		Fields:   Config_Authentication_RulesFields,
+	},
+}
 
 var Config_Backend_RulesFields = ubx.FieldMap{
-		"Address": ubx.FieldSpec{WireName: "address"},
-		"Deadline": ubx.FieldSpec{WireName: "deadline"},
-		"DisableAuth": ubx.FieldSpec{WireName: "disable_auth"},
-		"JwtAudience": ubx.FieldSpec{WireName: "jwt_audience"},
-		"LoadBalancingPolicy": ubx.FieldSpec{WireName: "load_balancing_policy"},
-		"MinDeadline": ubx.FieldSpec{WireName: "min_deadline"},
-		"OperationDeadline": ubx.FieldSpec{WireName: "operation_deadline"},
-		"OverridesByRequestProtocol": ubx.FieldSpec{WireName: "overrides_by_request_protocol"},
-		"PathTranslation": ubx.FieldSpec{WireName: "path_translation"},
-		"Protocol": ubx.FieldSpec{WireName: "protocol"},
-		"Selector": ubx.FieldSpec{WireName: "selector"},
-	}
+	"Address":                    ubx.FieldSpec{WireName: "address"},
+	"Deadline":                   ubx.FieldSpec{WireName: "deadline"},
+	"DisableAuth":                ubx.FieldSpec{WireName: "disable_auth"},
+	"JwtAudience":                ubx.FieldSpec{WireName: "jwt_audience"},
+	"LoadBalancingPolicy":        ubx.FieldSpec{WireName: "load_balancing_policy"},
+	"MinDeadline":                ubx.FieldSpec{WireName: "min_deadline"},
+	"OperationDeadline":          ubx.FieldSpec{WireName: "operation_deadline"},
+	"OverridesByRequestProtocol": ubx.FieldSpec{WireName: "overrides_by_request_protocol"},
+	"PathTranslation":            ubx.FieldSpec{WireName: "path_translation"},
+	"Protocol":                   ubx.FieldSpec{WireName: "protocol"},
+	"Selector":                   ubx.FieldSpec{WireName: "selector"},
+}
 
 var Config_BackendFields = ubx.FieldMap{
-		"Rules": ubx.FieldSpec{
-			WireName: "rules",
-			Kind: "list",
-			Fields: Config_Backend_RulesFields,
-		},
-	}
+	"Rules": ubx.FieldSpec{
+		WireName: "rules",
+		Kind:     "list",
+		Fields:   Config_Backend_RulesFields,
+	},
+}
 
 var Config_Billing_ConsumerDestinationsFields = ubx.FieldMap{
-		"Metrics": ubx.FieldSpec{WireName: "metrics"},
-		"MonitoredResource": ubx.FieldSpec{WireName: "monitored_resource"},
-	}
+	"Metrics":           ubx.FieldSpec{WireName: "metrics"},
+	"MonitoredResource": ubx.FieldSpec{WireName: "monitored_resource"},
+}
 
 var Config_BillingFields = ubx.FieldMap{
-		"ConsumerDestinations": ubx.FieldSpec{
-			WireName: "consumer_destinations",
-			Kind: "list",
-			Fields: Config_Billing_ConsumerDestinationsFields,
-		},
-	}
+	"ConsumerDestinations": ubx.FieldSpec{
+		WireName: "consumer_destinations",
+		Kind:     "list",
+		Fields:   Config_Billing_ConsumerDestinationsFields,
+	},
+}
 
 var Config_Context_RulesFields = ubx.FieldMap{
-		"AllowedRequestExtensions": ubx.FieldSpec{WireName: "allowed_request_extensions"},
-		"AllowedResponseExtensions": ubx.FieldSpec{WireName: "allowed_response_extensions"},
-		"Provided": ubx.FieldSpec{WireName: "provided"},
-		"Requested": ubx.FieldSpec{WireName: "requested"},
-		"Selector": ubx.FieldSpec{WireName: "selector"},
-	}
+	"AllowedRequestExtensions":  ubx.FieldSpec{WireName: "allowed_request_extensions"},
+	"AllowedResponseExtensions": ubx.FieldSpec{WireName: "allowed_response_extensions"},
+	"Provided":                  ubx.FieldSpec{WireName: "provided"},
+	"Requested":                 ubx.FieldSpec{WireName: "requested"},
+	"Selector":                  ubx.FieldSpec{WireName: "selector"},
+}
 
 var Config_ContextFields = ubx.FieldMap{
-		"Rules": ubx.FieldSpec{
-			WireName: "rules",
-			Kind: "list",
-			Fields: Config_Context_RulesFields,
-		},
-	}
+	"Rules": ubx.FieldSpec{
+		WireName: "rules",
+		Kind:     "list",
+		Fields:   Config_Context_RulesFields,
+	},
+}
 
 var Config_Control_MethodPolicies_RequestPoliciesFields = ubx.FieldMap{
-		"ResourcePermission": ubx.FieldSpec{WireName: "resource_permission"},
-		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
-		"Selector": ubx.FieldSpec{WireName: "selector"},
-	}
+	"ResourcePermission": ubx.FieldSpec{WireName: "resource_permission"},
+	"ResourceType":       ubx.FieldSpec{WireName: "resource_type"},
+	"Selector":           ubx.FieldSpec{WireName: "selector"},
+}
 
 var Config_Control_MethodPoliciesFields = ubx.FieldMap{
-		"RequestPolicies": ubx.FieldSpec{
-			WireName: "request_policies",
-			Kind: "list",
-			Fields: Config_Control_MethodPolicies_RequestPoliciesFields,
-		},
-		"Selector": ubx.FieldSpec{WireName: "selector"},
-	}
+	"RequestPolicies": ubx.FieldSpec{
+		WireName: "request_policies",
+		Kind:     "list",
+		Fields:   Config_Control_MethodPolicies_RequestPoliciesFields,
+	},
+	"Selector": ubx.FieldSpec{WireName: "selector"},
+}
 
 var Config_ControlFields = ubx.FieldMap{
-		"Environment": ubx.FieldSpec{WireName: "environment"},
-		"MethodPolicies": ubx.FieldSpec{
-			WireName: "method_policies",
-			Kind: "list",
-			Fields: Config_Control_MethodPoliciesFields,
-		},
-	}
+	"Environment": ubx.FieldSpec{WireName: "environment"},
+	"MethodPolicies": ubx.FieldSpec{
+		WireName: "method_policies",
+		Kind:     "list",
+		Fields:   Config_Control_MethodPoliciesFields,
+	},
+}
 
 var Config_CustomError_RulesFields = ubx.FieldMap{
-		"IsErrorType": ubx.FieldSpec{WireName: "is_error_type"},
-		"Selector": ubx.FieldSpec{WireName: "selector"},
-	}
+	"IsErrorType": ubx.FieldSpec{WireName: "is_error_type"},
+	"Selector":    ubx.FieldSpec{WireName: "selector"},
+}
 
 var Config_CustomErrorFields = ubx.FieldMap{
-		"Rules": ubx.FieldSpec{
-			WireName: "rules",
-			Kind: "list",
-			Fields: Config_CustomError_RulesFields,
-		},
-		"Types": ubx.FieldSpec{WireName: "types"},
-	}
+	"Rules": ubx.FieldSpec{
+		WireName: "rules",
+		Kind:     "list",
+		Fields:   Config_CustomError_RulesFields,
+	},
+	"Types": ubx.FieldSpec{WireName: "types"},
+}
 
 var Config_Documentation_PagesFields = ubx.FieldMap{
-		"Content": ubx.FieldSpec{WireName: "content"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Subpages": ubx.FieldSpec{WireName: "subpages"},
-	}
+	"Content":  ubx.FieldSpec{WireName: "content"},
+	"Name":     ubx.FieldSpec{WireName: "name"},
+	"Subpages": ubx.FieldSpec{WireName: "subpages"},
+}
 
 var Config_Documentation_RulesFields = ubx.FieldMap{
-		"DeprecationDescription": ubx.FieldSpec{WireName: "deprecation_description"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisableReplacementWords": ubx.FieldSpec{WireName: "disable_replacement_words"},
-		"Selector": ubx.FieldSpec{WireName: "selector"},
-	}
+	"DeprecationDescription":  ubx.FieldSpec{WireName: "deprecation_description"},
+	"Description":             ubx.FieldSpec{WireName: "description"},
+	"DisableReplacementWords": ubx.FieldSpec{WireName: "disable_replacement_words"},
+	"Selector":                ubx.FieldSpec{WireName: "selector"},
+}
 
 var Config_DocumentationFields = ubx.FieldMap{
-		"AdditionalIamInfo": ubx.FieldSpec{WireName: "additional_iam_info"},
-		"DocumentationRootUrl": ubx.FieldSpec{WireName: "documentation_root_url"},
-		"Overview": ubx.FieldSpec{WireName: "overview"},
-		"Pages": ubx.FieldSpec{
-			WireName: "pages",
-			Kind: "list",
-			Fields: Config_Documentation_PagesFields,
-		},
-		"Rules": ubx.FieldSpec{
-			WireName: "rules",
-			Kind: "list",
-			Fields: Config_Documentation_RulesFields,
-		},
-		"SectionOverrides": ubx.FieldSpec{
-			WireName: "section_overrides",
-			Kind: "list",
-			Fields: Config_Documentation_PagesFields,
-		},
-		"ServiceRootUrl": ubx.FieldSpec{WireName: "service_root_url"},
-		"Summary": ubx.FieldSpec{WireName: "summary"},
-	}
+	"AdditionalIamInfo":    ubx.FieldSpec{WireName: "additional_iam_info"},
+	"DocumentationRootUrl": ubx.FieldSpec{WireName: "documentation_root_url"},
+	"Overview":             ubx.FieldSpec{WireName: "overview"},
+	"Pages": ubx.FieldSpec{
+		WireName: "pages",
+		Kind:     "list",
+		Fields:   Config_Documentation_PagesFields,
+	},
+	"Rules": ubx.FieldSpec{
+		WireName: "rules",
+		Kind:     "list",
+		Fields:   Config_Documentation_RulesFields,
+	},
+	"SectionOverrides": ubx.FieldSpec{
+		WireName: "section_overrides",
+		Kind:     "list",
+		Fields:   Config_Documentation_PagesFields,
+	},
+	"ServiceRootUrl": ubx.FieldSpec{WireName: "service_root_url"},
+	"Summary":        ubx.FieldSpec{WireName: "summary"},
+}
 
 var Config_EndpointsFields = ubx.FieldMap{
-		"Aliases": ubx.FieldSpec{WireName: "aliases"},
-		"AllowCors": ubx.FieldSpec{WireName: "allow_cors"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Target": ubx.FieldSpec{WireName: "target"},
-	}
+	"Aliases":   ubx.FieldSpec{WireName: "aliases"},
+	"AllowCors": ubx.FieldSpec{WireName: "allow_cors"},
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"Target":    ubx.FieldSpec{WireName: "target"},
+}
 
 var Config_Enums_EnumvalueFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Number": ubx.FieldSpec{WireName: "number"},
-		"Options": ubx.FieldSpec{
-			WireName: "options",
-			Kind: "list",
-			Fields: Config_Apis_Methods_OptionsFields,
-		},
-	}
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Number": ubx.FieldSpec{WireName: "number"},
+	"Options": ubx.FieldSpec{
+		WireName: "options",
+		Kind:     "list",
+		Fields:   Config_Apis_Methods_OptionsFields,
+	},
+}
 
 var Config_EnumsFields = ubx.FieldMap{
-		"Edition": ubx.FieldSpec{WireName: "edition"},
-		"Enumvalue": ubx.FieldSpec{
-			WireName: "enumvalue",
-			Kind: "list",
-			Fields: Config_Enums_EnumvalueFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Options": ubx.FieldSpec{
-			WireName: "options",
-			Kind: "list",
-			Fields: Config_Apis_Methods_OptionsFields,
-		},
-		"SourceContext": ubx.FieldSpec{
-			WireName: "source_context",
-			Kind: "object",
-			Fields: Config_Apis_SourceContextFields,
-		},
-		"Syntax": ubx.FieldSpec{WireName: "syntax"},
-	}
+	"Edition": ubx.FieldSpec{WireName: "edition"},
+	"Enumvalue": ubx.FieldSpec{
+		WireName: "enumvalue",
+		Kind:     "list",
+		Fields:   Config_Enums_EnumvalueFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Options": ubx.FieldSpec{
+		WireName: "options",
+		Kind:     "list",
+		Fields:   Config_Apis_Methods_OptionsFields,
+	},
+	"SourceContext": ubx.FieldSpec{
+		WireName: "source_context",
+		Kind:     "object",
+		Fields:   Config_Apis_SourceContextFields,
+	},
+	"Syntax": ubx.FieldSpec{WireName: "syntax"},
+}
 
 var Config_Http_Rules_CustomFields = ubx.FieldMap{
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-	}
+	"Kind": ubx.FieldSpec{WireName: "kind"},
+	"Path": ubx.FieldSpec{WireName: "path"},
+}
 
 var Config_Http_RulesFields = ubx.FieldMap{
-		"AdditionalBindings": ubx.FieldSpec{WireName: "additional_bindings"},
-		"Body": ubx.FieldSpec{WireName: "body"},
-		"Custom": ubx.FieldSpec{
-			WireName: "custom",
-			Kind: "object",
-			Fields: Config_Http_Rules_CustomFields,
-		},
-		"Delete": ubx.FieldSpec{WireName: "delete"},
-		"Get": ubx.FieldSpec{WireName: "get"},
-		"Patch": ubx.FieldSpec{WireName: "patch"},
-		"Post": ubx.FieldSpec{WireName: "post"},
-		"Put": ubx.FieldSpec{WireName: "put"},
-		"ResponseBody": ubx.FieldSpec{WireName: "response_body"},
-		"Selector": ubx.FieldSpec{WireName: "selector"},
-	}
+	"AdditionalBindings": ubx.FieldSpec{WireName: "additional_bindings"},
+	"Body":               ubx.FieldSpec{WireName: "body"},
+	"Custom": ubx.FieldSpec{
+		WireName: "custom",
+		Kind:     "object",
+		Fields:   Config_Http_Rules_CustomFields,
+	},
+	"Delete":       ubx.FieldSpec{WireName: "delete"},
+	"Get":          ubx.FieldSpec{WireName: "get"},
+	"Patch":        ubx.FieldSpec{WireName: "patch"},
+	"Post":         ubx.FieldSpec{WireName: "post"},
+	"Put":          ubx.FieldSpec{WireName: "put"},
+	"ResponseBody": ubx.FieldSpec{WireName: "response_body"},
+	"Selector":     ubx.FieldSpec{WireName: "selector"},
+}
 
 var Config_HttpFields = ubx.FieldMap{
-		"FullyDecodeReservedExpansion": ubx.FieldSpec{WireName: "fully_decode_reserved_expansion"},
-		"Rules": ubx.FieldSpec{
-			WireName: "rules",
-			Kind: "list",
-			Fields: Config_Http_RulesFields,
-		},
-	}
+	"FullyDecodeReservedExpansion": ubx.FieldSpec{WireName: "fully_decode_reserved_expansion"},
+	"Rules": ubx.FieldSpec{
+		WireName: "rules",
+		Kind:     "list",
+		Fields:   Config_Http_RulesFields,
+	},
+}
 
 var Config_Logging_ConsumerDestinationsFields = ubx.FieldMap{
-		"Logs": ubx.FieldSpec{WireName: "logs"},
-		"MonitoredResource": ubx.FieldSpec{WireName: "monitored_resource"},
-	}
+	"Logs":              ubx.FieldSpec{WireName: "logs"},
+	"MonitoredResource": ubx.FieldSpec{WireName: "monitored_resource"},
+}
 
 var Config_LoggingFields = ubx.FieldMap{
-		"ConsumerDestinations": ubx.FieldSpec{
-			WireName: "consumer_destinations",
-			Kind: "list",
-			Fields: Config_Logging_ConsumerDestinationsFields,
-		},
-		"ProducerDestinations": ubx.FieldSpec{
-			WireName: "producer_destinations",
-			Kind: "list",
-			Fields: Config_Logging_ConsumerDestinationsFields,
-		},
-	}
+	"ConsumerDestinations": ubx.FieldSpec{
+		WireName: "consumer_destinations",
+		Kind:     "list",
+		Fields:   Config_Logging_ConsumerDestinationsFields,
+	},
+	"ProducerDestinations": ubx.FieldSpec{
+		WireName: "producer_destinations",
+		Kind:     "list",
+		Fields:   Config_Logging_ConsumerDestinationsFields,
+	},
+}
 
 var Config_Logs_LabelsFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"ValueType": ubx.FieldSpec{WireName: "value_type"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Key":         ubx.FieldSpec{WireName: "key"},
+	"ValueType":   ubx.FieldSpec{WireName: "value_type"},
+}
 
 var Config_LogsFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Labels": ubx.FieldSpec{
-			WireName: "labels",
-			Kind: "list",
-			Fields: Config_Logs_LabelsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"Labels": ubx.FieldSpec{
+		WireName: "labels",
+		Kind:     "list",
+		Fields:   Config_Logs_LabelsFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var Config_Metrics_MetadataFields = ubx.FieldMap{
-		"IngestDelay": ubx.FieldSpec{WireName: "ingest_delay"},
-		"LaunchStage": ubx.FieldSpec{WireName: "launch_stage"},
-		"SamplePeriod": ubx.FieldSpec{WireName: "sample_period"},
-		"TimeSeriesResourceHierarchyLevel": ubx.FieldSpec{WireName: "time_series_resource_hierarchy_level"},
-	}
+	"IngestDelay":                      ubx.FieldSpec{WireName: "ingest_delay"},
+	"LaunchStage":                      ubx.FieldSpec{WireName: "launch_stage"},
+	"SamplePeriod":                     ubx.FieldSpec{WireName: "sample_period"},
+	"TimeSeriesResourceHierarchyLevel": ubx.FieldSpec{WireName: "time_series_resource_hierarchy_level"},
+}
 
 var Config_MetricsFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Labels": ubx.FieldSpec{
-			WireName: "labels",
-			Kind: "list",
-			Fields: Config_Logs_LabelsFields,
-		},
-		"LaunchStage": ubx.FieldSpec{WireName: "launch_stage"},
-		"Metadata": ubx.FieldSpec{
-			WireName: "metadata",
-			Kind: "object",
-			Fields: Config_Metrics_MetadataFields,
-		},
-		"MetricKind": ubx.FieldSpec{WireName: "metric_kind"},
-		"MonitoredResourceTypes": ubx.FieldSpec{WireName: "monitored_resource_types"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Unit": ubx.FieldSpec{WireName: "unit"},
-		"ValueType": ubx.FieldSpec{WireName: "value_type"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"Labels": ubx.FieldSpec{
+		WireName: "labels",
+		Kind:     "list",
+		Fields:   Config_Logs_LabelsFields,
+	},
+	"LaunchStage": ubx.FieldSpec{WireName: "launch_stage"},
+	"Metadata": ubx.FieldSpec{
+		WireName: "metadata",
+		Kind:     "object",
+		Fields:   Config_Metrics_MetadataFields,
+	},
+	"MetricKind":             ubx.FieldSpec{WireName: "metric_kind"},
+	"MonitoredResourceTypes": ubx.FieldSpec{WireName: "monitored_resource_types"},
+	"Name":                   ubx.FieldSpec{WireName: "name"},
+	"Type":                   ubx.FieldSpec{WireName: "type"},
+	"Unit":                   ubx.FieldSpec{WireName: "unit"},
+	"ValueType":              ubx.FieldSpec{WireName: "value_type"},
+}
 
 var Config_MonitoredResourcesFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Labels": ubx.FieldSpec{
-			WireName: "labels",
-			Kind: "list",
-			Fields: Config_Logs_LabelsFields,
-		},
-		"LaunchStage": ubx.FieldSpec{WireName: "launch_stage"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"Labels": ubx.FieldSpec{
+		WireName: "labels",
+		Kind:     "list",
+		Fields:   Config_Logs_LabelsFields,
+	},
+	"LaunchStage": ubx.FieldSpec{WireName: "launch_stage"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"Type":        ubx.FieldSpec{WireName: "type"},
+}
 
 var Config_MonitoringFields = ubx.FieldMap{
-		"ConsumerDestinations": ubx.FieldSpec{
-			WireName: "consumer_destinations",
-			Kind: "list",
-			Fields: Config_Billing_ConsumerDestinationsFields,
-		},
-		"ProducerDestinations": ubx.FieldSpec{
-			WireName: "producer_destinations",
-			Kind: "list",
-			Fields: Config_Billing_ConsumerDestinationsFields,
-		},
-	}
+	"ConsumerDestinations": ubx.FieldSpec{
+		WireName: "consumer_destinations",
+		Kind:     "list",
+		Fields:   Config_Billing_ConsumerDestinationsFields,
+	},
+	"ProducerDestinations": ubx.FieldSpec{
+		WireName: "producer_destinations",
+		Kind:     "list",
+		Fields:   Config_Billing_ConsumerDestinationsFields,
+	},
+}
 
 var Config_Publishing_LibrarySettings_CppSettings_Common_SelectiveGapicGenerationFields = ubx.FieldMap{
-		"GenerateOmittedAsInternal": ubx.FieldSpec{WireName: "generate_omitted_as_internal"},
-		"Methods": ubx.FieldSpec{WireName: "methods"},
-	}
+	"GenerateOmittedAsInternal": ubx.FieldSpec{WireName: "generate_omitted_as_internal"},
+	"Methods":                   ubx.FieldSpec{WireName: "methods"},
+}
 
 var Config_Publishing_LibrarySettings_CppSettings_CommonFields = ubx.FieldMap{
-		"Destinations": ubx.FieldSpec{WireName: "destinations"},
-		"ReferenceDocsUri": ubx.FieldSpec{WireName: "reference_docs_uri"},
-		"SelectiveGapicGeneration": ubx.FieldSpec{
-			WireName: "selective_gapic_generation",
-			Kind: "object",
-			Fields: Config_Publishing_LibrarySettings_CppSettings_Common_SelectiveGapicGenerationFields,
-		},
-	}
+	"Destinations":     ubx.FieldSpec{WireName: "destinations"},
+	"ReferenceDocsUri": ubx.FieldSpec{WireName: "reference_docs_uri"},
+	"SelectiveGapicGeneration": ubx.FieldSpec{
+		WireName: "selective_gapic_generation",
+		Kind:     "object",
+		Fields:   Config_Publishing_LibrarySettings_CppSettings_Common_SelectiveGapicGenerationFields,
+	},
+}
 
 var Config_Publishing_LibrarySettings_CppSettingsFields = ubx.FieldMap{
-		"Common": ubx.FieldSpec{
-			WireName: "common",
-			Kind: "object",
-			Fields: Config_Publishing_LibrarySettings_CppSettings_CommonFields,
-		},
-	}
+	"Common": ubx.FieldSpec{
+		WireName: "common",
+		Kind:     "object",
+		Fields:   Config_Publishing_LibrarySettings_CppSettings_CommonFields,
+	},
+}
 
 var Config_Publishing_LibrarySettings_DotnetSettingsFields = ubx.FieldMap{
-		"Common": ubx.FieldSpec{
-			WireName: "common",
-			Kind: "object",
-			Fields: Config_Publishing_LibrarySettings_CppSettings_CommonFields,
-		},
-		"ForcedNamespaceAliases": ubx.FieldSpec{WireName: "forced_namespace_aliases"},
-		"HandwrittenSignatures": ubx.FieldSpec{WireName: "handwritten_signatures"},
-		"IgnoredResources": ubx.FieldSpec{WireName: "ignored_resources"},
-		"RenamedResources": ubx.FieldSpec{WireName: "renamed_resources"},
-		"RenamedServices": ubx.FieldSpec{WireName: "renamed_services"},
-	}
+	"Common": ubx.FieldSpec{
+		WireName: "common",
+		Kind:     "object",
+		Fields:   Config_Publishing_LibrarySettings_CppSettings_CommonFields,
+	},
+	"ForcedNamespaceAliases": ubx.FieldSpec{WireName: "forced_namespace_aliases"},
+	"HandwrittenSignatures":  ubx.FieldSpec{WireName: "handwritten_signatures"},
+	"IgnoredResources":       ubx.FieldSpec{WireName: "ignored_resources"},
+	"RenamedResources":       ubx.FieldSpec{WireName: "renamed_resources"},
+	"RenamedServices":        ubx.FieldSpec{WireName: "renamed_services"},
+}
 
 var Config_Publishing_LibrarySettings_GoSettingsFields = ubx.FieldMap{
-		"Common": ubx.FieldSpec{
-			WireName: "common",
-			Kind: "object",
-			Fields: Config_Publishing_LibrarySettings_CppSettings_CommonFields,
-		},
-		"RenamedServices": ubx.FieldSpec{WireName: "renamed_services"},
-	}
+	"Common": ubx.FieldSpec{
+		WireName: "common",
+		Kind:     "object",
+		Fields:   Config_Publishing_LibrarySettings_CppSettings_CommonFields,
+	},
+	"RenamedServices": ubx.FieldSpec{WireName: "renamed_services"},
+}
 
 var Config_Publishing_LibrarySettings_JavaSettingsFields = ubx.FieldMap{
-		"Common": ubx.FieldSpec{
-			WireName: "common",
-			Kind: "object",
-			Fields: Config_Publishing_LibrarySettings_CppSettings_CommonFields,
-		},
-		"LibraryPackage": ubx.FieldSpec{WireName: "library_package"},
-		"ServiceClassNames": ubx.FieldSpec{WireName: "service_class_names"},
-	}
+	"Common": ubx.FieldSpec{
+		WireName: "common",
+		Kind:     "object",
+		Fields:   Config_Publishing_LibrarySettings_CppSettings_CommonFields,
+	},
+	"LibraryPackage":    ubx.FieldSpec{WireName: "library_package"},
+	"ServiceClassNames": ubx.FieldSpec{WireName: "service_class_names"},
+}
 
 var Config_Publishing_LibrarySettings_PhpSettingsFields = ubx.FieldMap{
-		"Common": ubx.FieldSpec{
-			WireName: "common",
-			Kind: "object",
-			Fields: Config_Publishing_LibrarySettings_CppSettings_CommonFields,
-		},
-		"LibraryPackage": ubx.FieldSpec{WireName: "library_package"},
-	}
+	"Common": ubx.FieldSpec{
+		WireName: "common",
+		Kind:     "object",
+		Fields:   Config_Publishing_LibrarySettings_CppSettings_CommonFields,
+	},
+	"LibraryPackage": ubx.FieldSpec{WireName: "library_package"},
+}
 
 var Config_Publishing_LibrarySettings_PythonSettings_ExperimentalFeaturesFields = ubx.FieldMap{
-		"ProtobufPythonicTypesEnabled": ubx.FieldSpec{WireName: "protobuf_pythonic_types_enabled"},
-		"RestAsyncIoEnabled": ubx.FieldSpec{WireName: "rest_async_io_enabled"},
-		"UnversionedPackageDisabled": ubx.FieldSpec{WireName: "unversioned_package_disabled"},
-	}
+	"ProtobufPythonicTypesEnabled": ubx.FieldSpec{WireName: "protobuf_pythonic_types_enabled"},
+	"RestAsyncIoEnabled":           ubx.FieldSpec{WireName: "rest_async_io_enabled"},
+	"UnversionedPackageDisabled":   ubx.FieldSpec{WireName: "unversioned_package_disabled"},
+}
 
 var Config_Publishing_LibrarySettings_PythonSettingsFields = ubx.FieldMap{
-		"Common": ubx.FieldSpec{
-			WireName: "common",
-			Kind: "object",
-			Fields: Config_Publishing_LibrarySettings_CppSettings_CommonFields,
-		},
-		"ExperimentalFeatures": ubx.FieldSpec{
-			WireName: "experimental_features",
-			Kind: "object",
-			Fields: Config_Publishing_LibrarySettings_PythonSettings_ExperimentalFeaturesFields,
-		},
-	}
+	"Common": ubx.FieldSpec{
+		WireName: "common",
+		Kind:     "object",
+		Fields:   Config_Publishing_LibrarySettings_CppSettings_CommonFields,
+	},
+	"ExperimentalFeatures": ubx.FieldSpec{
+		WireName: "experimental_features",
+		Kind:     "object",
+		Fields:   Config_Publishing_LibrarySettings_PythonSettings_ExperimentalFeaturesFields,
+	},
+}
 
 var Config_Publishing_LibrarySettingsFields = ubx.FieldMap{
-		"CppSettings": ubx.FieldSpec{
-			WireName: "cpp_settings",
-			Kind: "object",
-			Fields: Config_Publishing_LibrarySettings_CppSettingsFields,
-		},
-		"DotnetSettings": ubx.FieldSpec{
-			WireName: "dotnet_settings",
-			Kind: "object",
-			Fields: Config_Publishing_LibrarySettings_DotnetSettingsFields,
-		},
-		"GoSettings": ubx.FieldSpec{
-			WireName: "go_settings",
-			Kind: "object",
-			Fields: Config_Publishing_LibrarySettings_GoSettingsFields,
-		},
-		"JavaSettings": ubx.FieldSpec{
-			WireName: "java_settings",
-			Kind: "object",
-			Fields: Config_Publishing_LibrarySettings_JavaSettingsFields,
-		},
-		"LaunchStage": ubx.FieldSpec{WireName: "launch_stage"},
-		"NodeSettings": ubx.FieldSpec{
-			WireName: "node_settings",
-			Kind: "object",
-			Fields: Config_Publishing_LibrarySettings_CppSettingsFields,
-		},
-		"PhpSettings": ubx.FieldSpec{
-			WireName: "php_settings",
-			Kind: "object",
-			Fields: Config_Publishing_LibrarySettings_PhpSettingsFields,
-		},
-		"PythonSettings": ubx.FieldSpec{
-			WireName: "python_settings",
-			Kind: "object",
-			Fields: Config_Publishing_LibrarySettings_PythonSettingsFields,
-		},
-		"RestNumericEnums": ubx.FieldSpec{WireName: "rest_numeric_enums"},
-		"RubySettings": ubx.FieldSpec{
-			WireName: "ruby_settings",
-			Kind: "object",
-			Fields: Config_Publishing_LibrarySettings_CppSettingsFields,
-		},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"CppSettings": ubx.FieldSpec{
+		WireName: "cpp_settings",
+		Kind:     "object",
+		Fields:   Config_Publishing_LibrarySettings_CppSettingsFields,
+	},
+	"DotnetSettings": ubx.FieldSpec{
+		WireName: "dotnet_settings",
+		Kind:     "object",
+		Fields:   Config_Publishing_LibrarySettings_DotnetSettingsFields,
+	},
+	"GoSettings": ubx.FieldSpec{
+		WireName: "go_settings",
+		Kind:     "object",
+		Fields:   Config_Publishing_LibrarySettings_GoSettingsFields,
+	},
+	"JavaSettings": ubx.FieldSpec{
+		WireName: "java_settings",
+		Kind:     "object",
+		Fields:   Config_Publishing_LibrarySettings_JavaSettingsFields,
+	},
+	"LaunchStage": ubx.FieldSpec{WireName: "launch_stage"},
+	"NodeSettings": ubx.FieldSpec{
+		WireName: "node_settings",
+		Kind:     "object",
+		Fields:   Config_Publishing_LibrarySettings_CppSettingsFields,
+	},
+	"PhpSettings": ubx.FieldSpec{
+		WireName: "php_settings",
+		Kind:     "object",
+		Fields:   Config_Publishing_LibrarySettings_PhpSettingsFields,
+	},
+	"PythonSettings": ubx.FieldSpec{
+		WireName: "python_settings",
+		Kind:     "object",
+		Fields:   Config_Publishing_LibrarySettings_PythonSettingsFields,
+	},
+	"RestNumericEnums": ubx.FieldSpec{WireName: "rest_numeric_enums"},
+	"RubySettings": ubx.FieldSpec{
+		WireName: "ruby_settings",
+		Kind:     "object",
+		Fields:   Config_Publishing_LibrarySettings_CppSettingsFields,
+	},
+	"Version": ubx.FieldSpec{WireName: "version"},
+}
 
 var Config_Publishing_MethodSettings_Batching_BatchDescriptorFields = ubx.FieldMap{
-		"BatchedField": ubx.FieldSpec{WireName: "batched_field"},
-		"DiscriminatorFields": ubx.FieldSpec{WireName: "discriminator_fields"},
-		"SubresponseField": ubx.FieldSpec{WireName: "subresponse_field"},
-	}
+	"BatchedField":        ubx.FieldSpec{WireName: "batched_field"},
+	"DiscriminatorFields": ubx.FieldSpec{WireName: "discriminator_fields"},
+	"SubresponseField":    ubx.FieldSpec{WireName: "subresponse_field"},
+}
 
 var Config_Publishing_MethodSettings_Batching_ThresholdsFields = ubx.FieldMap{
-		"DelayThreshold": ubx.FieldSpec{WireName: "delay_threshold"},
-		"ElementCountLimit": ubx.FieldSpec{WireName: "element_count_limit"},
-		"ElementCountThreshold": ubx.FieldSpec{WireName: "element_count_threshold"},
-		"FlowControlByteLimit": ubx.FieldSpec{WireName: "flow_control_byte_limit"},
-		"FlowControlElementLimit": ubx.FieldSpec{WireName: "flow_control_element_limit"},
-		"FlowControlLimitExceededBehavior": ubx.FieldSpec{WireName: "flow_control_limit_exceeded_behavior"},
-		"RequestByteLimit": ubx.FieldSpec{WireName: "request_byte_limit"},
-		"RequestByteThreshold": ubx.FieldSpec{WireName: "request_byte_threshold"},
-	}
+	"DelayThreshold":                   ubx.FieldSpec{WireName: "delay_threshold"},
+	"ElementCountLimit":                ubx.FieldSpec{WireName: "element_count_limit"},
+	"ElementCountThreshold":            ubx.FieldSpec{WireName: "element_count_threshold"},
+	"FlowControlByteLimit":             ubx.FieldSpec{WireName: "flow_control_byte_limit"},
+	"FlowControlElementLimit":          ubx.FieldSpec{WireName: "flow_control_element_limit"},
+	"FlowControlLimitExceededBehavior": ubx.FieldSpec{WireName: "flow_control_limit_exceeded_behavior"},
+	"RequestByteLimit":                 ubx.FieldSpec{WireName: "request_byte_limit"},
+	"RequestByteThreshold":             ubx.FieldSpec{WireName: "request_byte_threshold"},
+}
 
 var Config_Publishing_MethodSettings_BatchingFields = ubx.FieldMap{
-		"BatchDescriptor": ubx.FieldSpec{
-			WireName: "batch_descriptor",
-			Kind: "object",
-			Fields: Config_Publishing_MethodSettings_Batching_BatchDescriptorFields,
-		},
-		"Thresholds": ubx.FieldSpec{
-			WireName: "thresholds",
-			Kind: "object",
-			Fields: Config_Publishing_MethodSettings_Batching_ThresholdsFields,
-		},
-	}
+	"BatchDescriptor": ubx.FieldSpec{
+		WireName: "batch_descriptor",
+		Kind:     "object",
+		Fields:   Config_Publishing_MethodSettings_Batching_BatchDescriptorFields,
+	},
+	"Thresholds": ubx.FieldSpec{
+		WireName: "thresholds",
+		Kind:     "object",
+		Fields:   Config_Publishing_MethodSettings_Batching_ThresholdsFields,
+	},
+}
 
 var Config_Publishing_MethodSettings_LongRunningFields = ubx.FieldMap{
-		"InitialPollDelay": ubx.FieldSpec{WireName: "initial_poll_delay"},
-		"MaxPollDelay": ubx.FieldSpec{WireName: "max_poll_delay"},
-		"PollDelayMultiplier": ubx.FieldSpec{WireName: "poll_delay_multiplier"},
-		"TotalPollTimeout": ubx.FieldSpec{WireName: "total_poll_timeout"},
-	}
+	"InitialPollDelay":    ubx.FieldSpec{WireName: "initial_poll_delay"},
+	"MaxPollDelay":        ubx.FieldSpec{WireName: "max_poll_delay"},
+	"PollDelayMultiplier": ubx.FieldSpec{WireName: "poll_delay_multiplier"},
+	"TotalPollTimeout":    ubx.FieldSpec{WireName: "total_poll_timeout"},
+}
 
 var Config_Publishing_MethodSettingsFields = ubx.FieldMap{
-		"AutoPopulatedFields": ubx.FieldSpec{WireName: "auto_populated_fields"},
-		"Batching": ubx.FieldSpec{
-			WireName: "batching",
-			Kind: "object",
-			Fields: Config_Publishing_MethodSettings_BatchingFields,
-		},
-		"LongRunning": ubx.FieldSpec{
-			WireName: "long_running",
-			Kind: "object",
-			Fields: Config_Publishing_MethodSettings_LongRunningFields,
-		},
-		"Selector": ubx.FieldSpec{WireName: "selector"},
-	}
+	"AutoPopulatedFields": ubx.FieldSpec{WireName: "auto_populated_fields"},
+	"Batching": ubx.FieldSpec{
+		WireName: "batching",
+		Kind:     "object",
+		Fields:   Config_Publishing_MethodSettings_BatchingFields,
+	},
+	"LongRunning": ubx.FieldSpec{
+		WireName: "long_running",
+		Kind:     "object",
+		Fields:   Config_Publishing_MethodSettings_LongRunningFields,
+	},
+	"Selector": ubx.FieldSpec{WireName: "selector"},
+}
 
 var Config_PublishingFields = ubx.FieldMap{
-		"ApiShortName": ubx.FieldSpec{WireName: "api_short_name"},
-		"CodeownerGithubTeams": ubx.FieldSpec{WireName: "codeowner_github_teams"},
-		"DocTagPrefix": ubx.FieldSpec{WireName: "doc_tag_prefix"},
-		"DocumentationUri": ubx.FieldSpec{WireName: "documentation_uri"},
-		"GithubLabel": ubx.FieldSpec{WireName: "github_label"},
-		"LibrarySettings": ubx.FieldSpec{
-			WireName: "library_settings",
-			Kind: "list",
-			Fields: Config_Publishing_LibrarySettingsFields,
-		},
-		"MethodSettings": ubx.FieldSpec{
-			WireName: "method_settings",
-			Kind: "list",
-			Fields: Config_Publishing_MethodSettingsFields,
-		},
-		"NewIssueUri": ubx.FieldSpec{WireName: "new_issue_uri"},
-		"Organization": ubx.FieldSpec{WireName: "organization"},
-		"ProtoReferenceDocumentationUri": ubx.FieldSpec{WireName: "proto_reference_documentation_uri"},
-		"RestReferenceDocumentationUri": ubx.FieldSpec{WireName: "rest_reference_documentation_uri"},
-	}
+	"ApiShortName":         ubx.FieldSpec{WireName: "api_short_name"},
+	"CodeownerGithubTeams": ubx.FieldSpec{WireName: "codeowner_github_teams"},
+	"DocTagPrefix":         ubx.FieldSpec{WireName: "doc_tag_prefix"},
+	"DocumentationUri":     ubx.FieldSpec{WireName: "documentation_uri"},
+	"GithubLabel":          ubx.FieldSpec{WireName: "github_label"},
+	"LibrarySettings": ubx.FieldSpec{
+		WireName: "library_settings",
+		Kind:     "list",
+		Fields:   Config_Publishing_LibrarySettingsFields,
+	},
+	"MethodSettings": ubx.FieldSpec{
+		WireName: "method_settings",
+		Kind:     "list",
+		Fields:   Config_Publishing_MethodSettingsFields,
+	},
+	"NewIssueUri":                    ubx.FieldSpec{WireName: "new_issue_uri"},
+	"Organization":                   ubx.FieldSpec{WireName: "organization"},
+	"ProtoReferenceDocumentationUri": ubx.FieldSpec{WireName: "proto_reference_documentation_uri"},
+	"RestReferenceDocumentationUri":  ubx.FieldSpec{WireName: "rest_reference_documentation_uri"},
+}
 
 var Config_Quota_LimitsFields = ubx.FieldMap{
-		"DefaultLimit": ubx.FieldSpec{WireName: "default_limit"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Duration": ubx.FieldSpec{WireName: "duration"},
-		"FreeTier": ubx.FieldSpec{WireName: "free_tier"},
-		"MaxLimit": ubx.FieldSpec{WireName: "max_limit"},
-		"Metric": ubx.FieldSpec{WireName: "metric"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"TrafficSource": ubx.FieldSpec{WireName: "traffic_source"},
-		"Unit": ubx.FieldSpec{WireName: "unit"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"DefaultLimit":  ubx.FieldSpec{WireName: "default_limit"},
+	"Description":   ubx.FieldSpec{WireName: "description"},
+	"DisplayName":   ubx.FieldSpec{WireName: "display_name"},
+	"Duration":      ubx.FieldSpec{WireName: "duration"},
+	"FreeTier":      ubx.FieldSpec{WireName: "free_tier"},
+	"MaxLimit":      ubx.FieldSpec{WireName: "max_limit"},
+	"Metric":        ubx.FieldSpec{WireName: "metric"},
+	"Name":          ubx.FieldSpec{WireName: "name"},
+	"TrafficSource": ubx.FieldSpec{WireName: "traffic_source"},
+	"Unit":          ubx.FieldSpec{WireName: "unit"},
+	"Values":        ubx.FieldSpec{WireName: "values"},
+}
 
 var Config_Quota_MetricRulesFields = ubx.FieldMap{
-		"AgenticMetricCosts": ubx.FieldSpec{WireName: "agentic_metric_costs"},
-		"MetricCosts": ubx.FieldSpec{WireName: "metric_costs"},
-		"NonagenticMetricCosts": ubx.FieldSpec{WireName: "nonagentic_metric_costs"},
-		"Selector": ubx.FieldSpec{WireName: "selector"},
-	}
+	"AgenticMetricCosts":    ubx.FieldSpec{WireName: "agentic_metric_costs"},
+	"MetricCosts":           ubx.FieldSpec{WireName: "metric_costs"},
+	"NonagenticMetricCosts": ubx.FieldSpec{WireName: "nonagentic_metric_costs"},
+	"Selector":              ubx.FieldSpec{WireName: "selector"},
+}
 
 var Config_QuotaFields = ubx.FieldMap{
-		"Limits": ubx.FieldSpec{
-			WireName: "limits",
-			Kind: "list",
-			Fields: Config_Quota_LimitsFields,
-		},
-		"MetricRules": ubx.FieldSpec{
-			WireName: "metric_rules",
-			Kind: "list",
-			Fields: Config_Quota_MetricRulesFields,
-		},
-	}
+	"Limits": ubx.FieldSpec{
+		WireName: "limits",
+		Kind:     "list",
+		Fields:   Config_Quota_LimitsFields,
+	},
+	"MetricRules": ubx.FieldSpec{
+		WireName: "metric_rules",
+		Kind:     "list",
+		Fields:   Config_Quota_MetricRulesFields,
+	},
+}
 
 var Config_SourceInfoFields = ubx.FieldMap{
-		"SourceFiles": ubx.FieldSpec{WireName: "source_files"},
-	}
+	"SourceFiles": ubx.FieldSpec{WireName: "source_files"},
+}
 
 var Config_SystemParameters_Rules_ParametersFields = ubx.FieldMap{
-		"HttpHeader": ubx.FieldSpec{WireName: "http_header"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"UrlQueryParameter": ubx.FieldSpec{WireName: "url_query_parameter"},
-	}
+	"HttpHeader":        ubx.FieldSpec{WireName: "http_header"},
+	"Name":              ubx.FieldSpec{WireName: "name"},
+	"UrlQueryParameter": ubx.FieldSpec{WireName: "url_query_parameter"},
+}
 
 var Config_SystemParameters_RulesFields = ubx.FieldMap{
-		"Parameters": ubx.FieldSpec{
-			WireName: "parameters",
-			Kind: "list",
-			Fields: Config_SystemParameters_Rules_ParametersFields,
-		},
-		"Selector": ubx.FieldSpec{WireName: "selector"},
-	}
+	"Parameters": ubx.FieldSpec{
+		WireName: "parameters",
+		Kind:     "list",
+		Fields:   Config_SystemParameters_Rules_ParametersFields,
+	},
+	"Selector": ubx.FieldSpec{WireName: "selector"},
+}
 
 var Config_SystemParametersFields = ubx.FieldMap{
-		"Rules": ubx.FieldSpec{
-			WireName: "rules",
-			Kind: "list",
-			Fields: Config_SystemParameters_RulesFields,
-		},
-	}
+	"Rules": ubx.FieldSpec{
+		WireName: "rules",
+		Kind:     "list",
+		Fields:   Config_SystemParameters_RulesFields,
+	},
+}
 
 var Config_SystemTypes_FieldsFields = ubx.FieldMap{
-		"Cardinality": ubx.FieldSpec{WireName: "cardinality"},
-		"DefaultValue": ubx.FieldSpec{WireName: "default_value"},
-		"JsonName": ubx.FieldSpec{WireName: "json_name"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Number": ubx.FieldSpec{WireName: "number"},
-		"OneofIndex": ubx.FieldSpec{WireName: "oneof_index"},
-		"Options": ubx.FieldSpec{
-			WireName: "options",
-			Kind: "list",
-			Fields: Config_Apis_Methods_OptionsFields,
-		},
-		"Packed": ubx.FieldSpec{WireName: "packed"},
-		"TypeUrl": ubx.FieldSpec{WireName: "type_url"},
-	}
+	"Cardinality":  ubx.FieldSpec{WireName: "cardinality"},
+	"DefaultValue": ubx.FieldSpec{WireName: "default_value"},
+	"JsonName":     ubx.FieldSpec{WireName: "json_name"},
+	"Kind":         ubx.FieldSpec{WireName: "kind"},
+	"Name":         ubx.FieldSpec{WireName: "name"},
+	"Number":       ubx.FieldSpec{WireName: "number"},
+	"OneofIndex":   ubx.FieldSpec{WireName: "oneof_index"},
+	"Options": ubx.FieldSpec{
+		WireName: "options",
+		Kind:     "list",
+		Fields:   Config_Apis_Methods_OptionsFields,
+	},
+	"Packed":  ubx.FieldSpec{WireName: "packed"},
+	"TypeUrl": ubx.FieldSpec{WireName: "type_url"},
+}
 
 var Config_SystemTypesFields = ubx.FieldMap{
-		"Edition": ubx.FieldSpec{WireName: "edition"},
-		"Fields": ubx.FieldSpec{
-			WireName: "fields",
-			Kind: "list",
-			Fields: Config_SystemTypes_FieldsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Oneofs": ubx.FieldSpec{WireName: "oneofs"},
-		"Options": ubx.FieldSpec{
-			WireName: "options",
-			Kind: "list",
-			Fields: Config_Apis_Methods_OptionsFields,
-		},
-		"SourceContext": ubx.FieldSpec{
-			WireName: "source_context",
-			Kind: "object",
-			Fields: Config_Apis_SourceContextFields,
-		},
-		"Syntax": ubx.FieldSpec{WireName: "syntax"},
-	}
+	"Edition": ubx.FieldSpec{WireName: "edition"},
+	"Fields": ubx.FieldSpec{
+		WireName: "fields",
+		Kind:     "list",
+		Fields:   Config_SystemTypes_FieldsFields,
+	},
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"Oneofs": ubx.FieldSpec{WireName: "oneofs"},
+	"Options": ubx.FieldSpec{
+		WireName: "options",
+		Kind:     "list",
+		Fields:   Config_Apis_Methods_OptionsFields,
+	},
+	"SourceContext": ubx.FieldSpec{
+		WireName: "source_context",
+		Kind:     "object",
+		Fields:   Config_Apis_SourceContextFields,
+	},
+	"Syntax": ubx.FieldSpec{WireName: "syntax"},
+}
 
 var Config_Usage_RulesFields = ubx.FieldMap{
-		"AllowUnregisteredCalls": ubx.FieldSpec{WireName: "allow_unregistered_calls"},
-		"Selector": ubx.FieldSpec{WireName: "selector"},
-		"SkipServiceControl": ubx.FieldSpec{WireName: "skip_service_control"},
-	}
+	"AllowUnregisteredCalls": ubx.FieldSpec{WireName: "allow_unregistered_calls"},
+	"Selector":               ubx.FieldSpec{WireName: "selector"},
+	"SkipServiceControl":     ubx.FieldSpec{WireName: "skip_service_control"},
+}
 
 var Config_UsageFields = ubx.FieldMap{
-		"ProducerNotificationChannel": ubx.FieldSpec{WireName: "producer_notification_channel"},
-		"Requirements": ubx.FieldSpec{WireName: "requirements"},
-		"Rules": ubx.FieldSpec{
-			WireName: "rules",
-			Kind: "list",
-			Fields: Config_Usage_RulesFields,
-		},
-	}
+	"ProducerNotificationChannel": ubx.FieldSpec{WireName: "producer_notification_channel"},
+	"Requirements":                ubx.FieldSpec{WireName: "requirements"},
+	"Rules": ubx.FieldSpec{
+		WireName: "rules",
+		Kind:     "list",
+		Fields:   Config_Usage_RulesFields,
+	},
+}
 
 type ConfigConfig struct {
 	// A list of API interfaces exported by this service. Only the `name` field of the google.protobuf.Api needs to be provided by the configuration author, as the remaining fields will be derived from the IDL during the normalization process. It is an error to specify an API interface here which cannot be resolved against the associated IDL files.
@@ -1373,128 +1373,128 @@ var Config = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Apis": ubx.FieldSpec{
 			WireName: "apis",
-			Kind: "list",
-			Fields: Config_ApisFields,
+			Kind:     "list",
+			Fields:   Config_ApisFields,
 		},
 		"Aspects": ubx.FieldSpec{
 			WireName: "aspects",
-			Kind: "list",
-			Fields: Config_AspectsFields,
+			Kind:     "list",
+			Fields:   Config_AspectsFields,
 		},
 		"Authentication": ubx.FieldSpec{
 			WireName: "authentication",
-			Kind: "object",
-			Fields: Config_AuthenticationFields,
+			Kind:     "object",
+			Fields:   Config_AuthenticationFields,
 		},
 		"Backend": ubx.FieldSpec{
 			WireName: "backend",
-			Kind: "object",
-			Fields: Config_BackendFields,
+			Kind:     "object",
+			Fields:   Config_BackendFields,
 		},
 		"Billing": ubx.FieldSpec{
 			WireName: "billing",
-			Kind: "object",
-			Fields: Config_BillingFields,
+			Kind:     "object",
+			Fields:   Config_BillingFields,
 		},
 		"ConfigVersion": ubx.FieldSpec{WireName: "config_version"},
 		"Context": ubx.FieldSpec{
 			WireName: "context",
-			Kind: "object",
-			Fields: Config_ContextFields,
+			Kind:     "object",
+			Fields:   Config_ContextFields,
 		},
 		"Control": ubx.FieldSpec{
 			WireName: "control",
-			Kind: "object",
-			Fields: Config_ControlFields,
+			Kind:     "object",
+			Fields:   Config_ControlFields,
 		},
 		"CustomError": ubx.FieldSpec{
 			WireName: "custom_error",
-			Kind: "object",
-			Fields: Config_CustomErrorFields,
+			Kind:     "object",
+			Fields:   Config_CustomErrorFields,
 		},
 		"Documentation": ubx.FieldSpec{
 			WireName: "documentation",
-			Kind: "object",
-			Fields: Config_DocumentationFields,
+			Kind:     "object",
+			Fields:   Config_DocumentationFields,
 		},
 		"Endpoints": ubx.FieldSpec{
 			WireName: "endpoints",
-			Kind: "list",
-			Fields: Config_EndpointsFields,
+			Kind:     "list",
+			Fields:   Config_EndpointsFields,
 		},
 		"Enums": ubx.FieldSpec{
 			WireName: "enums",
-			Kind: "list",
-			Fields: Config_EnumsFields,
+			Kind:     "list",
+			Fields:   Config_EnumsFields,
 		},
 		"Http": ubx.FieldSpec{
 			WireName: "http",
-			Kind: "object",
-			Fields: Config_HttpFields,
+			Kind:     "object",
+			Fields:   Config_HttpFields,
 		},
 		"Id": ubx.FieldSpec{WireName: "id"},
 		"Logging": ubx.FieldSpec{
 			WireName: "logging",
-			Kind: "object",
-			Fields: Config_LoggingFields,
+			Kind:     "object",
+			Fields:   Config_LoggingFields,
 		},
 		"Logs": ubx.FieldSpec{
 			WireName: "logs",
-			Kind: "list",
-			Fields: Config_LogsFields,
+			Kind:     "list",
+			Fields:   Config_LogsFields,
 		},
 		"Metrics": ubx.FieldSpec{
 			WireName: "metrics",
-			Kind: "list",
-			Fields: Config_MetricsFields,
+			Kind:     "list",
+			Fields:   Config_MetricsFields,
 		},
 		"MonitoredResources": ubx.FieldSpec{
 			WireName: "monitored_resources",
-			Kind: "list",
-			Fields: Config_MonitoredResourcesFields,
+			Kind:     "list",
+			Fields:   Config_MonitoredResourcesFields,
 		},
 		"Monitoring": ubx.FieldSpec{
 			WireName: "monitoring",
-			Kind: "object",
-			Fields: Config_MonitoringFields,
+			Kind:     "object",
+			Fields:   Config_MonitoringFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":              ubx.FieldSpec{WireName: "name"},
 		"ProducerProjectId": ubx.FieldSpec{WireName: "producer_project_id"},
 		"Publishing": ubx.FieldSpec{
 			WireName: "publishing",
-			Kind: "object",
-			Fields: Config_PublishingFields,
+			Kind:     "object",
+			Fields:   Config_PublishingFields,
 		},
 		"Quota": ubx.FieldSpec{
 			WireName: "quota",
-			Kind: "object",
-			Fields: Config_QuotaFields,
+			Kind:     "object",
+			Fields:   Config_QuotaFields,
 		},
 		"SourceInfo": ubx.FieldSpec{
 			WireName: "source_info",
-			Kind: "object",
-			Fields: Config_SourceInfoFields,
+			Kind:     "object",
+			Fields:   Config_SourceInfoFields,
 		},
 		"SystemParameters": ubx.FieldSpec{
 			WireName: "system_parameters",
-			Kind: "object",
-			Fields: Config_SystemParametersFields,
+			Kind:     "object",
+			Fields:   Config_SystemParametersFields,
 		},
 		"SystemTypes": ubx.FieldSpec{
 			WireName: "system_types",
-			Kind: "list",
-			Fields: Config_SystemTypesFields,
+			Kind:     "list",
+			Fields:   Config_SystemTypesFields,
 		},
 		"Title": ubx.FieldSpec{WireName: "title"},
 		"Types": ubx.FieldSpec{
 			WireName: "types",
-			Kind: "list",
-			Fields: Config_SystemTypesFields,
+			Kind:     "list",
+			Fields:   Config_SystemTypesFields,
 		},
 		"Usage": ubx.FieldSpec{
 			WireName: "usage",
-			Kind: "object",
-			Fields: Config_UsageFields,
+			Kind:     "object",
+			Fields:   Config_UsageFields,
 		},
 	},
 }

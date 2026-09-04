@@ -2,12 +2,8 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface V1alphaSubscriptionConfig {
-  /** Output only. Represents that, if subscription will renew or end when the term ends. */
-  autoRenewEnabled?: boolean | Computed<boolean>;
   /** Optional. Name of the billing account in the format. e.g. billingAccounts/123456-123456-123456 Required if Subscription is of Paid type. */
   billingAccount?: string | Computed<string>;
-  /** Output only. Create time of the subscription. */
-  createTime?: string | Computed<string>;
   /** Optional. Whether the subscription is being created as part of the Citrix flow. If this field is set to true, the subscription should have both the start_time and end_time set in the request and the billing account used will be the Citrix master billing account regardless of what its set to in the request. This field can only be set to true in create requests. */
   csgCustomer?: boolean | Computed<boolean>;
   /** Optional. End time of the subscription. */
@@ -22,10 +18,6 @@ export interface V1alphaSubscriptionConfig {
   sku?: string | Computed<string>;
   /** Optional. Start time of the subscription. */
   startTime?: string | Computed<string>;
-  /** Output only. The current state of the subscription. */
-  state?: string | Computed<string>;
-  /** Output only. Type of subscriber. */
-  subscriberType?: string | Computed<string>;
   /** Required. Type of subscription. */
   type?: string | Computed<string>;
 }
@@ -62,9 +54,7 @@ export interface V1alphaSubscriptionAttrs {
 export const V1alphaSubscription: ResourceBinding<V1alphaSubscriptionConfig, V1alphaSubscriptionAttrs> = {
   wireType: "google_beyondcorp_v1alpha_subscription",
   fields: {
-    autoRenewEnabled: "auto_renew_enabled",
     billingAccount: "billing_account",
-    createTime: "create_time",
     csgCustomer: "csg_customer",
     endTime: "end_time",
     name: "name",
@@ -72,8 +62,6 @@ export const V1alphaSubscription: ResourceBinding<V1alphaSubscriptionConfig, V1a
     signupSource: "signup_source",
     sku: "sku",
     startTime: "start_time",
-    state: "state",
-    subscriberType: "subscriber_type",
     type: "type",
   },
 };

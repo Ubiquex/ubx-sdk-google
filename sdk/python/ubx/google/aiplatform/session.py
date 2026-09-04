@@ -8,8 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class SessionConfig:
-    # Output only. Timestamp when the session was created.
-    create_time: Any = None
     # Optional. The display name of the session.
     display_name: Any = None
     # Optional. Timestamp of when this session is considered expired. This is *always* provided on output, regardless of what was sent on input. The minimum value is 24 hours from the time of creation.
@@ -22,8 +20,6 @@ class SessionConfig:
     session_state: Any = None
     # Optional. Input only. The TTL for this session. The minimum value is 24 hours.
     ttl: Any = None
-    # Output only. Timestamp when the session was updated.
-    update_time: Any = None
     # Required. Immutable. String id provided by the user
     user_id: Any = None
 
@@ -51,14 +47,12 @@ class SessionAttrs:
 Session = ubx.ResourceBinding(
     wire_type="google_aiplatform_session",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "expire_time": ubx.FieldSpec(wire_name="expire_time"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "name": ubx.FieldSpec(wire_name="name"),
         "session_state": ubx.FieldSpec(wire_name="session_state"),
         "ttl": ubx.FieldSpec(wire_name="ttl"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
         "user_id": ubx.FieldSpec(wire_name="user_id"),
     },
 )

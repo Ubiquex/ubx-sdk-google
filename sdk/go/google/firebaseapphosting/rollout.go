@@ -13,38 +13,24 @@ type Rollout_Error struct {
 }
 
 var Rollout_ErrorFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"Code":    ubx.FieldSpec{WireName: "code"},
+	"Details": ubx.FieldSpec{WireName: "details"},
+	"Message": ubx.FieldSpec{WireName: "message"},
+}
 
 type RolloutConfig struct {
 	// Optional. Unstructured key value map that may be set by external tools to store and arbitrary metadata. They are not queryable and should be preserved when modifying objects.
 	Annotations any
 	// Required. Immutable. The name of a build that already exists. It doesn't have to be built; a rollout will wait for a build to be ready before updating traffic.
 	Build any
-	// Output only. Time at which the rollout was created.
-	CreateTime any
-	// Output only. Time at which the rollout was deleted.
-	DeleteTime any
 	// Optional. Human-readable name. 63 character limit.
 	DisplayName any
 	// The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
 	Error any
-	// Output only. Server-computed checksum based on other values; may be sent on update or delete to ensure operation is done on expected resource.
-	Etag any
 	// Optional. Unstructured key value map that can be used to organize and categorize objects.
 	Labels any
 	// Identifier. The resource name of the rollout. Format: `projects/{project}/locations/{locationId}/backends/{backendId}/rollouts/{rolloutId}`.
 	Name any
-	// Output only. A field that, if true, indicates that the Rollout currently has an LRO.
-	Reconciling any
-	// Output only. The state of the rollout.
-	State any
-	// Output only. System-assigned, unique identifier.
-	Uid any
-	// Output only. Time at which the rollout was last updated.
-	UpdateTime any
 }
 
 type RolloutAttrs struct {
@@ -80,21 +66,14 @@ var Rollout = ubx.ResourceBinding{
 	WireType: "google_firebaseapphosting_rollout",
 	Fields: ubx.FieldMap{
 		"Annotations": ubx.FieldSpec{WireName: "annotations"},
-		"Build": ubx.FieldSpec{WireName: "build"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DeleteTime": ubx.FieldSpec{WireName: "delete_time"},
+		"Build":       ubx.FieldSpec{WireName: "build"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"Error": ubx.FieldSpec{
 			WireName: "error",
-			Kind: "object",
-			Fields: Rollout_ErrorFields,
+			Kind:     "object",
+			Fields:   Rollout_ErrorFields,
 		},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Reconciling": ubx.FieldSpec{WireName: "reconciling"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"Name":   ubx.FieldSpec{WireName: "name"},
 	},
 }

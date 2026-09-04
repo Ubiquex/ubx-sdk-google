@@ -4,10 +4,6 @@ package eventarc
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ChannelConfig struct {
-	// Output only. The activation token for the channel. The token must be used by the provider to register the channel for publishing.
-	ActivationToken any
-	// Output only. The creation time.
-	CreateTime any
 	// Optional. Resource name of a KMS crypto key (managed by the user) used to encrypt/decrypt their event data. It must match the pattern `projects/*/locations/*/keyRings/*/cryptoKeys/*`.
 	CryptoKeyName any
 	// Optional. Resource labels.
@@ -16,16 +12,6 @@ type ChannelConfig struct {
 	Name any
 	// The name of the event provider (e.g. Eventarc SaaS partner) associated with the channel. This provider will be granted permissions to publish events to the channel. Format: `projects/{project}/locations/{location}/providers/{provider_id}`.
 	Provider any
-	// Output only. The name of the Pub/Sub topic created and managed by Eventarc system as a transport for the event delivery. Format: `projects/{project}/topics/{topic_id}`.
-	PubsubTopic any
-	// Output only. Whether or not this Channel satisfies the requirements of physical zone separation
-	SatisfiesPzs any
-	// Output only. The state of a Channel.
-	State any
-	// Output only. Server assigned unique identifier for the channel. The value is a UUID4 string and guaranteed to remain unchanged until the resource is deleted.
-	Uid any
-	// Output only. The last-modified time.
-	UpdateTime any
 }
 
 type ChannelAttrs struct {
@@ -56,16 +42,9 @@ type ChannelAttrs struct {
 var Channel = ubx.ResourceBinding{
 	WireType: "google_eventarc_channel",
 	Fields: ubx.FieldMap{
-		"ActivationToken": ubx.FieldSpec{WireName: "activation_token"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"CryptoKeyName": ubx.FieldSpec{WireName: "crypto_key_name"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Provider": ubx.FieldSpec{WireName: "provider"},
-		"PubsubTopic": ubx.FieldSpec{WireName: "pubsub_topic"},
-		"SatisfiesPzs": ubx.FieldSpec{WireName: "satisfies_pzs"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"Labels":        ubx.FieldSpec{WireName: "labels"},
+		"Name":          ubx.FieldSpec{WireName: "name"},
+		"Provider":      ubx.FieldSpec{WireName: "provider"},
 	},
 }

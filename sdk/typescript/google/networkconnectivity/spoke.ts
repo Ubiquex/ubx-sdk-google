@@ -159,15 +159,7 @@ const Spoke_LinkedVpcNetworkFields: FieldMap = {
   uri: "uri",
 };
 
-const Spoke_ReasonsFields: FieldMap = {
-  code: "code",
-  message: "message",
-  userDetails: "user_details",
-};
-
 export interface SpokeConfig {
-  /** Output only. The time the spoke was created. */
-  createTime?: string | Computed<string>;
   /** Optional. An optional description of the spoke. */
   description?: string | Computed<string>;
   /** Optional. This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding. */
@@ -193,16 +185,6 @@ export interface SpokeConfig {
   linkedVpnTunnels?: Spoke_LinkedInterconnectAttachments | Computed<Spoke_LinkedInterconnectAttachments>;
   /** Immutable. The name of the spoke. Spoke names must be unique. They use the following form: `projects/{project_number}/locations/{region}/spokes/{spoke_id}` */
   name?: string | Computed<string>;
-  /** Output only. The reasons for current state of the spoke. */
-  reasons?: Spoke_Reasons[] | Computed<Spoke_Reasons[]>;
-  /** Output only. The type of resource associated with the spoke. */
-  spokeType?: string | Computed<string>;
-  /** Output only. The current lifecycle state of this spoke. */
-  state?: string | Computed<string>;
-  /** Output only. The Google-generated UUID for the spoke. This value is unique across all spoke resources. If a spoke is deleted and another with the same name is created, the new spoke is assigned a different `unique_id`. */
-  uniqueId?: string | Computed<string>;
-  /** Output only. The time the spoke was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface SpokeAttrs {
@@ -248,7 +230,6 @@ export interface SpokeAttrs {
 export const Spoke: ResourceBinding<SpokeConfig, SpokeAttrs> = {
   wireType: "google_networkconnectivity_spoke",
   fields: {
-    createTime: "create_time",
     description: "description",
     etag: "etag",
     fieldPathsPendingUpdate: "field_paths_pending_update",
@@ -286,14 +267,5 @@ export const Spoke: ResourceBinding<SpokeConfig, SpokeAttrs> = {
       fields: Spoke_LinkedInterconnectAttachmentsFields,
     },
     name: "name",
-    reasons: {
-      wireName: "reasons",
-      kind: "list",
-      fields: Spoke_ReasonsFields,
-    },
-    spokeType: "spoke_type",
-    state: "state",
-    uniqueId: "unique_id",
-    updateTime: "update_time",
   },
 };

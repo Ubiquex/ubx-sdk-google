@@ -4,22 +4,19 @@ package securitycenter
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EffectiveCustomModuleConfig struct {
-	Name any
 }
 
 type EffectiveCustomModuleAttrs struct {
-	CloudProvider any
-	Config any
-	Description any
-	DisplayName any
+	CloudProvider   any
+	Config          any
+	Description     any
+	DisplayName     any
 	EnablementState any
-	Name any
-	Type any
+	Name            any
+	Type            any
 }
 
 var EffectiveCustomModule = ubx.DataSourceBinding{
 	WireType: "google_securitycenter_effective_custom_module",
-	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	},
+	Fields:   ubx.FieldMap{},
 }

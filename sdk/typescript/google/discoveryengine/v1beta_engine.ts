@@ -274,8 +274,6 @@ export interface V1betaEngineConfig {
   agentGatewaySetting?: V1betaEngine_AgentGatewaySetting | Computed<V1betaEngine_AgentGatewaySetting>;
   /** Optional. Immutable. This the application type which this engine resource represents. NOTE: this is a new concept independ of existing industry vertical or solution type. */
   appType?: string | Computed<string>;
-  /** Output only. The Agent registry containing the agents, MCP servers and tools associated with this engine. Derived server-side from the linked Agent Gateway's registry. */
-  associatedAgentRegistry?: string | Computed<string>;
   /** Configurations for a Chat Engine. */
   chatEngineConfig?: V1betaEngine_ChatEngineConfig | Computed<V1betaEngine_ChatEngineConfig>;
   /** Additional information of a Chat Engine. Fields in this message are output only. */
@@ -288,8 +286,6 @@ export interface V1betaEngineConfig {
   configurableBillingApproach?: string | Computed<string>;
   /** Optional. Maps a connector ID (e.g., "hybrid-github", "shopify") to tenant-specific information required for that connector. The structure of the tenant information string is connector-dependent. */
   connectorTenantInfo?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. Timestamp the Recommendation Engine was created at. */
-  createTime?: string | Computed<string>;
   /** Optional. The data stores associated with this engine. For SOLUTION_TYPE_SEARCH and SOLUTION_TYPE_RECOMMENDATION type of engines, they can only associate with at most one data store. If solution_type is SOLUTION_TYPE_CHAT, multiple DataStores in the same Collection can be associated here. Note that when used in CreateEngineRequest, one DataStore id must be provided as the system will use it for necessary initializations. */
   dataStoreIds?: string[] | Computed<string[]>;
   /** Optional. Whether to disable analytics for searches performed on this engine. */
@@ -318,8 +314,6 @@ export interface V1betaEngineConfig {
   searchEngineConfig?: V1betaEngine_SearchEngineConfig | Computed<V1betaEngine_SearchEngineConfig>;
   /** Required. The solutions of the engine. */
   solutionType?: string | Computed<string>;
-  /** Output only. Timestamp the Recommendation Engine was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1betaEngineAttrs {
@@ -384,7 +378,6 @@ export const V1betaEngine: ResourceBinding<V1betaEngineConfig, V1betaEngineAttrs
       fields: V1betaEngine_AgentGatewaySettingFields,
     },
     appType: "app_type",
-    associatedAgentRegistry: "associated_agent_registry",
     chatEngineConfig: {
       wireName: "chat_engine_config",
       kind: "object",
@@ -407,7 +400,6 @@ export const V1betaEngine: ResourceBinding<V1betaEngineConfig, V1betaEngineAttrs
     },
     configurableBillingApproach: "configurable_billing_approach",
     connectorTenantInfo: "connector_tenant_info",
-    createTime: "create_time",
     dataStoreIds: "data_store_ids",
     disableAnalytics: "disable_analytics",
     displayName: "display_name",
@@ -438,6 +430,5 @@ export const V1betaEngine: ResourceBinding<V1betaEngineConfig, V1betaEngineAttrs
       fields: V1betaEngine_SearchEngineConfigFields,
     },
     solutionType: "solution_type",
-    updateTime: "update_time",
   },
 };

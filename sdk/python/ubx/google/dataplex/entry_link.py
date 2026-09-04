@@ -56,16 +56,10 @@ _EntryLink_EntryReferencesFields = {
 class EntryLinkConfig:
     # Optional. The aspects that are attached to the entry link. The format of the aspect key has to be the following: {project_id_or_number}.{location_id}.{aspect_type_id} Currently, only a single aspect of a Dataplex-owned Aspect Type is allowed.
     aspects: Any = None
-    # Output only. The time when the Entry Link was created.
-    create_time: Any = None
     # Required. Immutable. Relative resource name of the Entry Link Type used to create this Entry Link. For example: Entry link between synonym terms in a glossary: projects/dataplex-types/locations/global/entryLinkTypes/synonym Entry link between related terms in a glossary: projects/dataplex-types/locations/global/entryLinkTypes/related Entry link between glossary terms and data assets: projects/dataplex-types/locations/global/entryLinkTypes/definition
     entry_link_type: Any = None
     # Required. Immutable. Specifies the Entries referenced in the Entry Link. There should be exactly two entry references.
     entry_references: Any = None
-    # Output only. Immutable. Identifier. The relative resource name of the Entry Link, of the form: projects/{project_id_or_number}/locations/{location_id}/entryGroups/{entry_group_id}/entryLinks/{entry_link_id}
-    name: Any = None
-    # Output only. The time when the Entry Link was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class EntryLinkAttrs:
@@ -90,14 +84,11 @@ EntryLink = ubx.ResourceBinding(
             kind="map",
             fields=_EntryLink_AspectsFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "entry_link_type": ubx.FieldSpec(wire_name="entry_link_type"),
         "entry_references": ubx.FieldSpec(
             wire_name="entry_references",
             kind="list",
             fields=_EntryLink_EntryReferencesFields,
         ),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

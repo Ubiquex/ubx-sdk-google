@@ -49,14 +49,8 @@ const Assessment_AgentInfoFields: FieldMap = {
 export interface AssessmentConfig {
   /** Information about an agent involved in the conversation. */
   agentInfo?: Assessment_AgentInfo | Computed<Assessment_AgentInfo>;
-  /** Output only. The time at which the assessment was created. */
-  createTime?: string | Computed<string>;
   /** Identifier. The resource name of the assessment. Format: projects/{project}/locations/{location}/conversations/{conversation}/assessments/{assessment} */
   name?: string | Computed<string>;
-  /** Output only. The state of the assessment. */
-  state?: string | Computed<string>;
-  /** Output only. The time at which the assessment was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface AssessmentAttrs {
@@ -80,9 +74,6 @@ export const Assessment: ResourceBinding<AssessmentConfig, AssessmentAttrs> = {
       kind: "object",
       fields: Assessment_AgentInfoFields,
     },
-    createTime: "create_time",
     name: "name",
-    state: "state",
-    updateTime: "update_time",
   },
 };

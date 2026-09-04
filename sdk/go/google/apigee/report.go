@@ -5,59 +5,51 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Report_Metrics struct {
 	Function any
-	Name any
+	Name     any
 }
 
 type Report_Properties_Value struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type Report_Properties struct {
 	Property any
-	Value any
+	Value    any
 }
 
 var Report_MetricsFields = ubx.FieldMap{
-		"Function": ubx.FieldSpec{WireName: "function"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Function": ubx.FieldSpec{WireName: "function"},
+	"Name":     ubx.FieldSpec{WireName: "name"},
+}
 
 var Report_Properties_ValueFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Report_PropertiesFields = ubx.FieldMap{
-		"Property": ubx.FieldSpec{WireName: "property"},
-		"Value": ubx.FieldSpec{
-			WireName: "value",
-			Kind: "list",
-			Fields: Report_Properties_ValueFields,
-		},
-	}
+	"Property": ubx.FieldSpec{WireName: "property"},
+	"Value": ubx.FieldSpec{
+		WireName: "value",
+		Kind:     "list",
+		Fields:   Report_Properties_ValueFields,
+	},
+}
 
 type ReportConfig struct {
 	// This field contains the chart type for the report
 	ChartType any
 	// Legacy field: not used. This field contains a list of comments associated with custom report
 	Comments any
-	// Output only. Unix time when the app was created json key: createdAt
-	CreatedAt any
 	// This contains the list of dimensions for the report
 	Dimensions any
 	// This is the display name for the report
 	DisplayName any
-	// Output only. Environment name
-	Environment any
 	// This field contains the filter expression
 	Filter any
 	// Legacy field: not used. Contains the from time for the report
 	FromTime any
-	// Output only. Modified time of this entity as milliseconds since epoch. json key: lastModifiedAt
-	LastModifiedAt any
-	// Output only. Last viewed time of this entity as milliseconds since epoch
-	LastViewedAt any
 	// Legacy field: not used This field contains the limit for the result retrieved
 	Limit any
 	// Required. This contains the list of metrics
@@ -66,8 +58,6 @@ type ReportConfig struct {
 	Name any
 	// Legacy field: not used. This field contains the offset for the data
 	Offset any
-	// Output only. Organization name
-	Organization any
 	// This field contains report properties such as ui metadata etc.
 	Properties any
 	// Legacy field: not used much. Contains the list of sort by columns
@@ -134,35 +124,30 @@ type ReportAttrs struct {
 var Report = ubx.ResourceBinding{
 	WireType: "google_apigee_report",
 	Fields: ubx.FieldMap{
-		"ChartType": ubx.FieldSpec{WireName: "chart_type"},
-		"Comments": ubx.FieldSpec{WireName: "comments"},
-		"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
-		"Dimensions": ubx.FieldSpec{WireName: "dimensions"},
+		"ChartType":   ubx.FieldSpec{WireName: "chart_type"},
+		"Comments":    ubx.FieldSpec{WireName: "comments"},
+		"Dimensions":  ubx.FieldSpec{WireName: "dimensions"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Environment": ubx.FieldSpec{WireName: "environment"},
-		"Filter": ubx.FieldSpec{WireName: "filter"},
-		"FromTime": ubx.FieldSpec{WireName: "from_time"},
-		"LastModifiedAt": ubx.FieldSpec{WireName: "last_modified_at"},
-		"LastViewedAt": ubx.FieldSpec{WireName: "last_viewed_at"},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
+		"Filter":      ubx.FieldSpec{WireName: "filter"},
+		"FromTime":    ubx.FieldSpec{WireName: "from_time"},
+		"Limit":       ubx.FieldSpec{WireName: "limit"},
 		"Metrics": ubx.FieldSpec{
 			WireName: "metrics",
-			Kind: "list",
-			Fields: Report_MetricsFields,
+			Kind:     "list",
+			Fields:   Report_MetricsFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":   ubx.FieldSpec{WireName: "name"},
 		"Offset": ubx.FieldSpec{WireName: "offset"},
-		"Organization": ubx.FieldSpec{WireName: "organization"},
 		"Properties": ubx.FieldSpec{
 			WireName: "properties",
-			Kind: "list",
-			Fields: Report_PropertiesFields,
+			Kind:     "list",
+			Fields:   Report_PropertiesFields,
 		},
 		"SortByCols": ubx.FieldSpec{WireName: "sort_by_cols"},
-		"SortOrder": ubx.FieldSpec{WireName: "sort_order"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"TimeUnit": ubx.FieldSpec{WireName: "time_unit"},
-		"ToTime": ubx.FieldSpec{WireName: "to_time"},
-		"Topk": ubx.FieldSpec{WireName: "topk"},
+		"SortOrder":  ubx.FieldSpec{WireName: "sort_order"},
+		"Tags":       ubx.FieldSpec{WireName: "tags"},
+		"TimeUnit":   ubx.FieldSpec{WireName: "time_unit"},
+		"ToTime":     ubx.FieldSpec{WireName: "to_time"},
+		"Topk":       ubx.FieldSpec{WireName: "topk"},
 	},
 }

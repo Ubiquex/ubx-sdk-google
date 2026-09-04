@@ -4,16 +4,12 @@ package compute
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BetaTargetInstanceConfig struct {
-	// Output only. [Output Only] Creation timestamp inRFC3339 text format.
-	CreationTimestamp any
 	// An optional description of this resource. Provide this property when you create the resource.
 	Description any
 	// [Output Only] The unique identifier for the resource. This identifier is defined by the server.
 	Id any
 	// A URL to the virtual machine instance that handles traffic for this target instance. When creating a target instance, you can provide the fully-qualified URL or a valid partial URL to the desired virtual machine. For example, the following are all valid URLs: - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/instance - projects/project/zones/zone/instances/instance - zones/zone/instances/instance
 	Instance any
-	// Output only. [Output Only] The type of the resource. Alwayscompute#targetInstance for target instances.
-	Kind any
 	// Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
 	Name any
 	// Must have a value of NO_NAT. Protocol forwarding delivers packets while preserving the destination IP address of the forwarding rule referencing the target instance.
@@ -24,8 +20,6 @@ type BetaTargetInstanceConfig struct {
 	SecurityPolicy any
 	// [Output Only] Server-defined URL for the resource.
 	SelfLink any
-	// Output only. [Output Only] URL of the zone where the target instance resides. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
-	Zone any
 }
 
 type BetaTargetInstanceAttrs struct {
@@ -56,16 +50,13 @@ type BetaTargetInstanceAttrs struct {
 var BetaTargetInstance = ubx.ResourceBinding{
 	WireType: "google_compute_beta_target_instance",
 	Fields: ubx.FieldMap{
-		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Instance": ubx.FieldSpec{WireName: "instance"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NatPolicy": ubx.FieldSpec{WireName: "nat_policy"},
-		"Network": ubx.FieldSpec{WireName: "network"},
+		"Description":    ubx.FieldSpec{WireName: "description"},
+		"Id":             ubx.FieldSpec{WireName: "id"},
+		"Instance":       ubx.FieldSpec{WireName: "instance"},
+		"Name":           ubx.FieldSpec{WireName: "name"},
+		"NatPolicy":      ubx.FieldSpec{WireName: "nat_policy"},
+		"Network":        ubx.FieldSpec{WireName: "network"},
 		"SecurityPolicy": ubx.FieldSpec{WireName: "security_policy"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"Zone": ubx.FieldSpec{WireName: "zone"},
+		"SelfLink":       ubx.FieldSpec{WireName: "self_link"},
 	},
 }

@@ -22,20 +22,18 @@ type MetadataFeed_Scope struct {
 }
 
 var MetadataFeed_FiltersFields = ubx.FieldMap{
-		"AspectTypes": ubx.FieldSpec{WireName: "aspect_types"},
-		"ChangeTypes": ubx.FieldSpec{WireName: "change_types"},
-		"EntryTypes": ubx.FieldSpec{WireName: "entry_types"},
-	}
+	"AspectTypes": ubx.FieldSpec{WireName: "aspect_types"},
+	"ChangeTypes": ubx.FieldSpec{WireName: "change_types"},
+	"EntryTypes":  ubx.FieldSpec{WireName: "entry_types"},
+}
 
 var MetadataFeed_ScopeFields = ubx.FieldMap{
-		"EntryGroups": ubx.FieldSpec{WireName: "entry_groups"},
-		"OrganizationLevel": ubx.FieldSpec{WireName: "organization_level"},
-		"Projects": ubx.FieldSpec{WireName: "projects"},
-	}
+	"EntryGroups":       ubx.FieldSpec{WireName: "entry_groups"},
+	"OrganizationLevel": ubx.FieldSpec{WireName: "organization_level"},
+	"Projects":          ubx.FieldSpec{WireName: "projects"},
+}
 
 type MetadataFeedConfig struct {
-	// Output only. The time when the feed was created.
-	CreateTime any
 	// Filters defines the type of changes that you want to listen to. You can have multiple entry type filters and multiple aspect type filters. All of the entry type filters are OR'ed together. All of the aspect type filters are OR'ed together. All of the entry type filters and aspect type filters are AND'ed together.
 	Filters any
 	// Optional. User-defined labels.
@@ -46,10 +44,6 @@ type MetadataFeedConfig struct {
 	PubsubTopic any
 	// Scope defines the scope of the metadata feed. Scopes are exclusive. Only one of the scopes can be specified.
 	Scope any
-	// Output only. A system-generated, globally unique ID for the metadata job. If the metadata job is deleted and then re-created with the same name, this ID is different.
-	Uid any
-	// Output only. The time when the feed was updated.
-	UpdateTime any
 }
 
 type MetadataFeedAttrs struct {
@@ -74,21 +68,18 @@ type MetadataFeedAttrs struct {
 var MetadataFeed = ubx.ResourceBinding{
 	WireType: "google_dataplex_metadata_feed",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Filters": ubx.FieldSpec{
 			WireName: "filters",
-			Kind: "object",
-			Fields: MetadataFeed_FiltersFields,
+			Kind:     "object",
+			Fields:   MetadataFeed_FiltersFields,
 		},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"PubsubTopic": ubx.FieldSpec{WireName: "pubsub_topic"},
 		"Scope": ubx.FieldSpec{
 			WireName: "scope",
-			Kind: "object",
-			Fields: MetadataFeed_ScopeFields,
+			Kind:     "object",
+			Fields:   MetadataFeed_ScopeFields,
 		},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

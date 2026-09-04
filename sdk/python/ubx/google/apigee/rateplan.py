@@ -56,8 +56,6 @@ class RateplanConfig:
     consumption_pricing_rates: Any = None
     # Pricing model used for consumption-based charges.
     consumption_pricing_type: Any = None
-    # Output only. Time that the rate plan was created in milliseconds since epoch.
-    created_at: Any = None
     # Currency to be used for billing. Consists of a three-letter code as defined by the [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217) standard.
     currency_code: Any = None
     # Description of the rate plan.
@@ -70,10 +68,6 @@ class RateplanConfig:
     fixed_fee_frequency: Any = None
     # Represents an amount of money with its currency type.
     fixed_recurring_fee: Any = None
-    # Output only. Time the rate plan was last modified in milliseconds since epoch.
-    last_modified_at: Any = None
-    # Output only. Name of the rate plan.
-    name: Any = None
     # DEPRECATED: This field is no longer supported and will eventually be removed when Apigee Hybrid 1.5/1.6 is no longer supported. Instead, use the `billingType` field inside `DeveloperMonetizationConfig` resource. Flag that specifies the billing account type, prepaid or postpaid.
     payment_funding_model: Any = None
     # Details of the revenue sharing model.
@@ -139,7 +133,6 @@ Rateplan = ubx.ResourceBinding(
             fields=_Rateplan_ConsumptionPricingRatesFields,
         ),
         "consumption_pricing_type": ubx.FieldSpec(wire_name="consumption_pricing_type"),
-        "created_at": ubx.FieldSpec(wire_name="created_at"),
         "currency_code": ubx.FieldSpec(wire_name="currency_code"),
         "description": ubx.FieldSpec(wire_name="description"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
@@ -150,8 +143,6 @@ Rateplan = ubx.ResourceBinding(
             kind="object",
             fields=_Rateplan_ConsumptionPricingRates_FeeFields,
         ),
-        "last_modified_at": ubx.FieldSpec(wire_name="last_modified_at"),
-        "name": ubx.FieldSpec(wire_name="name"),
         "payment_funding_model": ubx.FieldSpec(wire_name="payment_funding_model"),
         "revenue_share_rates": ubx.FieldSpec(
             wire_name="revenue_share_rates",

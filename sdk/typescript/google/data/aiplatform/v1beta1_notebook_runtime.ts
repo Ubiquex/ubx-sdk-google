@@ -114,7 +114,6 @@ export interface V1beta1NotebookRuntime_SoftwareConfig {
 }
 
 export interface V1beta1NotebookRuntimeConfig {
-  name: string | Computed<string>;
 }
 
 export interface V1beta1NotebookRuntimeAttrs {
@@ -178,6 +177,5 @@ export interface V1beta1NotebookRuntimeAttrs {
 export const V1beta1NotebookRuntime: DataSourceBinding<V1beta1NotebookRuntimeConfig, V1beta1NotebookRuntimeAttrs> = {
   wireType: "google_aiplatform_v1beta1_notebook_runtime",
   fields: {
-    name: "name",
   },
 };

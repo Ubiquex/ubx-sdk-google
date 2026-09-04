@@ -42,7 +42,6 @@ export interface V1beta1Violation_Remediation {
 }
 
 export interface V1beta1ViolationConfig {
-  name: string | Computed<string>;
 }
 
 export interface V1beta1ViolationAttrs {
@@ -90,6 +89,5 @@ export interface V1beta1ViolationAttrs {
 export const V1beta1Violation: DataSourceBinding<V1beta1ViolationConfig, V1beta1ViolationAttrs> = {
   wireType: "google_assuredworkloads_v1beta1_violation",
   fields: {
-    name: "name",
   },
 };

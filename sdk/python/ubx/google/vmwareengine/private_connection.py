@@ -8,32 +8,16 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class PrivateConnectionConfig:
-    # Output only. Creation time of this resource.
-    create_time: Any = None
     # Optional. User-provided description for this private connection.
     description: Any = None
-    # Output only. The resource name of the private connection. Resource names are schemeless URIs that follow the conventions in https://cloud.google.com/apis/design/resource_names. For example: `projects/my-project/locations/us-central1/privateConnections/my-connection`
-    name: Any = None
-    # Output only. VPC network peering id between given network VPC and VMwareEngineNetwork.
-    peering_id: Any = None
-    # Output only. Peering state between service network and VMware Engine network.
-    peering_state: Any = None
     # Optional. Routing Mode. Default value is set to GLOBAL. For type = PRIVATE_SERVICE_ACCESS, this field can be set to GLOBAL or REGIONAL, for other types only GLOBAL is supported.
     routing_mode: Any = None
     # Required. Service network to create private connection. Specify the name in the following form: `projects/{project}/global/networks/{network_id}` For type = PRIVATE_SERVICE_ACCESS, this field represents servicenetworking VPC, e.g. projects/project-tp/global/networks/servicenetworking. For type = NETAPP_CLOUD_VOLUME, this field represents NetApp service VPC, e.g. projects/project-tp/global/networks/netapp-tenant-vpc. For type = DELL_POWERSCALE, this field represent Dell service VPC, e.g. projects/project-tp/global/networks/dell-tenant-vpc. For type= THIRD_PARTY_SERVICE, this field could represent a consumer VPC or any other producer VPC to which the VMware Engine Network needs to be connected, e.g. projects/project/global/networks/vpc.
     service_network: Any = None
-    # Output only. State of the private connection.
-    state: Any = None
     # Required. Private connection type.
     type: Any = None
-    # Output only. System-generated unique identifier for the resource.
-    uid: Any = None
-    # Output only. Last update time of this resource.
-    update_time: Any = None
     # Required. The relative resource name of Legacy VMware Engine network. Specify the name in the following form: `projects/{project}/locations/{location}/vmwareEngineNetworks/{vmware_engine_network_id}` where `{project}`, `{location}` will be same as specified in private connection resource name and `{vmware_engine_network_id}` will be in the form of `{location}`-default e.g. projects/project/locations/us-central1/vmwareEngineNetworks/us-central1-default.
     vmware_engine_network: Any = None
-    # Output only. The canonical name of the VMware Engine network in the form: `projects/{project_number}/locations/{location}/vmwareEngineNetworks/{vmware_engine_network_id}`
-    vmware_engine_network_canonical: Any = None
 
 @dataclasses.dataclass
 class PrivateConnectionAttrs:
@@ -67,18 +51,10 @@ class PrivateConnectionAttrs:
 PrivateConnection = ubx.ResourceBinding(
     wire_type="google_vmwareengine_private_connection",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "peering_id": ubx.FieldSpec(wire_name="peering_id"),
-        "peering_state": ubx.FieldSpec(wire_name="peering_state"),
         "routing_mode": ubx.FieldSpec(wire_name="routing_mode"),
         "service_network": ubx.FieldSpec(wire_name="service_network"),
-        "state": ubx.FieldSpec(wire_name="state"),
         "type": ubx.FieldSpec(wire_name="type"),
-        "uid": ubx.FieldSpec(wire_name="uid"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
         "vmware_engine_network": ubx.FieldSpec(wire_name="vmware_engine_network"),
-        "vmware_engine_network_canonical": ubx.FieldSpec(wire_name="vmware_engine_network_canonical"),
     },
 )

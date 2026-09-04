@@ -22,23 +22,23 @@ type BetaOrganizationRollout_WaveDetails_OrchestratedWaveDetails_LocationStatus 
 }
 
 type BetaOrganizationRollout_WaveDetails_OrchestratedWaveDetails struct {
-	CompletedResourcesCount any
-	EstimatedCompletionTime any
+	CompletedResourcesCount      any
+	EstimatedCompletionTime      any
 	EstimatedTotalResourcesCount any
-	FailedLocations any
-	FailedResourcesCount any
-	LocationStatus any
+	FailedLocations              any
+	FailedResourcesCount         any
+	LocationStatus               any
 }
 
 type BetaOrganizationRollout_WaveDetails struct {
 	OrchestratedWaveDetails any
-	WaveDisplayName any
-	WaveNumber any
+	WaveDisplayName         any
+	WaveNumber              any
 }
 
 type BetaOrganizationRolloutConfig struct {
 	Organization any
-	Rollout any
+	Rollout      any
 }
 
 type BetaOrganizationRolloutAttrs struct {
@@ -59,13 +59,13 @@ type BetaOrganizationRolloutAttrs struct {
 	// Output only. [Output Only] Type of the resource. Always compute#rollout for rollouts.
 	Kind any
 	// Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-	Name any
+	Name         any
 	Organization any
 	// Output only. The timestamp at which the Rollout was paused.
 	PauseTime any
 	// Output only. The timestamp at which the Rollout was resumed.
 	ResumeTime any
-	Rollout any
+	Rollout    any
 	// Specifications of the resource to roll out.
 	RolloutEntity any
 	// Required. Rollout Plan used to model the Rollout. Ex. compute.googleapis.com/v1/projects/1234/rolloutPlans/rp1
@@ -84,6 +84,6 @@ var BetaOrganizationRollout = ubx.DataSourceBinding{
 	WireType: "google_compute_beta_organization_rollout",
 	Fields: ubx.FieldMap{
 		"Organization": ubx.FieldSpec{WireName: "organization"},
-		"Rollout": ubx.FieldSpec{WireName: "rollout"},
+		"Rollout":      ubx.FieldSpec{WireName: "rollout"},
 	},
 }

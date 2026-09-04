@@ -13,7 +13,7 @@ type Config_Ingestion_Rules_LineageEnablement struct {
 
 type Config_Ingestion_Rules struct {
 	IntegrationSelector any
-	LineageEnablement any
+	LineageEnablement   any
 }
 
 type Config_Ingestion struct {
@@ -30,7 +30,7 @@ type ConfigAttrs struct {
 	Etag any
 	// Defines how Lineage should be ingested for a given resource.
 	Ingestion any
-	Name any
+	Name      any
 }
 
 var Config = ubx.DataSourceBinding{

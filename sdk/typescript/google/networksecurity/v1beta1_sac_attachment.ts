@@ -16,8 +16,6 @@ const V1beta1SacAttachment_SymantecOptionsFields: FieldMap = {
 export interface V1beta1SacAttachmentConfig {
   /** Optional. Case-insensitive ISO-3166 alpha-2 country code used for localization. Only valid for Symantec attachments. */
   country?: string | Computed<string>;
-  /** Output only. Timestamp when the attachment was created. */
-  createTime?: string | Computed<string>;
   /** Optional. Optional list of labels applied to the resource. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Identifier. Resource name, in the form `projects/{project}/locations/{location}/sacAttachments/{sac_attachment}`. */
@@ -26,14 +24,10 @@ export interface V1beta1SacAttachmentConfig {
   nccGateway?: string | Computed<string>;
   /** Required. SAC Realm which owns the attachment. This can be input as an ID or a full resource name. The output always has the form `projects/{project_number}/locations/{location}/sacRealms/{sac_realm}`. */
   sacRealm?: string | Computed<string>;
-  /** Output only. State of the attachment. */
-  state?: string | Computed<string>;
   /** Fields specific to attachments associated with Symantec Cloud SWG. */
   symantecOptions?: V1beta1SacAttachment_SymantecOptions | Computed<V1beta1SacAttachment_SymantecOptions>;
   /** Optional. Case-sensitive tzinfo identifier used for localization. Only valid for Symantec attachments. */
   timeZone?: string | Computed<string>;
-  /** Output only. Timestamp when the attachment was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1beta1SacAttachmentAttrs {
@@ -63,18 +57,15 @@ export const V1beta1SacAttachment: ResourceBinding<V1beta1SacAttachmentConfig, V
   wireType: "google_networksecurity_v1beta1_sac_attachment",
   fields: {
     country: "country",
-    createTime: "create_time",
     labels: "labels",
     name: "name",
     nccGateway: "ncc_gateway",
     sacRealm: "sac_realm",
-    state: "state",
     symantecOptions: {
       wireName: "symantec_options",
       kind: "object",
       fields: V1beta1SacAttachment_SymantecOptionsFields,
     },
     timeZone: "time_zone",
-    updateTime: "update_time",
   },
 };

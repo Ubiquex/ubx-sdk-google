@@ -76,11 +76,6 @@ export interface Trigger_Transport {
   pubsub?: Trigger_Transport_Pubsub | Computed<Trigger_Transport_Pubsub>;
 }
 
-const Trigger_ConditionsFields: FieldMap = {
-  code: "code",
-  message: "message",
-};
-
 const Trigger_Destination_CloudRunFields: FieldMap = {
   path: "path",
   region: "region",
@@ -154,14 +149,8 @@ const Trigger_TransportFields: FieldMap = {
 export interface TriggerConfig {
   /** Optional. The name of the channel associated with the trigger in `projects/{project}/locations/{location}/channels/{channel}` format. You must provide a channel to receive events from Eventarc SaaS partners. */
   channel?: string | Computed<string>;
-  /** Output only. The reason(s) why a trigger is in FAILED state. */
-  conditions?: Record<string, Trigger_Conditions> | Computed<Record<string, Trigger_Conditions>>;
-  /** Output only. The creation time. */
-  createTime?: string | Computed<string>;
   /** Represents a target of an invocation over HTTP. */
   destination?: Trigger_Destination | Computed<Trigger_Destination>;
-  /** Output only. This checksum is computed by the server based on the value of other fields, and might be sent only on create requests to ensure that the client has an up-to-date value before proceeding. */
-  etag?: string | Computed<string>;
   /** Optional. EventDataContentType specifies the type of payload in MIME format that is expected from the CloudEvent data field. This is set to `application/json` if the value is not defined. */
   eventDataContentType?: string | Computed<string>;
   /** Required. Unordered list. The list of filters that applies to event attributes. Only events that match all the provided filters are sent to the destination. */
@@ -172,16 +161,10 @@ export interface TriggerConfig {
   name?: string | Computed<string>;
   /** The retry policy configuration for the Trigger. Can only be set with Cloud Run destinations. */
   retryPolicy?: Trigger_RetryPolicy | Computed<Trigger_RetryPolicy>;
-  /** Output only. Whether or not this Trigger satisfies the requirements of physical zone separation */
-  satisfiesPzs?: boolean | Computed<boolean>;
   /** Optional. The IAM service account email associated with the trigger. The service account represents the identity of the trigger. The `iam.serviceAccounts.actAs` permission must be granted on the service account to allow a principal to impersonate the service account. For more information, see the [Roles and permissions](/eventarc/docs/all-roles-permissions) page specific to the trigger destination. */
   serviceAccount?: string | Computed<string>;
   /** Represents the transport intermediaries created for the trigger to deliver events. */
   transport?: Trigger_Transport | Computed<Trigger_Transport>;
-  /** Output only. Server-assigned unique identifier for the trigger. The value is a UUID4 string and guaranteed to remain unchanged until the resource is deleted. */
-  uid?: string | Computed<string>;
-  /** Output only. The last-modified time. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface TriggerAttrs {
@@ -221,18 +204,11 @@ export const Trigger: ResourceBinding<TriggerConfig, TriggerAttrs> = {
   wireType: "google_eventarc_trigger",
   fields: {
     channel: "channel",
-    conditions: {
-      wireName: "conditions",
-      kind: "map",
-      fields: Trigger_ConditionsFields,
-    },
-    createTime: "create_time",
     destination: {
       wireName: "destination",
       kind: "object",
       fields: Trigger_DestinationFields,
     },
-    etag: "etag",
     eventDataContentType: "event_data_content_type",
     eventFilters: {
       wireName: "event_filters",
@@ -246,14 +222,11 @@ export const Trigger: ResourceBinding<TriggerConfig, TriggerAttrs> = {
       kind: "object",
       fields: Trigger_RetryPolicyFields,
     },
-    satisfiesPzs: "satisfies_pzs",
     serviceAccount: "service_account",
     transport: {
       wireName: "transport",
       kind: "object",
       fields: Trigger_TransportFields,
     },
-    uid: "uid",
-    updateTime: "update_time",
   },
 };

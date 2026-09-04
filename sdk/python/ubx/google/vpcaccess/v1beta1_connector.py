@@ -20,14 +20,8 @@ _V1beta1Connector_SubnetFields = {
 
 @dataclasses.dataclass
 class V1beta1ConnectorConfig:
-    # Output only. List of projects using the connector.
-    connected_projects: Any = None
-    # Output only. The creation time of the connector.
-    create_time: Any = None
     # Optional. The range of internal addresses that follows RFC 4632 notation. Example: `10.132.0.0/28`.
     ip_cidr_range: Any = None
-    # Output only. The last restart time of the connector.
-    last_restart_time: Any = None
     # Machine type of VM Instance underlying connector. Default is e2-micro
     machine_type: Any = None
     # Maximum value of instances in autoscaling group underlying the connector.
@@ -42,8 +36,6 @@ class V1beta1ConnectorConfig:
     name: Any = None
     # Optional. Name of a VPC network.
     network: Any = None
-    # Output only. State of the VPC access connector.
-    state: Any = None
     # The subnet in which to house the connector
     subnet: Any = None
 
@@ -79,10 +71,7 @@ class V1beta1ConnectorAttrs:
 V1beta1Connector = ubx.ResourceBinding(
     wire_type="google_vpcaccess_v1beta1_connector",
     fields={
-        "connected_projects": ubx.FieldSpec(wire_name="connected_projects"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "ip_cidr_range": ubx.FieldSpec(wire_name="ip_cidr_range"),
-        "last_restart_time": ubx.FieldSpec(wire_name="last_restart_time"),
         "machine_type": ubx.FieldSpec(wire_name="machine_type"),
         "max_instances": ubx.FieldSpec(wire_name="max_instances"),
         "max_throughput": ubx.FieldSpec(wire_name="max_throughput"),
@@ -90,7 +79,6 @@ V1beta1Connector = ubx.ResourceBinding(
         "min_throughput": ubx.FieldSpec(wire_name="min_throughput"),
         "name": ubx.FieldSpec(wire_name="name"),
         "network": ubx.FieldSpec(wire_name="network"),
-        "state": ubx.FieldSpec(wire_name="state"),
         "subnet": ubx.FieldSpec(
             wire_name="subnet",
             kind="object",

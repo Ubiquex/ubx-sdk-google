@@ -366,8 +366,6 @@ _EndUserAuthentication_StatusFields = {
 class EndUserAuthenticationConfig:
     # Optional. Config variables for the EndUserAuthentication.
     config_variables: Any = None
-    # Output only. Created time.
-    create_time: Any = None
     # Optional. Destination configs for the EndUserAuthentication.
     destination_configs: Any = None
     # EndUserAuthenticationConfig defines details of a authentication configuration for EUC
@@ -382,8 +380,6 @@ class EndUserAuthenticationConfig:
     roles: Any = None
     # EndUserAuthentication Status denotes the status of the EndUserAuthentication resource.
     status: Any = None
-    # Output only. Updated time.
-    update_time: Any = None
     # Optional. The user id of the user.
     user_id: Any = None
 
@@ -420,7 +416,6 @@ EndUserAuthentication = ubx.ResourceBinding(
             kind="list",
             fields=_EndUserAuthentication_ConfigVariablesFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "destination_configs": ubx.FieldSpec(
             wire_name="destination_configs",
             kind="list",
@@ -444,7 +439,6 @@ EndUserAuthentication = ubx.ResourceBinding(
             kind="object",
             fields=_EndUserAuthentication_StatusFields,
         ),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
         "user_id": ubx.FieldSpec(wire_name="user_id"),
     },
 )

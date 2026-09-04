@@ -2,26 +2,14 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface AlphaRegionHealthSourceConfig {
-  /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
-  creationTimestamp?: string | Computed<string>;
   /** An optional description of this resource. Provide this property when you create the resource. */
   description?: string | Computed<string>;
   /** Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a HealthSource. An up-to-date fingerprint must be provided in order to patch the HealthSource; Otherwise, the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve the HealthSource. */
   fingerprint?: string | Computed<string>;
   /** URL to the HealthAggregationPolicy resource. Must be set. Must be regional and in the same region as the HealthSource. Can be mutated. */
   healthAggregationPolicy?: string | Computed<string>;
-  /** Output only. [Output Only] A unique identifier for this resource type. The server generates this identifier. */
-  id?: string | Computed<string>;
-  /** Output only. [Output Only] Type of the resource. Alwayscompute#healthSource for health sources. */
-  kind?: string | Computed<string>;
   /** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
   name?: string | Computed<string>;
-  /** Output only. [Output Only] URL of the region where the health source resides. This field applies only to the regional resource. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body. */
-  region?: string | Computed<string>;
-  /** Output only. [Output Only] Server-defined URL for the resource. */
-  selfLink?: string | Computed<string>;
-  /** Output only. [Output Only] Server-defined URL with id for the resource. */
-  selfLinkWithId?: string | Computed<string>;
   /** Specifies the type of the HealthSource. The only allowed value is BACKEND_SERVICE. Must be specified when theHealthSource is created, and cannot be mutated. */
   sourceType?: string | Computed<string>;
   /** URLs to the source resources. Must be size 1. Must be aBackendService if the sourceType is BACKEND_SERVICE. TheBackendService must have load balancing schemeINTERNAL or INTERNAL_MANAGED and must be regional and in the same region as the HealthSource (cross-region deployment for INTERNAL_MANAGED is not supported). TheBackendService may use only IGs, MIGs, or NEGs of typeGCE_VM_IP or GCE_VM_IP_PORT. TheBackendService may not use haPolicy. Can be mutated. */
@@ -58,16 +46,10 @@ export interface AlphaRegionHealthSourceAttrs {
 export const AlphaRegionHealthSource: ResourceBinding<AlphaRegionHealthSourceConfig, AlphaRegionHealthSourceAttrs> = {
   wireType: "google_compute_alpha_region_health_source",
   fields: {
-    creationTimestamp: "creation_timestamp",
     description: "description",
     fingerprint: "fingerprint",
     healthAggregationPolicy: "health_aggregation_policy",
-    id: "id",
-    kind: "kind",
     name: "name",
-    region: "region",
-    selfLink: "self_link",
-    selfLinkWithId: "self_link_with_id",
     sourceType: "source_type",
     sources: "sources",
   },

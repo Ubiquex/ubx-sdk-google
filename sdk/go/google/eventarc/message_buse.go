@@ -9,30 +9,22 @@ type MessageBuse_LoggingConfig struct {
 }
 
 var MessageBuse_LoggingConfigFields = ubx.FieldMap{
-		"LogSeverity": ubx.FieldSpec{WireName: "log_severity"},
-	}
+	"LogSeverity": ubx.FieldSpec{WireName: "log_severity"},
+}
 
 type MessageBuseConfig struct {
 	// Optional. Resource annotations.
 	Annotations any
-	// Output only. The creation time.
-	CreateTime any
 	// Optional. Resource name of a KMS crypto key (managed by the user) used to encrypt/decrypt their event data. It must match the pattern `projects/*/locations/*/keyRings/*/cryptoKeys/*`.
 	CryptoKeyName any
 	// Optional. Resource display name.
 	DisplayName any
-	// Output only. This checksum is computed by the server based on the value of other fields, and might be sent only on update and delete requests to ensure that the client has an up-to-date value before proceeding.
-	Etag any
 	// Optional. Resource labels.
 	Labels any
 	// The configuration for Platform Telemetry logging for Eventarc Advanced resources.
 	LoggingConfig any
 	// Identifier. Resource name of the form projects/{project}/locations/{location}/messageBuses/{message_bus}
 	Name any
-	// Output only. Server assigned unique identifier for the channel. The value is a UUID4 string and guaranteed to remain unchanged until the resource is deleted.
-	Uid any
-	// Output only. The last-modified time.
-	UpdateTime any
 }
 
 type MessageBuseAttrs struct {
@@ -61,19 +53,15 @@ type MessageBuseAttrs struct {
 var MessageBuse = ubx.ResourceBinding{
 	WireType: "google_eventarc_message_buse",
 	Fields: ubx.FieldMap{
-		"Annotations": ubx.FieldSpec{WireName: "annotations"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
+		"Annotations":   ubx.FieldSpec{WireName: "annotations"},
 		"CryptoKeyName": ubx.FieldSpec{WireName: "crypto_key_name"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"DisplayName":   ubx.FieldSpec{WireName: "display_name"},
+		"Labels":        ubx.FieldSpec{WireName: "labels"},
 		"LoggingConfig": ubx.FieldSpec{
 			WireName: "logging_config",
-			Kind: "object",
-			Fields: MessageBuse_LoggingConfigFields,
+			Kind:     "object",
+			Fields:   MessageBuse_LoggingConfigFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

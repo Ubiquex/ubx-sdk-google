@@ -58,24 +58,16 @@ _V2betaPolicy_RulesFields = {
 class V2betaPolicyConfig:
     # A key-value map to store arbitrary metadata for the `Policy`. Keys can be up to 63 characters. Values can be up to 255 characters.
     annotations: Any = None
-    # Output only. The time when the `Policy` was created.
-    create_time: Any = None
-    # Output only. The time when the `Policy` was deleted. Empty if the policy is not deleted.
-    delete_time: Any = None
     # A user-specified description of the `Policy`. This value can be up to 63 characters.
     display_name: Any = None
     # An opaque tag that identifies the current version of the `Policy`. IAM uses this value to help manage concurrent updates, so they do not cause one update to be overwritten by another. If this field is present in a CreatePolicyRequest, the value is ignored.
     etag: Any = None
-    # Output only. The kind of the `Policy`. Always contains the value `DenyPolicy`.
-    kind: Any = None
     # Immutable. The resource name of the `Policy`, which must be unique. Format: `policies/{attachment_point}/denypolicies/{policy_id}` The attachment point is identified by its URL-encoded full resource name, which means that the forward-slash character, `/`, must be written as `%2F`. For example, `policies/cloudresourcemanager.googleapis.com%2Fprojects%2Fmy-project/denypolicies/my-deny-policy`. For organizations and folders, use the numeric ID in the full resource name. For projects, requests can use the alphanumeric or the numeric ID. Responses always contain the numeric ID.
     name: Any = None
     # A list of rules that specify the behavior of the `Policy`. All of the rules should be of the `kind` specified in the `Policy`.
     rules: Any = None
     # Immutable. The globally unique ID of the `Policy`. Assigned automatically when the `Policy` is created.
     uid: Any = None
-    # Output only. The time when the `Policy` was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V2betaPolicyAttrs:
@@ -104,11 +96,8 @@ V2betaPolicy = ubx.ResourceBinding(
     wire_type="google_iam_v2beta_policy",
     fields={
         "annotations": ubx.FieldSpec(wire_name="annotations"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
-        "delete_time": ubx.FieldSpec(wire_name="delete_time"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "etag": ubx.FieldSpec(wire_name="etag"),
-        "kind": ubx.FieldSpec(wire_name="kind"),
         "name": ubx.FieldSpec(wire_name="name"),
         "rules": ubx.FieldSpec(
             wire_name="rules",
@@ -116,6 +105,5 @@ V2betaPolicy = ubx.ResourceBinding(
             fields=_V2betaPolicy_RulesFields,
         ),
         "uid": ubx.FieldSpec(wire_name="uid"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

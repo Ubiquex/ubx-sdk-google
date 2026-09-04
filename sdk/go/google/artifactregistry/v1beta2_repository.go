@@ -11,13 +11,11 @@ type V1beta2Repository_MavenConfig struct {
 }
 
 var V1beta2Repository_MavenConfigFields = ubx.FieldMap{
-		"AllowSnapshotOverwrites": ubx.FieldSpec{WireName: "allow_snapshot_overwrites"},
-		"VersionPolicy": ubx.FieldSpec{WireName: "version_policy"},
-	}
+	"AllowSnapshotOverwrites": ubx.FieldSpec{WireName: "allow_snapshot_overwrites"},
+	"VersionPolicy":           ubx.FieldSpec{WireName: "version_policy"},
+}
 
 type V1beta2RepositoryConfig struct {
-	// Output only. The time when the repository was created.
-	CreateTime any
 	// The user-provided description of the repository.
 	Description any
 	// Optional. The format of packages that are stored in the repository.
@@ -30,14 +28,6 @@ type V1beta2RepositoryConfig struct {
 	MavenConfig any
 	// The name of the repository, for example: `projects/p1/locations/us-central1/repositories/repo1`. For each location in a project, repository names must be unique.
 	Name any
-	// Output only. Whether or not this repository satisfies PZI.
-	SatisfiesPzi any
-	// Output only. Whether or not this repository satisfies PZS.
-	SatisfiesPzs any
-	// Output only. The size, in bytes, of all artifact storage in this repository. Repositories that are generally available or in public preview use this to calculate storage costs.
-	SizeBytes any
-	// Output only. The time when the repository was last updated.
-	UpdateTime any
 }
 
 type V1beta2RepositoryAttrs struct {
@@ -68,20 +58,15 @@ type V1beta2RepositoryAttrs struct {
 var V1beta2Repository = ubx.ResourceBinding{
 	WireType: "google_artifactregistry_v1beta2_repository",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Format": ubx.FieldSpec{WireName: "format"},
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Format":      ubx.FieldSpec{WireName: "format"},
+		"KmsKeyName":  ubx.FieldSpec{WireName: "kms_key_name"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
 		"MavenConfig": ubx.FieldSpec{
 			WireName: "maven_config",
-			Kind: "object",
-			Fields: V1beta2Repository_MavenConfigFields,
+			Kind:     "object",
+			Fields:   V1beta2Repository_MavenConfigFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
-		"SatisfiesPzi": ubx.FieldSpec{WireName: "satisfies_pzi"},
-		"SatisfiesPzs": ubx.FieldSpec{WireName: "satisfies_pzs"},
-		"SizeBytes": ubx.FieldSpec{WireName: "size_bytes"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

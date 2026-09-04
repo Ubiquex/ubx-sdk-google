@@ -18,20 +18,16 @@ type Attribute_ResourceAccessSpec struct {
 }
 
 var Attribute_DataAccessSpecFields = ubx.FieldMap{
-		"Readers": ubx.FieldSpec{WireName: "readers"},
-	}
+	"Readers": ubx.FieldSpec{WireName: "readers"},
+}
 
 var Attribute_ResourceAccessSpecFields = ubx.FieldMap{
-		"Owners": ubx.FieldSpec{WireName: "owners"},
-		"Readers": ubx.FieldSpec{WireName: "readers"},
-		"Writers": ubx.FieldSpec{WireName: "writers"},
-	}
+	"Owners":  ubx.FieldSpec{WireName: "owners"},
+	"Readers": ubx.FieldSpec{WireName: "readers"},
+	"Writers": ubx.FieldSpec{WireName: "writers"},
+}
 
 type AttributeConfig struct {
-	// Output only. The number of child attributes present for this attribute.
-	AttributeCount any
-	// Output only. The time when the DataAttribute was created.
-	CreateTime any
 	// DataAccessSpec holds the access control configuration to be enforced on data stored within resources (eg: rows, columns in BigQuery Tables). When associated with data, the data is only accessible to principals explicitly granted access through the DataAccessSpec. Principals with access to the containing resource are not implicitly granted access.
 	DataAccessSpec any
 	// Optional. Description of the DataAttribute.
@@ -42,16 +38,10 @@ type AttributeConfig struct {
 	Etag any
 	// Optional. User-defined labels for the DataAttribute.
 	Labels any
-	// Output only. The relative resource name of the dataAttribute, of the form: projects/{project_number}/locations/{location_id}/dataTaxonomies/{dataTaxonomy}/attributes/{data_attribute_id}.
-	Name any
 	// Optional. The ID of the parent DataAttribute resource, should belong to the same data taxonomy. Circular dependency in parent chain is not valid. Maximum depth of the hierarchy allowed is 4. a -> b -> c -> d -> e, depth = 4
 	ParentId any
 	// ResourceAccessSpec holds the access control configuration to be enforced on the resources, for example, Cloud Storage bucket, BigQuery dataset, BigQuery table.
 	ResourceAccessSpec any
-	// Output only. System generated globally unique ID for the DataAttribute. This ID will be different if the DataAttribute is deleted and re-created with the same name.
-	Uid any
-	// Output only. The time when the DataAttribute was last updated.
-	UpdateTime any
 }
 
 type AttributeAttrs struct {
@@ -84,25 +74,20 @@ type AttributeAttrs struct {
 var Attribute = ubx.ResourceBinding{
 	WireType: "google_dataplex_attribute",
 	Fields: ubx.FieldMap{
-		"AttributeCount": ubx.FieldSpec{WireName: "attribute_count"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"DataAccessSpec": ubx.FieldSpec{
 			WireName: "data_access_spec",
-			Kind: "object",
-			Fields: Attribute_DataAccessSpecFields,
+			Kind:     "object",
+			Fields:   Attribute_DataAccessSpecFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ParentId": ubx.FieldSpec{WireName: "parent_id"},
+		"Etag":        ubx.FieldSpec{WireName: "etag"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
+		"ParentId":    ubx.FieldSpec{WireName: "parent_id"},
 		"ResourceAccessSpec": ubx.FieldSpec{
 			WireName: "resource_access_spec",
-			Kind: "object",
-			Fields: Attribute_ResourceAccessSpecFields,
+			Kind:     "object",
+			Fields:   Attribute_ResourceAccessSpecFields,
 		},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

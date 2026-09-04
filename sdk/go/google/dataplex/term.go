@@ -4,22 +4,14 @@ package dataplex
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TermConfig struct {
-	// Output only. The time at which the GlossaryTerm was created.
-	CreateTime any
 	// Optional. The user-mutable description of the GlossaryTerm.
 	Description any
 	// Optional. User friendly display name of the GlossaryTerm. This is user-mutable. This will be same as the GlossaryTermId, if not specified.
 	DisplayName any
 	// Optional. User-defined labels for the GlossaryTerm.
 	Labels any
-	// Output only. Identifier. The resource name of the GlossaryTerm. Format: projects/{project_id_or_number}/locations/{location_id}/glossaries/{glossary_id}/terms/{term_id}
-	Name any
 	// Required. The immediate parent of the GlossaryTerm in the resource-hierarchy. It can either be a Glossary or a GlossaryCategory. Format: projects/{project_id_or_number}/locations/{location_id}/glossaries/{glossary_id} OR projects/{project_id_or_number}/locations/{location_id}/glossaries/{glossary_id}/categories/{category_id}
 	Parent any
-	// Output only. System generated unique id for the GlossaryTerm. This ID will be different if the GlossaryTerm is deleted and re-created with the same name.
-	Uid any
-	// Output only. The time at which the GlossaryTerm was last updated.
-	UpdateTime any
 }
 
 type TermAttrs struct {
@@ -44,13 +36,9 @@ type TermAttrs struct {
 var Term = ubx.ResourceBinding{
 	WireType: "google_dataplex_term",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Parent": ubx.FieldSpec{WireName: "parent"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
+		"Parent":      ubx.FieldSpec{WireName: "parent"},
 	},
 }

@@ -57,7 +57,6 @@ export interface Android_ServiceError {
 }
 
 export interface AndroidConfig {
-  name: string | Computed<string>;
 }
 
 export interface AndroidAttrs {
@@ -105,6 +104,5 @@ export interface AndroidAttrs {
 export const Android: DataSourceBinding<AndroidConfig, AndroidAttrs> = {
   wireType: "google_chromemanagement_android",
   fields: {
-    name: "name",
   },
 };

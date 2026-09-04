@@ -60,8 +60,6 @@ _V1beta1TlsRoute_RulesFields = {
 
 @dataclasses.dataclass
 class V1beta1TlsRouteConfig:
-    # Output only. The timestamp when the resource was created.
-    create_time: Any = None
     # Optional. A free-text description of the resource. Max length 1024 characters.
     description: Any = None
     # Optional. Gateways defines a list of gateways this TlsRoute is attached to, as one of the routing rules to route the requests served by the gateway. Each gateway reference should match the pattern: `projects/*/locations/*/gateways/`
@@ -74,12 +72,8 @@ class V1beta1TlsRouteConfig:
     name: Any = None
     # Required. Rules that define how traffic is routed and handled. At least one RouteRule must be supplied. If there are multiple rules then the action taken will be the first rule to match.
     rules: Any = None
-    # Output only. Server-defined URL of this resource
-    self_link: Any = None
     # Optional. TargetProxies defines a list of TargetTcpProxies this TlsRoute is attached to, as one of the routing rules to route the requests served by the TargetTcpProxy. Each TargetTcpProxy reference should match the pattern: `projects/*/locations/*/targetTcpProxies/`
     target_proxies: Any = None
-    # Output only. The timestamp when the resource was updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V1beta1TlsRouteAttrs:
@@ -107,7 +101,6 @@ class V1beta1TlsRouteAttrs:
 V1beta1TlsRoute = ubx.ResourceBinding(
     wire_type="google_networkservices_v1beta1_tls_route",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "gateways": ubx.FieldSpec(wire_name="gateways"),
         "labels": ubx.FieldSpec(wire_name="labels"),
@@ -118,8 +111,6 @@ V1beta1TlsRoute = ubx.ResourceBinding(
             kind="list",
             fields=_V1beta1TlsRoute_RulesFields,
         ),
-        "self_link": ubx.FieldSpec(wire_name="self_link"),
         "target_proxies": ubx.FieldSpec(wire_name="target_proxies"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

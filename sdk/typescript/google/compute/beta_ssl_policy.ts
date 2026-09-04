@@ -12,36 +12,13 @@ export interface BetaSslPolicy_Warnings {
   message?: string | Computed<string>;
 }
 
-const BetaSslPolicy_Warnings_DataFields: FieldMap = {
-  key: "key",
-  value: "value",
-};
-
-const BetaSslPolicy_WarningsFields: FieldMap = {
-  code: "code",
-  data: {
-    wireName: "data",
-    kind: "list",
-    fields: BetaSslPolicy_Warnings_DataFields,
-  },
-  message: "message",
-};
-
 export interface BetaSslPolicyConfig {
-  /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
-  creationTimestamp?: string | Computed<string>;
   /** A list of features enabled when the selected profile is CUSTOM. The method returns the set of features that can be specified in this list. This field must be empty if the profile is notCUSTOM. */
   customFeatures?: string[] | Computed<string[]>;
   /** An optional description of this resource. Provide this property when you create the resource. */
   description?: string | Computed<string>;
-  /** Output only. [Output Only] The list of features enabled in the SSL policy. */
-  enabledFeatures?: string[] | Computed<string[]>;
   /** Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a SslPolicy. An up-to-date fingerprint must be provided in order to update the SslPolicy, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve an SslPolicy. */
   fingerprint?: string | Computed<string>;
-  /** Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server. */
-  id?: string | Computed<string>;
-  /** Output only. [Output only] Type of the resource. Alwayscompute#sslPolicyfor SSL policies. */
-  kind?: string | Computed<string>;
   /** The minimum version of SSL protocol that can be used by the clients to establish a connection with the load balancer. This can be one ofTLS_1_0, TLS_1_1, TLS_1_2,TLS_1_3. When set to TLS_1_3, the profile field must be set to RESTRICTED. */
   minTlsVersion?: string | Computed<string>;
   /** Name of the resource. The name must be 1-63 characters long, and comply with RFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
@@ -50,12 +27,6 @@ export interface BetaSslPolicyConfig {
   postQuantumKeyExchange?: string | Computed<string>;
   /** Profile specifies the set of SSL features that can be used by the load balancer when negotiating SSL with clients. This can be one ofCOMPATIBLE, MODERN, RESTRICTED,FIPS_202205, or CUSTOM. If usingCUSTOM, the set of SSL features to enable must be specified in the customFeatures field. If using FIPS_202205, the min_tls_version field must be set to TLS_1_2. */
   profile?: string | Computed<string>;
-  /** Output only. [Output Only] URL of the region where the regional SSL policy resides. This field is not applicable to global SSL policies. */
-  region?: string | Computed<string>;
-  /** Output only. [Output Only] Server-defined URL for the resource. */
-  selfLink?: string | Computed<string>;
-  /** Output only. [Output Only] If potential misconfigurations are detected for this SSL policy, this field will be populated with warning messages. */
-  warnings?: BetaSslPolicy_Warnings[] | Computed<BetaSslPolicy_Warnings[]>;
 }
 
 export interface BetaSslPolicyAttrs {
@@ -92,23 +63,12 @@ export interface BetaSslPolicyAttrs {
 export const BetaSslPolicy: ResourceBinding<BetaSslPolicyConfig, BetaSslPolicyAttrs> = {
   wireType: "google_compute_beta_ssl_policy",
   fields: {
-    creationTimestamp: "creation_timestamp",
     customFeatures: "custom_features",
     description: "description",
-    enabledFeatures: "enabled_features",
     fingerprint: "fingerprint",
-    id: "id",
-    kind: "kind",
     minTlsVersion: "min_tls_version",
     name: "name",
     postQuantumKeyExchange: "post_quantum_key_exchange",
     profile: "profile",
-    region: "region",
-    selfLink: "self_link",
-    warnings: {
-      wireName: "warnings",
-      kind: "list",
-      fields: BetaSslPolicy_WarningsFields,
-    },
   },
 };

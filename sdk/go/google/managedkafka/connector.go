@@ -13,18 +13,16 @@ type Connector_TaskRestartPolicy struct {
 }
 
 var Connector_TaskRestartPolicyFields = ubx.FieldMap{
-		"MaximumBackoff": ubx.FieldSpec{WireName: "maximum_backoff"},
-		"MinimumBackoff": ubx.FieldSpec{WireName: "minimum_backoff"},
-		"TaskRetryDisabled": ubx.FieldSpec{WireName: "task_retry_disabled"},
-	}
+	"MaximumBackoff":    ubx.FieldSpec{WireName: "maximum_backoff"},
+	"MinimumBackoff":    ubx.FieldSpec{WireName: "minimum_backoff"},
+	"TaskRetryDisabled": ubx.FieldSpec{WireName: "task_retry_disabled"},
+}
 
 type ConnectorConfig struct {
 	// Optional. Connector config as keys/values. The keys of the map are connector property names, for example: `connector.class`, `tasks.max`, `key.converter`.
 	Configs any
 	// Identifier. The name of the connector. Structured like: projects/{project}/locations/{location}/connectClusters/{connect_cluster}/connectors/{connector}
 	Name any
-	// Output only. The current state of the connector.
-	State any
 	// Task Retry Policy is implemented on a best-effort basis. The default policy retries tasks with a minimum_backoff of 60 seconds, and a maximum_backoff of 12 hours. You can disable the policy by setting the task_retry_disabled field to true. Retry delay will be exponential based on provided minimum and maximum backoffs. https://en.wikipedia.org/wiki/Exponential_backoff. Note that the delay between consecutive task restarts may not always precisely match the configured settings. This can happen when the ConnectCluster is in rebalancing state or if the ConnectCluster is unresponsive etc. The default values for minimum and maximum backoffs are 60 seconds and 12 hours respectively.
 	TaskRestartPolicy any
 }
@@ -44,12 +42,11 @@ var Connector = ubx.ResourceBinding{
 	WireType: "google_managedkafka_connector",
 	Fields: ubx.FieldMap{
 		"Configs": ubx.FieldSpec{WireName: "configs"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"State": ubx.FieldSpec{WireName: "state"},
+		"Name":    ubx.FieldSpec{WireName: "name"},
 		"TaskRestartPolicy": ubx.FieldSpec{
 			WireName: "task_restart_policy",
-			Kind: "object",
-			Fields: Connector_TaskRestartPolicyFields,
+			Kind:     "object",
+			Fields:   Connector_TaskRestartPolicyFields,
 		},
 	},
 }

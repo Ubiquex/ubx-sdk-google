@@ -74,96 +74,6 @@ const V1alpha1AssetsExportJob_PerformanceDataFields: FieldMap = {
   maxDays: "max_days",
 };
 
-const V1alpha1AssetsExportJob_RecentExecutions_Result_ErrorFields: FieldMap = {
-  code: "code",
-  details: "details",
-  message: "message",
-};
-
-const V1alpha1AssetsExportJob_RecentExecutions_Result_OutputFiles_Entries_CsvOutputFile_SignedUriFields: FieldMap = {
-  file: "file",
-  uri: "uri",
-};
-
-const V1alpha1AssetsExportJob_RecentExecutions_Result_OutputFiles_Entries_CsvOutputFileFields: FieldMap = {
-  columnsCount: "columns_count",
-  rowCount: "row_count",
-  signedUri: {
-    wireName: "signed_uri",
-    kind: "object",
-    fields: V1alpha1AssetsExportJob_RecentExecutions_Result_OutputFiles_Entries_CsvOutputFile_SignedUriFields,
-  },
-};
-
-const V1alpha1AssetsExportJob_RecentExecutions_Result_OutputFiles_Entries_XlsxOutputFileFields: FieldMap = {
-  signedUri: {
-    wireName: "signed_uri",
-    kind: "object",
-    fields: V1alpha1AssetsExportJob_RecentExecutions_Result_OutputFiles_Entries_CsvOutputFile_SignedUriFields,
-  },
-};
-
-const V1alpha1AssetsExportJob_RecentExecutions_Result_OutputFiles_EntriesFields: FieldMap = {
-  csvOutputFile: {
-    wireName: "csv_output_file",
-    kind: "object",
-    fields: V1alpha1AssetsExportJob_RecentExecutions_Result_OutputFiles_Entries_CsvOutputFileFields,
-  },
-  fileSizeBytes: "file_size_bytes",
-  xlsxOutputFile: {
-    wireName: "xlsx_output_file",
-    kind: "object",
-    fields: V1alpha1AssetsExportJob_RecentExecutions_Result_OutputFiles_Entries_XlsxOutputFileFields,
-  },
-};
-
-const V1alpha1AssetsExportJob_RecentExecutions_Result_OutputFilesFields: FieldMap = {
-  entries: {
-    wireName: "entries",
-    kind: "list",
-    fields: V1alpha1AssetsExportJob_RecentExecutions_Result_OutputFiles_EntriesFields,
-  },
-};
-
-const V1alpha1AssetsExportJob_RecentExecutions_Result_SignedUrisFields: FieldMap = {
-  signedUris: {
-    wireName: "signed_uris",
-    kind: "list",
-    fields: V1alpha1AssetsExportJob_RecentExecutions_Result_OutputFiles_Entries_CsvOutputFile_SignedUriFields,
-  },
-};
-
-const V1alpha1AssetsExportJob_RecentExecutions_ResultFields: FieldMap = {
-  error: {
-    wireName: "error",
-    kind: "object",
-    fields: V1alpha1AssetsExportJob_RecentExecutions_Result_ErrorFields,
-  },
-  outputFiles: {
-    wireName: "output_files",
-    kind: "object",
-    fields: V1alpha1AssetsExportJob_RecentExecutions_Result_OutputFilesFields,
-  },
-  signedUris: {
-    wireName: "signed_uris",
-    kind: "object",
-    fields: V1alpha1AssetsExportJob_RecentExecutions_Result_SignedUrisFields,
-  },
-};
-
-const V1alpha1AssetsExportJob_RecentExecutionsFields: FieldMap = {
-  endTime: "end_time",
-  executionId: "execution_id",
-  expireTime: "expire_time",
-  requestedAssetCount: "requested_asset_count",
-  result: {
-    wireName: "result",
-    kind: "object",
-    fields: V1alpha1AssetsExportJob_RecentExecutions_ResultFields,
-  },
-  startTime: "start_time",
-};
-
 const V1alpha1AssetsExportJob_SignedUriDestinationFields: FieldMap = {
   fileFormat: "file_format",
 };
@@ -171,26 +81,18 @@ const V1alpha1AssetsExportJob_SignedUriDestinationFields: FieldMap = {
 export interface V1alpha1AssetsExportJobConfig {
   /** Conditions for selecting assets to export. */
   condition?: V1alpha1AssetsExportJob_Condition | Computed<V1alpha1AssetsExportJob_Condition>;
-  /** Output only. Resource creation time. */
-  createTime?: string | Computed<string>;
   /** Configuration for asset inventory details exports. */
   inventory?: unknown | Computed<unknown>;
   /** Optional. Labels as key value pairs. Labels must meet the following constraints: * Keys and values can contain only lowercase letters, numeric characters, underscores, and dashes. * All characters must use UTF-8 encoding, and international characters are allowed. * Keys must start with a lowercase letter or international character. * Each resource is limited to a maximum of 64 labels. Both keys and values are additionally constrained to be <= 128 bytes. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. Identifier. Resource name. */
-  name?: string | Computed<string>;
   /** Configuration for network dependencies exports. */
   networkDependencies?: unknown | Computed<unknown>;
   /** Configuration for performance data exports. */
   performanceData?: V1alpha1AssetsExportJob_PerformanceData | Computed<V1alpha1AssetsExportJob_PerformanceData>;
-  /** Output only. Recent non expired executions of the job. */
-  recentExecutions?: V1alpha1AssetsExportJob_RecentExecutions[] | Computed<V1alpha1AssetsExportJob_RecentExecutions[]>;
   /** Optional. When this value is set to 'true' the response will include all assets, including those that are hidden. */
   showHidden?: boolean | Computed<boolean>;
   /** Signed URI destination configuration. */
   signedUriDestination?: V1alpha1AssetsExportJob_SignedUriDestination | Computed<V1alpha1AssetsExportJob_SignedUriDestination>;
-  /** Output only. Resource update time. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1alpha1AssetsExportJobAttrs {
@@ -226,20 +128,13 @@ export const V1alpha1AssetsExportJob: ResourceBinding<V1alpha1AssetsExportJobCon
       kind: "object",
       fields: V1alpha1AssetsExportJob_ConditionFields,
     },
-    createTime: "create_time",
     inventory: "inventory",
     labels: "labels",
-    name: "name",
     networkDependencies: "network_dependencies",
     performanceData: {
       wireName: "performance_data",
       kind: "object",
       fields: V1alpha1AssetsExportJob_PerformanceDataFields,
-    },
-    recentExecutions: {
-      wireName: "recent_executions",
-      kind: "list",
-      fields: V1alpha1AssetsExportJob_RecentExecutionsFields,
     },
     showHidden: "show_hidden",
     signedUriDestination: {
@@ -247,6 +142,5 @@ export const V1alpha1AssetsExportJob: ResourceBinding<V1alpha1AssetsExportJobCon
       kind: "object",
       fields: V1alpha1AssetsExportJob_SignedUriDestinationFields,
     },
-    updateTime: "update_time",
   },
 };

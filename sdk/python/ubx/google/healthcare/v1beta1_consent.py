@@ -60,10 +60,6 @@ class V1beta1ConsentConfig:
     name: Any = None
     # Optional. Represents a user's consent in terms of the resources that can be accessed and under what conditions.
     policies: Any = None
-    # Output only. The timestamp that the revision was created.
-    revision_create_time: Any = None
-    # Output only. The revision ID of the Consent. The format is an 8-character hexadecimal string. Refer to a specific revision of a Consent by appending `@{revision_id}` to the Consent's resource name.
-    revision_id: Any = None
     # Required. Indicates the current state of this Consent.
     state: Any = None
     # Input only. The time to live for this Consent from when it is created.
@@ -106,8 +102,6 @@ V1beta1Consent = ubx.ResourceBinding(
             kind="list",
             fields=_V1beta1Consent_PoliciesFields,
         ),
-        "revision_create_time": ubx.FieldSpec(wire_name="revision_create_time"),
-        "revision_id": ubx.FieldSpec(wire_name="revision_id"),
         "state": ubx.FieldSpec(wire_name="state"),
         "ttl": ubx.FieldSpec(wire_name="ttl"),
         "user_id": ubx.FieldSpec(wire_name="user_id"),

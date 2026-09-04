@@ -77,16 +77,12 @@ _V1beta1Repository_WorkspaceCompilationOverridesFields = {
 class V1beta1RepositoryConfig:
     # Optional. The name of the containing folder of the repository. The field is immutable and it can be modified via a MoveRepository operation. Format: `projects/*/locations/*/folders/*`. or `projects/*/locations/*/teamFolders/*`.
     containing_folder: Any = None
-    # Output only. The timestamp of when the repository was created.
-    create_time: Any = None
     # Describes encryption state of a resource.
     data_encryption_state: Any = None
     # Optional. The repository's user-friendly name.
     display_name: Any = None
     # Controls Git remote configuration for a repository.
     git_remote_settings: Any = None
-    # Output only. All the metadata information that is used internally to serve the resource. For example: timestamps, flags, status fields, etc. The format of this field is a JSON string.
-    internal_metadata: Any = None
     # Optional. The reference to a KMS encryption key. If provided, it will be used to encrypt user data in the repository and all child resources. It is not possible to add or update the encryption key after the repository is created. Example: `projects/{kms_project}/locations/{location}/keyRings/{key_location}/cryptoKeys/{key}`
     kms_key_name: Any = None
     # Optional. Repository user labels.
@@ -99,8 +95,6 @@ class V1beta1RepositoryConfig:
     service_account: Any = None
     # Optional. Input only. If set to true, the authenticated user will be granted the roles/dataform.admin role on the created repository. To modify access to the created repository later apply setIamPolicy from https://cloud.google.com/dataform/reference/rest#rest-resource:-v1beta1.projects.locations.repositories
     set_authenticated_user_admin: Any = None
-    # Output only. The resource name of the TeamFolder that this Repository is associated with. This should take the format: projects/{project}/locations/{location}/teamFolders/{teamFolder}. If this is not set, the Repository is not associated with a TeamFolder.
-    team_folder_name: Any = None
     # Configures workspace compilation overrides for a repository. Primarily used by the UI (`console.cloud.google.com`). `schema_suffix` and `table_prefix` can have a special expression - `${workspaceName}`, which refers to the workspace name from which the compilation results will be created. API callers are expected to resolve the expression in these overrides and provide them explicitly in `code_compilation_config` (https://cloud.google.com/dataform/reference/rest/v1beta1/projects.locations.repositories.compilationResults#codecompilationconfig) when creating workspace-scoped compilation results.
     workspace_compilation_overrides: Any = None
 
@@ -139,7 +133,6 @@ V1beta1Repository = ubx.ResourceBinding(
     wire_type="google_dataform_v1beta1_repository",
     fields={
         "containing_folder": ubx.FieldSpec(wire_name="containing_folder"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "data_encryption_state": ubx.FieldSpec(
             wire_name="data_encryption_state",
             kind="object",
@@ -151,14 +144,12 @@ V1beta1Repository = ubx.ResourceBinding(
             kind="object",
             fields=_V1beta1Repository_GitRemoteSettingsFields,
         ),
-        "internal_metadata": ubx.FieldSpec(wire_name="internal_metadata"),
         "kms_key_name": ubx.FieldSpec(wire_name="kms_key_name"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "name": ubx.FieldSpec(wire_name="name"),
         "npmrc_environment_variables_secret_version": ubx.FieldSpec(wire_name="npmrc_environment_variables_secret_version"),
         "service_account": ubx.FieldSpec(wire_name="service_account"),
         "set_authenticated_user_admin": ubx.FieldSpec(wire_name="set_authenticated_user_admin"),
-        "team_folder_name": ubx.FieldSpec(wire_name="team_folder_name"),
         "workspace_compilation_overrides": ubx.FieldSpec(
             wire_name="workspace_compilation_overrides",
             kind="object",

@@ -28,15 +28,10 @@ class Subnetwork_Params:
 
 @dataclasses.dataclass
 class Subnetwork_SecondaryIpRanges:
-    # The CIDR range for the secondary IP range, specified in CIDR notation (e.g., '10.0.1.0/24'). This range must not overlap with the primary or other secondary IP ranges in the subnetwork. (AI-inferred)
     ip_cidr_range: Any = None
-    # The name of the IP collection to use for this secondary IP range. (AI-inferred)
     ip_collection: Any = None
-    # The IP version of this secondary IP range. Allowed values are IPV4, IPV6, or IP_VERSION_UNSPECIFIED. (AI-inferred)
     ip_version: Any = None
-    # The name of the secondary IP range. Must be unique within the subnetwork. (AI-inferred)
     range_name: Any = None
-    # Reference to a reserved internal range (by name or URI) used to allocate this secondary IP range. Specify this instead of ip_cidr_range to use a pre-reserved internal range for the secondary range. (AI-inferred)
     reserved_internal_range: Any = None
 
 @dataclasses.dataclass
@@ -51,11 +46,8 @@ class Subnetwork_UtilizationDetails_ExternalIpv6InstanceUtilization:
 
 @dataclasses.dataclass
 class Subnetwork_UtilizationDetails_Ipv4Utilizations:
-    # The name of the IP range (e.g., primary or a specific secondary range) for which this IPv4 utilization is reported. (AI-inferred)
     range_name: Any = None
-    # The total number of IPv4 addresses allocated in the subnetwork, represented as a string. (AI-inferred)
     total_allocated_ip: Any = None
-    # The total number of free (unassigned) IPv4 addresses in the subnet's utilization range, represented as a string. (AI-inferred)
     total_free_ip: Any = None
 
 @dataclasses.dataclass
@@ -141,8 +133,6 @@ _Subnetwork_UtilizationDetailsFields = {
 class SubnetworkConfig:
     # Whether this subnetwork's ranges can conflict with existing custom routes. Setting this to true allows this subnetwork's primary and secondary ranges to overlap with (and contain) custom routes that have already been configured on the corresponding network. For example if a static route has range 10.1.0.0/16, a subnet range 10.0.0.0/8 could only be created if allow_conflicting_routes=true. Overlapping is only allowed on subnetwork operations; routes whose ranges conflict with this subnetwork's ranges won't be allowed unless route.allow_conflicting_subnetworks is set to true. Typically packets destined to IPs within the subnetwork (which may contain private/sensitive data) are prevented from leaving the virtual network. Setting this field to true will disable this feature. The default value is false and applies to all existing subnetworks and automatically created subnetworks.
     allow_subnet_cidr_routes_overlap: Any = None
-    # Output only. [Output Only] Creation timestamp inRFC3339 text format.
-    creation_timestamp: Any = None
     # An optional description of this resource. Provide this property when you create the resource. This field can be set only at resource creation time.
     description: Any = None
     # Whether to enable flow logging for this subnetwork. If this field is not explicitly set, it will not appear in get listings. If not set the default behavior is determined by the org policy, if there is no org policy specified, then it will default to disabled. This field isn't supported if the subnet purpose field is set toREGIONAL_MANAGED_PROXY. It is recommended to uselogConfig.enable field instead.
@@ -151,10 +141,6 @@ class SubnetworkConfig:
     external_ipv6_prefix: Any = None
     # Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a Subnetwork. An up-to-date fingerprint must be provided in order to update the Subnetwork, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a Subnetwork.
     fingerprint: Any = None
-    # Output only. [Output Only] The gateway address for default routes to reach destination addresses outside this subnetwork.
-    gateway_address: Any = None
-    # Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-    id: Any = None
     # The internal IPv6 address range that is owned by this subnetwork.
     internal_ipv6_prefix: Any = None
     # The range of internal addresses that are owned by this subnetwork. Provide this property when you create the subnetwork. For example,10.0.0.0/8 or 100.64.0.0/10. Ranges must be unique and non-overlapping within a network. Only IPv4 is supported. This field is set at resource creation time. The range can be any range listed in theValid ranges list. The range can be expanded after creation usingexpandIpCidrRange.
@@ -163,12 +149,6 @@ class SubnetworkConfig:
     ip_collection: Any = None
     # The access type of IPv6 address this subnet holds. It's immutable and can only be specified during creation or the first time the subnet is updated into IPV4_IPV6 dual stack.
     ipv6_access_type: Any = None
-    # Output only. [Output Only] This field is for internal use.
-    ipv6_cidr_range: Any = None
-    # Output only. [Output Only] Possible endpoints of this subnetwork. It can be one of the following: - VM_ONLY: The subnetwork can be used for creating instances and IPv6 addresses with VM endpoint type. Such a subnetwork gets external IPv6 ranges from a public delegated prefix and cannot be used to create NetLb. - VM_AND_FR: The subnetwork can be used for creating both VM instances and Forwarding Rules. It can also be used to reserve IPv6 addresses with both VM and FR endpoint types. Such a subnetwork gets its IPv6 range from Google IP Pool directly.
-    ipv6_gce_endpoint: Any = None
-    # Output only. [Output Only] Type of the resource. Always compute#subnetwork for Subnetwork resources.
-    kind: Any = None
     # The available logging options for this subnetwork.
     log_config: Any = None
     # The name of the resource, provided by the client when initially creating the resource. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
@@ -181,7 +161,6 @@ class SubnetworkConfig:
     private_ip_google_access: Any = None
     # This field is for internal use. This field can be both set at resource creation time and updated usingpatch.
     private_ipv6_google_access: Any = None
-    # The purpose of the subnetwork, indicating how it is used. Valid values include GLOBAL_MANAGED_PROXY, INTERNAL_HTTPS_LOAD_BALANCER, PEER_MIGRATION, PRIVATE, PRIVATE_NAT, PRIVATE_RFC_1918, PRIVATE_SERVICE_CONNECT, and REGIONAL_MANAGED_PROXY. When not set, the default is PRIVATE. (AI-inferred)
     purpose: Any = None
     # URL of the region where the Subnetwork resides. This field can be set only at resource creation time.
     region: Any = None
@@ -197,12 +176,6 @@ class SubnetworkConfig:
     self_link: Any = None
     # The stack type for the subnet. If set to IPV4_ONLY, new VMs in the subnet are assigned IPv4 addresses only. If set toIPV4_IPV6, new VMs in the subnet can be assigned both IPv4 and IPv6 addresses. If not specified, IPV4_ONLY is used. This field can be both set at resource creation time and updated usingpatch.
     stack_type: Any = None
-    # Output only. [Output Only] The state of the subnetwork, which can be one of the following values:READY: Subnetwork is created and ready to useDRAINING: only applicable to subnetworks that have the purpose set to INTERNAL_HTTPS_LOAD_BALANCER and indicates that connections to the load balancer are being drained. A subnetwork that is draining cannot be used or modified until it reaches a status ofREADY
-    state: Any = None
-    # Output only. [Output Only] The array of external IPv6 network ranges reserved from the subnetwork's external IPv6 range for system use.
-    system_reserved_external_ipv6_ranges: Any = None
-    # Output only. [Output Only] The array of internal IPv6 network ranges reserved from the subnetwork's internal IPv6 range for system use.
-    system_reserved_internal_ipv6_ranges: Any = None
     # The current IP utilization of all subnetwork ranges. Contains the total number of allocated and free IPs in each range.
     utilization_details: Any = None
 
@@ -250,7 +223,6 @@ class SubnetworkAttrs:
     private_ip_google_access: Any = None
     # This field is for internal use. This field can be both set at resource creation time and updated usingpatch.
     private_ipv6_google_access: Any = None
-    # The purpose of the subnetwork, indicating how it is used. Valid values include GLOBAL_MANAGED_PROXY, INTERNAL_HTTPS_LOAD_BALANCER, PEER_MIGRATION, PRIVATE, PRIVATE_NAT, PRIVATE_RFC_1918, PRIVATE_SERVICE_CONNECT, and REGIONAL_MANAGED_PROXY. When not set, the default is PRIVATE. (AI-inferred)
     purpose: Any = None
     # URL of the region where the Subnetwork resides. This field can be set only at resource creation time.
     region: Any = None
@@ -279,20 +251,14 @@ Subnetwork = ubx.ResourceBinding(
     wire_type="google_compute_subnetwork",
     fields={
         "allow_subnet_cidr_routes_overlap": ubx.FieldSpec(wire_name="allow_subnet_cidr_routes_overlap"),
-        "creation_timestamp": ubx.FieldSpec(wire_name="creation_timestamp"),
         "description": ubx.FieldSpec(wire_name="description"),
         "enable_flow_logs": ubx.FieldSpec(wire_name="enable_flow_logs"),
         "external_ipv6_prefix": ubx.FieldSpec(wire_name="external_ipv6_prefix"),
         "fingerprint": ubx.FieldSpec(wire_name="fingerprint"),
-        "gateway_address": ubx.FieldSpec(wire_name="gateway_address"),
-        "id": ubx.FieldSpec(wire_name="id"),
         "internal_ipv6_prefix": ubx.FieldSpec(wire_name="internal_ipv6_prefix"),
         "ip_cidr_range": ubx.FieldSpec(wire_name="ip_cidr_range"),
         "ip_collection": ubx.FieldSpec(wire_name="ip_collection"),
         "ipv6_access_type": ubx.FieldSpec(wire_name="ipv6_access_type"),
-        "ipv6_cidr_range": ubx.FieldSpec(wire_name="ipv6_cidr_range"),
-        "ipv6_gce_endpoint": ubx.FieldSpec(wire_name="ipv6_gce_endpoint"),
-        "kind": ubx.FieldSpec(wire_name="kind"),
         "log_config": ubx.FieldSpec(
             wire_name="log_config",
             kind="object",
@@ -319,9 +285,6 @@ Subnetwork = ubx.ResourceBinding(
         ),
         "self_link": ubx.FieldSpec(wire_name="self_link"),
         "stack_type": ubx.FieldSpec(wire_name="stack_type"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "system_reserved_external_ipv6_ranges": ubx.FieldSpec(wire_name="system_reserved_external_ipv6_ranges"),
-        "system_reserved_internal_ipv6_ranges": ubx.FieldSpec(wire_name="system_reserved_internal_ipv6_ranges"),
         "utilization_details": ubx.FieldSpec(
             wire_name="utilization_details",
             kind="object",

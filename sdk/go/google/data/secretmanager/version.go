@@ -15,7 +15,7 @@ type Version_ReplicationStatus_Automatic struct {
 
 type Version_ReplicationStatus_UserManaged_Replicas struct {
 	CustomerManagedEncryption any
-	Location any
+	Location                  any
 }
 
 type Version_ReplicationStatus_UserManaged struct {
@@ -31,7 +31,6 @@ type Version_ReplicationStatus struct {
 }
 
 type VersionConfig struct {
-	Name any
 }
 
 type VersionAttrs struct {
@@ -56,7 +55,5 @@ type VersionAttrs struct {
 
 var Version = ubx.DataSourceBinding{
 	WireType: "google_secretmanager_version",
-	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	},
+	Fields:   ubx.FieldMap{},
 }

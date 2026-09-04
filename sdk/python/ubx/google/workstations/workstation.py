@@ -48,40 +48,22 @@ _Workstation_RuntimeHostFields = {
 class WorkstationConfig_:
     # Optional. Client-specified annotations.
     annotations: Any = None
-    # Output only. Time when this workstation was created.
-    create_time: Any = None
-    # Output only. Time when this workstation was soft-deleted.
-    delete_time: Any = None
     # Optional. Human-readable name for this workstation.
     display_name: Any = None
     # Optional. Environment variables passed to the workstation container's entrypoint.
     env: Any = None
     # Optional. Checksum computed by the server. May be sent on update and delete requests to make sure that the client has an up-to-date value before proceeding.
     etag: Any = None
-    # Output only. Host to which clients can send HTTPS traffic that will be received by the workstation. Authorized traffic will be received to the workstation as HTTP on port 80. To send traffic to a different port, clients may prefix the host with the destination port in the format `{port}-{host}`.
-    host: Any = None
-    # Output only. The name of the Google Cloud KMS encryption key used to encrypt this workstation. The KMS key can only be configured in the WorkstationConfig. The expected format is `projects/*/locations/*/keyRings/*/cryptoKeys/*`.
-    kms_key: Any = None
     # Optional. [Labels](https://cloud.google.com/workstations/docs/label-resources) that are applied to the workstation and that are also propagated to the underlying Compute Engine resources.
     labels: Any = None
     # Identifier. Full name of this workstation.
     name: Any = None
     # Optional. Directories to persist across workstation sessions.
     persistent_directories: Any = None
-    # Output only. Indicates whether this workstation is currently being updated to match its intended state.
-    reconciling: Any = None
     # Runtime host for the workstation.
     runtime_host: Any = None
     # Optional. The source workstation from which this workstation's persistent directories were cloned on creation.
     source_workstation: Any = None
-    # Output only. Time when this workstation was most recently successfully started, regardless of the workstation's initial state.
-    start_time: Any = None
-    # Output only. Current state of the workstation.
-    state: Any = None
-    # Output only. A system-assigned unique identifier for this workstation.
-    uid: Any = None
-    # Output only. Time when this workstation was most recently updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class WorkstationAttrs:
@@ -126,13 +108,9 @@ Workstation = ubx.ResourceBinding(
     wire_type="google_workstations_workstation",
     fields={
         "annotations": ubx.FieldSpec(wire_name="annotations"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
-        "delete_time": ubx.FieldSpec(wire_name="delete_time"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "env": ubx.FieldSpec(wire_name="env"),
         "etag": ubx.FieldSpec(wire_name="etag"),
-        "host": ubx.FieldSpec(wire_name="host"),
-        "kms_key": ubx.FieldSpec(wire_name="kms_key"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "name": ubx.FieldSpec(wire_name="name"),
         "persistent_directories": ubx.FieldSpec(
@@ -140,16 +118,11 @@ Workstation = ubx.ResourceBinding(
             kind="list",
             fields=_Workstation_PersistentDirectoriesFields,
         ),
-        "reconciling": ubx.FieldSpec(wire_name="reconciling"),
         "runtime_host": ubx.FieldSpec(
             wire_name="runtime_host",
             kind="object",
             fields=_Workstation_RuntimeHostFields,
         ),
         "source_workstation": ubx.FieldSpec(wire_name="source_workstation"),
-        "start_time": ubx.FieldSpec(wire_name="start_time"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "uid": ubx.FieldSpec(wire_name="uid"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

@@ -116,8 +116,6 @@ const V1alpha1ConnectionProfile_PrivateConnectivityFields: FieldMap = {
 };
 
 export interface V1alpha1ConnectionProfileConfig {
-  /** Output only. The create time of the resource. */
-  createTime?: string | Computed<string>;
   /** Required. Display name. */
   displayName?: string | Computed<string>;
   /** Forward SSH Tunnel connectivity. */
@@ -128,8 +126,6 @@ export interface V1alpha1ConnectionProfileConfig {
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** MySQL database profile. */
   mysqlProfile?: V1alpha1ConnectionProfile_MysqlProfile | Computed<V1alpha1ConnectionProfile_MysqlProfile>;
-  /** Output only. The resource's name. */
-  name?: string | Computed<string>;
   /** No connectivity settings. */
   noConnectivity?: unknown | Computed<unknown>;
   /** Oracle database profile. */
@@ -138,8 +134,6 @@ export interface V1alpha1ConnectionProfileConfig {
   privateConnectivity?: V1alpha1ConnectionProfile_PrivateConnectivity | Computed<V1alpha1ConnectionProfile_PrivateConnectivity>;
   /** Static IP address connectivity. */
   staticServiceIpConnectivity?: unknown | Computed<unknown>;
-  /** Output only. The update time of the resource. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1alpha1ConnectionProfileAttrs {
@@ -172,7 +166,6 @@ export interface V1alpha1ConnectionProfileAttrs {
 export const V1alpha1ConnectionProfile: ResourceBinding<V1alpha1ConnectionProfileConfig, V1alpha1ConnectionProfileAttrs> = {
   wireType: "google_datastream_v1alpha1_connection_profile",
   fields: {
-    createTime: "create_time",
     displayName: "display_name",
     forwardSshConnectivity: {
       wireName: "forward_ssh_connectivity",
@@ -190,7 +183,6 @@ export const V1alpha1ConnectionProfile: ResourceBinding<V1alpha1ConnectionProfil
       kind: "object",
       fields: V1alpha1ConnectionProfile_MysqlProfileFields,
     },
-    name: "name",
     noConnectivity: "no_connectivity",
     oracleProfile: {
       wireName: "oracle_profile",
@@ -203,6 +195,5 @@ export const V1alpha1ConnectionProfile: ResourceBinding<V1alpha1ConnectionProfil
       fields: V1alpha1ConnectionProfile_PrivateConnectivityFields,
     },
     staticServiceIpConnectivity: "static_service_ip_connectivity",
-    updateTime: "update_time",
   },
 };

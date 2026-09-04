@@ -4,11 +4,11 @@ package datastream
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Object_BackfillJob_Errors struct {
-	Details any
+	Details   any
 	ErrorTime any
 	ErrorUuid any
-	Message any
-	Reason any
+	Message   any
+	Reason    any
 }
 
 type Object_BackfillJob_EventFilter struct {
@@ -40,26 +40,26 @@ type Object_CustomizationRules_BigqueryPartitioning_IngestionTimePartition struc
 }
 
 type Object_CustomizationRules_BigqueryPartitioning_IntegerRangePartition struct {
-	Column any
-	End any
+	Column   any
+	End      any
 	Interval any
-	Start any
+	Start    any
 }
 
 type Object_CustomizationRules_BigqueryPartitioning_TimeUnitPartition struct {
-	Column any
+	Column                      any
 	PartitioningTimeGranularity any
 }
 
 type Object_CustomizationRules_BigqueryPartitioning struct {
 	IngestionTimePartition any
-	IntegerRangePartition any
+	IntegerRangePartition  any
 	RequirePartitionFilter any
-	TimeUnitPartition any
+	TimeUnitPartition      any
 }
 
 type Object_CustomizationRules struct {
-	BigqueryClustering any
+	BigqueryClustering   any
 	BigqueryPartitioning any
 }
 
@@ -107,7 +107,6 @@ type Object_SourceObject struct {
 }
 
 type ObjectConfig struct {
-	Name any
 }
 
 type ObjectAttrs struct {
@@ -121,7 +120,7 @@ type ObjectAttrs struct {
 	DisplayName any
 	// Output only. Active errors on the object.
 	Errors any
-	Name any
+	Name   any
 	// Represents an identifier of an object in the data source.
 	SourceObject any
 	// Output only. The last update time of the object.
@@ -130,7 +129,5 @@ type ObjectAttrs struct {
 
 var Object = ubx.DataSourceBinding{
 	WireType: "google_datastream_object",
-	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	},
+	Fields:   ubx.FieldMap{},
 }

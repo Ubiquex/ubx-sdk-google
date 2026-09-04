@@ -15,15 +15,13 @@ type V1beta1ProducerExtension_ExtensionSettings struct {
 }
 
 var V1beta1ProducerExtension_ExtensionSettingsFields = ubx.FieldMap{
-		"Authority": ubx.FieldSpec{WireName: "authority"},
-		"ObservabilityMode": ubx.FieldSpec{WireName: "observability_mode"},
-		"Service": ubx.FieldSpec{WireName: "service"},
-		"SupportedEvents": ubx.FieldSpec{WireName: "supported_events"},
-	}
+	"Authority":         ubx.FieldSpec{WireName: "authority"},
+	"ObservabilityMode": ubx.FieldSpec{WireName: "observability_mode"},
+	"Service":           ubx.FieldSpec{WireName: "service"},
+	"SupportedEvents":   ubx.FieldSpec{WireName: "supported_events"},
+}
 
 type V1beta1ProducerExtensionConfig struct {
-	// Output only. The timestamp when the resource was created.
-	CreateTime any
 	// Optional. A human-readable description of the resource.
 	Description any
 	// Optional. Etag of the resource. If this is provided, it must match the server's etag. If the provided etag does not match the server's etag, the request will fail with a 409 ABORTED error.
@@ -36,8 +34,6 @@ type V1beta1ProducerExtensionConfig struct {
 	Name any
 	// Required. The phase in which this `ProducerExtension` should execute.
 	Phase any
-	// Output only. The timestamp when the resource was updated.
-	UpdateTime any
 }
 
 type V1beta1ProducerExtensionAttrs struct {
@@ -62,17 +58,15 @@ type V1beta1ProducerExtensionAttrs struct {
 var V1beta1ProducerExtension = ubx.ResourceBinding{
 	WireType: "google_networkservices_v1beta1_producer_extension",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
+		"Etag":        ubx.FieldSpec{WireName: "etag"},
 		"ExtensionSettings": ubx.FieldSpec{
 			WireName: "extension_settings",
-			Kind: "object",
-			Fields: V1beta1ProducerExtension_ExtensionSettingsFields,
+			Kind:     "object",
+			Fields:   V1beta1ProducerExtension_ExtensionSettingsFields,
 		},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Phase": ubx.FieldSpec{WireName: "phase"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"Name":   ubx.FieldSpec{WireName: "name"},
+		"Phase":  ubx.FieldSpec{WireName: "phase"},
 	},
 }

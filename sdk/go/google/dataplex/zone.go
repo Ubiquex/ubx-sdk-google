@@ -51,49 +51,47 @@ type Zone_ResourceSpec struct {
 }
 
 var Zone_AssetStatusFields = ubx.FieldMap{
-		"ActiveAssets": ubx.FieldSpec{WireName: "active_assets"},
-		"SecurityPolicyApplyingAssets": ubx.FieldSpec{WireName: "security_policy_applying_assets"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-	}
+	"ActiveAssets":                 ubx.FieldSpec{WireName: "active_assets"},
+	"SecurityPolicyApplyingAssets": ubx.FieldSpec{WireName: "security_policy_applying_assets"},
+	"UpdateTime":                   ubx.FieldSpec{WireName: "update_time"},
+}
 
 var Zone_DiscoverySpec_CsvOptionsFields = ubx.FieldMap{
-		"Delimiter": ubx.FieldSpec{WireName: "delimiter"},
-		"DisableTypeInference": ubx.FieldSpec{WireName: "disable_type_inference"},
-		"Encoding": ubx.FieldSpec{WireName: "encoding"},
-		"HeaderRows": ubx.FieldSpec{WireName: "header_rows"},
-	}
+	"Delimiter":            ubx.FieldSpec{WireName: "delimiter"},
+	"DisableTypeInference": ubx.FieldSpec{WireName: "disable_type_inference"},
+	"Encoding":             ubx.FieldSpec{WireName: "encoding"},
+	"HeaderRows":           ubx.FieldSpec{WireName: "header_rows"},
+}
 
 var Zone_DiscoverySpec_JsonOptionsFields = ubx.FieldMap{
-		"DisableTypeInference": ubx.FieldSpec{WireName: "disable_type_inference"},
-		"Encoding": ubx.FieldSpec{WireName: "encoding"},
-	}
+	"DisableTypeInference": ubx.FieldSpec{WireName: "disable_type_inference"},
+	"Encoding":             ubx.FieldSpec{WireName: "encoding"},
+}
 
 var Zone_DiscoverySpecFields = ubx.FieldMap{
-		"CsvOptions": ubx.FieldSpec{
-			WireName: "csv_options",
-			Kind: "object",
-			Fields: Zone_DiscoverySpec_CsvOptionsFields,
-		},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"ExcludePatterns": ubx.FieldSpec{WireName: "exclude_patterns"},
-		"IncludePatterns": ubx.FieldSpec{WireName: "include_patterns"},
-		"JsonOptions": ubx.FieldSpec{
-			WireName: "json_options",
-			Kind: "object",
-			Fields: Zone_DiscoverySpec_JsonOptionsFields,
-		},
-		"Schedule": ubx.FieldSpec{WireName: "schedule"},
-	}
+	"CsvOptions": ubx.FieldSpec{
+		WireName: "csv_options",
+		Kind:     "object",
+		Fields:   Zone_DiscoverySpec_CsvOptionsFields,
+	},
+	"Enabled":         ubx.FieldSpec{WireName: "enabled"},
+	"ExcludePatterns": ubx.FieldSpec{WireName: "exclude_patterns"},
+	"IncludePatterns": ubx.FieldSpec{WireName: "include_patterns"},
+	"JsonOptions": ubx.FieldSpec{
+		WireName: "json_options",
+		Kind:     "object",
+		Fields:   Zone_DiscoverySpec_JsonOptionsFields,
+	},
+	"Schedule": ubx.FieldSpec{WireName: "schedule"},
+}
 
 var Zone_ResourceSpecFields = ubx.FieldMap{
-		"LocationType": ubx.FieldSpec{WireName: "location_type"},
-	}
+	"LocationType": ubx.FieldSpec{WireName: "location_type"},
+}
 
 type ZoneConfig struct {
 	// Aggregated status of the underlying assets of a lake or zone.
 	AssetStatus any
-	// Output only. The time when the zone was created.
-	CreateTime any
 	// Optional. Description of the zone.
 	Description any
 	// Settings to manage the metadata discovery and publishing in a zone.
@@ -102,18 +100,10 @@ type ZoneConfig struct {
 	DisplayName any
 	// Optional. User defined labels for the zone.
 	Labels any
-	// Output only. The relative resource name of the zone, of the form: projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}.
-	Name any
 	// Settings for resources attached as assets within a zone.
 	ResourceSpec any
-	// Output only. Current state of the zone.
-	State any
 	// Required. Immutable. The type of the zone.
 	Type any
-	// Output only. System generated globally unique ID for the zone. This ID will be different if the zone is deleted and re-created with the same name.
-	Uid any
-	// Output only. The time when the zone was last updated.
-	UpdateTime any
 }
 
 type ZoneAttrs struct {
@@ -148,27 +138,22 @@ var Zone = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AssetStatus": ubx.FieldSpec{
 			WireName: "asset_status",
-			Kind: "object",
-			Fields: Zone_AssetStatusFields,
+			Kind:     "object",
+			Fields:   Zone_AssetStatusFields,
 		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DiscoverySpec": ubx.FieldSpec{
 			WireName: "discovery_spec",
-			Kind: "object",
-			Fields: Zone_DiscoverySpecFields,
+			Kind:     "object",
+			Fields:   Zone_DiscoverySpecFields,
 		},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
 		"ResourceSpec": ubx.FieldSpec{
 			WireName: "resource_spec",
-			Kind: "object",
-			Fields: Zone_ResourceSpecFields,
+			Kind:     "object",
+			Fields:   Zone_ResourceSpecFields,
 		},
-		"State": ubx.FieldSpec{WireName: "state"},
 		"Type": ubx.FieldSpec{WireName: "type"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

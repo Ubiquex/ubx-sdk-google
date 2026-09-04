@@ -124,20 +124,12 @@ class BlockchainNodeConfig:
     blockchain_type: Any = None
     # The connection information through which to interact with a blockchain node.
     connection_info: Any = None
-    # Output only. The timestamp at which the blockchain node was first created.
-    create_time: Any = None
     # Ethereum-specific blockchain node details.
     ethereum_details: Any = None
     # User-provided key-value pairs.
     labels: Any = None
-    # Output only. The fully qualified name of the blockchain node. e.g. `projects/my-project/locations/us-central1/blockchainNodes/my-node`.
-    name: Any = None
     # Optional. When true, the node is only accessible via Private Service Connect; no public endpoints are exposed. Otherwise, the node is only accessible via public endpoints. Warning: These nodes are deprecated, please use public endpoints instead.
     private_service_connect_enabled: Any = None
-    # Output only. A status representing the state of the node.
-    state: Any = None
-    # Output only. The timestamp at which the blockchain node was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class BlockchainNodeAttrs:
@@ -169,16 +161,12 @@ BlockchainNode = ubx.ResourceBinding(
             kind="object",
             fields=_BlockchainNode_ConnectionInfoFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "ethereum_details": ubx.FieldSpec(
             wire_name="ethereum_details",
             kind="object",
             fields=_BlockchainNode_EthereumDetailsFields,
         ),
         "labels": ubx.FieldSpec(wire_name="labels"),
-        "name": ubx.FieldSpec(wire_name="name"),
         "private_service_connect_enabled": ubx.FieldSpec(wire_name="private_service_connect_enabled"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

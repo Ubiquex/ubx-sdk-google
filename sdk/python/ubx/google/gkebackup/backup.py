@@ -105,72 +105,26 @@ _Backup_TroubleshootingInfoFields = {
 
 @dataclasses.dataclass
 class BackupConfig:
-    # Output only. If True, all namespaces were included in the Backup.
-    all_namespaces: Any = None
     # Information about the GKE cluster from which this Backup was created.
     cluster_metadata: Any = None
-    # Output only. Completion time of the Backup
-    complete_time: Any = None
-    # Output only. The size of the config backup in bytes.
-    config_backup_size_bytes: Any = None
-    # Output only. Whether or not the Backup contains Kubernetes Secrets. Controlled by the parent BackupPlan's include_secrets value.
-    contains_secrets: Any = None
-    # Output only. Whether or not the Backup contains volume data. Controlled by the parent BackupPlan's include_volume_data value.
-    contains_volume_data: Any = None
-    # Output only. The timestamp when this Backup resource was created.
-    create_time: Any = None
     # Optional. Minimum age for this Backup (in days). If this field is set to a non-zero value, the Backup will be "locked" against deletion (either manual or automatic deletion) for the number of days provided (measured from the creation time of the Backup). MUST be an integer value between 0-90 (inclusive). Defaults to parent BackupPlan's backup_delete_lock_days setting and may only be increased (either at creation time or in a subsequent update).
     delete_lock_days: Any = None
-    # Output only. The time at which an existing delete lock will expire for this backup (calculated from create_time + delete_lock_days).
-    delete_lock_expire_time: Any = None
     # Optional. User specified descriptive string for this Backup.
     description: Any = None
     # Defined a customer managed encryption key that will be used to encrypt Backup artifacts.
     encryption_key: Any = None
-    # Output only. `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a backup from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform backup updates in order to avoid race conditions: An `etag` is returned in the response to `GetBackup`, and systems are expected to put that etag in the request to `UpdateBackup` or `DeleteBackup` to ensure that their change will be applied to the same version of the resource.
-    etag: Any = None
     # Optional. A set of custom labels supplied by user.
     labels: Any = None
-    # Output only. This flag indicates whether this Backup resource was created manually by a user or via a schedule in the BackupPlan. A value of True means that the Backup was created manually.
-    manual: Any = None
-    # Output only. Identifier. The fully qualified name of the Backup. `projects/*/locations/*/backupPlans/*/backups/*`
-    name: Any = None
-    # Output only. The total number of user managed namespaces contained in the Backup.
-    namespace_count: Any = None
-    # Output only. If false, Backup will fail when Backup for GKE detects Kubernetes configuration that is non-standard or requires additional setup to restore. Inherited from the parent BackupPlan's permissive_mode value.
-    permissive_mode: Any = None
-    # Output only. The total number of Kubernetes Pods contained in the Backup.
-    pod_count: Any = None
-    # Output only. The total number of Kubernetes resources included in the Backup.
-    resource_count: Any = None
     # Optional. The age (in days) after which this Backup will be automatically deleted. Must be an integer value >= 0: - If 0, no automatic deletion will occur for this Backup. - If not 0, this must be >= delete_lock_days and <= 365. Once a Backup is created, this value may only be increased. Defaults to the parent BackupPlan's backup_retain_days value.
     retain_days: Any = None
-    # Output only. The time at which this Backup will be automatically deleted (calculated from create_time + retain_days).
-    retain_expire_time: Any = None
-    # Output only. [Output Only] Reserved for future use.
-    satisfies_pzi: Any = None
-    # Output only. [Output Only] Reserved for future use.
-    satisfies_pzs: Any = None
     # A list of namespaced Kubernetes resources.
     selected_applications: Any = None
     # A list of Kubernetes labels.
     selected_namespace_labels: Any = None
     # A list of Kubernetes Namespaces.
     selected_namespaces: Any = None
-    # Output only. The total size of the Backup in bytes = config backup size + sum(volume backup sizes)
-    size_bytes: Any = None
-    # Output only. Current state of the Backup
-    state: Any = None
-    # Output only. Human-readable description of why the backup is in the current `state`. This field is only meant for human readability and should not be used programmatically as this field is not guaranteed to be consistent.
-    state_reason: Any = None
     # Stores information about troubleshooting doc for debugging a particular state of an operation (eg - backup/restore). This will be used by the end user to debug their operation failure scenario easily.
     troubleshooting_info: Any = None
-    # Output only. Server generated global unique identifier of [UUID4](https://en.wikipedia.org/wiki/Universally_unique_identifier)
-    uid: Any = None
-    # Output only. The timestamp when this Backup resource was last updated.
-    update_time: Any = None
-    # Output only. The total number of volume backups contained in the Backup.
-    volume_count: Any = None
 
 @dataclasses.dataclass
 class BackupAttrs:
@@ -244,37 +198,20 @@ class BackupAttrs:
 Backup = ubx.ResourceBinding(
     wire_type="google_gkebackup_backup",
     fields={
-        "all_namespaces": ubx.FieldSpec(wire_name="all_namespaces"),
         "cluster_metadata": ubx.FieldSpec(
             wire_name="cluster_metadata",
             kind="object",
             fields=_Backup_ClusterMetadataFields,
         ),
-        "complete_time": ubx.FieldSpec(wire_name="complete_time"),
-        "config_backup_size_bytes": ubx.FieldSpec(wire_name="config_backup_size_bytes"),
-        "contains_secrets": ubx.FieldSpec(wire_name="contains_secrets"),
-        "contains_volume_data": ubx.FieldSpec(wire_name="contains_volume_data"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "delete_lock_days": ubx.FieldSpec(wire_name="delete_lock_days"),
-        "delete_lock_expire_time": ubx.FieldSpec(wire_name="delete_lock_expire_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "encryption_key": ubx.FieldSpec(
             wire_name="encryption_key",
             kind="object",
             fields=_Backup_EncryptionKeyFields,
         ),
-        "etag": ubx.FieldSpec(wire_name="etag"),
         "labels": ubx.FieldSpec(wire_name="labels"),
-        "manual": ubx.FieldSpec(wire_name="manual"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "namespace_count": ubx.FieldSpec(wire_name="namespace_count"),
-        "permissive_mode": ubx.FieldSpec(wire_name="permissive_mode"),
-        "pod_count": ubx.FieldSpec(wire_name="pod_count"),
-        "resource_count": ubx.FieldSpec(wire_name="resource_count"),
         "retain_days": ubx.FieldSpec(wire_name="retain_days"),
-        "retain_expire_time": ubx.FieldSpec(wire_name="retain_expire_time"),
-        "satisfies_pzi": ubx.FieldSpec(wire_name="satisfies_pzi"),
-        "satisfies_pzs": ubx.FieldSpec(wire_name="satisfies_pzs"),
         "selected_applications": ubx.FieldSpec(
             wire_name="selected_applications",
             kind="object",
@@ -290,16 +227,10 @@ Backup = ubx.ResourceBinding(
             kind="object",
             fields=_Backup_SelectedNamespacesFields,
         ),
-        "size_bytes": ubx.FieldSpec(wire_name="size_bytes"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "state_reason": ubx.FieldSpec(wire_name="state_reason"),
         "troubleshooting_info": ubx.FieldSpec(
             wire_name="troubleshooting_info",
             kind="object",
             fields=_Backup_TroubleshootingInfoFields,
         ),
-        "uid": ubx.FieldSpec(wire_name="uid"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
-        "volume_count": ubx.FieldSpec(wire_name="volume_count"),
     },
 )

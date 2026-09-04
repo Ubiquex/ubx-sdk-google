@@ -485,16 +485,10 @@ export interface AutonomousDatabaseConfig {
   adminPasswordSecretVersion?: string | Computed<string>;
   /** Optional. Immutable. The subnet CIDR range for the Autonomous Database. */
   cidr?: string | Computed<string>;
-  /** Output only. The date and time that the Autonomous Database was created. */
-  createTime?: string | Computed<string>;
   /** Optional. Immutable. The name of the Autonomous Database. The database name must be unique in the project. The name must begin with a letter and can contain a maximum of 30 alphanumeric characters. */
   database?: string | Computed<string>;
-  /** Output only. List of supported GCP region to clone the Autonomous Database for disaster recovery. Format: `project/{project}/locations/{location}`. */
-  disasterRecoverySupportedLocations?: string[] | Computed<string[]>;
   /** Optional. Immutable. The display name for the Autonomous Database. The name does not have to be unique within your project. */
   displayName?: string | Computed<string>;
-  /** Output only. The ID of the subscription entitlement associated with the Autonomous Database. */
-  entitlementId?: string | Computed<string>;
   /** Optional. The labels or tags associated with the Autonomous Database. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Identifier. The name of the Autonomous Database resource in the following format: projects/{project}/locations/{region}/autonomousDatabases/{autonomous_database} */
@@ -505,8 +499,6 @@ export interface AutonomousDatabaseConfig {
   odbNetwork?: string | Computed<string>;
   /** Optional. Immutable. The name of the OdbSubnet associated with the Autonomous Database. Format: projects/{project}/locations/{location}/odbNetworks/{odb_network}/odbSubnets/{odb_subnet} */
   odbSubnet?: string | Computed<string>;
-  /** Output only. The peer Autonomous Database names of the given Autonomous Database. */
-  peerAutonomousDatabases?: string[] | Computed<string[]>;
   /** The properties of an Autonomous Database. */
   properties?: AutonomousDatabase_Properties | Computed<AutonomousDatabase_Properties>;
   /** The source configuration for the standby Autonomous Database. */
@@ -554,17 +546,13 @@ export const AutonomousDatabase: ResourceBinding<AutonomousDatabaseConfig, Auton
     adminPassword: "admin_password",
     adminPasswordSecretVersion: "admin_password_secret_version",
     cidr: "cidr",
-    createTime: "create_time",
     database: "database",
-    disasterRecoverySupportedLocations: "disaster_recovery_supported_locations",
     displayName: "display_name",
-    entitlementId: "entitlement_id",
     labels: "labels",
     name: "name",
     network: "network",
     odbNetwork: "odb_network",
     odbSubnet: "odb_subnet",
-    peerAutonomousDatabases: "peer_autonomous_databases",
     properties: {
       wireName: "properties",
       kind: "object",

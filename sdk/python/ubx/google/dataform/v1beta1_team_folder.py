@@ -8,18 +8,10 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class V1beta1TeamFolderConfig:
-    # Output only. The timestamp of when the TeamFolder was created.
-    create_time: Any = None
-    # Output only. The IAM principal identifier of the creator of the TeamFolder.
-    creator_iam_principal: Any = None
     # Required. The TeamFolder's user-friendly name.
     display_name: Any = None
-    # Output only. All the metadata information that is used internally to serve the resource. For example: timestamps, flags, status fields, etc. The format of this field is a JSON string.
-    internal_metadata: Any = None
     # Identifier. The TeamFolder's name.
     name: Any = None
-    # Output only. The timestamp of when the TeamFolder was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V1beta1TeamFolderAttrs:
@@ -39,11 +31,7 @@ class V1beta1TeamFolderAttrs:
 V1beta1TeamFolder = ubx.ResourceBinding(
     wire_type="google_dataform_v1beta1_team_folder",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
-        "creator_iam_principal": ubx.FieldSpec(wire_name="creator_iam_principal"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
-        "internal_metadata": ubx.FieldSpec(wire_name="internal_metadata"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

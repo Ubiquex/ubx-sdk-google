@@ -208,17 +208,12 @@ _V2beta1Tool_OpenApiSpecFields = {
 class V2beta1ToolConfig:
     action_confirmation_requirement: Any = None
     connector_spec: Any = None
-    create_time: Any = None
     description: Any = None
     display_name: Any = None
     extension_spec: Any = None
     function_spec: Any = None
-    name: Any = None
     open_api_spec: Any = None
-    satisfies_pzi: Any = None
-    satisfies_pzs: Any = None
     tool_key: Any = None
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V2beta1ToolAttrs:
@@ -245,7 +240,6 @@ V2beta1Tool = ubx.ResourceBinding(
             kind="object",
             fields=_V2beta1Tool_ConnectorSpecFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "extension_spec": ubx.FieldSpec(
@@ -258,15 +252,11 @@ V2beta1Tool = ubx.ResourceBinding(
             kind="object",
             fields=_V2beta1Tool_FunctionSpecFields,
         ),
-        "name": ubx.FieldSpec(wire_name="name"),
         "open_api_spec": ubx.FieldSpec(
             wire_name="open_api_spec",
             kind="object",
             fields=_V2beta1Tool_OpenApiSpecFields,
         ),
-        "satisfies_pzi": ubx.FieldSpec(wire_name="satisfies_pzi"),
-        "satisfies_pzs": ubx.FieldSpec(wire_name="satisfies_pzs"),
         "tool_key": ubx.FieldSpec(wire_name="tool_key"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

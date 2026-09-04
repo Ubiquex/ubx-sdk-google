@@ -22,20 +22,20 @@ type PushNotificationConfig_PushNotificationConfig struct {
 }
 
 var PushNotificationConfig_PushNotificationConfig_AuthenticationFields = ubx.FieldMap{
-		"Credentials": ubx.FieldSpec{WireName: "credentials"},
-		"Schemes": ubx.FieldSpec{WireName: "schemes"},
-	}
+	"Credentials": ubx.FieldSpec{WireName: "credentials"},
+	"Schemes":     ubx.FieldSpec{WireName: "schemes"},
+}
 
 var PushNotificationConfig_PushNotificationConfigFields = ubx.FieldMap{
-		"Authentication": ubx.FieldSpec{
-			WireName: "authentication",
-			Kind: "object",
-			Fields: PushNotificationConfig_PushNotificationConfig_AuthenticationFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Token": ubx.FieldSpec{WireName: "token"},
-		"Url": ubx.FieldSpec{WireName: "url"},
-	}
+	"Authentication": ubx.FieldSpec{
+		WireName: "authentication",
+		Kind:     "object",
+		Fields:   PushNotificationConfig_PushNotificationConfig_AuthenticationFields,
+	},
+	"Id":    ubx.FieldSpec{WireName: "id"},
+	"Token": ubx.FieldSpec{WireName: "token"},
+	"Url":   ubx.FieldSpec{WireName: "url"},
+}
 
 type PushNotificationConfigConfig struct {
 	// The resource name of the config. Format: tasks/{task_id}/pushNotificationConfigs/{config_id}
@@ -57,8 +57,8 @@ var PushNotificationConfig = ubx.ResourceBinding{
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"PushNotificationConfig": ubx.FieldSpec{
 			WireName: "push_notification_config",
-			Kind: "object",
-			Fields: PushNotificationConfig_PushNotificationConfigFields,
+			Kind:     "object",
+			Fields:   PushNotificationConfig_PushNotificationConfigFields,
 		},
 	},
 }

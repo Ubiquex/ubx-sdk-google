@@ -511,8 +511,6 @@ _Cluster_StorageResourcesFields = {
 class ClusterConfig:
     # Optional. Compute resources available to the cluster. Keys specify the ID of the compute resource by which it can be referenced elsewhere, and must conform to [RFC-1034](https://datatracker.ietf.org/doc/html/rfc1034) (lower-case, alphanumeric, and at most 63 characters).
     compute_resources: Any = None
-    # Output only. Time that the cluster was originally created.
-    create_time: Any = None
     # Optional. A description for your cluster. You can use up to 2,048 characters.
     description: Any = None
     # Optional. [Labels](https://cloud.google.com/compute/docs/labeling-resources) applied to the cluster. Labels can be used to organize clusters and to filter them in queries.
@@ -523,12 +521,8 @@ class ClusterConfig:
     network_resources: Any = None
     # The component responsible for scheduling and running workloads on the cluster as well as providing the user interface for interacting with the cluster at runtime.
     orchestrator: Any = None
-    # Output only. Indicates whether changes to the cluster are currently in flight. If this is `true`, then the current state might not match the cluster's intended state.
-    reconciling: Any = None
     # Optional. Storage resources available to the cluster. Keys specify the ID of the storage resource by which it can be referenced elsewhere, and must conform to [RFC-1034](https://datatracker.ietf.org/doc/html/rfc1034) (lower-case, alphanumeric, and at most 63 characters).
     storage_resources: Any = None
-    # Output only. Time that the cluster was most recently updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class ClusterAttrs:
@@ -561,7 +555,6 @@ Cluster = ubx.ResourceBinding(
             kind="map",
             fields=_Cluster_ComputeResourcesFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "name": ubx.FieldSpec(wire_name="name"),
@@ -575,12 +568,10 @@ Cluster = ubx.ResourceBinding(
             kind="object",
             fields=_Cluster_OrchestratorFields,
         ),
-        "reconciling": ubx.FieldSpec(wire_name="reconciling"),
         "storage_resources": ubx.FieldSpec(
             wire_name="storage_resources",
             kind="map",
             fields=_Cluster_StorageResourcesFields,
         ),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

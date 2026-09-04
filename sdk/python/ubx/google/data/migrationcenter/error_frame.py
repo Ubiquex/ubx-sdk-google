@@ -621,7 +621,6 @@ class ErrorFrame_Violations:
 
 @dataclasses.dataclass
 class ErrorFrameConfig:
-    name: Any = None
     view: Any = None
 
 @dataclasses.dataclass
@@ -638,7 +637,6 @@ class ErrorFrameAttrs:
 ErrorFrame = ubx.DataSourceBinding(
     wire_type="google_migrationcenter_error_frame",
     fields={
-        "name": ubx.FieldSpec(wire_name="name"),
         "view": ubx.FieldSpec(wire_name="view"),
     },
 )

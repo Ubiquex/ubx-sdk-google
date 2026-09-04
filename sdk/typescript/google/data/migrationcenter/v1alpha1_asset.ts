@@ -897,7 +897,6 @@ export interface V1alpha1Asset_VirtualMachineDetails {
 }
 
 export interface V1alpha1AssetConfig {
-  name: string | Computed<string>;
   view?: string | Computed<string>;
 }
 
@@ -1003,7 +1002,6 @@ export interface V1alpha1AssetAttrs {
 export const V1alpha1Asset: DataSourceBinding<V1alpha1AssetConfig, V1alpha1AssetAttrs> = {
   wireType: "google_migrationcenter_v1alpha1_asset",
   fields: {
-    name: "name",
     view: "view",
   },
 };

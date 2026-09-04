@@ -60,8 +60,6 @@ const LbRouteExtension_ExtensionChainsFields: FieldMap = {
 };
 
 export interface LbRouteExtensionConfig {
-  /** Output only. The timestamp when the resource was created. */
-  createTime?: string | Computed<string>;
   /** Optional. A human-readable description of the resource. */
   description?: string | Computed<string>;
   /** Required. A set of ordered extension chains that contain the match conditions and extensions to execute. Match conditions for each extension chain are evaluated in sequence for a given request. The first extension chain that has a condition that matches the request is executed. Any subsequent extension chains do not execute. Limited to 5 extension chains per resource. */
@@ -76,8 +74,6 @@ export interface LbRouteExtensionConfig {
   metadata?: Record<string, unknown> | Computed<Record<string, unknown>>;
   /** Required. Identifier. Name of the `LbRouteExtension` resource in the following format: `projects/{project}/locations/{location}/lbRouteExtensions/{lb_route_extension}`. */
   name?: string | Computed<string>;
-  /** Output only. The timestamp when the resource was updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface LbRouteExtensionAttrs {
@@ -104,7 +100,6 @@ export interface LbRouteExtensionAttrs {
 export const LbRouteExtension: ResourceBinding<LbRouteExtensionConfig, LbRouteExtensionAttrs> = {
   wireType: "google_networkservices_lb_route_extension",
   fields: {
-    createTime: "create_time",
     description: "description",
     extensionChains: {
       wireName: "extension_chains",
@@ -116,6 +111,5 @@ export const LbRouteExtension: ResourceBinding<LbRouteExtensionConfig, LbRouteEx
     loadBalancingScheme: "load_balancing_scheme",
     metadata: "metadata",
     name: "name",
-    updateTime: "update_time",
   },
 };

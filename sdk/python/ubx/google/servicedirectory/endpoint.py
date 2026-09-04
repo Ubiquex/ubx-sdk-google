@@ -18,8 +18,6 @@ class EndpointConfig:
     network: Any = None
     # Optional. Service Directory rejects values outside of `[0, 65535]`.
     port: Any = None
-    # Output only. The globally unique identifier of the endpoint in the UUID4 format.
-    uid: Any = None
 
 @dataclasses.dataclass
 class EndpointAttrs:
@@ -44,6 +42,5 @@ Endpoint = ubx.ResourceBinding(
         "name": ubx.FieldSpec(wire_name="name"),
         "network": ubx.FieldSpec(wire_name="network"),
         "port": ubx.FieldSpec(wire_name="port"),
-        "uid": ubx.FieldSpec(wire_name="uid"),
     },
 )

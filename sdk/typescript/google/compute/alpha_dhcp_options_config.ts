@@ -22,8 +22,6 @@ export interface AlphaDhcpOptionsConfigConfig {
   bootFileIpv6Parameters?: string[] | Computed<string[]>;
   /** The Uniform Resource Locator (URL) specifying the protocol, server address, and file path of the boot file that the client VM guest OS should download and execute for network boot (e.g., 'tftp://[2001:db8::1]/bootx64.efi' or 'http://[2001:db8::1]/boot.img'). Corresponds to DHCPv6 Option 59. */
   bootFileIpv6Url?: string | Computed<string>;
-  /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
-  creationTimestamp?: string | Computed<string>;
   /** An optional description of this resource. Provide this property when you create the resource. */
   description?: string | Computed<string>;
   /** An ordered list of domain suffixes (search paths) that the client VM guest OS should append to resolve hostnames that are not fully qualified. Applies to both DHCPv4 Option 119 and DHCPv6 Option 24. */
@@ -34,10 +32,6 @@ export interface AlphaDhcpOptionsConfigConfig {
   dnsServerIpv6Addresses?: string[] | Computed<string[]>;
   /** The domain name that the client VM guest OS should use when resolving hostnames via DNS (e.g., 'example.com'). It defines the default domain suffix for the client. Corresponds to DHCPv4 Option 15. */
   domainName?: string | Computed<string>;
-  /** Output only. [Output Only] The unique identifier for the resource type. The server generates this identifier. */
-  id?: string | Computed<string>;
-  /** Output only. [Output Only] Type of the resource. Alwayscompute#dhcpOptionsConfig for dhcp options configs. */
-  kind?: string | Computed<string>;
   /** The duration, in seconds, of the IPv4 address lease offered by the DHCP server to the client VM guest OS. Corresponds to DHCPv4 Option 51. */
   leaseTimeSec?: string | Computed<string>;
   /** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
@@ -46,10 +40,6 @@ export interface AlphaDhcpOptionsConfigConfig {
   ntpServerIpv4Addresses?: string[] | Computed<string[]>;
   /** An ordered list of IPv6 addresses of Network Time Protocol (NTP) servers available to the client VM guest OS for system clock synchronization. Corresponds to DHCPv6 Option 56. */
   ntpServerIpv6Addresses?: string[] | Computed<string[]>;
-  /** Output only. [Output Only] URL of the region where the resource resides. */
-  region?: string | Computed<string>;
-  /** Output only. [Output Only] Server-defined URL for the resource. */
-  selfLink?: string | Computed<string>;
   /** An ordered list of one or more IPv4 addresses of TFTP servers. Provides server redundancy and failover support, and is generally prioritized by clients over the single hostname specified in Option 66. Corresponds to DHCPv4 Option 150. */
   tftpServerIpv4Addresses?: string[] | Computed<string[]>;
   /** The hostname or IP address of the Trivial File Transfer Protocol (TFTP) server from which the client VM guest OS can download boot files. Typically used in network booting (PXE) when the standard DHCP header 'sname' field is overloaded. Corresponds to DHCPv4 Option 66. */
@@ -110,20 +100,15 @@ export const AlphaDhcpOptionsConfig: ResourceBinding<AlphaDhcpOptionsConfigConfi
     bootFileIpv4Name: "boot_file_ipv4_name",
     bootFileIpv6Parameters: "boot_file_ipv6_parameters",
     bootFileIpv6Url: "boot_file_ipv6_url",
-    creationTimestamp: "creation_timestamp",
     description: "description",
     dnsSearchPaths: "dns_search_paths",
     dnsServerIpv4Addresses: "dns_server_ipv4_addresses",
     dnsServerIpv6Addresses: "dns_server_ipv6_addresses",
     domainName: "domain_name",
-    id: "id",
-    kind: "kind",
     leaseTimeSec: "lease_time_sec",
     name: "name",
     ntpServerIpv4Addresses: "ntp_server_ipv4_addresses",
     ntpServerIpv6Addresses: "ntp_server_ipv6_addresses",
-    region: "region",
-    selfLink: "self_link",
     tftpServerIpv4Addresses: "tftp_server_ipv4_addresses",
     tftpServerIpv4Name: "tftp_server_ipv4_name",
   },

@@ -26,8 +26,6 @@ const V1beta1ServingProfile_CmekConfigFields: FieldMap = {
 export interface V1beta1ServingProfileConfig {
   /** Configuration for Customer-Managed Encryption Keys (CMEK). */
   cmekConfig?: V1beta1ServingProfile_CmekConfig | Computed<V1beta1ServingProfile_CmekConfig>;
-  /** Output only. Timestamp when the ServingProfile was created. */
-  createTime?: string | Computed<string>;
   /** Optional. The description of the ServingProfile. */
   description?: string | Computed<string>;
   /** Required. The display name of the ServingProfile. The name can be up to 128 characters long and can consist of any UTF-8 characters. */
@@ -36,8 +34,6 @@ export interface V1beta1ServingProfileConfig {
   name?: string | Computed<string>;
   /** Required. The specific API this ServingProfile applies to. */
   scope?: string | Computed<string>;
-  /** Output only. Timestamp when the ServingProfile was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1beta1ServingProfileAttrs {
@@ -65,11 +61,9 @@ export const V1beta1ServingProfile: ResourceBinding<V1beta1ServingProfileConfig,
       kind: "object",
       fields: V1beta1ServingProfile_CmekConfigFields,
     },
-    createTime: "create_time",
     description: "description",
     displayName: "display_name",
     name: "name",
     scope: "scope",
-    updateTime: "update_time",
   },
 };

@@ -4,8 +4,6 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 export interface DebugsessionConfig {
   /** Optional. The number of request to be traced. Min = 1, Max = 15, Default = 10. */
   count?: number | Computed<number>;
-  /** Output only. The first transaction creation timestamp, recorded by UAP. */
-  createTime?: string | Computed<string>;
   /** Optional. A conditional statement which is evaluated against the request message to determine if it should be traced. Syntax matches that of on API Proxy bundle flow Condition. */
   filter?: string | Computed<string>;
   /** A unique ID for this DebugSession. */
@@ -39,7 +37,6 @@ export const Debugsession: ResourceBinding<DebugsessionConfig, DebugsessionAttrs
   wireType: "google_apigee_debugsession",
   fields: {
     count: "count",
-    createTime: "create_time",
     filter: "filter",
     name: "name",
     timeout: "timeout",

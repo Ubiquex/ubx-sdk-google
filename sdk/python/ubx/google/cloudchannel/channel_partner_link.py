@@ -59,20 +59,10 @@ _ChannelPartnerLink_ChannelPartnerCloudIdentityInfoFields = {
 class ChannelPartnerLinkConfig:
     # Cloud Identity information for the Cloud Channel Customer.
     channel_partner_cloud_identity_info: Any = None
-    # Output only. Timestamp of when the channel partner link is created.
-    create_time: Any = None
-    # Output only. URI of the web page where partner accepts the link invitation.
-    invite_link_uri: Any = None
     # Required. State of the channel partner link.
     link_state: Any = None
-    # Output only. Resource name for the channel partner link, in the format accounts/{account_id}/channelPartnerLinks/{id}.
-    name: Any = None
-    # Output only. Public identifier that a customer must use to generate a transfer token to move to this distributor-reseller combination.
-    public_id: Any = None
     # Required. Cloud Identity ID of the linked reseller.
     reseller_cloud_identity_id: Any = None
-    # Output only. Timestamp of when the channel partner link is updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class ChannelPartnerLinkAttrs:
@@ -101,12 +91,7 @@ ChannelPartnerLink = ubx.ResourceBinding(
             kind="object",
             fields=_ChannelPartnerLink_ChannelPartnerCloudIdentityInfoFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
-        "invite_link_uri": ubx.FieldSpec(wire_name="invite_link_uri"),
         "link_state": ubx.FieldSpec(wire_name="link_state"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "public_id": ubx.FieldSpec(wire_name="public_id"),
         "reseller_cloud_identity_id": ubx.FieldSpec(wire_name="reseller_cloud_identity_id"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

@@ -26,8 +26,6 @@ const CertificateIssuanceConfig_CertificateAuthorityConfigFields: FieldMap = {
 export interface CertificateIssuanceConfigConfig {
   /** The CA that issues the workload certificate. It includes CA address, type, authentication to CA service, etc. */
   certificateAuthorityConfig?: CertificateIssuanceConfig_CertificateAuthorityConfig | Computed<CertificateIssuanceConfig_CertificateAuthorityConfig>;
-  /** Output only. The creation timestamp of a CertificateIssuanceConfig. */
-  createTime?: string | Computed<string>;
   /** Optional. One or more paragraphs of text description of a CertificateIssuanceConfig. */
   description?: string | Computed<string>;
   /** Required. The key algorithm to use when generating the private key. */
@@ -42,8 +40,6 @@ export interface CertificateIssuanceConfigConfig {
   rotationWindowPercentage?: number | Computed<number>;
   /** Optional. Input only. Immutable. Tag keys/values directly bound to this resource. For example: "123/environment": "production", "123/costCenter": "marketing" */
   tags?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. The last update timestamp of a CertificateIssuanceConfig. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface CertificateIssuanceConfigAttrs {
@@ -77,7 +73,6 @@ export const CertificateIssuanceConfig: ResourceBinding<CertificateIssuanceConfi
       kind: "object",
       fields: CertificateIssuanceConfig_CertificateAuthorityConfigFields,
     },
-    createTime: "create_time",
     description: "description",
     keyAlgorithm: "key_algorithm",
     labels: "labels",
@@ -85,6 +80,5 @@ export const CertificateIssuanceConfig: ResourceBinding<CertificateIssuanceConfi
     name: "name",
     rotationWindowPercentage: "rotation_window_percentage",
     tags: "tags",
-    updateTime: "update_time",
   },
 };

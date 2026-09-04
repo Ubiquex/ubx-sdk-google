@@ -2,8 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ExperimentConfig {
-  /** Output only. Timestamp when this TensorboardExperiment was created. */
-  createTime?: string | Computed<string>;
   /** Description of this TensorboardExperiment. */
   description?: string | Computed<string>;
   /** User provided name of this TensorboardExperiment. */
@@ -12,12 +10,8 @@ export interface ExperimentConfig {
   etag?: string | Computed<string>;
   /** The labels with user-defined metadata to organize your TensorboardExperiment. Label keys and values cannot be longer than 64 characters (Unicode codepoints), can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. No more than 64 user labels can be associated with one Dataset (System labels are excluded). See https://goo.gl/xmQnxf for more information and examples of labels. System reserved label keys are prefixed with `aiplatform.googleapis.com/` and are immutable. The following system labels exist for each Dataset: * `aiplatform.googleapis.com/dataset_metadata_schema`: output only. Its value is the metadata_schema's title. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. Name of the TensorboardExperiment. Format: `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}` */
-  name?: string | Computed<string>;
   /** Immutable. Source of the TensorboardExperiment. Example: a custom training job. */
   source?: string | Computed<string>;
-  /** Output only. Timestamp when this TensorboardExperiment was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface ExperimentAttrs {
@@ -42,13 +36,10 @@ export interface ExperimentAttrs {
 export const Experiment: ResourceBinding<ExperimentConfig, ExperimentAttrs> = {
   wireType: "google_aiplatform_experiment",
   fields: {
-    createTime: "create_time",
     description: "description",
     displayName: "display_name",
     etag: "etag",
     labels: "labels",
-    name: "name",
     source: "source",
-    updateTime: "update_time",
   },
 };

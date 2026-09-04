@@ -128,32 +128,18 @@ const Domain_ServeFields: FieldMap = {
 export interface DomainConfig {
   /** Optional. Annotations as key value pairs. */
   annotations?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. Time at which the domain was created. */
-  createTime?: string | Computed<string>;
   /** The status of a custom domain's linkage to a backend. */
   customDomainStatus?: Domain_CustomDomainStatus | Computed<Domain_CustomDomainStatus>;
-  /** Output only. Time at which the domain was deleted. */
-  deleteTime?: string | Computed<string>;
   /** Optional. Whether the domain is disabled. Defaults to false. */
   disabled?: boolean | Computed<boolean>;
   /** Optional. Mutable human-readable name for the domain. 63 character limit. e.g. `prod domain`. */
   displayName?: string | Computed<string>;
-  /** Output only. Server-computed checksum based on other values; may be sent on update or delete to ensure operation is done on expected resource. */
-  etag?: string | Computed<string>;
   /** Optional. Labels as key value pairs. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Identifier. The resource name of the domain, e.g. `/projects/p/locations/l/backends/b/domains/foo.com` */
   name?: string | Computed<string>;
-  /** Output only. A field that, if true, indicates that the build has an ongoing LRO. */
-  reconciling?: boolean | Computed<boolean>;
   /** Indicates whether App Hosting will serve content on the domain. */
   serve?: Domain_Serve | Computed<Domain_Serve>;
-  /** Output only. The type of the domain. */
-  type?: string | Computed<string>;
-  /** Output only. System-assigned, unique identifier. */
-  uid?: string | Computed<string>;
-  /** Output only. Time at which the domain was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface DomainAttrs {
@@ -191,26 +177,19 @@ export const Domain: ResourceBinding<DomainConfig, DomainAttrs> = {
   wireType: "google_firebaseapphosting_domain",
   fields: {
     annotations: "annotations",
-    createTime: "create_time",
     customDomainStatus: {
       wireName: "custom_domain_status",
       kind: "object",
       fields: Domain_CustomDomainStatusFields,
     },
-    deleteTime: "delete_time",
     disabled: "disabled",
     displayName: "display_name",
-    etag: "etag",
     labels: "labels",
     name: "name",
-    reconciling: "reconciling",
     serve: {
       wireName: "serve",
       kind: "object",
       fields: Domain_ServeFields,
     },
-    type: "type",
-    uid: "uid",
-    updateTime: "update_time",
   },
 };

@@ -35,28 +35,18 @@ export interface AlphaSslCertificateConfig {
   creationTimestamp?: string | Computed<string>;
   /** An optional description of this resource. Provide this property when you create the resource. */
   description?: string | Computed<string>;
-  /** Output only. [Output Only] Expire time of the certificate. RFC3339 */
-  expireTime?: string | Computed<string>;
   /** [Output Only] The unique identifier for the resource. This identifier is defined by the server. */
   id?: string | Computed<string>;
-  /** Output only. [Output Only] Type of the resource. Alwayscompute#sslCertificate for SSL certificates. */
-  kind?: string | Computed<string>;
   /** Configuration and status of a managed SSL certificate. */
   managed?: AlphaSslCertificate_Managed | Computed<AlphaSslCertificate_Managed>;
   /** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
   name?: string | Computed<string>;
   /** A value read into memory from a write-only private key file. The private key file must be in PEM format. For security, only insert requests include this field. */
   privateKey?: string | Computed<string>;
-  /** Output only. [Output Only] URL of the region where the regional SSL Certificate resides. This field is not applicable to global SSL Certificate. */
-  region?: string | Computed<string>;
   /** [Output only] Server-defined URL for the resource. */
   selfLink?: string | Computed<string>;
-  /** Output only. [Output Only] Server-defined URL for this resource with the resource id. */
-  selfLinkWithId?: string | Computed<string>;
   /** Configuration and status of a self-managed SSL certificate. */
   selfManaged?: AlphaSslCertificate_SelfManaged | Computed<AlphaSslCertificate_SelfManaged>;
-  /** Output only. [Output Only] Domains associated with the certificate via Subject Alternative Name. */
-  subjectAlternativeNames?: string[] | Computed<string[]>;
   /** (Optional) Specifies the type of SSL certificate, either "SELF_MANAGED" or "MANAGED". If not specified, the certificate is self-managed and the fieldscertificate and private_key are used. */
   type?: string | Computed<string>;
 }
@@ -100,9 +90,7 @@ export const AlphaSslCertificate: ResourceBinding<AlphaSslCertificateConfig, Alp
     certificate: "certificate",
     creationTimestamp: "creation_timestamp",
     description: "description",
-    expireTime: "expire_time",
     id: "id",
-    kind: "kind",
     managed: {
       wireName: "managed",
       kind: "object",
@@ -110,15 +98,12 @@ export const AlphaSslCertificate: ResourceBinding<AlphaSslCertificateConfig, Alp
     },
     name: "name",
     privateKey: "private_key",
-    region: "region",
     selfLink: "self_link",
-    selfLinkWithId: "self_link_with_id",
     selfManaged: {
       wireName: "self_managed",
       kind: "object",
       fields: AlphaSslCertificate_SelfManagedFields,
     },
-    subjectAlternativeNames: "subject_alternative_names",
     type: "type",
   },
 };

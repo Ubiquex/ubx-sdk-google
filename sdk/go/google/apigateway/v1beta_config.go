@@ -15,12 +15,12 @@ type V1betaConfig_GatewayConfig struct {
 
 type V1betaConfig_GrpcServices_FileDescriptorSet struct {
 	Contents any
-	Path any
+	Path     any
 }
 
 type V1betaConfig_GrpcServices struct {
 	FileDescriptorSet any
-	Source any
+	Source            any
 }
 
 type V1betaConfig_OpenapiDocuments struct {
@@ -28,46 +28,44 @@ type V1betaConfig_OpenapiDocuments struct {
 }
 
 var V1betaConfig_GatewayConfig_BackendConfigFields = ubx.FieldMap{
-		"GoogleServiceAccount": ubx.FieldSpec{WireName: "google_service_account"},
-	}
+	"GoogleServiceAccount": ubx.FieldSpec{WireName: "google_service_account"},
+}
 
 var V1betaConfig_GatewayConfigFields = ubx.FieldMap{
-		"BackendConfig": ubx.FieldSpec{
-			WireName: "backend_config",
-			Kind: "object",
-			Fields: V1betaConfig_GatewayConfig_BackendConfigFields,
-		},
-	}
+	"BackendConfig": ubx.FieldSpec{
+		WireName: "backend_config",
+		Kind:     "object",
+		Fields:   V1betaConfig_GatewayConfig_BackendConfigFields,
+	},
+}
 
 var V1betaConfig_GrpcServices_FileDescriptorSetFields = ubx.FieldMap{
-		"Contents": ubx.FieldSpec{WireName: "contents"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-	}
+	"Contents": ubx.FieldSpec{WireName: "contents"},
+	"Path":     ubx.FieldSpec{WireName: "path"},
+}
 
 var V1betaConfig_GrpcServicesFields = ubx.FieldMap{
-		"FileDescriptorSet": ubx.FieldSpec{
-			WireName: "file_descriptor_set",
-			Kind: "object",
-			Fields: V1betaConfig_GrpcServices_FileDescriptorSetFields,
-		},
-		"Source": ubx.FieldSpec{
-			WireName: "source",
-			Kind: "list",
-			Fields: V1betaConfig_GrpcServices_FileDescriptorSetFields,
-		},
-	}
+	"FileDescriptorSet": ubx.FieldSpec{
+		WireName: "file_descriptor_set",
+		Kind:     "object",
+		Fields:   V1betaConfig_GrpcServices_FileDescriptorSetFields,
+	},
+	"Source": ubx.FieldSpec{
+		WireName: "source",
+		Kind:     "list",
+		Fields:   V1betaConfig_GrpcServices_FileDescriptorSetFields,
+	},
+}
 
 var V1betaConfig_OpenapiDocumentsFields = ubx.FieldMap{
-		"Document": ubx.FieldSpec{
-			WireName: "document",
-			Kind: "object",
-			Fields: V1betaConfig_GrpcServices_FileDescriptorSetFields,
-		},
-	}
+	"Document": ubx.FieldSpec{
+		WireName: "document",
+		Kind:     "object",
+		Fields:   V1betaConfig_GrpcServices_FileDescriptorSetFields,
+	},
+}
 
 type V1betaConfigConfig struct {
-	// Output only. Created time.
-	CreateTime any
 	// Optional. Display name.
 	DisplayName any
 	// Configuration settings for Gateways.
@@ -80,16 +78,8 @@ type V1betaConfigConfig struct {
 	Labels any
 	// Optional. Service Configuration files. At least one must be included when using gRPC service definitions. See https://cloud.google.com/endpoints/docs/grpc/grpc-service-config#service_configuration_overview for the expected file contents. If multiple files are specified, the files are merged with the following rules: * All singular scalar fields are merged using "last one wins" semantics in the order of the files uploaded. * Repeated fields are concatenated. * Singular embedded messages are merged using these rules for nested fields.
 	ManagedServiceConfigs any
-	// Output only. Resource name of the API Config. Format: projects/{project}/locations/global/apis/{api}/configs/{api_config}
-	Name any
 	// Optional. OpenAPI specification documents. If specified, grpc_services and managed_service_configs must not be included.
 	OpenapiDocuments any
-	// Output only. The ID of the associated Service Config ( https://cloud.google.com/service-infrastructure/docs/glossary#config).
-	ServiceConfigId any
-	// Output only. State of the API Config.
-	State any
-	// Output only. Updated time.
-	UpdateTime any
 }
 
 type V1betaConfigAttrs struct {
@@ -122,33 +112,28 @@ type V1betaConfigAttrs struct {
 var V1betaConfig = ubx.ResourceBinding{
 	WireType: "google_apigateway_v1beta_config",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"GatewayConfig": ubx.FieldSpec{
 			WireName: "gateway_config",
-			Kind: "object",
-			Fields: V1betaConfig_GatewayConfigFields,
+			Kind:     "object",
+			Fields:   V1betaConfig_GatewayConfigFields,
 		},
 		"GatewayServiceAccount": ubx.FieldSpec{WireName: "gateway_service_account"},
 		"GrpcServices": ubx.FieldSpec{
 			WireName: "grpc_services",
-			Kind: "list",
-			Fields: V1betaConfig_GrpcServicesFields,
+			Kind:     "list",
+			Fields:   V1betaConfig_GrpcServicesFields,
 		},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
 		"ManagedServiceConfigs": ubx.FieldSpec{
 			WireName: "managed_service_configs",
-			Kind: "list",
-			Fields: V1betaConfig_GrpcServices_FileDescriptorSetFields,
+			Kind:     "list",
+			Fields:   V1betaConfig_GrpcServices_FileDescriptorSetFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
 		"OpenapiDocuments": ubx.FieldSpec{
 			WireName: "openapi_documents",
-			Kind: "list",
-			Fields: V1betaConfig_OpenapiDocumentsFields,
+			Kind:     "list",
+			Fields:   V1betaConfig_OpenapiDocumentsFields,
 		},
-		"ServiceConfigId": ubx.FieldSpec{WireName: "service_config_id"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

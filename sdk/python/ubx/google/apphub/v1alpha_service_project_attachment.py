@@ -8,16 +8,10 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class V1alphaServiceProjectAttachmentConfig:
-    # Output only. Create time.
-    create_time: Any = None
     # Identifier. The resource name of a ServiceProjectAttachment. Format: `"projects/{host-project-id}/locations/global/serviceProjectAttachments/{service-project-id}."`
     name: Any = None
     # Required. Immutable. Service project name in the format: `"projects/abc"` or `"projects/123"`. As input, project name with either project id or number are accepted. As output, this field will contain project number.
     service_project: Any = None
-    # Output only. ServiceProjectAttachment state.
-    state: Any = None
-    # Output only. A globally unique identifier (in UUID4 format) for the `ServiceProjectAttachment`.
-    uid: Any = None
 
 @dataclasses.dataclass
 class V1alphaServiceProjectAttachmentAttrs:
@@ -35,10 +29,7 @@ class V1alphaServiceProjectAttachmentAttrs:
 V1alphaServiceProjectAttachment = ubx.ResourceBinding(
     wire_type="google_apphub_v1alpha_service_project_attachment",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "name": ubx.FieldSpec(wire_name="name"),
         "service_project": ubx.FieldSpec(wire_name="service_project"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "uid": ubx.FieldSpec(wire_name="uid"),
     },
 )

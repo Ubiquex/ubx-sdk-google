@@ -35,20 +35,12 @@ const V1alpha1PrivateConnection_VpcPeeringConfigFields: FieldMap = {
 };
 
 export interface V1alpha1PrivateConnectionConfig {
-  /** Output only. The create time of the resource. */
-  createTime?: string | Computed<string>;
   /** Required. Display name. */
   displayName?: string | Computed<string>;
   /** Represent a user-facing Error. */
   error?: V1alpha1PrivateConnection_Error | Computed<V1alpha1PrivateConnection_Error>;
   /** Labels. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. The resource's name. */
-  name?: string | Computed<string>;
-  /** Output only. The state of the Private Connection. */
-  state?: string | Computed<string>;
-  /** Output only. The update time of the resource. */
-  updateTime?: string | Computed<string>;
   /** The VPC Peering configuration is used to create VPC peering between Datastream and the consumer's VPC. */
   vpcPeeringConfig?: V1alpha1PrivateConnection_VpcPeeringConfig | Computed<V1alpha1PrivateConnection_VpcPeeringConfig>;
 }
@@ -75,7 +67,6 @@ export interface V1alpha1PrivateConnectionAttrs {
 export const V1alpha1PrivateConnection: ResourceBinding<V1alpha1PrivateConnectionConfig, V1alpha1PrivateConnectionAttrs> = {
   wireType: "google_datastream_v1alpha1_private_connection",
   fields: {
-    createTime: "create_time",
     displayName: "display_name",
     error: {
       wireName: "error",
@@ -83,9 +74,6 @@ export const V1alpha1PrivateConnection: ResourceBinding<V1alpha1PrivateConnectio
       fields: V1alpha1PrivateConnection_ErrorFields,
     },
     labels: "labels",
-    name: "name",
-    state: "state",
-    updateTime: "update_time",
     vpcPeeringConfig: {
       wireName: "vpc_peering_config",
       kind: "object",

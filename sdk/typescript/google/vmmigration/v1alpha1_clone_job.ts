@@ -331,14 +331,6 @@ const V1alpha1CloneJob_ErrorFields: FieldMap = {
   message: "message",
 };
 
-const V1alpha1CloneJob_StepsFields: FieldMap = {
-  adaptingOs: "adapting_os",
-  endTime: "end_time",
-  instantiatingMigratedVm: "instantiating_migrated_vm",
-  preparingVmDisks: "preparing_vm_disks",
-  startTime: "start_time",
-};
-
 export interface V1alpha1CloneJobConfig {
   /** ComputeEngineDisksTargetDetails is a collection of created Persistent Disks details. */
   computeEngineDisksTargetDetails?: V1alpha1CloneJob_ComputeEngineDisksTargetDetails | Computed<V1alpha1CloneJob_ComputeEngineDisksTargetDetails>;
@@ -346,20 +338,8 @@ export interface V1alpha1CloneJobConfig {
   computeEngineTargetDetails?: V1alpha1CloneJob_ComputeEngineTargetDetails | Computed<V1alpha1CloneJob_ComputeEngineTargetDetails>;
   /** TargetVMDetails is a collection of details for creating a VM in a target Compute Engine project. */
   computeEngineVmDetails?: V1alpha1CloneJob_ComputeEngineVmDetails | Computed<V1alpha1CloneJob_ComputeEngineVmDetails>;
-  /** Output only. The time the clone job was created (as an API call, not when it was actually created in the target). */
-  createTime?: string | Computed<string>;
-  /** Output only. The time the clone job was ended. */
-  endTime?: string | Computed<string>;
   /** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
   error?: V1alpha1CloneJob_Error | Computed<V1alpha1CloneJob_Error>;
-  /** Output only. The name of the clone. */
-  name?: string | Computed<string>;
-  /** Output only. State of the clone job. */
-  state?: string | Computed<string>;
-  /** Output only. The time the state was last updated. */
-  stateTime?: string | Computed<string>;
-  /** Output only. The clone steps list representing its progress. */
-  steps?: V1alpha1CloneJob_Steps[] | Computed<V1alpha1CloneJob_Steps[]>;
   /** TargetVMDetails is a collection of details for creating a VM in a target Compute Engine project. */
   targetDetails?: V1alpha1CloneJob_ComputeEngineVmDetails | Computed<V1alpha1CloneJob_ComputeEngineVmDetails>;
 }
@@ -407,20 +387,10 @@ export const V1alpha1CloneJob: ResourceBinding<V1alpha1CloneJobConfig, V1alpha1C
       kind: "object",
       fields: V1alpha1CloneJob_ComputeEngineVmDetailsFields,
     },
-    createTime: "create_time",
-    endTime: "end_time",
     error: {
       wireName: "error",
       kind: "object",
       fields: V1alpha1CloneJob_ErrorFields,
-    },
-    name: "name",
-    state: "state",
-    stateTime: "state_time",
-    steps: {
-      wireName: "steps",
-      kind: "list",
-      fields: V1alpha1CloneJob_StepsFields,
     },
     targetDetails: {
       wireName: "target_details",

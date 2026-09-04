@@ -75,8 +75,6 @@ _Database_EncryptionConfigFields = {
 class DatabaseConfig:
     # Required. A `CREATE DATABASE` statement, which specifies the ID of the new database. The database ID must conform to the regular expression `a-z*[a-z0-9]` and be between 2 and 30 characters in length. If the database ID is a reserved word or if it contains a hyphen, the database ID must be enclosed in backticks (`` ` ``).
     create_statement: Any = None
-    # Optional. The dialect of the Cloud Spanner Database.
-    database_dialect: Any = None
     # Encryption configuration for a Cloud Spanner database.
     encryption_config: Any = None
     # Optional. A list of DDL statements to run inside the newly created database. Statements can create tables, indexes, etc. These statements execute atomically with the creation of the database: if there is an error in any statement, the database is not created.
@@ -123,7 +121,6 @@ Database = ubx.ResourceBinding(
     wire_type="google_spanner_database",
     fields={
         "create_statement": ubx.FieldSpec(wire_name="create_statement"),
-        "database_dialect": ubx.FieldSpec(wire_name="database_dialect"),
         "encryption_config": ubx.FieldSpec(
             wire_name="encryption_config",
             kind="object",

@@ -116,102 +116,8 @@ export interface V1beta1IndexEndpoint_PrivateServiceConnectConfig {
   serviceAttachment?: string | Computed<string>;
 }
 
-const V1beta1IndexEndpoint_DeployedIndexes_AutomaticResourcesFields: FieldMap = {
-  maxReplicaCount: "max_replica_count",
-  minReplicaCount: "min_replica_count",
-};
-
-const V1beta1IndexEndpoint_DeployedIndexes_DedicatedResources_AutoscalingMetricSpecsFields: FieldMap = {
-  metricName: "metric_name",
-  monitoredResourceLabels: "monitored_resource_labels",
-  target: "target",
-};
-
-const V1beta1IndexEndpoint_DeployedIndexes_DedicatedResources_FlexStartFields: FieldMap = {
-  maxRuntimeDuration: "max_runtime_duration",
-};
-
-const V1beta1IndexEndpoint_DeployedIndexes_DedicatedResources_MachineSpec_ReservationAffinityFields: FieldMap = {
-  key: "key",
-  reservationAffinityType: "reservation_affinity_type",
-  values: "values",
-};
-
-const V1beta1IndexEndpoint_DeployedIndexes_DedicatedResources_MachineSpecFields: FieldMap = {
-  acceleratorCount: "accelerator_count",
-  acceleratorType: "accelerator_type",
-  gpuPartitionSize: "gpu_partition_size",
-  machineType: "machine_type",
-  minGpuDriverVersion: "min_gpu_driver_version",
-  multihostGpuNodeCount: "multihost_gpu_node_count",
-  reservationAffinity: {
-    wireName: "reservation_affinity",
-    kind: "object",
-    fields: V1beta1IndexEndpoint_DeployedIndexes_DedicatedResources_MachineSpec_ReservationAffinityFields,
-  },
-  tpuTopology: "tpu_topology",
-};
-
-const V1beta1IndexEndpoint_DeployedIndexes_DedicatedResources_ScaleToZeroSpecFields: FieldMap = {
-  idleScaledownPeriod: "idle_scaledown_period",
-  minScaleupPeriod: "min_scaleup_period",
-};
-
-const V1beta1IndexEndpoint_DeployedIndexes_DedicatedResourcesFields: FieldMap = {
-  autoscalingMetricSpecs: {
-    wireName: "autoscaling_metric_specs",
-    kind: "list",
-    fields: V1beta1IndexEndpoint_DeployedIndexes_DedicatedResources_AutoscalingMetricSpecsFields,
-  },
-  flexStart: {
-    wireName: "flex_start",
-    kind: "object",
-    fields: V1beta1IndexEndpoint_DeployedIndexes_DedicatedResources_FlexStartFields,
-  },
-  initialReplicaCount: "initial_replica_count",
-  machineSpec: {
-    wireName: "machine_spec",
-    kind: "object",
-    fields: V1beta1IndexEndpoint_DeployedIndexes_DedicatedResources_MachineSpecFields,
-  },
-  maxReplicaCount: "max_replica_count",
-  minReplicaCount: "min_replica_count",
-  requiredReplicaCount: "required_replica_count",
-  scaleToZeroSpec: {
-    wireName: "scale_to_zero_spec",
-    kind: "object",
-    fields: V1beta1IndexEndpoint_DeployedIndexes_DedicatedResources_ScaleToZeroSpecFields,
-  },
-  spot: "spot",
-};
-
-const V1beta1IndexEndpoint_DeployedIndexes_DeployedIndexAuthConfig_AuthProviderFields: FieldMap = {
-  allowedIssuers: "allowed_issuers",
-  audiences: "audiences",
-};
-
-const V1beta1IndexEndpoint_DeployedIndexes_DeployedIndexAuthConfigFields: FieldMap = {
-  authProvider: {
-    wireName: "auth_provider",
-    kind: "object",
-    fields: V1beta1IndexEndpoint_DeployedIndexes_DeployedIndexAuthConfig_AuthProviderFields,
-  },
-};
-
-const V1beta1IndexEndpoint_DeployedIndexes_PrivateEndpoints_PscAutomatedEndpointsFields: FieldMap = {
-  matchAddress: "match_address",
-  network: "network",
-  projectId: "project_id",
-};
-
-const V1beta1IndexEndpoint_DeployedIndexes_PrivateEndpointsFields: FieldMap = {
-  matchGrpcAddress: "match_grpc_address",
-  pscAutomatedEndpoints: {
-    wireName: "psc_automated_endpoints",
-    kind: "list",
-    fields: V1beta1IndexEndpoint_DeployedIndexes_PrivateEndpoints_PscAutomatedEndpointsFields,
-  },
-  serviceAttachment: "service_attachment",
+const V1beta1IndexEndpoint_EncryptionSpecFields: FieldMap = {
+  kmsKeyName: "kms_key_name",
 };
 
 const V1beta1IndexEndpoint_DeployedIndexes_PscAutomationConfigsFields: FieldMap = {
@@ -221,48 +127,6 @@ const V1beta1IndexEndpoint_DeployedIndexes_PscAutomationConfigsFields: FieldMap 
   network: "network",
   projectId: "project_id",
   state: "state",
-};
-
-const V1beta1IndexEndpoint_DeployedIndexesFields: FieldMap = {
-  automaticResources: {
-    wireName: "automatic_resources",
-    kind: "object",
-    fields: V1beta1IndexEndpoint_DeployedIndexes_AutomaticResourcesFields,
-  },
-  createTime: "create_time",
-  dedicatedResources: {
-    wireName: "dedicated_resources",
-    kind: "object",
-    fields: V1beta1IndexEndpoint_DeployedIndexes_DedicatedResourcesFields,
-  },
-  deployedIndexAuthConfig: {
-    wireName: "deployed_index_auth_config",
-    kind: "object",
-    fields: V1beta1IndexEndpoint_DeployedIndexes_DeployedIndexAuthConfigFields,
-  },
-  deploymentGroup: "deployment_group",
-  deploymentTier: "deployment_tier",
-  displayName: "display_name",
-  enableAccessLogging: "enable_access_logging",
-  enableDatapointUpsertLogging: "enable_datapoint_upsert_logging",
-  id: "id",
-  index: "index",
-  indexSyncTime: "index_sync_time",
-  privateEndpoints: {
-    wireName: "private_endpoints",
-    kind: "object",
-    fields: V1beta1IndexEndpoint_DeployedIndexes_PrivateEndpointsFields,
-  },
-  pscAutomationConfigs: {
-    wireName: "psc_automation_configs",
-    kind: "list",
-    fields: V1beta1IndexEndpoint_DeployedIndexes_PscAutomationConfigsFields,
-  },
-  reservedIpRanges: "reserved_ip_ranges",
-};
-
-const V1beta1IndexEndpoint_EncryptionSpecFields: FieldMap = {
-  kmsKeyName: "kms_key_name",
 };
 
 const V1beta1IndexEndpoint_PrivateServiceConnectConfigFields: FieldMap = {
@@ -278,10 +142,6 @@ const V1beta1IndexEndpoint_PrivateServiceConnectConfigFields: FieldMap = {
 };
 
 export interface V1beta1IndexEndpointConfig {
-  /** Output only. Timestamp when this IndexEndpoint was created. */
-  createTime?: string | Computed<string>;
-  /** Output only. The indexes deployed in this endpoint. */
-  deployedIndexes?: V1beta1IndexEndpoint_DeployedIndexes[] | Computed<V1beta1IndexEndpoint_DeployedIndexes[]>;
   /** The description of the IndexEndpoint. */
   description?: string | Computed<string>;
   /** Required. The display name of the IndexEndpoint. The name can be up to 128 characters long and can consist of any UTF-8 characters. */
@@ -294,22 +154,12 @@ export interface V1beta1IndexEndpointConfig {
   etag?: string | Computed<string>;
   /** The labels with user-defined metadata to organize your IndexEndpoints. Label keys and values can be no longer than 64 characters (Unicode codepoints), can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. See https://goo.gl/xmQnxf for more information and examples of labels. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. The resource name of the IndexEndpoint. */
-  name?: string | Computed<string>;
   /** Optional. The full name of the Google Compute Engine [network](https://cloud.google.com/compute/docs/networks-and-firewalls#networks) to which the IndexEndpoint should be peered. Private services access must already be configured for the network. If left unspecified, the Endpoint is not peered with any network. network and private_service_connect_config are mutually exclusive. [Format](https://cloud.google.com/compute/docs/reference/rest/v1/networks/insert): `projects/{project}/global/networks/{network}`. Where {project} is a project number, as in '12345', and {network} is network name. */
   network?: string | Computed<string>;
   /** Represents configuration for private service connect. */
   privateServiceConnectConfig?: V1beta1IndexEndpoint_PrivateServiceConnectConfig | Computed<V1beta1IndexEndpoint_PrivateServiceConnectConfig>;
-  /** Output only. If public_endpoint_enabled is true, this field will be populated with the domain name to use for this index endpoint. */
-  publicEndpointDomainName?: string | Computed<string>;
   /** Optional. If true, the deployed index will be accessible through public endpoint. */
   publicEndpointEnabled?: boolean | Computed<boolean>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzi?: boolean | Computed<boolean>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzs?: boolean | Computed<boolean>;
-  /** Output only. Timestamp when this IndexEndpoint was last updated. This timestamp is not updated when the endpoint's DeployedIndexes are updated, e.g. due to updates of the original Indexes they are the deployments of. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1beta1IndexEndpointAttrs {
@@ -350,12 +200,6 @@ export interface V1beta1IndexEndpointAttrs {
 export const V1beta1IndexEndpoint: ResourceBinding<V1beta1IndexEndpointConfig, V1beta1IndexEndpointAttrs> = {
   wireType: "google_aiplatform_v1beta1_index_endpoint",
   fields: {
-    createTime: "create_time",
-    deployedIndexes: {
-      wireName: "deployed_indexes",
-      kind: "list",
-      fields: V1beta1IndexEndpoint_DeployedIndexesFields,
-    },
     description: "description",
     displayName: "display_name",
     enablePrivateServiceConnect: "enable_private_service_connect",
@@ -366,17 +210,12 @@ export const V1beta1IndexEndpoint: ResourceBinding<V1beta1IndexEndpointConfig, V
     },
     etag: "etag",
     labels: "labels",
-    name: "name",
     network: "network",
     privateServiceConnectConfig: {
       wireName: "private_service_connect_config",
       kind: "object",
       fields: V1beta1IndexEndpoint_PrivateServiceConnectConfigFields,
     },
-    publicEndpointDomainName: "public_endpoint_domain_name",
     publicEndpointEnabled: "public_endpoint_enabled",
-    satisfiesPzi: "satisfies_pzi",
-    satisfiesPzs: "satisfies_pzs",
-    updateTime: "update_time",
   },
 };

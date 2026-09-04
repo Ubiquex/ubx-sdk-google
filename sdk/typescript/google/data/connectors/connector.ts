@@ -34,7 +34,6 @@ export interface Connector_MarketplaceConnectorDetails {
 }
 
 export interface ConnectorConfig {
-  name: string | Computed<string>;
 }
 
 export interface ConnectorAttrs {
@@ -72,6 +71,5 @@ export interface ConnectorAttrs {
 export const Connector: DataSourceBinding<ConnectorConfig, ConnectorAttrs> = {
   wireType: "google_connectors_connector",
   fields: {
-    name: "name",
   },
 };

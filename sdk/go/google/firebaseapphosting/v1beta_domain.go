@@ -4,28 +4,28 @@ package firebaseapphosting
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1betaDomain_CustomDomainStatus_Issues struct {
-	Code any
+	Code    any
 	Details any
 	Message any
 }
 
 type V1betaDomain_CustomDomainStatus_RequiredDnsUpdates_Desired_Records struct {
-	DomainName any
-	Rdata any
-	RelevantState any
+	DomainName     any
+	Rdata          any
+	RelevantState  any
 	RequiredAction any
-	Type any
+	Type           any
 }
 
 type V1betaDomain_CustomDomainStatus_RequiredDnsUpdates_Desired struct {
 	CheckError any
 	DomainName any
-	Records any
+	Records    any
 }
 
 type V1betaDomain_CustomDomainStatus_RequiredDnsUpdates struct {
-	CheckTime any
-	Desired any
+	CheckTime  any
+	Desired    any
 	Discovered any
 	DomainName any
 }
@@ -56,108 +56,92 @@ type V1betaDomain_Serve struct {
 }
 
 var V1betaDomain_CustomDomainStatus_IssuesFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"Code":    ubx.FieldSpec{WireName: "code"},
+	"Details": ubx.FieldSpec{WireName: "details"},
+	"Message": ubx.FieldSpec{WireName: "message"},
+}
 
 var V1betaDomain_CustomDomainStatus_RequiredDnsUpdates_Desired_RecordsFields = ubx.FieldMap{
-		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
-		"Rdata": ubx.FieldSpec{WireName: "rdata"},
-		"RelevantState": ubx.FieldSpec{WireName: "relevant_state"},
-		"RequiredAction": ubx.FieldSpec{WireName: "required_action"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"DomainName":     ubx.FieldSpec{WireName: "domain_name"},
+	"Rdata":          ubx.FieldSpec{WireName: "rdata"},
+	"RelevantState":  ubx.FieldSpec{WireName: "relevant_state"},
+	"RequiredAction": ubx.FieldSpec{WireName: "required_action"},
+	"Type":           ubx.FieldSpec{WireName: "type"},
+}
 
 var V1betaDomain_CustomDomainStatus_RequiredDnsUpdates_DesiredFields = ubx.FieldMap{
-		"CheckError": ubx.FieldSpec{
-			WireName: "check_error",
-			Kind: "object",
-			Fields: V1betaDomain_CustomDomainStatus_IssuesFields,
-		},
-		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
-		"Records": ubx.FieldSpec{
-			WireName: "records",
-			Kind: "list",
-			Fields: V1betaDomain_CustomDomainStatus_RequiredDnsUpdates_Desired_RecordsFields,
-		},
-	}
+	"CheckError": ubx.FieldSpec{
+		WireName: "check_error",
+		Kind:     "object",
+		Fields:   V1betaDomain_CustomDomainStatus_IssuesFields,
+	},
+	"DomainName": ubx.FieldSpec{WireName: "domain_name"},
+	"Records": ubx.FieldSpec{
+		WireName: "records",
+		Kind:     "list",
+		Fields:   V1betaDomain_CustomDomainStatus_RequiredDnsUpdates_Desired_RecordsFields,
+	},
+}
 
 var V1betaDomain_CustomDomainStatus_RequiredDnsUpdatesFields = ubx.FieldMap{
-		"CheckTime": ubx.FieldSpec{WireName: "check_time"},
-		"Desired": ubx.FieldSpec{
-			WireName: "desired",
-			Kind: "list",
-			Fields: V1betaDomain_CustomDomainStatus_RequiredDnsUpdates_DesiredFields,
-		},
-		"Discovered": ubx.FieldSpec{
-			WireName: "discovered",
-			Kind: "list",
-			Fields: V1betaDomain_CustomDomainStatus_RequiredDnsUpdates_DesiredFields,
-		},
-		"DomainName": ubx.FieldSpec{WireName: "domain_name"},
-	}
+	"CheckTime": ubx.FieldSpec{WireName: "check_time"},
+	"Desired": ubx.FieldSpec{
+		WireName: "desired",
+		Kind:     "list",
+		Fields:   V1betaDomain_CustomDomainStatus_RequiredDnsUpdates_DesiredFields,
+	},
+	"Discovered": ubx.FieldSpec{
+		WireName: "discovered",
+		Kind:     "list",
+		Fields:   V1betaDomain_CustomDomainStatus_RequiredDnsUpdates_DesiredFields,
+	},
+	"DomainName": ubx.FieldSpec{WireName: "domain_name"},
+}
 
 var V1betaDomain_CustomDomainStatusFields = ubx.FieldMap{
-		"CertState": ubx.FieldSpec{WireName: "cert_state"},
-		"HostState": ubx.FieldSpec{WireName: "host_state"},
-		"Issues": ubx.FieldSpec{
-			WireName: "issues",
-			Kind: "list",
-			Fields: V1betaDomain_CustomDomainStatus_IssuesFields,
-		},
-		"OwnershipState": ubx.FieldSpec{WireName: "ownership_state"},
-		"RequiredDnsUpdates": ubx.FieldSpec{
-			WireName: "required_dns_updates",
-			Kind: "list",
-			Fields: V1betaDomain_CustomDomainStatus_RequiredDnsUpdatesFields,
-		},
-	}
+	"CertState": ubx.FieldSpec{WireName: "cert_state"},
+	"HostState": ubx.FieldSpec{WireName: "host_state"},
+	"Issues": ubx.FieldSpec{
+		WireName: "issues",
+		Kind:     "list",
+		Fields:   V1betaDomain_CustomDomainStatus_IssuesFields,
+	},
+	"OwnershipState": ubx.FieldSpec{WireName: "ownership_state"},
+	"RequiredDnsUpdates": ubx.FieldSpec{
+		WireName: "required_dns_updates",
+		Kind:     "list",
+		Fields:   V1betaDomain_CustomDomainStatus_RequiredDnsUpdatesFields,
+	},
+}
 
 var V1betaDomain_Serve_RedirectFields = ubx.FieldMap{
-		"Status": ubx.FieldSpec{WireName: "status"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"Status": ubx.FieldSpec{WireName: "status"},
+	"Uri":    ubx.FieldSpec{WireName: "uri"},
+}
 
 var V1betaDomain_ServeFields = ubx.FieldMap{
-		"Redirect": ubx.FieldSpec{
-			WireName: "redirect",
-			Kind: "object",
-			Fields: V1betaDomain_Serve_RedirectFields,
-		},
-	}
+	"Redirect": ubx.FieldSpec{
+		WireName: "redirect",
+		Kind:     "object",
+		Fields:   V1betaDomain_Serve_RedirectFields,
+	},
+}
 
 type V1betaDomainConfig struct {
 	// Optional. Annotations as key value pairs.
 	Annotations any
-	// Output only. Time at which the domain was created.
-	CreateTime any
 	// The status of a custom domain's linkage to a backend.
 	CustomDomainStatus any
-	// Output only. Time at which the domain was deleted.
-	DeleteTime any
 	// Optional. Whether the domain is disabled. Defaults to false.
 	Disabled any
 	// Optional. Mutable human-readable name for the domain. 63 character limit. e.g. `prod domain`.
 	DisplayName any
-	// Output only. Server-computed checksum based on other values; may be sent on update or delete to ensure operation is done on expected resource.
-	Etag any
 	// Optional. Labels as key value pairs.
 	Labels any
 	// Identifier. The resource name of the domain, e.g. `/projects/p/locations/l/backends/b/domains/foo.com`
 	Name any
-	// Output only. Time at which a soft-deleted domain will be purged, rendering in permanently deleted.
-	PurgeTime any
-	// Output only. A field that, if true, indicates that the build has an ongoing LRO.
-	Reconciling any
 	// Indicates whether App Hosting will serve content on the domain.
 	Serve any
-	// Output only. The type of the domain.
-	Type any
-	// Output only. System-assigned, unique identifier.
-	Uid any
-	// Output only. Time at which the domain was last updated.
-	UpdateTime any
 }
 
 type V1betaDomainAttrs struct {
@@ -197,27 +181,19 @@ var V1betaDomain = ubx.ResourceBinding{
 	WireType: "google_firebaseapphosting_v1beta_domain",
 	Fields: ubx.FieldMap{
 		"Annotations": ubx.FieldSpec{WireName: "annotations"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"CustomDomainStatus": ubx.FieldSpec{
 			WireName: "custom_domain_status",
-			Kind: "object",
-			Fields: V1betaDomain_CustomDomainStatusFields,
+			Kind:     "object",
+			Fields:   V1betaDomain_CustomDomainStatusFields,
 		},
-		"DeleteTime": ubx.FieldSpec{WireName: "delete_time"},
-		"Disabled": ubx.FieldSpec{WireName: "disabled"},
+		"Disabled":    ubx.FieldSpec{WireName: "disabled"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PurgeTime": ubx.FieldSpec{WireName: "purge_time"},
-		"Reconciling": ubx.FieldSpec{WireName: "reconciling"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"Serve": ubx.FieldSpec{
 			WireName: "serve",
-			Kind: "object",
-			Fields: V1betaDomain_ServeFields,
+			Kind:     "object",
+			Fields:   V1betaDomain_ServeFields,
 		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

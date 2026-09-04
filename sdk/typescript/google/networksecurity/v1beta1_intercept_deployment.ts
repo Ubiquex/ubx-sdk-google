@@ -2,8 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface V1beta1InterceptDeploymentConfig {
-  /** Output only. The timestamp when the resource was created. See https://google.aip.dev/148#timestamps. */
-  createTime?: string | Computed<string>;
   /** Optional. User-provided description of the deployment. Used as additional context for the deployment. */
   description?: string | Computed<string>;
   /** Required. Immutable. The regional forwarding rule that fronts the interceptors, for example: `projects/123456789/regions/us-central1/forwardingRules/my-rule`. See https://google.aip.dev/124. */
@@ -14,12 +12,6 @@ export interface V1beta1InterceptDeploymentConfig {
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Immutable. Identifier. The resource name of this deployment, for example: `projects/123456789/locations/us-central1-a/interceptDeployments/my-dep`. See https://google.aip.dev/122 for more details. */
   name?: string | Computed<string>;
-  /** Output only. The current state of the resource does not match the user's intended state, and the system is working to reconcile them. This part of the normal operation (e.g. linking a new association to the parent group). See https://google.aip.dev/128. */
-  reconciling?: boolean | Computed<boolean>;
-  /** Output only. The current state of the deployment. See https://google.aip.dev/216. */
-  state?: string | Computed<string>;
-  /** Output only. The timestamp when the resource was most recently updated. See https://google.aip.dev/148#timestamps. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1beta1InterceptDeploymentAttrs {
@@ -46,14 +38,10 @@ export interface V1beta1InterceptDeploymentAttrs {
 export const V1beta1InterceptDeployment: ResourceBinding<V1beta1InterceptDeploymentConfig, V1beta1InterceptDeploymentAttrs> = {
   wireType: "google_networksecurity_v1beta1_intercept_deployment",
   fields: {
-    createTime: "create_time",
     description: "description",
     forwardingRule: "forwarding_rule",
     interceptDeploymentGroup: "intercept_deployment_group",
     labels: "labels",
     name: "name",
-    reconciling: "reconciling",
-    state: "state",
-    updateTime: "update_time",
   },
 };

@@ -131,8 +131,6 @@ const V1alphaAssistant_GenerationConfigFields: FieldMap = {
 };
 
 export interface V1alphaAssistantConfig {
-  /** Output only. Represents the time when this Assistant was created. */
-  createTime?: string | Computed<string>;
   /** Customer-defined policy for the assistant. */
   customerPolicy?: V1alphaAssistant_CustomerPolicy | Computed<V1alphaAssistant_CustomerPolicy>;
   /** Optional. This field controls the default web grounding toggle for end users if `web_grounding_type` is set to `WEB_GROUNDING_TYPE_GOOGLE_SEARCH` or `WEB_GROUNDING_TYPE_ENTERPRISE_WEB_SEARCH`. By default, this field is set to false. If `web_grounding_type` is `WEB_GROUNDING_TYPE_GOOGLE_SEARCH` or `WEB_GROUNDING_TYPE_ENTERPRISE_WEB_SEARCH`, end users will have web grounding enabled by default on UI. If true, grounding toggle will be disabled by default on UI. End users can still enable web grounding in the UI if web grounding is enabled. */
@@ -149,8 +147,6 @@ export interface V1alphaAssistantConfig {
   generationConfig?: V1alphaAssistant_GenerationConfig | Computed<V1alphaAssistant_GenerationConfig>;
   /** Immutable. Resource name of the assistant. Format: `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}/assistants/{assistant}` It must be a UTF-8 encoded string with a length limit of 1024 characters. */
   name?: string | Computed<string>;
-  /** Output only. Represents the time when this Assistant was most recently updated. */
-  updateTime?: string | Computed<string>;
   /** Optional. The type of web grounding to use. */
   webGroundingType?: string | Computed<string>;
 }
@@ -183,7 +179,6 @@ export interface V1alphaAssistantAttrs {
 export const V1alphaAssistant: ResourceBinding<V1alphaAssistantConfig, V1alphaAssistantAttrs> = {
   wireType: "google_discoveryengine_v1alpha_assistant",
   fields: {
-    createTime: "create_time",
     customerPolicy: {
       wireName: "customer_policy",
       kind: "object",
@@ -204,7 +199,6 @@ export const V1alphaAssistant: ResourceBinding<V1alphaAssistantConfig, V1alphaAs
       fields: V1alphaAssistant_GenerationConfigFields,
     },
     name: "name",
-    updateTime: "update_time",
     webGroundingType: "web_grounding_type",
   },
 };

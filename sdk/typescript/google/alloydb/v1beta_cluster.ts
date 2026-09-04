@@ -455,20 +455,14 @@ export interface V1betaClusterConfig {
   backupdrInfo?: V1betaCluster_BackupdrInfo | Computed<V1betaCluster_BackupdrInfo>;
   /** The source CloudSQL backup resource. */
   cloudsqlBackupRunSource?: V1betaCluster_CloudsqlBackupRunSource | Computed<V1betaCluster_CloudsqlBackupRunSource>;
-  /** Output only. The type of the cluster. This is an output-only field and it's populated at the Cluster creation time or the Cluster promotion time. The cluster type is determined by which RPC was used to create the cluster (i.e. `CreateCluster` vs. `CreateSecondaryCluster` */
-  clusterType?: string | Computed<string>;
   /** ContinuousBackupConfig describes the continuous backups recovery configurations of a cluster. */
   continuousBackupConfig?: V1betaCluster_ContinuousBackupConfig | Computed<V1betaCluster_ContinuousBackupConfig>;
   /** ContinuousBackupInfo describes the continuous backup properties of a cluster. */
   continuousBackupInfo?: V1betaCluster_ContinuousBackupInfo | Computed<V1betaCluster_ContinuousBackupInfo>;
-  /** Output only. Create time stamp */
-  createTime?: string | Computed<string>;
   /** Optional. The database engine major version. This is an optional field and it is populated at the Cluster creation time. If a database version is not supplied at cluster creation time, then a default database version will be used. */
   databaseVersion?: string | Computed<string>;
   /** Configuration for Dataplex integration. */
   dataplexConfig?: V1betaCluster_DataplexConfig | Computed<V1betaCluster_DataplexConfig>;
-  /** Output only. Delete time stamp */
-  deleteTime?: string | Computed<string>;
   /** User-settable and human-readable display name for the Cluster. */
   displayName?: string | Computed<string>;
   /** EncryptionConfig describes the encryption config of a cluster or a backup that is encrypted with a CMEK (customer-managed encryption key). */
@@ -491,8 +485,6 @@ export interface V1betaClusterConfig {
   maintenanceVersionSelectionPolicy?: string | Computed<string>;
   /** Subset of the source instance configuration that is available when reading the cluster resource. */
   migrationSource?: V1betaCluster_MigrationSource | Computed<V1betaCluster_MigrationSource>;
-  /** Output only. The name of the cluster resource with the format: * projects/{project}/locations/{region}/clusters/{cluster_id} where the cluster ID segment should satisfy the regex expression `[a-z0-9-]+`. For more details see https://google.aip.dev/122. The prefix of the cluster resource name is the name of the parent resource: * projects/{project}/locations/{region} */
-  name?: string | Computed<string>;
   /** Required. The resource link for the VPC network in which cluster resources are created and from which they are accessible via Private IP. The network must belong to the same project as the cluster. It is specified in the form: `projects/{project}/global/networks/{network_id}`. This is required to create a cluster. Deprecated, use network_config.network instead. */
   network?: string | Computed<string>;
   /** Metadata related to network configuration. */
@@ -501,28 +493,16 @@ export interface V1betaClusterConfig {
   primaryConfig?: V1betaCluster_PrimaryConfig | Computed<V1betaCluster_PrimaryConfig>;
   /** PscConfig contains PSC related configuration at a cluster level. */
   pscConfig?: V1betaCluster_PscConfig | Computed<V1betaCluster_PscConfig>;
-  /** Output only. Reconciling (https://google.aip.dev/128#reconciliation). Set to true if the current state of Cluster does not match the user's intended state, and the service is actively updating the resource to reconcile them. This can happen due to user-triggered updates or system actions like failover or maintenance. */
-  reconciling?: boolean | Computed<boolean>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzs?: boolean | Computed<boolean>;
   /** Configuration information for the secondary cluster. This should be set if and only if the cluster is of type SECONDARY. */
   secondaryConfig?: V1betaCluster_SecondaryConfig | Computed<V1betaCluster_SecondaryConfig>;
-  /** Output only. AlloyDB per-cluster service account. This service account is created per-cluster per-project, and is different from the per-project service account. The per-cluster service account naming format is subject to change. */
-  serviceAccountEmail?: string | Computed<string>;
   /** SSL configuration. */
   sslConfig?: V1betaCluster_SslConfig | Computed<V1betaCluster_SslConfig>;
-  /** Output only. The current serving state of the cluster. */
-  state?: string | Computed<string>;
   /** Optional. Subscription type of the cluster. */
   subscriptionType?: string | Computed<string>;
   /** Optional. Input only. Immutable. Tag keys/values directly bound to this resource. For example: ``` "123/environment": "production", "123/costCenter": "marketing" ``` */
   tags?: Record<string, string> | Computed<Record<string, string>>;
   /** Contains information and all metadata related to TRIAL clusters. */
   trialMetadata?: V1betaCluster_TrialMetadata | Computed<V1betaCluster_TrialMetadata>;
-  /** Output only. The system-generated UID of the resource. The UID is assigned when the resource is created, and it is retained until it is deleted. */
-  uid?: string | Computed<string>;
-  /** Output only. Update time stamp */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1betaClusterAttrs {
@@ -637,7 +617,6 @@ export const V1betaCluster: ResourceBinding<V1betaClusterConfig, V1betaClusterAt
       kind: "object",
       fields: V1betaCluster_CloudsqlBackupRunSourceFields,
     },
-    clusterType: "cluster_type",
     continuousBackupConfig: {
       wireName: "continuous_backup_config",
       kind: "object",
@@ -648,14 +627,12 @@ export const V1betaCluster: ResourceBinding<V1betaClusterConfig, V1betaClusterAt
       kind: "object",
       fields: V1betaCluster_ContinuousBackupInfoFields,
     },
-    createTime: "create_time",
     databaseVersion: "database_version",
     dataplexConfig: {
       wireName: "dataplex_config",
       kind: "object",
       fields: V1betaCluster_DataplexConfigFields,
     },
-    deleteTime: "delete_time",
     displayName: "display_name",
     encryptionConfig: {
       wireName: "encryption_config",
@@ -695,7 +672,6 @@ export const V1betaCluster: ResourceBinding<V1betaClusterConfig, V1betaClusterAt
       kind: "object",
       fields: V1betaCluster_MigrationSourceFields,
     },
-    name: "name",
     network: "network",
     networkConfig: {
       wireName: "network_config",
@@ -712,20 +688,16 @@ export const V1betaCluster: ResourceBinding<V1betaClusterConfig, V1betaClusterAt
       kind: "object",
       fields: V1betaCluster_PscConfigFields,
     },
-    reconciling: "reconciling",
-    satisfiesPzs: "satisfies_pzs",
     secondaryConfig: {
       wireName: "secondary_config",
       kind: "object",
       fields: V1betaCluster_SecondaryConfigFields,
     },
-    serviceAccountEmail: "service_account_email",
     sslConfig: {
       wireName: "ssl_config",
       kind: "object",
       fields: V1betaCluster_SslConfigFields,
     },
-    state: "state",
     subscriptionType: "subscription_type",
     tags: "tags",
     trialMetadata: {
@@ -733,7 +705,5 @@ export const V1betaCluster: ResourceBinding<V1betaClusterConfig, V1betaClusterAt
       kind: "object",
       fields: V1betaCluster_TrialMetadataFields,
     },
-    uid: "uid",
-    updateTime: "update_time",
   },
 };

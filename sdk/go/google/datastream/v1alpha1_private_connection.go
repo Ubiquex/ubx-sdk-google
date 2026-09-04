@@ -24,33 +24,25 @@ type V1alpha1PrivateConnection_VpcPeeringConfig struct {
 }
 
 var V1alpha1PrivateConnection_ErrorFields = ubx.FieldMap{
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"ErrorTime": ubx.FieldSpec{WireName: "error_time"},
-		"ErrorUuid": ubx.FieldSpec{WireName: "error_uuid"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-		"Reason": ubx.FieldSpec{WireName: "reason"},
-	}
+	"Details":   ubx.FieldSpec{WireName: "details"},
+	"ErrorTime": ubx.FieldSpec{WireName: "error_time"},
+	"ErrorUuid": ubx.FieldSpec{WireName: "error_uuid"},
+	"Message":   ubx.FieldSpec{WireName: "message"},
+	"Reason":    ubx.FieldSpec{WireName: "reason"},
+}
 
 var V1alpha1PrivateConnection_VpcPeeringConfigFields = ubx.FieldMap{
-		"Subnet": ubx.FieldSpec{WireName: "subnet"},
-		"VpcName": ubx.FieldSpec{WireName: "vpc_name"},
-	}
+	"Subnet":  ubx.FieldSpec{WireName: "subnet"},
+	"VpcName": ubx.FieldSpec{WireName: "vpc_name"},
+}
 
 type V1alpha1PrivateConnectionConfig struct {
-	// Output only. The create time of the resource.
-	CreateTime any
 	// Required. Display name.
 	DisplayName any
 	// Represent a user-facing Error.
 	Error any
 	// Labels.
 	Labels any
-	// Output only. The resource's name.
-	Name any
-	// Output only. The state of the Private Connection.
-	State any
-	// Output only. The update time of the resource.
-	UpdateTime any
 	// The VPC Peering configuration is used to create VPC peering between Datastream and the consumer's VPC.
 	VpcPeeringConfig any
 }
@@ -77,21 +69,17 @@ type V1alpha1PrivateConnectionAttrs struct {
 var V1alpha1PrivateConnection = ubx.ResourceBinding{
 	WireType: "google_datastream_v1alpha1_private_connection",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"Error": ubx.FieldSpec{
 			WireName: "error",
-			Kind: "object",
-			Fields: V1alpha1PrivateConnection_ErrorFields,
+			Kind:     "object",
+			Fields:   V1alpha1PrivateConnection_ErrorFields,
 		},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 		"VpcPeeringConfig": ubx.FieldSpec{
 			WireName: "vpc_peering_config",
-			Kind: "object",
-			Fields: V1alpha1PrivateConnection_VpcPeeringConfigFields,
+			Kind:     "object",
+			Fields:   V1alpha1PrivateConnection_VpcPeeringConfigFields,
 		},
 	},
 }

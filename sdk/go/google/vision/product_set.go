@@ -13,18 +13,16 @@ type ProductSet_IndexError struct {
 }
 
 var ProductSet_IndexErrorFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"Code":    ubx.FieldSpec{WireName: "code"},
+	"Details": ubx.FieldSpec{WireName: "details"},
+	"Message": ubx.FieldSpec{WireName: "message"},
+}
 
 type ProductSetConfig struct {
 	// The user-provided name for this ProductSet. Must not be empty. Must be at most 4096 characters long.
 	DisplayName any
 	// The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
 	IndexError any
-	// Output only. The time at which this ProductSet was last indexed. Query results will reflect all updates before this time. If this ProductSet has never been indexed, this timestamp is the default value "1970-01-01T00:00:00Z". This field is ignored when creating a ProductSet.
-	IndexTime any
 	// The resource name of the ProductSet. Format is: `projects/PROJECT_ID/locations/LOC_ID/productSets/PRODUCT_SET_ID`. This field is ignored when creating a ProductSet.
 	Name any
 }
@@ -46,10 +44,9 @@ var ProductSet = ubx.ResourceBinding{
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"IndexError": ubx.FieldSpec{
 			WireName: "index_error",
-			Kind: "object",
-			Fields: ProductSet_IndexErrorFields,
+			Kind:     "object",
+			Fields:   ProductSet_IndexErrorFields,
 		},
-		"IndexTime": ubx.FieldSpec{WireName: "index_time"},
 		"Name": ubx.FieldSpec{WireName: "name"},
 	},
 }

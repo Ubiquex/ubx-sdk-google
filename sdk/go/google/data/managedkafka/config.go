@@ -5,16 +5,16 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ConfigConfig struct {
 	DefaultToGlobal any
-	Name any
+	Name            any
 }
 
 type ConfigAttrs struct {
 	// Optional. The subject to which this subject is an alias of. Only applicable for subject config.
 	Alias any
 	// Required. The compatibility type of the schema. The default value is BACKWARD. If unset in a SchemaSubject-level SchemaConfig, defaults to the global value. If unset in a SchemaRegistry-level SchemaConfig, reverts to the default value.
-	Compatibility any
+	Compatibility   any
 	DefaultToGlobal any
-	Name any
+	Name            any
 	// Optional. If true, the schema will be normalized before being stored or looked up. The default is false. If unset in a SchemaSubject-level SchemaConfig, the global value will be used. If unset in a SchemaRegistry-level SchemaConfig, reverts to the default value.
 	Normalize any
 }
@@ -23,6 +23,6 @@ var Config = ubx.DataSourceBinding{
 	WireType: "google_managedkafka_config",
 	Fields: ubx.FieldMap{
 		"DefaultToGlobal": ubx.FieldSpec{WireName: "default_to_global"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":            ubx.FieldSpec{WireName: "name"},
 	},
 }

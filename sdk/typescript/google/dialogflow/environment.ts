@@ -156,7 +156,6 @@ export interface EnvironmentConfig {
   displayName?: string | Computed<string>;
   name?: string | Computed<string>;
   testCasesConfig?: Environment_TestCasesConfig | Computed<Environment_TestCasesConfig>;
-  updateTime?: string | Computed<string>;
   versionConfigs?: Environment_VersionConfigs[] | Computed<Environment_VersionConfigs[]>;
   webhookConfig?: Environment_WebhookConfig | Computed<Environment_WebhookConfig>;
 }
@@ -182,7 +181,6 @@ export const Environment: ResourceBinding<EnvironmentConfig, EnvironmentAttrs> =
       kind: "object",
       fields: Environment_TestCasesConfigFields,
     },
-    updateTime: "update_time",
     versionConfigs: {
       wireName: "version_configs",
       kind: "list",

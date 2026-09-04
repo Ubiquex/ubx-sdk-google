@@ -498,36 +498,20 @@ const V1beta1NasJob_NasJobSpecFields: FieldMap = {
 };
 
 export interface V1beta1NasJobConfig {
-  /** Output only. Time when the NasJob was created. */
-  createTime?: string | Computed<string>;
   /** Required. The display name of the NasJob. The name can be up to 128 characters long and can consist of any UTF-8 characters. */
   displayName?: string | Computed<string>;
   /** Optional. Enable a separation of Custom model training and restricted image training for tenant project. */
   enableRestrictedImageTraining?: boolean | Computed<boolean>;
   /** Represents a customer-managed encryption key specification that can be applied to a Vertex AI resource. */
   encryptionSpec?: V1beta1NasJob_EncryptionSpec | Computed<V1beta1NasJob_EncryptionSpec>;
-  /** Output only. Time when the NasJob entered any of the following states: `JOB_STATE_SUCCEEDED`, `JOB_STATE_FAILED`, `JOB_STATE_CANCELLED`. */
-  endTime?: string | Computed<string>;
   /** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
   error?: V1beta1NasJob_Error | Computed<V1beta1NasJob_Error>;
   /** The labels with user-defined metadata to organize NasJobs. Label keys and values can be no longer than 64 characters (Unicode codepoints), can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. See https://goo.gl/xmQnxf for more information and examples of labels. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. Resource name of the NasJob. */
-  name?: string | Computed<string>;
   /** Represents a uCAIP NasJob output. */
   nasJobOutput?: V1beta1NasJob_NasJobOutput | Computed<V1beta1NasJob_NasJobOutput>;
   /** Represents the spec of a NasJob. */
   nasJobSpec?: V1beta1NasJob_NasJobSpec | Computed<V1beta1NasJob_NasJobSpec>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzi?: boolean | Computed<boolean>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzs?: boolean | Computed<boolean>;
-  /** Output only. Time when the NasJob for the first time entered the `JOB_STATE_RUNNING` state. */
-  startTime?: string | Computed<string>;
-  /** Output only. The detailed state of the job. */
-  state?: string | Computed<string>;
-  /** Output only. Time when the NasJob was most recently updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1beta1NasJobAttrs {
@@ -566,7 +550,6 @@ export interface V1beta1NasJobAttrs {
 export const V1beta1NasJob: ResourceBinding<V1beta1NasJobConfig, V1beta1NasJobAttrs> = {
   wireType: "google_aiplatform_v1beta1_nas_job",
   fields: {
-    createTime: "create_time",
     displayName: "display_name",
     enableRestrictedImageTraining: "enable_restricted_image_training",
     encryptionSpec: {
@@ -574,14 +557,12 @@ export const V1beta1NasJob: ResourceBinding<V1beta1NasJobConfig, V1beta1NasJobAt
       kind: "object",
       fields: V1beta1NasJob_EncryptionSpecFields,
     },
-    endTime: "end_time",
     error: {
       wireName: "error",
       kind: "object",
       fields: V1beta1NasJob_ErrorFields,
     },
     labels: "labels",
-    name: "name",
     nasJobOutput: {
       wireName: "nas_job_output",
       kind: "object",
@@ -592,10 +573,5 @@ export const V1beta1NasJob: ResourceBinding<V1beta1NasJobConfig, V1beta1NasJobAt
       kind: "object",
       fields: V1beta1NasJob_NasJobSpecFields,
     },
-    satisfiesPzi: "satisfies_pzi",
-    satisfiesPzs: "satisfies_pzs",
-    startTime: "start_time",
-    state: "state",
-    updateTime: "update_time",
   },
 };

@@ -593,10 +593,6 @@ export interface EnvironmentConfig {
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Identifier. The resource name of the environment, in the form: "projects/{projectId}/locations/{locationId}/environments/{environmentId}" EnvironmentId must start with a lowercase letter followed by up to 63 lowercase letters, numbers, or hyphens, and cannot end with a hyphen. */
   name?: string | Computed<string>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzi?: boolean | Computed<boolean>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzs?: boolean | Computed<boolean>;
   /** The current state of the environment. */
   state?: string | Computed<string>;
   /** The configuration for data storage in the environment. */
@@ -641,8 +637,6 @@ export const Environment: ResourceBinding<EnvironmentConfig, EnvironmentAttrs> =
     createTime: "create_time",
     labels: "labels",
     name: "name",
-    satisfiesPzi: "satisfies_pzi",
-    satisfiesPzs: "satisfies_pzs",
     state: "state",
     storageConfig: {
       wireName: "storage_config",

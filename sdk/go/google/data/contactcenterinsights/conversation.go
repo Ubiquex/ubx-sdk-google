@@ -37,7 +37,7 @@ type Conversation_DataSource_GcsSource struct {
 
 type Conversation_DataSource_TurnLevelAudios struct {
 	AudioDuration any
-	AudioGcsUri any
+	AudioGcsUri   any
 }
 
 type Conversation_DataSource struct {
@@ -57,18 +57,18 @@ type Conversation_DialogflowIntents struct {
 
 type Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Annotations_AnnotationEndBoundary struct {
 	TranscriptIndex any
-	WordIndex any
+	WordIndex       any
 }
 
 type Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Annotations_EntityMentionData_Sentiment struct {
 	Magnitude any
-	Score any
+	Score     any
 }
 
 type Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Annotations_EntityMentionData struct {
 	EntityUniqueId any
-	Sentiment any
-	Type any
+	Sentiment      any
+	Type           any
 }
 
 type Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Annotations_IntentMatchData struct {
@@ -77,8 +77,8 @@ type Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Annotations
 
 type Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Annotations_IssueMatchData_IssueAssignment struct {
 	DisplayName any
-	Issue any
-	Score any
+	Issue       any
+	Score       any
 }
 
 type Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Annotations_IssueMatchData struct {
@@ -86,35 +86,35 @@ type Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Annotations
 }
 
 type Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Annotations_PhraseMatchData struct {
-	DisplayName any
+	DisplayName   any
 	PhraseMatcher any
 }
 
 type Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Annotations struct {
-	AnnotationEndBoundary any
+	AnnotationEndBoundary   any
 	AnnotationStartBoundary any
-	ChannelTag any
-	EntityMentionData any
-	HoldData any
-	IntentMatchData any
-	InterruptionData any
-	IssueMatchData any
-	PhraseMatchData any
-	SentimentData any
-	SilenceData any
+	ChannelTag              any
+	EntityMentionData       any
+	HoldData                any
+	IntentMatchData         any
+	InterruptionData        any
+	IssueMatchData          any
+	PhraseMatchData         any
+	SentimentData           any
+	SilenceData             any
 }
 
 type Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Entities struct {
 	DisplayName any
-	Metadata any
-	Salience any
-	Sentiment any
-	Type any
+	Metadata    any
+	Salience    any
+	Sentiment   any
+	Type        any
 }
 
 type Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Intents struct {
 	DisplayName any
-	Id any
+	Id          any
 }
 
 type Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_IssueModelResult struct {
@@ -125,62 +125,62 @@ type Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_IssueModelR
 }
 
 type Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_QaScorecardResults_QaAnswers_AnswerSources_AnswerValue struct {
-	BoolValue any
-	Key any
-	NaValue any
+	BoolValue       any
+	Key             any
+	NaValue         any
 	NormalizedScore any
-	NumValue any
-	PotentialScore any
-	Score any
-	SkipValue any
-	StrValue any
+	NumValue        any
+	PotentialScore  any
+	Score           any
+	SkipValue       any
+	StrValue        any
 }
 
 type Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_QaScorecardResults_QaAnswers_AnswerSources struct {
 	AnswerValue any
-	SourceType any
+	SourceType  any
 }
 
 type Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_QaScorecardResults_QaAnswers struct {
 	AnswerSources any
-	AnswerValue any
-	Conversation any
-	QaQuestion any
-	QuestionBody any
-	Tags any
+	AnswerValue   any
+	Conversation  any
+	QaQuestion    any
+	QuestionBody  any
+	Tags          any
 }
 
 type Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_QaScorecardResults_QaTagResults struct {
 	NormalizedScore any
-	PotentialScore any
-	Score any
-	Tag any
+	PotentialScore  any
+	Score           any
+	Tag             any
 }
 
 type Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_QaScorecardResults_ScoreSources struct {
 	NormalizedScore any
-	PotentialScore any
-	QaTagResults any
-	Score any
-	SourceType any
+	PotentialScore  any
+	QaTagResults    any
+	Score           any
+	SourceType      any
 }
 
 type Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_QaScorecardResults struct {
-	AgentId any
-	Conversation any
-	CreateTime any
-	Name any
-	NormalizedScore any
-	PotentialScore any
-	QaAnswers any
+	AgentId             any
+	Conversation        any
+	CreateTime          any
+	Name                any
+	NormalizedScore     any
+	PotentialScore      any
+	QaAnswers           any
 	QaScorecardRevision any
-	QaTagResults any
-	Score any
-	ScoreSources any
+	QaTagResults        any
+	Score               any
+	ScoreSources        any
 }
 
 type Conversation_LatestAnalysis_AnalysisResult_CallAnalysisMetadata_Sentiments struct {
-	ChannelTag any
+	ChannelTag    any
 	SentimentData any
 }
 
@@ -298,28 +298,28 @@ type Conversation_LatestSummary struct {
 }
 
 type Conversation_QualityMetadata_AgentInfo struct {
-	AgentId any
-	AgentType any
-	DeploymentDisplayName any
-	DeploymentId any
-	DisplayName any
-	DispositionCode any
+	AgentId                  any
+	AgentType                any
+	DeploymentDisplayName    any
+	DeploymentId             any
+	DisplayName              any
+	DispositionCode          any
 	EntrySubagentDisplayName any
-	EntrySubagentId any
-	Location any
-	Team any
-	Teams any
-	VersionDisplayName any
-	VersionId any
+	EntrySubagentId          any
+	Location                 any
+	Team                     any
+	Teams                    any
+	VersionDisplayName       any
+	VersionId                any
 }
 
 type Conversation_QualityMetadata_FeedbackLabels struct {
-	CreateTime any
-	Label any
+	CreateTime      any
+	Label           any
 	LabeledResource any
-	Name any
-	QaAnswerLabel any
-	UpdateTime any
+	Name            any
+	QaAnswerLabel   any
+	UpdateTime      any
 }
 
 type Conversation_QualityMetadata struct {
@@ -336,18 +336,18 @@ type Conversation_QualityMetadata struct {
 }
 
 type Conversation_RuntimeAnnotations_AnswerFeedback struct {
-	Clicked any
+	Clicked          any
 	CorrectnessLevel any
-	Displayed any
+	Displayed        any
 }
 
 type Conversation_RuntimeAnnotations_ArticleSuggestion struct {
 	ConfidenceScore any
-	Metadata any
-	QueryRecord any
-	Source any
-	Title any
-	Uri any
+	Metadata        any
+	QueryRecord     any
+	Source          any
+	Title           any
+	Uri             any
 }
 
 type Conversation_RuntimeAnnotations_CesEndSessionAnnotation_EndSession struct {
@@ -364,61 +364,61 @@ type Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks_AgentTran
 }
 
 type Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks_Blob struct {
-	Data any
+	Data     any
 	MimeType any
 }
 
 type Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks_ToolCall_ToolsetTool struct {
-	ToolId any
+	ToolId  any
 	Toolset any
 }
 
 type Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks_ToolCall struct {
-	AgentName any
-	Args any
-	DisplayName any
-	Id any
+	AgentName        any
+	Args             any
+	DisplayName      any
+	Id               any
 	ParentToolCallId any
-	Tool any
-	ToolsetTool any
+	Tool             any
+	ToolsetTool      any
 }
 
 type Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks_ToolResponse struct {
-	AgentName any
-	DisplayName any
-	Id any
+	AgentName        any
+	DisplayName      any
+	Id               any
 	ParentToolCallId any
-	Response any
-	Tool any
-	ToolsetTool any
+	Response         any
+	Tool             any
+	ToolsetTool      any
 }
 
 type Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages_Chunks struct {
-	AgentTransfer any
-	Blob any
+	AgentTransfer    any
+	Blob             any
 	DefaultVariables any
-	Image any
-	Payload any
-	Text any
-	ToolCall any
-	ToolResponse any
-	Transcript any
+	Image            any
+	Payload          any
+	Text             any
+	ToolCall         any
+	ToolResponse     any
+	Transcript       any
 	UpdatedVariables any
 }
 
 type Conversation_RuntimeAnnotations_CesTurnAnnotation_Messages struct {
-	Chunks any
+	Chunks    any
 	EventTime any
-	Role any
+	Role      any
 }
 
 type Conversation_RuntimeAnnotations_CesTurnAnnotation_RootSpan struct {
 	Attributes any
 	ChildSpans any
-	Duration any
-	EndTime any
-	Name any
-	StartTime any
+	Duration   any
+	EndTime    any
+	Name       any
+	StartTime  any
 }
 
 type Conversation_RuntimeAnnotations_CesTurnAnnotation struct {
@@ -427,54 +427,54 @@ type Conversation_RuntimeAnnotations_CesTurnAnnotation struct {
 }
 
 type Conversation_RuntimeAnnotations_DialogflowInteraction struct {
-	Confidence any
+	Confidence         any
 	DialogflowIntentId any
 }
 
 type Conversation_RuntimeAnnotations_FaqAnswer struct {
-	Answer any
+	Answer          any
 	ConfidenceScore any
-	Metadata any
-	QueryRecord any
-	Question any
-	Source any
+	Metadata        any
+	QueryRecord     any
+	Question        any
+	Source          any
 }
 
 type Conversation_RuntimeAnnotations_SmartComposeSuggestion struct {
 	ConfidenceScore any
-	Metadata any
-	QueryRecord any
-	Suggestion any
+	Metadata        any
+	QueryRecord     any
+	Suggestion      any
 }
 
 type Conversation_RuntimeAnnotations_SmartReply struct {
 	ConfidenceScore any
-	Metadata any
-	QueryRecord any
-	Reply any
+	Metadata        any
+	QueryRecord     any
+	Reply           any
 }
 
 type Conversation_RuntimeAnnotations_UserInput struct {
 	GeneratorName any
-	Query any
-	QuerySource any
+	Query         any
+	QuerySource   any
 }
 
 type Conversation_RuntimeAnnotations struct {
-	AnnotationId any
-	AnswerFeedback any
-	ArticleSuggestion any
-	CesEndSessionAnnotation any
-	CesTurnAnnotation any
+	AnnotationId                        any
+	AnswerFeedback                      any
+	ArticleSuggestion                   any
+	CesEndSessionAnnotation             any
+	CesTurnAnnotation                   any
 	ConversationSummarizationSuggestion any
-	CreateTime any
-	DialogflowInteraction any
-	EndBoundary any
-	FaqAnswer any
-	SmartComposeSuggestion any
-	SmartReply any
-	StartBoundary any
-	UserInput any
+	CreateTime                          any
+	DialogflowInteraction               any
+	EndBoundary                         any
+	FaqAnswer                           any
+	SmartComposeSuggestion              any
+	SmartReply                          any
+	StartBoundary                       any
+	UserInput                           any
 }
 
 type Conversation_Transcript_TranscriptSegments_DialogflowSegmentMetadata struct {
@@ -482,49 +482,49 @@ type Conversation_Transcript_TranscriptSegments_DialogflowSegmentMetadata struct
 }
 
 type Conversation_Transcript_TranscriptSegments_Parts_Citation struct {
-	Snippet any
+	Snippet     any
 	SourceTitle any
-	SourceUri any
+	SourceUri   any
 }
 
 type Conversation_Transcript_TranscriptSegments_Parts_CustomPayload struct {
-	Payload any
+	Payload     any
 	PayloadType any
 }
 
 type Conversation_Transcript_TranscriptSegments_Parts_Image struct {
 	AlternativeText any
-	Uri any
+	Uri             any
 }
 
 type Conversation_Transcript_TranscriptSegments_Parts_Link struct {
 	Text any
-	Uri any
+	Uri  any
 }
 
 type Conversation_Transcript_TranscriptSegments_Parts_List_Items struct {
 	SubItems any
-	Text any
+	Text     any
 }
 
 type Conversation_Transcript_TranscriptSegments_Parts_List struct {
-	Items any
+	Items    any
 	ListType any
 }
 
 type Conversation_Transcript_TranscriptSegments_Parts_ProductCollection_Products_Price struct {
 	CurrencyCode any
-	Nanos any
-	Units any
+	Nanos        any
+	Units        any
 }
 
 type Conversation_Transcript_TranscriptSegments_Parts_ProductCollection_Products struct {
 	Description any
 	DisplayName any
-	Id any
-	ImageUris any
-	Price any
-	Uri any
+	Id          any
+	ImageUris   any
+	Price       any
+	Uri         any
 }
 
 type Conversation_Transcript_TranscriptSegments_Parts_ProductCollection struct {
@@ -533,7 +533,7 @@ type Conversation_Transcript_TranscriptSegments_Parts_ProductCollection struct {
 
 type Conversation_Transcript_TranscriptSegments_Parts_SuggestionChips_Chips struct {
 	ActionUri any
-	Text any
+	Text      any
 }
 
 type Conversation_Transcript_TranscriptSegments_Parts_SuggestionChips struct {
@@ -546,8 +546,8 @@ type Conversation_Transcript_TranscriptSegments_Parts_Table_Rows struct {
 
 type Conversation_Transcript_TranscriptSegments_Parts_Table struct {
 	Headers any
-	Rows any
-	Title any
+	Rows    any
+	Title   any
 }
 
 type Conversation_Transcript_TranscriptSegments_Parts_Text struct {
@@ -555,46 +555,46 @@ type Conversation_Transcript_TranscriptSegments_Parts_Text struct {
 }
 
 type Conversation_Transcript_TranscriptSegments_Parts struct {
-	Citation any
-	CustomPayload any
-	Image any
-	Link any
-	List any
+	Citation          any
+	CustomPayload     any
+	Image             any
+	Link              any
+	List              any
 	ProductCollection any
-	SuggestionChips any
-	Table any
-	Text any
-	Thought any
-	Video any
+	SuggestionChips   any
+	Table             any
+	Text              any
+	Thought           any
+	Video             any
 }
 
 type Conversation_Transcript_TranscriptSegments_SegmentParticipant struct {
-	DialogflowParticipant any
+	DialogflowParticipant     any
 	DialogflowParticipantName any
-	ObfuscatedExternalUserId any
-	Role any
-	UserId any
+	ObfuscatedExternalUserId  any
+	Role                      any
+	UserId                    any
 }
 
 type Conversation_Transcript_TranscriptSegments_Words struct {
-	Confidence any
-	EndOffset any
+	Confidence  any
+	EndOffset   any
 	StartOffset any
-	Word any
+	Word        any
 }
 
 type Conversation_Transcript_TranscriptSegments struct {
-	ChannelTag any
-	Confidence any
+	ChannelTag                any
+	Confidence                any
 	DialogflowSegmentMetadata any
-	LanguageCode any
-	MessageTime any
-	Parts any
-	SegmentParticipant any
-	Sentiment any
-	Text any
-	TurnLevelAudio any
-	Words any
+	LanguageCode              any
+	MessageTime               any
+	Parts                     any
+	SegmentParticipant        any
+	Sentiment                 any
+	Text                      any
+	TurnLevelAudio            any
+	Words                     any
 }
 
 type Conversation_Transcript struct {
@@ -636,7 +636,7 @@ type ConversationAttrs struct {
 	Medium any
 	// Optional. JSON metadata encoded as a string. This field is primarily used by Insights integrations with various telephony systems and must be in one of Insight's supported formats.
 	MetadataJson any
-	Name any
+	Name         any
 	// Obfuscated user ID which the customer sent to us.
 	ObfuscatedUserId any
 	// Conversation metadata related to quality management.
@@ -653,7 +653,7 @@ type ConversationAttrs struct {
 	TurnCount any
 	// Output only. The most recent time at which the conversation was updated.
 	UpdateTime any
-	View any
+	View       any
 }
 
 var Conversation = ubx.DataSourceBinding{

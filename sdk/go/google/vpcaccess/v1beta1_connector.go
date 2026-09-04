@@ -11,19 +11,13 @@ type V1beta1Connector_Subnet struct {
 }
 
 var V1beta1Connector_SubnetFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-	}
+	"Name":      ubx.FieldSpec{WireName: "name"},
+	"ProjectId": ubx.FieldSpec{WireName: "project_id"},
+}
 
 type V1beta1ConnectorConfig struct {
-	// Output only. List of projects using the connector.
-	ConnectedProjects any
-	// Output only. The creation time of the connector.
-	CreateTime any
 	// Optional. The range of internal addresses that follows RFC 4632 notation. Example: `10.132.0.0/28`.
 	IpCidrRange any
-	// Output only. The last restart time of the connector.
-	LastRestartTime any
 	// Machine type of VM Instance underlying connector. Default is e2-micro
 	MachineType any
 	// Maximum value of instances in autoscaling group underlying the connector.
@@ -38,8 +32,6 @@ type V1beta1ConnectorConfig struct {
 	Name any
 	// Optional. Name of a VPC network.
 	Network any
-	// Output only. State of the VPC access connector.
-	State any
 	// The subnet in which to house the connector
 	Subnet any
 }
@@ -76,22 +68,18 @@ type V1beta1ConnectorAttrs struct {
 var V1beta1Connector = ubx.ResourceBinding{
 	WireType: "google_vpcaccess_v1beta1_connector",
 	Fields: ubx.FieldMap{
-		"ConnectedProjects": ubx.FieldSpec{WireName: "connected_projects"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"IpCidrRange": ubx.FieldSpec{WireName: "ip_cidr_range"},
-		"LastRestartTime": ubx.FieldSpec{WireName: "last_restart_time"},
-		"MachineType": ubx.FieldSpec{WireName: "machine_type"},
-		"MaxInstances": ubx.FieldSpec{WireName: "max_instances"},
+		"IpCidrRange":   ubx.FieldSpec{WireName: "ip_cidr_range"},
+		"MachineType":   ubx.FieldSpec{WireName: "machine_type"},
+		"MaxInstances":  ubx.FieldSpec{WireName: "max_instances"},
 		"MaxThroughput": ubx.FieldSpec{WireName: "max_throughput"},
-		"MinInstances": ubx.FieldSpec{WireName: "min_instances"},
+		"MinInstances":  ubx.FieldSpec{WireName: "min_instances"},
 		"MinThroughput": ubx.FieldSpec{WireName: "min_throughput"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"State": ubx.FieldSpec{WireName: "state"},
+		"Name":          ubx.FieldSpec{WireName: "name"},
+		"Network":       ubx.FieldSpec{WireName: "network"},
 		"Subnet": ubx.FieldSpec{
 			WireName: "subnet",
-			Kind: "object",
-			Fields: V1beta1Connector_SubnetFields,
+			Kind:     "object",
+			Fields:   V1beta1Connector_SubnetFields,
 		},
 	},
 }

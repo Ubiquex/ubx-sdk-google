@@ -4,18 +4,12 @@ package apigee
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ArchiveDeploymentConfig struct {
-	// Output only. The time at which the Archive Deployment was created in milliseconds since the epoch.
-	CreatedAt any
 	// Input only. The Google Cloud Storage signed URL returned from GenerateUploadUrl and used to upload the Archive zip file.
 	GcsUri any
 	// User-supplied key-value pairs used to organize ArchiveDeployments. Label keys must be between 1 and 63 characters long, have a UTF-8 encoding of maximum 128 bytes, and must conform to the following PCRE regular expression: \p{Ll}\p{Lo}{0,62} Label values must be between 1 and 63 characters long, have a UTF-8 encoding of maximum 128 bytes, and must conform to the following PCRE regular expression: [\p{Ll}\p{Lo}\p{N}_-]{0,63} No more than 64 labels can be associated with a given store.
 	Labels any
 	// Name of the Archive Deployment in the following format: `organizations/{org}/environments/{env}/archiveDeployments/{id}`.
 	Name any
-	// Output only. A reference to the LRO that created this Archive Deployment in the following format: `organizations/{org}/operations/{id}`
-	Operation any
-	// Output only. The time at which the Archive Deployment was updated in milliseconds since the epoch.
-	UpdatedAt any
 }
 
 type ArchiveDeploymentAttrs struct {
@@ -36,11 +30,8 @@ type ArchiveDeploymentAttrs struct {
 var ArchiveDeployment = ubx.ResourceBinding{
 	WireType: "google_apigee_archive_deployment",
 	Fields: ubx.FieldMap{
-		"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
 		"GcsUri": ubx.FieldSpec{WireName: "gcs_uri"},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Operation": ubx.FieldSpec{WireName: "operation"},
-		"UpdatedAt": ubx.FieldSpec{WireName: "updated_at"},
+		"Name":   ubx.FieldSpec{WireName: "name"},
 	},
 }

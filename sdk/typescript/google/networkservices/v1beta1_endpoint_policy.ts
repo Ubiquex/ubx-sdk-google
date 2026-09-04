@@ -54,8 +54,6 @@ export interface V1beta1EndpointPolicyConfig {
   authorizationPolicy?: string | Computed<string>;
   /** Optional. Deprecated: This field is not used and is a no-op. A URL referring to a ClientTlsPolicy resource. ClientTlsPolicy can be set to specify the authentication for traffic from the proxy to the actual endpoints. More specifically, it is applied to the outgoing traffic from the proxy to the endpoint. This is typically used for sidecar model where the proxy identifies itself as endpoint to the control plane, with the connection between sidecar and endpoint requiring authentication. If this field is not set, authentication is disabled(open). Applicable only when EndpointPolicyType is SIDECAR_PROXY. */
   clientTlsPolicy?: string | Computed<string>;
-  /** Output only. The timestamp when the resource was created. */
-  createTime?: string | Computed<string>;
   /** Optional. A free-text description of the resource. Max length 1024 characters. */
   description?: string | Computed<string>;
   /** A definition of a matcher that selects endpoints to which the policies should be applied. */
@@ -72,8 +70,6 @@ export interface V1beta1EndpointPolicyConfig {
   trafficPortSelector?: V1beta1EndpointPolicy_TrafficPortSelector | Computed<V1beta1EndpointPolicy_TrafficPortSelector>;
   /** Required. The type of endpoint policy. This is primarily used to validate the configuration. */
   type?: string | Computed<string>;
-  /** Output only. The timestamp when the resource was updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1beta1EndpointPolicyAttrs {
@@ -108,7 +104,6 @@ export const V1beta1EndpointPolicy: ResourceBinding<V1beta1EndpointPolicyConfig,
   fields: {
     authorizationPolicy: "authorization_policy",
     clientTlsPolicy: "client_tls_policy",
-    createTime: "create_time",
     description: "description",
     endpointMatcher: {
       wireName: "endpoint_matcher",
@@ -125,6 +120,5 @@ export const V1beta1EndpointPolicy: ResourceBinding<V1beta1EndpointPolicyConfig,
       fields: V1beta1EndpointPolicy_TrafficPortSelectorFields,
     },
     type: "type",
-    updateTime: "update_time",
   },
 };

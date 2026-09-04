@@ -35,8 +35,6 @@ const BetaFirewall_ParamsFields: FieldMap = {
 export interface BetaFirewallConfig {
   /** The list of ALLOW rules specified by this firewall. Each rule specifies a protocol and port-range tuple that describes a permitted connection. */
   allowed?: BetaFirewall_Allowed[] | Computed<BetaFirewall_Allowed[]>;
-  /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
-  creationTimestamp?: string | Computed<string>;
   /** The list of DENY rules specified by this firewall. Each rule specifies a protocol and port-range tuple that describes a denied connection. */
   denied?: BetaFirewall_Allowed[] | Computed<BetaFirewall_Allowed[]>;
   /** An optional description of this resource. Provide this field when you create the resource. */
@@ -49,10 +47,6 @@ export interface BetaFirewallConfig {
   disabled?: boolean | Computed<boolean>;
   /** Deprecated in favor of enable in LogConfig. This field denotes whether to enable logging for a particular firewall rule. If logging is enabled, logs will be exported t Cloud Logging. */
   enableLogging?: boolean | Computed<boolean>;
-  /** Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server. */
-  id?: string | Computed<string>;
-  /** Output only. [Output Only] Type of the resource. Always compute#firewall for firewall rules. */
-  kind?: string | Computed<string>;
   /** The available logging options for a firewall rule. */
   logConfig?: BetaFirewall_LogConfig | Computed<BetaFirewall_LogConfig>;
   /** Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit. */
@@ -130,7 +124,6 @@ export const BetaFirewall: ResourceBinding<BetaFirewallConfig, BetaFirewallAttrs
       kind: "list",
       fields: BetaFirewall_AllowedFields,
     },
-    creationTimestamp: "creation_timestamp",
     denied: {
       wireName: "denied",
       kind: "list",
@@ -141,8 +134,6 @@ export const BetaFirewall: ResourceBinding<BetaFirewallConfig, BetaFirewallAttrs
     direction: "direction",
     disabled: "disabled",
     enableLogging: "enable_logging",
-    id: "id",
-    kind: "kind",
     logConfig: {
       wireName: "log_config",
       kind: "object",

@@ -8,18 +8,12 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class EndpointAttachmentConfig:
-    # Output only. State of the endpoint attachment connection to the service attachment.
-    connection_state: Any = None
-    # Output only. Host that can be used in either the HTTP target endpoint directly or as the host in target server.
-    host: Any = None
     # Required. Location of the endpoint attachment.
     location: Any = None
     # Name of the endpoint attachment. Use the following structure in your request: `organizations/{org}/endpointAttachments/{endpoint_attachment}`
     name: Any = None
     # Format: projects/*/regions/*/serviceAttachments/*
     service_attachment: Any = None
-    # Output only. State of the endpoint attachment. Values other than `ACTIVE` mean the resource is not ready to use.
-    state: Any = None
 
 @dataclasses.dataclass
 class EndpointAttachmentAttrs:
@@ -39,11 +33,8 @@ class EndpointAttachmentAttrs:
 EndpointAttachment = ubx.ResourceBinding(
     wire_type="google_apigee_endpoint_attachment",
     fields={
-        "connection_state": ubx.FieldSpec(wire_name="connection_state"),
-        "host": ubx.FieldSpec(wire_name="host"),
         "location": ubx.FieldSpec(wire_name="location"),
         "name": ubx.FieldSpec(wire_name="name"),
         "service_attachment": ubx.FieldSpec(wire_name="service_attachment"),
-        "state": ubx.FieldSpec(wire_name="state"),
     },
 )

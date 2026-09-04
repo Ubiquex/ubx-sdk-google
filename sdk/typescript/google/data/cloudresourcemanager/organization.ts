@@ -2,7 +2,6 @@
 import type { Computed, FieldMap, DataSourceBinding } from "@ubx/sdk";
 
 export interface OrganizationConfig {
-  name: string | Computed<string>;
 }
 
 export interface OrganizationAttrs {
@@ -26,6 +25,5 @@ export interface OrganizationAttrs {
 export const Organization: DataSourceBinding<OrganizationConfig, OrganizationAttrs> = {
   wireType: "google_cloudresourcemanager_organization",
   fields: {
-    name: "name",
   },
 };

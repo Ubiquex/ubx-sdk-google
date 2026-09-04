@@ -8,8 +8,6 @@ type RuleConfig struct {
 	ApplicationMatcher any
 	// Required. Profile which tells what the primitive action should be.
 	BasicProfile any
-	// Output only. Time when the rule was created.
-	CreateTime any
 	// Optional. Free-text description of the resource.
 	Description any
 	// Required. Whether the rule is enforced.
@@ -22,8 +20,6 @@ type RuleConfig struct {
 	SessionMatcher any
 	// Optional. Flag to enable TLS inspection of traffic matching on , can only be true if the parent GatewaySecurityPolicy references a TLSInspectionConfig.
 	TlsInspectionEnabled any
-	// Output only. Time when the rule was updated.
-	UpdateTime any
 }
 
 type RuleAttrs struct {
@@ -52,15 +48,13 @@ type RuleAttrs struct {
 var Rule = ubx.ResourceBinding{
 	WireType: "google_networksecurity_rule",
 	Fields: ubx.FieldMap{
-		"ApplicationMatcher": ubx.FieldSpec{WireName: "application_matcher"},
-		"BasicProfile": ubx.FieldSpec{WireName: "basic_profile"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Priority": ubx.FieldSpec{WireName: "priority"},
-		"SessionMatcher": ubx.FieldSpec{WireName: "session_matcher"},
+		"ApplicationMatcher":   ubx.FieldSpec{WireName: "application_matcher"},
+		"BasicProfile":         ubx.FieldSpec{WireName: "basic_profile"},
+		"Description":          ubx.FieldSpec{WireName: "description"},
+		"Enabled":              ubx.FieldSpec{WireName: "enabled"},
+		"Name":                 ubx.FieldSpec{WireName: "name"},
+		"Priority":             ubx.FieldSpec{WireName: "priority"},
+		"SessionMatcher":       ubx.FieldSpec{WireName: "session_matcher"},
 		"TlsInspectionEnabled": ubx.FieldSpec{WireName: "tls_inspection_enabled"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

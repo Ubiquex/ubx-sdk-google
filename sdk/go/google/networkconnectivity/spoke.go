@@ -55,7 +55,7 @@ type Spoke_LinkedProducerVpcNetwork struct {
 }
 
 type Spoke_LinkedRouterApplianceInstances_Instances struct {
-	IpAddress any
+	IpAddress      any
 	VirtualMachine any
 }
 
@@ -92,84 +92,76 @@ type Spoke_LinkedVpcNetwork struct {
 }
 
 type Spoke_Reasons struct {
-	Code any
-	Message any
+	Code        any
+	Message     any
 	UserDetails any
 }
 
 var Spoke_Gateway_IpRangeReservationsFields = ubx.FieldMap{
-		"IpRange": ubx.FieldSpec{WireName: "ip_range"},
-	}
+	"IpRange": ubx.FieldSpec{WireName: "ip_range"},
+}
 
 var Spoke_GatewayFields = ubx.FieldMap{
-		"Capacity": ubx.FieldSpec{WireName: "capacity"},
-		"CloudRouters": ubx.FieldSpec{WireName: "cloud_routers"},
-		"IpRangeReservations": ubx.FieldSpec{
-			WireName: "ip_range_reservations",
-			Kind: "list",
-			Fields: Spoke_Gateway_IpRangeReservationsFields,
-		},
-		"SacAttachment": ubx.FieldSpec{WireName: "sac_attachment"},
-	}
+	"Capacity":     ubx.FieldSpec{WireName: "capacity"},
+	"CloudRouters": ubx.FieldSpec{WireName: "cloud_routers"},
+	"IpRangeReservations": ubx.FieldSpec{
+		WireName: "ip_range_reservations",
+		Kind:     "list",
+		Fields:   Spoke_Gateway_IpRangeReservationsFields,
+	},
+	"SacAttachment": ubx.FieldSpec{WireName: "sac_attachment"},
+}
 
 var Spoke_LinkedInterconnectAttachmentsFields = ubx.FieldMap{
-		"ExcludeExportRanges": ubx.FieldSpec{WireName: "exclude_export_ranges"},
-		"ExcludeImportRanges": ubx.FieldSpec{WireName: "exclude_import_ranges"},
-		"IncludeExportRanges": ubx.FieldSpec{WireName: "include_export_ranges"},
-		"IncludeImportRanges": ubx.FieldSpec{WireName: "include_import_ranges"},
-		"SiteToSiteDataTransfer": ubx.FieldSpec{WireName: "site_to_site_data_transfer"},
-		"Uris": ubx.FieldSpec{WireName: "uris"},
-		"VpcNetwork": ubx.FieldSpec{WireName: "vpc_network"},
-	}
+	"ExcludeExportRanges":    ubx.FieldSpec{WireName: "exclude_export_ranges"},
+	"ExcludeImportRanges":    ubx.FieldSpec{WireName: "exclude_import_ranges"},
+	"IncludeExportRanges":    ubx.FieldSpec{WireName: "include_export_ranges"},
+	"IncludeImportRanges":    ubx.FieldSpec{WireName: "include_import_ranges"},
+	"SiteToSiteDataTransfer": ubx.FieldSpec{WireName: "site_to_site_data_transfer"},
+	"Uris":                   ubx.FieldSpec{WireName: "uris"},
+	"VpcNetwork":             ubx.FieldSpec{WireName: "vpc_network"},
+}
 
 var Spoke_LinkedProducerVpcNetworkFields = ubx.FieldMap{
-		"ExcludeExportRanges": ubx.FieldSpec{WireName: "exclude_export_ranges"},
-		"IncludeExportRanges": ubx.FieldSpec{WireName: "include_export_ranges"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"Peering": ubx.FieldSpec{WireName: "peering"},
-		"ProducerNetwork": ubx.FieldSpec{WireName: "producer_network"},
-		"ProposedExcludeExportRanges": ubx.FieldSpec{WireName: "proposed_exclude_export_ranges"},
-		"ProposedIncludeExportRanges": ubx.FieldSpec{WireName: "proposed_include_export_ranges"},
-		"ServiceConsumerVpcSpoke": ubx.FieldSpec{WireName: "service_consumer_vpc_spoke"},
-	}
+	"ExcludeExportRanges":         ubx.FieldSpec{WireName: "exclude_export_ranges"},
+	"IncludeExportRanges":         ubx.FieldSpec{WireName: "include_export_ranges"},
+	"Network":                     ubx.FieldSpec{WireName: "network"},
+	"Peering":                     ubx.FieldSpec{WireName: "peering"},
+	"ProducerNetwork":             ubx.FieldSpec{WireName: "producer_network"},
+	"ProposedExcludeExportRanges": ubx.FieldSpec{WireName: "proposed_exclude_export_ranges"},
+	"ProposedIncludeExportRanges": ubx.FieldSpec{WireName: "proposed_include_export_ranges"},
+	"ServiceConsumerVpcSpoke":     ubx.FieldSpec{WireName: "service_consumer_vpc_spoke"},
+}
 
 var Spoke_LinkedRouterApplianceInstances_InstancesFields = ubx.FieldMap{
-		"IpAddress": ubx.FieldSpec{WireName: "ip_address"},
-		"VirtualMachine": ubx.FieldSpec{WireName: "virtual_machine"},
-	}
+	"IpAddress":      ubx.FieldSpec{WireName: "ip_address"},
+	"VirtualMachine": ubx.FieldSpec{WireName: "virtual_machine"},
+}
 
 var Spoke_LinkedRouterApplianceInstancesFields = ubx.FieldMap{
-		"ExcludeExportRanges": ubx.FieldSpec{WireName: "exclude_export_ranges"},
-		"ExcludeImportRanges": ubx.FieldSpec{WireName: "exclude_import_ranges"},
-		"IncludeExportRanges": ubx.FieldSpec{WireName: "include_export_ranges"},
-		"IncludeImportRanges": ubx.FieldSpec{WireName: "include_import_ranges"},
-		"Instances": ubx.FieldSpec{
-			WireName: "instances",
-			Kind: "list",
-			Fields: Spoke_LinkedRouterApplianceInstances_InstancesFields,
-		},
-		"SiteToSiteDataTransfer": ubx.FieldSpec{WireName: "site_to_site_data_transfer"},
-		"VpcNetwork": ubx.FieldSpec{WireName: "vpc_network"},
-	}
+	"ExcludeExportRanges": ubx.FieldSpec{WireName: "exclude_export_ranges"},
+	"ExcludeImportRanges": ubx.FieldSpec{WireName: "exclude_import_ranges"},
+	"IncludeExportRanges": ubx.FieldSpec{WireName: "include_export_ranges"},
+	"IncludeImportRanges": ubx.FieldSpec{WireName: "include_import_ranges"},
+	"Instances": ubx.FieldSpec{
+		WireName: "instances",
+		Kind:     "list",
+		Fields:   Spoke_LinkedRouterApplianceInstances_InstancesFields,
+	},
+	"SiteToSiteDataTransfer": ubx.FieldSpec{WireName: "site_to_site_data_transfer"},
+	"VpcNetwork":             ubx.FieldSpec{WireName: "vpc_network"},
+}
 
 var Spoke_LinkedVpcNetworkFields = ubx.FieldMap{
-		"ExcludeExportRanges": ubx.FieldSpec{WireName: "exclude_export_ranges"},
-		"IncludeExportRanges": ubx.FieldSpec{WireName: "include_export_ranges"},
-		"ProducerVpcSpokes": ubx.FieldSpec{WireName: "producer_vpc_spokes"},
-		"ProposedExcludeExportRanges": ubx.FieldSpec{WireName: "proposed_exclude_export_ranges"},
-		"ProposedIncludeExportRanges": ubx.FieldSpec{WireName: "proposed_include_export_ranges"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
-
-var Spoke_ReasonsFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-		"UserDetails": ubx.FieldSpec{WireName: "user_details"},
-	}
+	"ExcludeExportRanges":         ubx.FieldSpec{WireName: "exclude_export_ranges"},
+	"IncludeExportRanges":         ubx.FieldSpec{WireName: "include_export_ranges"},
+	"ProducerVpcSpokes":           ubx.FieldSpec{WireName: "producer_vpc_spokes"},
+	"ProposedExcludeExportRanges": ubx.FieldSpec{WireName: "proposed_exclude_export_ranges"},
+	"ProposedIncludeExportRanges": ubx.FieldSpec{WireName: "proposed_include_export_ranges"},
+	"Uri":                         ubx.FieldSpec{WireName: "uri"},
+}
 
 type SpokeConfig struct {
-	// Output only. The time the spoke was created.
-	CreateTime any
 	// Optional. An optional description of the spoke.
 	Description any
 	// Optional. This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding.
@@ -186,7 +178,7 @@ type SpokeConfig struct {
 	Labels any
 	// A collection of VLAN attachment resources. These resources should be redundant attachments that all advertise the same prefixes to Google Cloud. Alternatively, in active/passive configurations, all attachments should be capable of advertising the same prefixes.
 	LinkedInterconnectAttachments any
-	LinkedProducerVpcNetwork any
+	LinkedProducerVpcNetwork      any
 	// A collection of router appliance instances. If you configure multiple router appliance instances to receive data from the same set of sites outside of Google Cloud, we recommend that you associate those instances with the same spoke.
 	LinkedRouterApplianceInstances any
 	// An existing VPC network.
@@ -195,16 +187,6 @@ type SpokeConfig struct {
 	LinkedVpnTunnels any
 	// Immutable. The name of the spoke. Spoke names must be unique. They use the following form: `projects/{project_number}/locations/{region}/spokes/{spoke_id}`
 	Name any
-	// Output only. The reasons for current state of the spoke.
-	Reasons any
-	// Output only. The type of resource associated with the spoke.
-	SpokeType any
-	// Output only. The current lifecycle state of this spoke.
-	State any
-	// Output only. The Google-generated UUID for the spoke. This value is unique across all spoke resources. If a spoke is deleted and another with the same name is created, the new spoke is assigned a different `unique_id`.
-	UniqueId any
-	// Output only. The time the spoke was last updated.
-	UpdateTime any
 }
 
 type SpokeAttrs struct {
@@ -226,7 +208,7 @@ type SpokeAttrs struct {
 	Labels any
 	// A collection of VLAN attachment resources. These resources should be redundant attachments that all advertise the same prefixes to Google Cloud. Alternatively, in active/passive configurations, all attachments should be capable of advertising the same prefixes.
 	LinkedInterconnectAttachments any
-	LinkedProducerVpcNetwork any
+	LinkedProducerVpcNetwork      any
 	// A collection of router appliance instances. If you configure multiple router appliance instances to receive data from the same set of sites outside of Google Cloud, we recommend that you associate those instances with the same spoke.
 	LinkedRouterApplianceInstances any
 	// An existing VPC network.
@@ -250,52 +232,42 @@ type SpokeAttrs struct {
 var Spoke = ubx.ResourceBinding{
 	WireType: "google_networkconnectivity_spoke",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
+		"Description":             ubx.FieldSpec{WireName: "description"},
+		"Etag":                    ubx.FieldSpec{WireName: "etag"},
 		"FieldPathsPendingUpdate": ubx.FieldSpec{WireName: "field_paths_pending_update"},
 		"Gateway": ubx.FieldSpec{
 			WireName: "gateway",
-			Kind: "object",
-			Fields: Spoke_GatewayFields,
+			Kind:     "object",
+			Fields:   Spoke_GatewayFields,
 		},
-		"Group": ubx.FieldSpec{WireName: "group"},
-		"Hub": ubx.FieldSpec{WireName: "hub"},
+		"Group":  ubx.FieldSpec{WireName: "group"},
+		"Hub":    ubx.FieldSpec{WireName: "hub"},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
 		"LinkedInterconnectAttachments": ubx.FieldSpec{
 			WireName: "linked_interconnect_attachments",
-			Kind: "object",
-			Fields: Spoke_LinkedInterconnectAttachmentsFields,
+			Kind:     "object",
+			Fields:   Spoke_LinkedInterconnectAttachmentsFields,
 		},
 		"LinkedProducerVpcNetwork": ubx.FieldSpec{
 			WireName: "linked_producer_vpc_network",
-			Kind: "object",
-			Fields: Spoke_LinkedProducerVpcNetworkFields,
+			Kind:     "object",
+			Fields:   Spoke_LinkedProducerVpcNetworkFields,
 		},
 		"LinkedRouterApplianceInstances": ubx.FieldSpec{
 			WireName: "linked_router_appliance_instances",
-			Kind: "object",
-			Fields: Spoke_LinkedRouterApplianceInstancesFields,
+			Kind:     "object",
+			Fields:   Spoke_LinkedRouterApplianceInstancesFields,
 		},
 		"LinkedVpcNetwork": ubx.FieldSpec{
 			WireName: "linked_vpc_network",
-			Kind: "object",
-			Fields: Spoke_LinkedVpcNetworkFields,
+			Kind:     "object",
+			Fields:   Spoke_LinkedVpcNetworkFields,
 		},
 		"LinkedVpnTunnels": ubx.FieldSpec{
 			WireName: "linked_vpn_tunnels",
-			Kind: "object",
-			Fields: Spoke_LinkedInterconnectAttachmentsFields,
+			Kind:     "object",
+			Fields:   Spoke_LinkedInterconnectAttachmentsFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
-		"Reasons": ubx.FieldSpec{
-			WireName: "reasons",
-			Kind: "list",
-			Fields: Spoke_ReasonsFields,
-		},
-		"SpokeType": ubx.FieldSpec{WireName: "spoke_type"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"UniqueId": ubx.FieldSpec{WireName: "unique_id"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

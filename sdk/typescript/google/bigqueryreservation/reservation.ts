@@ -67,8 +67,6 @@ export interface ReservationConfig {
   autoscale?: Reservation_Autoscale | Computed<Reservation_Autoscale>;
   /** Optional. Job concurrency target which sets a soft upper bound on the number of jobs that can run concurrently in this reservation. This is a soft target due to asynchronous nature of the system and various optimizations for small queries. Default value is 0 which means that concurrency target will be automatically computed by the system. NOTE: this field is exposed as target job concurrency in the Information Schema, DDL and BigQuery CLI. */
   concurrency?: string | Computed<string>;
-  /** Output only. Creation time of the reservation. */
-  creationTime?: string | Computed<string>;
   /** Optional. Edition of the reservation. */
   edition?: string | Computed<string>;
   /** Optional. If false, any query or pipeline job using this reservation will use idle slots from other reservations within the same admin project. If true, a query or pipeline job using this reservation will execute with the slot capacity specified in the slot_capacity field at most. */
@@ -81,16 +79,10 @@ export interface ReservationConfig {
   multiRegionAuxiliary?: boolean | Computed<boolean>;
   /** Identifier. The resource name of the reservation, e.g., `projects/* /locations/* /reservations/team1-prod`. The reservation_id must only contain lower case alphanumeric characters or dashes. It must start with a letter and must not end with a dash. Its maximum length is 64 characters. */
   name?: string | Computed<string>;
-  /** Output only. The location where the reservation was originally created. This is set only during the failover reservation's creation. All billing charges for the failover reservation will be applied to this location. */
-  originalPrimaryLocation?: string | Computed<string>;
-  /** Output only. The current location of the reservation's primary replica. This field is only set for reservations using the managed disaster recovery feature. */
-  primaryLocation?: string | Computed<string>;
   /** Disaster Recovery(DR) replication status of the reservation. */
   replicationStatus?: Reservation_ReplicationStatus | Computed<Reservation_ReplicationStatus>;
   /** Optional. The reservation group that this reservation belongs to. You can set this property when you create or update a reservation. Reservations do not need to belong to a reservation group. Format: projects/{project}/locations/{location}/reservationGroups/{reservation_group} or just {reservation_group} */
   reservationGroup?: string | Computed<string>;
-  /** Output only. The reservation group path of the reservation from root to leaf. The order of elements matters: the first element is the top level group and the last element is the direct parent reservation group. For example, if a reservation is under group-1 -> group-2 -> group-3, then the reservation group path is ["group-1", "group-2", "group-3"]. */
-  reservationGroupPath?: string[] | Computed<string[]>;
   /** Optional. The scaling mode for the reservation. If the field is present but max_slots is not present, requests will be rejected with error code `google.rpc.Code.INVALID_ARGUMENT`. */
   scalingMode?: string | Computed<string>;
   /** The scheduling policy controls how a reservation's resources are distributed. */
@@ -99,8 +91,6 @@ export interface ReservationConfig {
   secondaryLocation?: string | Computed<string>;
   /** Optional. Baseline slots available to this reservation. A slot is a unit of computational power in BigQuery, and serves as the unit of parallelism. Queries using this reservation might use more slots during runtime if ignore_idle_slots is set to false, or autoscaling is enabled. The total slot_capacity of the reservation and its siblings may exceed the total slot_count of capacity commitments. In that case, the exceeding slots will be charged with the autoscale SKU. You can increase the number of baseline slots in a reservation every few minutes. If you want to decrease your baseline slots, you are limited to once an hour if you have recently changed your baseline slot capacity and your baseline slots exceed your committed slots. Otherwise, you can decrease your baseline slots every few minutes. */
   slotCapacity?: string | Computed<string>;
-  /** Output only. Last update time of the reservation. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface ReservationAttrs {
@@ -153,22 +143,18 @@ export const Reservation: ResourceBinding<ReservationConfig, ReservationAttrs> =
       fields: Reservation_AutoscaleFields,
     },
     concurrency: "concurrency",
-    creationTime: "creation_time",
     edition: "edition",
     ignoreIdleSlots: "ignore_idle_slots",
     labels: "labels",
     maxSlots: "max_slots",
     multiRegionAuxiliary: "multi_region_auxiliary",
     name: "name",
-    originalPrimaryLocation: "original_primary_location",
-    primaryLocation: "primary_location",
     replicationStatus: {
       wireName: "replication_status",
       kind: "object",
       fields: Reservation_ReplicationStatusFields,
     },
     reservationGroup: "reservation_group",
-    reservationGroupPath: "reservation_group_path",
     scalingMode: "scaling_mode",
     schedulingPolicy: {
       wireName: "scheduling_policy",
@@ -177,6 +163,5 @@ export const Reservation: ResourceBinding<ReservationConfig, ReservationAttrs> =
     },
     secondaryLocation: "secondary_location",
     slotCapacity: "slot_capacity",
-    updateTime: "update_time",
   },
 };

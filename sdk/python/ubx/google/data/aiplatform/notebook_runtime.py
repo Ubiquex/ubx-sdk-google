@@ -116,7 +116,7 @@ class NotebookRuntime_SoftwareConfig:
 
 @dataclasses.dataclass
 class NotebookRuntimeConfig:
-    name: Any = None
+    pass
 
 @dataclasses.dataclass
 class NotebookRuntimeAttrs:
@@ -179,6 +179,5 @@ class NotebookRuntimeAttrs:
 NotebookRuntime = ubx.DataSourceBinding(
     wire_type="google_aiplatform_notebook_runtime",
     fields={
-        "name": ubx.FieldSpec(wire_name="name"),
     },
 )

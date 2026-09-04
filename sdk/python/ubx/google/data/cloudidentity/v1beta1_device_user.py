@@ -9,7 +9,6 @@ import ubx_sdk as ubx
 @dataclasses.dataclass
 class V1beta1DeviceUserConfig:
     customer: Any = None
-    name: Any = None
 
 @dataclasses.dataclass
 class V1beta1DeviceUserAttrs:
@@ -38,6 +37,5 @@ V1beta1DeviceUser = ubx.DataSourceBinding(
     wire_type="google_cloudidentity_v1beta1_device_user",
     fields={
         "customer": ubx.FieldSpec(wire_name="customer"),
-        "name": ubx.FieldSpec(wire_name="name"),
     },
 )

@@ -581,7 +581,6 @@ export interface Job_UnstructuredDataProfileSpec {
 }
 
 export interface JobConfig {
-  name: string | Computed<string>;
   view?: string | Computed<string>;
 }
 
@@ -629,7 +628,6 @@ export interface JobAttrs {
 export const Job: DataSourceBinding<JobConfig, JobAttrs> = {
   wireType: "google_dataplex_job",
   fields: {
-    name: "name",
     view: "view",
   },
 };

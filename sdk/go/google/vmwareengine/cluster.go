@@ -4,17 +4,17 @@ package vmwareengine
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Cluster_AutoscalingSettings_AutoscalingPolicies_ConsumedMemoryThresholds struct {
-	ScaleIn any
+	ScaleIn  any
 	ScaleOut any
 }
 
 type Cluster_AutoscalingSettings_AutoscalingPolicies struct {
 	ConsumedMemoryThresholds any
-	CpuThresholds any
-	GrantedMemoryThresholds any
-	NodeTypeId any
-	ScaleOutSize any
-	StorageThresholds any
+	CpuThresholds            any
+	GrantedMemoryThresholds  any
+	NodeTypeId               any
+	ScaleOutSize             any
+	StorageThresholds        any
 }
 
 type Cluster_AutoscalingSettings struct {
@@ -30,23 +30,23 @@ type Cluster_AutoscalingSettings struct {
 
 type Cluster_DatastoreMountConfig_DatastoreNetwork struct {
 	ConnectionCount any
-	Mtu any
-	NetworkPeering any
-	Subnet any
+	Mtu             any
+	NetworkPeering  any
+	Subnet          any
 }
 
 type Cluster_DatastoreMountConfig struct {
-	AccessMode any
-	Datastore any
+	AccessMode       any
+	Datastore        any
 	DatastoreNetwork any
-	FileShare any
-	NfsVersion any
-	Servers any
+	FileShare        any
+	NfsVersion       any
+	Servers          any
 }
 
 type Cluster_NodeTypeConfigs struct {
 	CustomCoreCount any
-	NodeCount any
+	NodeCount       any
 }
 
 type Cluster_StretchedClusterConfig struct {
@@ -57,97 +57,63 @@ type Cluster_StretchedClusterConfig struct {
 }
 
 var Cluster_AutoscalingSettings_AutoscalingPolicies_ConsumedMemoryThresholdsFields = ubx.FieldMap{
-		"ScaleIn": ubx.FieldSpec{WireName: "scale_in"},
-		"ScaleOut": ubx.FieldSpec{WireName: "scale_out"},
-	}
+	"ScaleIn":  ubx.FieldSpec{WireName: "scale_in"},
+	"ScaleOut": ubx.FieldSpec{WireName: "scale_out"},
+}
 
 var Cluster_AutoscalingSettings_AutoscalingPoliciesFields = ubx.FieldMap{
-		"ConsumedMemoryThresholds": ubx.FieldSpec{
-			WireName: "consumed_memory_thresholds",
-			Kind: "object",
-			Fields: Cluster_AutoscalingSettings_AutoscalingPolicies_ConsumedMemoryThresholdsFields,
-		},
-		"CpuThresholds": ubx.FieldSpec{
-			WireName: "cpu_thresholds",
-			Kind: "object",
-			Fields: Cluster_AutoscalingSettings_AutoscalingPolicies_ConsumedMemoryThresholdsFields,
-		},
-		"GrantedMemoryThresholds": ubx.FieldSpec{
-			WireName: "granted_memory_thresholds",
-			Kind: "object",
-			Fields: Cluster_AutoscalingSettings_AutoscalingPolicies_ConsumedMemoryThresholdsFields,
-		},
-		"NodeTypeId": ubx.FieldSpec{WireName: "node_type_id"},
-		"ScaleOutSize": ubx.FieldSpec{WireName: "scale_out_size"},
-		"StorageThresholds": ubx.FieldSpec{
-			WireName: "storage_thresholds",
-			Kind: "object",
-			Fields: Cluster_AutoscalingSettings_AutoscalingPolicies_ConsumedMemoryThresholdsFields,
-		},
-	}
+	"ConsumedMemoryThresholds": ubx.FieldSpec{
+		WireName: "consumed_memory_thresholds",
+		Kind:     "object",
+		Fields:   Cluster_AutoscalingSettings_AutoscalingPolicies_ConsumedMemoryThresholdsFields,
+	},
+	"CpuThresholds": ubx.FieldSpec{
+		WireName: "cpu_thresholds",
+		Kind:     "object",
+		Fields:   Cluster_AutoscalingSettings_AutoscalingPolicies_ConsumedMemoryThresholdsFields,
+	},
+	"GrantedMemoryThresholds": ubx.FieldSpec{
+		WireName: "granted_memory_thresholds",
+		Kind:     "object",
+		Fields:   Cluster_AutoscalingSettings_AutoscalingPolicies_ConsumedMemoryThresholdsFields,
+	},
+	"NodeTypeId":   ubx.FieldSpec{WireName: "node_type_id"},
+	"ScaleOutSize": ubx.FieldSpec{WireName: "scale_out_size"},
+	"StorageThresholds": ubx.FieldSpec{
+		WireName: "storage_thresholds",
+		Kind:     "object",
+		Fields:   Cluster_AutoscalingSettings_AutoscalingPolicies_ConsumedMemoryThresholdsFields,
+	},
+}
 
 var Cluster_AutoscalingSettingsFields = ubx.FieldMap{
-		"AutoscalingPolicies": ubx.FieldSpec{
-			WireName: "autoscaling_policies",
-			Kind: "map",
-			Fields: Cluster_AutoscalingSettings_AutoscalingPoliciesFields,
-		},
-		"CoolDownPeriod": ubx.FieldSpec{WireName: "cool_down_period"},
-		"MaxClusterNodeCount": ubx.FieldSpec{WireName: "max_cluster_node_count"},
-		"MinClusterNodeCount": ubx.FieldSpec{WireName: "min_cluster_node_count"},
-	}
-
-var Cluster_DatastoreMountConfig_DatastoreNetworkFields = ubx.FieldMap{
-		"ConnectionCount": ubx.FieldSpec{WireName: "connection_count"},
-		"Mtu": ubx.FieldSpec{WireName: "mtu"},
-		"NetworkPeering": ubx.FieldSpec{WireName: "network_peering"},
-		"Subnet": ubx.FieldSpec{WireName: "subnet"},
-	}
-
-var Cluster_DatastoreMountConfigFields = ubx.FieldMap{
-		"AccessMode": ubx.FieldSpec{WireName: "access_mode"},
-		"Datastore": ubx.FieldSpec{WireName: "datastore"},
-		"DatastoreNetwork": ubx.FieldSpec{
-			WireName: "datastore_network",
-			Kind: "object",
-			Fields: Cluster_DatastoreMountConfig_DatastoreNetworkFields,
-		},
-		"FileShare": ubx.FieldSpec{WireName: "file_share"},
-		"NfsVersion": ubx.FieldSpec{WireName: "nfs_version"},
-		"Servers": ubx.FieldSpec{WireName: "servers"},
-	}
+	"AutoscalingPolicies": ubx.FieldSpec{
+		WireName: "autoscaling_policies",
+		Kind:     "map",
+		Fields:   Cluster_AutoscalingSettings_AutoscalingPoliciesFields,
+	},
+	"CoolDownPeriod":      ubx.FieldSpec{WireName: "cool_down_period"},
+	"MaxClusterNodeCount": ubx.FieldSpec{WireName: "max_cluster_node_count"},
+	"MinClusterNodeCount": ubx.FieldSpec{WireName: "min_cluster_node_count"},
+}
 
 var Cluster_NodeTypeConfigsFields = ubx.FieldMap{
-		"CustomCoreCount": ubx.FieldSpec{WireName: "custom_core_count"},
-		"NodeCount": ubx.FieldSpec{WireName: "node_count"},
-	}
+	"CustomCoreCount": ubx.FieldSpec{WireName: "custom_core_count"},
+	"NodeCount":       ubx.FieldSpec{WireName: "node_count"},
+}
 
 var Cluster_StretchedClusterConfigFields = ubx.FieldMap{
-		"PreferredLocation": ubx.FieldSpec{WireName: "preferred_location"},
-		"SecondaryLocation": ubx.FieldSpec{WireName: "secondary_location"},
-	}
+	"PreferredLocation": ubx.FieldSpec{WireName: "preferred_location"},
+	"SecondaryLocation": ubx.FieldSpec{WireName: "secondary_location"},
+}
 
 type ClusterConfig struct {
 	// Autoscaling settings define the rules used by VMware Engine to automatically scale-out and scale-in the clusters in a private cloud.
 	AutoscalingSettings any
-	// Output only. Creation time of this resource.
-	CreateTime any
-	// Output only. Configuration of a mounted datastore.
-	DatastoreMountConfig any
-	// Output only. True if the cluster is a management cluster; false otherwise. There can only be one management cluster in a private cloud and it has to be the first one.
-	Management any
-	// Output only. Identifier. The resource name of this cluster. Resource names are schemeless URIs that follow the conventions in https://cloud.google.com/apis/design/resource_names. For example: `projects/my-project/locations/us-central1-a/privateClouds/my-cloud/clusters/my-cluster`
-	Name any
 	// Required. The map of cluster node types in this cluster, where the key is canonical identifier of the node type (corresponds to the `NodeType`).
 	NodeTypeConfigs any
-	// Output only. State of the resource.
-	State any
 	// Configuration of a stretched cluster.
 	StretchedClusterConfig any
-	// Output only. System-generated unique identifier for the resource.
-	Uid any
-	// Output only. Last update time of this resource.
-	UpdateTime any
 }
 
 type ClusterAttrs struct {
@@ -178,29 +144,18 @@ var Cluster = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AutoscalingSettings": ubx.FieldSpec{
 			WireName: "autoscaling_settings",
-			Kind: "object",
-			Fields: Cluster_AutoscalingSettingsFields,
+			Kind:     "object",
+			Fields:   Cluster_AutoscalingSettingsFields,
 		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DatastoreMountConfig": ubx.FieldSpec{
-			WireName: "datastore_mount_config",
-			Kind: "list",
-			Fields: Cluster_DatastoreMountConfigFields,
-		},
-		"Management": ubx.FieldSpec{WireName: "management"},
-		"Name": ubx.FieldSpec{WireName: "name"},
 		"NodeTypeConfigs": ubx.FieldSpec{
 			WireName: "node_type_configs",
-			Kind: "map",
-			Fields: Cluster_NodeTypeConfigsFields,
+			Kind:     "map",
+			Fields:   Cluster_NodeTypeConfigsFields,
 		},
-		"State": ubx.FieldSpec{WireName: "state"},
 		"StretchedClusterConfig": ubx.FieldSpec{
 			WireName: "stretched_cluster_config",
-			Kind: "object",
-			Fields: Cluster_StretchedClusterConfigFields,
+			Kind:     "object",
+			Fields:   Cluster_StretchedClusterConfigFields,
 		},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

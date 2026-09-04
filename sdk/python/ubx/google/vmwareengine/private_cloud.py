@@ -104,34 +104,20 @@ _PrivateCloud_NetworkConfigFields = {
 
 @dataclasses.dataclass
 class PrivateCloudConfig:
-    # Output only. Creation time of this resource.
-    create_time: Any = None
-    # Output only. Time when the resource was scheduled for deletion.
-    delete_time: Any = None
     # User-provided description for this private cloud.
     description: Any = None
     # Encryption configuration for a private cloud.
     encryption_config: Any = None
-    # Output only. Time when the resource will be irreversibly deleted.
-    expire_time: Any = None
     # Details about a HCX Cloud Manager appliance.
     hcx: Any = None
     # Management cluster configuration.
     management_cluster: Any = None
-    # Output only. Identifier. The resource name of this private cloud. Resource names are schemeless URIs that follow the conventions in https://cloud.google.com/apis/design/resource_names. For example: `projects/my-project/locations/us-central1-a/privateClouds/my-cloud`
-    name: Any = None
     # Network configuration in the consumer project with which the peering has to be done.
     network_config: Any = None
     # Details about a NSX Manager appliance.
     nsx: Any = None
-    # Output only. State of the resource. New values may be added to this enum when appropriate.
-    state: Any = None
     # Optional. Type of the private cloud. Defaults to STANDARD.
     type: Any = None
-    # Output only. System-generated unique identifier for the resource.
-    uid: Any = None
-    # Output only. Last update time of this resource.
-    update_time: Any = None
     # Details about a vCenter Server management appliance.
     vcenter: Any = None
 
@@ -171,15 +157,12 @@ class PrivateCloudAttrs:
 PrivateCloud = ubx.ResourceBinding(
     wire_type="google_vmwareengine_private_cloud",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
-        "delete_time": ubx.FieldSpec(wire_name="delete_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "encryption_config": ubx.FieldSpec(
             wire_name="encryption_config",
             kind="object",
             fields=_PrivateCloud_EncryptionConfigFields,
         ),
-        "expire_time": ubx.FieldSpec(wire_name="expire_time"),
         "hcx": ubx.FieldSpec(
             wire_name="hcx",
             kind="object",
@@ -190,7 +173,6 @@ PrivateCloud = ubx.ResourceBinding(
             kind="object",
             fields=_PrivateCloud_ManagementClusterFields,
         ),
-        "name": ubx.FieldSpec(wire_name="name"),
         "network_config": ubx.FieldSpec(
             wire_name="network_config",
             kind="object",
@@ -201,10 +183,7 @@ PrivateCloud = ubx.ResourceBinding(
             kind="object",
             fields=_PrivateCloud_HcxFields,
         ),
-        "state": ubx.FieldSpec(wire_name="state"),
         "type": ubx.FieldSpec(wire_name="type"),
-        "uid": ubx.FieldSpec(wire_name="uid"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
         "vcenter": ubx.FieldSpec(
             wire_name="vcenter",
             kind="object",

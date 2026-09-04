@@ -604,22 +604,14 @@ class BareMetalAdminClusterConfig:
     cluster_operations: Any = None
     # BareMetalAdminControlPlaneConfig specifies the control plane configuration.
     control_plane: Any = None
-    # Output only. The time at which this bare metal admin cluster was created.
-    create_time: Any = None
-    # Output only. The time at which this bare metal admin cluster was deleted. If the resource is not deleted, this must be empty
-    delete_time: Any = None
     # A human readable description of this bare metal admin cluster.
     description: Any = None
-    # Output only. The IP address name of bare metal admin cluster's API server.
-    endpoint: Any = None
     # This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding. Allows clients to perform consistent read-modify-writes through optimistic concurrency control.
     etag: Any = None
     # Fleet related configuration. Fleets are a Google Cloud concept for logically organizing clusters, letting you use and manage multi-cluster capabilities and apply consistent policies across your systems. See [Anthos Fleets](`https://cloud.google.com/anthos/multicluster-management/fleets`) for more details on Anthos multi-cluster capabilities using Fleets. ##
     fleet: Any = None
     # BareMetalAdminLoadBalancerConfig specifies the load balancer configuration.
     load_balancer: Any = None
-    # Output only. The object name of the bare metal cluster custom resource. This field is used to support conflicting names when enrolling existing clusters to the API. When used as a part of cluster enrollment, this field will differ from the ID in the resource name. For new clusters, this field will match the user provided cluster name and be visible in the last component of the resource name. It is not modifiable. All users should use this name to access their cluster using gkectl or kubectl and should expect to see the local name when viewing admin cluster controller logs.
-    local_name: Any = None
     # BareMetalAdminMaintenanceConfig specifies configurations to put bare metal Admin cluster CRs nodes in and out of maintenance.
     maintenance_config: Any = None
     # BareMetalAdminMaintenanceStatus represents the maintenance status for bare metal Admin cluster CR's nodes.
@@ -636,20 +628,12 @@ class BareMetalAdminClusterConfig:
     os_environment_config: Any = None
     # BareMetalAdminProxyConfig specifies the cluster proxy configuration.
     proxy: Any = None
-    # Output only. If set, there are currently changes in flight to the bare metal Admin Cluster.
-    reconciling: Any = None
     # Specifies the security related settings for the bare metal admin cluster.
     security_config: Any = None
-    # Output only. The current state of the bare metal admin cluster.
-    state: Any = None
     # ResourceStatus describes why a cluster or node pool has a certain status. (e.g., ERROR or DEGRADED).
     status: Any = None
     # BareMetalAdminStorageConfig specifies the cluster storage configuration.
     storage: Any = None
-    # Output only. The unique identifier of the bare metal admin cluster.
-    uid: Any = None
-    # Output only. The time at which this bare metal admin cluster was last updated.
-    update_time: Any = None
     # ValidationCheck represents the result of preflight check.
     validation_check: Any = None
 
@@ -734,10 +718,7 @@ BareMetalAdminCluster = ubx.ResourceBinding(
             kind="object",
             fields=_BareMetalAdminCluster_ControlPlaneFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
-        "delete_time": ubx.FieldSpec(wire_name="delete_time"),
         "description": ubx.FieldSpec(wire_name="description"),
-        "endpoint": ubx.FieldSpec(wire_name="endpoint"),
         "etag": ubx.FieldSpec(wire_name="etag"),
         "fleet": ubx.FieldSpec(
             wire_name="fleet",
@@ -749,7 +730,6 @@ BareMetalAdminCluster = ubx.ResourceBinding(
             kind="object",
             fields=_BareMetalAdminCluster_LoadBalancerFields,
         ),
-        "local_name": ubx.FieldSpec(wire_name="local_name"),
         "maintenance_config": ubx.FieldSpec(
             wire_name="maintenance_config",
             kind="object",
@@ -786,13 +766,11 @@ BareMetalAdminCluster = ubx.ResourceBinding(
             kind="object",
             fields=_BareMetalAdminCluster_ProxyFields,
         ),
-        "reconciling": ubx.FieldSpec(wire_name="reconciling"),
         "security_config": ubx.FieldSpec(
             wire_name="security_config",
             kind="object",
             fields=_BareMetalAdminCluster_SecurityConfigFields,
         ),
-        "state": ubx.FieldSpec(wire_name="state"),
         "status": ubx.FieldSpec(
             wire_name="status",
             kind="object",
@@ -803,8 +781,6 @@ BareMetalAdminCluster = ubx.ResourceBinding(
             kind="object",
             fields=_BareMetalAdminCluster_StorageFields,
         ),
-        "uid": ubx.FieldSpec(wire_name="uid"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
         "validation_check": ubx.FieldSpec(
             wire_name="validation_check",
             kind="object",

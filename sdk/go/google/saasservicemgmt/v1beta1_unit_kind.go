@@ -34,85 +34,85 @@ type V1beta1UnitKind_ApplicationTemplateComponent struct {
 }
 
 type V1beta1UnitKind_Dependencies struct {
-	Alias any
+	Alias    any
 	UnitKind any
 }
 
 type V1beta1UnitKind_InputVariableMappings_From struct {
-	Dependency any
+	Dependency     any
 	OutputVariable any
 }
 
 type V1beta1UnitKind_InputVariableMappings_To struct {
-	Dependency any
+	Dependency      any
 	IgnoreForLookup any
-	InputVariable any
+	InputVariable   any
 }
 
 type V1beta1UnitKind_InputVariableMappings struct {
-	From any
-	To any
+	From     any
+	To       any
 	Variable any
 }
 
 var V1beta1UnitKind_AppParams_ScopeFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var V1beta1UnitKind_AppParamsFields = ubx.FieldMap{
-		"Group": ubx.FieldSpec{WireName: "group"},
-		"Scope": ubx.FieldSpec{
-			WireName: "scope",
-			Kind: "object",
-			Fields: V1beta1UnitKind_AppParams_ScopeFields,
-		},
-	}
+	"Group": ubx.FieldSpec{WireName: "group"},
+	"Scope": ubx.FieldSpec{
+		WireName: "scope",
+		Kind:     "object",
+		Fields:   V1beta1UnitKind_AppParams_ScopeFields,
+	},
+}
 
 var V1beta1UnitKind_ApplicationTemplateComponent_CompositeRefFields = ubx.FieldMap{
-		"ApplicationTemplate": ubx.FieldSpec{WireName: "application_template"},
-		"Revision": ubx.FieldSpec{WireName: "revision"},
-		"SyncOperation": ubx.FieldSpec{WireName: "sync_operation"},
-	}
+	"ApplicationTemplate": ubx.FieldSpec{WireName: "application_template"},
+	"Revision":            ubx.FieldSpec{WireName: "revision"},
+	"SyncOperation":       ubx.FieldSpec{WireName: "sync_operation"},
+}
 
 var V1beta1UnitKind_ApplicationTemplateComponentFields = ubx.FieldMap{
-		"Component": ubx.FieldSpec{WireName: "component"},
-		"CompositeRef": ubx.FieldSpec{
-			WireName: "composite_ref",
-			Kind: "object",
-			Fields: V1beta1UnitKind_ApplicationTemplateComponent_CompositeRefFields,
-		},
-		"Revision": ubx.FieldSpec{WireName: "revision"},
-	}
+	"Component": ubx.FieldSpec{WireName: "component"},
+	"CompositeRef": ubx.FieldSpec{
+		WireName: "composite_ref",
+		Kind:     "object",
+		Fields:   V1beta1UnitKind_ApplicationTemplateComponent_CompositeRefFields,
+	},
+	"Revision": ubx.FieldSpec{WireName: "revision"},
+}
 
 var V1beta1UnitKind_DependenciesFields = ubx.FieldMap{
-		"Alias": ubx.FieldSpec{WireName: "alias"},
-		"UnitKind": ubx.FieldSpec{WireName: "unit_kind"},
-	}
+	"Alias":    ubx.FieldSpec{WireName: "alias"},
+	"UnitKind": ubx.FieldSpec{WireName: "unit_kind"},
+}
 
 var V1beta1UnitKind_InputVariableMappings_FromFields = ubx.FieldMap{
-		"Dependency": ubx.FieldSpec{WireName: "dependency"},
-		"OutputVariable": ubx.FieldSpec{WireName: "output_variable"},
-	}
+	"Dependency":     ubx.FieldSpec{WireName: "dependency"},
+	"OutputVariable": ubx.FieldSpec{WireName: "output_variable"},
+}
 
 var V1beta1UnitKind_InputVariableMappings_ToFields = ubx.FieldMap{
-		"Dependency": ubx.FieldSpec{WireName: "dependency"},
-		"IgnoreForLookup": ubx.FieldSpec{WireName: "ignore_for_lookup"},
-		"InputVariable": ubx.FieldSpec{WireName: "input_variable"},
-	}
+	"Dependency":      ubx.FieldSpec{WireName: "dependency"},
+	"IgnoreForLookup": ubx.FieldSpec{WireName: "ignore_for_lookup"},
+	"InputVariable":   ubx.FieldSpec{WireName: "input_variable"},
+}
 
 var V1beta1UnitKind_InputVariableMappingsFields = ubx.FieldMap{
-		"From": ubx.FieldSpec{
-			WireName: "from",
-			Kind: "object",
-			Fields: V1beta1UnitKind_InputVariableMappings_FromFields,
-		},
-		"To": ubx.FieldSpec{
-			WireName: "to",
-			Kind: "object",
-			Fields: V1beta1UnitKind_InputVariableMappings_ToFields,
-		},
-		"Variable": ubx.FieldSpec{WireName: "variable"},
-	}
+	"From": ubx.FieldSpec{
+		WireName: "from",
+		Kind:     "object",
+		Fields:   V1beta1UnitKind_InputVariableMappings_FromFields,
+	},
+	"To": ubx.FieldSpec{
+		WireName: "to",
+		Kind:     "object",
+		Fields:   V1beta1UnitKind_InputVariableMappings_ToFields,
+	},
+	"Variable": ubx.FieldSpec{WireName: "variable"},
+}
 
 type V1beta1UnitKindConfig struct {
 	// Optional. Annotations is an unstructured key-value map stored with a resource that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects. More info: https://kubernetes.io/docs/user-guide/annotations
@@ -121,18 +121,12 @@ type V1beta1UnitKindConfig struct {
 	AppParams any
 	// ComponentRef represents a reference to a component resource.
 	ApplicationTemplateComponent any
-	// Optional. Output only. BoundaryType describes the type of boundary the Unit Kind represents.
-	BoundaryType any
-	// Output only. The timestamp when the resource was created.
-	CreateTime any
 	// Optional. Default revisions of flags for this UnitKind. Newly created units will use the flag default_flag_revisions present at the time of creation.
 	DefaultFlagRevisions any
 	// Optional. A reference to the Release object to use as default for creating new units of this UnitKind (optional). If not specified, a new unit must explicitly reference which release to use for its creation.
 	DefaultRelease any
 	// Optional. Immutable. List of other unit kinds that this release will depend on. Dependencies will be automatically provisioned if not found. Maximum 10.
 	Dependencies any
-	// Output only. An opaque value that uniquely identifies a version or generation of a resource. It can be used to confirm that the client and server agree on the ordering of a resource being written.
-	Etag any
 	// Optional. List of inputVariables for this release that will either be retrieved from a dependency's outputVariables, or will be passed on to a dependency's inputVariables. Maximum 100.
 	InputVariableMappings any
 	// Optional. The labels on the resource, which can be used for categorization. similar to Kubernetes resource labels.
@@ -143,10 +137,6 @@ type V1beta1UnitKindConfig struct {
 	OutputVariableMappings any
 	// Required. Immutable. A reference to the Saas that defines the product (managed service) that the producer wants to manage with App Lifecycle Manager. Part of the App Lifecycle Manager common data model. Immutable once set.
 	Saas any
-	// Output only. The unique identifier of the resource. UID is unique in the time and space for this resource within the scope of the service. It is typically generated by the server on successful creation of a resource and must not be changed. UID is used to uniquely identify resources with resource name reuses. This should be a UUID4.
-	Uid any
-	// Output only. The timestamp when the resource was last updated. Any change to the resource made by users must refresh this value. Changes to a resource made by the service should refresh this value.
-	UpdateTime any
 }
 
 type V1beta1UnitKindAttrs struct {
@@ -190,38 +180,33 @@ var V1beta1UnitKind = ubx.ResourceBinding{
 		"Annotations": ubx.FieldSpec{WireName: "annotations"},
 		"AppParams": ubx.FieldSpec{
 			WireName: "app_params",
-			Kind: "object",
-			Fields: V1beta1UnitKind_AppParamsFields,
+			Kind:     "object",
+			Fields:   V1beta1UnitKind_AppParamsFields,
 		},
 		"ApplicationTemplateComponent": ubx.FieldSpec{
 			WireName: "application_template_component",
-			Kind: "object",
-			Fields: V1beta1UnitKind_ApplicationTemplateComponentFields,
+			Kind:     "object",
+			Fields:   V1beta1UnitKind_ApplicationTemplateComponentFields,
 		},
-		"BoundaryType": ubx.FieldSpec{WireName: "boundary_type"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"DefaultFlagRevisions": ubx.FieldSpec{WireName: "default_flag_revisions"},
-		"DefaultRelease": ubx.FieldSpec{WireName: "default_release"},
+		"DefaultRelease":       ubx.FieldSpec{WireName: "default_release"},
 		"Dependencies": ubx.FieldSpec{
 			WireName: "dependencies",
-			Kind: "list",
-			Fields: V1beta1UnitKind_DependenciesFields,
+			Kind:     "list",
+			Fields:   V1beta1UnitKind_DependenciesFields,
 		},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
 		"InputVariableMappings": ubx.FieldSpec{
 			WireName: "input_variable_mappings",
-			Kind: "list",
-			Fields: V1beta1UnitKind_InputVariableMappingsFields,
+			Kind:     "list",
+			Fields:   V1beta1UnitKind_InputVariableMappingsFields,
 		},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":   ubx.FieldSpec{WireName: "name"},
 		"OutputVariableMappings": ubx.FieldSpec{
 			WireName: "output_variable_mappings",
-			Kind: "list",
-			Fields: V1beta1UnitKind_InputVariableMappingsFields,
+			Kind:     "list",
+			Fields:   V1beta1UnitKind_InputVariableMappingsFields,
 		},
 		"Saas": ubx.FieldSpec{WireName: "saas"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

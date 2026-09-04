@@ -20,16 +20,10 @@ _Index_PropertiesFields = {
 class IndexConfig:
     # Required. The index's ancestor mode. Must not be ANCESTOR_MODE_UNSPECIFIED.
     ancestor: Any = None
-    # Output only. The resource ID of the index.
-    index_id: Any = None
     # Required. The entity kind to which this index applies.
     kind: Any = None
-    # Output only. Project ID.
-    project_id: Any = None
     # Required. An ordered sequence of property names and their index attributes. Requires: * A maximum of 100 properties.
     properties: Any = None
-    # Output only. The state of the index.
-    state: Any = None
 
 @dataclasses.dataclass
 class IndexAttrs:
@@ -50,14 +44,11 @@ Index = ubx.ResourceBinding(
     wire_type="google_datastore_index",
     fields={
         "ancestor": ubx.FieldSpec(wire_name="ancestor"),
-        "index_id": ubx.FieldSpec(wire_name="index_id"),
         "kind": ubx.FieldSpec(wire_name="kind"),
-        "project_id": ubx.FieldSpec(wire_name="project_id"),
         "properties": ubx.FieldSpec(
             wire_name="properties",
             kind="list",
             fields=_Index_PropertiesFields,
         ),
-        "state": ubx.FieldSpec(wire_name="state"),
     },
 )

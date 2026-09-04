@@ -25,25 +25,25 @@ type Enterprise_PlaySearch struct {
 }
 
 var Enterprise_ManagedConfigurationsFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+}
 
 var Enterprise_PlaySearchFields = ubx.FieldMap{
-		"ApproveApps": ubx.FieldSpec{WireName: "approve_apps"},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"ApproveApps": ubx.FieldSpec{WireName: "approve_apps"},
+	"Enabled":     ubx.FieldSpec{WireName: "enabled"},
+}
 
 type EnterpriseConfig struct {
 	ManagedConfigurations any
 	// The URI of the parent frame hosting the iframe. To prevent XSS, the iframe may not be hosted at other URIs. This URI must be https. Use whitespaces to separate multiple parent URIs.
 	Parent any
 	// Deprecated. Use PlaySearch.approveApps.
-	Permission any
-	PlaySearch any
-	PrivateApps any
+	Permission   any
+	PlaySearch   any
+	PrivateApps  any
 	StoreBuilder any
-	WebApps any
-	ZeroTouch any
+	WebApps      any
+	ZeroTouch    any
 }
 
 type EnterpriseAttrs struct {
@@ -54,7 +54,7 @@ type EnterpriseAttrs struct {
 	// Contains settings for Google-provided user authentication.
 	GoogleAuthenticationSettings any
 	// The unique ID for the enterprise.
-	Id any
+	Id                    any
 	ManagedConfigurations any
 	// The type of managed Google domain
 	ManagedGoogleDomainType any
@@ -67,10 +67,10 @@ type EnterpriseAttrs struct {
 	PlaySearch any
 	// The enterprise's primary domain, such as "example.com".
 	PrimaryDomain any
-	PrivateApps any
-	StoreBuilder any
-	WebApps any
-	ZeroTouch any
+	PrivateApps   any
+	StoreBuilder  any
+	WebApps       any
+	ZeroTouch     any
 }
 
 var Enterprise = ubx.ResourceBinding{
@@ -78,35 +78,35 @@ var Enterprise = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ManagedConfigurations": ubx.FieldSpec{
 			WireName: "managed_configurations",
-			Kind: "object",
-			Fields: Enterprise_ManagedConfigurationsFields,
+			Kind:     "object",
+			Fields:   Enterprise_ManagedConfigurationsFields,
 		},
-		"Parent": ubx.FieldSpec{WireName: "parent"},
+		"Parent":     ubx.FieldSpec{WireName: "parent"},
 		"Permission": ubx.FieldSpec{WireName: "permission"},
 		"PlaySearch": ubx.FieldSpec{
 			WireName: "play_search",
-			Kind: "object",
-			Fields: Enterprise_PlaySearchFields,
+			Kind:     "object",
+			Fields:   Enterprise_PlaySearchFields,
 		},
 		"PrivateApps": ubx.FieldSpec{
 			WireName: "private_apps",
-			Kind: "object",
-			Fields: Enterprise_ManagedConfigurationsFields,
+			Kind:     "object",
+			Fields:   Enterprise_ManagedConfigurationsFields,
 		},
 		"StoreBuilder": ubx.FieldSpec{
 			WireName: "store_builder",
-			Kind: "object",
-			Fields: Enterprise_ManagedConfigurationsFields,
+			Kind:     "object",
+			Fields:   Enterprise_ManagedConfigurationsFields,
 		},
 		"WebApps": ubx.FieldSpec{
 			WireName: "web_apps",
-			Kind: "object",
-			Fields: Enterprise_ManagedConfigurationsFields,
+			Kind:     "object",
+			Fields:   Enterprise_ManagedConfigurationsFields,
 		},
 		"ZeroTouch": ubx.FieldSpec{
 			WireName: "zero_touch",
-			Kind: "object",
-			Fields: Enterprise_ManagedConfigurationsFields,
+			Kind:     "object",
+			Fields:   Enterprise_ManagedConfigurationsFields,
 		},
 	},
 }

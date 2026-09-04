@@ -34,8 +34,6 @@ const V1beta1ServiceLbPolicy_IsolationConfigFields: FieldMap = {
 export interface V1beta1ServiceLbPolicyConfig {
   /** Option to specify if an unhealthy IG/NEG should be considered for global load balancing and traffic routing. */
   autoCapacityDrain?: V1beta1ServiceLbPolicy_AutoCapacityDrain | Computed<V1beta1ServiceLbPolicy_AutoCapacityDrain>;
-  /** Output only. The timestamp when this resource was created. */
-  createTime?: string | Computed<string>;
   /** Optional. A free-text description of the resource. Max length 1024 characters. */
   description?: string | Computed<string>;
   /** Option to specify health based failover behavior. This is not related to Network load balancer FailoverPolicy. */
@@ -48,8 +46,6 @@ export interface V1beta1ServiceLbPolicyConfig {
   loadBalancingAlgorithm?: string | Computed<string>;
   /** Identifier. Name of the ServiceLbPolicy resource. It matches pattern `projects/{project}/locations/{location}/serviceLbPolicies/{service_lb_policy_name}`. */
   name?: string | Computed<string>;
-  /** Output only. The timestamp when this resource was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1beta1ServiceLbPolicyAttrs {
@@ -81,7 +77,6 @@ export const V1beta1ServiceLbPolicy: ResourceBinding<V1beta1ServiceLbPolicyConfi
       kind: "object",
       fields: V1beta1ServiceLbPolicy_AutoCapacityDrainFields,
     },
-    createTime: "create_time",
     description: "description",
     failoverConfig: {
       wireName: "failover_config",
@@ -96,6 +91,5 @@ export const V1beta1ServiceLbPolicy: ResourceBinding<V1beta1ServiceLbPolicyConfi
     labels: "labels",
     loadBalancingAlgorithm: "load_balancing_algorithm",
     name: "name",
-    updateTime: "update_time",
   },
 };

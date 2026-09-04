@@ -46,22 +46,14 @@ const V1betaApp_IapFields: FieldMap = {
 export interface V1betaAppConfig {
   /** Google Apps authentication domain that controls which users can access this application.Defaults to open access for any Google Account. */
   authDomain?: string | Computed<string>;
-  /** Output only. Google Cloud Storage bucket that can be used for storing files associated with this application. This bucket is associated with the application and can be used by the gcloud deployment commands.@OutputOnly */
-  codeBucket?: string | Computed<string>;
   /** The type of the Cloud Firestore or Cloud Datastore database associated with this application. */
   databaseType?: string | Computed<string>;
-  /** Output only. Google Cloud Storage bucket that can be used by this application to store content.@OutputOnly */
-  defaultBucket?: string | Computed<string>;
   /** Cookie expiration policy for this application. */
   defaultCookieExpiration?: string | Computed<string>;
-  /** Output only. Hostname used to reach this application, as resolved by App Engine.@OutputOnly */
-  defaultHostname?: string | Computed<string>;
   /** HTTP path dispatch rules for requests to the application that do not explicitly target a service or version. Rules are order-dependent. Up to 20 dispatch rules can be supported. */
   dispatchRules?: V1betaApp_DispatchRules[] | Computed<V1betaApp_DispatchRules[]>;
   /** The feature specific settings to be used in the application. These define behaviors that are user configurable. */
   featureSettings?: V1betaApp_FeatureSettings | Computed<V1betaApp_FeatureSettings>;
-  /** Output only. The Google Container Registry domain used for storing managed build docker images for this application. */
-  gcrDomain?: string | Computed<string>;
   /** Additional Google Generated Customer Metadata, this field won't be provided by default and can be requested by setting the IncludeExtraData field in GetApplicationRequest */
   generatedCustomerMetadata?: Record<string, unknown> | Computed<Record<string, unknown>>;
   /** Identity-Aware Proxy */
@@ -70,7 +62,6 @@ export interface V1betaAppConfig {
   id?: string | Computed<string>;
   /** Location from which this application runs. Application instances run out of the data centers in the specified location, which is also where all of the application's end user content is stored.Defaults to us-central.View the list of supported locations (https://cloud.google.com/appengine/docs/locations). */
   locationId?: string | Computed<string>;
-  name?: string | Computed<string>;
   /** The service account associated with the application. This is the app-level default identity. If no identity provided during create version, Admin API will fallback to this one. */
   serviceAccount?: string | Computed<string>;
   /** Serving status of this application. */
@@ -119,11 +110,8 @@ export const V1betaApp: ResourceBinding<V1betaAppConfig, V1betaAppAttrs> = {
   wireType: "google_appengine_v1beta_app",
   fields: {
     authDomain: "auth_domain",
-    codeBucket: "code_bucket",
     databaseType: "database_type",
-    defaultBucket: "default_bucket",
     defaultCookieExpiration: "default_cookie_expiration",
-    defaultHostname: "default_hostname",
     dispatchRules: {
       wireName: "dispatch_rules",
       kind: "list",
@@ -134,7 +122,6 @@ export const V1betaApp: ResourceBinding<V1betaAppConfig, V1betaAppAttrs> = {
       kind: "object",
       fields: V1betaApp_FeatureSettingsFields,
     },
-    gcrDomain: "gcr_domain",
     generatedCustomerMetadata: "generated_customer_metadata",
     iap: {
       wireName: "iap",
@@ -143,7 +130,6 @@ export const V1betaApp: ResourceBinding<V1betaAppConfig, V1betaAppAttrs> = {
     },
     id: "id",
     locationId: "location_id",
-    name: "name",
     serviceAccount: "service_account",
     servingStatus: "serving_status",
     sslPolicy: "ssl_policy",

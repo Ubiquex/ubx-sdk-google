@@ -3,56 +3,37 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface BackendService_Backends_CustomMetrics {
   dryRun?: boolean | Computed<boolean>;
-  /** The maximum ratio of the custom metric's actual value to its target value. If a backend's metric exceeds this ratio, the load balancer considers it over-utilized and stops sending it new requests. (AI-inferred) */
   maxUtilization?: number | Computed<number>;
-  /** The name of the custom metric used for load balancing this backend. (AI-inferred) */
   name?: string | Computed<string>;
 }
 
 export interface BackendService_Backends_OrchestrationInfo {
-  /** The URI of the resource being orchestrated by this backend, such as an Instance Group Manager. (AI-inferred) */
   resourceUri?: string | Computed<string>;
 }
 
 export interface BackendService_Backends {
-  /** Specifies the balancing mode for this backend, which determines how traffic is distributed among instances. Valid values are CONNECTION (based on connection count), UTILIZATION (based on CPU utilization), RATE (based on requests per second), IN_FLIGHT (based on in-flight requests), and CUSTOM_METRICS (based on custom metrics). (AI-inferred) */
   balancingMode?: string | Computed<string>;
-  /** The capacity scaler for this backend, a floating-point value between 0 and 1. It determines the fraction of traffic that this backend will receive, with 1 (default) meaning full capacity. (AI-inferred) */
   capacityScaler?: number | Computed<number>;
   customMetrics?: BackendService_Backends_CustomMetrics[] | Computed<BackendService_Backends_CustomMetrics[]>;
   description?: string | Computed<string>;
-  /** If true, this backend is used only as a failover backend, meaning it receives traffic only when all other backends in the service are unhealthy. (AI-inferred) */
   failover?: boolean | Computed<boolean>;
-  /** The fully-qualified URL of a zonal or regional instance group, network endpoint group (NEG), or other backend resource that serves traffic for this backend service. This is required for each backend. (AI-inferred) */
   group?: string | Computed<string>;
-  /** Maximum number of connections to the backend. This applies when the balancing mode is CONNECTION and is used to determine backend capacity. (AI-inferred) */
   maxConnections?: number | Computed<number>;
-  /** The maximum number of simultaneous connections allowed per backend endpoint (e.g., per instance in an instance group). This field is used when the backend's balancing mode is 'CONNECTION' and the protocol is TCP or UDP; a value of 0 indicates no limit. (AI-inferred) */
   maxConnectionsPerEndpoint?: number | Computed<number>;
   maxConnectionsPerInstance?: number | Computed<number>;
-  /** The maximum number of simultaneous in-flight requests allowed for this backend. If not set, the default is 1024. (AI-inferred) */
   maxInFlightRequests?: number | Computed<number>;
-  /** The maximum number of simultaneous (in-flight) requests allowed per backend endpoint. This setting can be used to protect endpoints from being overwhelmed by concurrent requests. (AI-inferred) */
   maxInFlightRequestsPerEndpoint?: number | Computed<number>;
-  /** The maximum number of outstanding (in-flight) requests that a single backend instance can receive. This setting limits the number of simultaneous requests to an instance, helping to prevent overload in the backend service. (AI-inferred) */
   maxInFlightRequestsPerInstance?: number | Computed<number>;
-  /** The maximum requests per second (RPS) that the backend can handle. Used only when the backend's balancing mode is RATE. (AI-inferred) */
   maxRate?: number | Computed<number>;
-  /** The maximum number of requests per second (RPS) that each endpoint (instance) in this backend is allowed to handle. This setting is used for capacity-based load balancing and applies only when the backend service's load balancing protocol supports rate-based distribution. (AI-inferred) */
   maxRatePerEndpoint?: number | Computed<number>;
-  /** The maximum rate (in requests per second) that each instance in the backend instance group is allowed to receive. This setting is used when the balancing mode is RATE. (AI-inferred) */
   maxRatePerInstance?: number | Computed<number>;
-  /** The maximum utilization threshold for the backend, expressed as a fraction. This is used when the backend's balancing mode is set to UTILIZATION, and the backend is considered at capacity when its utilization reaches this value. (AI-inferred) */
   maxUtilization?: number | Computed<number>;
   orchestrationInfo?: BackendService_Backends_OrchestrationInfo | Computed<BackendService_Backends_OrchestrationInfo>;
-  /** Specifies the preference of this backend within the backend service. This field is used by load balancing policies that differentiate between preferred and default backends. Allowed values are DEFAULT, PREFERENCE_UNSPECIFIED, and PREFERRED. (AI-inferred) */
   preference?: string | Computed<string>;
-  /** Specifies whether the backend is expected to handle long-lived or short-lived traffic. Allowed values are LONG, SHORT, and TRAFFIC_DURATION_UNSPECIFIED. (AI-inferred) */
   trafficDuration?: string | Computed<string>;
 }
 
 export interface BackendService_CdnPolicy_BypassCacheOnRequestHeaders {
-  /** The name of the request header that, when present in the request, triggers bypassing the cache. The header name must be a valid HTTP header name. (AI-inferred) */
   headerName?: string | Computed<string>;
 }
 
@@ -74,9 +55,7 @@ export interface BackendService_CdnPolicy_CacheKeyPolicy {
 }
 
 export interface BackendService_CdnPolicy_NegativeCachingPolicy {
-  /** HTTP status code for which negative caching is applied (e.g., 404, 405, 500). (AI-inferred) */
   code?: number | Computed<number>;
-  /** The TTL (in seconds) for which to cache responses with the corresponding status code in the negative caching policy. (AI-inferred) */
   ttl?: number | Computed<number>;
 }
 
@@ -183,7 +162,6 @@ export interface BackendService_HaPolicy_Leader_NetworkEndpoint {
 export interface BackendService_HaPolicy_Leader {
   /** A fully-qualified URL (starting with https://www.googleapis.com/) of the zonal Network Endpoint Group (NEG) with `GCE_VM_IP` endpoints that the leader is attached to. The leader's backendGroup must already be specified as a backend of this backend service. Removing a backend that is designated as the leader's backendGroup is not permitted. */
   backendGroup?: string | Computed<string>;
-  /** The network endpoint to be designated as the leader in the high-availability policy. This object identifies the specific endpoint that holds the leader role. (AI-inferred) */
   networkEndpoint?: BackendService_HaPolicy_Leader_NetworkEndpoint | Computed<BackendService_HaPolicy_Leader_NetworkEndpoint>;
 }
 
@@ -205,20 +183,16 @@ export interface BackendService_Iap {
 }
 
 export interface BackendService_LocalityLbPolicies_CustomPolicy {
-  /** The data to be passed to the custom policy, as a string. (AI-inferred) */
   data?: string | Computed<string>;
   name?: string | Computed<string>;
 }
 
 export interface BackendService_LocalityLbPolicies_Policy {
-  /** The name of the load balancing policy. Must be one of: INVALID_LB_POLICY, LEAST_REQUEST, MAGLEV, ORIGINAL_DESTINATION, RANDOM, RING_HASH, ROUND_ROBIN, WEIGHTED_GCP_RENDEZVOUS, WEIGHTED_MAGLEV, WEIGHTED_ROUND_ROBIN. (AI-inferred) */
   name?: string | Computed<string>;
 }
 
 export interface BackendService_LocalityLbPolicies {
-  /** Configuration for a custom load balancing policy applied to a specific locality. This object defines a user-defined policy where a built-in policy is not used. (AI-inferred) */
   customPolicy?: BackendService_LocalityLbPolicies_CustomPolicy | Computed<BackendService_LocalityLbPolicies_CustomPolicy>;
-  /** Configuration for the locality load balancing policy. This object defines the standard load balancing algorithm and its optional settings within a locality LB policy. (AI-inferred) */
   policy?: BackendService_LocalityLbPolicies_Policy | Computed<BackendService_LocalityLbPolicies_Policy>;
 }
 
@@ -245,7 +219,6 @@ export interface BackendService_NetworkPassThroughLbTrafficPolicy_ZonalAffinity 
 }
 
 export interface BackendService_NetworkPassThroughLbTrafficPolicy {
-  /** Configures zonal affinity for the load balancer, which influences whether traffic is steered to backends in the same zone as the client. (AI-inferred) */
   zonalAffinity?: BackendService_NetworkPassThroughLbTrafficPolicy_ZonalAffinity | Computed<BackendService_NetworkPassThroughLbTrafficPolicy_ZonalAffinity>;
 }
 
@@ -300,14 +273,11 @@ export interface BackendService_SecuritySettings {
 }
 
 export interface BackendService_Subsetting {
-  /** The subsetting policy for this backend service. Allowed values are `CONSISTENT_HASH_SUBSETTING` and `NONE`. (AI-inferred) */
   policy?: string | Computed<string>;
 }
 
 export interface BackendService_TlsSettings_SubjectAltNames {
-  /** The DNS name to be included in the subject alternative names for TLS validation. This is used when the backend service’s TLS settings specify a DNS SAN. (AI-inferred) */
   dnsName?: string | Computed<string>;
-  /** A uniform resource identifier (URI) to be used as a subject alternative name for the backend service's TLS certificate. (AI-inferred) */
   uniformResourceIdentifier?: string | Computed<string>;
 }
 
@@ -323,7 +293,6 @@ export interface BackendService_TlsSettings {
 }
 
 export interface BackendService_UsedBy {
-  /** The URL of the resource that references (uses) this backend service. (AI-inferred) */
   reference?: string | Computed<string>;
 }
 
@@ -612,10 +581,6 @@ const BackendService_TlsSettingsFields: FieldMap = {
   },
 };
 
-const BackendService_UsedByFields: FieldMap = {
-  reference: "reference",
-};
-
 export interface BackendServiceConfig {
   /** Lifetime of cookies in seconds. This setting is applicable to Application Load Balancers and Traffic Director and requires GENERATED_COOKIE or HTTP_COOKIE session affinity. If set to 0, the cookie is non-persistent and lasts only until the end of the browser session (or equivalent). The maximum allowed value is two weeks (1,209,600). Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true. */
   affinityCookieTtlSec?: number | Computed<number>;
@@ -633,8 +598,6 @@ export interface BackendServiceConfig {
   connectionTrackingPolicy?: BackendService_ConnectionTrackingPolicy | Computed<BackendService_ConnectionTrackingPolicy>;
   /** This message defines settings for a consistent hash style load balancer. */
   consistentHash?: BackendService_ConsistentHash | Computed<BackendService_ConsistentHash>;
-  /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
-  creationTimestamp?: string | Computed<string>;
   /** List of custom metrics that are used for theWEIGHTED_ROUND_ROBIN locality_lb_policy. */
   customMetrics?: BackendService_CustomMetrics[] | Computed<BackendService_CustomMetrics[]>;
   /** Headers that the load balancer adds to proxied requests. See [Creating custom headers](https://cloud.google.com/load-balancing/docs/custom-headers). */
@@ -655,7 +618,6 @@ export interface BackendServiceConfig {
   failoverPolicy?: BackendService_FailoverPolicy | Computed<BackendService_FailoverPolicy>;
   /** Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a BackendService. An up-to-date fingerprint must be provided in order to update the BackendService, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a BackendService. */
   fingerprint?: string | Computed<string>;
-  /** The high availability (HA) policy for the backend service, which can include an HA mode (e.g., ACTIVE or INACTIVE) controlling cross-region failover behavior. (AI-inferred) */
   haPolicy?: BackendService_HaPolicy | Computed<BackendService_HaPolicy>;
   /** The list of URLs to the healthChecks, httpHealthChecks (legacy), or httpsHealthChecks (legacy) resource for health checking this backend service. Not all backend services support legacy health checks. See Load balancer guide. Currently, at most one health check can be specified for each backend service. Backend services with instance group or zonal NEG backends must have a health check unless haPolicy is specified. Backend services with internet or serverless NEG backends must not have a health check. healthChecks[] cannot be specified with haPolicy. */
   healthChecks?: string[] | Computed<string[]>;
@@ -665,8 +627,6 @@ export interface BackendServiceConfig {
   id?: string | Computed<string>;
   /** Specifies a preference for traffic sent from the proxy to the backend (or from the client to the backend for proxyless gRPC). The possible values are: - IPV4_ONLY: Only send IPv4 traffic to the backends of the backend service (Instance Group, Managed Instance Group, Network Endpoint Group), regardless of traffic from the client to the proxy. Only IPv4 health checks are used to check the health of the backends. This is the default setting. - PREFER_IPV6: Prioritize the connection to the endpoint's IPv6 address over its IPv4 address (provided there is a healthy IPv6 address). - IPV6_ONLY: Only send IPv6 traffic to the backends of the backend service (Instance Group, Managed Instance Group, Network Endpoint Group), regardless of traffic from the client to the proxy. Only IPv6 health checks are used to check the health of the backends. This field is applicable to either: - Advanced global external Application Load Balancer (load balancing scheme EXTERNAL_MANAGED), - Regional external Application Load Balancer, - Internal proxy Network Load Balancer (load balancing scheme INTERNAL_MANAGED), - Regional internal Application Load Balancer (load balancing scheme INTERNAL_MANAGED), - Traffic Director with Envoy proxies and proxyless gRPC (load balancing scheme INTERNAL_SELF_MANAGED). */
   ipAddressSelectionPolicy?: string | Computed<string>;
-  /** Output only. [Output Only] Type of resource. Always compute#backendService for backend services. */
-  kind?: string | Computed<string>;
   /** Specifies the load balancer type. A backend service created for one type of load balancer cannot be used with another. For more information, refer to Backend services product and scheme table. */
   loadBalancingScheme?: string | Computed<string>;
   /** A list of locality load-balancing policies to be used in order of preference. When you use localityLbPolicies, you must set at least one value for either the localityLbPolicies[].policy or the localityLbPolicies[].customPolicy field. localityLbPolicies overrides any value set in the localityLbPolicy field. For an example of how to use this field, seeDefine a list of preferred policies. Caution: This field and its children are intended for use in a service mesh that includes gRPC clients only. Envoy proxies can't use backend services that have this configuration. */
@@ -683,7 +643,6 @@ export interface BackendServiceConfig {
   name?: string | Computed<string>;
   /** The URL of the network to which this backend service belongs. This field must be set for Internal Passthrough Network Load Balancers when the haPolicy is enabled, and for External Passthrough Network Load Balancers when the haPolicy fastIpMove is enabled. This field can only be specified when the load balancing scheme is set toINTERNAL, or when the load balancing scheme is set toEXTERNAL and haPolicy fastIpMove is enabled. */
   network?: string | Computed<string>;
-  /** The network pass-through load balancer traffic policy for this backend service. This field is output-only and populated by the API with the effective traffic handling configuration for pass-through load balancers. (AI-inferred) */
   networkPassThroughLbTrafficPolicy?: BackendService_NetworkPassThroughLbTrafficPolicy | Computed<BackendService_NetworkPassThroughLbTrafficPolicy>;
   /** A message containing information about the resource or system that manages the backend service. */
   orchestrationInfo?: BackendService_Backends_OrchestrationInfo | Computed<BackendService_Backends_OrchestrationInfo>;
@@ -697,8 +656,6 @@ export interface BackendServiceConfig {
   portName?: string | Computed<string>;
   /** The protocol this BackendService uses to communicate with backends. Possible values are HTTP, HTTPS, HTTP2, H2C, TCP, SSL, UDP, GRPC, or UNSPECIFIED, depending on the chosen load balancer or Traffic Director configuration. Refer to Load balancing features for more information. Must be set to GRPC when the backend service is referenced by a URL map that is bound to target gRPC proxy. */
   protocol?: string | Computed<string>;
-  /** Output only. [Output Only] URL of the region where the regional backend service resides. This field is not applicable to global backend services. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body. */
-  region?: string | Computed<string>;
   /** [Output Only] The resource URL for the security policy associated with this backend service. */
   securityPolicy?: string | Computed<string>;
   /** The authentication and authorization settings for a BackendService. */
@@ -717,10 +674,7 @@ export interface BackendServiceConfig {
   subsetting?: BackendService_Subsetting | Computed<BackendService_Subsetting>;
   /** The backend service timeout has a different meaning depending on the type of load balancer. For more information see, Backend service settings. The default is 30 seconds. The full range of timeout values allowed goes from 1 through 2,147,483,647 seconds. This value can be overridden in the PathMatcher configuration of the UrlMap that references this backend service. Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true. Instead, use maxStreamDuration. */
   timeoutSec?: number | Computed<number>;
-  /** Settings for authenticating the backend service with a client certificate. (AI-inferred) */
   tlsSettings?: BackendService_TlsSettings | Computed<BackendService_TlsSettings>;
-  /** Output only. [Output Only] List of resources referencing given backend service. */
-  usedBy?: BackendService_UsedBy[] | Computed<BackendService_UsedBy[]>;
 }
 
 export interface BackendServiceAttrs {
@@ -762,7 +716,6 @@ export interface BackendServiceAttrs {
   failoverPolicy: BackendService_FailoverPolicy;
   /** Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a BackendService. An up-to-date fingerprint must be provided in order to update the BackendService, otherwise the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a BackendService. */
   fingerprint: string;
-  /** The high availability (HA) policy for the backend service, which can include an HA mode (e.g., ACTIVE or INACTIVE) controlling cross-region failover behavior. (AI-inferred) */
   haPolicy: BackendService_HaPolicy;
   /** The list of URLs to the healthChecks, httpHealthChecks (legacy), or httpsHealthChecks (legacy) resource for health checking this backend service. Not all backend services support legacy health checks. See Load balancer guide. Currently, at most one health check can be specified for each backend service. Backend services with instance group or zonal NEG backends must have a health check unless haPolicy is specified. Backend services with internet or serverless NEG backends must not have a health check. healthChecks[] cannot be specified with haPolicy. */
   healthChecks: string[];
@@ -790,7 +743,6 @@ export interface BackendServiceAttrs {
   name: string;
   /** The URL of the network to which this backend service belongs. This field must be set for Internal Passthrough Network Load Balancers when the haPolicy is enabled, and for External Passthrough Network Load Balancers when the haPolicy fastIpMove is enabled. This field can only be specified when the load balancing scheme is set toINTERNAL, or when the load balancing scheme is set toEXTERNAL and haPolicy fastIpMove is enabled. */
   network: string;
-  /** The network pass-through load balancer traffic policy for this backend service. This field is output-only and populated by the API with the effective traffic handling configuration for pass-through load balancers. (AI-inferred) */
   networkPassThroughLbTrafficPolicy: BackendService_NetworkPassThroughLbTrafficPolicy;
   /** A message containing information about the resource or system that manages the backend service. */
   orchestrationInfo: BackendService_Backends_OrchestrationInfo;
@@ -824,7 +776,6 @@ export interface BackendServiceAttrs {
   subsetting: BackendService_Subsetting;
   /** The backend service timeout has a different meaning depending on the type of load balancer. For more information see, Backend service settings. The default is 30 seconds. The full range of timeout values allowed goes from 1 through 2,147,483,647 seconds. This value can be overridden in the PathMatcher configuration of the UrlMap that references this backend service. Not supported when the backend service is referenced by a URL map that is bound to target gRPC proxy that has validateForProxyless field set to true. Instead, use maxStreamDuration. */
   timeoutSec: number;
-  /** Settings for authenticating the backend service with a client certificate. (AI-inferred) */
   tlsSettings: BackendService_TlsSettings;
   /** Output only. [Output Only] List of resources referencing given backend service. */
   usedBy: BackendService_UsedBy[];
@@ -865,7 +816,6 @@ export const BackendService: ResourceBinding<BackendServiceConfig, BackendServic
       kind: "object",
       fields: BackendService_ConsistentHashFields,
     },
-    creationTimestamp: "creation_timestamp",
     customMetrics: {
       wireName: "custom_metrics",
       kind: "list",
@@ -897,7 +847,6 @@ export const BackendService: ResourceBinding<BackendServiceConfig, BackendServic
     },
     id: "id",
     ipAddressSelectionPolicy: "ip_address_selection_policy",
-    kind: "kind",
     loadBalancingScheme: "load_balancing_scheme",
     localityLbPolicies: {
       wireName: "locality_lb_policies",
@@ -941,7 +890,6 @@ export const BackendService: ResourceBinding<BackendServiceConfig, BackendServic
     port: "port",
     portName: "port_name",
     protocol: "protocol",
-    region: "region",
     securityPolicy: "security_policy",
     securitySettings: {
       wireName: "security_settings",
@@ -967,11 +915,6 @@ export const BackendService: ResourceBinding<BackendServiceConfig, BackendServic
       wireName: "tls_settings",
       kind: "object",
       fields: BackendService_TlsSettingsFields,
-    },
-    usedBy: {
-      wireName: "used_by",
-      kind: "list",
-      fields: BackendService_UsedByFields,
     },
   },
 };

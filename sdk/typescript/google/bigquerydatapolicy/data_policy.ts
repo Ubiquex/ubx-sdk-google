@@ -69,8 +69,6 @@ const DataPolicy_DataPolicyFields: FieldMap = {
 export interface DataPolicyConfig {
   /** Represents the label-policy binding. */
   dataPolicy?: DataPolicy_DataPolicy | Computed<DataPolicy_DataPolicy>;
-  /** Required. User-assigned (human readable) ID of the data policy that needs to be unique within a project. Used as {data_policy_id} in part of the resource name. */
-  dataPolicyId?: string | Computed<string>;
 }
 
 export interface DataPolicyAttrs {
@@ -104,6 +102,5 @@ export const DataPolicy: ResourceBinding<DataPolicyConfig, DataPolicyAttrs> = {
       kind: "object",
       fields: DataPolicy_DataPolicyFields,
     },
-    dataPolicyId: "data_policy_id",
   },
 };

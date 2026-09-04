@@ -224,39 +224,14 @@ _Operation_DetailsFields = {
     ),
 }
 
-_Operation_SourceMetadata_PluginInstanceActionSourceFields = {
-    "action_id": ubx.FieldSpec(wire_name="action_id"),
-    "plugin_instance": ubx.FieldSpec(wire_name="plugin_instance"),
-}
-
-_Operation_SourceMetadataFields = {
-    "original_resource_create_time": ubx.FieldSpec(wire_name="original_resource_create_time"),
-    "original_resource_id": ubx.FieldSpec(wire_name="original_resource_id"),
-    "original_resource_update_time": ubx.FieldSpec(wire_name="original_resource_update_time"),
-    "plugin_instance_action_source": ubx.FieldSpec(
-        wire_name="plugin_instance_action_source",
-        kind="object",
-        fields=_Operation_SourceMetadata_PluginInstanceActionSourceFields,
-    ),
-    "source_type": ubx.FieldSpec(wire_name="source_type"),
-}
-
 @dataclasses.dataclass
 class OperationConfig:
     # Optional. The list of user defined attributes associated with the API operation resource. The key is the attribute name. It will be of the format: `projects/{project}/locations/{location}/attributes/{attribute}`. The value is the attribute values associated with the resource.
     attributes: Any = None
-    # Output only. The time at which the operation was created.
-    create_time: Any = None
     # The operation details parsed from the spec.
     details: Any = None
     # Identifier. The name of the operation. Format: `projects/{project}/locations/{location}/apis/{api}/versions/{version}/operations/{operation}`
     name: Any = None
-    # Output only. The list of sources and metadata from the sources of the API operation.
-    source_metadata: Any = None
-    # Output only. The name of the spec will be of the format: `projects/{project}/locations/{location}/apis/{api}/versions/{version}/specs/{spec}` Note:The name of the spec will be empty if the operation is created via CreateApiOperation API.
-    spec: Any = None
-    # Output only. The time at which the operation was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class OperationAttrs:
@@ -283,19 +258,11 @@ Operation = ubx.ResourceBinding(
             kind="map",
             fields=_Operation_AttributesFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "details": ubx.FieldSpec(
             wire_name="details",
             kind="object",
             fields=_Operation_DetailsFields,
         ),
         "name": ubx.FieldSpec(wire_name="name"),
-        "source_metadata": ubx.FieldSpec(
-            wire_name="source_metadata",
-            kind="list",
-            fields=_Operation_SourceMetadataFields,
-        ),
-        "spec": ubx.FieldSpec(wire_name="spec"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

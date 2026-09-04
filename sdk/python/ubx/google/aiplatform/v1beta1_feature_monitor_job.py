@@ -84,14 +84,8 @@ _V1beta1FeatureMonitorJob_JobSummaryFields = {
 
 @dataclasses.dataclass
 class V1beta1FeatureMonitorJobConfig:
-    # Output only. Timestamp when this FeatureMonitorJob was created. Creation of a FeatureMonitorJob means that the job is pending / waiting for sufficient resources but may not have started running yet.
-    create_time: Any = None
     # Optional. Description of the FeatureMonitor.
     description: Any = None
-    # Output only. FeatureMonitorJob ID comparing to which the drift is calculated.
-    drift_base_feature_monitor_job_id: Any = None
-    # Output only. Data snapshot time comparing to which the drift is calculated.
-    drift_base_snapshot_time: Any = None
     # Feature selection configuration for the FeatureMonitor.
     feature_selection_config: Any = None
     # The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
@@ -102,8 +96,6 @@ class V1beta1FeatureMonitorJobConfig:
     labels: Any = None
     # Identifier. Name of the FeatureMonitorJob. Format: `projects/{project}/locations/{location}/featureGroups/{feature_group}/featureMonitors/{feature_monitor}/featureMonitorJobs/{feature_monitor_job}`.
     name: Any = None
-    # Output only. Trigger type of the Feature Monitor Job.
-    trigger_type: Any = None
 
 @dataclasses.dataclass
 class V1beta1FeatureMonitorJobAttrs:
@@ -131,10 +123,7 @@ class V1beta1FeatureMonitorJobAttrs:
 V1beta1FeatureMonitorJob = ubx.ResourceBinding(
     wire_type="google_aiplatform_v1beta1_feature_monitor_job",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
-        "drift_base_feature_monitor_job_id": ubx.FieldSpec(wire_name="drift_base_feature_monitor_job_id"),
-        "drift_base_snapshot_time": ubx.FieldSpec(wire_name="drift_base_snapshot_time"),
         "feature_selection_config": ubx.FieldSpec(
             wire_name="feature_selection_config",
             kind="object",
@@ -152,6 +141,5 @@ V1beta1FeatureMonitorJob = ubx.ResourceBinding(
         ),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "trigger_type": ubx.FieldSpec(wire_name="trigger_type"),
     },
 )

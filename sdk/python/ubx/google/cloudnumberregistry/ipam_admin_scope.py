@@ -8,8 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class IpamAdminScopeConfig:
-    # Output only. The time at which the IpamAdminScope was created.
-    create_time: Any = None
     # Required. Add-on platforms that are enabled for this IpamAdminScope. Cloud Number Registry only discovers the IP addresses from the enabled platforms.
     enabled_addon_platforms: Any = None
     # Optional. User-defined labels.
@@ -18,10 +16,6 @@ class IpamAdminScopeConfig:
     name: Any = None
     # Required. Administrative scopes enabled for IP address discovery and management. For example, "organizations/1234567890". Minimum of 1 scope is required. In preview, only one organization scope is allowed.
     scopes: Any = None
-    # Output only. State of resource discovery pipeline.
-    state: Any = None
-    # Output only. The time at which the IpamAdminScope was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class IpamAdminScopeAttrs:
@@ -43,12 +37,9 @@ class IpamAdminScopeAttrs:
 IpamAdminScope = ubx.ResourceBinding(
     wire_type="google_cloudnumberregistry_ipam_admin_scope",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "enabled_addon_platforms": ubx.FieldSpec(wire_name="enabled_addon_platforms"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "name": ubx.FieldSpec(wire_name="name"),
         "scopes": ubx.FieldSpec(wire_name="scopes"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

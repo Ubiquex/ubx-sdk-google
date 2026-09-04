@@ -294,8 +294,6 @@ class V1alphaServingConfigConfig:
     answer_generation_spec: Any = None
     # Boost controls to use in serving path. All triggered boost controls will be applied. Boost controls must be in the same data store as the serving config. Maximum of 20 boost controls.
     boost_control_ids: Any = None
-    # Output only. ServingConfig created timestamp.
-    create_time: Any = None
     # Defines custom fine tuning spec.
     custom_fine_tuning_spec: Any = None
     # Required. The human readable serving config display name. Used in Discovery UI. This field must be a UTF-8 encoded string with a length limit of 128 characters. Otherwise, an INVALID_ARGUMENT error is returned.
@@ -336,8 +334,6 @@ class V1alphaServingConfigConfig:
     solution_type: Any = None
     # Condition synonyms specifications. If multiple synonyms conditions match, all matching synonyms controls in the list will execute. Maximum number of specifications is 100. Can only be set if SolutionType is SOLUTION_TYPE_SEARCH.
     synonyms_control_ids: Any = None
-    # Output only. ServingConfig updated timestamp.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V1alphaServingConfigAttrs:
@@ -399,7 +395,6 @@ V1alphaServingConfig = ubx.ResourceBinding(
             fields=_V1alphaServingConfig_AnswerGenerationSpecFields,
         ),
         "boost_control_ids": ubx.FieldSpec(wire_name="boost_control_ids"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "custom_fine_tuning_spec": ubx.FieldSpec(
             wire_name="custom_fine_tuning_spec",
             kind="object",
@@ -444,6 +439,5 @@ V1alphaServingConfig = ubx.ResourceBinding(
         "replacement_control_ids": ubx.FieldSpec(wire_name="replacement_control_ids"),
         "solution_type": ubx.FieldSpec(wire_name="solution_type"),
         "synonyms_control_ids": ubx.FieldSpec(wire_name="synonyms_control_ids"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

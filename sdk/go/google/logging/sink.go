@@ -11,33 +11,31 @@ type Sink_BigqueryOptions struct {
 }
 
 type Sink_Exclusions struct {
-	CreateTime any
+	CreateTime  any
 	Description any
-	Disabled any
-	Filter any
-	Name any
-	UpdateTime any
+	Disabled    any
+	Filter      any
+	Name        any
+	UpdateTime  any
 }
 
 var Sink_BigqueryOptionsFields = ubx.FieldMap{
-		"UsePartitionedTables": ubx.FieldSpec{WireName: "use_partitioned_tables"},
-		"UsesTimestampColumnPartitioning": ubx.FieldSpec{WireName: "uses_timestamp_column_partitioning"},
-	}
+	"UsePartitionedTables":            ubx.FieldSpec{WireName: "use_partitioned_tables"},
+	"UsesTimestampColumnPartitioning": ubx.FieldSpec{WireName: "uses_timestamp_column_partitioning"},
+}
 
 var Sink_ExclusionsFields = ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Disabled": ubx.FieldSpec{WireName: "disabled"},
-		"Filter": ubx.FieldSpec{WireName: "filter"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-	}
+	"CreateTime":  ubx.FieldSpec{WireName: "create_time"},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Disabled":    ubx.FieldSpec{WireName: "disabled"},
+	"Filter":      ubx.FieldSpec{WireName: "filter"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"UpdateTime":  ubx.FieldSpec{WireName: "update_time"},
+}
 
 type SinkConfig struct {
 	// Options that change functionality of a sink exporting data to BigQuery.
 	BigqueryOptions any
-	// Output only. The creation timestamp of the sink.This field may not be present for older sinks.
-	CreateTime any
 	// Optional. A description of this sink.The maximum length of the description is 8000 characters.
 	Description any
 	// Required. The export destination: "storage.googleapis.com/[GCS_BUCKET]" "bigquery.googleapis.com/projects/[PROJECT_ID]/datasets/[DATASET]" "pubsub.googleapis.com/projects/[PROJECT_ID]/topics/[TOPIC_ID]" "logging.googleapis.com/projects/[PROJECT_ID]" "logging.googleapis.com/projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" The sink's writer_identity, set when the sink is created, must have permission to write to the destination or else the log entries are not exported. For more information, see Route logs to supported destinations (https://docs.cloud.google.com/logging/docs/export/configure_export_v2).
@@ -56,12 +54,6 @@ type SinkConfig struct {
 	Name any
 	// Deprecated. This field is unused.
 	OutputVersionFormat any
-	// Output only. The resource name of the sink. "projects/[PROJECT_ID]/sinks/[SINK_NAME] "organizations/[ORGANIZATION_ID]/sinks/[SINK_NAME] "billingAccounts/[BILLING_ACCOUNT_ID]/sinks/[SINK_NAME] "folders/[FOLDER_ID]/sinks/[SINK_NAME] For example: projects/my_project/sinks/SINK_NAME
-	ResourceName any
-	// Output only. The last update timestamp of the sink.This field may not be present for older sinks.
-	UpdateTime any
-	// Output only. An IAM identity—a service account or group—under which Cloud Logging writes the exported log entries to the sink's destination. This field is either set by specifying custom_writer_identity or set automatically by sinks.create and sinks.update based on the value of unique_writer_identity in those methods.Until you grant this identity write-access to the destination, log entry exports from this sink will fail. For more information, see Manage access to projects, folders, and organizations (https://docs.cloud.google.com/iam/docs/granting-roles-to-service-accounts#granting_access_to_a_service_account_for_a_resource). Consult the destination service's documentation to determine the appropriate IAM roles to assign to the identity.Sinks that have a destination that is a log bucket in the same project as the sink cannot have a writer_identity and no additional permissions are required.
-	WriterIdentity any
 }
 
 type SinkAttrs struct {
@@ -100,25 +92,21 @@ var Sink = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"BigqueryOptions": ubx.FieldSpec{
 			WireName: "bigquery_options",
-			Kind: "object",
-			Fields: Sink_BigqueryOptionsFields,
+			Kind:     "object",
+			Fields:   Sink_BigqueryOptionsFields,
 		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"Destination": ubx.FieldSpec{WireName: "destination"},
-		"Disabled": ubx.FieldSpec{WireName: "disabled"},
+		"Disabled":    ubx.FieldSpec{WireName: "disabled"},
 		"Exclusions": ubx.FieldSpec{
 			WireName: "exclusions",
-			Kind: "list",
-			Fields: Sink_ExclusionsFields,
+			Kind:     "list",
+			Fields:   Sink_ExclusionsFields,
 		},
-		"Filter": ubx.FieldSpec{WireName: "filter"},
-		"IncludeChildren": ubx.FieldSpec{WireName: "include_children"},
-		"InterceptChildren": ubx.FieldSpec{WireName: "intercept_children"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Filter":              ubx.FieldSpec{WireName: "filter"},
+		"IncludeChildren":     ubx.FieldSpec{WireName: "include_children"},
+		"InterceptChildren":   ubx.FieldSpec{WireName: "intercept_children"},
+		"Name":                ubx.FieldSpec{WireName: "name"},
 		"OutputVersionFormat": ubx.FieldSpec{WireName: "output_version_format"},
-		"ResourceName": ubx.FieldSpec{WireName: "resource_name"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-		"WriterIdentity": ubx.FieldSpec{WireName: "writer_identity"},
 	},
 }

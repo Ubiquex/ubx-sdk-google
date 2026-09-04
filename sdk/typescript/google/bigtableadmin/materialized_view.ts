@@ -5,13 +5,7 @@ export interface MaterializedView_ClusterStates {
   replicationState?: string | Computed<string>;
 }
 
-const MaterializedView_ClusterStatesFields: FieldMap = {
-  replicationState: "replication_state",
-};
-
 export interface MaterializedViewConfig {
-  /** Output only. Map from cluster ID to per-cluster materialized view state. If it could not be determined whether or not the materialized view has data in a particular cluster (for example, if its zone is unavailable), then there will be an entry for the cluster with `STATE_NOT_KNOWN` state. Views: `REPLICATION_VIEW`, `FULL`. */
-  clusterStates?: Record<string, MaterializedView_ClusterStates> | Computed<Record<string, MaterializedView_ClusterStates>>;
   /** Set to true to make the MaterializedView protected against deletion. Views: `SCHEMA_VIEW`, `REPLICATION_VIEW`, `FULL`. */
   deletionProtection?: boolean | Computed<boolean>;
   /** Optional. The etag for this materialized view. This may be sent on update requests to ensure that the client has an up-to-date value before proceeding. The server returns an ABORTED error on a mismatched etag. Views: `SCHEMA_VIEW`, `REPLICATION_VIEW`, `FULL`. */
@@ -38,11 +32,6 @@ export interface MaterializedViewAttrs {
 export const MaterializedView: ResourceBinding<MaterializedViewConfig, MaterializedViewAttrs> = {
   wireType: "google_bigtableadmin_materialized_view",
   fields: {
-    clusterStates: {
-      wireName: "cluster_states",
-      kind: "map",
-      fields: MaterializedView_ClusterStatesFields,
-    },
     deletionProtection: "deletion_protection",
     etag: "etag",
     name: "name",

@@ -9,24 +9,18 @@ type BackupVault_EncryptionConfig struct {
 }
 
 var BackupVault_EncryptionConfigFields = ubx.FieldMap{
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-	}
+	"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
+}
 
 type BackupVaultConfig struct {
 	// Optional. Restricts access to certain sources and destinations for data being sent into, or restored from, the backup vault. Defaults to WITHIN_ORGANIZATION if not provided during creation.
 	AccessRestriction any
 	// Optional. User annotations. See https://google.aip.dev/128#annotations Stores small amounts of arbitrary data.
 	Annotations any
-	// Output only. The number of backups in this backup vault.
-	BackupCount any
 	// Required. The default and minimum enforced retention for each backup within the backup vault. The enforced retention for each backup can be extended. Note: Longer minimum enforced retention period impacts potential storage costs post introductory trial. We recommend starting with a short duration of 3 days or less.
 	BackupMinimumEnforcedRetentionDuration any
 	// Optional. Setting for how a backup's enforced retention end time is inherited.
 	BackupRetentionInheritance any
-	// Output only. The time when the instance was created.
-	CreateTime any
-	// Output only. Set to true when there are no backups nested under this resource.
-	Deletable any
 	// Optional. The description of the BackupVault instance (2048 characters or less).
 	Description any
 	// Optional. Time after which the BackupVault resource is locked.
@@ -37,18 +31,6 @@ type BackupVaultConfig struct {
 	Etag any
 	// Optional. Resource labels to represent user provided metadata. No labels currently defined:
 	Labels any
-	// Output only. Identifier. Name of the backup vault to create. It must have the format`"projects/{project}/locations/{location}/backupVaults/{backupvault}"`. `{backupvault}` cannot be changed after creation. It must be between 3-63 characters long and must be unique within the project and location.
-	Name any
-	// Output only. Service account used by the BackupVault Service for this BackupVault. The user should grant this account permissions in their workload project to enable the service to run backups and restores there.
-	ServiceAccount any
-	// Output only. The BackupVault resource instance state.
-	State any
-	// Output only. Total size of the storage used by all backup resources.
-	TotalStoredBytes any
-	// Output only. Immutable after resource creation until resource deletion.
-	Uid any
-	// Output only. The time when the instance was updated.
-	UpdateTime any
 }
 
 type BackupVaultAttrs struct {
@@ -93,27 +75,18 @@ type BackupVaultAttrs struct {
 var BackupVault = ubx.ResourceBinding{
 	WireType: "google_backupdr_backup_vault",
 	Fields: ubx.FieldMap{
-		"AccessRestriction": ubx.FieldSpec{WireName: "access_restriction"},
-		"Annotations": ubx.FieldSpec{WireName: "annotations"},
-		"BackupCount": ubx.FieldSpec{WireName: "backup_count"},
+		"AccessRestriction":                      ubx.FieldSpec{WireName: "access_restriction"},
+		"Annotations":                            ubx.FieldSpec{WireName: "annotations"},
 		"BackupMinimumEnforcedRetentionDuration": ubx.FieldSpec{WireName: "backup_minimum_enforced_retention_duration"},
-		"BackupRetentionInheritance": ubx.FieldSpec{WireName: "backup_retention_inheritance"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Deletable": ubx.FieldSpec{WireName: "deletable"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"EffectiveTime": ubx.FieldSpec{WireName: "effective_time"},
+		"BackupRetentionInheritance":             ubx.FieldSpec{WireName: "backup_retention_inheritance"},
+		"Description":                            ubx.FieldSpec{WireName: "description"},
+		"EffectiveTime":                          ubx.FieldSpec{WireName: "effective_time"},
 		"EncryptionConfig": ubx.FieldSpec{
 			WireName: "encryption_config",
-			Kind: "object",
-			Fields: BackupVault_EncryptionConfigFields,
+			Kind:     "object",
+			Fields:   BackupVault_EncryptionConfigFields,
 		},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
+		"Etag":   ubx.FieldSpec{WireName: "etag"},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"TotalStoredBytes": ubx.FieldSpec{WireName: "total_stored_bytes"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

@@ -76,14 +76,14 @@ type StoredInfoType_Config struct {
 }
 
 type StoredInfoType_CurrentVersion_Errors_Details struct {
-	Code any
+	Code    any
 	Details any
 	Message any
 }
 
 type StoredInfoType_CurrentVersion_Errors struct {
-	Details any
-	ExtraInfo any
+	Details    any
+	ExtraInfo  any
 	Timestamps any
 }
 
@@ -111,95 +111,95 @@ type StoredInfoType_CurrentVersion struct {
 }
 
 var StoredInfoType_Config_Dictionary_CloudStoragePathFields = ubx.FieldMap{
-		"Path": ubx.FieldSpec{WireName: "path"},
-	}
+	"Path": ubx.FieldSpec{WireName: "path"},
+}
 
 var StoredInfoType_Config_Dictionary_WordListFields = ubx.FieldMap{
-		"Words": ubx.FieldSpec{WireName: "words"},
-	}
+	"Words": ubx.FieldSpec{WireName: "words"},
+}
 
 var StoredInfoType_Config_DictionaryFields = ubx.FieldMap{
-		"CloudStoragePath": ubx.FieldSpec{
-			WireName: "cloud_storage_path",
-			Kind: "object",
-			Fields: StoredInfoType_Config_Dictionary_CloudStoragePathFields,
-		},
-		"WordList": ubx.FieldSpec{
-			WireName: "word_list",
-			Kind: "object",
-			Fields: StoredInfoType_Config_Dictionary_WordListFields,
-		},
-	}
+	"CloudStoragePath": ubx.FieldSpec{
+		WireName: "cloud_storage_path",
+		Kind:     "object",
+		Fields:   StoredInfoType_Config_Dictionary_CloudStoragePathFields,
+	},
+	"WordList": ubx.FieldSpec{
+		WireName: "word_list",
+		Kind:     "object",
+		Fields:   StoredInfoType_Config_Dictionary_WordListFields,
+	},
+}
 
 var StoredInfoType_Config_LargeCustomDictionary_BigQueryField_FieldFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var StoredInfoType_Config_LargeCustomDictionary_BigQueryField_TableFields = ubx.FieldMap{
-		"DatasetId": ubx.FieldSpec{WireName: "dataset_id"},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-		"TableId": ubx.FieldSpec{WireName: "table_id"},
-	}
+	"DatasetId": ubx.FieldSpec{WireName: "dataset_id"},
+	"ProjectId": ubx.FieldSpec{WireName: "project_id"},
+	"TableId":   ubx.FieldSpec{WireName: "table_id"},
+}
 
 var StoredInfoType_Config_LargeCustomDictionary_BigQueryFieldFields = ubx.FieldMap{
-		"Field": ubx.FieldSpec{
-			WireName: "field",
-			Kind: "object",
-			Fields: StoredInfoType_Config_LargeCustomDictionary_BigQueryField_FieldFields,
-		},
-		"Table": ubx.FieldSpec{
-			WireName: "table",
-			Kind: "object",
-			Fields: StoredInfoType_Config_LargeCustomDictionary_BigQueryField_TableFields,
-		},
-	}
+	"Field": ubx.FieldSpec{
+		WireName: "field",
+		Kind:     "object",
+		Fields:   StoredInfoType_Config_LargeCustomDictionary_BigQueryField_FieldFields,
+	},
+	"Table": ubx.FieldSpec{
+		WireName: "table",
+		Kind:     "object",
+		Fields:   StoredInfoType_Config_LargeCustomDictionary_BigQueryField_TableFields,
+	},
+}
 
 var StoredInfoType_Config_LargeCustomDictionary_CloudStorageFileSetFields = ubx.FieldMap{
-		"Url": ubx.FieldSpec{WireName: "url"},
-	}
+	"Url": ubx.FieldSpec{WireName: "url"},
+}
 
 var StoredInfoType_Config_LargeCustomDictionaryFields = ubx.FieldMap{
-		"BigQueryField": ubx.FieldSpec{
-			WireName: "big_query_field",
-			Kind: "object",
-			Fields: StoredInfoType_Config_LargeCustomDictionary_BigQueryFieldFields,
-		},
-		"CloudStorageFileSet": ubx.FieldSpec{
-			WireName: "cloud_storage_file_set",
-			Kind: "object",
-			Fields: StoredInfoType_Config_LargeCustomDictionary_CloudStorageFileSetFields,
-		},
-		"OutputPath": ubx.FieldSpec{
-			WireName: "output_path",
-			Kind: "object",
-			Fields: StoredInfoType_Config_Dictionary_CloudStoragePathFields,
-		},
-	}
+	"BigQueryField": ubx.FieldSpec{
+		WireName: "big_query_field",
+		Kind:     "object",
+		Fields:   StoredInfoType_Config_LargeCustomDictionary_BigQueryFieldFields,
+	},
+	"CloudStorageFileSet": ubx.FieldSpec{
+		WireName: "cloud_storage_file_set",
+		Kind:     "object",
+		Fields:   StoredInfoType_Config_LargeCustomDictionary_CloudStorageFileSetFields,
+	},
+	"OutputPath": ubx.FieldSpec{
+		WireName: "output_path",
+		Kind:     "object",
+		Fields:   StoredInfoType_Config_Dictionary_CloudStoragePathFields,
+	},
+}
 
 var StoredInfoType_Config_RegexFields = ubx.FieldMap{
-		"GroupIndexes": ubx.FieldSpec{WireName: "group_indexes"},
-		"Pattern": ubx.FieldSpec{WireName: "pattern"},
-	}
+	"GroupIndexes": ubx.FieldSpec{WireName: "group_indexes"},
+	"Pattern":      ubx.FieldSpec{WireName: "pattern"},
+}
 
 var StoredInfoType_ConfigFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Dictionary": ubx.FieldSpec{
-			WireName: "dictionary",
-			Kind: "object",
-			Fields: StoredInfoType_Config_DictionaryFields,
-		},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"LargeCustomDictionary": ubx.FieldSpec{
-			WireName: "large_custom_dictionary",
-			Kind: "object",
-			Fields: StoredInfoType_Config_LargeCustomDictionaryFields,
-		},
-		"Regex": ubx.FieldSpec{
-			WireName: "regex",
-			Kind: "object",
-			Fields: StoredInfoType_Config_RegexFields,
-		},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Dictionary": ubx.FieldSpec{
+		WireName: "dictionary",
+		Kind:     "object",
+		Fields:   StoredInfoType_Config_DictionaryFields,
+	},
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"LargeCustomDictionary": ubx.FieldSpec{
+		WireName: "large_custom_dictionary",
+		Kind:     "object",
+		Fields:   StoredInfoType_Config_LargeCustomDictionaryFields,
+	},
+	"Regex": ubx.FieldSpec{
+		WireName: "regex",
+		Kind:     "object",
+		Fields:   StoredInfoType_Config_RegexFields,
+	},
+}
 
 type StoredInfoTypeConfig struct {
 	// Configuration for stored infoTypes. All fields and subfield are provided by the user. For more information, see https://docs.cloud.google.com/sensitive-data-protection/docs/creating-custom-infotypes.
@@ -230,10 +230,10 @@ var StoredInfoType = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Config": ubx.FieldSpec{
 			WireName: "config",
-			Kind: "object",
-			Fields: StoredInfoType_ConfigFields,
+			Kind:     "object",
+			Fields:   StoredInfoType_ConfigFields,
 		},
-		"LocationId": ubx.FieldSpec{WireName: "location_id"},
+		"LocationId":       ubx.FieldSpec{WireName: "location_id"},
 		"StoredInfoTypeId": ubx.FieldSpec{WireName: "stored_info_type_id"},
 	},
 }

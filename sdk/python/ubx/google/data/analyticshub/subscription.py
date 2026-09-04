@@ -45,7 +45,7 @@ class Subscription_LinkedDatasetMap:
 
 @dataclasses.dataclass
 class SubscriptionConfig:
-    name: Any = None
+    pass
 
 @dataclasses.dataclass
 class SubscriptionAttrs:
@@ -82,6 +82,5 @@ class SubscriptionAttrs:
 Subscription = ubx.DataSourceBinding(
     wire_type="google_analyticshub_subscription",
     fields={
-        "name": ubx.FieldSpec(wire_name="name"),
     },
 )

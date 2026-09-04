@@ -12,8 +12,6 @@ const DataAsset_AccessGroupConfigsFields: FieldMap = {
 export interface DataAssetConfig {
   /** Optional. Access groups configurations for this data asset.The key is DataProduct.AccessGroup.id and the value is AccessGroupConfig.Example: { "analyst": { "iamRoles": ["roles/bigquery.dataViewer"] } } Currently, at most one IAM role is allowed per access group. For providing multiple predefined IAM roles, wrap them in a custom IAM role as per https://cloud.google.com/iam/docs/creating-custom-roles. */
   accessGroupConfigs?: Record<string, DataAsset_AccessGroupConfigs> | Computed<Record<string, DataAsset_AccessGroupConfigs>>;
-  /** Output only. The time at which the data asset was created. */
-  createTime?: string | Computed<string>;
   /** Optional. This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding. */
   etag?: string | Computed<string>;
   /** Optional. User-defined labels for the data asset.Example: { "environment": "production", "billing": "marketing-department" } */
@@ -22,10 +20,6 @@ export interface DataAssetConfig {
   name?: string | Computed<string>;
   /** Required. Immutable. Full resource name of the cloud resource represented by the data asset. This must follow https://cloud.google.com/iam/docs/full-resource-names. Example: //bigquery.googleapis.com/projects/my_project_123/datasets/dataset_456/tables/table_789 Only BigQuery tables and datasets are currently supported. Data asset creator must have getIamPolicy and setIamPolicy permissions on the resource. Data asset creator must also have resource specific get permission, for instance, bigquery.tables.get for BigQuery tables. */
   resource?: string | Computed<string>;
-  /** Output only. System generated globally unique ID for the data asset. This ID will be different if the data asset is deleted and re-created with the same name. */
-  uid?: string | Computed<string>;
-  /** Output only. The time at which the data asset was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface DataAssetAttrs {
@@ -55,12 +49,9 @@ export const DataAsset: ResourceBinding<DataAssetConfig, DataAssetAttrs> = {
       kind: "map",
       fields: DataAsset_AccessGroupConfigsFields,
     },
-    createTime: "create_time",
     etag: "etag",
     labels: "labels",
     name: "name",
     resource: "resource",
-    uid: "uid",
-    updateTime: "update_time",
   },
 };

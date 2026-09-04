@@ -4,20 +4,12 @@ package netapp
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SnapshotConfig struct {
-	// Output only. The time when the snapshot was created.
-	CreateTime any
 	// A description of the snapshot with 2048 characters or less. Requests with longer descriptions will be rejected.
 	Description any
 	// Resource labels to represent user provided metadata.
 	Labels any
 	// Identifier. The resource name of the snapshot. Format: `projects/{project_id}/locations/{location}/volumes/{volume_id}/snapshots/{snapshot_id}`.
 	Name any
-	// Output only. The snapshot state.
-	State any
-	// Output only. State details of the storage pool
-	StateDetails any
-	// Output only. Current storage usage for the snapshot in bytes.
-	UsedBytes any
 }
 
 type SnapshotAttrs struct {
@@ -40,12 +32,8 @@ type SnapshotAttrs struct {
 var Snapshot = ubx.ResourceBinding{
 	WireType: "google_netapp_snapshot",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"StateDetails": ubx.FieldSpec{WireName: "state_details"},
-		"UsedBytes": ubx.FieldSpec{WireName: "used_bytes"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 	},
 }

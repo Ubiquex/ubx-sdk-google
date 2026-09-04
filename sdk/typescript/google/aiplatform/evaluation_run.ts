@@ -1888,10 +1888,6 @@ const EvaluationRun_InferenceConfigsFields: FieldMap = {
 };
 
 export interface EvaluationRunConfig {
-  /** Output only. Time when the evaluation run was completed. */
-  completionTime?: string | Computed<string>;
-  /** Output only. Time when the evaluation run was created. */
-  createTime?: string | Computed<string>;
   /** The data source for the evaluation run. */
   dataSource?: EvaluationRun_DataSource | Computed<EvaluationRun_DataSource>;
   /** Required. The display name of the Evaluation Run. */
@@ -1904,8 +1900,6 @@ export interface EvaluationRunConfig {
   evaluationConfig?: EvaluationRun_EvaluationConfig | Computed<EvaluationRun_EvaluationConfig>;
   /** The results of the evaluation run. */
   evaluationResults?: EvaluationRun_EvaluationResults | Computed<EvaluationRun_EvaluationResults>;
-  /** Output only. The specific evaluation set of the evaluation run. For runs with an evaluation set input, this will be that same set. For runs with BigQuery input, it's the sampled BigQuery dataset. */
-  evaluationSetSnapshot?: string | Computed<string>;
   /** Optional. The candidate to inference config map for the evaluation run. The candidate can be up to 128 characters long and can consist of any UTF-8 characters. */
   inferenceConfigs?: Record<string, EvaluationRun_InferenceConfigs> | Computed<Record<string, EvaluationRun_InferenceConfigs>>;
   /** Optional. Labels for the evaluation run. */
@@ -1914,8 +1908,6 @@ export interface EvaluationRunConfig {
   metadata?: unknown | Computed<unknown>;
   /** Identifier. The resource name of the EvaluationRun. This is a unique identifier. Format: `projects/{project}/locations/{location}/evaluationRuns/{evaluation_run}` */
   name?: string | Computed<string>;
-  /** Output only. The state of the evaluation run. */
-  state?: string | Computed<string>;
 }
 
 export interface EvaluationRunAttrs {
@@ -1952,8 +1944,6 @@ export interface EvaluationRunAttrs {
 export const EvaluationRun: ResourceBinding<EvaluationRunConfig, EvaluationRunAttrs> = {
   wireType: "google_aiplatform_evaluation_run",
   fields: {
-    completionTime: "completion_time",
-    createTime: "create_time",
     dataSource: {
       wireName: "data_source",
       kind: "object",
@@ -1980,7 +1970,6 @@ export const EvaluationRun: ResourceBinding<EvaluationRunConfig, EvaluationRunAt
       kind: "object",
       fields: EvaluationRun_EvaluationResultsFields,
     },
-    evaluationSetSnapshot: "evaluation_set_snapshot",
     inferenceConfigs: {
       wireName: "inference_configs",
       kind: "map",
@@ -1989,6 +1978,5 @@ export const EvaluationRun: ResourceBinding<EvaluationRunConfig, EvaluationRunAt
     labels: "labels",
     metadata: "metadata",
     name: "name",
-    state: "state",
   },
 };

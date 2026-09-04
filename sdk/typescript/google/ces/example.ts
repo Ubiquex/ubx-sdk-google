@@ -134,8 +134,6 @@ const Example_MessagesFields: FieldMap = {
 };
 
 export interface ExampleConfig {
-  /** Output only. Timestamp when the example was created. */
-  createTime?: string | Computed<string>;
   /** Optional. Human-readable description of the example. */
   description?: string | Computed<string>;
   /** Required. Display name of the example. */
@@ -144,14 +142,10 @@ export interface ExampleConfig {
   entryAgent?: string | Computed<string>;
   /** Etag used to ensure the object hasn't changed during a read-modify-write operation. If the etag is empty, the update will overwrite any concurrent changes. */
   etag?: string | Computed<string>;
-  /** Output only. The example may become invalid if referencing resources are deleted. Invalid examples will not be used as few-shot examples. */
-  invalid?: boolean | Computed<boolean>;
   /** Optional. The collection of messages that make up the conversation. */
   messages?: Example_Messages[] | Computed<Example_Messages[]>;
   /** Identifier. The unique identifier of the example. Format: `projects/{project}/locations/{location}/apps/{app}/examples/{example}` */
   name?: string | Computed<string>;
-  /** Output only. Timestamp when the example was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface ExampleAttrs {
@@ -178,18 +172,15 @@ export interface ExampleAttrs {
 export const Example: ResourceBinding<ExampleConfig, ExampleAttrs> = {
   wireType: "google_ces_example",
   fields: {
-    createTime: "create_time",
     description: "description",
     displayName: "display_name",
     entryAgent: "entry_agent",
     etag: "etag",
-    invalid: "invalid",
     messages: {
       wireName: "messages",
       kind: "list",
       fields: Example_MessagesFields,
     },
     name: "name",
-    updateTime: "update_time",
   },
 };

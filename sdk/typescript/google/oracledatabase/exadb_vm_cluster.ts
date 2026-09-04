@@ -127,14 +127,8 @@ const ExadbVmCluster_PropertiesFields: FieldMap = {
 export interface ExadbVmClusterConfig {
   /** Required. Immutable. The name of the backup OdbSubnet associated with the ExadbVmCluster. Format: projects/{project}/locations/{location}/odbNetworks/{odb_network}/odbSubnets/{odb_subnet} */
   backupOdbSubnet?: string | Computed<string>;
-  /** Output only. The date and time that the ExadbVmCluster was created. */
-  createTime?: string | Computed<string>;
   /** Required. Immutable. The display name for the ExadbVmCluster. The name does not have to be unique within your project. The name must be 1-255 characters long and can only contain alphanumeric characters. */
   displayName?: string | Computed<string>;
-  /** Output only. The ID of the subscription entitlement associated with the ExadbVmCluster. */
-  entitlementId?: string | Computed<string>;
-  /** Output only. Immutable. The GCP Oracle zone where Oracle ExadbVmCluster is hosted. Example: us-east4-b-r2. During creation, the system will pick the zone assigned to the ExascaleDbStorageVault. */
-  gcpOracleZone?: string | Computed<string>;
   /** The identity connector details which will allow OCI to securely access the resources in the customer project. */
   identityConnector?: ExadbVmCluster_IdentityConnector | Computed<ExadbVmCluster_IdentityConnector>;
   /** Optional. The labels or tags associated with the ExadbVmCluster. */
@@ -178,10 +172,7 @@ export const ExadbVmCluster: ResourceBinding<ExadbVmClusterConfig, ExadbVmCluste
   wireType: "google_oracledatabase_exadb_vm_cluster",
   fields: {
     backupOdbSubnet: "backup_odb_subnet",
-    createTime: "create_time",
     displayName: "display_name",
-    entitlementId: "entitlement_id",
-    gcpOracleZone: "gcp_oracle_zone",
     identityConnector: {
       wireName: "identity_connector",
       kind: "object",

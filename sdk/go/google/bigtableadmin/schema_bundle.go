@@ -9,8 +9,8 @@ type SchemaBundle_ProtoSchema struct {
 }
 
 var SchemaBundle_ProtoSchemaFields = ubx.FieldMap{
-		"ProtoDescriptors": ubx.FieldSpec{WireName: "proto_descriptors"},
-	}
+	"ProtoDescriptors": ubx.FieldSpec{WireName: "proto_descriptors"},
+}
 
 type SchemaBundleConfig struct {
 	// Optional. The etag for this schema bundle. This may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding. The server returns an ABORTED error on a mismatched etag.
@@ -37,8 +37,8 @@ var SchemaBundle = ubx.ResourceBinding{
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"ProtoSchema": ubx.FieldSpec{
 			WireName: "proto_schema",
-			Kind: "object",
-			Fields: SchemaBundle_ProtoSchemaFields,
+			Kind:     "object",
+			Fields:   SchemaBundle_ProtoSchemaFields,
 		},
 	},
 }

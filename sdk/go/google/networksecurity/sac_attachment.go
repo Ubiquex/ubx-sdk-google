@@ -4,8 +4,6 @@ package networksecurity
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type SacAttachmentConfig struct {
-	// Output only. Timestamp when the attachment was created.
-	CreateTime any
 	// Optional. Optional list of labels applied to the resource.
 	Labels any
 	// Identifier. Resource name, in the form `projects/{project}/locations/{location}/sacAttachments/{sac_attachment}`.
@@ -14,10 +12,6 @@ type SacAttachmentConfig struct {
 	NccGateway any
 	// Required. SAC Realm which owns the attachment. This can be input as an ID or a full resource name. The output always has the form `projects/{project_number}/locations/{location}/sacRealms/{sac_realm}`.
 	SacRealm any
-	// Output only. State of the attachment.
-	State any
-	// Output only. Timestamp when the attachment was last updated.
-	UpdateTime any
 }
 
 type SacAttachmentAttrs struct {
@@ -40,12 +34,9 @@ type SacAttachmentAttrs struct {
 var SacAttachment = ubx.ResourceBinding{
 	WireType: "google_networksecurity_sac_attachment",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Labels":     ubx.FieldSpec{WireName: "labels"},
+		"Name":       ubx.FieldSpec{WireName: "name"},
 		"NccGateway": ubx.FieldSpec{WireName: "ncc_gateway"},
-		"SacRealm": ubx.FieldSpec{WireName: "sac_realm"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"SacRealm":   ubx.FieldSpec{WireName: "sac_realm"},
 	},
 }

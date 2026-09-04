@@ -4,15 +4,15 @@ package baremetalsolution
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Network_MountPoints struct {
-	DefaultGateway any
-	Instance any
-	IpAddress any
+	DefaultGateway   any
+	Instance         any
+	IpAddress        any
 	LogicalInterface any
 }
 
 type Network_Reservations struct {
-	EndAddress any
-	Note any
+	EndAddress   any
+	Note         any
 	StartAddress any
 }
 
@@ -22,13 +22,13 @@ type Network_Vrf_QosPolicy struct {
 }
 
 type Network_Vrf_VlanAttachments struct {
-	Id any
+	Id                     any
 	InterconnectAttachment any
-	PairingKey any
-	PeerIp any
-	PeerVlanId any
-	QosPolicy any
-	RouterIp any
+	PairingKey             any
+	PeerIp                 any
+	PeerVlanId             any
+	QosPolicy              any
+	RouterIp               any
 }
 
 type Network_Vrf struct {
@@ -43,7 +43,6 @@ type Network_Vrf struct {
 }
 
 type NetworkConfig struct {
-	Name any
 }
 
 type NetworkAttrs struct {
@@ -63,7 +62,7 @@ type NetworkAttrs struct {
 	MacAddress any
 	// Input only. List of mount points to attach the network to.
 	MountPoints any
-	Name any
+	Name        any
 	// Immutable. Pod name. Pod is an independent part of infrastructure. Network can only be connected to the assets (instances, nfsshares) allocated in the same pod.
 	Pod any
 	// List of IP address reservations in this network. When updating this field, an error will be generated if a reservation conflicts with an IP address already allocated to a physical server.
@@ -84,7 +83,5 @@ type NetworkAttrs struct {
 
 var Network = ubx.DataSourceBinding{
 	WireType: "google_baremetalsolution_network",
-	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	},
+	Fields:   ubx.FieldMap{},
 }

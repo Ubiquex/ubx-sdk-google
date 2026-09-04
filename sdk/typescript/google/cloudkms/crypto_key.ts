@@ -140,8 +140,6 @@ const CryptoKey_VersionTemplateFields: FieldMap = {
 };
 
 export interface CryptoKeyConfig {
-  /** Output only. The time at which this CryptoKey was created. */
-  createTime?: string | Computed<string>;
   /** Immutable. The resource name of the backend environment where the key material for all CryptoKeyVersions associated with this CryptoKey reside and where all related cryptographic operations are performed. Only applicable if CryptoKeyVersions have a ProtectionLevel of EXTERNAL_VPC, with the resource name in the format `projects/* /locations/* /ekmConnections/*`. Only applicable if CryptoKeyVersions have a ProtectionLevel of HSM_SINGLE_TENANT, with the resource name in the format `projects/* /locations/* /singleTenantHsmInstances/*`. Note, this list is non-exhaustive and may apply to additional ProtectionLevels in the future. */
   cryptoKeyBackend?: string | Computed<string>;
   /** Immutable. The period of time that versions of this key spend in the DESTROY_SCHEDULED state before transitioning to DESTROYED. If not specified at creation time, the default duration is 30 days. */
@@ -152,8 +150,6 @@ export interface CryptoKeyConfig {
   keyAccessJustificationsPolicy?: CryptoKey_KeyAccessJustificationsPolicy | Computed<CryptoKey_KeyAccessJustificationsPolicy>;
   /** Labels with user-defined metadata. For more information, see [Labeling Keys](https://cloud.google.com/kms/docs/labeling-keys). */
   labels?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. The resource name for this CryptoKey in the format `projects/* /locations/* /keyRings/* /cryptoKeys/*`. */
-  name?: string | Computed<string>;
   /** At next_rotation_time, the Key Management Service will automatically: 1. Create a new version of this CryptoKey. 2. Mark the new version as primary. Key rotations performed manually via CreateCryptoKeyVersion and UpdateCryptoKeyPrimaryVersion do not affect next_rotation_time. Keys with purpose ENCRYPT_DECRYPT support automatic rotation. For other keys, this field must be omitted. */
   nextRotationTime?: string | Computed<string>;
   /** A CryptoKeyVersion represents an individual cryptographic key, and the associated key material. An ENABLED version can be used for cryptographic operations. For security reasons, the raw cryptographic key material represented by a CryptoKeyVersion can never be viewed or exported. It can only be used to encrypt, decrypt, or sign data when an authorized user or application invokes Cloud KMS. */
@@ -196,7 +192,6 @@ export interface CryptoKeyAttrs {
 export const CryptoKey: ResourceBinding<CryptoKeyConfig, CryptoKeyAttrs> = {
   wireType: "google_cloudkms_crypto_key",
   fields: {
-    createTime: "create_time",
     cryptoKeyBackend: "crypto_key_backend",
     destroyScheduledDuration: "destroy_scheduled_duration",
     importOnly: "import_only",
@@ -206,7 +201,6 @@ export const CryptoKey: ResourceBinding<CryptoKeyConfig, CryptoKeyAttrs> = {
       fields: CryptoKey_KeyAccessJustificationsPolicyFields,
     },
     labels: "labels",
-    name: "name",
     nextRotationTime: "next_rotation_time",
     primary: {
       wireName: "primary",

@@ -1185,8 +1185,6 @@ const V1beta1EvaluationItem_EvaluationResponseFields: FieldMap = {
 };
 
 export interface V1beta1EvaluationItemConfig {
-  /** Output only. Timestamp when this item was created. */
-  createTime?: string | Computed<string>;
   /** Required. The display name of the EvaluationItem. */
   displayName?: string | Computed<string>;
   /** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
@@ -1233,7 +1231,6 @@ export interface V1beta1EvaluationItemAttrs {
 export const V1beta1EvaluationItem: ResourceBinding<V1beta1EvaluationItemConfig, V1beta1EvaluationItemAttrs> = {
   wireType: "google_aiplatform_v1beta1_evaluation_item",
   fields: {
-    createTime: "create_time",
     displayName: "display_name",
     error: {
       wireName: "error",

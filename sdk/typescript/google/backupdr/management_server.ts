@@ -48,10 +48,6 @@ const ManagementServer_WorkforceIdentityBasedOauth2ClientIdFields: FieldMap = {
 };
 
 export interface ManagementServerConfig {
-  /** Output only. The hostname or ip address of the exposed AGM endpoints, used by BAs to connect to BA proxy. */
-  baProxyUri?: string[] | Computed<string[]>;
-  /** Output only. The time when the instance was created. */
-  createTime?: string | Computed<string>;
   /** Optional. The description of the ManagementServer instance (2048 characters or less). */
   description?: string | Computed<string>;
   /** Optional. Server specified ETag for the ManagementServer resource to prevent simultaneous updates from overwiting each other. */
@@ -60,22 +56,10 @@ export interface ManagementServerConfig {
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** ManagementURI for the Management Server resource. */
   managementUri?: ManagementServer_ManagementUri | Computed<ManagementServer_ManagementUri>;
-  /** Output only. Identifier. The resource name. */
-  name?: string | Computed<string>;
   /** Optional. VPC networks to which the ManagementServer instance is connected. For this version, only a single network is supported. This field is optional if MS is created without PSA */
   networks?: ManagementServer_Networks[] | Computed<ManagementServer_Networks[]>;
-  /** Output only. The OAuth 2.0 client id is required to make API calls to the Backup and DR instance API of this ManagementServer. This is the value that should be provided in the 'aud' field of the OIDC ID Token (see openid specification https://openid.net/specs/openid-connect-core-1_0.html#IDToken). */
-  oauth2ClientId?: string | Computed<string>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzi?: boolean | Computed<boolean>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzs?: boolean | Computed<boolean>;
-  /** Output only. The ManagementServer state. */
-  state?: string | Computed<string>;
   /** Optional. The type of the ManagementServer resource. */
   type?: string | Computed<string>;
-  /** Output only. The time when the instance was updated. */
-  updateTime?: string | Computed<string>;
   /** ManagementURI depending on the Workforce Identity i.e. either 1p or 3p. */
   workforceIdentityBasedManagementUri?: ManagementServer_WorkforceIdentityBasedManagementUri | Computed<ManagementServer_WorkforceIdentityBasedManagementUri>;
   /** OAuth Client ID depending on the Workforce Identity i.e. either 1p or 3p, */
@@ -120,8 +104,6 @@ export interface ManagementServerAttrs {
 export const ManagementServer: ResourceBinding<ManagementServerConfig, ManagementServerAttrs> = {
   wireType: "google_backupdr_management_server",
   fields: {
-    baProxyUri: "ba_proxy_uri",
-    createTime: "create_time",
     description: "description",
     etag: "etag",
     labels: "labels",
@@ -130,18 +112,12 @@ export const ManagementServer: ResourceBinding<ManagementServerConfig, Managemen
       kind: "object",
       fields: ManagementServer_ManagementUriFields,
     },
-    name: "name",
     networks: {
       wireName: "networks",
       kind: "list",
       fields: ManagementServer_NetworksFields,
     },
-    oauth2ClientId: "oauth2_client_id",
-    satisfiesPzi: "satisfies_pzi",
-    satisfiesPzs: "satisfies_pzs",
-    state: "state",
     type: "type",
-    updateTime: "update_time",
     workforceIdentityBasedManagementUri: {
       wireName: "workforce_identity_based_management_uri",
       kind: "object",

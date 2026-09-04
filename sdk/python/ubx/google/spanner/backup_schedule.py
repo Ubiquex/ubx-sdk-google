@@ -63,8 +63,6 @@ class BackupScheduleConfig:
     retention_duration: Any = None
     # Defines specifications of the backup schedule.
     spec: Any = None
-    # Output only. The timestamp at which the schedule was last updated. If the schedule has never been updated, this field contains the timestamp when the schedule was first created.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class BackupScheduleAttrs:
@@ -100,6 +98,5 @@ BackupSchedule = ubx.ResourceBinding(
             kind="object",
             fields=_BackupSchedule_SpecFields,
         ),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

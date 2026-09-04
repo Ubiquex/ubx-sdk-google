@@ -4,7 +4,7 @@ package apikeys
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Key_Restrictions_AndroidKeyRestrictions_AllowedApplications struct {
-	PackageName any
+	PackageName     any
 	Sha1Fingerprint any
 }
 
@@ -47,86 +47,76 @@ type Key_Restrictions struct {
 }
 
 var Key_Restrictions_AndroidKeyRestrictions_AllowedApplicationsFields = ubx.FieldMap{
-		"PackageName": ubx.FieldSpec{WireName: "package_name"},
-		"Sha1Fingerprint": ubx.FieldSpec{WireName: "sha1_fingerprint"},
-	}
+	"PackageName":     ubx.FieldSpec{WireName: "package_name"},
+	"Sha1Fingerprint": ubx.FieldSpec{WireName: "sha1_fingerprint"},
+}
 
 var Key_Restrictions_AndroidKeyRestrictionsFields = ubx.FieldMap{
-		"AllowedApplications": ubx.FieldSpec{
-			WireName: "allowed_applications",
-			Kind: "list",
-			Fields: Key_Restrictions_AndroidKeyRestrictions_AllowedApplicationsFields,
-		},
-	}
+	"AllowedApplications": ubx.FieldSpec{
+		WireName: "allowed_applications",
+		Kind:     "list",
+		Fields:   Key_Restrictions_AndroidKeyRestrictions_AllowedApplicationsFields,
+	},
+}
 
 var Key_Restrictions_ApiTargetsFields = ubx.FieldMap{
-		"Methods": ubx.FieldSpec{WireName: "methods"},
-		"Service": ubx.FieldSpec{WireName: "service"},
-	}
+	"Methods": ubx.FieldSpec{WireName: "methods"},
+	"Service": ubx.FieldSpec{WireName: "service"},
+}
 
 var Key_Restrictions_BrowserKeyRestrictionsFields = ubx.FieldMap{
-		"AllowedReferrers": ubx.FieldSpec{WireName: "allowed_referrers"},
-	}
+	"AllowedReferrers": ubx.FieldSpec{WireName: "allowed_referrers"},
+}
 
 var Key_Restrictions_IosKeyRestrictionsFields = ubx.FieldMap{
-		"AllowedBundleIds": ubx.FieldSpec{WireName: "allowed_bundle_ids"},
-	}
+	"AllowedBundleIds": ubx.FieldSpec{WireName: "allowed_bundle_ids"},
+}
 
 var Key_Restrictions_ServerKeyRestrictionsFields = ubx.FieldMap{
-		"AllowedIps": ubx.FieldSpec{WireName: "allowed_ips"},
-	}
+	"AllowedIps": ubx.FieldSpec{WireName: "allowed_ips"},
+}
 
 var Key_RestrictionsFields = ubx.FieldMap{
-		"AndroidKeyRestrictions": ubx.FieldSpec{
-			WireName: "android_key_restrictions",
-			Kind: "object",
-			Fields: Key_Restrictions_AndroidKeyRestrictionsFields,
-		},
-		"ApiTargets": ubx.FieldSpec{
-			WireName: "api_targets",
-			Kind: "list",
-			Fields: Key_Restrictions_ApiTargetsFields,
-		},
-		"BrowserKeyRestrictions": ubx.FieldSpec{
-			WireName: "browser_key_restrictions",
-			Kind: "object",
-			Fields: Key_Restrictions_BrowserKeyRestrictionsFields,
-		},
-		"IosKeyRestrictions": ubx.FieldSpec{
-			WireName: "ios_key_restrictions",
-			Kind: "object",
-			Fields: Key_Restrictions_IosKeyRestrictionsFields,
-		},
-		"ServerKeyRestrictions": ubx.FieldSpec{
-			WireName: "server_key_restrictions",
-			Kind: "object",
-			Fields: Key_Restrictions_ServerKeyRestrictionsFields,
-		},
-	}
+	"AndroidKeyRestrictions": ubx.FieldSpec{
+		WireName: "android_key_restrictions",
+		Kind:     "object",
+		Fields:   Key_Restrictions_AndroidKeyRestrictionsFields,
+	},
+	"ApiTargets": ubx.FieldSpec{
+		WireName: "api_targets",
+		Kind:     "list",
+		Fields:   Key_Restrictions_ApiTargetsFields,
+	},
+	"BrowserKeyRestrictions": ubx.FieldSpec{
+		WireName: "browser_key_restrictions",
+		Kind:     "object",
+		Fields:   Key_Restrictions_BrowserKeyRestrictionsFields,
+	},
+	"IosKeyRestrictions": ubx.FieldSpec{
+		WireName: "ios_key_restrictions",
+		Kind:     "object",
+		Fields:   Key_Restrictions_IosKeyRestrictionsFields,
+	},
+	"ServerKeyRestrictions": ubx.FieldSpec{
+		WireName: "server_key_restrictions",
+		Kind:     "object",
+		Fields:   Key_Restrictions_ServerKeyRestrictionsFields,
+	},
+}
 
 type KeyConfig struct {
 	// Annotations is an unstructured key-value map stored with a policy that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects.
 	Annotations any
-	// Output only. A timestamp identifying the time this key was originally created.
-	CreateTime any
-	// Output only. A timestamp when this key was deleted. If the resource is not deleted, this must be empty.
-	DeleteTime any
 	// Human-readable display name of this key that you can modify. The maximum length is 63 characters.
 	DisplayName any
 	// A checksum computed by the server based on the current value of the Key resource. This may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding. See https://google.aip.dev/154.
 	Etag any
-	// Output only. An encrypted and signed value held by this key. This field can be accessed only through the `GetKeyString` method.
-	KeyString any
 	// Identifier. The resource name of the key. The `name` has the form: `projects//locations/global/keys/`. For example: `projects/123456867718/locations/global/keys/b7ff1f9f-8275-410a-94dd-3855ee9b5dd2` NOTE: Key is a global resource; hence the only supported value for location is `global`.
 	Name any
 	// Describes the restrictions on the key.
 	Restrictions any
 	// Optional. The email address of [the service account](https://cloud.google.com/iam/docs/service-accounts) the key is bound to.
 	ServiceAccountEmail any
-	// Output only. Unique id in UUID4 format.
-	Uid any
-	// Output only. A timestamp identifying the time this key was last updated.
-	UpdateTime any
 }
 
 type KeyAttrs struct {
@@ -158,19 +148,14 @@ var Key = ubx.ResourceBinding{
 	WireType: "google_apikeys_key",
 	Fields: ubx.FieldMap{
 		"Annotations": ubx.FieldSpec{WireName: "annotations"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DeleteTime": ubx.FieldSpec{WireName: "delete_time"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"KeyString": ubx.FieldSpec{WireName: "key_string"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Etag":        ubx.FieldSpec{WireName: "etag"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"Restrictions": ubx.FieldSpec{
 			WireName: "restrictions",
-			Kind: "object",
-			Fields: Key_RestrictionsFields,
+			Kind:     "object",
+			Fields:   Key_RestrictionsFields,
 		},
 		"ServiceAccountEmail": ubx.FieldSpec{WireName: "service_account_email"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

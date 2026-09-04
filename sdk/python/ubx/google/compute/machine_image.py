@@ -30,128 +30,79 @@ class MachineImage_InstanceProperties_ConfidentialInstanceConfig:
 
 @dataclasses.dataclass
 class MachineImage_InstanceProperties_Disks_DiskEncryptionKey:
-    # The full resource name of the Cloud KMS CryptoKey used to encrypt the disk. For example: projects/PROJECT_ID/locations/LOCATION/keyRings/KEY_RING/cryptoKeys/KEY_NAME. (AI-inferred)
     kms_key_name: Any = None
-    # The service account used to encrypt or decrypt the disk with the KMS key. This account must have the required Cloud KMS IAM permissions on the key. (AI-inferred)
     kms_key_service_account: Any = None
-    # The raw customer-supplied encryption key for the disk, base64-encoded. This is used when providing your own key instead of a KMS key. (AI-inferred)
     raw_key: Any = None
-    # The customer-supplied encryption key, encrypted using an RSA public key and encoded in base64, used to protect the disk and its contents. This allows the key to be provided securely without exposing the raw key in plaintext. (AI-inferred)
     rsa_encrypted_key: Any = None
-    # The SHA-256 hash of the customer-supplied encryption key. This value is used to verify the key's integrity and to identify the key when the disk is attached to a VM. (AI-inferred)
     sha256: Any = None
 
 @dataclasses.dataclass
 class MachineImage_InstanceProperties_Disks_GuestOsFeatures:
-    # The type of guest OS feature to enable on the disk. Must be one of the predefined feature types: BARE_METAL_LINUX_COMPATIBLE, CCA_CAPABLE, FEATURE_TYPE_UNSPECIFIED, GVNIC, IDPF, MULTI_IP_SUBNET, SECURE_BOOT, SEV_CAPABLE, SEV_LIVE_MIGRATABLE, SEV_LIVE_MIGRATABLE_V2, SEV_SNP_CAPABLE, SNP_SVSM_CAPABLE, TDX_CAPABLE, UEFI_COMPATIBLE, VIRTIO_SCSI_MULTIQUEUE, WINDOWS. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class MachineImage_InstanceProperties_Disks_InitializeParams:
-    # The CPU architecture of the disk, indicating compatibility with ARM64 or X86_64. Valid values are ARCHITECTURE_UNSPECIFIED, ARM64, and X86_64. (AI-inferred)
     architecture: Any = None
-    # An optional description for the disk. This is a user-defined field that can be used to provide additional context about the disk. (AI-inferred)
     description: Any = None
-    # Specifies the name of the disk. If not set, the default is to use the name of the instance. (AI-inferred)
     disk_name: Any = None
-    # The size of the disk in gigabytes (GB). This value is provided as a string, but should represent a numeric size (e.g., '10'). (AI-inferred)
     disk_size_gb: Any = None
-    # The type of disk to use, such as 'pd-standard' or 'pd-ssd'. This can be a full or partial URL to a disk type resource. If not specified, the default disk type is used. (AI-inferred)
     disk_type: Any = None
-    # Whether this disk adds confidential computing capability. Note: This field is only applicable to boot disks of VM instances that use Confidential VMs. (AI-inferred)
     enable_confidential_compute: Any = None
-    # Labels to apply to this disk. A map of key/value pairs that can be used to organize and identify the disk. (AI-inferred)
     labels: Any = None
-    # A list of URLs referencing license resources that the disk will be subject to when initialized. When specified, these licenses override any licenses inherited from the source image or snapshot. (AI-inferred)
     licenses: Any = None
-    # Specifies the action to take on the disk when its configuration is updated. Possible values: `RECREATE_DISK` (always recreate), `RECREATE_DISK_IF_SOURCE_CHANGED` (recreate only if the source changes), `USE_EXISTING_DISK` (keep the existing disk). (AI-inferred)
     on_update_action: Any = None
-    # The provisioned I/O operations per second (IOPS) for the persistent disk. This value is represented as a string and determines the disk's performance level when initialized. (AI-inferred)
     provisioned_iops: Any = None
-    # The provisioned throughput of the disk in MB/s, used to configure performance for supported disk types such as SSD persistent disks. (AI-inferred)
     provisioned_throughput: Any = None
-    # Specifies the zones for a regional persistent disk. Provide exactly two zones to create a regional disk; leave unset for a zonal disk. (AI-inferred)
     replica_zones: Any = None
-    # A map of resource manager tags (key-value pairs) to apply to the disk when it is created. These tags can be used for access control, cost tracking, or resource organization. (AI-inferred)
     resource_manager_tags: Any = None
-    # List of resource policy self-links to apply to the disk. Resource policies control schedules for snapshots or other disk management operations. (AI-inferred)
     resource_policies: Any = None
-    # The source image to use for the disk. This can be a full URL, a partial URL, or an image name. The disk is initialized from this image. (AI-inferred)
     source_image: Any = None
-    # Encryption key used to encrypt the source image. If the specified source image is encrypted, this key is required to access it when creating the disk. (AI-inferred)
     source_image_encryption_key: Any = None
-    # The source snapshot used to initialize this disk. Provide the full or partial URL of the snapshot resource. (AI-inferred)
     source_snapshot: Any = None
-    # Specifies the customer-supplied encryption key used to decrypt the source snapshot. Required if the source snapshot is protected by a customer-managed encryption key. (AI-inferred)
     source_snapshot_encryption_key: Any = None
-    # The URL or name of a storage pool to use for creating this disk. If specified, the disk is provisioned from the given storage pool (e.g., a Hyperdisk storage pool) rather than standard storage. (AI-inferred)
     storage_pool: Any = None
 
 @dataclasses.dataclass
 class MachineImage_InstanceProperties_Disks_ShieldedInstanceInitialState_Dbs:
-    # The base64-encoded certificate content for the UEFI secure boot database (dbs). (AI-inferred)
     content: Any = None
-    # The format of the file. Allowed values are: BIN (binary content), X509 (X.509 certificate), or UNDEFINED (unspecified). (AI-inferred)
     file_type: Any = None
 
 @dataclasses.dataclass
 class MachineImage_InstanceProperties_Disks_ShieldedInstanceInitialState:
-    # The list of UEFI secure boot database (db) entries for this shielded instance initial state. Each entry contains the base64-encoded content and file type (e.g., X509, BIN) for a secure boot database. (AI-inferred)
     dbs: Any = None
-    # List of X.509 certificates that are revoked for UEFI secure boot (dbx). Each entry includes the certificate content and file type. (AI-inferred)
     dbxs: Any = None
-    # A list of key exchange key (KEK) certificates used for verifying firmware and kernel signatures during the shielded VM boot process. Each object in the list specifies a certificate's content and file type. (AI-inferred)
     keks: Any = None
-    # The Platform Key (PK) certificate for the shielded instance's initial state. (AI-inferred)
     pk: Any = None
 
 @dataclasses.dataclass
 class MachineImage_InstanceProperties_Disks:
-    # The architecture of the disk, either ARM64 or X86_64, or ARCHITECTURE_UNSPECIFIED if not set. (AI-inferred)
     architecture: Any = None
-    # Specifies whether this disk will be automatically deleted when the instance is deleted. This controls the disk's lifecycle relative to the instance. (AI-inferred)
     auto_delete: Any = None
-    # Indicates whether this disk is a boot disk. A boot disk is the primary disk from which the instance boots. (AI-inferred)
     boot: Any = None
-    # Specifies a unique device name of your choice that is reflected into the /dev/disk/by-id/google-* tree of a Linux operating system running within the instance. This name can be used to reference the device for mounting, resizing, and so on, from within the instance. (AI-inferred)
     device_name: Any = None
-    # The customer-supplied encryption key (CSEK) or Cloud KMS key used to encrypt the disk. This block can contain a raw key, an RSA-encrypted key, or a KMS key self-link. (AI-inferred)
     disk_encryption_key: Any = None
     disk_size_gb: Any = None
     force_attach: Any = None
     guest_os_features: Any = None
-    # The zero-based index of this disk in the attached disks list, which determines the device name (e.g., /dev/sda) and boot order. (AI-inferred)
     index: Any = None
-    # Initialize parameters for the disk, including source image, disk size, and disk type, used when creating an instance from this machine image. (AI-inferred)
     initialize_params: Any = None
-    # The disk interface used for attaching this disk. Valid values are 'NVME' or 'SCSI'. (AI-inferred)
     interface: Any = None
-    # The type of the resource. For a disk in instance properties, this is always 'compute#disk'. (AI-inferred)
     kind: Any = None
-    # List of license URIs to apply to this disk, such as operating system licenses. (AI-inferred)
     licenses: Any = None
-    # The access mode of the disk. Valid values are READ_ONLY and READ_WRITE. (AI-inferred)
     mode: Any = None
-    # The saved state of the disk when creating a machine image. Set to PRESERVED to preserve the disk's state, or DISK_SAVED_STATE_UNSPECIFIED for the default behavior. (AI-inferred)
     saved_state: Any = None
     shielded_instance_initial_state: Any = None
-    # The full or partial URL of the persistent disk to attach. This is used to reference an existing disk resource. (AI-inferred)
     source: Any = None
-    # The type of disk. Valid values are PERSISTENT and SCRATCH. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class MachineImage_InstanceProperties_GuestAccelerators:
-    # The number of accelerator cards of the specified type to attach to the instance. (AI-inferred)
     accelerator_count: Any = None
-    # Specifies the accelerator type (GPU) to attach to the instance, in the form of a name or a fully-qualified URL to an accelerator type resource. (AI-inferred)
     accelerator_type: Any = None
 
 @dataclasses.dataclass
 class MachineImage_InstanceProperties_Metadata_Items:
-    # The key of the metadata entry. In Compute Engine metadata, keys are unique and can be used to retrieve the corresponding value. (AI-inferred)
     key: Any = None
-    # The value of the metadata item. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
@@ -165,79 +116,49 @@ class MachineImage_InstanceProperties_Metadata:
 
 @dataclasses.dataclass
 class MachineImage_InstanceProperties_NetworkInterfaces_AccessConfigs:
-    # The external IPv6 address assigned to this access configuration. (AI-inferred)
     external_ipv6: Any = None
-    # Specifies the prefix length for the external IPv6 address in the access configuration. (AI-inferred)
     external_ipv6_prefix_length: Any = None
     kind: Any = None
-    # The name of the access configuration. The default and recommended name is 'External NAT'. (AI-inferred)
     name: Any = None
-    # The external IPv4 address to assign to the instance for this access config. If not specified, an ephemeral address is automatically allocated. (AI-inferred)
     nat_ip: Any = None
-    # The network tier for this access config. Determines the service tier (Premium or Standard) used for the external IP address. Possible values: FIXED_STANDARD, PREMIUM, STANDARD, and STANDARD_OVERRIDES_FIXED_STANDARD. (AI-inferred)
     network_tier: Any = None
-    # The public PTR domain name to be set for the external IP address. This field is used when `set_public_ptr` is enabled. (AI-inferred)
     public_ptr_domain_name: Any = None
-    # Specifies the URL of a security policy (e.g., Cloud Armor policy) to apply to this access config for the external IP address. This field is only applicable when the access config type is EXTERNAL_NAT. (AI-inferred)
     security_policy: Any = None
-    # Specifies whether a public DNS PTR record should be created for the external IP address associated with this access config. When set to true, a reverse DNS record is automatically provisioned for the public IP. (AI-inferred)
     set_public_ptr: Any = None
-    # Specifies the type of access configuration. Use ONE_TO_ONE_NAT for NAT-based external IPv4 access and DIRECT_IPV6 for direct external IPv6 access. (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class MachineImage_InstanceProperties_NetworkInterfaces_AliasIpRanges:
-    # The IP CIDR range for this alias IP range, specified in CIDR notation (e.g., 10.0.0.0/24). (AI-inferred)
     ip_cidr_range: Any = None
-    # The name of the subnetwork secondary range to which the alias IP range belongs. (AI-inferred)
     subnetwork_range_name: Any = None
 
 @dataclasses.dataclass
 class MachineImage_InstanceProperties_NetworkInterfaces:
-    # List of access configurations for the network interface. Each configuration defines how the instance is connected to the internet, typically assigning an external IP address. (AI-inferred)
     access_configs: Any = None
-    # A list of alias IP ranges allocated to this network interface. Each alias IP range specifies an IP CIDR range and optionally the subnetwork range name it belongs to. (AI-inferred)
     alias_ip_ranges: Any = None
     alias_ipv6_ranges: Any = None
-    # Enables VPC-scoped DNS for the network interface, allowing DNS queries to be resolved using the VPC's private DNS zones. When set to true, the instance uses the DNS configuration scoped to the VPC network. (AI-inferred)
     enable_vpc_scoped_dns: Any = None
-    # The fingerprint of the network interface, a hash of its contents used for optimistic locking and concurrency control. This value is computed automatically by the API. (AI-inferred)
     fingerprint: Any = None
-    # The IGMP query mode for the network interface. Set to 'IGMP_QUERY_DISABLED' to disable IGMP queries, or 'IGMP_QUERY_V2' to use IGMPv2. (AI-inferred)
     igmp_query: Any = None
     internal_ipv6_prefix_length: Any = None
-    # A list of access configurations for IPv6 addresses on the network interface. Each configuration specifies how the instance is accessed via IPv6, including the external IPv6 address, network tier, and access config type. (AI-inferred)
     ipv6_access_configs: Any = None
-    # The IPv6 access type for the network interface. Allowed values are EXTERNAL (for public IPv6 addresses) and INTERNAL (for private IPv6 addresses). (AI-inferred)
     ipv6_access_type: Any = None
-    # The IPv6 address to assign to the network interface. This is an optional field that specifies a static IPv6 address for the interface when an instance is created from the machine image. (AI-inferred)
     ipv6_address: Any = None
-    # The type of resource. For a network interface, this is always 'compute#networkInterface'. (AI-inferred)
     kind: Any = None
-    # The name of the network interface, such as 'nic0'. (AI-inferred)
     name: Any = None
-    # The name or self-link of the VPC network to attach this network interface to. If not specified, the default network is used. (AI-inferred)
     network: Any = None
-    # The URL of the network attachment resource that this network interface is associated with. (AI-inferred)
     network_attachment: Any = None
-    # Specifies the primary internal IPv4 address of the network interface. If not set, an ephemeral internal IP is automatically assigned. (AI-inferred)
     network_ip: Any = None
-    # The type of network interface card (NIC) used for the instance. Valid values include GVNIC, IDPF, IRDMA, MRDMA, UNSPECIFIED_NIC_TYPE, and VIRTIO_NET. (AI-inferred)
     nic_type: Any = None
-    # The name of the parent network interface that this interface is attached to, used when configuring a child or secondary network interface. This corresponds to the `parentNicName` field in the Compute Engine API. (AI-inferred)
     parent_nic_name: Any = None
-    # The number of queues for this network interface. This is applicable to only certain instance types and allows configuring multi-queue networking. (AI-inferred)
     queue_count: Any = None
     service_class_id: Any = None
-    # The stack type for the network interface. Specifies whether the interface uses IPv4 only, IPv6 only, or both IPv4 and IPv6. Allowed values are IPV4_IPV6, IPV4_ONLY, and IPV6_ONLY. (AI-inferred)
     stack_type: Any = None
-    # The name or self_link of the subnetwork to attach this network interface to. If not specified, the network's default subnetwork is used. (AI-inferred)
     subnetwork: Any = None
     vlan: Any = None
 
 @dataclasses.dataclass
 class MachineImage_InstanceProperties_NetworkPerformanceConfig:
-    # Specifies the tier to use for total egress bandwidth. Valid values are DEFAULT (default tier) and TIER_1 (higher bandwidth tier). (AI-inferred)
     total_egress_bandwidth_tier: Any = None
 
 @dataclasses.dataclass
@@ -265,9 +186,7 @@ class MachineImage_InstanceProperties_Scheduling_GracefulShutdown:
 
 @dataclasses.dataclass
 class MachineImage_InstanceProperties_Scheduling_NodeAffinities:
-    # The key of the node affinity label. It specifies the node label to match against when scheduling the instance. (AI-inferred)
     key: Any = None
-    # The operator specifies how the node affinity is evaluated against the label values. Valid values are IN, NOT_IN, and OPERATOR_UNSPECIFIED. (AI-inferred)
     operator: Any = None
     values: Any = None
 
@@ -315,9 +234,7 @@ class MachineImage_InstanceProperties_Scheduling:
 
 @dataclasses.dataclass
 class MachineImage_InstanceProperties_ServiceAccounts:
-    # Email address of the service account to associate with the instance. (AI-inferred)
     email: Any = None
-    # The list of OAuth2 scopes to be granted to the service account for the machine image instance. These scopes control the API access permissions available to the instance. (AI-inferred)
     scopes: Any = None
 
 @dataclasses.dataclass
@@ -338,7 +255,6 @@ class MachineImage_InstanceProperties_Tags:
 
 @dataclasses.dataclass
 class MachineImage_InstanceProperties_WorkloadIdentityConfig:
-    # The email address of the service account used for the workload identity configuration. (AI-inferred)
     identity: Any = None
     identity_certificate_enabled: Any = None
 
@@ -370,7 +286,6 @@ class MachineImage_InstanceProperties:
     min_cpu_platform: Any = None
     # An array of network access configurations for this interface.
     network_interfaces: Any = None
-    # An object to configure network performance settings for the instance, such as the total egress bandwidth tier. When omitted, default network performance settings apply. (AI-inferred)
     network_performance_config: Any = None
     # The private IPv6 google access type for VMs. If not specified, use INHERIT_FROM_SUBNETWORK as default. Note that for MachineImage, this is not supported yet.
     private_ipv6_google_access: Any = None
@@ -388,7 +303,6 @@ class MachineImage_InstanceProperties:
     shielded_instance_config: Any = None
     # A set of instance tags.
     tags: Any = None
-    # The workload identity configuration for the instance from which the machine image was created. It defines the workload identity settings applied to the instance. (AI-inferred)
     workload_identity_config: Any = None
 
 @dataclasses.dataclass
@@ -398,55 +312,34 @@ class MachineImage_Params:
 
 @dataclasses.dataclass
 class MachineImage_SavedDisks:
-    # The CPU architecture of the disk. Allowed values are ARCHITECTURE_UNSPECIFIED, ARM64, and X86_64. (AI-inferred)
     architecture: Any = None
-    # The kind of resource this saved disk represents. For a saved disk in a machine image, this value is always 'compute#savedDisk'. (AI-inferred)
     kind: Any = None
-    # The URL of the source disk to be stored in the machine image. This can be a full or partial URL of a persistent disk in the same project or a cross-project disk reference. (AI-inferred)
     source_disk: Any = None
-    # The storage size of the saved disk in bytes, represented as a string. This is a computed value reflecting the actual storage size of the disk image. (AI-inferred)
     storage_bytes: Any = None
-    # The status of the storage_bytes field, indicating whether it is currently being updated (UPDATING) or is current and stable (UP_TO_DATE). (AI-inferred)
     storage_bytes_status: Any = None
 
 @dataclasses.dataclass
 class MachineImage_SourceDiskEncryptionKeys:
-    # The encryption key details for a source disk, used to decrypt the disk when creating the machine image. (AI-inferred)
     disk_encryption_key: Any = None
-    # The name or URL of the source disk to which this encryption key applies. (AI-inferred)
     source_disk: Any = None
 
 @dataclasses.dataclass
 class MachineImage_SourceInstanceProperties_Disks:
-    # Specifies whether the disk is automatically deleted when the instance is deleted. (AI-inferred)
     auto_delete: Any = None
-    # Indicates whether this disk is the boot disk. Only one disk per instance can be a boot disk. (AI-inferred)
     boot: Any = None
-    # The device name with which the disk is exposed to the instance, as specified in the source instance's disk configuration. (AI-inferred)
     device_name: Any = None
-    # The customer-supplied encryption key for the disk. This key is used to encrypt or decrypt the disk when creating an instance from the machine image. (AI-inferred)
     disk_encryption_key: Any = None
-    # The size of the disk in gigabytes, as configured on the source instance. This value is read from the source instance's disk properties. (AI-inferred)
     disk_size_gb: Any = None
-    # The type of disk, such as pd-standard, pd-ssd, or pd-balanced. (AI-inferred)
     disk_type: Any = None
     guest_os_features: Any = None
-    # The zero-based index of this disk within the source instance's disk list. For example, the boot disk typically has index 0. (AI-inferred)
     index: Any = None
-    # The disk interface type. Valid values are `NVME` and `SCSI`. (AI-inferred)
     interface: Any = None
-    # The resource type identifier. For disk resources, this value is typically 'compute#disk'. (AI-inferred)
     kind: Any = None
-    # A list of license URIs associated with the disk, typically representing the operating system license (e.g., Debian, Ubuntu, Windows Server). (AI-inferred)
     licenses: Any = None
-    # The access mode of the disk: READ_ONLY or READ_WRITE. In READ_ONLY mode, the disk can be attached to multiple instances simultaneously, but writes are not allowed; in READ_WRITE mode, the disk can be attached to only one instance and supports read and write operations. (AI-inferred)
     mode: Any = None
-    # The URL of the source disk or image from which this disk was created in the source instance. (AI-inferred)
     source: Any = None
     storage_bytes: Any = None
-    # The status of the disk's storage byte count, indicating whether the value is being updated (UPDATING) or is current (UP_TO_DATE). (AI-inferred)
     storage_bytes_status: Any = None
-    # The disk type, which determines the storage medium and behavior. Valid values are PERSISTENT (standard persistent disk) and SCRATCH (local SSD). (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
@@ -863,14 +756,6 @@ _MachineImage_ParamsFields = {
     "resource_manager_tags": ubx.FieldSpec(wire_name="resource_manager_tags"),
 }
 
-_MachineImage_SavedDisksFields = {
-    "architecture": ubx.FieldSpec(wire_name="architecture"),
-    "kind": ubx.FieldSpec(wire_name="kind"),
-    "source_disk": ubx.FieldSpec(wire_name="source_disk"),
-    "storage_bytes": ubx.FieldSpec(wire_name="storage_bytes"),
-    "storage_bytes_status": ubx.FieldSpec(wire_name="storage_bytes_status"),
-}
-
 _MachineImage_SourceDiskEncryptionKeysFields = {
     "disk_encryption_key": ubx.FieldSpec(
         wire_name="disk_encryption_key",
@@ -955,48 +840,28 @@ _MachineImage_SourceInstancePropertiesFields = {
 
 @dataclasses.dataclass
 class MachineImageConfig:
-    # Output only. [Output Only] The creation timestamp for this machine image inRFC3339 text format.
-    creation_timestamp: Any = None
     # An optional description of this resource. Provide this property when you create the resource.
     description: Any = None
     # [Input Only] Whether to attempt an application consistent machine image by informing the OS to prepare for the snapshot process.
     guest_flush: Any = None
-    # Output only. [Output Only] A unique identifier for this machine image. The server defines this identifier.
-    id: Any = None
-    # The properties of the source instance used to create the machine image. This is an output-only field that captures the instance configuration for reference. (AI-inferred)
     instance_properties: Any = None
-    # Output only. [Output Only] The resource type, which is alwayscompute#machineImage for machine image.
-    kind: Any = None
     # A fingerprint for the labels being applied to this machine image, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels. To see the latest fingerprint, make get() request to the machine image.
     label_fingerprint: Any = None
     # Labels to apply to this machine image. These can be later modified by the setLabels method.
     labels: Any = None
-    # The customer-managed encryption key used to encrypt the machine image. This field is output-only, so it reflects the actual key configuration applied to the resource. (AI-inferred)
     machine_image_encryption_key: Any = None
     # Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
     name: Any = None
     # Machine Image parameters
     params: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzi: Any = None
-    # Output only. [Output Only] Reserved for future use.
-    satisfies_pzs: Any = None
-    # Output only. An array of Machine Image specific properties for disks attached to the source instance
-    saved_disks: Any = None
-    # Output only. [Output Only] The URL for this machine image. The server defines this URL.
-    self_link: Any = None
     # [Input Only] Thecustomer-supplied encryption key of the disks attached to the source instance. Required if the source disk is protected by a customer-supplied encryption key.
     source_disk_encryption_keys: Any = None
     # The source instance used to create the machine image. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/instance - projects/project/zones/zone/instances/instance
     source_instance: Any = None
     # DEPRECATED: Please use compute#instanceProperties instead. New properties will not be added to this field.
     source_instance_properties: Any = None
-    # Output only. [Output Only] The status of the machine image. One of the following values:INVALID, CREATING, READY,DELETING, and UPLOADING.
-    status: Any = None
     # The regional or multi-regional Cloud Storage bucket location where themachine image is stored.
     storage_locations: Any = None
-    # Output only. [Output Only] Total size of the storage used by the machine image.
-    total_storage_bytes: Any = None
 
 @dataclasses.dataclass
 class MachineImageAttrs:
@@ -1008,7 +873,6 @@ class MachineImageAttrs:
     guest_flush: Any = None
     # Output only. [Output Only] A unique identifier for this machine image. The server defines this identifier.
     id: Any = None
-    # The properties of the source instance used to create the machine image. This is an output-only field that captures the instance configuration for reference. (AI-inferred)
     instance_properties: Any = None
     # Output only. [Output Only] The resource type, which is alwayscompute#machineImage for machine image.
     kind: Any = None
@@ -1016,7 +880,6 @@ class MachineImageAttrs:
     label_fingerprint: Any = None
     # Labels to apply to this machine image. These can be later modified by the setLabels method.
     labels: Any = None
-    # The customer-managed encryption key used to encrypt the machine image. This field is output-only, so it reflects the actual key configuration applied to the resource. (AI-inferred)
     machine_image_encryption_key: Any = None
     # Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
     name: Any = None
@@ -1046,16 +909,13 @@ class MachineImageAttrs:
 MachineImage = ubx.ResourceBinding(
     wire_type="google_compute_machine_image",
     fields={
-        "creation_timestamp": ubx.FieldSpec(wire_name="creation_timestamp"),
         "description": ubx.FieldSpec(wire_name="description"),
         "guest_flush": ubx.FieldSpec(wire_name="guest_flush"),
-        "id": ubx.FieldSpec(wire_name="id"),
         "instance_properties": ubx.FieldSpec(
             wire_name="instance_properties",
             kind="object",
             fields=_MachineImage_InstancePropertiesFields,
         ),
-        "kind": ubx.FieldSpec(wire_name="kind"),
         "label_fingerprint": ubx.FieldSpec(wire_name="label_fingerprint"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "machine_image_encryption_key": ubx.FieldSpec(
@@ -1069,14 +929,6 @@ MachineImage = ubx.ResourceBinding(
             kind="object",
             fields=_MachineImage_ParamsFields,
         ),
-        "satisfies_pzi": ubx.FieldSpec(wire_name="satisfies_pzi"),
-        "satisfies_pzs": ubx.FieldSpec(wire_name="satisfies_pzs"),
-        "saved_disks": ubx.FieldSpec(
-            wire_name="saved_disks",
-            kind="list",
-            fields=_MachineImage_SavedDisksFields,
-        ),
-        "self_link": ubx.FieldSpec(wire_name="self_link"),
         "source_disk_encryption_keys": ubx.FieldSpec(
             wire_name="source_disk_encryption_keys",
             kind="list",
@@ -1088,8 +940,6 @@ MachineImage = ubx.ResourceBinding(
             kind="object",
             fields=_MachineImage_SourceInstancePropertiesFields,
         ),
-        "status": ubx.FieldSpec(wire_name="status"),
         "storage_locations": ubx.FieldSpec(wire_name="storage_locations"),
-        "total_storage_bytes": ubx.FieldSpec(wire_name="total_storage_bytes"),
     },
 )

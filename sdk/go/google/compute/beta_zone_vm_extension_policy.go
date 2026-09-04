@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type BetaZoneVmExtensionPolicy_ExtensionPolicies struct {
 	PinnedVersion any
-	StringConfig any
+	StringConfig  any
 }
 
 type BetaZoneVmExtensionPolicy_InstanceSelectors_LabelSelector struct {
@@ -17,51 +17,33 @@ type BetaZoneVmExtensionPolicy_InstanceSelectors struct {
 }
 
 var BetaZoneVmExtensionPolicy_ExtensionPoliciesFields = ubx.FieldMap{
-		"PinnedVersion": ubx.FieldSpec{WireName: "pinned_version"},
-		"StringConfig": ubx.FieldSpec{WireName: "string_config"},
-	}
+	"PinnedVersion": ubx.FieldSpec{WireName: "pinned_version"},
+	"StringConfig":  ubx.FieldSpec{WireName: "string_config"},
+}
 
 var BetaZoneVmExtensionPolicy_InstanceSelectors_LabelSelectorFields = ubx.FieldMap{
-		"InclusionLabels": ubx.FieldSpec{WireName: "inclusion_labels"},
-	}
+	"InclusionLabels": ubx.FieldSpec{WireName: "inclusion_labels"},
+}
 
 var BetaZoneVmExtensionPolicy_InstanceSelectorsFields = ubx.FieldMap{
-		"LabelSelector": ubx.FieldSpec{
-			WireName: "label_selector",
-			Kind: "object",
-			Fields: BetaZoneVmExtensionPolicy_InstanceSelectors_LabelSelectorFields,
-		},
-	}
+	"LabelSelector": ubx.FieldSpec{
+		WireName: "label_selector",
+		Kind:     "object",
+		Fields:   BetaZoneVmExtensionPolicy_InstanceSelectors_LabelSelectorFields,
+	},
+}
 
 type BetaZoneVmExtensionPolicyConfig struct {
-	// Output only. [Output Only] Creation timestamp inRFC3339 text format.
-	CreationTimestamp any
 	// An optional description of this resource.
 	Description any
 	// Required. A map of extension names (for example, "ops-agent") to their corresponding policy configurations.
 	ExtensionPolicies any
-	// Optional. Output only. [Output Only] Link to the global policy that manages this zone policy, if applicable.
-	GlobalResourceLink any
-	// Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-	Id any
 	// Optional. Selectors to target VMs for this policy. VMs are selected if they match *any* of the provided selectors (logical OR). If this list is empty, the policy applies to all VMs.
 	InstanceSelectors any
-	// Output only. [Output Only] Type of the resource. Alwayscompute#vmExtensionPolicy.
-	Kind any
-	// Optional. Output only. [Output Only] Indicates if this policy is managed by a global policy.
-	ManagedByGlobal any
 	// Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
 	Name any
 	// Optional. Priority of this policy. Used to resolve conflicts when multiple policies apply to the same extension. The policy priority is an integer from 0 to 65535, inclusive. Lower integers indicate higher priorities. If you do not specify a priority when creating a rule, it is assigned a priority of 1000. If priorities are equal, the policy with the most recent creation timestamp takes precedence.
 	Priority any
-	// Output only. [Output Only] Server-defined fully-qualified URL for this resource.
-	SelfLink any
-	// Output only. [Output Only] Server-defined URL for this resource's resource id.
-	SelfLinkWithId any
-	// Optional. Output only. [Output Only] Current state of the policy: ACTIVE or DELETING.
-	State any
-	// Output only. [Output Only] Update timestamp inRFC3339 text format.
-	UpdateTimestamp any
 }
 
 type BetaZoneVmExtensionPolicyAttrs struct {
@@ -98,27 +80,18 @@ type BetaZoneVmExtensionPolicyAttrs struct {
 var BetaZoneVmExtensionPolicy = ubx.ResourceBinding{
 	WireType: "google_compute_beta_zone_vm_extension_policy",
 	Fields: ubx.FieldMap{
-		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"ExtensionPolicies": ubx.FieldSpec{
 			WireName: "extension_policies",
-			Kind: "map",
-			Fields: BetaZoneVmExtensionPolicy_ExtensionPoliciesFields,
+			Kind:     "map",
+			Fields:   BetaZoneVmExtensionPolicy_ExtensionPoliciesFields,
 		},
-		"GlobalResourceLink": ubx.FieldSpec{WireName: "global_resource_link"},
-		"Id": ubx.FieldSpec{WireName: "id"},
 		"InstanceSelectors": ubx.FieldSpec{
 			WireName: "instance_selectors",
-			Kind: "list",
-			Fields: BetaZoneVmExtensionPolicy_InstanceSelectorsFields,
+			Kind:     "list",
+			Fields:   BetaZoneVmExtensionPolicy_InstanceSelectorsFields,
 		},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"ManagedByGlobal": ubx.FieldSpec{WireName: "managed_by_global"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":     ubx.FieldSpec{WireName: "name"},
 		"Priority": ubx.FieldSpec{WireName: "priority"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"SelfLinkWithId": ubx.FieldSpec{WireName: "self_link_with_id"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"UpdateTimestamp": ubx.FieldSpec{WireName: "update_timestamp"},
 	},
 }

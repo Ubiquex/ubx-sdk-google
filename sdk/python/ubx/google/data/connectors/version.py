@@ -269,7 +269,6 @@ class Version_VpcscConfig:
 
 @dataclasses.dataclass
 class VersionConfig:
-    name: Any = None
     view: Any = None
 
 @dataclasses.dataclass
@@ -328,7 +327,6 @@ class VersionAttrs:
 Version = ubx.DataSourceBinding(
     wire_type="google_connectors_version",
     fields={
-        "name": ubx.FieldSpec(wire_name="name"),
         "view": ubx.FieldSpec(wire_name="view"),
     },
 )

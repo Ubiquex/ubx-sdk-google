@@ -13,7 +13,6 @@ export interface NotificationConfigConfig {
   description?: string | Computed<string>;
   name?: string | Computed<string>;
   pubsubTopic?: string | Computed<string>;
-  serviceAccount?: string | Computed<string>;
   streamingConfig?: NotificationConfig_StreamingConfig | Computed<NotificationConfig_StreamingConfig>;
 }
 
@@ -31,7 +30,6 @@ export const NotificationConfig: ResourceBinding<NotificationConfigConfig, Notif
     description: "description",
     name: "name",
     pubsubTopic: "pubsub_topic",
-    serviceAccount: "service_account",
     streamingConfig: {
       wireName: "streaming_config",
       kind: "object",

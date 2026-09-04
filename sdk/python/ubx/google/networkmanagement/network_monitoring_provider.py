@@ -8,20 +8,8 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class NetworkMonitoringProviderConfig:
-    # Output only. The time the NetworkMonitoringProvider was created.
-    create_time: Any = None
-    # Output only. The list of error messages detected for the NetworkMonitoringProvider.
-    errors: Any = None
-    # Output only. Identifier. Name of the resource. Format: `projects/{project}/locations/{location}/networkMonitoringProviders/{network_monitoring_provider}`
-    name: Any = None
     # Required. Type of the NetworkMonitoringProvider.
     provider_type: Any = None
-    # Output only. Link to the provider's UI.
-    provider_uri: Any = None
-    # Output only. State of the NetworkMonitoringProvider.
-    state: Any = None
-    # Output only. The time the NetworkMonitoringProvider was updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class NetworkMonitoringProviderAttrs:
@@ -43,12 +31,6 @@ class NetworkMonitoringProviderAttrs:
 NetworkMonitoringProvider = ubx.ResourceBinding(
     wire_type="google_networkmanagement_network_monitoring_provider",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
-        "errors": ubx.FieldSpec(wire_name="errors"),
-        "name": ubx.FieldSpec(wire_name="name"),
         "provider_type": ubx.FieldSpec(wire_name="provider_type"),
-        "provider_uri": ubx.FieldSpec(wire_name="provider_uri"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

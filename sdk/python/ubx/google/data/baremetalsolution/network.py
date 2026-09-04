@@ -47,7 +47,7 @@ class Network_Vrf:
 
 @dataclasses.dataclass
 class NetworkConfig:
-    name: Any = None
+    pass
 
 @dataclasses.dataclass
 class NetworkAttrs:
@@ -88,6 +88,5 @@ class NetworkAttrs:
 Network = ubx.DataSourceBinding(
     wire_type="google_baremetalsolution_network",
     fields={
-        "name": ubx.FieldSpec(wire_name="name"),
     },
 )

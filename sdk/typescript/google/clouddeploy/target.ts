@@ -128,8 +128,6 @@ export interface TargetConfig {
   anthosCluster?: Target_AnthosCluster | Computed<Target_AnthosCluster>;
   /** Optional. Map of entity IDs to their associated entities. Associated entities allows specifying places other than the deployment target for specific features. For example, the Gateway API canary can be configured to deploy the HTTPRoute to a different cluster(s) than the deployment cluster using associated entities. An entity ID must consist of lower-case letters, numbers, and hyphens, start with a letter and end with a letter or a number, and have a max length of 63 characters. In other words, it must match the following regex: `^[a-z]([a-z0-9-]{0,61}[a-z0-9])?$`. */
   associatedEntities?: Record<string, Target_AssociatedEntities> | Computed<Record<string, Target_AssociatedEntities>>;
-  /** Output only. Time at which the `Target` was created. */
-  createTime?: string | Computed<string>;
   /** Information specifying a Custom Target. */
   customTarget?: Target_CustomTarget | Computed<Target_CustomTarget>;
   /** Optional. The deploy parameters to use for this target. */
@@ -152,12 +150,6 @@ export interface TargetConfig {
   requireApproval?: boolean | Computed<boolean>;
   /** Information specifying where to deploy a Cloud Run Service. */
   run?: Target_Run | Computed<Target_Run>;
-  /** Output only. Resource id of the `Target`. */
-  targetId?: string | Computed<string>;
-  /** Output only. Unique identifier of the `Target`. */
-  uid?: string | Computed<string>;
-  /** Output only. Most recent time at which the `Target` was updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface TargetAttrs {
@@ -213,7 +205,6 @@ export const Target: ResourceBinding<TargetConfig, TargetAttrs> = {
       kind: "map",
       fields: Target_AssociatedEntitiesFields,
     },
-    createTime: "create_time",
     customTarget: {
       wireName: "custom_target",
       kind: "object",
@@ -245,8 +236,5 @@ export const Target: ResourceBinding<TargetConfig, TargetAttrs> = {
       kind: "object",
       fields: Target_RunFields,
     },
-    targetId: "target_id",
-    uid: "uid",
-    updateTime: "update_time",
   },
 };

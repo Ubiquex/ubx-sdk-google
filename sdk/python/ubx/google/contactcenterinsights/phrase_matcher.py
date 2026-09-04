@@ -60,8 +60,6 @@ _PhraseMatcher_PhraseMatchRuleGroupsFields = {
 
 @dataclasses.dataclass
 class PhraseMatcherConfig:
-    # Output only. The most recent time at which the activation status was updated.
-    activation_update_time: Any = None
     # Applies the phrase matcher only when it is active.
     active: Any = None
     # The human-readable name of the phrase matcher.
@@ -70,16 +68,10 @@ class PhraseMatcherConfig:
     name: Any = None
     # A list of phase match rule groups that are included in this matcher.
     phrase_match_rule_groups: Any = None
-    # Output only. The timestamp of when the revision was created. It is also the create time when a new matcher is added.
-    revision_create_time: Any = None
-    # Output only. Immutable. The revision ID of the phrase matcher. A new revision is committed whenever the matcher is changed, except when it is activated or deactivated. A server generated random ID will be used. Example: locations/global/phraseMatchers/my-first-matcher@1234567
-    revision_id: Any = None
     # The role whose utterances the phrase matcher should be matched against. If the role is ROLE_UNSPECIFIED it will be matched against any utterances in the transcript.
     role_match: Any = None
     # Required. The type of this phrase matcher.
     type: Any = None
-    # Output only. The most recent time at which the phrase matcher was updated.
-    update_time: Any = None
     # The customized version tag to use for the phrase matcher. If not specified, it will default to `revision_id`.
     version_tag: Any = None
 
@@ -111,7 +103,6 @@ class PhraseMatcherAttrs:
 PhraseMatcher = ubx.ResourceBinding(
     wire_type="google_contactcenterinsights_phrase_matcher",
     fields={
-        "activation_update_time": ubx.FieldSpec(wire_name="activation_update_time"),
         "active": ubx.FieldSpec(wire_name="active"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "name": ubx.FieldSpec(wire_name="name"),
@@ -120,11 +111,8 @@ PhraseMatcher = ubx.ResourceBinding(
             kind="list",
             fields=_PhraseMatcher_PhraseMatchRuleGroupsFields,
         ),
-        "revision_create_time": ubx.FieldSpec(wire_name="revision_create_time"),
-        "revision_id": ubx.FieldSpec(wire_name="revision_id"),
         "role_match": ubx.FieldSpec(wire_name="role_match"),
         "type": ubx.FieldSpec(wire_name="type"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
         "version_tag": ubx.FieldSpec(wire_name="version_tag"),
     },
 )

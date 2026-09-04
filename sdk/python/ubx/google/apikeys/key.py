@@ -111,26 +111,16 @@ _Key_RestrictionsFields = {
 class KeyConfig:
     # Annotations is an unstructured key-value map stored with a policy that may be set by external tools to store and retrieve arbitrary metadata. They are not queryable and should be preserved when modifying objects.
     annotations: Any = None
-    # Output only. A timestamp identifying the time this key was originally created.
-    create_time: Any = None
-    # Output only. A timestamp when this key was deleted. If the resource is not deleted, this must be empty.
-    delete_time: Any = None
     # Human-readable display name of this key that you can modify. The maximum length is 63 characters.
     display_name: Any = None
     # A checksum computed by the server based on the current value of the Key resource. This may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding. See https://google.aip.dev/154.
     etag: Any = None
-    # Output only. An encrypted and signed value held by this key. This field can be accessed only through the `GetKeyString` method.
-    key_string: Any = None
     # Identifier. The resource name of the key. The `name` has the form: `projects//locations/global/keys/`. For example: `projects/123456867718/locations/global/keys/b7ff1f9f-8275-410a-94dd-3855ee9b5dd2` NOTE: Key is a global resource; hence the only supported value for location is `global`.
     name: Any = None
     # Describes the restrictions on the key.
     restrictions: Any = None
     # Optional. The email address of [the service account](https://cloud.google.com/iam/docs/service-accounts) the key is bound to.
     service_account_email: Any = None
-    # Output only. Unique id in UUID4 format.
-    uid: Any = None
-    # Output only. A timestamp identifying the time this key was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class KeyAttrs:
@@ -161,11 +151,8 @@ Key = ubx.ResourceBinding(
     wire_type="google_apikeys_key",
     fields={
         "annotations": ubx.FieldSpec(wire_name="annotations"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
-        "delete_time": ubx.FieldSpec(wire_name="delete_time"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "etag": ubx.FieldSpec(wire_name="etag"),
-        "key_string": ubx.FieldSpec(wire_name="key_string"),
         "name": ubx.FieldSpec(wire_name="name"),
         "restrictions": ubx.FieldSpec(
             wire_name="restrictions",
@@ -173,7 +160,5 @@ Key = ubx.ResourceBinding(
             fields=_Key_RestrictionsFields,
         ),
         "service_account_email": ubx.FieldSpec(wire_name="service_account_email"),
-        "uid": ubx.FieldSpec(wire_name="uid"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

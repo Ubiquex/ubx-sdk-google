@@ -62,8 +62,6 @@ const V1beta1LbTcpExtension_ExtensionChainsFields: FieldMap = {
 };
 
 export interface V1beta1LbTcpExtensionConfig {
-  /** Output only. The timestamp when the resource was created. */
-  createTime?: string | Computed<string>;
   /** Optional. A human-readable description of the resource. */
   description?: string | Computed<string>;
   /** Required. A set of ordered extension chains that contain the match conditions and extensions to execute. Match conditions for each extension chain are evaluated in sequence for a given request. The first extension chain that has a condition that matches the request is executed. Any subsequent extension chains do not execute. Limited to 5 extension chains per resource. */
@@ -76,8 +74,6 @@ export interface V1beta1LbTcpExtensionConfig {
   name?: string | Computed<string>;
   /** Optional. If set, this `LbTcpExtension` resource applies to all `ForwardingRule` resources in these VPC networks. Values should be relative resource names identifying VPC networks, for example `projects/* /global/networks/network-1`. Currently limited to 1 network per resource. Limited to 1 network per resource. */
   networks?: string[] | Computed<string[]>;
-  /** Output only. The timestamp when the resource was updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1beta1LbTcpExtensionAttrs {
@@ -102,7 +98,6 @@ export interface V1beta1LbTcpExtensionAttrs {
 export const V1beta1LbTcpExtension: ResourceBinding<V1beta1LbTcpExtensionConfig, V1beta1LbTcpExtensionAttrs> = {
   wireType: "google_networkservices_v1beta1_lb_tcp_extension",
   fields: {
-    createTime: "create_time",
     description: "description",
     extensionChains: {
       wireName: "extension_chains",
@@ -113,6 +108,5 @@ export const V1beta1LbTcpExtension: ResourceBinding<V1beta1LbTcpExtensionConfig,
     loadBalancingScheme: "load_balancing_scheme",
     name: "name",
     networks: "networks",
-    updateTime: "update_time",
   },
 };

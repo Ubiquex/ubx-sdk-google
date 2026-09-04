@@ -26,20 +26,12 @@ _V1alphaMetadataImport_DatabaseDumpFields = {
 
 @dataclasses.dataclass
 class V1alphaMetadataImportConfig:
-    # Output only. The time when the metadata import was started.
-    create_time: Any = None
     # A specification of the location of and metadata about a database dump from a relational database management system.
     database_dump: Any = None
     # Optional. The description of the metadata import.
     description: Any = None
-    # Output only. The time when the metadata import finished.
-    end_time: Any = None
     # Immutable. Identifier. The relative resource name of the metadata import, of the form:projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports/{metadata_import_id}.
     name: Any = None
-    # Output only. The current state of the metadata import.
-    state: Any = None
-    # Output only. The time when the metadata import was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V1alphaMetadataImportAttrs:
@@ -61,16 +53,12 @@ class V1alphaMetadataImportAttrs:
 V1alphaMetadataImport = ubx.ResourceBinding(
     wire_type="google_metastore_v1alpha_metadata_import",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "database_dump": ubx.FieldSpec(
             wire_name="database_dump",
             kind="object",
             fields=_V1alphaMetadataImport_DatabaseDumpFields,
         ),
         "description": ubx.FieldSpec(wire_name="description"),
-        "end_time": ubx.FieldSpec(wire_name="end_time"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

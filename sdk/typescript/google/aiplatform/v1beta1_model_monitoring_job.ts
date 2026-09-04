@@ -829,24 +829,12 @@ const V1beta1ModelMonitoringJob_ModelMonitoringSpecFields: FieldMap = {
 };
 
 export interface V1beta1ModelMonitoringJobConfig {
-  /** Output only. Timestamp when this ModelMonitoringJob was created. */
-  createTime?: string | Computed<string>;
   /** The display name of the ModelMonitoringJob. The name can be up to 128 characters long and can consist of any UTF-8. */
   displayName?: string | Computed<string>;
   /** Represent the execution details of the job. */
   jobExecutionDetail?: V1beta1ModelMonitoringJob_JobExecutionDetail | Computed<V1beta1ModelMonitoringJob_JobExecutionDetail>;
   /** Monitoring monitoring job spec. It outlines the specifications for monitoring objectives, notifications, and result exports. */
   modelMonitoringSpec?: V1beta1ModelMonitoringJob_ModelMonitoringSpec | Computed<V1beta1ModelMonitoringJob_ModelMonitoringSpec>;
-  /** Output only. Resource name of a ModelMonitoringJob. Format: `projects/{project_id}/locations/{location_id}/modelMonitors/{model_monitor_id}/modelMonitoringJobs/{model_monitoring_job_id}` */
-  name?: string | Computed<string>;
-  /** Output only. Schedule resource name. It will only appear when this job is triggered by a schedule. */
-  schedule?: string | Computed<string>;
-  /** Output only. Timestamp when this ModelMonitoringJob was scheduled. It will only appear when this job is triggered by a schedule. */
-  scheduleTime?: string | Computed<string>;
-  /** Output only. The state of the monitoring job. * When the job is still creating, the state will be 'JOB_STATE_PENDING'. * Once the job is successfully created, the state will be 'JOB_STATE_RUNNING'. * Once the job is finished, the state will be one of 'JOB_STATE_FAILED', 'JOB_STATE_SUCCEEDED', 'JOB_STATE_PARTIALLY_SUCCEEDED'. */
-  state?: string | Computed<string>;
-  /** Output only. Timestamp when this ModelMonitoringJob was updated most recently. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1beta1ModelMonitoringJobAttrs {
@@ -873,7 +861,6 @@ export interface V1beta1ModelMonitoringJobAttrs {
 export const V1beta1ModelMonitoringJob: ResourceBinding<V1beta1ModelMonitoringJobConfig, V1beta1ModelMonitoringJobAttrs> = {
   wireType: "google_aiplatform_v1beta1_model_monitoring_job",
   fields: {
-    createTime: "create_time",
     displayName: "display_name",
     jobExecutionDetail: {
       wireName: "job_execution_detail",
@@ -885,10 +872,5 @@ export const V1beta1ModelMonitoringJob: ResourceBinding<V1beta1ModelMonitoringJo
       kind: "object",
       fields: V1beta1ModelMonitoringJob_ModelMonitoringSpecFields,
     },
-    name: "name",
-    schedule: "schedule",
-    scheduleTime: "schedule_time",
-    state: "state",
-    updateTime: "update_time",
   },
 };

@@ -2,36 +2,24 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ForwardingRule_AttachedExtensions {
-  /** The self-link or complete URL of the extension resource attached to this forwarding rule. (AI-inferred) */
   reference?: string | Computed<string>;
 }
 
 export interface ForwardingRule_MetadataFilters_FilterLabels {
-  /** The name of the metadata filter label. This is the key of the label. (AI-inferred) */
   name?: string | Computed<string>;
-  /** The value of the metadata filter label. This is the value part of a key-value pair used to match incoming metadata traffic for the forwarding rule. (AI-inferred) */
   value?: string | Computed<string>;
 }
 
 export interface ForwardingRule_MetadataFilters {
-  /** The list of label-value pairs to match against for the forwarding rule's metadata filter. (AI-inferred) */
   filterLabels?: ForwardingRule_MetadataFilters_FilterLabels[] | Computed<ForwardingRule_MetadataFilters_FilterLabels[]>;
-  /** Specifies how the metadata filter labels are matched against traffic. Valid values are MATCH_ALL (require all labels to match), MATCH_ANY (allow any one label to match), and NOT_SET (no specific matching criteria). (AI-inferred) */
   filterMatchCriteria?: string | Computed<string>;
 }
 
 export interface ForwardingRule_ServiceDirectoryRegistrations {
-  /** The Service Directory namespace where the forwarding rule will be registered as a service. (AI-inferred) */
   namespace?: string | Computed<string>;
-  /** The name of the Service Directory service to register the forwarding rule with. If not specified, a service name of the form `forwarding_rule_<forwarding_rule_name>` is automatically generated. (AI-inferred) */
   service?: string | Computed<string>;
-  /** The region of the Service Directory service to register. If not specified, it defaults to the region of the forwarding rule. (AI-inferred) */
   serviceDirectoryRegion?: string | Computed<string>;
 }
-
-const ForwardingRule_AttachedExtensionsFields: FieldMap = {
-  reference: "reference",
-};
 
 const ForwardingRule_MetadataFilters_FilterLabelsFields: FieldMap = {
   name: "name",
@@ -60,14 +48,8 @@ export interface ForwardingRuleConfig {
   allowGlobalAccess?: boolean | Computed<boolean>;
   /** This is used in PSC consumer ForwardingRule to control whether the PSC endpoint can be accessed from another region. */
   allowPscGlobalAccess?: boolean | Computed<boolean>;
-  /** Output only. [Output Only]. The extensions that are attached to this ForwardingRule. */
-  attachedExtensions?: ForwardingRule_AttachedExtensions[] | Computed<ForwardingRule_AttachedExtensions[]>;
   /** Identifies the backend service to which the forwarding rule sends traffic. It is a required field for the following load balancers: - Internal passthrough Network Load Balancers - Backend service-based regional external passthrough Network Load Balancers - Global external passthrough Network Load Balancers It cannot be set by other load balancer types and protocol forwarding rules. */
   backendService?: string | Computed<string>;
-  /** Output only. [Output Only] The URL for the corresponding base forwarding rule. By base forwarding rule, we mean the forwarding rule that has the same IP address, protocol, and port settings with the current forwarding rule, but without sourceIPRanges specified. Always empty if the current forwarding rule does not have sourceIPRanges specified. */
-  baseForwardingRule?: string | Computed<string>;
-  /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
-  creationTimestamp?: string | Computed<string>;
   /** An optional description of this resource. Provide this property when you create the resource. */
   description?: string | Computed<string>;
   /** Specifies the canary migration state for the backend buckets attached to this forwarding rule. Possible values are PREPARE, TEST_BY_PERCENTAGE, and TEST_ALL_TRAFFIC. To begin the migration from EXTERNAL to EXTERNAL_MANAGED, the state must be changed to PREPARE. The state must be changed to TEST_ALL_TRAFFIC before the loadBalancingScheme can be changed to EXTERNAL_MANAGED. Optionally, the TEST_BY_PERCENTAGE state can be used to migrate traffic to backend buckets attached to this forwarding rule by percentage using externalManagedBackendBucketMigrationTestingPercentage. Rolling back a migration requires the states to be set in reverse order. So changing the scheme from EXTERNAL_MANAGED to EXTERNAL requires the state to be set to TEST_ALL_TRAFFIC at the same time. Optionally, the TEST_BY_PERCENTAGE state can be used to migrate some traffic back to EXTERNAL or PREPARE can be used to migrate all traffic back to EXTERNAL. */
@@ -88,8 +70,6 @@ export interface ForwardingRuleConfig {
   ipprotocol?: string | Computed<string>;
   /** Indicates whether or not this load balancer can be used as a collector for packet mirroring. To prevent mirroring loops, instances behind this load balancer will not have their traffic mirrored even if aPacketMirroring rule applies to them. This can only be set to true for load balancers that have theirloadBalancingScheme set to INTERNAL. */
   isMirroringCollector?: boolean | Computed<boolean>;
-  /** Output only. [Output Only] Type of the resource. Alwayscompute#forwardingRule for forwarding rule resources. */
-  kind?: string | Computed<string>;
   /** A fingerprint for the labels being applied to this resource, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a ForwardingRule. */
   labelFingerprint?: string | Computed<string>;
   /** Labels for this resource. These can only be added or modified by thesetLabels method. Each label key/value pair must comply withRFC1035. Label values may be empty. */
@@ -112,14 +92,8 @@ export interface ForwardingRuleConfig {
   ports?: string[] | Computed<string[]>;
   /** [Output Only] The PSC connection id of the PSC forwarding rule. */
   pscConnectionId?: string | Computed<string>;
-  /** The status of the Private Service Connect (PSC) connection associated with this forwarding rule. Possible values are: ACCEPTED, CLOSED, NEEDS_ATTENTION, PENDING, REJECTED, and STATUS_UNSPECIFIED. (AI-inferred) */
-  pscConnectionStatus?: string | Computed<string>;
-  /** Output only. [Output Only] URL of the region where the regional forwarding rule resides. This field is not applicable to global forwarding rules. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body. */
-  region?: string | Computed<string>;
   /** [Output Only] Server-defined URL for the resource. */
   selfLink?: string | Computed<string>;
-  /** Output only. [Output Only] Server-defined URL for this resource with the resource id. */
-  selfLinkWithId?: string | Computed<string>;
   /** Service Directory resources to register this forwarding rule with. Currently, only supports a single Service Directory resource. */
   serviceDirectoryRegistrations?: ForwardingRule_ServiceDirectoryRegistrations[] | Computed<ForwardingRule_ServiceDirectoryRegistrations[]>;
   /** An optional prefix to the service name for this forwarding rule. If specified, the prefix is the first label of the fully qualified service name. The label must be 1-63 characters long, and comply withRFC1035. Specifically, the label must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. This field is only used for internal load balancing. */
@@ -193,7 +167,6 @@ export interface ForwardingRuleAttrs {
   ports: string[];
   /** [Output Only] The PSC connection id of the PSC forwarding rule. */
   pscConnectionId: string;
-  /** The status of the Private Service Connect (PSC) connection associated with this forwarding rule. Possible values are: ACCEPTED, CLOSED, NEEDS_ATTENTION, PENDING, REJECTED, and STATUS_UNSPECIFIED. (AI-inferred) */
   pscConnectionStatus: string;
   /** Output only. [Output Only] URL of the region where the regional forwarding rule resides. This field is not applicable to global forwarding rules. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body. */
   region: string;
@@ -221,14 +194,7 @@ export const ForwardingRule: ResourceBinding<ForwardingRuleConfig, ForwardingRul
     allPorts: "all_ports",
     allowGlobalAccess: "allow_global_access",
     allowPscGlobalAccess: "allow_psc_global_access",
-    attachedExtensions: {
-      wireName: "attached_extensions",
-      kind: "list",
-      fields: ForwardingRule_AttachedExtensionsFields,
-    },
     backendService: "backend_service",
-    baseForwardingRule: "base_forwarding_rule",
-    creationTimestamp: "creation_timestamp",
     description: "description",
     externalManagedBackendBucketMigrationState: "external_managed_backend_bucket_migration_state",
     externalManagedBackendBucketMigrationTestingPercentage: "external_managed_backend_bucket_migration_testing_percentage",
@@ -239,7 +205,6 @@ export const ForwardingRule: ResourceBinding<ForwardingRuleConfig, ForwardingRul
     ipaddress: "ipaddress",
     ipprotocol: "ipprotocol",
     isMirroringCollector: "is_mirroring_collector",
-    kind: "kind",
     labelFingerprint: "label_fingerprint",
     labels: "labels",
     loadBalancingScheme: "load_balancing_scheme",
@@ -255,10 +220,7 @@ export const ForwardingRule: ResourceBinding<ForwardingRuleConfig, ForwardingRul
     portRange: "port_range",
     ports: "ports",
     pscConnectionId: "psc_connection_id",
-    pscConnectionStatus: "psc_connection_status",
-    region: "region",
     selfLink: "self_link",
-    selfLinkWithId: "self_link_with_id",
     serviceDirectoryRegistrations: {
       wireName: "service_directory_registrations",
       kind: "list",

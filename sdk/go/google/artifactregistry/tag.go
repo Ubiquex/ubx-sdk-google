@@ -20,7 +20,7 @@ type TagAttrs struct {
 var Tag = ubx.ResourceBinding{
 	WireType: "google_artifactregistry_tag",
 	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":    ubx.FieldSpec{WireName: "name"},
 		"Version": ubx.FieldSpec{WireName: "version"},
 	},
 }

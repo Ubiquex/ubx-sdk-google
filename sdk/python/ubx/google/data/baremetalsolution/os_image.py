@@ -8,7 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class OsImageConfig:
-    name: Any = None
+    pass
 
 @dataclasses.dataclass
 class OsImageAttrs:
@@ -25,6 +25,5 @@ class OsImageAttrs:
 OsImage = ubx.DataSourceBinding(
     wire_type="google_baremetalsolution_os_image",
     fields={
-        "name": ubx.FieldSpec(wire_name="name"),
     },
 )

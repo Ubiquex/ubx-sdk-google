@@ -62,8 +62,6 @@ _TcpRoute_RulesFields = {
 
 @dataclasses.dataclass
 class TcpRouteConfig:
-    # Output only. The timestamp when the resource was created.
-    create_time: Any = None
     # Optional. A free-text description of the resource. Max length 1024 characters.
     description: Any = None
     # Optional. Gateways defines a list of gateways this TcpRoute is attached to, as one of the routing rules to route the requests served by the gateway. Each gateway reference should match the pattern: `projects/*/locations/*/gateways/`
@@ -76,10 +74,6 @@ class TcpRouteConfig:
     name: Any = None
     # Required. Rules that define how traffic is routed and handled. At least one RouteRule must be supplied. If there are multiple rules then the action taken will be the first rule to match.
     rules: Any = None
-    # Output only. Server-defined URL of this resource
-    self_link: Any = None
-    # Output only. The timestamp when the resource was updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class TcpRouteAttrs:
@@ -105,7 +99,6 @@ class TcpRouteAttrs:
 TcpRoute = ubx.ResourceBinding(
     wire_type="google_networkservices_tcp_route",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "gateways": ubx.FieldSpec(wire_name="gateways"),
         "labels": ubx.FieldSpec(wire_name="labels"),
@@ -116,7 +109,5 @@ TcpRoute = ubx.ResourceBinding(
             kind="list",
             fields=_TcpRoute_RulesFields,
         ),
-        "self_link": ubx.FieldSpec(wire_name="self_link"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

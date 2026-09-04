@@ -17,7 +17,7 @@ class Backup_Stats:
 
 @dataclasses.dataclass
 class BackupConfig:
-    name: Any = None
+    pass
 
 @dataclasses.dataclass
 class BackupAttrs:
@@ -38,6 +38,5 @@ class BackupAttrs:
 Backup = ubx.DataSourceBinding(
     wire_type="google_firestore_backup",
     fields={
-        "name": ubx.FieldSpec(wire_name="name"),
     },
 )

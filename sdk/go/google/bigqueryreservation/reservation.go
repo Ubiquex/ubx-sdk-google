@@ -38,39 +38,37 @@ type Reservation_SchedulingPolicy struct {
 }
 
 var Reservation_AutoscaleFields = ubx.FieldMap{
-		"CurrentSlots": ubx.FieldSpec{WireName: "current_slots"},
-		"MaxSlots": ubx.FieldSpec{WireName: "max_slots"},
-	}
+	"CurrentSlots": ubx.FieldSpec{WireName: "current_slots"},
+	"MaxSlots":     ubx.FieldSpec{WireName: "max_slots"},
+}
 
 var Reservation_ReplicationStatus_ErrorFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"Code":    ubx.FieldSpec{WireName: "code"},
+	"Details": ubx.FieldSpec{WireName: "details"},
+	"Message": ubx.FieldSpec{WireName: "message"},
+}
 
 var Reservation_ReplicationStatusFields = ubx.FieldMap{
-		"Error": ubx.FieldSpec{
-			WireName: "error",
-			Kind: "object",
-			Fields: Reservation_ReplicationStatus_ErrorFields,
-		},
-		"LastErrorTime": ubx.FieldSpec{WireName: "last_error_time"},
-		"LastReplicationTime": ubx.FieldSpec{WireName: "last_replication_time"},
-		"SoftFailoverStartTime": ubx.FieldSpec{WireName: "soft_failover_start_time"},
-	}
+	"Error": ubx.FieldSpec{
+		WireName: "error",
+		Kind:     "object",
+		Fields:   Reservation_ReplicationStatus_ErrorFields,
+	},
+	"LastErrorTime":         ubx.FieldSpec{WireName: "last_error_time"},
+	"LastReplicationTime":   ubx.FieldSpec{WireName: "last_replication_time"},
+	"SoftFailoverStartTime": ubx.FieldSpec{WireName: "soft_failover_start_time"},
+}
 
 var Reservation_SchedulingPolicyFields = ubx.FieldMap{
-		"Concurrency": ubx.FieldSpec{WireName: "concurrency"},
-		"MaxSlots": ubx.FieldSpec{WireName: "max_slots"},
-	}
+	"Concurrency": ubx.FieldSpec{WireName: "concurrency"},
+	"MaxSlots":    ubx.FieldSpec{WireName: "max_slots"},
+}
 
 type ReservationConfig struct {
 	// Auto scaling settings.
 	Autoscale any
 	// Optional. Job concurrency target which sets a soft upper bound on the number of jobs that can run concurrently in this reservation. This is a soft target due to asynchronous nature of the system and various optimizations for small queries. Default value is 0 which means that concurrency target will be automatically computed by the system. NOTE: this field is exposed as target job concurrency in the Information Schema, DDL and BigQuery CLI.
 	Concurrency any
-	// Output only. Creation time of the reservation.
-	CreationTime any
 	// Optional. Edition of the reservation.
 	Edition any
 	// Optional. If false, any query or pipeline job using this reservation will use idle slots from other reservations within the same admin project. If true, a query or pipeline job using this reservation will execute with the slot capacity specified in the slot_capacity field at most.
@@ -83,16 +81,10 @@ type ReservationConfig struct {
 	MultiRegionAuxiliary any
 	// Identifier. The resource name of the reservation, e.g., `projects/*/locations/*/reservations/team1-prod`. The reservation_id must only contain lower case alphanumeric characters or dashes. It must start with a letter and must not end with a dash. Its maximum length is 64 characters.
 	Name any
-	// Output only. The location where the reservation was originally created. This is set only during the failover reservation's creation. All billing charges for the failover reservation will be applied to this location.
-	OriginalPrimaryLocation any
-	// Output only. The current location of the reservation's primary replica. This field is only set for reservations using the managed disaster recovery feature.
-	PrimaryLocation any
 	// Disaster Recovery(DR) replication status of the reservation.
 	ReplicationStatus any
 	// Optional. The reservation group that this reservation belongs to. You can set this property when you create or update a reservation. Reservations do not need to belong to a reservation group. Format: projects/{project}/locations/{location}/reservationGroups/{reservation_group} or just {reservation_group}
 	ReservationGroup any
-	// Output only. The reservation group path of the reservation from root to leaf. The order of elements matters: the first element is the top level group and the last element is the direct parent reservation group. For example, if a reservation is under group-1 -> group-2 -> group-3, then the reservation group path is ["group-1", "group-2", "group-3"].
-	ReservationGroupPath any
 	// Optional. The scaling mode for the reservation. If the field is present but max_slots is not present, requests will be rejected with error code `google.rpc.Code.INVALID_ARGUMENT`.
 	ScalingMode any
 	// The scheduling policy controls how a reservation's resources are distributed.
@@ -101,8 +93,6 @@ type ReservationConfig struct {
 	SecondaryLocation any
 	// Optional. Baseline slots available to this reservation. A slot is a unit of computational power in BigQuery, and serves as the unit of parallelism. Queries using this reservation might use more slots during runtime if ignore_idle_slots is set to false, or autoscaling is enabled. The total slot_capacity of the reservation and its siblings may exceed the total slot_count of capacity commitments. In that case, the exceeding slots will be charged with the autoscale SKU. You can increase the number of baseline slots in a reservation every few minutes. If you want to decrease your baseline slots, you are limited to once an hour if you have recently changed your baseline slot capacity and your baseline slots exceed your committed slots. Otherwise, you can decrease your baseline slots every few minutes.
 	SlotCapacity any
-	// Output only. Last update time of the reservation.
-	UpdateTime any
 }
 
 type ReservationAttrs struct {
@@ -151,34 +141,29 @@ var Reservation = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Autoscale": ubx.FieldSpec{
 			WireName: "autoscale",
-			Kind: "object",
-			Fields: Reservation_AutoscaleFields,
+			Kind:     "object",
+			Fields:   Reservation_AutoscaleFields,
 		},
-		"Concurrency": ubx.FieldSpec{WireName: "concurrency"},
-		"CreationTime": ubx.FieldSpec{WireName: "creation_time"},
-		"Edition": ubx.FieldSpec{WireName: "edition"},
-		"IgnoreIdleSlots": ubx.FieldSpec{WireName: "ignore_idle_slots"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"MaxSlots": ubx.FieldSpec{WireName: "max_slots"},
+		"Concurrency":          ubx.FieldSpec{WireName: "concurrency"},
+		"Edition":              ubx.FieldSpec{WireName: "edition"},
+		"IgnoreIdleSlots":      ubx.FieldSpec{WireName: "ignore_idle_slots"},
+		"Labels":               ubx.FieldSpec{WireName: "labels"},
+		"MaxSlots":             ubx.FieldSpec{WireName: "max_slots"},
 		"MultiRegionAuxiliary": ubx.FieldSpec{WireName: "multi_region_auxiliary"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"OriginalPrimaryLocation": ubx.FieldSpec{WireName: "original_primary_location"},
-		"PrimaryLocation": ubx.FieldSpec{WireName: "primary_location"},
+		"Name":                 ubx.FieldSpec{WireName: "name"},
 		"ReplicationStatus": ubx.FieldSpec{
 			WireName: "replication_status",
-			Kind: "object",
-			Fields: Reservation_ReplicationStatusFields,
+			Kind:     "object",
+			Fields:   Reservation_ReplicationStatusFields,
 		},
 		"ReservationGroup": ubx.FieldSpec{WireName: "reservation_group"},
-		"ReservationGroupPath": ubx.FieldSpec{WireName: "reservation_group_path"},
-		"ScalingMode": ubx.FieldSpec{WireName: "scaling_mode"},
+		"ScalingMode":      ubx.FieldSpec{WireName: "scaling_mode"},
 		"SchedulingPolicy": ubx.FieldSpec{
 			WireName: "scheduling_policy",
-			Kind: "object",
-			Fields: Reservation_SchedulingPolicyFields,
+			Kind:     "object",
+			Fields:   Reservation_SchedulingPolicyFields,
 		},
 		"SecondaryLocation": ubx.FieldSpec{WireName: "secondary_location"},
-		"SlotCapacity": ubx.FieldSpec{WireName: "slot_capacity"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"SlotCapacity":      ubx.FieldSpec{WireName: "slot_capacity"},
 	},
 }

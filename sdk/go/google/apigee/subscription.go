@@ -6,16 +6,6 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type SubscriptionConfig struct {
 	// Required. Name of the API product for which the appgroup is purchasing a subscription.
 	Apiproduct any
-	// Output only. Time when the API product subscription was created in milliseconds since epoch.
-	CreatedAt any
-	// Output only. Time when the API product subscription ends in milliseconds since epoch.
-	EndTime any
-	// Output only. Time when the API product subscription was last modified in milliseconds since epoch.
-	LastModifiedAt any
-	// Output only. Name of the API product subscription.
-	Name any
-	// Output only. Time when the API product subscription starts in milliseconds since epoch.
-	StartTime any
 }
 
 type SubscriptionAttrs struct {
@@ -37,10 +27,5 @@ var Subscription = ubx.ResourceBinding{
 	WireType: "google_apigee_subscription",
 	Fields: ubx.FieldMap{
 		"Apiproduct": ubx.FieldSpec{WireName: "apiproduct"},
-		"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"LastModifiedAt": ubx.FieldSpec{WireName: "last_modified_at"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
 	},
 }

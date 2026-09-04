@@ -10,8 +10,6 @@ export interface V1beta1AgentAnomalyDetectionScopeConfig {
   name?: string | Computed<string>;
   /** Required. Customer-owned Cloud Observability bucket resource names attached to this scope. Format: `projects/{project}/locations/{location}/observationBuckets/{observation_bucket}`. */
   observabilityBuckets?: string[] | Computed<string[]>;
-  /** Output only. The lifecycle state of the scope. */
-  state?: string | Computed<string>;
 }
 
 export interface V1beta1AgentAnomalyDetectionScopeAttrs {
@@ -34,6 +32,5 @@ export const V1beta1AgentAnomalyDetectionScope: ResourceBinding<V1beta1AgentAnom
     logBuckets: "log_buckets",
     name: "name",
     observabilityBuckets: "observability_buckets",
-    state: "state",
   },
 };

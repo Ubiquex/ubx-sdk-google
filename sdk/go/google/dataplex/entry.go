@@ -4,18 +4,18 @@ package dataplex
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Entry_Aspects_AspectSource struct {
-	CreateTime any
+	CreateTime  any
 	DataVersion any
-	UpdateTime any
+	UpdateTime  any
 }
 
 type Entry_Aspects struct {
 	AspectSource any
-	AspectType any
-	CreateTime any
-	Data any
-	Path any
-	UpdateTime any
+	AspectType   any
+	CreateTime   any
+	Data         any
+	Path         any
+	UpdateTime   any
 }
 
 type Entry_EntrySource_Ancestors struct {
@@ -47,51 +47,49 @@ type Entry_EntrySource struct {
 }
 
 var Entry_Aspects_AspectSourceFields = ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DataVersion": ubx.FieldSpec{WireName: "data_version"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-	}
+	"CreateTime":  ubx.FieldSpec{WireName: "create_time"},
+	"DataVersion": ubx.FieldSpec{WireName: "data_version"},
+	"UpdateTime":  ubx.FieldSpec{WireName: "update_time"},
+}
 
 var Entry_AspectsFields = ubx.FieldMap{
-		"AspectSource": ubx.FieldSpec{
-			WireName: "aspect_source",
-			Kind: "object",
-			Fields: Entry_Aspects_AspectSourceFields,
-		},
-		"AspectType": ubx.FieldSpec{WireName: "aspect_type"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Data": ubx.FieldSpec{WireName: "data"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-	}
+	"AspectSource": ubx.FieldSpec{
+		WireName: "aspect_source",
+		Kind:     "object",
+		Fields:   Entry_Aspects_AspectSourceFields,
+	},
+	"AspectType": ubx.FieldSpec{WireName: "aspect_type"},
+	"CreateTime": ubx.FieldSpec{WireName: "create_time"},
+	"Data":       ubx.FieldSpec{WireName: "data"},
+	"Path":       ubx.FieldSpec{WireName: "path"},
+	"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+}
 
 var Entry_EntrySource_AncestorsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var Entry_EntrySourceFields = ubx.FieldMap{
-		"Ancestors": ubx.FieldSpec{
-			WireName: "ancestors",
-			Kind: "list",
-			Fields: Entry_EntrySource_AncestorsFields,
-		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"Platform": ubx.FieldSpec{WireName: "platform"},
-		"Resource": ubx.FieldSpec{WireName: "resource"},
-		"System": ubx.FieldSpec{WireName: "system"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-	}
+	"Ancestors": ubx.FieldSpec{
+		WireName: "ancestors",
+		Kind:     "list",
+		Fields:   Entry_EntrySource_AncestorsFields,
+	},
+	"CreateTime":  ubx.FieldSpec{WireName: "create_time"},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"Labels":      ubx.FieldSpec{WireName: "labels"},
+	"Location":    ubx.FieldSpec{WireName: "location"},
+	"Platform":    ubx.FieldSpec{WireName: "platform"},
+	"Resource":    ubx.FieldSpec{WireName: "resource"},
+	"System":      ubx.FieldSpec{WireName: "system"},
+	"UpdateTime":  ubx.FieldSpec{WireName: "update_time"},
+}
 
 type EntryConfig struct {
 	// Optional. The aspects that are attached to the entry. Depending on how the aspect is attached to the entry, the format of the aspect key can be one of the following: If the aspect is attached directly to the entry: {project_id_or_number}.{location_id}.{aspect_type_id} If the aspect is attached to an entry's path: {project_id_or_number}.{location_id}.{aspect_type_id}@{path}
 	Aspects any
-	// Output only. The time when the entry was created in Dataplex Universal Catalog.
-	CreateTime any
 	// Information related to the source system of the data resource that is represented by the entry.
 	EntrySource any
 	// Required. Immutable. The relative resource name of the entry type that was used to create this entry, in the format projects/{project_id_or_number}/locations/{location_id}/entryTypes/{entry_type_id}.
@@ -102,8 +100,6 @@ type EntryConfig struct {
 	Name any
 	// Optional. Immutable. The resource name of the parent entry, in the format projects/{project_id_or_number}/locations/{location_id}/entryGroups/{entry_group_id}/entries/{entry_id}.
 	ParentEntry any
-	// Output only. The time when the entry was last updated in Dataplex Universal Catalog.
-	UpdateTime any
 }
 
 type EntryAttrs struct {
@@ -130,19 +126,17 @@ var Entry = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Aspects": ubx.FieldSpec{
 			WireName: "aspects",
-			Kind: "map",
-			Fields: Entry_AspectsFields,
+			Kind:     "map",
+			Fields:   Entry_AspectsFields,
 		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"EntrySource": ubx.FieldSpec{
 			WireName: "entry_source",
-			Kind: "object",
-			Fields: Entry_EntrySourceFields,
+			Kind:     "object",
+			Fields:   Entry_EntrySourceFields,
 		},
-		"EntryType": ubx.FieldSpec{WireName: "entry_type"},
+		"EntryType":          ubx.FieldSpec{WireName: "entry_type"},
 		"FullyQualifiedName": ubx.FieldSpec{WireName: "fully_qualified_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ParentEntry": ubx.FieldSpec{WireName: "parent_entry"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"Name":               ubx.FieldSpec{WireName: "name"},
+		"ParentEntry":        ubx.FieldSpec{WireName: "parent_entry"},
 	},
 }

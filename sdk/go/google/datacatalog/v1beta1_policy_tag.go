@@ -4,8 +4,6 @@ package datacatalog
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta1PolicyTagConfig struct {
-	// Output only. Resource names of child policy tags of this policy tag.
-	ChildPolicyTags any
 	// Description of this policy tag. It must: contain only unicode characters, tabs, newlines, carriage returns and page breaks; and be at most 2000 bytes long when encoded in UTF-8. If not set, defaults to an empty description. If not set, defaults to an empty description.
 	Description any
 	// Required. User defined name of this policy tag. It must: be unique within the parent taxonomy; contain only unicode letters, numbers, underscores, dashes and spaces; not start or end with spaces; and be at most 200 bytes long when encoded in UTF-8.
@@ -32,10 +30,9 @@ type V1beta1PolicyTagAttrs struct {
 var V1beta1PolicyTag = ubx.ResourceBinding{
 	WireType: "google_datacatalog_v1beta1_policy_tag",
 	Fields: ubx.FieldMap{
-		"ChildPolicyTags": ubx.FieldSpec{WireName: "child_policy_tags"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Description":     ubx.FieldSpec{WireName: "description"},
+		"DisplayName":     ubx.FieldSpec{WireName: "display_name"},
+		"Name":            ubx.FieldSpec{WireName: "name"},
 		"ParentPolicyTag": ubx.FieldSpec{WireName: "parent_policy_tag"},
 	},
 }

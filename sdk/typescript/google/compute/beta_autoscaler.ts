@@ -177,12 +177,6 @@ const BetaAutoscaler_AutoscalingPolicyFields: FieldMap = {
   stabilizationPeriodSec: "stabilization_period_sec",
 };
 
-const BetaAutoscaler_ScalingScheduleStatusFields: FieldMap = {
-  lastStartTime: "last_start_time",
-  nextStartTime: "next_start_time",
-  state: "state",
-};
-
 const BetaAutoscaler_StatusDetailsFields: FieldMap = {
   message: "message",
   type: "type",
@@ -191,22 +185,10 @@ const BetaAutoscaler_StatusDetailsFields: FieldMap = {
 export interface BetaAutoscalerConfig {
   /** Cloud Autoscaler policy. */
   autoscalingPolicy?: BetaAutoscaler_AutoscalingPolicy | Computed<BetaAutoscaler_AutoscalingPolicy>;
-  /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
-  creationTimestamp?: string | Computed<string>;
   /** An optional description of this resource. Provide this property when you create the resource. */
   description?: string | Computed<string>;
-  /** Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server. */
-  id?: string | Computed<string>;
-  /** Output only. [Output Only] Type of the resource. Always compute#autoscaler for autoscalers. */
-  kind?: string | Computed<string>;
   /** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
   name?: string | Computed<string>;
-  /** Output only. [Output Only] Target recommended MIG size (number of instances) computed by autoscaler. Autoscaler calculates the recommended MIG size even when the autoscaling policy mode is different from ON. This field is empty when autoscaler is not connected to an existing managed instance group or autoscaler did not generate its prediction. */
-  recommendedSize?: number | Computed<number>;
-  /** Output only. [Output Only] URL of theregion where the instance group resides (for autoscalers living in regional scope). */
-  region?: string | Computed<string>;
-  /** Output only. [Output Only] Status information of existing scaling schedules. */
-  scalingScheduleStatus?: Record<string, BetaAutoscaler_ScalingScheduleStatus> | Computed<Record<string, BetaAutoscaler_ScalingScheduleStatus>>;
   /** [Output Only] Server-defined URL for the resource. */
   selfLink?: string | Computed<string>;
   /** [Output Only] The status of the autoscaler configuration. Current set of possible values: - PENDING: Autoscaler backend hasn't read new/updated configuration. - DELETING: Configuration is being deleted. - ACTIVE: Configuration is acknowledged to be effective. Some warnings might be present in the statusDetails field. - ERROR: Configuration has errors. Actionable for users. Details are present in the statusDetails field. New values might be added in the future. */
@@ -215,8 +197,6 @@ export interface BetaAutoscalerConfig {
   statusDetails?: BetaAutoscaler_StatusDetails[] | Computed<BetaAutoscaler_StatusDetails[]>;
   /** URL of the managed instance group that this autoscaler will scale. This field is required when creating an autoscaler. */
   target?: string | Computed<string>;
-  /** Output only. [Output Only] URL of thezone where the instance group resides (for autoscalers living in zonal scope). */
-  zone?: string | Computed<string>;
 }
 
 export interface BetaAutoscalerAttrs {
@@ -258,18 +238,8 @@ export const BetaAutoscaler: ResourceBinding<BetaAutoscalerConfig, BetaAutoscale
       kind: "object",
       fields: BetaAutoscaler_AutoscalingPolicyFields,
     },
-    creationTimestamp: "creation_timestamp",
     description: "description",
-    id: "id",
-    kind: "kind",
     name: "name",
-    recommendedSize: "recommended_size",
-    region: "region",
-    scalingScheduleStatus: {
-      wireName: "scaling_schedule_status",
-      kind: "map",
-      fields: BetaAutoscaler_ScalingScheduleStatusFields,
-    },
     selfLink: "self_link",
     status: "status",
     statusDetails: {
@@ -278,6 +248,5 @@ export const BetaAutoscaler: ResourceBinding<BetaAutoscalerConfig, BetaAutoscale
       fields: BetaAutoscaler_StatusDetailsFields,
     },
     target: "target",
-    zone: "zone",
   },
 };

@@ -12,8 +12,6 @@ type V1betaDebugTokenConfig struct {
 	Name any
 	// Required. Input only. Immutable. The secret token itself. Must be provided during creation, and must be a UUID4, case insensitive. This field is immutable once set, and cannot be provided during a UpdateDebugToken request. You can, however, delete this debug token using DeleteDebugToken to revoke it. For security reasons, this field will never be populated in any response.
 	Token any
-	// Output only. Timestamp when this debug token was most recently updated.
-	UpdateTime any
 }
 
 type V1betaDebugTokenAttrs struct {
@@ -33,9 +31,8 @@ var V1betaDebugToken = ubx.ResourceBinding{
 	WireType: "google_firebaseappcheck_v1beta_debug_token",
 	Fields: ubx.FieldMap{
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Token": ubx.FieldSpec{WireName: "token"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"Etag":        ubx.FieldSpec{WireName: "etag"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Token":       ubx.FieldSpec{WireName: "token"},
 	},
 }

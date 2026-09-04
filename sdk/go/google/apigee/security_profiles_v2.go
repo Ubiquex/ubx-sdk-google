@@ -9,37 +9,31 @@ type SecurityProfilesV2_ProfileAssessmentConfigs_Include struct {
 
 type SecurityProfilesV2_ProfileAssessmentConfigs struct {
 	Include any
-	Weight any
+	Weight  any
 }
 
 var SecurityProfilesV2_ProfileAssessmentConfigs_IncludeFields = ubx.FieldMap{
-		"GatewayTypes": ubx.FieldSpec{WireName: "gateway_types"},
-	}
+	"GatewayTypes": ubx.FieldSpec{WireName: "gateway_types"},
+}
 
 var SecurityProfilesV2_ProfileAssessmentConfigsFields = ubx.FieldMap{
-		"Include": ubx.FieldSpec{
-			WireName: "include",
-			Kind: "object",
-			Fields: SecurityProfilesV2_ProfileAssessmentConfigs_IncludeFields,
-		},
-		"Weight": ubx.FieldSpec{WireName: "weight"},
-	}
+	"Include": ubx.FieldSpec{
+		WireName: "include",
+		Kind:     "object",
+		Fields:   SecurityProfilesV2_ProfileAssessmentConfigs_IncludeFields,
+	},
+	"Weight": ubx.FieldSpec{WireName: "weight"},
+}
 
 type SecurityProfilesV2Config struct {
-	// Output only. The time of the security profile creation.
-	CreateTime any
 	// Optional. The description of the security profile.
 	Description any
-	// Output only. Whether the security profile is google defined.
-	GoogleDefined any
 	// Identifier. Name of the security profile v2 resource. Format: organizations/{org}/securityProfilesV2/{profile}
 	Name any
 	// Required. The configuration for each assessment in this profile. Key is the name/id of the assessment.
 	ProfileAssessmentConfigs any
 	// Optional. The risk assessment type of the security profile. Defaults to ADVANCED_API_SECURITY.
 	RiskAssessmentType any
-	// Output only. The time of the security profile update.
-	UpdateTime any
 }
 
 type SecurityProfilesV2Attrs struct {
@@ -62,16 +56,13 @@ type SecurityProfilesV2Attrs struct {
 var SecurityProfilesV2 = ubx.ResourceBinding{
 	WireType: "google_apigee_security_profiles_v2",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"GoogleDefined": ubx.FieldSpec{WireName: "google_defined"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"ProfileAssessmentConfigs": ubx.FieldSpec{
 			WireName: "profile_assessment_configs",
-			Kind: "map",
-			Fields: SecurityProfilesV2_ProfileAssessmentConfigsFields,
+			Kind:     "map",
+			Fields:   SecurityProfilesV2_ProfileAssessmentConfigsFields,
 		},
 		"RiskAssessmentType": ubx.FieldSpec{WireName: "risk_assessment_type"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

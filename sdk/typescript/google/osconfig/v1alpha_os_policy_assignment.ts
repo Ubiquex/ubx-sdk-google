@@ -415,10 +415,6 @@ const V1alphaOsPolicyAssignment_RolloutFields: FieldMap = {
 };
 
 export interface V1alphaOsPolicyAssignmentConfig {
-  /** Output only. Indicates that this revision has been successfully rolled out in this zone and new VMs will be assigned OS policies from this revision. For a given OS policy assignment, there is only one revision with a value of `true` for this field. */
-  baseline?: boolean | Computed<boolean>;
-  /** Output only. Indicates that this revision deletes the OS policy assignment. */
-  deleted?: boolean | Computed<boolean>;
   /** OS policy assignment description. Length of the description is limited to 1024 characters. */
   description?: string | Computed<string>;
   /** The etag for this OS policy assignment. If this is provided on update, it must match the server's etag. */
@@ -429,18 +425,8 @@ export interface V1alphaOsPolicyAssignmentConfig {
   name?: string | Computed<string>;
   /** Required. List of OS policies to be applied to the VMs. */
   osPolicies?: V1alphaOsPolicyAssignment_OsPolicies[] | Computed<V1alphaOsPolicyAssignment_OsPolicies[]>;
-  /** Output only. Indicates that reconciliation is in progress for the revision. This value is `true` when the `rollout_state` is one of: * IN_PROGRESS * CANCELLING */
-  reconciling?: boolean | Computed<boolean>;
-  /** Output only. The timestamp that the revision was created. */
-  revisionCreateTime?: string | Computed<string>;
-  /** Output only. The assignment revision ID A new revision is committed whenever a rollout is triggered for a OS policy assignment */
-  revisionId?: string | Computed<string>;
   /** Message to configure the rollout at the zonal level for the OS policy assignment. */
   rollout?: V1alphaOsPolicyAssignment_Rollout | Computed<V1alphaOsPolicyAssignment_Rollout>;
-  /** Output only. OS policy assignment rollout state */
-  rolloutState?: string | Computed<string>;
-  /** Output only. Server generated unique id for the OS policy assignment resource. */
-  uid?: string | Computed<string>;
 }
 
 export interface V1alphaOsPolicyAssignmentAttrs {
@@ -475,8 +461,6 @@ export interface V1alphaOsPolicyAssignmentAttrs {
 export const V1alphaOsPolicyAssignment: ResourceBinding<V1alphaOsPolicyAssignmentConfig, V1alphaOsPolicyAssignmentAttrs> = {
   wireType: "google_osconfig_v1alpha_os_policy_assignment",
   fields: {
-    baseline: "baseline",
-    deleted: "deleted",
     description: "description",
     etag: "etag",
     instanceFilter: {
@@ -490,15 +474,10 @@ export const V1alphaOsPolicyAssignment: ResourceBinding<V1alphaOsPolicyAssignmen
       kind: "list",
       fields: V1alphaOsPolicyAssignment_OsPoliciesFields,
     },
-    reconciling: "reconciling",
-    revisionCreateTime: "revision_create_time",
-    revisionId: "revision_id",
     rollout: {
       wireName: "rollout",
       kind: "object",
       fields: V1alphaOsPolicyAssignment_RolloutFields,
     },
-    rolloutState: "rollout_state",
-    uid: "uid",
   },
 };

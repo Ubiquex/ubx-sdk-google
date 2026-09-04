@@ -148,15 +148,12 @@ const Example_ActionsFields: FieldMap = {
 export interface ExampleConfig {
   actions?: Example_Actions[] | Computed<Example_Actions[]>;
   conversationState?: string | Computed<string>;
-  createTime?: string | Computed<string>;
   description?: string | Computed<string>;
   displayName?: string | Computed<string>;
   languageCode?: string | Computed<string>;
   name?: string | Computed<string>;
   playbookInput?: Example_Actions_PlaybookInvocation_PlaybookInput | Computed<Example_Actions_PlaybookInvocation_PlaybookInput>;
   playbookOutput?: Example_Actions_PlaybookInvocation_PlaybookOutput | Computed<Example_Actions_PlaybookInvocation_PlaybookOutput>;
-  tokenCount?: string | Computed<string>;
-  updateTime?: string | Computed<string>;
 }
 
 export interface ExampleAttrs {
@@ -182,7 +179,6 @@ export const Example: ResourceBinding<ExampleConfig, ExampleAttrs> = {
       fields: Example_ActionsFields,
     },
     conversationState: "conversation_state",
-    createTime: "create_time",
     description: "description",
     displayName: "display_name",
     languageCode: "language_code",
@@ -197,7 +193,5 @@ export const Example: ResourceBinding<ExampleConfig, ExampleAttrs> = {
       kind: "object",
       fields: Example_Actions_PlaybookInvocation_PlaybookOutputFields,
     },
-    tokenCount: "token_count",
-    updateTime: "update_time",
   },
 };

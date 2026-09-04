@@ -310,7 +310,6 @@ export interface Device_ThunderboltInfo {
 }
 
 export interface DeviceConfig {
-  name: string | Computed<string>;
   readMask?: string | Computed<string>;
 }
 
@@ -376,7 +375,6 @@ export interface DeviceAttrs {
 export const Device: DataSourceBinding<DeviceConfig, DeviceAttrs> = {
   wireType: "google_chromemanagement_device",
   fields: {
-    name: "name",
     readMask: "read_mask",
   },
 };

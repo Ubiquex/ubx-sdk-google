@@ -50,16 +50,10 @@ const EntryLink_EntryReferencesFields: FieldMap = {
 export interface EntryLinkConfig {
   /** Optional. The aspects that are attached to the entry link. The format of the aspect key has to be the following: {project_id_or_number}.{location_id}.{aspect_type_id} Currently, only a single aspect of a Dataplex-owned Aspect Type is allowed. */
   aspects?: Record<string, EntryLink_Aspects> | Computed<Record<string, EntryLink_Aspects>>;
-  /** Output only. The time when the Entry Link was created. */
-  createTime?: string | Computed<string>;
   /** Required. Immutable. Relative resource name of the Entry Link Type used to create this Entry Link. For example: Entry link between synonym terms in a glossary: projects/dataplex-types/locations/global/entryLinkTypes/synonym Entry link between related terms in a glossary: projects/dataplex-types/locations/global/entryLinkTypes/related Entry link between glossary terms and data assets: projects/dataplex-types/locations/global/entryLinkTypes/definition */
   entryLinkType?: string | Computed<string>;
   /** Required. Immutable. Specifies the Entries referenced in the Entry Link. There should be exactly two entry references. */
   entryReferences?: EntryLink_EntryReferences[] | Computed<EntryLink_EntryReferences[]>;
-  /** Output only. Immutable. Identifier. The relative resource name of the Entry Link, of the form: projects/{project_id_or_number}/locations/{location_id}/entryGroups/{entry_group_id}/entryLinks/{entry_link_id} */
-  name?: string | Computed<string>;
-  /** Output only. The time when the Entry Link was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface EntryLinkAttrs {
@@ -85,14 +79,11 @@ export const EntryLink: ResourceBinding<EntryLinkConfig, EntryLinkAttrs> = {
       kind: "map",
       fields: EntryLink_AspectsFields,
     },
-    createTime: "create_time",
     entryLinkType: "entry_link_type",
     entryReferences: {
       wireName: "entry_references",
       kind: "list",
       fields: EntryLink_EntryReferencesFields,
     },
-    name: "name",
-    updateTime: "update_time",
   },
 };

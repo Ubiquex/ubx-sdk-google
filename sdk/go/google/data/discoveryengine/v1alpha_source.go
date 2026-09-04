@@ -118,7 +118,7 @@ type V1alphaSourceConfig struct {
 type V1alphaSourceAttrs struct {
 	// Represents the metadata of a source and some additional information.
 	Metadata any
-	Name any
+	Name     any
 	// Allows extension of Source Settings in the BatchCreateSources (Formerly AddSource request).
 	Settings any
 	// SourceId is the last segment of the source's resource name.

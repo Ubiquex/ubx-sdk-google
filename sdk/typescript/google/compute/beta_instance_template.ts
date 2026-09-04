@@ -766,21 +766,11 @@ const BetaInstanceTemplate_SourceInstanceParamsFields: FieldMap = {
 };
 
 export interface BetaInstanceTemplateConfig {
-  /** Output only. [Output Only] The creation timestamp for this instance template inRFC3339 text format. */
-  creationTimestamp?: string | Computed<string>;
   /** An optional description of this resource. Provide this property when you create the resource. */
   description?: string | Computed<string>;
-  /** Output only. [Output Only] A unique identifier for this instance template. The server defines this identifier. */
-  id?: string | Computed<string>;
-  /** Output only. [Output Only] The resource type, which is alwayscompute#instanceTemplate for instance templates. */
-  kind?: string | Computed<string>;
   /** Name of the resource; provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
   name?: string | Computed<string>;
   properties?: BetaInstanceTemplate_Properties | Computed<BetaInstanceTemplate_Properties>;
-  /** Output only. [Output Only] URL of the region where the instance template resides. Only applicable for regional resources. */
-  region?: string | Computed<string>;
-  /** Output only. [Output Only] The URL for this instance template. The server defines this URL. */
-  selfLink?: string | Computed<string>;
   /** The source instance used to create the template. You can provide this as a partial or full URL to the resource. For example, the following are valid values: - https://www.googleapis.com/compute/v1/projects/project/zones/zone/instances/instance - projects/project/zones/zone/instances/instance */
   sourceInstance?: string | Computed<string>;
   /** A specification of the parameters to use when creating the instance template from a source instance. */
@@ -812,18 +802,13 @@ export interface BetaInstanceTemplateAttrs {
 export const BetaInstanceTemplate: ResourceBinding<BetaInstanceTemplateConfig, BetaInstanceTemplateAttrs> = {
   wireType: "google_compute_beta_instance_template",
   fields: {
-    creationTimestamp: "creation_timestamp",
     description: "description",
-    id: "id",
-    kind: "kind",
     name: "name",
     properties: {
       wireName: "properties",
       kind: "object",
       fields: BetaInstanceTemplate_PropertiesFields,
     },
-    region: "region",
-    selfLink: "self_link",
     sourceInstance: "source_instance",
     sourceInstanceParams: {
       wireName: "source_instance_params",

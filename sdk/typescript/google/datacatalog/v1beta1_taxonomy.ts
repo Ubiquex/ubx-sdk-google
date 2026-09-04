@@ -37,8 +37,6 @@ export interface V1beta1TaxonomyConfig {
   displayName?: string | Computed<string>;
   /** Identifier. Resource name of this taxonomy, whose format is: "projects/{project_number}/locations/{location_id}/taxonomies/{id}". */
   name?: string | Computed<string>;
-  /** Output only. Number of policy tags contained in this taxonomy. */
-  policyTagCount?: number | Computed<number>;
   /** The source system of the Taxonomy. */
   service?: V1beta1Taxonomy_Service | Computed<V1beta1Taxonomy_Service>;
   /** Timestamps about this resource according to a particular system. */
@@ -69,7 +67,6 @@ export const V1beta1Taxonomy: ResourceBinding<V1beta1TaxonomyConfig, V1beta1Taxo
     description: "description",
     displayName: "display_name",
     name: "name",
-    policyTagCount: "policy_tag_count",
     service: {
       wireName: "service",
       kind: "object",

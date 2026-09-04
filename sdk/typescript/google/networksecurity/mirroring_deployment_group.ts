@@ -15,43 +15,15 @@ export interface MirroringDeploymentGroup_NestedDeployments {
   state?: string | Computed<string>;
 }
 
-const MirroringDeploymentGroup_ConnectedEndpointGroupsFields: FieldMap = {
-  name: "name",
-};
-
-const MirroringDeploymentGroup_LocationsFields: FieldMap = {
-  location: "location",
-  state: "state",
-};
-
-const MirroringDeploymentGroup_NestedDeploymentsFields: FieldMap = {
-  name: "name",
-  state: "state",
-};
-
 export interface MirroringDeploymentGroupConfig {
-  /** Output only. The list of endpoint groups that are connected to this resource. */
-  connectedEndpointGroups?: MirroringDeploymentGroup_ConnectedEndpointGroups[] | Computed<MirroringDeploymentGroup_ConnectedEndpointGroups[]>;
-  /** Output only. The timestamp when the resource was created. See https://google.aip.dev/148#timestamps. */
-  createTime?: string | Computed<string>;
   /** Optional. User-provided description of the deployment group. Used as additional context for the deployment group. */
   description?: string | Computed<string>;
   /** Optional. Labels are key/value pairs that help to organize and filter resources. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. The list of locations where the deployment group is present. */
-  locations?: MirroringDeploymentGroup_Locations[] | Computed<MirroringDeploymentGroup_Locations[]>;
   /** Immutable. Identifier. The resource name of this deployment group, for example: `projects/123456789/locations/global/mirroringDeploymentGroups/my-dg`. See https://google.aip.dev/122 for more details. */
   name?: string | Computed<string>;
-  /** Output only. The list of Mirroring Deployments that belong to this group. */
-  nestedDeployments?: MirroringDeploymentGroup_NestedDeployments[] | Computed<MirroringDeploymentGroup_NestedDeployments[]>;
   /** Required. Immutable. The network that will be used for all child deployments, for example: `projects/{project}/global/networks/{network}`. See https://google.aip.dev/124. */
   network?: string | Computed<string>;
-  /** Output only. The current state of the resource does not match the user's intended state, and the system is working to reconcile them. This is part of the normal operation (e.g. adding a new deployment to the group) See https://google.aip.dev/128. */
-  reconciling?: boolean | Computed<boolean>;
-  /** Output only. The current state of the deployment group. See https://google.aip.dev/216. */
-  state?: string | Computed<string>;
-  /** Output only. The timestamp when the resource was most recently updated. See https://google.aip.dev/148#timestamps. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface MirroringDeploymentGroupAttrs {
@@ -82,28 +54,9 @@ export interface MirroringDeploymentGroupAttrs {
 export const MirroringDeploymentGroup: ResourceBinding<MirroringDeploymentGroupConfig, MirroringDeploymentGroupAttrs> = {
   wireType: "google_networksecurity_mirroring_deployment_group",
   fields: {
-    connectedEndpointGroups: {
-      wireName: "connected_endpoint_groups",
-      kind: "list",
-      fields: MirroringDeploymentGroup_ConnectedEndpointGroupsFields,
-    },
-    createTime: "create_time",
     description: "description",
     labels: "labels",
-    locations: {
-      wireName: "locations",
-      kind: "list",
-      fields: MirroringDeploymentGroup_LocationsFields,
-    },
     name: "name",
-    nestedDeployments: {
-      wireName: "nested_deployments",
-      kind: "list",
-      fields: MirroringDeploymentGroup_NestedDeploymentsFields,
-    },
     network: "network",
-    reconciling: "reconciling",
-    state: "state",
-    updateTime: "update_time",
   },
 };

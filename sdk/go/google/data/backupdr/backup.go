@@ -26,12 +26,12 @@ type Backup_BackupApplianceBackupProperties struct {
 }
 
 type Backup_BackupApplianceLocks_BackupApplianceLockInfo struct {
-	BackupApplianceId any
+	BackupApplianceId   any
 	BackupApplianceName any
-	BackupImage any
-	JobName any
-	LockReason any
-	SlaId any
+	BackupImage         any
+	JobName             any
+	LockReason          any
+	SlaId               any
 }
 
 type Backup_BackupApplianceLocks_ServiceLockInfo struct {
@@ -40,8 +40,8 @@ type Backup_BackupApplianceLocks_ServiceLockInfo struct {
 
 type Backup_BackupApplianceLocks struct {
 	BackupApplianceLockInfo any
-	LockUntilTime any
-	ServiceLockInfo any
+	LockUntilTime           any
+	ServiceLockInfo         any
 }
 
 type Backup_CloudSqlInstanceBackupProperties struct {
@@ -60,10 +60,10 @@ type Backup_CloudSqlInstanceBackupProperties struct {
 }
 
 type Backup_ComputeInstanceBackupProperties_Disk_DiskEncryptionKey struct {
-	KmsKeyName any
+	KmsKeyName           any
 	KmsKeyServiceAccount any
-	RawKey any
-	RsaEncryptedKey any
+	RawKey               any
+	RsaEncryptedKey      any
 }
 
 type Backup_ComputeInstanceBackupProperties_Disk_GuestOsFeature struct {
@@ -71,37 +71,37 @@ type Backup_ComputeInstanceBackupProperties_Disk_GuestOsFeature struct {
 }
 
 type Backup_ComputeInstanceBackupProperties_Disk_InitializeParams struct {
-	DiskName any
+	DiskName     any
 	ReplicaZones any
 }
 
 type Backup_ComputeInstanceBackupProperties_Disk struct {
-	AutoDelete any
-	Boot any
-	DeviceName any
-	DiskEncryptionKey any
-	DiskInterface any
-	DiskSizeGb any
-	DiskType any
+	AutoDelete         any
+	Boot               any
+	DeviceName         any
+	DiskEncryptionKey  any
+	DiskInterface      any
+	DiskSizeGb         any
+	DiskType           any
 	DiskTypeDeprecated any
-	GuestOsFeature any
-	Index any
-	InitializeParams any
-	Kind any
-	License any
-	Mode any
-	SavedState any
-	Source any
-	Type any
+	GuestOsFeature     any
+	Index              any
+	InitializeParams   any
+	Kind               any
+	License            any
+	Mode               any
+	SavedState         any
+	Source             any
+	Type               any
 }
 
 type Backup_ComputeInstanceBackupProperties_GuestAccelerator struct {
 	AcceleratorCount any
-	AcceleratorType any
+	AcceleratorType  any
 }
 
 type Backup_ComputeInstanceBackupProperties_Metadata_Items struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -111,36 +111,36 @@ type Backup_ComputeInstanceBackupProperties_Metadata struct {
 }
 
 type Backup_ComputeInstanceBackupProperties_NetworkInterface_AccessConfigs struct {
-	ExternalIpv6 any
+	ExternalIpv6             any
 	ExternalIpv6PrefixLength any
-	Name any
-	NatIp any
-	NetworkTier any
-	PublicPtrDomainName any
-	SetPublicPtr any
-	Type any
+	Name                     any
+	NatIp                    any
+	NetworkTier              any
+	PublicPtrDomainName      any
+	SetPublicPtr             any
+	Type                     any
 }
 
 type Backup_ComputeInstanceBackupProperties_NetworkInterface_AliasIpRanges struct {
-	IpCidrRange any
+	IpCidrRange         any
 	SubnetworkRangeName any
 }
 
 type Backup_ComputeInstanceBackupProperties_NetworkInterface struct {
-	AccessConfigs any
-	AliasIpRanges any
+	AccessConfigs            any
+	AliasIpRanges            any
 	InternalIpv6PrefixLength any
-	Ipv6AccessConfigs any
-	Ipv6AccessType any
-	Ipv6Address any
-	Name any
-	Network any
-	NetworkAttachment any
-	NetworkIp any
-	NicType any
-	QueueCount any
-	StackType any
-	Subnetwork any
+	Ipv6AccessConfigs        any
+	Ipv6AccessType           any
+	Ipv6Address              any
+	Name                     any
+	Network                  any
+	NetworkAttachment        any
+	NetworkIp                any
+	NicType                  any
+	QueueCount               any
+	StackType                any
+	Subnetwork               any
 }
 
 type Backup_ComputeInstanceBackupProperties_Scheduling_LocalSsdRecoveryTimeout struct {
@@ -151,9 +151,9 @@ type Backup_ComputeInstanceBackupProperties_Scheduling_LocalSsdRecoveryTimeout s
 }
 
 type Backup_ComputeInstanceBackupProperties_Scheduling_NodeAffinities struct {
-	Key any
+	Key      any
 	Operator any
-	Values any
+	Values   any
 }
 
 type Backup_ComputeInstanceBackupProperties_Scheduling struct {
@@ -176,7 +176,7 @@ type Backup_ComputeInstanceBackupProperties_Scheduling struct {
 }
 
 type Backup_ComputeInstanceBackupProperties_ServiceAccount struct {
-	Email any
+	Email  any
 	Scopes any
 }
 
@@ -287,7 +287,6 @@ type Backup_GcpResource struct {
 }
 
 type BackupConfig struct {
-	Name any
 	View any
 }
 
@@ -330,7 +329,7 @@ type BackupAttrs struct {
 	KmsKeyVersions any
 	// Optional. Resource labels to represent user provided metadata. No labels currently defined.
 	Labels any
-	Name any
+	Name   any
 	// Output only. source resource size in bytes at the time of the backup.
 	ResourceSizeBytes any
 	// Optional. Output only. Reserved for future use.
@@ -343,13 +342,12 @@ type BackupAttrs struct {
 	State any
 	// Output only. The time when the instance was updated.
 	UpdateTime any
-	View any
+	View       any
 }
 
 var Backup = ubx.DataSourceBinding{
 	WireType: "google_backupdr_backup",
 	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
 		"View": ubx.FieldSpec{WireName: "view"},
 	},
 }

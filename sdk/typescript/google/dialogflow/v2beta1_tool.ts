@@ -202,17 +202,12 @@ const V2beta1Tool_OpenApiSpecFields: FieldMap = {
 export interface V2beta1ToolConfig {
   actionConfirmationRequirement?: Record<string, string> | Computed<Record<string, string>>;
   connectorSpec?: V2beta1Tool_ConnectorSpec | Computed<V2beta1Tool_ConnectorSpec>;
-  createTime?: string | Computed<string>;
   description?: string | Computed<string>;
   displayName?: string | Computed<string>;
   extensionSpec?: V2beta1Tool_ExtensionSpec | Computed<V2beta1Tool_ExtensionSpec>;
   functionSpec?: V2beta1Tool_FunctionSpec | Computed<V2beta1Tool_FunctionSpec>;
-  name?: string | Computed<string>;
   openApiSpec?: V2beta1Tool_OpenApiSpec | Computed<V2beta1Tool_OpenApiSpec>;
-  satisfiesPzi?: boolean | Computed<boolean>;
-  satisfiesPzs?: boolean | Computed<boolean>;
   toolKey?: string | Computed<string>;
-  updateTime?: string | Computed<string>;
 }
 
 export interface V2beta1ToolAttrs {
@@ -240,7 +235,6 @@ export const V2beta1Tool: ResourceBinding<V2beta1ToolConfig, V2beta1ToolAttrs> =
       kind: "object",
       fields: V2beta1Tool_ConnectorSpecFields,
     },
-    createTime: "create_time",
     description: "description",
     displayName: "display_name",
     extensionSpec: {
@@ -253,15 +247,11 @@ export const V2beta1Tool: ResourceBinding<V2beta1ToolConfig, V2beta1ToolAttrs> =
       kind: "object",
       fields: V2beta1Tool_FunctionSpecFields,
     },
-    name: "name",
     openApiSpec: {
       wireName: "open_api_spec",
       kind: "object",
       fields: V2beta1Tool_OpenApiSpecFields,
     },
-    satisfiesPzi: "satisfies_pzi",
-    satisfiesPzs: "satisfies_pzs",
     toolKey: "tool_key",
-    updateTime: "update_time",
   },
 };

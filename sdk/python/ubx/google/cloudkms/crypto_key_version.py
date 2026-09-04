@@ -57,38 +57,10 @@ _CryptoKeyVersion_ExternalProtectionLevelOptionsFields = {
 
 @dataclasses.dataclass
 class CryptoKeyVersionConfig:
-    # Output only. The CryptoKeyVersionAlgorithm that this CryptoKeyVersion supports.
-    algorithm: Any = None
     # Contains an HSM-generated attestation about a key operation. For more information, see [Verifying attestations] (https://cloud.google.com/kms/docs/attest-key).
     attestation: Any = None
-    # Output only. The time at which this CryptoKeyVersion was created.
-    create_time: Any = None
-    # Output only. The time this CryptoKeyVersion's key material was destroyed. Only present if state is DESTROYED.
-    destroy_event_time: Any = None
-    # Output only. The time this CryptoKeyVersion's key material is scheduled for destruction. Only present if state is DESTROY_SCHEDULED.
-    destroy_time: Any = None
-    # Output only. The root cause of the most recent external destruction failure. Only present if state is EXTERNAL_DESTRUCTION_FAILED.
-    external_destruction_failure_reason: Any = None
     # ExternalProtectionLevelOptions stores a group of additional fields for configuring a CryptoKeyVersion that are specific to the EXTERNAL protection level and EXTERNAL_VPC protection levels.
     external_protection_level_options: Any = None
-    # Output only. The time this CryptoKeyVersion's key material was generated.
-    generate_time: Any = None
-    # Output only. The root cause of the most recent generation failure. Only present if state is GENERATION_FAILED.
-    generation_failure_reason: Any = None
-    # Output only. Field indicating that the key wrapping key is trusted. This field is only valid for key purpose AES_256_WRAPPING, and protection level HSM_SINGLE_TENANT.
-    hsm_trusted: Any = None
-    # Output only. The root cause of the most recent import failure. Only present if state is IMPORT_FAILED.
-    import_failure_reason: Any = None
-    # Output only. The name of the ImportJob used in the most recent import of this CryptoKeyVersion. Only present if the underlying key material was imported.
-    import_job: Any = None
-    # Output only. The time at which this CryptoKeyVersion's key material was most recently imported.
-    import_time: Any = None
-    # Output only. The resource name for this CryptoKeyVersion in the format `projects/*/locations/*/keyRings/*/cryptoKeys/*/cryptoKeyVersions/*`.
-    name: Any = None
-    # Output only. The ProtectionLevel describing how crypto operations are performed with this CryptoKeyVersion.
-    protection_level: Any = None
-    # Output only. Whether or not this key version is eligible for reimport, by being specified as a target in ImportCryptoKeyVersionRequest.crypto_key_version.
-    reimport_eligible: Any = None
     # The current state of the CryptoKeyVersion.
     state: Any = None
     # Immutable. Field indicating that the key may be wrapped by a trusted key. This field can be set for all key purposes except ENCRYPT_DECRYPT, and is only valid for keys with protection level HSM_SINGLE_TENANT. This field can only be set at creation or import time via CreateCryptoKeyVersion, or ImportCryptoKeyVersion.
@@ -136,30 +108,16 @@ class CryptoKeyVersionAttrs:
 CryptoKeyVersion = ubx.ResourceBinding(
     wire_type="google_cloudkms_crypto_key_version",
     fields={
-        "algorithm": ubx.FieldSpec(wire_name="algorithm"),
         "attestation": ubx.FieldSpec(
             wire_name="attestation",
             kind="object",
             fields=_CryptoKeyVersion_AttestationFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
-        "destroy_event_time": ubx.FieldSpec(wire_name="destroy_event_time"),
-        "destroy_time": ubx.FieldSpec(wire_name="destroy_time"),
-        "external_destruction_failure_reason": ubx.FieldSpec(wire_name="external_destruction_failure_reason"),
         "external_protection_level_options": ubx.FieldSpec(
             wire_name="external_protection_level_options",
             kind="object",
             fields=_CryptoKeyVersion_ExternalProtectionLevelOptionsFields,
         ),
-        "generate_time": ubx.FieldSpec(wire_name="generate_time"),
-        "generation_failure_reason": ubx.FieldSpec(wire_name="generation_failure_reason"),
-        "hsm_trusted": ubx.FieldSpec(wire_name="hsm_trusted"),
-        "import_failure_reason": ubx.FieldSpec(wire_name="import_failure_reason"),
-        "import_job": ubx.FieldSpec(wire_name="import_job"),
-        "import_time": ubx.FieldSpec(wire_name="import_time"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "protection_level": ubx.FieldSpec(wire_name="protection_level"),
-        "reimport_eligible": ubx.FieldSpec(wire_name="reimport_eligible"),
         "state": ubx.FieldSpec(wire_name="state"),
         "trusted_wrapping_enabled": ubx.FieldSpec(wire_name="trusted_wrapping_enabled"),
     },

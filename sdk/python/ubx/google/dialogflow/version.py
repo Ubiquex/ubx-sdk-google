@@ -20,12 +20,10 @@ _Version_NluSettingsFields = {
 
 @dataclasses.dataclass
 class VersionConfig:
-    create_time: Any = None
     description: Any = None
     display_name: Any = None
     name: Any = None
     nlu_settings: Any = None
-    state: Any = None
 
 @dataclasses.dataclass
 class VersionAttrs:
@@ -39,7 +37,6 @@ class VersionAttrs:
 Version = ubx.ResourceBinding(
     wire_type="google_dialogflow_version",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "name": ubx.FieldSpec(wire_name="name"),
@@ -48,6 +45,5 @@ Version = ubx.ResourceBinding(
             kind="object",
             fields=_Version_NluSettingsFields,
         ),
-        "state": ubx.FieldSpec(wire_name="state"),
     },
 )

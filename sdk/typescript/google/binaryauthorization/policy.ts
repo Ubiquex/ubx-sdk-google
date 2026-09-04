@@ -294,10 +294,6 @@ export interface PolicyConfig {
   etag?: string | Computed<string>;
   /** A Binary Authorization policy for a GKE cluster. This is one type of policy that can occur as a `PlatformPolicy`. */
   gkePolicy?: Policy_GkePolicy | Computed<Policy_GkePolicy>;
-  /** Output only. The relative resource name of the Binary Authorization platform policy, in the form of `projects/* /platforms/* /policies/*`. */
-  name?: string | Computed<string>;
-  /** Output only. Time when the policy was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface PolicyAttrs {
@@ -323,7 +319,5 @@ export const Policy: ResourceBinding<PolicyConfig, PolicyAttrs> = {
       kind: "object",
       fields: Policy_GkePolicyFields,
     },
-    name: "name",
-    updateTime: "update_time",
   },
 };

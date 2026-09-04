@@ -4,9 +4,9 @@ package discoveryengine
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1alphaAlphaEvolveProgram_Content_Files struct {
-	Content any
-	Description any
-	Path any
+	Content         any
+	Description     any
+	Path            any
 	ProgramLanguage any
 }
 
@@ -19,7 +19,7 @@ type V1alphaAlphaEvolveProgram_Content struct {
 
 type V1alphaAlphaEvolveProgram_Evaluation_Insights_Insights struct {
 	Label any
-	Text any
+	Text  any
 }
 
 type V1alphaAlphaEvolveProgram_Evaluation_Insights struct {
@@ -29,7 +29,7 @@ type V1alphaAlphaEvolveProgram_Evaluation_Insights struct {
 
 type V1alphaAlphaEvolveProgram_Evaluation_Scores_Scores struct {
 	Metric any
-	Score any
+	Score  any
 }
 
 type V1alphaAlphaEvolveProgram_Evaluation_Scores struct {
@@ -45,75 +45,69 @@ type V1alphaAlphaEvolveProgram_Evaluation struct {
 }
 
 var V1alphaAlphaEvolveProgram_Content_FilesFields = ubx.FieldMap{
-		"Content": ubx.FieldSpec{WireName: "content"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"ProgramLanguage": ubx.FieldSpec{WireName: "program_language"},
-	}
+	"Content":         ubx.FieldSpec{WireName: "content"},
+	"Description":     ubx.FieldSpec{WireName: "description"},
+	"Path":            ubx.FieldSpec{WireName: "path"},
+	"ProgramLanguage": ubx.FieldSpec{WireName: "program_language"},
+}
 
 var V1alphaAlphaEvolveProgram_ContentFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Files": ubx.FieldSpec{
-			WireName: "files",
-			Kind: "list",
-			Fields: V1alphaAlphaEvolveProgram_Content_FilesFields,
-		},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Files": ubx.FieldSpec{
+		WireName: "files",
+		Kind:     "list",
+		Fields:   V1alphaAlphaEvolveProgram_Content_FilesFields,
+	},
+}
 
 var V1alphaAlphaEvolveProgram_Evaluation_Insights_InsightsFields = ubx.FieldMap{
-		"Label": ubx.FieldSpec{WireName: "label"},
-		"Text": ubx.FieldSpec{WireName: "text"},
-	}
+	"Label": ubx.FieldSpec{WireName: "label"},
+	"Text":  ubx.FieldSpec{WireName: "text"},
+}
 
 var V1alphaAlphaEvolveProgram_Evaluation_InsightsFields = ubx.FieldMap{
-		"Insights": ubx.FieldSpec{
-			WireName: "insights",
-			Kind: "list",
-			Fields: V1alphaAlphaEvolveProgram_Evaluation_Insights_InsightsFields,
-		},
-	}
+	"Insights": ubx.FieldSpec{
+		WireName: "insights",
+		Kind:     "list",
+		Fields:   V1alphaAlphaEvolveProgram_Evaluation_Insights_InsightsFields,
+	},
+}
 
 var V1alphaAlphaEvolveProgram_Evaluation_Scores_ScoresFields = ubx.FieldMap{
-		"Metric": ubx.FieldSpec{WireName: "metric"},
-		"Score": ubx.FieldSpec{WireName: "score"},
-	}
+	"Metric": ubx.FieldSpec{WireName: "metric"},
+	"Score":  ubx.FieldSpec{WireName: "score"},
+}
 
 var V1alphaAlphaEvolveProgram_Evaluation_ScoresFields = ubx.FieldMap{
-		"Scores": ubx.FieldSpec{
-			WireName: "scores",
-			Kind: "list",
-			Fields: V1alphaAlphaEvolveProgram_Evaluation_Scores_ScoresFields,
-		},
-	}
+	"Scores": ubx.FieldSpec{
+		WireName: "scores",
+		Kind:     "list",
+		Fields:   V1alphaAlphaEvolveProgram_Evaluation_Scores_ScoresFields,
+	},
+}
 
 var V1alphaAlphaEvolveProgram_EvaluationFields = ubx.FieldMap{
-		"Insights": ubx.FieldSpec{
-			WireName: "insights",
-			Kind: "object",
-			Fields: V1alphaAlphaEvolveProgram_Evaluation_InsightsFields,
-		},
-		"Scores": ubx.FieldSpec{
-			WireName: "scores",
-			Kind: "object",
-			Fields: V1alphaAlphaEvolveProgram_Evaluation_ScoresFields,
-		},
-	}
+	"Insights": ubx.FieldSpec{
+		WireName: "insights",
+		Kind:     "object",
+		Fields:   V1alphaAlphaEvolveProgram_Evaluation_InsightsFields,
+	},
+	"Scores": ubx.FieldSpec{
+		WireName: "scores",
+		Kind:     "object",
+		Fields:   V1alphaAlphaEvolveProgram_Evaluation_ScoresFields,
+	},
+}
 
 type V1alphaAlphaEvolveProgramConfig struct {
 	// A self-contained message containing the content of a program. Can represent a collection of files.
 	Content any
-	// Output only. Time when the program was created.
-	CreateTime any
 	// Evaluation results for a program candidate.
 	Evaluation any
 	// Optional. Lock token for the program.
 	LockToken any
 	// Identifier. Unique identifier for the program. Format: `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}/sessions/{session}/alphaEvolveExperiments/{alpha_evolve_experiment}/alphaEvolvePrograms/{alpha_evolve_program}`
 	Name any
-	// Output only. Optionally specifies which parent programs this program was evolved from. Format: `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}/sessions/{session}/alphaEvolveExperiments/{alpha_evolve_experiment}/alphaEvolvePrograms/{alpha_evolve_program}`
-	ParentPrograms any
-	// Output only. State of the program.
-	State any
 }
 
 type V1alphaAlphaEvolveProgramAttrs struct {
@@ -138,18 +132,15 @@ var V1alphaAlphaEvolveProgram = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Content": ubx.FieldSpec{
 			WireName: "content",
-			Kind: "object",
-			Fields: V1alphaAlphaEvolveProgram_ContentFields,
+			Kind:     "object",
+			Fields:   V1alphaAlphaEvolveProgram_ContentFields,
 		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Evaluation": ubx.FieldSpec{
 			WireName: "evaluation",
-			Kind: "object",
-			Fields: V1alphaAlphaEvolveProgram_EvaluationFields,
+			Kind:     "object",
+			Fields:   V1alphaAlphaEvolveProgram_EvaluationFields,
 		},
 		"LockToken": ubx.FieldSpec{WireName: "lock_token"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ParentPrograms": ubx.FieldSpec{WireName: "parent_programs"},
-		"State": ubx.FieldSpec{WireName: "state"},
+		"Name":      ubx.FieldSpec{WireName: "name"},
 	},
 }

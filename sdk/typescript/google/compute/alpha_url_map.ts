@@ -760,8 +760,6 @@ const AlphaUrlMap_TestsFields: FieldMap = {
 };
 
 export interface AlphaUrlMapConfig {
-  /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
-  creationTimestamp?: string | Computed<string>;
   /** Specifies the custom error response policy that must be applied when the backend service or backend bucket responds with an error. */
   defaultCustomErrorResponsePolicy?: AlphaUrlMap_DefaultCustomErrorResponsePolicy | Computed<AlphaUrlMap_DefaultCustomErrorResponsePolicy>;
   defaultRouteAction?: AlphaUrlMap_DefaultRouteAction | Computed<AlphaUrlMap_DefaultRouteAction>;
@@ -779,14 +777,10 @@ export interface AlphaUrlMapConfig {
   hostRules?: AlphaUrlMap_HostRules[] | Computed<AlphaUrlMap_HostRules[]>;
   /** [Output Only] The unique identifier for the resource. This identifier is defined by the server. */
   id?: string | Computed<string>;
-  /** Output only. [Output Only] Type of the resource. Always compute#urlMaps for url maps. */
-  kind?: string | Computed<string>;
   /** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
   name?: string | Computed<string>;
   /** The list of named PathMatchers to use against the URL. */
   pathMatchers?: AlphaUrlMap_PathMatchers[] | Computed<AlphaUrlMap_PathMatchers[]>;
-  /** Output only. [Output Only] URL of the region where the regional URL map resides. This field is not applicable to global URL maps. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body. */
-  region?: string | Computed<string>;
   /** [Output Only] Server-defined URL for the resource. */
   selfLink?: string | Computed<string>;
   /** [Output Only] The status of the URL map. */
@@ -834,7 +828,6 @@ export interface AlphaUrlMapAttrs {
 export const AlphaUrlMap: ResourceBinding<AlphaUrlMapConfig, AlphaUrlMapAttrs> = {
   wireType: "google_compute_alpha_url_map",
   fields: {
-    creationTimestamp: "creation_timestamp",
     defaultCustomErrorResponsePolicy: {
       wireName: "default_custom_error_response_policy",
       kind: "object",
@@ -864,14 +857,12 @@ export const AlphaUrlMap: ResourceBinding<AlphaUrlMapConfig, AlphaUrlMapAttrs> =
       fields: AlphaUrlMap_HostRulesFields,
     },
     id: "id",
-    kind: "kind",
     name: "name",
     pathMatchers: {
       wireName: "path_matchers",
       kind: "list",
       fields: AlphaUrlMap_PathMatchersFields,
     },
-    region: "region",
     selfLink: "self_link",
     status: {
       wireName: "status",

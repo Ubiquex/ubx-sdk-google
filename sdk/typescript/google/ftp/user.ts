@@ -28,24 +28,16 @@ const User_UserCredentialsFields: FieldMap = {
 };
 
 export interface UserConfig {
-  /** Output only. [Output only] Create time stamp */
-  createTime?: string | Computed<string>;
   /** Required. Service account in customer project attached to this SFTP User. */
   customerServiceAccount?: string | Computed<string>;
   /** Optional. Labels as key value pairs */
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Identifier. User-friendly name via which User will be identified. projects/{project}/locations/{location}/servers/{server}/users/{user} */
   name?: string | Computed<string>;
-  /** Output only. Tracks user creation. */
-  state?: string | Computed<string>;
   /** Required. Mapping of Cloud Storage buckets to directories where the user will land in the SFTP server. */
   storageDirectoryMappings?: User_StorageDirectoryMappings[] | Computed<User_StorageDirectoryMappings[]>;
-  /** Output only. [Output only] Update time stamp */
-  updateTime?: string | Computed<string>;
   /** Required. User credential for the user. The maximum number of user credentials is 10. */
   userCredentials?: User_UserCredentials[] | Computed<User_UserCredentials[]>;
-  /** Output only. [Output only] The username of the user. */
-  username?: string | Computed<string>;
 }
 
 export interface UserAttrs {
@@ -72,22 +64,18 @@ export interface UserAttrs {
 export const User: ResourceBinding<UserConfig, UserAttrs> = {
   wireType: "google_ftp_user",
   fields: {
-    createTime: "create_time",
     customerServiceAccount: "customer_service_account",
     labels: "labels",
     name: "name",
-    state: "state",
     storageDirectoryMappings: {
       wireName: "storage_directory_mappings",
       kind: "list",
       fields: User_StorageDirectoryMappingsFields,
     },
-    updateTime: "update_time",
     userCredentials: {
       wireName: "user_credentials",
       kind: "list",
       fields: User_UserCredentialsFields,
     },
-    username: "username",
   },
 };

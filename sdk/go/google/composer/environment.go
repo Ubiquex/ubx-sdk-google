@@ -44,7 +44,7 @@ type Environment_Config_MaintenanceWindow struct {
 }
 
 type Environment_Config_MasterAuthorizedNetworksConfig_CidrBlocks struct {
-	CidrBlock any
+	CidrBlock   any
 	DisplayName any
 }
 
@@ -185,7 +185,7 @@ type Environment_Config_WebServerConfig struct {
 
 type Environment_Config_WebServerNetworkAccessControl_AllowedIpRanges struct {
 	Description any
-	Value any
+	Value       any
 }
 
 type Environment_Config_WebServerNetworkAccessControl struct {
@@ -295,296 +295,296 @@ type Environment_StorageConfig struct {
 }
 
 var Environment_Config_DataRetentionConfig_AirflowMetadataRetentionConfigFields = ubx.FieldMap{
-		"RetentionDays": ubx.FieldSpec{WireName: "retention_days"},
-		"RetentionMode": ubx.FieldSpec{WireName: "retention_mode"},
-	}
+	"RetentionDays": ubx.FieldSpec{WireName: "retention_days"},
+	"RetentionMode": ubx.FieldSpec{WireName: "retention_mode"},
+}
 
 var Environment_Config_DataRetentionConfig_TaskLogsRetentionConfigFields = ubx.FieldMap{
-		"StorageMode": ubx.FieldSpec{WireName: "storage_mode"},
-	}
+	"StorageMode": ubx.FieldSpec{WireName: "storage_mode"},
+}
 
 var Environment_Config_DataRetentionConfigFields = ubx.FieldMap{
-		"AirflowMetadataRetentionConfig": ubx.FieldSpec{
-			WireName: "airflow_metadata_retention_config",
-			Kind: "object",
-			Fields: Environment_Config_DataRetentionConfig_AirflowMetadataRetentionConfigFields,
-		},
-		"TaskLogsRetentionConfig": ubx.FieldSpec{
-			WireName: "task_logs_retention_config",
-			Kind: "object",
-			Fields: Environment_Config_DataRetentionConfig_TaskLogsRetentionConfigFields,
-		},
-	}
+	"AirflowMetadataRetentionConfig": ubx.FieldSpec{
+		WireName: "airflow_metadata_retention_config",
+		Kind:     "object",
+		Fields:   Environment_Config_DataRetentionConfig_AirflowMetadataRetentionConfigFields,
+	},
+	"TaskLogsRetentionConfig": ubx.FieldSpec{
+		WireName: "task_logs_retention_config",
+		Kind:     "object",
+		Fields:   Environment_Config_DataRetentionConfig_TaskLogsRetentionConfigFields,
+	},
+}
 
 var Environment_Config_DatabaseConfigFields = ubx.FieldMap{
-		"MachineType": ubx.FieldSpec{WireName: "machine_type"},
-		"Zone": ubx.FieldSpec{WireName: "zone"},
-	}
+	"MachineType": ubx.FieldSpec{WireName: "machine_type"},
+	"Zone":        ubx.FieldSpec{WireName: "zone"},
+}
 
 var Environment_Config_EncryptionConfigFields = ubx.FieldMap{
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-	}
+	"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
+}
 
 var Environment_Config_MaintenanceWindowFields = ubx.FieldMap{
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"Recurrence": ubx.FieldSpec{WireName: "recurrence"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-	}
+	"EndTime":    ubx.FieldSpec{WireName: "end_time"},
+	"Recurrence": ubx.FieldSpec{WireName: "recurrence"},
+	"StartTime":  ubx.FieldSpec{WireName: "start_time"},
+}
 
 var Environment_Config_MasterAuthorizedNetworksConfig_CidrBlocksFields = ubx.FieldMap{
-		"CidrBlock": ubx.FieldSpec{WireName: "cidr_block"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-	}
+	"CidrBlock":   ubx.FieldSpec{WireName: "cidr_block"},
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+}
 
 var Environment_Config_MasterAuthorizedNetworksConfigFields = ubx.FieldMap{
-		"CidrBlocks": ubx.FieldSpec{
-			WireName: "cidr_blocks",
-			Kind: "list",
-			Fields: Environment_Config_MasterAuthorizedNetworksConfig_CidrBlocksFields,
-		},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"CidrBlocks": ubx.FieldSpec{
+		WireName: "cidr_blocks",
+		Kind:     "list",
+		Fields:   Environment_Config_MasterAuthorizedNetworksConfig_CidrBlocksFields,
+	},
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+}
 
 var Environment_Config_NodeConfig_IpAllocationPolicyFields = ubx.FieldMap{
-		"ClusterIpv4CidrBlock": ubx.FieldSpec{WireName: "cluster_ipv4_cidr_block"},
-		"ClusterSecondaryRangeName": ubx.FieldSpec{WireName: "cluster_secondary_range_name"},
-		"ServicesIpv4CidrBlock": ubx.FieldSpec{WireName: "services_ipv4_cidr_block"},
-		"ServicesSecondaryRangeName": ubx.FieldSpec{WireName: "services_secondary_range_name"},
-		"UseIpAliases": ubx.FieldSpec{WireName: "use_ip_aliases"},
-	}
+	"ClusterIpv4CidrBlock":       ubx.FieldSpec{WireName: "cluster_ipv4_cidr_block"},
+	"ClusterSecondaryRangeName":  ubx.FieldSpec{WireName: "cluster_secondary_range_name"},
+	"ServicesIpv4CidrBlock":      ubx.FieldSpec{WireName: "services_ipv4_cidr_block"},
+	"ServicesSecondaryRangeName": ubx.FieldSpec{WireName: "services_secondary_range_name"},
+	"UseIpAliases":               ubx.FieldSpec{WireName: "use_ip_aliases"},
+}
 
 var Environment_Config_NodeConfigFields = ubx.FieldMap{
-		"ComposerInternalIpv4CidrBlock": ubx.FieldSpec{WireName: "composer_internal_ipv4_cidr_block"},
-		"ComposerNetworkAttachment": ubx.FieldSpec{WireName: "composer_network_attachment"},
-		"DiskSizeGb": ubx.FieldSpec{WireName: "disk_size_gb"},
-		"EnableIpMasqAgent": ubx.FieldSpec{WireName: "enable_ip_masq_agent"},
-		"IpAllocationPolicy": ubx.FieldSpec{
-			WireName: "ip_allocation_policy",
-			Kind: "object",
-			Fields: Environment_Config_NodeConfig_IpAllocationPolicyFields,
-		},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"MachineType": ubx.FieldSpec{WireName: "machine_type"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"OauthScopes": ubx.FieldSpec{WireName: "oauth_scopes"},
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-		"Subnetwork": ubx.FieldSpec{WireName: "subnetwork"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-	}
+	"ComposerInternalIpv4CidrBlock": ubx.FieldSpec{WireName: "composer_internal_ipv4_cidr_block"},
+	"ComposerNetworkAttachment":     ubx.FieldSpec{WireName: "composer_network_attachment"},
+	"DiskSizeGb":                    ubx.FieldSpec{WireName: "disk_size_gb"},
+	"EnableIpMasqAgent":             ubx.FieldSpec{WireName: "enable_ip_masq_agent"},
+	"IpAllocationPolicy": ubx.FieldSpec{
+		WireName: "ip_allocation_policy",
+		Kind:     "object",
+		Fields:   Environment_Config_NodeConfig_IpAllocationPolicyFields,
+	},
+	"Location":       ubx.FieldSpec{WireName: "location"},
+	"MachineType":    ubx.FieldSpec{WireName: "machine_type"},
+	"Network":        ubx.FieldSpec{WireName: "network"},
+	"OauthScopes":    ubx.FieldSpec{WireName: "oauth_scopes"},
+	"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
+	"Subnetwork":     ubx.FieldSpec{WireName: "subnetwork"},
+	"Tags":           ubx.FieldSpec{WireName: "tags"},
+}
 
 var Environment_Config_PrivateEnvironmentConfig_NetworkingConfigFields = ubx.FieldMap{
-		"ConnectionType": ubx.FieldSpec{WireName: "connection_type"},
-	}
+	"ConnectionType": ubx.FieldSpec{WireName: "connection_type"},
+}
 
 var Environment_Config_PrivateEnvironmentConfig_PrivateClusterConfigFields = ubx.FieldMap{
-		"EnablePrivateEndpoint": ubx.FieldSpec{WireName: "enable_private_endpoint"},
-		"MasterIpv4CidrBlock": ubx.FieldSpec{WireName: "master_ipv4_cidr_block"},
-		"MasterIpv4ReservedRange": ubx.FieldSpec{WireName: "master_ipv4_reserved_range"},
-	}
+	"EnablePrivateEndpoint":   ubx.FieldSpec{WireName: "enable_private_endpoint"},
+	"MasterIpv4CidrBlock":     ubx.FieldSpec{WireName: "master_ipv4_cidr_block"},
+	"MasterIpv4ReservedRange": ubx.FieldSpec{WireName: "master_ipv4_reserved_range"},
+}
 
 var Environment_Config_PrivateEnvironmentConfigFields = ubx.FieldMap{
-		"CloudComposerConnectionSubnetwork": ubx.FieldSpec{WireName: "cloud_composer_connection_subnetwork"},
-		"CloudComposerNetworkIpv4CidrBlock": ubx.FieldSpec{WireName: "cloud_composer_network_ipv4_cidr_block"},
-		"CloudComposerNetworkIpv4ReservedRange": ubx.FieldSpec{WireName: "cloud_composer_network_ipv4_reserved_range"},
-		"CloudSqlIpv4CidrBlock": ubx.FieldSpec{WireName: "cloud_sql_ipv4_cidr_block"},
-		"EnablePrivateBuildsOnly": ubx.FieldSpec{WireName: "enable_private_builds_only"},
-		"EnablePrivateEnvironment": ubx.FieldSpec{WireName: "enable_private_environment"},
-		"EnablePrivatelyUsedPublicIps": ubx.FieldSpec{WireName: "enable_privately_used_public_ips"},
-		"NetworkingConfig": ubx.FieldSpec{
-			WireName: "networking_config",
-			Kind: "object",
-			Fields: Environment_Config_PrivateEnvironmentConfig_NetworkingConfigFields,
-		},
-		"NetworkingType": ubx.FieldSpec{WireName: "networking_type"},
-		"PrivateClusterConfig": ubx.FieldSpec{
-			WireName: "private_cluster_config",
-			Kind: "object",
-			Fields: Environment_Config_PrivateEnvironmentConfig_PrivateClusterConfigFields,
-		},
-		"WebServerIpv4CidrBlock": ubx.FieldSpec{WireName: "web_server_ipv4_cidr_block"},
-		"WebServerIpv4ReservedRange": ubx.FieldSpec{WireName: "web_server_ipv4_reserved_range"},
-	}
+	"CloudComposerConnectionSubnetwork":     ubx.FieldSpec{WireName: "cloud_composer_connection_subnetwork"},
+	"CloudComposerNetworkIpv4CidrBlock":     ubx.FieldSpec{WireName: "cloud_composer_network_ipv4_cidr_block"},
+	"CloudComposerNetworkIpv4ReservedRange": ubx.FieldSpec{WireName: "cloud_composer_network_ipv4_reserved_range"},
+	"CloudSqlIpv4CidrBlock":                 ubx.FieldSpec{WireName: "cloud_sql_ipv4_cidr_block"},
+	"EnablePrivateBuildsOnly":               ubx.FieldSpec{WireName: "enable_private_builds_only"},
+	"EnablePrivateEnvironment":              ubx.FieldSpec{WireName: "enable_private_environment"},
+	"EnablePrivatelyUsedPublicIps":          ubx.FieldSpec{WireName: "enable_privately_used_public_ips"},
+	"NetworkingConfig": ubx.FieldSpec{
+		WireName: "networking_config",
+		Kind:     "object",
+		Fields:   Environment_Config_PrivateEnvironmentConfig_NetworkingConfigFields,
+	},
+	"NetworkingType": ubx.FieldSpec{WireName: "networking_type"},
+	"PrivateClusterConfig": ubx.FieldSpec{
+		WireName: "private_cluster_config",
+		Kind:     "object",
+		Fields:   Environment_Config_PrivateEnvironmentConfig_PrivateClusterConfigFields,
+	},
+	"WebServerIpv4CidrBlock":     ubx.FieldSpec{WireName: "web_server_ipv4_cidr_block"},
+	"WebServerIpv4ReservedRange": ubx.FieldSpec{WireName: "web_server_ipv4_reserved_range"},
+}
 
 var Environment_Config_RecoveryConfig_ScheduledSnapshotsConfigFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"SnapshotCreationSchedule": ubx.FieldSpec{WireName: "snapshot_creation_schedule"},
-		"SnapshotLocation": ubx.FieldSpec{WireName: "snapshot_location"},
-		"TimeZone": ubx.FieldSpec{WireName: "time_zone"},
-	}
+	"Enabled":                  ubx.FieldSpec{WireName: "enabled"},
+	"SnapshotCreationSchedule": ubx.FieldSpec{WireName: "snapshot_creation_schedule"},
+	"SnapshotLocation":         ubx.FieldSpec{WireName: "snapshot_location"},
+	"TimeZone":                 ubx.FieldSpec{WireName: "time_zone"},
+}
 
 var Environment_Config_RecoveryConfigFields = ubx.FieldMap{
-		"ScheduledSnapshotsConfig": ubx.FieldSpec{
-			WireName: "scheduled_snapshots_config",
-			Kind: "object",
-			Fields: Environment_Config_RecoveryConfig_ScheduledSnapshotsConfigFields,
-		},
-	}
+	"ScheduledSnapshotsConfig": ubx.FieldSpec{
+		WireName: "scheduled_snapshots_config",
+		Kind:     "object",
+		Fields:   Environment_Config_RecoveryConfig_ScheduledSnapshotsConfigFields,
+	},
+}
 
 var Environment_Config_SoftwareConfig_CloudDataLineageIntegrationFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+}
 
 var Environment_Config_SoftwareConfigFields = ubx.FieldMap{
-		"AirflowConfigOverrides": ubx.FieldSpec{WireName: "airflow_config_overrides"},
-		"AuditLogsReplicationMode": ubx.FieldSpec{WireName: "audit_logs_replication_mode"},
-		"CloudDataLineageIntegration": ubx.FieldSpec{
-			WireName: "cloud_data_lineage_integration",
-			Kind: "object",
-			Fields: Environment_Config_SoftwareConfig_CloudDataLineageIntegrationFields,
-		},
-		"EnvVariables": ubx.FieldSpec{WireName: "env_variables"},
-		"ImageVersion": ubx.FieldSpec{WireName: "image_version"},
-		"PypiPackages": ubx.FieldSpec{WireName: "pypi_packages"},
-		"PythonVersion": ubx.FieldSpec{WireName: "python_version"},
-		"SchedulerCount": ubx.FieldSpec{WireName: "scheduler_count"},
-		"WebServerPluginsMode": ubx.FieldSpec{WireName: "web_server_plugins_mode"},
-	}
+	"AirflowConfigOverrides":   ubx.FieldSpec{WireName: "airflow_config_overrides"},
+	"AuditLogsReplicationMode": ubx.FieldSpec{WireName: "audit_logs_replication_mode"},
+	"CloudDataLineageIntegration": ubx.FieldSpec{
+		WireName: "cloud_data_lineage_integration",
+		Kind:     "object",
+		Fields:   Environment_Config_SoftwareConfig_CloudDataLineageIntegrationFields,
+	},
+	"EnvVariables":         ubx.FieldSpec{WireName: "env_variables"},
+	"ImageVersion":         ubx.FieldSpec{WireName: "image_version"},
+	"PypiPackages":         ubx.FieldSpec{WireName: "pypi_packages"},
+	"PythonVersion":        ubx.FieldSpec{WireName: "python_version"},
+	"SchedulerCount":       ubx.FieldSpec{WireName: "scheduler_count"},
+	"WebServerPluginsMode": ubx.FieldSpec{WireName: "web_server_plugins_mode"},
+}
 
 var Environment_Config_WebServerConfigFields = ubx.FieldMap{
-		"MachineType": ubx.FieldSpec{WireName: "machine_type"},
-	}
+	"MachineType": ubx.FieldSpec{WireName: "machine_type"},
+}
 
 var Environment_Config_WebServerNetworkAccessControl_AllowedIpRangesFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Value":       ubx.FieldSpec{WireName: "value"},
+}
 
 var Environment_Config_WebServerNetworkAccessControlFields = ubx.FieldMap{
-		"AllowedIpRanges": ubx.FieldSpec{
-			WireName: "allowed_ip_ranges",
-			Kind: "list",
-			Fields: Environment_Config_WebServerNetworkAccessControl_AllowedIpRangesFields,
-		},
-	}
+	"AllowedIpRanges": ubx.FieldSpec{
+		WireName: "allowed_ip_ranges",
+		Kind:     "list",
+		Fields:   Environment_Config_WebServerNetworkAccessControl_AllowedIpRangesFields,
+	},
+}
 
 var Environment_Config_WorkloadsConfig_DagProcessorFields = ubx.FieldMap{
-		"Count": ubx.FieldSpec{WireName: "count"},
-		"Cpu": ubx.FieldSpec{WireName: "cpu"},
-		"MemoryGb": ubx.FieldSpec{WireName: "memory_gb"},
-		"StorageGb": ubx.FieldSpec{WireName: "storage_gb"},
-	}
+	"Count":     ubx.FieldSpec{WireName: "count"},
+	"Cpu":       ubx.FieldSpec{WireName: "cpu"},
+	"MemoryGb":  ubx.FieldSpec{WireName: "memory_gb"},
+	"StorageGb": ubx.FieldSpec{WireName: "storage_gb"},
+}
 
 var Environment_Config_WorkloadsConfig_TriggererFields = ubx.FieldMap{
-		"Count": ubx.FieldSpec{WireName: "count"},
-		"Cpu": ubx.FieldSpec{WireName: "cpu"},
-		"MemoryGb": ubx.FieldSpec{WireName: "memory_gb"},
-	}
+	"Count":    ubx.FieldSpec{WireName: "count"},
+	"Cpu":      ubx.FieldSpec{WireName: "cpu"},
+	"MemoryGb": ubx.FieldSpec{WireName: "memory_gb"},
+}
 
 var Environment_Config_WorkloadsConfig_WebServerFields = ubx.FieldMap{
-		"Cpu": ubx.FieldSpec{WireName: "cpu"},
-		"MemoryGb": ubx.FieldSpec{WireName: "memory_gb"},
-		"StorageGb": ubx.FieldSpec{WireName: "storage_gb"},
-	}
+	"Cpu":       ubx.FieldSpec{WireName: "cpu"},
+	"MemoryGb":  ubx.FieldSpec{WireName: "memory_gb"},
+	"StorageGb": ubx.FieldSpec{WireName: "storage_gb"},
+}
 
 var Environment_Config_WorkloadsConfig_WorkerFields = ubx.FieldMap{
-		"Cpu": ubx.FieldSpec{WireName: "cpu"},
-		"MaxCount": ubx.FieldSpec{WireName: "max_count"},
-		"MemoryGb": ubx.FieldSpec{WireName: "memory_gb"},
-		"MinCount": ubx.FieldSpec{WireName: "min_count"},
-		"StorageGb": ubx.FieldSpec{WireName: "storage_gb"},
-	}
+	"Cpu":       ubx.FieldSpec{WireName: "cpu"},
+	"MaxCount":  ubx.FieldSpec{WireName: "max_count"},
+	"MemoryGb":  ubx.FieldSpec{WireName: "memory_gb"},
+	"MinCount":  ubx.FieldSpec{WireName: "min_count"},
+	"StorageGb": ubx.FieldSpec{WireName: "storage_gb"},
+}
 
 var Environment_Config_WorkloadsConfigFields = ubx.FieldMap{
-		"DagProcessor": ubx.FieldSpec{
-			WireName: "dag_processor",
-			Kind: "object",
-			Fields: Environment_Config_WorkloadsConfig_DagProcessorFields,
-		},
-		"Scheduler": ubx.FieldSpec{
-			WireName: "scheduler",
-			Kind: "object",
-			Fields: Environment_Config_WorkloadsConfig_DagProcessorFields,
-		},
-		"Triggerer": ubx.FieldSpec{
-			WireName: "triggerer",
-			Kind: "object",
-			Fields: Environment_Config_WorkloadsConfig_TriggererFields,
-		},
-		"WebServer": ubx.FieldSpec{
-			WireName: "web_server",
-			Kind: "object",
-			Fields: Environment_Config_WorkloadsConfig_WebServerFields,
-		},
-		"Worker": ubx.FieldSpec{
-			WireName: "worker",
-			Kind: "object",
-			Fields: Environment_Config_WorkloadsConfig_WorkerFields,
-		},
-	}
+	"DagProcessor": ubx.FieldSpec{
+		WireName: "dag_processor",
+		Kind:     "object",
+		Fields:   Environment_Config_WorkloadsConfig_DagProcessorFields,
+	},
+	"Scheduler": ubx.FieldSpec{
+		WireName: "scheduler",
+		Kind:     "object",
+		Fields:   Environment_Config_WorkloadsConfig_DagProcessorFields,
+	},
+	"Triggerer": ubx.FieldSpec{
+		WireName: "triggerer",
+		Kind:     "object",
+		Fields:   Environment_Config_WorkloadsConfig_TriggererFields,
+	},
+	"WebServer": ubx.FieldSpec{
+		WireName: "web_server",
+		Kind:     "object",
+		Fields:   Environment_Config_WorkloadsConfig_WebServerFields,
+	},
+	"Worker": ubx.FieldSpec{
+		WireName: "worker",
+		Kind:     "object",
+		Fields:   Environment_Config_WorkloadsConfig_WorkerFields,
+	},
+}
 
 var Environment_ConfigFields = ubx.FieldMap{
-		"AirflowByoidUri": ubx.FieldSpec{WireName: "airflow_byoid_uri"},
-		"AirflowUri": ubx.FieldSpec{WireName: "airflow_uri"},
-		"DagGcsPrefix": ubx.FieldSpec{WireName: "dag_gcs_prefix"},
-		"DataRetentionConfig": ubx.FieldSpec{
-			WireName: "data_retention_config",
-			Kind: "object",
-			Fields: Environment_Config_DataRetentionConfigFields,
-		},
-		"DatabaseConfig": ubx.FieldSpec{
-			WireName: "database_config",
-			Kind: "object",
-			Fields: Environment_Config_DatabaseConfigFields,
-		},
-		"EncryptionConfig": ubx.FieldSpec{
-			WireName: "encryption_config",
-			Kind: "object",
-			Fields: Environment_Config_EncryptionConfigFields,
-		},
-		"EnvironmentSize": ubx.FieldSpec{WireName: "environment_size"},
-		"GkeCluster": ubx.FieldSpec{WireName: "gke_cluster"},
-		"MaintenanceWindow": ubx.FieldSpec{
-			WireName: "maintenance_window",
-			Kind: "object",
-			Fields: Environment_Config_MaintenanceWindowFields,
-		},
-		"MasterAuthorizedNetworksConfig": ubx.FieldSpec{
-			WireName: "master_authorized_networks_config",
-			Kind: "object",
-			Fields: Environment_Config_MasterAuthorizedNetworksConfigFields,
-		},
-		"NodeConfig": ubx.FieldSpec{
-			WireName: "node_config",
-			Kind: "object",
-			Fields: Environment_Config_NodeConfigFields,
-		},
-		"NodeCount": ubx.FieldSpec{WireName: "node_count"},
-		"PrivateEnvironmentConfig": ubx.FieldSpec{
-			WireName: "private_environment_config",
-			Kind: "object",
-			Fields: Environment_Config_PrivateEnvironmentConfigFields,
-		},
-		"RecoveryConfig": ubx.FieldSpec{
-			WireName: "recovery_config",
-			Kind: "object",
-			Fields: Environment_Config_RecoveryConfigFields,
-		},
-		"ResilienceMode": ubx.FieldSpec{WireName: "resilience_mode"},
-		"SoftwareConfig": ubx.FieldSpec{
-			WireName: "software_config",
-			Kind: "object",
-			Fields: Environment_Config_SoftwareConfigFields,
-		},
-		"WebServerConfig": ubx.FieldSpec{
-			WireName: "web_server_config",
-			Kind: "object",
-			Fields: Environment_Config_WebServerConfigFields,
-		},
-		"WebServerNetworkAccessControl": ubx.FieldSpec{
-			WireName: "web_server_network_access_control",
-			Kind: "object",
-			Fields: Environment_Config_WebServerNetworkAccessControlFields,
-		},
-		"WorkloadsConfig": ubx.FieldSpec{
-			WireName: "workloads_config",
-			Kind: "object",
-			Fields: Environment_Config_WorkloadsConfigFields,
-		},
-	}
+	"AirflowByoidUri": ubx.FieldSpec{WireName: "airflow_byoid_uri"},
+	"AirflowUri":      ubx.FieldSpec{WireName: "airflow_uri"},
+	"DagGcsPrefix":    ubx.FieldSpec{WireName: "dag_gcs_prefix"},
+	"DataRetentionConfig": ubx.FieldSpec{
+		WireName: "data_retention_config",
+		Kind:     "object",
+		Fields:   Environment_Config_DataRetentionConfigFields,
+	},
+	"DatabaseConfig": ubx.FieldSpec{
+		WireName: "database_config",
+		Kind:     "object",
+		Fields:   Environment_Config_DatabaseConfigFields,
+	},
+	"EncryptionConfig": ubx.FieldSpec{
+		WireName: "encryption_config",
+		Kind:     "object",
+		Fields:   Environment_Config_EncryptionConfigFields,
+	},
+	"EnvironmentSize": ubx.FieldSpec{WireName: "environment_size"},
+	"GkeCluster":      ubx.FieldSpec{WireName: "gke_cluster"},
+	"MaintenanceWindow": ubx.FieldSpec{
+		WireName: "maintenance_window",
+		Kind:     "object",
+		Fields:   Environment_Config_MaintenanceWindowFields,
+	},
+	"MasterAuthorizedNetworksConfig": ubx.FieldSpec{
+		WireName: "master_authorized_networks_config",
+		Kind:     "object",
+		Fields:   Environment_Config_MasterAuthorizedNetworksConfigFields,
+	},
+	"NodeConfig": ubx.FieldSpec{
+		WireName: "node_config",
+		Kind:     "object",
+		Fields:   Environment_Config_NodeConfigFields,
+	},
+	"NodeCount": ubx.FieldSpec{WireName: "node_count"},
+	"PrivateEnvironmentConfig": ubx.FieldSpec{
+		WireName: "private_environment_config",
+		Kind:     "object",
+		Fields:   Environment_Config_PrivateEnvironmentConfigFields,
+	},
+	"RecoveryConfig": ubx.FieldSpec{
+		WireName: "recovery_config",
+		Kind:     "object",
+		Fields:   Environment_Config_RecoveryConfigFields,
+	},
+	"ResilienceMode": ubx.FieldSpec{WireName: "resilience_mode"},
+	"SoftwareConfig": ubx.FieldSpec{
+		WireName: "software_config",
+		Kind:     "object",
+		Fields:   Environment_Config_SoftwareConfigFields,
+	},
+	"WebServerConfig": ubx.FieldSpec{
+		WireName: "web_server_config",
+		Kind:     "object",
+		Fields:   Environment_Config_WebServerConfigFields,
+	},
+	"WebServerNetworkAccessControl": ubx.FieldSpec{
+		WireName: "web_server_network_access_control",
+		Kind:     "object",
+		Fields:   Environment_Config_WebServerNetworkAccessControlFields,
+	},
+	"WorkloadsConfig": ubx.FieldSpec{
+		WireName: "workloads_config",
+		Kind:     "object",
+		Fields:   Environment_Config_WorkloadsConfigFields,
+	},
+}
 
 var Environment_StorageConfigFields = ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-	}
+	"Bucket": ubx.FieldSpec{WireName: "bucket"},
+}
 
 type EnvironmentConfig struct {
 	// Configuration information for an environment.
@@ -595,10 +595,6 @@ type EnvironmentConfig struct {
 	Labels any
 	// Identifier. The resource name of the environment, in the form: "projects/{projectId}/locations/{locationId}/environments/{environmentId}" EnvironmentId must start with a lowercase letter followed by up to 63 lowercase letters, numbers, or hyphens, and cannot end with a hyphen.
 	Name any
-	// Output only. Reserved for future use.
-	SatisfiesPzi any
-	// Output only. Reserved for future use.
-	SatisfiesPzs any
 	// The current state of the environment.
 	State any
 	// The configuration for data storage in the environment.
@@ -637,21 +633,19 @@ var Environment = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Config": ubx.FieldSpec{
 			WireName: "config",
-			Kind: "object",
-			Fields: Environment_ConfigFields,
+			Kind:     "object",
+			Fields:   Environment_ConfigFields,
 		},
 		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SatisfiesPzi": ubx.FieldSpec{WireName: "satisfies_pzi"},
-		"SatisfiesPzs": ubx.FieldSpec{WireName: "satisfies_pzs"},
-		"State": ubx.FieldSpec{WireName: "state"},
+		"Labels":     ubx.FieldSpec{WireName: "labels"},
+		"Name":       ubx.FieldSpec{WireName: "name"},
+		"State":      ubx.FieldSpec{WireName: "state"},
 		"StorageConfig": ubx.FieldSpec{
 			WireName: "storage_config",
-			Kind: "object",
-			Fields: Environment_StorageConfigFields,
+			Kind:     "object",
+			Fields:   Environment_StorageConfigFields,
 		},
 		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-		"Uuid": ubx.FieldSpec{WireName: "uuid"},
+		"Uuid":       ubx.FieldSpec{WireName: "uuid"},
 	},
 }

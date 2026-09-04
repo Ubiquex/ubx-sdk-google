@@ -4,32 +4,18 @@ package managedidentities
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Domain_Trusts struct {
-	CreateTime any
-	LastTrustHeartbeatTime any
+	CreateTime              any
+	LastTrustHeartbeatTime  any
 	SelectiveAuthentication any
-	State any
-	StateDescription any
-	TargetDnsIpAddresses any
-	TargetDomainName any
-	TrustDirection any
-	TrustHandshakeSecret any
-	TrustType any
-	UpdateTime any
+	State                   any
+	StateDescription        any
+	TargetDnsIpAddresses    any
+	TargetDomainName        any
+	TrustDirection          any
+	TrustHandshakeSecret    any
+	TrustType               any
+	UpdateTime              any
 }
-
-var Domain_TrustsFields = ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"LastTrustHeartbeatTime": ubx.FieldSpec{WireName: "last_trust_heartbeat_time"},
-		"SelectiveAuthentication": ubx.FieldSpec{WireName: "selective_authentication"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"StateDescription": ubx.FieldSpec{WireName: "state_description"},
-		"TargetDnsIpAddresses": ubx.FieldSpec{WireName: "target_dns_ip_addresses"},
-		"TargetDomainName": ubx.FieldSpec{WireName: "target_domain_name"},
-		"TrustDirection": ubx.FieldSpec{WireName: "trust_direction"},
-		"TrustHandshakeSecret": ubx.FieldSpec{WireName: "trust_handshake_secret"},
-		"TrustType": ubx.FieldSpec{WireName: "trust_type"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-	}
 
 type DomainConfig struct {
 	// Optional. The name of delegated administrator account used to perform Active Directory operations. If not specified, `setupadmin` will be used.
@@ -38,10 +24,6 @@ type DomainConfig struct {
 	AuditLogsEnabled any
 	// Optional. The full names of the Google Compute Engine [networks](/compute/docs/networks-and-firewalls#networks) the domain instance is connected to. Networks can be added using UpdateDomain. The domain is only available on networks listed in `authorized_networks`. If CIDR subnets overlap between networks, domain creation will fail.
 	AuthorizedNetworks any
-	// Output only. The time the instance was created.
-	CreateTime any
-	// Output only. The fully-qualified domain name of the exposed domain used by clients to connect to the service. Similar to what would be chosen for an Active Directory set up on an internal network.
-	Fqdn any
 	// Optional. Resource labels that can contain user-provided metadata.
 	Labels any
 	// Required. Locations where domain needs to be provisioned. The locations can be specified according to https://cloud.google.com/compute/docs/regions-zones, such as `us-west1` or `us-east4`. Each domain supports up to 4 locations, separated by commas. Each location will use a /26 block.
@@ -50,14 +32,6 @@ type DomainConfig struct {
 	Name any
 	// Required. The CIDR range of internal addresses that are reserved for this domain. Reserved networks must be /24 or larger. Ranges must be unique and non-overlapping with existing subnets in [Domain].[authorized_networks].
 	ReservedIpRange any
-	// Output only. The current state of this domain.
-	State any
-	// Output only. Additional information about the current status of this domain, if available.
-	StatusMessage any
-	// Output only. The current trusts associated with the domain.
-	Trusts any
-	// Output only. The last update time.
-	UpdateTime any
 }
 
 type DomainAttrs struct {
@@ -92,22 +66,12 @@ type DomainAttrs struct {
 var Domain = ubx.ResourceBinding{
 	WireType: "google_managedidentities_domain",
 	Fields: ubx.FieldMap{
-		"Admin": ubx.FieldSpec{WireName: "admin"},
-		"AuditLogsEnabled": ubx.FieldSpec{WireName: "audit_logs_enabled"},
+		"Admin":              ubx.FieldSpec{WireName: "admin"},
+		"AuditLogsEnabled":   ubx.FieldSpec{WireName: "audit_logs_enabled"},
 		"AuthorizedNetworks": ubx.FieldSpec{WireName: "authorized_networks"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Fqdn": ubx.FieldSpec{WireName: "fqdn"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Locations": ubx.FieldSpec{WireName: "locations"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ReservedIpRange": ubx.FieldSpec{WireName: "reserved_ip_range"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"StatusMessage": ubx.FieldSpec{WireName: "status_message"},
-		"Trusts": ubx.FieldSpec{
-			WireName: "trusts",
-			Kind: "list",
-			Fields: Domain_TrustsFields,
-		},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"Labels":             ubx.FieldSpec{WireName: "labels"},
+		"Locations":          ubx.FieldSpec{WireName: "locations"},
+		"Name":               ubx.FieldSpec{WireName: "name"},
+		"ReservedIpRange":    ubx.FieldSpec{WireName: "reserved_ip_range"},
 	},
 }

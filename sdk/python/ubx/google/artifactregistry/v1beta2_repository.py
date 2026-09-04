@@ -20,8 +20,6 @@ _V1beta2Repository_MavenConfigFields = {
 
 @dataclasses.dataclass
 class V1beta2RepositoryConfig:
-    # Output only. The time when the repository was created.
-    create_time: Any = None
     # The user-provided description of the repository.
     description: Any = None
     # Optional. The format of packages that are stored in the repository.
@@ -34,14 +32,6 @@ class V1beta2RepositoryConfig:
     maven_config: Any = None
     # The name of the repository, for example: `projects/p1/locations/us-central1/repositories/repo1`. For each location in a project, repository names must be unique.
     name: Any = None
-    # Output only. Whether or not this repository satisfies PZI.
-    satisfies_pzi: Any = None
-    # Output only. Whether or not this repository satisfies PZS.
-    satisfies_pzs: Any = None
-    # Output only. The size, in bytes, of all artifact storage in this repository. Repositories that are generally available or in public preview use this to calculate storage costs.
-    size_bytes: Any = None
-    # Output only. The time when the repository was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V1beta2RepositoryAttrs:
@@ -71,7 +61,6 @@ class V1beta2RepositoryAttrs:
 V1beta2Repository = ubx.ResourceBinding(
     wire_type="google_artifactregistry_v1beta2_repository",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "format": ubx.FieldSpec(wire_name="format"),
         "kms_key_name": ubx.FieldSpec(wire_name="kms_key_name"),
@@ -82,9 +71,5 @@ V1beta2Repository = ubx.ResourceBinding(
             fields=_V1beta2Repository_MavenConfigFields,
         ),
         "name": ubx.FieldSpec(wire_name="name"),
-        "satisfies_pzi": ubx.FieldSpec(wire_name="satisfies_pzi"),
-        "satisfies_pzs": ubx.FieldSpec(wire_name="satisfies_pzs"),
-        "size_bytes": ubx.FieldSpec(wire_name="size_bytes"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

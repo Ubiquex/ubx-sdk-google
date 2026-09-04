@@ -414,8 +414,6 @@ _V1betaToolset_ToolFakeConfigFields = {
 class V1betaToolsetConfig:
     # A toolset that generates tools from an Integration Connectors Connection.
     connector_toolset: Any = None
-    # Output only. Timestamp when the toolset was created.
-    create_time: Any = None
     # Optional. The description of the toolset.
     description: Any = None
     # Optional. The display name of the toolset. Must be unique within the same app.
@@ -434,8 +432,6 @@ class V1betaToolsetConfig:
     timeout: Any = None
     # Configuration for tool behavior in fake mode.
     tool_fake_config: Any = None
-    # Output only. Timestamp when the toolset was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V1betaToolsetAttrs:
@@ -472,7 +468,6 @@ V1betaToolset = ubx.ResourceBinding(
             kind="object",
             fields=_V1betaToolset_ConnectorToolsetFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "etag": ubx.FieldSpec(wire_name="etag"),
@@ -494,6 +489,5 @@ V1betaToolset = ubx.ResourceBinding(
             kind="object",
             fields=_V1betaToolset_ToolFakeConfigFields,
         ),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

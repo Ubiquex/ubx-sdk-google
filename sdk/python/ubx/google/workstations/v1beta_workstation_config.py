@@ -173,12 +173,6 @@ _V1betaWorkstationConfig_AllowedPortsFields = {
     "last": ubx.FieldSpec(wire_name="last"),
 }
 
-_V1betaWorkstationConfig_ConditionsFields = {
-    "code": ubx.FieldSpec(wire_name="code"),
-    "details": ubx.FieldSpec(wire_name="details"),
-    "message": ubx.FieldSpec(wire_name="message"),
-}
-
 _V1betaWorkstationConfig_ContainerFields = {
     "args": ubx.FieldSpec(wire_name="args"),
     "command": ubx.FieldSpec(wire_name="command"),
@@ -347,16 +341,8 @@ class V1betaWorkstationConfigConfig:
     allowed_ports: Any = None
     # Optional. Client-specified annotations.
     annotations: Any = None
-    # Output only. Status conditions describing the workstation configuration's current state.
-    conditions: Any = None
     # A Docker container.
     container: Any = None
-    # Output only. Time when this workstation configuration was created.
-    create_time: Any = None
-    # Output only. Whether this workstation configuration is in degraded mode, in which case it may require user action to restore full functionality. The conditions field contains detailed information about the status of the configuration.
-    degraded: Any = None
-    # Output only. Time when this workstation configuration was soft-deleted.
-    delete_time: Any = None
     # Optional. Disables support for plain TCP connections in the workstation. By default the service supports TCP connections through a websocket relay. Setting this option to true disables that relay, which prevents the usage of services that require plain TCP connections, such as SSH. When enabled, all communication must occur over HTTPS or WSS.
     disable_tcp_connections: Any = None
     # Optional. Human-readable name for this workstation configuration.
@@ -391,20 +377,10 @@ class V1betaWorkstationConfigConfig:
     persistent_directories: Any = None
     # Optional. Readiness checks to perform when starting a workstation using this workstation configuration. Mark a workstation as running only after all specified readiness checks return 200 status codes.
     readiness_checks: Any = None
-    # Output only. Indicates whether this workstation configuration is currently being updated to match its intended state.
-    reconciling: Any = None
     # Optional. Immutable. Specifies the zones used to replicate the VM and disk resources within the region. If set, exactly two zones within the workstation cluster's region must be specified—for example, `['us-central1-a', 'us-central1-f']`. If this field is empty, two default zones within the region are used. Immutable after the workstation configuration is created.
     replica_zones: Any = None
     # Optional. Number of seconds to wait before automatically stopping a workstation. We recommend that workstations be stopped daily so that security updates can be applied upon restart. The idle_timeout and running_timeout fields are independent of each other. Note that the running_timeout field stops workstations after the specified time, regardless of whether or not the workstations are idle. Provide duration terminated by `s` for seconds—for example, `"54000s"` (15 hours). Defaults to `"43200s"` (12 hours). A value of `"0s"` indicates that workstations using this configuration should never time out. If encryption_key is set, it must be greater than `"0s"` and less than `"86400s"` (24 hours). Warning: A value of `"0s"` indicates that Cloud Workstations VMs created with this configuration have no maximum running time. This is strongly discouraged because you incur costs and will not pick up security updates.
     running_timeout: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzi: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzs: Any = None
-    # Output only. A system-assigned unique identifier for this workstation configuration.
-    uid: Any = None
-    # Output only. Time when this workstation configuration was most recently updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V1betaWorkstationConfigAttrs:
@@ -480,19 +456,11 @@ V1betaWorkstationConfig = ubx.ResourceBinding(
             fields=_V1betaWorkstationConfig_AllowedPortsFields,
         ),
         "annotations": ubx.FieldSpec(wire_name="annotations"),
-        "conditions": ubx.FieldSpec(
-            wire_name="conditions",
-            kind="list",
-            fields=_V1betaWorkstationConfig_ConditionsFields,
-        ),
         "container": ubx.FieldSpec(
             wire_name="container",
             kind="object",
             fields=_V1betaWorkstationConfig_ContainerFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
-        "degraded": ubx.FieldSpec(wire_name="degraded"),
-        "delete_time": ubx.FieldSpec(wire_name="delete_time"),
         "disable_tcp_connections": ubx.FieldSpec(wire_name="disable_tcp_connections"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "enable_audit_agent": ubx.FieldSpec(wire_name="enable_audit_agent"),
@@ -534,12 +502,7 @@ V1betaWorkstationConfig = ubx.ResourceBinding(
             kind="list",
             fields=_V1betaWorkstationConfig_ReadinessChecksFields,
         ),
-        "reconciling": ubx.FieldSpec(wire_name="reconciling"),
         "replica_zones": ubx.FieldSpec(wire_name="replica_zones"),
         "running_timeout": ubx.FieldSpec(wire_name="running_timeout"),
-        "satisfies_pzi": ubx.FieldSpec(wire_name="satisfies_pzi"),
-        "satisfies_pzs": ubx.FieldSpec(wire_name="satisfies_pzs"),
-        "uid": ubx.FieldSpec(wire_name="uid"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

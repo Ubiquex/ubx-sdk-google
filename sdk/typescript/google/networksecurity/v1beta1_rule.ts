@@ -6,8 +6,6 @@ export interface V1beta1RuleConfig {
   applicationMatcher?: string | Computed<string>;
   /** Required. Profile which tells what the primitive action should be. */
   basicProfile?: string | Computed<string>;
-  /** Output only. Time when the rule was created. */
-  createTime?: string | Computed<string>;
   /** Optional. Free-text description of the resource. */
   description?: string | Computed<string>;
   /** Required. Whether the rule is enforced. */
@@ -20,8 +18,6 @@ export interface V1beta1RuleConfig {
   sessionMatcher?: string | Computed<string>;
   /** Optional. Flag to enable TLS inspection of traffic matching on , can only be true if the parent GatewaySecurityPolicy references a TLSInspectionConfig. */
   tlsInspectionEnabled?: boolean | Computed<boolean>;
-  /** Output only. Time when the rule was updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1beta1RuleAttrs {
@@ -52,13 +48,11 @@ export const V1beta1Rule: ResourceBinding<V1beta1RuleConfig, V1beta1RuleAttrs> =
   fields: {
     applicationMatcher: "application_matcher",
     basicProfile: "basic_profile",
-    createTime: "create_time",
     description: "description",
     enabled: "enabled",
     name: "name",
     priority: "priority",
     sessionMatcher: "session_matcher",
     tlsInspectionEnabled: "tls_inspection_enabled",
-    updateTime: "update_time",
   },
 };

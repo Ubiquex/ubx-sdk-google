@@ -171,10 +171,6 @@ const SessionTemplate_RuntimeConfigFields: FieldMap = {
 };
 
 export interface SessionTemplateConfig {
-  /** Output only. The time when the template was created. */
-  createTime?: string | Computed<string>;
-  /** Output only. The email address of the user who created the template. */
-  creator?: string | Computed<string>;
   /** Optional. Brief description of the template. */
   description?: string | Computed<string>;
   /** Environment configuration for a workload. */
@@ -189,10 +185,6 @@ export interface SessionTemplateConfig {
   runtimeConfig?: SessionTemplate_RuntimeConfig | Computed<SessionTemplate_RuntimeConfig>;
   /** Spark connect configuration for an interactive session. */
   sparkConnectSession?: unknown | Computed<unknown>;
-  /** Output only. The time the template was last updated. */
-  updateTime?: string | Computed<string>;
-  /** Output only. A session template UUID (Unique Universal Identifier). The service generates this value when it creates the session template. */
-  uuid?: string | Computed<string>;
 }
 
 export interface SessionTemplateAttrs {
@@ -223,8 +215,6 @@ export interface SessionTemplateAttrs {
 export const SessionTemplate: ResourceBinding<SessionTemplateConfig, SessionTemplateAttrs> = {
   wireType: "google_dataproc_session_template",
   fields: {
-    createTime: "create_time",
-    creator: "creator",
     description: "description",
     environmentConfig: {
       wireName: "environment_config",
@@ -244,7 +234,5 @@ export const SessionTemplate: ResourceBinding<SessionTemplateConfig, SessionTemp
       fields: SessionTemplate_RuntimeConfigFields,
     },
     sparkConnectSession: "spark_connect_session",
-    updateTime: "update_time",
-    uuid: "uuid",
   },
 };

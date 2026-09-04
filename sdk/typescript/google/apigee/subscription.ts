@@ -4,16 +4,6 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 export interface SubscriptionConfig {
   /** Required. Name of the API product for which the appgroup is purchasing a subscription. */
   apiproduct?: string | Computed<string>;
-  /** Output only. Time when the API product subscription was created in milliseconds since epoch. */
-  createdAt?: string | Computed<string>;
-  /** Output only. Time when the API product subscription ends in milliseconds since epoch. */
-  endTime?: string | Computed<string>;
-  /** Output only. Time when the API product subscription was last modified in milliseconds since epoch. */
-  lastModifiedAt?: string | Computed<string>;
-  /** Output only. Name of the API product subscription. */
-  name?: string | Computed<string>;
-  /** Output only. Time when the API product subscription starts in milliseconds since epoch. */
-  startTime?: string | Computed<string>;
 }
 
 export interface SubscriptionAttrs {
@@ -35,10 +25,5 @@ export const Subscription: ResourceBinding<SubscriptionConfig, SubscriptionAttrs
   wireType: "google_apigee_subscription",
   fields: {
     apiproduct: "apiproduct",
-    createdAt: "created_at",
-    endTime: "end_time",
-    lastModifiedAt: "last_modified_at",
-    name: "name",
-    startTime: "start_time",
   },
 };

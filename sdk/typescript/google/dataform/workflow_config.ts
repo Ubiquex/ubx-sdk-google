@@ -56,43 +56,19 @@ const WorkflowConfig_InvocationConfigFields: FieldMap = {
   transitiveDependentsIncluded: "transitive_dependents_included",
 };
 
-const WorkflowConfig_RecentScheduledExecutionRecords_ErrorStatusFields: FieldMap = {
-  code: "code",
-  details: "details",
-  message: "message",
-};
-
-const WorkflowConfig_RecentScheduledExecutionRecordsFields: FieldMap = {
-  errorStatus: {
-    wireName: "error_status",
-    kind: "object",
-    fields: WorkflowConfig_RecentScheduledExecutionRecords_ErrorStatusFields,
-  },
-  executionTime: "execution_time",
-  workflowInvocation: "workflow_invocation",
-};
-
 export interface WorkflowConfigConfig {
-  /** Output only. The timestamp of when the WorkflowConfig was created. */
-  createTime?: string | Computed<string>;
   /** Optional. Optional schedule (in cron format) for automatic execution of this workflow config. */
   cronSchedule?: string | Computed<string>;
   /** Optional. Disables automatic creation of workflow invocations. */
   disabled?: boolean | Computed<boolean>;
-  /** Output only. All the metadata information that is used internally to serve the resource. For example: timestamps, flags, status fields, etc. The format of this field is a JSON string. */
-  internalMetadata?: string | Computed<string>;
   /** Includes various configuration options for a workflow invocation. If both `included_targets` and `included_tags` are unset, all actions will be included. */
   invocationConfig?: WorkflowConfig_InvocationConfig | Computed<WorkflowConfig_InvocationConfig>;
   /** Identifier. The workflow config's name. */
   name?: string | Computed<string>;
-  /** Output only. Records of the 10 most recent scheduled execution attempts, ordered in descending order of `execution_time`. Updated whenever automatic creation of a workflow invocation is triggered by cron_schedule. */
-  recentScheduledExecutionRecords?: WorkflowConfig_RecentScheduledExecutionRecords[] | Computed<WorkflowConfig_RecentScheduledExecutionRecords[]>;
   /** Required. The name of the release config whose release_compilation_result should be executed. Must be in the format `projects/* /locations/* /repositories/* /releaseConfigs/*`. */
   releaseConfig?: string | Computed<string>;
   /** Optional. Specifies the time zone to be used when interpreting cron_schedule. Must be a time zone name from the [time zone database](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones). If left unspecified, the default is `UTC`. */
   timeZone?: string | Computed<string>;
-  /** Output only. The timestamp of when the WorkflowConfig was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface WorkflowConfigAttrs {
@@ -121,23 +97,15 @@ export interface WorkflowConfigAttrs {
 export const WorkflowConfig: ResourceBinding<WorkflowConfigConfig, WorkflowConfigAttrs> = {
   wireType: "google_dataform_workflow_config",
   fields: {
-    createTime: "create_time",
     cronSchedule: "cron_schedule",
     disabled: "disabled",
-    internalMetadata: "internal_metadata",
     invocationConfig: {
       wireName: "invocation_config",
       kind: "object",
       fields: WorkflowConfig_InvocationConfigFields,
     },
     name: "name",
-    recentScheduledExecutionRecords: {
-      wireName: "recent_scheduled_execution_records",
-      kind: "list",
-      fields: WorkflowConfig_RecentScheduledExecutionRecordsFields,
-    },
     releaseConfig: "release_config",
     timeZone: "time_zone",
-    updateTime: "update_time",
   },
 };

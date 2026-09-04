@@ -6,10 +6,6 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type IdentityAwareProxyClientConfig struct {
 	// Human-friendly name given to the OAuth client.
 	DisplayName any
-	// Output only. Unique identifier of the OAuth client.
-	Name any
-	// Output only. Client secret of the OAuth client.
-	Secret any
 }
 
 type IdentityAwareProxyClientAttrs struct {
@@ -25,7 +21,5 @@ var IdentityAwareProxyClient = ubx.ResourceBinding{
 	WireType: "google_iap_identity_aware_proxy_client",
 	Fields: ubx.FieldMap{
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Secret": ubx.FieldSpec{WireName: "secret"},
 	},
 }

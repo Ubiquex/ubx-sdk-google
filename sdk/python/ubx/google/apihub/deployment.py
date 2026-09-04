@@ -94,31 +94,10 @@ _Deployment_DocumentationFields = {
     "external_uri": ubx.FieldSpec(wire_name="external_uri"),
 }
 
-_Deployment_SourceMetadata_PluginInstanceActionSourceFields = {
-    "action_id": ubx.FieldSpec(wire_name="action_id"),
-    "plugin_instance": ubx.FieldSpec(wire_name="plugin_instance"),
-}
-
-_Deployment_SourceMetadataFields = {
-    "original_resource_create_time": ubx.FieldSpec(wire_name="original_resource_create_time"),
-    "original_resource_id": ubx.FieldSpec(wire_name="original_resource_id"),
-    "original_resource_update_time": ubx.FieldSpec(wire_name="original_resource_update_time"),
-    "plugin_instance_action_source": ubx.FieldSpec(
-        wire_name="plugin_instance_action_source",
-        kind="object",
-        fields=_Deployment_SourceMetadata_PluginInstanceActionSourceFields,
-    ),
-    "source_type": ubx.FieldSpec(wire_name="source_type"),
-}
-
 @dataclasses.dataclass
 class DeploymentConfig:
-    # Output only. The API versions linked to this deployment. Note: A particular deployment could be linked to multiple different API versions (of same or different APIs).
-    api_versions: Any = None
     # Optional. The list of user defined attributes associated with the deployment resource. The key is the attribute name. It will be of the format: `projects/{project}/locations/{location}/attributes/{attribute}`. The value is the attribute values associated with the resource.
     attributes: Any = None
-    # Output only. The time at which the deployment was created.
-    create_time: Any = None
     # The attribute values associated with resource.
     deployment_type: Any = None
     # Optional. The description of the deployment.
@@ -141,14 +120,10 @@ class DeploymentConfig:
     slo: Any = None
     # Optional. The environment at source for the deployment. For example: prod, dev, staging, etc.
     source_environment: Any = None
-    # Output only. The list of sources and metadata from the sources of the deployment.
-    source_metadata: Any = None
     # Optional. The project to which the deployment belongs. For Google Cloud gateways, this will refer to the project identifier. For others like Edge/OPDK, this will refer to the org identifier.
     source_project: Any = None
     # The attribute values associated with resource.
     source_uri: Any = None
-    # Output only. The time at which the deployment was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class DeploymentAttrs:
@@ -192,13 +167,11 @@ class DeploymentAttrs:
 Deployment = ubx.ResourceBinding(
     wire_type="google_apihub_deployment",
     fields={
-        "api_versions": ubx.FieldSpec(wire_name="api_versions"),
         "attributes": ubx.FieldSpec(
             wire_name="attributes",
             kind="map",
             fields=_Deployment_AttributesFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "deployment_type": ubx.FieldSpec(
             wire_name="deployment_type",
             kind="object",
@@ -230,17 +203,11 @@ Deployment = ubx.ResourceBinding(
             fields=_Deployment_AttributesFields,
         ),
         "source_environment": ubx.FieldSpec(wire_name="source_environment"),
-        "source_metadata": ubx.FieldSpec(
-            wire_name="source_metadata",
-            kind="list",
-            fields=_Deployment_SourceMetadataFields,
-        ),
         "source_project": ubx.FieldSpec(wire_name="source_project"),
         "source_uri": ubx.FieldSpec(
             wire_name="source_uri",
             kind="object",
             fields=_Deployment_AttributesFields,
         ),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

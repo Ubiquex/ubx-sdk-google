@@ -9,7 +9,7 @@ type Proposal_AddQuorumMember struct {
 }
 
 type Proposal_QuorumParameters_Challenges struct {
-	Challenge any
+	Challenge    any
 	PublicKeyPem any
 }
 
@@ -48,70 +48,62 @@ type Proposal_UpgradeKeyTrust struct {
 }
 
 var Proposal_AddQuorumMemberFields = ubx.FieldMap{
-		"TwoFactorPublicKeyPem": ubx.FieldSpec{WireName: "two_factor_public_key_pem"},
-	}
+	"TwoFactorPublicKeyPem": ubx.FieldSpec{WireName: "two_factor_public_key_pem"},
+}
 
 var Proposal_QuorumParameters_ChallengesFields = ubx.FieldMap{
-		"Challenge": ubx.FieldSpec{WireName: "challenge"},
-		"PublicKeyPem": ubx.FieldSpec{WireName: "public_key_pem"},
-	}
+	"Challenge":    ubx.FieldSpec{WireName: "challenge"},
+	"PublicKeyPem": ubx.FieldSpec{WireName: "public_key_pem"},
+}
 
 var Proposal_QuorumParametersFields = ubx.FieldMap{
-		"ApprovedTwoFactorPublicKeyPems": ubx.FieldSpec{WireName: "approved_two_factor_public_key_pems"},
-		"Challenges": ubx.FieldSpec{
-			WireName: "challenges",
-			Kind: "list",
-			Fields: Proposal_QuorumParameters_ChallengesFields,
-		},
-		"RequiredApproverCount": ubx.FieldSpec{WireName: "required_approver_count"},
-	}
+	"ApprovedTwoFactorPublicKeyPems": ubx.FieldSpec{WireName: "approved_two_factor_public_key_pems"},
+	"Challenges": ubx.FieldSpec{
+		WireName: "challenges",
+		Kind:     "list",
+		Fields:   Proposal_QuorumParameters_ChallengesFields,
+	},
+	"RequiredApproverCount": ubx.FieldSpec{WireName: "required_approver_count"},
+}
 
 var Proposal_RegisterTwoFactorAuthKeysFields = ubx.FieldMap{
-		"RequiredApproverCount": ubx.FieldSpec{WireName: "required_approver_count"},
-		"TwoFactorPublicKeyPems": ubx.FieldSpec{WireName: "two_factor_public_key_pems"},
-	}
+	"RequiredApproverCount":  ubx.FieldSpec{WireName: "required_approver_count"},
+	"TwoFactorPublicKeyPems": ubx.FieldSpec{WireName: "two_factor_public_key_pems"},
+}
 
 var Proposal_RequiredActionQuorumParametersFields = ubx.FieldMap{
-		"ApprovedTwoFactorPublicKeyPems": ubx.FieldSpec{WireName: "approved_two_factor_public_key_pems"},
-		"QuorumChallenges": ubx.FieldSpec{
-			WireName: "quorum_challenges",
-			Kind: "list",
-			Fields: Proposal_QuorumParameters_ChallengesFields,
-		},
-		"RequiredApproverCount": ubx.FieldSpec{WireName: "required_approver_count"},
-		"RequiredChallenges": ubx.FieldSpec{
-			WireName: "required_challenges",
-			Kind: "list",
-			Fields: Proposal_QuorumParameters_ChallengesFields,
-		},
-	}
+	"ApprovedTwoFactorPublicKeyPems": ubx.FieldSpec{WireName: "approved_two_factor_public_key_pems"},
+	"QuorumChallenges": ubx.FieldSpec{
+		WireName: "quorum_challenges",
+		Kind:     "list",
+		Fields:   Proposal_QuorumParameters_ChallengesFields,
+	},
+	"RequiredApproverCount": ubx.FieldSpec{WireName: "required_approver_count"},
+	"RequiredChallenges": ubx.FieldSpec{
+		WireName: "required_challenges",
+		Kind:     "list",
+		Fields:   Proposal_QuorumParameters_ChallengesFields,
+	},
+}
 
 var Proposal_UpgradeKeyTrustFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"TwoFactorPublicKeyPem": ubx.FieldSpec{WireName: "two_factor_public_key_pem"},
-	}
+	"Name":                  ubx.FieldSpec{WireName: "name"},
+	"TwoFactorPublicKeyPem": ubx.FieldSpec{WireName: "two_factor_public_key_pem"},
+}
 
 type ProposalConfig struct {
 	// Add a quorum member to the SingleTenantHsmInstance. This will increase the total_approver_count by 1. The SingleTenantHsmInstance must be in the ACTIVE state to perform this operation.
 	AddQuorumMember any
-	// Output only. The time at which the SingleTenantHsmInstanceProposal was created.
-	CreateTime any
 	// Delete the SingleTenantHsmInstance. Deleting a SingleTenantHsmInstance will make all CryptoKeys attached to the SingleTenantHsmInstance unusable. The SingleTenantHsmInstance must not be in the DELETING or DELETED state to perform this operation.
 	DeleteSingleTenantHsmInstance any
-	// Output only. The time at which the SingleTenantHsmInstanceProposal was deleted.
-	DeleteTime any
 	// Disable the SingleTenantHsmInstance. The SingleTenantHsmInstance must be in the ACTIVE state to perform this operation.
 	DisableSingleTenantHsmInstance any
 	// Enable the SingleTenantHsmInstance. The SingleTenantHsmInstance must be in the DISABLED state to perform this operation.
 	EnableSingleTenantHsmInstance any
 	// The time at which the SingleTenantHsmInstanceProposal will expire if not approved and executed.
 	ExpireTime any
-	// Output only. The root cause of the most recent failure. Only present if state is FAILED.
-	FailureReason any
 	// Identifier. The resource name for this SingleTenantHsmInstance in the format `projects/*/locations/*/singleTenantHsmInstances/*/proposals/*`.
 	Name any
-	// Output only. The time at which the soft-deleted SingleTenantHsmInstanceProposal will be permanently purged. This field is only populated when the state is DELETED and will be set a time after expiration of the proposal, i.e. >= expire_time or (create_time + ttl).
-	PurgeTime any
 	// Parameters of quorum approval for the SingleTenantHsmInstanceProposal.
 	QuorumParameters any
 	// Refreshes the SingleTenantHsmInstance. This operation must be performed periodically to keep the SingleTenantHsmInstance active. This operation must be performed before unrefreshed_duration_until_disable has passed. The SingleTenantHsmInstance must be in the ACTIVE state to perform this operation.
@@ -122,8 +114,6 @@ type ProposalConfig struct {
 	RemoveQuorumMember any
 	// Parameters for an approval that has both required challenges and a quorum.
 	RequiredActionQuorumParameters any
-	// Output only. The state of the SingleTenantHsmInstanceProposal.
-	State any
 	// Input only. The TTL for the SingleTenantHsmInstanceProposal. Proposals will expire after this duration.
 	Ttl any
 	// Promotes a key with the AES_WRAPPING purpose to a trusted wrapping key. The key must be in the ACTIVE state to perform this operation.
@@ -174,45 +164,40 @@ var Proposal = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AddQuorumMember": ubx.FieldSpec{
 			WireName: "add_quorum_member",
-			Kind: "object",
-			Fields: Proposal_AddQuorumMemberFields,
+			Kind:     "object",
+			Fields:   Proposal_AddQuorumMemberFields,
 		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DeleteSingleTenantHsmInstance": ubx.FieldSpec{WireName: "delete_single_tenant_hsm_instance"},
-		"DeleteTime": ubx.FieldSpec{WireName: "delete_time"},
+		"DeleteSingleTenantHsmInstance":  ubx.FieldSpec{WireName: "delete_single_tenant_hsm_instance"},
 		"DisableSingleTenantHsmInstance": ubx.FieldSpec{WireName: "disable_single_tenant_hsm_instance"},
-		"EnableSingleTenantHsmInstance": ubx.FieldSpec{WireName: "enable_single_tenant_hsm_instance"},
-		"ExpireTime": ubx.FieldSpec{WireName: "expire_time"},
-		"FailureReason": ubx.FieldSpec{WireName: "failure_reason"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"PurgeTime": ubx.FieldSpec{WireName: "purge_time"},
+		"EnableSingleTenantHsmInstance":  ubx.FieldSpec{WireName: "enable_single_tenant_hsm_instance"},
+		"ExpireTime":                     ubx.FieldSpec{WireName: "expire_time"},
+		"Name":                           ubx.FieldSpec{WireName: "name"},
 		"QuorumParameters": ubx.FieldSpec{
 			WireName: "quorum_parameters",
-			Kind: "object",
-			Fields: Proposal_QuorumParametersFields,
+			Kind:     "object",
+			Fields:   Proposal_QuorumParametersFields,
 		},
 		"RefreshSingleTenantHsmInstance": ubx.FieldSpec{WireName: "refresh_single_tenant_hsm_instance"},
 		"RegisterTwoFactorAuthKeys": ubx.FieldSpec{
 			WireName: "register_two_factor_auth_keys",
-			Kind: "object",
-			Fields: Proposal_RegisterTwoFactorAuthKeysFields,
+			Kind:     "object",
+			Fields:   Proposal_RegisterTwoFactorAuthKeysFields,
 		},
 		"RemoveQuorumMember": ubx.FieldSpec{
 			WireName: "remove_quorum_member",
-			Kind: "object",
-			Fields: Proposal_AddQuorumMemberFields,
+			Kind:     "object",
+			Fields:   Proposal_AddQuorumMemberFields,
 		},
 		"RequiredActionQuorumParameters": ubx.FieldSpec{
 			WireName: "required_action_quorum_parameters",
-			Kind: "object",
-			Fields: Proposal_RequiredActionQuorumParametersFields,
+			Kind:     "object",
+			Fields:   Proposal_RequiredActionQuorumParametersFields,
 		},
-		"State": ubx.FieldSpec{WireName: "state"},
 		"Ttl": ubx.FieldSpec{WireName: "ttl"},
 		"UpgradeKeyTrust": ubx.FieldSpec{
 			WireName: "upgrade_key_trust",
-			Kind: "object",
-			Fields: Proposal_UpgradeKeyTrustFields,
+			Kind:     "object",
+			Fields:   Proposal_UpgradeKeyTrustFields,
 		},
 	},
 }

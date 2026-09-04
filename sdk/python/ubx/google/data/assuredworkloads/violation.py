@@ -48,7 +48,7 @@ class Violation_Remediation:
 
 @dataclasses.dataclass
 class ViolationConfig:
-    name: Any = None
+    pass
 
 @dataclasses.dataclass
 class ViolationAttrs:
@@ -95,6 +95,5 @@ class ViolationAttrs:
 Violation = ubx.DataSourceBinding(
     wire_type="google_assuredworkloads_violation",
     fields={
-        "name": ubx.FieldSpec(wire_name="name"),
     },
 )

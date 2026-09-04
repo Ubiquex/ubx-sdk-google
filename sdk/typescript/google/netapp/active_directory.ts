@@ -8,8 +8,6 @@ export interface ActiveDirectoryConfig {
   aesEncryption?: boolean | Computed<boolean>;
   /** Optional. Users to be added to the Built-in Backup Operator active directory group. */
   backupOperators?: string[] | Computed<string[]>;
-  /** Output only. Create time of the active directory. */
-  createTime?: string | Computed<string>;
   /** Description of the active directory. */
   description?: string | Computed<string>;
   /** Required. Comma separated list of DNS server IP addresses for the Active Directory domain. */
@@ -40,10 +38,6 @@ export interface ActiveDirectoryConfig {
   securityOperators?: string[] | Computed<string[]>;
   /** The Active Directory site the service will limit Domain Controller discovery too. */
   site?: string | Computed<string>;
-  /** Output only. The state of the AD. */
-  state?: string | Computed<string>;
-  /** Output only. The state details of the Active Directory. */
-  stateDetails?: string | Computed<string>;
   /** Required. Username of the Active Directory domain administrator. */
   username?: string | Computed<string>;
 }
@@ -101,7 +95,6 @@ export const ActiveDirectory: ResourceBinding<ActiveDirectoryConfig, ActiveDirec
     administrators: "administrators",
     aesEncryption: "aes_encryption",
     backupOperators: "backup_operators",
-    createTime: "create_time",
     description: "description",
     dns: "dns",
     domain: "domain",
@@ -117,8 +110,6 @@ export const ActiveDirectory: ResourceBinding<ActiveDirectoryConfig, ActiveDirec
     password: "password",
     securityOperators: "security_operators",
     site: "site",
-    state: "state",
-    stateDetails: "state_details",
     username: "username",
   },
 };

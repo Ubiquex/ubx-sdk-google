@@ -164,16 +164,8 @@ _Spoke_LinkedVpcNetworkFields = {
     "uri": ubx.FieldSpec(wire_name="uri"),
 }
 
-_Spoke_ReasonsFields = {
-    "code": ubx.FieldSpec(wire_name="code"),
-    "message": ubx.FieldSpec(wire_name="message"),
-    "user_details": ubx.FieldSpec(wire_name="user_details"),
-}
-
 @dataclasses.dataclass
 class SpokeConfig:
-    # Output only. The time the spoke was created.
-    create_time: Any = None
     # Optional. An optional description of the spoke.
     description: Any = None
     # Optional. This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding.
@@ -199,16 +191,6 @@ class SpokeConfig:
     linked_vpn_tunnels: Any = None
     # Immutable. The name of the spoke. Spoke names must be unique. They use the following form: `projects/{project_number}/locations/{region}/spokes/{spoke_id}`
     name: Any = None
-    # Output only. The reasons for current state of the spoke.
-    reasons: Any = None
-    # Output only. The type of resource associated with the spoke.
-    spoke_type: Any = None
-    # Output only. The current lifecycle state of this spoke.
-    state: Any = None
-    # Output only. The Google-generated UUID for the spoke. This value is unique across all spoke resources. If a spoke is deleted and another with the same name is created, the new spoke is assigned a different `unique_id`.
-    unique_id: Any = None
-    # Output only. The time the spoke was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class SpokeAttrs:
@@ -253,7 +235,6 @@ class SpokeAttrs:
 Spoke = ubx.ResourceBinding(
     wire_type="google_networkconnectivity_spoke",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "etag": ubx.FieldSpec(wire_name="etag"),
         "field_paths_pending_update": ubx.FieldSpec(wire_name="field_paths_pending_update"),
@@ -291,14 +272,5 @@ Spoke = ubx.ResourceBinding(
             fields=_Spoke_LinkedInterconnectAttachmentsFields,
         ),
         "name": ubx.FieldSpec(wire_name="name"),
-        "reasons": ubx.FieldSpec(
-            wire_name="reasons",
-            kind="list",
-            fields=_Spoke_ReasonsFields,
-        ),
-        "spoke_type": ubx.FieldSpec(wire_name="spoke_type"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "unique_id": ubx.FieldSpec(wire_name="unique_id"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

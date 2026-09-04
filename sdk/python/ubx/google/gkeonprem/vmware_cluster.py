@@ -538,8 +538,6 @@ _VmwareCluster_VcenterFields = {
 class VmwareClusterConfig:
     # Required. The admin cluster this VMware user cluster belongs to. This is the full resource name of the admin cluster's fleet membership. In the future, references to other resource types might be allowed if admin clusters are modeled as their own resources.
     admin_cluster_membership: Any = None
-    # Output only. The resource name of the VMware admin cluster hosting this user cluster.
-    admin_cluster_name: Any = None
     # Annotations on the VMware user cluster. This field has the same restrictions as Kubernetes annotations. The total size of all keys and values combined is limited to 256k. Key can have 2 segments: prefix (optional) and name (required), separated by a slash (/). Prefix must be a DNS subdomain. Name must be 63 characters or less, begin and end with alphanumerics, with dashes (-), underscores (_), dots (.), and alphanumerics between.
     annotations: Any = None
     # Specifies anti affinity group config for the VMware user cluster.
@@ -552,12 +550,8 @@ class VmwareClusterConfig:
     binary_authorization: Any = None
     # Specifies control plane node config for the VMware user cluster.
     control_plane_node: Any = None
-    # Output only. The time at which VMware user cluster was created.
-    create_time: Any = None
     # Contains configurations for Dataplane V2, which is optimized dataplane for Kubernetes networking. For more information, see: https://cloud.google.com/kubernetes-engine/docs/concepts/dataplane-v2
     dataplane_v2: Any = None
-    # Output only. The time at which VMware user cluster was deleted.
-    delete_time: Any = None
     # A human readable description of this VMware user cluster.
     description: Any = None
     # Disable bundled ingress.
@@ -566,34 +560,22 @@ class VmwareClusterConfig:
     enable_advanced_cluster: Any = None
     # Enable control plane V2. Default to false.
     enable_control_plane_v2: Any = None
-    # Output only. The DNS name of VMware user cluster's API server.
-    endpoint: Any = None
     # This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding. Allows clients to perform consistent read-modify-writes through optimistic concurrency control.
     etag: Any = None
     # Fleet related configuration. Fleets are a Google Cloud concept for logically organizing clusters, letting you use and manage multi-cluster capabilities and apply consistent policies across your systems. See [Anthos Fleets](`https://cloud.google.com/anthos/multicluster-management/fleets`) for more details on Anthos multi-cluster capabilities using Fleets. ##
     fleet: Any = None
     # Specifies the locad balancer config for the VMware user cluster.
     load_balancer: Any = None
-    # Output only. The object name of the VMware OnPremUserCluster custom resource on the associated admin cluster. This field is used to support conflicting names when enrolling existing clusters to the API. When used as a part of cluster enrollment, this field will differ from the ID in the resource name. For new clusters, this field will match the user provided cluster name and be visible in the last component of the resource name. It is not modifiable. All users should use this name to access their cluster using gkectl or kubectl and should expect to see the local name when viewing admin cluster controller logs.
-    local_name: Any = None
     # Immutable. The VMware user cluster resource name.
     name: Any = None
     # Specifies network config for the VMware user cluster.
     network_config: Any = None
     # Required. The Anthos clusters on the VMware version for your user cluster.
     on_prem_version: Any = None
-    # Output only. If set, there are currently changes in flight to the VMware user cluster.
-    reconciling: Any = None
-    # Output only. The current state of VMware user cluster.
-    state: Any = None
     # ResourceStatus describes why a cluster or node pool has a certain status. (e.g., ERROR or DEGRADED).
     status: Any = None
     # Specifies vSphere CSI components deployment config in the VMware user cluster.
     storage: Any = None
-    # Output only. The unique identifier of the VMware user cluster.
-    uid: Any = None
-    # Output only. The time at which VMware user cluster was last updated.
-    update_time: Any = None
     # VmwareClusterUpgradePolicy defines the cluster upgrade policy.
     upgrade_policy: Any = None
     # ValidationCheck represents the result of preflight check.
@@ -676,7 +658,6 @@ VmwareCluster = ubx.ResourceBinding(
     wire_type="google_gkeonprem_vmware_cluster",
     fields={
         "admin_cluster_membership": ubx.FieldSpec(wire_name="admin_cluster_membership"),
-        "admin_cluster_name": ubx.FieldSpec(wire_name="admin_cluster_name"),
         "annotations": ubx.FieldSpec(wire_name="annotations"),
         "anti_affinity_groups": ubx.FieldSpec(
             wire_name="anti_affinity_groups",
@@ -703,18 +684,15 @@ VmwareCluster = ubx.ResourceBinding(
             kind="object",
             fields=_VmwareCluster_ControlPlaneNodeFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "dataplane_v2": ubx.FieldSpec(
             wire_name="dataplane_v2",
             kind="object",
             fields=_VmwareCluster_DataplaneV2Fields,
         ),
-        "delete_time": ubx.FieldSpec(wire_name="delete_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "disable_bundled_ingress": ubx.FieldSpec(wire_name="disable_bundled_ingress"),
         "enable_advanced_cluster": ubx.FieldSpec(wire_name="enable_advanced_cluster"),
         "enable_control_plane_v2": ubx.FieldSpec(wire_name="enable_control_plane_v2"),
-        "endpoint": ubx.FieldSpec(wire_name="endpoint"),
         "etag": ubx.FieldSpec(wire_name="etag"),
         "fleet": ubx.FieldSpec(
             wire_name="fleet",
@@ -726,7 +704,6 @@ VmwareCluster = ubx.ResourceBinding(
             kind="object",
             fields=_VmwareCluster_LoadBalancerFields,
         ),
-        "local_name": ubx.FieldSpec(wire_name="local_name"),
         "name": ubx.FieldSpec(wire_name="name"),
         "network_config": ubx.FieldSpec(
             wire_name="network_config",
@@ -734,8 +711,6 @@ VmwareCluster = ubx.ResourceBinding(
             fields=_VmwareCluster_NetworkConfigFields,
         ),
         "on_prem_version": ubx.FieldSpec(wire_name="on_prem_version"),
-        "reconciling": ubx.FieldSpec(wire_name="reconciling"),
-        "state": ubx.FieldSpec(wire_name="state"),
         "status": ubx.FieldSpec(
             wire_name="status",
             kind="object",
@@ -746,8 +721,6 @@ VmwareCluster = ubx.ResourceBinding(
             kind="object",
             fields=_VmwareCluster_StorageFields,
         ),
-        "uid": ubx.FieldSpec(wire_name="uid"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
         "upgrade_policy": ubx.FieldSpec(
             wire_name="upgrade_policy",
             kind="object",

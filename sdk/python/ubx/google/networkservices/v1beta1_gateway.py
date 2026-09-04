@@ -16,8 +16,6 @@ class V1beta1GatewayConfig:
     allow_global_access: Any = None
     # Optional. A fully-qualified Certificates URL reference. The proxy presents a Certificate (selected based on SNI) when establishing a TLS connection. This feature only applies to gateways of type 'SECURE_WEB_GATEWAY'.
     certificate_urls: Any = None
-    # Output only. The timestamp when the resource was created.
-    create_time: Any = None
     # Optional. A free-text description of the resource. Max length 1024 characters.
     description: Any = None
     # Optional. Determines if envoy will insert internal debug headers into upstream requests. Other Envoy headers may still be injected. By default, envoy will not insert any debug headers.
@@ -38,16 +36,12 @@ class V1beta1GatewayConfig:
     routing_mode: Any = None
     # Optional. Scope determines how configuration across multiple Gateway instances are merged. The configuration for multiple Gateway instances with the same scope will be merged as presented as a single configuration to the proxy/load balancer. Max length 64 characters. Scope should start with a letter and can only have letters, numbers, hyphens.
     scope: Any = None
-    # Output only. Server-defined URL of this resource
-    self_link: Any = None
     # Optional. A fully-qualified ServerTLSPolicy URL reference. Specifies how TLS traffic is terminated. If empty, TLS termination is disabled.
     server_tls_policy: Any = None
     # Optional. The relative resource name identifying the subnetwork in which this SWG is allocated. For example: `projects/*/regions/us-central1/subnetworks/network-1` Currently, this field is specific to gateways of type 'SECURE_WEB_GATEWAY".
     subnetwork: Any = None
     # Immutable. The type of the customer managed gateway. This field is required. If unspecified, an error is returned.
     type: Any = None
-    # Output only. The timestamp when the resource was updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V1beta1GatewayAttrs:
@@ -99,7 +93,6 @@ V1beta1Gateway = ubx.ResourceBinding(
         "all_ports": ubx.FieldSpec(wire_name="all_ports"),
         "allow_global_access": ubx.FieldSpec(wire_name="allow_global_access"),
         "certificate_urls": ubx.FieldSpec(wire_name="certificate_urls"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "envoy_headers": ubx.FieldSpec(wire_name="envoy_headers"),
         "gateway_security_policy": ubx.FieldSpec(wire_name="gateway_security_policy"),
@@ -110,10 +103,8 @@ V1beta1Gateway = ubx.ResourceBinding(
         "ports": ubx.FieldSpec(wire_name="ports"),
         "routing_mode": ubx.FieldSpec(wire_name="routing_mode"),
         "scope": ubx.FieldSpec(wire_name="scope"),
-        "self_link": ubx.FieldSpec(wire_name="self_link"),
         "server_tls_policy": ubx.FieldSpec(wire_name="server_tls_policy"),
         "subnetwork": ubx.FieldSpec(wire_name="subnetwork"),
         "type": ubx.FieldSpec(wire_name="type"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

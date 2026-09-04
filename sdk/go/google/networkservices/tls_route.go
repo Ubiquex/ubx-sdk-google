@@ -5,59 +5,57 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TlsRoute_Rules_Action_Destinations struct {
 	ServiceName any
-	Weight any
+	Weight      any
 }
 
 type TlsRoute_Rules_Action struct {
 	Destinations any
-	IdleTimeout any
+	IdleTimeout  any
 }
 
 type TlsRoute_Rules_Matches struct {
-	Alpn any
+	Alpn    any
 	SniHost any
 }
 
 type TlsRoute_Rules struct {
-	Action any
+	Action  any
 	Matches any
 }
 
 var TlsRoute_Rules_Action_DestinationsFields = ubx.FieldMap{
-		"ServiceName": ubx.FieldSpec{WireName: "service_name"},
-		"Weight": ubx.FieldSpec{WireName: "weight"},
-	}
+	"ServiceName": ubx.FieldSpec{WireName: "service_name"},
+	"Weight":      ubx.FieldSpec{WireName: "weight"},
+}
 
 var TlsRoute_Rules_ActionFields = ubx.FieldMap{
-		"Destinations": ubx.FieldSpec{
-			WireName: "destinations",
-			Kind: "list",
-			Fields: TlsRoute_Rules_Action_DestinationsFields,
-		},
-		"IdleTimeout": ubx.FieldSpec{WireName: "idle_timeout"},
-	}
+	"Destinations": ubx.FieldSpec{
+		WireName: "destinations",
+		Kind:     "list",
+		Fields:   TlsRoute_Rules_Action_DestinationsFields,
+	},
+	"IdleTimeout": ubx.FieldSpec{WireName: "idle_timeout"},
+}
 
 var TlsRoute_Rules_MatchesFields = ubx.FieldMap{
-		"Alpn": ubx.FieldSpec{WireName: "alpn"},
-		"SniHost": ubx.FieldSpec{WireName: "sni_host"},
-	}
+	"Alpn":    ubx.FieldSpec{WireName: "alpn"},
+	"SniHost": ubx.FieldSpec{WireName: "sni_host"},
+}
 
 var TlsRoute_RulesFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{
-			WireName: "action",
-			Kind: "object",
-			Fields: TlsRoute_Rules_ActionFields,
-		},
-		"Matches": ubx.FieldSpec{
-			WireName: "matches",
-			Kind: "list",
-			Fields: TlsRoute_Rules_MatchesFields,
-		},
-	}
+	"Action": ubx.FieldSpec{
+		WireName: "action",
+		Kind:     "object",
+		Fields:   TlsRoute_Rules_ActionFields,
+	},
+	"Matches": ubx.FieldSpec{
+		WireName: "matches",
+		Kind:     "list",
+		Fields:   TlsRoute_Rules_MatchesFields,
+	},
+}
 
 type TlsRouteConfig struct {
-	// Output only. The timestamp when the resource was created.
-	CreateTime any
 	// Optional. A free-text description of the resource. Max length 1024 characters.
 	Description any
 	// Optional. Gateways defines a list of gateways this TlsRoute is attached to, as one of the routing rules to route the requests served by the gateway. Each gateway reference should match the pattern: `projects/*/locations/*/gateways/`
@@ -70,12 +68,8 @@ type TlsRouteConfig struct {
 	Name any
 	// Required. Rules that define how traffic is routed and handled. At least one RouteRule must be supplied. If there are multiple rules then the action taken will be the first rule to match.
 	Rules any
-	// Output only. Server-defined URL of this resource
-	SelfLink any
 	// Optional. TargetProxies defines a list of TargetTcpProxies this TlsRoute is attached to, as one of the routing rules to route the requests served by the TargetTcpProxy. Each TargetTcpProxy reference should match the pattern: `projects/*/locations/*/targetTcpProxies/`
 	TargetProxies any
-	// Output only. The timestamp when the resource was updated.
-	UpdateTime any
 }
 
 type TlsRouteAttrs struct {
@@ -104,19 +98,16 @@ type TlsRouteAttrs struct {
 var TlsRoute = ubx.ResourceBinding{
 	WireType: "google_networkservices_tls_route",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Gateways": ubx.FieldSpec{WireName: "gateways"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Meshes": ubx.FieldSpec{WireName: "meshes"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Gateways":    ubx.FieldSpec{WireName: "gateways"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
+		"Meshes":      ubx.FieldSpec{WireName: "meshes"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"Rules": ubx.FieldSpec{
 			WireName: "rules",
-			Kind: "list",
-			Fields: TlsRoute_RulesFields,
+			Kind:     "list",
+			Fields:   TlsRoute_RulesFields,
 		},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
 		"TargetProxies": ubx.FieldSpec{WireName: "target_proxies"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

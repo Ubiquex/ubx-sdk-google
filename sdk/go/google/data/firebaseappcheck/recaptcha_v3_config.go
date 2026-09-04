@@ -10,7 +10,7 @@ type RecaptchaV3ConfigConfig struct {
 type RecaptchaV3ConfigAttrs struct {
 	// Specifies a minimum score required for a reCAPTCHA token to be considered valid. If its score is greater than or equal to this value, it will be accepted; otherwise, it will be rejected. The value must be between 0.0 and 1.0. The default value is 0.5.
 	MinValidScore any
-	Name any
+	Name          any
 	// Required. Input only. The site secret used to identify your service for reCAPTCHA v3 verification. For security reasons, this field will never be populated in any response.
 	SiteSecret any
 	// Output only. Whether the `site_secret` field was previously set. Since we will never return the `site_secret` field, this field is the only way to find out whether it was previously set.

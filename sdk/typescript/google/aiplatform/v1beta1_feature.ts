@@ -61,17 +61,6 @@ export interface V1beta1Feature_MonitoringStatsAnomalies {
   objective?: string | Computed<string>;
 }
 
-const V1beta1Feature_FeatureStatsAndAnomalyFields: FieldMap = {
-  distributionDeviation: "distribution_deviation",
-  driftDetected: "drift_detected",
-  driftDetectionThreshold: "drift_detection_threshold",
-  featureId: "feature_id",
-  featureMonitorId: "feature_monitor_id",
-  featureMonitorJobId: "feature_monitor_job_id",
-  featureStats: "feature_stats",
-  statsTime: "stats_time",
-};
-
 const V1beta1Feature_MonitoringConfig_CategoricalThresholdConfigFields: FieldMap = {
   value: "value",
 };
@@ -111,50 +100,21 @@ const V1beta1Feature_MonitoringConfigFields: FieldMap = {
   },
 };
 
-const V1beta1Feature_MonitoringStatsFields: FieldMap = {
-  anomalyDetectionThreshold: "anomaly_detection_threshold",
-  anomalyUri: "anomaly_uri",
-  distributionDeviation: "distribution_deviation",
-  endTime: "end_time",
-  score: "score",
-  startTime: "start_time",
-  statsUri: "stats_uri",
-};
-
-const V1beta1Feature_MonitoringStatsAnomaliesFields: FieldMap = {
-  featureStatsAnomaly: {
-    wireName: "feature_stats_anomaly",
-    kind: "object",
-    fields: V1beta1Feature_MonitoringStatsFields,
-  },
-  objective: "objective",
-};
-
 export interface V1beta1FeatureConfig {
-  /** Output only. Only applicable for Vertex AI Feature Store (Legacy). Timestamp when this EntityType was created. */
-  createTime?: string | Computed<string>;
   /** Description of the Feature. */
   description?: string | Computed<string>;
   /** Optional. Only applicable for Vertex AI Feature Store (Legacy). If not set, use the monitoring_config defined for the EntityType this Feature belongs to. Only Features with type (Feature.ValueType) BOOL, STRING, DOUBLE or INT64 can enable monitoring. If set to true, all types of data monitoring are disabled despite the config on EntityType. */
   disableMonitoring?: boolean | Computed<boolean>;
   /** Used to perform a consistent read-modify-write updates. If not set, a blind "overwrite" update happens. */
   etag?: string | Computed<string>;
-  /** Output only. Only applicable for Vertex AI Feature Store. The list of historical stats and anomalies. */
-  featureStatsAndAnomaly?: V1beta1Feature_FeatureStatsAndAnomaly[] | Computed<V1beta1Feature_FeatureStatsAndAnomaly[]>;
   /** Optional. The labels with user-defined metadata to organize your Features. Label keys and values can be no longer than 64 characters (Unicode codepoints), can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. See https://goo.gl/xmQnxf for more information on and examples of labels. No more than 64 user labels can be associated with one Feature (System labels are excluded)." System reserved label keys are prefixed with "aiplatform.googleapis.com/" and are immutable. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Configuration of how features in Featurestore are monitored. */
   monitoringConfig?: V1beta1Feature_MonitoringConfig | Computed<V1beta1Feature_MonitoringConfig>;
-  /** Output only. Only applicable for Vertex AI Feature Store (Legacy). A list of historical SnapshotAnalysis stats requested by user, sorted by FeatureStatsAnomaly.start_time descending. */
-  monitoringStats?: V1beta1Feature_MonitoringStats[] | Computed<V1beta1Feature_MonitoringStats[]>;
-  /** Output only. Only applicable for Vertex AI Feature Store (Legacy). The list of historical stats and anomalies with specified objectives. */
-  monitoringStatsAnomalies?: V1beta1Feature_MonitoringStatsAnomalies[] | Computed<V1beta1Feature_MonitoringStatsAnomalies[]>;
   /** Immutable. Name of the Feature. Format: `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}/features/{feature}` `projects/{project}/locations/{location}/featureGroups/{feature_group}/features/{feature}` The last part feature is assigned by the client. The feature can be up to 64 characters long and can consist only of ASCII Latin letters A-Z and a-z, underscore(_), and ASCII digits 0-9 starting with a letter. The value will be unique given an entity type. */
   name?: string | Computed<string>;
   /** Entity responsible for maintaining this feature. Can be comma separated list of email addresses or URIs. */
   pointOfContact?: string | Computed<string>;
-  /** Output only. Only applicable for Vertex AI Feature Store (Legacy). Timestamp when this EntityType was most recently updated. */
-  updateTime?: string | Computed<string>;
   /** Immutable. Only applicable for Vertex AI Feature Store (Legacy). Type of Feature value. */
   valueType?: string | Computed<string>;
   /** Only applicable for Vertex AI Feature Store. The name of the BigQuery Table/View column hosting data for this version. If no value is provided, will use feature_id. */
@@ -195,34 +155,17 @@ export interface V1beta1FeatureAttrs {
 export const V1beta1Feature: ResourceBinding<V1beta1FeatureConfig, V1beta1FeatureAttrs> = {
   wireType: "google_aiplatform_v1beta1_feature",
   fields: {
-    createTime: "create_time",
     description: "description",
     disableMonitoring: "disable_monitoring",
     etag: "etag",
-    featureStatsAndAnomaly: {
-      wireName: "feature_stats_and_anomaly",
-      kind: "list",
-      fields: V1beta1Feature_FeatureStatsAndAnomalyFields,
-    },
     labels: "labels",
     monitoringConfig: {
       wireName: "monitoring_config",
       kind: "object",
       fields: V1beta1Feature_MonitoringConfigFields,
     },
-    monitoringStats: {
-      wireName: "monitoring_stats",
-      kind: "list",
-      fields: V1beta1Feature_MonitoringStatsFields,
-    },
-    monitoringStatsAnomalies: {
-      wireName: "monitoring_stats_anomalies",
-      kind: "list",
-      fields: V1beta1Feature_MonitoringStatsAnomaliesFields,
-    },
     name: "name",
     pointOfContact: "point_of_contact",
-    updateTime: "update_time",
     valueType: "value_type",
     versionColumnName: "version_column_name",
   },

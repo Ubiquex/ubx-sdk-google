@@ -6,13 +6,13 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type V1beta1SourceConfig struct {
 	Description any
 	DisplayName any
-	Name any
+	Name        any
 }
 
 type V1beta1SourceAttrs struct {
 	Description any
 	DisplayName any
-	Name any
+	Name        any
 }
 
 var V1beta1Source = ubx.ResourceBinding{
@@ -20,6 +20,6 @@ var V1beta1Source = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 	},
 }

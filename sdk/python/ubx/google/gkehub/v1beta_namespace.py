@@ -17,10 +17,6 @@ _V1betaNamespace_StateFields = {
 
 @dataclasses.dataclass
 class V1betaNamespaceConfig:
-    # Output only. When the namespace was created.
-    create_time: Any = None
-    # Output only. When the namespace was deleted.
-    delete_time: Any = None
     # Optional. Labels for this Namespace.
     labels: Any = None
     # The resource name for the namespace `projects/{project}/locations/{location}/namespaces/{namespace}`
@@ -31,10 +27,6 @@ class V1betaNamespaceConfig:
     scope: Any = None
     # NamespaceLifecycleState describes the state of a Namespace resource.
     state: Any = None
-    # Output only. Google-generated UUID for this resource. This is unique across all namespace resources. If a namespace resource is deleted and another resource with the same name is created, it gets a different uid.
-    uid: Any = None
-    # Output only. When the namespace was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V1betaNamespaceAttrs:
@@ -60,8 +52,6 @@ class V1betaNamespaceAttrs:
 V1betaNamespace = ubx.ResourceBinding(
     wire_type="google_gkehub_v1beta_namespace",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
-        "delete_time": ubx.FieldSpec(wire_name="delete_time"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "name": ubx.FieldSpec(wire_name="name"),
         "namespace_labels": ubx.FieldSpec(wire_name="namespace_labels"),
@@ -71,7 +61,5 @@ V1betaNamespace = ubx.ResourceBinding(
             kind="object",
             fields=_V1betaNamespace_StateFields,
         ),
-        "uid": ubx.FieldSpec(wire_name="uid"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

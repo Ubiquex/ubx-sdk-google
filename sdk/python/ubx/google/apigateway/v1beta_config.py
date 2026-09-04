@@ -70,8 +70,6 @@ _V1betaConfig_OpenapiDocumentsFields = {
 
 @dataclasses.dataclass
 class V1betaConfigConfig:
-    # Output only. Created time.
-    create_time: Any = None
     # Optional. Display name.
     display_name: Any = None
     # Configuration settings for Gateways.
@@ -84,16 +82,8 @@ class V1betaConfigConfig:
     labels: Any = None
     # Optional. Service Configuration files. At least one must be included when using gRPC service definitions. See https://cloud.google.com/endpoints/docs/grpc/grpc-service-config#service_configuration_overview for the expected file contents. If multiple files are specified, the files are merged with the following rules: * All singular scalar fields are merged using "last one wins" semantics in the order of the files uploaded. * Repeated fields are concatenated. * Singular embedded messages are merged using these rules for nested fields.
     managed_service_configs: Any = None
-    # Output only. Resource name of the API Config. Format: projects/{project}/locations/global/apis/{api}/configs/{api_config}
-    name: Any = None
     # Optional. OpenAPI specification documents. If specified, grpc_services and managed_service_configs must not be included.
     openapi_documents: Any = None
-    # Output only. The ID of the associated Service Config ( https://cloud.google.com/service-infrastructure/docs/glossary#config).
-    service_config_id: Any = None
-    # Output only. State of the API Config.
-    state: Any = None
-    # Output only. Updated time.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V1betaConfigAttrs:
@@ -125,7 +115,6 @@ class V1betaConfigAttrs:
 V1betaConfig = ubx.ResourceBinding(
     wire_type="google_apigateway_v1beta_config",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "gateway_config": ubx.FieldSpec(
             wire_name="gateway_config",
@@ -144,14 +133,10 @@ V1betaConfig = ubx.ResourceBinding(
             kind="list",
             fields=_V1betaConfig_GrpcServices_FileDescriptorSetFields,
         ),
-        "name": ubx.FieldSpec(wire_name="name"),
         "openapi_documents": ubx.FieldSpec(
             wire_name="openapi_documents",
             kind="list",
             fields=_V1betaConfig_OpenapiDocumentsFields,
         ),
-        "service_config_id": ubx.FieldSpec(wire_name="service_config_id"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

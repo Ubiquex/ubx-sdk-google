@@ -2,10 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface KeyRingConfig {
-  /** Output only. The time at which this KeyRing was created. */
-  createTime?: string | Computed<string>;
-  /** Output only. The resource name for the KeyRing in the format `projects/* /locations/* /keyRings/*`. */
-  name?: string | Computed<string>;
 }
 
 export interface KeyRingAttrs {
@@ -18,7 +14,5 @@ export interface KeyRingAttrs {
 export const KeyRing: ResourceBinding<KeyRingConfig, KeyRingAttrs> = {
   wireType: "google_cloudkms_key_ring",
   fields: {
-    createTime: "create_time",
-    name: "name",
   },
 };

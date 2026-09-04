@@ -52,8 +52,6 @@ export interface V2betaCaseConfig {
   classification?: V2betaCase_Classification | Computed<V2betaCase_Classification>;
   /** A user-supplied email address to send case update notifications for. This should only be used in BYOID flows, where we cannot infer the user's email address directly from their EUCs. */
   contactEmail?: string | Computed<string>;
-  /** Output only. The time this case was created. */
-  createTime?: string | Computed<string>;
   /** An Actor represents an entity that performed an action. For example, an actor could be a user who posted a comment on a support case, a user who uploaded an attachment, or a service account that created a support case. */
   creator?: V2betaCase_Creator | Computed<V2betaCase_Creator>;
   /** A broad description of the issue. */
@@ -70,16 +68,12 @@ export interface V2betaCaseConfig {
   priority?: string | Computed<string>;
   /** REMOVED. The severity of this case. Use priority instead. */
   severity?: string | Computed<string>;
-  /** Output only. The current status of the support case. */
-  state?: string | Computed<string>;
   /** The email addresses to receive updates on this case. */
   subscriberEmailAddresses?: string[] | Computed<string[]>;
   /** Whether this case was created for internal API testing and should not be acted on by the support team. */
   testCase?: boolean | Computed<boolean>;
   /** The timezone of the user who created the support case. It should be in a format IANA recognizes: https://www.iana.org/time-zones. There is no additional validation done by the API. */
   timeZone?: string | Computed<string>;
-  /** Output only. The time this case was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V2betaCaseAttrs {
@@ -126,7 +120,6 @@ export const V2betaCase: ResourceBinding<V2betaCaseConfig, V2betaCaseAttrs> = {
       fields: V2betaCase_ClassificationFields,
     },
     contactEmail: "contact_email",
-    createTime: "create_time",
     creator: {
       wireName: "creator",
       kind: "object",
@@ -139,10 +132,8 @@ export const V2betaCase: ResourceBinding<V2betaCaseConfig, V2betaCaseAttrs> = {
     name: "name",
     priority: "priority",
     severity: "severity",
-    state: "state",
     subscriberEmailAddresses: "subscriber_email_addresses",
     testCase: "test_case",
     timeZone: "time_zone",
-    updateTime: "update_time",
   },
 };

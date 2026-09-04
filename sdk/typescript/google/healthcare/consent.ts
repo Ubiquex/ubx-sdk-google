@@ -54,10 +54,6 @@ export interface ConsentConfig {
   name?: string | Computed<string>;
   /** Optional. Represents a user's consent in terms of the resources that can be accessed and under what conditions. */
   policies?: Consent_Policies[] | Computed<Consent_Policies[]>;
-  /** Output only. The timestamp that the revision was created. */
-  revisionCreateTime?: string | Computed<string>;
-  /** Output only. The revision ID of the Consent. The format is an 8-character hexadecimal string. Refer to a specific revision of a Consent by appending `@{revision_id}` to the Consent's resource name. */
-  revisionId?: string | Computed<string>;
   /** Required. Indicates the current state of this Consent. */
   state?: string | Computed<string>;
   /** Input only. The time to live for this Consent from when it is created. */
@@ -101,8 +97,6 @@ export const Consent: ResourceBinding<ConsentConfig, ConsentAttrs> = {
       kind: "list",
       fields: Consent_PoliciesFields,
     },
-    revisionCreateTime: "revision_create_time",
-    revisionId: "revision_id",
     state: "state",
     ttl: "ttl",
     userId: "user_id",

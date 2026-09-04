@@ -92,76 +92,74 @@ type Asset_SecurityStatus struct {
 }
 
 var Asset_DiscoverySpec_CsvOptionsFields = ubx.FieldMap{
-		"Delimiter": ubx.FieldSpec{WireName: "delimiter"},
-		"DisableTypeInference": ubx.FieldSpec{WireName: "disable_type_inference"},
-		"Encoding": ubx.FieldSpec{WireName: "encoding"},
-		"HeaderRows": ubx.FieldSpec{WireName: "header_rows"},
-	}
+	"Delimiter":            ubx.FieldSpec{WireName: "delimiter"},
+	"DisableTypeInference": ubx.FieldSpec{WireName: "disable_type_inference"},
+	"Encoding":             ubx.FieldSpec{WireName: "encoding"},
+	"HeaderRows":           ubx.FieldSpec{WireName: "header_rows"},
+}
 
 var Asset_DiscoverySpec_JsonOptionsFields = ubx.FieldMap{
-		"DisableTypeInference": ubx.FieldSpec{WireName: "disable_type_inference"},
-		"Encoding": ubx.FieldSpec{WireName: "encoding"},
-	}
+	"DisableTypeInference": ubx.FieldSpec{WireName: "disable_type_inference"},
+	"Encoding":             ubx.FieldSpec{WireName: "encoding"},
+}
 
 var Asset_DiscoverySpecFields = ubx.FieldMap{
-		"CsvOptions": ubx.FieldSpec{
-			WireName: "csv_options",
-			Kind: "object",
-			Fields: Asset_DiscoverySpec_CsvOptionsFields,
-		},
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"ExcludePatterns": ubx.FieldSpec{WireName: "exclude_patterns"},
-		"IncludePatterns": ubx.FieldSpec{WireName: "include_patterns"},
-		"JsonOptions": ubx.FieldSpec{
-			WireName: "json_options",
-			Kind: "object",
-			Fields: Asset_DiscoverySpec_JsonOptionsFields,
-		},
-		"Schedule": ubx.FieldSpec{WireName: "schedule"},
-	}
+	"CsvOptions": ubx.FieldSpec{
+		WireName: "csv_options",
+		Kind:     "object",
+		Fields:   Asset_DiscoverySpec_CsvOptionsFields,
+	},
+	"Enabled":         ubx.FieldSpec{WireName: "enabled"},
+	"ExcludePatterns": ubx.FieldSpec{WireName: "exclude_patterns"},
+	"IncludePatterns": ubx.FieldSpec{WireName: "include_patterns"},
+	"JsonOptions": ubx.FieldSpec{
+		WireName: "json_options",
+		Kind:     "object",
+		Fields:   Asset_DiscoverySpec_JsonOptionsFields,
+	},
+	"Schedule": ubx.FieldSpec{WireName: "schedule"},
+}
 
 var Asset_DiscoveryStatus_StatsFields = ubx.FieldMap{
-		"DataItems": ubx.FieldSpec{WireName: "data_items"},
-		"DataSize": ubx.FieldSpec{WireName: "data_size"},
-		"Filesets": ubx.FieldSpec{WireName: "filesets"},
-		"Tables": ubx.FieldSpec{WireName: "tables"},
-	}
+	"DataItems": ubx.FieldSpec{WireName: "data_items"},
+	"DataSize":  ubx.FieldSpec{WireName: "data_size"},
+	"Filesets":  ubx.FieldSpec{WireName: "filesets"},
+	"Tables":    ubx.FieldSpec{WireName: "tables"},
+}
 
 var Asset_DiscoveryStatusFields = ubx.FieldMap{
-		"LastRunDuration": ubx.FieldSpec{WireName: "last_run_duration"},
-		"LastRunTime": ubx.FieldSpec{WireName: "last_run_time"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"Stats": ubx.FieldSpec{
-			WireName: "stats",
-			Kind: "object",
-			Fields: Asset_DiscoveryStatus_StatsFields,
-		},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-	}
+	"LastRunDuration": ubx.FieldSpec{WireName: "last_run_duration"},
+	"LastRunTime":     ubx.FieldSpec{WireName: "last_run_time"},
+	"Message":         ubx.FieldSpec{WireName: "message"},
+	"State":           ubx.FieldSpec{WireName: "state"},
+	"Stats": ubx.FieldSpec{
+		WireName: "stats",
+		Kind:     "object",
+		Fields:   Asset_DiscoveryStatus_StatsFields,
+	},
+	"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+}
 
 var Asset_ResourceSpecFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ReadAccessMode": ubx.FieldSpec{WireName: "read_access_mode"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Name":           ubx.FieldSpec{WireName: "name"},
+	"ReadAccessMode": ubx.FieldSpec{WireName: "read_access_mode"},
+	"Type":           ubx.FieldSpec{WireName: "type"},
+}
 
 var Asset_ResourceStatusFields = ubx.FieldMap{
-		"ManagedAccessIdentity": ubx.FieldSpec{WireName: "managed_access_identity"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-	}
+	"ManagedAccessIdentity": ubx.FieldSpec{WireName: "managed_access_identity"},
+	"Message":               ubx.FieldSpec{WireName: "message"},
+	"State":                 ubx.FieldSpec{WireName: "state"},
+	"UpdateTime":            ubx.FieldSpec{WireName: "update_time"},
+}
 
 var Asset_SecurityStatusFields = ubx.FieldMap{
-		"Message": ubx.FieldSpec{WireName: "message"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-	}
+	"Message":    ubx.FieldSpec{WireName: "message"},
+	"State":      ubx.FieldSpec{WireName: "state"},
+	"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+}
 
 type AssetConfig struct {
-	// Output only. The time when the asset was created.
-	CreateTime any
 	// Optional. Description of the asset.
 	Description any
 	// Settings to manage the metadata discovery and publishing for an asset.
@@ -172,20 +170,12 @@ type AssetConfig struct {
 	DisplayName any
 	// Optional. User defined labels for the asset.
 	Labels any
-	// Output only. The relative resource name of the asset, of the form: projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}/assets/{asset_id}.
-	Name any
 	// Identifies the cloud resource that is referenced by this asset.
 	ResourceSpec any
 	// Status of the resource referenced by an asset.
 	ResourceStatus any
 	// Security policy status of the asset. Data security policy, i.e., readers, writers & owners, should be specified in the lake/zone/asset IAM policy.
 	SecurityStatus any
-	// Output only. Current state of the asset.
-	State any
-	// Output only. System generated globally unique ID for the asset. This ID will be different if the asset is deleted and re-created with the same name.
-	Uid any
-	// Output only. The time when the asset was last updated.
-	UpdateTime any
 }
 
 type AssetAttrs struct {
@@ -220,38 +210,33 @@ type AssetAttrs struct {
 var Asset = ubx.ResourceBinding{
 	WireType: "google_dataplex_asset",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DiscoverySpec": ubx.FieldSpec{
 			WireName: "discovery_spec",
-			Kind: "object",
-			Fields: Asset_DiscoverySpecFields,
+			Kind:     "object",
+			Fields:   Asset_DiscoverySpecFields,
 		},
 		"DiscoveryStatus": ubx.FieldSpec{
 			WireName: "discovery_status",
-			Kind: "object",
-			Fields: Asset_DiscoveryStatusFields,
+			Kind:     "object",
+			Fields:   Asset_DiscoveryStatusFields,
 		},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
 		"ResourceSpec": ubx.FieldSpec{
 			WireName: "resource_spec",
-			Kind: "object",
-			Fields: Asset_ResourceSpecFields,
+			Kind:     "object",
+			Fields:   Asset_ResourceSpecFields,
 		},
 		"ResourceStatus": ubx.FieldSpec{
 			WireName: "resource_status",
-			Kind: "object",
-			Fields: Asset_ResourceStatusFields,
+			Kind:     "object",
+			Fields:   Asset_ResourceStatusFields,
 		},
 		"SecurityStatus": ubx.FieldSpec{
 			WireName: "security_status",
-			Kind: "object",
-			Fields: Asset_SecurityStatusFields,
+			Kind:     "object",
+			Fields:   Asset_SecurityStatusFields,
 		},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

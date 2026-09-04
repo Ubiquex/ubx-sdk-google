@@ -408,8 +408,6 @@ const V1betaToolset_ToolFakeConfigFields: FieldMap = {
 export interface V1betaToolsetConfig {
   /** A toolset that generates tools from an Integration Connectors Connection. */
   connectorToolset?: V1betaToolset_ConnectorToolset | Computed<V1betaToolset_ConnectorToolset>;
-  /** Output only. Timestamp when the toolset was created. */
-  createTime?: string | Computed<string>;
   /** Optional. The description of the toolset. */
   description?: string | Computed<string>;
   /** Optional. The display name of the toolset. Must be unique within the same app. */
@@ -428,8 +426,6 @@ export interface V1betaToolsetConfig {
   timeout?: string | Computed<string>;
   /** Configuration for tool behavior in fake mode. */
   toolFakeConfig?: V1betaToolset_ToolFakeConfig | Computed<V1betaToolset_ToolFakeConfig>;
-  /** Output only. Timestamp when the toolset was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1betaToolsetAttrs {
@@ -467,7 +463,6 @@ export const V1betaToolset: ResourceBinding<V1betaToolsetConfig, V1betaToolsetAt
       kind: "object",
       fields: V1betaToolset_ConnectorToolsetFields,
     },
-    createTime: "create_time",
     description: "description",
     displayName: "display_name",
     etag: "etag",
@@ -489,6 +484,5 @@ export const V1betaToolset: ResourceBinding<V1betaToolsetConfig, V1betaToolsetAt
       kind: "object",
       fields: V1betaToolset_ToolFakeConfigFields,
     },
-    updateTime: "update_time",
   },
 };

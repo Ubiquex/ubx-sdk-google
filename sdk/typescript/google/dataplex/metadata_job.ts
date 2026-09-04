@@ -154,8 +154,6 @@ const MetadataJob_StatusFields: FieldMap = {
 };
 
 export interface MetadataJobConfig {
-  /** Output only. The time when the metadata job was created. */
-  createTime?: string | Computed<string>;
   /** Summary results from a metadata export job. The results are a snapshot of the metadata at the time when the job was created. The exported entries are saved to a Cloud Storage bucket. */
   exportResult?: MetadataJob_ExportResult | Computed<MetadataJob_ExportResult>;
   /** Job specification for a metadata export job. */
@@ -166,16 +164,10 @@ export interface MetadataJobConfig {
   importSpec?: MetadataJob_ImportSpec | Computed<MetadataJob_ImportSpec>;
   /** Optional. User-defined labels. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. Identifier. The name of the resource that the configuration is applied to, in the format projects/{project_number}/locations/{location_id}/metadataJobs/{metadata_job_id}. */
-  name?: string | Computed<string>;
   /** Metadata job status. */
   status?: MetadataJob_Status | Computed<MetadataJob_Status>;
   /** Required. Metadata job type. */
   type?: string | Computed<string>;
-  /** Output only. A system-generated, globally unique ID for the metadata job. If the metadata job is deleted and then re-created with the same name, this ID is different. */
-  uid?: string | Computed<string>;
-  /** Output only. The time when the metadata job was updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface MetadataJobAttrs {
@@ -206,7 +198,6 @@ export interface MetadataJobAttrs {
 export const MetadataJob: ResourceBinding<MetadataJobConfig, MetadataJobAttrs> = {
   wireType: "google_dataplex_metadata_job",
   fields: {
-    createTime: "create_time",
     exportResult: {
       wireName: "export_result",
       kind: "object",
@@ -228,14 +219,11 @@ export const MetadataJob: ResourceBinding<MetadataJobConfig, MetadataJobAttrs> =
       fields: MetadataJob_ImportSpecFields,
     },
     labels: "labels",
-    name: "name",
     status: {
       wireName: "status",
       kind: "object",
       fields: MetadataJob_StatusFields,
     },
     type: "type",
-    uid: "uid",
-    updateTime: "update_time",
   },
 };

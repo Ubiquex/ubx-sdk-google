@@ -179,22 +179,12 @@ const BetaRegionMultiMig_StatusFields: FieldMap = {
 };
 
 export interface BetaRegionMultiMigConfig {
-  /** Output only. [Output only] The creation timestamp of this multi-MIG in RFC3339 text format. */
-  creationTimestamp?: string | Computed<string>;
   /** An optional description of this resource. */
   description?: string | Computed<string>;
-  /** Output only. [Output only] The unique identifier for this resource type. The server generates this identifier. */
-  id?: string | Computed<string>;
-  /** Output only. [Output only] Type of the resource. Alwayscompute#multiMig for multi-MIGs. */
-  kind?: string | Computed<string>;
   /** The name of the multi-MIG. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
   name?: string | Computed<string>;
-  /** Output only. [Output only] The URL of the region where the resource resides. You must specify this field as part of the HTTP request URL. You cannot set the region as a field in the request body. */
-  region?: string | Computed<string>;
   /** Resource policies message for a multi-MIG. Specifies the workload policy configuration of the multi-MIG. */
   resourcePolicies?: BetaRegionMultiMig_ResourcePolicies | Computed<BetaRegionMultiMig_ResourcePolicies>;
-  /** Output only. [Output only] Server-defined URL for the resource. */
-  selfLink?: string | Computed<string>;
   status?: BetaRegionMultiMig_Status | Computed<BetaRegionMultiMig_Status>;
 }
 
@@ -221,18 +211,13 @@ export interface BetaRegionMultiMigAttrs {
 export const BetaRegionMultiMig: ResourceBinding<BetaRegionMultiMigConfig, BetaRegionMultiMigAttrs> = {
   wireType: "google_compute_beta_region_multi_mig",
   fields: {
-    creationTimestamp: "creation_timestamp",
     description: "description",
-    id: "id",
-    kind: "kind",
     name: "name",
-    region: "region",
     resourcePolicies: {
       wireName: "resource_policies",
       kind: "object",
       fields: BetaRegionMultiMig_ResourcePoliciesFields,
     },
-    selfLink: "self_link",
     status: {
       wireName: "status",
       kind: "object",

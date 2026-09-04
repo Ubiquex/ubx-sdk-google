@@ -150,8 +150,6 @@ _EventSubscription_StatusFields = {
 
 @dataclasses.dataclass
 class EventSubscriptionConfig:
-    # Output only. Created time.
-    create_time: Any = None
     # Message for EventSubscription Destination to act on receiving an event
     destinations: Any = None
     # Optional. Event type id of the event of current EventSubscription.
@@ -170,8 +168,6 @@ class EventSubscriptionConfig:
     subscriber_link: Any = None
     # Optional. Configuration for configuring the trigger
     trigger_config_variables: Any = None
-    # Output only. Updated time.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class EventSubscriptionAttrs:
@@ -201,7 +197,6 @@ class EventSubscriptionAttrs:
 EventSubscription = ubx.ResourceBinding(
     wire_type="google_connectors_event_subscription",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "destinations": ubx.FieldSpec(
             wire_name="destinations",
             kind="object",
@@ -227,6 +222,5 @@ EventSubscription = ubx.ResourceBinding(
             kind="list",
             fields=_EventSubscription_Destinations_Pubsub_ConfigVariablesFields,
         ),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

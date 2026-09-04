@@ -138,8 +138,6 @@ class TransferConfigConfig:
     data_refresh_window_days: Any = None
     # Data source ID. This cannot be changed once data transfer is created. The full list of available data source IDs can be returned through an API call: https://cloud.google.com/bigquery-transfer/docs/reference/datatransfer/rest/v1/projects.locations.dataSources/list
     data_source_id: Any = None
-    # Output only. Region in which BigQuery dataset is located.
-    dataset_region: Any = None
     # The BigQuery target dataset id.
     destination_dataset_id: Any = None
     # Is this config disabled. When set to true, no runs will be scheduled for this transfer config.
@@ -158,8 +156,6 @@ class TransferConfigConfig:
     metadata_destination: Any = None
     # Identifier. The resource name of the transfer config. Transfer config names have the form either `projects/{project_id}/locations/{region}/transferConfigs/{config_id}` or `projects/{project_id}/transferConfigs/{config_id}`, where `config_id` is usually a UUID, even though it is not guaranteed or required. The name is ignored when creating a transfer config.
     name: Any = None
-    # Output only. Next time when data transfer will run.
-    next_run_time: Any = None
     # Pub/Sub topic where notifications will be sent after transfer runs associated with this transfer config finish. The format for specifying a pubsub topic is: `projects/{project_id}/topics/{topic_id}`
     notification_pubsub_topic: Any = None
     # Information about a user.
@@ -172,10 +168,6 @@ class TransferConfigConfig:
     schedule_options: Any = None
     # V2 options customizing different types of data transfer schedule. This field supports existing time-based and manual transfer schedule. Also supports Event-Driven transfer schedule. ScheduleOptionsV2 cannot be used together with ScheduleOptions/Schedule.
     schedule_options_v2: Any = None
-    # Output only. State of the most recently updated transfer run.
-    state: Any = None
-    # Output only. Data transfer modification time. Ignored by server on input.
-    update_time: Any = None
     # Deprecated. Unique ID of the user on whose behalf transfer is done.
     user_id: Any = None
 
@@ -231,7 +223,6 @@ TransferConfig = ubx.ResourceBinding(
     fields={
         "data_refresh_window_days": ubx.FieldSpec(wire_name="data_refresh_window_days"),
         "data_source_id": ubx.FieldSpec(wire_name="data_source_id"),
-        "dataset_region": ubx.FieldSpec(wire_name="dataset_region"),
         "destination_dataset_id": ubx.FieldSpec(wire_name="destination_dataset_id"),
         "disabled": ubx.FieldSpec(wire_name="disabled"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
@@ -257,7 +248,6 @@ TransferConfig = ubx.ResourceBinding(
             fields=_TransferConfig_MetadataDestinationFields,
         ),
         "name": ubx.FieldSpec(wire_name="name"),
-        "next_run_time": ubx.FieldSpec(wire_name="next_run_time"),
         "notification_pubsub_topic": ubx.FieldSpec(wire_name="notification_pubsub_topic"),
         "owner_info": ubx.FieldSpec(
             wire_name="owner_info",
@@ -276,8 +266,6 @@ TransferConfig = ubx.ResourceBinding(
             kind="object",
             fields=_TransferConfig_ScheduleOptionsV2Fields,
         ),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
         "user_id": ubx.FieldSpec(wire_name="user_id"),
     },
 )

@@ -2,34 +2,18 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface EndpointConfig {
-  /** Output only. The create time timestamp. */
-  createTime?: string | Computed<string>;
   /** User-provided description of the endpoint */
   description?: string | Computed<string>;
-  /** Output only. The fully qualified URL of the endpoint's ILB Forwarding Rule. */
-  endpointForwardingRule?: string | Computed<string>;
-  /** Output only. The IP address of the IDS Endpoint's ILB. */
-  endpointIp?: string | Computed<string>;
   /** The labels of the endpoint. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. The name of the endpoint. */
-  name?: string | Computed<string>;
   /** Required. The fully qualified URL of the network to which the IDS Endpoint is attached. */
   network?: string | Computed<string>;
-  /** Output only. [Output Only] Reserved for future use. */
-  satisfiesPzi?: boolean | Computed<boolean>;
-  /** Output only. [Output Only] Reserved for future use. */
-  satisfiesPzs?: boolean | Computed<boolean>;
   /** Required. Lowest threat severity that this endpoint will alert on. */
   severity?: string | Computed<string>;
-  /** Output only. Current state of the endpoint. */
-  state?: string | Computed<string>;
   /** List of threat IDs to be excepted from generating alerts. */
   threatExceptions?: string[] | Computed<string[]>;
   /** Whether the endpoint should report traffic logs in addition to threat logs. */
   trafficLogs?: boolean | Computed<boolean>;
-  /** Output only. The update time timestamp. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface EndpointAttrs {
@@ -66,19 +50,11 @@ export interface EndpointAttrs {
 export const Endpoint: ResourceBinding<EndpointConfig, EndpointAttrs> = {
   wireType: "google_ids_endpoint",
   fields: {
-    createTime: "create_time",
     description: "description",
-    endpointForwardingRule: "endpoint_forwarding_rule",
-    endpointIp: "endpoint_ip",
     labels: "labels",
-    name: "name",
     network: "network",
-    satisfiesPzi: "satisfies_pzi",
-    satisfiesPzs: "satisfies_pzs",
     severity: "severity",
-    state: "state",
     threatExceptions: "threat_exceptions",
     trafficLogs: "traffic_logs",
-    updateTime: "update_time",
   },
 };

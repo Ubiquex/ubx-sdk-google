@@ -29,8 +29,8 @@ var LogicalView = ubx.ResourceBinding{
 	WireType: "google_bigtableadmin_logical_view",
 	Fields: ubx.FieldMap{
 		"DeletionProtection": ubx.FieldSpec{WireName: "deletion_protection"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Query": ubx.FieldSpec{WireName: "query"},
+		"Etag":               ubx.FieldSpec{WireName: "etag"},
+		"Name":               ubx.FieldSpec{WireName: "name"},
+		"Query":              ubx.FieldSpec{WireName: "query"},
 	},
 }

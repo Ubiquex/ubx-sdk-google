@@ -17,22 +17,18 @@ type Key_KeyData struct {
 }
 
 var Key_KeyDataFields = ubx.FieldMap{
-		"Format": ubx.FieldSpec{WireName: "format"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"KeySpec": ubx.FieldSpec{WireName: "key_spec"},
-		"NotAfterTime": ubx.FieldSpec{WireName: "not_after_time"},
-		"NotBeforeTime": ubx.FieldSpec{WireName: "not_before_time"},
-	}
+	"Format":        ubx.FieldSpec{WireName: "format"},
+	"Key":           ubx.FieldSpec{WireName: "key"},
+	"KeySpec":       ubx.FieldSpec{WireName: "key_spec"},
+	"NotAfterTime":  ubx.FieldSpec{WireName: "not_after_time"},
+	"NotBeforeTime": ubx.FieldSpec{WireName: "not_before_time"},
+}
 
 type KeyConfig struct {
-	// Output only. The time after which the key will be permanently deleted and cannot be recovered. Note that the key may get purged before this time if the total limit of keys per provider is exceeded.
-	ExpireTime any
 	// Represents a public key data along with its format.
 	KeyData any
 	// Identifier. The resource name of the key. Format: `locations/{location}/workforcePools/{workforce_pool_id}/providers/{provider_id}/keys/{key_id}`
 	Name any
-	// Output only. The state of the key.
-	State any
 	// Required. The purpose of the key.
 	Use any
 }
@@ -53,14 +49,12 @@ type KeyAttrs struct {
 var Key = ubx.ResourceBinding{
 	WireType: "google_iam_key",
 	Fields: ubx.FieldMap{
-		"ExpireTime": ubx.FieldSpec{WireName: "expire_time"},
 		"KeyData": ubx.FieldSpec{
 			WireName: "key_data",
-			Kind: "object",
-			Fields: Key_KeyDataFields,
+			Kind:     "object",
+			Fields:   Key_KeyDataFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"Use": ubx.FieldSpec{WireName: "use"},
+		"Use":  ubx.FieldSpec{WireName: "use"},
 	},
 }

@@ -919,8 +919,6 @@ _CachedContent_UsageMetadataFields = {
 class CachedContentConfig:
     # Optional. Input only. Immutable. The content to cache
     contents: Any = None
-    # Output only. Creation time of the cache entry.
-    create_time: Any = None
     # Optional. Immutable. The user-generated meaningful display name of the cached content.
     display_name: Any = None
     # Represents a customer-managed encryption key specification that can be applied to a Vertex AI resource.
@@ -939,8 +937,6 @@ class CachedContentConfig:
     tools: Any = None
     # Input only. The TTL for this resource. The expiration time is computed: now + TTL.
     ttl: Any = None
-    # Output only. When the cache entry was last updated in UTC time.
-    update_time: Any = None
     # Metadata on the usage of the cached content.
     usage_metadata: Any = None
 
@@ -981,7 +977,6 @@ CachedContent = ubx.ResourceBinding(
             kind="list",
             fields=_CachedContent_ContentsFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "encryption_spec": ubx.FieldSpec(
             wire_name="encryption_spec",
@@ -1007,7 +1002,6 @@ CachedContent = ubx.ResourceBinding(
             fields=_CachedContent_ToolsFields,
         ),
         "ttl": ubx.FieldSpec(wire_name="ttl"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
         "usage_metadata": ubx.FieldSpec(
             wire_name="usage_metadata",
             kind="object",

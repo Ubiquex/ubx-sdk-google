@@ -6,8 +6,6 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type V1beta1EndpointConfig struct {
 	// Optional. An IPv4 or IPv6 address. Service Directory rejects bad addresses like: * `8.8.8` * `8.8.8.8:53` * `test:bad:address` * `[::1]` * `[::1]:8080` Limited to 45 characters.
 	Address any
-	// Output only. The timestamp when the endpoint was created.
-	CreateTime any
 	// Optional. Metadata for the endpoint. This data can be consumed by service clients. Restrictions: * The entire metadata dictionary may contain up to 512 characters, spread accoss all key-value pairs. Metadata that goes beyond this limit are rejected * Valid metadata keys have two segments: an optional prefix and name, separated by a slash (/). The name segment is required and must be 63 characters or less, beginning and ending with an alphanumeric character ([a-z0-9A-Z]) with dashes (-), underscores (_), dots (.), and alphanumerics between. The prefix is optional. If specified, the prefix must be a DNS subdomain: a series of DNS labels separated by dots (.), not longer than 253 characters in total, followed by a slash (/). Metadata that fails to meet these requirements are rejected Note: This field is equivalent to the `annotations` field in the v1 API. They have the same syntax and read/write to the same location in Service Directory.
 	Metadata any
 	// Immutable. The resource name for the endpoint in the format `projects/*/locations/*/namespaces/*/services/*/endpoints/*`.
@@ -16,10 +14,6 @@ type V1beta1EndpointConfig struct {
 	Network any
 	// Optional. Service Directory rejects values outside of `[0, 65535]`.
 	Port any
-	// Output only. A globally unique identifier (in UUID4 format) for this endpoint.
-	Uid any
-	// Output only. The timestamp when the endpoint was last updated.
-	UpdateTime any
 }
 
 type V1beta1EndpointAttrs struct {
@@ -44,13 +38,10 @@ type V1beta1EndpointAttrs struct {
 var V1beta1Endpoint = ubx.ResourceBinding{
 	WireType: "google_servicedirectory_v1beta1_endpoint",
 	Fields: ubx.FieldMap{
-		"Address": ubx.FieldSpec{WireName: "address"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
+		"Address":  ubx.FieldSpec{WireName: "address"},
 		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"Name":     ubx.FieldSpec{WireName: "name"},
+		"Network":  ubx.FieldSpec{WireName: "network"},
+		"Port":     ubx.FieldSpec{WireName: "port"},
 	},
 }

@@ -5,9 +5,9 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Customer_CustomerOnboardingState_OnboardingSteps struct {
 	CompletionState any
-	CompletionTime any
-	StartTime any
-	Step any
+	CompletionTime  any
+	StartTime       any
+	Step            any
 }
 
 type Customer_CustomerOnboardingState struct {
@@ -16,31 +16,27 @@ type Customer_CustomerOnboardingState struct {
 }
 
 var Customer_CustomerOnboardingState_OnboardingStepsFields = ubx.FieldMap{
-		"CompletionState": ubx.FieldSpec{WireName: "completion_state"},
-		"CompletionTime": ubx.FieldSpec{WireName: "completion_time"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"Step": ubx.FieldSpec{WireName: "step"},
-	}
+	"CompletionState": ubx.FieldSpec{WireName: "completion_state"},
+	"CompletionTime":  ubx.FieldSpec{WireName: "completion_time"},
+	"StartTime":       ubx.FieldSpec{WireName: "start_time"},
+	"Step":            ubx.FieldSpec{WireName: "step"},
+}
 
 var Customer_CustomerOnboardingStateFields = ubx.FieldMap{
-		"OnboardingSteps": ubx.FieldSpec{
-			WireName: "onboarding_steps",
-			Kind: "list",
-			Fields: Customer_CustomerOnboardingState_OnboardingStepsFields,
-		},
-	}
+	"OnboardingSteps": ubx.FieldSpec{
+		WireName: "onboarding_steps",
+		Kind:     "list",
+		Fields:   Customer_CustomerOnboardingState_OnboardingStepsFields,
+	},
+}
 
 type CustomerConfig struct {
 	// Container for customer onboarding steps
 	CustomerOnboardingState any
 	// Required. Display name for the customer
 	DisplayName any
-	// Output only. Indicates whether a customer is fully onboarded
-	IsOnboarded any
 	// Identifier. Format: `organizations/{organization}/locations/{location}/customers/{customer}`
 	Name any
-	// Output only. The customer organization domain, extracted from CRM Organization’s display_name field. e.g. "google.com"
-	OrganizationDomain any
 }
 
 type CustomerAttrs struct {
@@ -61,12 +57,10 @@ var Customer = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"CustomerOnboardingState": ubx.FieldSpec{
 			WireName: "customer_onboarding_state",
-			Kind: "object",
-			Fields: Customer_CustomerOnboardingStateFields,
+			Kind:     "object",
+			Fields:   Customer_CustomerOnboardingStateFields,
 		},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"IsOnboarded": ubx.FieldSpec{WireName: "is_onboarded"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"OrganizationDomain": ubx.FieldSpec{WireName: "organization_domain"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 	},
 }

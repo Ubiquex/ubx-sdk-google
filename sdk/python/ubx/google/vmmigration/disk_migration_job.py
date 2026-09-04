@@ -65,20 +65,6 @@ _DiskMigrationJob_AwsSourceDiskDetailsFields = {
     "volume_id": ubx.FieldSpec(wire_name="volume_id"),
 }
 
-_DiskMigrationJob_ErrorsFields = {
-    "code": ubx.FieldSpec(wire_name="code"),
-    "details": ubx.FieldSpec(wire_name="details"),
-    "message": ubx.FieldSpec(wire_name="message"),
-}
-
-_DiskMigrationJob_StepsFields = {
-    "copying_source_disk_snapshot": ubx.FieldSpec(wire_name="copying_source_disk_snapshot"),
-    "creating_source_disk_snapshot": ubx.FieldSpec(wire_name="creating_source_disk_snapshot"),
-    "end_time": ubx.FieldSpec(wire_name="end_time"),
-    "provisioning_target_disk": ubx.FieldSpec(wire_name="provisioning_target_disk"),
-    "start_time": ubx.FieldSpec(wire_name="start_time"),
-}
-
 _DiskMigrationJob_TargetDetails_EncryptionFields = {
     "kms_key": ubx.FieldSpec(wire_name="kms_key"),
 }
@@ -109,20 +95,8 @@ _DiskMigrationJob_TargetDetailsFields = {
 class DiskMigrationJobConfig:
     # Represents the source AWS Disk details.
     aws_source_disk_details: Any = None
-    # Output only. The time the DiskMigrationJob resource was created.
-    create_time: Any = None
-    # Output only. Provides details on the errors that led to the disk migration job's state in case of an error.
-    errors: Any = None
-    # Output only. Identifier. The identifier of the DiskMigrationJob.
-    name: Any = None
-    # Output only. State of the DiskMigrationJob.
-    state: Any = None
-    # Output only. The disk migration steps list representing its progress.
-    steps: Any = None
     # Details of the target disk in Compute Engine.
     target_details: Any = None
-    # Output only. The last time the DiskMigrationJob resource was updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class DiskMigrationJobAttrs:
@@ -151,24 +125,10 @@ DiskMigrationJob = ubx.ResourceBinding(
             kind="object",
             fields=_DiskMigrationJob_AwsSourceDiskDetailsFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
-        "errors": ubx.FieldSpec(
-            wire_name="errors",
-            kind="list",
-            fields=_DiskMigrationJob_ErrorsFields,
-        ),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "steps": ubx.FieldSpec(
-            wire_name="steps",
-            kind="list",
-            fields=_DiskMigrationJob_StepsFields,
-        ),
         "target_details": ubx.FieldSpec(
             wire_name="target_details",
             kind="object",
             fields=_DiskMigrationJob_TargetDetailsFields,
         ),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

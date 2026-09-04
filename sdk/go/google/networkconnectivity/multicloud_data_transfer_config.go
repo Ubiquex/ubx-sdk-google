@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type MulticloudDataTransferConfig_Services_States struct {
 	EffectiveTime any
-	State any
+	State         any
 }
 
 type MulticloudDataTransferConfig_Services struct {
@@ -13,27 +13,21 @@ type MulticloudDataTransferConfig_Services struct {
 }
 
 var MulticloudDataTransferConfig_Services_StatesFields = ubx.FieldMap{
-		"EffectiveTime": ubx.FieldSpec{WireName: "effective_time"},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"EffectiveTime": ubx.FieldSpec{WireName: "effective_time"},
+	"State":         ubx.FieldSpec{WireName: "state"},
+}
 
 var MulticloudDataTransferConfig_ServicesFields = ubx.FieldMap{
-		"States": ubx.FieldSpec{
-			WireName: "states",
-			Kind: "list",
-			Fields: MulticloudDataTransferConfig_Services_StatesFields,
-		},
-	}
+	"States": ubx.FieldSpec{
+		WireName: "states",
+		Kind:     "list",
+		Fields:   MulticloudDataTransferConfig_Services_StatesFields,
+	},
+}
 
 type MulticloudDataTransferConfigConfig struct {
-	// Output only. Time when the `MulticloudDataTransferConfig` resource was created.
-	CreateTime any
 	// Optional. A description of this resource.
 	Description any
-	// Output only. The number of `Destination` resources in use with the `MulticloudDataTransferConfig` resource.
-	DestinationsActiveCount any
-	// Output only. The number of `Destination` resources configured for the `MulticloudDataTransferConfig` resource.
-	DestinationsCount any
 	// The etag is computed by the server, and might be sent with update and delete requests so that the client has an up-to-date value before proceeding.
 	Etag any
 	// Optional. User-defined labels.
@@ -42,10 +36,6 @@ type MulticloudDataTransferConfigConfig struct {
 	Name any
 	// Optional. Maps services to their current or planned states. Service names are keys, and the associated values describe the state of the service. If a state change is expected, the value is either `ADDING` or `DELETING`, depending on the actions taken. Sample output: "services": { "big-query": { "states": [ { "effectiveTime": "2024-12-12T08:00:00Z" "state": "ADDING", }, ] }, "cloud-storage": { "states": [ { "state": "ACTIVE", } ] } }
 	Services any
-	// Output only. The Google-generated unique ID for the `MulticloudDataTransferConfig` resource. This value is unique across all `MulticloudDataTransferConfig` resources. If a resource is deleted and another with the same name is created, the new resource is assigned a different and unique ID.
-	Uid any
-	// Output only. Time when the `MulticloudDataTransferConfig` resource was updated.
-	UpdateTime any
 }
 
 type MulticloudDataTransferConfigAttrs struct {
@@ -74,19 +64,14 @@ type MulticloudDataTransferConfigAttrs struct {
 var MulticloudDataTransferConfig = ubx.ResourceBinding{
 	WireType: "google_networkconnectivity_multicloud_data_transfer_config",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"DestinationsActiveCount": ubx.FieldSpec{WireName: "destinations_active_count"},
-		"DestinationsCount": ubx.FieldSpec{WireName: "destinations_count"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Etag":        ubx.FieldSpec{WireName: "etag"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"Services": ubx.FieldSpec{
 			WireName: "services",
-			Kind: "map",
-			Fields: MulticloudDataTransferConfig_ServicesFields,
+			Kind:     "map",
+			Fields:   MulticloudDataTransferConfig_ServicesFields,
 		},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

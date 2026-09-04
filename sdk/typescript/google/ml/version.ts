@@ -192,10 +192,6 @@ export interface VersionConfig {
   isDefault?: boolean | Computed<boolean>;
   /** Optional. One or more labels that you can add, to organize your model versions. Each label is a key-value pair, where both the key and the value are arbitrary strings that you supply. For more information, see the documentation on using labels. Note that this field is not updatable for mls1* models. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. The [AI Platform (Unified) `Model`](https://cloud.google.com/ai-platform-unified/docs/reference/rest/v1beta1/projects.locations.models) ID for the last [model migration](https://cloud.google.com/ai-platform-unified/docs/start/migrating-to-ai-platform-unified). */
-  lastMigrationModelId?: string | Computed<string>;
-  /** Output only. The last time this version was successfully [migrated to AI Platform (Unified)](https://cloud.google.com/ai-platform-unified/docs/start/migrating-to-ai-platform-unified). */
-  lastMigrationTime?: string | Computed<string>;
   /** Output only. The time the version was last used for prediction. */
   lastUseTime?: string | Computed<string>;
   /** Optional. The type of machine on which to serve the model. Currently only applies to online prediction service. To learn about valid values for this field, read [Choosing a machine type for online prediction](/ai-platform/prediction/docs/machine-types-online-prediction). If this field is not specified and you are using a [regional endpoint](/ai-platform/prediction/docs/regional-endpoints), then the machine type defaults to `n1-standard-2`. If this field is not specified and you are using the global endpoint (`ml.googleapis.com`), then the machine type defaults to `mls1-c1-m2`. */
@@ -308,8 +304,6 @@ export const Version: ResourceBinding<VersionConfig, VersionAttrs> = {
     framework: "framework",
     isDefault: "is_default",
     labels: "labels",
-    lastMigrationModelId: "last_migration_model_id",
-    lastMigrationTime: "last_migration_time",
     lastUseTime: "last_use_time",
     machineType: "machine_type",
     manualScaling: {

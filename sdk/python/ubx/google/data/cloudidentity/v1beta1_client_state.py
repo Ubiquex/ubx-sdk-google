@@ -15,7 +15,6 @@ class V1beta1ClientState_KeyValuePairs:
 @dataclasses.dataclass
 class V1beta1ClientStateConfig:
     customer: Any = None
-    name: Any = None
 
 @dataclasses.dataclass
 class V1beta1ClientStateAttrs:
@@ -48,6 +47,5 @@ V1beta1ClientState = ubx.DataSourceBinding(
     wire_type="google_cloudidentity_v1beta1_client_state",
     fields={
         "customer": ubx.FieldSpec(wire_name="customer"),
-        "name": ubx.FieldSpec(wire_name="name"),
     },
 )

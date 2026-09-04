@@ -20,8 +20,6 @@ _ConversionWorkspace_DestinationFields = {
 
 @dataclasses.dataclass
 class ConversionWorkspaceConfig:
-    # Output only. The timestamp when the workspace resource was created.
-    create_time: Any = None
     # The type and version of a source or destination database.
     destination: Any = None
     # Optional. The provider for the destination database.
@@ -30,20 +28,12 @@ class ConversionWorkspaceConfig:
     display_name: Any = None
     # Optional. A generic list of settings for the workspace. The settings are database pair dependant and can indicate default behavior for the mapping rules engine or turn on or off specific features. Such examples can be: convert_foreign_key_to_interleave=true, skip_triggers=false, ignore_non_table_synonyms=true
     global_settings: Any = None
-    # Output only. Whether the workspace has uncommitted changes (changes which were made after the workspace was committed).
-    has_uncommitted_changes: Any = None
-    # Output only. The latest commit ID.
-    latest_commit_id: Any = None
-    # Output only. The timestamp when the workspace was committed.
-    latest_commit_time: Any = None
     # Full name of the workspace resource, in the form of: projects/{project}/locations/{location}/conversionWorkspaces/{conversion_workspace}.
     name: Any = None
     # The type and version of a source or destination database.
     source: Any = None
     # Optional. The provider for the source database.
     source_provider: Any = None
-    # Output only. The timestamp when the workspace resource was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class ConversionWorkspaceAttrs:
@@ -75,7 +65,6 @@ class ConversionWorkspaceAttrs:
 ConversionWorkspace = ubx.ResourceBinding(
     wire_type="google_datamigration_conversion_workspace",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "destination": ubx.FieldSpec(
             wire_name="destination",
             kind="object",
@@ -84,9 +73,6 @@ ConversionWorkspace = ubx.ResourceBinding(
         "destination_provider": ubx.FieldSpec(wire_name="destination_provider"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "global_settings": ubx.FieldSpec(wire_name="global_settings"),
-        "has_uncommitted_changes": ubx.FieldSpec(wire_name="has_uncommitted_changes"),
-        "latest_commit_id": ubx.FieldSpec(wire_name="latest_commit_id"),
-        "latest_commit_time": ubx.FieldSpec(wire_name="latest_commit_time"),
         "name": ubx.FieldSpec(wire_name="name"),
         "source": ubx.FieldSpec(
             wire_name="source",
@@ -94,6 +80,5 @@ ConversionWorkspace = ubx.ResourceBinding(
             fields=_ConversionWorkspace_DestinationFields,
         ),
         "source_provider": ubx.FieldSpec(wire_name="source_provider"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

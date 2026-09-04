@@ -14,12 +14,8 @@ const EncryptionConfig_FailureDetailsFields: FieldMap = {
 };
 
 export interface EncryptionConfigConfig {
-  /** Output only. The time when the Encryption configuration was created. */
-  createTime?: string | Computed<string>;
   /** Optional. Represent the state of CMEK opt-in for metastore. */
   enableMetastoreEncryption?: boolean | Computed<boolean>;
-  /** Output only. The state of encryption of the databases. */
-  encryptionState?: string | Computed<string>;
   /** Etag of the EncryptionConfig. This is a strong etag. */
   etag?: string | Computed<string>;
   /** Details of the failure if anything related to Cmek db fails. */
@@ -28,8 +24,6 @@ export interface EncryptionConfigConfig {
   key?: string | Computed<string>;
   /** Identifier. The resource name of the EncryptionConfig. Format: organizations/{organization}/locations/{location}/encryptionConfigs/{encryption_config} Global location is not supported. */
   name?: string | Computed<string>;
-  /** Output only. The time when the Encryption configuration was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface EncryptionConfigAttrs {
@@ -54,9 +48,7 @@ export interface EncryptionConfigAttrs {
 export const EncryptionConfig: ResourceBinding<EncryptionConfigConfig, EncryptionConfigAttrs> = {
   wireType: "google_dataplex_encryption_config",
   fields: {
-    createTime: "create_time",
     enableMetastoreEncryption: "enable_metastore_encryption",
-    encryptionState: "encryption_state",
     etag: "etag",
     failureDetails: {
       wireName: "failure_details",
@@ -65,6 +57,5 @@ export const EncryptionConfig: ResourceBinding<EncryptionConfigConfig, Encryptio
     },
     key: "key",
     name: "name",
-    updateTime: "update_time",
   },
 };

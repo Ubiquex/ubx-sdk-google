@@ -97,24 +97,12 @@ _UtilizationReport_VmsFields = {
 
 @dataclasses.dataclass
 class UtilizationReportConfig:
-    # Output only. The time the report was created (this refers to the time of the request, not the time the report creation completed).
-    create_time: Any = None
     # The report display name, as assigned by the user.
     display_name: Any = None
     # The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
     error: Any = None
-    # Output only. The point in time when the time frame ends. Notice that the time frame is counted backwards. For instance if the "frame_end_time" value is 2021/01/20 and the time frame is WEEK then the report covers the week between 2021/01/20 and 2021/01/14.
-    frame_end_time: Any = None
-    # Output only. The report unique name.
-    name: Any = None
-    # Output only. Current state of the report.
-    state: Any = None
-    # Output only. The time the state was last set.
-    state_time: Any = None
     # Time frame of the report.
     time_frame: Any = None
-    # Output only. Total number of VMs included in the report.
-    vm_count: Any = None
     # List of utilization information per VM. When sent as part of the request, the "vm_id" field is used in order to specify which VMs to include in the report. In that case all other fields are ignored.
     vms: Any = None
 
@@ -144,19 +132,13 @@ class UtilizationReportAttrs:
 UtilizationReport = ubx.ResourceBinding(
     wire_type="google_vmmigration_utilization_report",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "error": ubx.FieldSpec(
             wire_name="error",
             kind="object",
             fields=_UtilizationReport_ErrorFields,
         ),
-        "frame_end_time": ubx.FieldSpec(wire_name="frame_end_time"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "state_time": ubx.FieldSpec(wire_name="state_time"),
         "time_frame": ubx.FieldSpec(wire_name="time_frame"),
-        "vm_count": ubx.FieldSpec(wire_name="vm_count"),
         "vms": ubx.FieldSpec(
             wire_name="vms",
             kind="list",

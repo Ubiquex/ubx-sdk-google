@@ -33,8 +33,6 @@ _SecurityMonitoringCondition_IncludeFields = {
 class SecurityMonitoringConditionConfig:
     # Optional. The API Hub gateway monitored by the security monitoring condition. This should only be set if risk_assessment_type is API_HUB. Format: `projects/{project}/locations/{location}/plugins/{plugin}/instances/{instance}`
     api_hub_gateway: Any = None
-    # Output only. The time of the security monitoring condition creation.
-    create_time: Any = None
     # Message for the array of resources. For Apigee, the proxies are resources.
     include: Any = None
     # Message for include_all_resources option.
@@ -47,12 +45,6 @@ class SecurityMonitoringConditionConfig:
     risk_assessment_type: Any = None
     # Optional. Scope of the security monitoring condition. When RiskAssessmentType is APIGEE, the scope should be set to the environment of the resources. When RiskAssessmentType is API_HUB, the scope should not be set.
     scope: Any = None
-    # Output only. Total number of deployed resources within scope.
-    total_deployed_resources: Any = None
-    # Output only. Total number of monitored resources within this condition.
-    total_monitored_resources: Any = None
-    # Output only. The time of the security monitoring condition update.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class SecurityMonitoringConditionAttrs:
@@ -83,7 +75,6 @@ SecurityMonitoringCondition = ubx.ResourceBinding(
     wire_type="google_apigee_security_monitoring_condition",
     fields={
         "api_hub_gateway": ubx.FieldSpec(wire_name="api_hub_gateway"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "include": ubx.FieldSpec(
             wire_name="include",
             kind="object",
@@ -94,8 +85,5 @@ SecurityMonitoringCondition = ubx.ResourceBinding(
         "profile": ubx.FieldSpec(wire_name="profile"),
         "risk_assessment_type": ubx.FieldSpec(wire_name="risk_assessment_type"),
         "scope": ubx.FieldSpec(wire_name="scope"),
-        "total_deployed_resources": ubx.FieldSpec(wire_name="total_deployed_resources"),
-        "total_monitored_resources": ubx.FieldSpec(wire_name="total_monitored_resources"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

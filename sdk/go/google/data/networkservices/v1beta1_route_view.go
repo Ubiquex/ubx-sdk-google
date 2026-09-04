@@ -4,7 +4,6 @@ package networkservices
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta1RouteViewConfig struct {
-	Name any
 }
 
 type V1beta1RouteViewAttrs struct {
@@ -21,7 +20,5 @@ type V1beta1RouteViewAttrs struct {
 
 var V1beta1RouteView = ubx.DataSourceBinding{
 	WireType: "google_networkservices_v1beta1_route_view",
-	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	},
+	Fields:   ubx.FieldMap{},
 }

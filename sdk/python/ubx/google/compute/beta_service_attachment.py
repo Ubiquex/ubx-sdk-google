@@ -35,16 +35,6 @@ class BetaServiceAttachment_TunnelingConfig:
     # How this Service Attachment will treat traffic sent to the tunnel_ip, destined for the consumer network.
     routing_mode: Any = None
 
-_BetaServiceAttachment_ConnectedEndpointsFields = {
-    "consumer_network": ubx.FieldSpec(wire_name="consumer_network"),
-    "endpoint": ubx.FieldSpec(wire_name="endpoint"),
-    "endpoint_with_id": ubx.FieldSpec(wire_name="endpoint_with_id"),
-    "nat_ips": ubx.FieldSpec(wire_name="nat_ips"),
-    "propagated_connection_count": ubx.FieldSpec(wire_name="propagated_connection_count"),
-    "psc_connection_id": ubx.FieldSpec(wire_name="psc_connection_id"),
-    "status": ubx.FieldSpec(wire_name="status"),
-}
-
 _BetaServiceAttachment_ConsumerAcceptListsFields = {
     "connection_limit": ubx.FieldSpec(wire_name="connection_limit"),
     "endpoint_url": ubx.FieldSpec(wire_name="endpoint_url"),
@@ -64,16 +54,12 @@ _BetaServiceAttachment_TunnelingConfigFields = {
 
 @dataclasses.dataclass
 class BetaServiceAttachmentConfig:
-    # Output only. [Output Only] An array of connections for all the consumers connected to this service attachment.
-    connected_endpoints: Any = None
     # The connection preference of service attachment. The value can be set to ACCEPT_AUTOMATIC. An ACCEPT_AUTOMATIC service attachment is one that always accepts the connection from consumer forwarding rules.
     connection_preference: Any = None
     # Specifies which consumer projects or networks are allowed to connect to the service attachment. Each project or network has a connection limit. A given service attachment can manage connections at either the project or network level. Therefore, both the accept and reject lists for a given service attachment must contain either only projects or only networks or only endpoints.
     consumer_accept_lists: Any = None
     # Specifies a list of projects or networks that are not allowed to connect to this service attachment. The project can be specified using its project ID or project number and the network can be specified using its URL. A given service attachment can manage connections at either the project or network level. Therefore, both the reject and accept lists for a given service attachment must contain either only projects or only networks.
     consumer_reject_lists: Any = None
-    # Output only. [Output Only] Creation timestamp inRFC3339 text format.
-    creation_timestamp: Any = None
     # An optional description of this resource. Provide this property when you create the resource.
     description: Any = None
     # If specified, the domain name will be used during the integration between the PSC connected endpoints and the Cloud DNS. For example, this is a valid domain name: "p.mycompany.com.". Current max number of domain names supported is 1.
@@ -82,10 +68,6 @@ class BetaServiceAttachmentConfig:
     enable_proxy_protocol: Any = None
     # Fingerprint of this resource. A hash of the contents stored in this object. This field is used in optimistic locking. This field will be ignored when inserting a ServiceAttachment. An up-to-date fingerprint must be provided in order to patch/update the ServiceAttachment; otherwise, the request will fail with error 412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve the ServiceAttachment.
     fingerprint: Any = None
-    # Output only. [Output Only] The unique identifier for the resource type. The server generates this identifier.
-    id: Any = None
-    # Output only. [Output Only] Type of the resource. Alwayscompute#serviceAttachment for service attachments.
-    kind: Any = None
     # Metadata of the service attachment.
     metadata: Any = None
     # Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
@@ -101,10 +83,6 @@ class BetaServiceAttachmentConfig:
     psc_service_attachment_id: Any = None
     # This flag determines whether a consumer accept/reject list change can reconcile the statuses of existing ACCEPTED or REJECTED PSC endpoints. - If false, connection policy update will only affect existing PENDING PSC endpoints. Existing ACCEPTED/REJECTED endpoints will remain untouched regardless how the connection policy is modified . - If true, update will affect both PENDING and ACCEPTED/REJECTED PSC endpoints. For example, an ACCEPTED PSC endpoint will be moved to REJECTED if its project is added to the reject list. For newly created service attachment, this boolean defaults to false.
     reconcile_connections: Any = None
-    # Output only. [Output Only] URL of the region where the service attachment resides. This field applies only to the region resource. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
-    region: Any = None
-    # Output only. [Output Only] Server-defined URL for the resource.
-    self_link: Any = None
     # The URL of a service serving the endpoint identified by this service attachment.
     target_service: Any = None
     # Use to configure this PSC connection in tunneling mode. In tunneling mode traffic from consumer to producer will be encapsulated as it crosses the VPC boundary and traffic from producer to consumer will be decapsulated in the same manner.
@@ -161,11 +139,6 @@ class BetaServiceAttachmentAttrs:
 BetaServiceAttachment = ubx.ResourceBinding(
     wire_type="google_compute_beta_service_attachment",
     fields={
-        "connected_endpoints": ubx.FieldSpec(
-            wire_name="connected_endpoints",
-            kind="list",
-            fields=_BetaServiceAttachment_ConnectedEndpointsFields,
-        ),
         "connection_preference": ubx.FieldSpec(wire_name="connection_preference"),
         "consumer_accept_lists": ubx.FieldSpec(
             wire_name="consumer_accept_lists",
@@ -173,13 +146,10 @@ BetaServiceAttachment = ubx.ResourceBinding(
             fields=_BetaServiceAttachment_ConsumerAcceptListsFields,
         ),
         "consumer_reject_lists": ubx.FieldSpec(wire_name="consumer_reject_lists"),
-        "creation_timestamp": ubx.FieldSpec(wire_name="creation_timestamp"),
         "description": ubx.FieldSpec(wire_name="description"),
         "domain_names": ubx.FieldSpec(wire_name="domain_names"),
         "enable_proxy_protocol": ubx.FieldSpec(wire_name="enable_proxy_protocol"),
         "fingerprint": ubx.FieldSpec(wire_name="fingerprint"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "kind": ubx.FieldSpec(wire_name="kind"),
         "metadata": ubx.FieldSpec(wire_name="metadata"),
         "name": ubx.FieldSpec(wire_name="name"),
         "nat_ips_per_endpoint": ubx.FieldSpec(wire_name="nat_ips_per_endpoint"),
@@ -192,8 +162,6 @@ BetaServiceAttachment = ubx.ResourceBinding(
             fields=_BetaServiceAttachment_PscServiceAttachmentIdFields,
         ),
         "reconcile_connections": ubx.FieldSpec(wire_name="reconcile_connections"),
-        "region": ubx.FieldSpec(wire_name="region"),
-        "self_link": ubx.FieldSpec(wire_name="self_link"),
         "target_service": ubx.FieldSpec(wire_name="target_service"),
         "tunneling_config": ubx.FieldSpec(
             wire_name="tunneling_config",

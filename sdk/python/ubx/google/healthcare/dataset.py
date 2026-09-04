@@ -21,10 +21,6 @@ class DatasetConfig:
     encryption_spec: Any = None
     # Identifier. Resource name of the dataset, of the form `projects/{project_id}/locations/{location_id}/datasets/{dataset_id}`.
     name: Any = None
-    # Output only. Whether the dataset satisfies zone isolation.
-    satisfies_pzi: Any = None
-    # Output only. Whether the dataset satisfies zone separation.
-    satisfies_pzs: Any = None
     # Optional. The default timezone used by this dataset. Must be a either a valid IANA time zone name such as "America/New_York" or empty, which defaults to UTC. This is used for parsing times in resources, such as HL7 messages, where no explicit timezone is specified.
     time_zone: Any = None
 
@@ -50,8 +46,6 @@ Dataset = ubx.ResourceBinding(
             fields=_Dataset_EncryptionSpecFields,
         ),
         "name": ubx.FieldSpec(wire_name="name"),
-        "satisfies_pzi": ubx.FieldSpec(wire_name="satisfies_pzi"),
-        "satisfies_pzs": ubx.FieldSpec(wire_name="satisfies_pzs"),
         "time_zone": ubx.FieldSpec(wire_name="time_zone"),
     },
 )

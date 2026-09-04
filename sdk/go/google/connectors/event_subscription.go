@@ -4,7 +4,7 @@ package connectors
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EventSubscription_Destinations_Endpoint_Headers struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -17,7 +17,7 @@ type EventSubscription_Destinations_Endpoint struct {
 
 type EventSubscription_Destinations_Pubsub_ConfigVariables_EncryptionKeyValue struct {
 	KmsKeyName any
-	Type any
+	Type       any
 }
 
 type EventSubscription_Destinations_Pubsub_ConfigVariables_SecretValue struct {
@@ -25,12 +25,12 @@ type EventSubscription_Destinations_Pubsub_ConfigVariables_SecretValue struct {
 }
 
 type EventSubscription_Destinations_Pubsub_ConfigVariables struct {
-	BoolValue any
+	BoolValue          any
 	EncryptionKeyValue any
-	IntValue any
-	Key any
-	SecretValue any
-	StringValue any
+	IntValue           any
+	Key                any
+	SecretValue        any
+	StringValue        any
 }
 
 type EventSubscription_Destinations_Pubsub struct {
@@ -70,84 +70,82 @@ type EventSubscription_Status struct {
 }
 
 var EventSubscription_Destinations_Endpoint_HeadersFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var EventSubscription_Destinations_EndpointFields = ubx.FieldMap{
-		"EndpointUri": ubx.FieldSpec{WireName: "endpoint_uri"},
-		"Headers": ubx.FieldSpec{
-			WireName: "headers",
-			Kind: "list",
-			Fields: EventSubscription_Destinations_Endpoint_HeadersFields,
-		},
-	}
+	"EndpointUri": ubx.FieldSpec{WireName: "endpoint_uri"},
+	"Headers": ubx.FieldSpec{
+		WireName: "headers",
+		Kind:     "list",
+		Fields:   EventSubscription_Destinations_Endpoint_HeadersFields,
+	},
+}
 
 var EventSubscription_Destinations_Pubsub_ConfigVariables_EncryptionKeyValueFields = ubx.FieldMap{
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
+	"Type":       ubx.FieldSpec{WireName: "type"},
+}
 
 var EventSubscription_Destinations_Pubsub_ConfigVariables_SecretValueFields = ubx.FieldMap{
-		"SecretVersion": ubx.FieldSpec{WireName: "secret_version"},
-	}
+	"SecretVersion": ubx.FieldSpec{WireName: "secret_version"},
+}
 
 var EventSubscription_Destinations_Pubsub_ConfigVariablesFields = ubx.FieldMap{
-		"BoolValue": ubx.FieldSpec{WireName: "bool_value"},
-		"EncryptionKeyValue": ubx.FieldSpec{
-			WireName: "encryption_key_value",
-			Kind: "object",
-			Fields: EventSubscription_Destinations_Pubsub_ConfigVariables_EncryptionKeyValueFields,
-		},
-		"IntValue": ubx.FieldSpec{WireName: "int_value"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"SecretValue": ubx.FieldSpec{
-			WireName: "secret_value",
-			Kind: "object",
-			Fields: EventSubscription_Destinations_Pubsub_ConfigVariables_SecretValueFields,
-		},
-		"StringValue": ubx.FieldSpec{WireName: "string_value"},
-	}
+	"BoolValue": ubx.FieldSpec{WireName: "bool_value"},
+	"EncryptionKeyValue": ubx.FieldSpec{
+		WireName: "encryption_key_value",
+		Kind:     "object",
+		Fields:   EventSubscription_Destinations_Pubsub_ConfigVariables_EncryptionKeyValueFields,
+	},
+	"IntValue": ubx.FieldSpec{WireName: "int_value"},
+	"Key":      ubx.FieldSpec{WireName: "key"},
+	"SecretValue": ubx.FieldSpec{
+		WireName: "secret_value",
+		Kind:     "object",
+		Fields:   EventSubscription_Destinations_Pubsub_ConfigVariables_SecretValueFields,
+	},
+	"StringValue": ubx.FieldSpec{WireName: "string_value"},
+}
 
 var EventSubscription_Destinations_PubsubFields = ubx.FieldMap{
-		"Attributes": ubx.FieldSpec{WireName: "attributes"},
-		"ConfigVariables": ubx.FieldSpec{
-			WireName: "config_variables",
-			Kind: "list",
-			Fields: EventSubscription_Destinations_Pubsub_ConfigVariablesFields,
-		},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-		"TopicId": ubx.FieldSpec{WireName: "topic_id"},
-	}
+	"Attributes": ubx.FieldSpec{WireName: "attributes"},
+	"ConfigVariables": ubx.FieldSpec{
+		WireName: "config_variables",
+		Kind:     "list",
+		Fields:   EventSubscription_Destinations_Pubsub_ConfigVariablesFields,
+	},
+	"ProjectId": ubx.FieldSpec{WireName: "project_id"},
+	"TopicId":   ubx.FieldSpec{WireName: "topic_id"},
+}
 
 var EventSubscription_DestinationsFields = ubx.FieldMap{
-		"Endpoint": ubx.FieldSpec{
-			WireName: "endpoint",
-			Kind: "object",
-			Fields: EventSubscription_Destinations_EndpointFields,
-		},
-		"Pubsub": ubx.FieldSpec{
-			WireName: "pubsub",
-			Kind: "object",
-			Fields: EventSubscription_Destinations_PubsubFields,
-		},
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Endpoint": ubx.FieldSpec{
+		WireName: "endpoint",
+		Kind:     "object",
+		Fields:   EventSubscription_Destinations_EndpointFields,
+	},
+	"Pubsub": ubx.FieldSpec{
+		WireName: "pubsub",
+		Kind:     "object",
+		Fields:   EventSubscription_Destinations_PubsubFields,
+	},
+	"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
+	"Type":           ubx.FieldSpec{WireName: "type"},
+}
 
 var EventSubscription_JmsFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var EventSubscription_StatusFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"State":       ubx.FieldSpec{WireName: "state"},
+}
 
 type EventSubscriptionConfig struct {
-	// Output only. Created time.
-	CreateTime any
 	// Message for EventSubscription Destination to act on receiving an event
 	Destinations any
 	// Optional. Event type id of the event of current EventSubscription.
@@ -166,8 +164,6 @@ type EventSubscriptionConfig struct {
 	SubscriberLink any
 	// Optional. Configuration for configuring the trigger
 	TriggerConfigVariables any
-	// Output only. Updated time.
-	UpdateTime any
 }
 
 type EventSubscriptionAttrs struct {
@@ -198,32 +194,30 @@ type EventSubscriptionAttrs struct {
 var EventSubscription = ubx.ResourceBinding{
 	WireType: "google_connectors_event_subscription",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Destinations": ubx.FieldSpec{
 			WireName: "destinations",
-			Kind: "object",
-			Fields: EventSubscription_DestinationsFields,
+			Kind:     "object",
+			Fields:   EventSubscription_DestinationsFields,
 		},
 		"EventTypeId": ubx.FieldSpec{WireName: "event_type_id"},
-		"Filter": ubx.FieldSpec{WireName: "filter"},
+		"Filter":      ubx.FieldSpec{WireName: "filter"},
 		"Jms": ubx.FieldSpec{
 			WireName: "jms",
-			Kind: "object",
-			Fields: EventSubscription_JmsFields,
+			Kind:     "object",
+			Fields:   EventSubscription_JmsFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Status": ubx.FieldSpec{
 			WireName: "status",
-			Kind: "object",
-			Fields: EventSubscription_StatusFields,
+			Kind:     "object",
+			Fields:   EventSubscription_StatusFields,
 		},
-		"Subscriber": ubx.FieldSpec{WireName: "subscriber"},
+		"Subscriber":     ubx.FieldSpec{WireName: "subscriber"},
 		"SubscriberLink": ubx.FieldSpec{WireName: "subscriber_link"},
 		"TriggerConfigVariables": ubx.FieldSpec{
 			WireName: "trigger_config_variables",
-			Kind: "list",
-			Fields: EventSubscription_Destinations_Pubsub_ConfigVariablesFields,
+			Kind:     "list",
+			Fields:   EventSubscription_Destinations_Pubsub_ConfigVariablesFields,
 		},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

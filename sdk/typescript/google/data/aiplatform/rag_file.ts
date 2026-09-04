@@ -75,7 +75,6 @@ export interface RagFile_SlackSource {
 }
 
 export interface RagFileConfig {
-  name: string | Computed<string>;
 }
 
 export interface RagFileAttrs {
@@ -109,6 +108,5 @@ export interface RagFileAttrs {
 export const RagFile: DataSourceBinding<RagFileConfig, RagFileAttrs> = {
   wireType: "google_aiplatform_rag_file",
   fields: {
-    name: "name",
   },
 };

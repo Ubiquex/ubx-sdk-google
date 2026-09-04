@@ -4,10 +4,10 @@ package apigee
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ApimServiceExtension_Extensions struct {
-	FailOpen any
-	Hostname any
-	MatchCondition any
-	Name any
+	FailOpen        any
+	Hostname        any
+	MatchCondition  any
+	Name            any
 	SupportedEvents any
 }
 
@@ -17,21 +17,19 @@ type ApimServiceExtension_NetworkConfigs struct {
 }
 
 var ApimServiceExtension_ExtensionsFields = ubx.FieldMap{
-		"FailOpen": ubx.FieldSpec{WireName: "fail_open"},
-		"Hostname": ubx.FieldSpec{WireName: "hostname"},
-		"MatchCondition": ubx.FieldSpec{WireName: "match_condition"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SupportedEvents": ubx.FieldSpec{WireName: "supported_events"},
-	}
+	"FailOpen":        ubx.FieldSpec{WireName: "fail_open"},
+	"Hostname":        ubx.FieldSpec{WireName: "hostname"},
+	"MatchCondition":  ubx.FieldSpec{WireName: "match_condition"},
+	"Name":            ubx.FieldSpec{WireName: "name"},
+	"SupportedEvents": ubx.FieldSpec{WireName: "supported_events"},
+}
 
 var ApimServiceExtension_NetworkConfigsFields = ubx.FieldMap{
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"Subnet": ubx.FieldSpec{WireName: "subnet"},
-	}
+	"Region": ubx.FieldSpec{WireName: "region"},
+	"Subnet": ubx.FieldSpec{WireName: "subnet"},
+}
 
 type ApimServiceExtensionConfig struct {
-	// Output only. The time that this resource was created on the server.
-	CreateTime any
 	// Required. Name of the proxy deployed in the Apigee X instance.
 	ExtensionProcessor any
 	// Optional. List of extensions that are part of the service extension. Refer to https://cloud.google.com/service-extensions/docs/quotas#limits for any limits.
@@ -44,10 +42,6 @@ type ApimServiceExtensionConfig struct {
 	Network any
 	// Required. List of network configurations for the APIM service extension.
 	NetworkConfigs any
-	// Output only. State of the APIM service extension. Values other than `ACTIVE` mean the resource is not ready to use.
-	State any
-	// Output only. The time that this resource was updated on the server.
-	UpdateTime any
 }
 
 type ApimServiceExtensionAttrs struct {
@@ -74,22 +68,19 @@ type ApimServiceExtensionAttrs struct {
 var ApimServiceExtension = ubx.ResourceBinding{
 	WireType: "google_apigee_apim_service_extension",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"ExtensionProcessor": ubx.FieldSpec{WireName: "extension_processor"},
 		"Extensions": ubx.FieldSpec{
 			WireName: "extensions",
-			Kind: "list",
-			Fields: ApimServiceExtension_ExtensionsFields,
+			Kind:     "list",
+			Fields:   ApimServiceExtension_ExtensionsFields,
 		},
 		"LbForwardingRule": ubx.FieldSpec{WireName: "lb_forwarding_rule"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Network": ubx.FieldSpec{WireName: "network"},
+		"Name":             ubx.FieldSpec{WireName: "name"},
+		"Network":          ubx.FieldSpec{WireName: "network"},
 		"NetworkConfigs": ubx.FieldSpec{
 			WireName: "network_configs",
-			Kind: "list",
-			Fields: ApimServiceExtension_NetworkConfigsFields,
+			Kind:     "list",
+			Fields:   ApimServiceExtension_NetworkConfigsFields,
 		},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

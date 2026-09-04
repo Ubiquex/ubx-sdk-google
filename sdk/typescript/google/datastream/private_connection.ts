@@ -44,26 +44,14 @@ const PrivateConnection_VpcPeeringConfigFields: FieldMap = {
 };
 
 export interface PrivateConnectionConfig {
-  /** Output only. The create time of the resource. */
-  createTime?: string | Computed<string>;
   /** Required. Display name. */
   displayName?: string | Computed<string>;
   /** Represent a user-facing Error. */
   error?: PrivateConnection_Error | Computed<PrivateConnection_Error>;
   /** Labels. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. Identifier. The resource's name. */
-  name?: string | Computed<string>;
   /** The PSC Interface configuration is used to create PSC Interface between Datastream and the consumer's PSC. */
   pscInterfaceConfig?: PrivateConnection_PscInterfaceConfig | Computed<PrivateConnection_PscInterfaceConfig>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzi?: boolean | Computed<boolean>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzs?: boolean | Computed<boolean>;
-  /** Output only. The state of the Private Connection. */
-  state?: string | Computed<string>;
-  /** Output only. The update time of the resource. */
-  updateTime?: string | Computed<string>;
   /** The VPC Peering configuration is used to create VPC peering between Datastream and the consumer's VPC. */
   vpcPeeringConfig?: PrivateConnection_VpcPeeringConfig | Computed<PrivateConnection_VpcPeeringConfig>;
 }
@@ -96,7 +84,6 @@ export interface PrivateConnectionAttrs {
 export const PrivateConnection: ResourceBinding<PrivateConnectionConfig, PrivateConnectionAttrs> = {
   wireType: "google_datastream_private_connection",
   fields: {
-    createTime: "create_time",
     displayName: "display_name",
     error: {
       wireName: "error",
@@ -104,16 +91,11 @@ export const PrivateConnection: ResourceBinding<PrivateConnectionConfig, Private
       fields: PrivateConnection_ErrorFields,
     },
     labels: "labels",
-    name: "name",
     pscInterfaceConfig: {
       wireName: "psc_interface_config",
       kind: "object",
       fields: PrivateConnection_PscInterfaceConfigFields,
     },
-    satisfiesPzi: "satisfies_pzi",
-    satisfiesPzs: "satisfies_pzs",
-    state: "state",
-    updateTime: "update_time",
     vpcPeeringConfig: {
       wireName: "vpc_peering_config",
       kind: "object",

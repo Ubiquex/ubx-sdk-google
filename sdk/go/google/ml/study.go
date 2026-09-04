@@ -15,7 +15,7 @@ type Study_StudyConfig_AutomatedStoppingConfig struct {
 }
 
 type Study_StudyConfig_Metrics struct {
-	Goal any
+	Goal   any
 	Metric any
 }
 
@@ -38,17 +38,17 @@ type Study_StudyConfig_Parameters_IntegerValueSpec struct {
 }
 
 type Study_StudyConfig_Parameters struct {
-	CategoricalValueSpec any
-	ChildParameterSpecs any
-	DiscreteValueSpec any
-	DoubleValueSpec any
-	IntegerValueSpec any
-	Parameter any
+	CategoricalValueSpec    any
+	ChildParameterSpecs     any
+	DiscreteValueSpec       any
+	DoubleValueSpec         any
+	IntegerValueSpec        any
+	Parameter               any
 	ParentCategoricalValues any
-	ParentDiscreteValues any
-	ParentIntValues any
-	ScaleType any
-	Type any
+	ParentDiscreteValues    any
+	ParentIntValues         any
+	ScaleType               any
+	Type                    any
 }
 
 type Study_StudyConfig struct {
@@ -63,115 +63,107 @@ type Study_StudyConfig struct {
 }
 
 var Study_StudyConfig_AutomatedStoppingConfig_DecayCurveStoppingConfigFields = ubx.FieldMap{
-		"UseElapsedTime": ubx.FieldSpec{WireName: "use_elapsed_time"},
-	}
+	"UseElapsedTime": ubx.FieldSpec{WireName: "use_elapsed_time"},
+}
 
 var Study_StudyConfig_AutomatedStoppingConfigFields = ubx.FieldMap{
-		"DecayCurveStoppingConfig": ubx.FieldSpec{
-			WireName: "decay_curve_stopping_config",
-			Kind: "object",
-			Fields: Study_StudyConfig_AutomatedStoppingConfig_DecayCurveStoppingConfigFields,
-		},
-		"MedianAutomatedStoppingConfig": ubx.FieldSpec{
-			WireName: "median_automated_stopping_config",
-			Kind: "object",
-			Fields: Study_StudyConfig_AutomatedStoppingConfig_DecayCurveStoppingConfigFields,
-		},
-	}
+	"DecayCurveStoppingConfig": ubx.FieldSpec{
+		WireName: "decay_curve_stopping_config",
+		Kind:     "object",
+		Fields:   Study_StudyConfig_AutomatedStoppingConfig_DecayCurveStoppingConfigFields,
+	},
+	"MedianAutomatedStoppingConfig": ubx.FieldSpec{
+		WireName: "median_automated_stopping_config",
+		Kind:     "object",
+		Fields:   Study_StudyConfig_AutomatedStoppingConfig_DecayCurveStoppingConfigFields,
+	},
+}
 
 var Study_StudyConfig_MetricsFields = ubx.FieldMap{
-		"Goal": ubx.FieldSpec{WireName: "goal"},
-		"Metric": ubx.FieldSpec{WireName: "metric"},
-	}
+	"Goal":   ubx.FieldSpec{WireName: "goal"},
+	"Metric": ubx.FieldSpec{WireName: "metric"},
+}
 
 var Study_StudyConfig_Parameters_CategoricalValueSpecFields = ubx.FieldMap{
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 var Study_StudyConfig_Parameters_DiscreteValueSpecFields = ubx.FieldMap{
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 var Study_StudyConfig_Parameters_DoubleValueSpecFields = ubx.FieldMap{
-		"MaxValue": ubx.FieldSpec{WireName: "max_value"},
-		"MinValue": ubx.FieldSpec{WireName: "min_value"},
-	}
+	"MaxValue": ubx.FieldSpec{WireName: "max_value"},
+	"MinValue": ubx.FieldSpec{WireName: "min_value"},
+}
 
 var Study_StudyConfig_Parameters_IntegerValueSpecFields = ubx.FieldMap{
-		"MaxValue": ubx.FieldSpec{WireName: "max_value"},
-		"MinValue": ubx.FieldSpec{WireName: "min_value"},
-	}
+	"MaxValue": ubx.FieldSpec{WireName: "max_value"},
+	"MinValue": ubx.FieldSpec{WireName: "min_value"},
+}
 
 var Study_StudyConfig_ParametersFields = ubx.FieldMap{
-		"CategoricalValueSpec": ubx.FieldSpec{
-			WireName: "categorical_value_spec",
-			Kind: "object",
-			Fields: Study_StudyConfig_Parameters_CategoricalValueSpecFields,
-		},
-		"ChildParameterSpecs": ubx.FieldSpec{WireName: "child_parameter_specs"},
-		"DiscreteValueSpec": ubx.FieldSpec{
-			WireName: "discrete_value_spec",
-			Kind: "object",
-			Fields: Study_StudyConfig_Parameters_DiscreteValueSpecFields,
-		},
-		"DoubleValueSpec": ubx.FieldSpec{
-			WireName: "double_value_spec",
-			Kind: "object",
-			Fields: Study_StudyConfig_Parameters_DoubleValueSpecFields,
-		},
-		"IntegerValueSpec": ubx.FieldSpec{
-			WireName: "integer_value_spec",
-			Kind: "object",
-			Fields: Study_StudyConfig_Parameters_IntegerValueSpecFields,
-		},
-		"Parameter": ubx.FieldSpec{WireName: "parameter"},
-		"ParentCategoricalValues": ubx.FieldSpec{
-			WireName: "parent_categorical_values",
-			Kind: "object",
-			Fields: Study_StudyConfig_Parameters_CategoricalValueSpecFields,
-		},
-		"ParentDiscreteValues": ubx.FieldSpec{
-			WireName: "parent_discrete_values",
-			Kind: "object",
-			Fields: Study_StudyConfig_Parameters_DiscreteValueSpecFields,
-		},
-		"ParentIntValues": ubx.FieldSpec{
-			WireName: "parent_int_values",
-			Kind: "object",
-			Fields: Study_StudyConfig_Parameters_CategoricalValueSpecFields,
-		},
-		"ScaleType": ubx.FieldSpec{WireName: "scale_type"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"CategoricalValueSpec": ubx.FieldSpec{
+		WireName: "categorical_value_spec",
+		Kind:     "object",
+		Fields:   Study_StudyConfig_Parameters_CategoricalValueSpecFields,
+	},
+	"ChildParameterSpecs": ubx.FieldSpec{WireName: "child_parameter_specs"},
+	"DiscreteValueSpec": ubx.FieldSpec{
+		WireName: "discrete_value_spec",
+		Kind:     "object",
+		Fields:   Study_StudyConfig_Parameters_DiscreteValueSpecFields,
+	},
+	"DoubleValueSpec": ubx.FieldSpec{
+		WireName: "double_value_spec",
+		Kind:     "object",
+		Fields:   Study_StudyConfig_Parameters_DoubleValueSpecFields,
+	},
+	"IntegerValueSpec": ubx.FieldSpec{
+		WireName: "integer_value_spec",
+		Kind:     "object",
+		Fields:   Study_StudyConfig_Parameters_IntegerValueSpecFields,
+	},
+	"Parameter": ubx.FieldSpec{WireName: "parameter"},
+	"ParentCategoricalValues": ubx.FieldSpec{
+		WireName: "parent_categorical_values",
+		Kind:     "object",
+		Fields:   Study_StudyConfig_Parameters_CategoricalValueSpecFields,
+	},
+	"ParentDiscreteValues": ubx.FieldSpec{
+		WireName: "parent_discrete_values",
+		Kind:     "object",
+		Fields:   Study_StudyConfig_Parameters_DiscreteValueSpecFields,
+	},
+	"ParentIntValues": ubx.FieldSpec{
+		WireName: "parent_int_values",
+		Kind:     "object",
+		Fields:   Study_StudyConfig_Parameters_CategoricalValueSpecFields,
+	},
+	"ScaleType": ubx.FieldSpec{WireName: "scale_type"},
+	"Type":      ubx.FieldSpec{WireName: "type"},
+}
 
 var Study_StudyConfigFields = ubx.FieldMap{
-		"Algorithm": ubx.FieldSpec{WireName: "algorithm"},
-		"AutomatedStoppingConfig": ubx.FieldSpec{
-			WireName: "automated_stopping_config",
-			Kind: "object",
-			Fields: Study_StudyConfig_AutomatedStoppingConfigFields,
-		},
-		"Metrics": ubx.FieldSpec{
-			WireName: "metrics",
-			Kind: "list",
-			Fields: Study_StudyConfig_MetricsFields,
-		},
-		"Parameters": ubx.FieldSpec{
-			WireName: "parameters",
-			Kind: "list",
-			Fields: Study_StudyConfig_ParametersFields,
-		},
-	}
+	"Algorithm": ubx.FieldSpec{WireName: "algorithm"},
+	"AutomatedStoppingConfig": ubx.FieldSpec{
+		WireName: "automated_stopping_config",
+		Kind:     "object",
+		Fields:   Study_StudyConfig_AutomatedStoppingConfigFields,
+	},
+	"Metrics": ubx.FieldSpec{
+		WireName: "metrics",
+		Kind:     "list",
+		Fields:   Study_StudyConfig_MetricsFields,
+	},
+	"Parameters": ubx.FieldSpec{
+		WireName: "parameters",
+		Kind:     "list",
+		Fields:   Study_StudyConfig_ParametersFields,
+	},
+}
 
 type StudyConfig struct {
-	// Output only. Time at which the study was created.
-	CreateTime any
-	// Output only. A human readable reason why the Study is inactive. This should be empty if a study is ACTIVE or COMPLETED.
-	InactiveReason any
-	// Output only. The name of a study.
-	Name any
-	// Output only. The detailed state of a study.
-	State any
 	// Represents configuration of a study.
 	StudyConfig any
 }
@@ -192,14 +184,10 @@ type StudyAttrs struct {
 var Study = ubx.ResourceBinding{
 	WireType: "google_ml_study",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"InactiveReason": ubx.FieldSpec{WireName: "inactive_reason"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"State": ubx.FieldSpec{WireName: "state"},
 		"StudyConfig": ubx.FieldSpec{
 			WireName: "study_config",
-			Kind: "object",
-			Fields: Study_StudyConfigFields,
+			Kind:     "object",
+			Fields:   Study_StudyConfigFields,
 		},
 	},
 }

@@ -40,8 +40,6 @@ const AssessmentRule_ScheduleInfoFields: FieldMap = {
 export interface AssessmentRuleConfig {
   /** If true, apply this rule to conversations. Otherwise, this rule is inactive. */
   active?: boolean | Computed<boolean>;
-  /** Output only. The time at which this assessment rule was created. */
-  createTime?: string | Computed<string>;
   /** Display Name of the assessment rule. */
   displayName?: string | Computed<string>;
   /** Identifier. The resource name of the assessment rule. Format: projects/{project}/locations/{location}/assessmentRules/{assessment_rule} */
@@ -50,8 +48,6 @@ export interface AssessmentRuleConfig {
   sampleRule?: AssessmentRule_SampleRule | Computed<AssessmentRule_SampleRule>;
   /** Message for schedule info. */
   scheduleInfo?: AssessmentRule_ScheduleInfo | Computed<AssessmentRule_ScheduleInfo>;
-  /** Output only. The most recent time at which this assessment rule was updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface AssessmentRuleAttrs {
@@ -75,7 +71,6 @@ export const AssessmentRule: ResourceBinding<AssessmentRuleConfig, AssessmentRul
   wireType: "google_contactcenterinsights_assessment_rule",
   fields: {
     active: "active",
-    createTime: "create_time",
     displayName: "display_name",
     name: "name",
     sampleRule: {
@@ -88,6 +83,5 @@ export const AssessmentRule: ResourceBinding<AssessmentRuleConfig, AssessmentRul
       kind: "object",
       fields: AssessmentRule_ScheduleInfoFields,
     },
-    updateTime: "update_time",
   },
 };

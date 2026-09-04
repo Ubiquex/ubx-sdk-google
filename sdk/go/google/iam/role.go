@@ -21,14 +21,14 @@ type Role_Role struct {
 }
 
 var Role_RoleFields = ubx.FieldMap{
-		"Deleted": ubx.FieldSpec{WireName: "deleted"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"IncludedPermissions": ubx.FieldSpec{WireName: "included_permissions"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Stage": ubx.FieldSpec{WireName: "stage"},
-		"Title": ubx.FieldSpec{WireName: "title"},
-	}
+	"Deleted":             ubx.FieldSpec{WireName: "deleted"},
+	"Description":         ubx.FieldSpec{WireName: "description"},
+	"Etag":                ubx.FieldSpec{WireName: "etag"},
+	"IncludedPermissions": ubx.FieldSpec{WireName: "included_permissions"},
+	"Name":                ubx.FieldSpec{WireName: "name"},
+	"Stage":               ubx.FieldSpec{WireName: "stage"},
+	"Title":               ubx.FieldSpec{WireName: "title"},
+}
 
 type RoleConfig struct {
 	// A role in the Identity and Access Management API.
@@ -63,8 +63,8 @@ var Role = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Role": ubx.FieldSpec{
 			WireName: "role",
-			Kind: "object",
-			Fields: Role_RoleFields,
+			Kind:     "object",
+			Fields:   Role_RoleFields,
 		},
 		"RoleId": ubx.FieldSpec{WireName: "role_id"},
 	},

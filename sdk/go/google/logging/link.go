@@ -9,20 +9,14 @@ type Link_BigqueryDataset struct {
 }
 
 var Link_BigqueryDatasetFields = ubx.FieldMap{
-		"DatasetId": ubx.FieldSpec{WireName: "dataset_id"},
-	}
+	"DatasetId": ubx.FieldSpec{WireName: "dataset_id"},
+}
 
 type LinkConfig struct {
 	// Describes a BigQuery dataset that was created by a link.
 	BigqueryDataset any
-	// Output only. The creation timestamp of the link.
-	CreateTime any
 	// Optional. Describes this link.The maximum length of the description is 8000 characters.
 	Description any
-	// Output only. The resource lifecycle state.
-	LifecycleState any
-	// Output only. The resource name of the link. The name can have up to 100 characters. A valid link id (at the end of the link name) must only have alphanumeric characters and underscores within it. "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/[LINK_ID]" "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/[LINK_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/[LINK_ID]" "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/links/[LINK_ID]" For example:`projects/my-project/locations/global/buckets/my-bucket/links/my_link
-	Name any
 }
 
 type LinkAttrs struct {
@@ -43,12 +37,9 @@ var Link = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"BigqueryDataset": ubx.FieldSpec{
 			WireName: "bigquery_dataset",
-			Kind: "object",
-			Fields: Link_BigqueryDatasetFields,
+			Kind:     "object",
+			Fields:   Link_BigqueryDatasetFields,
 		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"LifecycleState": ubx.FieldSpec{WireName: "lifecycle_state"},
-		"Name": ubx.FieldSpec{WireName: "name"},
 	},
 }

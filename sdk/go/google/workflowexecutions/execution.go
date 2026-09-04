@@ -6,13 +6,13 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type Execution_Error_StackTrace_Elements_Position struct {
 	Column any
 	Length any
-	Line any
+	Line   any
 }
 
 type Execution_Error_StackTrace_Elements struct {
 	Position any
-	Routine any
-	Step any
+	Routine  any
+	Step     any
 }
 
 type Execution_Error_StackTrace struct {
@@ -38,7 +38,7 @@ type Execution_StateError struct {
 
 type Execution_Status_CurrentSteps struct {
 	Routine any
-	Step any
+	Step    any
 }
 
 type Execution_Status struct {
@@ -47,90 +47,74 @@ type Execution_Status struct {
 }
 
 var Execution_Error_StackTrace_Elements_PositionFields = ubx.FieldMap{
-		"Column": ubx.FieldSpec{WireName: "column"},
-		"Length": ubx.FieldSpec{WireName: "length"},
-		"Line": ubx.FieldSpec{WireName: "line"},
-	}
+	"Column": ubx.FieldSpec{WireName: "column"},
+	"Length": ubx.FieldSpec{WireName: "length"},
+	"Line":   ubx.FieldSpec{WireName: "line"},
+}
 
 var Execution_Error_StackTrace_ElementsFields = ubx.FieldMap{
-		"Position": ubx.FieldSpec{
-			WireName: "position",
-			Kind: "object",
-			Fields: Execution_Error_StackTrace_Elements_PositionFields,
-		},
-		"Routine": ubx.FieldSpec{WireName: "routine"},
-		"Step": ubx.FieldSpec{WireName: "step"},
-	}
+	"Position": ubx.FieldSpec{
+		WireName: "position",
+		Kind:     "object",
+		Fields:   Execution_Error_StackTrace_Elements_PositionFields,
+	},
+	"Routine": ubx.FieldSpec{WireName: "routine"},
+	"Step":    ubx.FieldSpec{WireName: "step"},
+}
 
 var Execution_Error_StackTraceFields = ubx.FieldMap{
-		"Elements": ubx.FieldSpec{
-			WireName: "elements",
-			Kind: "list",
-			Fields: Execution_Error_StackTrace_ElementsFields,
-		},
-	}
+	"Elements": ubx.FieldSpec{
+		WireName: "elements",
+		Kind:     "list",
+		Fields:   Execution_Error_StackTrace_ElementsFields,
+	},
+}
 
 var Execution_ErrorFields = ubx.FieldMap{
-		"Context": ubx.FieldSpec{WireName: "context"},
-		"Payload": ubx.FieldSpec{WireName: "payload"},
-		"StackTrace": ubx.FieldSpec{
-			WireName: "stack_trace",
-			Kind: "object",
-			Fields: Execution_Error_StackTraceFields,
-		},
-	}
+	"Context": ubx.FieldSpec{WireName: "context"},
+	"Payload": ubx.FieldSpec{WireName: "payload"},
+	"StackTrace": ubx.FieldSpec{
+		WireName: "stack_trace",
+		Kind:     "object",
+		Fields:   Execution_Error_StackTraceFields,
+	},
+}
 
 var Execution_StateErrorFields = ubx.FieldMap{
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Details": ubx.FieldSpec{WireName: "details"},
+	"Type":    ubx.FieldSpec{WireName: "type"},
+}
 
 var Execution_Status_CurrentStepsFields = ubx.FieldMap{
-		"Routine": ubx.FieldSpec{WireName: "routine"},
-		"Step": ubx.FieldSpec{WireName: "step"},
-	}
+	"Routine": ubx.FieldSpec{WireName: "routine"},
+	"Step":    ubx.FieldSpec{WireName: "step"},
+}
 
 var Execution_StatusFields = ubx.FieldMap{
-		"CurrentSteps": ubx.FieldSpec{
-			WireName: "current_steps",
-			Kind: "list",
-			Fields: Execution_Status_CurrentStepsFields,
-		},
-	}
+	"CurrentSteps": ubx.FieldSpec{
+		WireName: "current_steps",
+		Kind:     "list",
+		Fields:   Execution_Status_CurrentStepsFields,
+	},
+}
 
 type ExecutionConfig struct {
 	// Input parameters of the execution represented as a JSON string. The size limit is 32KB. *Note*: If you are using the REST API directly to run your workflow, you must escape any JSON string value of `argument`. Example: `'{"argument":"{\"firstName\":\"FIRST\",\"lastName\":\"LAST\"}"}'`
 	Argument any
 	// The call logging level associated to this execution.
 	CallLogLevel any
-	// Output only. Marks the creation of the execution.
-	CreateTime any
 	// Optional. If set to true, the execution will not be backlogged when the concurrency quota is exhausted. The backlog execution starts when the concurrency quota becomes available.
 	DisableConcurrencyQuotaOverflowBuffering any
-	// Output only. Measures the duration of the execution.
-	Duration any
-	// Output only. Marks the end of execution, successful or not.
-	EndTime any
 	// Error describes why the execution was abnormally terminated.
 	Error any
 	// Optional. Describes the execution history level to apply to this execution. If not specified, the execution history level is determined by its workflow's execution history level. If the levels are different, the executionHistoryLevel overrides the workflow's execution history level for this execution.
 	ExecutionHistoryLevel any
 	// Labels associated with this execution. Labels can contain at most 64 entries. Keys and values can be no longer than 63 characters and can only contain lowercase letters, numeric characters, underscores, and dashes. Label keys must start with a letter. International characters are allowed. By default, labels are inherited from the workflow but are overridden by any labels associated with the execution.
 	Labels any
-	// Output only. The resource name of the execution. Format: projects/{project}/locations/{location}/workflows/{workflow}/executions/{execution}
-	Name any
-	// Output only. Output of the execution represented as a JSON string. The value can only be present if the execution's state is `SUCCEEDED`.
-	Result any
-	// Output only. Marks the beginning of execution. Note that this will be the same as `createTime` for executions that start immediately.
-	StartTime any
-	// Output only. Current state of the execution.
-	State any
 	// Describes an error related to the current state of the Execution resource.
 	StateError any
 	// Represents the current status of this execution.
 	Status any
-	// Output only. Revision of the workflow this execution is using.
-	WorkflowRevisionId any
 }
 
 type ExecutionAttrs struct {
@@ -171,33 +155,25 @@ type ExecutionAttrs struct {
 var Execution = ubx.ResourceBinding{
 	WireType: "google_workflowexecutions_execution",
 	Fields: ubx.FieldMap{
-		"Argument": ubx.FieldSpec{WireName: "argument"},
+		"Argument":     ubx.FieldSpec{WireName: "argument"},
 		"CallLogLevel": ubx.FieldSpec{WireName: "call_log_level"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"DisableConcurrencyQuotaOverflowBuffering": ubx.FieldSpec{WireName: "disable_concurrency_quota_overflow_buffering"},
-		"Duration": ubx.FieldSpec{WireName: "duration"},
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
 		"Error": ubx.FieldSpec{
 			WireName: "error",
-			Kind: "object",
-			Fields: Execution_ErrorFields,
+			Kind:     "object",
+			Fields:   Execution_ErrorFields,
 		},
 		"ExecutionHistoryLevel": ubx.FieldSpec{WireName: "execution_history_level"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Result": ubx.FieldSpec{WireName: "result"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"State": ubx.FieldSpec{WireName: "state"},
+		"Labels":                ubx.FieldSpec{WireName: "labels"},
 		"StateError": ubx.FieldSpec{
 			WireName: "state_error",
-			Kind: "object",
-			Fields: Execution_StateErrorFields,
+			Kind:     "object",
+			Fields:   Execution_StateErrorFields,
 		},
 		"Status": ubx.FieldSpec{
 			WireName: "status",
-			Kind: "object",
-			Fields: Execution_StatusFields,
+			Kind:     "object",
+			Fields:   Execution_StatusFields,
 		},
-		"WorkflowRevisionId": ubx.FieldSpec{WireName: "workflow_revision_id"},
 	},
 }

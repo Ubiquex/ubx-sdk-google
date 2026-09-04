@@ -4,20 +4,14 @@ import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 export interface V1beta1BackendAuthenticationConfigConfig {
   /** Optional. A reference to a certificatemanager.googleapis.com.Certificate resource. This is a relative resource path following the form "projects/{project}/locations/{location}/certificates/{certificate}". Used by a BackendService to negotiate mTLS when the backend connection uses TLS and the backend requests a client certificate. Must have a CLIENT_AUTH scope. */
   clientCertificate?: string | Computed<string>;
-  /** Output only. The timestamp when the resource was created. */
-  createTime?: string | Computed<string>;
   /** Optional. Free-text description of the resource. */
   description?: string | Computed<string>;
-  /** Output only. Etag of the resource. */
-  etag?: string | Computed<string>;
   /** Set of label tags associated with the resource. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Required. Name of the BackendAuthenticationConfig resource. It matches the pattern `projects/* /locations/{location}/backendAuthenticationConfigs/{backend_authentication_config}` */
   name?: string | Computed<string>;
   /** Optional. A reference to a TrustConfig resource from the certificatemanager.googleapis.com namespace. This is a relative resource path following the form "projects/{project}/locations/{location}/trustConfigs/{trust_config}". A BackendService uses the chain of trust represented by this TrustConfig, if specified, to validate the server certificates presented by the backend. Required unless wellKnownRoots is set to PUBLIC_ROOTS. */
   trustConfig?: string | Computed<string>;
-  /** Output only. The timestamp when the resource was updated. */
-  updateTime?: string | Computed<string>;
   /** Well known roots to use for server certificate validation. */
   wellKnownRoots?: string | Computed<string>;
 }
@@ -47,13 +41,10 @@ export const V1beta1BackendAuthenticationConfig: ResourceBinding<V1beta1BackendA
   wireType: "google_networksecurity_v1beta1_backend_authentication_config",
   fields: {
     clientCertificate: "client_certificate",
-    createTime: "create_time",
     description: "description",
-    etag: "etag",
     labels: "labels",
     name: "name",
     trustConfig: "trust_config",
-    updateTime: "update_time",
     wellKnownRoots: "well_known_roots",
   },
 };

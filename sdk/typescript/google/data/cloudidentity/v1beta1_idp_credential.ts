@@ -7,7 +7,6 @@ export interface V1beta1IdpCredential_DsaKeyInfo {
 }
 
 export interface V1beta1IdpCredentialConfig {
-  name: string | Computed<string>;
 }
 
 export interface V1beta1IdpCredentialAttrs {
@@ -23,6 +22,5 @@ export interface V1beta1IdpCredentialAttrs {
 export const V1beta1IdpCredential: DataSourceBinding<V1beta1IdpCredentialConfig, V1beta1IdpCredentialAttrs> = {
   wireType: "google_cloudidentity_v1beta1_idp_credential",
   fields: {
-    name: "name",
   },
 };

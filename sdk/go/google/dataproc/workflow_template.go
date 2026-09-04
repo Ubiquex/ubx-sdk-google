@@ -13,24 +13,24 @@ type WorkflowTemplate_Jobs_FlinkJob_LoggingConfig struct {
 }
 
 type WorkflowTemplate_Jobs_FlinkJob struct {
-	Args any
-	JarFileUris any
-	LoggingConfig any
-	MainClass any
+	Args           any
+	JarFileUris    any
+	LoggingConfig  any
+	MainClass      any
 	MainJarFileUri any
-	Properties any
-	SavepointUri any
+	Properties     any
+	SavepointUri   any
 }
 
 type WorkflowTemplate_Jobs_HadoopJob struct {
-	ArchiveUris any
-	Args any
-	FileUris any
-	JarFileUris any
-	LoggingConfig any
-	MainClass any
+	ArchiveUris    any
+	Args           any
+	FileUris       any
+	JarFileUris    any
+	LoggingConfig  any
+	MainClass      any
 	MainJarFileUri any
-	Properties any
+	Properties     any
 }
 
 type WorkflowTemplate_Jobs_HiveJob_QueryList struct {
@@ -39,82 +39,82 @@ type WorkflowTemplate_Jobs_HiveJob_QueryList struct {
 
 type WorkflowTemplate_Jobs_HiveJob struct {
 	ContinueOnFailure any
-	JarFileUris any
-	Properties any
-	QueryFileUri any
-	QueryList any
-	ScriptVariables any
+	JarFileUris       any
+	Properties        any
+	QueryFileUri      any
+	QueryList         any
+	ScriptVariables   any
 }
 
 type WorkflowTemplate_Jobs_PigJob struct {
 	ContinueOnFailure any
-	JarFileUris any
-	LoggingConfig any
-	Properties any
-	QueryFileUri any
-	QueryList any
-	ScriptVariables any
+	JarFileUris       any
+	LoggingConfig     any
+	Properties        any
+	QueryFileUri      any
+	QueryList         any
+	ScriptVariables   any
 }
 
 type WorkflowTemplate_Jobs_PrestoJob struct {
-	ClientTags any
+	ClientTags        any
 	ContinueOnFailure any
-	LoggingConfig any
-	OutputFormat any
-	Properties any
-	QueryFileUri any
-	QueryList any
+	LoggingConfig     any
+	OutputFormat      any
+	Properties        any
+	QueryFileUri      any
+	QueryList         any
 }
 
 type WorkflowTemplate_Jobs_PysparkJob struct {
-	ArchiveUris any
-	Args any
-	FileUris any
-	JarFileUris any
-	LoggingConfig any
+	ArchiveUris       any
+	Args              any
+	FileUris          any
+	JarFileUris       any
+	LoggingConfig     any
 	MainPythonFileUri any
-	Properties any
-	PythonFileUris any
+	Properties        any
+	PythonFileUris    any
 }
 
 type WorkflowTemplate_Jobs_Scheduling struct {
 	MaxFailuresPerHour any
-	MaxFailuresTotal any
+	MaxFailuresTotal   any
 }
 
 type WorkflowTemplate_Jobs_SparkRjob struct {
-	ArchiveUris any
-	Args any
-	FileUris any
+	ArchiveUris   any
+	Args          any
+	FileUris      any
 	LoggingConfig any
-	MainRfileUri any
-	Properties any
+	MainRfileUri  any
+	Properties    any
 }
 
 type WorkflowTemplate_Jobs_SparkSqlJob struct {
-	JarFileUris any
-	LoggingConfig any
-	Properties any
-	QueryFileUri any
-	QueryList any
+	JarFileUris     any
+	LoggingConfig   any
+	Properties      any
+	QueryFileUri    any
+	QueryList       any
 	ScriptVariables any
 }
 
 type WorkflowTemplate_Jobs struct {
-	FlinkJob any
-	HadoopJob any
-	HiveJob any
-	Labels any
-	PigJob any
+	FlinkJob            any
+	HadoopJob           any
+	HiveJob             any
+	Labels              any
+	PigJob              any
 	PrerequisiteStepIds any
-	PrestoJob any
-	PysparkJob any
-	Scheduling any
-	SparkJob any
-	SparkRjob any
-	SparkSqlJob any
-	StepId any
-	TrinoJob any
+	PrestoJob           any
+	PysparkJob          any
+	Scheduling          any
+	SparkJob            any
+	SparkRjob           any
+	SparkSqlJob         any
+	StepId              any
+	TrinoJob            any
 }
 
 type WorkflowTemplate_Parameters_Validation_Regex struct {
@@ -126,15 +126,15 @@ type WorkflowTemplate_Parameters_Validation_Values struct {
 }
 
 type WorkflowTemplate_Parameters_Validation struct {
-	Regex any
+	Regex  any
 	Values any
 }
 
 type WorkflowTemplate_Parameters struct {
 	Description any
-	Fields any
-	Name any
-	Validation any
+	Fields      any
+	Name        any
+	Validation  any
 }
 
 type WorkflowTemplate_Placement_ClusterSelector struct {
@@ -150,61 +150,61 @@ type WorkflowTemplate_Placement_ManagedCluster_Config_AutoscalingConfig struct {
 }
 
 type WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_Accelerators struct {
-	AcceleratorCount any
+	AcceleratorCount   any
 	AcceleratorTypeUri any
 }
 
 type WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_DiskConfig_AttachedDiskConfigs struct {
-	DiskSizeGb any
-	DiskType any
-	ProvisionedIops any
+	DiskSizeGb            any
+	DiskType              any
+	ProvisionedIops       any
 	ProvisionedThroughput any
 }
 
 type WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_DiskConfig struct {
-	AttachedDiskConfigs any
-	BootDiskProvisionedIops any
+	AttachedDiskConfigs           any
+	BootDiskProvisionedIops       any
 	BootDiskProvisionedThroughput any
-	BootDiskSizeGb any
-	BootDiskType any
-	LocalSsdInterface any
-	NumLocalSsds any
+	BootDiskSizeGb                any
+	BootDiskType                  any
+	LocalSsdInterface             any
+	NumLocalSsds                  any
 }
 
 type WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy_InstanceSelectionList struct {
-	DiskConfig any
+	DiskConfig   any
 	MachineTypes any
-	Rank any
+	Rank         any
 }
 
 type WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy_InstanceSelectionResults struct {
 	MachineType any
-	VmCount any
+	VmCount     any
 }
 
 type WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy_ProvisioningModelMix struct {
-	StandardCapacityBase any
+	StandardCapacityBase             any
 	StandardCapacityPercentAboveBase any
 }
 
 type WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy struct {
-	InstanceMachineTypes any
-	InstanceSelectionList any
+	InstanceMachineTypes     any
+	InstanceSelectionList    any
 	InstanceSelectionResults any
-	ProvisioningModelMix any
+	ProvisioningModelMix     any
 }
 
 type WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceReferences struct {
-	InstanceId any
-	InstanceName any
+	InstanceId     any
+	InstanceName   any
 	PublicEciesKey any
-	PublicKey any
+	PublicKey      any
 }
 
 type WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_ManagedGroupConfig struct {
 	InstanceGroupManagerName any
-	InstanceGroupManagerUri any
-	InstanceTemplateName any
+	InstanceGroupManagerUri  any
+	InstanceTemplateName     any
 }
 
 type WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_StartupConfig struct {
@@ -212,37 +212,37 @@ type WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGr
 }
 
 type WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig struct {
-	Accelerators any
-	DiskConfig any
-	ImageUri any
+	Accelerators              any
+	DiskConfig                any
+	ImageUri                  any
 	InstanceFlexibilityPolicy any
-	InstanceNames any
-	InstanceReferences any
-	IsPreemptible any
-	MachineTypeUri any
-	ManagedGroupConfig any
-	MinCpuPlatform any
-	MinNumInstances any
-	NumInstances any
-	Preemptibility any
-	StartupConfig any
+	InstanceNames             any
+	InstanceReferences        any
+	IsPreemptible             any
+	MachineTypeUri            any
+	ManagedGroupConfig        any
+	MinCpuPlatform            any
+	MinNumInstances           any
+	NumInstances              any
+	Preemptibility            any
+	StartupConfig             any
 }
 
 type WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup struct {
-	Labels any
-	Name any
+	Labels          any
+	Name            any
 	NodeGroupConfig any
-	Roles any
+	Roles           any
 }
 
 type WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups struct {
-	NodeGroup any
+	NodeGroup   any
 	NodeGroupId any
 }
 
 type WorkflowTemplate_Placement_ManagedCluster_Config_DataprocMetricConfig_Metrics struct {
 	MetricOverrides any
-	MetricSource any
+	MetricSource    any
 }
 
 type WorkflowTemplate_Placement_ManagedCluster_Config_DataprocMetricConfig struct {
@@ -341,31 +341,31 @@ type WorkflowTemplate_Placement_ManagedCluster_Config_GkeClusterConfig_NodePoolT
 
 type WorkflowTemplate_Placement_ManagedCluster_Config_GkeClusterConfig_NodePoolTarget_NodePoolConfig_Config_Accelerators struct {
 	AcceleratorCount any
-	AcceleratorType any
+	AcceleratorType  any
 	GpuPartitionSize any
 }
 
 type WorkflowTemplate_Placement_ManagedCluster_Config_GkeClusterConfig_NodePoolTarget_NodePoolConfig_Config struct {
-	Accelerators any
+	Accelerators   any
 	BootDiskKmsKey any
-	LocalSsdCount any
-	MachineType any
+	LocalSsdCount  any
+	MachineType    any
 	MinCpuPlatform any
-	Preemptible any
+	Preemptible    any
 	ServiceAccount any
-	Spot any
+	Spot           any
 }
 
 type WorkflowTemplate_Placement_ManagedCluster_Config_GkeClusterConfig_NodePoolTarget_NodePoolConfig struct {
 	Autoscaling any
-	Config any
-	Locations any
+	Config      any
+	Locations   any
 }
 
 type WorkflowTemplate_Placement_ManagedCluster_Config_GkeClusterConfig_NodePoolTarget struct {
-	NodePool any
+	NodePool       any
 	NodePoolConfig any
-	Roles any
+	Roles          any
 }
 
 type WorkflowTemplate_Placement_ManagedCluster_Config_GkeClusterConfig struct {
@@ -378,7 +378,7 @@ type WorkflowTemplate_Placement_ManagedCluster_Config_GkeClusterConfig struct {
 }
 
 type WorkflowTemplate_Placement_ManagedCluster_Config_InitializationActions struct {
-	ExecutableFile any
+	ExecutableFile   any
 	ExecutionTimeout any
 }
 
@@ -522,725 +522,719 @@ type WorkflowTemplate_Placement struct {
 }
 
 var WorkflowTemplate_EncryptionConfigFields = ubx.FieldMap{
-		"KmsKey": ubx.FieldSpec{WireName: "kms_key"},
-	}
+	"KmsKey": ubx.FieldSpec{WireName: "kms_key"},
+}
 
 var WorkflowTemplate_Jobs_FlinkJob_LoggingConfigFields = ubx.FieldMap{
-		"DriverLogLevels": ubx.FieldSpec{WireName: "driver_log_levels"},
-	}
+	"DriverLogLevels": ubx.FieldSpec{WireName: "driver_log_levels"},
+}
 
 var WorkflowTemplate_Jobs_FlinkJobFields = ubx.FieldMap{
-		"Args": ubx.FieldSpec{WireName: "args"},
-		"JarFileUris": ubx.FieldSpec{WireName: "jar_file_uris"},
-		"LoggingConfig": ubx.FieldSpec{
-			WireName: "logging_config",
-			Kind: "object",
-			Fields: WorkflowTemplate_Jobs_FlinkJob_LoggingConfigFields,
-		},
-		"MainClass": ubx.FieldSpec{WireName: "main_class"},
-		"MainJarFileUri": ubx.FieldSpec{WireName: "main_jar_file_uri"},
-		"Properties": ubx.FieldSpec{WireName: "properties"},
-		"SavepointUri": ubx.FieldSpec{WireName: "savepoint_uri"},
-	}
+	"Args":        ubx.FieldSpec{WireName: "args"},
+	"JarFileUris": ubx.FieldSpec{WireName: "jar_file_uris"},
+	"LoggingConfig": ubx.FieldSpec{
+		WireName: "logging_config",
+		Kind:     "object",
+		Fields:   WorkflowTemplate_Jobs_FlinkJob_LoggingConfigFields,
+	},
+	"MainClass":      ubx.FieldSpec{WireName: "main_class"},
+	"MainJarFileUri": ubx.FieldSpec{WireName: "main_jar_file_uri"},
+	"Properties":     ubx.FieldSpec{WireName: "properties"},
+	"SavepointUri":   ubx.FieldSpec{WireName: "savepoint_uri"},
+}
 
 var WorkflowTemplate_Jobs_HadoopJobFields = ubx.FieldMap{
-		"ArchiveUris": ubx.FieldSpec{WireName: "archive_uris"},
-		"Args": ubx.FieldSpec{WireName: "args"},
-		"FileUris": ubx.FieldSpec{WireName: "file_uris"},
-		"JarFileUris": ubx.FieldSpec{WireName: "jar_file_uris"},
-		"LoggingConfig": ubx.FieldSpec{
-			WireName: "logging_config",
-			Kind: "object",
-			Fields: WorkflowTemplate_Jobs_FlinkJob_LoggingConfigFields,
-		},
-		"MainClass": ubx.FieldSpec{WireName: "main_class"},
-		"MainJarFileUri": ubx.FieldSpec{WireName: "main_jar_file_uri"},
-		"Properties": ubx.FieldSpec{WireName: "properties"},
-	}
+	"ArchiveUris": ubx.FieldSpec{WireName: "archive_uris"},
+	"Args":        ubx.FieldSpec{WireName: "args"},
+	"FileUris":    ubx.FieldSpec{WireName: "file_uris"},
+	"JarFileUris": ubx.FieldSpec{WireName: "jar_file_uris"},
+	"LoggingConfig": ubx.FieldSpec{
+		WireName: "logging_config",
+		Kind:     "object",
+		Fields:   WorkflowTemplate_Jobs_FlinkJob_LoggingConfigFields,
+	},
+	"MainClass":      ubx.FieldSpec{WireName: "main_class"},
+	"MainJarFileUri": ubx.FieldSpec{WireName: "main_jar_file_uri"},
+	"Properties":     ubx.FieldSpec{WireName: "properties"},
+}
 
 var WorkflowTemplate_Jobs_HiveJob_QueryListFields = ubx.FieldMap{
-		"Queries": ubx.FieldSpec{WireName: "queries"},
-	}
+	"Queries": ubx.FieldSpec{WireName: "queries"},
+}
 
 var WorkflowTemplate_Jobs_HiveJobFields = ubx.FieldMap{
-		"ContinueOnFailure": ubx.FieldSpec{WireName: "continue_on_failure"},
-		"JarFileUris": ubx.FieldSpec{WireName: "jar_file_uris"},
-		"Properties": ubx.FieldSpec{WireName: "properties"},
-		"QueryFileUri": ubx.FieldSpec{WireName: "query_file_uri"},
-		"QueryList": ubx.FieldSpec{
-			WireName: "query_list",
-			Kind: "object",
-			Fields: WorkflowTemplate_Jobs_HiveJob_QueryListFields,
-		},
-		"ScriptVariables": ubx.FieldSpec{WireName: "script_variables"},
-	}
+	"ContinueOnFailure": ubx.FieldSpec{WireName: "continue_on_failure"},
+	"JarFileUris":       ubx.FieldSpec{WireName: "jar_file_uris"},
+	"Properties":        ubx.FieldSpec{WireName: "properties"},
+	"QueryFileUri":      ubx.FieldSpec{WireName: "query_file_uri"},
+	"QueryList": ubx.FieldSpec{
+		WireName: "query_list",
+		Kind:     "object",
+		Fields:   WorkflowTemplate_Jobs_HiveJob_QueryListFields,
+	},
+	"ScriptVariables": ubx.FieldSpec{WireName: "script_variables"},
+}
 
 var WorkflowTemplate_Jobs_PigJobFields = ubx.FieldMap{
-		"ContinueOnFailure": ubx.FieldSpec{WireName: "continue_on_failure"},
-		"JarFileUris": ubx.FieldSpec{WireName: "jar_file_uris"},
-		"LoggingConfig": ubx.FieldSpec{
-			WireName: "logging_config",
-			Kind: "object",
-			Fields: WorkflowTemplate_Jobs_FlinkJob_LoggingConfigFields,
-		},
-		"Properties": ubx.FieldSpec{WireName: "properties"},
-		"QueryFileUri": ubx.FieldSpec{WireName: "query_file_uri"},
-		"QueryList": ubx.FieldSpec{
-			WireName: "query_list",
-			Kind: "object",
-			Fields: WorkflowTemplate_Jobs_HiveJob_QueryListFields,
-		},
-		"ScriptVariables": ubx.FieldSpec{WireName: "script_variables"},
-	}
+	"ContinueOnFailure": ubx.FieldSpec{WireName: "continue_on_failure"},
+	"JarFileUris":       ubx.FieldSpec{WireName: "jar_file_uris"},
+	"LoggingConfig": ubx.FieldSpec{
+		WireName: "logging_config",
+		Kind:     "object",
+		Fields:   WorkflowTemplate_Jobs_FlinkJob_LoggingConfigFields,
+	},
+	"Properties":   ubx.FieldSpec{WireName: "properties"},
+	"QueryFileUri": ubx.FieldSpec{WireName: "query_file_uri"},
+	"QueryList": ubx.FieldSpec{
+		WireName: "query_list",
+		Kind:     "object",
+		Fields:   WorkflowTemplate_Jobs_HiveJob_QueryListFields,
+	},
+	"ScriptVariables": ubx.FieldSpec{WireName: "script_variables"},
+}
 
 var WorkflowTemplate_Jobs_PrestoJobFields = ubx.FieldMap{
-		"ClientTags": ubx.FieldSpec{WireName: "client_tags"},
-		"ContinueOnFailure": ubx.FieldSpec{WireName: "continue_on_failure"},
-		"LoggingConfig": ubx.FieldSpec{
-			WireName: "logging_config",
-			Kind: "object",
-			Fields: WorkflowTemplate_Jobs_FlinkJob_LoggingConfigFields,
-		},
-		"OutputFormat": ubx.FieldSpec{WireName: "output_format"},
-		"Properties": ubx.FieldSpec{WireName: "properties"},
-		"QueryFileUri": ubx.FieldSpec{WireName: "query_file_uri"},
-		"QueryList": ubx.FieldSpec{
-			WireName: "query_list",
-			Kind: "object",
-			Fields: WorkflowTemplate_Jobs_HiveJob_QueryListFields,
-		},
-	}
+	"ClientTags":        ubx.FieldSpec{WireName: "client_tags"},
+	"ContinueOnFailure": ubx.FieldSpec{WireName: "continue_on_failure"},
+	"LoggingConfig": ubx.FieldSpec{
+		WireName: "logging_config",
+		Kind:     "object",
+		Fields:   WorkflowTemplate_Jobs_FlinkJob_LoggingConfigFields,
+	},
+	"OutputFormat": ubx.FieldSpec{WireName: "output_format"},
+	"Properties":   ubx.FieldSpec{WireName: "properties"},
+	"QueryFileUri": ubx.FieldSpec{WireName: "query_file_uri"},
+	"QueryList": ubx.FieldSpec{
+		WireName: "query_list",
+		Kind:     "object",
+		Fields:   WorkflowTemplate_Jobs_HiveJob_QueryListFields,
+	},
+}
 
 var WorkflowTemplate_Jobs_PysparkJobFields = ubx.FieldMap{
-		"ArchiveUris": ubx.FieldSpec{WireName: "archive_uris"},
-		"Args": ubx.FieldSpec{WireName: "args"},
-		"FileUris": ubx.FieldSpec{WireName: "file_uris"},
-		"JarFileUris": ubx.FieldSpec{WireName: "jar_file_uris"},
-		"LoggingConfig": ubx.FieldSpec{
-			WireName: "logging_config",
-			Kind: "object",
-			Fields: WorkflowTemplate_Jobs_FlinkJob_LoggingConfigFields,
-		},
-		"MainPythonFileUri": ubx.FieldSpec{WireName: "main_python_file_uri"},
-		"Properties": ubx.FieldSpec{WireName: "properties"},
-		"PythonFileUris": ubx.FieldSpec{WireName: "python_file_uris"},
-	}
+	"ArchiveUris": ubx.FieldSpec{WireName: "archive_uris"},
+	"Args":        ubx.FieldSpec{WireName: "args"},
+	"FileUris":    ubx.FieldSpec{WireName: "file_uris"},
+	"JarFileUris": ubx.FieldSpec{WireName: "jar_file_uris"},
+	"LoggingConfig": ubx.FieldSpec{
+		WireName: "logging_config",
+		Kind:     "object",
+		Fields:   WorkflowTemplate_Jobs_FlinkJob_LoggingConfigFields,
+	},
+	"MainPythonFileUri": ubx.FieldSpec{WireName: "main_python_file_uri"},
+	"Properties":        ubx.FieldSpec{WireName: "properties"},
+	"PythonFileUris":    ubx.FieldSpec{WireName: "python_file_uris"},
+}
 
 var WorkflowTemplate_Jobs_SchedulingFields = ubx.FieldMap{
-		"MaxFailuresPerHour": ubx.FieldSpec{WireName: "max_failures_per_hour"},
-		"MaxFailuresTotal": ubx.FieldSpec{WireName: "max_failures_total"},
-	}
+	"MaxFailuresPerHour": ubx.FieldSpec{WireName: "max_failures_per_hour"},
+	"MaxFailuresTotal":   ubx.FieldSpec{WireName: "max_failures_total"},
+}
 
 var WorkflowTemplate_Jobs_SparkRjobFields = ubx.FieldMap{
-		"ArchiveUris": ubx.FieldSpec{WireName: "archive_uris"},
-		"Args": ubx.FieldSpec{WireName: "args"},
-		"FileUris": ubx.FieldSpec{WireName: "file_uris"},
-		"LoggingConfig": ubx.FieldSpec{
-			WireName: "logging_config",
-			Kind: "object",
-			Fields: WorkflowTemplate_Jobs_FlinkJob_LoggingConfigFields,
-		},
-		"MainRfileUri": ubx.FieldSpec{WireName: "main_rfile_uri"},
-		"Properties": ubx.FieldSpec{WireName: "properties"},
-	}
+	"ArchiveUris": ubx.FieldSpec{WireName: "archive_uris"},
+	"Args":        ubx.FieldSpec{WireName: "args"},
+	"FileUris":    ubx.FieldSpec{WireName: "file_uris"},
+	"LoggingConfig": ubx.FieldSpec{
+		WireName: "logging_config",
+		Kind:     "object",
+		Fields:   WorkflowTemplate_Jobs_FlinkJob_LoggingConfigFields,
+	},
+	"MainRfileUri": ubx.FieldSpec{WireName: "main_rfile_uri"},
+	"Properties":   ubx.FieldSpec{WireName: "properties"},
+}
 
 var WorkflowTemplate_Jobs_SparkSqlJobFields = ubx.FieldMap{
-		"JarFileUris": ubx.FieldSpec{WireName: "jar_file_uris"},
-		"LoggingConfig": ubx.FieldSpec{
-			WireName: "logging_config",
-			Kind: "object",
-			Fields: WorkflowTemplate_Jobs_FlinkJob_LoggingConfigFields,
-		},
-		"Properties": ubx.FieldSpec{WireName: "properties"},
-		"QueryFileUri": ubx.FieldSpec{WireName: "query_file_uri"},
-		"QueryList": ubx.FieldSpec{
-			WireName: "query_list",
-			Kind: "object",
-			Fields: WorkflowTemplate_Jobs_HiveJob_QueryListFields,
-		},
-		"ScriptVariables": ubx.FieldSpec{WireName: "script_variables"},
-	}
+	"JarFileUris": ubx.FieldSpec{WireName: "jar_file_uris"},
+	"LoggingConfig": ubx.FieldSpec{
+		WireName: "logging_config",
+		Kind:     "object",
+		Fields:   WorkflowTemplate_Jobs_FlinkJob_LoggingConfigFields,
+	},
+	"Properties":   ubx.FieldSpec{WireName: "properties"},
+	"QueryFileUri": ubx.FieldSpec{WireName: "query_file_uri"},
+	"QueryList": ubx.FieldSpec{
+		WireName: "query_list",
+		Kind:     "object",
+		Fields:   WorkflowTemplate_Jobs_HiveJob_QueryListFields,
+	},
+	"ScriptVariables": ubx.FieldSpec{WireName: "script_variables"},
+}
 
 var WorkflowTemplate_JobsFields = ubx.FieldMap{
-		"FlinkJob": ubx.FieldSpec{
-			WireName: "flink_job",
-			Kind: "object",
-			Fields: WorkflowTemplate_Jobs_FlinkJobFields,
-		},
-		"HadoopJob": ubx.FieldSpec{
-			WireName: "hadoop_job",
-			Kind: "object",
-			Fields: WorkflowTemplate_Jobs_HadoopJobFields,
-		},
-		"HiveJob": ubx.FieldSpec{
-			WireName: "hive_job",
-			Kind: "object",
-			Fields: WorkflowTemplate_Jobs_HiveJobFields,
-		},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"PigJob": ubx.FieldSpec{
-			WireName: "pig_job",
-			Kind: "object",
-			Fields: WorkflowTemplate_Jobs_PigJobFields,
-		},
-		"PrerequisiteStepIds": ubx.FieldSpec{WireName: "prerequisite_step_ids"},
-		"PrestoJob": ubx.FieldSpec{
-			WireName: "presto_job",
-			Kind: "object",
-			Fields: WorkflowTemplate_Jobs_PrestoJobFields,
-		},
-		"PysparkJob": ubx.FieldSpec{
-			WireName: "pyspark_job",
-			Kind: "object",
-			Fields: WorkflowTemplate_Jobs_PysparkJobFields,
-		},
-		"Scheduling": ubx.FieldSpec{
-			WireName: "scheduling",
-			Kind: "object",
-			Fields: WorkflowTemplate_Jobs_SchedulingFields,
-		},
-		"SparkJob": ubx.FieldSpec{
-			WireName: "spark_job",
-			Kind: "object",
-			Fields: WorkflowTemplate_Jobs_HadoopJobFields,
-		},
-		"SparkRjob": ubx.FieldSpec{
-			WireName: "spark_rjob",
-			Kind: "object",
-			Fields: WorkflowTemplate_Jobs_SparkRjobFields,
-		},
-		"SparkSqlJob": ubx.FieldSpec{
-			WireName: "spark_sql_job",
-			Kind: "object",
-			Fields: WorkflowTemplate_Jobs_SparkSqlJobFields,
-		},
-		"StepId": ubx.FieldSpec{WireName: "step_id"},
-		"TrinoJob": ubx.FieldSpec{
-			WireName: "trino_job",
-			Kind: "object",
-			Fields: WorkflowTemplate_Jobs_PrestoJobFields,
-		},
-	}
+	"FlinkJob": ubx.FieldSpec{
+		WireName: "flink_job",
+		Kind:     "object",
+		Fields:   WorkflowTemplate_Jobs_FlinkJobFields,
+	},
+	"HadoopJob": ubx.FieldSpec{
+		WireName: "hadoop_job",
+		Kind:     "object",
+		Fields:   WorkflowTemplate_Jobs_HadoopJobFields,
+	},
+	"HiveJob": ubx.FieldSpec{
+		WireName: "hive_job",
+		Kind:     "object",
+		Fields:   WorkflowTemplate_Jobs_HiveJobFields,
+	},
+	"Labels": ubx.FieldSpec{WireName: "labels"},
+	"PigJob": ubx.FieldSpec{
+		WireName: "pig_job",
+		Kind:     "object",
+		Fields:   WorkflowTemplate_Jobs_PigJobFields,
+	},
+	"PrerequisiteStepIds": ubx.FieldSpec{WireName: "prerequisite_step_ids"},
+	"PrestoJob": ubx.FieldSpec{
+		WireName: "presto_job",
+		Kind:     "object",
+		Fields:   WorkflowTemplate_Jobs_PrestoJobFields,
+	},
+	"PysparkJob": ubx.FieldSpec{
+		WireName: "pyspark_job",
+		Kind:     "object",
+		Fields:   WorkflowTemplate_Jobs_PysparkJobFields,
+	},
+	"Scheduling": ubx.FieldSpec{
+		WireName: "scheduling",
+		Kind:     "object",
+		Fields:   WorkflowTemplate_Jobs_SchedulingFields,
+	},
+	"SparkJob": ubx.FieldSpec{
+		WireName: "spark_job",
+		Kind:     "object",
+		Fields:   WorkflowTemplate_Jobs_HadoopJobFields,
+	},
+	"SparkRjob": ubx.FieldSpec{
+		WireName: "spark_rjob",
+		Kind:     "object",
+		Fields:   WorkflowTemplate_Jobs_SparkRjobFields,
+	},
+	"SparkSqlJob": ubx.FieldSpec{
+		WireName: "spark_sql_job",
+		Kind:     "object",
+		Fields:   WorkflowTemplate_Jobs_SparkSqlJobFields,
+	},
+	"StepId": ubx.FieldSpec{WireName: "step_id"},
+	"TrinoJob": ubx.FieldSpec{
+		WireName: "trino_job",
+		Kind:     "object",
+		Fields:   WorkflowTemplate_Jobs_PrestoJobFields,
+	},
+}
 
 var WorkflowTemplate_Parameters_Validation_RegexFields = ubx.FieldMap{
-		"Regexes": ubx.FieldSpec{WireName: "regexes"},
-	}
+	"Regexes": ubx.FieldSpec{WireName: "regexes"},
+}
 
 var WorkflowTemplate_Parameters_Validation_ValuesFields = ubx.FieldMap{
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 var WorkflowTemplate_Parameters_ValidationFields = ubx.FieldMap{
-		"Regex": ubx.FieldSpec{
-			WireName: "regex",
-			Kind: "object",
-			Fields: WorkflowTemplate_Parameters_Validation_RegexFields,
-		},
-		"Values": ubx.FieldSpec{
-			WireName: "values",
-			Kind: "object",
-			Fields: WorkflowTemplate_Parameters_Validation_ValuesFields,
-		},
-	}
+	"Regex": ubx.FieldSpec{
+		WireName: "regex",
+		Kind:     "object",
+		Fields:   WorkflowTemplate_Parameters_Validation_RegexFields,
+	},
+	"Values": ubx.FieldSpec{
+		WireName: "values",
+		Kind:     "object",
+		Fields:   WorkflowTemplate_Parameters_Validation_ValuesFields,
+	},
+}
 
 var WorkflowTemplate_ParametersFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Fields": ubx.FieldSpec{WireName: "fields"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Validation": ubx.FieldSpec{
-			WireName: "validation",
-			Kind: "object",
-			Fields: WorkflowTemplate_Parameters_ValidationFields,
-		},
-	}
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"Fields":      ubx.FieldSpec{WireName: "fields"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"Validation": ubx.FieldSpec{
+		WireName: "validation",
+		Kind:     "object",
+		Fields:   WorkflowTemplate_Parameters_ValidationFields,
+	},
+}
 
 var WorkflowTemplate_Placement_ClusterSelectorFields = ubx.FieldMap{
-		"ClusterLabels": ubx.FieldSpec{WireName: "cluster_labels"},
-		"Zone": ubx.FieldSpec{WireName: "zone"},
-	}
+	"ClusterLabels": ubx.FieldSpec{WireName: "cluster_labels"},
+	"Zone":          ubx.FieldSpec{WireName: "zone"},
+}
 
 var WorkflowTemplate_Placement_ManagedCluster_Config_AutoscalingConfigFields = ubx.FieldMap{
-		"PolicyUri": ubx.FieldSpec{WireName: "policy_uri"},
-	}
+	"PolicyUri": ubx.FieldSpec{WireName: "policy_uri"},
+}
 
 var WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_AcceleratorsFields = ubx.FieldMap{
-		"AcceleratorCount": ubx.FieldSpec{WireName: "accelerator_count"},
-		"AcceleratorTypeUri": ubx.FieldSpec{WireName: "accelerator_type_uri"},
-	}
+	"AcceleratorCount":   ubx.FieldSpec{WireName: "accelerator_count"},
+	"AcceleratorTypeUri": ubx.FieldSpec{WireName: "accelerator_type_uri"},
+}
 
 var WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_DiskConfig_AttachedDiskConfigsFields = ubx.FieldMap{
-		"DiskSizeGb": ubx.FieldSpec{WireName: "disk_size_gb"},
-		"DiskType": ubx.FieldSpec{WireName: "disk_type"},
-		"ProvisionedIops": ubx.FieldSpec{WireName: "provisioned_iops"},
-		"ProvisionedThroughput": ubx.FieldSpec{WireName: "provisioned_throughput"},
-	}
+	"DiskSizeGb":            ubx.FieldSpec{WireName: "disk_size_gb"},
+	"DiskType":              ubx.FieldSpec{WireName: "disk_type"},
+	"ProvisionedIops":       ubx.FieldSpec{WireName: "provisioned_iops"},
+	"ProvisionedThroughput": ubx.FieldSpec{WireName: "provisioned_throughput"},
+}
 
 var WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_DiskConfigFields = ubx.FieldMap{
-		"AttachedDiskConfigs": ubx.FieldSpec{
-			WireName: "attached_disk_configs",
-			Kind: "list",
-			Fields: WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_DiskConfig_AttachedDiskConfigsFields,
-		},
-		"BootDiskProvisionedIops": ubx.FieldSpec{WireName: "boot_disk_provisioned_iops"},
-		"BootDiskProvisionedThroughput": ubx.FieldSpec{WireName: "boot_disk_provisioned_throughput"},
-		"BootDiskSizeGb": ubx.FieldSpec{WireName: "boot_disk_size_gb"},
-		"BootDiskType": ubx.FieldSpec{WireName: "boot_disk_type"},
-		"LocalSsdInterface": ubx.FieldSpec{WireName: "local_ssd_interface"},
-		"NumLocalSsds": ubx.FieldSpec{WireName: "num_local_ssds"},
-	}
+	"AttachedDiskConfigs": ubx.FieldSpec{
+		WireName: "attached_disk_configs",
+		Kind:     "list",
+		Fields:   WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_DiskConfig_AttachedDiskConfigsFields,
+	},
+	"BootDiskProvisionedIops":       ubx.FieldSpec{WireName: "boot_disk_provisioned_iops"},
+	"BootDiskProvisionedThroughput": ubx.FieldSpec{WireName: "boot_disk_provisioned_throughput"},
+	"BootDiskSizeGb":                ubx.FieldSpec{WireName: "boot_disk_size_gb"},
+	"BootDiskType":                  ubx.FieldSpec{WireName: "boot_disk_type"},
+	"LocalSsdInterface":             ubx.FieldSpec{WireName: "local_ssd_interface"},
+	"NumLocalSsds":                  ubx.FieldSpec{WireName: "num_local_ssds"},
+}
 
 var WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy_InstanceSelectionListFields = ubx.FieldMap{
-		"DiskConfig": ubx.FieldSpec{
-			WireName: "disk_config",
-			Kind: "object",
-			Fields: WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_DiskConfigFields,
-		},
-		"MachineTypes": ubx.FieldSpec{WireName: "machine_types"},
-		"Rank": ubx.FieldSpec{WireName: "rank"},
-	}
+	"DiskConfig": ubx.FieldSpec{
+		WireName: "disk_config",
+		Kind:     "object",
+		Fields:   WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_DiskConfigFields,
+	},
+	"MachineTypes": ubx.FieldSpec{WireName: "machine_types"},
+	"Rank":         ubx.FieldSpec{WireName: "rank"},
+}
 
 var WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy_InstanceSelectionResultsFields = ubx.FieldMap{
-		"MachineType": ubx.FieldSpec{WireName: "machine_type"},
-		"VmCount": ubx.FieldSpec{WireName: "vm_count"},
-	}
+	"MachineType": ubx.FieldSpec{WireName: "machine_type"},
+	"VmCount":     ubx.FieldSpec{WireName: "vm_count"},
+}
 
 var WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy_ProvisioningModelMixFields = ubx.FieldMap{
-		"StandardCapacityBase": ubx.FieldSpec{WireName: "standard_capacity_base"},
-		"StandardCapacityPercentAboveBase": ubx.FieldSpec{WireName: "standard_capacity_percent_above_base"},
-	}
+	"StandardCapacityBase":             ubx.FieldSpec{WireName: "standard_capacity_base"},
+	"StandardCapacityPercentAboveBase": ubx.FieldSpec{WireName: "standard_capacity_percent_above_base"},
+}
 
 var WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicyFields = ubx.FieldMap{
-		"InstanceMachineTypes": ubx.FieldSpec{WireName: "instance_machine_types"},
-		"InstanceSelectionList": ubx.FieldSpec{
-			WireName: "instance_selection_list",
-			Kind: "list",
-			Fields: WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy_InstanceSelectionListFields,
-		},
-		"InstanceSelectionResults": ubx.FieldSpec{
-			WireName: "instance_selection_results",
-			Kind: "list",
-			Fields: WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy_InstanceSelectionResultsFields,
-		},
-		"ProvisioningModelMix": ubx.FieldSpec{
-			WireName: "provisioning_model_mix",
-			Kind: "object",
-			Fields: WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy_ProvisioningModelMixFields,
-		},
-	}
+	"InstanceMachineTypes": ubx.FieldSpec{WireName: "instance_machine_types"},
+	"InstanceSelectionList": ubx.FieldSpec{
+		WireName: "instance_selection_list",
+		Kind:     "list",
+		Fields:   WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy_InstanceSelectionListFields,
+	},
+	"InstanceSelectionResults": ubx.FieldSpec{
+		WireName: "instance_selection_results",
+		Kind:     "list",
+		Fields:   WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy_InstanceSelectionResultsFields,
+	},
+	"ProvisioningModelMix": ubx.FieldSpec{
+		WireName: "provisioning_model_mix",
+		Kind:     "object",
+		Fields:   WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicy_ProvisioningModelMixFields,
+	},
+}
 
 var WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceReferencesFields = ubx.FieldMap{
-		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
-		"InstanceName": ubx.FieldSpec{WireName: "instance_name"},
-		"PublicEciesKey": ubx.FieldSpec{WireName: "public_ecies_key"},
-		"PublicKey": ubx.FieldSpec{WireName: "public_key"},
-	}
+	"InstanceId":     ubx.FieldSpec{WireName: "instance_id"},
+	"InstanceName":   ubx.FieldSpec{WireName: "instance_name"},
+	"PublicEciesKey": ubx.FieldSpec{WireName: "public_ecies_key"},
+	"PublicKey":      ubx.FieldSpec{WireName: "public_key"},
+}
 
 var WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_ManagedGroupConfigFields = ubx.FieldMap{
-		"InstanceGroupManagerName": ubx.FieldSpec{WireName: "instance_group_manager_name"},
-		"InstanceGroupManagerUri": ubx.FieldSpec{WireName: "instance_group_manager_uri"},
-		"InstanceTemplateName": ubx.FieldSpec{WireName: "instance_template_name"},
-	}
+	"InstanceGroupManagerName": ubx.FieldSpec{WireName: "instance_group_manager_name"},
+	"InstanceGroupManagerUri":  ubx.FieldSpec{WireName: "instance_group_manager_uri"},
+	"InstanceTemplateName":     ubx.FieldSpec{WireName: "instance_template_name"},
+}
 
 var WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_StartupConfigFields = ubx.FieldMap{
-		"RequiredRegistrationFraction": ubx.FieldSpec{WireName: "required_registration_fraction"},
-	}
+	"RequiredRegistrationFraction": ubx.FieldSpec{WireName: "required_registration_fraction"},
+}
 
 var WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfigFields = ubx.FieldMap{
-		"Accelerators": ubx.FieldSpec{
-			WireName: "accelerators",
-			Kind: "list",
-			Fields: WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_AcceleratorsFields,
-		},
-		"DiskConfig": ubx.FieldSpec{
-			WireName: "disk_config",
-			Kind: "object",
-			Fields: WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_DiskConfigFields,
-		},
-		"ImageUri": ubx.FieldSpec{WireName: "image_uri"},
-		"InstanceFlexibilityPolicy": ubx.FieldSpec{
-			WireName: "instance_flexibility_policy",
-			Kind: "object",
-			Fields: WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicyFields,
-		},
-		"InstanceNames": ubx.FieldSpec{WireName: "instance_names"},
-		"InstanceReferences": ubx.FieldSpec{
-			WireName: "instance_references",
-			Kind: "list",
-			Fields: WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceReferencesFields,
-		},
-		"IsPreemptible": ubx.FieldSpec{WireName: "is_preemptible"},
-		"MachineTypeUri": ubx.FieldSpec{WireName: "machine_type_uri"},
-		"ManagedGroupConfig": ubx.FieldSpec{
-			WireName: "managed_group_config",
-			Kind: "object",
-			Fields: WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_ManagedGroupConfigFields,
-		},
-		"MinCpuPlatform": ubx.FieldSpec{WireName: "min_cpu_platform"},
-		"MinNumInstances": ubx.FieldSpec{WireName: "min_num_instances"},
-		"NumInstances": ubx.FieldSpec{WireName: "num_instances"},
-		"Preemptibility": ubx.FieldSpec{WireName: "preemptibility"},
-		"StartupConfig": ubx.FieldSpec{
-			WireName: "startup_config",
-			Kind: "object",
-			Fields: WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_StartupConfigFields,
-		},
-	}
+	"Accelerators": ubx.FieldSpec{
+		WireName: "accelerators",
+		Kind:     "list",
+		Fields:   WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_AcceleratorsFields,
+	},
+	"DiskConfig": ubx.FieldSpec{
+		WireName: "disk_config",
+		Kind:     "object",
+		Fields:   WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_DiskConfigFields,
+	},
+	"ImageUri": ubx.FieldSpec{WireName: "image_uri"},
+	"InstanceFlexibilityPolicy": ubx.FieldSpec{
+		WireName: "instance_flexibility_policy",
+		Kind:     "object",
+		Fields:   WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceFlexibilityPolicyFields,
+	},
+	"InstanceNames": ubx.FieldSpec{WireName: "instance_names"},
+	"InstanceReferences": ubx.FieldSpec{
+		WireName: "instance_references",
+		Kind:     "list",
+		Fields:   WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_InstanceReferencesFields,
+	},
+	"IsPreemptible":  ubx.FieldSpec{WireName: "is_preemptible"},
+	"MachineTypeUri": ubx.FieldSpec{WireName: "machine_type_uri"},
+	"ManagedGroupConfig": ubx.FieldSpec{
+		WireName: "managed_group_config",
+		Kind:     "object",
+		Fields:   WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_ManagedGroupConfigFields,
+	},
+	"MinCpuPlatform":  ubx.FieldSpec{WireName: "min_cpu_platform"},
+	"MinNumInstances": ubx.FieldSpec{WireName: "min_num_instances"},
+	"NumInstances":    ubx.FieldSpec{WireName: "num_instances"},
+	"Preemptibility":  ubx.FieldSpec{WireName: "preemptibility"},
+	"StartupConfig": ubx.FieldSpec{
+		WireName: "startup_config",
+		Kind:     "object",
+		Fields:   WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfig_StartupConfigFields,
+	},
+}
 
 var WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroupFields = ubx.FieldMap{
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NodeGroupConfig": ubx.FieldSpec{
-			WireName: "node_group_config",
-			Kind: "object",
-			Fields: WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfigFields,
-		},
-		"Roles": ubx.FieldSpec{WireName: "roles"},
-	}
+	"Labels": ubx.FieldSpec{WireName: "labels"},
+	"Name":   ubx.FieldSpec{WireName: "name"},
+	"NodeGroupConfig": ubx.FieldSpec{
+		WireName: "node_group_config",
+		Kind:     "object",
+		Fields:   WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfigFields,
+	},
+	"Roles": ubx.FieldSpec{WireName: "roles"},
+}
 
 var WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroupsFields = ubx.FieldMap{
-		"NodeGroup": ubx.FieldSpec{
-			WireName: "node_group",
-			Kind: "object",
-			Fields: WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroupFields,
-		},
-		"NodeGroupId": ubx.FieldSpec{WireName: "node_group_id"},
-	}
+	"NodeGroup": ubx.FieldSpec{
+		WireName: "node_group",
+		Kind:     "object",
+		Fields:   WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroupFields,
+	},
+	"NodeGroupId": ubx.FieldSpec{WireName: "node_group_id"},
+}
 
 var WorkflowTemplate_Placement_ManagedCluster_Config_DataprocMetricConfig_MetricsFields = ubx.FieldMap{
-		"MetricOverrides": ubx.FieldSpec{WireName: "metric_overrides"},
-		"MetricSource": ubx.FieldSpec{WireName: "metric_source"},
-	}
+	"MetricOverrides": ubx.FieldSpec{WireName: "metric_overrides"},
+	"MetricSource":    ubx.FieldSpec{WireName: "metric_source"},
+}
 
 var WorkflowTemplate_Placement_ManagedCluster_Config_DataprocMetricConfigFields = ubx.FieldMap{
-		"Metrics": ubx.FieldSpec{
-			WireName: "metrics",
-			Kind: "list",
-			Fields: WorkflowTemplate_Placement_ManagedCluster_Config_DataprocMetricConfig_MetricsFields,
-		},
-	}
+	"Metrics": ubx.FieldSpec{
+		WireName: "metrics",
+		Kind:     "list",
+		Fields:   WorkflowTemplate_Placement_ManagedCluster_Config_DataprocMetricConfig_MetricsFields,
+	},
+}
 
 var WorkflowTemplate_Placement_ManagedCluster_Config_EncryptionConfigFields = ubx.FieldMap{
-		"GcePdKmsKeyName": ubx.FieldSpec{WireName: "gce_pd_kms_key_name"},
-		"KmsKey": ubx.FieldSpec{WireName: "kms_key"},
-	}
+	"GcePdKmsKeyName": ubx.FieldSpec{WireName: "gce_pd_kms_key_name"},
+	"KmsKey":          ubx.FieldSpec{WireName: "kms_key"},
+}
 
 var WorkflowTemplate_Placement_ManagedCluster_Config_EndpointConfigFields = ubx.FieldMap{
-		"EnableHttpPortAccess": ubx.FieldSpec{WireName: "enable_http_port_access"},
-		"HttpPorts": ubx.FieldSpec{WireName: "http_ports"},
-	}
+	"EnableHttpPortAccess": ubx.FieldSpec{WireName: "enable_http_port_access"},
+	"HttpPorts":            ubx.FieldSpec{WireName: "http_ports"},
+}
 
 var WorkflowTemplate_Placement_ManagedCluster_Config_GceClusterConfig_ConfidentialInstanceConfigFields = ubx.FieldMap{
-		"ConfidentialInstanceType": ubx.FieldSpec{WireName: "confidential_instance_type"},
-		"EnableConfidentialCompute": ubx.FieldSpec{WireName: "enable_confidential_compute"},
-	}
+	"ConfidentialInstanceType":  ubx.FieldSpec{WireName: "confidential_instance_type"},
+	"EnableConfidentialCompute": ubx.FieldSpec{WireName: "enable_confidential_compute"},
+}
 
 var WorkflowTemplate_Placement_ManagedCluster_Config_GceClusterConfig_NodeGroupAffinityFields = ubx.FieldMap{
-		"NodeGroupUri": ubx.FieldSpec{WireName: "node_group_uri"},
-	}
+	"NodeGroupUri": ubx.FieldSpec{WireName: "node_group_uri"},
+}
 
 var WorkflowTemplate_Placement_ManagedCluster_Config_GceClusterConfig_ReservationAffinityFields = ubx.FieldMap{
-		"ConsumeReservationType": ubx.FieldSpec{WireName: "consume_reservation_type"},
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"ConsumeReservationType": ubx.FieldSpec{WireName: "consume_reservation_type"},
+	"Key":                    ubx.FieldSpec{WireName: "key"},
+	"Values":                 ubx.FieldSpec{WireName: "values"},
+}
 
 var WorkflowTemplate_Placement_ManagedCluster_Config_GceClusterConfig_ShieldedInstanceConfigFields = ubx.FieldMap{
-		"EnableIntegrityMonitoring": ubx.FieldSpec{WireName: "enable_integrity_monitoring"},
-		"EnableSecureBoot": ubx.FieldSpec{WireName: "enable_secure_boot"},
-		"EnableVtpm": ubx.FieldSpec{WireName: "enable_vtpm"},
-	}
+	"EnableIntegrityMonitoring": ubx.FieldSpec{WireName: "enable_integrity_monitoring"},
+	"EnableSecureBoot":          ubx.FieldSpec{WireName: "enable_secure_boot"},
+	"EnableVtpm":                ubx.FieldSpec{WireName: "enable_vtpm"},
+}
 
 var WorkflowTemplate_Placement_ManagedCluster_Config_GceClusterConfigFields = ubx.FieldMap{
-		"AutoZoneExcludeZoneUris": ubx.FieldSpec{WireName: "auto_zone_exclude_zone_uris"},
-		"ConfidentialInstanceConfig": ubx.FieldSpec{
-			WireName: "confidential_instance_config",
-			Kind: "object",
-			Fields: WorkflowTemplate_Placement_ManagedCluster_Config_GceClusterConfig_ConfidentialInstanceConfigFields,
-		},
-		"InternalIpOnly": ubx.FieldSpec{WireName: "internal_ip_only"},
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-		"NetworkUri": ubx.FieldSpec{WireName: "network_uri"},
-		"NodeGroupAffinity": ubx.FieldSpec{
-			WireName: "node_group_affinity",
-			Kind: "object",
-			Fields: WorkflowTemplate_Placement_ManagedCluster_Config_GceClusterConfig_NodeGroupAffinityFields,
-		},
-		"PrivateIpv6GoogleAccess": ubx.FieldSpec{WireName: "private_ipv6_google_access"},
-		"ReservationAffinity": ubx.FieldSpec{
-			WireName: "reservation_affinity",
-			Kind: "object",
-			Fields: WorkflowTemplate_Placement_ManagedCluster_Config_GceClusterConfig_ReservationAffinityFields,
-		},
-		"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-		"ServiceAccountScopes": ubx.FieldSpec{WireName: "service_account_scopes"},
-		"ShieldedInstanceConfig": ubx.FieldSpec{
-			WireName: "shielded_instance_config",
-			Kind: "object",
-			Fields: WorkflowTemplate_Placement_ManagedCluster_Config_GceClusterConfig_ShieldedInstanceConfigFields,
-		},
-		"SubnetworkUri": ubx.FieldSpec{WireName: "subnetwork_uri"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"ZoneUri": ubx.FieldSpec{WireName: "zone_uri"},
-	}
+	"AutoZoneExcludeZoneUris": ubx.FieldSpec{WireName: "auto_zone_exclude_zone_uris"},
+	"ConfidentialInstanceConfig": ubx.FieldSpec{
+		WireName: "confidential_instance_config",
+		Kind:     "object",
+		Fields:   WorkflowTemplate_Placement_ManagedCluster_Config_GceClusterConfig_ConfidentialInstanceConfigFields,
+	},
+	"InternalIpOnly": ubx.FieldSpec{WireName: "internal_ip_only"},
+	"Metadata":       ubx.FieldSpec{WireName: "metadata"},
+	"NetworkUri":     ubx.FieldSpec{WireName: "network_uri"},
+	"NodeGroupAffinity": ubx.FieldSpec{
+		WireName: "node_group_affinity",
+		Kind:     "object",
+		Fields:   WorkflowTemplate_Placement_ManagedCluster_Config_GceClusterConfig_NodeGroupAffinityFields,
+	},
+	"PrivateIpv6GoogleAccess": ubx.FieldSpec{WireName: "private_ipv6_google_access"},
+	"ReservationAffinity": ubx.FieldSpec{
+		WireName: "reservation_affinity",
+		Kind:     "object",
+		Fields:   WorkflowTemplate_Placement_ManagedCluster_Config_GceClusterConfig_ReservationAffinityFields,
+	},
+	"ResourceManagerTags":  ubx.FieldSpec{WireName: "resource_manager_tags"},
+	"ServiceAccount":       ubx.FieldSpec{WireName: "service_account"},
+	"ServiceAccountScopes": ubx.FieldSpec{WireName: "service_account_scopes"},
+	"ShieldedInstanceConfig": ubx.FieldSpec{
+		WireName: "shielded_instance_config",
+		Kind:     "object",
+		Fields:   WorkflowTemplate_Placement_ManagedCluster_Config_GceClusterConfig_ShieldedInstanceConfigFields,
+	},
+	"SubnetworkUri": ubx.FieldSpec{WireName: "subnetwork_uri"},
+	"Tags":          ubx.FieldSpec{WireName: "tags"},
+	"ZoneUri":       ubx.FieldSpec{WireName: "zone_uri"},
+}
 
 var WorkflowTemplate_Placement_ManagedCluster_Config_GkeClusterConfig_NamespacedGkeDeploymentTargetFields = ubx.FieldMap{
-		"ClusterNamespace": ubx.FieldSpec{WireName: "cluster_namespace"},
-		"TargetGkeCluster": ubx.FieldSpec{WireName: "target_gke_cluster"},
-	}
+	"ClusterNamespace": ubx.FieldSpec{WireName: "cluster_namespace"},
+	"TargetGkeCluster": ubx.FieldSpec{WireName: "target_gke_cluster"},
+}
 
 var WorkflowTemplate_Placement_ManagedCluster_Config_GkeClusterConfig_NodePoolTarget_NodePoolConfig_AutoscalingFields = ubx.FieldMap{
-		"MaxNodeCount": ubx.FieldSpec{WireName: "max_node_count"},
-		"MinNodeCount": ubx.FieldSpec{WireName: "min_node_count"},
-	}
+	"MaxNodeCount": ubx.FieldSpec{WireName: "max_node_count"},
+	"MinNodeCount": ubx.FieldSpec{WireName: "min_node_count"},
+}
 
 var WorkflowTemplate_Placement_ManagedCluster_Config_GkeClusterConfig_NodePoolTarget_NodePoolConfig_Config_AcceleratorsFields = ubx.FieldMap{
-		"AcceleratorCount": ubx.FieldSpec{WireName: "accelerator_count"},
-		"AcceleratorType": ubx.FieldSpec{WireName: "accelerator_type"},
-		"GpuPartitionSize": ubx.FieldSpec{WireName: "gpu_partition_size"},
-	}
+	"AcceleratorCount": ubx.FieldSpec{WireName: "accelerator_count"},
+	"AcceleratorType":  ubx.FieldSpec{WireName: "accelerator_type"},
+	"GpuPartitionSize": ubx.FieldSpec{WireName: "gpu_partition_size"},
+}
 
 var WorkflowTemplate_Placement_ManagedCluster_Config_GkeClusterConfig_NodePoolTarget_NodePoolConfig_ConfigFields = ubx.FieldMap{
-		"Accelerators": ubx.FieldSpec{
-			WireName: "accelerators",
-			Kind: "list",
-			Fields: WorkflowTemplate_Placement_ManagedCluster_Config_GkeClusterConfig_NodePoolTarget_NodePoolConfig_Config_AcceleratorsFields,
-		},
-		"BootDiskKmsKey": ubx.FieldSpec{WireName: "boot_disk_kms_key"},
-		"LocalSsdCount": ubx.FieldSpec{WireName: "local_ssd_count"},
-		"MachineType": ubx.FieldSpec{WireName: "machine_type"},
-		"MinCpuPlatform": ubx.FieldSpec{WireName: "min_cpu_platform"},
-		"Preemptible": ubx.FieldSpec{WireName: "preemptible"},
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-		"Spot": ubx.FieldSpec{WireName: "spot"},
-	}
+	"Accelerators": ubx.FieldSpec{
+		WireName: "accelerators",
+		Kind:     "list",
+		Fields:   WorkflowTemplate_Placement_ManagedCluster_Config_GkeClusterConfig_NodePoolTarget_NodePoolConfig_Config_AcceleratorsFields,
+	},
+	"BootDiskKmsKey": ubx.FieldSpec{WireName: "boot_disk_kms_key"},
+	"LocalSsdCount":  ubx.FieldSpec{WireName: "local_ssd_count"},
+	"MachineType":    ubx.FieldSpec{WireName: "machine_type"},
+	"MinCpuPlatform": ubx.FieldSpec{WireName: "min_cpu_platform"},
+	"Preemptible":    ubx.FieldSpec{WireName: "preemptible"},
+	"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
+	"Spot":           ubx.FieldSpec{WireName: "spot"},
+}
 
 var WorkflowTemplate_Placement_ManagedCluster_Config_GkeClusterConfig_NodePoolTarget_NodePoolConfigFields = ubx.FieldMap{
-		"Autoscaling": ubx.FieldSpec{
-			WireName: "autoscaling",
-			Kind: "object",
-			Fields: WorkflowTemplate_Placement_ManagedCluster_Config_GkeClusterConfig_NodePoolTarget_NodePoolConfig_AutoscalingFields,
-		},
-		"Config": ubx.FieldSpec{
-			WireName: "config",
-			Kind: "object",
-			Fields: WorkflowTemplate_Placement_ManagedCluster_Config_GkeClusterConfig_NodePoolTarget_NodePoolConfig_ConfigFields,
-		},
-		"Locations": ubx.FieldSpec{WireName: "locations"},
-	}
+	"Autoscaling": ubx.FieldSpec{
+		WireName: "autoscaling",
+		Kind:     "object",
+		Fields:   WorkflowTemplate_Placement_ManagedCluster_Config_GkeClusterConfig_NodePoolTarget_NodePoolConfig_AutoscalingFields,
+	},
+	"Config": ubx.FieldSpec{
+		WireName: "config",
+		Kind:     "object",
+		Fields:   WorkflowTemplate_Placement_ManagedCluster_Config_GkeClusterConfig_NodePoolTarget_NodePoolConfig_ConfigFields,
+	},
+	"Locations": ubx.FieldSpec{WireName: "locations"},
+}
 
 var WorkflowTemplate_Placement_ManagedCluster_Config_GkeClusterConfig_NodePoolTargetFields = ubx.FieldMap{
-		"NodePool": ubx.FieldSpec{WireName: "node_pool"},
-		"NodePoolConfig": ubx.FieldSpec{
-			WireName: "node_pool_config",
-			Kind: "object",
-			Fields: WorkflowTemplate_Placement_ManagedCluster_Config_GkeClusterConfig_NodePoolTarget_NodePoolConfigFields,
-		},
-		"Roles": ubx.FieldSpec{WireName: "roles"},
-	}
+	"NodePool": ubx.FieldSpec{WireName: "node_pool"},
+	"NodePoolConfig": ubx.FieldSpec{
+		WireName: "node_pool_config",
+		Kind:     "object",
+		Fields:   WorkflowTemplate_Placement_ManagedCluster_Config_GkeClusterConfig_NodePoolTarget_NodePoolConfigFields,
+	},
+	"Roles": ubx.FieldSpec{WireName: "roles"},
+}
 
 var WorkflowTemplate_Placement_ManagedCluster_Config_GkeClusterConfigFields = ubx.FieldMap{
-		"GkeClusterTarget": ubx.FieldSpec{WireName: "gke_cluster_target"},
-		"NamespacedGkeDeploymentTarget": ubx.FieldSpec{
-			WireName: "namespaced_gke_deployment_target",
-			Kind: "object",
-			Fields: WorkflowTemplate_Placement_ManagedCluster_Config_GkeClusterConfig_NamespacedGkeDeploymentTargetFields,
-		},
-		"NodePoolTarget": ubx.FieldSpec{
-			WireName: "node_pool_target",
-			Kind: "list",
-			Fields: WorkflowTemplate_Placement_ManagedCluster_Config_GkeClusterConfig_NodePoolTargetFields,
-		},
-	}
+	"GkeClusterTarget": ubx.FieldSpec{WireName: "gke_cluster_target"},
+	"NamespacedGkeDeploymentTarget": ubx.FieldSpec{
+		WireName: "namespaced_gke_deployment_target",
+		Kind:     "object",
+		Fields:   WorkflowTemplate_Placement_ManagedCluster_Config_GkeClusterConfig_NamespacedGkeDeploymentTargetFields,
+	},
+	"NodePoolTarget": ubx.FieldSpec{
+		WireName: "node_pool_target",
+		Kind:     "list",
+		Fields:   WorkflowTemplate_Placement_ManagedCluster_Config_GkeClusterConfig_NodePoolTargetFields,
+	},
+}
 
 var WorkflowTemplate_Placement_ManagedCluster_Config_InitializationActionsFields = ubx.FieldMap{
-		"ExecutableFile": ubx.FieldSpec{WireName: "executable_file"},
-		"ExecutionTimeout": ubx.FieldSpec{WireName: "execution_timeout"},
-	}
+	"ExecutableFile":   ubx.FieldSpec{WireName: "executable_file"},
+	"ExecutionTimeout": ubx.FieldSpec{WireName: "execution_timeout"},
+}
 
 var WorkflowTemplate_Placement_ManagedCluster_Config_LifecycleConfigFields = ubx.FieldMap{
-		"AutoDeleteTime": ubx.FieldSpec{WireName: "auto_delete_time"},
-		"AutoDeleteTtl": ubx.FieldSpec{WireName: "auto_delete_ttl"},
-		"AutoStopTime": ubx.FieldSpec{WireName: "auto_stop_time"},
-		"AutoStopTtl": ubx.FieldSpec{WireName: "auto_stop_ttl"},
-		"IdleDeleteTtl": ubx.FieldSpec{WireName: "idle_delete_ttl"},
-		"IdleStartTime": ubx.FieldSpec{WireName: "idle_start_time"},
-		"IdleStopTtl": ubx.FieldSpec{WireName: "idle_stop_ttl"},
-	}
+	"AutoDeleteTime": ubx.FieldSpec{WireName: "auto_delete_time"},
+	"AutoDeleteTtl":  ubx.FieldSpec{WireName: "auto_delete_ttl"},
+	"AutoStopTime":   ubx.FieldSpec{WireName: "auto_stop_time"},
+	"AutoStopTtl":    ubx.FieldSpec{WireName: "auto_stop_ttl"},
+	"IdleDeleteTtl":  ubx.FieldSpec{WireName: "idle_delete_ttl"},
+	"IdleStartTime":  ubx.FieldSpec{WireName: "idle_start_time"},
+	"IdleStopTtl":    ubx.FieldSpec{WireName: "idle_stop_ttl"},
+}
 
 var WorkflowTemplate_Placement_ManagedCluster_Config_MetastoreConfigFields = ubx.FieldMap{
-		"DataprocMetastoreService": ubx.FieldSpec{WireName: "dataproc_metastore_service"},
-	}
+	"DataprocMetastoreService": ubx.FieldSpec{WireName: "dataproc_metastore_service"},
+}
 
 var WorkflowTemplate_Placement_ManagedCluster_Config_SecurityConfig_IdentityConfigFields = ubx.FieldMap{
-		"EnableSsh": ubx.FieldSpec{WireName: "enable_ssh"},
-		"UserServiceAccountMapping": ubx.FieldSpec{WireName: "user_service_account_mapping"},
-	}
+	"EnableSsh":                 ubx.FieldSpec{WireName: "enable_ssh"},
+	"UserServiceAccountMapping": ubx.FieldSpec{WireName: "user_service_account_mapping"},
+}
 
 var WorkflowTemplate_Placement_ManagedCluster_Config_SecurityConfig_KerberosConfigFields = ubx.FieldMap{
-		"CrossRealmTrustAdminServer": ubx.FieldSpec{WireName: "cross_realm_trust_admin_server"},
-		"CrossRealmTrustKdc": ubx.FieldSpec{WireName: "cross_realm_trust_kdc"},
-		"CrossRealmTrustRealm": ubx.FieldSpec{WireName: "cross_realm_trust_realm"},
-		"CrossRealmTrustSharedPasswordUri": ubx.FieldSpec{WireName: "cross_realm_trust_shared_password_uri"},
-		"EnableKerberos": ubx.FieldSpec{WireName: "enable_kerberos"},
-		"KdcDbKeyUri": ubx.FieldSpec{WireName: "kdc_db_key_uri"},
-		"KeyPasswordUri": ubx.FieldSpec{WireName: "key_password_uri"},
-		"KeystorePasswordUri": ubx.FieldSpec{WireName: "keystore_password_uri"},
-		"KeystoreUri": ubx.FieldSpec{WireName: "keystore_uri"},
-		"KmsKeyUri": ubx.FieldSpec{WireName: "kms_key_uri"},
-		"Realm": ubx.FieldSpec{WireName: "realm"},
-		"RootPrincipalPasswordUri": ubx.FieldSpec{WireName: "root_principal_password_uri"},
-		"TgtLifetimeHours": ubx.FieldSpec{WireName: "tgt_lifetime_hours"},
-		"TruststorePasswordUri": ubx.FieldSpec{WireName: "truststore_password_uri"},
-		"TruststoreUri": ubx.FieldSpec{WireName: "truststore_uri"},
-	}
+	"CrossRealmTrustAdminServer":       ubx.FieldSpec{WireName: "cross_realm_trust_admin_server"},
+	"CrossRealmTrustKdc":               ubx.FieldSpec{WireName: "cross_realm_trust_kdc"},
+	"CrossRealmTrustRealm":             ubx.FieldSpec{WireName: "cross_realm_trust_realm"},
+	"CrossRealmTrustSharedPasswordUri": ubx.FieldSpec{WireName: "cross_realm_trust_shared_password_uri"},
+	"EnableKerberos":                   ubx.FieldSpec{WireName: "enable_kerberos"},
+	"KdcDbKeyUri":                      ubx.FieldSpec{WireName: "kdc_db_key_uri"},
+	"KeyPasswordUri":                   ubx.FieldSpec{WireName: "key_password_uri"},
+	"KeystorePasswordUri":              ubx.FieldSpec{WireName: "keystore_password_uri"},
+	"KeystoreUri":                      ubx.FieldSpec{WireName: "keystore_uri"},
+	"KmsKeyUri":                        ubx.FieldSpec{WireName: "kms_key_uri"},
+	"Realm":                            ubx.FieldSpec{WireName: "realm"},
+	"RootPrincipalPasswordUri":         ubx.FieldSpec{WireName: "root_principal_password_uri"},
+	"TgtLifetimeHours":                 ubx.FieldSpec{WireName: "tgt_lifetime_hours"},
+	"TruststorePasswordUri":            ubx.FieldSpec{WireName: "truststore_password_uri"},
+	"TruststoreUri":                    ubx.FieldSpec{WireName: "truststore_uri"},
+}
 
 var WorkflowTemplate_Placement_ManagedCluster_Config_SecurityConfigFields = ubx.FieldMap{
-		"IdentityConfig": ubx.FieldSpec{
-			WireName: "identity_config",
-			Kind: "object",
-			Fields: WorkflowTemplate_Placement_ManagedCluster_Config_SecurityConfig_IdentityConfigFields,
-		},
-		"KerberosConfig": ubx.FieldSpec{
-			WireName: "kerberos_config",
-			Kind: "object",
-			Fields: WorkflowTemplate_Placement_ManagedCluster_Config_SecurityConfig_KerberosConfigFields,
-		},
-	}
+	"IdentityConfig": ubx.FieldSpec{
+		WireName: "identity_config",
+		Kind:     "object",
+		Fields:   WorkflowTemplate_Placement_ManagedCluster_Config_SecurityConfig_IdentityConfigFields,
+	},
+	"KerberosConfig": ubx.FieldSpec{
+		WireName: "kerberos_config",
+		Kind:     "object",
+		Fields:   WorkflowTemplate_Placement_ManagedCluster_Config_SecurityConfig_KerberosConfigFields,
+	},
+}
 
 var WorkflowTemplate_Placement_ManagedCluster_Config_SoftwareConfigFields = ubx.FieldMap{
-		"ImageVersion": ubx.FieldSpec{WireName: "image_version"},
-		"OptionalComponents": ubx.FieldSpec{WireName: "optional_components"},
-		"Properties": ubx.FieldSpec{WireName: "properties"},
-	}
+	"ImageVersion":       ubx.FieldSpec{WireName: "image_version"},
+	"OptionalComponents": ubx.FieldSpec{WireName: "optional_components"},
+	"Properties":         ubx.FieldSpec{WireName: "properties"},
+}
 
 var WorkflowTemplate_Placement_ManagedCluster_ConfigFields = ubx.FieldMap{
-		"AutoscalingConfig": ubx.FieldSpec{
-			WireName: "autoscaling_config",
-			Kind: "object",
-			Fields: WorkflowTemplate_Placement_ManagedCluster_Config_AutoscalingConfigFields,
-		},
-		"AuxiliaryNodeGroups": ubx.FieldSpec{
-			WireName: "auxiliary_node_groups",
-			Kind: "list",
-			Fields: WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroupsFields,
-		},
-		"ClusterTier": ubx.FieldSpec{WireName: "cluster_tier"},
-		"ClusterType": ubx.FieldSpec{WireName: "cluster_type"},
-		"ConfigBucket": ubx.FieldSpec{WireName: "config_bucket"},
-		"DataprocMetricConfig": ubx.FieldSpec{
-			WireName: "dataproc_metric_config",
-			Kind: "object",
-			Fields: WorkflowTemplate_Placement_ManagedCluster_Config_DataprocMetricConfigFields,
-		},
-		"DiagnosticBucket": ubx.FieldSpec{WireName: "diagnostic_bucket"},
-		"EncryptionConfig": ubx.FieldSpec{
-			WireName: "encryption_config",
-			Kind: "object",
-			Fields: WorkflowTemplate_Placement_ManagedCluster_Config_EncryptionConfigFields,
-		},
-		"EndpointConfig": ubx.FieldSpec{
-			WireName: "endpoint_config",
-			Kind: "object",
-			Fields: WorkflowTemplate_Placement_ManagedCluster_Config_EndpointConfigFields,
-		},
-		"Engine": ubx.FieldSpec{WireName: "engine"},
-		"GceClusterConfig": ubx.FieldSpec{
-			WireName: "gce_cluster_config",
-			Kind: "object",
-			Fields: WorkflowTemplate_Placement_ManagedCluster_Config_GceClusterConfigFields,
-		},
-		"GkeClusterConfig": ubx.FieldSpec{
-			WireName: "gke_cluster_config",
-			Kind: "object",
-			Fields: WorkflowTemplate_Placement_ManagedCluster_Config_GkeClusterConfigFields,
-		},
-		"InitializationActions": ubx.FieldSpec{
-			WireName: "initialization_actions",
-			Kind: "list",
-			Fields: WorkflowTemplate_Placement_ManagedCluster_Config_InitializationActionsFields,
-		},
-		"LifecycleConfig": ubx.FieldSpec{
-			WireName: "lifecycle_config",
-			Kind: "object",
-			Fields: WorkflowTemplate_Placement_ManagedCluster_Config_LifecycleConfigFields,
-		},
-		"MasterConfig": ubx.FieldSpec{
-			WireName: "master_config",
-			Kind: "object",
-			Fields: WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfigFields,
-		},
-		"MetastoreConfig": ubx.FieldSpec{
-			WireName: "metastore_config",
-			Kind: "object",
-			Fields: WorkflowTemplate_Placement_ManagedCluster_Config_MetastoreConfigFields,
-		},
-		"SecondaryWorkerConfig": ubx.FieldSpec{
-			WireName: "secondary_worker_config",
-			Kind: "object",
-			Fields: WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfigFields,
-		},
-		"SecurityConfig": ubx.FieldSpec{
-			WireName: "security_config",
-			Kind: "object",
-			Fields: WorkflowTemplate_Placement_ManagedCluster_Config_SecurityConfigFields,
-		},
-		"SoftwareConfig": ubx.FieldSpec{
-			WireName: "software_config",
-			Kind: "object",
-			Fields: WorkflowTemplate_Placement_ManagedCluster_Config_SoftwareConfigFields,
-		},
-		"TempBucket": ubx.FieldSpec{WireName: "temp_bucket"},
-		"WorkerConfig": ubx.FieldSpec{
-			WireName: "worker_config",
-			Kind: "object",
-			Fields: WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfigFields,
-		},
-	}
+	"AutoscalingConfig": ubx.FieldSpec{
+		WireName: "autoscaling_config",
+		Kind:     "object",
+		Fields:   WorkflowTemplate_Placement_ManagedCluster_Config_AutoscalingConfigFields,
+	},
+	"AuxiliaryNodeGroups": ubx.FieldSpec{
+		WireName: "auxiliary_node_groups",
+		Kind:     "list",
+		Fields:   WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroupsFields,
+	},
+	"ClusterTier":  ubx.FieldSpec{WireName: "cluster_tier"},
+	"ClusterType":  ubx.FieldSpec{WireName: "cluster_type"},
+	"ConfigBucket": ubx.FieldSpec{WireName: "config_bucket"},
+	"DataprocMetricConfig": ubx.FieldSpec{
+		WireName: "dataproc_metric_config",
+		Kind:     "object",
+		Fields:   WorkflowTemplate_Placement_ManagedCluster_Config_DataprocMetricConfigFields,
+	},
+	"DiagnosticBucket": ubx.FieldSpec{WireName: "diagnostic_bucket"},
+	"EncryptionConfig": ubx.FieldSpec{
+		WireName: "encryption_config",
+		Kind:     "object",
+		Fields:   WorkflowTemplate_Placement_ManagedCluster_Config_EncryptionConfigFields,
+	},
+	"EndpointConfig": ubx.FieldSpec{
+		WireName: "endpoint_config",
+		Kind:     "object",
+		Fields:   WorkflowTemplate_Placement_ManagedCluster_Config_EndpointConfigFields,
+	},
+	"Engine": ubx.FieldSpec{WireName: "engine"},
+	"GceClusterConfig": ubx.FieldSpec{
+		WireName: "gce_cluster_config",
+		Kind:     "object",
+		Fields:   WorkflowTemplate_Placement_ManagedCluster_Config_GceClusterConfigFields,
+	},
+	"GkeClusterConfig": ubx.FieldSpec{
+		WireName: "gke_cluster_config",
+		Kind:     "object",
+		Fields:   WorkflowTemplate_Placement_ManagedCluster_Config_GkeClusterConfigFields,
+	},
+	"InitializationActions": ubx.FieldSpec{
+		WireName: "initialization_actions",
+		Kind:     "list",
+		Fields:   WorkflowTemplate_Placement_ManagedCluster_Config_InitializationActionsFields,
+	},
+	"LifecycleConfig": ubx.FieldSpec{
+		WireName: "lifecycle_config",
+		Kind:     "object",
+		Fields:   WorkflowTemplate_Placement_ManagedCluster_Config_LifecycleConfigFields,
+	},
+	"MasterConfig": ubx.FieldSpec{
+		WireName: "master_config",
+		Kind:     "object",
+		Fields:   WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfigFields,
+	},
+	"MetastoreConfig": ubx.FieldSpec{
+		WireName: "metastore_config",
+		Kind:     "object",
+		Fields:   WorkflowTemplate_Placement_ManagedCluster_Config_MetastoreConfigFields,
+	},
+	"SecondaryWorkerConfig": ubx.FieldSpec{
+		WireName: "secondary_worker_config",
+		Kind:     "object",
+		Fields:   WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfigFields,
+	},
+	"SecurityConfig": ubx.FieldSpec{
+		WireName: "security_config",
+		Kind:     "object",
+		Fields:   WorkflowTemplate_Placement_ManagedCluster_Config_SecurityConfigFields,
+	},
+	"SoftwareConfig": ubx.FieldSpec{
+		WireName: "software_config",
+		Kind:     "object",
+		Fields:   WorkflowTemplate_Placement_ManagedCluster_Config_SoftwareConfigFields,
+	},
+	"TempBucket": ubx.FieldSpec{WireName: "temp_bucket"},
+	"WorkerConfig": ubx.FieldSpec{
+		WireName: "worker_config",
+		Kind:     "object",
+		Fields:   WorkflowTemplate_Placement_ManagedCluster_Config_AuxiliaryNodeGroups_NodeGroup_NodeGroupConfigFields,
+	},
+}
 
 var WorkflowTemplate_Placement_ManagedClusterFields = ubx.FieldMap{
-		"ClusterName": ubx.FieldSpec{WireName: "cluster_name"},
-		"Config": ubx.FieldSpec{
-			WireName: "config",
-			Kind: "object",
-			Fields: WorkflowTemplate_Placement_ManagedCluster_ConfigFields,
-		},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-	}
+	"ClusterName": ubx.FieldSpec{WireName: "cluster_name"},
+	"Config": ubx.FieldSpec{
+		WireName: "config",
+		Kind:     "object",
+		Fields:   WorkflowTemplate_Placement_ManagedCluster_ConfigFields,
+	},
+	"Labels": ubx.FieldSpec{WireName: "labels"},
+}
 
 var WorkflowTemplate_PlacementFields = ubx.FieldMap{
-		"ClusterSelector": ubx.FieldSpec{
-			WireName: "cluster_selector",
-			Kind: "object",
-			Fields: WorkflowTemplate_Placement_ClusterSelectorFields,
-		},
-		"ManagedCluster": ubx.FieldSpec{
-			WireName: "managed_cluster",
-			Kind: "object",
-			Fields: WorkflowTemplate_Placement_ManagedClusterFields,
-		},
-	}
+	"ClusterSelector": ubx.FieldSpec{
+		WireName: "cluster_selector",
+		Kind:     "object",
+		Fields:   WorkflowTemplate_Placement_ClusterSelectorFields,
+	},
+	"ManagedCluster": ubx.FieldSpec{
+		WireName: "managed_cluster",
+		Kind:     "object",
+		Fields:   WorkflowTemplate_Placement_ManagedClusterFields,
+	},
+}
 
 type WorkflowTemplateConfig struct {
-	// Output only. The time template was created.
-	CreateTime any
 	// Optional. Timeout duration for the DAG of jobs, expressed in seconds (see JSON representation of duration (https://developers.google.com/protocol-buffers/docs/proto3#json)). The timeout duration must be from 10 minutes ("600s") to 24 hours ("86400s"). The timer begins when the first job is submitted. If the workflow is running at the end of the timeout period, any remaining jobs are cancelled, the workflow is ended, and if the workflow was running on a managed cluster, the cluster is deleted.
 	DagTimeout any
 	// Encryption settings for encrypting workflow template job arguments.
 	EncryptionConfig any
-	Id any
+	Id               any
 	// Required. The Directed Acyclic Graph of Jobs to submit.
 	Jobs any
 	// Optional. The labels to associate with this template. These labels will be propagated to all jobs and clusters created by the workflow instance.Label keys must contain 1 to 63 characters, and must conform to RFC 1035 (https://www.ietf.org/rfc/rfc1035.txt).Label values may be empty, but, if present, must contain 1 to 63 characters, and must conform to RFC 1035 (https://www.ietf.org/rfc/rfc1035.txt).No more than 32 labels can be associated with a template.
 	Labels any
-	// Output only. The resource name of the workflow template, as described in https://cloud.google.com/apis/design/resource_names. For projects.regions.workflowTemplates, the resource name of the template has the following format: projects/{project_id}/regions/{region}/workflowTemplates/{template_id} For projects.locations.workflowTemplates, the resource name of the template has the following format: projects/{project_id}/locations/{location}/workflowTemplates/{template_id}
-	Name any
 	// Optional. Template parameters whose values are substituted into the template. Values for parameters must be provided when the template is instantiated.
 	Parameters any
 	// Specifies workflow execution target.Either managed_cluster or cluster_selector is required.
 	Placement any
-	// Output only. The time template was last updated.
-	UpdateTime any
 	// Optional. Used to perform a consistent read-modify-write.This field should be left blank for a CreateWorkflowTemplate request. It is required for an UpdateWorkflowTemplate request, and must match the current server version. A typical update template flow would fetch the current template with a GetWorkflowTemplate request, which will return the current template with the version field filled in with the current server version. The user updates other fields in the template, then returns it as part of the UpdateWorkflowTemplate request.
 	Version any
 }
@@ -1252,7 +1246,7 @@ type WorkflowTemplateAttrs struct {
 	DagTimeout any
 	// Encryption settings for encrypting workflow template job arguments.
 	EncryptionConfig any
-	Id any
+	Id               any
 	// Required. The Directed Acyclic Graph of Jobs to submit.
 	Jobs any
 	// Optional. The labels to associate with this template. These labels will be propagated to all jobs and clusters created by the workflow instance.Label keys must contain 1 to 63 characters, and must conform to RFC 1035 (https://www.ietf.org/rfc/rfc1035.txt).Label values may be empty, but, if present, must contain 1 to 63 characters, and must conform to RFC 1035 (https://www.ietf.org/rfc/rfc1035.txt).No more than 32 labels can be associated with a template.
@@ -1272,32 +1266,29 @@ type WorkflowTemplateAttrs struct {
 var WorkflowTemplate = ubx.ResourceBinding{
 	WireType: "google_dataproc_workflow_template",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"DagTimeout": ubx.FieldSpec{WireName: "dag_timeout"},
 		"EncryptionConfig": ubx.FieldSpec{
 			WireName: "encryption_config",
-			Kind: "object",
-			Fields: WorkflowTemplate_EncryptionConfigFields,
+			Kind:     "object",
+			Fields:   WorkflowTemplate_EncryptionConfigFields,
 		},
 		"Id": ubx.FieldSpec{WireName: "id"},
 		"Jobs": ubx.FieldSpec{
 			WireName: "jobs",
-			Kind: "list",
-			Fields: WorkflowTemplate_JobsFields,
+			Kind:     "list",
+			Fields:   WorkflowTemplate_JobsFields,
 		},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
 		"Parameters": ubx.FieldSpec{
 			WireName: "parameters",
-			Kind: "list",
-			Fields: WorkflowTemplate_ParametersFields,
+			Kind:     "list",
+			Fields:   WorkflowTemplate_ParametersFields,
 		},
 		"Placement": ubx.FieldSpec{
 			WireName: "placement",
-			Kind: "object",
-			Fields: WorkflowTemplate_PlacementFields,
+			Kind:     "object",
+			Fields:   WorkflowTemplate_PlacementFields,
 		},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 		"Version": ubx.FieldSpec{WireName: "version"},
 	},
 }

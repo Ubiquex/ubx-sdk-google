@@ -12,12 +12,8 @@ class ManagedIdentityConfig:
     description: Any = None
     # Optional. Whether the managed identity is disabled. If disabled, credentials may no longer be issued for the identity, however existing credentials will still be accepted until they expire.
     disabled: Any = None
-    # Output only. Time after which the managed identity will be permanently purged and cannot be recovered.
-    expire_time: Any = None
     # Identifier. The resource name of the managed identity.
     name: Any = None
-    # Output only. The state of the managed identity.
-    state: Any = None
 
 @dataclasses.dataclass
 class ManagedIdentityAttrs:
@@ -37,8 +33,6 @@ ManagedIdentity = ubx.ResourceBinding(
     fields={
         "description": ubx.FieldSpec(wire_name="description"),
         "disabled": ubx.FieldSpec(wire_name="disabled"),
-        "expire_time": ubx.FieldSpec(wire_name="expire_time"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "state": ubx.FieldSpec(wire_name="state"),
     },
 )

@@ -120,14 +120,8 @@ export interface V1alphaAgentConfig {
   adkAgentDefinition?: V1alphaAgent_AdkAgentDefinition | Computed<V1alphaAgent_AdkAgentDefinition>;
   /** Describes the authorizations required. */
   authorizationConfig?: V1alphaAgent_AuthorizationConfig | Computed<V1alphaAgent_AuthorizationConfig>;
-  /** Output only. Timestamp when this Agent was created. */
-  createTime?: string | Computed<string>;
-  /** Output only. The reason why the agent creation (provisioning) failed. Only set if the state is CREATION_FAILED. */
-  creationFailureReason?: string | Computed<string>;
   /** Optional. The custom placeholder text that appears in the text box before the user enters any text. */
   customPlaceholderText?: string | Computed<string>;
-  /** Output only. The reason why the agent deployment failed. Only set if the state is DEPLOYMENT_FAILED. */
-  deploymentFailureReason?: string | Computed<string>;
   /** Required. Human-readable description of the agent. This might be used by an LLM to automatically select an agent to respond to a user query. */
   description?: string | Computed<string>;
   /** Stored definition of an agent that uses a Dialogflow agent. */
@@ -144,18 +138,10 @@ export interface V1alphaAgentConfig {
   name?: string | Computed<string>;
   /** Observability config for a resource. */
   observabilityConfig?: V1alphaAgent_ObservabilityConfig | Computed<V1alphaAgent_ObservabilityConfig>;
-  /** Output only. The reason why the agent was rejected. Only set if the state is PRIVATE, and got there via rejection. */
-  rejectionReason?: string | Computed<string>;
   /** Sharing related configuration. */
   sharingConfig?: V1alphaAgent_SharingConfig | Computed<V1alphaAgent_SharingConfig>;
   /** Optional. The starter prompt suggestions to show the user on the landing page of the agent. */
   starterPrompts?: V1alphaAgent_StarterPrompts[] | Computed<V1alphaAgent_StarterPrompts[]>;
-  /** Output only. The lifecycle state of the agent. */
-  state?: string | Computed<string>;
-  /** Output only. The reason why the agent was suspended. Only set if the state is SUSPENDED. */
-  suspensionReason?: string | Computed<string>;
-  /** Output only. Timestamp when this Agent was most recently updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1alphaAgentAttrs {
@@ -221,10 +207,7 @@ export const V1alphaAgent: ResourceBinding<V1alphaAgentConfig, V1alphaAgentAttrs
       kind: "object",
       fields: V1alphaAgent_AuthorizationConfigFields,
     },
-    createTime: "create_time",
-    creationFailureReason: "creation_failure_reason",
     customPlaceholderText: "custom_placeholder_text",
-    deploymentFailureReason: "deployment_failure_reason",
     description: "description",
     dialogflowAgentDefinition: {
       wireName: "dialogflow_agent_definition",
@@ -245,7 +228,6 @@ export const V1alphaAgent: ResourceBinding<V1alphaAgentConfig, V1alphaAgentAttrs
       kind: "object",
       fields: V1alphaAgent_ObservabilityConfigFields,
     },
-    rejectionReason: "rejection_reason",
     sharingConfig: {
       wireName: "sharing_config",
       kind: "object",
@@ -256,8 +238,5 @@ export const V1alphaAgent: ResourceBinding<V1alphaAgentConfig, V1alphaAgentAttrs
       kind: "list",
       fields: V1alphaAgent_StarterPromptsFields,
     },
-    state: "state",
-    suspensionReason: "suspension_reason",
-    updateTime: "update_time",
   },
 };

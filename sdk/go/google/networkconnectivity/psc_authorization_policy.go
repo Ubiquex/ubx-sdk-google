@@ -8,8 +8,6 @@ type PscAuthorizationPolicyConfig struct {
 	AuthorizationMode any
 	// Required. List of authorized consumer resources allowed to connect. Supported values are: 1. Project resource name (e.g., `projects/{project_id}`) 2. Wildcard `"*"` (grants global ingress authorization to the target).
 	AuthorizedClientResources any
-	// Output only. The time when the PscAuthorizationPolicy was created.
-	CreateTime any
 	// Optional. A description of this resource.
 	Description any
 	// Output only. The etag of the PscAuthorizationPolicy.
@@ -20,10 +18,6 @@ type PscAuthorizationPolicyConfig struct {
 	Name any
 	// Required. The full absolute URI of the targeted resource governed by this policy. For example, for an AgentRegistry resource, the format is: `//agentregistry.googleapis.com/projects/{project}/locations/{location}`
 	TargetResourceUri any
-	// Output only. The unique identifier of the PscAuthorizationPolicy.
-	Uid any
-	// Output only. The time when the PscAuthorizationPolicy was updated.
-	UpdateTime any
 }
 
 type PscAuthorizationPolicyAttrs struct {
@@ -52,15 +46,12 @@ type PscAuthorizationPolicyAttrs struct {
 var PscAuthorizationPolicy = ubx.ResourceBinding{
 	WireType: "google_networkconnectivity_psc_authorization_policy",
 	Fields: ubx.FieldMap{
-		"AuthorizationMode": ubx.FieldSpec{WireName: "authorization_mode"},
+		"AuthorizationMode":         ubx.FieldSpec{WireName: "authorization_mode"},
 		"AuthorizedClientResources": ubx.FieldSpec{WireName: "authorized_client_resources"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"TargetResourceUri": ubx.FieldSpec{WireName: "target_resource_uri"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"Description":               ubx.FieldSpec{WireName: "description"},
+		"Etag":                      ubx.FieldSpec{WireName: "etag"},
+		"Labels":                    ubx.FieldSpec{WireName: "labels"},
+		"Name":                      ubx.FieldSpec{WireName: "name"},
+		"TargetResourceUri":         ubx.FieldSpec{WireName: "target_resource_uri"},
 	},
 }

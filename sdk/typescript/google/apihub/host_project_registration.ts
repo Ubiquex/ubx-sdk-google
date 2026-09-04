@@ -2,8 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface HostProjectRegistrationConfig {
-  /** Output only. The time at which the host project registration was created. */
-  createTime?: string | Computed<string>;
   /** Required. Immutable. Google cloud project name in the format: "projects/abc" or "projects/123". As input, project name with either project id or number are accepted. As output, this field will contain project number. */
   gcpProject?: string | Computed<string>;
   /** Identifier. The name of the host project registration. Format: "projects/{project}/locations/{location}/hostProjectRegistrations/{host_project_registration}". */
@@ -22,7 +20,6 @@ export interface HostProjectRegistrationAttrs {
 export const HostProjectRegistration: ResourceBinding<HostProjectRegistrationConfig, HostProjectRegistrationAttrs> = {
   wireType: "google_apihub_host_project_registration",
   fields: {
-    createTime: "create_time",
     gcpProject: "gcp_project",
     name: "name",
   },

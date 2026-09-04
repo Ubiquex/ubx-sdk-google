@@ -4,7 +4,7 @@ package apim
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ObservationSource_GclbObservationSource_PscNetworkConfigs struct {
-	Network any
+	Network    any
 	Subnetwork any
 }
 
@@ -14,29 +14,23 @@ type ObservationSource_GclbObservationSource struct {
 }
 
 var ObservationSource_GclbObservationSource_PscNetworkConfigsFields = ubx.FieldMap{
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"Subnetwork": ubx.FieldSpec{WireName: "subnetwork"},
-	}
+	"Network":    ubx.FieldSpec{WireName: "network"},
+	"Subnetwork": ubx.FieldSpec{WireName: "subnetwork"},
+}
 
 var ObservationSource_GclbObservationSourceFields = ubx.FieldMap{
-		"PscNetworkConfigs": ubx.FieldSpec{
-			WireName: "psc_network_configs",
-			Kind: "list",
-			Fields: ObservationSource_GclbObservationSource_PscNetworkConfigsFields,
-		},
-	}
+	"PscNetworkConfigs": ubx.FieldSpec{
+		WireName: "psc_network_configs",
+		Kind:     "list",
+		Fields:   ObservationSource_GclbObservationSource_PscNetworkConfigsFields,
+	},
+}
 
 type ObservationSourceConfig struct {
-	// Output only. [Output only] Create time stamp
-	CreateTime any
 	// The GCLB observation source.
 	GclbObservationSource any
 	// Identifier. name of resource For MVP, each region can only have 1 source.
 	Name any
-	// Output only. The observation source state
-	State any
-	// Output only. [Output only] Update time stamp
-	UpdateTime any
 }
 
 type ObservationSourceAttrs struct {
@@ -55,14 +49,11 @@ type ObservationSourceAttrs struct {
 var ObservationSource = ubx.ResourceBinding{
 	WireType: "google_apim_observation_source",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"GclbObservationSource": ubx.FieldSpec{
 			WireName: "gclb_observation_source",
-			Kind: "object",
-			Fields: ObservationSource_GclbObservationSourceFields,
+			Kind:     "object",
+			Fields:   ObservationSource_GclbObservationSourceFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

@@ -48,24 +48,14 @@ _PolicyBasedRoute_VirtualMachineFields = {
     "tags": ubx.FieldSpec(wire_name="tags"),
 }
 
-_PolicyBasedRoute_WarningsFields = {
-    "code": ubx.FieldSpec(wire_name="code"),
-    "data": ubx.FieldSpec(wire_name="data"),
-    "warning_message": ubx.FieldSpec(wire_name="warning_message"),
-}
-
 @dataclasses.dataclass
 class PolicyBasedRouteConfig:
-    # Output only. Time when the policy-based route was created.
-    create_time: Any = None
     # Optional. An optional description of this resource. Provide this field when you create the resource.
     description: Any = None
     # Filter matches L4 traffic.
     filter: Any = None
     # InterconnectAttachment that this route applies to.
     interconnect_attachment: Any = None
-    # Output only. Type of this resource. Always networkconnectivity#policyBasedRoute for policy-based Route resources.
-    kind: Any = None
     # User-defined labels.
     labels: Any = None
     # Immutable. Identifier. A unique name of the resource in the form of `projects/{project_number}/locations/global/PolicyBasedRoutes/{policy_based_route_id}`
@@ -78,14 +68,8 @@ class PolicyBasedRouteConfig:
     next_hop_other_routes: Any = None
     # Optional. The priority of this policy-based route. Priority is used to break ties in cases where there are more than one matching policy-based routes found. In cases where multiple policy-based routes are matched, the one with the lowest-numbered priority value wins. The default value is 1000. The priority value must be from 1 to 65535, inclusive.
     priority: Any = None
-    # Output only. Server-defined fully-qualified URL for this resource.
-    self_link: Any = None
-    # Output only. Time when the policy-based route was updated.
-    update_time: Any = None
     # VM instances that this policy-based route applies to.
     virtual_machine: Any = None
-    # Output only. If potential misconfigurations are detected for this route, this field will be populated with warning messages.
-    warnings: Any = None
 
 @dataclasses.dataclass
 class PolicyBasedRouteAttrs:
@@ -123,7 +107,6 @@ class PolicyBasedRouteAttrs:
 PolicyBasedRoute = ubx.ResourceBinding(
     wire_type="google_networkconnectivity_policy_based_route",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "filter": ubx.FieldSpec(
             wire_name="filter",
@@ -135,24 +118,16 @@ PolicyBasedRoute = ubx.ResourceBinding(
             kind="object",
             fields=_PolicyBasedRoute_InterconnectAttachmentFields,
         ),
-        "kind": ubx.FieldSpec(wire_name="kind"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "name": ubx.FieldSpec(wire_name="name"),
         "network": ubx.FieldSpec(wire_name="network"),
         "next_hop_ilb_ip": ubx.FieldSpec(wire_name="next_hop_ilb_ip"),
         "next_hop_other_routes": ubx.FieldSpec(wire_name="next_hop_other_routes"),
         "priority": ubx.FieldSpec(wire_name="priority"),
-        "self_link": ubx.FieldSpec(wire_name="self_link"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
         "virtual_machine": ubx.FieldSpec(
             wire_name="virtual_machine",
             kind="object",
             fields=_PolicyBasedRoute_VirtualMachineFields,
-        ),
-        "warnings": ubx.FieldSpec(
-            wire_name="warnings",
-            kind="list",
-            fields=_PolicyBasedRoute_WarningsFields,
         ),
     },
 )

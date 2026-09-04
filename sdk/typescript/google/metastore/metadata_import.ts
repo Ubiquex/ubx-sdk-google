@@ -20,20 +20,12 @@ const MetadataImport_DatabaseDumpFields: FieldMap = {
 };
 
 export interface MetadataImportConfig {
-  /** Output only. The time when the metadata import was started. */
-  createTime?: string | Computed<string>;
   /** A specification of the location of and metadata about a database dump from a relational database management system. */
   databaseDump?: MetadataImport_DatabaseDump | Computed<MetadataImport_DatabaseDump>;
   /** Optional. The description of the metadata import. */
   description?: string | Computed<string>;
-  /** Output only. The time when the metadata import finished. */
-  endTime?: string | Computed<string>;
   /** Immutable. Identifier. The relative resource name of the metadata import, of the form:projects/{project_number}/locations/{location_id}/services/{service_id}/metadataImports/{metadata_import_id}. */
   name?: string | Computed<string>;
-  /** Output only. The current state of the metadata import. */
-  state?: string | Computed<string>;
-  /** Output only. The time when the metadata import was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface MetadataImportAttrs {
@@ -56,16 +48,12 @@ export interface MetadataImportAttrs {
 export const MetadataImport: ResourceBinding<MetadataImportConfig, MetadataImportAttrs> = {
   wireType: "google_metastore_metadata_import",
   fields: {
-    createTime: "create_time",
     databaseDump: {
       wireName: "database_dump",
       kind: "object",
       fields: MetadataImport_DatabaseDumpFields,
     },
     description: "description",
-    endTime: "end_time",
     name: "name",
-    state: "state",
-    updateTime: "update_time",
   },
 };

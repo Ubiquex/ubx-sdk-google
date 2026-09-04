@@ -56,8 +56,6 @@ _PrivateConnection_VpcPeeringConfigFields = {
 
 @dataclasses.dataclass
 class PrivateConnectionConfig:
-    # Output only. The create time of the resource.
-    create_time: Any = None
     # The private connection display name.
     display_name: Any = None
     # The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
@@ -70,14 +68,6 @@ class PrivateConnectionConfig:
     psc_interface_config: Any = None
     # Reserved Public IP configuration.
     reserved_public_ip_config: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzi: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzs: Any = None
-    # Output only. The state of the private connection.
-    state: Any = None
-    # Output only. The last update time of the resource.
-    update_time: Any = None
     # The VPC peering configuration is used to create VPC peering with the consumer's VPC.
     vpc_peering_config: Any = None
 
@@ -111,7 +101,6 @@ class PrivateConnectionAttrs:
 PrivateConnection = ubx.ResourceBinding(
     wire_type="google_datamigration_private_connection",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "error": ubx.FieldSpec(
             wire_name="error",
@@ -130,10 +119,6 @@ PrivateConnection = ubx.ResourceBinding(
             kind="object",
             fields=_PrivateConnection_ReservedPublicIpConfigFields,
         ),
-        "satisfies_pzi": ubx.FieldSpec(wire_name="satisfies_pzi"),
-        "satisfies_pzs": ubx.FieldSpec(wire_name="satisfies_pzs"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
         "vpc_peering_config": ubx.FieldSpec(
             wire_name="vpc_peering_config",
             kind="object",

@@ -168,18 +168,12 @@ export interface SourceConfig {
   aws?: Source_Aws | Computed<Source_Aws>;
   /** AzureSourceDetails message describes a specific source details for the Azure source type. */
   azure?: Source_Azure | Computed<Source_Azure>;
-  /** Output only. The create time timestamp. */
-  createTime?: string | Computed<string>;
   /** User-provided description of the source. */
   description?: string | Computed<string>;
   /** Encryption message describes the details of the applied encryption. */
   encryption?: Source_Encryption | Computed<Source_Encryption>;
   /** The labels of the source. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. The Source name. */
-  name?: string | Computed<string>;
-  /** Output only. The update time timestamp. */
-  updateTime?: string | Computed<string>;
   /** VmwareSourceDetails message describes a specific source details for the vmware source type. */
   vmware?: Source_Vmware | Computed<Source_Vmware>;
 }
@@ -218,7 +212,6 @@ export const Source: ResourceBinding<SourceConfig, SourceAttrs> = {
       kind: "object",
       fields: Source_AzureFields,
     },
-    createTime: "create_time",
     description: "description",
     encryption: {
       wireName: "encryption",
@@ -226,8 +219,6 @@ export const Source: ResourceBinding<SourceConfig, SourceAttrs> = {
       fields: Source_EncryptionFields,
     },
     labels: "labels",
-    name: "name",
-    updateTime: "update_time",
     vmware: {
       wireName: "vmware",
       kind: "object",

@@ -2,14 +2,10 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ReleaseConfig {
-  /** Output only. Time the release was created. */
-  createTime?: string | Computed<string>;
   /** Required. Format: `projects/{project_id}/releases/{release_id}` */
   name?: string | Computed<string>;
   /** Required. Name of the `Ruleset` referred to by this `Release`. The `Ruleset` must exist for the `Release` to be created. */
   rulesetName?: string | Computed<string>;
-  /** Output only. Time the release was updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface ReleaseAttrs {
@@ -26,9 +22,7 @@ export interface ReleaseAttrs {
 export const Release: ResourceBinding<ReleaseConfig, ReleaseAttrs> = {
   wireType: "google_firebaserules_release",
   fields: {
-    createTime: "create_time",
     name: "name",
     rulesetName: "ruleset_name",
-    updateTime: "update_time",
   },
 };

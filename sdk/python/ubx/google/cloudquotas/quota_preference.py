@@ -34,8 +34,6 @@ _QuotaPreference_QuotaConfigFields = {
 class QuotaPreferenceConfig:
     # Input only. An email address that can be used to contact the user, in case Google Cloud needs more information to make a decision before additional quota can be granted. When requesting a quota increase, the email address is required. When requesting a quota decrease, the email address is optional. For example, the email address is optional when the `QuotaConfig.preferred_value` is smaller than the `QuotaDetails.reset_value`.
     contact_email: Any = None
-    # Output only. Create time stamp
-    create_time: Any = None
     # Immutable. The dimensions that this quota preference applies to. The key of the map entry is the name of a dimension, such as `region`, `zone`, `network_id`, and the value of the map entry is the dimension value. If a dimension is missing from the map of dimensions, the quota preference applies to all the dimension values except for those that have other quota preferences configured for the specific value. Note: QuotaPreferences can only be applied across all values of `user` and `resource` dimension. Do not set values for `user` or `resource` in the dimension map. For example: `{"provider" : "Example Organization"}` where `provider` is a service-specific quota dimension and `Example Organization` is the provider name.
     dimensions: Any = None
     # Optional. The current etag of the quota preference. If an etag is provided on update and does not match the current server's etag of the quota preference, the request will be blocked and an ABORTED error will be returned. See https://google.aip.dev/134#etags for more details on etags.
@@ -48,12 +46,8 @@ class QuotaPreferenceConfig:
     quota_config: Any = None
     # Required. The id of the quota to which the quota preference is applied. A quota name is unique in the service. For example, `CpusPerProjectPerRegion`
     quota_id: Any = None
-    # Output only. Is the quota preference pending Google Cloud approval and fulfillment.
-    reconciling: Any = None
     # Required. The name of the service to which the quota preference is applied.
     service: Any = None
-    # Output only. Update time stamp
-    update_time: Any = None
 
 @dataclasses.dataclass
 class QuotaPreferenceAttrs:
@@ -84,7 +78,6 @@ QuotaPreference = ubx.ResourceBinding(
     wire_type="google_cloudquotas_quota_preference",
     fields={
         "contact_email": ubx.FieldSpec(wire_name="contact_email"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "dimensions": ubx.FieldSpec(wire_name="dimensions"),
         "etag": ubx.FieldSpec(wire_name="etag"),
         "justification": ubx.FieldSpec(wire_name="justification"),
@@ -95,8 +88,6 @@ QuotaPreference = ubx.ResourceBinding(
             fields=_QuotaPreference_QuotaConfigFields,
         ),
         "quota_id": ubx.FieldSpec(wire_name="quota_id"),
-        "reconciling": ubx.FieldSpec(wire_name="reconciling"),
         "service": ubx.FieldSpec(wire_name="service"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

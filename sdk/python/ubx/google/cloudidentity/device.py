@@ -155,64 +155,16 @@ class DeviceConfig:
     android_specific_attributes: Any = None
     # Asset tag of the device.
     asset_tag: Any = None
-    # Output only. Baseband version of the device.
-    baseband_version: Any = None
-    # Output only. Device bootloader version. Example: 0.6.7.
-    bootloader_version: Any = None
-    # Output only. Device brand. Example: Samsung.
-    brand: Any = None
-    # Output only. Build number of the device.
-    build_number: Any = None
-    # Output only. Represents whether the Device is compromised.
-    compromised_state: Any = None
-    # Output only. When the Company-Owned device was imported. This field is empty for BYOD devices.
-    create_time: Any = None
     # Unique identifier for the device.
     device_id: Any = None
-    # Output only. Type of device.
-    device_type: Any = None
-    # Output only. Whether developer options is enabled on device.
-    enabled_developer_options: Any = None
-    # Output only. Whether USB debugging is enabled on device.
-    enabled_usb_debugging: Any = None
-    # Output only. Device encryption state.
-    encryption_state: Any = None
     # Resource representing the [Endpoint Verification-specific attributes](https://cloud.google.com/endpoint-verification/docs/device-information) of a device.
     endpoint_verification_specific_attributes: Any = None
     # Host name of the device.
     hostname: Any = None
-    # Output only. IMEI number of device if GSM device; empty otherwise.
-    imei: Any = None
-    # Output only. Kernel version of the device.
-    kernel_version: Any = None
     # Most recent time when device synced with this service.
     last_sync_time: Any = None
-    # Output only. Management state of the device
-    management_state: Any = None
-    # Output only. Device manufacturer. Example: Motorola.
-    manufacturer: Any = None
-    # Output only. MEID number of device if CDMA device; empty otherwise.
-    meid: Any = None
-    # Output only. Model name of device. Example: Pixel 3.
-    model: Any = None
-    # Output only. [Resource name](https://cloud.google.com/apis/design/resource_names) of the Device in format: `devices/{device}`, where device is the unique id assigned to the Device. Important: Device API scopes require that you use domain-wide delegation to access the API. For more information, see [Set up the Devices API](https://cloud.google.com/identity/docs/how-to/setup-devices).
-    name: Any = None
-    # Output only. Mobile or network operator of device, if available.
-    network_operator: Any = None
-    # Output only. OS version of the device. Example: Android 8.1.0.
-    os_version: Any = None
-    # Output only. Domain name for Google accounts on device. Type for other accounts on device. On Android, will only be populated if |ownership_privilege| is |PROFILE_OWNER| or |DEVICE_OWNER|. Does not include the account signed in to the device policy app if that account's domain has only one account. Examples: "com.example", "xyz.com".
-    other_accounts: Any = None
-    # Output only. Whether the device is owned by the company or an individual
-    owner_type: Any = None
-    # Output only. OS release version. Example: 6.0.
-    release_version: Any = None
-    # Output only. OS security patch update time on device.
-    security_patch_time: Any = None
     # Serial Number of device. Example: HT82V1A01076.
     serial_number: Any = None
-    # Output only. Unified device id of the device.
-    unified_device_id: Any = None
     # WiFi MAC addresses of device.
     wifi_mac_addresses: Any = None
 
@@ -292,39 +244,15 @@ Device = ubx.ResourceBinding(
             fields=_Device_AndroidSpecificAttributesFields,
         ),
         "asset_tag": ubx.FieldSpec(wire_name="asset_tag"),
-        "baseband_version": ubx.FieldSpec(wire_name="baseband_version"),
-        "bootloader_version": ubx.FieldSpec(wire_name="bootloader_version"),
-        "brand": ubx.FieldSpec(wire_name="brand"),
-        "build_number": ubx.FieldSpec(wire_name="build_number"),
-        "compromised_state": ubx.FieldSpec(wire_name="compromised_state"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "device_id": ubx.FieldSpec(wire_name="device_id"),
-        "device_type": ubx.FieldSpec(wire_name="device_type"),
-        "enabled_developer_options": ubx.FieldSpec(wire_name="enabled_developer_options"),
-        "enabled_usb_debugging": ubx.FieldSpec(wire_name="enabled_usb_debugging"),
-        "encryption_state": ubx.FieldSpec(wire_name="encryption_state"),
         "endpoint_verification_specific_attributes": ubx.FieldSpec(
             wire_name="endpoint_verification_specific_attributes",
             kind="object",
             fields=_Device_EndpointVerificationSpecificAttributesFields,
         ),
         "hostname": ubx.FieldSpec(wire_name="hostname"),
-        "imei": ubx.FieldSpec(wire_name="imei"),
-        "kernel_version": ubx.FieldSpec(wire_name="kernel_version"),
         "last_sync_time": ubx.FieldSpec(wire_name="last_sync_time"),
-        "management_state": ubx.FieldSpec(wire_name="management_state"),
-        "manufacturer": ubx.FieldSpec(wire_name="manufacturer"),
-        "meid": ubx.FieldSpec(wire_name="meid"),
-        "model": ubx.FieldSpec(wire_name="model"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "network_operator": ubx.FieldSpec(wire_name="network_operator"),
-        "os_version": ubx.FieldSpec(wire_name="os_version"),
-        "other_accounts": ubx.FieldSpec(wire_name="other_accounts"),
-        "owner_type": ubx.FieldSpec(wire_name="owner_type"),
-        "release_version": ubx.FieldSpec(wire_name="release_version"),
-        "security_patch_time": ubx.FieldSpec(wire_name="security_patch_time"),
         "serial_number": ubx.FieldSpec(wire_name="serial_number"),
-        "unified_device_id": ubx.FieldSpec(wire_name="unified_device_id"),
         "wifi_mac_addresses": ubx.FieldSpec(wire_name="wifi_mac_addresses"),
     },
 )

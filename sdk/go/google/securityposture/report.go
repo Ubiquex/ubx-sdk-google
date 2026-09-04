@@ -9,32 +9,32 @@ type Report_Iac struct {
 }
 
 type Report_IacValidationReport_Violations_ViolatedAsset struct {
-	Asset any
+	Asset     any
 	AssetType any
 }
 
 type Report_IacValidationReport_Violations_ViolatedPolicy struct {
 	ComplianceStandards any
-	Constraint any
-	ConstraintType any
-	Description any
+	Constraint          any
+	ConstraintType      any
+	Description         any
 }
 
 type Report_IacValidationReport_Violations_ViolatedPosture struct {
-	PolicySet any
-	Posture any
-	PostureDeployment any
+	PolicySet                       any
+	Posture                         any
+	PostureDeployment               any
 	PostureDeploymentTargetResource any
-	PostureRevisionId any
+	PostureRevisionId               any
 }
 
 type Report_IacValidationReport_Violations struct {
-	AssetId any
-	NextSteps any
-	PolicyId any
-	Severity any
-	ViolatedAsset any
-	ViolatedPolicy any
+	AssetId         any
+	NextSteps       any
+	PolicyId        any
+	Severity        any
+	ViolatedAsset   any
+	ViolatedPolicy  any
 	ViolatedPosture any
 }
 
@@ -46,8 +46,8 @@ type Report_IacValidationReport struct {
 }
 
 var Report_IacFields = ubx.FieldMap{
-		"TfPlan": ubx.FieldSpec{WireName: "tf_plan"},
-	}
+	"TfPlan": ubx.FieldSpec{WireName: "tf_plan"},
+}
 
 type ReportConfig struct {
 	// Details of an infrastructure-as-code (IaC) configuration.
@@ -72,8 +72,8 @@ var Report = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Iac": ubx.FieldSpec{
 			WireName: "iac",
-			Kind: "object",
-			Fields: Report_IacFields,
+			Kind:     "object",
+			Fields:   Report_IacFields,
 		},
 	},
 }

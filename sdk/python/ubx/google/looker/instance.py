@@ -274,14 +274,10 @@ class InstanceConfig:
     controlled_egress_config: Any = None
     # Optional. Whether controlled egress is enabled on the Looker instance.
     controlled_egress_enabled: Any = None
-    # Output only. The time when the Looker instance provisioning was first requested.
-    create_time: Any = None
     # Custom domain information.
     custom_domain: Any = None
     # Specifies the maintenance denial period.
     deny_maintenance_period: Any = None
-    # Output only. Public Egress IP (IPv4).
-    egress_public_ip: Any = None
     # Encryption configuration (i.e. CMEK).
     encryption_config: Any = None
     # Optional. Whether FIPS is enabled on the Looker instance.
@@ -290,24 +286,14 @@ class InstanceConfig:
     gemini_enabled: Any = None
     # Ingress IP allowlist configuration.
     ingress_ip_allowlist_config: Any = None
-    # Output only. Private Ingress IP (IPv4).
-    ingress_private_ip: Any = None
-    # Output only. Public Ingress IP (IPv4).
-    ingress_public_ip: Any = None
     # Specifies the maintenance denial period.
     last_deny_maintenance_period: Any = None
     # Optional. Linked Google Cloud Project Number for Looker Studio Pro.
     linked_lsp_project_number: Any = None
-    # Output only. Looker instance URI which can be used to access the Looker Instance UI.
-    looker_uri: Any = None
-    # Output only. The Looker version that the instance is using.
-    looker_version: Any = None
     # Published upcoming future maintenance schedule.
     maintenance_schedule: Any = None
     # Specifies the recurring maintenance window.
     maintenance_window: Any = None
-    # Output only. Format: `projects/{project}/locations/{location}/instances/{instance}`.
-    name: Any = None
     # Looker instance OAuth login settings.
     oauth_config: Any = None
     # Configuration for periodic export.
@@ -326,18 +312,6 @@ class InstanceConfig:
     release_channel: Any = None
     # Name of a reserved IP address range within the Instance.consumer_network, to be used for private services access connection. May or may not be specified in a create request.
     reserved_range: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzi: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzs: Any = None
-    # Output only. The reason for the instance being in a soft-deleted state.
-    soft_delete_reason: Any = None
-    # Output only. The state of the instance.
-    state: Any = None
-    # Output only. The time when the Looker instance was suspended (soft deleted).
-    suspended_time: Any = None
-    # Output only. The time when the Looker instance was last updated.
-    update_time: Any = None
     # Metadata about users for a Looker instance.
     user_metadata: Any = None
 
@@ -442,7 +416,6 @@ Instance = ubx.ResourceBinding(
             fields=_Instance_ControlledEgressConfigFields,
         ),
         "controlled_egress_enabled": ubx.FieldSpec(wire_name="controlled_egress_enabled"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "custom_domain": ubx.FieldSpec(
             wire_name="custom_domain",
             kind="object",
@@ -453,7 +426,6 @@ Instance = ubx.ResourceBinding(
             kind="object",
             fields=_Instance_DenyMaintenancePeriodFields,
         ),
-        "egress_public_ip": ubx.FieldSpec(wire_name="egress_public_ip"),
         "encryption_config": ubx.FieldSpec(
             wire_name="encryption_config",
             kind="object",
@@ -466,16 +438,12 @@ Instance = ubx.ResourceBinding(
             kind="object",
             fields=_Instance_IngressIpAllowlistConfigFields,
         ),
-        "ingress_private_ip": ubx.FieldSpec(wire_name="ingress_private_ip"),
-        "ingress_public_ip": ubx.FieldSpec(wire_name="ingress_public_ip"),
         "last_deny_maintenance_period": ubx.FieldSpec(
             wire_name="last_deny_maintenance_period",
             kind="object",
             fields=_Instance_DenyMaintenancePeriodFields,
         ),
         "linked_lsp_project_number": ubx.FieldSpec(wire_name="linked_lsp_project_number"),
-        "looker_uri": ubx.FieldSpec(wire_name="looker_uri"),
-        "looker_version": ubx.FieldSpec(wire_name="looker_version"),
         "maintenance_schedule": ubx.FieldSpec(
             wire_name="maintenance_schedule",
             kind="object",
@@ -486,7 +454,6 @@ Instance = ubx.ResourceBinding(
             kind="object",
             fields=_Instance_MaintenanceWindowFields,
         ),
-        "name": ubx.FieldSpec(wire_name="name"),
         "oauth_config": ubx.FieldSpec(
             wire_name="oauth_config",
             kind="object",
@@ -508,12 +475,6 @@ Instance = ubx.ResourceBinding(
         "public_ip_enabled": ubx.FieldSpec(wire_name="public_ip_enabled"),
         "release_channel": ubx.FieldSpec(wire_name="release_channel"),
         "reserved_range": ubx.FieldSpec(wire_name="reserved_range"),
-        "satisfies_pzi": ubx.FieldSpec(wire_name="satisfies_pzi"),
-        "satisfies_pzs": ubx.FieldSpec(wire_name="satisfies_pzs"),
-        "soft_delete_reason": ubx.FieldSpec(wire_name="soft_delete_reason"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "suspended_time": ubx.FieldSpec(wire_name="suspended_time"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
         "user_metadata": ubx.FieldSpec(
             wire_name="user_metadata",
             kind="object",

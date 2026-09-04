@@ -136,7 +136,6 @@ export interface JobRun_VerifyJobRun {
 }
 
 export interface JobRunConfig {
-  name: string | Computed<string>;
 }
 
 export interface JobRunAttrs {
@@ -176,6 +175,5 @@ export interface JobRunAttrs {
 export const JobRun: DataSourceBinding<JobRunConfig, JobRunAttrs> = {
   wireType: "google_clouddeploy_job_run",
   fields: {
-    name: "name",
   },
 };

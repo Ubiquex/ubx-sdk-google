@@ -19,7 +19,7 @@ class V2betaAttachment_Creator:
 
 @dataclasses.dataclass
 class V2betaAttachmentConfig:
-    name: Any = None
+    pass
 
 @dataclasses.dataclass
 class V2betaAttachmentAttrs:
@@ -38,6 +38,5 @@ class V2betaAttachmentAttrs:
 V2betaAttachment = ubx.DataSourceBinding(
     wire_type="google_cloudsupport_v2beta_attachment",
     fields={
-        "name": ubx.FieldSpec(wire_name="name"),
     },
 )

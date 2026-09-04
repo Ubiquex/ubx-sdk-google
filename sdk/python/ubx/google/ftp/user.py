@@ -34,24 +34,16 @@ _User_UserCredentialsFields = {
 
 @dataclasses.dataclass
 class UserConfig:
-    # Output only. [Output only] Create time stamp
-    create_time: Any = None
     # Required. Service account in customer project attached to this SFTP User.
     customer_service_account: Any = None
     # Optional. Labels as key value pairs
     labels: Any = None
     # Identifier. User-friendly name via which User will be identified. projects/{project}/locations/{location}/servers/{server}/users/{user}
     name: Any = None
-    # Output only. Tracks user creation.
-    state: Any = None
     # Required. Mapping of Cloud Storage buckets to directories where the user will land in the SFTP server.
     storage_directory_mappings: Any = None
-    # Output only. [Output only] Update time stamp
-    update_time: Any = None
     # Required. User credential for the user. The maximum number of user credentials is 10.
     user_credentials: Any = None
-    # Output only. [Output only] The username of the user.
-    username: Any = None
 
 @dataclasses.dataclass
 class UserAttrs:
@@ -77,22 +69,18 @@ class UserAttrs:
 User = ubx.ResourceBinding(
     wire_type="google_ftp_user",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "customer_service_account": ubx.FieldSpec(wire_name="customer_service_account"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "state": ubx.FieldSpec(wire_name="state"),
         "storage_directory_mappings": ubx.FieldSpec(
             wire_name="storage_directory_mappings",
             kind="list",
             fields=_User_StorageDirectoryMappingsFields,
         ),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
         "user_credentials": ubx.FieldSpec(
             wire_name="user_credentials",
             kind="list",
             fields=_User_UserCredentialsFields,
         ),
-        "username": ubx.FieldSpec(wire_name="username"),
     },
 )

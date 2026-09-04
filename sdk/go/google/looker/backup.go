@@ -13,22 +13,16 @@ type Backup_EncryptionConfig struct {
 }
 
 var Backup_EncryptionConfigFields = ubx.FieldMap{
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-		"KmsKeyNameVersion": ubx.FieldSpec{WireName: "kms_key_name_version"},
-		"KmsKeyState": ubx.FieldSpec{WireName: "kms_key_state"},
-	}
+	"KmsKeyName":        ubx.FieldSpec{WireName: "kms_key_name"},
+	"KmsKeyNameVersion": ubx.FieldSpec{WireName: "kms_key_name_version"},
+	"KmsKeyState":       ubx.FieldSpec{WireName: "kms_key_state"},
+}
 
 type BackupConfig struct {
-	// Output only. The time when the backup was started.
-	CreateTime any
 	// Encryption configuration (i.e. CMEK).
 	EncryptionConfig any
-	// Output only. The time when the backup will be deleted.
-	ExpireTime any
 	// Immutable. The relative resource name of the backup, in the following form: `projects/{project_number}/locations/{location_id}/instances/{instance_id}/backups/{backup}`
 	Name any
-	// Output only. The current state of the backup.
-	State any
 }
 
 type BackupAttrs struct {
@@ -47,14 +41,11 @@ type BackupAttrs struct {
 var Backup = ubx.ResourceBinding{
 	WireType: "google_looker_backup",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"EncryptionConfig": ubx.FieldSpec{
 			WireName: "encryption_config",
-			Kind: "object",
-			Fields: Backup_EncryptionConfigFields,
+			Kind:     "object",
+			Fields:   Backup_EncryptionConfigFields,
 		},
-		"ExpireTime": ubx.FieldSpec{WireName: "expire_time"},
 		"Name": ubx.FieldSpec{WireName: "name"},
-		"State": ubx.FieldSpec{WireName: "state"},
 	},
 }

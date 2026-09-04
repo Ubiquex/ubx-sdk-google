@@ -42,8 +42,6 @@ const ClientTlsPolicy_ClientCertificateFields: FieldMap = {
 export interface ClientTlsPolicyConfig {
   /** Specification of certificate provider. Defines the mechanism to obtain the certificate and private key for peer to peer authentication. */
   clientCertificate?: ClientTlsPolicy_ClientCertificate | Computed<ClientTlsPolicy_ClientCertificate>;
-  /** Output only. The timestamp when the resource was created. */
-  createTime?: string | Computed<string>;
   /** Optional. Free-text description of the resource. */
   description?: string | Computed<string>;
   /** Optional. Set of label tags associated with the resource. */
@@ -54,8 +52,6 @@ export interface ClientTlsPolicyConfig {
   serverValidationCa?: ClientTlsPolicy_ClientCertificate[] | Computed<ClientTlsPolicy_ClientCertificate[]>;
   /** Optional. Server Name Indication string to present to the server during TLS handshake. E.g: "secure.example.com". */
   sni?: string | Computed<string>;
-  /** Output only. The timestamp when the resource was updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface ClientTlsPolicyAttrs {
@@ -85,7 +81,6 @@ export const ClientTlsPolicy: ResourceBinding<ClientTlsPolicyConfig, ClientTlsPo
       kind: "object",
       fields: ClientTlsPolicy_ClientCertificateFields,
     },
-    createTime: "create_time",
     description: "description",
     labels: "labels",
     name: "name",
@@ -95,6 +90,5 @@ export const ClientTlsPolicy: ResourceBinding<ClientTlsPolicyConfig, ClientTlsPo
       fields: ClientTlsPolicy_ClientCertificateFields,
     },
     sni: "sni",
-    updateTime: "update_time",
   },
 };

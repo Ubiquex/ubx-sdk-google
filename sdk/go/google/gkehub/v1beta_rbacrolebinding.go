@@ -16,19 +16,15 @@ type V1betaRbacrolebinding_State struct {
 }
 
 var V1betaRbacrolebinding_RoleFields = ubx.FieldMap{
-		"CustomRole": ubx.FieldSpec{WireName: "custom_role"},
-		"PredefinedRole": ubx.FieldSpec{WireName: "predefined_role"},
-	}
+	"CustomRole":     ubx.FieldSpec{WireName: "custom_role"},
+	"PredefinedRole": ubx.FieldSpec{WireName: "predefined_role"},
+}
 
 var V1betaRbacrolebinding_StateFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-	}
+	"Code": ubx.FieldSpec{WireName: "code"},
+}
 
 type V1betaRbacrolebindingConfig struct {
-	// Output only. When the rbacrolebinding was created.
-	CreateTime any
-	// Output only. When the rbacrolebinding was deleted.
-	DeleteTime any
 	// group is the group, as seen by the kubernetes cluster.
 	Group any
 	// Optional. Labels for this RBACRolebinding.
@@ -39,10 +35,6 @@ type V1betaRbacrolebindingConfig struct {
 	Role any
 	// RBACRoleBindingLifecycleState describes the state of a RbacRoleBinding resource.
 	State any
-	// Output only. Google-generated UUID for this resource. This is unique across all rbacrolebinding resources. If a rbacrolebinding resource is deleted and another resource with the same name is created, it gets a different uid.
-	Uid any
-	// Output only. When the rbacrolebinding was last updated.
-	UpdateTime any
 	// user is the name of the user as seen by the kubernetes cluster, example "alice" or "alice@domain.tld"
 	User any
 }
@@ -73,23 +65,19 @@ type V1betaRbacrolebindingAttrs struct {
 var V1betaRbacrolebinding = ubx.ResourceBinding{
 	WireType: "google_gkehub_v1beta_rbacrolebinding",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DeleteTime": ubx.FieldSpec{WireName: "delete_time"},
-		"Group": ubx.FieldSpec{WireName: "group"},
+		"Group":  ubx.FieldSpec{WireName: "group"},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":   ubx.FieldSpec{WireName: "name"},
 		"Role": ubx.FieldSpec{
 			WireName: "role",
-			Kind: "object",
-			Fields: V1betaRbacrolebinding_RoleFields,
+			Kind:     "object",
+			Fields:   V1betaRbacrolebinding_RoleFields,
 		},
 		"State": ubx.FieldSpec{
 			WireName: "state",
-			Kind: "object",
-			Fields: V1betaRbacrolebinding_StateFields,
+			Kind:     "object",
+			Fields:   V1betaRbacrolebinding_StateFields,
 		},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 		"User": ubx.FieldSpec{WireName: "user"},
 	},
 }

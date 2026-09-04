@@ -20,24 +20,16 @@ export interface AttributeConfig {
   allowedValues?: Attribute_AllowedValues[] | Computed<Attribute_AllowedValues[]>;
   /** Optional. The maximum number of values that the attribute can have when associated with an API Hub resource. Cardinality 1 would represent a single-valued attribute. It must not be less than 1 or greater than 20. If not specified, the cardinality would be set to 1 by default and represent a single-valued attribute. */
   cardinality?: number | Computed<number>;
-  /** Output only. The time at which the attribute was created. */
-  createTime?: string | Computed<string>;
   /** Required. The type of the data of the attribute. */
   dataType?: string | Computed<string>;
-  /** Output only. The definition type of the attribute. */
-  definitionType?: string | Computed<string>;
   /** Optional. The description of the attribute. */
   description?: string | Computed<string>;
   /** Required. The display name of the attribute. */
   displayName?: string | Computed<string>;
-  /** Output only. When mandatory is true, the attribute is mandatory for the resource specified in the scope. Only System defined attributes can be mandatory. */
-  mandatory?: boolean | Computed<boolean>;
   /** Identifier. The name of the attribute in the API Hub. Format: `projects/{project}/locations/{location}/attributes/{attribute}` */
   name?: string | Computed<string>;
   /** Required. The scope of the attribute. It represents the resource in the API Hub to which the attribute can be linked. */
   scope?: string | Computed<string>;
-  /** Output only. The time at which the attribute was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface AttributeAttrs {
@@ -74,14 +66,10 @@ export const Attribute: ResourceBinding<AttributeConfig, AttributeAttrs> = {
       fields: Attribute_AllowedValuesFields,
     },
     cardinality: "cardinality",
-    createTime: "create_time",
     dataType: "data_type",
-    definitionType: "definition_type",
     description: "description",
     displayName: "display_name",
-    mandatory: "mandatory",
     name: "name",
     scope: "scope",
-    updateTime: "update_time",
   },
 };

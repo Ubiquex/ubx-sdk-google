@@ -4,12 +4,6 @@ package dataplex
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DataTaxonomyConfig struct {
-	// Output only. The number of attributes in the DataTaxonomy.
-	AttributeCount any
-	// Output only. The number of classes in the DataTaxonomy.
-	ClassCount any
-	// Output only. The time when the DataTaxonomy was created.
-	CreateTime any
 	// Optional. Description of the DataTaxonomy.
 	Description any
 	// Optional. User friendly display name.
@@ -18,12 +12,6 @@ type DataTaxonomyConfig struct {
 	Etag any
 	// Optional. User-defined labels for the DataTaxonomy.
 	Labels any
-	// Output only. The relative resource name of the DataTaxonomy, of the form: projects/{project_number}/locations/{location_id}/dataTaxonomies/{data_taxonomy_id}.
-	Name any
-	// Output only. System generated globally unique ID for the dataTaxonomy. This ID will be different if the DataTaxonomy is deleted and re-created with the same name.
-	Uid any
-	// Output only. The time when the DataTaxonomy was last updated.
-	UpdateTime any
 }
 
 type DataTaxonomyAttrs struct {
@@ -52,15 +40,9 @@ type DataTaxonomyAttrs struct {
 var DataTaxonomy = ubx.ResourceBinding{
 	WireType: "google_dataplex_data_taxonomy",
 	Fields: ubx.FieldMap{
-		"AttributeCount": ubx.FieldSpec{WireName: "attribute_count"},
-		"ClassCount": ubx.FieldSpec{WireName: "class_count"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"Etag":        ubx.FieldSpec{WireName: "etag"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
 	},
 }

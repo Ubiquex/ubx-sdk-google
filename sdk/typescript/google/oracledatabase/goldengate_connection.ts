@@ -1269,18 +1269,12 @@ const GoldengateConnection_PropertiesFields: FieldMap = {
 };
 
 export interface GoldengateConnectionConfig {
-  /** Output only. The date and time that the GoldengateConnection was created. */
-  createTime?: string | Computed<string>;
-  /** Output only. The ID of the subscription entitlement associated with the GoldengateConnection. */
-  entitlementId?: string | Computed<string>;
   /** Optional. The GCP Oracle zone where Oracle GoldengateConnection is hosted. Example: us-east4-b-r2. If not specified, the system will pick a zone based on availability. */
   gcpOracleZone?: string | Computed<string>;
   /** Optional. The labels or tags associated with the GoldengateConnection. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Identifier. The name of the GoldengateConnection resource in the following format: projects/{project}/locations/{region}/goldengateConnections/{goldengate_connection} */
   name?: string | Computed<string>;
-  /** Output only. HTTPS link to OCI resources exposed to Customer via UI Interface. */
-  ociUrl?: string | Computed<string>;
   /** Optional. The name of the OdbNetwork associated with the GoldengateConnection. The format is projects/{project}/locations/{location}/odbNetworks/{odb_network}. It is optional but if specified, this should match the parent ODBNetwork of the OdbSubnet. */
   odbNetwork?: string | Computed<string>;
   /** Optional. The name of the OdbSubnet associated with the GoldengateConnection for IP allocation. Format: projects/{project}/locations/{location}/odbNetworks/{odb_network}/odbSubnets/{odb_subnet} */
@@ -1313,12 +1307,9 @@ export interface GoldengateConnectionAttrs {
 export const GoldengateConnection: ResourceBinding<GoldengateConnectionConfig, GoldengateConnectionAttrs> = {
   wireType: "google_oracledatabase_goldengate_connection",
   fields: {
-    createTime: "create_time",
-    entitlementId: "entitlement_id",
     gcpOracleZone: "gcp_oracle_zone",
     labels: "labels",
     name: "name",
-    ociUrl: "oci_url",
     odbNetwork: "odb_network",
     odbSubnet: "odb_subnet",
     properties: {

@@ -14,8 +14,6 @@ const DnsZone_PeeringConfigFields: FieldMap = {
 };
 
 export interface DnsZoneConfig {
-  /** Output only. The time that this resource was created on the server. */
-  createTime?: string | Computed<string>;
   /** Required. Description of the resource. String of at most 1024 characters associated with this resource for the user's convenience. */
   description?: string | Computed<string>;
   /** Required. The domain name for hosts in this private zone, for instance "example.com.". */
@@ -24,10 +22,6 @@ export interface DnsZoneConfig {
   name?: string | Computed<string>;
   /** Fields for DNS PEERING zone. */
   peeringConfig?: DnsZone_PeeringConfig | Computed<DnsZone_PeeringConfig>;
-  /** Output only. State of the DNS Peering. Values other than `ACTIVE` mean the resource is not ready to use. */
-  state?: string | Computed<string>;
-  /** Output only. The time that this resource was updated on the server. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface DnsZoneAttrs {
@@ -50,7 +44,6 @@ export interface DnsZoneAttrs {
 export const DnsZone: ResourceBinding<DnsZoneConfig, DnsZoneAttrs> = {
   wireType: "google_apigee_dns_zone",
   fields: {
-    createTime: "create_time",
     description: "description",
     domain: "domain",
     name: "name",
@@ -59,7 +52,5 @@ export const DnsZone: ResourceBinding<DnsZoneConfig, DnsZoneAttrs> = {
       kind: "object",
       fields: DnsZone_PeeringConfigFields,
     },
-    state: "state",
-    updateTime: "update_time",
   },
 };

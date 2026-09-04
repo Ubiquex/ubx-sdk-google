@@ -164,8 +164,6 @@ const GrpcRoute_RulesFields: FieldMap = {
 };
 
 export interface GrpcRouteConfig {
-  /** Output only. The timestamp when the resource was created. */
-  createTime?: string | Computed<string>;
   /** Optional. A free-text description of the resource. Max length 1024 characters. */
   description?: string | Computed<string>;
   /** Optional. Gateways defines a list of gateways this GrpcRoute is attached to, as one of the routing rules to route the requests served by the gateway. Each gateway reference should match the pattern: `projects/* /locations/* /gateways/` */
@@ -180,10 +178,6 @@ export interface GrpcRouteConfig {
   name?: string | Computed<string>;
   /** Required. A list of detailed rules defining how to route traffic. Within a single GrpcRoute, the GrpcRoute.RouteAction associated with the first matching GrpcRoute.RouteRule will be executed. At least one rule must be supplied. */
   rules?: GrpcRoute_Rules[] | Computed<GrpcRoute_Rules[]>;
-  /** Output only. Server-defined URL of this resource */
-  selfLink?: string | Computed<string>;
-  /** Output only. The timestamp when the resource was updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface GrpcRouteAttrs {
@@ -212,7 +206,6 @@ export interface GrpcRouteAttrs {
 export const GrpcRoute: ResourceBinding<GrpcRouteConfig, GrpcRouteAttrs> = {
   wireType: "google_networkservices_grpc_route",
   fields: {
-    createTime: "create_time",
     description: "description",
     gateways: "gateways",
     hostnames: "hostnames",
@@ -224,7 +217,5 @@ export const GrpcRoute: ResourceBinding<GrpcRouteConfig, GrpcRouteAttrs> = {
       kind: "list",
       fields: GrpcRoute_RulesFields,
     },
-    selfLink: "self_link",
-    updateTime: "update_time",
   },
 };

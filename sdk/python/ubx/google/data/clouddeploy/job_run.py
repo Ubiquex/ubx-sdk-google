@@ -142,7 +142,7 @@ class JobRun_VerifyJobRun:
 
 @dataclasses.dataclass
 class JobRunConfig:
-    name: Any = None
+    pass
 
 @dataclasses.dataclass
 class JobRunAttrs:
@@ -181,6 +181,5 @@ class JobRunAttrs:
 JobRun = ubx.DataSourceBinding(
     wire_type="google_clouddeploy_job_run",
     fields={
-        "name": ubx.FieldSpec(wire_name="name"),
     },
 )

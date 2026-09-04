@@ -20,20 +20,6 @@ class Domain_Trusts:
     trust_type: Any = None
     update_time: Any = None
 
-_Domain_TrustsFields = {
-    "create_time": ubx.FieldSpec(wire_name="create_time"),
-    "last_trust_heartbeat_time": ubx.FieldSpec(wire_name="last_trust_heartbeat_time"),
-    "selective_authentication": ubx.FieldSpec(wire_name="selective_authentication"),
-    "state": ubx.FieldSpec(wire_name="state"),
-    "state_description": ubx.FieldSpec(wire_name="state_description"),
-    "target_dns_ip_addresses": ubx.FieldSpec(wire_name="target_dns_ip_addresses"),
-    "target_domain_name": ubx.FieldSpec(wire_name="target_domain_name"),
-    "trust_direction": ubx.FieldSpec(wire_name="trust_direction"),
-    "trust_handshake_secret": ubx.FieldSpec(wire_name="trust_handshake_secret"),
-    "trust_type": ubx.FieldSpec(wire_name="trust_type"),
-    "update_time": ubx.FieldSpec(wire_name="update_time"),
-}
-
 @dataclasses.dataclass
 class DomainConfig:
     # Optional. The name of delegated administrator account used to perform Active Directory operations. If not specified, `setupadmin` will be used.
@@ -42,10 +28,6 @@ class DomainConfig:
     audit_logs_enabled: Any = None
     # Optional. The full names of the Google Compute Engine [networks](/compute/docs/networks-and-firewalls#networks) the domain instance is connected to. Networks can be added using UpdateDomain. The domain is only available on networks listed in `authorized_networks`. If CIDR subnets overlap between networks, domain creation will fail.
     authorized_networks: Any = None
-    # Output only. The time the instance was created.
-    create_time: Any = None
-    # Output only. The fully-qualified domain name of the exposed domain used by clients to connect to the service. Similar to what would be chosen for an Active Directory set up on an internal network.
-    fqdn: Any = None
     # Optional. Resource labels that can contain user-provided metadata.
     labels: Any = None
     # Required. Locations where domain needs to be provisioned. The locations can be specified according to https://cloud.google.com/compute/docs/regions-zones, such as `us-west1` or `us-east4`. Each domain supports up to 4 locations, separated by commas. Each location will use a /26 block.
@@ -54,14 +36,6 @@ class DomainConfig:
     name: Any = None
     # Required. The CIDR range of internal addresses that are reserved for this domain. Reserved networks must be /24 or larger. Ranges must be unique and non-overlapping with existing subnets in [Domain].[authorized_networks].
     reserved_ip_range: Any = None
-    # Output only. The current state of this domain.
-    state: Any = None
-    # Output only. Additional information about the current status of this domain, if available.
-    status_message: Any = None
-    # Output only. The current trusts associated with the domain.
-    trusts: Any = None
-    # Output only. The last update time.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class DomainAttrs:
@@ -98,19 +72,9 @@ Domain = ubx.ResourceBinding(
         "admin": ubx.FieldSpec(wire_name="admin"),
         "audit_logs_enabled": ubx.FieldSpec(wire_name="audit_logs_enabled"),
         "authorized_networks": ubx.FieldSpec(wire_name="authorized_networks"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
-        "fqdn": ubx.FieldSpec(wire_name="fqdn"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "locations": ubx.FieldSpec(wire_name="locations"),
         "name": ubx.FieldSpec(wire_name="name"),
         "reserved_ip_range": ubx.FieldSpec(wire_name="reserved_ip_range"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "status_message": ubx.FieldSpec(wire_name="status_message"),
-        "trusts": ubx.FieldSpec(
-            wire_name="trusts",
-            kind="list",
-            fields=_Domain_TrustsFields,
-        ),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

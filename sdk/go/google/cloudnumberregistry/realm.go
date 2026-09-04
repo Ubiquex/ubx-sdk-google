@@ -30,26 +30,24 @@ type Realm_DiscoveryMetadata struct {
 }
 
 var Realm_AggregatedDataFields = ubx.FieldMap{
-		"CustomRangesCount": ubx.FieldSpec{WireName: "custom_ranges_count"},
-		"DiscoveredRangesCount": ubx.FieldSpec{WireName: "discovered_ranges_count"},
-	}
+	"CustomRangesCount":     ubx.FieldSpec{WireName: "custom_ranges_count"},
+	"DiscoveredRangesCount": ubx.FieldSpec{WireName: "discovered_ranges_count"},
+}
 
 var Realm_DiscoveryMetadataFields = ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"EventTime": ubx.FieldSpec{WireName: "event_time"},
-		"Resource": ubx.FieldSpec{WireName: "resource"},
-		"ResourceUri": ubx.FieldSpec{WireName: "resource_uri"},
-		"SourceId": ubx.FieldSpec{WireName: "source_id"},
-		"SourceSubId": ubx.FieldSpec{WireName: "source_sub_id"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-	}
+	"CreateTime":  ubx.FieldSpec{WireName: "create_time"},
+	"EventTime":   ubx.FieldSpec{WireName: "event_time"},
+	"Resource":    ubx.FieldSpec{WireName: "resource"},
+	"ResourceUri": ubx.FieldSpec{WireName: "resource_uri"},
+	"SourceId":    ubx.FieldSpec{WireName: "source_id"},
+	"SourceSubId": ubx.FieldSpec{WireName: "source_sub_id"},
+	"State":       ubx.FieldSpec{WireName: "state"},
+	"UpdateTime":  ubx.FieldSpec{WireName: "update_time"},
+}
 
 type RealmConfig struct {
 	// Aggregated data for the Realm.
 	AggregatedData any
-	// Output only. The time at which the Realm was created.
-	CreateTime any
 	// Metadata about a discovered resource, tracking event times, state, and source information.
 	DiscoveryMetadata any
 	// Optional. IP version of the Realm.
@@ -64,8 +62,6 @@ type RealmConfig struct {
 	RegistryBook any
 	// Required. Traffic type of the Realm.
 	TrafficType any
-	// Output only. The time at which the Realm was last updated.
-	UpdateTime any
 }
 
 type RealmAttrs struct {
@@ -96,21 +92,19 @@ var Realm = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AggregatedData": ubx.FieldSpec{
 			WireName: "aggregated_data",
-			Kind: "object",
-			Fields: Realm_AggregatedDataFields,
+			Kind:     "object",
+			Fields:   Realm_AggregatedDataFields,
 		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"DiscoveryMetadata": ubx.FieldSpec{
 			WireName: "discovery_metadata",
-			Kind: "object",
-			Fields: Realm_DiscoveryMetadataFields,
+			Kind:     "object",
+			Fields:   Realm_DiscoveryMetadataFields,
 		},
-		"IpVersion": ubx.FieldSpec{WireName: "ip_version"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"IpVersion":      ubx.FieldSpec{WireName: "ip_version"},
+		"Labels":         ubx.FieldSpec{WireName: "labels"},
 		"ManagementType": ubx.FieldSpec{WireName: "management_type"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"RegistryBook": ubx.FieldSpec{WireName: "registry_book"},
-		"TrafficType": ubx.FieldSpec{WireName: "traffic_type"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"Name":           ubx.FieldSpec{WireName: "name"},
+		"RegistryBook":   ubx.FieldSpec{WireName: "registry_book"},
+		"TrafficType":    ubx.FieldSpec{WireName: "traffic_type"},
 	},
 }

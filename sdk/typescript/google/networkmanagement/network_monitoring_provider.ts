@@ -2,20 +2,8 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface NetworkMonitoringProviderConfig {
-  /** Output only. The time the NetworkMonitoringProvider was created. */
-  createTime?: string | Computed<string>;
-  /** Output only. The list of error messages detected for the NetworkMonitoringProvider. */
-  errors?: string[] | Computed<string[]>;
-  /** Output only. Identifier. Name of the resource. Format: `projects/{project}/locations/{location}/networkMonitoringProviders/{network_monitoring_provider}` */
-  name?: string | Computed<string>;
   /** Required. Type of the NetworkMonitoringProvider. */
   providerType?: string | Computed<string>;
-  /** Output only. Link to the provider's UI. */
-  providerUri?: string | Computed<string>;
-  /** Output only. State of the NetworkMonitoringProvider. */
-  state?: string | Computed<string>;
-  /** Output only. The time the NetworkMonitoringProvider was updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface NetworkMonitoringProviderAttrs {
@@ -38,12 +26,6 @@ export interface NetworkMonitoringProviderAttrs {
 export const NetworkMonitoringProvider: ResourceBinding<NetworkMonitoringProviderConfig, NetworkMonitoringProviderAttrs> = {
   wireType: "google_networkmanagement_network_monitoring_provider",
   fields: {
-    createTime: "create_time",
-    errors: "errors",
-    name: "name",
     providerType: "provider_type",
-    providerUri: "provider_uri",
-    state: "state",
-    updateTime: "update_time",
   },
 };

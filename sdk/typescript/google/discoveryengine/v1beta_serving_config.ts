@@ -264,8 +264,6 @@ export interface V1betaServingConfigConfig {
   answerGenerationSpec?: V1betaServingConfig_AnswerGenerationSpec | Computed<V1betaServingConfig_AnswerGenerationSpec>;
   /** Boost controls to use in serving path. All triggered boost controls will be applied. Boost controls must be in the same data store as the serving config. Maximum of 20 boost controls. */
   boostControlIds?: string[] | Computed<string[]>;
-  /** Output only. ServingConfig created timestamp. */
-  createTime?: string | Computed<string>;
   /** Required. The human readable serving config display name. Used in Discovery UI. This field must be a UTF-8 encoded string with a length limit of 128 characters. Otherwise, an INVALID_ARGUMENT error is returned. */
   displayName?: string | Computed<string>;
   /** Condition do not associate specifications. If multiple do not associate conditions match, all matching do not associate controls in the list will execute. Order does not matter. Maximum number of specifications is 100. Can only be set if SolutionType is SOLUTION_TYPE_SEARCH. */
@@ -302,8 +300,6 @@ export interface V1betaServingConfigConfig {
   solutionType?: string | Computed<string>;
   /** Condition synonyms specifications. If multiple synonyms conditions match, all matching synonyms controls in the list will execute. Maximum number of specifications is 100. Can only be set if SolutionType is SOLUTION_TYPE_SEARCH. */
   synonymsControlIds?: string[] | Computed<string[]>;
-  /** Output only. ServingConfig updated timestamp. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1betaServingConfigAttrs {
@@ -362,7 +358,6 @@ export const V1betaServingConfig: ResourceBinding<V1betaServingConfigConfig, V1b
       fields: V1betaServingConfig_AnswerGenerationSpecFields,
     },
     boostControlIds: "boost_control_ids",
-    createTime: "create_time",
     displayName: "display_name",
     dissociateControlIds: "dissociate_control_ids",
     diversityLevel: "diversity_level",
@@ -397,6 +392,5 @@ export const V1betaServingConfig: ResourceBinding<V1betaServingConfigConfig, V1b
     replacementControlIds: "replacement_control_ids",
     solutionType: "solution_type",
     synonymsControlIds: "synonyms_control_ids",
-    updateTime: "update_time",
   },
 };

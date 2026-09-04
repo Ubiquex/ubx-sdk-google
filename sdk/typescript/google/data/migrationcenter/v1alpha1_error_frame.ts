@@ -872,7 +872,6 @@ export interface V1alpha1ErrorFrame_Violations {
 }
 
 export interface V1alpha1ErrorFrameConfig {
-  name: string | Computed<string>;
   view?: string | Computed<string>;
 }
 
@@ -890,7 +889,6 @@ export interface V1alpha1ErrorFrameAttrs {
 export const V1alpha1ErrorFrame: DataSourceBinding<V1alpha1ErrorFrameConfig, V1alpha1ErrorFrameAttrs> = {
   wireType: "google_migrationcenter_v1alpha1_error_frame",
   fields: {
-    name: "name",
     view: "view",
   },
 };

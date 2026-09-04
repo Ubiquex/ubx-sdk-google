@@ -5,8 +5,8 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Violation_ExceptionContexts struct {
 	AcknowledgementTime any
-	Comment any
-	UserName any
+	Comment             any
+	UserName            any
 }
 
 type Violation_Remediation_Instructions_ConsoleInstructions struct {
@@ -44,7 +44,6 @@ type Violation_Remediation struct {
 }
 
 type ViolationConfig struct {
-	Name any
 }
 
 type ViolationAttrs struct {
@@ -66,7 +65,7 @@ type ViolationAttrs struct {
 	ExceptionAuditLogLink any
 	// Output only. List of all the exception detail added for the violation.
 	ExceptionContexts any
-	Name any
+	Name              any
 	// Output only. Immutable. Name of the OrgPolicy which was modified with non-compliant change and resulted this violation. Format: projects/{project_number}/policies/{constraint_name} folders/{folder_id}/policies/{constraint_name} organizations/{organization_id}/policies/{constraint_name}
 	NonCompliantOrgPolicy any
 	// Output only. Immutable. The org-policy-constraint that was incorrectly changed, which resulted in this violation.
@@ -91,7 +90,5 @@ type ViolationAttrs struct {
 
 var Violation = ubx.DataSourceBinding{
 	WireType: "google_assuredworkloads_violation",
-	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	},
+	Fields:   ubx.FieldMap{},
 }

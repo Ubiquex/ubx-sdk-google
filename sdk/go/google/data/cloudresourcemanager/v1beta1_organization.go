@@ -9,7 +9,7 @@ type V1beta1Organization_Owner struct {
 }
 
 type V1beta1OrganizationConfig struct {
-	Name any
+	Name           any
 	OrganizationId any
 }
 
@@ -20,7 +20,7 @@ type V1beta1OrganizationAttrs struct {
 	DisplayName any
 	// The organization's current lifecycle state. Assigned by the server.
 	LifecycleState any
-	Name any
+	Name           any
 	OrganizationId any
 	// The entity that owns an Organization. The lifetime of the Organization and all of its descendants are bound to the `OrganizationOwner`. If the `OrganizationOwner` is deleted, the Organization and all its descendants will be deleted.
 	Owner any
@@ -29,7 +29,7 @@ type V1beta1OrganizationAttrs struct {
 var V1beta1Organization = ubx.DataSourceBinding{
 	WireType: "google_cloudresourcemanager_v1beta1_organization",
 	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":           ubx.FieldSpec{WireName: "name"},
 		"OrganizationId": ubx.FieldSpec{WireName: "organization_id"},
 	},
 }

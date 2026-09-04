@@ -145,32 +145,18 @@ _AlphaOrganizationGlobalVmExtensionPolicy_RolloutOperationFields = {
 
 @dataclasses.dataclass
 class AlphaOrganizationGlobalVmExtensionPolicyConfig:
-    # Output only. [Output Only] Creation timestamp inRFC3339 text format.
-    creation_timestamp: Any = None
     # An optional description of this resource. Provide this property when you create the resource.
     description: Any = None
     # Required. Map from extension (eg: "cloudops") to its policy configuration. The key is the name of the extension.
     extension_policies: Any = None
-    # Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-    id: Any = None
     # Optional. Selector to target VMs for a policy. There is a logical "AND" between instance_selectors.
     instance_selectors: Any = None
-    # Output only. [Output Only] Type of the resource. Alwayscompute#globalVmExtensionPolicy for globalVmExtensionPolicies.
-    kind: Any = None
     # Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
     name: Any = None
     # Optional. Used to resolve conflicts when multiple policies are active for the same extension. Defaults to 0. Larger the number, higher the priority. When the priority is the same, the policy with the newer create time has higher priority.
     priority: Any = None
     # Represents the rollout operation
     rollout_operation: Any = None
-    # Output only. [Output Only] The scoped resource status. It's only for tracking the purging status of the policy.
-    scoped_resource_status: Any = None
-    # Output only. [Output Only] Server-defined fully-qualified URL for this resource.
-    self_link: Any = None
-    # Output only. [Output Only] Server-defined URL for this resource's resource id.
-    self_link_with_id: Any = None
-    # Output only. [Output Only] Update timestamp inRFC3339 text format.
-    update_timestamp: Any = None
 
 @dataclasses.dataclass
 class AlphaOrganizationGlobalVmExtensionPolicyAttrs:
@@ -204,20 +190,17 @@ class AlphaOrganizationGlobalVmExtensionPolicyAttrs:
 AlphaOrganizationGlobalVmExtensionPolicy = ubx.ResourceBinding(
     wire_type="google_compute_alpha_organization_global_vm_extension_policy",
     fields={
-        "creation_timestamp": ubx.FieldSpec(wire_name="creation_timestamp"),
         "description": ubx.FieldSpec(wire_name="description"),
         "extension_policies": ubx.FieldSpec(
             wire_name="extension_policies",
             kind="map",
             fields=_AlphaOrganizationGlobalVmExtensionPolicy_ExtensionPoliciesFields,
         ),
-        "id": ubx.FieldSpec(wire_name="id"),
         "instance_selectors": ubx.FieldSpec(
             wire_name="instance_selectors",
             kind="list",
             fields=_AlphaOrganizationGlobalVmExtensionPolicy_InstanceSelectorsFields,
         ),
-        "kind": ubx.FieldSpec(wire_name="kind"),
         "name": ubx.FieldSpec(wire_name="name"),
         "priority": ubx.FieldSpec(wire_name="priority"),
         "rollout_operation": ubx.FieldSpec(
@@ -225,9 +208,5 @@ AlphaOrganizationGlobalVmExtensionPolicy = ubx.ResourceBinding(
             kind="object",
             fields=_AlphaOrganizationGlobalVmExtensionPolicy_RolloutOperationFields,
         ),
-        "scoped_resource_status": ubx.FieldSpec(wire_name="scoped_resource_status"),
-        "self_link": ubx.FieldSpec(wire_name="self_link"),
-        "self_link_with_id": ubx.FieldSpec(wire_name="self_link_with_id"),
-        "update_timestamp": ubx.FieldSpec(wire_name="update_timestamp"),
     },
 )

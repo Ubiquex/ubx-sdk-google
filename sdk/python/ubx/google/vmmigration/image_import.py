@@ -275,101 +275,16 @@ _ImageImport_MachineImageTargetDefaultsFields = {
     "target_project": ubx.FieldSpec(wire_name="target_project"),
 }
 
-_ImageImport_RecentImageImportJobs_ErrorsFields = {
-    "code": ubx.FieldSpec(wire_name="code"),
-    "details": ubx.FieldSpec(wire_name="details"),
-    "message": ubx.FieldSpec(wire_name="message"),
-}
-
-_ImageImport_RecentImageImportJobs_StepsFields = {
-    "adapting_os": ubx.FieldSpec(wire_name="adapting_os"),
-    "creating_image": ubx.FieldSpec(wire_name="creating_image"),
-    "end_time": ubx.FieldSpec(wire_name="end_time"),
-    "initializing": ubx.FieldSpec(wire_name="initializing"),
-    "loading_source_files": ubx.FieldSpec(wire_name="loading_source_files"),
-    "start_time": ubx.FieldSpec(wire_name="start_time"),
-}
-
-_ImageImport_RecentImageImportJobs_Warnings_ActionItemFields = {
-    "locale": ubx.FieldSpec(wire_name="locale"),
-    "message": ubx.FieldSpec(wire_name="message"),
-}
-
-_ImageImport_RecentImageImportJobs_Warnings_HelpLinksFields = {
-    "description": ubx.FieldSpec(wire_name="description"),
-    "url": ubx.FieldSpec(wire_name="url"),
-}
-
-_ImageImport_RecentImageImportJobs_WarningsFields = {
-    "action_item": ubx.FieldSpec(
-        wire_name="action_item",
-        kind="object",
-        fields=_ImageImport_RecentImageImportJobs_Warnings_ActionItemFields,
-    ),
-    "code": ubx.FieldSpec(wire_name="code"),
-    "help_links": ubx.FieldSpec(
-        wire_name="help_links",
-        kind="list",
-        fields=_ImageImport_RecentImageImportJobs_Warnings_HelpLinksFields,
-    ),
-    "warning_message": ubx.FieldSpec(
-        wire_name="warning_message",
-        kind="object",
-        fields=_ImageImport_RecentImageImportJobs_Warnings_ActionItemFields,
-    ),
-    "warning_time": ubx.FieldSpec(wire_name="warning_time"),
-}
-
-_ImageImport_RecentImageImportJobsFields = {
-    "cloud_storage_uri": ubx.FieldSpec(wire_name="cloud_storage_uri"),
-    "create_time": ubx.FieldSpec(wire_name="create_time"),
-    "created_resources": ubx.FieldSpec(wire_name="created_resources"),
-    "disk_image_target_details": ubx.FieldSpec(
-        wire_name="disk_image_target_details",
-        kind="object",
-        fields=_ImageImport_DiskImageTargetDefaultsFields,
-    ),
-    "end_time": ubx.FieldSpec(wire_name="end_time"),
-    "errors": ubx.FieldSpec(
-        wire_name="errors",
-        kind="list",
-        fields=_ImageImport_RecentImageImportJobs_ErrorsFields,
-    ),
-    "machine_image_target_details": ubx.FieldSpec(
-        wire_name="machine_image_target_details",
-        kind="object",
-        fields=_ImageImport_MachineImageTargetDefaultsFields,
-    ),
-    "name": ubx.FieldSpec(wire_name="name"),
-    "state": ubx.FieldSpec(wire_name="state"),
-    "steps": ubx.FieldSpec(
-        wire_name="steps",
-        kind="list",
-        fields=_ImageImport_RecentImageImportJobs_StepsFields,
-    ),
-    "warnings": ubx.FieldSpec(
-        wire_name="warnings",
-        kind="list",
-        fields=_ImageImport_RecentImageImportJobs_WarningsFields,
-    ),
-}
-
 @dataclasses.dataclass
 class ImageImportConfig:
     # Immutable. The path to the Cloud Storage file from which the image should be imported.
     cloud_storage_uri: Any = None
-    # Output only. The time the image import was created.
-    create_time: Any = None
     # The target details of the image resource that will be created by the import job.
     disk_image_target_defaults: Any = None
     # Encryption message describes the details of the applied encryption.
     encryption: Any = None
     # The target details of the machine image resource that will be created by the image import job.
     machine_image_target_defaults: Any = None
-    # Output only. The resource path of the ImageImport.
-    name: Any = None
-    # Output only. The result of the most recent runs for this ImageImport. All jobs for this ImageImport can be listed via ListImageImportJobs.
-    recent_image_import_jobs: Any = None
 
 @dataclasses.dataclass
 class ImageImportAttrs:
@@ -392,7 +307,6 @@ ImageImport = ubx.ResourceBinding(
     wire_type="google_vmmigration_image_import",
     fields={
         "cloud_storage_uri": ubx.FieldSpec(wire_name="cloud_storage_uri"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "disk_image_target_defaults": ubx.FieldSpec(
             wire_name="disk_image_target_defaults",
             kind="object",
@@ -407,12 +321,6 @@ ImageImport = ubx.ResourceBinding(
             wire_name="machine_image_target_defaults",
             kind="object",
             fields=_ImageImport_MachineImageTargetDefaultsFields,
-        ),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "recent_image_import_jobs": ubx.FieldSpec(
-            wire_name="recent_image_import_jobs",
-            kind="list",
-            fields=_ImageImport_RecentImageImportJobsFields,
         ),
     },
 )

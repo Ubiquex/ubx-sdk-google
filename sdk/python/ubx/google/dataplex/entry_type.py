@@ -27,8 +27,6 @@ _EntryType_RequiredAspectsFields = {
 class EntryTypeConfig:
     # Authorization for an Entry Type.
     authorization: Any = None
-    # Output only. The time when the EntryType was created.
-    create_time: Any = None
     # Optional. Description of the EntryType.
     description: Any = None
     # Optional. User friendly display name.
@@ -37,8 +35,6 @@ class EntryTypeConfig:
     etag: Any = None
     # Optional. User-defined labels for the EntryType.
     labels: Any = None
-    # Output only. The relative resource name of the EntryType, of the form: projects/{project_number}/locations/{location_id}/entryTypes/{entry_type_id}.
-    name: Any = None
     # Optional. The platform that Entries of this type belongs to.
     platform: Any = None
     # AspectInfo for the entry type.
@@ -47,10 +43,6 @@ class EntryTypeConfig:
     system: Any = None
     # Optional. Indicates the classes this Entry Type belongs to, for example, TABLE, DATABASE, MODEL.
     type_aliases: Any = None
-    # Output only. System generated globally unique ID for the EntryType. This ID will be different if the EntryType is deleted and re-created with the same name.
-    uid: Any = None
-    # Output only. The time when the EntryType was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class EntryTypeAttrs:
@@ -89,12 +81,10 @@ EntryType = ubx.ResourceBinding(
             kind="object",
             fields=_EntryType_AuthorizationFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "etag": ubx.FieldSpec(wire_name="etag"),
         "labels": ubx.FieldSpec(wire_name="labels"),
-        "name": ubx.FieldSpec(wire_name="name"),
         "platform": ubx.FieldSpec(wire_name="platform"),
         "required_aspects": ubx.FieldSpec(
             wire_name="required_aspects",
@@ -103,7 +93,5 @@ EntryType = ubx.ResourceBinding(
         ),
         "system": ubx.FieldSpec(wire_name="system"),
         "type_aliases": ubx.FieldSpec(wire_name="type_aliases"),
-        "uid": ubx.FieldSpec(wire_name="uid"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

@@ -5,13 +5,13 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Storelayoutpage_Name struct {
 	Locale any
-	Text any
+	Text   any
 }
 
 var Storelayoutpage_NameFields = ubx.FieldMap{
-		"Locale": ubx.FieldSpec{WireName: "locale"},
-		"Text": ubx.FieldSpec{WireName: "text"},
-	}
+	"Locale": ubx.FieldSpec{WireName: "locale"},
+	"Text":   ubx.FieldSpec{WireName: "text"},
+}
 
 type StorelayoutpageConfig struct {
 	// Unique ID of this page. Assigned by the server. Immutable once assigned.
@@ -34,12 +34,12 @@ type StorelayoutpageAttrs struct {
 var Storelayoutpage = ubx.ResourceBinding{
 	WireType: "google_androidenterprise_storelayoutpage",
 	Fields: ubx.FieldMap{
-		"Id": ubx.FieldSpec{WireName: "id"},
+		"Id":   ubx.FieldSpec{WireName: "id"},
 		"Link": ubx.FieldSpec{WireName: "link"},
 		"Name": ubx.FieldSpec{
 			WireName: "name",
-			Kind: "list",
-			Fields: Storelayoutpage_NameFields,
+			Kind:     "list",
+			Fields:   Storelayoutpage_NameFields,
 		},
 	},
 }

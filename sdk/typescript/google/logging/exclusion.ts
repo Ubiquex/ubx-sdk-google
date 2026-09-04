@@ -2,8 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ExclusionConfig {
-  /** Output only. The creation timestamp of the exclusion.This field may not be present for older exclusions. */
-  createTime?: string | Computed<string>;
   /** Optional. A description of this exclusion. */
   description?: string | Computed<string>;
   /** Optional. If set to True, then this exclusion is disabled and it does not exclude any log entries. You can update an exclusion to change the value of this field. */
@@ -12,8 +10,6 @@ export interface ExclusionConfig {
   filter?: string | Computed<string>;
   /** Optional. A client-assigned identifier, such as "load-balancer-exclusion". Identifiers are limited to 100 characters and can include only letters, digits, underscores, hyphens, and periods. First character has to be alphanumeric. */
   name?: string | Computed<string>;
-  /** Output only. The last update timestamp of the exclusion.This field may not be present for older exclusions. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface ExclusionAttrs {
@@ -34,11 +30,9 @@ export interface ExclusionAttrs {
 export const Exclusion: ResourceBinding<ExclusionConfig, ExclusionAttrs> = {
   wireType: "google_logging_exclusion",
   fields: {
-    createTime: "create_time",
     description: "description",
     disabled: "disabled",
     filter: "filter",
     name: "name",
-    updateTime: "update_time",
   },
 };

@@ -190,17 +190,17 @@ type Job_Status struct {
 
 type Job_YarnApplications struct {
 	MemoryMbSeconds any
-	Name any
-	Progress any
-	State any
-	TrackingUrl any
-	VcoreSeconds any
+	Name            any
+	Progress        any
+	State           any
+	TrackingUrl     any
+	VcoreSeconds    any
 }
 
 type JobConfig struct {
-	JobId any
+	JobId     any
 	ProjectId any
-	Region any
+	Region    any
 }
 
 type JobAttrs struct {
@@ -218,7 +218,7 @@ type JobAttrs struct {
 	HadoopJob any
 	// A Dataproc job for running Apache Hive (https://hive.apache.org/) queries on YARN.
 	HiveJob any
-	JobId any
+	JobId   any
 	// Output only. A UUID that uniquely identifies a job within the project over time. This is in contrast to a user-settable reference.job_id that might be reused over time.
 	JobUuid any
 	// Optional. The labels to associate with this job. Label keys must contain 1 to 63 characters, and must conform to RFC 1035 (https://www.ietf.org/rfc/rfc1035.txt). Label values can be empty, but, if present, must contain 1 to 63 characters, and must conform to RFC 1035 (https://www.ietf.org/rfc/rfc1035.txt). No more than 32 labels can be associated with a job.
@@ -234,7 +234,7 @@ type JobAttrs struct {
 	PysparkJob any
 	// Encapsulates the full scoping used to reference a job.
 	Reference any
-	Region any
+	Region    any
 	// Job scheduling options.
 	Scheduling any
 	// A Dataproc job for running Apache Spark (https://spark.apache.org/) applications on YARN.
@@ -256,8 +256,8 @@ type JobAttrs struct {
 var Job = ubx.DataSourceBinding{
 	WireType: "google_dataproc_job",
 	Fields: ubx.FieldMap{
-		"JobId": ubx.FieldSpec{WireName: "job_id"},
+		"JobId":     ubx.FieldSpec{WireName: "job_id"},
 		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-		"Region": ubx.FieldSpec{WireName: "region"},
+		"Region":    ubx.FieldSpec{WireName: "region"},
 	},
 }

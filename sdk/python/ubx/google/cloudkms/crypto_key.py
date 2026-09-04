@@ -146,8 +146,6 @@ _CryptoKey_VersionTemplateFields = {
 
 @dataclasses.dataclass
 class CryptoKeyConfig:
-    # Output only. The time at which this CryptoKey was created.
-    create_time: Any = None
     # Immutable. The resource name of the backend environment where the key material for all CryptoKeyVersions associated with this CryptoKey reside and where all related cryptographic operations are performed. Only applicable if CryptoKeyVersions have a ProtectionLevel of EXTERNAL_VPC, with the resource name in the format `projects/*/locations/*/ekmConnections/*`. Only applicable if CryptoKeyVersions have a ProtectionLevel of HSM_SINGLE_TENANT, with the resource name in the format `projects/*/locations/*/singleTenantHsmInstances/*`. Note, this list is non-exhaustive and may apply to additional ProtectionLevels in the future.
     crypto_key_backend: Any = None
     # Immutable. The period of time that versions of this key spend in the DESTROY_SCHEDULED state before transitioning to DESTROYED. If not specified at creation time, the default duration is 30 days.
@@ -158,8 +156,6 @@ class CryptoKeyConfig:
     key_access_justifications_policy: Any = None
     # Labels with user-defined metadata. For more information, see [Labeling Keys](https://cloud.google.com/kms/docs/labeling-keys).
     labels: Any = None
-    # Output only. The resource name for this CryptoKey in the format `projects/*/locations/*/keyRings/*/cryptoKeys/*`.
-    name: Any = None
     # At next_rotation_time, the Key Management Service will automatically: 1. Create a new version of this CryptoKey. 2. Mark the new version as primary. Key rotations performed manually via CreateCryptoKeyVersion and UpdateCryptoKeyPrimaryVersion do not affect next_rotation_time. Keys with purpose ENCRYPT_DECRYPT support automatic rotation. For other keys, this field must be omitted.
     next_rotation_time: Any = None
     # A CryptoKeyVersion represents an individual cryptographic key, and the associated key material. An ENABLED version can be used for cryptographic operations. For security reasons, the raw cryptographic key material represented by a CryptoKeyVersion can never be viewed or exported. It can only be used to encrypt, decrypt, or sign data when an authorized user or application invokes Cloud KMS.
@@ -201,7 +197,6 @@ class CryptoKeyAttrs:
 CryptoKey = ubx.ResourceBinding(
     wire_type="google_cloudkms_crypto_key",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "crypto_key_backend": ubx.FieldSpec(wire_name="crypto_key_backend"),
         "destroy_scheduled_duration": ubx.FieldSpec(wire_name="destroy_scheduled_duration"),
         "import_only": ubx.FieldSpec(wire_name="import_only"),
@@ -211,7 +206,6 @@ CryptoKey = ubx.ResourceBinding(
             fields=_CryptoKey_KeyAccessJustificationsPolicyFields,
         ),
         "labels": ubx.FieldSpec(wire_name="labels"),
-        "name": ubx.FieldSpec(wire_name="name"),
         "next_rotation_time": ubx.FieldSpec(wire_name="next_rotation_time"),
         "primary": ubx.FieldSpec(
             wire_name="primary",

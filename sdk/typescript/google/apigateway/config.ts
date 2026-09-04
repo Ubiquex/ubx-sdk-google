@@ -42,8 +42,6 @@ const Config_OpenapiDocumentsFields: FieldMap = {
 };
 
 export interface ConfigConfig {
-  /** Output only. Created time. */
-  createTime?: string | Computed<string>;
   /** Optional. Display name. */
   displayName?: string | Computed<string>;
   /** Immutable. The Google Cloud IAM Service Account that Gateways serving this config should use to authenticate to other services. This may either be the Service Account's email (`{ACCOUNT_ID}@{PROJECT}.iam.gserviceaccount.com`) or its full resource name (`projects/{PROJECT}/accounts/{UNIQUE_ID}`). This is most often used when the service is a GCP resource such as a Cloud Run Service or an IAP-secured service. */
@@ -54,16 +52,8 @@ export interface ConfigConfig {
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Optional. Service Configuration files. At least one must be included when using gRPC service definitions. See https://cloud.google.com/endpoints/docs/grpc/grpc-service-config#service_configuration_overview for the expected file contents. If multiple files are specified, the files are merged with the following rules: * All singular scalar fields are merged using "last one wins" semantics in the order of the files uploaded. * Repeated fields are concatenated. * Singular embedded messages are merged using these rules for nested fields. */
   managedServiceConfigs?: Config_GrpcServices_FileDescriptorSet[] | Computed<Config_GrpcServices_FileDescriptorSet[]>;
-  /** Output only. Resource name of the API Config. Format: projects/{project}/locations/global/apis/{api}/configs/{api_config} */
-  name?: string | Computed<string>;
   /** Optional. OpenAPI specification documents. If specified, grpc_services and managed_service_configs must not be included. */
   openapiDocuments?: Config_OpenapiDocuments[] | Computed<Config_OpenapiDocuments[]>;
-  /** Output only. The ID of the associated Service Config ( https://cloud.google.com/service-infrastructure/docs/glossary#config). */
-  serviceConfigId?: string | Computed<string>;
-  /** Output only. State of the API Config. */
-  state?: string | Computed<string>;
-  /** Output only. Updated time. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface ConfigAttrs {
@@ -94,7 +84,6 @@ export interface ConfigAttrs {
 export const Config: ResourceBinding<ConfigConfig, ConfigAttrs> = {
   wireType: "google_apigateway_config",
   fields: {
-    createTime: "create_time",
     displayName: "display_name",
     gatewayServiceAccount: "gateway_service_account",
     grpcServices: {
@@ -108,14 +97,10 @@ export const Config: ResourceBinding<ConfigConfig, ConfigAttrs> = {
       kind: "list",
       fields: Config_GrpcServices_FileDescriptorSetFields,
     },
-    name: "name",
     openapiDocuments: {
       wireName: "openapi_documents",
       kind: "list",
       fields: Config_OpenapiDocumentsFields,
     },
-    serviceConfigId: "service_config_id",
-    state: "state",
-    updateTime: "update_time",
   },
 };

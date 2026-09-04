@@ -11,15 +11,15 @@ type Step_CompletionTime struct {
 }
 
 type Step_DimensionValue struct {
-	Key any
+	Key   any
 	Value any
 }
 
 type Step_MultiStep_PrimaryStep_IndividualOutcome struct {
 	MultistepNumber any
-	OutcomeSummary any
-	RunDuration any
-	StepId any
+	OutcomeSummary  any
+	RunDuration     any
+	StepId          any
 }
 
 type Step_MultiStep_PrimaryStep struct {
@@ -99,15 +99,15 @@ type Step_TestExecutionStep_TestIssues_StackTrace struct {
 
 type Step_TestExecutionStep_TestIssues_WarningMigration struct {
 	TypeUrl any
-	Value any
+	Value   any
 }
 
 type Step_TestExecutionStep_TestIssues struct {
-	Category any
-	ErrorMessage any
-	Severity any
-	StackTrace any
-	Type any
+	Category         any
+	ErrorMessage     any
+	Severity         any
+	StackTrace       any
+	Type             any
 	WarningMigration any
 }
 
@@ -116,14 +116,14 @@ type Step_TestExecutionStep_TestSuiteOverviews_XmlSource struct {
 }
 
 type Step_TestExecutionStep_TestSuiteOverviews struct {
-	ElapsedTime any
-	ErrorCount any
+	ElapsedTime  any
+	ErrorCount   any
 	FailureCount any
-	FlakyCount any
-	Name any
+	FlakyCount   any
+	Name         any
 	SkippedCount any
-	TotalCount any
-	XmlSource any
+	TotalCount   any
+	XmlSource    any
 }
 
 type Step_TestExecutionStep_TestTiming struct {
@@ -137,15 +137,15 @@ type Step_TestExecutionStep_ToolExecution_ExitCode struct {
 }
 
 type Step_TestExecutionStep_ToolExecution_ToolOutputs_TestCase struct {
-	ClassName any
-	Name any
+	ClassName     any
+	Name          any
 	TestSuiteName any
 }
 
 type Step_TestExecutionStep_ToolExecution_ToolOutputs struct {
 	CreationTime any
-	Output any
-	TestCase any
+	Output       any
+	TestCase     any
 }
 
 type Step_TestExecutionStep_ToolExecution struct {
@@ -176,230 +176,230 @@ type Step_ToolExecutionStep struct {
 }
 
 var Step_CompletionTimeFields = ubx.FieldMap{
-		"Nanos": ubx.FieldSpec{WireName: "nanos"},
-		"Seconds": ubx.FieldSpec{WireName: "seconds"},
-	}
+	"Nanos":   ubx.FieldSpec{WireName: "nanos"},
+	"Seconds": ubx.FieldSpec{WireName: "seconds"},
+}
 
 var Step_DimensionValueFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var Step_MultiStep_PrimaryStep_IndividualOutcomeFields = ubx.FieldMap{
-		"MultistepNumber": ubx.FieldSpec{WireName: "multistep_number"},
-		"OutcomeSummary": ubx.FieldSpec{WireName: "outcome_summary"},
-		"RunDuration": ubx.FieldSpec{
-			WireName: "run_duration",
-			Kind: "object",
-			Fields: Step_CompletionTimeFields,
-		},
-		"StepId": ubx.FieldSpec{WireName: "step_id"},
-	}
+	"MultistepNumber": ubx.FieldSpec{WireName: "multistep_number"},
+	"OutcomeSummary":  ubx.FieldSpec{WireName: "outcome_summary"},
+	"RunDuration": ubx.FieldSpec{
+		WireName: "run_duration",
+		Kind:     "object",
+		Fields:   Step_CompletionTimeFields,
+	},
+	"StepId": ubx.FieldSpec{WireName: "step_id"},
+}
 
 var Step_MultiStep_PrimaryStepFields = ubx.FieldMap{
-		"IndividualOutcome": ubx.FieldSpec{
-			WireName: "individual_outcome",
-			Kind: "list",
-			Fields: Step_MultiStep_PrimaryStep_IndividualOutcomeFields,
-		},
-		"RollUp": ubx.FieldSpec{WireName: "roll_up"},
-	}
+	"IndividualOutcome": ubx.FieldSpec{
+		WireName: "individual_outcome",
+		Kind:     "list",
+		Fields:   Step_MultiStep_PrimaryStep_IndividualOutcomeFields,
+	},
+	"RollUp": ubx.FieldSpec{WireName: "roll_up"},
+}
 
 var Step_MultiStepFields = ubx.FieldMap{
-		"MultistepNumber": ubx.FieldSpec{WireName: "multistep_number"},
-		"PrimaryStep": ubx.FieldSpec{
-			WireName: "primary_step",
-			Kind: "object",
-			Fields: Step_MultiStep_PrimaryStepFields,
-		},
-		"PrimaryStepId": ubx.FieldSpec{WireName: "primary_step_id"},
-	}
+	"MultistepNumber": ubx.FieldSpec{WireName: "multistep_number"},
+	"PrimaryStep": ubx.FieldSpec{
+		WireName: "primary_step",
+		Kind:     "object",
+		Fields:   Step_MultiStep_PrimaryStepFields,
+	},
+	"PrimaryStepId": ubx.FieldSpec{WireName: "primary_step_id"},
+}
 
 var Step_Outcome_FailureDetailFields = ubx.FieldMap{
-		"Crashed": ubx.FieldSpec{WireName: "crashed"},
-		"DeviceOutOfMemory": ubx.FieldSpec{WireName: "device_out_of_memory"},
-		"FailedRoboscript": ubx.FieldSpec{WireName: "failed_roboscript"},
-		"NotInstalled": ubx.FieldSpec{WireName: "not_installed"},
-		"OtherNativeCrash": ubx.FieldSpec{WireName: "other_native_crash"},
-		"TimedOut": ubx.FieldSpec{WireName: "timed_out"},
-		"UnableToCrawl": ubx.FieldSpec{WireName: "unable_to_crawl"},
-	}
+	"Crashed":           ubx.FieldSpec{WireName: "crashed"},
+	"DeviceOutOfMemory": ubx.FieldSpec{WireName: "device_out_of_memory"},
+	"FailedRoboscript":  ubx.FieldSpec{WireName: "failed_roboscript"},
+	"NotInstalled":      ubx.FieldSpec{WireName: "not_installed"},
+	"OtherNativeCrash":  ubx.FieldSpec{WireName: "other_native_crash"},
+	"TimedOut":          ubx.FieldSpec{WireName: "timed_out"},
+	"UnableToCrawl":     ubx.FieldSpec{WireName: "unable_to_crawl"},
+}
 
 var Step_Outcome_InconclusiveDetailFields = ubx.FieldMap{
-		"AbortedByUser": ubx.FieldSpec{WireName: "aborted_by_user"},
-		"HasErrorLogs": ubx.FieldSpec{WireName: "has_error_logs"},
-		"InfrastructureFailure": ubx.FieldSpec{WireName: "infrastructure_failure"},
-	}
+	"AbortedByUser":         ubx.FieldSpec{WireName: "aborted_by_user"},
+	"HasErrorLogs":          ubx.FieldSpec{WireName: "has_error_logs"},
+	"InfrastructureFailure": ubx.FieldSpec{WireName: "infrastructure_failure"},
+}
 
 var Step_Outcome_SkippedDetailFields = ubx.FieldMap{
-		"IncompatibleAppVersion": ubx.FieldSpec{WireName: "incompatible_app_version"},
-		"IncompatibleArchitecture": ubx.FieldSpec{WireName: "incompatible_architecture"},
-		"IncompatibleDevice": ubx.FieldSpec{WireName: "incompatible_device"},
-		"PendingTimeout": ubx.FieldSpec{WireName: "pending_timeout"},
-	}
+	"IncompatibleAppVersion":   ubx.FieldSpec{WireName: "incompatible_app_version"},
+	"IncompatibleArchitecture": ubx.FieldSpec{WireName: "incompatible_architecture"},
+	"IncompatibleDevice":       ubx.FieldSpec{WireName: "incompatible_device"},
+	"PendingTimeout":           ubx.FieldSpec{WireName: "pending_timeout"},
+}
 
 var Step_Outcome_SuccessDetailFields = ubx.FieldMap{
-		"OtherNativeCrash": ubx.FieldSpec{WireName: "other_native_crash"},
-	}
+	"OtherNativeCrash": ubx.FieldSpec{WireName: "other_native_crash"},
+}
 
 var Step_OutcomeFields = ubx.FieldMap{
-		"FailureDetail": ubx.FieldSpec{
-			WireName: "failure_detail",
-			Kind: "object",
-			Fields: Step_Outcome_FailureDetailFields,
-		},
-		"InconclusiveDetail": ubx.FieldSpec{
-			WireName: "inconclusive_detail",
-			Kind: "object",
-			Fields: Step_Outcome_InconclusiveDetailFields,
-		},
-		"SkippedDetail": ubx.FieldSpec{
-			WireName: "skipped_detail",
-			Kind: "object",
-			Fields: Step_Outcome_SkippedDetailFields,
-		},
-		"SuccessDetail": ubx.FieldSpec{
-			WireName: "success_detail",
-			Kind: "object",
-			Fields: Step_Outcome_SuccessDetailFields,
-		},
-		"Summary": ubx.FieldSpec{WireName: "summary"},
-	}
+	"FailureDetail": ubx.FieldSpec{
+		WireName: "failure_detail",
+		Kind:     "object",
+		Fields:   Step_Outcome_FailureDetailFields,
+	},
+	"InconclusiveDetail": ubx.FieldSpec{
+		WireName: "inconclusive_detail",
+		Kind:     "object",
+		Fields:   Step_Outcome_InconclusiveDetailFields,
+	},
+	"SkippedDetail": ubx.FieldSpec{
+		WireName: "skipped_detail",
+		Kind:     "object",
+		Fields:   Step_Outcome_SkippedDetailFields,
+	},
+	"SuccessDetail": ubx.FieldSpec{
+		WireName: "success_detail",
+		Kind:     "object",
+		Fields:   Step_Outcome_SuccessDetailFields,
+	},
+	"Summary": ubx.FieldSpec{WireName: "summary"},
+}
 
 var Step_TestExecutionStep_TestIssues_StackTraceFields = ubx.FieldMap{
-		"Exception": ubx.FieldSpec{WireName: "exception"},
-	}
+	"Exception": ubx.FieldSpec{WireName: "exception"},
+}
 
 var Step_TestExecutionStep_TestIssues_WarningMigrationFields = ubx.FieldMap{
-		"TypeUrl": ubx.FieldSpec{WireName: "type_url"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"TypeUrl": ubx.FieldSpec{WireName: "type_url"},
+	"Value":   ubx.FieldSpec{WireName: "value"},
+}
 
 var Step_TestExecutionStep_TestIssuesFields = ubx.FieldMap{
-		"Category": ubx.FieldSpec{WireName: "category"},
-		"ErrorMessage": ubx.FieldSpec{WireName: "error_message"},
-		"Severity": ubx.FieldSpec{WireName: "severity"},
-		"StackTrace": ubx.FieldSpec{
-			WireName: "stack_trace",
-			Kind: "object",
-			Fields: Step_TestExecutionStep_TestIssues_StackTraceFields,
-		},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"WarningMigration": ubx.FieldSpec{
-			WireName: "warning_migration",
-			Kind: "object",
-			Fields: Step_TestExecutionStep_TestIssues_WarningMigrationFields,
-		},
-	}
+	"Category":     ubx.FieldSpec{WireName: "category"},
+	"ErrorMessage": ubx.FieldSpec{WireName: "error_message"},
+	"Severity":     ubx.FieldSpec{WireName: "severity"},
+	"StackTrace": ubx.FieldSpec{
+		WireName: "stack_trace",
+		Kind:     "object",
+		Fields:   Step_TestExecutionStep_TestIssues_StackTraceFields,
+	},
+	"Type": ubx.FieldSpec{WireName: "type"},
+	"WarningMigration": ubx.FieldSpec{
+		WireName: "warning_migration",
+		Kind:     "object",
+		Fields:   Step_TestExecutionStep_TestIssues_WarningMigrationFields,
+	},
+}
 
 var Step_TestExecutionStep_TestSuiteOverviews_XmlSourceFields = ubx.FieldMap{
-		"FileUri": ubx.FieldSpec{WireName: "file_uri"},
-	}
+	"FileUri": ubx.FieldSpec{WireName: "file_uri"},
+}
 
 var Step_TestExecutionStep_TestSuiteOverviewsFields = ubx.FieldMap{
-		"ElapsedTime": ubx.FieldSpec{
-			WireName: "elapsed_time",
-			Kind: "object",
-			Fields: Step_CompletionTimeFields,
-		},
-		"ErrorCount": ubx.FieldSpec{WireName: "error_count"},
-		"FailureCount": ubx.FieldSpec{WireName: "failure_count"},
-		"FlakyCount": ubx.FieldSpec{WireName: "flaky_count"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SkippedCount": ubx.FieldSpec{WireName: "skipped_count"},
-		"TotalCount": ubx.FieldSpec{WireName: "total_count"},
-		"XmlSource": ubx.FieldSpec{
-			WireName: "xml_source",
-			Kind: "object",
-			Fields: Step_TestExecutionStep_TestSuiteOverviews_XmlSourceFields,
-		},
-	}
+	"ElapsedTime": ubx.FieldSpec{
+		WireName: "elapsed_time",
+		Kind:     "object",
+		Fields:   Step_CompletionTimeFields,
+	},
+	"ErrorCount":   ubx.FieldSpec{WireName: "error_count"},
+	"FailureCount": ubx.FieldSpec{WireName: "failure_count"},
+	"FlakyCount":   ubx.FieldSpec{WireName: "flaky_count"},
+	"Name":         ubx.FieldSpec{WireName: "name"},
+	"SkippedCount": ubx.FieldSpec{WireName: "skipped_count"},
+	"TotalCount":   ubx.FieldSpec{WireName: "total_count"},
+	"XmlSource": ubx.FieldSpec{
+		WireName: "xml_source",
+		Kind:     "object",
+		Fields:   Step_TestExecutionStep_TestSuiteOverviews_XmlSourceFields,
+	},
+}
 
 var Step_TestExecutionStep_TestTimingFields = ubx.FieldMap{
-		"TestProcessDuration": ubx.FieldSpec{
-			WireName: "test_process_duration",
-			Kind: "object",
-			Fields: Step_CompletionTimeFields,
-		},
-	}
+	"TestProcessDuration": ubx.FieldSpec{
+		WireName: "test_process_duration",
+		Kind:     "object",
+		Fields:   Step_CompletionTimeFields,
+	},
+}
 
 var Step_TestExecutionStep_ToolExecution_ExitCodeFields = ubx.FieldMap{
-		"Number": ubx.FieldSpec{WireName: "number"},
-	}
+	"Number": ubx.FieldSpec{WireName: "number"},
+}
 
 var Step_TestExecutionStep_ToolExecution_ToolOutputs_TestCaseFields = ubx.FieldMap{
-		"ClassName": ubx.FieldSpec{WireName: "class_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"TestSuiteName": ubx.FieldSpec{WireName: "test_suite_name"},
-	}
+	"ClassName":     ubx.FieldSpec{WireName: "class_name"},
+	"Name":          ubx.FieldSpec{WireName: "name"},
+	"TestSuiteName": ubx.FieldSpec{WireName: "test_suite_name"},
+}
 
 var Step_TestExecutionStep_ToolExecution_ToolOutputsFields = ubx.FieldMap{
-		"CreationTime": ubx.FieldSpec{
-			WireName: "creation_time",
-			Kind: "object",
-			Fields: Step_CompletionTimeFields,
-		},
-		"Output": ubx.FieldSpec{
-			WireName: "output",
-			Kind: "object",
-			Fields: Step_TestExecutionStep_TestSuiteOverviews_XmlSourceFields,
-		},
-		"TestCase": ubx.FieldSpec{
-			WireName: "test_case",
-			Kind: "object",
-			Fields: Step_TestExecutionStep_ToolExecution_ToolOutputs_TestCaseFields,
-		},
-	}
+	"CreationTime": ubx.FieldSpec{
+		WireName: "creation_time",
+		Kind:     "object",
+		Fields:   Step_CompletionTimeFields,
+	},
+	"Output": ubx.FieldSpec{
+		WireName: "output",
+		Kind:     "object",
+		Fields:   Step_TestExecutionStep_TestSuiteOverviews_XmlSourceFields,
+	},
+	"TestCase": ubx.FieldSpec{
+		WireName: "test_case",
+		Kind:     "object",
+		Fields:   Step_TestExecutionStep_ToolExecution_ToolOutputs_TestCaseFields,
+	},
+}
 
 var Step_TestExecutionStep_ToolExecutionFields = ubx.FieldMap{
-		"CommandLineArguments": ubx.FieldSpec{WireName: "command_line_arguments"},
-		"ExitCode": ubx.FieldSpec{
-			WireName: "exit_code",
-			Kind: "object",
-			Fields: Step_TestExecutionStep_ToolExecution_ExitCodeFields,
-		},
-		"ToolLogs": ubx.FieldSpec{
-			WireName: "tool_logs",
-			Kind: "list",
-			Fields: Step_TestExecutionStep_TestSuiteOverviews_XmlSourceFields,
-		},
-		"ToolOutputs": ubx.FieldSpec{
-			WireName: "tool_outputs",
-			Kind: "list",
-			Fields: Step_TestExecutionStep_ToolExecution_ToolOutputsFields,
-		},
-	}
+	"CommandLineArguments": ubx.FieldSpec{WireName: "command_line_arguments"},
+	"ExitCode": ubx.FieldSpec{
+		WireName: "exit_code",
+		Kind:     "object",
+		Fields:   Step_TestExecutionStep_ToolExecution_ExitCodeFields,
+	},
+	"ToolLogs": ubx.FieldSpec{
+		WireName: "tool_logs",
+		Kind:     "list",
+		Fields:   Step_TestExecutionStep_TestSuiteOverviews_XmlSourceFields,
+	},
+	"ToolOutputs": ubx.FieldSpec{
+		WireName: "tool_outputs",
+		Kind:     "list",
+		Fields:   Step_TestExecutionStep_ToolExecution_ToolOutputsFields,
+	},
+}
 
 var Step_TestExecutionStepFields = ubx.FieldMap{
-		"TestIssues": ubx.FieldSpec{
-			WireName: "test_issues",
-			Kind: "list",
-			Fields: Step_TestExecutionStep_TestIssuesFields,
-		},
-		"TestSuiteOverviews": ubx.FieldSpec{
-			WireName: "test_suite_overviews",
-			Kind: "list",
-			Fields: Step_TestExecutionStep_TestSuiteOverviewsFields,
-		},
-		"TestTiming": ubx.FieldSpec{
-			WireName: "test_timing",
-			Kind: "object",
-			Fields: Step_TestExecutionStep_TestTimingFields,
-		},
-		"ToolExecution": ubx.FieldSpec{
-			WireName: "tool_execution",
-			Kind: "object",
-			Fields: Step_TestExecutionStep_ToolExecutionFields,
-		},
-	}
+	"TestIssues": ubx.FieldSpec{
+		WireName: "test_issues",
+		Kind:     "list",
+		Fields:   Step_TestExecutionStep_TestIssuesFields,
+	},
+	"TestSuiteOverviews": ubx.FieldSpec{
+		WireName: "test_suite_overviews",
+		Kind:     "list",
+		Fields:   Step_TestExecutionStep_TestSuiteOverviewsFields,
+	},
+	"TestTiming": ubx.FieldSpec{
+		WireName: "test_timing",
+		Kind:     "object",
+		Fields:   Step_TestExecutionStep_TestTimingFields,
+	},
+	"ToolExecution": ubx.FieldSpec{
+		WireName: "tool_execution",
+		Kind:     "object",
+		Fields:   Step_TestExecutionStep_ToolExecutionFields,
+	},
+}
 
 var Step_ToolExecutionStepFields = ubx.FieldMap{
-		"ToolExecution": ubx.FieldSpec{
-			WireName: "tool_execution",
-			Kind: "object",
-			Fields: Step_TestExecutionStep_ToolExecutionFields,
-		},
-	}
+	"ToolExecution": ubx.FieldSpec{
+		WireName: "tool_execution",
+		Kind:     "object",
+		Fields:   Step_TestExecutionStep_ToolExecutionFields,
+	},
+}
 
 type StepConfig struct {
 	// A Timestamp represents a point in time independent of any time zone or local calendar, encoded as a count of seconds and fractions of seconds at nanosecond resolution. The count is relative to an epoch at UTC midnight on January 1, 1970, in the proleptic Gregorian calendar which extends the Gregorian calendar backwards to year one. All minutes are 60 seconds long. Leap seconds are "smeared" so that no leap second table is needed for interpretation, using a [24-hour linear smear](https://developers.google.com/time/smear). The range is from 0001-01-01T00:00:00Z to 9999-12-31T23:59:59.999999999Z. By restricting to that range, we ensure that we can convert to and from [RFC 3339](https://www.ietf.org/rfc/rfc3339.txt) date strings.
@@ -472,58 +472,58 @@ var Step = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"CompletionTime": ubx.FieldSpec{
 			WireName: "completion_time",
-			Kind: "object",
-			Fields: Step_CompletionTimeFields,
+			Kind:     "object",
+			Fields:   Step_CompletionTimeFields,
 		},
 		"CreationTime": ubx.FieldSpec{
 			WireName: "creation_time",
-			Kind: "object",
-			Fields: Step_CompletionTimeFields,
+			Kind:     "object",
+			Fields:   Step_CompletionTimeFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DeviceUsageDuration": ubx.FieldSpec{
 			WireName: "device_usage_duration",
-			Kind: "object",
-			Fields: Step_CompletionTimeFields,
+			Kind:     "object",
+			Fields:   Step_CompletionTimeFields,
 		},
 		"DimensionValue": ubx.FieldSpec{
 			WireName: "dimension_value",
-			Kind: "list",
-			Fields: Step_DimensionValueFields,
+			Kind:     "list",
+			Fields:   Step_DimensionValueFields,
 		},
 		"HasImages": ubx.FieldSpec{WireName: "has_images"},
 		"Labels": ubx.FieldSpec{
 			WireName: "labels",
-			Kind: "list",
-			Fields: Step_DimensionValueFields,
+			Kind:     "list",
+			Fields:   Step_DimensionValueFields,
 		},
 		"MultiStep": ubx.FieldSpec{
 			WireName: "multi_step",
-			Kind: "object",
-			Fields: Step_MultiStepFields,
+			Kind:     "object",
+			Fields:   Step_MultiStepFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Outcome": ubx.FieldSpec{
 			WireName: "outcome",
-			Kind: "object",
-			Fields: Step_OutcomeFields,
+			Kind:     "object",
+			Fields:   Step_OutcomeFields,
 		},
 		"RunDuration": ubx.FieldSpec{
 			WireName: "run_duration",
-			Kind: "object",
-			Fields: Step_CompletionTimeFields,
+			Kind:     "object",
+			Fields:   Step_CompletionTimeFields,
 		},
-		"State": ubx.FieldSpec{WireName: "state"},
+		"State":  ubx.FieldSpec{WireName: "state"},
 		"StepId": ubx.FieldSpec{WireName: "step_id"},
 		"TestExecutionStep": ubx.FieldSpec{
 			WireName: "test_execution_step",
-			Kind: "object",
-			Fields: Step_TestExecutionStepFields,
+			Kind:     "object",
+			Fields:   Step_TestExecutionStepFields,
 		},
 		"ToolExecutionStep": ubx.FieldSpec{
 			WireName: "tool_execution_step",
-			Kind: "object",
-			Fields: Step_ToolExecutionStepFields,
+			Kind:     "object",
+			Fields:   Step_ToolExecutionStepFields,
 		},
 	},
 }

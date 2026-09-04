@@ -268,14 +268,10 @@ export interface InstanceConfig {
   controlledEgressConfig?: Instance_ControlledEgressConfig | Computed<Instance_ControlledEgressConfig>;
   /** Optional. Whether controlled egress is enabled on the Looker instance. */
   controlledEgressEnabled?: boolean | Computed<boolean>;
-  /** Output only. The time when the Looker instance provisioning was first requested. */
-  createTime?: string | Computed<string>;
   /** Custom domain information. */
   customDomain?: Instance_CustomDomain | Computed<Instance_CustomDomain>;
   /** Specifies the maintenance denial period. */
   denyMaintenancePeriod?: Instance_DenyMaintenancePeriod | Computed<Instance_DenyMaintenancePeriod>;
-  /** Output only. Public Egress IP (IPv4). */
-  egressPublicIp?: string | Computed<string>;
   /** Encryption configuration (i.e. CMEK). */
   encryptionConfig?: Instance_EncryptionConfig | Computed<Instance_EncryptionConfig>;
   /** Optional. Whether FIPS is enabled on the Looker instance. */
@@ -284,24 +280,14 @@ export interface InstanceConfig {
   geminiEnabled?: boolean | Computed<boolean>;
   /** Ingress IP allowlist configuration. */
   ingressIpAllowlistConfig?: Instance_IngressIpAllowlistConfig | Computed<Instance_IngressIpAllowlistConfig>;
-  /** Output only. Private Ingress IP (IPv4). */
-  ingressPrivateIp?: string | Computed<string>;
-  /** Output only. Public Ingress IP (IPv4). */
-  ingressPublicIp?: string | Computed<string>;
   /** Specifies the maintenance denial period. */
   lastDenyMaintenancePeriod?: Instance_DenyMaintenancePeriod | Computed<Instance_DenyMaintenancePeriod>;
   /** Optional. Linked Google Cloud Project Number for Looker Studio Pro. */
   linkedLspProjectNumber?: string | Computed<string>;
-  /** Output only. Looker instance URI which can be used to access the Looker Instance UI. */
-  lookerUri?: string | Computed<string>;
-  /** Output only. The Looker version that the instance is using. */
-  lookerVersion?: string | Computed<string>;
   /** Published upcoming future maintenance schedule. */
   maintenanceSchedule?: Instance_MaintenanceSchedule | Computed<Instance_MaintenanceSchedule>;
   /** Specifies the recurring maintenance window. */
   maintenanceWindow?: Instance_MaintenanceWindow | Computed<Instance_MaintenanceWindow>;
-  /** Output only. Format: `projects/{project}/locations/{location}/instances/{instance}`. */
-  name?: string | Computed<string>;
   /** Looker instance OAuth login settings. */
   oauthConfig?: Instance_OauthConfig | Computed<Instance_OauthConfig>;
   /** Configuration for periodic export. */
@@ -320,18 +306,6 @@ export interface InstanceConfig {
   releaseChannel?: string | Computed<string>;
   /** Name of a reserved IP address range within the Instance.consumer_network, to be used for private services access connection. May or may not be specified in a create request. */
   reservedRange?: string | Computed<string>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzi?: boolean | Computed<boolean>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzs?: boolean | Computed<boolean>;
-  /** Output only. The reason for the instance being in a soft-deleted state. */
-  softDeleteReason?: string | Computed<string>;
-  /** Output only. The state of the instance. */
-  state?: string | Computed<string>;
-  /** Output only. The time when the Looker instance was suspended (soft deleted). */
-  suspendedTime?: string | Computed<string>;
-  /** Output only. The time when the Looker instance was last updated. */
-  updateTime?: string | Computed<string>;
   /** Metadata about users for a Looker instance. */
   userMetadata?: Instance_UserMetadata | Computed<Instance_UserMetadata>;
 }
@@ -437,7 +411,6 @@ export const Instance: ResourceBinding<InstanceConfig, InstanceAttrs> = {
       fields: Instance_ControlledEgressConfigFields,
     },
     controlledEgressEnabled: "controlled_egress_enabled",
-    createTime: "create_time",
     customDomain: {
       wireName: "custom_domain",
       kind: "object",
@@ -448,7 +421,6 @@ export const Instance: ResourceBinding<InstanceConfig, InstanceAttrs> = {
       kind: "object",
       fields: Instance_DenyMaintenancePeriodFields,
     },
-    egressPublicIp: "egress_public_ip",
     encryptionConfig: {
       wireName: "encryption_config",
       kind: "object",
@@ -461,16 +433,12 @@ export const Instance: ResourceBinding<InstanceConfig, InstanceAttrs> = {
       kind: "object",
       fields: Instance_IngressIpAllowlistConfigFields,
     },
-    ingressPrivateIp: "ingress_private_ip",
-    ingressPublicIp: "ingress_public_ip",
     lastDenyMaintenancePeriod: {
       wireName: "last_deny_maintenance_period",
       kind: "object",
       fields: Instance_DenyMaintenancePeriodFields,
     },
     linkedLspProjectNumber: "linked_lsp_project_number",
-    lookerUri: "looker_uri",
-    lookerVersion: "looker_version",
     maintenanceSchedule: {
       wireName: "maintenance_schedule",
       kind: "object",
@@ -481,7 +449,6 @@ export const Instance: ResourceBinding<InstanceConfig, InstanceAttrs> = {
       kind: "object",
       fields: Instance_MaintenanceWindowFields,
     },
-    name: "name",
     oauthConfig: {
       wireName: "oauth_config",
       kind: "object",
@@ -503,12 +470,6 @@ export const Instance: ResourceBinding<InstanceConfig, InstanceAttrs> = {
     publicIpEnabled: "public_ip_enabled",
     releaseChannel: "release_channel",
     reservedRange: "reserved_range",
-    satisfiesPzi: "satisfies_pzi",
-    satisfiesPzs: "satisfies_pzs",
-    softDeleteReason: "soft_delete_reason",
-    state: "state",
-    suspendedTime: "suspended_time",
-    updateTime: "update_time",
     userMetadata: {
       wireName: "user_metadata",
       kind: "object",

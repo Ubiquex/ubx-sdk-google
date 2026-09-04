@@ -13,24 +13,20 @@ type V1betaLicenseConfig_EarlyTerminationDate struct {
 }
 
 var V1betaLicenseConfig_EarlyTerminationDateFields = ubx.FieldMap{
-		"Day": ubx.FieldSpec{WireName: "day"},
-		"Month": ubx.FieldSpec{WireName: "month"},
-		"Year": ubx.FieldSpec{WireName: "year"},
-	}
+	"Day":   ubx.FieldSpec{WireName: "day"},
+	"Month": ubx.FieldSpec{WireName: "month"},
+	"Year":  ubx.FieldSpec{WireName: "year"},
+}
 
 type V1betaLicenseConfigConfig struct {
 	// Optional. Whether the license config should be auto renewed when it reaches the end date.
 	AutoRenew any
-	// Output only. Indication of whether the subscription is terminated earlier than the expiration date. This is usually terminated by pipeline once the subscription gets terminated from subsv3.
-	EarlyTerminated any
 	// Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp
 	EarlyTerminationDate any
 	// Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp
 	EndDate any
 	// Optional. Whether the license config is for free trial.
 	FreeTrial any
-	// Output only. Whether the license config is for Gemini bundle.
-	GeminiBundle any
 	// Optional. Timestamp of the most recent user-initiated update (seat count change or subscription term change). Unlike `update_time`, this field is only stamped when a customer explicitly updates the license (e.g. via the UI), and is not touched by system-driven writes (subscription pipeline, BALC propagation, etc.).
 	LastUserUpdateTime any
 	// Required. Number of licenses purchased.
@@ -39,8 +35,6 @@ type V1betaLicenseConfigConfig struct {
 	Name any
 	// Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp
 	StartDate any
-	// Output only. The state of the license config.
-	State any
 	// Required. Subscription term.
 	SubscriptionTerm any
 	// Required. Subscription tier information for the license config.
@@ -80,28 +74,25 @@ var V1betaLicenseConfig = ubx.ResourceBinding{
 	WireType: "google_discoveryengine_v1beta_license_config",
 	Fields: ubx.FieldMap{
 		"AutoRenew": ubx.FieldSpec{WireName: "auto_renew"},
-		"EarlyTerminated": ubx.FieldSpec{WireName: "early_terminated"},
 		"EarlyTerminationDate": ubx.FieldSpec{
 			WireName: "early_termination_date",
-			Kind: "object",
-			Fields: V1betaLicenseConfig_EarlyTerminationDateFields,
+			Kind:     "object",
+			Fields:   V1betaLicenseConfig_EarlyTerminationDateFields,
 		},
 		"EndDate": ubx.FieldSpec{
 			WireName: "end_date",
-			Kind: "object",
-			Fields: V1betaLicenseConfig_EarlyTerminationDateFields,
+			Kind:     "object",
+			Fields:   V1betaLicenseConfig_EarlyTerminationDateFields,
 		},
-		"FreeTrial": ubx.FieldSpec{WireName: "free_trial"},
-		"GeminiBundle": ubx.FieldSpec{WireName: "gemini_bundle"},
+		"FreeTrial":          ubx.FieldSpec{WireName: "free_trial"},
 		"LastUserUpdateTime": ubx.FieldSpec{WireName: "last_user_update_time"},
-		"LicenseCount": ubx.FieldSpec{WireName: "license_count"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"LicenseCount":       ubx.FieldSpec{WireName: "license_count"},
+		"Name":               ubx.FieldSpec{WireName: "name"},
 		"StartDate": ubx.FieldSpec{
 			WireName: "start_date",
-			Kind: "object",
-			Fields: V1betaLicenseConfig_EarlyTerminationDateFields,
+			Kind:     "object",
+			Fields:   V1betaLicenseConfig_EarlyTerminationDateFields,
 		},
-		"State": ubx.FieldSpec{WireName: "state"},
 		"SubscriptionTerm": ubx.FieldSpec{WireName: "subscription_term"},
 		"SubscriptionTier": ubx.FieldSpec{WireName: "subscription_tier"},
 	},

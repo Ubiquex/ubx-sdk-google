@@ -14,35 +14,35 @@ type AlphaNetwork_Peerings_ConnectionStatus_ConsensusState struct {
 }
 
 type AlphaNetwork_Peerings_ConnectionStatus_TrafficConfiguration struct {
-	ExportCustomRoutesToPeer any
-	ExportSubnetRoutesWithPublicIpToPeer any
-	ImportCustomRoutesFromPeer any
+	ExportCustomRoutesToPeer               any
+	ExportSubnetRoutesWithPublicIpToPeer   any
+	ImportCustomRoutesFromPeer             any
 	ImportSubnetRoutesWithPublicIpFromPeer any
-	StackType any
+	StackType                              any
 }
 
 type AlphaNetwork_Peerings_ConnectionStatus struct {
-	ConsensusState any
+	ConsensusState       any
 	TrafficConfiguration any
-	UpdateStrategy any
+	UpdateStrategy       any
 }
 
 type AlphaNetwork_Peerings struct {
 	AdvertisePeerSubnetsViaRouters any
-	AutoCreateRoutes any
-	ConnectionStatus any
-	ExchangeSubnetRoutes any
-	ExportCustomRoutes any
+	AutoCreateRoutes               any
+	ConnectionStatus               any
+	ExchangeSubnetRoutes           any
+	ExportCustomRoutes             any
 	ExportSubnetRoutesWithPublicIp any
-	ImportCustomRoutes any
+	ImportCustomRoutes             any
 	ImportSubnetRoutesWithPublicIp any
-	Name any
-	Network any
-	PeerMtu any
-	StackType any
-	State any
-	StateDetails any
-	UpdateStrategy any
+	Name                           any
+	Network                        any
+	PeerMtu                        any
+	StackType                      any
+	State                          any
+	StateDetails                   any
+	UpdateStrategy                 any
 }
 
 type AlphaNetwork_RoutingConfig struct {
@@ -61,88 +61,31 @@ type AlphaNetwork_RoutingConfig struct {
 }
 
 var AlphaNetwork_ParamsFields = ubx.FieldMap{
-		"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
-	}
-
-var AlphaNetwork_Peerings_ConnectionStatus_ConsensusStateFields = ubx.FieldMap{
-		"DeleteStatus": ubx.FieldSpec{WireName: "delete_status"},
-		"UpdateStatus": ubx.FieldSpec{WireName: "update_status"},
-	}
-
-var AlphaNetwork_Peerings_ConnectionStatus_TrafficConfigurationFields = ubx.FieldMap{
-		"ExportCustomRoutesToPeer": ubx.FieldSpec{WireName: "export_custom_routes_to_peer"},
-		"ExportSubnetRoutesWithPublicIpToPeer": ubx.FieldSpec{WireName: "export_subnet_routes_with_public_ip_to_peer"},
-		"ImportCustomRoutesFromPeer": ubx.FieldSpec{WireName: "import_custom_routes_from_peer"},
-		"ImportSubnetRoutesWithPublicIpFromPeer": ubx.FieldSpec{WireName: "import_subnet_routes_with_public_ip_from_peer"},
-		"StackType": ubx.FieldSpec{WireName: "stack_type"},
-	}
-
-var AlphaNetwork_Peerings_ConnectionStatusFields = ubx.FieldMap{
-		"ConsensusState": ubx.FieldSpec{
-			WireName: "consensus_state",
-			Kind: "object",
-			Fields: AlphaNetwork_Peerings_ConnectionStatus_ConsensusStateFields,
-		},
-		"TrafficConfiguration": ubx.FieldSpec{
-			WireName: "traffic_configuration",
-			Kind: "object",
-			Fields: AlphaNetwork_Peerings_ConnectionStatus_TrafficConfigurationFields,
-		},
-		"UpdateStrategy": ubx.FieldSpec{WireName: "update_strategy"},
-	}
-
-var AlphaNetwork_PeeringsFields = ubx.FieldMap{
-		"AdvertisePeerSubnetsViaRouters": ubx.FieldSpec{WireName: "advertise_peer_subnets_via_routers"},
-		"AutoCreateRoutes": ubx.FieldSpec{WireName: "auto_create_routes"},
-		"ConnectionStatus": ubx.FieldSpec{
-			WireName: "connection_status",
-			Kind: "object",
-			Fields: AlphaNetwork_Peerings_ConnectionStatusFields,
-		},
-		"ExchangeSubnetRoutes": ubx.FieldSpec{WireName: "exchange_subnet_routes"},
-		"ExportCustomRoutes": ubx.FieldSpec{WireName: "export_custom_routes"},
-		"ExportSubnetRoutesWithPublicIp": ubx.FieldSpec{WireName: "export_subnet_routes_with_public_ip"},
-		"ImportCustomRoutes": ubx.FieldSpec{WireName: "import_custom_routes"},
-		"ImportSubnetRoutesWithPublicIp": ubx.FieldSpec{WireName: "import_subnet_routes_with_public_ip"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"PeerMtu": ubx.FieldSpec{WireName: "peer_mtu"},
-		"StackType": ubx.FieldSpec{WireName: "stack_type"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"StateDetails": ubx.FieldSpec{WireName: "state_details"},
-		"UpdateStrategy": ubx.FieldSpec{WireName: "update_strategy"},
-	}
+	"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
+}
 
 var AlphaNetwork_RoutingConfigFields = ubx.FieldMap{
-		"BgpAlwaysCompareMed": ubx.FieldSpec{WireName: "bgp_always_compare_med"},
-		"BgpBestPathSelectionMode": ubx.FieldSpec{WireName: "bgp_best_path_selection_mode"},
-		"BgpInterRegionCost": ubx.FieldSpec{WireName: "bgp_inter_region_cost"},
-		"EffectiveBgpAlwaysCompareMed": ubx.FieldSpec{WireName: "effective_bgp_always_compare_med"},
-		"EffectiveBgpInterRegionCost": ubx.FieldSpec{WireName: "effective_bgp_inter_region_cost"},
-		"RoutingMode": ubx.FieldSpec{WireName: "routing_mode"},
-	}
+	"BgpAlwaysCompareMed":          ubx.FieldSpec{WireName: "bgp_always_compare_med"},
+	"BgpBestPathSelectionMode":     ubx.FieldSpec{WireName: "bgp_best_path_selection_mode"},
+	"BgpInterRegionCost":           ubx.FieldSpec{WireName: "bgp_inter_region_cost"},
+	"EffectiveBgpAlwaysCompareMed": ubx.FieldSpec{WireName: "effective_bgp_always_compare_med"},
+	"EffectiveBgpInterRegionCost":  ubx.FieldSpec{WireName: "effective_bgp_inter_region_cost"},
+	"RoutingMode":                  ubx.FieldSpec{WireName: "routing_mode"},
+}
 
 type AlphaNetworkConfig struct {
 	// Must be set to create a VPC network. If not set, a legacy network is created. When set to true, the VPC network is created in auto mode. When set to false, the VPC network is created in custom mode. An auto mode VPC network starts with one subnet per region. Each subnet has a predetermined range as described inAuto mode VPC network IP ranges. For custom mode VPC networks, you can add subnets using the subnetworksinsert method.
 	AutoCreateSubnetworks any
-	// Output only. [Output Only] Creation timestamp inRFC3339 text format.
-	CreationTimestamp any
 	// An optional description of this resource. Provide this field when you create the resource.
 	Description any
 	// Enable ULA internal ipv6 on this network. Enabling this feature will assign a /48 from google defined ULA prefix fd20::/20. .
 	EnableUlaInternalIpv6 any
-	// Output only. [Output Only] URL of the firewall policy the network is associated with.
-	FirewallPolicy any
 	// [Output Only] The gateway address for default routing out of the network, selected by Google Cloud.
 	GatewayIpv4 any
-	// Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-	Id any
 	// When enabling ula internal ipv6, caller optionally can specify the /48 range they want from the google defined ULA prefix fd20::/20. The input must be a valid /48 ULA IPv6 address and must be within the fd20::/20. Operation will fail if the speficied /48 is already in used by another resource. If the field is not speficied, then a /48 range will be randomly allocated from fd20::/20 and returned via this field. .
 	InternalIpv6Range any
 	// Deprecated in favor of subnet mode networks. The range of internal addresses that are legal on this network. This range is aCIDR specification, for example:192.168.0.0/16. Provided by the client when the network is created.
 	Ipv4Range any
-	// Output only. [Output Only] Type of the resource. Always compute#network for networks.
-	Kind any
 	// Maximum Transmission Unit in bytes. The minimum value for this field is 1300 and the maximum value is 8896. The suggested value is 1500, which is the default MTU used on the Internet, or 8896 if you want to use Jumbo frames. If unspecified, the value defaults to 1460.
 	Mtu any
 	// Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
@@ -153,16 +96,10 @@ type AlphaNetworkConfig struct {
 	NetworkProfile any
 	// Additional network parameters.
 	Params any
-	// Output only. [Output Only] A list of network peerings for the resource.
-	Peerings any
-	// Output only. [Output Only] URL of the region where the regional network resides. This field is not applicable to global network. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
-	Region any
 	// A routing configuration attached to a network resource. The message includes the list of routers associated with the network, and a flag indicating the type of routing behavior to enforce network-wide.
 	RoutingConfig any
 	// [Output Only] Server-defined URL for the resource.
 	SelfLink any
-	// Output only. [Output Only] Server-defined URL for this resource with the resource id.
-	SelfLinkWithId any
 	// [Output Only] Server-defined fully-qualified URLs for all subnetworks in this VPC network.
 	Subnetworks any
 }
@@ -215,38 +152,27 @@ type AlphaNetworkAttrs struct {
 var AlphaNetwork = ubx.ResourceBinding{
 	WireType: "google_compute_alpha_network",
 	Fields: ubx.FieldMap{
-		"AutoCreateSubnetworks": ubx.FieldSpec{WireName: "auto_create_subnetworks"},
-		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"EnableUlaInternalIpv6": ubx.FieldSpec{WireName: "enable_ula_internal_ipv6"},
-		"FirewallPolicy": ubx.FieldSpec{WireName: "firewall_policy"},
-		"GatewayIpv4": ubx.FieldSpec{WireName: "gateway_ipv4"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"InternalIpv6Range": ubx.FieldSpec{WireName: "internal_ipv6_range"},
-		"Ipv4Range": ubx.FieldSpec{WireName: "ipv4_range"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Mtu": ubx.FieldSpec{WireName: "mtu"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"AutoCreateSubnetworks":                 ubx.FieldSpec{WireName: "auto_create_subnetworks"},
+		"Description":                           ubx.FieldSpec{WireName: "description"},
+		"EnableUlaInternalIpv6":                 ubx.FieldSpec{WireName: "enable_ula_internal_ipv6"},
+		"GatewayIpv4":                           ubx.FieldSpec{WireName: "gateway_ipv4"},
+		"InternalIpv6Range":                     ubx.FieldSpec{WireName: "internal_ipv6_range"},
+		"Ipv4Range":                             ubx.FieldSpec{WireName: "ipv4_range"},
+		"Mtu":                                   ubx.FieldSpec{WireName: "mtu"},
+		"Name":                                  ubx.FieldSpec{WireName: "name"},
 		"NetworkFirewallPolicyEnforcementOrder": ubx.FieldSpec{WireName: "network_firewall_policy_enforcement_order"},
-		"NetworkProfile": ubx.FieldSpec{WireName: "network_profile"},
+		"NetworkProfile":                        ubx.FieldSpec{WireName: "network_profile"},
 		"Params": ubx.FieldSpec{
 			WireName: "params",
-			Kind: "object",
-			Fields: AlphaNetwork_ParamsFields,
+			Kind:     "object",
+			Fields:   AlphaNetwork_ParamsFields,
 		},
-		"Peerings": ubx.FieldSpec{
-			WireName: "peerings",
-			Kind: "list",
-			Fields: AlphaNetwork_PeeringsFields,
-		},
-		"Region": ubx.FieldSpec{WireName: "region"},
 		"RoutingConfig": ubx.FieldSpec{
 			WireName: "routing_config",
-			Kind: "object",
-			Fields: AlphaNetwork_RoutingConfigFields,
+			Kind:     "object",
+			Fields:   AlphaNetwork_RoutingConfigFields,
 		},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"SelfLinkWithId": ubx.FieldSpec{WireName: "self_link_with_id"},
+		"SelfLink":    ubx.FieldSpec{WireName: "self_link"},
 		"Subnetworks": ubx.FieldSpec{WireName: "subnetworks"},
 	},
 }

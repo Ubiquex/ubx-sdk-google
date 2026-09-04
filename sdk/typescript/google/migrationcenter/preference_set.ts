@@ -142,16 +142,10 @@ const PreferenceSet_VirtualMachinePreferencesFields: FieldMap = {
 };
 
 export interface PreferenceSetConfig {
-  /** Output only. The timestamp when the preference set was created. */
-  createTime?: string | Computed<string>;
   /** A description of the preference set. */
   description?: string | Computed<string>;
   /** User-friendly display name. Maximum length is 63 characters. */
   displayName?: string | Computed<string>;
-  /** Output only. Name of the preference set. */
-  name?: string | Computed<string>;
-  /** Output only. The timestamp when the preference set was last updated. */
-  updateTime?: string | Computed<string>;
   /** VirtualMachinePreferences enables you to create sets of assumptions, for example, a geographical location and pricing track, for your migrated virtual machines. The set of preferences influence recommendations for migrating virtual machine assets. */
   virtualMachinePreferences?: PreferenceSet_VirtualMachinePreferences | Computed<PreferenceSet_VirtualMachinePreferences>;
 }
@@ -174,11 +168,8 @@ export interface PreferenceSetAttrs {
 export const PreferenceSet: ResourceBinding<PreferenceSetConfig, PreferenceSetAttrs> = {
   wireType: "google_migrationcenter_preference_set",
   fields: {
-    createTime: "create_time",
     description: "description",
     displayName: "display_name",
-    name: "name",
-    updateTime: "update_time",
     virtualMachinePreferences: {
       wireName: "virtual_machine_preferences",
       kind: "object",

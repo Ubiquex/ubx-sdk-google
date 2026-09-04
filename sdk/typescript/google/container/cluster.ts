@@ -3511,8 +3511,6 @@ export interface ClusterConfig {
   parent?: string | Computed<string>;
   /** Deprecated. The Google Developers Console [project ID or project number](https://cloud.google.com/resource-manager/docs/creating-managing-projects). This field has been deprecated and replaced by the parent field. */
   projectId?: string | Computed<string>;
-  /** Deprecated. The name of the Google Compute Engine [zone](https://cloud.google.com/compute/docs/zones#available) in which the cluster resides. This field has been deprecated and replaced by the parent field. */
-  zone?: string | Computed<string>;
 }
 
 export interface ClusterAttrs {
@@ -3708,6 +3706,5 @@ export const Cluster: ResourceBinding<ClusterConfig, ClusterAttrs> = {
     },
     parent: "parent",
     projectId: "project_id",
-    zone: "zone",
   },
 };

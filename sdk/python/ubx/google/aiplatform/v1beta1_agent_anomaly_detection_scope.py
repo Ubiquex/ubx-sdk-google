@@ -16,8 +16,6 @@ class V1beta1AgentAnomalyDetectionScopeConfig:
     name: Any = None
     # Required. Customer-owned Cloud Observability bucket resource names attached to this scope. Format: `projects/{project}/locations/{location}/observationBuckets/{observation_bucket}`.
     observability_buckets: Any = None
-    # Output only. The lifecycle state of the scope.
-    state: Any = None
 
 @dataclasses.dataclass
 class V1beta1AgentAnomalyDetectionScopeAttrs:
@@ -39,6 +37,5 @@ V1beta1AgentAnomalyDetectionScope = ubx.ResourceBinding(
         "log_buckets": ubx.FieldSpec(wire_name="log_buckets"),
         "name": ubx.FieldSpec(wire_name="name"),
         "observability_buckets": ubx.FieldSpec(wire_name="observability_buckets"),
-        "state": ubx.FieldSpec(wire_name="state"),
     },
 )

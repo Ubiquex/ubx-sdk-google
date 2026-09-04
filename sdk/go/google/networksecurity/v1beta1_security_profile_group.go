@@ -4,26 +4,18 @@ package networksecurity
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta1SecurityProfileGroupConfig struct {
-	// Output only. Resource creation timestamp.
-	CreateTime any
 	// Optional. Reference to a SecurityProfile with the CustomIntercept configuration.
 	CustomInterceptProfile any
 	// Optional. Reference to a SecurityProfile with the CustomMirroring configuration.
 	CustomMirroringProfile any
-	// Output only. Identifier used by the data-path. Unique within `{container, location}`.
-	DataPathId any
 	// Optional. An optional description of the profile group. Max length 2048 characters.
 	Description any
-	// Output only. This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding.
-	Etag any
 	// Optional. Labels as key value pairs.
 	Labels any
 	// Immutable. Identifier. Name of the SecurityProfileGroup resource. It matches pattern `projects|organizations/*/locations/{location}/securityProfileGroups/{security_profile_group}`.
 	Name any
 	// Optional. Reference to a SecurityProfile with the ThreatPrevention configuration.
 	ThreatPreventionProfile any
-	// Output only. Last resource update timestamp.
-	UpdateTime any
 	// Optional. Reference to a SecurityProfile with the UrlFiltering configuration.
 	UrlFilteringProfile any
 	// Optional. Reference to a SecurityProfile with the WildFire configuration.
@@ -60,17 +52,13 @@ type V1beta1SecurityProfileGroupAttrs struct {
 var V1beta1SecurityProfileGroup = ubx.ResourceBinding{
 	WireType: "google_networksecurity_v1beta1_security_profile_group",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"CustomInterceptProfile": ubx.FieldSpec{WireName: "custom_intercept_profile"},
-		"CustomMirroringProfile": ubx.FieldSpec{WireName: "custom_mirroring_profile"},
-		"DataPathId": ubx.FieldSpec{WireName: "data_path_id"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"CustomInterceptProfile":  ubx.FieldSpec{WireName: "custom_intercept_profile"},
+		"CustomMirroringProfile":  ubx.FieldSpec{WireName: "custom_mirroring_profile"},
+		"Description":             ubx.FieldSpec{WireName: "description"},
+		"Labels":                  ubx.FieldSpec{WireName: "labels"},
+		"Name":                    ubx.FieldSpec{WireName: "name"},
 		"ThreatPreventionProfile": ubx.FieldSpec{WireName: "threat_prevention_profile"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-		"UrlFilteringProfile": ubx.FieldSpec{WireName: "url_filtering_profile"},
+		"UrlFilteringProfile":     ubx.FieldSpec{WireName: "url_filtering_profile"},
 		"WildfireAnalysisProfile": ubx.FieldSpec{WireName: "wildfire_analysis_profile"},
 	},
 }

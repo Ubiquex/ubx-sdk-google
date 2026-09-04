@@ -5,75 +5,75 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1alphaInventory_Items_AvailablePackage_AptPackage struct {
 	Architecture any
-	PackageName any
-	Version any
+	PackageName  any
+	Version      any
 }
 
 type V1alphaInventory_Items_AvailablePackage_QfePackage struct {
-	Caption any
+	Caption     any
 	Description any
-	HotFixId any
+	HotFixId    any
 	InstallTime any
 }
 
 type V1alphaInventory_Items_AvailablePackage_WindowsApplication_InstallDate struct {
-	Day any
+	Day   any
 	Month any
-	Year any
+	Year  any
 }
 
 type V1alphaInventory_Items_AvailablePackage_WindowsApplication struct {
-	DisplayName any
+	DisplayName    any
 	DisplayVersion any
-	HelpLink any
-	InstallDate any
-	Publisher any
+	HelpLink       any
+	InstallDate    any
+	Publisher      any
 }
 
 type V1alphaInventory_Items_AvailablePackage_WuaPackage_Categories struct {
-	Id any
+	Id   any
 	Name any
 }
 
 type V1alphaInventory_Items_AvailablePackage_WuaPackage struct {
-	Categories any
-	Description any
-	KbArticleIds any
+	Categories               any
+	Description              any
+	KbArticleIds             any
 	LastDeploymentChangeTime any
-	MoreInfoUrls any
-	RevisionNumber any
-	SupportUrl any
-	Title any
-	UpdateId any
+	MoreInfoUrls             any
+	RevisionNumber           any
+	SupportUrl               any
+	Title                    any
+	UpdateId                 any
 }
 
 type V1alphaInventory_Items_AvailablePackage_ZypperPatch struct {
-	Category any
+	Category  any
 	PatchName any
-	Severity any
-	Summary any
+	Severity  any
+	Summary   any
 }
 
 type V1alphaInventory_Items_AvailablePackage struct {
-	AptPackage any
-	CosPackage any
-	GoogetPackage any
-	QfePackage any
+	AptPackage         any
+	CosPackage         any
+	GoogetPackage      any
+	QfePackage         any
 	WindowsApplication any
-	WuaPackage any
-	YumPackage any
-	ZypperPackage any
-	ZypperPatch any
+	WuaPackage         any
+	YumPackage         any
+	ZypperPackage      any
+	ZypperPatch        any
 }
 
 type V1alphaInventory_Items struct {
 	AvailablePackage any
-	CreateTime any
-	Id any
+	CreateTime       any
+	Id               any
 	InstalledPackage any
-	OriginType any
-	Type any
-	UpdateTime any
+	OriginType       any
+	Type             any
+	UpdateTime       any
 }
 
 type V1alphaInventory_OsInfo struct {
@@ -96,25 +96,23 @@ type V1alphaInventory_OsInfo struct {
 }
 
 type V1alphaInventoryConfig struct {
-	Name any
 	View any
 }
 
 type V1alphaInventoryAttrs struct {
 	// Output only. Inventory items related to the VM keyed by an opaque unique identifier for each inventory item. The identifier is unique to each distinct and addressable inventory item and will change, when there is a new package version.
 	Items any
-	Name any
+	Name  any
 	// Operating system information for the VM.
 	OsInfo any
 	// Output only. Timestamp of the last reported inventory for the VM.
 	UpdateTime any
-	View any
+	View       any
 }
 
 var V1alphaInventory = ubx.DataSourceBinding{
 	WireType: "google_osconfig_v1alpha_inventory",
 	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
 		"View": ubx.FieldSpec{WireName: "view"},
 	},
 }

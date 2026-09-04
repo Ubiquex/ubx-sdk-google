@@ -503,23 +503,17 @@ const V3beta1Playbook_LlmModelSettingsFields: FieldMap = {
 
 export interface V3beta1PlaybookConfig {
   codeBlock?: V3beta1Playbook_CodeBlock | Computed<V3beta1Playbook_CodeBlock>;
-  createTime?: string | Computed<string>;
   displayName?: string | Computed<string>;
   goal?: string | Computed<string>;
   handlers?: V3beta1Playbook_Handlers[] | Computed<V3beta1Playbook_Handlers[]>;
-  inlineActions?: string[] | Computed<string[]>;
   inputParameterDefinitions?: V3beta1Playbook_InputParameterDefinitions[] | Computed<V3beta1Playbook_InputParameterDefinitions[]>;
   instruction?: V3beta1Playbook_Instruction | Computed<V3beta1Playbook_Instruction>;
   llmModelSettings?: V3beta1Playbook_LlmModelSettings | Computed<V3beta1Playbook_LlmModelSettings>;
   name?: string | Computed<string>;
   outputParameterDefinitions?: V3beta1Playbook_InputParameterDefinitions[] | Computed<V3beta1Playbook_InputParameterDefinitions[]>;
   playbookType?: string | Computed<string>;
-  referencedFlows?: string[] | Computed<string[]>;
-  referencedPlaybooks?: string[] | Computed<string[]>;
   referencedTools?: string[] | Computed<string[]>;
   speechSettings?: V3beta1Playbook_Handlers_EventHandler_Fulfillment_AdvancedSettings_SpeechSettings | Computed<V3beta1Playbook_Handlers_EventHandler_Fulfillment_AdvancedSettings_SpeechSettings>;
-  tokenCount?: string | Computed<string>;
-  updateTime?: string | Computed<string>;
 }
 
 export interface V3beta1PlaybookAttrs {
@@ -551,7 +545,6 @@ export const V3beta1Playbook: ResourceBinding<V3beta1PlaybookConfig, V3beta1Play
       kind: "object",
       fields: V3beta1Playbook_CodeBlockFields,
     },
-    createTime: "create_time",
     displayName: "display_name",
     goal: "goal",
     handlers: {
@@ -559,7 +552,6 @@ export const V3beta1Playbook: ResourceBinding<V3beta1PlaybookConfig, V3beta1Play
       kind: "list",
       fields: V3beta1Playbook_HandlersFields,
     },
-    inlineActions: "inline_actions",
     inputParameterDefinitions: {
       wireName: "input_parameter_definitions",
       kind: "list",
@@ -582,15 +574,11 @@ export const V3beta1Playbook: ResourceBinding<V3beta1PlaybookConfig, V3beta1Play
       fields: V3beta1Playbook_InputParameterDefinitionsFields,
     },
     playbookType: "playbook_type",
-    referencedFlows: "referenced_flows",
-    referencedPlaybooks: "referenced_playbooks",
     referencedTools: "referenced_tools",
     speechSettings: {
       wireName: "speech_settings",
       kind: "object",
       fields: V3beta1Playbook_Handlers_EventHandler_Fulfillment_AdvancedSettings_SpeechSettingsFields,
     },
-    tokenCount: "token_count",
-    updateTime: "update_time",
   },
 };

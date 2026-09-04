@@ -285,8 +285,6 @@ _AuthzPolicy_TargetFields = {
 class AuthzPolicyConfig:
     # Required. Can be one of `ALLOW`, `DENY`, `CUSTOM`. When the action is `CUSTOM`, `customProvider` must be specified. When the action is `ALLOW`, only requests matching the policy will be allowed. When the action is `DENY`, only requests matching the policy will be denied. When a request arrives, the policies are evaluated in the following order: 1. If there is a `CUSTOM` policy that matches the request, the `CUSTOM` policy is evaluated using the custom authorization providers and the request is denied if the provider rejects the request. 2. If there are any `DENY` policies that match the request, the request is denied. 3. If there are no `ALLOW` policies for the resource or if any of the `ALLOW` policies match the request, the request is allowed. 4. Else the request is denied by default if none of the configured AuthzPolicies with `ALLOW` action match the request.
     action: Any = None
-    # Output only. The timestamp when the resource was created.
-    create_time: Any = None
     # Allows delegating authorization decisions to Cloud IAP or to Service Extensions.
     custom_provider: Any = None
     # Optional. A human-readable description of the resource.
@@ -303,8 +301,6 @@ class AuthzPolicyConfig:
     policy_profile: Any = None
     # Specifies the set of targets to which this policy should be applied to.
     target: Any = None
-    # Output only. The timestamp when the resource was updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class AuthzPolicyAttrs:
@@ -335,7 +331,6 @@ AuthzPolicy = ubx.ResourceBinding(
     wire_type="google_networksecurity_authz_policy",
     fields={
         "action": ubx.FieldSpec(wire_name="action"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "custom_provider": ubx.FieldSpec(
             wire_name="custom_provider",
             kind="object",
@@ -360,6 +355,5 @@ AuthzPolicy = ubx.ResourceBinding(
             kind="object",
             fields=_AuthzPolicy_TargetFields,
         ),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

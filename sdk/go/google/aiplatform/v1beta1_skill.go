@@ -6,8 +6,6 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type V1beta1SkillConfig struct {
 	// Optional. Specifies the compatibility of the Skill. Indicates environment requirements (intended product, system packages, network access, etc.). This should align with `compatibility` in the `SKILL.md` file.
 	Compatibility any
-	// Output only. Timestamp when this Skill was created.
-	CreateTime any
 	// Required. Describes the Skill. Should describe both what the skill does and when to use it. Should include specific keywords that help agents identify relevant tasks. This should align with `description` in the `SKILL.md` file.
 	Description any
 	// Required. Provides the display name of the Skill. This should align with `name` in the `SKILL.md` file.
@@ -18,14 +16,6 @@ type V1beta1SkillConfig struct {
 	License any
 	// Identifier. The resource name of the Skill. Format: `projects/{project}/locations/{location}/skills/{skill}`
 	Name any
-	// Output only. The SHA256 checksum of the zipped filesystem.
-	Sha256 any
-	// Output only. The source of the Skill.
-	SkillSource any
-	// Output only. The state of the Skill.
-	State any
-	// Output only. Timestamp when this Skill was most recently updated.
-	UpdateTime any
 	// Required. Provides the zipped filesystem of the Skill. This should contain the `SKILL.md` file at the root of the zip and optional directories for scripts, references, and assets. Directory should align with the directory structure specified at https://agentskills.io/specification#directory-structure.
 	ZippedFilesystem any
 }
@@ -60,17 +50,12 @@ type V1beta1SkillAttrs struct {
 var V1beta1Skill = ubx.ResourceBinding{
 	WireType: "google_aiplatform_v1beta1_skill",
 	Fields: ubx.FieldMap{
-		"Compatibility": ubx.FieldSpec{WireName: "compatibility"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"License": ubx.FieldSpec{WireName: "license"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Sha256": ubx.FieldSpec{WireName: "sha256"},
-		"SkillSource": ubx.FieldSpec{WireName: "skill_source"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"Compatibility":    ubx.FieldSpec{WireName: "compatibility"},
+		"Description":      ubx.FieldSpec{WireName: "description"},
+		"DisplayName":      ubx.FieldSpec{WireName: "display_name"},
+		"Labels":           ubx.FieldSpec{WireName: "labels"},
+		"License":          ubx.FieldSpec{WireName: "license"},
+		"Name":             ubx.FieldSpec{WireName: "name"},
 		"ZippedFilesystem": ubx.FieldSpec{WireName: "zipped_filesystem"},
 	},
 }

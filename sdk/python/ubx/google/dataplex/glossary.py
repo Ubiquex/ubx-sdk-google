@@ -8,10 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class GlossaryConfig:
-    # Output only. The number of GlossaryCategories in the Glossary.
-    category_count: Any = None
-    # Output only. The time at which the Glossary was created.
-    create_time: Any = None
     # Optional. The user-mutable description of the Glossary.
     description: Any = None
     # Optional. User friendly display name of the Glossary. This is user-mutable. This will be same as the GlossaryId, if not specified.
@@ -20,14 +16,6 @@ class GlossaryConfig:
     etag: Any = None
     # Optional. User-defined labels for the Glossary.
     labels: Any = None
-    # Output only. Identifier. The resource name of the Glossary. Format: projects/{project_id_or_number}/locations/{location_id}/glossaries/{glossary_id}
-    name: Any = None
-    # Output only. The number of GlossaryTerms in the Glossary.
-    term_count: Any = None
-    # Output only. System generated unique id for the Glossary. This ID will be different if the Glossary is deleted and re-created with the same name.
-    uid: Any = None
-    # Output only. The time at which the Glossary was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class GlossaryAttrs:
@@ -55,15 +43,9 @@ class GlossaryAttrs:
 Glossary = ubx.ResourceBinding(
     wire_type="google_dataplex_glossary",
     fields={
-        "category_count": ubx.FieldSpec(wire_name="category_count"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "etag": ubx.FieldSpec(wire_name="etag"),
         "labels": ubx.FieldSpec(wire_name="labels"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "term_count": ubx.FieldSpec(wire_name="term_count"),
-        "uid": ubx.FieldSpec(wire_name="uid"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

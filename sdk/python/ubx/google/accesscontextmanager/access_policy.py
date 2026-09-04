@@ -8,8 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class AccessPolicyConfig:
-    # Output only. An opaque identifier for the current version of the `AccessPolicy`. This will always be a strongly validated etag, meaning that two Access Policies will be identical if and only if their etags are identical. Clients should not expect this to be in any specific format.
-    etag: Any = None
     # Output only. Identifier. Resource name of the `AccessPolicy`. Format: `accessPolicies/{access_policy}`
     name: Any = None
     # Required. The parent of this `AccessPolicy` in the Cloud Resource Hierarchy. Currently immutable once created. Format: `organizations/{organization_id}`
@@ -35,7 +33,6 @@ class AccessPolicyAttrs:
 AccessPolicy = ubx.ResourceBinding(
     wire_type="google_accesscontextmanager_access_policy",
     fields={
-        "etag": ubx.FieldSpec(wire_name="etag"),
         "name": ubx.FieldSpec(wire_name="name"),
         "parent": ubx.FieldSpec(wire_name="parent"),
         "scopes": ubx.FieldSpec(wire_name="scopes"),

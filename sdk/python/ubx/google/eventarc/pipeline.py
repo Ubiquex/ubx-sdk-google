@@ -174,16 +174,12 @@ _Pipeline_RetryPolicyFields = {
 class PipelineConfig:
     # Optional. User-defined annotations. See https://google.aip.dev/128#annotations.
     annotations: Any = None
-    # Output only. The creation time. A timestamp in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to nine fractional digits. Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".
-    create_time: Any = None
     # Optional. Resource name of a KMS crypto key (managed by the user) used to encrypt/decrypt the event data. If not set, an internal Google-owned key will be used to encrypt messages. It must match the pattern "projects/{project}/locations/{location}/keyRings/{keyring}/cryptoKeys/{key}".
     crypto_key_name: Any = None
     # Required. List of destinations to which messages will be forwarded. Currently, exactly one destination is supported per Pipeline.
     destinations: Any = None
     # Optional. Display name of resource.
     display_name: Any = None
-    # Output only. This checksum is computed by the server based on the value of other fields, and might be sent only on create requests to ensure that the client has an up-to-date value before proceeding.
-    etag: Any = None
     # Represents the format of message data.
     input_payload_format: Any = None
     # Optional. User labels attached to the Pipeline that can be used to group resources. An object containing a list of "key": value pairs. Example: { "name": "wrench", "mass": "1.3kg", "count": "3" }.
@@ -196,12 +192,6 @@ class PipelineConfig:
     name: Any = None
     # The retry policy configuration for the Pipeline. The pipeline exponentially backs off in case the destination is non responsive or returns a retryable error code. The default semantics are as follows: The backoff starts with a 5 second delay and doubles the delay after each failed attempt (10 seconds, 20 seconds, 40 seconds, etc.). The delay is capped at 60 seconds by default. Please note that if you set the min_retry_delay and max_retry_delay fields to the same value this will make the duration between retries constant.
     retry_policy: Any = None
-    # Output only. Whether or not this Pipeline satisfies the requirements of physical zone separation
-    satisfies_pzs: Any = None
-    # Output only. Server-assigned unique identifier for the Pipeline. The value is a UUID4 string and guaranteed to remain unchanged until the resource is deleted.
-    uid: Any = None
-    # Output only. The last-modified time. A timestamp in RFC3339 UTC "Zulu" format, with nanosecond resolution and up to nine fractional digits. Examples: "2014-10-02T15:01:23Z" and "2014-10-02T15:01:23.045123456Z".
-    update_time: Any = None
 
 @dataclasses.dataclass
 class PipelineAttrs:
@@ -240,7 +230,6 @@ Pipeline = ubx.ResourceBinding(
     wire_type="google_eventarc_pipeline",
     fields={
         "annotations": ubx.FieldSpec(wire_name="annotations"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "crypto_key_name": ubx.FieldSpec(wire_name="crypto_key_name"),
         "destinations": ubx.FieldSpec(
             wire_name="destinations",
@@ -248,7 +237,6 @@ Pipeline = ubx.ResourceBinding(
             fields=_Pipeline_DestinationsFields,
         ),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
-        "etag": ubx.FieldSpec(wire_name="etag"),
         "input_payload_format": ubx.FieldSpec(
             wire_name="input_payload_format",
             kind="object",
@@ -271,8 +259,5 @@ Pipeline = ubx.ResourceBinding(
             kind="object",
             fields=_Pipeline_RetryPolicyFields,
         ),
-        "satisfies_pzs": ubx.FieldSpec(wire_name="satisfies_pzs"),
-        "uid": ubx.FieldSpec(wire_name="uid"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

@@ -36,8 +36,6 @@ export interface CaseConfig {
   classification?: Case_Classification | Computed<Case_Classification>;
   /** A user-supplied email address to send case update notifications for. This should only be used in BYOID flows, where we cannot infer the user's email address directly from their EUCs. */
   contactEmail?: string | Computed<string>;
-  /** Output only. The time this case was created. */
-  createTime?: string | Computed<string>;
   /** An Actor represents an entity that performed an action. For example, an actor could be a user who posted a comment on a support case, a user who uploaded an attachment, or a service account that created a support case. */
   creator?: Case_Creator | Computed<Case_Creator>;
   /** A broad description of the issue. */
@@ -52,16 +50,12 @@ export interface CaseConfig {
   name?: string | Computed<string>;
   /** The priority of this case. */
   priority?: string | Computed<string>;
-  /** Output only. The current status of the support case. */
-  state?: string | Computed<string>;
   /** The email addresses to receive updates on this case. */
   subscriberEmailAddresses?: string[] | Computed<string[]>;
   /** Whether this case was created for internal API testing and should not be acted on by the support team. */
   testCase?: boolean | Computed<boolean>;
   /** The timezone of the user who created the support case. It should be in a format IANA recognizes: https://www.iana.org/time-zones. There is no additional validation done by the API. */
   timeZone?: string | Computed<string>;
-  /** Output only. The time this case was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface CaseAttrs {
@@ -106,7 +100,6 @@ export const Case: ResourceBinding<CaseConfig, CaseAttrs> = {
       fields: Case_ClassificationFields,
     },
     contactEmail: "contact_email",
-    createTime: "create_time",
     creator: {
       wireName: "creator",
       kind: "object",
@@ -118,10 +111,8 @@ export const Case: ResourceBinding<CaseConfig, CaseAttrs> = {
     languageCode: "language_code",
     name: "name",
     priority: "priority",
-    state: "state",
     subscriberEmailAddresses: "subscriber_email_addresses",
     testCase: "test_case",
     timeZone: "time_zone",
-    updateTime: "update_time",
   },
 };

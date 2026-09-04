@@ -14,7 +14,7 @@ type PackageAttrs struct {
 	CreateTime any
 	// The display name of the package.
 	DisplayName any
-	Name any
+	Name        any
 	// The time when the package was last updated. This includes publishing a new version of the package.
 	UpdateTime any
 }

@@ -28,7 +28,6 @@ class HostConfig:
     association: Any = None
     host: Any = None
     project: Any = None
-    zone: Any = None
 
 @dataclasses.dataclass
 class HostAttrs:
@@ -62,6 +61,5 @@ Host = ubx.DataSourceBinding(
         "association": ubx.FieldSpec(wire_name="association"),
         "host": ubx.FieldSpec(wire_name="host"),
         "project": ubx.FieldSpec(wire_name="project"),
-        "zone": ubx.FieldSpec(wire_name="zone"),
     },
 )

@@ -34,8 +34,6 @@ const V1beta1FeatureMonitor_ScheduleConfigFields: FieldMap = {
 };
 
 export interface V1beta1FeatureMonitorConfig {
-  /** Output only. Timestamp when this FeatureMonitor was created. */
-  createTime?: string | Computed<string>;
   /** Optional. Description of the FeatureMonitor. */
   description?: string | Computed<string>;
   /** Optional. Used to perform consistent read-modify-write updates. If not set, a blind "overwrite" update happens. */
@@ -48,8 +46,6 @@ export interface V1beta1FeatureMonitorConfig {
   name?: string | Computed<string>;
   /** Schedule configuration for the FeatureMonitor. */
   scheduleConfig?: V1beta1FeatureMonitor_ScheduleConfig | Computed<V1beta1FeatureMonitor_ScheduleConfig>;
-  /** Output only. Timestamp when this FeatureMonitor was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1beta1FeatureMonitorAttrs {
@@ -74,7 +70,6 @@ export interface V1beta1FeatureMonitorAttrs {
 export const V1beta1FeatureMonitor: ResourceBinding<V1beta1FeatureMonitorConfig, V1beta1FeatureMonitorAttrs> = {
   wireType: "google_aiplatform_v1beta1_feature_monitor",
   fields: {
-    createTime: "create_time",
     description: "description",
     etag: "etag",
     featureSelectionConfig: {
@@ -89,6 +84,5 @@ export const V1beta1FeatureMonitor: ResourceBinding<V1beta1FeatureMonitorConfig,
       kind: "object",
       fields: V1beta1FeatureMonitor_ScheduleConfigFields,
     },
-    updateTime: "update_time",
   },
 };

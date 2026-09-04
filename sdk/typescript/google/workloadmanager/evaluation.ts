@@ -56,8 +56,6 @@ const Evaluation_ResourceStatusFields: FieldMap = {
 export interface EvaluationConfig {
   /** BigQuery destination for evaluation results. */
   bigQueryDestination?: Evaluation_BigQueryDestination | Computed<Evaluation_BigQueryDestination>;
-  /** Output only. [Output only] Create time stamp. */
-  createTime?: string | Computed<string>;
   /** The Cloud Storage bucket name for custom rules. */
   customRulesBucket?: string | Computed<string>;
   /** Description of the Evaluation. */
@@ -78,8 +76,6 @@ export interface EvaluationConfig {
   ruleNames?: string[] | Computed<string[]>;
   /** Crontab format schedule for scheduled evaluation, currently only supports the following fixed schedules: * `0 * /1 * * *` # Hourly * `0 * /6 * * *` # Every 6 hours * `0 * /12 * * *` # Every 12 hours * `0 0 * /1 * *` # Daily * `0 0 * /7 * *` # Weekly * `0 0 * /14 * *` # Every 14 days * `0 0 1 * /1 *` # Monthly */
   schedule?: string | Computed<string>;
-  /** Output only. [Output only] Update time stamp. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface EvaluationAttrs {
@@ -119,7 +115,6 @@ export const Evaluation: ResourceBinding<EvaluationConfig, EvaluationAttrs> = {
       kind: "object",
       fields: Evaluation_BigQueryDestinationFields,
     },
-    createTime: "create_time",
     customRulesBucket: "custom_rules_bucket",
     description: "description",
     evaluationType: "evaluation_type",
@@ -138,6 +133,5 @@ export const Evaluation: ResourceBinding<EvaluationConfig, EvaluationAttrs> = {
     },
     ruleNames: "rule_names",
     schedule: "schedule",
-    updateTime: "update_time",
   },
 };

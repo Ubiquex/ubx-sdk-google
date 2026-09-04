@@ -114,8 +114,7 @@ class PostureTemplate_PolicySets:
 
 @dataclasses.dataclass
 class PostureTemplateConfig:
-    name: Any = None
-    revision_id: Any = None
+    pass
 
 @dataclasses.dataclass
 class PostureTemplateAttrs:
@@ -133,7 +132,5 @@ class PostureTemplateAttrs:
 PostureTemplate = ubx.DataSourceBinding(
     wire_type="google_securityposture_posture_template",
     fields={
-        "name": ubx.FieldSpec(wire_name="name"),
-        "revision_id": ubx.FieldSpec(wire_name="revision_id"),
     },
 )

@@ -113,8 +113,6 @@ _AspectType_MetadataTemplateFields = {
 class AspectTypeConfig:
     # Authorization for an AspectType.
     authorization: Any = None
-    # Output only. The time when the AspectType was created.
-    create_time: Any = None
     # Optional. Immutable. Stores data classification of the aspect.
     data_classification: Any = None
     # Optional. Description of the AspectType.
@@ -127,14 +125,6 @@ class AspectTypeConfig:
     labels: Any = None
     # MetadataTemplate definition for an AspectType.
     metadata_template: Any = None
-    # Output only. The relative resource name of the AspectType, of the form: projects/{project_number}/locations/{location_id}/aspectTypes/{aspect_type_id}.
-    name: Any = None
-    # Output only. Denotes the transfer status of the Aspect Type. It is unspecified for Aspect Types created from Dataplex API.
-    transfer_status: Any = None
-    # Output only. System generated globally unique ID for the AspectType. If you delete and recreate the AspectType with the same name, then this ID will be different.
-    uid: Any = None
-    # Output only. The time when the AspectType was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class AspectTypeAttrs:
@@ -171,7 +161,6 @@ AspectType = ubx.ResourceBinding(
             kind="object",
             fields=_AspectType_AuthorizationFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "data_classification": ubx.FieldSpec(wire_name="data_classification"),
         "description": ubx.FieldSpec(wire_name="description"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
@@ -182,9 +171,5 @@ AspectType = ubx.ResourceBinding(
             kind="object",
             fields=_AspectType_MetadataTemplateFields,
         ),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "transfer_status": ubx.FieldSpec(wire_name="transfer_status"),
-        "uid": ubx.FieldSpec(wire_name="uid"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

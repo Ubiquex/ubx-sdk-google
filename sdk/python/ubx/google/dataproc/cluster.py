@@ -927,8 +927,6 @@ _Cluster_VirtualClusterConfigFields = {
 class ClusterConfig:
     # Required. The cluster name, which must be unique within a project. The name must start with a lowercase letter, and can contain up to 51 lowercase letters, numbers, and hyphens. It cannot end with a hyphen. The name of a deleted cluster can be reused.
     cluster_name: Any = None
-    # Output only. A cluster UUID (Unique Universal Identifier). The service generates this value when it creates the cluster.
-    cluster_uuid: Any = None
     # The cluster config.
     config: Any = None
     # Optional. The labels to associate with this cluster. Label keys must contain 1 to 63 characters, and must conform to RFC 1035 (https://www.ietf.org/rfc/rfc1035.txt). Label values may be empty, but, if present, must contain 1 to 63 characters, and must conform to RFC 1035 (https://www.ietf.org/rfc/rfc1035.txt). No more than 32 labels can be associated with a cluster.
@@ -939,8 +937,6 @@ class ClusterConfig:
     project_id: Any = None
     # The status of a cluster and its instances.
     status: Any = None
-    # Output only. The previous cluster status.
-    status_history: Any = None
     # The cluster config for a cluster that does not directly control the underlying compute resources, such as a GKE cluster (https://cloud.google.com/dataproc/docs/guides/dpgke/dataproc-gke-overview).
     virtual_cluster_config: Any = None
 
@@ -969,7 +965,6 @@ Cluster = ubx.ResourceBinding(
     wire_type="google_dataproc_cluster",
     fields={
         "cluster_name": ubx.FieldSpec(wire_name="cluster_name"),
-        "cluster_uuid": ubx.FieldSpec(wire_name="cluster_uuid"),
         "config": ubx.FieldSpec(
             wire_name="config",
             kind="object",
@@ -985,11 +980,6 @@ Cluster = ubx.ResourceBinding(
         "status": ubx.FieldSpec(
             wire_name="status",
             kind="object",
-            fields=_Cluster_StatusFields,
-        ),
-        "status_history": ubx.FieldSpec(
-            wire_name="status_history",
-            kind="list",
             fields=_Cluster_StatusFields,
         ),
         "virtual_cluster_config": ubx.FieldSpec(

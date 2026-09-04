@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta1FeatureMonitor_FeatureSelectionConfig_FeatureConfigs struct {
 	DriftThreshold any
-	FeatureId any
+	FeatureId      any
 }
 
 type V1beta1FeatureMonitor_FeatureSelectionConfig struct {
@@ -19,25 +19,23 @@ type V1beta1FeatureMonitor_ScheduleConfig struct {
 }
 
 var V1beta1FeatureMonitor_FeatureSelectionConfig_FeatureConfigsFields = ubx.FieldMap{
-		"DriftThreshold": ubx.FieldSpec{WireName: "drift_threshold"},
-		"FeatureId": ubx.FieldSpec{WireName: "feature_id"},
-	}
+	"DriftThreshold": ubx.FieldSpec{WireName: "drift_threshold"},
+	"FeatureId":      ubx.FieldSpec{WireName: "feature_id"},
+}
 
 var V1beta1FeatureMonitor_FeatureSelectionConfigFields = ubx.FieldMap{
-		"FeatureConfigs": ubx.FieldSpec{
-			WireName: "feature_configs",
-			Kind: "list",
-			Fields: V1beta1FeatureMonitor_FeatureSelectionConfig_FeatureConfigsFields,
-		},
-	}
+	"FeatureConfigs": ubx.FieldSpec{
+		WireName: "feature_configs",
+		Kind:     "list",
+		Fields:   V1beta1FeatureMonitor_FeatureSelectionConfig_FeatureConfigsFields,
+	},
+}
 
 var V1beta1FeatureMonitor_ScheduleConfigFields = ubx.FieldMap{
-		"Cron": ubx.FieldSpec{WireName: "cron"},
-	}
+	"Cron": ubx.FieldSpec{WireName: "cron"},
+}
 
 type V1beta1FeatureMonitorConfig struct {
-	// Output only. Timestamp when this FeatureMonitor was created.
-	CreateTime any
 	// Optional. Description of the FeatureMonitor.
 	Description any
 	// Optional. Used to perform consistent read-modify-write updates. If not set, a blind "overwrite" update happens.
@@ -50,8 +48,6 @@ type V1beta1FeatureMonitorConfig struct {
 	Name any
 	// Schedule configuration for the FeatureMonitor.
 	ScheduleConfig any
-	// Output only. Timestamp when this FeatureMonitor was last updated.
-	UpdateTime any
 }
 
 type V1beta1FeatureMonitorAttrs struct {
@@ -76,21 +72,19 @@ type V1beta1FeatureMonitorAttrs struct {
 var V1beta1FeatureMonitor = ubx.ResourceBinding{
 	WireType: "google_aiplatform_v1beta1_feature_monitor",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
+		"Etag":        ubx.FieldSpec{WireName: "etag"},
 		"FeatureSelectionConfig": ubx.FieldSpec{
 			WireName: "feature_selection_config",
-			Kind: "object",
-			Fields: V1beta1FeatureMonitor_FeatureSelectionConfigFields,
+			Kind:     "object",
+			Fields:   V1beta1FeatureMonitor_FeatureSelectionConfigFields,
 		},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":   ubx.FieldSpec{WireName: "name"},
 		"ScheduleConfig": ubx.FieldSpec{
 			WireName: "schedule_config",
-			Kind: "object",
-			Fields: V1beta1FeatureMonitor_ScheduleConfigFields,
+			Kind:     "object",
+			Fields:   V1beta1FeatureMonitor_ScheduleConfigFields,
 		},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

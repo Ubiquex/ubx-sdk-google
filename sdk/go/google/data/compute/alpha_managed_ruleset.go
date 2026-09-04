@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type AlphaManagedRulesetConfig struct {
 	ManagedRuleset any
-	Project any
+	Project        any
 }
 
 type AlphaManagedRulesetAttrs struct {
@@ -16,10 +16,10 @@ type AlphaManagedRulesetAttrs struct {
 	// [Output Only] An optional description of this resource.
 	Description any
 	// Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-	Id any
+	Id             any
 	ManagedRuleset any
 	// Name of the resource. Generated internally when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
-	Name any
+	Name    any
 	Project any
 	// Output only. [Output Only] The list of managed rule IDs that are included in this managed ruleset.
 	RuleIds any
@@ -33,6 +33,6 @@ var AlphaManagedRuleset = ubx.DataSourceBinding{
 	WireType: "google_compute_alpha_managed_ruleset",
 	Fields: ubx.FieldMap{
 		"ManagedRuleset": ubx.FieldSpec{WireName: "managed_ruleset"},
-		"Project": ubx.FieldSpec{WireName: "project"},
+		"Project":        ubx.FieldSpec{WireName: "project"},
 	},
 }

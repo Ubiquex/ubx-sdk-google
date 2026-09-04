@@ -78,8 +78,8 @@ type Deployment_ChannelProfile struct {
 }
 
 type Deployment_ExperimentConfig_VersionRelease_TrafficAllocations struct {
-	AppVersion any
-	Id any
+	AppVersion        any
+	Id                any
 	TrafficPercentage any
 }
 
@@ -125,124 +125,120 @@ type Deployment_WhatsappCredentials struct {
 }
 
 var Deployment_ChannelProfile_InstagramConfigFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"InstagramAccountId": ubx.FieldSpec{WireName: "instagram_account_id"},
-		"ThumbnailUrl": ubx.FieldSpec{WireName: "thumbnail_url"},
-	}
+	"Description":        ubx.FieldSpec{WireName: "description"},
+	"DisplayName":        ubx.FieldSpec{WireName: "display_name"},
+	"InstagramAccountId": ubx.FieldSpec{WireName: "instagram_account_id"},
+	"ThumbnailUrl":       ubx.FieldSpec{WireName: "thumbnail_url"},
+}
 
 var Deployment_ChannelProfile_PersonaPropertyFields = ubx.FieldMap{
-		"Persona": ubx.FieldSpec{WireName: "persona"},
-	}
+	"Persona": ubx.FieldSpec{WireName: "persona"},
+}
 
 var Deployment_ChannelProfile_WebWidgetConfig_SecuritySettingsFields = ubx.FieldMap{
-		"AllowedOrigins": ubx.FieldSpec{WireName: "allowed_origins"},
-		"EnableOriginCheck": ubx.FieldSpec{WireName: "enable_origin_check"},
-		"EnablePublicAccess": ubx.FieldSpec{WireName: "enable_public_access"},
-		"EnableRecaptcha": ubx.FieldSpec{WireName: "enable_recaptcha"},
-	}
+	"AllowedOrigins":     ubx.FieldSpec{WireName: "allowed_origins"},
+	"EnableOriginCheck":  ubx.FieldSpec{WireName: "enable_origin_check"},
+	"EnablePublicAccess": ubx.FieldSpec{WireName: "enable_public_access"},
+	"EnableRecaptcha":    ubx.FieldSpec{WireName: "enable_recaptcha"},
+}
 
 var Deployment_ChannelProfile_WebWidgetConfigFields = ubx.FieldMap{
-		"Modality": ubx.FieldSpec{WireName: "modality"},
-		"SecuritySettings": ubx.FieldSpec{
-			WireName: "security_settings",
-			Kind: "object",
-			Fields: Deployment_ChannelProfile_WebWidgetConfig_SecuritySettingsFields,
-		},
-		"Theme": ubx.FieldSpec{WireName: "theme"},
-		"WebWidgetTitle": ubx.FieldSpec{WireName: "web_widget_title"},
-	}
+	"Modality": ubx.FieldSpec{WireName: "modality"},
+	"SecuritySettings": ubx.FieldSpec{
+		WireName: "security_settings",
+		Kind:     "object",
+		Fields:   Deployment_ChannelProfile_WebWidgetConfig_SecuritySettingsFields,
+	},
+	"Theme":          ubx.FieldSpec{WireName: "theme"},
+	"WebWidgetTitle": ubx.FieldSpec{WireName: "web_widget_title"},
+}
 
 var Deployment_ChannelProfile_WhatsappConfigFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"PhoneNumber": ubx.FieldSpec{WireName: "phone_number"},
-		"PhoneNumberId": ubx.FieldSpec{WireName: "phone_number_id"},
-		"ThumbnailUrl": ubx.FieldSpec{WireName: "thumbnail_url"},
-		"WabaId": ubx.FieldSpec{WireName: "waba_id"},
-	}
+	"Description":   ubx.FieldSpec{WireName: "description"},
+	"DisplayName":   ubx.FieldSpec{WireName: "display_name"},
+	"PhoneNumber":   ubx.FieldSpec{WireName: "phone_number"},
+	"PhoneNumberId": ubx.FieldSpec{WireName: "phone_number_id"},
+	"ThumbnailUrl":  ubx.FieldSpec{WireName: "thumbnail_url"},
+	"WabaId":        ubx.FieldSpec{WireName: "waba_id"},
+}
 
 var Deployment_ChannelProfileFields = ubx.FieldMap{
-		"ChannelType": ubx.FieldSpec{WireName: "channel_type"},
-		"DisableBargeInControl": ubx.FieldSpec{WireName: "disable_barge_in_control"},
-		"DisableDtmf": ubx.FieldSpec{WireName: "disable_dtmf"},
-		"InstagramConfig": ubx.FieldSpec{
-			WireName: "instagram_config",
-			Kind: "object",
-			Fields: Deployment_ChannelProfile_InstagramConfigFields,
-		},
-		"NoiseSuppressionLevel": ubx.FieldSpec{WireName: "noise_suppression_level"},
-		"PersonaProperty": ubx.FieldSpec{
-			WireName: "persona_property",
-			Kind: "object",
-			Fields: Deployment_ChannelProfile_PersonaPropertyFields,
-		},
-		"ProfileId": ubx.FieldSpec{WireName: "profile_id"},
-		"WebWidgetConfig": ubx.FieldSpec{
-			WireName: "web_widget_config",
-			Kind: "object",
-			Fields: Deployment_ChannelProfile_WebWidgetConfigFields,
-		},
-		"WhatsappConfig": ubx.FieldSpec{
-			WireName: "whatsapp_config",
-			Kind: "object",
-			Fields: Deployment_ChannelProfile_WhatsappConfigFields,
-		},
-	}
+	"ChannelType":           ubx.FieldSpec{WireName: "channel_type"},
+	"DisableBargeInControl": ubx.FieldSpec{WireName: "disable_barge_in_control"},
+	"DisableDtmf":           ubx.FieldSpec{WireName: "disable_dtmf"},
+	"InstagramConfig": ubx.FieldSpec{
+		WireName: "instagram_config",
+		Kind:     "object",
+		Fields:   Deployment_ChannelProfile_InstagramConfigFields,
+	},
+	"NoiseSuppressionLevel": ubx.FieldSpec{WireName: "noise_suppression_level"},
+	"PersonaProperty": ubx.FieldSpec{
+		WireName: "persona_property",
+		Kind:     "object",
+		Fields:   Deployment_ChannelProfile_PersonaPropertyFields,
+	},
+	"ProfileId": ubx.FieldSpec{WireName: "profile_id"},
+	"WebWidgetConfig": ubx.FieldSpec{
+		WireName: "web_widget_config",
+		Kind:     "object",
+		Fields:   Deployment_ChannelProfile_WebWidgetConfigFields,
+	},
+	"WhatsappConfig": ubx.FieldSpec{
+		WireName: "whatsapp_config",
+		Kind:     "object",
+		Fields:   Deployment_ChannelProfile_WhatsappConfigFields,
+	},
+}
 
 var Deployment_ExperimentConfig_VersionRelease_TrafficAllocationsFields = ubx.FieldMap{
-		"AppVersion": ubx.FieldSpec{WireName: "app_version"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"TrafficPercentage": ubx.FieldSpec{WireName: "traffic_percentage"},
-	}
+	"AppVersion":        ubx.FieldSpec{WireName: "app_version"},
+	"Id":                ubx.FieldSpec{WireName: "id"},
+	"TrafficPercentage": ubx.FieldSpec{WireName: "traffic_percentage"},
+}
 
 var Deployment_ExperimentConfig_VersionReleaseFields = ubx.FieldMap{
-		"State": ubx.FieldSpec{WireName: "state"},
-		"TrafficAllocations": ubx.FieldSpec{
-			WireName: "traffic_allocations",
-			Kind: "list",
-			Fields: Deployment_ExperimentConfig_VersionRelease_TrafficAllocationsFields,
-		},
-	}
+	"State": ubx.FieldSpec{WireName: "state"},
+	"TrafficAllocations": ubx.FieldSpec{
+		WireName: "traffic_allocations",
+		Kind:     "list",
+		Fields:   Deployment_ExperimentConfig_VersionRelease_TrafficAllocationsFields,
+	},
+}
 
 var Deployment_ExperimentConfigFields = ubx.FieldMap{
-		"VersionRelease": ubx.FieldSpec{
-			WireName: "version_release",
-			Kind: "object",
-			Fields: Deployment_ExperimentConfig_VersionReleaseFields,
-		},
-	}
+	"VersionRelease": ubx.FieldSpec{
+		WireName: "version_release",
+		Kind:     "object",
+		Fields:   Deployment_ExperimentConfig_VersionReleaseFields,
+	},
+}
 
 var Deployment_InstagramCredentialsFields = ubx.FieldMap{
-		"AuthCode": ubx.FieldSpec{WireName: "auth_code"},
-		"ConversationProfileId": ubx.FieldSpec{WireName: "conversation_profile_id"},
-	}
+	"AuthCode":              ubx.FieldSpec{WireName: "auth_code"},
+	"ConversationProfileId": ubx.FieldSpec{WireName: "conversation_profile_id"},
+}
 
 var Deployment_ModelSettingsFields = ubx.FieldMap{
-		"Model": ubx.FieldSpec{WireName: "model"},
-		"Temperature": ubx.FieldSpec{WireName: "temperature"},
-	}
+	"Model":       ubx.FieldSpec{WireName: "model"},
+	"Temperature": ubx.FieldSpec{WireName: "temperature"},
+}
 
 var Deployment_WhatsappCredentialsFields = ubx.FieldMap{
-		"AuthCode": ubx.FieldSpec{WireName: "auth_code"},
-		"BusinessAccountId": ubx.FieldSpec{WireName: "business_account_id"},
-		"ConversationProfileId": ubx.FieldSpec{WireName: "conversation_profile_id"},
-		"PhoneNumber": ubx.FieldSpec{WireName: "phone_number"},
-		"Pin": ubx.FieldSpec{WireName: "pin"},
-		"WabaId": ubx.FieldSpec{WireName: "waba_id"},
-	}
+	"AuthCode":              ubx.FieldSpec{WireName: "auth_code"},
+	"BusinessAccountId":     ubx.FieldSpec{WireName: "business_account_id"},
+	"ConversationProfileId": ubx.FieldSpec{WireName: "conversation_profile_id"},
+	"PhoneNumber":           ubx.FieldSpec{WireName: "phone_number"},
+	"Pin":                   ubx.FieldSpec{WireName: "pin"},
+	"WabaId":                ubx.FieldSpec{WireName: "waba_id"},
+}
 
 type DeploymentConfig struct {
 	// Optional. The resource name of the app version to deploy. Format: `projects/{project}/locations/{location}/apps/{app}/versions/{version}` Use `projects/{project}/locations/{location}/apps/{app}/versions/-` to use the draft app.
 	AppVersion any
 	// A ChannelProfile configures the agent's behavior for a specific communication channel, such as web UI or telephony.
 	ChannelProfile any
-	// Output only. Timestamp when this deployment was created.
-	CreateTime any
 	// Required. Display name of the deployment.
 	DisplayName any
-	// Output only. Etag used to ensure the object hasn't changed during a read-modify-write operation. If the etag is empty, the update will overwrite any concurrent changes.
-	Etag any
 	// Experiment for the deployment.
 	ExperimentConfig any
 	// Ephemeral Meta credentials for Instagram native integration.
@@ -253,8 +249,6 @@ type DeploymentConfig struct {
 	ModelSettings any
 	// Identifier. The resource name of the deployment. Format: `projects/{project}/locations/{location}/apps/{app}/deployments/{deployment}`
 	Name any
-	// Output only. Timestamp when this deployment was last updated.
-	UpdateTime any
 	// Ephemeral Meta credentials for WhatsApp native integration.
 	WhatsappCredentials any
 }
@@ -292,34 +286,31 @@ var Deployment = ubx.ResourceBinding{
 		"AppVersion": ubx.FieldSpec{WireName: "app_version"},
 		"ChannelProfile": ubx.FieldSpec{
 			WireName: "channel_profile",
-			Kind: "object",
-			Fields: Deployment_ChannelProfileFields,
+			Kind:     "object",
+			Fields:   Deployment_ChannelProfileFields,
 		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
 		"ExperimentConfig": ubx.FieldSpec{
 			WireName: "experiment_config",
-			Kind: "object",
-			Fields: Deployment_ExperimentConfigFields,
+			Kind:     "object",
+			Fields:   Deployment_ExperimentConfigFields,
 		},
 		"InstagramCredentials": ubx.FieldSpec{
 			WireName: "instagram_credentials",
-			Kind: "object",
-			Fields: Deployment_InstagramCredentialsFields,
+			Kind:     "object",
+			Fields:   Deployment_InstagramCredentialsFields,
 		},
 		"Modality": ubx.FieldSpec{WireName: "modality"},
 		"ModelSettings": ubx.FieldSpec{
 			WireName: "model_settings",
-			Kind: "object",
-			Fields: Deployment_ModelSettingsFields,
+			Kind:     "object",
+			Fields:   Deployment_ModelSettingsFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 		"WhatsappCredentials": ubx.FieldSpec{
 			WireName: "whatsapp_credentials",
-			Kind: "object",
-			Fields: Deployment_WhatsappCredentialsFields,
+			Kind:     "object",
+			Fields:   Deployment_WhatsappCredentialsFields,
 		},
 	},
 }

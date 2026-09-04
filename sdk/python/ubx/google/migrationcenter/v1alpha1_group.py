@@ -8,18 +8,12 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class V1alpha1GroupConfig:
-    # Output only. The timestamp when the group was created.
-    create_time: Any = None
     # Optional. The description of the group.
     description: Any = None
     # Optional. User-friendly display name.
     display_name: Any = None
     # Labels as key value pairs.
     labels: Any = None
-    # Output only. The name of the group.
-    name: Any = None
-    # Output only. The timestamp when the group was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V1alpha1GroupAttrs:
@@ -39,11 +33,8 @@ class V1alpha1GroupAttrs:
 V1alpha1Group = ubx.ResourceBinding(
     wire_type="google_migrationcenter_v1alpha1_group",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "labels": ubx.FieldSpec(wire_name="labels"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

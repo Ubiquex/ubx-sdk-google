@@ -41,16 +41,10 @@ const V1beta1Connection_CloudSqlFields: FieldMap = {
 export interface V1beta1ConnectionConfig {
   /** Connection properties specific to the Cloud SQL. */
   cloudSql?: V1beta1Connection_CloudSql | Computed<V1beta1Connection_CloudSql>;
-  /** Output only. The creation timestamp of the connection. */
-  creationTime?: string | Computed<string>;
   /** User provided description. */
   description?: string | Computed<string>;
   /** User provided display name for the connection. */
   friendlyName?: string | Computed<string>;
-  /** Output only. True, if credential is configured for this connection. */
-  hasCredential?: boolean | Computed<boolean>;
-  /** Output only. The last update timestamp of the connection. */
-  lastModifiedTime?: string | Computed<string>;
   /** The resource name of the connection in the form of: `projects/{project_id}/locations/{location_id}/connections/{connection_id}` */
   name?: string | Computed<string>;
 }
@@ -80,11 +74,8 @@ export const V1beta1Connection: ResourceBinding<V1beta1ConnectionConfig, V1beta1
       kind: "object",
       fields: V1beta1Connection_CloudSqlFields,
     },
-    creationTime: "creation_time",
     description: "description",
     friendlyName: "friendly_name",
-    hasCredential: "has_credential",
-    lastModifiedTime: "last_modified_time",
     name: "name",
   },
 };

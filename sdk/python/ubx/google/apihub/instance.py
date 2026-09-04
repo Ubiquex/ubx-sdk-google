@@ -313,22 +313,14 @@ class InstanceConfig:
     additional_config: Any = None
     # AuthConfig represents the authentication information.
     auth_config: Any = None
-    # Output only. Timestamp indicating when the plugin instance was created.
-    create_time: Any = None
     # Required. The display name for this plugin instance. Max length is 255 characters.
     display_name: Any = None
-    # Output only. Error message describing the failure, if any, during Create, Delete or ApplyConfig operation corresponding to the plugin instance.This field will only be populated if the plugin instance is in the ERROR or FAILED state.
-    error_message: Any = None
     # Identifier. The unique name of the plugin instance resource. Format: `projects/{project}/locations/{location}/plugins/{plugin}/instances/{instance}`
     name: Any = None
     # Optional. The source environment's config present in the gateway instance linked to the plugin instance. The key is the `source_environment` name from the SourceEnvironment message.
     source_environments_config: Any = None
     # Optional. The source project id of the plugin instance. This will be the id of runtime project in case of Google Cloud based plugins and org id in case of non-Google Cloud based plugins. This field will be a required field for Google provided on-ramp plugins.
     source_project_id: Any = None
-    # Output only. The current state of the plugin instance (e.g., enabled, disabled, provisioning).
-    state: Any = None
-    # Output only. Timestamp indicating when the plugin instance was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class InstanceAttrs:
@@ -373,9 +365,7 @@ Instance = ubx.ResourceBinding(
             kind="object",
             fields=_Instance_AuthConfigFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
-        "error_message": ubx.FieldSpec(wire_name="error_message"),
         "name": ubx.FieldSpec(wire_name="name"),
         "source_environments_config": ubx.FieldSpec(
             wire_name="source_environments_config",
@@ -383,7 +373,5 @@ Instance = ubx.ResourceBinding(
             fields=_Instance_SourceEnvironmentsConfigFields,
         ),
         "source_project_id": ubx.FieldSpec(wire_name="source_project_id"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

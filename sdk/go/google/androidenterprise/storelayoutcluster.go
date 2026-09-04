@@ -5,13 +5,13 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Storelayoutcluster_Name struct {
 	Locale any
-	Text any
+	Text   any
 }
 
 var Storelayoutcluster_NameFields = ubx.FieldMap{
-		"Locale": ubx.FieldSpec{WireName: "locale"},
-		"Text": ubx.FieldSpec{WireName: "text"},
-	}
+	"Locale": ubx.FieldSpec{WireName: "locale"},
+	"Text":   ubx.FieldSpec{WireName: "text"},
+}
 
 type StorelayoutclusterConfig struct {
 	// Unique ID of this cluster. Assigned by the server. Immutable once assigned.
@@ -41,10 +41,10 @@ var Storelayoutcluster = ubx.ResourceBinding{
 		"Id": ubx.FieldSpec{WireName: "id"},
 		"Name": ubx.FieldSpec{
 			WireName: "name",
-			Kind: "list",
-			Fields: Storelayoutcluster_NameFields,
+			Kind:     "list",
+			Fields:   Storelayoutcluster_NameFields,
 		},
 		"OrderInPage": ubx.FieldSpec{WireName: "order_in_page"},
-		"ProductId": ubx.FieldSpec{WireName: "product_id"},
+		"ProductId":   ubx.FieldSpec{WireName: "product_id"},
 	},
 }

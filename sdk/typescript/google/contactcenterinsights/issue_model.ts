@@ -48,26 +48,18 @@ const IssueModel_TrainingStatsFields: FieldMap = {
 };
 
 export interface IssueModelConfig {
-  /** Output only. The time at which this issue model was created. */
-  createTime?: string | Computed<string>;
   /** The representative name for the issue model. */
   displayName?: string | Computed<string>;
   /** Configs for the input data used to create the issue model. */
   inputDataConfig?: IssueModel_InputDataConfig | Computed<IssueModel_InputDataConfig>;
-  /** Output only. Number of issues in this issue model. */
-  issueCount?: string | Computed<string>;
   /** Language of the model. */
   languageCode?: string | Computed<string>;
   /** Type of the model. */
   modelType?: string | Computed<string>;
   /** Immutable. The resource name of the issue model. Format: projects/{project}/locations/{location}/issueModels/{issue_model} */
   name?: string | Computed<string>;
-  /** Output only. State of the model. */
-  state?: string | Computed<string>;
   /** Aggregated statistics about an issue model. */
   trainingStats?: IssueModel_TrainingStats | Computed<IssueModel_TrainingStats>;
-  /** Output only. The most recent time at which the issue model was updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface IssueModelAttrs {
@@ -96,23 +88,19 @@ export interface IssueModelAttrs {
 export const IssueModel: ResourceBinding<IssueModelConfig, IssueModelAttrs> = {
   wireType: "google_contactcenterinsights_issue_model",
   fields: {
-    createTime: "create_time",
     displayName: "display_name",
     inputDataConfig: {
       wireName: "input_data_config",
       kind: "object",
       fields: IssueModel_InputDataConfigFields,
     },
-    issueCount: "issue_count",
     languageCode: "language_code",
     modelType: "model_type",
     name: "name",
-    state: "state",
     trainingStats: {
       wireName: "training_stats",
       kind: "object",
       fields: IssueModel_TrainingStatsFields,
     },
-    updateTime: "update_time",
   },
 };

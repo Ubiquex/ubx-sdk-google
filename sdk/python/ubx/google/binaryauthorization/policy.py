@@ -300,10 +300,6 @@ class PolicyConfig:
     etag: Any = None
     # A Binary Authorization policy for a GKE cluster. This is one type of policy that can occur as a `PlatformPolicy`.
     gke_policy: Any = None
-    # Output only. The relative resource name of the Binary Authorization platform policy, in the form of `projects/*/platforms/*/policies/*`.
-    name: Any = None
-    # Output only. Time when the policy was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class PolicyAttrs:
@@ -328,7 +324,5 @@ Policy = ubx.ResourceBinding(
             kind="object",
             fields=_Policy_GkePolicyFields,
         ),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

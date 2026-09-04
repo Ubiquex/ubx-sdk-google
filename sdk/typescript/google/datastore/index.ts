@@ -14,16 +14,10 @@ const Index_PropertiesFields: FieldMap = {
 export interface IndexConfig {
   /** Required. The index's ancestor mode. Must not be ANCESTOR_MODE_UNSPECIFIED. */
   ancestor?: string | Computed<string>;
-  /** Output only. The resource ID of the index. */
-  indexId?: string | Computed<string>;
   /** Required. The entity kind to which this index applies. */
   kind?: string | Computed<string>;
-  /** Output only. Project ID. */
-  projectId?: string | Computed<string>;
   /** Required. An ordered sequence of property names and their index attributes. Requires: * A maximum of 100 properties. */
   properties?: Index_Properties[] | Computed<Index_Properties[]>;
-  /** Output only. The state of the index. */
-  state?: string | Computed<string>;
 }
 
 export interface IndexAttrs {
@@ -45,14 +39,11 @@ export const Index: ResourceBinding<IndexConfig, IndexAttrs> = {
   wireType: "google_datastore_index",
   fields: {
     ancestor: "ancestor",
-    indexId: "index_id",
     kind: "kind",
-    projectId: "project_id",
     properties: {
       wireName: "properties",
       kind: "list",
       fields: Index_PropertiesFields,
     },
-    state: "state",
   },
 };

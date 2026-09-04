@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Trial_FinalMeasurement_Metrics struct {
 	Metric any
-	Value any
+	Value  any
 }
 
 type Trial_FinalMeasurement struct {
@@ -18,55 +18,43 @@ type Trial_FinalMeasurement struct {
 }
 
 type Trial_Parameters struct {
-	FloatValue any
-	IntValue any
-	Parameter any
+	FloatValue  any
+	IntValue    any
+	Parameter   any
 	StringValue any
 }
 
 var Trial_FinalMeasurement_MetricsFields = ubx.FieldMap{
-		"Metric": ubx.FieldSpec{WireName: "metric"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Metric": ubx.FieldSpec{WireName: "metric"},
+	"Value":  ubx.FieldSpec{WireName: "value"},
+}
 
 var Trial_FinalMeasurementFields = ubx.FieldMap{
-		"ElapsedTime": ubx.FieldSpec{WireName: "elapsed_time"},
-		"Metrics": ubx.FieldSpec{
-			WireName: "metrics",
-			Kind: "list",
-			Fields: Trial_FinalMeasurement_MetricsFields,
-		},
-		"StepCount": ubx.FieldSpec{WireName: "step_count"},
-	}
+	"ElapsedTime": ubx.FieldSpec{WireName: "elapsed_time"},
+	"Metrics": ubx.FieldSpec{
+		WireName: "metrics",
+		Kind:     "list",
+		Fields:   Trial_FinalMeasurement_MetricsFields,
+	},
+	"StepCount": ubx.FieldSpec{WireName: "step_count"},
+}
 
 var Trial_ParametersFields = ubx.FieldMap{
-		"FloatValue": ubx.FieldSpec{WireName: "float_value"},
-		"IntValue": ubx.FieldSpec{WireName: "int_value"},
-		"Parameter": ubx.FieldSpec{WireName: "parameter"},
-		"StringValue": ubx.FieldSpec{WireName: "string_value"},
-	}
+	"FloatValue":  ubx.FieldSpec{WireName: "float_value"},
+	"IntValue":    ubx.FieldSpec{WireName: "int_value"},
+	"Parameter":   ubx.FieldSpec{WireName: "parameter"},
+	"StringValue": ubx.FieldSpec{WireName: "string_value"},
+}
 
 type TrialConfig struct {
-	// Output only. The identifier of the client that originally requested this trial.
-	ClientId any
-	// Output only. Time at which the trial's status changed to COMPLETED.
-	EndTime any
 	// A message representing a measurement.
 	FinalMeasurement any
-	// Output only. A human readable string describing why the trial is infeasible. This should only be set if trial_infeasible is true.
-	InfeasibleReason any
 	// A list of measurements that are strictly lexicographically ordered by their induced tuples (steps, elapsed_time). These are used for early stopping computations.
 	Measurements any
-	// Output only. Name of the trial assigned by the service.
-	Name any
 	// The parameters of the trial.
 	Parameters any
-	// Output only. Time at which the trial was started.
-	StartTime any
 	// The detailed state of a trial.
 	State any
-	// Output only. If true, the parameters in this trial are not attempted again.
-	TrialInfeasible any
 }
 
 type TrialAttrs struct {
@@ -95,27 +83,21 @@ type TrialAttrs struct {
 var Trial = ubx.ResourceBinding{
 	WireType: "google_ml_trial",
 	Fields: ubx.FieldMap{
-		"ClientId": ubx.FieldSpec{WireName: "client_id"},
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
 		"FinalMeasurement": ubx.FieldSpec{
 			WireName: "final_measurement",
-			Kind: "object",
-			Fields: Trial_FinalMeasurementFields,
+			Kind:     "object",
+			Fields:   Trial_FinalMeasurementFields,
 		},
-		"InfeasibleReason": ubx.FieldSpec{WireName: "infeasible_reason"},
 		"Measurements": ubx.FieldSpec{
 			WireName: "measurements",
-			Kind: "list",
-			Fields: Trial_FinalMeasurementFields,
+			Kind:     "list",
+			Fields:   Trial_FinalMeasurementFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
 		"Parameters": ubx.FieldSpec{
 			WireName: "parameters",
-			Kind: "list",
-			Fields: Trial_ParametersFields,
+			Kind:     "list",
+			Fields:   Trial_ParametersFields,
 		},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
 		"State": ubx.FieldSpec{WireName: "state"},
-		"TrialInfeasible": ubx.FieldSpec{WireName: "trial_infeasible"},
 	},
 }

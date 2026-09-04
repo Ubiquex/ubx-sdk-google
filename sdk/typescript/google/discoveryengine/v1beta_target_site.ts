@@ -40,22 +40,12 @@ export interface V1betaTargetSiteConfig {
   exactMatch?: boolean | Computed<boolean>;
   /** Site search indexing failure reasons. */
   failureReason?: V1betaTargetSite_FailureReason | Computed<V1betaTargetSite_FailureReason>;
-  /** Output only. This is system-generated based on the provided_uri_pattern. */
-  generatedUriPattern?: string | Computed<string>;
-  /** Output only. Indexing status. */
-  indexingStatus?: string | Computed<string>;
-  /** Output only. The fully qualified resource name of the target site. `projects/{project}/locations/{location}/collections/{collection}/dataStores/{data_store}/siteSearchEngine/targetSites/{target_site}` The `target_site_id` is system-generated. */
-  name?: string | Computed<string>;
   /** Required. Input only. The user provided URI pattern from which the `generated_uri_pattern` is generated. */
   providedUriPattern?: string | Computed<string>;
-  /** Output only. Root domain of the provided_uri_pattern. */
-  rootDomainUri?: string | Computed<string>;
   /** Verification information for target sites in advanced site search. */
   siteVerificationInfo?: V1betaTargetSite_SiteVerificationInfo | Computed<V1betaTargetSite_SiteVerificationInfo>;
   /** The type of the target site, e.g., whether the site is to be included or excluded. */
   type?: string | Computed<string>;
-  /** Output only. The target site's last updated time. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1betaTargetSiteAttrs {
@@ -90,17 +80,12 @@ export const V1betaTargetSite: ResourceBinding<V1betaTargetSiteConfig, V1betaTar
       kind: "object",
       fields: V1betaTargetSite_FailureReasonFields,
     },
-    generatedUriPattern: "generated_uri_pattern",
-    indexingStatus: "indexing_status",
-    name: "name",
     providedUriPattern: "provided_uri_pattern",
-    rootDomainUri: "root_domain_uri",
     siteVerificationInfo: {
       wireName: "site_verification_info",
       kind: "object",
       fields: V1betaTargetSite_SiteVerificationInfoFields,
     },
     type: "type",
-    updateTime: "update_time",
   },
 };

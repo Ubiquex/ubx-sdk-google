@@ -187,22 +187,12 @@ _AlphaRegionMultiMig_StatusFields = {
 
 @dataclasses.dataclass
 class AlphaRegionMultiMigConfig:
-    # Output only. [Output only] The creation timestamp of this multi-MIG in RFC3339 text format.
-    creation_timestamp: Any = None
     # An optional description of this resource.
     description: Any = None
-    # Output only. [Output only] The unique identifier for this resource type. The server generates this identifier.
-    id: Any = None
-    # Output only. [Output only] Type of the resource. Alwayscompute#multiMig for multi-MIGs.
-    kind: Any = None
     # The name of the multi-MIG. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
     name: Any = None
-    # Output only. [Output only] The URL of the region where the resource resides. You must specify this field as part of the HTTP request URL. You cannot set the region as a field in the request body.
-    region: Any = None
     # Resource policies message for a multi-MIG. Specifies the workload policy configuration of the multi-MIG.
     resource_policies: Any = None
-    # Output only. [Output only] Server-defined URL for the resource.
-    self_link: Any = None
     status: Any = None
 
 @dataclasses.dataclass
@@ -228,18 +218,13 @@ class AlphaRegionMultiMigAttrs:
 AlphaRegionMultiMig = ubx.ResourceBinding(
     wire_type="google_compute_alpha_region_multi_mig",
     fields={
-        "creation_timestamp": ubx.FieldSpec(wire_name="creation_timestamp"),
         "description": ubx.FieldSpec(wire_name="description"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "kind": ubx.FieldSpec(wire_name="kind"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "region": ubx.FieldSpec(wire_name="region"),
         "resource_policies": ubx.FieldSpec(
             wire_name="resource_policies",
             kind="object",
             fields=_AlphaRegionMultiMig_ResourcePoliciesFields,
         ),
-        "self_link": ubx.FieldSpec(wire_name="self_link"),
         "status": ubx.FieldSpec(
             wire_name="status",
             kind="object",

@@ -151,18 +151,10 @@ _Certificate_SelfManagedFields = {
     "pem_private_key": ubx.FieldSpec(wire_name="pem_private_key"),
 }
 
-_Certificate_UsedByFields = {
-    "name": ubx.FieldSpec(wire_name="name"),
-}
-
 @dataclasses.dataclass
 class CertificateConfig:
-    # Output only. The creation timestamp of a Certificate.
-    create_time: Any = None
     # Optional. One or more paragraphs of text description of a certificate.
     description: Any = None
-    # Output only. The expiry timestamp of a Certificate.
-    expire_time: Any = None
     # Optional. Set of labels associated with a Certificate.
     labels: Any = None
     # Configuration and state of a Managed Certificate. Certificate Manager provisions and renews Managed Certificates automatically, for as long as it's authorized to do so.
@@ -171,20 +163,12 @@ class CertificateConfig:
     managed_identity: Any = None
     # Identifier. A user-defined name of the certificate. Certificate names must be unique globally and match pattern `projects/*/locations/*/certificates/*`.
     name: Any = None
-    # Output only. The PEM-encoded certificate chain.
-    pem_certificate: Any = None
-    # Output only. The list of Subject Alternative Names of dnsName type defined in the certificate (see RFC 5280 4.2.1.6). Managed certificates that haven't been provisioned yet have this field populated with a value of the managed.domains field.
-    san_dnsnames: Any = None
     # Optional. Immutable. The scope of the certificate.
     scope: Any = None
     # Certificate data for a SelfManaged Certificate. SelfManaged Certificates are uploaded by the user. Updating such certificates before they expire remains the user's responsibility.
     self_managed: Any = None
     # Optional. Input only. Immutable. Tag keys/values directly bound to this resource. For example: "123/environment": "production", "123/costCenter": "marketing"
     tags: Any = None
-    # Output only. The last update timestamp of a Certificate.
-    update_time: Any = None
-    # Output only. The list of resources that use this Certificate.
-    used_by: Any = None
 
 @dataclasses.dataclass
 class CertificateAttrs:
@@ -220,9 +204,7 @@ class CertificateAttrs:
 Certificate = ubx.ResourceBinding(
     wire_type="google_certificatemanager_certificate",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
-        "expire_time": ubx.FieldSpec(wire_name="expire_time"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "managed": ubx.FieldSpec(
             wire_name="managed",
@@ -235,8 +217,6 @@ Certificate = ubx.ResourceBinding(
             fields=_Certificate_ManagedIdentityFields,
         ),
         "name": ubx.FieldSpec(wire_name="name"),
-        "pem_certificate": ubx.FieldSpec(wire_name="pem_certificate"),
-        "san_dnsnames": ubx.FieldSpec(wire_name="san_dnsnames"),
         "scope": ubx.FieldSpec(wire_name="scope"),
         "self_managed": ubx.FieldSpec(
             wire_name="self_managed",
@@ -244,11 +224,5 @@ Certificate = ubx.ResourceBinding(
             fields=_Certificate_SelfManagedFields,
         ),
         "tags": ubx.FieldSpec(wire_name="tags"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
-        "used_by": ubx.FieldSpec(
-            wire_name="used_by",
-            kind="list",
-            fields=_Certificate_UsedByFields,
-        ),
     },
 )

@@ -26,13 +26,13 @@ type Chart_DataSource_GenerativeInsights_ChartCheckpoint struct {
 
 type Chart_DataSource_GenerativeInsights_ChartConversations_Messages_SystemMessage_TextOutput struct {
 	Texts any
-	Type any
+	Type  any
 }
 
 type Chart_DataSource_GenerativeInsights_ChartConversations_Messages_SystemMessage struct {
-	ChartSpec any
+	ChartSpec         any
 	GeneratedSqlQuery any
-	TextOutput any
+	TextOutput        any
 }
 
 type Chart_DataSource_GenerativeInsights_ChartConversations_Messages_UserMessage struct {
@@ -40,17 +40,17 @@ type Chart_DataSource_GenerativeInsights_ChartConversations_Messages_UserMessage
 }
 
 type Chart_DataSource_GenerativeInsights_ChartConversations_Messages struct {
-	CreateTime any
-	MessageId any
+	CreateTime    any
+	MessageId     any
 	SystemMessage any
-	UserMessage any
+	UserMessage   any
 }
 
 type Chart_DataSource_GenerativeInsights_ChartConversations struct {
 	ConversationId any
-	CreateTime any
-	Messages any
-	UpdateTime any
+	CreateTime     any
+	Messages       any
+	UpdateTime     any
 }
 
 type Chart_DataSource_GenerativeInsights struct {
@@ -60,7 +60,7 @@ type Chart_DataSource_GenerativeInsights struct {
 	ChartConversations any
 	// Chart spec for the chart.
 	ChartSpec any
-	Request any
+	Request   any
 	// Optional. For charts with comparison, this key will determine the metric that will be compared between the current and another dataset.
 	SqlComparisonKey any
 	// SQL query used to generate the chart.
@@ -100,135 +100,131 @@ type Chart_DateRangeConfig struct {
 }
 
 var Chart_Action_RedirectActionFields = ubx.FieldMap{
-		"QueryParams": ubx.FieldSpec{WireName: "query_params"},
-		"RelativePath": ubx.FieldSpec{WireName: "relative_path"},
-	}
+	"QueryParams":  ubx.FieldSpec{WireName: "query_params"},
+	"RelativePath": ubx.FieldSpec{WireName: "relative_path"},
+}
 
 var Chart_ActionFields = ubx.FieldMap{
-		"ConversationFilter": ubx.FieldSpec{WireName: "conversation_filter"},
-		"RedirectAction": ubx.FieldSpec{
-			WireName: "redirect_action",
-			Kind: "object",
-			Fields: Chart_Action_RedirectActionFields,
-		},
-	}
+	"ConversationFilter": ubx.FieldSpec{WireName: "conversation_filter"},
+	"RedirectAction": ubx.FieldSpec{
+		WireName: "redirect_action",
+		Kind:     "object",
+		Fields:   Chart_Action_RedirectActionFields,
+	},
+}
 
 var Chart_DataSource_GenerativeInsights_ChartCheckpointFields = ubx.FieldMap{
-		"RevisionId": ubx.FieldSpec{WireName: "revision_id"},
-		"SessionId": ubx.FieldSpec{WireName: "session_id"},
-	}
+	"RevisionId": ubx.FieldSpec{WireName: "revision_id"},
+	"SessionId":  ubx.FieldSpec{WireName: "session_id"},
+}
 
 var Chart_DataSource_GenerativeInsights_ChartConversations_Messages_SystemMessage_TextOutputFields = ubx.FieldMap{
-		"Texts": ubx.FieldSpec{WireName: "texts"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Texts": ubx.FieldSpec{WireName: "texts"},
+	"Type":  ubx.FieldSpec{WireName: "type"},
+}
 
 var Chart_DataSource_GenerativeInsights_ChartConversations_Messages_SystemMessageFields = ubx.FieldMap{
-		"ChartSpec": ubx.FieldSpec{WireName: "chart_spec"},
-		"GeneratedSqlQuery": ubx.FieldSpec{WireName: "generated_sql_query"},
-		"TextOutput": ubx.FieldSpec{
-			WireName: "text_output",
-			Kind: "object",
-			Fields: Chart_DataSource_GenerativeInsights_ChartConversations_Messages_SystemMessage_TextOutputFields,
-		},
-	}
+	"ChartSpec":         ubx.FieldSpec{WireName: "chart_spec"},
+	"GeneratedSqlQuery": ubx.FieldSpec{WireName: "generated_sql_query"},
+	"TextOutput": ubx.FieldSpec{
+		WireName: "text_output",
+		Kind:     "object",
+		Fields:   Chart_DataSource_GenerativeInsights_ChartConversations_Messages_SystemMessage_TextOutputFields,
+	},
+}
 
 var Chart_DataSource_GenerativeInsights_ChartConversations_Messages_UserMessageFields = ubx.FieldMap{
-		"Text": ubx.FieldSpec{WireName: "text"},
-	}
+	"Text": ubx.FieldSpec{WireName: "text"},
+}
 
 var Chart_DataSource_GenerativeInsights_ChartConversations_MessagesFields = ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"MessageId": ubx.FieldSpec{WireName: "message_id"},
-		"SystemMessage": ubx.FieldSpec{
-			WireName: "system_message",
-			Kind: "object",
-			Fields: Chart_DataSource_GenerativeInsights_ChartConversations_Messages_SystemMessageFields,
-		},
-		"UserMessage": ubx.FieldSpec{
-			WireName: "user_message",
-			Kind: "object",
-			Fields: Chart_DataSource_GenerativeInsights_ChartConversations_Messages_UserMessageFields,
-		},
-	}
+	"CreateTime": ubx.FieldSpec{WireName: "create_time"},
+	"MessageId":  ubx.FieldSpec{WireName: "message_id"},
+	"SystemMessage": ubx.FieldSpec{
+		WireName: "system_message",
+		Kind:     "object",
+		Fields:   Chart_DataSource_GenerativeInsights_ChartConversations_Messages_SystemMessageFields,
+	},
+	"UserMessage": ubx.FieldSpec{
+		WireName: "user_message",
+		Kind:     "object",
+		Fields:   Chart_DataSource_GenerativeInsights_ChartConversations_Messages_UserMessageFields,
+	},
+}
 
 var Chart_DataSource_GenerativeInsights_ChartConversationsFields = ubx.FieldMap{
-		"ConversationId": ubx.FieldSpec{WireName: "conversation_id"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Messages": ubx.FieldSpec{
-			WireName: "messages",
-			Kind: "list",
-			Fields: Chart_DataSource_GenerativeInsights_ChartConversations_MessagesFields,
-		},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-	}
+	"ConversationId": ubx.FieldSpec{WireName: "conversation_id"},
+	"CreateTime":     ubx.FieldSpec{WireName: "create_time"},
+	"Messages": ubx.FieldSpec{
+		WireName: "messages",
+		Kind:     "list",
+		Fields:   Chart_DataSource_GenerativeInsights_ChartConversations_MessagesFields,
+	},
+	"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+}
 
 var Chart_DataSource_GenerativeInsightsFields = ubx.FieldMap{
-		"ChartCheckpoint": ubx.FieldSpec{
-			WireName: "chart_checkpoint",
-			Kind: "object",
-			Fields: Chart_DataSource_GenerativeInsights_ChartCheckpointFields,
-		},
-		"ChartConversations": ubx.FieldSpec{
-			WireName: "chart_conversations",
-			Kind: "list",
-			Fields: Chart_DataSource_GenerativeInsights_ChartConversationsFields,
-		},
-		"ChartSpec": ubx.FieldSpec{WireName: "chart_spec"},
-		"Request": ubx.FieldSpec{WireName: "request"},
-		"SqlComparisonKey": ubx.FieldSpec{WireName: "sql_comparison_key"},
-		"SqlQuery": ubx.FieldSpec{WireName: "sql_query"},
-	}
+	"ChartCheckpoint": ubx.FieldSpec{
+		WireName: "chart_checkpoint",
+		Kind:     "object",
+		Fields:   Chart_DataSource_GenerativeInsights_ChartCheckpointFields,
+	},
+	"ChartConversations": ubx.FieldSpec{
+		WireName: "chart_conversations",
+		Kind:     "list",
+		Fields:   Chart_DataSource_GenerativeInsights_ChartConversationsFields,
+	},
+	"ChartSpec":        ubx.FieldSpec{WireName: "chart_spec"},
+	"Request":          ubx.FieldSpec{WireName: "request"},
+	"SqlComparisonKey": ubx.FieldSpec{WireName: "sql_comparison_key"},
+	"SqlQuery":         ubx.FieldSpec{WireName: "sql_query"},
+}
 
 var Chart_DataSource_QueryMetricsFields = ubx.FieldMap{
-		"Request": ubx.FieldSpec{WireName: "request"},
-	}
+	"Request": ubx.FieldSpec{WireName: "request"},
+}
 
 var Chart_DataSourceFields = ubx.FieldMap{
-		"GenerativeInsights": ubx.FieldSpec{
-			WireName: "generative_insights",
-			Kind: "object",
-			Fields: Chart_DataSource_GenerativeInsightsFields,
-		},
-		"QueryMetrics": ubx.FieldSpec{
-			WireName: "query_metrics",
-			Kind: "object",
-			Fields: Chart_DataSource_QueryMetricsFields,
-		},
-	}
+	"GenerativeInsights": ubx.FieldSpec{
+		WireName: "generative_insights",
+		Kind:     "object",
+		Fields:   Chart_DataSource_GenerativeInsightsFields,
+	},
+	"QueryMetrics": ubx.FieldSpec{
+		WireName: "query_metrics",
+		Kind:     "object",
+		Fields:   Chart_DataSource_QueryMetricsFields,
+	},
+}
 
 var Chart_DateRangeConfig_AbsoluteDateRangeFields = ubx.FieldMap{
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-	}
+	"EndTime":   ubx.FieldSpec{WireName: "end_time"},
+	"StartTime": ubx.FieldSpec{WireName: "start_time"},
+}
 
 var Chart_DateRangeConfig_RelativeDateRangeFields = ubx.FieldMap{
-		"Quantity": ubx.FieldSpec{WireName: "quantity"},
-		"Unit": ubx.FieldSpec{WireName: "unit"},
-	}
+	"Quantity": ubx.FieldSpec{WireName: "quantity"},
+	"Unit":     ubx.FieldSpec{WireName: "unit"},
+}
 
 var Chart_DateRangeConfigFields = ubx.FieldMap{
-		"AbsoluteDateRange": ubx.FieldSpec{
-			WireName: "absolute_date_range",
-			Kind: "object",
-			Fields: Chart_DateRangeConfig_AbsoluteDateRangeFields,
-		},
-		"RelativeDateRange": ubx.FieldSpec{
-			WireName: "relative_date_range",
-			Kind: "object",
-			Fields: Chart_DateRangeConfig_RelativeDateRangeFields,
-		},
-	}
+	"AbsoluteDateRange": ubx.FieldSpec{
+		WireName: "absolute_date_range",
+		Kind:     "object",
+		Fields:   Chart_DateRangeConfig_AbsoluteDateRangeFields,
+	},
+	"RelativeDateRange": ubx.FieldSpec{
+		WireName: "relative_date_range",
+		Kind:     "object",
+		Fields:   Chart_DateRangeConfig_RelativeDateRangeFields,
+	},
+}
 
 type ChartConfig struct {
 	// The action to be taken when the chart is clicked.
 	Action any
-	// Output only. Chart type.
-	ChartType any
 	// Chart visualization type.
 	ChartVisualizationType any
-	// Output only. Chart create time.
-	CreateTime any
 	// The request data for visualizing the dataset in the chart.
 	DataSource any
 	// Date range configuration for dashboard charts.
@@ -243,8 +239,6 @@ type ChartConfig struct {
 	Height any
 	// Identifier. Chart resource name. Format: projects/{project}/locations/{location}/dashboards/{dashboard}/charts/{chart}
 	Name any
-	// Output only. Chart last update time.
-	UpdateTime any
 	// The width of the chart in grid units.
 	Width any
 }
@@ -283,28 +277,25 @@ var Chart = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Action": ubx.FieldSpec{
 			WireName: "action",
-			Kind: "object",
-			Fields: Chart_ActionFields,
+			Kind:     "object",
+			Fields:   Chart_ActionFields,
 		},
-		"ChartType": ubx.FieldSpec{WireName: "chart_type"},
 		"ChartVisualizationType": ubx.FieldSpec{WireName: "chart_visualization_type"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"DataSource": ubx.FieldSpec{
 			WireName: "data_source",
-			Kind: "object",
-			Fields: Chart_DataSourceFields,
+			Kind:     "object",
+			Fields:   Chart_DataSourceFields,
 		},
 		"DateRangeConfig": ubx.FieldSpec{
 			WireName: "date_range_config",
-			Kind: "object",
-			Fields: Chart_DateRangeConfigFields,
+			Kind:     "object",
+			Fields:   Chart_DateRangeConfigFields,
 		},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Filter": ubx.FieldSpec{WireName: "filter"},
-		"Height": ubx.FieldSpec{WireName: "height"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-		"Width": ubx.FieldSpec{WireName: "width"},
+		"Filter":      ubx.FieldSpec{WireName: "filter"},
+		"Height":      ubx.FieldSpec{WireName: "height"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"Width":       ubx.FieldSpec{WireName: "width"},
 	},
 }

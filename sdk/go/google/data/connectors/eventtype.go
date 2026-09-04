@@ -4,7 +4,6 @@ package connectors
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type EventtypeConfig struct {
-	Name any
 }
 
 type EventtypeAttrs struct {
@@ -20,14 +19,12 @@ type EventtypeAttrs struct {
 	EventTypeId any
 	// Output only. Id path denotes the path of id in webhook payload.
 	IdPath any
-	Name any
+	Name   any
 	// Output only. Updated time.
 	UpdateTime any
 }
 
 var Eventtype = ubx.DataSourceBinding{
 	WireType: "google_connectors_eventtype",
-	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	},
+	Fields:   ubx.FieldMap{},
 }

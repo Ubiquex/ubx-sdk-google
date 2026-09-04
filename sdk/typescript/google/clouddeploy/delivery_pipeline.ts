@@ -485,8 +485,6 @@ export interface DeliveryPipelineConfig {
   annotations?: Record<string, string> | Computed<Record<string, string>>;
   /** PipelineCondition contains all conditions relevant to a Delivery Pipeline. */
   condition?: DeliveryPipeline_Condition | Computed<DeliveryPipeline_Condition>;
-  /** Output only. Time at which the pipeline was created. */
-  createTime?: string | Computed<string>;
   /** Optional. Description of the `DeliveryPipeline`. Max length is 255 characters. */
   description?: string | Computed<string>;
   /** This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding. */
@@ -499,10 +497,6 @@ export interface DeliveryPipelineConfig {
   serialPipeline?: DeliveryPipeline_SerialPipeline | Computed<DeliveryPipeline_SerialPipeline>;
   /** Optional. When suspended, no new releases or rollouts can be created, but in-progress ones will complete. */
   suspended?: boolean | Computed<boolean>;
-  /** Output only. Unique identifier of the `DeliveryPipeline`. */
-  uid?: string | Computed<string>;
-  /** Output only. Most recent time at which the pipeline was updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface DeliveryPipelineAttrs {
@@ -539,7 +533,6 @@ export const DeliveryPipeline: ResourceBinding<DeliveryPipelineConfig, DeliveryP
       kind: "object",
       fields: DeliveryPipeline_ConditionFields,
     },
-    createTime: "create_time",
     description: "description",
     etag: "etag",
     labels: "labels",
@@ -550,7 +543,5 @@ export const DeliveryPipeline: ResourceBinding<DeliveryPipelineConfig, DeliveryP
       fields: DeliveryPipeline_SerialPipelineFields,
     },
     suspended: "suspended",
-    uid: "uid",
-    updateTime: "update_time",
   },
 };

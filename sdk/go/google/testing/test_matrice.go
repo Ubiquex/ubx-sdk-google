@@ -4,7 +4,7 @@ package testing
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type TestMatrice_ClientInfo_ClientInfoDetails struct {
-	Key any
+	Key   any
 	Value any
 }
 
@@ -16,10 +16,10 @@ type TestMatrice_ClientInfo struct {
 }
 
 type TestMatrice_EnvironmentMatrix_AndroidDeviceList_AndroidDevices struct {
-	AndroidModelId any
+	AndroidModelId   any
 	AndroidVersionId any
-	Locale any
-	Orientation any
+	Locale           any
+	Orientation      any
 }
 
 type TestMatrice_EnvironmentMatrix_AndroidDeviceList struct {
@@ -39,10 +39,10 @@ type TestMatrice_EnvironmentMatrix_AndroidMatrix struct {
 }
 
 type TestMatrice_EnvironmentMatrix_IosDeviceList_IosDevices struct {
-	IosModelId any
+	IosModelId   any
 	IosVersionId any
-	Locale any
-	Orientation any
+	Locale       any
+	Orientation  any
 }
 
 type TestMatrice_EnvironmentMatrix_IosDeviceList struct {
@@ -61,7 +61,7 @@ type TestMatrice_EnvironmentMatrix struct {
 
 type TestMatrice_ExtendedInvalidMatrixDetails struct {
 	Message any
-	Reason any
+	Reason  any
 }
 
 type TestMatrice_ResultStorage_GoogleCloudStorage struct {
@@ -98,7 +98,7 @@ type TestMatrice_ResultStorage struct {
 
 type TestMatrice_TestExecutions_Environment struct {
 	AndroidDevice any
-	IosDevice any
+	IosDevice     any
 }
 
 type TestMatrice_TestExecutions_Shard_TestTargetsForShard struct {
@@ -107,13 +107,13 @@ type TestMatrice_TestExecutions_Shard_TestTargetsForShard struct {
 
 type TestMatrice_TestExecutions_Shard struct {
 	EstimatedShardDuration any
-	NumShards any
-	ShardIndex any
-	TestTargetsForShard any
+	NumShards              any
+	ShardIndex             any
+	TestTargetsForShard    any
 }
 
 type TestMatrice_TestExecutions_TestDetails struct {
-	ErrorMessage any
+	ErrorMessage     any
 	ProgressMessages any
 }
 
@@ -122,7 +122,7 @@ type TestMatrice_TestExecutions_TestSpecification_AndroidInstrumentationTest_App
 }
 
 type TestMatrice_TestExecutions_TestSpecification_AndroidInstrumentationTest_AppBundle struct {
-	Apks any
+	Apks           any
 	BundleLocation any
 }
 
@@ -139,94 +139,94 @@ type TestMatrice_TestExecutions_TestSpecification_AndroidInstrumentationTest_Sha
 }
 
 type TestMatrice_TestExecutions_TestSpecification_AndroidInstrumentationTest_ShardingOption struct {
-	ManualSharding any
-	SmartSharding any
+	ManualSharding  any
+	SmartSharding   any
 	UniformSharding any
 }
 
 type TestMatrice_TestExecutions_TestSpecification_AndroidInstrumentationTest struct {
-	AppApk any
-	AppBundle any
-	AppPackageId any
+	AppApk             any
+	AppBundle          any
+	AppPackageId       any
 	OrchestratorOption any
-	ShardingOption any
-	TestApk any
-	TestPackageId any
-	TestRunnerClass any
-	TestTargets any
+	ShardingOption     any
+	TestApk            any
+	TestPackageId      any
+	TestRunnerClass    any
+	TestTargets        any
 }
 
 type TestMatrice_TestExecutions_TestSpecification_AndroidRoboTest_RoboDirectives struct {
-	ActionType any
-	InputText any
+	ActionType   any
+	InputText    any
 	ResourceName any
 }
 
 type TestMatrice_TestExecutions_TestSpecification_AndroidRoboTest_StartingIntents_StartActivity struct {
-	Action any
+	Action     any
 	Categories any
-	Uri any
+	Uri        any
 }
 
 type TestMatrice_TestExecutions_TestSpecification_AndroidRoboTest_StartingIntents struct {
 	LauncherActivity any
-	NoActivity any
-	StartActivity any
-	Timeout any
+	NoActivity       any
+	StartActivity    any
+	Timeout          any
 }
 
 type TestMatrice_TestExecutions_TestSpecification_AndroidRoboTest struct {
-	AppApk any
-	AppBundle any
+	AppApk             any
+	AppBundle          any
 	AppInitialActivity any
-	AppPackageId any
-	MaxDepth any
-	MaxSteps any
-	RoboDirectives any
-	RoboMode any
-	RoboScript any
-	StartingIntents any
+	AppPackageId       any
+	MaxDepth           any
+	MaxSteps           any
+	RoboDirectives     any
+	RoboMode           any
+	RoboScript         any
+	StartingIntents    any
 }
 
 type TestMatrice_TestExecutions_TestSpecification_AndroidTestLoop struct {
-	AppApk any
-	AppBundle any
-	AppPackageId any
+	AppApk         any
+	AppBundle      any
+	AppPackageId   any
 	ScenarioLabels any
-	Scenarios any
+	Scenarios      any
 }
 
 type TestMatrice_TestExecutions_TestSpecification_IosRoboTest struct {
 	AppBundleId any
-	AppIpa any
-	RoboScript any
+	AppIpa      any
+	RoboScript  any
 }
 
 type TestMatrice_TestExecutions_TestSpecification_IosTestLoop struct {
 	AppBundleId any
-	AppIpa any
-	Scenarios any
+	AppIpa      any
+	Scenarios   any
 }
 
 type TestMatrice_TestExecutions_TestSpecification_IosTestSetup_PullDirectories struct {
-	BundleId any
-	Content any
+	BundleId   any
+	Content    any
 	DevicePath any
 }
 
 type TestMatrice_TestExecutions_TestSpecification_IosTestSetup struct {
-	AdditionalIpas any
-	NetworkProfile any
+	AdditionalIpas  any
+	NetworkProfile  any
 	PullDirectories any
-	PushFiles any
+	PushFiles       any
 }
 
 type TestMatrice_TestExecutions_TestSpecification_IosXcTest struct {
-	AppBundleId any
+	AppBundleId             any
 	TestSpecialEntitlements any
-	TestsZip any
-	XcodeVersion any
-	Xctestrun any
+	TestsZip                any
+	XcodeVersion            any
+	Xctestrun               any
 }
 
 type TestMatrice_TestExecutions_TestSpecification_TestSetup_Account struct {
@@ -234,22 +234,22 @@ type TestMatrice_TestExecutions_TestSpecification_TestSetup_Account struct {
 }
 
 type TestMatrice_TestExecutions_TestSpecification_TestSetup_AdditionalApks struct {
-	Location any
+	Location    any
 	PackageName any
 }
 
 type TestMatrice_TestExecutions_TestSpecification_TestSetup_FilesToPush_ObbFile struct {
-	Obb any
+	Obb         any
 	ObbFileName any
 }
 
 type TestMatrice_TestExecutions_TestSpecification_TestSetup_FilesToPush_RegularFile struct {
-	Content any
+	Content    any
 	DevicePath any
 }
 
 type TestMatrice_TestExecutions_TestSpecification_TestSetup_FilesToPush struct {
-	ObbFile any
+	ObbFile     any
 	RegularFile any
 }
 
@@ -258,593 +258,586 @@ type TestMatrice_TestExecutions_TestSpecification_TestSetup_Systrace struct {
 }
 
 type TestMatrice_TestExecutions_TestSpecification_TestSetup struct {
-	Account any
-	AdditionalApks any
-	DirectoriesToPull any
+	Account                  any
+	AdditionalApks           any
+	DirectoriesToPull        any
 	DontAutograntPermissions any
-	EnvironmentVariables any
-	FilesToPush any
-	InitialSetupApks any
-	NetworkProfile any
-	Systrace any
+	EnvironmentVariables     any
+	FilesToPush              any
+	InitialSetupApks         any
+	NetworkProfile           any
+	Systrace                 any
 }
 
 type TestMatrice_TestExecutions_TestSpecification struct {
 	AndroidInstrumentationTest any
-	AndroidRoboTest any
-	AndroidTestLoop any
-	DisablePerformanceMetrics any
-	DisableVideoRecording any
-	IosRoboTest any
-	IosTestLoop any
-	IosTestSetup any
-	IosXcTest any
-	TestSetup any
-	TestTimeout any
+	AndroidRoboTest            any
+	AndroidTestLoop            any
+	DisablePerformanceMetrics  any
+	DisableVideoRecording      any
+	IosRoboTest                any
+	IosTestLoop                any
+	IosTestSetup               any
+	IosXcTest                  any
+	TestSetup                  any
+	TestTimeout                any
 }
 
 type TestMatrice_TestExecutions_ToolResultsStep struct {
 	ExecutionId any
-	HistoryId any
-	ProjectId any
-	StepId any
+	HistoryId   any
+	ProjectId   any
+	StepId      any
 }
 
 type TestMatrice_TestExecutions struct {
-	Environment any
-	Id any
-	MatrixId any
-	ProjectId any
-	Shard any
-	State any
-	TestDetails any
+	Environment       any
+	Id                any
+	MatrixId          any
+	ProjectId         any
+	Shard             any
+	State             any
+	TestDetails       any
 	TestSpecification any
-	Timestamp any
-	ToolResultsStep any
+	Timestamp         any
+	ToolResultsStep   any
 }
 
 var TestMatrice_ClientInfo_ClientInfoDetailsFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Key":   ubx.FieldSpec{WireName: "key"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 var TestMatrice_ClientInfoFields = ubx.FieldMap{
-		"ClientInfoDetails": ubx.FieldSpec{
-			WireName: "client_info_details",
-			Kind: "list",
-			Fields: TestMatrice_ClientInfo_ClientInfoDetailsFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-	}
+	"ClientInfoDetails": ubx.FieldSpec{
+		WireName: "client_info_details",
+		Kind:     "list",
+		Fields:   TestMatrice_ClientInfo_ClientInfoDetailsFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+}
 
 var TestMatrice_EnvironmentMatrix_AndroidDeviceList_AndroidDevicesFields = ubx.FieldMap{
-		"AndroidModelId": ubx.FieldSpec{WireName: "android_model_id"},
-		"AndroidVersionId": ubx.FieldSpec{WireName: "android_version_id"},
-		"Locale": ubx.FieldSpec{WireName: "locale"},
-		"Orientation": ubx.FieldSpec{WireName: "orientation"},
-	}
+	"AndroidModelId":   ubx.FieldSpec{WireName: "android_model_id"},
+	"AndroidVersionId": ubx.FieldSpec{WireName: "android_version_id"},
+	"Locale":           ubx.FieldSpec{WireName: "locale"},
+	"Orientation":      ubx.FieldSpec{WireName: "orientation"},
+}
 
 var TestMatrice_EnvironmentMatrix_AndroidDeviceListFields = ubx.FieldMap{
-		"AndroidDevices": ubx.FieldSpec{
-			WireName: "android_devices",
-			Kind: "list",
-			Fields: TestMatrice_EnvironmentMatrix_AndroidDeviceList_AndroidDevicesFields,
-		},
-	}
+	"AndroidDevices": ubx.FieldSpec{
+		WireName: "android_devices",
+		Kind:     "list",
+		Fields:   TestMatrice_EnvironmentMatrix_AndroidDeviceList_AndroidDevicesFields,
+	},
+}
 
 var TestMatrice_EnvironmentMatrix_AndroidMatrixFields = ubx.FieldMap{
-		"AndroidModelIds": ubx.FieldSpec{WireName: "android_model_ids"},
-		"AndroidVersionIds": ubx.FieldSpec{WireName: "android_version_ids"},
-		"Locales": ubx.FieldSpec{WireName: "locales"},
-		"Orientations": ubx.FieldSpec{WireName: "orientations"},
-	}
+	"AndroidModelIds":   ubx.FieldSpec{WireName: "android_model_ids"},
+	"AndroidVersionIds": ubx.FieldSpec{WireName: "android_version_ids"},
+	"Locales":           ubx.FieldSpec{WireName: "locales"},
+	"Orientations":      ubx.FieldSpec{WireName: "orientations"},
+}
 
 var TestMatrice_EnvironmentMatrix_IosDeviceList_IosDevicesFields = ubx.FieldMap{
-		"IosModelId": ubx.FieldSpec{WireName: "ios_model_id"},
-		"IosVersionId": ubx.FieldSpec{WireName: "ios_version_id"},
-		"Locale": ubx.FieldSpec{WireName: "locale"},
-		"Orientation": ubx.FieldSpec{WireName: "orientation"},
-	}
+	"IosModelId":   ubx.FieldSpec{WireName: "ios_model_id"},
+	"IosVersionId": ubx.FieldSpec{WireName: "ios_version_id"},
+	"Locale":       ubx.FieldSpec{WireName: "locale"},
+	"Orientation":  ubx.FieldSpec{WireName: "orientation"},
+}
 
 var TestMatrice_EnvironmentMatrix_IosDeviceListFields = ubx.FieldMap{
-		"IosDevices": ubx.FieldSpec{
-			WireName: "ios_devices",
-			Kind: "list",
-			Fields: TestMatrice_EnvironmentMatrix_IosDeviceList_IosDevicesFields,
-		},
-	}
+	"IosDevices": ubx.FieldSpec{
+		WireName: "ios_devices",
+		Kind:     "list",
+		Fields:   TestMatrice_EnvironmentMatrix_IosDeviceList_IosDevicesFields,
+	},
+}
 
 var TestMatrice_EnvironmentMatrixFields = ubx.FieldMap{
-		"AndroidDeviceList": ubx.FieldSpec{
-			WireName: "android_device_list",
-			Kind: "object",
-			Fields: TestMatrice_EnvironmentMatrix_AndroidDeviceListFields,
-		},
-		"AndroidMatrix": ubx.FieldSpec{
-			WireName: "android_matrix",
-			Kind: "object",
-			Fields: TestMatrice_EnvironmentMatrix_AndroidMatrixFields,
-		},
-		"IosDeviceList": ubx.FieldSpec{
-			WireName: "ios_device_list",
-			Kind: "object",
-			Fields: TestMatrice_EnvironmentMatrix_IosDeviceListFields,
-		},
-	}
-
-var TestMatrice_ExtendedInvalidMatrixDetailsFields = ubx.FieldMap{
-		"Message": ubx.FieldSpec{WireName: "message"},
-		"Reason": ubx.FieldSpec{WireName: "reason"},
-	}
+	"AndroidDeviceList": ubx.FieldSpec{
+		WireName: "android_device_list",
+		Kind:     "object",
+		Fields:   TestMatrice_EnvironmentMatrix_AndroidDeviceListFields,
+	},
+	"AndroidMatrix": ubx.FieldSpec{
+		WireName: "android_matrix",
+		Kind:     "object",
+		Fields:   TestMatrice_EnvironmentMatrix_AndroidMatrixFields,
+	},
+	"IosDeviceList": ubx.FieldSpec{
+		WireName: "ios_device_list",
+		Kind:     "object",
+		Fields:   TestMatrice_EnvironmentMatrix_IosDeviceListFields,
+	},
+}
 
 var TestMatrice_ResultStorage_GoogleCloudStorageFields = ubx.FieldMap{
-		"GcsPath": ubx.FieldSpec{WireName: "gcs_path"},
-	}
+	"GcsPath": ubx.FieldSpec{WireName: "gcs_path"},
+}
 
 var TestMatrice_ResultStorage_ToolResultsExecutionFields = ubx.FieldMap{
-		"ExecutionId": ubx.FieldSpec{WireName: "execution_id"},
-		"HistoryId": ubx.FieldSpec{WireName: "history_id"},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-	}
+	"ExecutionId": ubx.FieldSpec{WireName: "execution_id"},
+	"HistoryId":   ubx.FieldSpec{WireName: "history_id"},
+	"ProjectId":   ubx.FieldSpec{WireName: "project_id"},
+}
 
 var TestMatrice_ResultStorage_ToolResultsHistoryFields = ubx.FieldMap{
-		"HistoryId": ubx.FieldSpec{WireName: "history_id"},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-	}
+	"HistoryId": ubx.FieldSpec{WireName: "history_id"},
+	"ProjectId": ubx.FieldSpec{WireName: "project_id"},
+}
 
 var TestMatrice_ResultStorageFields = ubx.FieldMap{
-		"GoogleCloudStorage": ubx.FieldSpec{
-			WireName: "google_cloud_storage",
-			Kind: "object",
-			Fields: TestMatrice_ResultStorage_GoogleCloudStorageFields,
-		},
-		"ResultsUrl": ubx.FieldSpec{WireName: "results_url"},
-		"ToolResultsExecution": ubx.FieldSpec{
-			WireName: "tool_results_execution",
-			Kind: "object",
-			Fields: TestMatrice_ResultStorage_ToolResultsExecutionFields,
-		},
-		"ToolResultsHistory": ubx.FieldSpec{
-			WireName: "tool_results_history",
-			Kind: "object",
-			Fields: TestMatrice_ResultStorage_ToolResultsHistoryFields,
-		},
-	}
+	"GoogleCloudStorage": ubx.FieldSpec{
+		WireName: "google_cloud_storage",
+		Kind:     "object",
+		Fields:   TestMatrice_ResultStorage_GoogleCloudStorageFields,
+	},
+	"ResultsUrl": ubx.FieldSpec{WireName: "results_url"},
+	"ToolResultsExecution": ubx.FieldSpec{
+		WireName: "tool_results_execution",
+		Kind:     "object",
+		Fields:   TestMatrice_ResultStorage_ToolResultsExecutionFields,
+	},
+	"ToolResultsHistory": ubx.FieldSpec{
+		WireName: "tool_results_history",
+		Kind:     "object",
+		Fields:   TestMatrice_ResultStorage_ToolResultsHistoryFields,
+	},
+}
 
 var TestMatrice_TestExecutions_EnvironmentFields = ubx.FieldMap{
-		"AndroidDevice": ubx.FieldSpec{
-			WireName: "android_device",
-			Kind: "object",
-			Fields: TestMatrice_EnvironmentMatrix_AndroidDeviceList_AndroidDevicesFields,
-		},
-		"IosDevice": ubx.FieldSpec{
-			WireName: "ios_device",
-			Kind: "object",
-			Fields: TestMatrice_EnvironmentMatrix_IosDeviceList_IosDevicesFields,
-		},
-	}
+	"AndroidDevice": ubx.FieldSpec{
+		WireName: "android_device",
+		Kind:     "object",
+		Fields:   TestMatrice_EnvironmentMatrix_AndroidDeviceList_AndroidDevicesFields,
+	},
+	"IosDevice": ubx.FieldSpec{
+		WireName: "ios_device",
+		Kind:     "object",
+		Fields:   TestMatrice_EnvironmentMatrix_IosDeviceList_IosDevicesFields,
+	},
+}
 
 var TestMatrice_TestExecutions_Shard_TestTargetsForShardFields = ubx.FieldMap{
-		"TestTargets": ubx.FieldSpec{WireName: "test_targets"},
-	}
+	"TestTargets": ubx.FieldSpec{WireName: "test_targets"},
+}
 
 var TestMatrice_TestExecutions_ShardFields = ubx.FieldMap{
-		"EstimatedShardDuration": ubx.FieldSpec{WireName: "estimated_shard_duration"},
-		"NumShards": ubx.FieldSpec{WireName: "num_shards"},
-		"ShardIndex": ubx.FieldSpec{WireName: "shard_index"},
-		"TestTargetsForShard": ubx.FieldSpec{
-			WireName: "test_targets_for_shard",
-			Kind: "object",
-			Fields: TestMatrice_TestExecutions_Shard_TestTargetsForShardFields,
-		},
-	}
+	"EstimatedShardDuration": ubx.FieldSpec{WireName: "estimated_shard_duration"},
+	"NumShards":              ubx.FieldSpec{WireName: "num_shards"},
+	"ShardIndex":             ubx.FieldSpec{WireName: "shard_index"},
+	"TestTargetsForShard": ubx.FieldSpec{
+		WireName: "test_targets_for_shard",
+		Kind:     "object",
+		Fields:   TestMatrice_TestExecutions_Shard_TestTargetsForShardFields,
+	},
+}
 
 var TestMatrice_TestExecutions_TestDetailsFields = ubx.FieldMap{
-		"ErrorMessage": ubx.FieldSpec{WireName: "error_message"},
-		"ProgressMessages": ubx.FieldSpec{WireName: "progress_messages"},
-	}
+	"ErrorMessage":     ubx.FieldSpec{WireName: "error_message"},
+	"ProgressMessages": ubx.FieldSpec{WireName: "progress_messages"},
+}
 
 var TestMatrice_TestExecutions_TestSpecification_AndroidInstrumentationTest_AppBundle_ApksFields = ubx.FieldMap{
-		"BundleSplits": ubx.FieldSpec{
-			WireName: "bundle_splits",
-			Kind: "list",
-			Fields: TestMatrice_ResultStorage_GoogleCloudStorageFields,
-		},
-	}
+	"BundleSplits": ubx.FieldSpec{
+		WireName: "bundle_splits",
+		Kind:     "list",
+		Fields:   TestMatrice_ResultStorage_GoogleCloudStorageFields,
+	},
+}
 
 var TestMatrice_TestExecutions_TestSpecification_AndroidInstrumentationTest_AppBundleFields = ubx.FieldMap{
-		"Apks": ubx.FieldSpec{
-			WireName: "apks",
-			Kind: "object",
-			Fields: TestMatrice_TestExecutions_TestSpecification_AndroidInstrumentationTest_AppBundle_ApksFields,
-		},
-		"BundleLocation": ubx.FieldSpec{
-			WireName: "bundle_location",
-			Kind: "object",
-			Fields: TestMatrice_ResultStorage_GoogleCloudStorageFields,
-		},
-	}
+	"Apks": ubx.FieldSpec{
+		WireName: "apks",
+		Kind:     "object",
+		Fields:   TestMatrice_TestExecutions_TestSpecification_AndroidInstrumentationTest_AppBundle_ApksFields,
+	},
+	"BundleLocation": ubx.FieldSpec{
+		WireName: "bundle_location",
+		Kind:     "object",
+		Fields:   TestMatrice_ResultStorage_GoogleCloudStorageFields,
+	},
+}
 
 var TestMatrice_TestExecutions_TestSpecification_AndroidInstrumentationTest_ShardingOption_ManualShardingFields = ubx.FieldMap{
-		"TestTargetsForShard": ubx.FieldSpec{
-			WireName: "test_targets_for_shard",
-			Kind: "list",
-			Fields: TestMatrice_TestExecutions_Shard_TestTargetsForShardFields,
-		},
-	}
+	"TestTargetsForShard": ubx.FieldSpec{
+		WireName: "test_targets_for_shard",
+		Kind:     "list",
+		Fields:   TestMatrice_TestExecutions_Shard_TestTargetsForShardFields,
+	},
+}
 
 var TestMatrice_TestExecutions_TestSpecification_AndroidInstrumentationTest_ShardingOption_SmartShardingFields = ubx.FieldMap{
-		"TargetedShardDuration": ubx.FieldSpec{WireName: "targeted_shard_duration"},
-	}
+	"TargetedShardDuration": ubx.FieldSpec{WireName: "targeted_shard_duration"},
+}
 
 var TestMatrice_TestExecutions_TestSpecification_AndroidInstrumentationTest_ShardingOption_UniformShardingFields = ubx.FieldMap{
-		"NumShards": ubx.FieldSpec{WireName: "num_shards"},
-	}
+	"NumShards": ubx.FieldSpec{WireName: "num_shards"},
+}
 
 var TestMatrice_TestExecutions_TestSpecification_AndroidInstrumentationTest_ShardingOptionFields = ubx.FieldMap{
-		"ManualSharding": ubx.FieldSpec{
-			WireName: "manual_sharding",
-			Kind: "object",
-			Fields: TestMatrice_TestExecutions_TestSpecification_AndroidInstrumentationTest_ShardingOption_ManualShardingFields,
-		},
-		"SmartSharding": ubx.FieldSpec{
-			WireName: "smart_sharding",
-			Kind: "object",
-			Fields: TestMatrice_TestExecutions_TestSpecification_AndroidInstrumentationTest_ShardingOption_SmartShardingFields,
-		},
-		"UniformSharding": ubx.FieldSpec{
-			WireName: "uniform_sharding",
-			Kind: "object",
-			Fields: TestMatrice_TestExecutions_TestSpecification_AndroidInstrumentationTest_ShardingOption_UniformShardingFields,
-		},
-	}
+	"ManualSharding": ubx.FieldSpec{
+		WireName: "manual_sharding",
+		Kind:     "object",
+		Fields:   TestMatrice_TestExecutions_TestSpecification_AndroidInstrumentationTest_ShardingOption_ManualShardingFields,
+	},
+	"SmartSharding": ubx.FieldSpec{
+		WireName: "smart_sharding",
+		Kind:     "object",
+		Fields:   TestMatrice_TestExecutions_TestSpecification_AndroidInstrumentationTest_ShardingOption_SmartShardingFields,
+	},
+	"UniformSharding": ubx.FieldSpec{
+		WireName: "uniform_sharding",
+		Kind:     "object",
+		Fields:   TestMatrice_TestExecutions_TestSpecification_AndroidInstrumentationTest_ShardingOption_UniformShardingFields,
+	},
+}
 
 var TestMatrice_TestExecutions_TestSpecification_AndroidInstrumentationTestFields = ubx.FieldMap{
-		"AppApk": ubx.FieldSpec{
-			WireName: "app_apk",
-			Kind: "object",
-			Fields: TestMatrice_ResultStorage_GoogleCloudStorageFields,
-		},
-		"AppBundle": ubx.FieldSpec{
-			WireName: "app_bundle",
-			Kind: "object",
-			Fields: TestMatrice_TestExecutions_TestSpecification_AndroidInstrumentationTest_AppBundleFields,
-		},
-		"AppPackageId": ubx.FieldSpec{WireName: "app_package_id"},
-		"OrchestratorOption": ubx.FieldSpec{WireName: "orchestrator_option"},
-		"ShardingOption": ubx.FieldSpec{
-			WireName: "sharding_option",
-			Kind: "object",
-			Fields: TestMatrice_TestExecutions_TestSpecification_AndroidInstrumentationTest_ShardingOptionFields,
-		},
-		"TestApk": ubx.FieldSpec{
-			WireName: "test_apk",
-			Kind: "object",
-			Fields: TestMatrice_ResultStorage_GoogleCloudStorageFields,
-		},
-		"TestPackageId": ubx.FieldSpec{WireName: "test_package_id"},
-		"TestRunnerClass": ubx.FieldSpec{WireName: "test_runner_class"},
-		"TestTargets": ubx.FieldSpec{WireName: "test_targets"},
-	}
+	"AppApk": ubx.FieldSpec{
+		WireName: "app_apk",
+		Kind:     "object",
+		Fields:   TestMatrice_ResultStorage_GoogleCloudStorageFields,
+	},
+	"AppBundle": ubx.FieldSpec{
+		WireName: "app_bundle",
+		Kind:     "object",
+		Fields:   TestMatrice_TestExecutions_TestSpecification_AndroidInstrumentationTest_AppBundleFields,
+	},
+	"AppPackageId":       ubx.FieldSpec{WireName: "app_package_id"},
+	"OrchestratorOption": ubx.FieldSpec{WireName: "orchestrator_option"},
+	"ShardingOption": ubx.FieldSpec{
+		WireName: "sharding_option",
+		Kind:     "object",
+		Fields:   TestMatrice_TestExecutions_TestSpecification_AndroidInstrumentationTest_ShardingOptionFields,
+	},
+	"TestApk": ubx.FieldSpec{
+		WireName: "test_apk",
+		Kind:     "object",
+		Fields:   TestMatrice_ResultStorage_GoogleCloudStorageFields,
+	},
+	"TestPackageId":   ubx.FieldSpec{WireName: "test_package_id"},
+	"TestRunnerClass": ubx.FieldSpec{WireName: "test_runner_class"},
+	"TestTargets":     ubx.FieldSpec{WireName: "test_targets"},
+}
 
 var TestMatrice_TestExecutions_TestSpecification_AndroidRoboTest_RoboDirectivesFields = ubx.FieldMap{
-		"ActionType": ubx.FieldSpec{WireName: "action_type"},
-		"InputText": ubx.FieldSpec{WireName: "input_text"},
-		"ResourceName": ubx.FieldSpec{WireName: "resource_name"},
-	}
+	"ActionType":   ubx.FieldSpec{WireName: "action_type"},
+	"InputText":    ubx.FieldSpec{WireName: "input_text"},
+	"ResourceName": ubx.FieldSpec{WireName: "resource_name"},
+}
 
 var TestMatrice_TestExecutions_TestSpecification_AndroidRoboTest_StartingIntents_StartActivityFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
-		"Categories": ubx.FieldSpec{WireName: "categories"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"Action":     ubx.FieldSpec{WireName: "action"},
+	"Categories": ubx.FieldSpec{WireName: "categories"},
+	"Uri":        ubx.FieldSpec{WireName: "uri"},
+}
 
 var TestMatrice_TestExecutions_TestSpecification_AndroidRoboTest_StartingIntentsFields = ubx.FieldMap{
-		"LauncherActivity": ubx.FieldSpec{WireName: "launcher_activity"},
-		"NoActivity": ubx.FieldSpec{WireName: "no_activity"},
-		"StartActivity": ubx.FieldSpec{
-			WireName: "start_activity",
-			Kind: "object",
-			Fields: TestMatrice_TestExecutions_TestSpecification_AndroidRoboTest_StartingIntents_StartActivityFields,
-		},
-		"Timeout": ubx.FieldSpec{WireName: "timeout"},
-	}
+	"LauncherActivity": ubx.FieldSpec{WireName: "launcher_activity"},
+	"NoActivity":       ubx.FieldSpec{WireName: "no_activity"},
+	"StartActivity": ubx.FieldSpec{
+		WireName: "start_activity",
+		Kind:     "object",
+		Fields:   TestMatrice_TestExecutions_TestSpecification_AndroidRoboTest_StartingIntents_StartActivityFields,
+	},
+	"Timeout": ubx.FieldSpec{WireName: "timeout"},
+}
 
 var TestMatrice_TestExecutions_TestSpecification_AndroidRoboTestFields = ubx.FieldMap{
-		"AppApk": ubx.FieldSpec{
-			WireName: "app_apk",
-			Kind: "object",
-			Fields: TestMatrice_ResultStorage_GoogleCloudStorageFields,
-		},
-		"AppBundle": ubx.FieldSpec{
-			WireName: "app_bundle",
-			Kind: "object",
-			Fields: TestMatrice_TestExecutions_TestSpecification_AndroidInstrumentationTest_AppBundleFields,
-		},
-		"AppInitialActivity": ubx.FieldSpec{WireName: "app_initial_activity"},
-		"AppPackageId": ubx.FieldSpec{WireName: "app_package_id"},
-		"MaxDepth": ubx.FieldSpec{WireName: "max_depth"},
-		"MaxSteps": ubx.FieldSpec{WireName: "max_steps"},
-		"RoboDirectives": ubx.FieldSpec{
-			WireName: "robo_directives",
-			Kind: "list",
-			Fields: TestMatrice_TestExecutions_TestSpecification_AndroidRoboTest_RoboDirectivesFields,
-		},
-		"RoboMode": ubx.FieldSpec{WireName: "robo_mode"},
-		"RoboScript": ubx.FieldSpec{
-			WireName: "robo_script",
-			Kind: "object",
-			Fields: TestMatrice_ResultStorage_GoogleCloudStorageFields,
-		},
-		"StartingIntents": ubx.FieldSpec{
-			WireName: "starting_intents",
-			Kind: "list",
-			Fields: TestMatrice_TestExecutions_TestSpecification_AndroidRoboTest_StartingIntentsFields,
-		},
-	}
+	"AppApk": ubx.FieldSpec{
+		WireName: "app_apk",
+		Kind:     "object",
+		Fields:   TestMatrice_ResultStorage_GoogleCloudStorageFields,
+	},
+	"AppBundle": ubx.FieldSpec{
+		WireName: "app_bundle",
+		Kind:     "object",
+		Fields:   TestMatrice_TestExecutions_TestSpecification_AndroidInstrumentationTest_AppBundleFields,
+	},
+	"AppInitialActivity": ubx.FieldSpec{WireName: "app_initial_activity"},
+	"AppPackageId":       ubx.FieldSpec{WireName: "app_package_id"},
+	"MaxDepth":           ubx.FieldSpec{WireName: "max_depth"},
+	"MaxSteps":           ubx.FieldSpec{WireName: "max_steps"},
+	"RoboDirectives": ubx.FieldSpec{
+		WireName: "robo_directives",
+		Kind:     "list",
+		Fields:   TestMatrice_TestExecutions_TestSpecification_AndroidRoboTest_RoboDirectivesFields,
+	},
+	"RoboMode": ubx.FieldSpec{WireName: "robo_mode"},
+	"RoboScript": ubx.FieldSpec{
+		WireName: "robo_script",
+		Kind:     "object",
+		Fields:   TestMatrice_ResultStorage_GoogleCloudStorageFields,
+	},
+	"StartingIntents": ubx.FieldSpec{
+		WireName: "starting_intents",
+		Kind:     "list",
+		Fields:   TestMatrice_TestExecutions_TestSpecification_AndroidRoboTest_StartingIntentsFields,
+	},
+}
 
 var TestMatrice_TestExecutions_TestSpecification_AndroidTestLoopFields = ubx.FieldMap{
-		"AppApk": ubx.FieldSpec{
-			WireName: "app_apk",
-			Kind: "object",
-			Fields: TestMatrice_ResultStorage_GoogleCloudStorageFields,
-		},
-		"AppBundle": ubx.FieldSpec{
-			WireName: "app_bundle",
-			Kind: "object",
-			Fields: TestMatrice_TestExecutions_TestSpecification_AndroidInstrumentationTest_AppBundleFields,
-		},
-		"AppPackageId": ubx.FieldSpec{WireName: "app_package_id"},
-		"ScenarioLabels": ubx.FieldSpec{WireName: "scenario_labels"},
-		"Scenarios": ubx.FieldSpec{WireName: "scenarios"},
-	}
+	"AppApk": ubx.FieldSpec{
+		WireName: "app_apk",
+		Kind:     "object",
+		Fields:   TestMatrice_ResultStorage_GoogleCloudStorageFields,
+	},
+	"AppBundle": ubx.FieldSpec{
+		WireName: "app_bundle",
+		Kind:     "object",
+		Fields:   TestMatrice_TestExecutions_TestSpecification_AndroidInstrumentationTest_AppBundleFields,
+	},
+	"AppPackageId":   ubx.FieldSpec{WireName: "app_package_id"},
+	"ScenarioLabels": ubx.FieldSpec{WireName: "scenario_labels"},
+	"Scenarios":      ubx.FieldSpec{WireName: "scenarios"},
+}
 
 var TestMatrice_TestExecutions_TestSpecification_IosRoboTestFields = ubx.FieldMap{
-		"AppBundleId": ubx.FieldSpec{WireName: "app_bundle_id"},
-		"AppIpa": ubx.FieldSpec{
-			WireName: "app_ipa",
-			Kind: "object",
-			Fields: TestMatrice_ResultStorage_GoogleCloudStorageFields,
-		},
-		"RoboScript": ubx.FieldSpec{
-			WireName: "robo_script",
-			Kind: "object",
-			Fields: TestMatrice_ResultStorage_GoogleCloudStorageFields,
-		},
-	}
+	"AppBundleId": ubx.FieldSpec{WireName: "app_bundle_id"},
+	"AppIpa": ubx.FieldSpec{
+		WireName: "app_ipa",
+		Kind:     "object",
+		Fields:   TestMatrice_ResultStorage_GoogleCloudStorageFields,
+	},
+	"RoboScript": ubx.FieldSpec{
+		WireName: "robo_script",
+		Kind:     "object",
+		Fields:   TestMatrice_ResultStorage_GoogleCloudStorageFields,
+	},
+}
 
 var TestMatrice_TestExecutions_TestSpecification_IosTestLoopFields = ubx.FieldMap{
-		"AppBundleId": ubx.FieldSpec{WireName: "app_bundle_id"},
-		"AppIpa": ubx.FieldSpec{
-			WireName: "app_ipa",
-			Kind: "object",
-			Fields: TestMatrice_ResultStorage_GoogleCloudStorageFields,
-		},
-		"Scenarios": ubx.FieldSpec{WireName: "scenarios"},
-	}
+	"AppBundleId": ubx.FieldSpec{WireName: "app_bundle_id"},
+	"AppIpa": ubx.FieldSpec{
+		WireName: "app_ipa",
+		Kind:     "object",
+		Fields:   TestMatrice_ResultStorage_GoogleCloudStorageFields,
+	},
+	"Scenarios": ubx.FieldSpec{WireName: "scenarios"},
+}
 
 var TestMatrice_TestExecutions_TestSpecification_IosTestSetup_PullDirectoriesFields = ubx.FieldMap{
-		"BundleId": ubx.FieldSpec{WireName: "bundle_id"},
-		"Content": ubx.FieldSpec{
-			WireName: "content",
-			Kind: "object",
-			Fields: TestMatrice_ResultStorage_GoogleCloudStorageFields,
-		},
-		"DevicePath": ubx.FieldSpec{WireName: "device_path"},
-	}
+	"BundleId": ubx.FieldSpec{WireName: "bundle_id"},
+	"Content": ubx.FieldSpec{
+		WireName: "content",
+		Kind:     "object",
+		Fields:   TestMatrice_ResultStorage_GoogleCloudStorageFields,
+	},
+	"DevicePath": ubx.FieldSpec{WireName: "device_path"},
+}
 
 var TestMatrice_TestExecutions_TestSpecification_IosTestSetupFields = ubx.FieldMap{
-		"AdditionalIpas": ubx.FieldSpec{
-			WireName: "additional_ipas",
-			Kind: "list",
-			Fields: TestMatrice_ResultStorage_GoogleCloudStorageFields,
-		},
-		"NetworkProfile": ubx.FieldSpec{WireName: "network_profile"},
-		"PullDirectories": ubx.FieldSpec{
-			WireName: "pull_directories",
-			Kind: "list",
-			Fields: TestMatrice_TestExecutions_TestSpecification_IosTestSetup_PullDirectoriesFields,
-		},
-		"PushFiles": ubx.FieldSpec{
-			WireName: "push_files",
-			Kind: "list",
-			Fields: TestMatrice_TestExecutions_TestSpecification_IosTestSetup_PullDirectoriesFields,
-		},
-	}
+	"AdditionalIpas": ubx.FieldSpec{
+		WireName: "additional_ipas",
+		Kind:     "list",
+		Fields:   TestMatrice_ResultStorage_GoogleCloudStorageFields,
+	},
+	"NetworkProfile": ubx.FieldSpec{WireName: "network_profile"},
+	"PullDirectories": ubx.FieldSpec{
+		WireName: "pull_directories",
+		Kind:     "list",
+		Fields:   TestMatrice_TestExecutions_TestSpecification_IosTestSetup_PullDirectoriesFields,
+	},
+	"PushFiles": ubx.FieldSpec{
+		WireName: "push_files",
+		Kind:     "list",
+		Fields:   TestMatrice_TestExecutions_TestSpecification_IosTestSetup_PullDirectoriesFields,
+	},
+}
 
 var TestMatrice_TestExecutions_TestSpecification_IosXcTestFields = ubx.FieldMap{
-		"AppBundleId": ubx.FieldSpec{WireName: "app_bundle_id"},
-		"TestSpecialEntitlements": ubx.FieldSpec{WireName: "test_special_entitlements"},
-		"TestsZip": ubx.FieldSpec{
-			WireName: "tests_zip",
-			Kind: "object",
-			Fields: TestMatrice_ResultStorage_GoogleCloudStorageFields,
-		},
-		"XcodeVersion": ubx.FieldSpec{WireName: "xcode_version"},
-		"Xctestrun": ubx.FieldSpec{
-			WireName: "xctestrun",
-			Kind: "object",
-			Fields: TestMatrice_ResultStorage_GoogleCloudStorageFields,
-		},
-	}
+	"AppBundleId":             ubx.FieldSpec{WireName: "app_bundle_id"},
+	"TestSpecialEntitlements": ubx.FieldSpec{WireName: "test_special_entitlements"},
+	"TestsZip": ubx.FieldSpec{
+		WireName: "tests_zip",
+		Kind:     "object",
+		Fields:   TestMatrice_ResultStorage_GoogleCloudStorageFields,
+	},
+	"XcodeVersion": ubx.FieldSpec{WireName: "xcode_version"},
+	"Xctestrun": ubx.FieldSpec{
+		WireName: "xctestrun",
+		Kind:     "object",
+		Fields:   TestMatrice_ResultStorage_GoogleCloudStorageFields,
+	},
+}
 
 var TestMatrice_TestExecutions_TestSpecification_TestSetup_AccountFields = ubx.FieldMap{
-		"GoogleAuto": ubx.FieldSpec{WireName: "google_auto"},
-	}
+	"GoogleAuto": ubx.FieldSpec{WireName: "google_auto"},
+}
 
 var TestMatrice_TestExecutions_TestSpecification_TestSetup_AdditionalApksFields = ubx.FieldMap{
-		"Location": ubx.FieldSpec{
-			WireName: "location",
-			Kind: "object",
-			Fields: TestMatrice_ResultStorage_GoogleCloudStorageFields,
-		},
-		"PackageName": ubx.FieldSpec{WireName: "package_name"},
-	}
+	"Location": ubx.FieldSpec{
+		WireName: "location",
+		Kind:     "object",
+		Fields:   TestMatrice_ResultStorage_GoogleCloudStorageFields,
+	},
+	"PackageName": ubx.FieldSpec{WireName: "package_name"},
+}
 
 var TestMatrice_TestExecutions_TestSpecification_TestSetup_FilesToPush_ObbFileFields = ubx.FieldMap{
-		"Obb": ubx.FieldSpec{
-			WireName: "obb",
-			Kind: "object",
-			Fields: TestMatrice_ResultStorage_GoogleCloudStorageFields,
-		},
-		"ObbFileName": ubx.FieldSpec{WireName: "obb_file_name"},
-	}
+	"Obb": ubx.FieldSpec{
+		WireName: "obb",
+		Kind:     "object",
+		Fields:   TestMatrice_ResultStorage_GoogleCloudStorageFields,
+	},
+	"ObbFileName": ubx.FieldSpec{WireName: "obb_file_name"},
+}
 
 var TestMatrice_TestExecutions_TestSpecification_TestSetup_FilesToPush_RegularFileFields = ubx.FieldMap{
-		"Content": ubx.FieldSpec{
-			WireName: "content",
-			Kind: "object",
-			Fields: TestMatrice_ResultStorage_GoogleCloudStorageFields,
-		},
-		"DevicePath": ubx.FieldSpec{WireName: "device_path"},
-	}
+	"Content": ubx.FieldSpec{
+		WireName: "content",
+		Kind:     "object",
+		Fields:   TestMatrice_ResultStorage_GoogleCloudStorageFields,
+	},
+	"DevicePath": ubx.FieldSpec{WireName: "device_path"},
+}
 
 var TestMatrice_TestExecutions_TestSpecification_TestSetup_FilesToPushFields = ubx.FieldMap{
-		"ObbFile": ubx.FieldSpec{
-			WireName: "obb_file",
-			Kind: "object",
-			Fields: TestMatrice_TestExecutions_TestSpecification_TestSetup_FilesToPush_ObbFileFields,
-		},
-		"RegularFile": ubx.FieldSpec{
-			WireName: "regular_file",
-			Kind: "object",
-			Fields: TestMatrice_TestExecutions_TestSpecification_TestSetup_FilesToPush_RegularFileFields,
-		},
-	}
+	"ObbFile": ubx.FieldSpec{
+		WireName: "obb_file",
+		Kind:     "object",
+		Fields:   TestMatrice_TestExecutions_TestSpecification_TestSetup_FilesToPush_ObbFileFields,
+	},
+	"RegularFile": ubx.FieldSpec{
+		WireName: "regular_file",
+		Kind:     "object",
+		Fields:   TestMatrice_TestExecutions_TestSpecification_TestSetup_FilesToPush_RegularFileFields,
+	},
+}
 
 var TestMatrice_TestExecutions_TestSpecification_TestSetup_SystraceFields = ubx.FieldMap{
-		"DurationSeconds": ubx.FieldSpec{WireName: "duration_seconds"},
-	}
+	"DurationSeconds": ubx.FieldSpec{WireName: "duration_seconds"},
+}
 
 var TestMatrice_TestExecutions_TestSpecification_TestSetupFields = ubx.FieldMap{
-		"Account": ubx.FieldSpec{
-			WireName: "account",
-			Kind: "object",
-			Fields: TestMatrice_TestExecutions_TestSpecification_TestSetup_AccountFields,
-		},
-		"AdditionalApks": ubx.FieldSpec{
-			WireName: "additional_apks",
-			Kind: "list",
-			Fields: TestMatrice_TestExecutions_TestSpecification_TestSetup_AdditionalApksFields,
-		},
-		"DirectoriesToPull": ubx.FieldSpec{WireName: "directories_to_pull"},
-		"DontAutograntPermissions": ubx.FieldSpec{WireName: "dont_autogrant_permissions"},
-		"EnvironmentVariables": ubx.FieldSpec{
-			WireName: "environment_variables",
-			Kind: "list",
-			Fields: TestMatrice_ClientInfo_ClientInfoDetailsFields,
-		},
-		"FilesToPush": ubx.FieldSpec{
-			WireName: "files_to_push",
-			Kind: "list",
-			Fields: TestMatrice_TestExecutions_TestSpecification_TestSetup_FilesToPushFields,
-		},
-		"InitialSetupApks": ubx.FieldSpec{
-			WireName: "initial_setup_apks",
-			Kind: "list",
-			Fields: TestMatrice_TestExecutions_TestSpecification_TestSetup_AdditionalApksFields,
-		},
-		"NetworkProfile": ubx.FieldSpec{WireName: "network_profile"},
-		"Systrace": ubx.FieldSpec{
-			WireName: "systrace",
-			Kind: "object",
-			Fields: TestMatrice_TestExecutions_TestSpecification_TestSetup_SystraceFields,
-		},
-	}
+	"Account": ubx.FieldSpec{
+		WireName: "account",
+		Kind:     "object",
+		Fields:   TestMatrice_TestExecutions_TestSpecification_TestSetup_AccountFields,
+	},
+	"AdditionalApks": ubx.FieldSpec{
+		WireName: "additional_apks",
+		Kind:     "list",
+		Fields:   TestMatrice_TestExecutions_TestSpecification_TestSetup_AdditionalApksFields,
+	},
+	"DirectoriesToPull":        ubx.FieldSpec{WireName: "directories_to_pull"},
+	"DontAutograntPermissions": ubx.FieldSpec{WireName: "dont_autogrant_permissions"},
+	"EnvironmentVariables": ubx.FieldSpec{
+		WireName: "environment_variables",
+		Kind:     "list",
+		Fields:   TestMatrice_ClientInfo_ClientInfoDetailsFields,
+	},
+	"FilesToPush": ubx.FieldSpec{
+		WireName: "files_to_push",
+		Kind:     "list",
+		Fields:   TestMatrice_TestExecutions_TestSpecification_TestSetup_FilesToPushFields,
+	},
+	"InitialSetupApks": ubx.FieldSpec{
+		WireName: "initial_setup_apks",
+		Kind:     "list",
+		Fields:   TestMatrice_TestExecutions_TestSpecification_TestSetup_AdditionalApksFields,
+	},
+	"NetworkProfile": ubx.FieldSpec{WireName: "network_profile"},
+	"Systrace": ubx.FieldSpec{
+		WireName: "systrace",
+		Kind:     "object",
+		Fields:   TestMatrice_TestExecutions_TestSpecification_TestSetup_SystraceFields,
+	},
+}
 
 var TestMatrice_TestExecutions_TestSpecificationFields = ubx.FieldMap{
-		"AndroidInstrumentationTest": ubx.FieldSpec{
-			WireName: "android_instrumentation_test",
-			Kind: "object",
-			Fields: TestMatrice_TestExecutions_TestSpecification_AndroidInstrumentationTestFields,
-		},
-		"AndroidRoboTest": ubx.FieldSpec{
-			WireName: "android_robo_test",
-			Kind: "object",
-			Fields: TestMatrice_TestExecutions_TestSpecification_AndroidRoboTestFields,
-		},
-		"AndroidTestLoop": ubx.FieldSpec{
-			WireName: "android_test_loop",
-			Kind: "object",
-			Fields: TestMatrice_TestExecutions_TestSpecification_AndroidTestLoopFields,
-		},
-		"DisablePerformanceMetrics": ubx.FieldSpec{WireName: "disable_performance_metrics"},
-		"DisableVideoRecording": ubx.FieldSpec{WireName: "disable_video_recording"},
-		"IosRoboTest": ubx.FieldSpec{
-			WireName: "ios_robo_test",
-			Kind: "object",
-			Fields: TestMatrice_TestExecutions_TestSpecification_IosRoboTestFields,
-		},
-		"IosTestLoop": ubx.FieldSpec{
-			WireName: "ios_test_loop",
-			Kind: "object",
-			Fields: TestMatrice_TestExecutions_TestSpecification_IosTestLoopFields,
-		},
-		"IosTestSetup": ubx.FieldSpec{
-			WireName: "ios_test_setup",
-			Kind: "object",
-			Fields: TestMatrice_TestExecutions_TestSpecification_IosTestSetupFields,
-		},
-		"IosXcTest": ubx.FieldSpec{
-			WireName: "ios_xc_test",
-			Kind: "object",
-			Fields: TestMatrice_TestExecutions_TestSpecification_IosXcTestFields,
-		},
-		"TestSetup": ubx.FieldSpec{
-			WireName: "test_setup",
-			Kind: "object",
-			Fields: TestMatrice_TestExecutions_TestSpecification_TestSetupFields,
-		},
-		"TestTimeout": ubx.FieldSpec{WireName: "test_timeout"},
-	}
+	"AndroidInstrumentationTest": ubx.FieldSpec{
+		WireName: "android_instrumentation_test",
+		Kind:     "object",
+		Fields:   TestMatrice_TestExecutions_TestSpecification_AndroidInstrumentationTestFields,
+	},
+	"AndroidRoboTest": ubx.FieldSpec{
+		WireName: "android_robo_test",
+		Kind:     "object",
+		Fields:   TestMatrice_TestExecutions_TestSpecification_AndroidRoboTestFields,
+	},
+	"AndroidTestLoop": ubx.FieldSpec{
+		WireName: "android_test_loop",
+		Kind:     "object",
+		Fields:   TestMatrice_TestExecutions_TestSpecification_AndroidTestLoopFields,
+	},
+	"DisablePerformanceMetrics": ubx.FieldSpec{WireName: "disable_performance_metrics"},
+	"DisableVideoRecording":     ubx.FieldSpec{WireName: "disable_video_recording"},
+	"IosRoboTest": ubx.FieldSpec{
+		WireName: "ios_robo_test",
+		Kind:     "object",
+		Fields:   TestMatrice_TestExecutions_TestSpecification_IosRoboTestFields,
+	},
+	"IosTestLoop": ubx.FieldSpec{
+		WireName: "ios_test_loop",
+		Kind:     "object",
+		Fields:   TestMatrice_TestExecutions_TestSpecification_IosTestLoopFields,
+	},
+	"IosTestSetup": ubx.FieldSpec{
+		WireName: "ios_test_setup",
+		Kind:     "object",
+		Fields:   TestMatrice_TestExecutions_TestSpecification_IosTestSetupFields,
+	},
+	"IosXcTest": ubx.FieldSpec{
+		WireName: "ios_xc_test",
+		Kind:     "object",
+		Fields:   TestMatrice_TestExecutions_TestSpecification_IosXcTestFields,
+	},
+	"TestSetup": ubx.FieldSpec{
+		WireName: "test_setup",
+		Kind:     "object",
+		Fields:   TestMatrice_TestExecutions_TestSpecification_TestSetupFields,
+	},
+	"TestTimeout": ubx.FieldSpec{WireName: "test_timeout"},
+}
 
 var TestMatrice_TestExecutions_ToolResultsStepFields = ubx.FieldMap{
-		"ExecutionId": ubx.FieldSpec{WireName: "execution_id"},
-		"HistoryId": ubx.FieldSpec{WireName: "history_id"},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-		"StepId": ubx.FieldSpec{WireName: "step_id"},
-	}
+	"ExecutionId": ubx.FieldSpec{WireName: "execution_id"},
+	"HistoryId":   ubx.FieldSpec{WireName: "history_id"},
+	"ProjectId":   ubx.FieldSpec{WireName: "project_id"},
+	"StepId":      ubx.FieldSpec{WireName: "step_id"},
+}
 
 var TestMatrice_TestExecutionsFields = ubx.FieldMap{
-		"Environment": ubx.FieldSpec{
-			WireName: "environment",
-			Kind: "object",
-			Fields: TestMatrice_TestExecutions_EnvironmentFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"MatrixId": ubx.FieldSpec{WireName: "matrix_id"},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-		"Shard": ubx.FieldSpec{
-			WireName: "shard",
-			Kind: "object",
-			Fields: TestMatrice_TestExecutions_ShardFields,
-		},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"TestDetails": ubx.FieldSpec{
-			WireName: "test_details",
-			Kind: "object",
-			Fields: TestMatrice_TestExecutions_TestDetailsFields,
-		},
-		"TestSpecification": ubx.FieldSpec{
-			WireName: "test_specification",
-			Kind: "object",
-			Fields: TestMatrice_TestExecutions_TestSpecificationFields,
-		},
-		"Timestamp": ubx.FieldSpec{WireName: "timestamp"},
-		"ToolResultsStep": ubx.FieldSpec{
-			WireName: "tool_results_step",
-			Kind: "object",
-			Fields: TestMatrice_TestExecutions_ToolResultsStepFields,
-		},
-	}
+	"Environment": ubx.FieldSpec{
+		WireName: "environment",
+		Kind:     "object",
+		Fields:   TestMatrice_TestExecutions_EnvironmentFields,
+	},
+	"Id":        ubx.FieldSpec{WireName: "id"},
+	"MatrixId":  ubx.FieldSpec{WireName: "matrix_id"},
+	"ProjectId": ubx.FieldSpec{WireName: "project_id"},
+	"Shard": ubx.FieldSpec{
+		WireName: "shard",
+		Kind:     "object",
+		Fields:   TestMatrice_TestExecutions_ShardFields,
+	},
+	"State": ubx.FieldSpec{WireName: "state"},
+	"TestDetails": ubx.FieldSpec{
+		WireName: "test_details",
+		Kind:     "object",
+		Fields:   TestMatrice_TestExecutions_TestDetailsFields,
+	},
+	"TestSpecification": ubx.FieldSpec{
+		WireName: "test_specification",
+		Kind:     "object",
+		Fields:   TestMatrice_TestExecutions_TestSpecificationFields,
+	},
+	"Timestamp": ubx.FieldSpec{WireName: "timestamp"},
+	"ToolResultsStep": ubx.FieldSpec{
+		WireName: "tool_results_step",
+		Kind:     "object",
+		Fields:   TestMatrice_TestExecutions_ToolResultsStepFields,
+	},
+}
 
 type TestMatriceConfig struct {
 	// Information about the client which invoked the test.
 	ClientInfo any
 	// The matrix of environments in which the test is to be executed.
 	EnvironmentMatrix any
-	// Output only. Details about why a matrix was deemed invalid. If multiple checks can be safely performed, they will be reported but no assumptions should be made about the length of this list.
-	ExtendedInvalidMatrixDetails any
 	// If true, only a single attempt at most will be made to run each execution/shard in the matrix. Flaky test attempts are not affected. Normally, 2 or more attempts are made if a potential infrastructure issue is detected. This feature is for latency sensitive workloads. The incidence of execution failures may be significantly greater for fail-fast matrices and support is more limited because of that expectation.
 	FailFast any
 	// The number of times a TestExecution should be re-attempted if one or more of its test cases fail for any reason. The maximum number of reruns allowed is 10. Default is 0, which implies no reruns.
@@ -905,40 +898,35 @@ var TestMatrice = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ClientInfo": ubx.FieldSpec{
 			WireName: "client_info",
-			Kind: "object",
-			Fields: TestMatrice_ClientInfoFields,
+			Kind:     "object",
+			Fields:   TestMatrice_ClientInfoFields,
 		},
 		"EnvironmentMatrix": ubx.FieldSpec{
 			WireName: "environment_matrix",
-			Kind: "object",
-			Fields: TestMatrice_EnvironmentMatrixFields,
+			Kind:     "object",
+			Fields:   TestMatrice_EnvironmentMatrixFields,
 		},
-		"ExtendedInvalidMatrixDetails": ubx.FieldSpec{
-			WireName: "extended_invalid_matrix_details",
-			Kind: "list",
-			Fields: TestMatrice_ExtendedInvalidMatrixDetailsFields,
-		},
-		"FailFast": ubx.FieldSpec{WireName: "fail_fast"},
-		"FlakyTestAttempts": ubx.FieldSpec{WireName: "flaky_test_attempts"},
+		"FailFast":             ubx.FieldSpec{WireName: "fail_fast"},
+		"FlakyTestAttempts":    ubx.FieldSpec{WireName: "flaky_test_attempts"},
 		"InvalidMatrixDetails": ubx.FieldSpec{WireName: "invalid_matrix_details"},
-		"OutcomeSummary": ubx.FieldSpec{WireName: "outcome_summary"},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
+		"OutcomeSummary":       ubx.FieldSpec{WireName: "outcome_summary"},
+		"ProjectId":            ubx.FieldSpec{WireName: "project_id"},
 		"ResultStorage": ubx.FieldSpec{
 			WireName: "result_storage",
-			Kind: "object",
-			Fields: TestMatrice_ResultStorageFields,
+			Kind:     "object",
+			Fields:   TestMatrice_ResultStorageFields,
 		},
 		"State": ubx.FieldSpec{WireName: "state"},
 		"TestExecutions": ubx.FieldSpec{
 			WireName: "test_executions",
-			Kind: "list",
-			Fields: TestMatrice_TestExecutionsFields,
+			Kind:     "list",
+			Fields:   TestMatrice_TestExecutionsFields,
 		},
 		"TestMatrixId": ubx.FieldSpec{WireName: "test_matrix_id"},
 		"TestSpecification": ubx.FieldSpec{
 			WireName: "test_specification",
-			Kind: "object",
-			Fields: TestMatrice_TestExecutions_TestSpecificationFields,
+			Kind:     "object",
+			Fields:   TestMatrice_TestExecutions_TestSpecificationFields,
 		},
 		"Timestamp": ubx.FieldSpec{WireName: "timestamp"},
 	},

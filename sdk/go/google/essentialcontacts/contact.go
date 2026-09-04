@@ -8,14 +8,8 @@ type ContactConfig struct {
 	Email any
 	// Required. The preferred language for notifications, as a ISO 639-1 language code. See [Supported languages](https://cloud.google.com/resource-manager/docs/managing-notification-contacts#supported-languages) for a list of supported languages.
 	LanguageTag any
-	// Output only. The identifier for the contact. Format: {resource_type}/{resource_id}/contacts/{contact_id}
-	Name any
 	// Required. The categories of notifications that the contact will receive communications for.
 	NotificationCategorySubscriptions any
-	// Output only. The last time the validation_state was updated, either manually or automatically. A contact is considered stale if its validation state was updated more than 1 year ago.
-	ValidateTime any
-	// Output only. The validity of the contact. A contact is considered valid if it is the correct recipient for notifications for a particular resource.
-	ValidationState any
 }
 
 type ContactAttrs struct {
@@ -36,11 +30,8 @@ type ContactAttrs struct {
 var Contact = ubx.ResourceBinding{
 	WireType: "google_essentialcontacts_contact",
 	Fields: ubx.FieldMap{
-		"Email": ubx.FieldSpec{WireName: "email"},
-		"LanguageTag": ubx.FieldSpec{WireName: "language_tag"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Email":                             ubx.FieldSpec{WireName: "email"},
+		"LanguageTag":                       ubx.FieldSpec{WireName: "language_tag"},
 		"NotificationCategorySubscriptions": ubx.FieldSpec{WireName: "notification_category_subscriptions"},
-		"ValidateTime": ubx.FieldSpec{WireName: "validate_time"},
-		"ValidationState": ubx.FieldSpec{WireName: "validation_state"},
 	},
 }

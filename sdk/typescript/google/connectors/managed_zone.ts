@@ -2,22 +2,16 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ManagedZoneConfig {
-  /** Output only. Created time. */
-  createTime?: string | Computed<string>;
   /** Optional. Description of the resource. */
   description?: string | Computed<string>;
   /** Required. DNS Name of the resource */
   dns?: string | Computed<string>;
   /** Optional. Resource labels to represent user-provided metadata. Refer to cloud documentation on labels for more details. https://cloud.google.com/compute/docs/labeling-resources */
   labels?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. Resource name of the Managed Zone. Format: projects/{project}/locations/global/managedZones/{managed_zone} */
-  name?: string | Computed<string>;
   /** Required. The name of the Target Project */
   targetProject?: string | Computed<string>;
   /** Required. The name of the Target Project VPC Network */
   targetVpc?: string | Computed<string>;
-  /** Output only. Updated time. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface ManagedZoneAttrs {
@@ -42,13 +36,10 @@ export interface ManagedZoneAttrs {
 export const ManagedZone: ResourceBinding<ManagedZoneConfig, ManagedZoneAttrs> = {
   wireType: "google_connectors_managed_zone",
   fields: {
-    createTime: "create_time",
     description: "description",
     dns: "dns",
     labels: "labels",
-    name: "name",
     targetProject: "target_project",
     targetVpc: "target_vpc",
-    updateTime: "update_time",
   },
 };

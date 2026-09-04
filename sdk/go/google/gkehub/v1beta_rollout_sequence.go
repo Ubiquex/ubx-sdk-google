@@ -31,80 +31,60 @@ type V1betaRolloutSequence_OperationalState struct {
 
 type V1betaRolloutSequence_Stages struct {
 	ClusterSelector any
-	FleetProjects any
-	SoakDuration any
+	FleetProjects   any
+	SoakDuration    any
 }
 
 var V1betaRolloutSequence_AutoUpgradeConfig_RolloutCreationScopeFields = ubx.FieldMap{
-		"UpgradeTypes": ubx.FieldSpec{WireName: "upgrade_types"},
-	}
+	"UpgradeTypes": ubx.FieldSpec{WireName: "upgrade_types"},
+}
 
 var V1betaRolloutSequence_AutoUpgradeConfigFields = ubx.FieldMap{
-		"EnforcedRollouts": ubx.FieldSpec{WireName: "enforced_rollouts"},
-		"RolloutCreationScope": ubx.FieldSpec{
-			WireName: "rollout_creation_scope",
-			Kind: "object",
-			Fields: V1betaRolloutSequence_AutoUpgradeConfig_RolloutCreationScopeFields,
-		},
-	}
+	"EnforcedRollouts": ubx.FieldSpec{WireName: "enforced_rollouts"},
+	"RolloutCreationScope": ubx.FieldSpec{
+		WireName: "rollout_creation_scope",
+		Kind:     "object",
+		Fields:   V1betaRolloutSequence_AutoUpgradeConfig_RolloutCreationScopeFields,
+	},
+}
 
 var V1betaRolloutSequence_IgnoredClustersSelectorFields = ubx.FieldMap{
-		"LabelSelector": ubx.FieldSpec{WireName: "label_selector"},
-	}
+	"LabelSelector": ubx.FieldSpec{WireName: "label_selector"},
+}
 
 var V1betaRolloutSequence_OperationalStateFields = ubx.FieldMap{
-		"Reasons": ubx.FieldSpec{WireName: "reasons"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"StateChangeTime": ubx.FieldSpec{WireName: "state_change_time"},
-	}
+	"Reasons":         ubx.FieldSpec{WireName: "reasons"},
+	"State":           ubx.FieldSpec{WireName: "state"},
+	"StateChangeTime": ubx.FieldSpec{WireName: "state_change_time"},
+}
 
 var V1betaRolloutSequence_StagesFields = ubx.FieldMap{
-		"ClusterSelector": ubx.FieldSpec{
-			WireName: "cluster_selector",
-			Kind: "object",
-			Fields: V1betaRolloutSequence_IgnoredClustersSelectorFields,
-		},
-		"FleetProjects": ubx.FieldSpec{WireName: "fleet_projects"},
-		"SoakDuration": ubx.FieldSpec{WireName: "soak_duration"},
-	}
+	"ClusterSelector": ubx.FieldSpec{
+		WireName: "cluster_selector",
+		Kind:     "object",
+		Fields:   V1betaRolloutSequence_IgnoredClustersSelectorFields,
+	},
+	"FleetProjects": ubx.FieldSpec{WireName: "fleet_projects"},
+	"SoakDuration":  ubx.FieldSpec{WireName: "soak_duration"},
+}
 
 type V1betaRolloutSequenceConfig struct {
 	// Configuration for automatic upgrades.
 	AutoUpgradeConfig any
-	// Output only. The computed release channel used for the Rollout Sequence.
-	ComputedReleaseChannel any
-	// Output only. The timestamp at which the Rollout Sequence was created.
-	CreateTime any
-	// Output only. The timestamp at the Rollout Sequence was deleted.
-	DeleteTime any
 	// Optional. Human readable display name of the Rollout Sequence.
 	DisplayName any
 	// Configuration for automatic upgrades.
 	EffectiveAutoUpgradeConfig any
-	// Output only. etag of the Rollout Sequence Ex. abc1234
-	Etag any
 	// Selector for clusters.
 	IgnoredClustersSelector any
 	// Optional. Labels for this Rollout Sequence.
 	Labels any
-	// Output only. The last qualified control plane version.
-	LastQualifiedControlPlaneVersion any
-	// Output only. The last qualified node version.
-	LastQualifiedNodeVersion any
 	// Identifier. Name of the rollout sequence in the format of: projects/{PROJECT_ID}/locations/global/rolloutSequences/{NAME}
 	Name any
 	// Operational state of the Rollout Sequence.
 	OperationalState any
 	// Required. Ordered list of stages that constitutes this Rollout.
 	Stages any
-	// Output only. The target control plane version of the Rollout Sequence.
-	TargetControlPlaneVersion any
-	// Output only. The target node version of the Rollout Sequence.
-	TargetNodeVersion any
-	// Output only. Google-generated UUID for this resource. This is unique across all Rollout Sequence resources. If a Rollout Sequence resource is deleted and another resource with the same name is created, it gets a different uid.
-	Uid any
-	// Output only. The timestamp at which the Rollout Sequence was last updated.
-	UpdateTime any
 }
 
 type V1betaRolloutSequenceAttrs struct {
@@ -151,41 +131,31 @@ var V1betaRolloutSequence = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AutoUpgradeConfig": ubx.FieldSpec{
 			WireName: "auto_upgrade_config",
-			Kind: "object",
-			Fields: V1betaRolloutSequence_AutoUpgradeConfigFields,
+			Kind:     "object",
+			Fields:   V1betaRolloutSequence_AutoUpgradeConfigFields,
 		},
-		"ComputedReleaseChannel": ubx.FieldSpec{WireName: "computed_release_channel"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DeleteTime": ubx.FieldSpec{WireName: "delete_time"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"EffectiveAutoUpgradeConfig": ubx.FieldSpec{
 			WireName: "effective_auto_upgrade_config",
-			Kind: "object",
-			Fields: V1betaRolloutSequence_AutoUpgradeConfigFields,
+			Kind:     "object",
+			Fields:   V1betaRolloutSequence_AutoUpgradeConfigFields,
 		},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
 		"IgnoredClustersSelector": ubx.FieldSpec{
 			WireName: "ignored_clusters_selector",
-			Kind: "object",
-			Fields: V1betaRolloutSequence_IgnoredClustersSelectorFields,
+			Kind:     "object",
+			Fields:   V1betaRolloutSequence_IgnoredClustersSelectorFields,
 		},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"LastQualifiedControlPlaneVersion": ubx.FieldSpec{WireName: "last_qualified_control_plane_version"},
-		"LastQualifiedNodeVersion": ubx.FieldSpec{WireName: "last_qualified_node_version"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":   ubx.FieldSpec{WireName: "name"},
 		"OperationalState": ubx.FieldSpec{
 			WireName: "operational_state",
-			Kind: "object",
-			Fields: V1betaRolloutSequence_OperationalStateFields,
+			Kind:     "object",
+			Fields:   V1betaRolloutSequence_OperationalStateFields,
 		},
 		"Stages": ubx.FieldSpec{
 			WireName: "stages",
-			Kind: "list",
-			Fields: V1betaRolloutSequence_StagesFields,
+			Kind:     "list",
+			Fields:   V1betaRolloutSequence_StagesFields,
 		},
-		"TargetControlPlaneVersion": ubx.FieldSpec{WireName: "target_control_plane_version"},
-		"TargetNodeVersion": ubx.FieldSpec{WireName: "target_node_version"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

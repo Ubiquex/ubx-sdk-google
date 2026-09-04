@@ -21,28 +21,14 @@ export interface V1betaRolloutConfig {
   annotations?: Record<string, string> | Computed<Record<string, string>>;
   /** Required. Immutable. The name of a build that already exists. It doesn't have to be built; a rollout will wait for a build to be ready before updating traffic. */
   build?: string | Computed<string>;
-  /** Output only. Time at which the rollout was created. */
-  createTime?: string | Computed<string>;
-  /** Output only. Time at which the rollout was deleted. */
-  deleteTime?: string | Computed<string>;
   /** Optional. Human-readable name. 63 character limit. */
   displayName?: string | Computed<string>;
   /** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
   error?: V1betaRollout_Error | Computed<V1betaRollout_Error>;
-  /** Output only. Server-computed checksum based on other values; may be sent on update or delete to ensure operation is done on expected resource. */
-  etag?: string | Computed<string>;
   /** Optional. Unstructured key value map that can be used to organize and categorize objects. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Identifier. The resource name of the rollout. Format: `projects/{project}/locations/{locationId}/backends/{backendId}/rollouts/{rolloutId}`. */
   name?: string | Computed<string>;
-  /** Output only. A field that, if true, indicates that the Rollout currently has an LRO. */
-  reconciling?: boolean | Computed<boolean>;
-  /** Output only. The state of the rollout. */
-  state?: string | Computed<string>;
-  /** Output only. System-assigned, unique identifier. */
-  uid?: string | Computed<string>;
-  /** Output only. Time at which the rollout was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1betaRolloutAttrs {
@@ -79,20 +65,13 @@ export const V1betaRollout: ResourceBinding<V1betaRolloutConfig, V1betaRolloutAt
   fields: {
     annotations: "annotations",
     build: "build",
-    createTime: "create_time",
-    deleteTime: "delete_time",
     displayName: "display_name",
     error: {
       wireName: "error",
       kind: "object",
       fields: V1betaRollout_ErrorFields,
     },
-    etag: "etag",
     labels: "labels",
     name: "name",
-    reconciling: "reconciling",
-    state: "state",
-    uid: "uid",
-    updateTime: "update_time",
   },
 };

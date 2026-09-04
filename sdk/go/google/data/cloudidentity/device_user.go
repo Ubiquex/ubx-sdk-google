@@ -5,7 +5,6 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type DeviceUserConfig struct {
 	Customer any
-	Name any
 }
 
 type DeviceUserAttrs struct {
@@ -13,7 +12,7 @@ type DeviceUserAttrs struct {
 	CompromisedState any
 	// When the user first signed in to the device
 	CreateTime any
-	Customer any
+	Customer   any
 	// Output only. Most recent time when user registered with this service.
 	FirstSyncTime any
 	// Output only. Default locale used on device, in IETF BCP-47 format.
@@ -22,7 +21,7 @@ type DeviceUserAttrs struct {
 	LastSyncTime any
 	// Output only. Management state of the user on the device.
 	ManagementState any
-	Name any
+	Name            any
 	// Password state of the DeviceUser object
 	PasswordState any
 	// Output only. User agent on the device for this specific user
@@ -35,6 +34,5 @@ var DeviceUser = ubx.DataSourceBinding{
 	WireType: "google_cloudidentity_device_user",
 	Fields: ubx.FieldMap{
 		"Customer": ubx.FieldSpec{WireName: "customer"},
-		"Name": ubx.FieldSpec{WireName: "name"},
 	},
 }

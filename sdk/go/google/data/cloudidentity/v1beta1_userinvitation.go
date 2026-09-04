@@ -10,7 +10,7 @@ type V1beta1UserinvitationConfig struct {
 type V1beta1UserinvitationAttrs struct {
 	// Number of invitation emails sent to the user.
 	MailsSentCount any
-	Name any
+	Name           any
 	// State of the `UserInvitation`.
 	State any
 	// Time when the `UserInvitation` was last updated.

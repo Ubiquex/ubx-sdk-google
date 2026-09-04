@@ -4,12 +4,8 @@ package apigee
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type NatAddressConfig struct {
-	// Output only. The static IPV4 address.
-	IpAddress any
 	// Required. Resource ID of the NAT address.
 	Name any
-	// Output only. State of the nat address.
-	State any
 }
 
 type NatAddressAttrs struct {
@@ -24,8 +20,6 @@ type NatAddressAttrs struct {
 var NatAddress = ubx.ResourceBinding{
 	WireType: "google_apigee_nat_address",
 	Fields: ubx.FieldMap{
-		"IpAddress": ubx.FieldSpec{WireName: "ip_address"},
 		"Name": ubx.FieldSpec{WireName: "name"},
-		"State": ubx.FieldSpec{WireName: "state"},
 	},
 }

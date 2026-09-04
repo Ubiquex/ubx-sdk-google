@@ -190,10 +190,6 @@ const V1alpha1ImportJob_InlinePayloadFields: FieldMap = {
 export interface V1alpha1ImportJobConfig {
   /** Required. Reference to a source. */
   assetSource?: string | Computed<string>;
-  /** Output only. The timestamp when the import job was completed. */
-  completeTime?: string | Computed<string>;
-  /** Output only. The timestamp when the import job was created. */
-  createTime?: string | Computed<string>;
   /** User-friendly display name. Maximum length is 63 characters. */
   displayName?: string | Computed<string>;
   /** A resource that reports result of the import job execution. */
@@ -204,12 +200,6 @@ export interface V1alpha1ImportJobConfig {
   inlinePayload?: V1alpha1ImportJob_InlinePayload | Computed<V1alpha1ImportJob_InlinePayload>;
   /** Labels as key value pairs. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. The full name of the import job. */
-  name?: string | Computed<string>;
-  /** Output only. The state of the import job. */
-  state?: string | Computed<string>;
-  /** Output only. The timestamp when the import job was last updated. */
-  updateTime?: string | Computed<string>;
   /** A resource that aggregates errors across import job files. */
   validationReport?: V1alpha1ImportJob_ExecutionReport_ExecutionErrors | Computed<V1alpha1ImportJob_ExecutionReport_ExecutionErrors>;
 }
@@ -245,8 +235,6 @@ export const V1alpha1ImportJob: ResourceBinding<V1alpha1ImportJobConfig, V1alpha
   wireType: "google_migrationcenter_v1alpha1_import_job",
   fields: {
     assetSource: "asset_source",
-    completeTime: "complete_time",
-    createTime: "create_time",
     displayName: "display_name",
     executionReport: {
       wireName: "execution_report",
@@ -264,9 +252,6 @@ export const V1alpha1ImportJob: ResourceBinding<V1alpha1ImportJobConfig, V1alpha
       fields: V1alpha1ImportJob_InlinePayloadFields,
     },
     labels: "labels",
-    name: "name",
-    state: "state",
-    updateTime: "update_time",
     validationReport: {
       wireName: "validation_report",
       kind: "object",

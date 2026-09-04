@@ -77,12 +77,12 @@ type Job_TrainingInput_EvaluatorConfig struct {
 
 type Job_TrainingInput_Hyperparameters_Params struct {
 	CategoricalValues any
-	DiscreteValues any
-	MaxValue any
-	MinValue any
-	ParameterName any
-	ScaleType any
-	Type any
+	DiscreteValues    any
+	MaxValue          any
+	MinValue          any
+	ParameterName     any
+	ScaleType         any
+	Type              any
 }
 
 type Job_TrainingInput_Hyperparameters struct {
@@ -183,20 +183,20 @@ type Job_TrainingOutput_BuiltInAlgorithmOutput struct {
 
 type Job_TrainingOutput_Trials_AllMetrics struct {
 	ObjectiveValue any
-	TrainingStep any
+	TrainingStep   any
 }
 
 type Job_TrainingOutput_Trials struct {
-	AllMetrics any
+	AllMetrics             any
 	BuiltInAlgorithmOutput any
-	EndTime any
-	FinalMetric any
-	Hyperparameters any
-	IsTrialStoppedEarly any
-	StartTime any
-	State any
-	TrialId any
-	WebAccessUris any
+	EndTime                any
+	FinalMetric            any
+	Hyperparameters        any
+	IsTrialStoppedEarly    any
+	StartTime              any
+	State                  any
+	TrialId                any
+	WebAccessUris          any
 }
 
 type Job_TrainingOutput struct {
@@ -219,202 +219,202 @@ type Job_TrainingOutput struct {
 }
 
 var Job_PredictionInputFields = ubx.FieldMap{
-		"BatchSize": ubx.FieldSpec{WireName: "batch_size"},
-		"DataFormat": ubx.FieldSpec{WireName: "data_format"},
-		"InputPaths": ubx.FieldSpec{WireName: "input_paths"},
-		"MaxWorkerCount": ubx.FieldSpec{WireName: "max_worker_count"},
-		"ModelName": ubx.FieldSpec{WireName: "model_name"},
-		"OutputDataFormat": ubx.FieldSpec{WireName: "output_data_format"},
-		"OutputPath": ubx.FieldSpec{WireName: "output_path"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"RuntimeVersion": ubx.FieldSpec{WireName: "runtime_version"},
-		"SignatureName": ubx.FieldSpec{WireName: "signature_name"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-		"VersionName": ubx.FieldSpec{WireName: "version_name"},
-	}
+	"BatchSize":        ubx.FieldSpec{WireName: "batch_size"},
+	"DataFormat":       ubx.FieldSpec{WireName: "data_format"},
+	"InputPaths":       ubx.FieldSpec{WireName: "input_paths"},
+	"MaxWorkerCount":   ubx.FieldSpec{WireName: "max_worker_count"},
+	"ModelName":        ubx.FieldSpec{WireName: "model_name"},
+	"OutputDataFormat": ubx.FieldSpec{WireName: "output_data_format"},
+	"OutputPath":       ubx.FieldSpec{WireName: "output_path"},
+	"Region":           ubx.FieldSpec{WireName: "region"},
+	"RuntimeVersion":   ubx.FieldSpec{WireName: "runtime_version"},
+	"SignatureName":    ubx.FieldSpec{WireName: "signature_name"},
+	"Uri":              ubx.FieldSpec{WireName: "uri"},
+	"VersionName":      ubx.FieldSpec{WireName: "version_name"},
+}
 
 var Job_PredictionOutputFields = ubx.FieldMap{
-		"ErrorCount": ubx.FieldSpec{WireName: "error_count"},
-		"NodeHours": ubx.FieldSpec{WireName: "node_hours"},
-		"OutputPath": ubx.FieldSpec{WireName: "output_path"},
-		"PredictionCount": ubx.FieldSpec{WireName: "prediction_count"},
-	}
+	"ErrorCount":      ubx.FieldSpec{WireName: "error_count"},
+	"NodeHours":       ubx.FieldSpec{WireName: "node_hours"},
+	"OutputPath":      ubx.FieldSpec{WireName: "output_path"},
+	"PredictionCount": ubx.FieldSpec{WireName: "prediction_count"},
+}
 
 var Job_TrainingInput_EncryptionConfigFields = ubx.FieldMap{
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-	}
+	"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
+}
 
 var Job_TrainingInput_EvaluatorConfig_AcceleratorConfigFields = ubx.FieldMap{
-		"Count": ubx.FieldSpec{WireName: "count"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Count": ubx.FieldSpec{WireName: "count"},
+	"Type":  ubx.FieldSpec{WireName: "type"},
+}
 
 var Job_TrainingInput_EvaluatorConfig_DiskConfigFields = ubx.FieldMap{
-		"BootDiskSizeGb": ubx.FieldSpec{WireName: "boot_disk_size_gb"},
-		"BootDiskType": ubx.FieldSpec{WireName: "boot_disk_type"},
-	}
+	"BootDiskSizeGb": ubx.FieldSpec{WireName: "boot_disk_size_gb"},
+	"BootDiskType":   ubx.FieldSpec{WireName: "boot_disk_type"},
+}
 
 var Job_TrainingInput_EvaluatorConfigFields = ubx.FieldMap{
-		"AcceleratorConfig": ubx.FieldSpec{
-			WireName: "accelerator_config",
-			Kind: "object",
-			Fields: Job_TrainingInput_EvaluatorConfig_AcceleratorConfigFields,
-		},
-		"ContainerArgs": ubx.FieldSpec{WireName: "container_args"},
-		"ContainerCommand": ubx.FieldSpec{WireName: "container_command"},
-		"DiskConfig": ubx.FieldSpec{
-			WireName: "disk_config",
-			Kind: "object",
-			Fields: Job_TrainingInput_EvaluatorConfig_DiskConfigFields,
-		},
-		"ImageUri": ubx.FieldSpec{WireName: "image_uri"},
-		"TpuTfVersion": ubx.FieldSpec{WireName: "tpu_tf_version"},
-	}
+	"AcceleratorConfig": ubx.FieldSpec{
+		WireName: "accelerator_config",
+		Kind:     "object",
+		Fields:   Job_TrainingInput_EvaluatorConfig_AcceleratorConfigFields,
+	},
+	"ContainerArgs":    ubx.FieldSpec{WireName: "container_args"},
+	"ContainerCommand": ubx.FieldSpec{WireName: "container_command"},
+	"DiskConfig": ubx.FieldSpec{
+		WireName: "disk_config",
+		Kind:     "object",
+		Fields:   Job_TrainingInput_EvaluatorConfig_DiskConfigFields,
+	},
+	"ImageUri":     ubx.FieldSpec{WireName: "image_uri"},
+	"TpuTfVersion": ubx.FieldSpec{WireName: "tpu_tf_version"},
+}
 
 var Job_TrainingInput_Hyperparameters_ParamsFields = ubx.FieldMap{
-		"CategoricalValues": ubx.FieldSpec{WireName: "categorical_values"},
-		"DiscreteValues": ubx.FieldSpec{WireName: "discrete_values"},
-		"MaxValue": ubx.FieldSpec{WireName: "max_value"},
-		"MinValue": ubx.FieldSpec{WireName: "min_value"},
-		"ParameterName": ubx.FieldSpec{WireName: "parameter_name"},
-		"ScaleType": ubx.FieldSpec{WireName: "scale_type"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"CategoricalValues": ubx.FieldSpec{WireName: "categorical_values"},
+	"DiscreteValues":    ubx.FieldSpec{WireName: "discrete_values"},
+	"MaxValue":          ubx.FieldSpec{WireName: "max_value"},
+	"MinValue":          ubx.FieldSpec{WireName: "min_value"},
+	"ParameterName":     ubx.FieldSpec{WireName: "parameter_name"},
+	"ScaleType":         ubx.FieldSpec{WireName: "scale_type"},
+	"Type":              ubx.FieldSpec{WireName: "type"},
+}
 
 var Job_TrainingInput_HyperparametersFields = ubx.FieldMap{
-		"Algorithm": ubx.FieldSpec{WireName: "algorithm"},
-		"EnableTrialEarlyStopping": ubx.FieldSpec{WireName: "enable_trial_early_stopping"},
-		"Goal": ubx.FieldSpec{WireName: "goal"},
-		"HyperparameterMetricTag": ubx.FieldSpec{WireName: "hyperparameter_metric_tag"},
-		"MaxFailedTrials": ubx.FieldSpec{WireName: "max_failed_trials"},
-		"MaxParallelTrials": ubx.FieldSpec{WireName: "max_parallel_trials"},
-		"MaxTrials": ubx.FieldSpec{WireName: "max_trials"},
-		"Params": ubx.FieldSpec{
-			WireName: "params",
-			Kind: "list",
-			Fields: Job_TrainingInput_Hyperparameters_ParamsFields,
-		},
-		"ResumePreviousJobId": ubx.FieldSpec{WireName: "resume_previous_job_id"},
-	}
+	"Algorithm":                ubx.FieldSpec{WireName: "algorithm"},
+	"EnableTrialEarlyStopping": ubx.FieldSpec{WireName: "enable_trial_early_stopping"},
+	"Goal":                     ubx.FieldSpec{WireName: "goal"},
+	"HyperparameterMetricTag":  ubx.FieldSpec{WireName: "hyperparameter_metric_tag"},
+	"MaxFailedTrials":          ubx.FieldSpec{WireName: "max_failed_trials"},
+	"MaxParallelTrials":        ubx.FieldSpec{WireName: "max_parallel_trials"},
+	"MaxTrials":                ubx.FieldSpec{WireName: "max_trials"},
+	"Params": ubx.FieldSpec{
+		WireName: "params",
+		Kind:     "list",
+		Fields:   Job_TrainingInput_Hyperparameters_ParamsFields,
+	},
+	"ResumePreviousJobId": ubx.FieldSpec{WireName: "resume_previous_job_id"},
+}
 
 var Job_TrainingInput_SchedulingFields = ubx.FieldMap{
-		"MaxRunningTime": ubx.FieldSpec{WireName: "max_running_time"},
-		"MaxWaitTime": ubx.FieldSpec{WireName: "max_wait_time"},
-		"Priority": ubx.FieldSpec{WireName: "priority"},
-	}
+	"MaxRunningTime": ubx.FieldSpec{WireName: "max_running_time"},
+	"MaxWaitTime":    ubx.FieldSpec{WireName: "max_wait_time"},
+	"Priority":       ubx.FieldSpec{WireName: "priority"},
+}
 
 var Job_TrainingInputFields = ubx.FieldMap{
-		"Args": ubx.FieldSpec{WireName: "args"},
-		"EnableWebAccess": ubx.FieldSpec{WireName: "enable_web_access"},
-		"EncryptionConfig": ubx.FieldSpec{
-			WireName: "encryption_config",
-			Kind: "object",
-			Fields: Job_TrainingInput_EncryptionConfigFields,
-		},
-		"EvaluatorConfig": ubx.FieldSpec{
-			WireName: "evaluator_config",
-			Kind: "object",
-			Fields: Job_TrainingInput_EvaluatorConfigFields,
-		},
-		"EvaluatorCount": ubx.FieldSpec{WireName: "evaluator_count"},
-		"EvaluatorType": ubx.FieldSpec{WireName: "evaluator_type"},
-		"Hyperparameters": ubx.FieldSpec{
-			WireName: "hyperparameters",
-			Kind: "object",
-			Fields: Job_TrainingInput_HyperparametersFields,
-		},
-		"JobDir": ubx.FieldSpec{WireName: "job_dir"},
-		"MasterConfig": ubx.FieldSpec{
-			WireName: "master_config",
-			Kind: "object",
-			Fields: Job_TrainingInput_EvaluatorConfigFields,
-		},
-		"MasterType": ubx.FieldSpec{WireName: "master_type"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"PackageUris": ubx.FieldSpec{WireName: "package_uris"},
-		"ParameterServerConfig": ubx.FieldSpec{
-			WireName: "parameter_server_config",
-			Kind: "object",
-			Fields: Job_TrainingInput_EvaluatorConfigFields,
-		},
-		"ParameterServerCount": ubx.FieldSpec{WireName: "parameter_server_count"},
-		"ParameterServerType": ubx.FieldSpec{WireName: "parameter_server_type"},
-		"PythonModule": ubx.FieldSpec{WireName: "python_module"},
-		"PythonVersion": ubx.FieldSpec{WireName: "python_version"},
-		"Region": ubx.FieldSpec{WireName: "region"},
-		"RuntimeVersion": ubx.FieldSpec{WireName: "runtime_version"},
-		"ScaleTier": ubx.FieldSpec{WireName: "scale_tier"},
-		"Scheduling": ubx.FieldSpec{
-			WireName: "scheduling",
-			Kind: "object",
-			Fields: Job_TrainingInput_SchedulingFields,
-		},
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-		"UseChiefInTfConfig": ubx.FieldSpec{WireName: "use_chief_in_tf_config"},
-		"WorkerConfig": ubx.FieldSpec{
-			WireName: "worker_config",
-			Kind: "object",
-			Fields: Job_TrainingInput_EvaluatorConfigFields,
-		},
-		"WorkerCount": ubx.FieldSpec{WireName: "worker_count"},
-		"WorkerType": ubx.FieldSpec{WireName: "worker_type"},
-	}
+	"Args":            ubx.FieldSpec{WireName: "args"},
+	"EnableWebAccess": ubx.FieldSpec{WireName: "enable_web_access"},
+	"EncryptionConfig": ubx.FieldSpec{
+		WireName: "encryption_config",
+		Kind:     "object",
+		Fields:   Job_TrainingInput_EncryptionConfigFields,
+	},
+	"EvaluatorConfig": ubx.FieldSpec{
+		WireName: "evaluator_config",
+		Kind:     "object",
+		Fields:   Job_TrainingInput_EvaluatorConfigFields,
+	},
+	"EvaluatorCount": ubx.FieldSpec{WireName: "evaluator_count"},
+	"EvaluatorType":  ubx.FieldSpec{WireName: "evaluator_type"},
+	"Hyperparameters": ubx.FieldSpec{
+		WireName: "hyperparameters",
+		Kind:     "object",
+		Fields:   Job_TrainingInput_HyperparametersFields,
+	},
+	"JobDir": ubx.FieldSpec{WireName: "job_dir"},
+	"MasterConfig": ubx.FieldSpec{
+		WireName: "master_config",
+		Kind:     "object",
+		Fields:   Job_TrainingInput_EvaluatorConfigFields,
+	},
+	"MasterType":  ubx.FieldSpec{WireName: "master_type"},
+	"Network":     ubx.FieldSpec{WireName: "network"},
+	"PackageUris": ubx.FieldSpec{WireName: "package_uris"},
+	"ParameterServerConfig": ubx.FieldSpec{
+		WireName: "parameter_server_config",
+		Kind:     "object",
+		Fields:   Job_TrainingInput_EvaluatorConfigFields,
+	},
+	"ParameterServerCount": ubx.FieldSpec{WireName: "parameter_server_count"},
+	"ParameterServerType":  ubx.FieldSpec{WireName: "parameter_server_type"},
+	"PythonModule":         ubx.FieldSpec{WireName: "python_module"},
+	"PythonVersion":        ubx.FieldSpec{WireName: "python_version"},
+	"Region":               ubx.FieldSpec{WireName: "region"},
+	"RuntimeVersion":       ubx.FieldSpec{WireName: "runtime_version"},
+	"ScaleTier":            ubx.FieldSpec{WireName: "scale_tier"},
+	"Scheduling": ubx.FieldSpec{
+		WireName: "scheduling",
+		Kind:     "object",
+		Fields:   Job_TrainingInput_SchedulingFields,
+	},
+	"ServiceAccount":     ubx.FieldSpec{WireName: "service_account"},
+	"UseChiefInTfConfig": ubx.FieldSpec{WireName: "use_chief_in_tf_config"},
+	"WorkerConfig": ubx.FieldSpec{
+		WireName: "worker_config",
+		Kind:     "object",
+		Fields:   Job_TrainingInput_EvaluatorConfigFields,
+	},
+	"WorkerCount": ubx.FieldSpec{WireName: "worker_count"},
+	"WorkerType":  ubx.FieldSpec{WireName: "worker_type"},
+}
 
 var Job_TrainingOutput_BuiltInAlgorithmOutputFields = ubx.FieldMap{
-		"Framework": ubx.FieldSpec{WireName: "framework"},
-		"ModelPath": ubx.FieldSpec{WireName: "model_path"},
-		"PythonVersion": ubx.FieldSpec{WireName: "python_version"},
-		"RuntimeVersion": ubx.FieldSpec{WireName: "runtime_version"},
-	}
+	"Framework":      ubx.FieldSpec{WireName: "framework"},
+	"ModelPath":      ubx.FieldSpec{WireName: "model_path"},
+	"PythonVersion":  ubx.FieldSpec{WireName: "python_version"},
+	"RuntimeVersion": ubx.FieldSpec{WireName: "runtime_version"},
+}
 
 var Job_TrainingOutput_Trials_AllMetricsFields = ubx.FieldMap{
-		"ObjectiveValue": ubx.FieldSpec{WireName: "objective_value"},
-		"TrainingStep": ubx.FieldSpec{WireName: "training_step"},
-	}
+	"ObjectiveValue": ubx.FieldSpec{WireName: "objective_value"},
+	"TrainingStep":   ubx.FieldSpec{WireName: "training_step"},
+}
 
 var Job_TrainingOutput_TrialsFields = ubx.FieldMap{
-		"AllMetrics": ubx.FieldSpec{
-			WireName: "all_metrics",
-			Kind: "list",
-			Fields: Job_TrainingOutput_Trials_AllMetricsFields,
-		},
-		"BuiltInAlgorithmOutput": ubx.FieldSpec{
-			WireName: "built_in_algorithm_output",
-			Kind: "object",
-			Fields: Job_TrainingOutput_BuiltInAlgorithmOutputFields,
-		},
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"FinalMetric": ubx.FieldSpec{
-			WireName: "final_metric",
-			Kind: "object",
-			Fields: Job_TrainingOutput_Trials_AllMetricsFields,
-		},
-		"Hyperparameters": ubx.FieldSpec{WireName: "hyperparameters"},
-		"IsTrialStoppedEarly": ubx.FieldSpec{WireName: "is_trial_stopped_early"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"TrialId": ubx.FieldSpec{WireName: "trial_id"},
-		"WebAccessUris": ubx.FieldSpec{WireName: "web_access_uris"},
-	}
+	"AllMetrics": ubx.FieldSpec{
+		WireName: "all_metrics",
+		Kind:     "list",
+		Fields:   Job_TrainingOutput_Trials_AllMetricsFields,
+	},
+	"BuiltInAlgorithmOutput": ubx.FieldSpec{
+		WireName: "built_in_algorithm_output",
+		Kind:     "object",
+		Fields:   Job_TrainingOutput_BuiltInAlgorithmOutputFields,
+	},
+	"EndTime": ubx.FieldSpec{WireName: "end_time"},
+	"FinalMetric": ubx.FieldSpec{
+		WireName: "final_metric",
+		Kind:     "object",
+		Fields:   Job_TrainingOutput_Trials_AllMetricsFields,
+	},
+	"Hyperparameters":     ubx.FieldSpec{WireName: "hyperparameters"},
+	"IsTrialStoppedEarly": ubx.FieldSpec{WireName: "is_trial_stopped_early"},
+	"StartTime":           ubx.FieldSpec{WireName: "start_time"},
+	"State":               ubx.FieldSpec{WireName: "state"},
+	"TrialId":             ubx.FieldSpec{WireName: "trial_id"},
+	"WebAccessUris":       ubx.FieldSpec{WireName: "web_access_uris"},
+}
 
 var Job_TrainingOutputFields = ubx.FieldMap{
-		"BuiltInAlgorithmOutput": ubx.FieldSpec{
-			WireName: "built_in_algorithm_output",
-			Kind: "object",
-			Fields: Job_TrainingOutput_BuiltInAlgorithmOutputFields,
-		},
-		"CompletedTrialCount": ubx.FieldSpec{WireName: "completed_trial_count"},
-		"ConsumedMlunits": ubx.FieldSpec{WireName: "consumed_mlunits"},
-		"HyperparameterMetricTag": ubx.FieldSpec{WireName: "hyperparameter_metric_tag"},
-		"IsBuiltInAlgorithmJob": ubx.FieldSpec{WireName: "is_built_in_algorithm_job"},
-		"IsHyperparameterTuningJob": ubx.FieldSpec{WireName: "is_hyperparameter_tuning_job"},
-		"Trials": ubx.FieldSpec{
-			WireName: "trials",
-			Kind: "list",
-			Fields: Job_TrainingOutput_TrialsFields,
-		},
-		"WebAccessUris": ubx.FieldSpec{WireName: "web_access_uris"},
-	}
+	"BuiltInAlgorithmOutput": ubx.FieldSpec{
+		WireName: "built_in_algorithm_output",
+		Kind:     "object",
+		Fields:   Job_TrainingOutput_BuiltInAlgorithmOutputFields,
+	},
+	"CompletedTrialCount":       ubx.FieldSpec{WireName: "completed_trial_count"},
+	"ConsumedMlunits":           ubx.FieldSpec{WireName: "consumed_mlunits"},
+	"HyperparameterMetricTag":   ubx.FieldSpec{WireName: "hyperparameter_metric_tag"},
+	"IsBuiltInAlgorithmJob":     ubx.FieldSpec{WireName: "is_built_in_algorithm_job"},
+	"IsHyperparameterTuningJob": ubx.FieldSpec{WireName: "is_hyperparameter_tuning_job"},
+	"Trials": ubx.FieldSpec{
+		WireName: "trials",
+		Kind:     "list",
+		Fields:   Job_TrainingOutput_TrialsFields,
+	},
+	"WebAccessUris": ubx.FieldSpec{WireName: "web_access_uris"},
+}
 
 type JobConfig struct {
 	// Output only. When the job was created.
@@ -427,8 +427,6 @@ type JobConfig struct {
 	Etag any
 	// Required. The user-specified id of the job.
 	JobId any
-	// Output only. It's only effect when the job is in QUEUED state. If it's positive, it indicates the job's position in the job scheduler. It's 0 when the job is already scheduled.
-	JobPosition any
 	// Optional. One or more labels that you can add, to organize your jobs. Each label is a key-value pair, where both the key and the value are arbitrary strings that you supply. For more information, see the documentation on using labels.
 	Labels any
 	// Represents input parameters for a prediction job.
@@ -477,34 +475,33 @@ type JobAttrs struct {
 var Job = ubx.ResourceBinding{
 	WireType: "google_ml_job",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
+		"CreateTime":   ubx.FieldSpec{WireName: "create_time"},
+		"EndTime":      ubx.FieldSpec{WireName: "end_time"},
 		"ErrorMessage": ubx.FieldSpec{WireName: "error_message"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"JobId": ubx.FieldSpec{WireName: "job_id"},
-		"JobPosition": ubx.FieldSpec{WireName: "job_position"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Etag":         ubx.FieldSpec{WireName: "etag"},
+		"JobId":        ubx.FieldSpec{WireName: "job_id"},
+		"Labels":       ubx.FieldSpec{WireName: "labels"},
 		"PredictionInput": ubx.FieldSpec{
 			WireName: "prediction_input",
-			Kind: "object",
-			Fields: Job_PredictionInputFields,
+			Kind:     "object",
+			Fields:   Job_PredictionInputFields,
 		},
 		"PredictionOutput": ubx.FieldSpec{
 			WireName: "prediction_output",
-			Kind: "object",
-			Fields: Job_PredictionOutputFields,
+			Kind:     "object",
+			Fields:   Job_PredictionOutputFields,
 		},
 		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"State": ubx.FieldSpec{WireName: "state"},
+		"State":     ubx.FieldSpec{WireName: "state"},
 		"TrainingInput": ubx.FieldSpec{
 			WireName: "training_input",
-			Kind: "object",
-			Fields: Job_TrainingInputFields,
+			Kind:     "object",
+			Fields:   Job_TrainingInputFields,
 		},
 		"TrainingOutput": ubx.FieldSpec{
 			WireName: "training_output",
-			Kind: "object",
-			Fields: Job_TrainingOutputFields,
+			Kind:     "object",
+			Fields:   Job_TrainingOutputFields,
 		},
 	},
 }

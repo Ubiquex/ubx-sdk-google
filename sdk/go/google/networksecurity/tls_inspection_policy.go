@@ -6,8 +6,6 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type TlsInspectionPolicyConfig struct {
 	// Required. A CA pool resource used to issue interception certificates. The CA pool string has a relative resource path following the form "projects/{project}/locations/{location}/caPools/{ca_pool}".
 	CaPool any
-	// Output only. The timestamp when the resource was created.
-	CreateTime any
 	// Optional. List of custom TLS cipher suites selected. This field is valid only if the selected tls_feature_profile is CUSTOM. The compute.SslPoliciesService.ListAvailableFeatures method returns the set of features that can be specified in this list. Note that Secure Web Proxy does not yet honor this field.
 	CustomTlsFeatures any
 	// Optional. Free-text description of the resource.
@@ -22,8 +20,6 @@ type TlsInspectionPolicyConfig struct {
 	TlsFeatureProfile any
 	// Optional. A TrustConfig resource used when making a connection to the TLS server. This is a relative resource path following the form "projects/{project}/locations/{location}/trustConfigs/{trust_config}". This is necessary to intercept TLS connections to servers with certificates signed by a private CA or self-signed certificates. Note that Secure Web Proxy does not yet honor this field.
 	TrustConfig any
-	// Output only. The timestamp when the resource was updated.
-	UpdateTime any
 }
 
 type TlsInspectionPolicyAttrs struct {
@@ -52,15 +48,13 @@ type TlsInspectionPolicyAttrs struct {
 var TlsInspectionPolicy = ubx.ResourceBinding{
 	WireType: "google_networksecurity_tls_inspection_policy",
 	Fields: ubx.FieldMap{
-		"CaPool": ubx.FieldSpec{WireName: "ca_pool"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"CustomTlsFeatures": ubx.FieldSpec{WireName: "custom_tls_features"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"CaPool":             ubx.FieldSpec{WireName: "ca_pool"},
+		"CustomTlsFeatures":  ubx.FieldSpec{WireName: "custom_tls_features"},
+		"Description":        ubx.FieldSpec{WireName: "description"},
 		"ExcludePublicCaSet": ubx.FieldSpec{WireName: "exclude_public_ca_set"},
-		"MinTlsVersion": ubx.FieldSpec{WireName: "min_tls_version"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"TlsFeatureProfile": ubx.FieldSpec{WireName: "tls_feature_profile"},
-		"TrustConfig": ubx.FieldSpec{WireName: "trust_config"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"MinTlsVersion":      ubx.FieldSpec{WireName: "min_tls_version"},
+		"Name":               ubx.FieldSpec{WireName: "name"},
+		"TlsFeatureProfile":  ubx.FieldSpec{WireName: "tls_feature_profile"},
+		"TrustConfig":        ubx.FieldSpec{WireName: "trust_config"},
 	},
 }

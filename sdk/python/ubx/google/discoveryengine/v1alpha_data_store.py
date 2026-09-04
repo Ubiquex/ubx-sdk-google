@@ -490,16 +490,10 @@ class V1alphaDataStoreConfig:
     cmek_config: Any = None
     # Optional. Configuration for configurable billing approach. See
     configurable_billing_approach: Any = None
-    # Output only. The timestamp when configurable_billing_approach was last updated.
-    configurable_billing_approach_update_time: Any = None
     # Immutable. The content config of the data store. If this field is unset, the server behavior defaults to ContentConfig.NO_CONTENT.
     content_config: Any = None
-    # Output only. Timestamp the DataStore was created at.
-    create_time: Any = None
     # Contains the data protection policy config for a DataStore or a connector.
     data_protection_policy: Any = None
-    # Output only. The id of the default Schema associated to this data store.
-    default_schema_id: Any = None
     # Required. The data store display name. This field must be a UTF-8 encoded string with a length limit of 128 characters. Otherwise, an INVALID_ARGUMENT error is returned.
     display_name: Any = None
     # A singleton resource of DataStore. If it's empty when DataStore is created and DataStore is set to DataStore.ContentConfig.CONTENT_REQUIRED, the default parser will default to digital parser.
@@ -508,8 +502,6 @@ class V1alphaDataStoreConfig:
     federated_search_config: Any = None
     # Config to data store for `HEALTHCARE_FHIR` vertical.
     healthcare_fhir_config: Any = None
-    # Output only. Provides the icon URI of the data store's connector source, if this is a connector-backed data store. Empty for data stores without an associated connector source. In DataStoreService.ListDataStores and DataStoreService.GetDataStore, this is only populated when DataStoreView.DATA_STORE_VIEW_FULL is requested via ListDataStoresRequest.view or GetDataStoreRequest.view respectively.
-    icon_uri: Any = None
     # Immutable. The fully qualified resource name of the associated IdentityMappingStore. This field can only be set for acl_enabled DataStores with `THIRD_PARTY` or `GSUITE` IdP. Format: `projects/{project}/locations/{location}/identityMappingStores/{identity_mapping_store}`.
     identity_mapping_store: Any = None
     # Identity Provider Config.
@@ -612,15 +604,12 @@ V1alphaDataStore = ubx.ResourceBinding(
             fields=_V1alphaDataStore_CmekConfigFields,
         ),
         "configurable_billing_approach": ubx.FieldSpec(wire_name="configurable_billing_approach"),
-        "configurable_billing_approach_update_time": ubx.FieldSpec(wire_name="configurable_billing_approach_update_time"),
         "content_config": ubx.FieldSpec(wire_name="content_config"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "data_protection_policy": ubx.FieldSpec(
             wire_name="data_protection_policy",
             kind="object",
             fields=_V1alphaDataStore_DataProtectionPolicyFields,
         ),
-        "default_schema_id": ubx.FieldSpec(wire_name="default_schema_id"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "document_processing_config": ubx.FieldSpec(
             wire_name="document_processing_config",
@@ -637,7 +626,6 @@ V1alphaDataStore = ubx.ResourceBinding(
             kind="object",
             fields=_V1alphaDataStore_HealthcareFhirConfigFields,
         ),
-        "icon_uri": ubx.FieldSpec(wire_name="icon_uri"),
         "identity_mapping_store": ubx.FieldSpec(wire_name="identity_mapping_store"),
         "idp_config": ubx.FieldSpec(
             wire_name="idp_config",

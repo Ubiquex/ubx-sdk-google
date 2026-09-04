@@ -4,8 +4,8 @@ package appengine
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type App_DispatchRules struct {
-	Domain any
-	Path any
+	Domain  any
+	Path    any
 	Service any
 }
 
@@ -28,42 +28,34 @@ type App_Iap struct {
 }
 
 var App_DispatchRulesFields = ubx.FieldMap{
-		"Domain": ubx.FieldSpec{WireName: "domain"},
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"Service": ubx.FieldSpec{WireName: "service"},
-	}
+	"Domain":  ubx.FieldSpec{WireName: "domain"},
+	"Path":    ubx.FieldSpec{WireName: "path"},
+	"Service": ubx.FieldSpec{WireName: "service"},
+}
 
 var App_FeatureSettingsFields = ubx.FieldMap{
-		"SplitHealthChecks": ubx.FieldSpec{WireName: "split_health_checks"},
-		"UseContainerOptimizedOs": ubx.FieldSpec{WireName: "use_container_optimized_os"},
-	}
+	"SplitHealthChecks":       ubx.FieldSpec{WireName: "split_health_checks"},
+	"UseContainerOptimizedOs": ubx.FieldSpec{WireName: "use_container_optimized_os"},
+}
 
 var App_IapFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-		"Oauth2ClientId": ubx.FieldSpec{WireName: "oauth2_client_id"},
-		"Oauth2ClientSecret": ubx.FieldSpec{WireName: "oauth2_client_secret"},
-		"Oauth2ClientSecretSha256": ubx.FieldSpec{WireName: "oauth2_client_secret_sha256"},
-	}
+	"Enabled":                  ubx.FieldSpec{WireName: "enabled"},
+	"Oauth2ClientId":           ubx.FieldSpec{WireName: "oauth2_client_id"},
+	"Oauth2ClientSecret":       ubx.FieldSpec{WireName: "oauth2_client_secret"},
+	"Oauth2ClientSecretSha256": ubx.FieldSpec{WireName: "oauth2_client_secret_sha256"},
+}
 
 type AppConfig struct {
 	// Google Apps authentication domain that controls which users can access this application.Defaults to open access for any Google Account.
 	AuthDomain any
-	// Output only. Google Cloud Storage bucket that can be used for storing files associated with this application. This bucket is associated with the application and can be used by the gcloud deployment commands.@OutputOnly
-	CodeBucket any
 	// The type of the Cloud Firestore or Cloud Datastore database associated with this application.
 	DatabaseType any
-	// Output only. Google Cloud Storage bucket that can be used by this application to store content.@OutputOnly
-	DefaultBucket any
 	// Cookie expiration policy for this application.
 	DefaultCookieExpiration any
-	// Output only. Hostname used to reach this application, as resolved by App Engine.@OutputOnly
-	DefaultHostname any
 	// HTTP path dispatch rules for requests to the application that do not explicitly target a service or version. Rules are order-dependent. Up to 20 dispatch rules can be supported.
 	DispatchRules any
 	// The feature specific settings to be used in the application. These define behaviors that are user configurable.
 	FeatureSettings any
-	// Output only. The Google Container Registry domain used for storing managed build docker images for this application.
-	GcrDomain any
 	// Additional Google Generated Customer Metadata, this field won't be provided by default and can be requested by setting the IncludeExtraData field in GetApplicationRequest
 	GeneratedCustomerMetadata any
 	// Identity-Aware Proxy
@@ -72,7 +64,6 @@ type AppConfig struct {
 	Id any
 	// Location from which this application runs. Application instances run out of the data centers in the specified location, which is also where all of the application's end user content is stored.Defaults to us-central.View the list of supported locations (https://cloud.google.com/appengine/docs/locations).
 	LocationId any
-	Name any
 	// The service account associated with the application. This is the app-level default identity. If no identity provided during create version, Admin API will fallback to this one.
 	ServiceAccount any
 	// Serving status of this application.
@@ -108,7 +99,7 @@ type AppAttrs struct {
 	Id any
 	// Location from which this application runs. Application instances run out of the data centers in the specified location, which is also where all of the application's end user content is stored.Defaults to us-central.View the list of supported locations (https://cloud.google.com/appengine/docs/locations).
 	LocationId any
-	Name any
+	Name       any
 	// The service account associated with the application. This is the app-level default identity. If no identity provided during create version, Admin API will fallback to this one.
 	ServiceAccount any
 	// Serving status of this application.
@@ -120,34 +111,29 @@ type AppAttrs struct {
 var App = ubx.ResourceBinding{
 	WireType: "google_appengine_app",
 	Fields: ubx.FieldMap{
-		"AuthDomain": ubx.FieldSpec{WireName: "auth_domain"},
-		"CodeBucket": ubx.FieldSpec{WireName: "code_bucket"},
-		"DatabaseType": ubx.FieldSpec{WireName: "database_type"},
-		"DefaultBucket": ubx.FieldSpec{WireName: "default_bucket"},
+		"AuthDomain":              ubx.FieldSpec{WireName: "auth_domain"},
+		"DatabaseType":            ubx.FieldSpec{WireName: "database_type"},
 		"DefaultCookieExpiration": ubx.FieldSpec{WireName: "default_cookie_expiration"},
-		"DefaultHostname": ubx.FieldSpec{WireName: "default_hostname"},
 		"DispatchRules": ubx.FieldSpec{
 			WireName: "dispatch_rules",
-			Kind: "list",
-			Fields: App_DispatchRulesFields,
+			Kind:     "list",
+			Fields:   App_DispatchRulesFields,
 		},
 		"FeatureSettings": ubx.FieldSpec{
 			WireName: "feature_settings",
-			Kind: "object",
-			Fields: App_FeatureSettingsFields,
+			Kind:     "object",
+			Fields:   App_FeatureSettingsFields,
 		},
-		"GcrDomain": ubx.FieldSpec{WireName: "gcr_domain"},
 		"GeneratedCustomerMetadata": ubx.FieldSpec{WireName: "generated_customer_metadata"},
 		"Iap": ubx.FieldSpec{
 			WireName: "iap",
-			Kind: "object",
-			Fields: App_IapFields,
+			Kind:     "object",
+			Fields:   App_IapFields,
 		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"LocationId": ubx.FieldSpec{WireName: "location_id"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Id":             ubx.FieldSpec{WireName: "id"},
+		"LocationId":     ubx.FieldSpec{WireName: "location_id"},
 		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-		"ServingStatus": ubx.FieldSpec{WireName: "serving_status"},
-		"SslPolicy": ubx.FieldSpec{WireName: "ssl_policy"},
+		"ServingStatus":  ubx.FieldSpec{WireName: "serving_status"},
+		"SslPolicy":      ubx.FieldSpec{WireName: "ssl_policy"},
 	},
 }

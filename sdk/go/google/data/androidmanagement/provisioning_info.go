@@ -24,7 +24,7 @@ type ProvisioningInfoAttrs struct {
 	Meid any
 	// The model of the device. For example, Asus Nexus 7.
 	Model any
-	Name any
+	Name  any
 	// Ownership of the managed device.
 	Ownership any
 	// For corporate-owned devices, The device serial number.

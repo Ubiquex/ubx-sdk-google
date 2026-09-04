@@ -25,43 +25,33 @@ type PolicyBasedRoute_VirtualMachine struct {
 }
 
 type PolicyBasedRoute_Warnings struct {
-	Code any
-	Data any
+	Code           any
+	Data           any
 	WarningMessage any
 }
 
 var PolicyBasedRoute_FilterFields = ubx.FieldMap{
-		"DestRange": ubx.FieldSpec{WireName: "dest_range"},
-		"IpProtocol": ubx.FieldSpec{WireName: "ip_protocol"},
-		"ProtocolVersion": ubx.FieldSpec{WireName: "protocol_version"},
-		"SrcRange": ubx.FieldSpec{WireName: "src_range"},
-	}
+	"DestRange":       ubx.FieldSpec{WireName: "dest_range"},
+	"IpProtocol":      ubx.FieldSpec{WireName: "ip_protocol"},
+	"ProtocolVersion": ubx.FieldSpec{WireName: "protocol_version"},
+	"SrcRange":        ubx.FieldSpec{WireName: "src_range"},
+}
 
 var PolicyBasedRoute_InterconnectAttachmentFields = ubx.FieldMap{
-		"Region": ubx.FieldSpec{WireName: "region"},
-	}
+	"Region": ubx.FieldSpec{WireName: "region"},
+}
 
 var PolicyBasedRoute_VirtualMachineFields = ubx.FieldMap{
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-	}
-
-var PolicyBasedRoute_WarningsFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Data": ubx.FieldSpec{WireName: "data"},
-		"WarningMessage": ubx.FieldSpec{WireName: "warning_message"},
-	}
+	"Tags": ubx.FieldSpec{WireName: "tags"},
+}
 
 type PolicyBasedRouteConfig struct {
-	// Output only. Time when the policy-based route was created.
-	CreateTime any
 	// Optional. An optional description of this resource. Provide this field when you create the resource.
 	Description any
 	// Filter matches L4 traffic.
 	Filter any
 	// InterconnectAttachment that this route applies to.
 	InterconnectAttachment any
-	// Output only. Type of this resource. Always networkconnectivity#policyBasedRoute for policy-based Route resources.
-	Kind any
 	// User-defined labels.
 	Labels any
 	// Immutable. Identifier. A unique name of the resource in the form of `projects/{project_number}/locations/global/PolicyBasedRoutes/{policy_based_route_id}`
@@ -74,14 +64,8 @@ type PolicyBasedRouteConfig struct {
 	NextHopOtherRoutes any
 	// Optional. The priority of this policy-based route. Priority is used to break ties in cases where there are more than one matching policy-based routes found. In cases where multiple policy-based routes are matched, the one with the lowest-numbered priority value wins. The default value is 1000. The priority value must be from 1 to 65535, inclusive.
 	Priority any
-	// Output only. Server-defined fully-qualified URL for this resource.
-	SelfLink any
-	// Output only. Time when the policy-based route was updated.
-	UpdateTime any
 	// VM instances that this policy-based route applies to.
 	VirtualMachine any
-	// Output only. If potential misconfigurations are detected for this route, this field will be populated with warning messages.
-	Warnings any
 }
 
 type PolicyBasedRouteAttrs struct {
@@ -120,36 +104,27 @@ type PolicyBasedRouteAttrs struct {
 var PolicyBasedRoute = ubx.ResourceBinding{
 	WireType: "google_networkconnectivity_policy_based_route",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"Filter": ubx.FieldSpec{
 			WireName: "filter",
-			Kind: "object",
-			Fields: PolicyBasedRoute_FilterFields,
+			Kind:     "object",
+			Fields:   PolicyBasedRoute_FilterFields,
 		},
 		"InterconnectAttachment": ubx.FieldSpec{
 			WireName: "interconnect_attachment",
-			Kind: "object",
-			Fields: PolicyBasedRoute_InterconnectAttachmentFields,
+			Kind:     "object",
+			Fields:   PolicyBasedRoute_InterconnectAttachmentFields,
 		},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"NextHopIlbIp": ubx.FieldSpec{WireName: "next_hop_ilb_ip"},
+		"Labels":             ubx.FieldSpec{WireName: "labels"},
+		"Name":               ubx.FieldSpec{WireName: "name"},
+		"Network":            ubx.FieldSpec{WireName: "network"},
+		"NextHopIlbIp":       ubx.FieldSpec{WireName: "next_hop_ilb_ip"},
 		"NextHopOtherRoutes": ubx.FieldSpec{WireName: "next_hop_other_routes"},
-		"Priority": ubx.FieldSpec{WireName: "priority"},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"Priority":           ubx.FieldSpec{WireName: "priority"},
 		"VirtualMachine": ubx.FieldSpec{
 			WireName: "virtual_machine",
-			Kind: "object",
-			Fields: PolicyBasedRoute_VirtualMachineFields,
-		},
-		"Warnings": ubx.FieldSpec{
-			WireName: "warnings",
-			Kind: "list",
-			Fields: PolicyBasedRoute_WarningsFields,
+			Kind:     "object",
+			Fields:   PolicyBasedRoute_VirtualMachineFields,
 		},
 	},
 }

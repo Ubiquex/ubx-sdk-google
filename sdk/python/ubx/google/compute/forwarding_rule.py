@@ -8,35 +8,23 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class ForwardingRule_AttachedExtensions:
-    # The self-link or complete URL of the extension resource attached to this forwarding rule. (AI-inferred)
     reference: Any = None
 
 @dataclasses.dataclass
 class ForwardingRule_MetadataFilters_FilterLabels:
-    # The name of the metadata filter label. This is the key of the label. (AI-inferred)
     name: Any = None
-    # The value of the metadata filter label. This is the value part of a key-value pair used to match incoming metadata traffic for the forwarding rule. (AI-inferred)
     value: Any = None
 
 @dataclasses.dataclass
 class ForwardingRule_MetadataFilters:
-    # The list of label-value pairs to match against for the forwarding rule's metadata filter. (AI-inferred)
     filter_labels: Any = None
-    # Specifies how the metadata filter labels are matched against traffic. Valid values are MATCH_ALL (require all labels to match), MATCH_ANY (allow any one label to match), and NOT_SET (no specific matching criteria). (AI-inferred)
     filter_match_criteria: Any = None
 
 @dataclasses.dataclass
 class ForwardingRule_ServiceDirectoryRegistrations:
-    # The Service Directory namespace where the forwarding rule will be registered as a service. (AI-inferred)
     namespace: Any = None
-    # The name of the Service Directory service to register the forwarding rule with. If not specified, a service name of the form `forwarding_rule_<forwarding_rule_name>` is automatically generated. (AI-inferred)
     service: Any = None
-    # The region of the Service Directory service to register. If not specified, it defaults to the region of the forwarding rule. (AI-inferred)
     service_directory_region: Any = None
-
-_ForwardingRule_AttachedExtensionsFields = {
-    "reference": ubx.FieldSpec(wire_name="reference"),
-}
 
 _ForwardingRule_MetadataFilters_FilterLabelsFields = {
     "name": ubx.FieldSpec(wire_name="name"),
@@ -66,14 +54,8 @@ class ForwardingRuleConfig:
     allow_global_access: Any = None
     # This is used in PSC consumer ForwardingRule to control whether the PSC endpoint can be accessed from another region.
     allow_psc_global_access: Any = None
-    # Output only. [Output Only]. The extensions that are attached to this ForwardingRule.
-    attached_extensions: Any = None
     # Identifies the backend service to which the forwarding rule sends traffic. It is a required field for the following load balancers: - Internal passthrough Network Load Balancers - Backend service-based regional external passthrough Network Load Balancers - Global external passthrough Network Load Balancers It cannot be set by other load balancer types and protocol forwarding rules.
     backend_service: Any = None
-    # Output only. [Output Only] The URL for the corresponding base forwarding rule. By base forwarding rule, we mean the forwarding rule that has the same IP address, protocol, and port settings with the current forwarding rule, but without sourceIPRanges specified. Always empty if the current forwarding rule does not have sourceIPRanges specified.
-    base_forwarding_rule: Any = None
-    # Output only. [Output Only] Creation timestamp inRFC3339 text format.
-    creation_timestamp: Any = None
     # An optional description of this resource. Provide this property when you create the resource.
     description: Any = None
     # Specifies the canary migration state for the backend buckets attached to this forwarding rule. Possible values are PREPARE, TEST_BY_PERCENTAGE, and TEST_ALL_TRAFFIC. To begin the migration from EXTERNAL to EXTERNAL_MANAGED, the state must be changed to PREPARE. The state must be changed to TEST_ALL_TRAFFIC before the loadBalancingScheme can be changed to EXTERNAL_MANAGED. Optionally, the TEST_BY_PERCENTAGE state can be used to migrate traffic to backend buckets attached to this forwarding rule by percentage using externalManagedBackendBucketMigrationTestingPercentage. Rolling back a migration requires the states to be set in reverse order. So changing the scheme from EXTERNAL_MANAGED to EXTERNAL requires the state to be set to TEST_ALL_TRAFFIC at the same time. Optionally, the TEST_BY_PERCENTAGE state can be used to migrate some traffic back to EXTERNAL or PREPARE can be used to migrate all traffic back to EXTERNAL.
@@ -94,8 +76,6 @@ class ForwardingRuleConfig:
     ipprotocol: Any = None
     # Indicates whether or not this load balancer can be used as a collector for packet mirroring. To prevent mirroring loops, instances behind this load balancer will not have their traffic mirrored even if aPacketMirroring rule applies to them. This can only be set to true for load balancers that have theirloadBalancingScheme set to INTERNAL.
     is_mirroring_collector: Any = None
-    # Output only. [Output Only] Type of the resource. Alwayscompute#forwardingRule for forwarding rule resources.
-    kind: Any = None
     # A fingerprint for the labels being applied to this resource, which is essentially a hash of the labels set used for optimistic locking. The fingerprint is initially generated by Compute Engine and changes after every request to modify or update labels. You must always provide an up-to-date fingerprint hash in order to update or change labels, otherwise the request will fail with error412 conditionNotMet. To see the latest fingerprint, make a get() request to retrieve a ForwardingRule.
     label_fingerprint: Any = None
     # Labels for this resource. These can only be added or modified by thesetLabels method. Each label key/value pair must comply withRFC1035. Label values may be empty.
@@ -118,14 +98,8 @@ class ForwardingRuleConfig:
     ports: Any = None
     # [Output Only] The PSC connection id of the PSC forwarding rule.
     psc_connection_id: Any = None
-    # The status of the Private Service Connect (PSC) connection associated with this forwarding rule. Possible values are: ACCEPTED, CLOSED, NEEDS_ATTENTION, PENDING, REJECTED, and STATUS_UNSPECIFIED. (AI-inferred)
-    psc_connection_status: Any = None
-    # Output only. [Output Only] URL of the region where the regional forwarding rule resides. This field is not applicable to global forwarding rules. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
-    region: Any = None
     # [Output Only] Server-defined URL for the resource.
     self_link: Any = None
-    # Output only. [Output Only] Server-defined URL for this resource with the resource id.
-    self_link_with_id: Any = None
     # Service Directory resources to register this forwarding rule with. Currently, only supports a single Service Directory resource.
     service_directory_registrations: Any = None
     # An optional prefix to the service name for this forwarding rule. If specified, the prefix is the first label of the fully qualified service name. The label must be 1-63 characters long, and comply withRFC1035. Specifically, the label must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. This field is only used for internal load balancing.
@@ -199,7 +173,6 @@ class ForwardingRuleAttrs:
     ports: Any = None
     # [Output Only] The PSC connection id of the PSC forwarding rule.
     psc_connection_id: Any = None
-    # The status of the Private Service Connect (PSC) connection associated with this forwarding rule. Possible values are: ACCEPTED, CLOSED, NEEDS_ATTENTION, PENDING, REJECTED, and STATUS_UNSPECIFIED. (AI-inferred)
     psc_connection_status: Any = None
     # Output only. [Output Only] URL of the region where the regional forwarding rule resides. This field is not applicable to global forwarding rules. You must specify this field as part of the HTTP request URL. It is not settable as a field in the request body.
     region: Any = None
@@ -226,14 +199,7 @@ ForwardingRule = ubx.ResourceBinding(
         "all_ports": ubx.FieldSpec(wire_name="all_ports"),
         "allow_global_access": ubx.FieldSpec(wire_name="allow_global_access"),
         "allow_psc_global_access": ubx.FieldSpec(wire_name="allow_psc_global_access"),
-        "attached_extensions": ubx.FieldSpec(
-            wire_name="attached_extensions",
-            kind="list",
-            fields=_ForwardingRule_AttachedExtensionsFields,
-        ),
         "backend_service": ubx.FieldSpec(wire_name="backend_service"),
-        "base_forwarding_rule": ubx.FieldSpec(wire_name="base_forwarding_rule"),
-        "creation_timestamp": ubx.FieldSpec(wire_name="creation_timestamp"),
         "description": ubx.FieldSpec(wire_name="description"),
         "external_managed_backend_bucket_migration_state": ubx.FieldSpec(wire_name="external_managed_backend_bucket_migration_state"),
         "external_managed_backend_bucket_migration_testing_percentage": ubx.FieldSpec(wire_name="external_managed_backend_bucket_migration_testing_percentage"),
@@ -244,7 +210,6 @@ ForwardingRule = ubx.ResourceBinding(
         "ipaddress": ubx.FieldSpec(wire_name="ipaddress"),
         "ipprotocol": ubx.FieldSpec(wire_name="ipprotocol"),
         "is_mirroring_collector": ubx.FieldSpec(wire_name="is_mirroring_collector"),
-        "kind": ubx.FieldSpec(wire_name="kind"),
         "label_fingerprint": ubx.FieldSpec(wire_name="label_fingerprint"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "load_balancing_scheme": ubx.FieldSpec(wire_name="load_balancing_scheme"),
@@ -260,10 +225,7 @@ ForwardingRule = ubx.ResourceBinding(
         "port_range": ubx.FieldSpec(wire_name="port_range"),
         "ports": ubx.FieldSpec(wire_name="ports"),
         "psc_connection_id": ubx.FieldSpec(wire_name="psc_connection_id"),
-        "psc_connection_status": ubx.FieldSpec(wire_name="psc_connection_status"),
-        "region": ubx.FieldSpec(wire_name="region"),
         "self_link": ubx.FieldSpec(wire_name="self_link"),
-        "self_link_with_id": ubx.FieldSpec(wire_name="self_link_with_id"),
         "service_directory_registrations": ubx.FieldSpec(
             wire_name="service_directory_registrations",
             kind="list",

@@ -17,38 +17,18 @@ const Backup_OntapSourceFields: FieldMap = {
 };
 
 export interface BackupConfig {
-  /** Output only. Region in which backup is stored. Format: `projects/{project_id}/locations/{location}` */
-  backupRegion?: string | Computed<string>;
-  /** Output only. Type of backup, manually created or created by a backup policy. */
-  backupType?: string | Computed<string>;
-  /** Output only. Total size of all backups in a chain in bytes = baseline backup size + sum(incremental backup size) */
-  chainStorageBytes?: string | Computed<string>;
-  /** Output only. The time when the backup was created. */
-  createTime?: string | Computed<string>;
   /** A description of the backup with 2048 characters or less. Requests with longer descriptions will be rejected. */
   description?: string | Computed<string>;
-  /** Output only. The time until which the backup is not deletable. */
-  enforcedRetentionEndTime?: string | Computed<string>;
   /** Resource labels to represent user provided metadata. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Identifier. The resource name of the backup. Format: `projects/{project_id}/locations/{location}/backupVaults/{backup_vault_id}/backups/{backup_id}`. */
   name?: string | Computed<string>;
   /** Represents ONTAP source details. */
   ontapSource?: Backup_OntapSource | Computed<Backup_OntapSource>;
-  /** Output only. Reserved for future use */
-  satisfiesPzi?: boolean | Computed<boolean>;
-  /** Output only. Reserved for future use */
-  satisfiesPzs?: boolean | Computed<boolean>;
   /** If specified, backup will be created from the given snapshot. If not specified, there will be a new snapshot taken to initiate the backup creation. Format: `projects/{project_id}/locations/{location}/volumes/{volume_id}/snapshots/{snapshot_id}` */
   sourceSnapshot?: string | Computed<string>;
   /** The resource name of the volume that this backup belongs to. You must provide either `source_volume` or `ontap_source`. Format: `projects/{project_id}/locations/{location}/volumes/{volume_id}` */
   sourceVolume?: string | Computed<string>;
-  /** Output only. The backup state. */
-  state?: string | Computed<string>;
-  /** Output only. Region of the volume from which the backup was created. Format: `projects/{project_id}/locations/{location}` */
-  volumeRegion?: string | Computed<string>;
-  /** Output only. Size of the file system when the backup was created. When creating a new volume from the backup, the volume capacity will have to be at least as big. */
-  volumeUsageBytes?: string | Computed<string>;
 }
 
 export interface BackupAttrs {
@@ -89,12 +69,7 @@ export interface BackupAttrs {
 export const Backup: ResourceBinding<BackupConfig, BackupAttrs> = {
   wireType: "google_netapp_backup",
   fields: {
-    backupRegion: "backup_region",
-    backupType: "backup_type",
-    chainStorageBytes: "chain_storage_bytes",
-    createTime: "create_time",
     description: "description",
-    enforcedRetentionEndTime: "enforced_retention_end_time",
     labels: "labels",
     name: "name",
     ontapSource: {
@@ -102,12 +77,7 @@ export const Backup: ResourceBinding<BackupConfig, BackupAttrs> = {
       kind: "object",
       fields: Backup_OntapSourceFields,
     },
-    satisfiesPzi: "satisfies_pzi",
-    satisfiesPzs: "satisfies_pzs",
     sourceSnapshot: "source_snapshot",
     sourceVolume: "source_volume",
-    state: "state",
-    volumeRegion: "volume_region",
-    volumeUsageBytes: "volume_usage_bytes",
   },
 };

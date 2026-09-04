@@ -4,11 +4,11 @@ package datastream
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1alpha1Object_BackfillJob_Errors struct {
-	Details any
+	Details   any
 	ErrorTime any
 	ErrorUuid any
-	Message any
-	Reason any
+	Message   any
+	Reason    any
 }
 
 type V1alpha1Object_BackfillJob struct {
@@ -46,7 +46,6 @@ type V1alpha1Object_SourceObject struct {
 }
 
 type V1alpha1ObjectConfig struct {
-	Name any
 }
 
 type V1alpha1ObjectAttrs struct {
@@ -58,7 +57,7 @@ type V1alpha1ObjectAttrs struct {
 	DisplayName any
 	// Output only. Active errors on the object.
 	Errors any
-	Name any
+	Name   any
 	// Represents an identifier of an object in the data source.
 	SourceObject any
 	// Output only. The last update time of the object.
@@ -67,7 +66,5 @@ type V1alpha1ObjectAttrs struct {
 
 var V1alpha1Object = ubx.DataSourceBinding{
 	WireType: "google_datastream_v1alpha1_object",
-	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	},
+	Fields:   ubx.FieldMap{},
 }

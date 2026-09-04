@@ -137,8 +137,6 @@ _V1alphaAssistant_GenerationConfigFields = {
 
 @dataclasses.dataclass
 class V1alphaAssistantConfig:
-    # Output only. Represents the time when this Assistant was created.
-    create_time: Any = None
     # Customer-defined policy for the assistant.
     customer_policy: Any = None
     # Optional. This field controls the default web grounding toggle for end users if `web_grounding_type` is set to `WEB_GROUNDING_TYPE_GOOGLE_SEARCH` or `WEB_GROUNDING_TYPE_ENTERPRISE_WEB_SEARCH`. By default, this field is set to false. If `web_grounding_type` is `WEB_GROUNDING_TYPE_GOOGLE_SEARCH` or `WEB_GROUNDING_TYPE_ENTERPRISE_WEB_SEARCH`, end users will have web grounding enabled by default on UI. If true, grounding toggle will be disabled by default on UI. End users can still enable web grounding in the UI if web grounding is enabled.
@@ -155,8 +153,6 @@ class V1alphaAssistantConfig:
     generation_config: Any = None
     # Immutable. Resource name of the assistant. Format: `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}/assistants/{assistant}` It must be a UTF-8 encoded string with a length limit of 1024 characters.
     name: Any = None
-    # Output only. Represents the time when this Assistant was most recently updated.
-    update_time: Any = None
     # Optional. The type of web grounding to use.
     web_grounding_type: Any = None
 
@@ -188,7 +184,6 @@ class V1alphaAssistantAttrs:
 V1alphaAssistant = ubx.ResourceBinding(
     wire_type="google_discoveryengine_v1alpha_assistant",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "customer_policy": ubx.FieldSpec(
             wire_name="customer_policy",
             kind="object",
@@ -209,7 +204,6 @@ V1alphaAssistant = ubx.ResourceBinding(
             fields=_V1alphaAssistant_GenerationConfigFields,
         ),
         "name": ubx.FieldSpec(wire_name="name"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
         "web_grounding_type": ubx.FieldSpec(wire_name="web_grounding_type"),
     },
 )

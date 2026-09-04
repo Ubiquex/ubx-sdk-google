@@ -285,8 +285,6 @@ export interface RepositoryConfig {
   cleanupPolicies?: Record<string, Repository_CleanupPolicies> | Computed<Record<string, Repository_CleanupPolicies>>;
   /** Optional. If true, the cleanup pipeline is prevented from deleting versions in this repository. */
   cleanupPolicyDryRun?: boolean | Computed<boolean>;
-  /** Output only. The time when the repository was created. */
-  createTime?: string | Computed<string>;
   /** The user-provided description of the repository. */
   description?: string | Computed<string>;
   /** Optional. If this is true, an unspecified repo type will be treated as error rather than defaulting to standard. */
@@ -307,18 +305,8 @@ export interface RepositoryConfig {
   name?: string | Computed<string>;
   /** The platform logs config for a project or a repository. */
   platformLogsConfig?: Repository_PlatformLogsConfig | Computed<Repository_PlatformLogsConfig>;
-  /** Output only. The repository endpoint, for example: `us-docker.pkg.dev/my-proj/my-repo`. */
-  registryUri?: string | Computed<string>;
   /** Remote repository configuration. */
   remoteRepositoryConfig?: Repository_RemoteRepositoryConfig | Computed<Repository_RemoteRepositoryConfig>;
-  /** Output only. Whether or not this repository satisfies PZI. */
-  satisfiesPzi?: boolean | Computed<boolean>;
-  /** Output only. Whether or not this repository satisfies PZS. */
-  satisfiesPzs?: boolean | Computed<boolean>;
-  /** Output only. The size, in bytes, of all artifact storage in this repository. Repositories that are generally available or in public preview use this to calculate storage costs. */
-  sizeBytes?: string | Computed<string>;
-  /** Output only. The time when the repository was last updated. */
-  updateTime?: string | Computed<string>;
   /** Virtual repository configuration. */
   virtualRepositoryConfig?: Repository_VirtualRepositoryConfig | Computed<Repository_VirtualRepositoryConfig>;
   /** Config on whether to perform vulnerability scanning for resources in this repository, as well as output fields describing current state. */
@@ -379,7 +367,6 @@ export const Repository: ResourceBinding<RepositoryConfig, RepositoryAttrs> = {
       fields: Repository_CleanupPoliciesFields,
     },
     cleanupPolicyDryRun: "cleanup_policy_dry_run",
-    createTime: "create_time",
     description: "description",
     disallowUnspecifiedMode: "disallow_unspecified_mode",
     dockerConfig: {
@@ -402,16 +389,11 @@ export const Repository: ResourceBinding<RepositoryConfig, RepositoryAttrs> = {
       kind: "object",
       fields: Repository_PlatformLogsConfigFields,
     },
-    registryUri: "registry_uri",
     remoteRepositoryConfig: {
       wireName: "remote_repository_config",
       kind: "object",
       fields: Repository_RemoteRepositoryConfigFields,
     },
-    satisfiesPzi: "satisfies_pzi",
-    satisfiesPzs: "satisfies_pzs",
-    sizeBytes: "size_bytes",
-    updateTime: "update_time",
     virtualRepositoryConfig: {
       wireName: "virtual_repository_config",
       kind: "object",

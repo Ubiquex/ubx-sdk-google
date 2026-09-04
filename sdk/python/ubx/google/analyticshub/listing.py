@@ -161,8 +161,6 @@ class ListingConfig:
     icon: Any = None
     # Optional. By default, false. If true, the Listing has an email sharing mandate enabled.
     log_linked_dataset_query_user_email: Any = None
-    # Output only. The resource name of the listing. e.g. `projects/myproject/locations/us/dataExchanges/123/listings/456`
-    name: Any = None
     # Optional. Email or URL of the primary point of contact of the listing. Max Length: 1000 bytes.
     primary_contact: Any = None
     # Contains details of the listing publisher.
@@ -171,12 +169,8 @@ class ListingConfig:
     pubsub_topic: Any = None
     # Optional. Email or URL of the request access of the listing. Subscribers can use this reference to request access. Max Length: 1000 bytes.
     request_access: Any = None
-    # Output only. Listing shared asset type.
-    resource_type: Any = None
     # Restricted export config, used to configure restricted export on linked dataset.
     restricted_export_config: Any = None
-    # Output only. Current state of the listing.
-    state: Any = None
     # Stored procedure configuration, used to configure stored procedure sharing on linked dataset.
     stored_procedure_config: Any = None
 
@@ -249,7 +243,6 @@ Listing = ubx.ResourceBinding(
         "documentation": ubx.FieldSpec(wire_name="documentation"),
         "icon": ubx.FieldSpec(wire_name="icon"),
         "log_linked_dataset_query_user_email": ubx.FieldSpec(wire_name="log_linked_dataset_query_user_email"),
-        "name": ubx.FieldSpec(wire_name="name"),
         "primary_contact": ubx.FieldSpec(wire_name="primary_contact"),
         "publisher": ubx.FieldSpec(
             wire_name="publisher",
@@ -262,13 +255,11 @@ Listing = ubx.ResourceBinding(
             fields=_Listing_PubsubTopicFields,
         ),
         "request_access": ubx.FieldSpec(wire_name="request_access"),
-        "resource_type": ubx.FieldSpec(wire_name="resource_type"),
         "restricted_export_config": ubx.FieldSpec(
             wire_name="restricted_export_config",
             kind="object",
             fields=_Listing_BigqueryDataset_RestrictedExportPolicyFields,
         ),
-        "state": ubx.FieldSpec(wire_name="state"),
         "stored_procedure_config": ubx.FieldSpec(
             wire_name="stored_procedure_config",
             kind="object",

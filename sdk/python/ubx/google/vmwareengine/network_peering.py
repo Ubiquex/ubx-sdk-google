@@ -8,8 +8,6 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class NetworkPeeringConfig:
-    # Output only. Creation time of this resource.
-    create_time: Any = None
     # Optional. User-provided description for this network peering.
     description: Any = None
     # Optional. True if full mesh connectivity is created and managed automatically between peered networks; false otherwise. Currently this field is always true because Google Compute Engine automatically creates and manages subnetwork routes between two VPC networks when peering state is 'ACTIVE'.
@@ -22,22 +20,12 @@ class NetworkPeeringConfig:
     import_custom_routes: Any = None
     # Optional. True if all subnet routes with public IP address range are imported; false otherwise. The default value is true. IPv4 special-use ranges (https://en.wikipedia.org/wiki/IPv4#Special_addresses) are always imported to peers and are not controlled by this field.
     import_custom_routes_with_public_ip: Any = None
-    # Output only. Identifier. The resource name of the network peering. NetworkPeering is a global resource and location can only be global. Resource names are scheme-less URIs that follow the conventions in https://cloud.google.com/apis/design/resource_names. For example: `projects/my-project/locations/global/networkPeerings/my-peering`
-    name: Any = None
     # Optional. Maximum transmission unit (MTU) in bytes. The default value is `1500`. If a value of `0` is provided for this field, VMware Engine uses the default value instead.
     peer_mtu: Any = None
     # Required. The relative resource name of the network to peer with a standard VMware Engine network. The provided network can be a consumer VPC network or another standard VMware Engine network. If the `peer_network_type` is VMWARE_ENGINE_NETWORK, specify the name in the form: `projects/{project}/locations/global/vmwareEngineNetworks/{vmware_engine_network_id}`. Otherwise specify the name in the form: `projects/{project}/global/networks/{network_id}`, where `{project}` can either be a project number or a project ID.
     peer_network: Any = None
     # Required. The type of the network to peer with the VMware Engine network.
     peer_network_type: Any = None
-    # Output only. State of the network peering. This field has a value of 'ACTIVE' when there's a matching configuration in the peer network. New values may be added to this enum when appropriate.
-    state: Any = None
-    # Output only. Output Only. Details about the current state of the network peering.
-    state_details: Any = None
-    # Output only. System-generated unique identifier for the resource.
-    uid: Any = None
-    # Output only. Last update time of this resource.
-    update_time: Any = None
     # Required. The relative resource name of the VMware Engine network. Specify the name in the following form: `projects/{project}/locations/{location}/vmwareEngineNetworks/{vmware_engine_network_id}` where `{project}` can either be a project number or a project ID.
     vmware_engine_network: Any = None
 
@@ -79,21 +67,15 @@ class NetworkPeeringAttrs:
 NetworkPeering = ubx.ResourceBinding(
     wire_type="google_vmwareengine_network_peering",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "exchange_subnet_routes": ubx.FieldSpec(wire_name="exchange_subnet_routes"),
         "export_custom_routes": ubx.FieldSpec(wire_name="export_custom_routes"),
         "export_custom_routes_with_public_ip": ubx.FieldSpec(wire_name="export_custom_routes_with_public_ip"),
         "import_custom_routes": ubx.FieldSpec(wire_name="import_custom_routes"),
         "import_custom_routes_with_public_ip": ubx.FieldSpec(wire_name="import_custom_routes_with_public_ip"),
-        "name": ubx.FieldSpec(wire_name="name"),
         "peer_mtu": ubx.FieldSpec(wire_name="peer_mtu"),
         "peer_network": ubx.FieldSpec(wire_name="peer_network"),
         "peer_network_type": ubx.FieldSpec(wire_name="peer_network_type"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "state_details": ubx.FieldSpec(wire_name="state_details"),
-        "uid": ubx.FieldSpec(wire_name="uid"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
         "vmware_engine_network": ubx.FieldSpec(wire_name="vmware_engine_network"),
     },
 )

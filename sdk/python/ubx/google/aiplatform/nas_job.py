@@ -500,36 +500,20 @@ _NasJob_NasJobSpecFields = {
 
 @dataclasses.dataclass
 class NasJobConfig:
-    # Output only. Time when the NasJob was created.
-    create_time: Any = None
     # Required. The display name of the NasJob. The name can be up to 128 characters long and can consist of any UTF-8 characters.
     display_name: Any = None
     # Optional. Enable a separation of Custom model training and restricted image training for tenant project.
     enable_restricted_image_training: Any = None
     # Represents a customer-managed encryption key specification that can be applied to a Vertex AI resource.
     encryption_spec: Any = None
-    # Output only. Time when the NasJob entered any of the following states: `JOB_STATE_SUCCEEDED`, `JOB_STATE_FAILED`, `JOB_STATE_CANCELLED`.
-    end_time: Any = None
     # The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
     error: Any = None
     # The labels with user-defined metadata to organize NasJobs. Label keys and values can be no longer than 64 characters (Unicode codepoints), can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. See https://goo.gl/xmQnxf for more information and examples of labels.
     labels: Any = None
-    # Output only. Resource name of the NasJob.
-    name: Any = None
     # Represents a uCAIP NasJob output.
     nas_job_output: Any = None
     # Represents the spec of a NasJob.
     nas_job_spec: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzi: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzs: Any = None
-    # Output only. Time when the NasJob for the first time entered the `JOB_STATE_RUNNING` state.
-    start_time: Any = None
-    # Output only. The detailed state of the job.
-    state: Any = None
-    # Output only. Time when the NasJob was most recently updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class NasJobAttrs:
@@ -567,7 +551,6 @@ class NasJobAttrs:
 NasJob = ubx.ResourceBinding(
     wire_type="google_aiplatform_nas_job",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "enable_restricted_image_training": ubx.FieldSpec(wire_name="enable_restricted_image_training"),
         "encryption_spec": ubx.FieldSpec(
@@ -575,14 +558,12 @@ NasJob = ubx.ResourceBinding(
             kind="object",
             fields=_NasJob_EncryptionSpecFields,
         ),
-        "end_time": ubx.FieldSpec(wire_name="end_time"),
         "error": ubx.FieldSpec(
             wire_name="error",
             kind="object",
             fields=_NasJob_ErrorFields,
         ),
         "labels": ubx.FieldSpec(wire_name="labels"),
-        "name": ubx.FieldSpec(wire_name="name"),
         "nas_job_output": ubx.FieldSpec(
             wire_name="nas_job_output",
             kind="object",
@@ -593,10 +574,5 @@ NasJob = ubx.ResourceBinding(
             kind="object",
             fields=_NasJob_NasJobSpecFields,
         ),
-        "satisfies_pzi": ubx.FieldSpec(wire_name="satisfies_pzi"),
-        "satisfies_pzs": ubx.FieldSpec(wire_name="satisfies_pzs"),
-        "start_time": ubx.FieldSpec(wire_name="start_time"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

@@ -43,8 +43,6 @@ const V1beta4BackupRun_ErrorFields: FieldMap = {
 export interface V1beta4BackupRunConfig {
   /** Specifies the kind of backup, PHYSICAL or DEFAULT_SNAPSHOT. */
   backupKind?: string | Computed<string>;
-  /** Output only. The instance database version at the time this backup was made. */
-  databaseVersion?: string | Computed<string>;
   /** The description of this run, only applicable to on-demand backups. */
   description?: string | Computed<string>;
   /** Disk encryption configuration for an instance. */
@@ -65,8 +63,6 @@ export interface V1beta4BackupRunConfig {
   kind?: string | Computed<string>;
   /** Location of the backups. */
   location?: string | Computed<string>;
-  /** Output only. The maximum chargeable bytes for the backup. */
-  maxChargeableBytes?: string | Computed<string>;
   /** The URI of this resource. */
   selfLink?: string | Computed<string>;
   /** The time the backup operation actually started in UTC timezone in [RFC 3339](https://tools.ietf.org/html/rfc3339) format, for example `2012-11-15T16:19:00.094Z`. */
@@ -126,7 +122,6 @@ export const V1beta4BackupRun: ResourceBinding<V1beta4BackupRunConfig, V1beta4Ba
   wireType: "google_sqladmin_v1beta4_backup_run",
   fields: {
     backupKind: "backup_kind",
-    databaseVersion: "database_version",
     description: "description",
     diskEncryptionConfiguration: {
       wireName: "disk_encryption_configuration",
@@ -149,7 +144,6 @@ export const V1beta4BackupRun: ResourceBinding<V1beta4BackupRunConfig, V1beta4Ba
     instance: "instance",
     kind: "kind",
     location: "location",
-    maxChargeableBytes: "max_chargeable_bytes",
     selfLink: "self_link",
     startTime: "start_time",
     status: "status",

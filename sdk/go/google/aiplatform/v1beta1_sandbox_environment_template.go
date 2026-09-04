@@ -9,7 +9,7 @@ type V1beta1SandboxEnvironmentTemplate_CustomContainerEnvironment_CustomContaine
 }
 
 type V1beta1SandboxEnvironmentTemplate_CustomContainerEnvironment_Ports struct {
-	Port any
+	Port     any
 	Protocol any
 }
 
@@ -37,7 +37,7 @@ type V1beta1SandboxEnvironmentTemplate_DefaultContainerEnvironment struct {
 }
 
 type V1beta1SandboxEnvironmentTemplate_EgressControlConfig_DnsPeeringConfigs struct {
-	Domain any
+	Domain        any
 	TargetNetwork any
 	TargetProject any
 }
@@ -54,12 +54,12 @@ type V1beta1SandboxEnvironmentTemplate_EgressControlConfig struct {
 }
 
 type V1beta1SandboxEnvironmentTemplate_IngressControlConfig_PscAutomationConfigs struct {
-	ErrorMessage any
+	ErrorMessage   any
 	ForwardingRule any
-	IpAddress any
-	Network any
-	ProjectId any
-	State any
+	IpAddress      any
+	Network        any
+	ProjectId      any
+	State          any
 }
 
 type V1beta1SandboxEnvironmentTemplate_IngressControlConfig struct {
@@ -76,87 +76,85 @@ type V1beta1SandboxEnvironmentTemplate_IngressControlConfig struct {
 }
 
 var V1beta1SandboxEnvironmentTemplate_CustomContainerEnvironment_CustomContainerSpecFields = ubx.FieldMap{
-		"ImageUri": ubx.FieldSpec{WireName: "image_uri"},
-	}
+	"ImageUri": ubx.FieldSpec{WireName: "image_uri"},
+}
 
 var V1beta1SandboxEnvironmentTemplate_CustomContainerEnvironment_PortsFields = ubx.FieldMap{
-		"Port": ubx.FieldSpec{WireName: "port"},
-		"Protocol": ubx.FieldSpec{WireName: "protocol"},
-	}
+	"Port":     ubx.FieldSpec{WireName: "port"},
+	"Protocol": ubx.FieldSpec{WireName: "protocol"},
+}
 
 var V1beta1SandboxEnvironmentTemplate_CustomContainerEnvironment_ResourcesFields = ubx.FieldMap{
-		"Limits": ubx.FieldSpec{WireName: "limits"},
-		"Requests": ubx.FieldSpec{WireName: "requests"},
-	}
+	"Limits":   ubx.FieldSpec{WireName: "limits"},
+	"Requests": ubx.FieldSpec{WireName: "requests"},
+}
 
 var V1beta1SandboxEnvironmentTemplate_CustomContainerEnvironmentFields = ubx.FieldMap{
-		"CustomContainerSpec": ubx.FieldSpec{
-			WireName: "custom_container_spec",
-			Kind: "object",
-			Fields: V1beta1SandboxEnvironmentTemplate_CustomContainerEnvironment_CustomContainerSpecFields,
-		},
-		"Ports": ubx.FieldSpec{
-			WireName: "ports",
-			Kind: "list",
-			Fields: V1beta1SandboxEnvironmentTemplate_CustomContainerEnvironment_PortsFields,
-		},
-		"Resources": ubx.FieldSpec{
-			WireName: "resources",
-			Kind: "object",
-			Fields: V1beta1SandboxEnvironmentTemplate_CustomContainerEnvironment_ResourcesFields,
-		},
-	}
+	"CustomContainerSpec": ubx.FieldSpec{
+		WireName: "custom_container_spec",
+		Kind:     "object",
+		Fields:   V1beta1SandboxEnvironmentTemplate_CustomContainerEnvironment_CustomContainerSpecFields,
+	},
+	"Ports": ubx.FieldSpec{
+		WireName: "ports",
+		Kind:     "list",
+		Fields:   V1beta1SandboxEnvironmentTemplate_CustomContainerEnvironment_PortsFields,
+	},
+	"Resources": ubx.FieldSpec{
+		WireName: "resources",
+		Kind:     "object",
+		Fields:   V1beta1SandboxEnvironmentTemplate_CustomContainerEnvironment_ResourcesFields,
+	},
+}
 
 var V1beta1SandboxEnvironmentTemplate_DefaultContainerEnvironmentFields = ubx.FieldMap{
-		"DefaultContainerCategory": ubx.FieldSpec{WireName: "default_container_category"},
-		"Resources": ubx.FieldSpec{
-			WireName: "resources",
-			Kind: "object",
-			Fields: V1beta1SandboxEnvironmentTemplate_CustomContainerEnvironment_ResourcesFields,
-		},
-	}
+	"DefaultContainerCategory": ubx.FieldSpec{WireName: "default_container_category"},
+	"Resources": ubx.FieldSpec{
+		WireName: "resources",
+		Kind:     "object",
+		Fields:   V1beta1SandboxEnvironmentTemplate_CustomContainerEnvironment_ResourcesFields,
+	},
+}
 
 var V1beta1SandboxEnvironmentTemplate_EgressControlConfig_DnsPeeringConfigsFields = ubx.FieldMap{
-		"Domain": ubx.FieldSpec{WireName: "domain"},
-		"TargetNetwork": ubx.FieldSpec{WireName: "target_network"},
-		"TargetProject": ubx.FieldSpec{WireName: "target_project"},
-	}
+	"Domain":        ubx.FieldSpec{WireName: "domain"},
+	"TargetNetwork": ubx.FieldSpec{WireName: "target_network"},
+	"TargetProject": ubx.FieldSpec{WireName: "target_project"},
+}
 
 var V1beta1SandboxEnvironmentTemplate_EgressControlConfigFields = ubx.FieldMap{
-		"CustomerVpcNetwork": ubx.FieldSpec{WireName: "customer_vpc_network"},
-		"DnsPeeringConfigs": ubx.FieldSpec{
-			WireName: "dns_peering_configs",
-			Kind: "list",
-			Fields: V1beta1SandboxEnvironmentTemplate_EgressControlConfig_DnsPeeringConfigsFields,
-		},
-		"InternetAccess": ubx.FieldSpec{WireName: "internet_access"},
-		"NetworkAttachment": ubx.FieldSpec{WireName: "network_attachment"},
-	}
+	"CustomerVpcNetwork": ubx.FieldSpec{WireName: "customer_vpc_network"},
+	"DnsPeeringConfigs": ubx.FieldSpec{
+		WireName: "dns_peering_configs",
+		Kind:     "list",
+		Fields:   V1beta1SandboxEnvironmentTemplate_EgressControlConfig_DnsPeeringConfigsFields,
+	},
+	"InternetAccess":    ubx.FieldSpec{WireName: "internet_access"},
+	"NetworkAttachment": ubx.FieldSpec{WireName: "network_attachment"},
+}
 
 var V1beta1SandboxEnvironmentTemplate_IngressControlConfig_PscAutomationConfigsFields = ubx.FieldMap{
-		"ErrorMessage": ubx.FieldSpec{WireName: "error_message"},
-		"ForwardingRule": ubx.FieldSpec{WireName: "forwarding_rule"},
-		"IpAddress": ubx.FieldSpec{WireName: "ip_address"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"ErrorMessage":   ubx.FieldSpec{WireName: "error_message"},
+	"ForwardingRule": ubx.FieldSpec{WireName: "forwarding_rule"},
+	"IpAddress":      ubx.FieldSpec{WireName: "ip_address"},
+	"Network":        ubx.FieldSpec{WireName: "network"},
+	"ProjectId":      ubx.FieldSpec{WireName: "project_id"},
+	"State":          ubx.FieldSpec{WireName: "state"},
+}
 
 var V1beta1SandboxEnvironmentTemplate_IngressControlConfigFields = ubx.FieldMap{
-		"EnablePrivateServiceConnect": ubx.FieldSpec{WireName: "enable_private_service_connect"},
-		"EnableSecurePrivateServiceConnect": ubx.FieldSpec{WireName: "enable_secure_private_service_connect"},
-		"ProjectAllowlist": ubx.FieldSpec{WireName: "project_allowlist"},
-		"PscAutomationConfigs": ubx.FieldSpec{
-			WireName: "psc_automation_configs",
-			Kind: "list",
-			Fields: V1beta1SandboxEnvironmentTemplate_IngressControlConfig_PscAutomationConfigsFields,
-		},
-		"ServiceAttachment": ubx.FieldSpec{WireName: "service_attachment"},
-	}
+	"EnablePrivateServiceConnect":       ubx.FieldSpec{WireName: "enable_private_service_connect"},
+	"EnableSecurePrivateServiceConnect": ubx.FieldSpec{WireName: "enable_secure_private_service_connect"},
+	"ProjectAllowlist":                  ubx.FieldSpec{WireName: "project_allowlist"},
+	"PscAutomationConfigs": ubx.FieldSpec{
+		WireName: "psc_automation_configs",
+		Kind:     "list",
+		Fields:   V1beta1SandboxEnvironmentTemplate_IngressControlConfig_PscAutomationConfigsFields,
+	},
+	"ServiceAttachment": ubx.FieldSpec{WireName: "service_attachment"},
+}
 
 type V1beta1SandboxEnvironmentTemplateConfig struct {
-	// Output only. The timestamp when this SandboxEnvironmentTemplate was created.
-	CreateTime any
 	// The customized sandbox runtime environment for BYOC.
 	CustomContainerEnvironment any
 	// The default sandbox runtime environment for default container workloads.
@@ -169,10 +167,6 @@ type V1beta1SandboxEnvironmentTemplateConfig struct {
 	IngressControlConfig any
 	// Identifier. The resource name of the SandboxEnvironmentTemplate. Format: `projects/{project}/locations/{location}/reasoningEngines/{reasoning_engine}/sandboxEnvironmentTemplates/{sandbox_environment_template}`
 	Name any
-	// Output only. The state of the sandbox environment template.
-	State any
-	// Output only. The timestamp when this SandboxEnvironmentTemplate was most recently updated.
-	UpdateTime any
 }
 
 type V1beta1SandboxEnvironmentTemplateAttrs struct {
@@ -199,30 +193,27 @@ type V1beta1SandboxEnvironmentTemplateAttrs struct {
 var V1beta1SandboxEnvironmentTemplate = ubx.ResourceBinding{
 	WireType: "google_aiplatform_v1beta1_sandbox_environment_template",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"CustomContainerEnvironment": ubx.FieldSpec{
 			WireName: "custom_container_environment",
-			Kind: "object",
-			Fields: V1beta1SandboxEnvironmentTemplate_CustomContainerEnvironmentFields,
+			Kind:     "object",
+			Fields:   V1beta1SandboxEnvironmentTemplate_CustomContainerEnvironmentFields,
 		},
 		"DefaultContainerEnvironment": ubx.FieldSpec{
 			WireName: "default_container_environment",
-			Kind: "object",
-			Fields: V1beta1SandboxEnvironmentTemplate_DefaultContainerEnvironmentFields,
+			Kind:     "object",
+			Fields:   V1beta1SandboxEnvironmentTemplate_DefaultContainerEnvironmentFields,
 		},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"EgressControlConfig": ubx.FieldSpec{
 			WireName: "egress_control_config",
-			Kind: "object",
-			Fields: V1beta1SandboxEnvironmentTemplate_EgressControlConfigFields,
+			Kind:     "object",
+			Fields:   V1beta1SandboxEnvironmentTemplate_EgressControlConfigFields,
 		},
 		"IngressControlConfig": ubx.FieldSpec{
 			WireName: "ingress_control_config",
-			Kind: "object",
-			Fields: V1beta1SandboxEnvironmentTemplate_IngressControlConfigFields,
+			Kind:     "object",
+			Fields:   V1beta1SandboxEnvironmentTemplate_IngressControlConfigFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

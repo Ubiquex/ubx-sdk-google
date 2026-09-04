@@ -126,22 +126,14 @@ class OrganizationConfig:
     api_consumer_data_encryption_key_name: Any = None
     # Optional. This field is needed only for customers using non-default data residency regions. Apigee stores some control plane data only in single region. This field determines which single region Apigee should use. For example: "us-west1" when control plane is in US or "europe-west2" when control plane is in EU.
     api_consumer_data_location: Any = None
-    # Output only. Apigee Project ID associated with the organization. Use this project to allowlist Apigee in the Service Attachment when using private service connect with Apigee.
-    apigee_project_id: Any = None
     # Not used by Apigee.
     attributes: Any = None
     # Optional. Compute Engine network used for Service Networking to be peered with Apigee runtime instances. See [Getting started with the Service Networking API](https://cloud.google.com/service-infrastructure/docs/service-networking/getting-started). Valid only when [RuntimeType](#RuntimeType) is set to `CLOUD`. The value must be set before the creation of a runtime instance and can be updated only when there are no runtime instances. For example: `default`. When changing authorizedNetwork, you must reconfigure VPC peering. After VPC peering with previous network is deleted, [run the following command](https://cloud.google.com/sdk/gcloud/reference/services/vpc-peerings/delete): `gcloud services vpc-peerings delete --network=NETWORK`, where `NETWORK` is the name of the previous network. This will delete the previous Service Networking. Otherwise, you will get the following error: `The resource 'projects/...-tp' is already linked to another shared VPC host 'projects/...-tp`. Apigee also supports shared VPC (that is, the host network project is not the same as the one that is peering with Apigee). See [Shared VPC overview](https://cloud.google.com/vpc/docs/shared-vpc). To use a shared VPC network, use the following format: `projects/{host-project-id}/{region}/networks/{network-name}`. For example: `projects/my-sharedvpc-host/global/networks/mynetwork` **Note:** Not supported for Apigee hybrid.
     authorized_network: Any = None
     # Optional. Billing type of the Apigee organization. See [Apigee pricing](https://cloud.google.com/apigee/pricing).
     billing_type: Any = None
-    # Output only. Deprecated: Use `ca_certificates` instead. Base64-encoded public certificate for the root CA of the Apigee organization. Valid only when [RuntimeType](#RuntimeType) is `CLOUD`.
-    ca_certificate: Any = None
-    # Output only. Base64-encoded public certificates for the root CA of the Apigee organization. Valid only when [RuntimeType](#RuntimeType) is `CLOUD`. Multiple certificates are used to support certificate rotation.
-    ca_certificates: Any = None
     # Optional. Cloud KMS key name used for encrypting control plane data that is stored in a multi region. Only used for the data residency region "US" or "EU". If not specified or [BillingType](#BillingType) is `EVALUATION`, a Google-Managed encryption key will be used. Format: `projects/*/locations/*/keyRings/*/cryptoKeys/*`
     control_plane_encryption_key_name: Any = None
-    # Output only. Time that the Apigee organization was created in milliseconds since epoch.
-    created_at: Any = None
     # Not used by Apigee.
     customer_name: Any = None
     # Optional. Description of the Apigee organization.
@@ -150,32 +142,16 @@ class OrganizationConfig:
     disable_vpc_peering: Any = None
     # Optional. Display name for the Apigee organization. Unused, but reserved for future use.
     display_name: Any = None
-    # Output only. List of environments in the Apigee organization.
-    environments: Any = None
-    # Output only. Time that the Apigee organization is scheduled for deletion.
-    expires_at: Any = None
-    # Output only. Time that the Apigee organization was last modified in milliseconds since epoch.
-    last_modified_at: Any = None
-    # Output only. Name of the Apigee organization.
-    name: Any = None
     # Optional. Flag that specifies if internet egress is restricted for VPC Service Controls. Valid only when runtime_type is `CLOUD` and disable_vpc_peering is `true`.
     network_egress_restricted: Any = None
     # Optional. Configuration for the Portals settings.
     portal_disabled: Any = None
-    # Output only. Project ID associated with the Apigee organization.
-    project_id: Any = None
     # Message for compatibility with legacy Edge specification for Java Properties object in JSON.
     properties: Any = None
     # Optional. Cloud KMS key name used for encrypting the data that is stored and replicated across runtime instances. Update is not allowed after the organization is created. If not specified or [RuntimeType](#RuntimeType) is `TRIAL`, a Google-Managed encryption key will be used. For example: "projects/foo/locations/us/keyRings/bar/cryptoKeys/baz". **Note:** Not supported for Apigee hybrid.
     runtime_database_encryption_key_name: Any = None
     # Required. Runtime type of the Apigee organization based on the Apigee subscription purchased.
     runtime_type: Any = None
-    # Output only. State of the organization. Values other than ACTIVE means the resource is not ready to use.
-    state: Any = None
-    # Output only. Subscription plan that the customer has purchased. Output only.
-    subscription_plan: Any = None
-    # Output only. DEPRECATED: This will eventually be replaced by BillingType. Subscription type of the Apigee organization. Valid values include trial (free, limited, and for evaluation purposes only) or paid (full subscription has been purchased). See [Apigee pricing](https://cloud.google.com/apigee/pricing/).
-    subscription_type: Any = None
     # Not used by Apigee.
     type: Any = None
 
@@ -253,25 +229,16 @@ Organization = ubx.ResourceBinding(
         "analytics_region": ubx.FieldSpec(wire_name="analytics_region"),
         "api_consumer_data_encryption_key_name": ubx.FieldSpec(wire_name="api_consumer_data_encryption_key_name"),
         "api_consumer_data_location": ubx.FieldSpec(wire_name="api_consumer_data_location"),
-        "apigee_project_id": ubx.FieldSpec(wire_name="apigee_project_id"),
         "attributes": ubx.FieldSpec(wire_name="attributes"),
         "authorized_network": ubx.FieldSpec(wire_name="authorized_network"),
         "billing_type": ubx.FieldSpec(wire_name="billing_type"),
-        "ca_certificate": ubx.FieldSpec(wire_name="ca_certificate"),
-        "ca_certificates": ubx.FieldSpec(wire_name="ca_certificates"),
         "control_plane_encryption_key_name": ubx.FieldSpec(wire_name="control_plane_encryption_key_name"),
-        "created_at": ubx.FieldSpec(wire_name="created_at"),
         "customer_name": ubx.FieldSpec(wire_name="customer_name"),
         "description": ubx.FieldSpec(wire_name="description"),
         "disable_vpc_peering": ubx.FieldSpec(wire_name="disable_vpc_peering"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
-        "environments": ubx.FieldSpec(wire_name="environments"),
-        "expires_at": ubx.FieldSpec(wire_name="expires_at"),
-        "last_modified_at": ubx.FieldSpec(wire_name="last_modified_at"),
-        "name": ubx.FieldSpec(wire_name="name"),
         "network_egress_restricted": ubx.FieldSpec(wire_name="network_egress_restricted"),
         "portal_disabled": ubx.FieldSpec(wire_name="portal_disabled"),
-        "project_id": ubx.FieldSpec(wire_name="project_id"),
         "properties": ubx.FieldSpec(
             wire_name="properties",
             kind="object",
@@ -279,9 +246,6 @@ Organization = ubx.ResourceBinding(
         ),
         "runtime_database_encryption_key_name": ubx.FieldSpec(wire_name="runtime_database_encryption_key_name"),
         "runtime_type": ubx.FieldSpec(wire_name="runtime_type"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "subscription_plan": ubx.FieldSpec(wire_name="subscription_plan"),
-        "subscription_type": ubx.FieldSpec(wire_name="subscription_type"),
         "type": ubx.FieldSpec(wire_name="type"),
     },
 )

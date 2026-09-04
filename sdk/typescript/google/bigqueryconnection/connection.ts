@@ -383,20 +383,12 @@ export interface ConnectionConfig {
   cloudSql?: Connection_CloudSql | Computed<Connection_CloudSql>;
   /** Represents concrete parameter values for Connector Configuration. */
   configuration?: Connection_Configuration | Computed<Connection_Configuration>;
-  /** Output only. The creation timestamp of the connection. */
-  creationTime?: string | Computed<string>;
   /** User provided description. */
   description?: string | Computed<string>;
   /** User provided display name for the connection. */
   friendlyName?: string | Computed<string>;
-  /** Output only. True, if credential is configured for this connection. */
-  hasCredential?: boolean | Computed<boolean>;
   /** Optional. The Cloud KMS key that is used for credentials encryption. If omitted, internal Google owned encryption keys are used. Example: `projects/[kms_project_id]/locations/[region]/keyRings/[key_region]/cryptoKeys/[key]` */
   kmsKeyName?: string | Computed<string>;
-  /** Output only. The last update timestamp of the connection. */
-  lastModifiedTime?: string | Computed<string>;
-  /** Output only. The resource name of the connection in the form of: `projects/{project_id}/locations/{location_id}/connections/{connection_id}` */
-  name?: string | Computed<string>;
   /** Connection properties specific to Salesforce DataCloud. This is intended for use only by Salesforce partner projects. */
   salesforceDataCloud?: Connection_SalesforceDataCloud | Computed<Connection_SalesforceDataCloud>;
   /** Container for connection properties to execute stored procedures for Apache Spark. */
@@ -469,13 +461,9 @@ export const Connection: ResourceBinding<ConnectionConfig, ConnectionAttrs> = {
       kind: "object",
       fields: Connection_ConfigurationFields,
     },
-    creationTime: "creation_time",
     description: "description",
     friendlyName: "friendly_name",
-    hasCredential: "has_credential",
     kmsKeyName: "kms_key_name",
-    lastModifiedTime: "last_modified_time",
-    name: "name",
     salesforceDataCloud: {
       wireName: "salesforce_data_cloud",
       kind: "object",

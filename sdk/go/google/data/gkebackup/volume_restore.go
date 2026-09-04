@@ -11,7 +11,6 @@ type VolumeRestore_TargetPvc struct {
 }
 
 type VolumeRestoreConfig struct {
-	Name any
 }
 
 type VolumeRestoreAttrs struct {
@@ -42,7 +41,5 @@ type VolumeRestoreAttrs struct {
 
 var VolumeRestore = ubx.DataSourceBinding{
 	WireType: "google_gkebackup_volume_restore",
-	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	},
+	Fields:   ubx.FieldMap{},
 }

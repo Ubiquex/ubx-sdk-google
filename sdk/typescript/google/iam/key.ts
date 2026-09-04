@@ -23,14 +23,10 @@ const Key_KeyDataFields: FieldMap = {
 };
 
 export interface KeyConfig {
-  /** Output only. The time after which the key will be permanently deleted and cannot be recovered. Note that the key may get purged before this time if the total limit of keys per provider is exceeded. */
-  expireTime?: string | Computed<string>;
   /** Represents a public key data along with its format. */
   keyData?: Key_KeyData | Computed<Key_KeyData>;
   /** Identifier. The resource name of the key. Format: `locations/{location}/workforcePools/{workforce_pool_id}/providers/{provider_id}/keys/{key_id}` */
   name?: string | Computed<string>;
-  /** Output only. The state of the key. */
-  state?: string | Computed<string>;
   /** Required. The purpose of the key. */
   use?: string | Computed<string>;
 }
@@ -51,14 +47,12 @@ export interface KeyAttrs {
 export const Key: ResourceBinding<KeyConfig, KeyAttrs> = {
   wireType: "google_iam_key",
   fields: {
-    expireTime: "expire_time",
     keyData: {
       wireName: "key_data",
       kind: "object",
       fields: Key_KeyDataFields,
     },
     name: "name",
-    state: "state",
     use: "use",
   },
 };

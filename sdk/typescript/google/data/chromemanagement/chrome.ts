@@ -57,7 +57,6 @@ export interface Chrome_ServiceError {
 }
 
 export interface ChromeConfig {
-  name: string | Computed<string>;
 }
 
 export interface ChromeAttrs {
@@ -105,6 +104,5 @@ export interface ChromeAttrs {
 export const Chrome: DataSourceBinding<ChromeConfig, ChromeAttrs> = {
   wireType: "google_chromemanagement_chrome",
   fields: {
-    name: "name",
   },
 };

@@ -32,10 +32,6 @@ _Attribute_ResourceAccessSpecFields = {
 
 @dataclasses.dataclass
 class AttributeConfig:
-    # Output only. The number of child attributes present for this attribute.
-    attribute_count: Any = None
-    # Output only. The time when the DataAttribute was created.
-    create_time: Any = None
     # DataAccessSpec holds the access control configuration to be enforced on data stored within resources (eg: rows, columns in BigQuery Tables). When associated with data, the data is only accessible to principals explicitly granted access through the DataAccessSpec. Principals with access to the containing resource are not implicitly granted access.
     data_access_spec: Any = None
     # Optional. Description of the DataAttribute.
@@ -46,16 +42,10 @@ class AttributeConfig:
     etag: Any = None
     # Optional. User-defined labels for the DataAttribute.
     labels: Any = None
-    # Output only. The relative resource name of the dataAttribute, of the form: projects/{project_number}/locations/{location_id}/dataTaxonomies/{dataTaxonomy}/attributes/{data_attribute_id}.
-    name: Any = None
     # Optional. The ID of the parent DataAttribute resource, should belong to the same data taxonomy. Circular dependency in parent chain is not valid. Maximum depth of the hierarchy allowed is 4. a -> b -> c -> d -> e, depth = 4
     parent_id: Any = None
     # ResourceAccessSpec holds the access control configuration to be enforced on the resources, for example, Cloud Storage bucket, BigQuery dataset, BigQuery table.
     resource_access_spec: Any = None
-    # Output only. System generated globally unique ID for the DataAttribute. This ID will be different if the DataAttribute is deleted and re-created with the same name.
-    uid: Any = None
-    # Output only. The time when the DataAttribute was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class AttributeAttrs:
@@ -87,8 +77,6 @@ class AttributeAttrs:
 Attribute = ubx.ResourceBinding(
     wire_type="google_dataplex_attribute",
     fields={
-        "attribute_count": ubx.FieldSpec(wire_name="attribute_count"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "data_access_spec": ubx.FieldSpec(
             wire_name="data_access_spec",
             kind="object",
@@ -98,14 +86,11 @@ Attribute = ubx.ResourceBinding(
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "etag": ubx.FieldSpec(wire_name="etag"),
         "labels": ubx.FieldSpec(wire_name="labels"),
-        "name": ubx.FieldSpec(wire_name="name"),
         "parent_id": ubx.FieldSpec(wire_name="parent_id"),
         "resource_access_spec": ubx.FieldSpec(
             wire_name="resource_access_spec",
             kind="object",
             fields=_Attribute_ResourceAccessSpecFields,
         ),
-        "uid": ubx.FieldSpec(wire_name="uid"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

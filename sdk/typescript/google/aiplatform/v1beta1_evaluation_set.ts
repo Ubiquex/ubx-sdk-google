@@ -617,8 +617,6 @@ const V1beta1EvaluationSet_EncryptionSpecFields: FieldMap = {
 export interface V1beta1EvaluationSetConfig {
   /** Optional. Static configurations for each agent associated with the items in this set. Key: `agent_id` (matches the `author` field in `events`). Value: The static configuration of the agent. */
   agentConfigs?: Record<string, V1beta1EvaluationSet_AgentConfigs> | Computed<Record<string, V1beta1EvaluationSet_AgentConfigs>>;
-  /** Output only. Timestamp when this item was created. */
-  createTime?: string | Computed<string>;
   /** Required. The display name of the EvaluationSet. */
   displayName?: string | Computed<string>;
   /** Represents a customer-managed encryption key specification that can be applied to a Vertex AI resource. */
@@ -629,8 +627,6 @@ export interface V1beta1EvaluationSetConfig {
   metadata?: unknown | Computed<unknown>;
   /** Identifier. The resource name of the EvaluationSet. Format: `projects/{project}/locations/{location}/evaluationSets/{evaluation_set}` */
   name?: string | Computed<string>;
-  /** Output only. Timestamp when this item was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1beta1EvaluationSetAttrs {
@@ -660,7 +656,6 @@ export const V1beta1EvaluationSet: ResourceBinding<V1beta1EvaluationSetConfig, V
       kind: "map",
       fields: V1beta1EvaluationSet_AgentConfigsFields,
     },
-    createTime: "create_time",
     displayName: "display_name",
     encryptionSpec: {
       wireName: "encryption_spec",
@@ -670,6 +665,5 @@ export const V1beta1EvaluationSet: ResourceBinding<V1beta1EvaluationSetConfig, V
     evaluationItems: "evaluation_items",
     metadata: "metadata",
     name: "name",
-    updateTime: "update_time",
   },
 };

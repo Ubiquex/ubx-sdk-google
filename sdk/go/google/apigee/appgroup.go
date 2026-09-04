@@ -4,32 +4,26 @@ package apigee
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Appgroup_Attributes struct {
-	Name any
+	Name  any
 	Value any
 }
 
 var Appgroup_AttributesFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Name":  ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{WireName: "value"},
+}
 
 type AppgroupConfig struct {
-	// Output only. Internal identifier that cannot be edited
-	AppGroupId any
 	// A list of attributes
 	Attributes any
 	// channel identifier identifies the owner maintaing this grouping.
 	ChannelId any
 	// A reference to the associated storefront/marketplace.
 	ChannelUri any
-	// Output only. Created time as milliseconds since epoch.
-	CreatedAt any
 	// app group name displayed in the UI
 	DisplayName any
 	// Optional. Email of the AppGroup.
 	Email any
-	// Output only. Modified time as milliseconds since epoch.
-	LastModifiedAt any
 	// Immutable. Name of the AppGroup. Characters you can use in the name are restricted to: A-Z0-9._\-$ %.
 	Name any
 	// Immutable. the org the app group is created
@@ -66,20 +60,17 @@ type AppgroupAttrs struct {
 var Appgroup = ubx.ResourceBinding{
 	WireType: "google_apigee_appgroup",
 	Fields: ubx.FieldMap{
-		"AppGroupId": ubx.FieldSpec{WireName: "app_group_id"},
 		"Attributes": ubx.FieldSpec{
 			WireName: "attributes",
-			Kind: "list",
-			Fields: Appgroup_AttributesFields,
+			Kind:     "list",
+			Fields:   Appgroup_AttributesFields,
 		},
-		"ChannelId": ubx.FieldSpec{WireName: "channel_id"},
-		"ChannelUri": ubx.FieldSpec{WireName: "channel_uri"},
-		"CreatedAt": ubx.FieldSpec{WireName: "created_at"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Email": ubx.FieldSpec{WireName: "email"},
-		"LastModifiedAt": ubx.FieldSpec{WireName: "last_modified_at"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"ChannelId":    ubx.FieldSpec{WireName: "channel_id"},
+		"ChannelUri":   ubx.FieldSpec{WireName: "channel_uri"},
+		"DisplayName":  ubx.FieldSpec{WireName: "display_name"},
+		"Email":        ubx.FieldSpec{WireName: "email"},
+		"Name":         ubx.FieldSpec{WireName: "name"},
 		"Organization": ubx.FieldSpec{WireName: "organization"},
-		"Status": ubx.FieldSpec{WireName: "status"},
+		"Status":       ubx.FieldSpec{WireName: "status"},
 	},
 }

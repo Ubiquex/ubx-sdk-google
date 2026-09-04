@@ -4,16 +4,16 @@ package binaryauthorization
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Attestor_UserOwnedGrafeasNote_PublicKeys_PkixPublicKey struct {
-	KeyId any
-	PublicKeyPem any
+	KeyId              any
+	PublicKeyPem       any
 	SignatureAlgorithm any
 }
 
 type Attestor_UserOwnedGrafeasNote_PublicKeys struct {
 	AsciiArmoredPgpPublicKey any
-	Comment any
-	Id any
-	PkixPublicKey any
+	Comment                  any
+	Id                       any
+	PkixPublicKey            any
 }
 
 type Attestor_UserOwnedGrafeasNote struct {
@@ -26,31 +26,31 @@ type Attestor_UserOwnedGrafeasNote struct {
 }
 
 var Attestor_UserOwnedGrafeasNote_PublicKeys_PkixPublicKeyFields = ubx.FieldMap{
-		"KeyId": ubx.FieldSpec{WireName: "key_id"},
-		"PublicKeyPem": ubx.FieldSpec{WireName: "public_key_pem"},
-		"SignatureAlgorithm": ubx.FieldSpec{WireName: "signature_algorithm"},
-	}
+	"KeyId":              ubx.FieldSpec{WireName: "key_id"},
+	"PublicKeyPem":       ubx.FieldSpec{WireName: "public_key_pem"},
+	"SignatureAlgorithm": ubx.FieldSpec{WireName: "signature_algorithm"},
+}
 
 var Attestor_UserOwnedGrafeasNote_PublicKeysFields = ubx.FieldMap{
-		"AsciiArmoredPgpPublicKey": ubx.FieldSpec{WireName: "ascii_armored_pgp_public_key"},
-		"Comment": ubx.FieldSpec{WireName: "comment"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"PkixPublicKey": ubx.FieldSpec{
-			WireName: "pkix_public_key",
-			Kind: "object",
-			Fields: Attestor_UserOwnedGrafeasNote_PublicKeys_PkixPublicKeyFields,
-		},
-	}
+	"AsciiArmoredPgpPublicKey": ubx.FieldSpec{WireName: "ascii_armored_pgp_public_key"},
+	"Comment":                  ubx.FieldSpec{WireName: "comment"},
+	"Id":                       ubx.FieldSpec{WireName: "id"},
+	"PkixPublicKey": ubx.FieldSpec{
+		WireName: "pkix_public_key",
+		Kind:     "object",
+		Fields:   Attestor_UserOwnedGrafeasNote_PublicKeys_PkixPublicKeyFields,
+	},
+}
 
 var Attestor_UserOwnedGrafeasNoteFields = ubx.FieldMap{
-		"DelegationServiceAccountEmail": ubx.FieldSpec{WireName: "delegation_service_account_email"},
-		"NoteReference": ubx.FieldSpec{WireName: "note_reference"},
-		"PublicKeys": ubx.FieldSpec{
-			WireName: "public_keys",
-			Kind: "list",
-			Fields: Attestor_UserOwnedGrafeasNote_PublicKeysFields,
-		},
-	}
+	"DelegationServiceAccountEmail": ubx.FieldSpec{WireName: "delegation_service_account_email"},
+	"NoteReference":                 ubx.FieldSpec{WireName: "note_reference"},
+	"PublicKeys": ubx.FieldSpec{
+		WireName: "public_keys",
+		Kind:     "list",
+		Fields:   Attestor_UserOwnedGrafeasNote_PublicKeysFields,
+	},
+}
 
 type AttestorConfig struct {
 	// Optional. A descriptive comment. This field may be updated. The field may be displayed in chooser dialogs.
@@ -59,8 +59,6 @@ type AttestorConfig struct {
 	Etag any
 	// Required. The resource name, in the format: `projects/*/attestors/*`. This field may not be updated.
 	Name any
-	// Output only. Time when the attestor was last updated.
-	UpdateTime any
 	// An user owned Grafeas note references a Grafeas Attestation.Authority Note created by the user.
 	UserOwnedGrafeasNote any
 }
@@ -82,13 +80,12 @@ var Attestor = ubx.ResourceBinding{
 	WireType: "google_binaryauthorization_attestor",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"Etag":        ubx.FieldSpec{WireName: "etag"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 		"UserOwnedGrafeasNote": ubx.FieldSpec{
 			WireName: "user_owned_grafeas_note",
-			Kind: "object",
-			Fields: Attestor_UserOwnedGrafeasNoteFields,
+			Kind:     "object",
+			Fields:   Attestor_UserOwnedGrafeasNoteFields,
 		},
 	},
 }

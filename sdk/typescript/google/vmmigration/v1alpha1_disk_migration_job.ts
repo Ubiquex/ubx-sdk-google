@@ -60,20 +60,6 @@ const V1alpha1DiskMigrationJob_AwsSourceDiskDetailsFields: FieldMap = {
   volumeId: "volume_id",
 };
 
-const V1alpha1DiskMigrationJob_ErrorsFields: FieldMap = {
-  code: "code",
-  details: "details",
-  message: "message",
-};
-
-const V1alpha1DiskMigrationJob_StepsFields: FieldMap = {
-  copyingSourceDiskSnapshot: "copying_source_disk_snapshot",
-  creatingSourceDiskSnapshot: "creating_source_disk_snapshot",
-  endTime: "end_time",
-  provisioningTargetDisk: "provisioning_target_disk",
-  startTime: "start_time",
-};
-
 const V1alpha1DiskMigrationJob_TargetDetails_EncryptionFields: FieldMap = {
   kmsKey: "kms_key",
 };
@@ -103,20 +89,8 @@ const V1alpha1DiskMigrationJob_TargetDetailsFields: FieldMap = {
 export interface V1alpha1DiskMigrationJobConfig {
   /** Represents the source AWS Disk details. */
   awsSourceDiskDetails?: V1alpha1DiskMigrationJob_AwsSourceDiskDetails | Computed<V1alpha1DiskMigrationJob_AwsSourceDiskDetails>;
-  /** Output only. The time the DiskMigrationJob resource was created. */
-  createTime?: string | Computed<string>;
-  /** Output only. Provides details on the errors that led to the disk migration job's state in case of an error. */
-  errors?: V1alpha1DiskMigrationJob_Errors[] | Computed<V1alpha1DiskMigrationJob_Errors[]>;
-  /** Output only. Identifier. The identifier of the DiskMigrationJob. */
-  name?: string | Computed<string>;
-  /** Output only. State of the DiskMigrationJob. */
-  state?: string | Computed<string>;
-  /** Output only. The disk migration steps list representing its progress. */
-  steps?: V1alpha1DiskMigrationJob_Steps[] | Computed<V1alpha1DiskMigrationJob_Steps[]>;
   /** Details of the target disk in Compute Engine. */
   targetDetails?: V1alpha1DiskMigrationJob_TargetDetails | Computed<V1alpha1DiskMigrationJob_TargetDetails>;
-  /** Output only. The last time the DiskMigrationJob resource was updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1alpha1DiskMigrationJobAttrs {
@@ -146,24 +120,10 @@ export const V1alpha1DiskMigrationJob: ResourceBinding<V1alpha1DiskMigrationJobC
       kind: "object",
       fields: V1alpha1DiskMigrationJob_AwsSourceDiskDetailsFields,
     },
-    createTime: "create_time",
-    errors: {
-      wireName: "errors",
-      kind: "list",
-      fields: V1alpha1DiskMigrationJob_ErrorsFields,
-    },
-    name: "name",
-    state: "state",
-    steps: {
-      wireName: "steps",
-      kind: "list",
-      fields: V1alpha1DiskMigrationJob_StepsFields,
-    },
     targetDetails: {
       wireName: "target_details",
       kind: "object",
       fields: V1alpha1DiskMigrationJob_TargetDetailsFields,
     },
-    updateTime: "update_time",
   },
 };

@@ -13,14 +13,12 @@ type DnsAuthorization_DnsResourceRecord struct {
 }
 
 var DnsAuthorization_DnsResourceRecordFields = ubx.FieldMap{
-		"Data": ubx.FieldSpec{WireName: "data"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Data": ubx.FieldSpec{WireName: "data"},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 type DnsAuthorizationConfig struct {
-	// Output only. The creation timestamp of a DnsAuthorization.
-	CreateTime any
 	// Optional. One or more paragraphs of text description of a DnsAuthorization.
 	Description any
 	// The structure describing the DNS Resource Record that needs to be added to DNS configuration for the authorization to be usable by certificate.
@@ -35,8 +33,6 @@ type DnsAuthorizationConfig struct {
 	Tags any
 	// Optional. Immutable. Type of DnsAuthorization. If unset during resource creation the following default will be used: - in location `global`: FIXED_RECORD, - in other locations: PER_PROJECT_RECORD.
 	Type any
-	// Output only. The last update timestamp of a DnsAuthorization.
-	UpdateTime any
 }
 
 type DnsAuthorizationAttrs struct {
@@ -63,18 +59,16 @@ type DnsAuthorizationAttrs struct {
 var DnsAuthorization = ubx.ResourceBinding{
 	WireType: "google_certificatemanager_dns_authorization",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DnsResourceRecord": ubx.FieldSpec{
 			WireName: "dns_resource_record",
-			Kind: "object",
-			Fields: DnsAuthorization_DnsResourceRecordFields,
+			Kind:     "object",
+			Fields:   DnsAuthorization_DnsResourceRecordFields,
 		},
 		"Domain": ubx.FieldSpec{WireName: "domain"},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"Name":   ubx.FieldSpec{WireName: "name"},
+		"Tags":   ubx.FieldSpec{WireName: "tags"},
+		"Type":   ubx.FieldSpec{WireName: "type"},
 	},
 }

@@ -18,8 +18,6 @@ _DataAsset_AccessGroupConfigsFields = {
 class DataAssetConfig:
     # Optional. Access groups configurations for this data asset.The key is DataProduct.AccessGroup.id and the value is AccessGroupConfig.Example: { "analyst": { "iamRoles": ["roles/bigquery.dataViewer"] } } Currently, at most one IAM role is allowed per access group. For providing multiple predefined IAM roles, wrap them in a custom IAM role as per https://cloud.google.com/iam/docs/creating-custom-roles.
     access_group_configs: Any = None
-    # Output only. The time at which the data asset was created.
-    create_time: Any = None
     # Optional. This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding.
     etag: Any = None
     # Optional. User-defined labels for the data asset.Example: { "environment": "production", "billing": "marketing-department" }
@@ -28,10 +26,6 @@ class DataAssetConfig:
     name: Any = None
     # Required. Immutable. Full resource name of the cloud resource represented by the data asset. This must follow https://cloud.google.com/iam/docs/full-resource-names. Example: //bigquery.googleapis.com/projects/my_project_123/datasets/dataset_456/tables/table_789 Only BigQuery tables and datasets are currently supported. Data asset creator must have getIamPolicy and setIamPolicy permissions on the resource. Data asset creator must also have resource specific get permission, for instance, bigquery.tables.get for BigQuery tables.
     resource: Any = None
-    # Output only. System generated globally unique ID for the data asset. This ID will be different if the data asset is deleted and re-created with the same name.
-    uid: Any = None
-    # Output only. The time at which the data asset was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class DataAssetAttrs:
@@ -60,12 +54,9 @@ DataAsset = ubx.ResourceBinding(
             kind="map",
             fields=_DataAsset_AccessGroupConfigsFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "etag": ubx.FieldSpec(wire_name="etag"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "name": ubx.FieldSpec(wire_name="name"),
         "resource": ubx.FieldSpec(wire_name="resource"),
-        "uid": ubx.FieldSpec(wire_name="uid"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

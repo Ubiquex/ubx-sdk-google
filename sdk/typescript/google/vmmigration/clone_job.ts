@@ -248,33 +248,13 @@ const CloneJob_ErrorFields: FieldMap = {
   message: "message",
 };
 
-const CloneJob_StepsFields: FieldMap = {
-  adaptingOs: "adapting_os",
-  endTime: "end_time",
-  instantiatingMigratedVm: "instantiating_migrated_vm",
-  preparingVmDisks: "preparing_vm_disks",
-  startTime: "start_time",
-};
-
 export interface CloneJobConfig {
   /** ComputeEngineDisksTargetDetails is a collection of created Persistent Disks details. */
   computeEngineDisksTargetDetails?: CloneJob_ComputeEngineDisksTargetDetails | Computed<CloneJob_ComputeEngineDisksTargetDetails>;
   /** ComputeEngineTargetDetails is a collection of details for creating a VM in a target Compute Engine project. */
   computeEngineTargetDetails?: CloneJob_ComputeEngineTargetDetails | Computed<CloneJob_ComputeEngineTargetDetails>;
-  /** Output only. The time the clone job was created (as an API call, not when it was actually created in the target). */
-  createTime?: string | Computed<string>;
-  /** Output only. The time the clone job was ended. */
-  endTime?: string | Computed<string>;
   /** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
   error?: CloneJob_Error | Computed<CloneJob_Error>;
-  /** Output only. The name of the clone. */
-  name?: string | Computed<string>;
-  /** Output only. State of the clone job. */
-  state?: string | Computed<string>;
-  /** Output only. The time the state was last updated. */
-  stateTime?: string | Computed<string>;
-  /** Output only. The clone steps list representing its progress. */
-  steps?: CloneJob_Steps[] | Computed<CloneJob_Steps[]>;
 }
 
 export interface CloneJobAttrs {
@@ -311,20 +291,10 @@ export const CloneJob: ResourceBinding<CloneJobConfig, CloneJobAttrs> = {
       kind: "object",
       fields: CloneJob_ComputeEngineTargetDetailsFields,
     },
-    createTime: "create_time",
-    endTime: "end_time",
     error: {
       wireName: "error",
       kind: "object",
       fields: CloneJob_ErrorFields,
-    },
-    name: "name",
-    state: "state",
-    stateTime: "state_time",
-    steps: {
-      wireName: "steps",
-      kind: "list",
-      fields: CloneJob_StepsFields,
     },
   },
 };

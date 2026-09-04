@@ -36,11 +36,6 @@ class V1beta1Group_PosixGroups:
     name: Any = None
     system_id: Any = None
 
-_V1beta1Group_AdditionalGroupKeysFields = {
-    "id": ubx.FieldSpec(wire_name="id"),
-    "namespace": ubx.FieldSpec(wire_name="namespace"),
-}
-
 _V1beta1Group_DynamicGroupMetadata_QueriesFields = {
     "query": ubx.FieldSpec(wire_name="query"),
     "resource_type": ubx.FieldSpec(wire_name="resource_type"),
@@ -64,6 +59,11 @@ _V1beta1Group_DynamicGroupMetadataFields = {
     ),
 }
 
+_V1beta1Group_AdditionalGroupKeysFields = {
+    "id": ubx.FieldSpec(wire_name="id"),
+    "namespace": ubx.FieldSpec(wire_name="namespace"),
+}
+
 _V1beta1Group_PosixGroupsFields = {
     "gid": ubx.FieldSpec(wire_name="gid"),
     "name": ubx.FieldSpec(wire_name="name"),
@@ -72,10 +72,6 @@ _V1beta1Group_PosixGroupsFields = {
 
 @dataclasses.dataclass
 class V1beta1GroupConfig:
-    # Output only. Additional group keys associated with the Group.
-    additional_group_keys: Any = None
-    # Output only. The time when the `Group` was created.
-    create_time: Any = None
     # An extended description to help users determine the purpose of a `Group`. Must not be longer than 4,096 characters.
     description: Any = None
     # The display name of the `Group`.
@@ -88,14 +84,10 @@ class V1beta1GroupConfig:
     group_key: Any = None
     # Required. One or more label entries that apply to the Group. Labels contain a key with an empty value. Google Groups are the default type of group and have a label with a key of `cloudidentity.googleapis.com/groups.discussion_forum` and an empty value. Existing Google Groups can have an additional label with a key of `cloudidentity.googleapis.com/groups.security` and an empty value added to them. **This is an immutable change and the security label cannot be removed once added.** Dynamic groups have a label with a key of `cloudidentity.googleapis.com/groups.dynamic`. Identity-mapped groups for Cloud Search have a label with a key of `system/groups/external` and an empty value. Google Groups can be [locked](https://support.google.com/a?p=locked-groups). To lock a group, add a label with a key of `cloudidentity.googleapis.com/groups.locked` and an empty value. Doing so locks the group. To unlock the group, remove this label.
     labels: Any = None
-    # Output only. The [resource name](https://cloud.google.com/apis/design/resource_names) of the `Group`. Shall be of the form `groups/{group_id}`.
-    name: Any = None
     # Required. Immutable. The resource name of the entity under which this `Group` resides in the Cloud Identity resource hierarchy. Must be of the form `identitysources/{identity_source}` for external [identity-mapped groups](https://support.google.com/a/answer/9039510) or `customers/{customer_id}` for Google Groups. The `customer_id` must begin with "C" (for example, 'C046psxkn'). [Find your customer ID.] (https://support.google.com/cloudidentity/answer/10070793)
     parent: Any = None
     # Optional. The POSIX groups associated with the `Group`.
     posix_groups: Any = None
-    # Output only. The time when the `Group` was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V1beta1GroupAttrs:
@@ -127,12 +119,6 @@ class V1beta1GroupAttrs:
 V1beta1Group = ubx.ResourceBinding(
     wire_type="google_cloudidentity_v1beta1_group",
     fields={
-        "additional_group_keys": ubx.FieldSpec(
-            wire_name="additional_group_keys",
-            kind="list",
-            fields=_V1beta1Group_AdditionalGroupKeysFields,
-        ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "dynamic_group_metadata": ubx.FieldSpec(
@@ -151,13 +137,11 @@ V1beta1Group = ubx.ResourceBinding(
             fields=_V1beta1Group_AdditionalGroupKeysFields,
         ),
         "labels": ubx.FieldSpec(wire_name="labels"),
-        "name": ubx.FieldSpec(wire_name="name"),
         "parent": ubx.FieldSpec(wire_name="parent"),
         "posix_groups": ubx.FieldSpec(
             wire_name="posix_groups",
             kind="list",
             fields=_V1beta1Group_PosixGroupsFields,
         ),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

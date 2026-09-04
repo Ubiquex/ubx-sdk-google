@@ -390,8 +390,6 @@ _Deployment_TerraformVariablesFields = {
 
 @dataclasses.dataclass
 class DeploymentConfig:
-    # Output only. Create time stamp.
-    create_time: Any = None
     # Description of the deployment.
     description: Any = None
     # The name of the deployment resource. The format is 'projects/{project_id}/locations/{location_id}/deployments/{deployment_id}'.
@@ -402,12 +400,8 @@ class DeploymentConfig:
     service_account: Any = None
     # Message for MS SQL workload.
     sql_server_workload: Any = None
-    # Output only. Current state of the deployment.
-    state: Any = None
     # Optional. terraform_variables represents all the Terraform variables for the deployment workload. The key is the name of the Terraform variable, and the value is the TerraformVariable. For example: { "project_id": { "input_value": { "string_value": "my-project-id" } }, "zone": { "input_value": { "string_value": "us-central1-a" } } }
     terraform_variables: Any = None
-    # Output only. Update time stamp.
-    update_time: Any = None
     # Optional. The user-specified Cloud Build worker pool resource in which the Cloud Build job will execute. Format: `projects/{project}/locations/{location}/workerPools/{workerPoolId}`. If this field is unspecified, the default Cloud Build worker pool will be used.
     worker_pool: Any = None
     # Optional. Workload type of the deployment.
@@ -441,7 +435,6 @@ class DeploymentAttrs:
 Deployment = ubx.ResourceBinding(
     wire_type="google_workloadmanager_deployment",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "name": ubx.FieldSpec(wire_name="name"),
         "sap_system_s4_config": ubx.FieldSpec(
@@ -455,13 +448,11 @@ Deployment = ubx.ResourceBinding(
             kind="object",
             fields=_Deployment_SqlServerWorkloadFields,
         ),
-        "state": ubx.FieldSpec(wire_name="state"),
         "terraform_variables": ubx.FieldSpec(
             wire_name="terraform_variables",
             kind="map",
             fields=_Deployment_TerraformVariablesFields,
         ),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
         "worker_pool": ubx.FieldSpec(wire_name="worker_pool"),
         "workload_type": ubx.FieldSpec(wire_name="workload_type"),
     },

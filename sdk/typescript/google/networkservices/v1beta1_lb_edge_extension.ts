@@ -62,8 +62,6 @@ const V1beta1LbEdgeExtension_ExtensionChainsFields: FieldMap = {
 };
 
 export interface V1beta1LbEdgeExtensionConfig {
-  /** Output only. The timestamp when the resource was created. */
-  createTime?: string | Computed<string>;
   /** Optional. A human-readable description of the resource. */
   description?: string | Computed<string>;
   /** Required. A set of ordered extension chains that contain the match conditions and extensions to execute. Match conditions for each extension chain are evaluated in sequence for a given request. The first extension chain that has a condition that matches the request is executed. Any subsequent extension chains do not execute. Limited to 5 extension chains per resource. */
@@ -76,8 +74,6 @@ export interface V1beta1LbEdgeExtensionConfig {
   loadBalancingScheme?: string | Computed<string>;
   /** Required. Identifier. Name of the `LbEdgeExtension` resource in the following format: `projects/{project}/locations/{location}/lbEdgeExtensions/{lb_edge_extension}`. */
   name?: string | Computed<string>;
-  /** Output only. The timestamp when the resource was updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1beta1LbEdgeExtensionAttrs {
@@ -102,7 +98,6 @@ export interface V1beta1LbEdgeExtensionAttrs {
 export const V1beta1LbEdgeExtension: ResourceBinding<V1beta1LbEdgeExtensionConfig, V1beta1LbEdgeExtensionAttrs> = {
   wireType: "google_networkservices_v1beta1_lb_edge_extension",
   fields: {
-    createTime: "create_time",
     description: "description",
     extensionChains: {
       wireName: "extension_chains",
@@ -113,6 +108,5 @@ export const V1beta1LbEdgeExtension: ResourceBinding<V1beta1LbEdgeExtensionConfi
     labels: "labels",
     loadBalancingScheme: "load_balancing_scheme",
     name: "name",
-    updateTime: "update_time",
   },
 };

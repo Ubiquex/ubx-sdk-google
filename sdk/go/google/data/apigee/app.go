@@ -5,23 +5,23 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type App_ApiProducts struct {
 	Apiproduct any
-	Status any
+	Status     any
 }
 
 type App_Attributes struct {
-	Name any
+	Name  any
 	Value any
 }
 
 type App_Credentials struct {
-	ApiProducts any
-	Attributes any
-	ConsumerKey any
+	ApiProducts    any
+	Attributes     any
+	ConsumerKey    any
 	ConsumerSecret any
-	ExpiresAt any
-	IssuedAt any
-	Scopes any
-	Status any
+	ExpiresAt      any
+	IssuedAt       any
+	Scopes         any
+	Status         any
 }
 
 type AppConfig struct {
@@ -53,7 +53,7 @@ type AppAttrs struct {
 	KeyExpiresIn any
 	// Output only. Last modified time as milliseconds since epoch.
 	LastModifiedAt any
-	Name any
+	Name           any
 	// Scopes to apply to the app. The specified scope names must already exist on the API product that you associate with the app.
 	Scopes any
 	// Status of the credential.

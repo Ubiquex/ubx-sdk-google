@@ -1079,8 +1079,6 @@ export interface TableConfig {
   cloneDefinition?: Table_CloneDefinition | Computed<Table_CloneDefinition>;
   /** Configures table clustering. */
   clustering?: Table_Clustering | Computed<Table_Clustering>;
-  /** Output only. The time when this table was created, in milliseconds since the epoch. */
-  creationTime?: string | Computed<string>;
   /** Optional. Defines the default collation specification of new STRING fields in the table. During table creation or update, if a STRING field is added to this table without explicit collation specified, then the table inherits the table default collation. A change to this field affects only fields added afterwards, and does not alter the existing fields. The following values are supported: * 'und:ci': undetermined locale, case insensitive. * '': empty string. Default to case-sensitive behavior. */
   defaultCollation?: string | Computed<string>;
   /** Optional. Defines the default rounding mode specification of new decimal fields (NUMERIC OR BIGNUMERIC) in the table. During table creation or update, if a decimal field is added to this table without an explicit rounding mode specified, then the field inherits the table default rounding mode. Changing this field doesn't affect existing fields. */
@@ -1089,8 +1087,6 @@ export interface TableConfig {
   description?: string | Computed<string>;
   /** Configuration for Cloud KMS encryption settings. */
   encryptionConfiguration?: Table_EncryptionConfiguration | Computed<Table_EncryptionConfiguration>;
-  /** Output only. A hash of this resource. */
-  etag?: string | Computed<string>;
   /** Optional. The time when this table expires, in milliseconds since the epoch. If not present, the table will persist indefinitely. Expired tables will be deleted and their storage reclaimed. The defaultTableExpirationMs property of the encapsulating dataset can be used to set a default expirationTime on newly created tables. */
   expirationTime?: string | Computed<string>;
   /** Metadata about open source compatible table. The fields contained in these options correspond to Hive metastore's table-level properties. */
@@ -1098,16 +1094,10 @@ export interface TableConfig {
   externalDataConfiguration?: Table_ExternalDataConfiguration | Computed<Table_ExternalDataConfiguration>;
   /** Optional. A descriptive name for this table. */
   friendlyName?: string | Computed<string>;
-  /** Output only. An opaque ID uniquely identifying the table. */
-  id?: string | Computed<string>;
   /** The type of resource ID. */
   kind?: string | Computed<string>;
   /** The labels associated with this table. You can use these to organize and group your tables. Label keys and values can be no longer than 63 characters, can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. Label values are optional. Label keys must start with a letter and each label in the list must have a different key. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. The time when this table was last modified, in milliseconds since the epoch. */
-  lastModifiedTime?: string | Computed<string>;
-  /** Output only. The geographic location where the table resides. This value is inherited from the dataset. */
-  location?: string | Computed<string>;
   /** Optional. If set, overrides the default managed table type configured in the dataset. */
   managedTableType?: string | Computed<string>;
   /** Definition and configuration of a materialized view. */
@@ -1117,37 +1107,9 @@ export interface TableConfig {
   /** Optional. The maximum staleness of data that could be returned when the table (or stale MV) is queried. Staleness encoded as a string encoding of sql IntervalValue type. */
   maxStaleness?: string | Computed<string>;
   model?: Table_Model | Computed<Table_Model>;
-  /** Output only. Number of logical bytes that are less than 90 days old. */
-  numActiveLogicalBytes?: string | Computed<string>;
-  /** Output only. Number of physical bytes less than 90 days old. This data is not kept in real time, and might be delayed by a few seconds to a few minutes. */
-  numActivePhysicalBytes?: string | Computed<string>;
-  /** Output only. The size of this table in logical bytes, excluding any data in the streaming buffer. */
-  numBytes?: string | Computed<string>;
-  /** Output only. Number of physical bytes used by current live data storage. This data is not kept in real time, and might be delayed by a few seconds to a few minutes. */
-  numCurrentPhysicalBytes?: string | Computed<string>;
-  /** Output only. The number of logical bytes in the table that are considered "long-term storage". */
-  numLongTermBytes?: string | Computed<string>;
-  /** Output only. Number of logical bytes that are more than 90 days old. */
-  numLongTermLogicalBytes?: string | Computed<string>;
-  /** Output only. Number of physical bytes more than 90 days old. This data is not kept in real time, and might be delayed by a few seconds to a few minutes. */
-  numLongTermPhysicalBytes?: string | Computed<string>;
-  /** Output only. The number of partitions present in the table or materialized view. This data is not kept in real time, and might be delayed by a few seconds to a few minutes. */
-  numPartitions?: string | Computed<string>;
-  /** Output only. The physical size of this table in bytes. This includes storage used for time travel. */
-  numPhysicalBytes?: string | Computed<string>;
-  /** Output only. The number of rows of data in this table, excluding any data in the streaming buffer. */
-  numRows?: string | Computed<string>;
-  /** Output only. Number of physical bytes used by time travel storage (deleted or changed data). This data is not kept in real time, and might be delayed by a few seconds to a few minutes. */
-  numTimeTravelPhysicalBytes?: string | Computed<string>;
-  /** Output only. Total number of logical bytes in the table or materialized view. */
-  numTotalLogicalBytes?: string | Computed<string>;
-  /** Output only. The physical size of this table in bytes. This also includes storage used for time travel. This data is not kept in real time, and might be delayed by a few seconds to a few minutes. */
-  numTotalPhysicalBytes?: string | Computed<string>;
   /** The partitioning information, which includes managed table, external table and metastore partitioned table partition information. */
   partitionDefinition?: Table_PartitionDefinition | Computed<Table_PartitionDefinition>;
   rangePartitioning?: Table_RangePartitioning | Computed<Table_RangePartitioning>;
-  /** Optional. Output only. Table references of all replicas currently active on the table. */
-  replicas?: Table_CloneDefinition_BaseTableReference[] | Computed<Table_CloneDefinition_BaseTableReference[]>;
   /** Optional. If set to true, queries over this table require a partition filter that can be used for partition elimination to be specified. */
   requirePartitionFilter?: boolean | Computed<boolean>;
   /** [Optional] The tags associated with this table. Tag keys are globally unique. See additional information on [tags](https://cloud.google.com/iam/docs/tags-access-control#definitions). An object containing a list of "key": value pairs. The key is the namespaced friendly name of the tag key, e.g. "12345/environment" where 12345 is parent id. The value is the friendly short name of the tag value, e.g. "production". */
@@ -1155,8 +1117,6 @@ export interface TableConfig {
   restrictions?: Table_ExternalDataConfiguration_Schema_Fields_RangeElementType | Computed<Table_ExternalDataConfiguration_Schema_Fields_RangeElementType>;
   /** Schema of a table */
   schema?: Table_ExternalDataConfiguration_Schema | Computed<Table_ExternalDataConfiguration_Schema>;
-  /** Output only. A URL that can be used to access this resource again. */
-  selfLink?: string | Computed<string>;
   /** Information about base table and snapshot time of the snapshot. */
   snapshotDefinition?: Table_SnapshotDefinition | Computed<Table_SnapshotDefinition>;
   streamingBuffer?: Table_StreamingBuffer | Computed<Table_StreamingBuffer>;
@@ -1166,8 +1126,6 @@ export interface TableConfig {
   /** Replication info of a table created using `AS REPLICA` DDL like: `CREATE MATERIALIZED VIEW mv1 AS REPLICA OF src_mv` */
   tableReplicationInfo?: Table_TableReplicationInfo | Computed<Table_TableReplicationInfo>;
   timePartitioning?: Table_TimePartitioning | Computed<Table_TimePartitioning>;
-  /** Output only. Describes the table type. The following values are supported: * `TABLE`: A normal BigQuery table. * `VIEW`: A virtual table defined by a SQL query. * `EXTERNAL`: A table that references data stored in an external storage system, such as Google Cloud Storage. * `MATERIALIZED_VIEW`: A precomputed view defined by a SQL query. * `SNAPSHOT`: An immutable BigQuery table that preserves the contents of a base table at a particular time. See additional information on [table snapshots](https://cloud.google.com/bigquery/docs/table-snapshots-intro). The default value is `TABLE`. */
-  type?: string | Computed<string>;
   /** Describes the definition of a logical view. */
   view?: Table_View | Computed<Table_View>;
 }
@@ -1290,7 +1248,6 @@ export const Table: ResourceBinding<TableConfig, TableAttrs> = {
       kind: "object",
       fields: Table_ClusteringFields,
     },
-    creationTime: "creation_time",
     defaultCollation: "default_collation",
     defaultRoundingMode: "default_rounding_mode",
     description: "description",
@@ -1299,7 +1256,6 @@ export const Table: ResourceBinding<TableConfig, TableAttrs> = {
       kind: "object",
       fields: Table_EncryptionConfigurationFields,
     },
-    etag: "etag",
     expirationTime: "expiration_time",
     externalCatalogTableOptions: {
       wireName: "external_catalog_table_options",
@@ -1312,11 +1268,8 @@ export const Table: ResourceBinding<TableConfig, TableAttrs> = {
       fields: Table_ExternalDataConfigurationFields,
     },
     friendlyName: "friendly_name",
-    id: "id",
     kind: "kind",
     labels: "labels",
-    lastModifiedTime: "last_modified_time",
-    location: "location",
     managedTableType: "managed_table_type",
     materializedView: {
       wireName: "materialized_view",
@@ -1334,19 +1287,6 @@ export const Table: ResourceBinding<TableConfig, TableAttrs> = {
       kind: "object",
       fields: Table_ModelFields,
     },
-    numActiveLogicalBytes: "num_active_logical_bytes",
-    numActivePhysicalBytes: "num_active_physical_bytes",
-    numBytes: "num_bytes",
-    numCurrentPhysicalBytes: "num_current_physical_bytes",
-    numLongTermBytes: "num_long_term_bytes",
-    numLongTermLogicalBytes: "num_long_term_logical_bytes",
-    numLongTermPhysicalBytes: "num_long_term_physical_bytes",
-    numPartitions: "num_partitions",
-    numPhysicalBytes: "num_physical_bytes",
-    numRows: "num_rows",
-    numTimeTravelPhysicalBytes: "num_time_travel_physical_bytes",
-    numTotalLogicalBytes: "num_total_logical_bytes",
-    numTotalPhysicalBytes: "num_total_physical_bytes",
     partitionDefinition: {
       wireName: "partition_definition",
       kind: "object",
@@ -1356,11 +1296,6 @@ export const Table: ResourceBinding<TableConfig, TableAttrs> = {
       wireName: "range_partitioning",
       kind: "object",
       fields: Table_RangePartitioningFields,
-    },
-    replicas: {
-      wireName: "replicas",
-      kind: "list",
-      fields: Table_CloneDefinition_BaseTableReferenceFields,
     },
     requirePartitionFilter: "require_partition_filter",
     resourceTags: "resource_tags",
@@ -1374,7 +1309,6 @@ export const Table: ResourceBinding<TableConfig, TableAttrs> = {
       kind: "object",
       fields: Table_ExternalDataConfiguration_SchemaFields,
     },
-    selfLink: "self_link",
     snapshotDefinition: {
       wireName: "snapshot_definition",
       kind: "object",
@@ -1405,7 +1339,6 @@ export const Table: ResourceBinding<TableConfig, TableAttrs> = {
       kind: "object",
       fields: Table_TimePartitioningFields,
     },
-    type: "type",
     view: {
       wireName: "view",
       kind: "object",

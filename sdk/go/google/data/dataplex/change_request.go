@@ -4,18 +4,18 @@ package dataplex
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type ChangeRequest_CreateEntry_Entry_Aspects_AspectSource struct {
-	CreateTime any
+	CreateTime  any
 	DataVersion any
-	UpdateTime any
+	UpdateTime  any
 }
 
 type ChangeRequest_CreateEntry_Entry_Aspects struct {
 	AspectSource any
-	AspectType any
-	CreateTime any
-	Data any
-	Path any
-	UpdateTime any
+	AspectType   any
+	CreateTime   any
+	Data         any
+	Path         any
+	UpdateTime   any
 }
 
 type ChangeRequest_CreateEntry_Entry_EntrySource_Ancestors struct {
@@ -275,7 +275,7 @@ type ChangeRequestAttrs struct {
 	Justification any
 	// Optional. User-defined labels for the ChangeRequest.
 	Labels any
-	Name any
+	Name   any
 	// Output only. The reason provided for rejecting the ChangeRequest.
 	RejectionComment any
 	// Output only. The full resource name of the target resource to be modified. Example: //dataplex.googleapis.com/projects/my-project/locations/us-central1/entryGroups/my-group/entries/my-entry

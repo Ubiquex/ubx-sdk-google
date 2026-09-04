@@ -348,8 +348,6 @@ _V1beta1HttpRoute_RulesFields = {
 
 @dataclasses.dataclass
 class V1beta1HttpRouteConfig:
-    # Output only. The timestamp when the resource was created.
-    create_time: Any = None
     # Optional. A free-text description of the resource. Max length 1024 characters.
     description: Any = None
     # Optional. Gateways defines a list of gateways this HttpRoute is attached to, as one of the routing rules to route the requests served by the gateway. Each gateway reference should match the pattern: `projects/*/locations/*/gateways/`
@@ -364,10 +362,6 @@ class V1beta1HttpRouteConfig:
     name: Any = None
     # Required. Rules that define how traffic is routed and handled. Rules will be matched sequentially based on the RouteMatch specified for the rule.
     rules: Any = None
-    # Output only. Server-defined URL of this resource
-    self_link: Any = None
-    # Output only. The timestamp when the resource was updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V1beta1HttpRouteAttrs:
@@ -395,7 +389,6 @@ class V1beta1HttpRouteAttrs:
 V1beta1HttpRoute = ubx.ResourceBinding(
     wire_type="google_networkservices_v1beta1_http_route",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "gateways": ubx.FieldSpec(wire_name="gateways"),
         "hostnames": ubx.FieldSpec(wire_name="hostnames"),
@@ -407,7 +400,5 @@ V1beta1HttpRoute = ubx.ResourceBinding(
             kind="list",
             fields=_V1beta1HttpRoute_RulesFields,
         ),
-        "self_link": ubx.FieldSpec(wire_name="self_link"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

@@ -8,14 +8,8 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class InstanceConfig:
-    # Output only. Output Only. The globally unique hostname of the database.
-    database_url: Any = None
     # The fully qualified resource name of the database instance, in the form: `projects/{project-number}/locations/{location-id}/instances/{database-id}`.
     name: Any = None
-    # Output only. The resource name of the project this instance belongs to. For example: `projects/{project-number}`.
-    project: Any = None
-    # Output only. The database's lifecycle state. Read-only.
-    state: Any = None
     # Immutable. The database instance type. On creation only USER_DATABASE is allowed, which is also the default when omitted.
     type: Any = None
 
@@ -35,10 +29,7 @@ class InstanceAttrs:
 Instance = ubx.ResourceBinding(
     wire_type="google_firebasedatabase_instance",
     fields={
-        "database_url": ubx.FieldSpec(wire_name="database_url"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "project": ubx.FieldSpec(wire_name="project"),
-        "state": ubx.FieldSpec(wire_name="state"),
         "type": ubx.FieldSpec(wire_name="type"),
     },
 )

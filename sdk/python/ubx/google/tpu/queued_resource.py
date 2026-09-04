@@ -413,12 +413,8 @@ _QueuedResource_TpuFields = {
 
 @dataclasses.dataclass
 class QueuedResourceConfig:
-    # Output only. The time when the QueuedResource was created.
-    create_time: Any = None
     # Guaranteed tier definition.
     guaranteed: Any = None
-    # Output only. Immutable. The name of the QueuedResource.
-    name: Any = None
     # Defines the policy of the QueuedRequest.
     queueing_policy: Any = None
     # Optional. Name of the reservation in which the resource should be provisioned. Format: projects/{project}/locations/{zone}/reservations/{reservation}
@@ -452,13 +448,11 @@ class QueuedResourceAttrs:
 QueuedResource = ubx.ResourceBinding(
     wire_type="google_tpu_queued_resource",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "guaranteed": ubx.FieldSpec(
             wire_name="guaranteed",
             kind="object",
             fields=_QueuedResource_GuaranteedFields,
         ),
-        "name": ubx.FieldSpec(wire_name="name"),
         "queueing_policy": ubx.FieldSpec(
             wire_name="queueing_policy",
             kind="object",

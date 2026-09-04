@@ -80,8 +80,6 @@ const AccountConnector_ProxyConfigFields: FieldMap = {
 export interface AccountConnectorConfig {
   /** Optional. Allows users to store small amounts of arbitrary data. */
   annotations?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. The timestamp when the accountConnector was created. */
-  createTime?: string | Computed<string>;
   /** Message for a customized OAuth config. */
   customOauthConfig?: AccountConnector_CustomOauthConfig | Computed<AccountConnector_CustomOauthConfig>;
   /** Optional. This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding. */
@@ -90,16 +88,10 @@ export interface AccountConnectorConfig {
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Identifier. The resource name of the accountConnector, in the format `projects/{project}/locations/{location}/accountConnectors/{account_connector_id}`. */
   name?: string | Computed<string>;
-  /** Output only. Start OAuth flow by clicking on this URL. */
-  oauthStartUri?: string | Computed<string>;
   /** ProviderOAuthConfig is the OAuth config for a provider. */
   providerOauthConfig?: AccountConnector_ProviderOauthConfig | Computed<AccountConnector_ProviderOauthConfig>;
   /** The proxy configuration. */
   proxyConfig?: AccountConnector_ProxyConfig | Computed<AccountConnector_ProxyConfig>;
-  /** Output only. A system-assigned unique identifier for the Account Connector. */
-  uid?: string | Computed<string>;
-  /** Output only. The timestamp when the accountConnector was updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface AccountConnectorAttrs {
@@ -131,7 +123,6 @@ export const AccountConnector: ResourceBinding<AccountConnectorConfig, AccountCo
   wireType: "google_developerconnect_account_connector",
   fields: {
     annotations: "annotations",
-    createTime: "create_time",
     customOauthConfig: {
       wireName: "custom_oauth_config",
       kind: "object",
@@ -140,7 +131,6 @@ export const AccountConnector: ResourceBinding<AccountConnectorConfig, AccountCo
     etag: "etag",
     labels: "labels",
     name: "name",
-    oauthStartUri: "oauth_start_uri",
     providerOauthConfig: {
       wireName: "provider_oauth_config",
       kind: "object",
@@ -151,7 +141,5 @@ export const AccountConnector: ResourceBinding<AccountConnectorConfig, AccountCo
       kind: "object",
       fields: AccountConnector_ProxyConfigFields,
     },
-    uid: "uid",
-    updateTime: "update_time",
   },
 };

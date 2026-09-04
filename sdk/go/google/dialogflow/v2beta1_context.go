@@ -5,21 +5,21 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V2beta1ContextConfig struct {
 	LifespanCount any
-	Name any
-	Parameters any
+	Name          any
+	Parameters    any
 }
 
 type V2beta1ContextAttrs struct {
 	LifespanCount any
-	Name any
-	Parameters any
+	Name          any
+	Parameters    any
 }
 
 var V2beta1Context = ubx.ResourceBinding{
 	WireType: "google_dialogflow_v2beta1_context",
 	Fields: ubx.FieldMap{
 		"LifespanCount": ubx.FieldSpec{WireName: "lifespan_count"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Parameters": ubx.FieldSpec{WireName: "parameters"},
+		"Name":          ubx.FieldSpec{WireName: "name"},
+		"Parameters":    ubx.FieldSpec{WireName: "parameters"},
 	},
 }

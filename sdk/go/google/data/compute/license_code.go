@@ -5,7 +5,7 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type LicenseCode_LicenseAlias struct {
 	Description any
-	SelfLink any
+	SelfLink    any
 }
 
 type LicenseCode_MinimumRetention struct {
@@ -17,7 +17,7 @@ type LicenseCode_MinimumRetention struct {
 
 type LicenseCodeConfig struct {
 	LicenseCode any
-	Project any
+	Project     any
 }
 
 type LicenseCodeAttrs struct {
@@ -37,7 +37,7 @@ type LicenseCodeAttrs struct {
 	Kind any
 	// [Output Only] URL and description aliases of Licenses with the same License Code.
 	LicenseAlias any
-	LicenseCode any
+	LicenseCode  any
 	// A Duration represents a fixed-length span of time represented as a count of seconds and fractions of seconds at nanosecond resolution. It is independent of any calendar and concepts like "day" or "month". Range is approximately 10,000 years.
 	MinimumRetention any
 	// If true, this license can only be used on VMs on multi tenant nodes.
@@ -46,7 +46,7 @@ type LicenseCodeAttrs struct {
 	Name any
 	// If true, indicates this is an OS license. Only one OS license can be attached to a disk or image at a time.
 	OsLicense any
-	Project any
+	Project   any
 	// If true, this license can be removed from a disk's set of licenses, with no replacement license needed.
 	RemovableFromDisk any
 	// Specifies the set of permissible coattached licenseCodes of licenses that satisfy the coattachment requirement of this license. At least one license from the set must be attached to the same disk or image as this license.
@@ -67,6 +67,6 @@ var LicenseCode = ubx.DataSourceBinding{
 	WireType: "google_compute_license_code",
 	Fields: ubx.FieldMap{
 		"LicenseCode": ubx.FieldSpec{WireName: "license_code"},
-		"Project": ubx.FieldSpec{WireName: "project"},
+		"Project":     ubx.FieldSpec{WireName: "project"},
 	},
 }

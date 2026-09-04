@@ -4,8 +4,6 @@ package networksecurity
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta1MirroringDeploymentConfig struct {
-	// Output only. The timestamp when the resource was created. See https://google.aip.dev/148#timestamps.
-	CreateTime any
 	// Optional. User-provided description of the deployment. Used as additional context for the deployment.
 	Description any
 	// Required. Immutable. The regional forwarding rule that fronts the mirroring collectors, for example: `projects/123456789/regions/us-central1/forwardingRules/my-rule`. See https://google.aip.dev/124.
@@ -16,12 +14,6 @@ type V1beta1MirroringDeploymentConfig struct {
 	MirroringDeploymentGroup any
 	// Immutable. Identifier. The resource name of this deployment, for example: `projects/123456789/locations/us-central1-a/mirroringDeployments/my-dep`. See https://google.aip.dev/122 for more details.
 	Name any
-	// Output only. The current state of the resource does not match the user's intended state, and the system is working to reconcile them. This part of the normal operation (e.g. linking a new association to the parent group). See https://google.aip.dev/128.
-	Reconciling any
-	// Output only. The current state of the deployment. See https://google.aip.dev/216.
-	State any
-	// Output only. The timestamp when the resource was most recently updated. See https://google.aip.dev/148#timestamps.
-	UpdateTime any
 }
 
 type V1beta1MirroringDeploymentAttrs struct {
@@ -48,14 +40,10 @@ type V1beta1MirroringDeploymentAttrs struct {
 var V1beta1MirroringDeployment = ubx.ResourceBinding{
 	WireType: "google_networksecurity_v1beta1_mirroring_deployment",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"ForwardingRule": ubx.FieldSpec{WireName: "forwarding_rule"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Description":              ubx.FieldSpec{WireName: "description"},
+		"ForwardingRule":           ubx.FieldSpec{WireName: "forwarding_rule"},
+		"Labels":                   ubx.FieldSpec{WireName: "labels"},
 		"MirroringDeploymentGroup": ubx.FieldSpec{WireName: "mirroring_deployment_group"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Reconciling": ubx.FieldSpec{WireName: "reconciling"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"Name":                     ubx.FieldSpec{WireName: "name"},
 	},
 }

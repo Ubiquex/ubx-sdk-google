@@ -9,12 +9,12 @@ type Instance_Clusters_ClusterConfig_ClusterAutoscalingConfig_AutoscalingLimits 
 }
 
 type Instance_Clusters_ClusterConfig_ClusterAutoscalingConfig_AutoscalingTargets struct {
-	CpuUtilizationPercent any
+	CpuUtilizationPercent        any
 	StorageUtilizationGibPerNode any
 }
 
 type Instance_Clusters_ClusterConfig_ClusterAutoscalingConfig struct {
-	AutoscalingLimits any
+	AutoscalingLimits  any
 	AutoscalingTargets any
 }
 
@@ -27,14 +27,14 @@ type Instance_Clusters_EncryptionConfig struct {
 }
 
 type Instance_Clusters struct {
-	ClusterConfig any
+	ClusterConfig      any
 	DefaultStorageType any
-	EncryptionConfig any
-	Location any
-	Name any
-	NodeScalingFactor any
-	ServeNodes any
-	State any
+	EncryptionConfig   any
+	Location           any
+	Name               any
+	NodeScalingFactor  any
+	ServeNodes         any
+	State              any
 }
 
 type Instance_Instance struct {
@@ -63,72 +63,72 @@ type Instance_Instance struct {
 }
 
 var Instance_Clusters_ClusterConfig_ClusterAutoscalingConfig_AutoscalingLimitsFields = ubx.FieldMap{
-		"MaxServeNodes": ubx.FieldSpec{WireName: "max_serve_nodes"},
-		"MinServeNodes": ubx.FieldSpec{WireName: "min_serve_nodes"},
-	}
+	"MaxServeNodes": ubx.FieldSpec{WireName: "max_serve_nodes"},
+	"MinServeNodes": ubx.FieldSpec{WireName: "min_serve_nodes"},
+}
 
 var Instance_Clusters_ClusterConfig_ClusterAutoscalingConfig_AutoscalingTargetsFields = ubx.FieldMap{
-		"CpuUtilizationPercent": ubx.FieldSpec{WireName: "cpu_utilization_percent"},
-		"StorageUtilizationGibPerNode": ubx.FieldSpec{WireName: "storage_utilization_gib_per_node"},
-	}
+	"CpuUtilizationPercent":        ubx.FieldSpec{WireName: "cpu_utilization_percent"},
+	"StorageUtilizationGibPerNode": ubx.FieldSpec{WireName: "storage_utilization_gib_per_node"},
+}
 
 var Instance_Clusters_ClusterConfig_ClusterAutoscalingConfigFields = ubx.FieldMap{
-		"AutoscalingLimits": ubx.FieldSpec{
-			WireName: "autoscaling_limits",
-			Kind: "object",
-			Fields: Instance_Clusters_ClusterConfig_ClusterAutoscalingConfig_AutoscalingLimitsFields,
-		},
-		"AutoscalingTargets": ubx.FieldSpec{
-			WireName: "autoscaling_targets",
-			Kind: "object",
-			Fields: Instance_Clusters_ClusterConfig_ClusterAutoscalingConfig_AutoscalingTargetsFields,
-		},
-	}
+	"AutoscalingLimits": ubx.FieldSpec{
+		WireName: "autoscaling_limits",
+		Kind:     "object",
+		Fields:   Instance_Clusters_ClusterConfig_ClusterAutoscalingConfig_AutoscalingLimitsFields,
+	},
+	"AutoscalingTargets": ubx.FieldSpec{
+		WireName: "autoscaling_targets",
+		Kind:     "object",
+		Fields:   Instance_Clusters_ClusterConfig_ClusterAutoscalingConfig_AutoscalingTargetsFields,
+	},
+}
 
 var Instance_Clusters_ClusterConfigFields = ubx.FieldMap{
-		"ClusterAutoscalingConfig": ubx.FieldSpec{
-			WireName: "cluster_autoscaling_config",
-			Kind: "object",
-			Fields: Instance_Clusters_ClusterConfig_ClusterAutoscalingConfigFields,
-		},
-	}
+	"ClusterAutoscalingConfig": ubx.FieldSpec{
+		WireName: "cluster_autoscaling_config",
+		Kind:     "object",
+		Fields:   Instance_Clusters_ClusterConfig_ClusterAutoscalingConfigFields,
+	},
+}
 
 var Instance_Clusters_EncryptionConfigFields = ubx.FieldMap{
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-	}
+	"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
+}
 
 var Instance_ClustersFields = ubx.FieldMap{
-		"ClusterConfig": ubx.FieldSpec{
-			WireName: "cluster_config",
-			Kind: "object",
-			Fields: Instance_Clusters_ClusterConfigFields,
-		},
-		"DefaultStorageType": ubx.FieldSpec{WireName: "default_storage_type"},
-		"EncryptionConfig": ubx.FieldSpec{
-			WireName: "encryption_config",
-			Kind: "object",
-			Fields: Instance_Clusters_EncryptionConfigFields,
-		},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NodeScalingFactor": ubx.FieldSpec{WireName: "node_scaling_factor"},
-		"ServeNodes": ubx.FieldSpec{WireName: "serve_nodes"},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"ClusterConfig": ubx.FieldSpec{
+		WireName: "cluster_config",
+		Kind:     "object",
+		Fields:   Instance_Clusters_ClusterConfigFields,
+	},
+	"DefaultStorageType": ubx.FieldSpec{WireName: "default_storage_type"},
+	"EncryptionConfig": ubx.FieldSpec{
+		WireName: "encryption_config",
+		Kind:     "object",
+		Fields:   Instance_Clusters_EncryptionConfigFields,
+	},
+	"Location":          ubx.FieldSpec{WireName: "location"},
+	"Name":              ubx.FieldSpec{WireName: "name"},
+	"NodeScalingFactor": ubx.FieldSpec{WireName: "node_scaling_factor"},
+	"ServeNodes":        ubx.FieldSpec{WireName: "serve_nodes"},
+	"State":             ubx.FieldSpec{WireName: "state"},
+}
 
 var Instance_InstanceFields = ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Edition": ubx.FieldSpec{WireName: "edition"},
-		"KnowledgeCatalogRegion": ubx.FieldSpec{WireName: "knowledge_catalog_region"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SatisfiesPzi": ubx.FieldSpec{WireName: "satisfies_pzi"},
-		"SatisfiesPzs": ubx.FieldSpec{WireName: "satisfies_pzs"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"CreateTime":             ubx.FieldSpec{WireName: "create_time"},
+	"DisplayName":            ubx.FieldSpec{WireName: "display_name"},
+	"Edition":                ubx.FieldSpec{WireName: "edition"},
+	"KnowledgeCatalogRegion": ubx.FieldSpec{WireName: "knowledge_catalog_region"},
+	"Labels":                 ubx.FieldSpec{WireName: "labels"},
+	"Name":                   ubx.FieldSpec{WireName: "name"},
+	"SatisfiesPzi":           ubx.FieldSpec{WireName: "satisfies_pzi"},
+	"SatisfiesPzs":           ubx.FieldSpec{WireName: "satisfies_pzs"},
+	"State":                  ubx.FieldSpec{WireName: "state"},
+	"Tags":                   ubx.FieldSpec{WireName: "tags"},
+	"Type":                   ubx.FieldSpec{WireName: "type"},
+}
 
 type InstanceConfig struct {
 	// Required. The clusters to be created within the instance, mapped by desired cluster ID, e.g., just `mycluster` rather than `projects/myproject/instances/myinstance/clusters/mycluster`. Fields marked `OutputOnly` must be left blank.
@@ -179,15 +179,15 @@ var Instance = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Clusters": ubx.FieldSpec{
 			WireName: "clusters",
-			Kind: "map",
-			Fields: Instance_ClustersFields,
+			Kind:     "map",
+			Fields:   Instance_ClustersFields,
 		},
 		"Instance": ubx.FieldSpec{
 			WireName: "instance",
-			Kind: "object",
-			Fields: Instance_InstanceFields,
+			Kind:     "object",
+			Fields:   Instance_InstanceFields,
 		},
 		"InstanceId": ubx.FieldSpec{WireName: "instance_id"},
-		"Parent": ubx.FieldSpec{WireName: "parent"},
+		"Parent":     ubx.FieldSpec{WireName: "parent"},
 	},
 }

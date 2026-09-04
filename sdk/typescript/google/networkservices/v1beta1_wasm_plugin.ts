@@ -32,10 +32,6 @@ const V1beta1WasmPlugin_LogConfigFields: FieldMap = {
   sampleRate: "sample_rate",
 };
 
-const V1beta1WasmPlugin_UsedByFields: FieldMap = {
-  name: "name",
-};
-
 const V1beta1WasmPlugin_VersionsFields: FieldMap = {
   createTime: "create_time",
   description: "description",
@@ -49,14 +45,10 @@ const V1beta1WasmPlugin_VersionsFields: FieldMap = {
 };
 
 export interface V1beta1WasmPluginConfig {
-  /** Output only. The timestamp when the resource was created. */
-  createTime?: string | Computed<string>;
   /** Optional. A human-readable description of the resource. */
   description?: string | Computed<string>;
   /** Optional. The name of the customer-managed [CryptoKey](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys) to be used to encrypt the `WasmPlugin` image (provided by image_uri) and configuration (provided by plugin_config_data or plugin_config_uri) that are stored by the `Service Extensions` product at rest. Format: `projects/{project}/locations/{location}/keyRings/{keyring}/cryptoKeys/{key}` By default, Google Cloud automatically encrypts all data at rest using Google-owned and Google-managed encryption keys. If you need ownership and control of the keys that protect your data at rest, you can specify a customer-managed encryption key (CMEK) to encrypt your `WasmPlugin` data. For more information, see [Using customer-managed encryption keys](https://cloud.google.com/service-extensions/docs/cmek). */
   kmsKeyName?: string | Computed<string>;
-  /** Output only. The name of the specific [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions) used to encrypt the `WasmPlugin` data, if the kms_key_name field is set. Format: `projects/{project}/locations/{location}/keyRings/{keyring}/cryptoKeys/{key}/cryptoKeyVersions/{version}` This is a read-only field. `WasmPlugin` data is automatically encrypted using the most recent `CryptoKeyVersion` of the `CryptoKey` provided in the `kms_key_name` field. See [Cloud KMS resources](https://cloud.google.com/kms/docs/resource-hierarchy) for more information. */
-  kmsKeyVersion?: string | Computed<string>;
   /** Optional. Set of labels associated with the `WasmPlugin` resource. The format must comply with [the following requirements](/compute/docs/labeling-resources#requirements). */
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Specifies the logging options for the activity performed by this plugin. If logging is enabled, plugin logs are exported to Cloud Logging. */
@@ -65,10 +57,6 @@ export interface V1beta1WasmPluginConfig {
   mainVersionId?: string | Computed<string>;
   /** Identifier. Name of the `WasmPlugin` resource in the following format: `projects/{project}/locations/{location}/wasmPlugins/{wasm_plugin}`. */
   name?: string | Computed<string>;
-  /** Output only. The timestamp when the resource was updated. */
-  updateTime?: string | Computed<string>;
-  /** Output only. List of all [extensions](https://cloud.google.com/service-extensions/docs/overview) that use this `WasmPlugin` resource. */
-  usedBy?: V1beta1WasmPlugin_UsedBy[] | Computed<V1beta1WasmPlugin_UsedBy[]>;
   /** Optional. All versions of this `WasmPlugin` resource in the key-value format. The key is the resource ID, and the value is the `VersionDetails` object. Lets you create or update a `WasmPlugin` resource and its versions in a single request. When the `main_version_id` field is not empty, it must point to one of the `VersionDetails` objects in the map. If provided in a `PATCH` request, the new versions replace the previous set. Any version omitted from the `versions` field is removed. Because the `WasmPluginVersion` resource is immutable, if a `WasmPluginVersion` resource with the same name already exists and differs, the request fails. Note: In a `GET` request, this field is populated only if the field `GetWasmPluginRequest.view` is set to `WASM_PLUGIN_VIEW_FULL`. */
   versions?: Record<string, V1beta1WasmPlugin_Versions> | Computed<Record<string, V1beta1WasmPlugin_Versions>>;
 }
@@ -101,10 +89,8 @@ export interface V1beta1WasmPluginAttrs {
 export const V1beta1WasmPlugin: ResourceBinding<V1beta1WasmPluginConfig, V1beta1WasmPluginAttrs> = {
   wireType: "google_networkservices_v1beta1_wasm_plugin",
   fields: {
-    createTime: "create_time",
     description: "description",
     kmsKeyName: "kms_key_name",
-    kmsKeyVersion: "kms_key_version",
     labels: "labels",
     logConfig: {
       wireName: "log_config",
@@ -113,12 +99,6 @@ export const V1beta1WasmPlugin: ResourceBinding<V1beta1WasmPluginConfig, V1beta1
     },
     mainVersionId: "main_version_id",
     name: "name",
-    updateTime: "update_time",
-    usedBy: {
-      wireName: "used_by",
-      kind: "list",
-      fields: V1beta1WasmPlugin_UsedByFields,
-    },
     versions: {
       wireName: "versions",
       kind: "map",

@@ -4,15 +4,15 @@ package networkservices
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1beta1ExtensionBinding_MatchConditions_To_Destination_HeaderSet_Headers_Value struct {
-	Contains any
-	Exact any
+	Contains   any
+	Exact      any
 	IgnoreCase any
-	Prefix any
-	Suffix any
+	Prefix     any
+	Suffix     any
 }
 
 type V1beta1ExtensionBinding_MatchConditions_To_Destination_HeaderSet_Headers struct {
-	Name any
+	Name  any
 	Value any
 }
 
@@ -22,13 +22,13 @@ type V1beta1ExtensionBinding_MatchConditions_To_Destination_HeaderSet struct {
 
 type V1beta1ExtensionBinding_MatchConditions_To_Destination struct {
 	HeaderSet any
-	Hosts any
-	Paths any
+	Hosts     any
+	Paths     any
 	Resources any
 }
 
 type V1beta1ExtensionBinding_MatchConditions_To struct {
-	Destination any
+	Destination    any
 	NotDestination any
 }
 
@@ -51,91 +51,89 @@ type V1beta1ExtensionBinding_Target struct {
 }
 
 var V1beta1ExtensionBinding_MatchConditions_To_Destination_HeaderSet_Headers_ValueFields = ubx.FieldMap{
-		"Contains": ubx.FieldSpec{WireName: "contains"},
-		"Exact": ubx.FieldSpec{WireName: "exact"},
-		"IgnoreCase": ubx.FieldSpec{WireName: "ignore_case"},
-		"Prefix": ubx.FieldSpec{WireName: "prefix"},
-		"Suffix": ubx.FieldSpec{WireName: "suffix"},
-	}
+	"Contains":   ubx.FieldSpec{WireName: "contains"},
+	"Exact":      ubx.FieldSpec{WireName: "exact"},
+	"IgnoreCase": ubx.FieldSpec{WireName: "ignore_case"},
+	"Prefix":     ubx.FieldSpec{WireName: "prefix"},
+	"Suffix":     ubx.FieldSpec{WireName: "suffix"},
+}
 
 var V1beta1ExtensionBinding_MatchConditions_To_Destination_HeaderSet_HeadersFields = ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Value": ubx.FieldSpec{
-			WireName: "value",
-			Kind: "object",
-			Fields: V1beta1ExtensionBinding_MatchConditions_To_Destination_HeaderSet_Headers_ValueFields,
-		},
-	}
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"Value": ubx.FieldSpec{
+		WireName: "value",
+		Kind:     "object",
+		Fields:   V1beta1ExtensionBinding_MatchConditions_To_Destination_HeaderSet_Headers_ValueFields,
+	},
+}
 
 var V1beta1ExtensionBinding_MatchConditions_To_Destination_HeaderSetFields = ubx.FieldMap{
-		"Headers": ubx.FieldSpec{
-			WireName: "headers",
-			Kind: "list",
-			Fields: V1beta1ExtensionBinding_MatchConditions_To_Destination_HeaderSet_HeadersFields,
-		},
-	}
+	"Headers": ubx.FieldSpec{
+		WireName: "headers",
+		Kind:     "list",
+		Fields:   V1beta1ExtensionBinding_MatchConditions_To_Destination_HeaderSet_HeadersFields,
+	},
+}
 
 var V1beta1ExtensionBinding_MatchConditions_To_DestinationFields = ubx.FieldMap{
-		"HeaderSet": ubx.FieldSpec{
-			WireName: "header_set",
-			Kind: "object",
-			Fields: V1beta1ExtensionBinding_MatchConditions_To_Destination_HeaderSetFields,
-		},
-		"Hosts": ubx.FieldSpec{
-			WireName: "hosts",
-			Kind: "list",
-			Fields: V1beta1ExtensionBinding_MatchConditions_To_Destination_HeaderSet_Headers_ValueFields,
-		},
-		"Paths": ubx.FieldSpec{
-			WireName: "paths",
-			Kind: "list",
-			Fields: V1beta1ExtensionBinding_MatchConditions_To_Destination_HeaderSet_Headers_ValueFields,
-		},
-		"Resources": ubx.FieldSpec{
-			WireName: "resources",
-			Kind: "list",
-			Fields: V1beta1ExtensionBinding_MatchConditions_To_Destination_HeaderSet_Headers_ValueFields,
-		},
-	}
+	"HeaderSet": ubx.FieldSpec{
+		WireName: "header_set",
+		Kind:     "object",
+		Fields:   V1beta1ExtensionBinding_MatchConditions_To_Destination_HeaderSetFields,
+	},
+	"Hosts": ubx.FieldSpec{
+		WireName: "hosts",
+		Kind:     "list",
+		Fields:   V1beta1ExtensionBinding_MatchConditions_To_Destination_HeaderSet_Headers_ValueFields,
+	},
+	"Paths": ubx.FieldSpec{
+		WireName: "paths",
+		Kind:     "list",
+		Fields:   V1beta1ExtensionBinding_MatchConditions_To_Destination_HeaderSet_Headers_ValueFields,
+	},
+	"Resources": ubx.FieldSpec{
+		WireName: "resources",
+		Kind:     "list",
+		Fields:   V1beta1ExtensionBinding_MatchConditions_To_Destination_HeaderSet_Headers_ValueFields,
+	},
+}
 
 var V1beta1ExtensionBinding_MatchConditions_ToFields = ubx.FieldMap{
-		"Destination": ubx.FieldSpec{
-			WireName: "destination",
-			Kind: "object",
-			Fields: V1beta1ExtensionBinding_MatchConditions_To_DestinationFields,
-		},
-		"NotDestination": ubx.FieldSpec{
-			WireName: "not_destination",
-			Kind: "object",
-			Fields: V1beta1ExtensionBinding_MatchConditions_To_DestinationFields,
-		},
-	}
+	"Destination": ubx.FieldSpec{
+		WireName: "destination",
+		Kind:     "object",
+		Fields:   V1beta1ExtensionBinding_MatchConditions_To_DestinationFields,
+	},
+	"NotDestination": ubx.FieldSpec{
+		WireName: "not_destination",
+		Kind:     "object",
+		Fields:   V1beta1ExtensionBinding_MatchConditions_To_DestinationFields,
+	},
+}
 
 var V1beta1ExtensionBinding_MatchConditionsFields = ubx.FieldMap{
-		"To": ubx.FieldSpec{
-			WireName: "to",
-			Kind: "object",
-			Fields: V1beta1ExtensionBinding_MatchConditions_ToFields,
-		},
-	}
+	"To": ubx.FieldSpec{
+		WireName: "to",
+		Kind:     "object",
+		Fields:   V1beta1ExtensionBinding_MatchConditions_ToFields,
+	},
+}
 
 var V1beta1ExtensionBinding_Target_ScopeFields = ubx.FieldMap{
-		"Parent": ubx.FieldSpec{WireName: "parent"},
-		"ResourceTypes": ubx.FieldSpec{WireName: "resource_types"},
-	}
+	"Parent":        ubx.FieldSpec{WireName: "parent"},
+	"ResourceTypes": ubx.FieldSpec{WireName: "resource_types"},
+}
 
 var V1beta1ExtensionBinding_TargetFields = ubx.FieldMap{
-		"Resources": ubx.FieldSpec{WireName: "resources"},
-		"Scope": ubx.FieldSpec{
-			WireName: "scope",
-			Kind: "object",
-			Fields: V1beta1ExtensionBinding_Target_ScopeFields,
-		},
-	}
+	"Resources": ubx.FieldSpec{WireName: "resources"},
+	"Scope": ubx.FieldSpec{
+		WireName: "scope",
+		Kind:     "object",
+		Fields:   V1beta1ExtensionBinding_Target_ScopeFields,
+	},
+}
 
 type V1beta1ExtensionBindingConfig struct {
-	// Output only. The timestamp when the resource was created.
-	CreateTime any
 	// Optional. A human-readable description of the resource.
 	Description any
 	// Optional. Etag of the resource. If provided, it must match the server's etag. If the provided etag does not match the server's etag, the request will fail with a 409 ABORTED error.
@@ -156,8 +154,6 @@ type V1beta1ExtensionBindingConfig struct {
 	ProducerMetadata any
 	// Specifies a list of targets to which this `ExtensionBinding` should attach.
 	Target any
-	// Output only. The timestamp when the resource was updated.
-	UpdateTime any
 }
 
 type V1beta1ExtensionBindingAttrs struct {
@@ -190,25 +186,23 @@ type V1beta1ExtensionBindingAttrs struct {
 var V1beta1ExtensionBinding = ubx.ResourceBinding{
 	WireType: "google_networkservices_v1beta1_extension_binding",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"FailOpen": ubx.FieldSpec{WireName: "fail_open"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Etag":        ubx.FieldSpec{WireName: "etag"},
+		"FailOpen":    ubx.FieldSpec{WireName: "fail_open"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
 		"MatchConditions": ubx.FieldSpec{
 			WireName: "match_conditions",
-			Kind: "list",
-			Fields: V1beta1ExtensionBinding_MatchConditionsFields,
+			Kind:     "list",
+			Fields:   V1beta1ExtensionBinding_MatchConditionsFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Priority": ubx.FieldSpec{WireName: "priority"},
+		"Name":              ubx.FieldSpec{WireName: "name"},
+		"Priority":          ubx.FieldSpec{WireName: "priority"},
 		"ProducerExtension": ubx.FieldSpec{WireName: "producer_extension"},
-		"ProducerMetadata": ubx.FieldSpec{WireName: "producer_metadata"},
+		"ProducerMetadata":  ubx.FieldSpec{WireName: "producer_metadata"},
 		"Target": ubx.FieldSpec{
 			WireName: "target",
-			Kind: "object",
-			Fields: V1beta1ExtensionBinding_TargetFields,
+			Kind:     "object",
+			Fields:   V1beta1ExtensionBinding_TargetFields,
 		},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

@@ -2,16 +2,10 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ServiceProjectAttachmentConfig {
-  /** Output only. Create time. */
-  createTime?: string | Computed<string>;
   /** Identifier. The resource name of a ServiceProjectAttachment. Format: `"projects/{host-project-id}/locations/global/serviceProjectAttachments/{service-project-id}."` */
   name?: string | Computed<string>;
   /** Required. Immutable. Service project name in the format: `"projects/abc"` or `"projects/123"`. As input, project name with either project id or number are accepted. As output, this field will contain project number. */
   serviceProject?: string | Computed<string>;
-  /** Output only. ServiceProjectAttachment state. */
-  state?: string | Computed<string>;
-  /** Output only. A globally unique identifier (in UUID4 format) for the `ServiceProjectAttachment`. */
-  uid?: string | Computed<string>;
 }
 
 export interface ServiceProjectAttachmentAttrs {
@@ -30,10 +24,7 @@ export interface ServiceProjectAttachmentAttrs {
 export const ServiceProjectAttachment: ResourceBinding<ServiceProjectAttachmentConfig, ServiceProjectAttachmentAttrs> = {
   wireType: "google_apphub_service_project_attachment",
   fields: {
-    createTime: "create_time",
     name: "name",
     serviceProject: "service_project",
-    state: "state",
-    uid: "uid",
   },
 };

@@ -646,7 +646,6 @@ export interface Asset_PerformanceData {
 }
 
 export interface AssetConfig {
-  name: string | Computed<string>;
   view?: string | Computed<string>;
 }
 
@@ -688,7 +687,6 @@ export interface AssetAttrs {
 export const Asset: DataSourceBinding<AssetConfig, AssetAttrs> = {
   wireType: "google_migrationcenter_asset",
   fields: {
-    name: "name",
     view: "view",
   },
 };

@@ -8,12 +8,8 @@ type ManagedIdentityConfig struct {
 	Description any
 	// Optional. Whether the managed identity is disabled. If disabled, credentials may no longer be issued for the identity, however existing credentials will still be accepted until they expire.
 	Disabled any
-	// Output only. Time after which the managed identity will be permanently purged and cannot be recovered.
-	ExpireTime any
 	// Identifier. The resource name of the managed identity.
 	Name any
-	// Output only. The state of the managed identity.
-	State any
 }
 
 type ManagedIdentityAttrs struct {
@@ -33,9 +29,7 @@ var ManagedIdentity = ubx.ResourceBinding{
 	WireType: "google_iam_managed_identity",
 	Fields: ubx.FieldMap{
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Disabled": ubx.FieldSpec{WireName: "disabled"},
-		"ExpireTime": ubx.FieldSpec{WireName: "expire_time"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"State": ubx.FieldSpec{WireName: "state"},
+		"Disabled":    ubx.FieldSpec{WireName: "disabled"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
 	},
 }

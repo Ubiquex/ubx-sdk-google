@@ -51,24 +51,14 @@ class DatabaseConfig:
     cmek_config: Any = None
     # The default concurrency control mode to use for this database. If unspecified in a CreateDatabase request, this will default based on the database edition: Optimistic for Enterprise and Pessimistic for all other databases. While transactions can explicitly specify their own concurrency mode, this setting defines the default behavior when left unspecified. Important: This database-level setting is not respected for Firestore with MongoDB compatibility. All transactions through the MongoDB compatibility layer will use optimistic concurrency control, regardless of this setting.
     concurrency_mode: Any = None
-    # Output only. The timestamp at which this database was created. Databases created before 2016 do not populate create_time.
-    create_time: Any = None
     # Immutable. The edition of the database.
     database_edition: Any = None
     # State of delete protection for the database.
     delete_protection_state: Any = None
-    # Output only. The timestamp at which this database was deleted. Only set if the database has been deleted.
-    delete_time: Any = None
-    # Output only. The earliest timestamp at which older versions of the data can be read from the database. See [version_retention_period] above; this field is populated with `now - version_retention_period`. This value is continuously updated, and becomes stale the moment it is queried. If you are using this value to recover data, make sure to account for the time from the moment when the value is queried to the moment when you initiate the recovery.
-    earliest_version_time: Any = None
     # This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding.
     etag: Any = None
     # Optional. The Firestore API data access mode to use for this database. If not set on write: - the default value is DATA_ACCESS_MODE_DISABLED for Enterprise edition. - the default value is DATA_ACCESS_MODE_ENABLED for Standard edition.
     firestore_data_access_mode: Any = None
-    # Output only. Background: Free tier is the ability of a Firestore database to use a small amount of resources every day without being charged. Once usage exceeds the free tier limit further usage is charged. Whether this database can make use of the free tier. Only one database per project can be eligible for the free tier. The first (or next) database that is created in a project without a free tier database will be marked as eligible for the free tier. Databases that are created while there is a free tier database will not be eligible for the free tier.
-    free_tier: Any = None
-    # Output only. The key_prefix for this database. This key_prefix is used, in combination with the project ID ("~") to construct the application ID that is returned from the Cloud Datastore APIs in Google App Engine first generation runtimes. This value may be empty in which case the appid to use for URL-encoded keys is the project_id (eg: foo instead of v~foo).
-    key_prefix: Any = None
     # Required. The location of the database. Available locations are listed at https://cloud.google.com/firestore/docs/locations.
     location_id: Any = None
     # Optional. The MongoDB compatible API data access mode to use for this database. If not set on write, the default value is DATA_ACCESS_MODE_ENABLED for Enterprise edition. The value is always DATA_ACCESS_MODE_DISABLED for Standard edition.
@@ -77,8 +67,6 @@ class DatabaseConfig:
     name: Any = None
     # Whether to enable the PITR feature on this database.
     point_in_time_recovery_enablement: Any = None
-    # Output only. The database resource's prior database ID. This field is only populated for deleted databases.
-    previous_id: Any = None
     # Immutable. The default Realtime Updates mode to use for this database.
     realtime_updates_mode: Any = None
     # Information about the provenance of this database.
@@ -87,12 +75,6 @@ class DatabaseConfig:
     tags: Any = None
     # Required. The type of the database. See https://cloud.google.com/datastore/docs/firestore-or-datastore for information about how to choose.
     type: Any = None
-    # Output only. The system-generated UUID4 for this Database.
-    uid: Any = None
-    # Output only. The timestamp at which this database was most recently updated. Note this only includes updates to the database resource and not data contained by the database.
-    update_time: Any = None
-    # Output only. The period during which past versions of data are retained in the database. Any read or query can specify a `read_time` within this window, and will read the state of the database at that time. If the PITR feature is enabled, the retention period is 7 days. Otherwise, the retention period is 1 hour.
-    version_retention_period: Any = None
 
 @dataclasses.dataclass
 class DatabaseAttrs:
@@ -155,20 +137,14 @@ Database = ubx.ResourceBinding(
             fields=_Database_CmekConfigFields,
         ),
         "concurrency_mode": ubx.FieldSpec(wire_name="concurrency_mode"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "database_edition": ubx.FieldSpec(wire_name="database_edition"),
         "delete_protection_state": ubx.FieldSpec(wire_name="delete_protection_state"),
-        "delete_time": ubx.FieldSpec(wire_name="delete_time"),
-        "earliest_version_time": ubx.FieldSpec(wire_name="earliest_version_time"),
         "etag": ubx.FieldSpec(wire_name="etag"),
         "firestore_data_access_mode": ubx.FieldSpec(wire_name="firestore_data_access_mode"),
-        "free_tier": ubx.FieldSpec(wire_name="free_tier"),
-        "key_prefix": ubx.FieldSpec(wire_name="key_prefix"),
         "location_id": ubx.FieldSpec(wire_name="location_id"),
         "mongodb_compatible_data_access_mode": ubx.FieldSpec(wire_name="mongodb_compatible_data_access_mode"),
         "name": ubx.FieldSpec(wire_name="name"),
         "point_in_time_recovery_enablement": ubx.FieldSpec(wire_name="point_in_time_recovery_enablement"),
-        "previous_id": ubx.FieldSpec(wire_name="previous_id"),
         "realtime_updates_mode": ubx.FieldSpec(wire_name="realtime_updates_mode"),
         "source_info": ubx.FieldSpec(
             wire_name="source_info",
@@ -177,8 +153,5 @@ Database = ubx.ResourceBinding(
         ),
         "tags": ubx.FieldSpec(wire_name="tags"),
         "type": ubx.FieldSpec(wire_name="type"),
-        "uid": ubx.FieldSpec(wire_name="uid"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
-        "version_retention_period": ubx.FieldSpec(wire_name="version_retention_period"),
     },
 )

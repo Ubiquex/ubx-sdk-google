@@ -76,8 +76,6 @@ class WorkloadIdentityPoolConfig:
     disabled: Any = None
     # Optional. A display name for the pool. Cannot exceed 32 characters.
     display_name: Any = None
-    # Output only. Time after which the workload identity pool will be permanently purged and cannot be recovered.
-    expire_time: Any = None
     # Represents configuration for generating mutual TLS (mTLS) certificates for the identities within this pool.
     inline_certificate_issuance_config: Any = None
     # Defines configuration for extending trust to additional trust domains. By establishing trust with another domain, the current domain will recognize and accept certificates issued by entities within the trusted domains. Note that a trust domain automatically trusts itself, eliminating the need for explicit configuration.
@@ -86,8 +84,6 @@ class WorkloadIdentityPoolConfig:
     mode: Any = None
     # Identifier. The resource name of the pool.
     name: Any = None
-    # Output only. The state of the pool.
-    state: Any = None
 
 @dataclasses.dataclass
 class WorkloadIdentityPoolAttrs:
@@ -116,7 +112,6 @@ WorkloadIdentityPool = ubx.ResourceBinding(
         "description": ubx.FieldSpec(wire_name="description"),
         "disabled": ubx.FieldSpec(wire_name="disabled"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
-        "expire_time": ubx.FieldSpec(wire_name="expire_time"),
         "inline_certificate_issuance_config": ubx.FieldSpec(
             wire_name="inline_certificate_issuance_config",
             kind="object",
@@ -129,6 +124,5 @@ WorkloadIdentityPool = ubx.ResourceBinding(
         ),
         "mode": ubx.FieldSpec(wire_name="mode"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "state": ubx.FieldSpec(wire_name="state"),
     },
 )

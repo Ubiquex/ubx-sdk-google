@@ -4,7 +4,7 @@ package vmmigration
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V1alpha1CutoverJob_ComputeEngineDisksTargetDetails_Disks struct {
-	DiskUri any
+	DiskUri          any
 	SourceDiskNumber any
 }
 
@@ -24,7 +24,7 @@ type V1alpha1CutoverJob_ComputeEngineDisksTargetDetails struct {
 
 type V1alpha1CutoverJob_ComputeEngineTargetDetails_AdaptationModifiers struct {
 	Modifier any
-	Value any
+	Value    any
 }
 
 type V1alpha1CutoverJob_ComputeEngineTargetDetails_AppliedLicense struct {
@@ -35,9 +35,9 @@ type V1alpha1CutoverJob_ComputeEngineTargetDetails_AppliedLicense struct {
 }
 
 type V1alpha1CutoverJob_ComputeEngineTargetDetails_ComputeScheduling_NodeAffinities struct {
-	Key any
+	Key      any
 	Operator any
-	Values any
+	Values   any
 }
 
 type V1alpha1CutoverJob_ComputeEngineTargetDetails_ComputeScheduling struct {
@@ -58,11 +58,11 @@ type V1alpha1CutoverJob_ComputeEngineTargetDetails_Encryption struct {
 }
 
 type V1alpha1CutoverJob_ComputeEngineTargetDetails_NetworkInterfaces struct {
-	ExternalIp any
-	InternalIp any
-	Network any
+	ExternalIp  any
+	InternalIp  any
+	Network     any
 	NetworkTier any
-	Subnetwork any
+	Subnetwork  any
 }
 
 type V1alpha1CutoverJob_ComputeEngineTargetDetails struct {
@@ -174,306 +174,213 @@ type V1alpha1CutoverJob_Error struct {
 
 type V1alpha1CutoverJob_Steps_FinalSync_Steps_Replicating struct {
 	LastThirtyMinutesAverageBytesPerSecond any
-	LastTwoMinutesAverageBytesPerSecond any
-	ReplicatedBytes any
-	TotalBytes any
+	LastTwoMinutesAverageBytesPerSecond    any
+	ReplicatedBytes                        any
+	TotalBytes                             any
 }
 
 type V1alpha1CutoverJob_Steps_FinalSync_Steps struct {
-	EndTime any
+	EndTime                 any
 	InitializingReplication any
-	PostProcessing any
-	Replicating any
-	StartTime any
+	PostProcessing          any
+	Replicating             any
+	StartTime               any
 }
 
 type V1alpha1CutoverJob_Steps_FinalSync_Warnings_ActionItem struct {
-	Locale any
+	Locale  any
 	Message any
 }
 
 type V1alpha1CutoverJob_Steps_FinalSync_Warnings_HelpLinks struct {
 	Description any
-	Url any
+	Url         any
 }
 
 type V1alpha1CutoverJob_Steps_FinalSync_Warnings struct {
-	ActionItem any
-	Code any
-	HelpLinks any
+	ActionItem     any
+	Code           any
+	HelpLinks      any
 	WarningMessage any
-	WarningTime any
+	WarningTime    any
 }
 
 type V1alpha1CutoverJob_Steps_FinalSync struct {
-	CycleNumber any
-	EndTime any
-	Error any
-	Name any
-	Progress any
-	ProgressPercent any
-	StartTime any
-	State any
-	Steps any
+	CycleNumber        any
+	EndTime            any
+	Error              any
+	Name               any
+	Progress           any
+	ProgressPercent    any
+	StartTime          any
+	State              any
+	Steps              any
 	TotalPauseDuration any
-	Warnings any
+	Warnings           any
 }
 
 type V1alpha1CutoverJob_Steps struct {
-	EndTime any
-	FinalSync any
-	InstantiatingMigratedVm any
-	PreparingVmDisks any
+	EndTime                  any
+	FinalSync                any
+	InstantiatingMigratedVm  any
+	PreparingVmDisks         any
 	PreviousReplicationCycle any
-	ShuttingDownSourceVm any
-	StartTime any
+	ShuttingDownSourceVm     any
+	StartTime                any
 }
 
 var V1alpha1CutoverJob_ComputeEngineDisksTargetDetails_DisksFields = ubx.FieldMap{
-		"DiskUri": ubx.FieldSpec{WireName: "disk_uri"},
-		"SourceDiskNumber": ubx.FieldSpec{WireName: "source_disk_number"},
-	}
+	"DiskUri":          ubx.FieldSpec{WireName: "disk_uri"},
+	"SourceDiskNumber": ubx.FieldSpec{WireName: "source_disk_number"},
+}
 
 var V1alpha1CutoverJob_ComputeEngineDisksTargetDetails_VmTargetDetailsFields = ubx.FieldMap{
-		"VmUri": ubx.FieldSpec{WireName: "vm_uri"},
-	}
+	"VmUri": ubx.FieldSpec{WireName: "vm_uri"},
+}
 
 var V1alpha1CutoverJob_ComputeEngineDisksTargetDetailsFields = ubx.FieldMap{
-		"Disks": ubx.FieldSpec{
-			WireName: "disks",
-			Kind: "list",
-			Fields: V1alpha1CutoverJob_ComputeEngineDisksTargetDetails_DisksFields,
-		},
-		"DisksTargetDetails": ubx.FieldSpec{WireName: "disks_target_details"},
-		"VmTargetDetails": ubx.FieldSpec{
-			WireName: "vm_target_details",
-			Kind: "object",
-			Fields: V1alpha1CutoverJob_ComputeEngineDisksTargetDetails_VmTargetDetailsFields,
-		},
-	}
+	"Disks": ubx.FieldSpec{
+		WireName: "disks",
+		Kind:     "list",
+		Fields:   V1alpha1CutoverJob_ComputeEngineDisksTargetDetails_DisksFields,
+	},
+	"DisksTargetDetails": ubx.FieldSpec{WireName: "disks_target_details"},
+	"VmTargetDetails": ubx.FieldSpec{
+		WireName: "vm_target_details",
+		Kind:     "object",
+		Fields:   V1alpha1CutoverJob_ComputeEngineDisksTargetDetails_VmTargetDetailsFields,
+	},
+}
 
 var V1alpha1CutoverJob_ComputeEngineTargetDetails_AdaptationModifiersFields = ubx.FieldMap{
-		"Modifier": ubx.FieldSpec{WireName: "modifier"},
-		"Value": ubx.FieldSpec{WireName: "value"},
-	}
+	"Modifier": ubx.FieldSpec{WireName: "modifier"},
+	"Value":    ubx.FieldSpec{WireName: "value"},
+}
 
 var V1alpha1CutoverJob_ComputeEngineTargetDetails_AppliedLicenseFields = ubx.FieldMap{
-		"OsLicense": ubx.FieldSpec{WireName: "os_license"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"OsLicense": ubx.FieldSpec{WireName: "os_license"},
+	"Type":      ubx.FieldSpec{WireName: "type"},
+}
 
 var V1alpha1CutoverJob_ComputeEngineTargetDetails_ComputeScheduling_NodeAffinitiesFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Operator": ubx.FieldSpec{WireName: "operator"},
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Key":      ubx.FieldSpec{WireName: "key"},
+	"Operator": ubx.FieldSpec{WireName: "operator"},
+	"Values":   ubx.FieldSpec{WireName: "values"},
+}
 
 var V1alpha1CutoverJob_ComputeEngineTargetDetails_ComputeSchedulingFields = ubx.FieldMap{
-		"AutomaticRestart": ubx.FieldSpec{WireName: "automatic_restart"},
-		"MinNodeCpus": ubx.FieldSpec{WireName: "min_node_cpus"},
-		"NodeAffinities": ubx.FieldSpec{
-			WireName: "node_affinities",
-			Kind: "list",
-			Fields: V1alpha1CutoverJob_ComputeEngineTargetDetails_ComputeScheduling_NodeAffinitiesFields,
-		},
-		"OnHostMaintenance": ubx.FieldSpec{WireName: "on_host_maintenance"},
-		"RestartType": ubx.FieldSpec{WireName: "restart_type"},
-	}
+	"AutomaticRestart": ubx.FieldSpec{WireName: "automatic_restart"},
+	"MinNodeCpus":      ubx.FieldSpec{WireName: "min_node_cpus"},
+	"NodeAffinities": ubx.FieldSpec{
+		WireName: "node_affinities",
+		Kind:     "list",
+		Fields:   V1alpha1CutoverJob_ComputeEngineTargetDetails_ComputeScheduling_NodeAffinitiesFields,
+	},
+	"OnHostMaintenance": ubx.FieldSpec{WireName: "on_host_maintenance"},
+	"RestartType":       ubx.FieldSpec{WireName: "restart_type"},
+}
 
 var V1alpha1CutoverJob_ComputeEngineTargetDetails_EncryptionFields = ubx.FieldMap{
-		"KmsKey": ubx.FieldSpec{WireName: "kms_key"},
-	}
+	"KmsKey": ubx.FieldSpec{WireName: "kms_key"},
+}
 
 var V1alpha1CutoverJob_ComputeEngineTargetDetails_NetworkInterfacesFields = ubx.FieldMap{
-		"ExternalIp": ubx.FieldSpec{WireName: "external_ip"},
-		"InternalIp": ubx.FieldSpec{WireName: "internal_ip"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"NetworkTier": ubx.FieldSpec{WireName: "network_tier"},
-		"Subnetwork": ubx.FieldSpec{WireName: "subnetwork"},
-	}
+	"ExternalIp":  ubx.FieldSpec{WireName: "external_ip"},
+	"InternalIp":  ubx.FieldSpec{WireName: "internal_ip"},
+	"Network":     ubx.FieldSpec{WireName: "network"},
+	"NetworkTier": ubx.FieldSpec{WireName: "network_tier"},
+	"Subnetwork":  ubx.FieldSpec{WireName: "subnetwork"},
+}
 
 var V1alpha1CutoverJob_ComputeEngineTargetDetailsFields = ubx.FieldMap{
-		"AdaptationModifiers": ubx.FieldSpec{
-			WireName: "adaptation_modifiers",
-			Kind: "list",
-			Fields: V1alpha1CutoverJob_ComputeEngineTargetDetails_AdaptationModifiersFields,
-		},
-		"AdditionalLicenses": ubx.FieldSpec{WireName: "additional_licenses"},
-		"AppliedLicense": ubx.FieldSpec{
-			WireName: "applied_license",
-			Kind: "object",
-			Fields: V1alpha1CutoverJob_ComputeEngineTargetDetails_AppliedLicenseFields,
-		},
-		"BootConversion": ubx.FieldSpec{WireName: "boot_conversion"},
-		"BootOption": ubx.FieldSpec{WireName: "boot_option"},
-		"ComputeScheduling": ubx.FieldSpec{
-			WireName: "compute_scheduling",
-			Kind: "object",
-			Fields: V1alpha1CutoverJob_ComputeEngineTargetDetails_ComputeSchedulingFields,
-		},
-		"DiskReplicaZones": ubx.FieldSpec{WireName: "disk_replica_zones"},
-		"DiskType": ubx.FieldSpec{WireName: "disk_type"},
-		"EnableIntegrityMonitoring": ubx.FieldSpec{WireName: "enable_integrity_monitoring"},
-		"EnableVtpm": ubx.FieldSpec{WireName: "enable_vtpm"},
-		"Encryption": ubx.FieldSpec{
-			WireName: "encryption",
-			Kind: "object",
-			Fields: V1alpha1CutoverJob_ComputeEngineTargetDetails_EncryptionFields,
-		},
-		"Hostname": ubx.FieldSpec{WireName: "hostname"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"LicenseType": ubx.FieldSpec{WireName: "license_type"},
-		"MachineType": ubx.FieldSpec{WireName: "machine_type"},
-		"MachineTypeSeries": ubx.FieldSpec{WireName: "machine_type_series"},
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-		"NetworkInterfaces": ubx.FieldSpec{
-			WireName: "network_interfaces",
-			Kind: "list",
-			Fields: V1alpha1CutoverJob_ComputeEngineTargetDetails_NetworkInterfacesFields,
-		},
-		"NetworkTags": ubx.FieldSpec{WireName: "network_tags"},
-		"Project": ubx.FieldSpec{WireName: "project"},
-		"SecureBoot": ubx.FieldSpec{WireName: "secure_boot"},
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-		"StoragePool": ubx.FieldSpec{WireName: "storage_pool"},
-		"VmName": ubx.FieldSpec{WireName: "vm_name"},
-		"Zone": ubx.FieldSpec{WireName: "zone"},
-	}
+	"AdaptationModifiers": ubx.FieldSpec{
+		WireName: "adaptation_modifiers",
+		Kind:     "list",
+		Fields:   V1alpha1CutoverJob_ComputeEngineTargetDetails_AdaptationModifiersFields,
+	},
+	"AdditionalLicenses": ubx.FieldSpec{WireName: "additional_licenses"},
+	"AppliedLicense": ubx.FieldSpec{
+		WireName: "applied_license",
+		Kind:     "object",
+		Fields:   V1alpha1CutoverJob_ComputeEngineTargetDetails_AppliedLicenseFields,
+	},
+	"BootConversion": ubx.FieldSpec{WireName: "boot_conversion"},
+	"BootOption":     ubx.FieldSpec{WireName: "boot_option"},
+	"ComputeScheduling": ubx.FieldSpec{
+		WireName: "compute_scheduling",
+		Kind:     "object",
+		Fields:   V1alpha1CutoverJob_ComputeEngineTargetDetails_ComputeSchedulingFields,
+	},
+	"DiskReplicaZones":          ubx.FieldSpec{WireName: "disk_replica_zones"},
+	"DiskType":                  ubx.FieldSpec{WireName: "disk_type"},
+	"EnableIntegrityMonitoring": ubx.FieldSpec{WireName: "enable_integrity_monitoring"},
+	"EnableVtpm":                ubx.FieldSpec{WireName: "enable_vtpm"},
+	"Encryption": ubx.FieldSpec{
+		WireName: "encryption",
+		Kind:     "object",
+		Fields:   V1alpha1CutoverJob_ComputeEngineTargetDetails_EncryptionFields,
+	},
+	"Hostname":          ubx.FieldSpec{WireName: "hostname"},
+	"Labels":            ubx.FieldSpec{WireName: "labels"},
+	"LicenseType":       ubx.FieldSpec{WireName: "license_type"},
+	"MachineType":       ubx.FieldSpec{WireName: "machine_type"},
+	"MachineTypeSeries": ubx.FieldSpec{WireName: "machine_type_series"},
+	"Metadata":          ubx.FieldSpec{WireName: "metadata"},
+	"NetworkInterfaces": ubx.FieldSpec{
+		WireName: "network_interfaces",
+		Kind:     "list",
+		Fields:   V1alpha1CutoverJob_ComputeEngineTargetDetails_NetworkInterfacesFields,
+	},
+	"NetworkTags":    ubx.FieldSpec{WireName: "network_tags"},
+	"Project":        ubx.FieldSpec{WireName: "project"},
+	"SecureBoot":     ubx.FieldSpec{WireName: "secure_boot"},
+	"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
+	"StoragePool":    ubx.FieldSpec{WireName: "storage_pool"},
+	"VmName":         ubx.FieldSpec{WireName: "vm_name"},
+	"Zone":           ubx.FieldSpec{WireName: "zone"},
+}
 
 var V1alpha1CutoverJob_ComputeEngineVmDetailsFields = ubx.FieldMap{
-		"AppliedLicense": ubx.FieldSpec{
-			WireName: "applied_license",
-			Kind: "object",
-			Fields: V1alpha1CutoverJob_ComputeEngineTargetDetails_AppliedLicenseFields,
-		},
-		"BootOption": ubx.FieldSpec{WireName: "boot_option"},
-		"ComputeScheduling": ubx.FieldSpec{
-			WireName: "compute_scheduling",
-			Kind: "object",
-			Fields: V1alpha1CutoverJob_ComputeEngineTargetDetails_ComputeSchedulingFields,
-		},
-		"DiskType": ubx.FieldSpec{WireName: "disk_type"},
-		"ExternalIp": ubx.FieldSpec{WireName: "external_ip"},
-		"InternalIp": ubx.FieldSpec{WireName: "internal_ip"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"LicenseType": ubx.FieldSpec{WireName: "license_type"},
-		"MachineType": ubx.FieldSpec{WireName: "machine_type"},
-		"MachineTypeSeries": ubx.FieldSpec{WireName: "machine_type_series"},
-		"Metadata": ubx.FieldSpec{WireName: "metadata"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"NetworkInterfaces": ubx.FieldSpec{
-			WireName: "network_interfaces",
-			Kind: "list",
-			Fields: V1alpha1CutoverJob_ComputeEngineTargetDetails_NetworkInterfacesFields,
-		},
-		"NetworkTags": ubx.FieldSpec{WireName: "network_tags"},
-		"Project": ubx.FieldSpec{WireName: "project"},
-		"SecureBoot": ubx.FieldSpec{WireName: "secure_boot"},
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-		"Subnetwork": ubx.FieldSpec{WireName: "subnetwork"},
-		"TargetProject": ubx.FieldSpec{WireName: "target_project"},
-		"Zone": ubx.FieldSpec{WireName: "zone"},
-	}
+	"AppliedLicense": ubx.FieldSpec{
+		WireName: "applied_license",
+		Kind:     "object",
+		Fields:   V1alpha1CutoverJob_ComputeEngineTargetDetails_AppliedLicenseFields,
+	},
+	"BootOption": ubx.FieldSpec{WireName: "boot_option"},
+	"ComputeScheduling": ubx.FieldSpec{
+		WireName: "compute_scheduling",
+		Kind:     "object",
+		Fields:   V1alpha1CutoverJob_ComputeEngineTargetDetails_ComputeSchedulingFields,
+	},
+	"DiskType":          ubx.FieldSpec{WireName: "disk_type"},
+	"ExternalIp":        ubx.FieldSpec{WireName: "external_ip"},
+	"InternalIp":        ubx.FieldSpec{WireName: "internal_ip"},
+	"Labels":            ubx.FieldSpec{WireName: "labels"},
+	"LicenseType":       ubx.FieldSpec{WireName: "license_type"},
+	"MachineType":       ubx.FieldSpec{WireName: "machine_type"},
+	"MachineTypeSeries": ubx.FieldSpec{WireName: "machine_type_series"},
+	"Metadata":          ubx.FieldSpec{WireName: "metadata"},
+	"Name":              ubx.FieldSpec{WireName: "name"},
+	"Network":           ubx.FieldSpec{WireName: "network"},
+	"NetworkInterfaces": ubx.FieldSpec{
+		WireName: "network_interfaces",
+		Kind:     "list",
+		Fields:   V1alpha1CutoverJob_ComputeEngineTargetDetails_NetworkInterfacesFields,
+	},
+	"NetworkTags":    ubx.FieldSpec{WireName: "network_tags"},
+	"Project":        ubx.FieldSpec{WireName: "project"},
+	"SecureBoot":     ubx.FieldSpec{WireName: "secure_boot"},
+	"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
+	"Subnetwork":     ubx.FieldSpec{WireName: "subnetwork"},
+	"TargetProject":  ubx.FieldSpec{WireName: "target_project"},
+	"Zone":           ubx.FieldSpec{WireName: "zone"},
+}
 
 var V1alpha1CutoverJob_ErrorFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
-
-var V1alpha1CutoverJob_Steps_FinalSync_Steps_ReplicatingFields = ubx.FieldMap{
-		"LastThirtyMinutesAverageBytesPerSecond": ubx.FieldSpec{WireName: "last_thirty_minutes_average_bytes_per_second"},
-		"LastTwoMinutesAverageBytesPerSecond": ubx.FieldSpec{WireName: "last_two_minutes_average_bytes_per_second"},
-		"ReplicatedBytes": ubx.FieldSpec{WireName: "replicated_bytes"},
-		"TotalBytes": ubx.FieldSpec{WireName: "total_bytes"},
-	}
-
-var V1alpha1CutoverJob_Steps_FinalSync_StepsFields = ubx.FieldMap{
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"InitializingReplication": ubx.FieldSpec{WireName: "initializing_replication"},
-		"PostProcessing": ubx.FieldSpec{WireName: "post_processing"},
-		"Replicating": ubx.FieldSpec{
-			WireName: "replicating",
-			Kind: "object",
-			Fields: V1alpha1CutoverJob_Steps_FinalSync_Steps_ReplicatingFields,
-		},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-	}
-
-var V1alpha1CutoverJob_Steps_FinalSync_Warnings_ActionItemFields = ubx.FieldMap{
-		"Locale": ubx.FieldSpec{WireName: "locale"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
-
-var V1alpha1CutoverJob_Steps_FinalSync_Warnings_HelpLinksFields = ubx.FieldMap{
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"Url": ubx.FieldSpec{WireName: "url"},
-	}
-
-var V1alpha1CutoverJob_Steps_FinalSync_WarningsFields = ubx.FieldMap{
-		"ActionItem": ubx.FieldSpec{
-			WireName: "action_item",
-			Kind: "object",
-			Fields: V1alpha1CutoverJob_Steps_FinalSync_Warnings_ActionItemFields,
-		},
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"HelpLinks": ubx.FieldSpec{
-			WireName: "help_links",
-			Kind: "list",
-			Fields: V1alpha1CutoverJob_Steps_FinalSync_Warnings_HelpLinksFields,
-		},
-		"WarningMessage": ubx.FieldSpec{
-			WireName: "warning_message",
-			Kind: "object",
-			Fields: V1alpha1CutoverJob_Steps_FinalSync_Warnings_ActionItemFields,
-		},
-		"WarningTime": ubx.FieldSpec{WireName: "warning_time"},
-	}
-
-var V1alpha1CutoverJob_Steps_FinalSyncFields = ubx.FieldMap{
-		"CycleNumber": ubx.FieldSpec{WireName: "cycle_number"},
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"Error": ubx.FieldSpec{
-			WireName: "error",
-			Kind: "object",
-			Fields: V1alpha1CutoverJob_ErrorFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Progress": ubx.FieldSpec{WireName: "progress"},
-		"ProgressPercent": ubx.FieldSpec{WireName: "progress_percent"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"Steps": ubx.FieldSpec{
-			WireName: "steps",
-			Kind: "list",
-			Fields: V1alpha1CutoverJob_Steps_FinalSync_StepsFields,
-		},
-		"TotalPauseDuration": ubx.FieldSpec{WireName: "total_pause_duration"},
-		"Warnings": ubx.FieldSpec{
-			WireName: "warnings",
-			Kind: "list",
-			Fields: V1alpha1CutoverJob_Steps_FinalSync_WarningsFields,
-		},
-	}
-
-var V1alpha1CutoverJob_StepsFields = ubx.FieldMap{
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"FinalSync": ubx.FieldSpec{
-			WireName: "final_sync",
-			Kind: "object",
-			Fields: V1alpha1CutoverJob_Steps_FinalSyncFields,
-		},
-		"InstantiatingMigratedVm": ubx.FieldSpec{WireName: "instantiating_migrated_vm"},
-		"PreparingVmDisks": ubx.FieldSpec{WireName: "preparing_vm_disks"},
-		"PreviousReplicationCycle": ubx.FieldSpec{
-			WireName: "previous_replication_cycle",
-			Kind: "object",
-			Fields: V1alpha1CutoverJob_Steps_FinalSyncFields,
-		},
-		"ShuttingDownSourceVm": ubx.FieldSpec{WireName: "shutting_down_source_vm"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-	}
+	"Code":    ubx.FieldSpec{WireName: "code"},
+	"Details": ubx.FieldSpec{WireName: "details"},
+	"Message": ubx.FieldSpec{WireName: "message"},
+}
 
 type V1alpha1CutoverJobConfig struct {
 	// ComputeEngineDisksTargetDetails is a collection of created Persistent Disks details.
@@ -482,26 +389,8 @@ type V1alpha1CutoverJobConfig struct {
 	ComputeEngineTargetDetails any
 	// TargetVMDetails is a collection of details for creating a VM in a target Compute Engine project.
 	ComputeEngineVmDetails any
-	// Output only. The time the cutover job was created (as an API call, not when it was actually created in the target).
-	CreateTime any
-	// Output only. The time the cutover job had finished.
-	EndTime any
 	// The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
 	Error any
-	// Output only. The name of the cutover job.
-	Name any
-	// Output only. The current progress in percentage of the cutover job.
-	Progress any
-	// Output only. The current progress in percentage of the cutover job.
-	ProgressPercent any
-	// Output only. State of the cutover job.
-	State any
-	// Output only. A message providing possible extra details about the current state.
-	StateMessage any
-	// Output only. The time the state was last updated.
-	StateTime any
-	// Output only. The cutover steps list representing its progress.
-	Steps any
 	// TargetVMDetails is a collection of details for creating a VM in a target Compute Engine project.
 	TargetDetails any
 }
@@ -542,41 +431,28 @@ var V1alpha1CutoverJob = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ComputeEngineDisksTargetDetails": ubx.FieldSpec{
 			WireName: "compute_engine_disks_target_details",
-			Kind: "object",
-			Fields: V1alpha1CutoverJob_ComputeEngineDisksTargetDetailsFields,
+			Kind:     "object",
+			Fields:   V1alpha1CutoverJob_ComputeEngineDisksTargetDetailsFields,
 		},
 		"ComputeEngineTargetDetails": ubx.FieldSpec{
 			WireName: "compute_engine_target_details",
-			Kind: "object",
-			Fields: V1alpha1CutoverJob_ComputeEngineTargetDetailsFields,
+			Kind:     "object",
+			Fields:   V1alpha1CutoverJob_ComputeEngineTargetDetailsFields,
 		},
 		"ComputeEngineVmDetails": ubx.FieldSpec{
 			WireName: "compute_engine_vm_details",
-			Kind: "object",
-			Fields: V1alpha1CutoverJob_ComputeEngineVmDetailsFields,
+			Kind:     "object",
+			Fields:   V1alpha1CutoverJob_ComputeEngineVmDetailsFields,
 		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
 		"Error": ubx.FieldSpec{
 			WireName: "error",
-			Kind: "object",
-			Fields: V1alpha1CutoverJob_ErrorFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Progress": ubx.FieldSpec{WireName: "progress"},
-		"ProgressPercent": ubx.FieldSpec{WireName: "progress_percent"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"StateMessage": ubx.FieldSpec{WireName: "state_message"},
-		"StateTime": ubx.FieldSpec{WireName: "state_time"},
-		"Steps": ubx.FieldSpec{
-			WireName: "steps",
-			Kind: "list",
-			Fields: V1alpha1CutoverJob_StepsFields,
+			Kind:     "object",
+			Fields:   V1alpha1CutoverJob_ErrorFields,
 		},
 		"TargetDetails": ubx.FieldSpec{
 			WireName: "target_details",
-			Kind: "object",
-			Fields: V1alpha1CutoverJob_ComputeEngineVmDetailsFields,
+			Kind:     "object",
+			Fields:   V1alpha1CutoverJob_ComputeEngineVmDetailsFields,
 		},
 	},
 }

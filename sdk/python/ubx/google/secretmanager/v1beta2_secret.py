@@ -99,8 +99,6 @@ _V1beta2Secret_TopicsFields = {
 class V1beta2SecretConfig:
     # Optional. Custom metadata about the secret. Annotations are distinct from various forms of labels. Annotations exist to allow client tools to store their own state information without requiring a database. Annotation keys must be between 1 and 63 characters long, have a UTF-8 encoding of maximum 128 bytes, begin and end with an alphanumeric character ([a-z0-9A-Z]), and may have dashes (-), underscores (_), dots (.), and alphanumerics in between these symbols. The total size of annotation keys and values must be less than 16KiB.
     annotations: Any = None
-    # Output only. The time at which the Secret was created.
-    create_time: Any = None
     # Configuration for encrypting secret payloads using customer-managed encryption keys (CMEK).
     customer_managed_encryption: Any = None
     # Optional. Etag of the currently stored Secret.
@@ -109,8 +107,6 @@ class V1beta2SecretConfig:
     expire_time: Any = None
     # The labels assigned to this Secret. Label keys must be between 1 and 63 characters long, have a UTF-8 encoding of maximum 128 bytes, and must conform to the following PCRE regular expression: `\p{Ll}\p{Lo}{0,62}` Label values must be between 0 and 63 characters long, have a UTF-8 encoding of maximum 128 bytes, and must conform to the following PCRE regular expression: `[\p{Ll}\p{Lo}\p{N}_-]{0,63}` No more than 64 labels can be assigned to a given resource.
     labels: Any = None
-    # Output only. The resource name of the Secret in the format `projects/*/secrets/*`.
-    name: Any = None
     # A policy that defines the replication and encryption configuration of data.
     replication: Any = None
     # The rotation time and period for a Secret. At next_rotation_time, Secret Manager will send a Pub/Sub notification to the topics configured on the Secret. Secret.topics must be set to configure rotation.
@@ -161,7 +157,6 @@ V1beta2Secret = ubx.ResourceBinding(
     wire_type="google_secretmanager_v1beta2_secret",
     fields={
         "annotations": ubx.FieldSpec(wire_name="annotations"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "customer_managed_encryption": ubx.FieldSpec(
             wire_name="customer_managed_encryption",
             kind="object",
@@ -170,7 +165,6 @@ V1beta2Secret = ubx.ResourceBinding(
         "etag": ubx.FieldSpec(wire_name="etag"),
         "expire_time": ubx.FieldSpec(wire_name="expire_time"),
         "labels": ubx.FieldSpec(wire_name="labels"),
-        "name": ubx.FieldSpec(wire_name="name"),
         "replication": ubx.FieldSpec(
             wire_name="replication",
             kind="object",

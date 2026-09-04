@@ -427,7 +427,6 @@ const V2beta1ConversationProfile_TtsConfigFields: FieldMap = {
 
 export interface V2beta1ConversationProfileConfig {
   automatedAgentConfig?: V2beta1ConversationProfile_AutomatedAgentConfig | Computed<V2beta1ConversationProfile_AutomatedAgentConfig>;
-  createTime?: string | Computed<string>;
   displayName?: string | Computed<string>;
   humanAgentAssistantConfig?: V2beta1ConversationProfile_HumanAgentAssistantConfig | Computed<V2beta1ConversationProfile_HumanAgentAssistantConfig>;
   humanAgentHandoffConfig?: V2beta1ConversationProfile_HumanAgentHandoffConfig | Computed<V2beta1ConversationProfile_HumanAgentHandoffConfig>;
@@ -442,7 +441,6 @@ export interface V2beta1ConversationProfileConfig {
   sttConfig?: V2beta1ConversationProfile_SttConfig | Computed<V2beta1ConversationProfile_SttConfig>;
   timeZone?: string | Computed<string>;
   ttsConfig?: V2beta1ConversationProfile_TtsConfig | Computed<V2beta1ConversationProfile_TtsConfig>;
-  updateTime?: string | Computed<string>;
   useBidiStreaming?: boolean | Computed<boolean>;
 }
 
@@ -475,7 +473,6 @@ export const V2beta1ConversationProfile: ResourceBinding<V2beta1ConversationProf
       kind: "object",
       fields: V2beta1ConversationProfile_AutomatedAgentConfigFields,
     },
-    createTime: "create_time",
     displayName: "display_name",
     humanAgentAssistantConfig: {
       wireName: "human_agent_assistant_config",
@@ -526,7 +523,6 @@ export const V2beta1ConversationProfile: ResourceBinding<V2beta1ConversationProf
       kind: "object",
       fields: V2beta1ConversationProfile_TtsConfigFields,
     },
-    updateTime: "update_time",
     useBidiStreaming: "use_bidi_streaming",
   },
 };

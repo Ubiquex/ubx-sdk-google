@@ -4,11 +4,11 @@ package dialogflow
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type V3beta1Webhook_GenericWebService_OauthConfig struct {
-	ClientId any
-	ClientSecret any
-	Scopes any
+	ClientId                     any
+	ClientSecret                 any
+	Scopes                       any
 	SecretVersionForClientSecret any
-	TokenEndpoint any
+	TokenEndpoint                any
 }
 
 type V3beta1Webhook_GenericWebService_SecretVersionsForRequestHeaders struct {
@@ -20,114 +20,114 @@ type V3beta1Webhook_GenericWebService_ServiceAccountAuthConfig struct {
 }
 
 type V3beta1Webhook_GenericWebService struct {
-	AllowedCaCerts any
-	HttpMethod any
-	OauthConfig any
-	ParameterMapping any
-	Password any
-	RequestBody any
-	RequestHeaders any
+	AllowedCaCerts                   any
+	HttpMethod                       any
+	OauthConfig                      any
+	ParameterMapping                 any
+	Password                         any
+	RequestBody                      any
+	RequestHeaders                   any
 	SecretVersionForUsernamePassword any
-	SecretVersionsForRequestHeaders any
-	ServiceAccountAuthConfig any
-	ServiceAgentAuth any
-	Uri any
-	Username any
-	WebhookType any
+	SecretVersionsForRequestHeaders  any
+	ServiceAccountAuthConfig         any
+	ServiceAgentAuth                 any
+	Uri                              any
+	Username                         any
+	WebhookType                      any
 }
 
 type V3beta1Webhook_ServiceDirectory struct {
 	GenericWebService any
-	Service any
+	Service           any
 }
 
 var V3beta1Webhook_GenericWebService_OauthConfigFields = ubx.FieldMap{
-		"ClientId": ubx.FieldSpec{WireName: "client_id"},
-		"ClientSecret": ubx.FieldSpec{WireName: "client_secret"},
-		"Scopes": ubx.FieldSpec{WireName: "scopes"},
-		"SecretVersionForClientSecret": ubx.FieldSpec{WireName: "secret_version_for_client_secret"},
-		"TokenEndpoint": ubx.FieldSpec{WireName: "token_endpoint"},
-	}
+	"ClientId":                     ubx.FieldSpec{WireName: "client_id"},
+	"ClientSecret":                 ubx.FieldSpec{WireName: "client_secret"},
+	"Scopes":                       ubx.FieldSpec{WireName: "scopes"},
+	"SecretVersionForClientSecret": ubx.FieldSpec{WireName: "secret_version_for_client_secret"},
+	"TokenEndpoint":                ubx.FieldSpec{WireName: "token_endpoint"},
+}
 
 var V3beta1Webhook_GenericWebService_SecretVersionsForRequestHeadersFields = ubx.FieldMap{
-		"SecretVersion": ubx.FieldSpec{WireName: "secret_version"},
-	}
+	"SecretVersion": ubx.FieldSpec{WireName: "secret_version"},
+}
 
 var V3beta1Webhook_GenericWebService_ServiceAccountAuthConfigFields = ubx.FieldMap{
-		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-	}
+	"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
+}
 
 var V3beta1Webhook_GenericWebServiceFields = ubx.FieldMap{
-		"AllowedCaCerts": ubx.FieldSpec{WireName: "allowed_ca_certs"},
-		"HttpMethod": ubx.FieldSpec{WireName: "http_method"},
-		"OauthConfig": ubx.FieldSpec{
-			WireName: "oauth_config",
-			Kind: "object",
-			Fields: V3beta1Webhook_GenericWebService_OauthConfigFields,
-		},
-		"ParameterMapping": ubx.FieldSpec{WireName: "parameter_mapping"},
-		"Password": ubx.FieldSpec{WireName: "password"},
-		"RequestBody": ubx.FieldSpec{WireName: "request_body"},
-		"RequestHeaders": ubx.FieldSpec{WireName: "request_headers"},
-		"SecretVersionForUsernamePassword": ubx.FieldSpec{WireName: "secret_version_for_username_password"},
-		"SecretVersionsForRequestHeaders": ubx.FieldSpec{
-			WireName: "secret_versions_for_request_headers",
-			Kind: "map",
-			Fields: V3beta1Webhook_GenericWebService_SecretVersionsForRequestHeadersFields,
-		},
-		"ServiceAccountAuthConfig": ubx.FieldSpec{
-			WireName: "service_account_auth_config",
-			Kind: "object",
-			Fields: V3beta1Webhook_GenericWebService_ServiceAccountAuthConfigFields,
-		},
-		"ServiceAgentAuth": ubx.FieldSpec{WireName: "service_agent_auth"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-		"Username": ubx.FieldSpec{WireName: "username"},
-		"WebhookType": ubx.FieldSpec{WireName: "webhook_type"},
-	}
+	"AllowedCaCerts": ubx.FieldSpec{WireName: "allowed_ca_certs"},
+	"HttpMethod":     ubx.FieldSpec{WireName: "http_method"},
+	"OauthConfig": ubx.FieldSpec{
+		WireName: "oauth_config",
+		Kind:     "object",
+		Fields:   V3beta1Webhook_GenericWebService_OauthConfigFields,
+	},
+	"ParameterMapping":                 ubx.FieldSpec{WireName: "parameter_mapping"},
+	"Password":                         ubx.FieldSpec{WireName: "password"},
+	"RequestBody":                      ubx.FieldSpec{WireName: "request_body"},
+	"RequestHeaders":                   ubx.FieldSpec{WireName: "request_headers"},
+	"SecretVersionForUsernamePassword": ubx.FieldSpec{WireName: "secret_version_for_username_password"},
+	"SecretVersionsForRequestHeaders": ubx.FieldSpec{
+		WireName: "secret_versions_for_request_headers",
+		Kind:     "map",
+		Fields:   V3beta1Webhook_GenericWebService_SecretVersionsForRequestHeadersFields,
+	},
+	"ServiceAccountAuthConfig": ubx.FieldSpec{
+		WireName: "service_account_auth_config",
+		Kind:     "object",
+		Fields:   V3beta1Webhook_GenericWebService_ServiceAccountAuthConfigFields,
+	},
+	"ServiceAgentAuth": ubx.FieldSpec{WireName: "service_agent_auth"},
+	"Uri":              ubx.FieldSpec{WireName: "uri"},
+	"Username":         ubx.FieldSpec{WireName: "username"},
+	"WebhookType":      ubx.FieldSpec{WireName: "webhook_type"},
+}
 
 var V3beta1Webhook_ServiceDirectoryFields = ubx.FieldMap{
-		"GenericWebService": ubx.FieldSpec{
-			WireName: "generic_web_service",
-			Kind: "object",
-			Fields: V3beta1Webhook_GenericWebServiceFields,
-		},
-		"Service": ubx.FieldSpec{WireName: "service"},
-	}
+	"GenericWebService": ubx.FieldSpec{
+		WireName: "generic_web_service",
+		Kind:     "object",
+		Fields:   V3beta1Webhook_GenericWebServiceFields,
+	},
+	"Service": ubx.FieldSpec{WireName: "service"},
+}
 
 type V3beta1WebhookConfig struct {
-	Disabled any
-	DisplayName any
+	Disabled          any
+	DisplayName       any
 	GenericWebService any
-	Name any
-	ServiceDirectory any
-	Timeout any
+	Name              any
+	ServiceDirectory  any
+	Timeout           any
 }
 
 type V3beta1WebhookAttrs struct {
-	Disabled any
-	DisplayName any
+	Disabled          any
+	DisplayName       any
 	GenericWebService any
-	Name any
-	ServiceDirectory any
-	Timeout any
+	Name              any
+	ServiceDirectory  any
+	Timeout           any
 }
 
 var V3beta1Webhook = ubx.ResourceBinding{
 	WireType: "google_dialogflow_v3beta1_webhook",
 	Fields: ubx.FieldMap{
-		"Disabled": ubx.FieldSpec{WireName: "disabled"},
+		"Disabled":    ubx.FieldSpec{WireName: "disabled"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"GenericWebService": ubx.FieldSpec{
 			WireName: "generic_web_service",
-			Kind: "object",
-			Fields: V3beta1Webhook_GenericWebServiceFields,
+			Kind:     "object",
+			Fields:   V3beta1Webhook_GenericWebServiceFields,
 		},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"ServiceDirectory": ubx.FieldSpec{
 			WireName: "service_directory",
-			Kind: "object",
-			Fields: V3beta1Webhook_ServiceDirectoryFields,
+			Kind:     "object",
+			Fields:   V3beta1Webhook_ServiceDirectoryFields,
 		},
 		"Timeout": ubx.FieldSpec{WireName: "timeout"},
 	},

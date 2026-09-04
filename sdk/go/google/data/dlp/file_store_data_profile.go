@@ -6,21 +6,21 @@ import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 type FileStoreDataProfile_ConfigSnapshot_DataProfileJob_DataProfileActions_ExportData_ProfileTable struct {
 	DatasetId any
 	ProjectId any
-	TableId any
+	TableId   any
 }
 
 type FileStoreDataProfile_ConfigSnapshot_DataProfileJob_DataProfileActions_ExportData struct {
-	ProfileTable any
+	ProfileTable        any
 	SampleFindingsTable any
 }
 
 type FileStoreDataProfile_ConfigSnapshot_DataProfileJob_DataProfileActions_PubSubNotification_PubsubCondition_Expressions_Conditions struct {
-	MinimumRiskScore any
+	MinimumRiskScore        any
 	MinimumSensitivityScore any
 }
 
 type FileStoreDataProfile_ConfigSnapshot_DataProfileJob_DataProfileActions_PubSubNotification_PubsubCondition_Expressions struct {
-	Conditions any
+	Conditions      any
 	LogicalOperator any
 }
 
@@ -30,9 +30,9 @@ type FileStoreDataProfile_ConfigSnapshot_DataProfileJob_DataProfileActions_PubSu
 
 type FileStoreDataProfile_ConfigSnapshot_DataProfileJob_DataProfileActions_PubSubNotification struct {
 	DetailOfMessage any
-	Event any
+	Event           any
 	PubsubCondition any
-	Topic any
+	Topic           any
 }
 
 type FileStoreDataProfile_ConfigSnapshot_DataProfileJob_DataProfileActions_PublishToDataplexCatalog struct {
@@ -49,22 +49,22 @@ type FileStoreDataProfile_ConfigSnapshot_DataProfileJob_DataProfileActions_TagRe
 
 type FileStoreDataProfile_ConfigSnapshot_DataProfileJob_DataProfileActions_TagResources_TagConditions struct {
 	SensitivityScore any
-	Tag any
+	Tag              any
 }
 
 type FileStoreDataProfile_ConfigSnapshot_DataProfileJob_DataProfileActions_TagResources struct {
-	LowerDataRiskToLow any
+	LowerDataRiskToLow      any
 	ProfileGenerationsToTag any
-	TagConditions any
+	TagConditions           any
 }
 
 type FileStoreDataProfile_ConfigSnapshot_DataProfileJob_DataProfileActions struct {
-	ExportData any
-	PubSubNotification any
-	PublishToChronicle any
+	ExportData               any
+	PubSubNotification       any
+	PublishToChronicle       any
 	PublishToDataplexCatalog any
-	PublishToScc any
-	TagResources any
+	PublishToScc             any
+	TagResources             any
 }
 
 type FileStoreDataProfile_ConfigSnapshot_DataProfileJob_Location struct {
@@ -100,14 +100,14 @@ type FileStoreDataProfile_ConfigSnapshot_DataProfileJob struct {
 }
 
 type FileStoreDataProfile_ConfigSnapshot_DiscoveryConfig_Errors_Details struct {
-	Code any
+	Code    any
 	Details any
 	Message any
 }
 
 type FileStoreDataProfile_ConfigSnapshot_DiscoveryConfig_Errors struct {
-	Details any
-	ExtraInfo any
+	Details    any
+	ExtraInfo  any
 	Timestamps any
 }
 
@@ -138,18 +138,18 @@ type FileStoreDataProfile_ConfigSnapshot_DiscoveryConfig_Targets_BigQueryTarget_
 
 type FileStoreDataProfile_ConfigSnapshot_DiscoveryConfig_Targets_BigQueryTarget_Cadence_SchemaModifiedCadence struct {
 	Frequency any
-	Types any
+	Types     any
 }
 
 type FileStoreDataProfile_ConfigSnapshot_DiscoveryConfig_Targets_BigQueryTarget_Cadence struct {
 	InspectTemplateModifiedCadence any
-	RefreshFrequency any
-	SchemaModifiedCadence any
-	TableModifiedCadence any
+	RefreshFrequency               any
+	SchemaModifiedCadence          any
+	TableModifiedCadence           any
 }
 
 type FileStoreDataProfile_ConfigSnapshot_DiscoveryConfig_Targets_BigQueryTarget_Conditions_OrConditions struct {
-	MinAge any
+	MinAge      any
 	MinRowCount any
 }
 
@@ -158,16 +158,16 @@ type FileStoreDataProfile_ConfigSnapshot_DiscoveryConfig_Targets_BigQueryTarget_
 }
 
 type FileStoreDataProfile_ConfigSnapshot_DiscoveryConfig_Targets_BigQueryTarget_Conditions struct {
-	CreatedAfter any
-	OrConditions any
+	CreatedAfter   any
+	OrConditions   any
 	TypeCollection any
-	Types any
+	Types          any
 }
 
 type FileStoreDataProfile_ConfigSnapshot_DiscoveryConfig_Targets_BigQueryTarget_Filter_Tables_IncludeRegexes_Patterns struct {
 	DatasetIdRegex any
 	ProjectIdRegex any
-	TableIdRegex any
+	TableIdRegex   any
 }
 
 type FileStoreDataProfile_ConfigSnapshot_DiscoveryConfig_Targets_BigQueryTarget_Filter_Tables_IncludeRegexes struct {
@@ -179,28 +179,28 @@ type FileStoreDataProfile_ConfigSnapshot_DiscoveryConfig_Targets_BigQueryTarget_
 }
 
 type FileStoreDataProfile_ConfigSnapshot_DiscoveryConfig_Targets_BigQueryTarget_Filter struct {
-	OtherTables any
+	OtherTables    any
 	TableReference any
-	Tables any
+	Tables         any
 }
 
 type FileStoreDataProfile_ConfigSnapshot_DiscoveryConfig_Targets_BigQueryTarget struct {
-	Cadence any
+	Cadence    any
 	Conditions any
-	Disabled any
-	Filter any
+	Disabled   any
+	Filter     any
 }
 
 type FileStoreDataProfile_ConfigSnapshot_DiscoveryConfig_Targets_CloudSqlTarget_Conditions struct {
 	DatabaseEngines any
-	Types any
+	Types           any
 }
 
 type FileStoreDataProfile_ConfigSnapshot_DiscoveryConfig_Targets_CloudSqlTarget_Filter_Collection_IncludeRegexes_Patterns struct {
-	DatabaseRegex any
+	DatabaseRegex             any
 	DatabaseResourceNameRegex any
-	InstanceRegex any
-	ProjectIdRegex any
+	InstanceRegex             any
+	ProjectIdRegex            any
 }
 
 type FileStoreDataProfile_ConfigSnapshot_DiscoveryConfig_Targets_CloudSqlTarget_Filter_Collection_IncludeRegexes struct {
@@ -212,28 +212,28 @@ type FileStoreDataProfile_ConfigSnapshot_DiscoveryConfig_Targets_CloudSqlTarget_
 }
 
 type FileStoreDataProfile_ConfigSnapshot_DiscoveryConfig_Targets_CloudSqlTarget_Filter_DatabaseResourceReference struct {
-	Database any
+	Database         any
 	DatabaseResource any
-	Instance any
-	ProjectId any
+	Instance         any
+	ProjectId        any
 }
 
 type FileStoreDataProfile_ConfigSnapshot_DiscoveryConfig_Targets_CloudSqlTarget_Filter struct {
-	Collection any
+	Collection                any
 	DatabaseResourceReference any
-	Others any
+	Others                    any
 }
 
 type FileStoreDataProfile_ConfigSnapshot_DiscoveryConfig_Targets_CloudSqlTarget_GenerationCadence struct {
 	InspectTemplateModifiedCadence any
-	RefreshFrequency any
-	SchemaModifiedCadence any
+	RefreshFrequency               any
+	SchemaModifiedCadence          any
 }
 
 type FileStoreDataProfile_ConfigSnapshot_DiscoveryConfig_Targets_CloudSqlTarget struct {
-	Conditions any
-	Disabled any
-	Filter any
+	Conditions        any
+	Disabled          any
+	Filter            any
 	GenerationCadence any
 }
 
@@ -244,18 +244,18 @@ type FileStoreDataProfile_ConfigSnapshot_DiscoveryConfig_Targets_CloudStorageTar
 
 type FileStoreDataProfile_ConfigSnapshot_DiscoveryConfig_Targets_CloudStorageTarget_Conditions struct {
 	CloudStorageConditions any
-	CreatedAfter any
-	MinAge any
+	CreatedAfter           any
+	MinAge                 any
 }
 
 type FileStoreDataProfile_ConfigSnapshot_DiscoveryConfig_Targets_CloudStorageTarget_Filter_CloudStorageResourceReference struct {
 	BucketName any
-	ProjectId any
+	ProjectId  any
 }
 
 type FileStoreDataProfile_ConfigSnapshot_DiscoveryConfig_Targets_CloudStorageTarget_Filter_Collection_IncludeRegexes_Patterns_CloudStorageRegex struct {
 	BucketNameRegex any
-	ProjectIdRegex any
+	ProjectIdRegex  any
 }
 
 type FileStoreDataProfile_ConfigSnapshot_DiscoveryConfig_Targets_CloudStorageTarget_Filter_Collection_IncludeRegexes_Patterns struct {
@@ -267,7 +267,7 @@ type FileStoreDataProfile_ConfigSnapshot_DiscoveryConfig_Targets_CloudStorageTar
 }
 
 type FileStoreDataProfile_ConfigSnapshot_DiscoveryConfig_Targets_CloudStorageTarget_Filter_Collection_IncludeTags_TagFilters struct {
-	NamespacedTagKey any
+	NamespacedTagKey   any
 	NamespacedTagValue any
 }
 
@@ -277,35 +277,35 @@ type FileStoreDataProfile_ConfigSnapshot_DiscoveryConfig_Targets_CloudStorageTar
 
 type FileStoreDataProfile_ConfigSnapshot_DiscoveryConfig_Targets_CloudStorageTarget_Filter_Collection struct {
 	IncludeRegexes any
-	IncludeTags any
+	IncludeTags    any
 }
 
 type FileStoreDataProfile_ConfigSnapshot_DiscoveryConfig_Targets_CloudStorageTarget_Filter struct {
 	CloudStorageResourceReference any
-	Collection any
-	Others any
+	Collection                    any
+	Others                        any
 }
 
 type FileStoreDataProfile_ConfigSnapshot_DiscoveryConfig_Targets_CloudStorageTarget_GenerationCadence struct {
 	InspectTemplateModifiedCadence any
-	RefreshFrequency any
+	RefreshFrequency               any
 }
 
 type FileStoreDataProfile_ConfigSnapshot_DiscoveryConfig_Targets_CloudStorageTarget struct {
-	Conditions any
-	Disabled any
-	Filter any
+	Conditions        any
+	Disabled          any
+	Filter            any
 	GenerationCadence any
 }
 
 type FileStoreDataProfile_ConfigSnapshot_DiscoveryConfig_Targets_OtherCloudTarget_Conditions_AmazonS3BucketConditions struct {
-	BucketTypes any
+	BucketTypes          any
 	ObjectStorageClasses any
 }
 
 type FileStoreDataProfile_ConfigSnapshot_DiscoveryConfig_Targets_OtherCloudTarget_Conditions struct {
 	AmazonS3BucketConditions any
-	MinAge any
+	MinAge                   any
 }
 
 type FileStoreDataProfile_ConfigSnapshot_DiscoveryConfig_Targets_OtherCloudTarget_DataSourceType struct {
@@ -347,22 +347,22 @@ type FileStoreDataProfile_ConfigSnapshot_DiscoveryConfig_Targets_OtherCloudTarge
 }
 
 type FileStoreDataProfile_ConfigSnapshot_DiscoveryConfig_Targets_OtherCloudTarget_Filter struct {
-	Collection any
-	Others any
+	Collection     any
+	Others         any
 	SingleResource any
 }
 
 type FileStoreDataProfile_ConfigSnapshot_DiscoveryConfig_Targets_OtherCloudTarget struct {
-	Conditions any
-	DataSourceType any
-	Disabled any
-	Filter any
+	Conditions        any
+	DataSourceType    any
+	Disabled          any
+	Filter            any
 	GenerationCadence any
 }
 
 type FileStoreDataProfile_ConfigSnapshot_DiscoveryConfig_Targets_VertexDatasetTarget_Conditions struct {
 	CreatedAfter any
-	MinAge any
+	MinAge       any
 }
 
 type FileStoreDataProfile_ConfigSnapshot_DiscoveryConfig_Targets_VertexDatasetTarget_Filter_Collection_VertexDatasetRegexes_Patterns struct {
@@ -382,24 +382,24 @@ type FileStoreDataProfile_ConfigSnapshot_DiscoveryConfig_Targets_VertexDatasetTa
 }
 
 type FileStoreDataProfile_ConfigSnapshot_DiscoveryConfig_Targets_VertexDatasetTarget_Filter struct {
-	Collection any
-	Others any
+	Collection                     any
+	Others                         any
 	VertexDatasetResourceReference any
 }
 
 type FileStoreDataProfile_ConfigSnapshot_DiscoveryConfig_Targets_VertexDatasetTarget struct {
-	Conditions any
-	Disabled any
-	Filter any
+	Conditions        any
+	Disabled          any
+	Filter            any
 	GenerationCadence any
 }
 
 type FileStoreDataProfile_ConfigSnapshot_DiscoveryConfig_Targets struct {
-	BigQueryTarget any
-	CloudSqlTarget any
-	CloudStorageTarget any
-	OtherCloudTarget any
-	SecretsTarget any
+	BigQueryTarget      any
+	CloudSqlTarget      any
+	CloudStorageTarget  any
+	OtherCloudTarget    any
+	SecretsTarget       any
 	VertexDatasetTarget any
 }
 
@@ -434,23 +434,23 @@ type FileStoreDataProfile_ConfigSnapshot_DiscoveryConfig struct {
 
 type FileStoreDataProfile_ConfigSnapshot_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_HotwordRegex struct {
 	GroupIndexes any
-	Pattern any
+	Pattern      any
 }
 
 type FileStoreDataProfile_ConfigSnapshot_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_LikelihoodAdjustment struct {
-	FixedLikelihood any
+	FixedLikelihood    any
 	RelativeLikelihood any
 }
 
 type FileStoreDataProfile_ConfigSnapshot_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule_Proximity struct {
-	WindowAfter any
+	WindowAfter  any
 	WindowBefore any
 }
 
 type FileStoreDataProfile_ConfigSnapshot_InspectConfig_CustomInfoTypes_DetectionRules_HotwordRule struct {
-	HotwordRegex any
+	HotwordRegex         any
 	LikelihoodAdjustment any
-	Proximity any
+	Proximity            any
 }
 
 type FileStoreDataProfile_ConfigSnapshot_InspectConfig_CustomInfoTypes_DetectionRules struct {
@@ -467,17 +467,17 @@ type FileStoreDataProfile_ConfigSnapshot_InspectConfig_CustomInfoTypes_Dictionar
 
 type FileStoreDataProfile_ConfigSnapshot_InspectConfig_CustomInfoTypes_Dictionary struct {
 	CloudStoragePath any
-	WordList any
+	WordList         any
 }
 
 type FileStoreDataProfile_ConfigSnapshot_InspectConfig_CustomInfoTypes_FileLabelInfoType_GoogleDriveLabel_LabelFieldsToMatch struct {
-	Id any
+	Id    any
 	Value any
 }
 
 type FileStoreDataProfile_ConfigSnapshot_InspectConfig_CustomInfoTypes_FileLabelInfoType_GoogleDriveLabel struct {
 	LabelFieldsToMatch any
-	LabelId any
+	LabelId            any
 }
 
 type FileStoreDataProfile_ConfigSnapshot_InspectConfig_CustomInfoTypes_FileLabelInfoType_SensitivityLabel struct {
@@ -490,37 +490,37 @@ type FileStoreDataProfile_ConfigSnapshot_InspectConfig_CustomInfoTypes_FileLabel
 }
 
 type FileStoreDataProfile_ConfigSnapshot_InspectConfig_CustomInfoTypes_InfoType struct {
-	Name any
+	Name             any
 	SensitivityScore any
-	Version any
+	Version          any
 }
 
 type FileStoreDataProfile_ConfigSnapshot_InspectConfig_CustomInfoTypes_MetadataKeyValueExpression struct {
-	KeyRegex any
+	KeyRegex   any
 	ValueRegex any
 }
 
 type FileStoreDataProfile_ConfigSnapshot_InspectConfig_CustomInfoTypes_StoredType struct {
 	CreateTime any
-	Name any
+	Name       any
 }
 
 type FileStoreDataProfile_ConfigSnapshot_InspectConfig_CustomInfoTypes struct {
-	DetectionRules any
-	Dictionary any
-	ExclusionType any
-	FileLabelInfoType any
-	InfoType any
-	Likelihood any
+	DetectionRules             any
+	Dictionary                 any
+	ExclusionType              any
+	FileLabelInfoType          any
+	InfoType                   any
+	Likelihood                 any
 	MetadataKeyValueExpression any
-	Regex any
-	SensitivityScore any
-	StoredType any
-	SurrogateType any
+	Regex                      any
+	SensitivityScore           any
+	StoredType                 any
+	SurrogateType              any
 }
 
 type FileStoreDataProfile_ConfigSnapshot_InspectConfig_Limits_MaxFindingsPerInfoType struct {
-	InfoType any
+	InfoType    any
 	MaxFindings any
 }
 
@@ -534,42 +534,42 @@ type FileStoreDataProfile_ConfigSnapshot_InspectConfig_Limits struct {
 }
 
 type FileStoreDataProfile_ConfigSnapshot_InspectConfig_MinLikelihoodPerInfoType struct {
-	InfoType any
+	InfoType      any
 	MinLikelihood any
 }
 
 type FileStoreDataProfile_ConfigSnapshot_InspectConfig_RuleSet_Rules_AdjustmentRule_AdjustByImageFindings_ImageContainmentType struct {
-	Encloses any
+	Encloses    any
 	FullyInside any
-	Overlaps any
+	Overlaps    any
 }
 
 type FileStoreDataProfile_ConfigSnapshot_InspectConfig_RuleSet_Rules_AdjustmentRule_AdjustByImageFindings struct {
 	ImageContainmentType any
-	InfoTypes any
-	MinLikelihood any
+	InfoTypes            any
+	MinLikelihood        any
 }
 
 type FileStoreDataProfile_ConfigSnapshot_InspectConfig_RuleSet_Rules_AdjustmentRule_AdjustByMatchingInfoTypes struct {
-	InfoTypes any
-	MatchingType any
+	InfoTypes     any
+	MatchingType  any
 	MinLikelihood any
 }
 
 type FileStoreDataProfile_ConfigSnapshot_InspectConfig_RuleSet_Rules_AdjustmentRule struct {
-	AdjustByImageFindings any
+	AdjustByImageFindings     any
 	AdjustByMatchingInfoTypes any
-	LikelihoodAdjustment any
+	LikelihoodAdjustment      any
 }
 
 type FileStoreDataProfile_ConfigSnapshot_InspectConfig_RuleSet_Rules_ExclusionRule_ExcludeByHotword struct {
 	HotwordRegex any
-	Proximity any
+	Proximity    any
 }
 
 type FileStoreDataProfile_ConfigSnapshot_InspectConfig_RuleSet_Rules_ExclusionRule_ExcludeByImageFindings struct {
 	ImageContainmentType any
-	InfoTypes any
+	InfoTypes            any
 }
 
 type FileStoreDataProfile_ConfigSnapshot_InspectConfig_RuleSet_Rules_ExclusionRule_ExcludeInfoTypes struct {
@@ -577,23 +577,23 @@ type FileStoreDataProfile_ConfigSnapshot_InspectConfig_RuleSet_Rules_ExclusionRu
 }
 
 type FileStoreDataProfile_ConfigSnapshot_InspectConfig_RuleSet_Rules_ExclusionRule struct {
-	Dictionary any
-	ExcludeByHotword any
+	Dictionary             any
+	ExcludeByHotword       any
 	ExcludeByImageFindings any
-	ExcludeInfoTypes any
-	MatchingType any
-	Regex any
+	ExcludeInfoTypes       any
+	MatchingType           any
+	Regex                  any
 }
 
 type FileStoreDataProfile_ConfigSnapshot_InspectConfig_RuleSet_Rules struct {
 	AdjustmentRule any
-	ExclusionRule any
-	HotwordRule any
+	ExclusionRule  any
+	HotwordRule    any
 }
 
 type FileStoreDataProfile_ConfigSnapshot_InspectConfig_RuleSet struct {
 	InfoTypes any
-	Rules any
+	Rules     any
 }
 
 type FileStoreDataProfile_ConfigSnapshot_InspectConfig struct {
@@ -632,7 +632,7 @@ type FileStoreDataProfile_ConfigSnapshot struct {
 
 type FileStoreDataProfile_Domains struct {
 	Category any
-	Signals any
+	Signals  any
 }
 
 type FileStoreDataProfile_FileClusterSummaries_FileClusterType struct {
@@ -648,14 +648,14 @@ type FileStoreDataProfile_FileClusterSummaries_FileStoreInfoTypeSummaries struct
 }
 
 type FileStoreDataProfile_FileClusterSummaries struct {
-	DataRiskLevel any
-	Errors any
-	FileClusterType any
-	FileExtensionsScanned any
-	FileExtensionsSeen any
+	DataRiskLevel              any
+	Errors                     any
+	FileClusterType            any
+	FileExtensionsScanned      any
+	FileExtensionsSeen         any
 	FileStoreInfoTypeSummaries any
-	NoFilesExist any
-	SensitivityScore any
+	NoFilesExist               any
+	SensitivityScore           any
 }
 
 type FileStoreDataProfile_ProfileStatus struct {
@@ -670,33 +670,33 @@ type FileStoreDataProfile_RelatedResources struct {
 }
 
 type FileStoreDataProfile_ResourceAttributes_DateValue struct {
-	Day any
+	Day   any
 	Month any
-	Year any
+	Year  any
 }
 
 type FileStoreDataProfile_ResourceAttributes_TimeValue struct {
-	Hours any
+	Hours   any
 	Minutes any
-	Nanos any
+	Nanos   any
 	Seconds any
 }
 
 type FileStoreDataProfile_ResourceAttributes struct {
-	BooleanValue any
-	DateValue any
+	BooleanValue   any
+	DateValue      any
 	DayOfWeekValue any
-	FloatValue any
-	IntegerValue any
-	StringValue any
-	TimeValue any
+	FloatValue     any
+	IntegerValue   any
+	StringValue    any
+	TimeValue      any
 	TimestampValue any
 }
 
 type FileStoreDataProfile_Tags struct {
-	Key any
+	Key                any
 	NamespacedTagValue any
-	Value any
+	Value              any
 }
 
 type FileStoreDataProfileConfig struct {
@@ -732,7 +732,7 @@ type FileStoreDataProfileAttrs struct {
 	LastModifiedTime any
 	// The location type of the file store (region, dual-region, multi-region, etc). If dual-region, expect data_storage_locations to be populated.
 	LocationType any
-	Name any
+	Name         any
 	// The last time the profile was generated.
 	ProfileLastGenerated any
 	// Success or errors for the profile generation.

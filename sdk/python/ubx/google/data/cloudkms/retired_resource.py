@@ -8,7 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class RetiredResourceConfig:
-    name: Any = None
+    pass
 
 @dataclasses.dataclass
 class RetiredResourceAttrs:
@@ -23,6 +23,5 @@ class RetiredResourceAttrs:
 RetiredResource = ubx.DataSourceBinding(
     wire_type="google_cloudkms_retired_resource",
     fields={
-        "name": ubx.FieldSpec(wire_name="name"),
     },
 )

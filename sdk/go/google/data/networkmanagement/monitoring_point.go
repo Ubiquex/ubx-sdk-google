@@ -29,18 +29,18 @@ type MonitoringPoint_Host struct {
 
 type MonitoringPoint_NetworkInterfaces struct {
 	AdapterDescription any
-	Cidr any
-	InterfaceName any
-	IpAddress any
-	MacAddress any
-	Speed any
-	VlanId any
+	Cidr               any
+	InterfaceName      any
+	IpAddress          any
+	MacAddress         any
+	Speed              any
+	VlanId             any
 }
 
 type MonitoringPoint_ProviderTags struct {
-	Category any
+	Category     any
 	ResourceType any
-	Value any
+	Value        any
 }
 
 type MonitoringPointConfig struct {
@@ -68,7 +68,7 @@ type MonitoringPointAttrs struct {
 	Host any
 	// Output only. The hostname of the MonitoringPoint.
 	Hostname any
-	Name any
+	Name     any
 	// Output only. The network interfaces of the MonitoringPoint.
 	NetworkInterfaces any
 	// Output only. IP address visible when MonitoringPoint connects to the provider.

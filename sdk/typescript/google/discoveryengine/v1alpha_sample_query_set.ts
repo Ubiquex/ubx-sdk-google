@@ -2,8 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface V1alphaSampleQuerySetConfig {
-  /** Output only. Timestamp the SampleQuerySet was created at. */
-  createTime?: string | Computed<string>;
   /** The description of the SampleQuerySet. */
   description?: string | Computed<string>;
   /** Required. The sample query set display name. This field must be a UTF-8 encoded string with a length limit of 128 characters. */
@@ -26,7 +24,6 @@ export interface V1alphaSampleQuerySetAttrs {
 export const V1alphaSampleQuerySet: ResourceBinding<V1alphaSampleQuerySetConfig, V1alphaSampleQuerySetAttrs> = {
   wireType: "google_discoveryengine_v1alpha_sample_query_set",
   fields: {
-    createTime: "create_time",
     description: "description",
     displayName: "display_name",
     name: "name",

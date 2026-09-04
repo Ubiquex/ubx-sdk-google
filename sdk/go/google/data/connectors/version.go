@@ -8,83 +8,83 @@ type Version_AuthConfigTemplates_ConfigVariableTemplates_AuthorizationCodeLink_C
 }
 
 type Version_AuthConfigTemplates_ConfigVariableTemplates_AuthorizationCodeLink struct {
-	ClientId any
-	ClientSecret any
-	EnablePkce any
+	ClientId        any
+	ClientSecret    any
+	EnablePkce      any
 	OmitQueryParams any
-	Scopes any
-	Uri any
+	Scopes          any
+	Uri             any
 }
 
 type Version_AuthConfigTemplates_ConfigVariableTemplates_EnumOptions struct {
 	DisplayName any
-	Id any
+	Id          any
 }
 
 type Version_AuthConfigTemplates_ConfigVariableTemplates_MultipleSelectConfig_MultipleSelectOptions struct {
 	Description any
 	DisplayName any
-	Key any
+	Key         any
 	Preselected any
 }
 
 type Version_AuthConfigTemplates_ConfigVariableTemplates_MultipleSelectConfig struct {
-	AllowCustomValues any
+	AllowCustomValues     any
 	MultipleSelectOptions any
-	ValueSeparator any
+	ValueSeparator        any
 }
 
 type Version_AuthConfigTemplates_ConfigVariableTemplates_RequiredCondition_FieldComparisons struct {
-	BoolValue any
-	Comparator any
-	IntValue any
-	Key any
+	BoolValue   any
+	Comparator  any
+	IntValue    any
+	Key         any
 	StringValue any
 }
 
 type Version_AuthConfigTemplates_ConfigVariableTemplates_RequiredCondition struct {
-	FieldComparisons any
+	FieldComparisons   any
 	LogicalExpressions any
-	LogicalOperator any
+	LogicalOperator    any
 }
 
 type Version_AuthConfigTemplates_ConfigVariableTemplates_RoleGrant_Resource struct {
 	PathTemplate any
-	Type any
+	Type         any
 }
 
 type Version_AuthConfigTemplates_ConfigVariableTemplates_RoleGrant struct {
 	HelperTextTemplate any
-	Principal any
-	Resource any
-	Roles any
+	Principal          any
+	Resource           any
+	Roles              any
 }
 
 type Version_AuthConfigTemplates_ConfigVariableTemplates struct {
 	AuthorizationCodeLink any
-	Description any
-	DisplayName any
-	EnumOptions any
-	EnumSource any
-	IsAdvanced any
-	Key any
-	LocationType any
-	MultipleSelectConfig any
-	Required any
-	RequiredCondition any
-	RoleGrant any
-	State any
-	ValidationRegex any
-	ValueType any
+	Description           any
+	DisplayName           any
+	EnumOptions           any
+	EnumSource            any
+	IsAdvanced            any
+	Key                   any
+	LocationType          any
+	MultipleSelectConfig  any
+	Required              any
+	RequiredCondition     any
+	RoleGrant             any
+	State                 any
+	ValidationRegex       any
+	ValueType             any
 }
 
 type Version_AuthConfigTemplates struct {
-	AuthKey any
-	AuthType any
+	AuthKey                 any
+	AuthType                any
 	ConfigVariableTemplates any
-	Description any
-	DisplayName any
-	IsDefault any
+	Description             any
+	DisplayName             any
+	IsDefault               any
 }
 
 type Version_ConnectorInfraConfig_HpaConfig struct {
@@ -151,26 +151,26 @@ type Version_ConnectorInfraConfig struct {
 
 type Version_DestinationConfigTemplates struct {
 	AutocompleteSuggestions any
-	DefaultPort any
-	Description any
-	DisplayName any
-	IsAdvanced any
-	Key any
-	Max any
-	Min any
-	PortFieldType any
-	RegexPattern any
+	DefaultPort             any
+	Description             any
+	DisplayName             any
+	IsAdvanced              any
+	Key                     any
+	Max                     any
+	Min                     any
+	PortFieldType           any
+	RegexPattern            any
 }
 
 type Version_EgressControlConfig_AdditionalExtractionRules_ExtractionRule_Source struct {
-	FieldId any
+	FieldId    any
 	SourceType any
 }
 
 type Version_EgressControlConfig_AdditionalExtractionRules_ExtractionRule struct {
 	ExtractionRegex any
-	FormatString any
-	Source any
+	FormatString    any
+	Source          any
 }
 
 type Version_EgressControlConfig_AdditionalExtractionRules struct {
@@ -265,7 +265,6 @@ type Version_VpcscConfig struct {
 }
 
 type VersionConfig struct {
-	Name any
 	View any
 }
 
@@ -296,7 +295,7 @@ type VersionAttrs struct {
 	Labels any
 	// Output only. Flag to mark the version indicating the launch stage.
 	LaunchStage any
-	Name any
+	Name        any
 	// Output only. ReleaseVersion of the connector, for example: "1.0.1-alpha".
 	ReleaseVersion any
 	// This configuration defines all the Cloud IAM roles that needs to be granted to a particular Google Cloud resource for the selected principal like service account. These configurations will let UI display to customers what IAM roles need to be granted by them. Or these configurations can be used by the UI to render a 'grant' button to do the same on behalf of the user.
@@ -317,7 +316,7 @@ type VersionAttrs struct {
 	UnsupportedConnectionTypes any
 	// Output only. Updated time.
 	UpdateTime any
-	View any
+	View       any
 	// This configuration provides VPCSC config for a connector.
 	VpcscConfig any
 }
@@ -325,7 +324,6 @@ type VersionAttrs struct {
 var Version = ubx.DataSourceBinding{
 	WireType: "google_connectors_version",
 	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
 		"View": ubx.FieldSpec{WireName: "view"},
 	},
 }

@@ -14,20 +14,10 @@ const Database_HiveOptionsFields: FieldMap = {
 };
 
 export interface DatabaseConfig {
-  /** Output only. The creation time of the database. */
-  createTime?: string | Computed<string>;
-  /** Output only. The deletion time of the database. Only set after the database is deleted. */
-  deleteTime?: string | Computed<string>;
-  /** Output only. The time when this database is considered expired. Only set after the database is deleted. */
-  expireTime?: string | Computed<string>;
   /** Options of a Hive database. */
   hiveOptions?: Database_HiveOptions | Computed<Database_HiveOptions>;
-  /** Output only. The resource name. Format: projects/{project_id_or_number}/locations/{location_id}/catalogs/{catalog_id}/databases/{database_id} */
-  name?: string | Computed<string>;
   /** The database type. */
   type?: string | Computed<string>;
-  /** Output only. The last modification time of the database. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface DatabaseAttrs {
@@ -50,16 +40,11 @@ export interface DatabaseAttrs {
 export const Database: ResourceBinding<DatabaseConfig, DatabaseAttrs> = {
   wireType: "google_biglake_database",
   fields: {
-    createTime: "create_time",
-    deleteTime: "delete_time",
-    expireTime: "expire_time",
     hiveOptions: {
       wireName: "hive_options",
       kind: "object",
       fields: Database_HiveOptionsFields,
     },
-    name: "name",
     type: "type",
-    updateTime: "update_time",
   },
 };

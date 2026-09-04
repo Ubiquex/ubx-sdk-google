@@ -9,18 +9,12 @@ type Collector_GuestOsScan struct {
 }
 
 var Collector_GuestOsScanFields = ubx.FieldMap{
-		"CoreSource": ubx.FieldSpec{WireName: "core_source"},
-	}
+	"CoreSource": ubx.FieldSpec{WireName: "core_source"},
+}
 
 type CollectorConfig struct {
-	// Output only. Store cloud storage bucket name (which is a guid) created with this Collector.
-	Bucket any
-	// Output only. Client version.
-	ClientVersion any
 	// How many days to collect data.
 	CollectionDays any
-	// Output only. Create time stamp.
-	CreateTime any
 	// User specified description of the Collector.
 	Description any
 	// User specified name of the Collector.
@@ -37,10 +31,6 @@ type CollectorConfig struct {
 	Name any
 	// Service Account email used to ingest data to this Collector.
 	ServiceAccount any
-	// Output only. State of the Collector.
-	State any
-	// Output only. Update time stamp.
-	UpdateTime any
 	// Message describing a MC Source of type VSphere Scan.
 	VsphereScan any
 }
@@ -81,28 +71,23 @@ type CollectorAttrs struct {
 var Collector = ubx.ResourceBinding{
 	WireType: "google_rapidmigrationassessment_collector",
 	Fields: ubx.FieldMap{
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"ClientVersion": ubx.FieldSpec{WireName: "client_version"},
-		"CollectionDays": ubx.FieldSpec{WireName: "collection_days"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"EulaUri": ubx.FieldSpec{WireName: "eula_uri"},
+		"CollectionDays":     ubx.FieldSpec{WireName: "collection_days"},
+		"Description":        ubx.FieldSpec{WireName: "description"},
+		"DisplayName":        ubx.FieldSpec{WireName: "display_name"},
+		"EulaUri":            ubx.FieldSpec{WireName: "eula_uri"},
 		"ExpectedAssetCount": ubx.FieldSpec{WireName: "expected_asset_count"},
 		"GuestOsScan": ubx.FieldSpec{
 			WireName: "guest_os_scan",
-			Kind: "object",
-			Fields: Collector_GuestOsScanFields,
+			Kind:     "object",
+			Fields:   Collector_GuestOsScanFields,
 		},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Labels":         ubx.FieldSpec{WireName: "labels"},
+		"Name":           ubx.FieldSpec{WireName: "name"},
 		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 		"VsphereScan": ubx.FieldSpec{
 			WireName: "vsphere_scan",
-			Kind: "object",
-			Fields: Collector_GuestOsScanFields,
+			Kind:     "object",
+			Fields:   Collector_GuestOsScanFields,
 		},
 	},
 }

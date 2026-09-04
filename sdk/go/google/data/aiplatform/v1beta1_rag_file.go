@@ -16,7 +16,7 @@ type V1beta1RagFile_GcsSource struct {
 }
 
 type V1beta1RagFile_GoogleDriveSource_ResourceIds struct {
-	ResourceId any
+	ResourceId   any
 	ResourceType any
 }
 
@@ -27,15 +27,15 @@ type V1beta1RagFile_GoogleDriveSource struct {
 
 type V1beta1RagFile_JiraSource_JiraQueries_ApiKeyConfig struct {
 	ApiKeySecretVersion any
-	ApiKeyString any
+	ApiKeyString        any
 }
 
 type V1beta1RagFile_JiraSource_JiraQueries struct {
-	ApiKeyConfig any
+	ApiKeyConfig  any
 	CustomQueries any
-	Email any
-	Projects any
-	ServerUri any
+	Email         any
+	Projects      any
+	ServerUri     any
 }
 
 type V1beta1RagFile_JiraSource struct {
@@ -44,15 +44,15 @@ type V1beta1RagFile_JiraSource struct {
 }
 
 type V1beta1RagFile_SharePointSources_SharePointSources struct {
-	ClientId any
-	ClientSecret any
-	DriveId any
-	DriveName any
-	FileId any
-	SharepointFolderId any
+	ClientId             any
+	ClientSecret         any
+	DriveId              any
+	DriveName            any
+	FileId               any
+	SharepointFolderId   any
 	SharepointFolderPath any
-	SharepointSiteName any
-	TenantId any
+	SharepointSiteName   any
+	TenantId             any
 }
 
 type V1beta1RagFile_SharePointSources struct {
@@ -62,13 +62,13 @@ type V1beta1RagFile_SharePointSources struct {
 
 type V1beta1RagFile_SlackSource_Channels_Channels struct {
 	ChannelId any
-	EndTime any
+	EndTime   any
 	StartTime any
 }
 
 type V1beta1RagFile_SlackSource_Channels struct {
 	ApiKeyConfig any
-	Channels any
+	Channels     any
 }
 
 type V1beta1RagFile_SlackSource struct {
@@ -77,7 +77,6 @@ type V1beta1RagFile_SlackSource struct {
 }
 
 type V1beta1RagFileConfig struct {
-	Name any
 }
 
 type V1beta1RagFileAttrs struct {
@@ -97,7 +96,7 @@ type V1beta1RagFileAttrs struct {
 	GoogleDriveSource any
 	// The Jira source for the ImportRagFilesRequest.
 	JiraSource any
-	Name any
+	Name       any
 	// Output only. The type of the RagFile.
 	RagFileType any
 	// The SharePointSources to pass to ImportRagFiles.
@@ -114,7 +113,5 @@ type V1beta1RagFileAttrs struct {
 
 var V1beta1RagFile = ubx.DataSourceBinding{
 	WireType: "google_aiplatform_v1beta1_rag_file",
-	Fields: ubx.FieldMap{
-		"Name": ubx.FieldSpec{WireName: "name"},
-	},
+	Fields:   ubx.FieldMap{},
 }

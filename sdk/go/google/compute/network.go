@@ -9,60 +9,39 @@ type Network_Params struct {
 }
 
 type Network_Peerings_ConnectionStatus_ConsensusState struct {
-	// The deletion status of this VPC network peering connection as part of the consensus state between local and peer networks. Possible values: DELETE_ACKNOWLEDGED, DELETE_STATUS_UNSPECIFIED, LOCAL_CANCEL_REQUESTED, LOCAL_DELETE_REQUESTED, PEER_CANCEL_REQUESTED, PEER_DELETE_REQUESTED. (AI-inferred)
 	DeleteStatus any
-	// Represents the update status of the peering consensus state. Possible values: IN_SYNC (no pending updates), PENDING_LOCAL_ACKNOWLEDMENT (waiting for local acknowledgment), PENDING_PEER_ACKNOWLEDGEMENT (waiting for peer acknowledgment), UPDATE_STATUS_UNSPECIFIED (unset). (AI-inferred)
 	UpdateStatus any
 }
 
 type Network_Peerings_ConnectionStatus_TrafficConfiguration struct {
-	// Indicates whether the VPC network exports its custom routes (routes not automatically generated from subnets) to the peered network. (AI-inferred)
-	ExportCustomRoutesToPeer any
-	// This boolean flag controls whether subnet routes with public IP addresses are exported to the peer network. When true, the VPC network exports routes to its peer for subnets that have public IPs, allowing the peer to reach these subnets via the peering connection. (AI-inferred)
-	ExportSubnetRoutesWithPublicIpToPeer any
-	// When true, this peering connection imports custom routes (non-subnet routes) from the peer network. (AI-inferred)
-	ImportCustomRoutesFromPeer any
-	// A boolean flag indicating whether the peering connection imports subnet routes with public IP addresses from the peer network. (AI-inferred)
+	ExportCustomRoutesToPeer               any
+	ExportSubnetRoutesWithPublicIpToPeer   any
+	ImportCustomRoutesFromPeer             any
 	ImportSubnetRoutesWithPublicIpFromPeer any
-	// The IP stack type for the traffic over the peering connection, either IPV4_ONLY or IPV4_IPV6. (AI-inferred)
-	StackType any
+	StackType                              any
 }
 
 type Network_Peerings_ConnectionStatus struct {
-	ConsensusState any
-	// The traffic configuration of the peering connection, providing the current traffic state and any associated details. (AI-inferred)
+	ConsensusState       any
 	TrafficConfiguration any
-	// Determines how updates to the peering are applied. CONSENSUS requires both networks to agree on updates, INDEPENDENT allows either side to update without the other's approval, and UNSPECIFIED indicates no strategy has been set. (AI-inferred)
-	UpdateStrategy any
+	UpdateStrategy       any
 }
 
 type Network_Peerings struct {
-	// Whether to automatically create routes for the peer network in this VPC peering connection. When true, routes are automatically generated for destinations in the peered network; when false, no automatic route creation occurs. This field is deprecated in favor of export_custom_routes and import_custom_routes. (AI-inferred)
-	AutoCreateRoutes any
-	ConnectionStatus any
-	// Controls whether subnet routes are exchanged with the peered network. When true (default), subnet routes are automatically advertised to the peer network; setting to false disables the exchange. (AI-inferred)
-	ExchangeSubnetRoutes any
-	// Whether this network exports custom routes (such as dynamic routes and routes learned from other networks) to the peered network. When true, these routes are advertised to the peer. (AI-inferred)
-	ExportCustomRoutes any
-	// Indicates whether subnet routes with public IP addresses are exported to the peer network. When set to true, the peer network can learn these routes; when false, they are not exported. (AI-inferred)
+	AutoCreateRoutes               any
+	ConnectionStatus               any
+	ExchangeSubnetRoutes           any
+	ExportCustomRoutes             any
 	ExportSubnetRoutesWithPublicIp any
-	// Indicates whether custom routes from the peered network are imported into this network's route table. Set to true to enable importing custom routes. (AI-inferred)
-	ImportCustomRoutes any
-	// Whether to import subnet routes with public IP addresses from the peer network. When false, only private subnet routes are imported. Defaults to false. (AI-inferred)
+	ImportCustomRoutes             any
 	ImportSubnetRoutesWithPublicIp any
-	Name any
-	// The name or self_link of the peer network to create the peering with. This can be a network in the same project or in a different project, and must be specified as a URL if cross-project. (AI-inferred)
-	Network any
-	// The Maximum Transmission Unit (MTU) for the VPC network peering connection, specified in bytes. This is the MTU of the peer network and determines the maximum size of packets that can be sent over the peering link without fragmentation. (AI-inferred)
-	PeerMtu any
-	// The stack type for the peering, either IPV4_ONLY or IPV4_IPV6, controlling whether IPv6 traffic is supported over the peering. (AI-inferred)
-	StackType any
-	// Current state of the VPC network peering connection, either ACTIVE or INACTIVE. (AI-inferred)
-	State any
-	// The output-only details of the VPC network peering state, providing additional context about the current peering status, such as the reason for the state. (AI-inferred)
-	StateDetails any
-	// Specifies the update strategy for the VPC peering. Possible values are 'CONSENSUS' (updates require agreement from both peering sides), 'INDEPENDENT' (updates can be made independently by either side), and 'UNSPECIFIED' (default, behavior is determined by the API). (AI-inferred)
-	UpdateStrategy any
+	Name                           any
+	Network                        any
+	PeerMtu                        any
+	StackType                      any
+	State                          any
+	StateDetails                   any
+	UpdateStrategy                 any
 }
 
 type Network_RoutingConfig struct {
@@ -81,87 +60,31 @@ type Network_RoutingConfig struct {
 }
 
 var Network_ParamsFields = ubx.FieldMap{
-		"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
-	}
-
-var Network_Peerings_ConnectionStatus_ConsensusStateFields = ubx.FieldMap{
-		"DeleteStatus": ubx.FieldSpec{WireName: "delete_status"},
-		"UpdateStatus": ubx.FieldSpec{WireName: "update_status"},
-	}
-
-var Network_Peerings_ConnectionStatus_TrafficConfigurationFields = ubx.FieldMap{
-		"ExportCustomRoutesToPeer": ubx.FieldSpec{WireName: "export_custom_routes_to_peer"},
-		"ExportSubnetRoutesWithPublicIpToPeer": ubx.FieldSpec{WireName: "export_subnet_routes_with_public_ip_to_peer"},
-		"ImportCustomRoutesFromPeer": ubx.FieldSpec{WireName: "import_custom_routes_from_peer"},
-		"ImportSubnetRoutesWithPublicIpFromPeer": ubx.FieldSpec{WireName: "import_subnet_routes_with_public_ip_from_peer"},
-		"StackType": ubx.FieldSpec{WireName: "stack_type"},
-	}
-
-var Network_Peerings_ConnectionStatusFields = ubx.FieldMap{
-		"ConsensusState": ubx.FieldSpec{
-			WireName: "consensus_state",
-			Kind: "object",
-			Fields: Network_Peerings_ConnectionStatus_ConsensusStateFields,
-		},
-		"TrafficConfiguration": ubx.FieldSpec{
-			WireName: "traffic_configuration",
-			Kind: "object",
-			Fields: Network_Peerings_ConnectionStatus_TrafficConfigurationFields,
-		},
-		"UpdateStrategy": ubx.FieldSpec{WireName: "update_strategy"},
-	}
-
-var Network_PeeringsFields = ubx.FieldMap{
-		"AutoCreateRoutes": ubx.FieldSpec{WireName: "auto_create_routes"},
-		"ConnectionStatus": ubx.FieldSpec{
-			WireName: "connection_status",
-			Kind: "object",
-			Fields: Network_Peerings_ConnectionStatusFields,
-		},
-		"ExchangeSubnetRoutes": ubx.FieldSpec{WireName: "exchange_subnet_routes"},
-		"ExportCustomRoutes": ubx.FieldSpec{WireName: "export_custom_routes"},
-		"ExportSubnetRoutesWithPublicIp": ubx.FieldSpec{WireName: "export_subnet_routes_with_public_ip"},
-		"ImportCustomRoutes": ubx.FieldSpec{WireName: "import_custom_routes"},
-		"ImportSubnetRoutesWithPublicIp": ubx.FieldSpec{WireName: "import_subnet_routes_with_public_ip"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"PeerMtu": ubx.FieldSpec{WireName: "peer_mtu"},
-		"StackType": ubx.FieldSpec{WireName: "stack_type"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"StateDetails": ubx.FieldSpec{WireName: "state_details"},
-		"UpdateStrategy": ubx.FieldSpec{WireName: "update_strategy"},
-	}
+	"ResourceManagerTags": ubx.FieldSpec{WireName: "resource_manager_tags"},
+}
 
 var Network_RoutingConfigFields = ubx.FieldMap{
-		"BgpAlwaysCompareMed": ubx.FieldSpec{WireName: "bgp_always_compare_med"},
-		"BgpBestPathSelectionMode": ubx.FieldSpec{WireName: "bgp_best_path_selection_mode"},
-		"BgpInterRegionCost": ubx.FieldSpec{WireName: "bgp_inter_region_cost"},
-		"EffectiveBgpAlwaysCompareMed": ubx.FieldSpec{WireName: "effective_bgp_always_compare_med"},
-		"EffectiveBgpInterRegionCost": ubx.FieldSpec{WireName: "effective_bgp_inter_region_cost"},
-		"RoutingMode": ubx.FieldSpec{WireName: "routing_mode"},
-	}
+	"BgpAlwaysCompareMed":          ubx.FieldSpec{WireName: "bgp_always_compare_med"},
+	"BgpBestPathSelectionMode":     ubx.FieldSpec{WireName: "bgp_best_path_selection_mode"},
+	"BgpInterRegionCost":           ubx.FieldSpec{WireName: "bgp_inter_region_cost"},
+	"EffectiveBgpAlwaysCompareMed": ubx.FieldSpec{WireName: "effective_bgp_always_compare_med"},
+	"EffectiveBgpInterRegionCost":  ubx.FieldSpec{WireName: "effective_bgp_inter_region_cost"},
+	"RoutingMode":                  ubx.FieldSpec{WireName: "routing_mode"},
+}
 
 type NetworkConfig struct {
 	// Must be set to create a VPC network. If not set, a legacy network is created. When set to true, the VPC network is created in auto mode. When set to false, the VPC network is created in custom mode. An auto mode VPC network starts with one subnet per region. Each subnet has a predetermined range as described inAuto mode VPC network IP ranges. For custom mode VPC networks, you can add subnets using the subnetworksinsert method.
 	AutoCreateSubnetworks any
-	// Output only. [Output Only] Creation timestamp inRFC3339 text format.
-	CreationTimestamp any
 	// An optional description of this resource. Provide this field when you create the resource.
 	Description any
 	// Enable ULA internal ipv6 on this network. Enabling this feature will assign a /48 from google defined ULA prefix fd20::/20. .
 	EnableUlaInternalIpv6 any
-	// Output only. [Output Only] URL of the firewall policy the network is associated with.
-	FirewallPolicy any
 	// [Output Only] The gateway address for default routing out of the network, selected by Google Cloud.
 	GatewayIpv4 any
-	// Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-	Id any
 	// When enabling ula internal ipv6, caller optionally can specify the /48 range they want from the google defined ULA prefix fd20::/20. The input must be a valid /48 ULA IPv6 address and must be within the fd20::/20. Operation will fail if the speficied /48 is already in used by another resource. If the field is not speficied, then a /48 range will be randomly allocated from fd20::/20 and returned via this field. .
 	InternalIpv6Range any
 	// Deprecated in favor of subnet mode networks. The range of internal addresses that are legal on this network. This range is aCIDR specification, for example:192.168.0.0/16. Provided by the client when the network is created.
 	Ipv4Range any
-	// Output only. [Output Only] Type of the resource. Always compute#network for networks.
-	Kind any
 	// Maximum Transmission Unit in bytes. The minimum value for this field is 1300 and the maximum value is 8896. The suggested value is 1500, which is the default MTU used on the Internet, or 8896 if you want to use Jumbo frames. If unspecified, the value defaults to 1460.
 	Mtu any
 	// Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?`. The first character must be a lowercase letter, and all following characters (except for the last character) must be a dash, lowercase letter, or digit. The last character must be a lowercase letter or digit.
@@ -172,14 +95,10 @@ type NetworkConfig struct {
 	NetworkProfile any
 	// Additional network parameters.
 	Params any
-	// Output only. [Output Only] A list of network peerings for the resource.
-	Peerings any
 	// A routing configuration attached to a network resource. The message includes the list of routers associated with the network, and a flag indicating the type of routing behavior to enforce network-wide.
 	RoutingConfig any
 	// [Output Only] Server-defined URL for the resource.
 	SelfLink any
-	// Output only. [Output Only] Server-defined URL for this resource with the resource id.
-	SelfLinkWithId any
 	// [Output Only] Server-defined fully-qualified URLs for all subnetworks in this VPC network.
 	Subnetworks any
 }
@@ -230,37 +149,27 @@ type NetworkAttrs struct {
 var Network = ubx.ResourceBinding{
 	WireType: "google_compute_network",
 	Fields: ubx.FieldMap{
-		"AutoCreateSubnetworks": ubx.FieldSpec{WireName: "auto_create_subnetworks"},
-		"CreationTimestamp": ubx.FieldSpec{WireName: "creation_timestamp"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"EnableUlaInternalIpv6": ubx.FieldSpec{WireName: "enable_ula_internal_ipv6"},
-		"FirewallPolicy": ubx.FieldSpec{WireName: "firewall_policy"},
-		"GatewayIpv4": ubx.FieldSpec{WireName: "gateway_ipv4"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"InternalIpv6Range": ubx.FieldSpec{WireName: "internal_ipv6_range"},
-		"Ipv4Range": ubx.FieldSpec{WireName: "ipv4_range"},
-		"Kind": ubx.FieldSpec{WireName: "kind"},
-		"Mtu": ubx.FieldSpec{WireName: "mtu"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"AutoCreateSubnetworks":                 ubx.FieldSpec{WireName: "auto_create_subnetworks"},
+		"Description":                           ubx.FieldSpec{WireName: "description"},
+		"EnableUlaInternalIpv6":                 ubx.FieldSpec{WireName: "enable_ula_internal_ipv6"},
+		"GatewayIpv4":                           ubx.FieldSpec{WireName: "gateway_ipv4"},
+		"InternalIpv6Range":                     ubx.FieldSpec{WireName: "internal_ipv6_range"},
+		"Ipv4Range":                             ubx.FieldSpec{WireName: "ipv4_range"},
+		"Mtu":                                   ubx.FieldSpec{WireName: "mtu"},
+		"Name":                                  ubx.FieldSpec{WireName: "name"},
 		"NetworkFirewallPolicyEnforcementOrder": ubx.FieldSpec{WireName: "network_firewall_policy_enforcement_order"},
-		"NetworkProfile": ubx.FieldSpec{WireName: "network_profile"},
+		"NetworkProfile":                        ubx.FieldSpec{WireName: "network_profile"},
 		"Params": ubx.FieldSpec{
 			WireName: "params",
-			Kind: "object",
-			Fields: Network_ParamsFields,
-		},
-		"Peerings": ubx.FieldSpec{
-			WireName: "peerings",
-			Kind: "list",
-			Fields: Network_PeeringsFields,
+			Kind:     "object",
+			Fields:   Network_ParamsFields,
 		},
 		"RoutingConfig": ubx.FieldSpec{
 			WireName: "routing_config",
-			Kind: "object",
-			Fields: Network_RoutingConfigFields,
+			Kind:     "object",
+			Fields:   Network_RoutingConfigFields,
 		},
-		"SelfLink": ubx.FieldSpec{WireName: "self_link"},
-		"SelfLinkWithId": ubx.FieldSpec{WireName: "self_link_with_id"},
+		"SelfLink":    ubx.FieldSpec{WireName: "self_link"},
 		"Subnetworks": ubx.FieldSpec{WireName: "subnetworks"},
 	},
 }

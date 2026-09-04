@@ -146,8 +146,6 @@ _V1alphaApplication_UpstreamsFields = {
 
 @dataclasses.dataclass
 class V1alphaApplicationConfig:
-    # Output only. Timestamp when the resource was created.
-    create_time: Any = None
     # Optional. An arbitrary user-provided name for the application resource. Cannot exceed 64 characters.
     display_name: Any = None
     # Optional. An array of conditions to match the application's network endpoint. Each element in the array is an EndpointMatcher object, which defines a specific combination of a hostname pattern and one or more ports. The application is considered matched if at least one of the EndpointMatcher conditions in this array is met (the conditions are combined using OR logic). Each EndpointMatcher must contain a hostname pattern, such as "example.com", and one or more port numbers specified as a string, such as "443". Hostname and port number examples: "*.example.com", "443" "example.com" and "22" "example.com" and "22,33"
@@ -156,8 +154,6 @@ class V1alphaApplicationConfig:
     name: Any = None
     # Optional. Type of the external application.
     schema: Any = None
-    # Output only. Timestamp when the resource was last modified.
-    update_time: Any = None
     # Optional. Which upstream resources to forward traffic to.
     upstreams: Any = None
 
@@ -181,7 +177,6 @@ class V1alphaApplicationAttrs:
 V1alphaApplication = ubx.ResourceBinding(
     wire_type="google_beyondcorp_v1alpha_application",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "endpoint_matchers": ubx.FieldSpec(
             wire_name="endpoint_matchers",
@@ -190,7 +185,6 @@ V1alphaApplication = ubx.ResourceBinding(
         ),
         "name": ubx.FieldSpec(wire_name="name"),
         "schema": ubx.FieldSpec(wire_name="schema"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
         "upstreams": ubx.FieldSpec(
             wire_name="upstreams",
             kind="list",

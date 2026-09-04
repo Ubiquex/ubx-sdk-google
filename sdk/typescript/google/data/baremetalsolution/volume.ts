@@ -13,7 +13,6 @@ export interface Volume_SnapshotReservationDetail {
 }
 
 export interface VolumeConfig {
-  name: string | Computed<string>;
 }
 
 export interface VolumeAttrs {
@@ -69,6 +68,5 @@ export interface VolumeAttrs {
 export const Volume: DataSourceBinding<VolumeConfig, VolumeAttrs> = {
   wireType: "google_baremetalsolution_volume",
   fields: {
-    name: "name",
   },
 };

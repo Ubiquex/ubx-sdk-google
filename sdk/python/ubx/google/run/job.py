@@ -257,18 +257,6 @@ _Job_BinaryAuthorizationFields = {
     "use_default": ubx.FieldSpec(wire_name="use_default"),
 }
 
-_Job_ConditionsFields = {
-    "execution_reason": ubx.FieldSpec(wire_name="execution_reason"),
-    "instance_reason": ubx.FieldSpec(wire_name="instance_reason"),
-    "last_transition_time": ubx.FieldSpec(wire_name="last_transition_time"),
-    "message": ubx.FieldSpec(wire_name="message"),
-    "reason": ubx.FieldSpec(wire_name="reason"),
-    "revision_reason": ubx.FieldSpec(wire_name="revision_reason"),
-    "severity": ubx.FieldSpec(wire_name="severity"),
-    "state": ubx.FieldSpec(wire_name="state"),
-    "type": ubx.FieldSpec(wire_name="type"),
-}
-
 _Job_LatestCreatedExecutionFields = {
     "completion_status": ubx.FieldSpec(wire_name="completion_status"),
     "completion_time": ubx.FieldSpec(wire_name="completion_time"),
@@ -586,6 +574,18 @@ _Job_TemplateFields = {
     ),
 }
 
+_Job_ConditionsFields = {
+    "execution_reason": ubx.FieldSpec(wire_name="execution_reason"),
+    "instance_reason": ubx.FieldSpec(wire_name="instance_reason"),
+    "last_transition_time": ubx.FieldSpec(wire_name="last_transition_time"),
+    "message": ubx.FieldSpec(wire_name="message"),
+    "reason": ubx.FieldSpec(wire_name="reason"),
+    "revision_reason": ubx.FieldSpec(wire_name="revision_reason"),
+    "severity": ubx.FieldSpec(wire_name="severity"),
+    "state": ubx.FieldSpec(wire_name="state"),
+    "type": ubx.FieldSpec(wire_name="type"),
+}
+
 @dataclasses.dataclass
 class JobConfig:
     # Unstructured key value map that may be set by external tools to store and arbitrary metadata. They are not queryable and should be preserved when modifying objects. Cloud Run API v2 does not support annotations with `run.googleapis.com`, `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev` namespaces, and they will be rejected on new resources. All system annotations in v1 now have a corresponding field in v2 Job. This field follows Kubernetes annotations' namespacing, limits, and rules.
@@ -596,50 +596,24 @@ class JobConfig:
     client: Any = None
     # Arbitrary version identifier for the API client.
     client_version: Any = None
-    # Output only. The Conditions of all other associated sub-resources. They contain additional diagnostics information in case the Job does not reach its desired state. See comments in `reconciling` for additional information on reconciliation process in Cloud Run.
-    conditions: Any = None
-    # Output only. The creation time.
-    create_time: Any = None
-    # Output only. Email address of the authenticated creator.
-    creator: Any = None
-    # Output only. The deletion time. It is only populated as a response to a Delete request.
-    delete_time: Any = None
     # Optional. A system-generated fingerprint for this version of the resource. May be used to detect modification conflict during updates.
     etag: Any = None
-    # Output only. Number of executions created for this job.
-    execution_count: Any = None
-    # Output only. For a deleted resource, the time after which it will be permamently deleted.
-    expire_time: Any = None
-    # Output only. A number that monotonically increases every time the user modifies the desired state.
-    generation: Any = None
     # Unstructured key value map that can be used to organize and categorize objects. User-provided labels are shared with Google's billing system, so they can be used to filter, or break down billing charges by team, component, environment, state, etc. For more information, visit https://cloud.google.com/resource-manager/docs/creating-managing-labels or https://cloud.google.com/run/docs/configuring/labels. Cloud Run API v2 does not support labels with `run.googleapis.com`, `cloud.googleapis.com`, `serving.knative.dev`, or `autoscaling.knative.dev` namespaces, and they will be rejected. All system labels in v1 now have a corresponding field in v2 Job.
     labels: Any = None
-    # Output only. Email address of the last authenticated modifier.
-    last_modifier: Any = None
     # Reference to an Execution. Use /Executions.GetExecution with the given name to get full execution including the latest status.
     latest_created_execution: Any = None
     # The launch stage as defined by [Google Cloud Platform Launch Stages](https://cloud.google.com/terms/launch-stages). Cloud Run supports `ALPHA`, `BETA`, and `GA`. If no value is specified, GA is assumed. Set the launch stage to a preview stage on input to allow use of preview features in that stage. On read (or output), describes whether the resource uses preview features. For example, if ALPHA is provided as input, but only BETA and GA-level features are used, this field will be BETA on output.
     launch_stage: Any = None
     # The fully qualified name of this Job. Format: projects/{project}/locations/{location}/jobs/{job}
     name: Any = None
-    # Output only. The generation of this Job. See comments in `reconciling` for additional information on reconciliation process in Cloud Run.
-    observed_generation: Any = None
-    # Output only. Returns true if the Job is currently being acted upon by the system to bring it into the desired state. When a new Job is created, or an existing one is updated, Cloud Run will asynchronously perform all necessary steps to bring the Job to the desired state. This process is called reconciliation. While reconciliation is in process, `observed_generation` and `latest_succeeded_execution`, will have transient values that might mismatch the intended state: Once reconciliation is over (and this field is false), there are two possible outcomes: reconciliation succeeded and the state matches the Job, or there was an error, and reconciliation failed. This state can be found in `terminal_condition.state`. If reconciliation succeeded, the following fields will match: `observed_generation` and `generation`, `latest_succeeded_execution` and `latest_created_execution`. If reconciliation failed, `observed_generation` and `latest_succeeded_execution` will have the state of the last succeeded execution or empty for newly created Job. Additional information on the failure can be found in `terminal_condition` and `conditions`.
-    reconciling: Any = None
     # A unique string used as a suffix for creating a new execution. The Job will become ready when the execution is successfully completed. The sum of job name and token length must be fewer than 63 characters.
     run_execution_token: Any = None
-    # Output only. Reserved for future use.
-    satisfies_pzs: Any = None
     # A unique string used as a suffix creating a new execution. The Job will become ready when the execution is successfully started. The sum of job name and token length must be fewer than 63 characters.
     start_execution_token: Any = None
     # ExecutionTemplate describes the data an execution should have when created from a template.
     template: Any = None
     # Defines a status condition for a resource.
     terminal_condition: Any = None
-    # Output only. Server assigned unique identifier for the Execution. The value is a UUID4 string and guaranteed to remain unchanged until the resource is deleted.
-    uid: Any = None
-    # Output only. The last-modified time.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class JobAttrs:
@@ -707,20 +681,8 @@ Job = ubx.ResourceBinding(
         ),
         "client": ubx.FieldSpec(wire_name="client"),
         "client_version": ubx.FieldSpec(wire_name="client_version"),
-        "conditions": ubx.FieldSpec(
-            wire_name="conditions",
-            kind="list",
-            fields=_Job_ConditionsFields,
-        ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
-        "creator": ubx.FieldSpec(wire_name="creator"),
-        "delete_time": ubx.FieldSpec(wire_name="delete_time"),
         "etag": ubx.FieldSpec(wire_name="etag"),
-        "execution_count": ubx.FieldSpec(wire_name="execution_count"),
-        "expire_time": ubx.FieldSpec(wire_name="expire_time"),
-        "generation": ubx.FieldSpec(wire_name="generation"),
         "labels": ubx.FieldSpec(wire_name="labels"),
-        "last_modifier": ubx.FieldSpec(wire_name="last_modifier"),
         "latest_created_execution": ubx.FieldSpec(
             wire_name="latest_created_execution",
             kind="object",
@@ -728,10 +690,7 @@ Job = ubx.ResourceBinding(
         ),
         "launch_stage": ubx.FieldSpec(wire_name="launch_stage"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "observed_generation": ubx.FieldSpec(wire_name="observed_generation"),
-        "reconciling": ubx.FieldSpec(wire_name="reconciling"),
         "run_execution_token": ubx.FieldSpec(wire_name="run_execution_token"),
-        "satisfies_pzs": ubx.FieldSpec(wire_name="satisfies_pzs"),
         "start_execution_token": ubx.FieldSpec(wire_name="start_execution_token"),
         "template": ubx.FieldSpec(
             wire_name="template",
@@ -743,7 +702,5 @@ Job = ubx.ResourceBinding(
             kind="object",
             fields=_Job_ConditionsFields,
         ),
-        "uid": ubx.FieldSpec(wire_name="uid"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

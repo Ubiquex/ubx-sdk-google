@@ -2,8 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface EntryGroupConfig {
-  /** Output only. The time when the EntryGroup was created. */
-  createTime?: string | Computed<string>;
   /** Optional. Description of the EntryGroup. */
   description?: string | Computed<string>;
   /** Optional. User friendly display name. */
@@ -12,14 +10,6 @@ export interface EntryGroupConfig {
   etag?: string | Computed<string>;
   /** Optional. User-defined labels for the EntryGroup. */
   labels?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. The relative resource name of the EntryGroup, in the format projects/{project_id_or_number}/locations/{location_id}/entryGroups/{entry_group_id}. */
-  name?: string | Computed<string>;
-  /** Output only. Denotes the transfer status of the Entry Group. It is unspecified for Entry Group created from Dataplex API. */
-  transferStatus?: string | Computed<string>;
-  /** Output only. System generated globally unique ID for the EntryGroup. If you delete and recreate the EntryGroup with the same name, this ID will be different. */
-  uid?: string | Computed<string>;
-  /** Output only. The time when the EntryGroup was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface EntryGroupAttrs {
@@ -46,14 +36,9 @@ export interface EntryGroupAttrs {
 export const EntryGroup: ResourceBinding<EntryGroupConfig, EntryGroupAttrs> = {
   wireType: "google_dataplex_entry_group",
   fields: {
-    createTime: "create_time",
     description: "description",
     displayName: "display_name",
     etag: "etag",
     labels: "labels",
-    name: "name",
-    transferStatus: "transfer_status",
-    uid: "uid",
-    updateTime: "update_time",
   },
 };

@@ -59,14 +59,10 @@ _SandboxEnvironment_SpecFields = {
 class SandboxEnvironmentConfig:
     # The connection information of the SandboxEnvironment.
     connection_info: Any = None
-    # Output only. The timestamp when this SandboxEnvironment was created.
-    create_time: Any = None
     # Required. The display name of the SandboxEnvironment.
     display_name: Any = None
     # Optional. Timestamp in UTC of when this SandboxEnvironment is considered expired. This is *always* provided on output, regardless of what `expiration` was sent on input.
     expire_time: Any = None
-    # Output only. The resource name of the latest snapshot taken for this SandboxEnvironment.
-    latest_sandbox_environment_snapshot: Any = None
     # Identifier. The name of the SandboxEnvironment.
     name: Any = None
     # Optional. Owner information for this sandbox environment. A Sandbox can only be restored from a snapshot that belongs to the same owner. If not set, sandbox will be created as the default owner.
@@ -77,12 +73,8 @@ class SandboxEnvironmentConfig:
     sandbox_environment_template: Any = None
     # The specification of a SandboxEnvironment.
     spec: Any = None
-    # Output only. The runtime state of the SandboxEnvironment.
-    state: Any = None
     # Optional. Input only. The TTL for the sandbox environment. The expiration time is computed: now + TTL.
     ttl: Any = None
-    # Output only. The timestamp when this SandboxEnvironment was most recently updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class SandboxEnvironmentAttrs:
@@ -121,10 +113,8 @@ SandboxEnvironment = ubx.ResourceBinding(
             kind="object",
             fields=_SandboxEnvironment_ConnectionInfoFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "expire_time": ubx.FieldSpec(wire_name="expire_time"),
-        "latest_sandbox_environment_snapshot": ubx.FieldSpec(wire_name="latest_sandbox_environment_snapshot"),
         "name": ubx.FieldSpec(wire_name="name"),
         "owner": ubx.FieldSpec(wire_name="owner"),
         "sandbox_environment_snapshot": ubx.FieldSpec(wire_name="sandbox_environment_snapshot"),
@@ -134,8 +124,6 @@ SandboxEnvironment = ubx.ResourceBinding(
             kind="object",
             fields=_SandboxEnvironment_SpecFields,
         ),
-        "state": ubx.FieldSpec(wire_name="state"),
         "ttl": ubx.FieldSpec(wire_name="ttl"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

@@ -268,11 +268,6 @@ class V2beta1Intent_TrainingPhrases:
     times_added_count: Any = None
     type: Any = None
 
-_V2beta1Intent_FollowupIntentInfoFields = {
-    "followup_intent_name": ubx.FieldSpec(wire_name="followup_intent_name"),
-    "parent_followup_intent_name": ubx.FieldSpec(wire_name="parent_followup_intent_name"),
-}
-
 _V2beta1Intent_Messages_BasicCard_Buttons_OpenUriActionFields = {
     "uri": ubx.FieldSpec(wire_name="uri"),
 }
@@ -737,7 +732,6 @@ class V2beta1IntentConfig:
     display_name: Any = None
     end_interaction: Any = None
     events: Any = None
-    followup_intent_info: Any = None
     input_context_names: Any = None
     is_fallback: Any = None
     live_agent_handoff: Any = None
@@ -750,7 +744,6 @@ class V2beta1IntentConfig:
     parent_followup_intent_name: Any = None
     priority: Any = None
     reset_contexts: Any = None
-    root_followup_intent_name: Any = None
     training_phrases: Any = None
     webhook_state: Any = None
 
@@ -786,11 +779,6 @@ V2beta1Intent = ubx.ResourceBinding(
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "end_interaction": ubx.FieldSpec(wire_name="end_interaction"),
         "events": ubx.FieldSpec(wire_name="events"),
-        "followup_intent_info": ubx.FieldSpec(
-            wire_name="followup_intent_info",
-            kind="list",
-            fields=_V2beta1Intent_FollowupIntentInfoFields,
-        ),
         "input_context_names": ubx.FieldSpec(wire_name="input_context_names"),
         "is_fallback": ubx.FieldSpec(wire_name="is_fallback"),
         "live_agent_handoff": ubx.FieldSpec(wire_name="live_agent_handoff"),
@@ -815,7 +803,6 @@ V2beta1Intent = ubx.ResourceBinding(
         "parent_followup_intent_name": ubx.FieldSpec(wire_name="parent_followup_intent_name"),
         "priority": ubx.FieldSpec(wire_name="priority"),
         "reset_contexts": ubx.FieldSpec(wire_name="reset_contexts"),
-        "root_followup_intent_name": ubx.FieldSpec(wire_name="root_followup_intent_name"),
         "training_phrases": ubx.FieldSpec(
             wire_name="training_phrases",
             kind="list",

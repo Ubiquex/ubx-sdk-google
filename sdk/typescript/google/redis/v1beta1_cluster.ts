@@ -329,20 +329,6 @@ const V1beta1Cluster_CrossClusterReplicationConfigFields: FieldMap = {
   updateTime: "update_time",
 };
 
-const V1beta1Cluster_DiscoveryEndpoints_PscConfigFields: FieldMap = {
-  network: "network",
-};
-
-const V1beta1Cluster_DiscoveryEndpointsFields: FieldMap = {
-  address: "address",
-  port: "port",
-  pscConfig: {
-    wireName: "psc_config",
-    kind: "object",
-    fields: V1beta1Cluster_DiscoveryEndpoints_PscConfigFields,
-  },
-};
-
 const V1beta1Cluster_EncryptionInfoFields: FieldMap = {
   encryptionType: "encryption_type",
   kmsKeyPrimaryState: "kms_key_primary_state",
@@ -405,9 +391,8 @@ const V1beta1Cluster_PersistenceConfigFields: FieldMap = {
   },
 };
 
-const V1beta1Cluster_PscServiceAttachmentsFields: FieldMap = {
-  connectionType: "connection_type",
-  serviceAttachment: "service_attachment",
+const V1beta1Cluster_DiscoveryEndpoints_PscConfigFields: FieldMap = {
+  network: "network",
 };
 
 const V1beta1Cluster_StateInfo_UpdateInfoFields: FieldMap = {
@@ -433,8 +418,6 @@ const V1beta1Cluster_ZoneDistributionConfigFields: FieldMap = {
 export interface V1beta1ClusterConfig {
   /** Optional. The ACL policy to be applied to the cluster. */
   aclPolicy?: string | Computed<string>;
-  /** Optional. Output only. Deprecated: Indicates whether the ACL rules applied to the cluster are in sync. */
-  aclPolicyInSync?: boolean | Computed<boolean>;
   /** Details of the applied ACL policy. */
   aclPolicyInfo?: V1beta1Cluster_AclPolicyInfo | Computed<V1beta1Cluster_AclPolicyInfo>;
   /** Optional. Immutable. Deprecated, do not use. */
@@ -445,22 +428,12 @@ export interface V1beta1ClusterConfig {
   authorizationMode?: string | Computed<string>;
   /** The automated backup config for a cluster. */
   automatedBackupConfig?: V1beta1Cluster_AutomatedBackupConfig | Computed<V1beta1Cluster_AutomatedBackupConfig>;
-  /** Output only. This field is used to determine the available maintenance versions for the self service update. */
-  availableMaintenanceVersions?: string[] | Computed<string[]>;
-  /** Optional. Output only. The backup collection full resource name. Example: projects/{project}/locations/{location}/backupCollections/{collection} */
-  backupCollection?: string | Computed<string>;
   /** Optional. A list of cluster endpoints. */
   clusterEndpoints?: V1beta1Cluster_ClusterEndpoints[] | Computed<V1beta1Cluster_ClusterEndpoints[]>;
-  /** Output only. The timestamp associated with the cluster creation request. */
-  createTime?: string | Computed<string>;
   /** Cross cluster replication config. */
   crossClusterReplicationConfig?: V1beta1Cluster_CrossClusterReplicationConfig | Computed<V1beta1Cluster_CrossClusterReplicationConfig>;
   /** Optional. The delete operation will fail when the value is set to true. */
   deletionProtectionEnabled?: boolean | Computed<boolean>;
-  /** Output only. Endpoints created on each given network, for Redis clients to connect to the cluster. Currently only one discovery endpoint is supported. */
-  discoveryEndpoints?: V1beta1Cluster_DiscoveryEndpoints[] | Computed<V1beta1Cluster_DiscoveryEndpoints[]>;
-  /** Output only. This field represents the actual maintenance version of the cluster. */
-  effectiveMaintenanceVersion?: string | Computed<string>;
   /** EncryptionInfo describes the encryption information of a cluster or a backup. */
   encryptionInfo?: V1beta1Cluster_EncryptionInfo | Computed<V1beta1Cluster_EncryptionInfo>;
   /** Backups stored in Cloud Storage buckets. The Cloud Storage buckets need to be the same region as the clusters. */
@@ -485,24 +458,14 @@ export interface V1beta1ClusterConfig {
   ondemandMaintenance?: boolean | Computed<boolean>;
   /** Configuration of the persistence functionality. */
   persistenceConfig?: V1beta1Cluster_PersistenceConfig | Computed<V1beta1Cluster_PersistenceConfig>;
-  /** Output only. Precise value of redis memory size in GB for the entire cluster. */
-  preciseSizeGb?: number | Computed<number>;
   /** Optional. Each PscConfig configures the consumer network where IPs will be designated to the cluster for client access through Private Service Connect Automation. Currently, only one PscConfig is supported. */
   pscConfigs?: V1beta1Cluster_DiscoveryEndpoints_PscConfig[] | Computed<V1beta1Cluster_DiscoveryEndpoints_PscConfig[]>;
-  /** Output only. The list of PSC connections that are auto-created through service connectivity automation. */
-  pscConnections?: V1beta1Cluster_ClusterEndpoints_Connections_PscConnection[] | Computed<V1beta1Cluster_ClusterEndpoints_Connections_PscConnection[]>;
-  /** Output only. Service attachment details to configure Psc connections */
-  pscServiceAttachments?: V1beta1Cluster_PscServiceAttachments[] | Computed<V1beta1Cluster_PscServiceAttachments[]>;
   /** Optional. Key/Value pairs of customer overrides for mutable Redis Configs */
   redisConfigs?: Record<string, string> | Computed<Record<string, string>>;
   /** Optional. The number of replica nodes per shard. */
   replicaCount?: number | Computed<number>;
   /** Optional. Input only. Rotate the server certificates. */
   rotateServerCertificate?: boolean | Computed<boolean>;
-  /** Optional. Output only. Reserved for future use. */
-  satisfiesPzi?: boolean | Computed<boolean>;
-  /** Optional. Output only. Reserved for future use. */
-  satisfiesPzs?: boolean | Computed<boolean>;
   /** Optional. Server CA mode for the cluster. */
   serverCaMode?: string | Computed<string>;
   /** Optional. Customer-managed CA pool for the cluster. Only applicable for BYOCA i.e. if server_ca_mode is SERVER_CA_MODE_CUSTOMER_MANAGED_CAS_CA. Format: "projects/{project}/locations/{region}/caPools/{ca_pool}". */
@@ -511,16 +474,10 @@ export interface V1beta1ClusterConfig {
   shardCount?: number | Computed<number>;
   /** Optional. Input only. Simulate a maintenance event. */
   simulateMaintenanceEvent?: boolean | Computed<boolean>;
-  /** Output only. Redis memory size in GB for the entire cluster rounded up to the next integer. */
-  sizeGb?: number | Computed<number>;
-  /** Output only. The current state of this cluster. Can be CREATING, READY, UPDATING, DELETING and SUSPENDED */
-  state?: string | Computed<string>;
   /** Represents additional information about the state of the cluster. */
   stateInfo?: V1beta1Cluster_StateInfo | Computed<V1beta1Cluster_StateInfo>;
   /** Optional. The in-transit encryption for the Redis cluster. If not provided, encryption is disabled for the cluster. */
   transitEncryptionMode?: string | Computed<string>;
-  /** Output only. System assigned, unique identifier for the cluster. */
-  uid?: string | Computed<string>;
   /** Zone distribution config for allocation of cluster resources. */
   zoneDistributionConfig?: V1beta1Cluster_ZoneDistributionConfig | Computed<V1beta1Cluster_ZoneDistributionConfig>;
 }
@@ -624,7 +581,6 @@ export const V1beta1Cluster: ResourceBinding<V1beta1ClusterConfig, V1beta1Cluste
   wireType: "google_redis_v1beta1_cluster",
   fields: {
     aclPolicy: "acl_policy",
-    aclPolicyInSync: "acl_policy_in_sync",
     aclPolicyInfo: {
       wireName: "acl_policy_info",
       kind: "object",
@@ -638,26 +594,17 @@ export const V1beta1Cluster: ResourceBinding<V1beta1ClusterConfig, V1beta1Cluste
       kind: "object",
       fields: V1beta1Cluster_AutomatedBackupConfigFields,
     },
-    availableMaintenanceVersions: "available_maintenance_versions",
-    backupCollection: "backup_collection",
     clusterEndpoints: {
       wireName: "cluster_endpoints",
       kind: "list",
       fields: V1beta1Cluster_ClusterEndpointsFields,
     },
-    createTime: "create_time",
     crossClusterReplicationConfig: {
       wireName: "cross_cluster_replication_config",
       kind: "object",
       fields: V1beta1Cluster_CrossClusterReplicationConfigFields,
     },
     deletionProtectionEnabled: "deletion_protection_enabled",
-    discoveryEndpoints: {
-      wireName: "discovery_endpoints",
-      kind: "list",
-      fields: V1beta1Cluster_DiscoveryEndpointsFields,
-    },
-    effectiveMaintenanceVersion: "effective_maintenance_version",
     encryptionInfo: {
       wireName: "encryption_info",
       kind: "object",
@@ -694,40 +641,24 @@ export const V1beta1Cluster: ResourceBinding<V1beta1ClusterConfig, V1beta1Cluste
       kind: "object",
       fields: V1beta1Cluster_PersistenceConfigFields,
     },
-    preciseSizeGb: "precise_size_gb",
     pscConfigs: {
       wireName: "psc_configs",
       kind: "list",
       fields: V1beta1Cluster_DiscoveryEndpoints_PscConfigFields,
     },
-    pscConnections: {
-      wireName: "psc_connections",
-      kind: "list",
-      fields: V1beta1Cluster_ClusterEndpoints_Connections_PscConnectionFields,
-    },
-    pscServiceAttachments: {
-      wireName: "psc_service_attachments",
-      kind: "list",
-      fields: V1beta1Cluster_PscServiceAttachmentsFields,
-    },
     redisConfigs: "redis_configs",
     replicaCount: "replica_count",
     rotateServerCertificate: "rotate_server_certificate",
-    satisfiesPzi: "satisfies_pzi",
-    satisfiesPzs: "satisfies_pzs",
     serverCaMode: "server_ca_mode",
     serverCaPool: "server_ca_pool",
     shardCount: "shard_count",
     simulateMaintenanceEvent: "simulate_maintenance_event",
-    sizeGb: "size_gb",
-    state: "state",
     stateInfo: {
       wireName: "state_info",
       kind: "object",
       fields: V1beta1Cluster_StateInfoFields,
     },
     transitEncryptionMode: "transit_encryption_mode",
-    uid: "uid",
     zoneDistributionConfig: {
       wireName: "zone_distribution_config",
       kind: "object",

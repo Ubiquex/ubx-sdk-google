@@ -100,26 +100,6 @@ _Cluster_AutoscalingSettingsFields = {
     "min_cluster_node_count": ubx.FieldSpec(wire_name="min_cluster_node_count"),
 }
 
-_Cluster_DatastoreMountConfig_DatastoreNetworkFields = {
-    "connection_count": ubx.FieldSpec(wire_name="connection_count"),
-    "mtu": ubx.FieldSpec(wire_name="mtu"),
-    "network_peering": ubx.FieldSpec(wire_name="network_peering"),
-    "subnet": ubx.FieldSpec(wire_name="subnet"),
-}
-
-_Cluster_DatastoreMountConfigFields = {
-    "access_mode": ubx.FieldSpec(wire_name="access_mode"),
-    "datastore": ubx.FieldSpec(wire_name="datastore"),
-    "datastore_network": ubx.FieldSpec(
-        wire_name="datastore_network",
-        kind="object",
-        fields=_Cluster_DatastoreMountConfig_DatastoreNetworkFields,
-    ),
-    "file_share": ubx.FieldSpec(wire_name="file_share"),
-    "nfs_version": ubx.FieldSpec(wire_name="nfs_version"),
-    "servers": ubx.FieldSpec(wire_name="servers"),
-}
-
 _Cluster_NodeTypeConfigsFields = {
     "custom_core_count": ubx.FieldSpec(wire_name="custom_core_count"),
     "node_count": ubx.FieldSpec(wire_name="node_count"),
@@ -134,24 +114,10 @@ _Cluster_StretchedClusterConfigFields = {
 class ClusterConfig:
     # Autoscaling settings define the rules used by VMware Engine to automatically scale-out and scale-in the clusters in a private cloud.
     autoscaling_settings: Any = None
-    # Output only. Creation time of this resource.
-    create_time: Any = None
-    # Output only. Configuration of a mounted datastore.
-    datastore_mount_config: Any = None
-    # Output only. True if the cluster is a management cluster; false otherwise. There can only be one management cluster in a private cloud and it has to be the first one.
-    management: Any = None
-    # Output only. Identifier. The resource name of this cluster. Resource names are schemeless URIs that follow the conventions in https://cloud.google.com/apis/design/resource_names. For example: `projects/my-project/locations/us-central1-a/privateClouds/my-cloud/clusters/my-cluster`
-    name: Any = None
     # Required. The map of cluster node types in this cluster, where the key is canonical identifier of the node type (corresponds to the `NodeType`).
     node_type_configs: Any = None
-    # Output only. State of the resource.
-    state: Any = None
     # Configuration of a stretched cluster.
     stretched_cluster_config: Any = None
-    # Output only. System-generated unique identifier for the resource.
-    uid: Any = None
-    # Output only. Last update time of this resource.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class ClusterAttrs:
@@ -184,26 +150,15 @@ Cluster = ubx.ResourceBinding(
             kind="object",
             fields=_Cluster_AutoscalingSettingsFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
-        "datastore_mount_config": ubx.FieldSpec(
-            wire_name="datastore_mount_config",
-            kind="list",
-            fields=_Cluster_DatastoreMountConfigFields,
-        ),
-        "management": ubx.FieldSpec(wire_name="management"),
-        "name": ubx.FieldSpec(wire_name="name"),
         "node_type_configs": ubx.FieldSpec(
             wire_name="node_type_configs",
             kind="map",
             fields=_Cluster_NodeTypeConfigsFields,
         ),
-        "state": ubx.FieldSpec(wire_name="state"),
         "stretched_cluster_config": ubx.FieldSpec(
             wire_name="stretched_cluster_config",
             kind="object",
             fields=_Cluster_StretchedClusterConfigFields,
         ),
-        "uid": ubx.FieldSpec(wire_name="uid"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

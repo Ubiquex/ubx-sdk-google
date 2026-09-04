@@ -40,18 +40,6 @@ _V1betaBackend_CodebaseFields = {
     "root_directory": ubx.FieldSpec(wire_name="root_directory"),
 }
 
-_V1betaBackend_ManagedResources_RunServiceFields = {
-    "service": ubx.FieldSpec(wire_name="service"),
-}
-
-_V1betaBackend_ManagedResourcesFields = {
-    "run_service": ubx.FieldSpec(
-        wire_name="run_service",
-        kind="object",
-        fields=_V1betaBackend_ManagedResources_RunServiceFields,
-    ),
-}
-
 _V1betaBackend_OverrideEnvFields = {
     "availability": ubx.FieldSpec(wire_name="availability"),
     "origin": ubx.FieldSpec(wire_name="origin"),
@@ -75,28 +63,18 @@ class V1betaBackendConfig:
     automatic_base_image_updates_disabled: Any = None
     # The connection to an external source repository to watch for event-driven updates to the backend.
     codebase: Any = None
-    # Output only. Time at which the backend was created.
-    create_time: Any = None
-    # Output only. Time at which the backend was deleted.
-    delete_time: Any = None
     # Optional. Human-readable name. 63 character limit.
     display_name: Any = None
     # Optional. The environment name of the backend, used to load environment variables from environment specific configuration.
     environment: Any = None
-    # Output only. Server-computed checksum based on other values; may be sent on update or delete to ensure operation is done on expected resource.
-    etag: Any = None
     # Optional. Unstructured key value map that can be used to organize and categorize objects.
     labels: Any = None
-    # Output only. A list of the resources managed by this backend.
-    managed_resources: Any = None
     # Optional. Deprecated: Use `environment` instead.
     mode: Any = None
     # Identifier. The resource name of the backend. Format: `projects/{project}/locations/{locationId}/backends/{backendId}`.
     name: Any = None
     # Optional. Override environment variables for this Backend.
     override_env: Any = None
-    # Output only. A field that, if true, indicates that the system is working to make adjustments to the backend during a LRO.
-    reconciling: Any = None
     # Optional. A field that, if true, indicates that incoming request logs are disabled for this backend. Incoming request logs are enabled by default.
     request_logs_disabled: Any = None
     # Runtime is a string that represents the runtime that is used to build the backend. Users can specify one of the following runtimes: nodejs20, nodejs22, nodejs24, nodejs. Runtime "nodejs" means that nodejs version will be determined at build time. If not specified or specified with a value that is not in the list above, the default runtime `nodejs` will be used and Automatic Base Image Updates will be disabled. See [Firebase documentation](https://firebase.google.com/docs/app-hosting/frameworks-tooling#managing_runtime_versions) for more details.
@@ -105,12 +83,6 @@ class V1betaBackendConfig:
     service_account: Any = None
     # Required. Immutable. Specifies how App Hosting will serve the content for this backend. It will either be contained to a single region (REGIONAL_STRICT) or allowed to use App Hosting's global-replicated serving infrastructure (GLOBAL_ACCESS).
     serving_locality: Any = None
-    # Output only. System-assigned, unique identifier.
-    uid: Any = None
-    # Output only. Time at which the backend was last updated.
-    update_time: Any = None
-    # Output only. The primary URI to communicate with the backend.
-    uri: Any = None
 
 @dataclasses.dataclass
 class V1betaBackendAttrs:
@@ -170,17 +142,9 @@ V1betaBackend = ubx.ResourceBinding(
             kind="object",
             fields=_V1betaBackend_CodebaseFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
-        "delete_time": ubx.FieldSpec(wire_name="delete_time"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "environment": ubx.FieldSpec(wire_name="environment"),
-        "etag": ubx.FieldSpec(wire_name="etag"),
         "labels": ubx.FieldSpec(wire_name="labels"),
-        "managed_resources": ubx.FieldSpec(
-            wire_name="managed_resources",
-            kind="list",
-            fields=_V1betaBackend_ManagedResourcesFields,
-        ),
         "mode": ubx.FieldSpec(wire_name="mode"),
         "name": ubx.FieldSpec(wire_name="name"),
         "override_env": ubx.FieldSpec(
@@ -188,7 +152,6 @@ V1betaBackend = ubx.ResourceBinding(
             kind="list",
             fields=_V1betaBackend_OverrideEnvFields,
         ),
-        "reconciling": ubx.FieldSpec(wire_name="reconciling"),
         "request_logs_disabled": ubx.FieldSpec(wire_name="request_logs_disabled"),
         "runtime": ubx.FieldSpec(
             wire_name="runtime",
@@ -197,8 +160,5 @@ V1betaBackend = ubx.ResourceBinding(
         ),
         "service_account": ubx.FieldSpec(wire_name="service_account"),
         "serving_locality": ubx.FieldSpec(wire_name="serving_locality"),
-        "uid": ubx.FieldSpec(wire_name="uid"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
-        "uri": ubx.FieldSpec(wire_name="uri"),
     },
 )

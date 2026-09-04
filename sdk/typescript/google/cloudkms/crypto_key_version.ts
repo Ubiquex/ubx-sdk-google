@@ -51,38 +51,10 @@ const CryptoKeyVersion_ExternalProtectionLevelOptionsFields: FieldMap = {
 };
 
 export interface CryptoKeyVersionConfig {
-  /** Output only. The CryptoKeyVersionAlgorithm that this CryptoKeyVersion supports. */
-  algorithm?: string | Computed<string>;
   /** Contains an HSM-generated attestation about a key operation. For more information, see [Verifying attestations] (https://cloud.google.com/kms/docs/attest-key). */
   attestation?: CryptoKeyVersion_Attestation | Computed<CryptoKeyVersion_Attestation>;
-  /** Output only. The time at which this CryptoKeyVersion was created. */
-  createTime?: string | Computed<string>;
-  /** Output only. The time this CryptoKeyVersion's key material was destroyed. Only present if state is DESTROYED. */
-  destroyEventTime?: string | Computed<string>;
-  /** Output only. The time this CryptoKeyVersion's key material is scheduled for destruction. Only present if state is DESTROY_SCHEDULED. */
-  destroyTime?: string | Computed<string>;
-  /** Output only. The root cause of the most recent external destruction failure. Only present if state is EXTERNAL_DESTRUCTION_FAILED. */
-  externalDestructionFailureReason?: string | Computed<string>;
   /** ExternalProtectionLevelOptions stores a group of additional fields for configuring a CryptoKeyVersion that are specific to the EXTERNAL protection level and EXTERNAL_VPC protection levels. */
   externalProtectionLevelOptions?: CryptoKeyVersion_ExternalProtectionLevelOptions | Computed<CryptoKeyVersion_ExternalProtectionLevelOptions>;
-  /** Output only. The time this CryptoKeyVersion's key material was generated. */
-  generateTime?: string | Computed<string>;
-  /** Output only. The root cause of the most recent generation failure. Only present if state is GENERATION_FAILED. */
-  generationFailureReason?: string | Computed<string>;
-  /** Output only. Field indicating that the key wrapping key is trusted. This field is only valid for key purpose AES_256_WRAPPING, and protection level HSM_SINGLE_TENANT. */
-  hsmTrusted?: boolean | Computed<boolean>;
-  /** Output only. The root cause of the most recent import failure. Only present if state is IMPORT_FAILED. */
-  importFailureReason?: string | Computed<string>;
-  /** Output only. The name of the ImportJob used in the most recent import of this CryptoKeyVersion. Only present if the underlying key material was imported. */
-  importJob?: string | Computed<string>;
-  /** Output only. The time at which this CryptoKeyVersion's key material was most recently imported. */
-  importTime?: string | Computed<string>;
-  /** Output only. The resource name for this CryptoKeyVersion in the format `projects/* /locations/* /keyRings/* /cryptoKeys/* /cryptoKeyVersions/*`. */
-  name?: string | Computed<string>;
-  /** Output only. The ProtectionLevel describing how crypto operations are performed with this CryptoKeyVersion. */
-  protectionLevel?: string | Computed<string>;
-  /** Output only. Whether or not this key version is eligible for reimport, by being specified as a target in ImportCryptoKeyVersionRequest.crypto_key_version. */
-  reimportEligible?: boolean | Computed<boolean>;
   /** The current state of the CryptoKeyVersion. */
   state?: string | Computed<string>;
   /** Immutable. Field indicating that the key may be wrapped by a trusted key. This field can be set for all key purposes except ENCRYPT_DECRYPT, and is only valid for keys with protection level HSM_SINGLE_TENANT. This field can only be set at creation or import time via CreateCryptoKeyVersion, or ImportCryptoKeyVersion. */
@@ -131,30 +103,16 @@ export interface CryptoKeyVersionAttrs {
 export const CryptoKeyVersion: ResourceBinding<CryptoKeyVersionConfig, CryptoKeyVersionAttrs> = {
   wireType: "google_cloudkms_crypto_key_version",
   fields: {
-    algorithm: "algorithm",
     attestation: {
       wireName: "attestation",
       kind: "object",
       fields: CryptoKeyVersion_AttestationFields,
     },
-    createTime: "create_time",
-    destroyEventTime: "destroy_event_time",
-    destroyTime: "destroy_time",
-    externalDestructionFailureReason: "external_destruction_failure_reason",
     externalProtectionLevelOptions: {
       wireName: "external_protection_level_options",
       kind: "object",
       fields: CryptoKeyVersion_ExternalProtectionLevelOptionsFields,
     },
-    generateTime: "generate_time",
-    generationFailureReason: "generation_failure_reason",
-    hsmTrusted: "hsm_trusted",
-    importFailureReason: "import_failure_reason",
-    importJob: "import_job",
-    importTime: "import_time",
-    name: "name",
-    protectionLevel: "protection_level",
-    reimportEligible: "reimport_eligible",
     state: "state",
     trustedWrappingEnabled: "trusted_wrapping_enabled",
   },

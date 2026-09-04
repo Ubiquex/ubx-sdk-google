@@ -14,8 +14,6 @@ const Parameter_PolicyMemberFields: FieldMap = {
 };
 
 export interface ParameterConfig {
-  /** Output only. [Output only] Create time stamp */
-  createTime?: string | Computed<string>;
   /** Optional. Specifies the format of a Parameter. */
   format?: string | Computed<string>;
   /** Optional. Customer managed encryption key (CMEK) to use for encrypting the Parameter Versions. If not set, the default Google-managed encryption key will be used. Cloud KMS CryptoKeys must reside in the same location as the Parameter. The expected format is `projects/* /locations/* /keyRings/* /cryptoKeys/*`. */
@@ -26,8 +24,6 @@ export interface ParameterConfig {
   name?: string | Computed<string>;
   /** Output-only policy member strings of a Google Cloud resource's built-in identity. */
   policyMember?: Parameter_PolicyMember | Computed<Parameter_PolicyMember>;
-  /** Output only. [Output only] Update time stamp */
-  updateTime?: string | Computed<string>;
 }
 
 export interface ParameterAttrs {
@@ -50,7 +46,6 @@ export interface ParameterAttrs {
 export const Parameter: ResourceBinding<ParameterConfig, ParameterAttrs> = {
   wireType: "google_parametermanager_parameter",
   fields: {
-    createTime: "create_time",
     format: "format",
     kmsKey: "kms_key",
     labels: "labels",
@@ -60,6 +55,5 @@ export const Parameter: ResourceBinding<ParameterConfig, ParameterAttrs> = {
       kind: "object",
       fields: Parameter_PolicyMemberFields,
     },
-    updateTime: "update_time",
   },
 };

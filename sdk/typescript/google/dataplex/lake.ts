@@ -46,8 +46,6 @@ const Lake_MetastoreStatusFields: FieldMap = {
 export interface LakeConfig {
   /** Aggregated status of the underlying assets of a lake or zone. */
   assetStatus?: Lake_AssetStatus | Computed<Lake_AssetStatus>;
-  /** Output only. The time when the lake was created. */
-  createTime?: string | Computed<string>;
   /** Optional. Description of the lake. */
   description?: string | Computed<string>;
   /** Optional. User friendly display name. */
@@ -58,16 +56,6 @@ export interface LakeConfig {
   metastore?: Lake_Metastore | Computed<Lake_Metastore>;
   /** Status of Lake and Dataproc Metastore service instance association. */
   metastoreStatus?: Lake_MetastoreStatus | Computed<Lake_MetastoreStatus>;
-  /** Output only. The relative resource name of the lake, of the form: projects/{project_number}/locations/{location_id}/lakes/{lake_id}. */
-  name?: string | Computed<string>;
-  /** Output only. Service account associated with this lake. This service account must be authorized to access or operate on resources managed by the lake. */
-  serviceAccount?: string | Computed<string>;
-  /** Output only. Current state of the lake. */
-  state?: string | Computed<string>;
-  /** Output only. System generated globally unique ID for the lake. This ID will be different if the lake is deleted and re-created with the same name. */
-  uid?: string | Computed<string>;
-  /** Output only. The time when the lake was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface LakeAttrs {
@@ -105,7 +93,6 @@ export const Lake: ResourceBinding<LakeConfig, LakeAttrs> = {
       kind: "object",
       fields: Lake_AssetStatusFields,
     },
-    createTime: "create_time",
     description: "description",
     displayName: "display_name",
     labels: "labels",
@@ -119,10 +106,5 @@ export const Lake: ResourceBinding<LakeConfig, LakeAttrs> = {
       kind: "object",
       fields: Lake_MetastoreStatusFields,
     },
-    name: "name",
-    serviceAccount: "service_account",
-    state: "state",
-    uid: "uid",
-    updateTime: "update_time",
   },
 };

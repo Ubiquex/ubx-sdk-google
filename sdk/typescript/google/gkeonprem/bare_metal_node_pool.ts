@@ -164,10 +164,6 @@ const BareMetalNodePool_UpgradePolicyFields: FieldMap = {
 export interface BareMetalNodePoolConfig {
   /** Annotations on the bare metal node pool. This field has the same restrictions as Kubernetes annotations. The total size of all keys and values combined is limited to 256k. Key can have 2 segments: prefix (optional) and name (required), separated by a slash (/). Prefix must be a DNS subdomain. Name must be 63 characters or less, begin and end with alphanumerics, with dashes (-), underscores (_), dots (.), and alphanumerics between. */
   annotations?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. The time at which this bare metal node pool was created. */
-  createTime?: string | Computed<string>;
-  /** Output only. The time at which this bare metal node pool was deleted. If the resource is not deleted, this must be empty */
-  deleteTime?: string | Computed<string>;
   /** The display name for the bare metal node pool. */
   displayName?: string | Computed<string>;
   /** This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding. Allows clients to perform consistent read-modify-writes through optimistic concurrency control. */
@@ -176,16 +172,8 @@ export interface BareMetalNodePoolConfig {
   name?: string | Computed<string>;
   /** BareMetalNodePoolConfig describes the configuration of all nodes within a given bare metal node pool. */
   nodePoolConfig?: BareMetalNodePool_NodePoolConfig | Computed<BareMetalNodePool_NodePoolConfig>;
-  /** Output only. If set, there are currently changes in flight to the bare metal node pool. */
-  reconciling?: boolean | Computed<boolean>;
-  /** Output only. The current state of the bare metal node pool. */
-  state?: string | Computed<string>;
   /** ResourceStatus describes why a cluster or node pool has a certain status. (e.g., ERROR or DEGRADED). */
   status?: BareMetalNodePool_Status | Computed<BareMetalNodePool_Status>;
-  /** Output only. The unique identifier of the bare metal node pool. */
-  uid?: string | Computed<string>;
-  /** Output only. The time at which this bare metal node pool was last updated. */
-  updateTime?: string | Computed<string>;
   /** BareMetalNodePoolUpgradePolicy defines the node pool upgrade policy. */
   upgradePolicy?: BareMetalNodePool_UpgradePolicy | Computed<BareMetalNodePool_UpgradePolicy>;
 }
@@ -223,8 +211,6 @@ export const BareMetalNodePool: ResourceBinding<BareMetalNodePoolConfig, BareMet
   wireType: "google_gkeonprem_bare_metal_node_pool",
   fields: {
     annotations: "annotations",
-    createTime: "create_time",
-    deleteTime: "delete_time",
     displayName: "display_name",
     etag: "etag",
     name: "name",
@@ -233,15 +219,11 @@ export const BareMetalNodePool: ResourceBinding<BareMetalNodePoolConfig, BareMet
       kind: "object",
       fields: BareMetalNodePool_NodePoolConfigFields,
     },
-    reconciling: "reconciling",
-    state: "state",
     status: {
       wireName: "status",
       kind: "object",
       fields: BareMetalNodePool_StatusFields,
     },
-    uid: "uid",
-    updateTime: "update_time",
     upgradePolicy: {
       wireName: "upgrade_policy",
       kind: "object",

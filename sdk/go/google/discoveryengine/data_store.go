@@ -196,180 +196,180 @@ type DataStore_WorkspaceConfig struct {
 }
 
 var DataStore_AdvancedSiteSearchConfigFields = ubx.FieldMap{
-		"DisableAutomaticRefresh": ubx.FieldSpec{WireName: "disable_automatic_refresh"},
-		"DisableInitialIndex": ubx.FieldSpec{WireName: "disable_initial_index"},
-	}
+	"DisableAutomaticRefresh": ubx.FieldSpec{WireName: "disable_automatic_refresh"},
+	"DisableInitialIndex":     ubx.FieldSpec{WireName: "disable_initial_index"},
+}
 
 var DataStore_BillingEstimationFields = ubx.FieldMap{
-		"StructuredDataSize": ubx.FieldSpec{WireName: "structured_data_size"},
-		"StructuredDataUpdateTime": ubx.FieldSpec{WireName: "structured_data_update_time"},
-		"UnstructuredDataSize": ubx.FieldSpec{WireName: "unstructured_data_size"},
-		"UnstructuredDataUpdateTime": ubx.FieldSpec{WireName: "unstructured_data_update_time"},
-		"WebsiteDataSize": ubx.FieldSpec{WireName: "website_data_size"},
-		"WebsiteDataUpdateTime": ubx.FieldSpec{WireName: "website_data_update_time"},
-	}
+	"StructuredDataSize":         ubx.FieldSpec{WireName: "structured_data_size"},
+	"StructuredDataUpdateTime":   ubx.FieldSpec{WireName: "structured_data_update_time"},
+	"UnstructuredDataSize":       ubx.FieldSpec{WireName: "unstructured_data_size"},
+	"UnstructuredDataUpdateTime": ubx.FieldSpec{WireName: "unstructured_data_update_time"},
+	"WebsiteDataSize":            ubx.FieldSpec{WireName: "website_data_size"},
+	"WebsiteDataUpdateTime":      ubx.FieldSpec{WireName: "website_data_update_time"},
+}
 
 var DataStore_CmekConfig_SingleRegionKeysFields = ubx.FieldMap{
-		"KmsKey": ubx.FieldSpec{WireName: "kms_key"},
-	}
+	"KmsKey": ubx.FieldSpec{WireName: "kms_key"},
+}
 
 var DataStore_CmekConfigFields = ubx.FieldMap{
-		"IsDefault": ubx.FieldSpec{WireName: "is_default"},
-		"KmsKey": ubx.FieldSpec{WireName: "kms_key"},
-		"KmsKeyVersion": ubx.FieldSpec{WireName: "kms_key_version"},
-		"LastRotationTimestampMicros": ubx.FieldSpec{WireName: "last_rotation_timestamp_micros"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"NotebooklmState": ubx.FieldSpec{WireName: "notebooklm_state"},
-		"SingleRegionKeys": ubx.FieldSpec{
-			WireName: "single_region_keys",
-			Kind: "list",
-			Fields: DataStore_CmekConfig_SingleRegionKeysFields,
-		},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"IsDefault":                   ubx.FieldSpec{WireName: "is_default"},
+	"KmsKey":                      ubx.FieldSpec{WireName: "kms_key"},
+	"KmsKeyVersion":               ubx.FieldSpec{WireName: "kms_key_version"},
+	"LastRotationTimestampMicros": ubx.FieldSpec{WireName: "last_rotation_timestamp_micros"},
+	"Name":                        ubx.FieldSpec{WireName: "name"},
+	"NotebooklmState":             ubx.FieldSpec{WireName: "notebooklm_state"},
+	"SingleRegionKeys": ubx.FieldSpec{
+		WireName: "single_region_keys",
+		Kind:     "list",
+		Fields:   DataStore_CmekConfig_SingleRegionKeysFields,
+	},
+	"State": ubx.FieldSpec{WireName: "state"},
+}
 
 var DataStore_DocumentProcessingConfig_ChunkingConfig_LayoutBasedChunkingConfigFields = ubx.FieldMap{
-		"ChunkSize": ubx.FieldSpec{WireName: "chunk_size"},
-		"IncludeAncestorHeadings": ubx.FieldSpec{WireName: "include_ancestor_headings"},
-	}
+	"ChunkSize":               ubx.FieldSpec{WireName: "chunk_size"},
+	"IncludeAncestorHeadings": ubx.FieldSpec{WireName: "include_ancestor_headings"},
+}
 
 var DataStore_DocumentProcessingConfig_ChunkingConfigFields = ubx.FieldMap{
-		"LayoutBasedChunkingConfig": ubx.FieldSpec{
-			WireName: "layout_based_chunking_config",
-			Kind: "object",
-			Fields: DataStore_DocumentProcessingConfig_ChunkingConfig_LayoutBasedChunkingConfigFields,
-		},
-	}
+	"LayoutBasedChunkingConfig": ubx.FieldSpec{
+		WireName: "layout_based_chunking_config",
+		Kind:     "object",
+		Fields:   DataStore_DocumentProcessingConfig_ChunkingConfig_LayoutBasedChunkingConfigFields,
+	},
+}
 
 var DataStore_DocumentProcessingConfig_DefaultParsingConfig_LayoutParsingConfigFields = ubx.FieldMap{
-		"EnableGetProcessedDocument": ubx.FieldSpec{WireName: "enable_get_processed_document"},
-		"EnableImageAnnotation": ubx.FieldSpec{WireName: "enable_image_annotation"},
-		"EnableLlmLayoutParsing": ubx.FieldSpec{WireName: "enable_llm_layout_parsing"},
-		"EnableTableAnnotation": ubx.FieldSpec{WireName: "enable_table_annotation"},
-		"ExcludeHtmlClasses": ubx.FieldSpec{WireName: "exclude_html_classes"},
-		"ExcludeHtmlElements": ubx.FieldSpec{WireName: "exclude_html_elements"},
-		"ExcludeHtmlIds": ubx.FieldSpec{WireName: "exclude_html_ids"},
-		"StructuredContentTypes": ubx.FieldSpec{WireName: "structured_content_types"},
-	}
+	"EnableGetProcessedDocument": ubx.FieldSpec{WireName: "enable_get_processed_document"},
+	"EnableImageAnnotation":      ubx.FieldSpec{WireName: "enable_image_annotation"},
+	"EnableLlmLayoutParsing":     ubx.FieldSpec{WireName: "enable_llm_layout_parsing"},
+	"EnableTableAnnotation":      ubx.FieldSpec{WireName: "enable_table_annotation"},
+	"ExcludeHtmlClasses":         ubx.FieldSpec{WireName: "exclude_html_classes"},
+	"ExcludeHtmlElements":        ubx.FieldSpec{WireName: "exclude_html_elements"},
+	"ExcludeHtmlIds":             ubx.FieldSpec{WireName: "exclude_html_ids"},
+	"StructuredContentTypes":     ubx.FieldSpec{WireName: "structured_content_types"},
+}
 
 var DataStore_DocumentProcessingConfig_DefaultParsingConfig_OcrParsingConfigFields = ubx.FieldMap{
-		"EnhancedDocumentElements": ubx.FieldSpec{WireName: "enhanced_document_elements"},
-		"UseNativeText": ubx.FieldSpec{WireName: "use_native_text"},
-	}
+	"EnhancedDocumentElements": ubx.FieldSpec{WireName: "enhanced_document_elements"},
+	"UseNativeText":            ubx.FieldSpec{WireName: "use_native_text"},
+}
 
 var DataStore_DocumentProcessingConfig_DefaultParsingConfigFields = ubx.FieldMap{
-		"DigitalParsingConfig": ubx.FieldSpec{WireName: "digital_parsing_config"},
-		"LayoutParsingConfig": ubx.FieldSpec{
-			WireName: "layout_parsing_config",
-			Kind: "object",
-			Fields: DataStore_DocumentProcessingConfig_DefaultParsingConfig_LayoutParsingConfigFields,
-		},
-		"OcrParsingConfig": ubx.FieldSpec{
-			WireName: "ocr_parsing_config",
-			Kind: "object",
-			Fields: DataStore_DocumentProcessingConfig_DefaultParsingConfig_OcrParsingConfigFields,
-		},
-	}
+	"DigitalParsingConfig": ubx.FieldSpec{WireName: "digital_parsing_config"},
+	"LayoutParsingConfig": ubx.FieldSpec{
+		WireName: "layout_parsing_config",
+		Kind:     "object",
+		Fields:   DataStore_DocumentProcessingConfig_DefaultParsingConfig_LayoutParsingConfigFields,
+	},
+	"OcrParsingConfig": ubx.FieldSpec{
+		WireName: "ocr_parsing_config",
+		Kind:     "object",
+		Fields:   DataStore_DocumentProcessingConfig_DefaultParsingConfig_OcrParsingConfigFields,
+	},
+}
 
 var DataStore_DocumentProcessingConfigFields = ubx.FieldMap{
-		"ChunkingConfig": ubx.FieldSpec{
-			WireName: "chunking_config",
-			Kind: "object",
-			Fields: DataStore_DocumentProcessingConfig_ChunkingConfigFields,
-		},
-		"DefaultParsingConfig": ubx.FieldSpec{
-			WireName: "default_parsing_config",
-			Kind: "object",
-			Fields: DataStore_DocumentProcessingConfig_DefaultParsingConfigFields,
-		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"ParsingConfigOverrides": ubx.FieldSpec{
-			WireName: "parsing_config_overrides",
-			Kind: "map",
-			Fields: DataStore_DocumentProcessingConfig_DefaultParsingConfigFields,
-		},
-	}
+	"ChunkingConfig": ubx.FieldSpec{
+		WireName: "chunking_config",
+		Kind:     "object",
+		Fields:   DataStore_DocumentProcessingConfig_ChunkingConfigFields,
+	},
+	"DefaultParsingConfig": ubx.FieldSpec{
+		WireName: "default_parsing_config",
+		Kind:     "object",
+		Fields:   DataStore_DocumentProcessingConfig_DefaultParsingConfigFields,
+	},
+	"Name": ubx.FieldSpec{WireName: "name"},
+	"ParsingConfigOverrides": ubx.FieldSpec{
+		WireName: "parsing_config_overrides",
+		Kind:     "map",
+		Fields:   DataStore_DocumentProcessingConfig_DefaultParsingConfigFields,
+	},
+}
 
 var DataStore_FederatedSearchConfig_AlloyDbConfig_AlloydbAiNlConfigFields = ubx.FieldMap{
-		"NlConfigId": ubx.FieldSpec{WireName: "nl_config_id"},
-	}
+	"NlConfigId": ubx.FieldSpec{WireName: "nl_config_id"},
+}
 
 var DataStore_FederatedSearchConfig_AlloyDbConfig_AlloydbConnectionConfigFields = ubx.FieldMap{
-		"AuthMode": ubx.FieldSpec{WireName: "auth_mode"},
-		"Database": ubx.FieldSpec{WireName: "database"},
-		"EnablePsvs": ubx.FieldSpec{WireName: "enable_psvs"},
-		"Instance": ubx.FieldSpec{WireName: "instance"},
-		"Password": ubx.FieldSpec{WireName: "password"},
-		"User": ubx.FieldSpec{WireName: "user"},
-	}
+	"AuthMode":   ubx.FieldSpec{WireName: "auth_mode"},
+	"Database":   ubx.FieldSpec{WireName: "database"},
+	"EnablePsvs": ubx.FieldSpec{WireName: "enable_psvs"},
+	"Instance":   ubx.FieldSpec{WireName: "instance"},
+	"Password":   ubx.FieldSpec{WireName: "password"},
+	"User":       ubx.FieldSpec{WireName: "user"},
+}
 
 var DataStore_FederatedSearchConfig_AlloyDbConfigFields = ubx.FieldMap{
-		"AlloydbAiNlConfig": ubx.FieldSpec{
-			WireName: "alloydb_ai_nl_config",
-			Kind: "object",
-			Fields: DataStore_FederatedSearchConfig_AlloyDbConfig_AlloydbAiNlConfigFields,
-		},
-		"AlloydbConnectionConfig": ubx.FieldSpec{
-			WireName: "alloydb_connection_config",
-			Kind: "object",
-			Fields: DataStore_FederatedSearchConfig_AlloyDbConfig_AlloydbConnectionConfigFields,
-		},
-		"ReturnedFields": ubx.FieldSpec{WireName: "returned_fields"},
-	}
+	"AlloydbAiNlConfig": ubx.FieldSpec{
+		WireName: "alloydb_ai_nl_config",
+		Kind:     "object",
+		Fields:   DataStore_FederatedSearchConfig_AlloyDbConfig_AlloydbAiNlConfigFields,
+	},
+	"AlloydbConnectionConfig": ubx.FieldSpec{
+		WireName: "alloydb_connection_config",
+		Kind:     "object",
+		Fields:   DataStore_FederatedSearchConfig_AlloyDbConfig_AlloydbConnectionConfigFields,
+	},
+	"ReturnedFields": ubx.FieldSpec{WireName: "returned_fields"},
+}
 
 var DataStore_FederatedSearchConfig_NotebooklmConfigFields = ubx.FieldMap{
-		"SearchConfig": ubx.FieldSpec{WireName: "search_config"},
-	}
+	"SearchConfig": ubx.FieldSpec{WireName: "search_config"},
+}
 
 var DataStore_FederatedSearchConfig_ThirdPartyOauthConfigFields = ubx.FieldMap{
-		"AppName": ubx.FieldSpec{WireName: "app_name"},
-		"InstanceName": ubx.FieldSpec{WireName: "instance_name"},
-	}
+	"AppName":      ubx.FieldSpec{WireName: "app_name"},
+	"InstanceName": ubx.FieldSpec{WireName: "instance_name"},
+}
 
 var DataStore_FederatedSearchConfigFields = ubx.FieldMap{
-		"AlloyDbConfig": ubx.FieldSpec{
-			WireName: "alloy_db_config",
-			Kind: "object",
-			Fields: DataStore_FederatedSearchConfig_AlloyDbConfigFields,
-		},
-		"NotebooklmConfig": ubx.FieldSpec{
-			WireName: "notebooklm_config",
-			Kind: "object",
-			Fields: DataStore_FederatedSearchConfig_NotebooklmConfigFields,
-		},
-		"ThirdPartyOauthConfig": ubx.FieldSpec{
-			WireName: "third_party_oauth_config",
-			Kind: "object",
-			Fields: DataStore_FederatedSearchConfig_ThirdPartyOauthConfigFields,
-		},
-	}
+	"AlloyDbConfig": ubx.FieldSpec{
+		WireName: "alloy_db_config",
+		Kind:     "object",
+		Fields:   DataStore_FederatedSearchConfig_AlloyDbConfigFields,
+	},
+	"NotebooklmConfig": ubx.FieldSpec{
+		WireName: "notebooklm_config",
+		Kind:     "object",
+		Fields:   DataStore_FederatedSearchConfig_NotebooklmConfigFields,
+	},
+	"ThirdPartyOauthConfig": ubx.FieldSpec{
+		WireName: "third_party_oauth_config",
+		Kind:     "object",
+		Fields:   DataStore_FederatedSearchConfig_ThirdPartyOauthConfigFields,
+	},
+}
 
 var DataStore_HealthcareFhirConfigFields = ubx.FieldMap{
-		"EnableConfigurableSchema": ubx.FieldSpec{WireName: "enable_configurable_schema"},
-		"EnableStaticIndexingForBatchIngestion": ubx.FieldSpec{WireName: "enable_static_indexing_for_batch_ingestion"},
-		"InitialFilterGroups": ubx.FieldSpec{WireName: "initial_filter_groups"},
-	}
+	"EnableConfigurableSchema":              ubx.FieldSpec{WireName: "enable_configurable_schema"},
+	"EnableStaticIndexingForBatchIngestion": ubx.FieldSpec{WireName: "enable_static_indexing_for_batch_ingestion"},
+	"InitialFilterGroups":                   ubx.FieldSpec{WireName: "initial_filter_groups"},
+}
 
 var DataStore_NaturalLanguageQueryUnderstandingConfigFields = ubx.FieldMap{
-		"Mode": ubx.FieldSpec{WireName: "mode"},
-	}
+	"Mode": ubx.FieldSpec{WireName: "mode"},
+}
 
 var DataStore_ServingConfigDataStoreFields = ubx.FieldMap{
-		"DisabledForServing": ubx.FieldSpec{WireName: "disabled_for_serving"},
-	}
+	"DisabledForServing": ubx.FieldSpec{WireName: "disabled_for_serving"},
+}
 
 var DataStore_StartingSchemaFields = ubx.FieldMap{
-		"JsonSchema": ubx.FieldSpec{WireName: "json_schema"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"StructSchema": ubx.FieldSpec{WireName: "struct_schema"},
-	}
+	"JsonSchema":   ubx.FieldSpec{WireName: "json_schema"},
+	"Name":         ubx.FieldSpec{WireName: "name"},
+	"StructSchema": ubx.FieldSpec{WireName: "struct_schema"},
+}
 
 var DataStore_WorkspaceConfigFields = ubx.FieldMap{
-		"DasherCustomerId": ubx.FieldSpec{WireName: "dasher_customer_id"},
-		"SuperAdminEmailAddress": ubx.FieldSpec{WireName: "super_admin_email_address"},
-		"SuperAdminServiceAccount": ubx.FieldSpec{WireName: "super_admin_service_account"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"DasherCustomerId":         ubx.FieldSpec{WireName: "dasher_customer_id"},
+	"SuperAdminEmailAddress":   ubx.FieldSpec{WireName: "super_admin_email_address"},
+	"SuperAdminServiceAccount": ubx.FieldSpec{WireName: "super_admin_service_account"},
+	"Type":                     ubx.FieldSpec{WireName: "type"},
+}
 
 type DataStoreConfig struct {
 	// Immutable. Whether data in the DataStore has ACL information. If set to `true`, the source data must have ACL. ACL will be ingested when data is ingested by DocumentService.ImportDocuments methods. When ACL is enabled for the DataStore, Document can't be accessed by calling DocumentService.GetDocument or DocumentService.ListDocuments. Currently ACL is only supported in `GENERIC` industry vertical with non-`PUBLIC_WEBSITE` content config.
@@ -382,14 +382,8 @@ type DataStoreConfig struct {
 	CmekConfig any
 	// Optional. Configuration for configurable billing approach. See
 	ConfigurableBillingApproach any
-	// Output only. The timestamp when configurable_billing_approach was last updated.
-	ConfigurableBillingApproachUpdateTime any
 	// Immutable. The content config of the data store. If this field is unset, the server behavior defaults to ContentConfig.NO_CONTENT.
 	ContentConfig any
-	// Output only. Timestamp the DataStore was created at.
-	CreateTime any
-	// Output only. The id of the default Schema associated to this data store.
-	DefaultSchemaId any
 	// Required. The data store display name. This field must be a UTF-8 encoded string with a length limit of 128 characters. Otherwise, an INVALID_ARGUMENT error is returned.
 	DisplayName any
 	// A singleton resource of DataStore. If it's empty when DataStore is created and DataStore is set to DataStore.ContentConfig.CONTENT_REQUIRED, the default parser will default to digital parser.
@@ -475,65 +469,62 @@ var DataStore = ubx.ResourceBinding{
 		"AclEnabled": ubx.FieldSpec{WireName: "acl_enabled"},
 		"AdvancedSiteSearchConfig": ubx.FieldSpec{
 			WireName: "advanced_site_search_config",
-			Kind: "object",
-			Fields: DataStore_AdvancedSiteSearchConfigFields,
+			Kind:     "object",
+			Fields:   DataStore_AdvancedSiteSearchConfigFields,
 		},
 		"BillingEstimation": ubx.FieldSpec{
 			WireName: "billing_estimation",
-			Kind: "object",
-			Fields: DataStore_BillingEstimationFields,
+			Kind:     "object",
+			Fields:   DataStore_BillingEstimationFields,
 		},
 		"CmekConfig": ubx.FieldSpec{
 			WireName: "cmek_config",
-			Kind: "object",
-			Fields: DataStore_CmekConfigFields,
+			Kind:     "object",
+			Fields:   DataStore_CmekConfigFields,
 		},
 		"ConfigurableBillingApproach": ubx.FieldSpec{WireName: "configurable_billing_approach"},
-		"ConfigurableBillingApproachUpdateTime": ubx.FieldSpec{WireName: "configurable_billing_approach_update_time"},
-		"ContentConfig": ubx.FieldSpec{WireName: "content_config"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DefaultSchemaId": ubx.FieldSpec{WireName: "default_schema_id"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"ContentConfig":               ubx.FieldSpec{WireName: "content_config"},
+		"DisplayName":                 ubx.FieldSpec{WireName: "display_name"},
 		"DocumentProcessingConfig": ubx.FieldSpec{
 			WireName: "document_processing_config",
-			Kind: "object",
-			Fields: DataStore_DocumentProcessingConfigFields,
+			Kind:     "object",
+			Fields:   DataStore_DocumentProcessingConfigFields,
 		},
 		"FederatedSearchConfig": ubx.FieldSpec{
 			WireName: "federated_search_config",
-			Kind: "object",
-			Fields: DataStore_FederatedSearchConfigFields,
+			Kind:     "object",
+			Fields:   DataStore_FederatedSearchConfigFields,
 		},
 		"HealthcareFhirConfig": ubx.FieldSpec{
 			WireName: "healthcare_fhir_config",
-			Kind: "object",
-			Fields: DataStore_HealthcareFhirConfigFields,
+			Kind:     "object",
+			Fields:   DataStore_HealthcareFhirConfigFields,
 		},
-		"IdentityMappingStore": ubx.FieldSpec{WireName: "identity_mapping_store"},
-		"IndustryVertical": ubx.FieldSpec{WireName: "industry_vertical"},
+		"IdentityMappingStore":  ubx.FieldSpec{WireName: "identity_mapping_store"},
+		"IndustryVertical":      ubx.FieldSpec{WireName: "industry_vertical"},
 		"IsInfobotFaqDataStore": ubx.FieldSpec{WireName: "is_infobot_faq_data_store"},
-		"KmsKeyName": ubx.FieldSpec{WireName: "kms_key_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"KmsKeyName":            ubx.FieldSpec{WireName: "kms_key_name"},
+		"Name":                  ubx.FieldSpec{WireName: "name"},
 		"NaturalLanguageQueryUnderstandingConfig": ubx.FieldSpec{
 			WireName: "natural_language_query_understanding_config",
-			Kind: "object",
-			Fields: DataStore_NaturalLanguageQueryUnderstandingConfigFields,
+			Kind:     "object",
+			Fields:   DataStore_NaturalLanguageQueryUnderstandingConfigFields,
 		},
 		"ServingConfigDataStore": ubx.FieldSpec{
 			WireName: "serving_config_data_store",
-			Kind: "object",
-			Fields: DataStore_ServingConfigDataStoreFields,
+			Kind:     "object",
+			Fields:   DataStore_ServingConfigDataStoreFields,
 		},
 		"SolutionTypes": ubx.FieldSpec{WireName: "solution_types"},
 		"StartingSchema": ubx.FieldSpec{
 			WireName: "starting_schema",
-			Kind: "object",
-			Fields: DataStore_StartingSchemaFields,
+			Kind:     "object",
+			Fields:   DataStore_StartingSchemaFields,
 		},
 		"WorkspaceConfig": ubx.FieldSpec{
 			WireName: "workspace_config",
-			Kind: "object",
-			Fields: DataStore_WorkspaceConfigFields,
+			Kind:     "object",
+			Fields:   DataStore_WorkspaceConfigFields,
 		},
 	},
 }

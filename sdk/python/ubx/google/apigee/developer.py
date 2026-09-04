@@ -28,22 +28,14 @@ class DeveloperConfig:
     attributes: Any = None
     # List of companies associated with the developer.
     companies: Any = None
-    # Output only. Time at which the developer was created in milliseconds since epoch.
-    created_at: Any = None
     # ID of the developer. **Note**: IDs are generated internally by Apigee and are not guaranteed to stay the same over time.
     developer_id: Any = None
     # Required. Email address of the developer. This value is used to uniquely identify the developer in Apigee hybrid. Note that the email address has to be in lowercase only.
     email: Any = None
     # Required. First name of the developer.
     first_name: Any = None
-    # Output only. Time at which the developer was last modified in milliseconds since epoch.
-    last_modified_at: Any = None
     # Required. Last name of the developer.
     last_name: Any = None
-    # Output only. Name of the Apigee organization in which the developer resides.
-    organization_name: Any = None
-    # Output only. Status of the developer. Valid values are `active` and `inactive`.
-    status: Any = None
     # Required. User name of the developer. Not used by Apigee hybrid.
     user_name: Any = None
 
@@ -90,14 +82,10 @@ Developer = ubx.ResourceBinding(
             fields=_Developer_AttributesFields,
         ),
         "companies": ubx.FieldSpec(wire_name="companies"),
-        "created_at": ubx.FieldSpec(wire_name="created_at"),
         "developer_id": ubx.FieldSpec(wire_name="developer_id"),
         "email": ubx.FieldSpec(wire_name="email"),
         "first_name": ubx.FieldSpec(wire_name="first_name"),
-        "last_modified_at": ubx.FieldSpec(wire_name="last_modified_at"),
         "last_name": ubx.FieldSpec(wire_name="last_name"),
-        "organization_name": ubx.FieldSpec(wire_name="organization_name"),
-        "status": ubx.FieldSpec(wire_name="status"),
         "user_name": ubx.FieldSpec(wire_name="user_name"),
     },
 )

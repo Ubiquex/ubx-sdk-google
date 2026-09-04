@@ -31,32 +31,15 @@ const Curation_EndpointFields: FieldMap = {
   },
 };
 
-const Curation_PluginInstanceActionsFields: FieldMap = {
-  actionId: "action_id",
-  pluginInstance: "plugin_instance",
-};
-
 export interface CurationConfig {
-  /** Output only. The time at which the curation was created. */
-  createTime?: string | Computed<string>;
   /** Optional. The description of the curation. */
   description?: string | Computed<string>;
   /** Required. The display name of the curation. */
   displayName?: string | Computed<string>;
   /** The endpoint to be triggered for curation. The endpoint will be invoked with a request payload containing ApiMetadata. Response should contain curated data in the form of ApiMetadata. */
   endpoint?: Curation_Endpoint | Computed<Curation_Endpoint>;
-  /** Output only. The error code of the last execution of the curation. The error code is populated only when the last execution state is failed. */
-  lastExecutionErrorCode?: string | Computed<string>;
-  /** Output only. Error message describing the failure, if any, during the last execution of the curation. */
-  lastExecutionErrorMessage?: string | Computed<string>;
-  /** Output only. The last execution state of the curation. */
-  lastExecutionState?: string | Computed<string>;
   /** Identifier. The name of the curation. Format: `projects/{project}/locations/{location}/curations/{curation}` */
   name?: string | Computed<string>;
-  /** Output only. The plugin instances and associated actions that are using the curation. Note: A particular curation could be used by multiple plugin instances or multiple actions in a plugin instance. */
-  pluginInstanceActions?: Curation_PluginInstanceActions[] | Computed<Curation_PluginInstanceActions[]>;
-  /** Output only. The time at which the curation was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface CurationAttrs {
@@ -85,7 +68,6 @@ export interface CurationAttrs {
 export const Curation: ResourceBinding<CurationConfig, CurationAttrs> = {
   wireType: "google_apihub_curation",
   fields: {
-    createTime: "create_time",
     description: "description",
     displayName: "display_name",
     endpoint: {
@@ -93,15 +75,6 @@ export const Curation: ResourceBinding<CurationConfig, CurationAttrs> = {
       kind: "object",
       fields: Curation_EndpointFields,
     },
-    lastExecutionErrorCode: "last_execution_error_code",
-    lastExecutionErrorMessage: "last_execution_error_message",
-    lastExecutionState: "last_execution_state",
     name: "name",
-    pluginInstanceActions: {
-      wireName: "plugin_instance_actions",
-      kind: "list",
-      fields: Curation_PluginInstanceActionsFields,
-    },
-    updateTime: "update_time",
   },
 };

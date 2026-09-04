@@ -616,14 +616,10 @@ _Job_TaskGroupsFields = {
 class JobConfig:
     # A Job's resource allocation policy describes when, where, and how compute resources should be allocated for the Job.
     allocation_policy: Any = None
-    # Output only. When the Job was created.
-    create_time: Any = None
     # Custom labels to apply to the job and any Cloud Logging [LogEntry](https://cloud.google.com/logging/docs/reference/v2/rest/v2/LogEntry) that it generates. Use labels to group and describe the resources they are applied to. Batch automatically applies predefined labels and supports multiple `labels` fields for each job, which each let you apply custom labels to various resources. Label names that start with "goog-" or "google-" are reserved for predefined labels. For more information about labels with Batch, see [Organize resources using labels](https://cloud.google.com/batch/docs/organize-resources-using-labels).
     labels: Any = None
     # LogsPolicy describes if and how a job's logs are preserved. Logs include information that is automatically written by the Batch service agent and any information that you configured the job's runnables to write to the `stdout` or `stderr` streams.
     logs_policy: Any = None
-    # Output only. Job name. For example: "projects/123456/locations/us-central1/jobs/job01".
-    name: Any = None
     # Notification configurations.
     notifications: Any = None
     # Priority of the Job. The valid value range is [0, 100). Default value is 0. Higher value indicates higher priority. A job with higher priority value is more likely to run earlier if all other requirements are satisfied.
@@ -632,10 +628,6 @@ class JobConfig:
     status: Any = None
     # Required. TaskGroups in the Job. Only one TaskGroup is supported now.
     task_groups: Any = None
-    # Output only. A system generated unique ID for the Job.
-    uid: Any = None
-    # Output only. The last time the Job was updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class JobAttrs:
@@ -670,14 +662,12 @@ Job = ubx.ResourceBinding(
             kind="object",
             fields=_Job_AllocationPolicyFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "logs_policy": ubx.FieldSpec(
             wire_name="logs_policy",
             kind="object",
             fields=_Job_LogsPolicyFields,
         ),
-        "name": ubx.FieldSpec(wire_name="name"),
         "notifications": ubx.FieldSpec(
             wire_name="notifications",
             kind="list",
@@ -694,7 +684,5 @@ Job = ubx.ResourceBinding(
             kind="list",
             fields=_Job_TaskGroupsFields,
         ),
-        "uid": ubx.FieldSpec(wire_name="uid"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

@@ -66,8 +66,6 @@ _Repository_UrisFields = {
 
 @dataclasses.dataclass
 class RepositoryConfig:
-    # Output only. Create timestamp.
-    create_time: Any = None
     # Optional. Description of the repository, which cannot exceed 500 characters.
     description: Any = None
     # Optional. This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding.
@@ -82,10 +80,6 @@ class RepositoryConfig:
     scan_config: Any = None
     # Optional. Repository level service account (BYOSA).
     service_account: Any = None
-    # Output only. Unique identifier of the repository.
-    uid: Any = None
-    # Output only. Update timestamp.
-    update_time: Any = None
     # URIs for the repository.
     uris: Any = None
 
@@ -117,7 +111,6 @@ class RepositoryAttrs:
 Repository = ubx.ResourceBinding(
     wire_type="google_securesourcemanager_repository",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "etag": ubx.FieldSpec(wire_name="etag"),
         "initial_config": ubx.FieldSpec(
@@ -133,8 +126,6 @@ Repository = ubx.ResourceBinding(
             fields=_Repository_ScanConfigFields,
         ),
         "service_account": ubx.FieldSpec(wire_name="service_account"),
-        "uid": ubx.FieldSpec(wire_name="uid"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
         "uris": ubx.FieldSpec(
             wire_name="uris",
             kind="object",

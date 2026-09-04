@@ -4,10 +4,6 @@ package oracledatabase
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type OdbNetworkConfig struct {
-	// Output only. The date and time that the OdbNetwork was created.
-	CreateTime any
-	// Output only. The ID of the subscription entitlement associated with the OdbNetwork.
-	EntitlementId any
 	// Optional. The GCP Oracle zone where OdbNetwork is hosted. Example: us-east4-b-r2. If not specified, the system will pick a zone based on availability.
 	GcpOracleZone any
 	// Optional. Labels or tags associated with the resource.
@@ -16,8 +12,6 @@ type OdbNetworkConfig struct {
 	Name any
 	// Required. The name of the VPC network in the following format: projects/{project}/global/networks/{network}
 	Network any
-	// Output only. State of the ODB Network.
-	State any
 }
 
 type OdbNetworkAttrs struct {
@@ -40,12 +34,9 @@ type OdbNetworkAttrs struct {
 var OdbNetwork = ubx.ResourceBinding{
 	WireType: "google_oracledatabase_odb_network",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"EntitlementId": ubx.FieldSpec{WireName: "entitlement_id"},
 		"GcpOracleZone": ubx.FieldSpec{WireName: "gcp_oracle_zone"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"State": ubx.FieldSpec{WireName: "state"},
+		"Labels":        ubx.FieldSpec{WireName: "labels"},
+		"Name":          ubx.FieldSpec{WireName: "name"},
+		"Network":       ubx.FieldSpec{WireName: "network"},
 	},
 }

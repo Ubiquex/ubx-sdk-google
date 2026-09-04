@@ -19,7 +19,6 @@ class NotificationConfigConfig:
     description: Any = None
     name: Any = None
     pubsub_topic: Any = None
-    service_account: Any = None
     streaming_config: Any = None
 
 @dataclasses.dataclass
@@ -36,7 +35,6 @@ NotificationConfig = ubx.ResourceBinding(
         "description": ubx.FieldSpec(wire_name="description"),
         "name": ubx.FieldSpec(wire_name="name"),
         "pubsub_topic": ubx.FieldSpec(wire_name="pubsub_topic"),
-        "service_account": ubx.FieldSpec(wire_name="service_account"),
         "streaming_config": ubx.FieldSpec(
             wire_name="streaming_config",
             kind="object",

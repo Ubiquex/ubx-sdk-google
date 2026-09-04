@@ -8,7 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class V1beta1VersionConfig:
-    name: Any = None
+    pass
 
 @dataclasses.dataclass
 class V1beta1VersionAttrs:
@@ -23,6 +23,5 @@ class V1beta1VersionAttrs:
 V1beta1Version = ubx.DataSourceBinding(
     wire_type="google_secretmanager_v1beta1_version",
     fields={
-        "name": ubx.FieldSpec(wire_name="name"),
     },
 )

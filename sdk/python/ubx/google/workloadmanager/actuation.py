@@ -47,25 +47,12 @@ _Actuation_ActuationOutputFields = {
     "terraform_template": ubx.FieldSpec(wire_name="terraform_template"),
 }
 
-_Actuation_DeploymentOutputFields = {
-    "name": ubx.FieldSpec(wire_name="name"),
-    "type": ubx.FieldSpec(wire_name="type"),
-}
-
 @dataclasses.dataclass
 class ActuationConfig:
     # Message for output of actuation.
     actuation_output: Any = None
-    # Output only. Deployment output.
-    deployment_output: Any = None
-    # Output only. End time stamp.
-    end_time: Any = None
     # The name of the actuation resource. The format is projects/{project}/locations/{location}/deployments/{deployment}/actuations/{actuation}.
     name: Any = None
-    # Output only. Start time stamp.
-    start_time: Any = None
-    # Output only. Actuation state.
-    state: Any = None
 
 @dataclasses.dataclass
 class ActuationAttrs:
@@ -90,14 +77,6 @@ Actuation = ubx.ResourceBinding(
             kind="object",
             fields=_Actuation_ActuationOutputFields,
         ),
-        "deployment_output": ubx.FieldSpec(
-            wire_name="deployment_output",
-            kind="list",
-            fields=_Actuation_DeploymentOutputFields,
-        ),
-        "end_time": ubx.FieldSpec(wire_name="end_time"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "start_time": ubx.FieldSpec(wire_name="start_time"),
-        "state": ubx.FieldSpec(wire_name="state"),
     },
 )

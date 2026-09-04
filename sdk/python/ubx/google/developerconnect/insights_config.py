@@ -85,60 +85,8 @@ _InsightsConfig_ArtifactConfigsFields = {
     "uri": ubx.FieldSpec(wire_name="uri"),
 }
 
-_InsightsConfig_ErrorsFields = {
-    "code": ubx.FieldSpec(wire_name="code"),
-    "details": ubx.FieldSpec(wire_name="details"),
-    "message": ubx.FieldSpec(wire_name="message"),
-}
-
 _InsightsConfig_ProjectsFields = {
     "project_ids": ubx.FieldSpec(wire_name="project_ids"),
-}
-
-_InsightsConfig_RuntimeConfigs_AppHubServiceFields = {
-    "apphub_service": ubx.FieldSpec(wire_name="apphub_service"),
-    "criticality": ubx.FieldSpec(wire_name="criticality"),
-    "environment": ubx.FieldSpec(wire_name="environment"),
-}
-
-_InsightsConfig_RuntimeConfigs_AppHubWorkloadFields = {
-    "criticality": ubx.FieldSpec(wire_name="criticality"),
-    "environment": ubx.FieldSpec(wire_name="environment"),
-    "workload": ubx.FieldSpec(wire_name="workload"),
-}
-
-_InsightsConfig_RuntimeConfigs_GkeWorkloadFields = {
-    "cluster": ubx.FieldSpec(wire_name="cluster"),
-    "deployment": ubx.FieldSpec(wire_name="deployment"),
-}
-
-_InsightsConfig_RuntimeConfigs_GoogleCloudRunFields = {
-    "service_uri": ubx.FieldSpec(wire_name="service_uri"),
-}
-
-_InsightsConfig_RuntimeConfigsFields = {
-    "app_hub_service": ubx.FieldSpec(
-        wire_name="app_hub_service",
-        kind="object",
-        fields=_InsightsConfig_RuntimeConfigs_AppHubServiceFields,
-    ),
-    "app_hub_workload": ubx.FieldSpec(
-        wire_name="app_hub_workload",
-        kind="object",
-        fields=_InsightsConfig_RuntimeConfigs_AppHubWorkloadFields,
-    ),
-    "gke_workload": ubx.FieldSpec(
-        wire_name="gke_workload",
-        kind="object",
-        fields=_InsightsConfig_RuntimeConfigs_GkeWorkloadFields,
-    ),
-    "google_cloud_run": ubx.FieldSpec(
-        wire_name="google_cloud_run",
-        kind="object",
-        fields=_InsightsConfig_RuntimeConfigs_GoogleCloudRunFields,
-    ),
-    "state": ubx.FieldSpec(wire_name="state"),
-    "uri": ubx.FieldSpec(wire_name="uri"),
 }
 
 @dataclasses.dataclass
@@ -149,24 +97,14 @@ class InsightsConfigConfig:
     app_hub_application: Any = None
     # Optional. The artifact configurations of the artifacts that are deployed.
     artifact_configs: Any = None
-    # Output only. Create timestamp.
-    create_time: Any = None
-    # Output only. Any errors that occurred while setting up the InsightsConfig. Each error will be in the format: `field_name: error_message`, e.g. GetAppHubApplication: Permission denied while getting App Hub application. Please grant permissions to the P4SA.
-    errors: Any = None
     # Optional. Set of labels associated with an InsightsConfig.
     labels: Any = None
     # Identifier. The name of the InsightsConfig. Format: projects/{project}/locations/{location}/insightsConfigs/{insightsConfig}
     name: Any = None
     # Projects represents the projects to track with the InsightsConfig.
     projects: Any = None
-    # Output only. Reconciling (https://google.aip.dev/128#reconciliation). Set to true if the current state of InsightsConfig does not match the user's intended state, and the service is actively updating the resource to reconcile them. This can happen due to user-triggered updates or system actions like failover or maintenance.
-    reconciling: Any = None
-    # Output only. The runtime configurations where the application is deployed.
-    runtime_configs: Any = None
     # Optional. Output only. The state of the InsightsConfig.
     state: Any = None
-    # Output only. Update timestamp.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class InsightsConfigAttrs:
@@ -205,12 +143,6 @@ InsightsConfig = ubx.ResourceBinding(
             kind="list",
             fields=_InsightsConfig_ArtifactConfigsFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
-        "errors": ubx.FieldSpec(
-            wire_name="errors",
-            kind="list",
-            fields=_InsightsConfig_ErrorsFields,
-        ),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "name": ubx.FieldSpec(wire_name="name"),
         "projects": ubx.FieldSpec(
@@ -218,13 +150,6 @@ InsightsConfig = ubx.ResourceBinding(
             kind="object",
             fields=_InsightsConfig_ProjectsFields,
         ),
-        "reconciling": ubx.FieldSpec(wire_name="reconciling"),
-        "runtime_configs": ubx.FieldSpec(
-            wire_name="runtime_configs",
-            kind="list",
-            fields=_InsightsConfig_RuntimeConfigsFields,
-        ),
         "state": ubx.FieldSpec(wire_name="state"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

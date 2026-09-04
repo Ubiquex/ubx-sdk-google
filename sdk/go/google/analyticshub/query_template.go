@@ -11,31 +11,23 @@ type QueryTemplate_Routine struct {
 }
 
 var QueryTemplate_RoutineFields = ubx.FieldMap{
-		"DefinitionBody": ubx.FieldSpec{WireName: "definition_body"},
-		"RoutineType": ubx.FieldSpec{WireName: "routine_type"},
-	}
+	"DefinitionBody": ubx.FieldSpec{WireName: "definition_body"},
+	"RoutineType":    ubx.FieldSpec{WireName: "routine_type"},
+}
 
 type QueryTemplateConfig struct {
-	// Output only. Timestamp when the QueryTemplate was created.
-	CreateTime any
 	// Optional. Short description of the QueryTemplate. The description must not contain Unicode non-characters and C0 and C1 control codes except tabs (HT), new lines (LF), carriage returns (CR), and page breaks (FF). Default value is an empty string. Max length: 2000 bytes.
 	Description any
 	// Required. Human-readable display name of the QueryTemplate. The display name must contain only Unicode letters, numbers (0-9), underscores (_), dashes (-), spaces ( ), ampersands (&) and can't start or end with spaces. Default value is an empty string. Max length: 63 bytes.
 	DisplayName any
 	// Optional. Documentation describing the QueryTemplate.
 	Documentation any
-	// Output only. The resource name of the QueryTemplate. e.g. `projects/myproject/locations/us/dataExchanges/123/queryTemplates/456`
-	Name any
 	// Optional. Email or URL of the primary point of contact of the QueryTemplate. Max Length: 1000 bytes.
 	PrimaryContact any
 	// Optional. Deprecated: Use `primary_contact` instead. Email or URL of the primary point of contact of the QueryTemplate. Max Length: 1000 bytes.
 	Proposer any
 	// Represents a bigquery routine.
 	Routine any
-	// Output only. The QueryTemplate lifecycle state.
-	State any
-	// Output only. Timestamp when the QueryTemplate was last modified.
-	UpdateTime any
 }
 
 type QueryTemplateAttrs struct {
@@ -64,19 +56,15 @@ type QueryTemplateAttrs struct {
 var QueryTemplate = ubx.ResourceBinding{
 	WireType: "google_analyticshub_query_template",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Documentation": ubx.FieldSpec{WireName: "documentation"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Description":    ubx.FieldSpec{WireName: "description"},
+		"DisplayName":    ubx.FieldSpec{WireName: "display_name"},
+		"Documentation":  ubx.FieldSpec{WireName: "documentation"},
 		"PrimaryContact": ubx.FieldSpec{WireName: "primary_contact"},
-		"Proposer": ubx.FieldSpec{WireName: "proposer"},
+		"Proposer":       ubx.FieldSpec{WireName: "proposer"},
 		"Routine": ubx.FieldSpec{
 			WireName: "routine",
-			Kind: "object",
-			Fields: QueryTemplate_RoutineFields,
+			Kind:     "object",
+			Fields:   QueryTemplate_RoutineFields,
 		},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

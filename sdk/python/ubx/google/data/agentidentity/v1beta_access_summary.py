@@ -8,7 +8,7 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class V1betaAccessSummaryConfig:
-    name: Any = None
+    pass
 
 @dataclasses.dataclass
 class V1betaAccessSummaryAttrs:
@@ -37,6 +37,5 @@ class V1betaAccessSummaryAttrs:
 V1betaAccessSummary = ubx.DataSourceBinding(
     wire_type="google_agentidentity_v1beta_access_summary",
     fields={
-        "name": ubx.FieldSpec(wire_name="name"),
     },
 )

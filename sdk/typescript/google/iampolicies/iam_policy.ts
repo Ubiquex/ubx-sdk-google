@@ -52,24 +52,16 @@ const IamPolicy_RulesFields: FieldMap = {
 export interface IamPolicyConfig {
   /** A key-value map to store arbitrary metadata for the `Policy`. Keys can be up to 63 characters. Values can be up to 255 characters. */
   annotations?: Record<string, string> | Computed<Record<string, string>>;
-  /** Output only. The time when the `Policy` was created. */
-  createTime?: string | Computed<string>;
-  /** Output only. The time when the `Policy` was deleted. Empty if the policy is not deleted. */
-  deleteTime?: string | Computed<string>;
   /** A user-specified description of the `Policy`. This value can be up to 63 characters. */
   displayName?: string | Computed<string>;
   /** An opaque tag that identifies the current version of the `Policy`. IAM uses this value to help manage concurrent updates, so they do not cause one update to be overwritten by another. If this field is present in a CreatePolicyRequest, the value is ignored. */
   etag?: string | Computed<string>;
-  /** Output only. The kind of the `Policy`. Always contains the value `DenyPolicy`. */
-  kind?: string | Computed<string>;
   /** Immutable. The resource name of the `Policy`, which must be unique. Format: `policies/{attachment_point}/denypolicies/{policy_id}` The attachment point is identified by its URL-encoded full resource name, which means that the forward-slash character, `/`, must be written as `%2F`. For example, `policies/cloudresourcemanager.googleapis.com%2Fprojects%2Fmy-project/denypolicies/my-deny-policy`. For organizations and folders, use the numeric ID in the full resource name. For projects, requests can use the alphanumeric or the numeric ID. Responses always contain the numeric ID. */
   name?: string | Computed<string>;
   /** A list of rules that specify the behavior of the `Policy`. All of the rules should be of the `kind` specified in the `Policy`. */
   rules?: IamPolicy_Rules[] | Computed<IamPolicy_Rules[]>;
   /** Immutable. The globally unique ID of the `Policy`. Assigned automatically when the `Policy` is created. */
   uid?: string | Computed<string>;
-  /** Output only. The time when the `Policy` was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface IamPolicyAttrs {
@@ -99,11 +91,8 @@ export const IamPolicy: ResourceBinding<IamPolicyConfig, IamPolicyAttrs> = {
   wireType: "google_iampolicies_iam_policy",
   fields: {
     annotations: "annotations",
-    createTime: "create_time",
-    deleteTime: "delete_time",
     displayName: "display_name",
     etag: "etag",
-    kind: "kind",
     name: "name",
     rules: {
       wireName: "rules",
@@ -111,6 +100,5 @@ export const IamPolicy: ResourceBinding<IamPolicyConfig, IamPolicyAttrs> = {
       fields: IamPolicy_RulesFields,
     },
     uid: "uid",
-    updateTime: "update_time",
   },
 };

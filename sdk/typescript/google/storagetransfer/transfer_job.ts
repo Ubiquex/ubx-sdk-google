@@ -538,16 +538,10 @@ const TransferJob_TransferSpecFields: FieldMap = {
 };
 
 export interface TransferJobConfig {
-  /** Output only. The time that the transfer job was created. */
-  creationTime?: string | Computed<string>;
-  /** Output only. The time that the transfer job was deleted. */
-  deletionTime?: string | Computed<string>;
   /** A description provided by the user for the job. Its max length is 1024 bytes when Unicode-encoded. */
   description?: string | Computed<string>;
   /** Specifies the Event-driven transfer options. Event-driven transfers listen to an event stream to transfer updated files. */
   eventStream?: TransferJob_EventStream | Computed<TransferJob_EventStream>;
-  /** Output only. The time that the transfer job was last modified. */
-  lastModificationTime?: string | Computed<string>;
   /** The name of the most recently started TransferOperation of this JobConfig. Present if a TransferOperation has been created for this JobConfig. */
   latestOperationName?: string | Computed<string>;
   /** Specifies the logging behavior for transfer operations. Logs can be sent to Cloud Logging for all transfer types. See [Read transfer logs](https://cloud.google.com/storage-transfer/docs/read-transfer-logs) for details. */
@@ -606,15 +600,12 @@ export interface TransferJobAttrs {
 export const TransferJob: ResourceBinding<TransferJobConfig, TransferJobAttrs> = {
   wireType: "google_storagetransfer_transfer_job",
   fields: {
-    creationTime: "creation_time",
-    deletionTime: "deletion_time",
     description: "description",
     eventStream: {
       wireName: "event_stream",
       kind: "object",
       fields: TransferJob_EventStreamFields,
     },
-    lastModificationTime: "last_modification_time",
     latestOperationName: "latest_operation_name",
     loggingConfig: {
       wireName: "logging_config",

@@ -16,7 +16,7 @@ type ServiceClassAttrs struct {
 	Etag any
 	// User-defined labels.
 	Labels any
-	Name any
+	Name   any
 	// Output only. The generated service class name. Use this name to refer to the Service class in Service Connection Maps and Service Connection Policies.
 	ServiceClass any
 	// Output only. Time when the ServiceClass was updated.

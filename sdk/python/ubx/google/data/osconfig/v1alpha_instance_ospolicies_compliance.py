@@ -32,7 +32,7 @@ class V1alphaInstanceOspoliciesCompliance_OsPolicyCompliances:
 
 @dataclasses.dataclass
 class V1alphaInstanceOspoliciesComplianceConfig:
-    name: Any = None
+    pass
 
 @dataclasses.dataclass
 class V1alphaInstanceOspoliciesComplianceAttrs:
@@ -55,6 +55,5 @@ class V1alphaInstanceOspoliciesComplianceAttrs:
 V1alphaInstanceOspoliciesCompliance = ubx.DataSourceBinding(
     wire_type="google_osconfig_v1alpha_instance_ospolicies_compliance",
     fields={
-        "name": ubx.FieldSpec(wire_name="name"),
     },
 )

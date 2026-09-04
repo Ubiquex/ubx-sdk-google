@@ -4,15 +4,15 @@ package networkconnectivity
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type Destination_Endpoints struct {
-	Asn any
-	Csp any
-	State any
+	Asn        any
+	Csp        any
+	State      any
 	UpdateTime any
 }
 
 type Destination_StateTimeline_States struct {
 	EffectiveTime any
-	State any
+	State         any
 }
 
 type Destination_StateTimeline struct {
@@ -21,28 +21,26 @@ type Destination_StateTimeline struct {
 }
 
 var Destination_EndpointsFields = ubx.FieldMap{
-		"Asn": ubx.FieldSpec{WireName: "asn"},
-		"Csp": ubx.FieldSpec{WireName: "csp"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-	}
+	"Asn":        ubx.FieldSpec{WireName: "asn"},
+	"Csp":        ubx.FieldSpec{WireName: "csp"},
+	"State":      ubx.FieldSpec{WireName: "state"},
+	"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+}
 
 var Destination_StateTimeline_StatesFields = ubx.FieldMap{
-		"EffectiveTime": ubx.FieldSpec{WireName: "effective_time"},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"EffectiveTime": ubx.FieldSpec{WireName: "effective_time"},
+	"State":         ubx.FieldSpec{WireName: "state"},
+}
 
 var Destination_StateTimelineFields = ubx.FieldMap{
-		"States": ubx.FieldSpec{
-			WireName: "states",
-			Kind: "list",
-			Fields: Destination_StateTimeline_StatesFields,
-		},
-	}
+	"States": ubx.FieldSpec{
+		WireName: "states",
+		Kind:     "list",
+		Fields:   Destination_StateTimeline_StatesFields,
+	},
+}
 
 type DestinationConfig struct {
-	// Output only. Time when the `Destination` resource was created.
-	CreateTime any
 	// Optional. A description of this resource.
 	Description any
 	// Required. Unordered list. The list of `DestinationEndpoint` resources configured for the IP prefix.
@@ -57,10 +55,6 @@ type DestinationConfig struct {
 	Name any
 	// The timeline of the pending states for a resource.
 	StateTimeline any
-	// Output only. The Google-generated unique ID for the `Destination` resource. This value is unique across all `Destination` resources. If a resource is deleted and another with the same name is created, the new resource is assigned a different and unique ID.
-	Uid any
-	// Output only. Time when the `Destination` resource was updated.
-	UpdateTime any
 }
 
 type DestinationAttrs struct {
@@ -89,23 +83,20 @@ type DestinationAttrs struct {
 var Destination = ubx.ResourceBinding{
 	WireType: "google_networkconnectivity_destination",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"Endpoints": ubx.FieldSpec{
 			WireName: "endpoints",
-			Kind: "list",
-			Fields: Destination_EndpointsFields,
+			Kind:     "list",
+			Fields:   Destination_EndpointsFields,
 		},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
+		"Etag":     ubx.FieldSpec{WireName: "etag"},
 		"IpPrefix": ubx.FieldSpec{WireName: "ip_prefix"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Labels":   ubx.FieldSpec{WireName: "labels"},
+		"Name":     ubx.FieldSpec{WireName: "name"},
 		"StateTimeline": ubx.FieldSpec{
 			WireName: "state_timeline",
-			Kind: "object",
-			Fields: Destination_StateTimelineFields,
+			Kind:     "object",
+			Fields:   Destination_StateTimelineFields,
 		},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

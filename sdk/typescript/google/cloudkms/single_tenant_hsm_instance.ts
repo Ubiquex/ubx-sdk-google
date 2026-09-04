@@ -17,22 +17,12 @@ const SingleTenantHsmInstance_QuorumAuthFields: FieldMap = {
 };
 
 export interface SingleTenantHsmInstanceConfig {
-  /** Output only. The time at which the SingleTenantHsmInstance was created. */
-  createTime?: string | Computed<string>;
-  /** Output only. The time at which the SingleTenantHsmInstance was deleted. */
-  deleteTime?: string | Computed<string>;
-  /** Output only. The time at which the instance will be automatically disabled if not refreshed. This field is updated upon creation and after each successful refresh operation and enable. A RefreshSingleTenantHsmInstance operation must be made via a SingleTenantHsmInstanceProposal before this time otherwise the SingleTenantHsmInstance will become disabled. */
-  disableTime?: string | Computed<string>;
   /** Optional. Immutable. Indicates whether key portability is enabled for the SingleTenantHsmInstance. This can only be set at creation time. Key portability features are disabled by default. */
   keyPortabilityEnabled?: boolean | Computed<boolean>;
   /** Identifier. The resource name for this SingleTenantHsmInstance in the format `projects/* /locations/* /singleTenantHsmInstances/*`. */
   name?: string | Computed<string>;
   /** Configuration for M of N quorum auth. */
   quorumAuth?: SingleTenantHsmInstance_QuorumAuth | Computed<SingleTenantHsmInstance_QuorumAuth>;
-  /** Output only. The state of the SingleTenantHsmInstance. */
-  state?: string | Computed<string>;
-  /** Output only. The system-defined duration that an instance can remain unrefreshed until it is automatically disabled. This will have a value of 730 days. */
-  unrefreshedDurationUntilDisable?: string | Computed<string>;
 }
 
 export interface SingleTenantHsmInstanceAttrs {
@@ -57,9 +47,6 @@ export interface SingleTenantHsmInstanceAttrs {
 export const SingleTenantHsmInstance: ResourceBinding<SingleTenantHsmInstanceConfig, SingleTenantHsmInstanceAttrs> = {
   wireType: "google_cloudkms_single_tenant_hsm_instance",
   fields: {
-    createTime: "create_time",
-    deleteTime: "delete_time",
-    disableTime: "disable_time",
     keyPortabilityEnabled: "key_portability_enabled",
     name: "name",
     quorumAuth: {
@@ -67,7 +54,5 @@ export const SingleTenantHsmInstance: ResourceBinding<SingleTenantHsmInstanceCon
       kind: "object",
       fields: SingleTenantHsmInstance_QuorumAuthFields,
     },
-    state: "state",
-    unrefreshedDurationUntilDisable: "unrefreshed_duration_until_disable",
   },
 };

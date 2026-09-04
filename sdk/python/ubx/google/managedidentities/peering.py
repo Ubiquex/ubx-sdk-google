@@ -10,20 +10,10 @@ import ubx_sdk as ubx
 class PeeringConfig:
     # Required. The full names of the Google Compute Engine [networks](/compute/docs/networks-and-firewalls#networks) to which the instance is connected. Caller needs to make sure that CIDR subnets do not overlap between networks, else peering creation will fail.
     authorized_network: Any = None
-    # Output only. The time the instance was created.
-    create_time: Any = None
     # Required. Full domain resource path for the Managed AD Domain involved in peering. The resource path should be in the form: `projects/{project_id}/locations/global/domains/{domain_name}`
     domain_resource: Any = None
     # Optional. Resource labels to represent user-provided metadata.
     labels: Any = None
-    # Output only. Unique name of the peering in this scope including projects and location using the form: `projects/{project_id}/locations/global/peerings/{peering_id}`.
-    name: Any = None
-    # Output only. The current state of this Peering.
-    state: Any = None
-    # Output only. Additional information about the current status of this peering, if available.
-    status_message: Any = None
-    # Output only. Last update time.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class PeeringAttrs:
@@ -48,12 +38,7 @@ Peering = ubx.ResourceBinding(
     wire_type="google_managedidentities_peering",
     fields={
         "authorized_network": ubx.FieldSpec(wire_name="authorized_network"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "domain_resource": ubx.FieldSpec(wire_name="domain_resource"),
         "labels": ubx.FieldSpec(wire_name="labels"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "status_message": ubx.FieldSpec(wire_name="status_message"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

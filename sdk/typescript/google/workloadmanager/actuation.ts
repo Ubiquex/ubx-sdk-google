@@ -42,24 +42,11 @@ const Actuation_ActuationOutputFields: FieldMap = {
   terraformTemplate: "terraform_template",
 };
 
-const Actuation_DeploymentOutputFields: FieldMap = {
-  name: "name",
-  type: "type",
-};
-
 export interface ActuationConfig {
   /** Message for output of actuation. */
   actuationOutput?: Actuation_ActuationOutput | Computed<Actuation_ActuationOutput>;
-  /** Output only. Deployment output. */
-  deploymentOutput?: Actuation_DeploymentOutput[] | Computed<Actuation_DeploymentOutput[]>;
-  /** Output only. End time stamp. */
-  endTime?: string | Computed<string>;
   /** The name of the actuation resource. The format is projects/{project}/locations/{location}/deployments/{deployment}/actuations/{actuation}. */
   name?: string | Computed<string>;
-  /** Output only. Start time stamp. */
-  startTime?: string | Computed<string>;
-  /** Output only. Actuation state. */
-  state?: string | Computed<string>;
 }
 
 export interface ActuationAttrs {
@@ -85,14 +72,6 @@ export const Actuation: ResourceBinding<ActuationConfig, ActuationAttrs> = {
       kind: "object",
       fields: Actuation_ActuationOutputFields,
     },
-    deploymentOutput: {
-      wireName: "deployment_output",
-      kind: "list",
-      fields: Actuation_DeploymentOutputFields,
-    },
-    endTime: "end_time",
     name: "name",
-    startTime: "start_time",
-    state: "state",
   },
 };

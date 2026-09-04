@@ -202,7 +202,7 @@ class AutomationRun_TimedPromoteReleaseOperation:
 
 @dataclasses.dataclass
 class AutomationRunConfig:
-    name: Any = None
+    pass
 
 @dataclasses.dataclass
 class AutomationRunAttrs:
@@ -247,6 +247,5 @@ class AutomationRunAttrs:
 AutomationRun = ubx.DataSourceBinding(
     wire_type="google_clouddeploy_automation_run",
     fields={
-        "name": ubx.FieldSpec(wire_name="name"),
     },
 )

@@ -8,32 +8,24 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class RolloutPlan_Waves_OrchestrationOptions_Delays:
-    # Specifies the grouping delimiter for delay execution. Valid values: DELIMITER_BATCH (delay applies per batch), DELIMITER_LOCATION (delay applies per location), DELIMITER_UNSPECIFIED (no specific grouping). (AI-inferred)
     delimiter: Any = None
-    # The duration of the delay, specified as a string with a time unit (e.g., '30s' or '5m'). (AI-inferred)
     duration: Any = None
-    # The type of delay for this orchestration step. Allowed values are TYPE_MINIMUM (minimum delay), TYPE_OFFSET (offset delay), and TYPE_UNSPECIFIED (not specified). (AI-inferred)
     type: Any = None
 
 @dataclasses.dataclass
 class RolloutPlan_Waves_OrchestrationOptions:
     delays: Any = None
-    # The maximum number of locations (zones) that can be updated concurrently during this wave of the rollout. The value can be a fixed number or a percentage of the total locations, e.g., '5' or '25%'. (AI-inferred)
     max_concurrent_locations: Any = None
     max_concurrent_resources_per_location: Any = None
 
 @dataclasses.dataclass
 class RolloutPlan_Waves_Selectors_LocationSelector:
-    # A list of Google Cloud locations (regions or zones) to include in this location selector. Resources in these locations will be selected for the rollout wave. (AI-inferred)
     included_locations: Any = None
 
 @dataclasses.dataclass
 class RolloutPlan_Waves_Selectors_ResourceHierarchySelector:
-    # A list of folder resource names (or IDs) to include in the resource hierarchy selector. Resources contained within these folders are selected for the rollout wave. (AI-inferred)
     included_folders: Any = None
-    # The list of organization IDs to include in the rollout wave's resource hierarchy selector. Only the resources within these organizations are targeted by the wave. (AI-inferred)
     included_organizations: Any = None
-    # A list of GCP project identifiers to include in the resource hierarchy selector. The rollout plan will apply to resources in these projects. (AI-inferred)
     included_projects: Any = None
 
 @dataclasses.dataclass
@@ -43,7 +35,6 @@ class RolloutPlan_Waves_Selectors:
 
 @dataclasses.dataclass
 class RolloutPlan_Waves_Validation_TimeBasedValidationMetadata:
-    # The duration to wait as part of time-based validation, represented as a string. (AI-inferred)
     wait_duration: Any = None
 
 @dataclasses.dataclass
@@ -54,11 +45,9 @@ class RolloutPlan_Waves_Validation:
 @dataclasses.dataclass
 class RolloutPlan_Waves:
     display_name: Any = None
-    # The wave number, represented as a string, indicating the sequential order of the wave within the rollout plan. (AI-inferred)
     number: Any = None
     orchestration_options: Any = None
     selectors: Any = None
-    # Configures the validation procedure for this wave, specifying how the rollout verifies the health and readiness of the instances in the wave before advancing to the next wave. (AI-inferred)
     validation: Any = None
 
 _RolloutPlan_Waves_OrchestrationOptions_DelaysFields = {
@@ -135,22 +124,12 @@ _RolloutPlan_WavesFields = {
 
 @dataclasses.dataclass
 class RolloutPlanConfig:
-    # Output only. [Output Only] Creation timestamp inRFC3339 text format.
-    creation_timestamp: Any = None
     # An optional description of this resource. Provide this property when you create the resource.
     description: Any = None
-    # Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server.
-    id: Any = None
-    # Output only. [Output Only] Type of the resource. Always compute#rolloutPlan for rolloutPlans.
-    kind: Any = None
     # The location scope of the rollout plan. If not specified, the location scope is considered as ZONAL.
     location_scope: Any = None
     # Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash.
     name: Any = None
-    # Output only. [Output Only] Server-defined fully-qualified URL for this resource.
-    self_link: Any = None
-    # Output only. [Output Only] Server-defined URL for this resource's resource id.
-    self_link_with_id: Any = None
     # Required. The waves included in this rollout plan.
     waves: Any = None
 
@@ -178,14 +157,9 @@ class RolloutPlanAttrs:
 RolloutPlan = ubx.ResourceBinding(
     wire_type="google_compute_rollout_plan",
     fields={
-        "creation_timestamp": ubx.FieldSpec(wire_name="creation_timestamp"),
         "description": ubx.FieldSpec(wire_name="description"),
-        "id": ubx.FieldSpec(wire_name="id"),
-        "kind": ubx.FieldSpec(wire_name="kind"),
         "location_scope": ubx.FieldSpec(wire_name="location_scope"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "self_link": ubx.FieldSpec(wire_name="self_link"),
-        "self_link_with_id": ubx.FieldSpec(wire_name="self_link_with_id"),
         "waves": ubx.FieldSpec(
             wire_name="waves",
             kind="list",

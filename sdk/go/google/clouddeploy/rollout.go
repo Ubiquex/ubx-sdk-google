@@ -42,10 +42,10 @@ type Rollout_Metadata struct {
 }
 
 type Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_AnalysisJob_CustomChecks_Task_Container struct {
-	Args any
+	Args    any
 	Command any
-	Env any
-	Image any
+	Env     any
+	Image   any
 }
 
 type Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_AnalysisJob_CustomChecks_Task struct {
@@ -54,14 +54,14 @@ type Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_AnalysisJob_CustomChecks
 
 type Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_AnalysisJob_CustomChecks struct {
 	Frequency any
-	Id any
-	Task any
+	Id        any
+	Task      any
 }
 
 type Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_AnalysisJob_GoogleCloud_AlertPolicyChecks struct {
 	AlertPolicies any
-	Id any
-	Labels any
+	Id            any
+	Labels        any
 }
 
 type Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_AnalysisJob_GoogleCloud struct {
@@ -70,13 +70,13 @@ type Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_AnalysisJob_GoogleCloud 
 
 type Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_AnalysisJob struct {
 	CustomChecks any
-	Duration any
-	GoogleCloud any
+	Duration     any
+	GoogleCloud  any
 }
 
 type Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_PostdeployJob struct {
 	Actions any
-	Tasks any
+	Tasks   any
 }
 
 type Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_VerifyJob struct {
@@ -85,280 +85,91 @@ type Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_VerifyJob struct {
 
 type Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs struct {
 	AdvanceChildRolloutJob any
-	AnalysisJob any
-	CreateChildRolloutJob any
-	DeployJob any
-	Id any
-	JobRun any
-	PostdeployJob any
-	PredeployJob any
-	SkipMessage any
-	State any
-	VerifyJob any
+	AnalysisJob            any
+	CreateChildRolloutJob  any
+	DeployJob              any
+	Id                     any
+	JobRun                 any
+	PostdeployJob          any
+	PredeployJob           any
+	SkipMessage            any
+	State                  any
+	VerifyJob              any
 }
 
 type Rollout_Phases_ChildRolloutJobs struct {
 	AdvanceRolloutJobs any
-	CreateRolloutJobs any
+	CreateRolloutJobs  any
 }
 
 type Rollout_Phases_DeploymentJobs struct {
-	AnalysisJob any
-	DeployJob any
+	AnalysisJob   any
+	DeployJob     any
 	PostdeployJob any
-	PredeployJob any
-	VerifyJob any
+	PredeployJob  any
+	VerifyJob     any
 }
 
 type Rollout_Phases struct {
 	ChildRolloutJobs any
-	DeploymentJobs any
-	Id any
-	SkipMessage any
-	State any
+	DeploymentJobs   any
+	Id               any
+	SkipMessage      any
+	State            any
 }
 
 var Rollout_Metadata_AutomationFields = ubx.FieldMap{
-		"AdvanceAutomationRuns": ubx.FieldSpec{WireName: "advance_automation_runs"},
-		"PromoteAutomationRun": ubx.FieldSpec{WireName: "promote_automation_run"},
-		"RepairAutomationRuns": ubx.FieldSpec{WireName: "repair_automation_runs"},
-	}
+	"AdvanceAutomationRuns": ubx.FieldSpec{WireName: "advance_automation_runs"},
+	"PromoteAutomationRun":  ubx.FieldSpec{WireName: "promote_automation_run"},
+	"RepairAutomationRuns":  ubx.FieldSpec{WireName: "repair_automation_runs"},
+}
 
 var Rollout_Metadata_CloudRunFields = ubx.FieldMap{
-		"Job": ubx.FieldSpec{WireName: "job"},
-		"PreviousRevision": ubx.FieldSpec{WireName: "previous_revision"},
-		"Revision": ubx.FieldSpec{WireName: "revision"},
-		"Service": ubx.FieldSpec{WireName: "service"},
-		"ServiceUrls": ubx.FieldSpec{WireName: "service_urls"},
-		"WorkerPool": ubx.FieldSpec{WireName: "worker_pool"},
-	}
+	"Job":              ubx.FieldSpec{WireName: "job"},
+	"PreviousRevision": ubx.FieldSpec{WireName: "previous_revision"},
+	"Revision":         ubx.FieldSpec{WireName: "revision"},
+	"Service":          ubx.FieldSpec{WireName: "service"},
+	"ServiceUrls":      ubx.FieldSpec{WireName: "service_urls"},
+	"WorkerPool":       ubx.FieldSpec{WireName: "worker_pool"},
+}
 
 var Rollout_Metadata_CustomFields = ubx.FieldMap{
-		"Values": ubx.FieldSpec{WireName: "values"},
-	}
+	"Values": ubx.FieldSpec{WireName: "values"},
+}
 
 var Rollout_MetadataFields = ubx.FieldMap{
-		"Automation": ubx.FieldSpec{
-			WireName: "automation",
-			Kind: "object",
-			Fields: Rollout_Metadata_AutomationFields,
-		},
-		"CloudRun": ubx.FieldSpec{
-			WireName: "cloud_run",
-			Kind: "object",
-			Fields: Rollout_Metadata_CloudRunFields,
-		},
-		"Custom": ubx.FieldSpec{
-			WireName: "custom",
-			Kind: "object",
-			Fields: Rollout_Metadata_CustomFields,
-		},
-	}
-
-var Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_AnalysisJob_CustomChecks_Task_ContainerFields = ubx.FieldMap{
-		"Args": ubx.FieldSpec{WireName: "args"},
-		"Command": ubx.FieldSpec{WireName: "command"},
-		"Env": ubx.FieldSpec{WireName: "env"},
-		"Image": ubx.FieldSpec{WireName: "image"},
-	}
-
-var Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_AnalysisJob_CustomChecks_TaskFields = ubx.FieldMap{
-		"Container": ubx.FieldSpec{
-			WireName: "container",
-			Kind: "object",
-			Fields: Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_AnalysisJob_CustomChecks_Task_ContainerFields,
-		},
-	}
-
-var Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_AnalysisJob_CustomChecksFields = ubx.FieldMap{
-		"Frequency": ubx.FieldSpec{WireName: "frequency"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Task": ubx.FieldSpec{
-			WireName: "task",
-			Kind: "object",
-			Fields: Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_AnalysisJob_CustomChecks_TaskFields,
-		},
-	}
-
-var Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_AnalysisJob_GoogleCloud_AlertPolicyChecksFields = ubx.FieldMap{
-		"AlertPolicies": ubx.FieldSpec{WireName: "alert_policies"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-	}
-
-var Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_AnalysisJob_GoogleCloudFields = ubx.FieldMap{
-		"AlertPolicyChecks": ubx.FieldSpec{
-			WireName: "alert_policy_checks",
-			Kind: "list",
-			Fields: Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_AnalysisJob_GoogleCloud_AlertPolicyChecksFields,
-		},
-	}
-
-var Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_AnalysisJobFields = ubx.FieldMap{
-		"CustomChecks": ubx.FieldSpec{
-			WireName: "custom_checks",
-			Kind: "list",
-			Fields: Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_AnalysisJob_CustomChecksFields,
-		},
-		"Duration": ubx.FieldSpec{WireName: "duration"},
-		"GoogleCloud": ubx.FieldSpec{
-			WireName: "google_cloud",
-			Kind: "object",
-			Fields: Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_AnalysisJob_GoogleCloudFields,
-		},
-	}
-
-var Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_PostdeployJobFields = ubx.FieldMap{
-		"Actions": ubx.FieldSpec{WireName: "actions"},
-		"Tasks": ubx.FieldSpec{
-			WireName: "tasks",
-			Kind: "list",
-			Fields: Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_AnalysisJob_CustomChecks_TaskFields,
-		},
-	}
-
-var Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_VerifyJobFields = ubx.FieldMap{
-		"Tasks": ubx.FieldSpec{
-			WireName: "tasks",
-			Kind: "list",
-			Fields: Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_AnalysisJob_CustomChecks_TaskFields,
-		},
-	}
-
-var Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobsFields = ubx.FieldMap{
-		"AdvanceChildRolloutJob": ubx.FieldSpec{WireName: "advance_child_rollout_job"},
-		"AnalysisJob": ubx.FieldSpec{
-			WireName: "analysis_job",
-			Kind: "object",
-			Fields: Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_AnalysisJobFields,
-		},
-		"CreateChildRolloutJob": ubx.FieldSpec{WireName: "create_child_rollout_job"},
-		"DeployJob": ubx.FieldSpec{WireName: "deploy_job"},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"JobRun": ubx.FieldSpec{WireName: "job_run"},
-		"PostdeployJob": ubx.FieldSpec{
-			WireName: "postdeploy_job",
-			Kind: "object",
-			Fields: Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_PostdeployJobFields,
-		},
-		"PredeployJob": ubx.FieldSpec{
-			WireName: "predeploy_job",
-			Kind: "object",
-			Fields: Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_PostdeployJobFields,
-		},
-		"SkipMessage": ubx.FieldSpec{WireName: "skip_message"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"VerifyJob": ubx.FieldSpec{
-			WireName: "verify_job",
-			Kind: "object",
-			Fields: Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobs_VerifyJobFields,
-		},
-	}
-
-var Rollout_Phases_ChildRolloutJobsFields = ubx.FieldMap{
-		"AdvanceRolloutJobs": ubx.FieldSpec{
-			WireName: "advance_rollout_jobs",
-			Kind: "list",
-			Fields: Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobsFields,
-		},
-		"CreateRolloutJobs": ubx.FieldSpec{
-			WireName: "create_rollout_jobs",
-			Kind: "list",
-			Fields: Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobsFields,
-		},
-	}
-
-var Rollout_Phases_DeploymentJobsFields = ubx.FieldMap{
-		"AnalysisJob": ubx.FieldSpec{
-			WireName: "analysis_job",
-			Kind: "object",
-			Fields: Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobsFields,
-		},
-		"DeployJob": ubx.FieldSpec{
-			WireName: "deploy_job",
-			Kind: "object",
-			Fields: Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobsFields,
-		},
-		"PostdeployJob": ubx.FieldSpec{
-			WireName: "postdeploy_job",
-			Kind: "object",
-			Fields: Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobsFields,
-		},
-		"PredeployJob": ubx.FieldSpec{
-			WireName: "predeploy_job",
-			Kind: "object",
-			Fields: Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobsFields,
-		},
-		"VerifyJob": ubx.FieldSpec{
-			WireName: "verify_job",
-			Kind: "object",
-			Fields: Rollout_Phases_ChildRolloutJobs_AdvanceRolloutJobsFields,
-		},
-	}
-
-var Rollout_PhasesFields = ubx.FieldMap{
-		"ChildRolloutJobs": ubx.FieldSpec{
-			WireName: "child_rollout_jobs",
-			Kind: "object",
-			Fields: Rollout_Phases_ChildRolloutJobsFields,
-		},
-		"DeploymentJobs": ubx.FieldSpec{
-			WireName: "deployment_jobs",
-			Kind: "object",
-			Fields: Rollout_Phases_DeploymentJobsFields,
-		},
-		"Id": ubx.FieldSpec{WireName: "id"},
-		"SkipMessage": ubx.FieldSpec{WireName: "skip_message"},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"Automation": ubx.FieldSpec{
+		WireName: "automation",
+		Kind:     "object",
+		Fields:   Rollout_Metadata_AutomationFields,
+	},
+	"CloudRun": ubx.FieldSpec{
+		WireName: "cloud_run",
+		Kind:     "object",
+		Fields:   Rollout_Metadata_CloudRunFields,
+	},
+	"Custom": ubx.FieldSpec{
+		WireName: "custom",
+		Kind:     "object",
+		Fields:   Rollout_Metadata_CustomFields,
+	},
+}
 
 type RolloutConfig struct {
-	// Output only. The AutomationRun actively repairing the rollout.
-	ActiveRepairAutomationRun any
 	// Optional. User annotations. These attributes can only be set and used by the user, and not by Cloud Deploy. See https://google.aip.dev/128#annotations for more details such as format and size limitations.
 	Annotations any
-	// Output only. Approval state of the `Rollout`.
-	ApprovalState any
-	// Output only. Time at which the `Rollout` was approved.
-	ApproveTime any
-	// Output only. Name of the `ControllerRollout`. Format is `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/{rollout}`.
-	ControllerRollout any
-	// Output only. Time at which the `Rollout` was created.
-	CreateTime any
-	// Output only. Time at which the `Rollout` finished deploying.
-	DeployEndTime any
-	// Output only. The reason this rollout failed. This will always be unspecified while the rollout is in progress.
-	DeployFailureCause any
-	// Output only. Time at which the `Rollout` started deploying.
-	DeployStartTime any
-	// Output only. The resource name of the Cloud Build `Build` object that is used to deploy the Rollout. Format is `projects/{project}/locations/{location}/builds/{build}`.
-	DeployingBuild any
 	// Optional. Description of the `Rollout` for user purposes. Max length is 255 characters.
 	Description any
-	// Output only. Time at which the `Rollout` was enqueued.
-	EnqueueTime any
 	// This checksum is computed by the server based on the value of other fields, and may be sent on update and delete requests to ensure the client has an up-to-date value before proceeding.
 	Etag any
-	// Output only. Additional information about the rollout failure, if available.
-	FailureReason any
 	// Labels are attributes that can be set and used by both the user and by Cloud Deploy. Labels must meet the following constraints: * Keys and values can contain only lowercase letters, numeric characters, underscores, and dashes. * All characters must use UTF-8 encoding, and international characters are allowed. * Keys must start with a lowercase letter or international character. * Each resource is limited to a maximum of 64 labels. Both keys and values are additionally constrained to be <= 128 bytes.
 	Labels any
 	// Metadata includes information associated with a `Rollout`.
 	Metadata any
 	// Identifier. Name of the `Rollout`. Format is `projects/{project}/locations/{location}/deliveryPipelines/{deliveryPipeline}/releases/{release}/rollouts/{rollout}`. The `rollout` component must match `[a-z]([a-z0-9-]{0,61}[a-z0-9])?`
 	Name any
-	// Output only. The phases that represent the workflows of this `Rollout`.
-	Phases any
-	// Output only. Name of the `Rollout` that is rolled back by this `Rollout`. Empty if this `Rollout` wasn't created as a rollback.
-	RollbackOfRollout any
-	// Output only. Names of `Rollouts` that rolled back this `Rollout`.
-	RolledBackByRollouts any
-	// Output only. Current state of the `Rollout`.
-	State any
 	// Required. The ID of Target to which this `Rollout` is deploying.
 	TargetId any
-	// Output only. Unique identifier of the `Rollout`.
-	Uid any
 }
 
 type RolloutAttrs struct {
@@ -413,36 +224,16 @@ type RolloutAttrs struct {
 var Rollout = ubx.ResourceBinding{
 	WireType: "google_clouddeploy_rollout",
 	Fields: ubx.FieldMap{
-		"ActiveRepairAutomationRun": ubx.FieldSpec{WireName: "active_repair_automation_run"},
 		"Annotations": ubx.FieldSpec{WireName: "annotations"},
-		"ApprovalState": ubx.FieldSpec{WireName: "approval_state"},
-		"ApproveTime": ubx.FieldSpec{WireName: "approve_time"},
-		"ControllerRollout": ubx.FieldSpec{WireName: "controller_rollout"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DeployEndTime": ubx.FieldSpec{WireName: "deploy_end_time"},
-		"DeployFailureCause": ubx.FieldSpec{WireName: "deploy_failure_cause"},
-		"DeployStartTime": ubx.FieldSpec{WireName: "deploy_start_time"},
-		"DeployingBuild": ubx.FieldSpec{WireName: "deploying_build"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"EnqueueTime": ubx.FieldSpec{WireName: "enqueue_time"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"FailureReason": ubx.FieldSpec{WireName: "failure_reason"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
+		"Etag":        ubx.FieldSpec{WireName: "etag"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
 		"Metadata": ubx.FieldSpec{
 			WireName: "metadata",
-			Kind: "object",
-			Fields: Rollout_MetadataFields,
+			Kind:     "object",
+			Fields:   Rollout_MetadataFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Phases": ubx.FieldSpec{
-			WireName: "phases",
-			Kind: "list",
-			Fields: Rollout_PhasesFields,
-		},
-		"RollbackOfRollout": ubx.FieldSpec{WireName: "rollback_of_rollout"},
-		"RolledBackByRollouts": ubx.FieldSpec{WireName: "rolled_back_by_rollouts"},
-		"State": ubx.FieldSpec{WireName: "state"},
+		"Name":     ubx.FieldSpec{WireName: "name"},
 		"TargetId": ubx.FieldSpec{WireName: "target_id"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
 	},
 }

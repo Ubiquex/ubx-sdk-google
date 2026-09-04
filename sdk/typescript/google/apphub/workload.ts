@@ -126,8 +126,6 @@ const Workload_WorkloadReferenceFields: FieldMap = {
 export interface WorkloadConfig {
   /** Consumer provided attributes. */
   attributes?: Workload_Attributes | Computed<Workload_Attributes>;
-  /** Output only. Create time. */
-  createTime?: string | Computed<string>;
   /** Optional. User-defined description of a Workload. Can have a maximum length of 2048 characters. */
   description?: string | Computed<string>;
   /** Required. Immutable. The resource name of the original discovered workload. */
@@ -136,12 +134,6 @@ export interface WorkloadConfig {
   displayName?: string | Computed<string>;
   /** Identifier. The resource name of the Workload. Format: `"projects/{host-project-id}/locations/{location}/applications/{application-id}/workloads/{workload-id}"` */
   name?: string | Computed<string>;
-  /** Output only. Workload state. */
-  state?: string | Computed<string>;
-  /** Output only. A universally unique identifier (UUID) for the `Workload` in the UUID4 format. */
-  uid?: string | Computed<string>;
-  /** Output only. Update time. */
-  updateTime?: string | Computed<string>;
   /** Properties of an underlying compute resource represented by the Workload. */
   workloadProperties?: Workload_WorkloadProperties | Computed<Workload_WorkloadProperties>;
   /** Reference of an underlying compute resource represented by the Workload. */
@@ -181,14 +173,10 @@ export const Workload: ResourceBinding<WorkloadConfig, WorkloadAttrs> = {
       kind: "object",
       fields: Workload_AttributesFields,
     },
-    createTime: "create_time",
     description: "description",
     discoveredWorkload: "discovered_workload",
     displayName: "display_name",
     name: "name",
-    state: "state",
-    uid: "uid",
-    updateTime: "update_time",
     workloadProperties: {
       wireName: "workload_properties",
       kind: "object",

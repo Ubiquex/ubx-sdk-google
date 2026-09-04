@@ -42,11 +42,6 @@ class V1beta1FirewallEndpoint_WildfireSettings:
     # Optional. The region where WildFire analysis will be performed. PAN supports regions: https://docs.paloaltonetworks.com/advanced-wildfire/administration/advanced-wildfire-overview/advanced-wildfire-deployments/advanced-wildfire-global-cloud
     wildfire_region: Any = None
 
-_V1beta1FirewallEndpoint_AssociationsFields = {
-    "name": ubx.FieldSpec(wire_name="name"),
-    "network": ubx.FieldSpec(wire_name="network"),
-}
-
 _V1beta1FirewallEndpoint_EndpointSettingsFields = {
     "content_cloud_region": ubx.FieldSpec(wire_name="content_cloud_region"),
     "http_partial_response_blocked": ubx.FieldSpec(wire_name="http_partial_response_blocked"),
@@ -73,14 +68,8 @@ _V1beta1FirewallEndpoint_WildfireSettingsFields = {
 
 @dataclasses.dataclass
 class V1beta1FirewallEndpointConfig:
-    # Output only. Deprecated: List of networks that are associated with this endpoint in the local zone. This is a projection of the FirewallEndpointAssociations pointing at this endpoint. A network will only appear in this list after traffic routing is fully configured. Format: projects/{project}/global/networks/{name}.
-    associated_networks: Any = None
-    # Output only. List of FirewallEndpointAssociations that are associated to this endpoint. An association will only appear in this list after traffic routing is fully configured.
-    associations: Any = None
     # Optional. Project to charge for the deployed firewall endpoint. This field must be specified when creating the endpoint in the organization scope, and should be omitted otherwise.
     billing_project_id: Any = None
-    # Output only. Create time stamp.
-    create_time: Any = None
     # Optional. Description of the firewall endpoint. Max length 2048 characters.
     description: Any = None
     # Settings for the endpoint.
@@ -89,16 +78,6 @@ class V1beta1FirewallEndpointConfig:
     labels: Any = None
     # Immutable. Identifier. Name of resource.
     name: Any = None
-    # Output only. Whether reconciling is in progress, recommended per https://google.aip.dev/128.
-    reconciling: Any = None
-    # Output only. [Output Only] Reserved for future use.
-    satisfies_pzi: Any = None
-    # Output only. [Output Only] Reserved for future use.
-    satisfies_pzs: Any = None
-    # Output only. Current state of the endpoint.
-    state: Any = None
-    # Output only. Update time stamp
-    update_time: Any = None
     # Settings for WildFire analysis.
     wildfire_settings: Any = None
 
@@ -136,14 +115,7 @@ class V1beta1FirewallEndpointAttrs:
 V1beta1FirewallEndpoint = ubx.ResourceBinding(
     wire_type="google_networksecurity_v1beta1_firewall_endpoint",
     fields={
-        "associated_networks": ubx.FieldSpec(wire_name="associated_networks"),
-        "associations": ubx.FieldSpec(
-            wire_name="associations",
-            kind="list",
-            fields=_V1beta1FirewallEndpoint_AssociationsFields,
-        ),
         "billing_project_id": ubx.FieldSpec(wire_name="billing_project_id"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "endpoint_settings": ubx.FieldSpec(
             wire_name="endpoint_settings",
@@ -152,11 +124,6 @@ V1beta1FirewallEndpoint = ubx.ResourceBinding(
         ),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "reconciling": ubx.FieldSpec(wire_name="reconciling"),
-        "satisfies_pzi": ubx.FieldSpec(wire_name="satisfies_pzi"),
-        "satisfies_pzs": ubx.FieldSpec(wire_name="satisfies_pzs"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
         "wildfire_settings": ubx.FieldSpec(
             wire_name="wildfire_settings",
             kind="object",

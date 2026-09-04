@@ -129,12 +129,8 @@ class BackupPlanConfig:
     backup_rules: Any = None
     # Required. Resource name of backup vault which will be used as storage location for backups. Format: projects/{project}/locations/{location}/backupVaults/{backupvault}
     backup_vault: Any = None
-    # Output only. The Google Cloud service account to be used by the BackupVault for taking backups. Specify the email address of the Backup Vault Service Account.
-    backup_vault_service_account: Any = None
     # Properties for a compute instance backup plan.
     compute_instance_backup_plan_properties: Any = None
-    # Output only. When the `BackupPlan` was created.
-    create_time: Any = None
     # Optional. The description of the `BackupPlan` resource. The description allows for additional details about `BackupPlan` and its use cases to be provided. An example description is the following: "This is a backup plan that performs a daily backup at 6pm and retains data for 3 months". The description must be at most 2048 characters.
     description: Any = None
     # Properties for a disk backup plan.
@@ -147,20 +143,8 @@ class BackupPlanConfig:
     log_retention_days: Any = None
     # Optional. Optional field to configure the maximum number of days for which a backup can be retained. This field is only applicable for on-demand backups taken with custom retention value.
     max_custom_on_demand_retention_days: Any = None
-    # Output only. Identifier. The resource name of the `BackupPlan`. Format: `projects/{project}/locations/{location}/backupPlans/{backup_plan}`
-    name: Any = None
     # Required. The resource type to which the `BackupPlan` will be applied. Examples include, "compute.googleapis.com/Instance", "sqladmin.googleapis.com/Instance", "alloydb.googleapis.com/Cluster", "compute.googleapis.com/Disk".
     resource_type: Any = None
-    # Output only. The user friendly revision ID of the `BackupPlanRevision`. Example: v0, v1, v2, etc.
-    revision_id: Any = None
-    # Output only. The resource id of the `BackupPlanRevision`. Format: `projects/{project}/locations/{location}/backupPlans/{backup_plan}/revisions/{revision_id}`
-    revision_name: Any = None
-    # Output only. The `State` for the `BackupPlan`.
-    state: Any = None
-    # Output only. All resource types to which backupPlan can be applied.
-    supported_resource_types: Any = None
-    # Output only. When the `BackupPlan` was last updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class BackupPlanAttrs:
@@ -210,13 +194,11 @@ BackupPlan = ubx.ResourceBinding(
             fields=_BackupPlan_BackupRulesFields,
         ),
         "backup_vault": ubx.FieldSpec(wire_name="backup_vault"),
-        "backup_vault_service_account": ubx.FieldSpec(wire_name="backup_vault_service_account"),
         "compute_instance_backup_plan_properties": ubx.FieldSpec(
             wire_name="compute_instance_backup_plan_properties",
             kind="object",
             fields=_BackupPlan_ComputeInstanceBackupPlanPropertiesFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "disk_backup_plan_properties": ubx.FieldSpec(
             wire_name="disk_backup_plan_properties",
@@ -227,12 +209,6 @@ BackupPlan = ubx.ResourceBinding(
         "labels": ubx.FieldSpec(wire_name="labels"),
         "log_retention_days": ubx.FieldSpec(wire_name="log_retention_days"),
         "max_custom_on_demand_retention_days": ubx.FieldSpec(wire_name="max_custom_on_demand_retention_days"),
-        "name": ubx.FieldSpec(wire_name="name"),
         "resource_type": ubx.FieldSpec(wire_name="resource_type"),
-        "revision_id": ubx.FieldSpec(wire_name="revision_id"),
-        "revision_name": ubx.FieldSpec(wire_name="revision_name"),
-        "state": ubx.FieldSpec(wire_name="state"),
-        "supported_resource_types": ubx.FieldSpec(wire_name="supported_resource_types"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

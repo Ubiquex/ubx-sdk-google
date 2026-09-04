@@ -15,8 +15,8 @@ type Model_FeatureColumns_Type_StructType struct {
 type Model_FeatureColumns_Type struct {
 	ArrayElementType any
 	RangeElementType any
-	StructType any
-	TypeKind any
+	StructType       any
+	TypeKind         any
 }
 
 type Model_FeatureColumns struct {
@@ -119,9 +119,9 @@ type Model_HparamSearchSpaces struct {
 }
 
 type Model_HparamTrials_EvaluationMetrics_ArimaForecastingMetrics_ArimaFittingMetrics struct {
-	Aic any
+	Aic           any
 	LogLikelihood any
-	Variance any
+	Variance      any
 }
 
 type Model_HparamTrials_EvaluationMetrics_ArimaForecastingMetrics_ArimaSingleModelForecastingMetrics_NonSeasonalOrder struct {
@@ -132,57 +132,57 @@ type Model_HparamTrials_EvaluationMetrics_ArimaForecastingMetrics_ArimaSingleMod
 
 type Model_HparamTrials_EvaluationMetrics_ArimaForecastingMetrics_ArimaSingleModelForecastingMetrics struct {
 	ArimaFittingMetrics any
-	HasDrift any
-	HasHolidayEffect any
-	HasSpikesAndDips any
-	HasStepChanges any
-	NonSeasonalOrder any
-	SeasonalPeriods any
-	TimeSeriesId any
-	TimeSeriesIds any
+	HasDrift            any
+	HasHolidayEffect    any
+	HasSpikesAndDips    any
+	HasStepChanges      any
+	NonSeasonalOrder    any
+	SeasonalPeriods     any
+	TimeSeriesId        any
+	TimeSeriesIds       any
 }
 
 type Model_HparamTrials_EvaluationMetrics_ArimaForecastingMetrics struct {
-	ArimaFittingMetrics any
+	ArimaFittingMetrics                any
 	ArimaSingleModelForecastingMetrics any
-	HasDrift any
-	NonSeasonalOrder any
-	SeasonalPeriods any
-	TimeSeriesId any
+	HasDrift                           any
+	NonSeasonalOrder                   any
+	SeasonalPeriods                    any
+	TimeSeriesId                       any
 }
 
 type Model_HparamTrials_EvaluationMetrics_BinaryClassificationMetrics_AggregateClassificationMetrics struct {
-	Accuracy any
-	F1Score any
-	LogLoss any
+	Accuracy  any
+	F1Score   any
+	LogLoss   any
 	Precision any
-	Recall any
-	RocAuc any
+	Recall    any
+	RocAuc    any
 	Threshold any
 }
 
 type Model_HparamTrials_EvaluationMetrics_BinaryClassificationMetrics_BinaryConfusionMatrixList struct {
-	Accuracy any
-	F1Score any
-	FalseNegatives any
-	FalsePositives any
+	Accuracy               any
+	F1Score                any
+	FalseNegatives         any
+	FalsePositives         any
 	PositiveClassThreshold any
-	Precision any
-	Recall any
-	TrueNegatives any
-	TruePositives any
+	Precision              any
+	Recall                 any
+	TrueNegatives          any
+	TruePositives          any
 }
 
 type Model_HparamTrials_EvaluationMetrics_BinaryClassificationMetrics struct {
 	AggregateClassificationMetrics any
-	BinaryConfusionMatrixList any
-	NegativeLabel any
-	PositiveLabel any
+	BinaryConfusionMatrixList      any
+	NegativeLabel                  any
+	PositiveLabel                  any
 }
 
 type Model_HparamTrials_EvaluationMetrics_ClusteringMetrics_Clusters_FeatureValues_CategoricalValue_CategoryCounts struct {
 	Category any
-	Count any
+	Count    any
 }
 
 type Model_HparamTrials_EvaluationMetrics_ClusteringMetrics_Clusters_FeatureValues_CategoricalValue struct {
@@ -191,19 +191,19 @@ type Model_HparamTrials_EvaluationMetrics_ClusteringMetrics_Clusters_FeatureValu
 
 type Model_HparamTrials_EvaluationMetrics_ClusteringMetrics_Clusters_FeatureValues struct {
 	CategoricalValue any
-	FeatureColumn any
-	NumericalValue any
+	FeatureColumn    any
+	NumericalValue   any
 }
 
 type Model_HparamTrials_EvaluationMetrics_ClusteringMetrics_Clusters struct {
-	CentroidId any
-	Count any
+	CentroidId    any
+	Count         any
 	FeatureValues any
 }
 
 type Model_HparamTrials_EvaluationMetrics_ClusteringMetrics struct {
-	Clusters any
-	DaviesBouldinIndex any
+	Clusters            any
+	DaviesBouldinIndex  any
 	MeanSquaredDistance any
 }
 
@@ -212,165 +212,165 @@ type Model_HparamTrials_EvaluationMetrics_DimensionalityReductionMetrics struct 
 }
 
 type Model_HparamTrials_EvaluationMetrics_MultiClassClassificationMetrics_ConfusionMatrixList_Rows_Entries struct {
-	ItemCount any
+	ItemCount      any
 	PredictedLabel any
 }
 
 type Model_HparamTrials_EvaluationMetrics_MultiClassClassificationMetrics_ConfusionMatrixList_Rows struct {
 	ActualLabel any
-	Entries any
+	Entries     any
 }
 
 type Model_HparamTrials_EvaluationMetrics_MultiClassClassificationMetrics_ConfusionMatrixList struct {
 	ConfidenceThreshold any
-	Rows any
+	Rows                any
 }
 
 type Model_HparamTrials_EvaluationMetrics_MultiClassClassificationMetrics struct {
 	AggregateClassificationMetrics any
-	ConfusionMatrixList any
+	ConfusionMatrixList            any
 }
 
 type Model_HparamTrials_EvaluationMetrics_RankingMetrics struct {
-	AverageRank any
-	MeanAveragePrecision any
-	MeanSquaredError any
+	AverageRank                        any
+	MeanAveragePrecision               any
+	MeanSquaredError                   any
 	NormalizedDiscountedCumulativeGain any
 }
 
 type Model_HparamTrials_EvaluationMetrics_RegressionMetrics struct {
-	MeanAbsoluteError any
-	MeanSquaredError any
+	MeanAbsoluteError   any
+	MeanSquaredError    any
 	MeanSquaredLogError any
 	MedianAbsoluteError any
-	RSquared any
+	RSquared            any
 }
 
 type Model_HparamTrials_EvaluationMetrics struct {
-	ArimaForecastingMetrics any
-	BinaryClassificationMetrics any
-	ClusteringMetrics any
-	DimensionalityReductionMetrics any
+	ArimaForecastingMetrics         any
+	BinaryClassificationMetrics     any
+	ClusteringMetrics               any
+	DimensionalityReductionMetrics  any
 	MultiClassClassificationMetrics any
-	RankingMetrics any
-	RegressionMetrics any
+	RankingMetrics                  any
+	RegressionMetrics               any
 }
 
 type Model_HparamTrials_Hparams struct {
-	ActivationFn any
-	AdjustStepChanges any
-	ApproxGlobalFeatureContrib any
-	AutoArima any
-	AutoArimaMaxOrder any
-	AutoArimaMinOrder any
-	AutoClassWeights any
-	BatchSize any
-	BoosterType any
-	BudgetHours any
-	CalculatePvalues any
-	CategoryEncodingMethod any
-	CleanSpikesAndDips any
-	ColorSpace any
-	ColsampleBylevel any
-	ColsampleBynode any
-	ColsampleBytree any
-	ContributionMetric any
-	DartNormalizeType any
-	DataFrequency any
-	DataSplitColumn any
-	DataSplitEvalFraction any
-	DataSplitMethod any
-	DecomposeTimeSeries any
-	DimensionIdColumns any
-	DistanceType any
-	Dropout any
-	EarlyStop any
-	EnableGlobalExplain any
-	EndpointIdleTtl any
-	FeedbackType any
-	FitIntercept any
-	ForecastLimitLowerBound any
-	ForecastLimitUpperBound any
-	HiddenUnits any
-	HolidayRegion any
-	HolidayRegions any
-	Horizon any
-	HparamTuningObjectives any
-	HuggingFaceModelId any
-	IncludeDrift any
-	InitialLearnRate any
-	InputLabelColumns any
-	InstanceWeightColumn any
+	ActivationFn                any
+	AdjustStepChanges           any
+	ApproxGlobalFeatureContrib  any
+	AutoArima                   any
+	AutoArimaMaxOrder           any
+	AutoArimaMinOrder           any
+	AutoClassWeights            any
+	BatchSize                   any
+	BoosterType                 any
+	BudgetHours                 any
+	CalculatePvalues            any
+	CategoryEncodingMethod      any
+	CleanSpikesAndDips          any
+	ColorSpace                  any
+	ColsampleBylevel            any
+	ColsampleBynode             any
+	ColsampleBytree             any
+	ContributionMetric          any
+	DartNormalizeType           any
+	DataFrequency               any
+	DataSplitColumn             any
+	DataSplitEvalFraction       any
+	DataSplitMethod             any
+	DecomposeTimeSeries         any
+	DimensionIdColumns          any
+	DistanceType                any
+	Dropout                     any
+	EarlyStop                   any
+	EnableGlobalExplain         any
+	EndpointIdleTtl             any
+	FeedbackType                any
+	FitIntercept                any
+	ForecastLimitLowerBound     any
+	ForecastLimitUpperBound     any
+	HiddenUnits                 any
+	HolidayRegion               any
+	HolidayRegions              any
+	Horizon                     any
+	HparamTuningObjectives      any
+	HuggingFaceModelId          any
+	IncludeDrift                any
+	InitialLearnRate            any
+	InputLabelColumns           any
+	InstanceWeightColumn        any
 	IntegratedGradientsNumSteps any
-	IsTestColumn any
-	ItemColumn any
-	KmeansInitializationColumn any
-	KmeansInitializationMethod any
-	L1RegActivation any
-	L1Regularization any
-	L2Regularization any
-	LabelClassWeights any
-	LearnRate any
-	LearnRateStrategy any
-	LossType any
-	MachineType any
-	MaxIterations any
-	MaxParallelTrials any
-	MaxReplicaCount any
-	MaxTimeSeriesLength any
-	MaxTreeDepth any
-	MinAprioriSupport any
-	MinRelativeProgress any
-	MinReplicaCount any
-	MinSplitLoss any
-	MinTimeSeriesLength any
-	MinTreeChildWeight any
-	ModelGardenModelName any
-	ModelRegistry any
-	ModelUri any
-	NonSeasonalOrder any
-	NumClusters any
-	NumFactors any
-	NumParallelTree any
-	NumPrincipalComponents any
-	NumTrials any
-	OptimizationStrategy any
-	Optimizer any
-	PcaExplainedVarianceRatio any
-	PcaSolver any
-	ReservationAffinityKey any
-	ReservationAffinityType any
-	ReservationAffinityValues any
-	SampledShapleyNumPaths any
-	ScaleFeatures any
-	StandardizeFeatures any
-	Subsample any
-	TfVersion any
-	TimeSeriesDataColumn any
-	TimeSeriesIdColumn any
-	TimeSeriesIdColumns any
-	TimeSeriesLengthFraction any
-	TimeSeriesTimestampColumn any
-	TreeMethod any
-	TrendSmoothingWindowSize any
-	UserColumn any
+	IsTestColumn                any
+	ItemColumn                  any
+	KmeansInitializationColumn  any
+	KmeansInitializationMethod  any
+	L1RegActivation             any
+	L1Regularization            any
+	L2Regularization            any
+	LabelClassWeights           any
+	LearnRate                   any
+	LearnRateStrategy           any
+	LossType                    any
+	MachineType                 any
+	MaxIterations               any
+	MaxParallelTrials           any
+	MaxReplicaCount             any
+	MaxTimeSeriesLength         any
+	MaxTreeDepth                any
+	MinAprioriSupport           any
+	MinRelativeProgress         any
+	MinReplicaCount             any
+	MinSplitLoss                any
+	MinTimeSeriesLength         any
+	MinTreeChildWeight          any
+	ModelGardenModelName        any
+	ModelRegistry               any
+	ModelUri                    any
+	NonSeasonalOrder            any
+	NumClusters                 any
+	NumFactors                  any
+	NumParallelTree             any
+	NumPrincipalComponents      any
+	NumTrials                   any
+	OptimizationStrategy        any
+	Optimizer                   any
+	PcaExplainedVarianceRatio   any
+	PcaSolver                   any
+	ReservationAffinityKey      any
+	ReservationAffinityType     any
+	ReservationAffinityValues   any
+	SampledShapleyNumPaths      any
+	ScaleFeatures               any
+	StandardizeFeatures         any
+	Subsample                   any
+	TfVersion                   any
+	TimeSeriesDataColumn        any
+	TimeSeriesIdColumn          any
+	TimeSeriesIdColumns         any
+	TimeSeriesLengthFraction    any
+	TimeSeriesTimestampColumn   any
+	TreeMethod                  any
+	TrendSmoothingWindowSize    any
+	UserColumn                  any
 	VertexAiModelVersionAliases any
-	WalsAlpha any
-	WarmStart any
-	XgboostVersion any
+	WalsAlpha                   any
+	WarmStart                   any
+	XgboostVersion              any
 }
 
 type Model_HparamTrials struct {
-	EndTimeMs any
-	ErrorMessage any
-	EvalLoss any
-	EvaluationMetrics any
+	EndTimeMs                     any
+	ErrorMessage                  any
+	EvalLoss                      any
+	EvaluationMetrics             any
 	HparamTuningEvaluationMetrics any
-	Hparams any
-	StartTimeMs any
-	Status any
-	TrainingLoss any
-	TrialId any
+	Hparams                       any
+	StartTimeMs                   any
+	Status                        any
+	TrainingLoss                  any
+	TrialId                       any
 }
 
 type Model_ModelReference struct {
@@ -403,81 +403,81 @@ type Model_TrainingRuns_ClassLevelGlobalExplanations_Explanations struct {
 }
 
 type Model_TrainingRuns_ClassLevelGlobalExplanations struct {
-	ClassLabel any
+	ClassLabel   any
 	Explanations any
 }
 
 type Model_TrainingRuns_DataSplitResult_EvaluationTable struct {
 	DatasetId any
 	ProjectId any
-	TableId any
+	TableId   any
 }
 
 type Model_TrainingRuns_DataSplitResult struct {
 	EvaluationTable any
-	TestTable any
-	TrainingTable any
+	TestTable       any
+	TrainingTable   any
 }
 
 type Model_TrainingRuns_Results_ArimaResult_ArimaModelInfo_ArimaCoefficients struct {
 	AutoRegressiveCoefficients any
-	InterceptCoefficient any
-	MovingAverageCoefficients any
+	InterceptCoefficient       any
+	MovingAverageCoefficients  any
 }
 
 type Model_TrainingRuns_Results_ArimaResult_ArimaModelInfo struct {
-	ArimaCoefficients any
+	ArimaCoefficients   any
 	ArimaFittingMetrics any
-	HasDrift any
-	HasHolidayEffect any
-	HasSpikesAndDips any
-	HasStepChanges any
-	NonSeasonalOrder any
-	SeasonalPeriods any
-	TimeSeriesId any
-	TimeSeriesIds any
+	HasDrift            any
+	HasHolidayEffect    any
+	HasSpikesAndDips    any
+	HasStepChanges      any
+	NonSeasonalOrder    any
+	SeasonalPeriods     any
+	TimeSeriesId        any
+	TimeSeriesIds       any
 }
 
 type Model_TrainingRuns_Results_ArimaResult struct {
-	ArimaModelInfo any
+	ArimaModelInfo  any
 	SeasonalPeriods any
 }
 
 type Model_TrainingRuns_Results_ClusterInfos struct {
-	CentroidId any
+	CentroidId    any
 	ClusterRadius any
-	ClusterSize any
+	ClusterSize   any
 }
 
 type Model_TrainingRuns_Results_PrincipalComponentInfos struct {
 	CumulativeExplainedVarianceRatio any
-	ExplainedVariance any
-	ExplainedVarianceRatio any
-	PrincipalComponentId any
+	ExplainedVariance                any
+	ExplainedVarianceRatio           any
+	PrincipalComponentId             any
 }
 
 type Model_TrainingRuns_Results struct {
-	ArimaResult any
-	ClusterInfos any
-	DurationMs any
-	EvalLoss any
-	Index any
-	LearnRate any
+	ArimaResult             any
+	ClusterInfos            any
+	DurationMs              any
+	EvalLoss                any
+	Index                   any
+	LearnRate               any
 	PrincipalComponentInfos any
-	TrainingLoss any
+	TrainingLoss            any
 }
 
 type Model_TrainingRuns struct {
 	ClassLevelGlobalExplanations any
-	DataSplitResult any
-	EvaluationMetrics any
-	ModelLevelGlobalExplanation any
-	Results any
-	StartTime any
-	TrainingOptions any
-	TrainingStartTime any
-	VertexAiModelId any
-	VertexAiModelVersion any
+	DataSplitResult              any
+	EvaluationMetrics            any
+	ModelLevelGlobalExplanation  any
+	Results                      any
+	StartTime                    any
+	TrainingOptions              any
+	TrainingStartTime            any
+	VertexAiModelId              any
+	VertexAiModelVersion         any
 }
 
 type Model_TransformColumns_Type_StructType_Fields struct {
@@ -492,19 +492,19 @@ type Model_TransformColumns_Type_StructType struct {
 type Model_TransformColumns_Type struct {
 	ArrayElementType any
 	RangeElementType any
-	StructType any
-	TypeKind any
+	StructType       any
+	TypeKind         any
 }
 
 type Model_TransformColumns struct {
-	Name any
+	Name         any
 	TransformSql any
-	Type any
+	Type         any
 }
 
 type ModelConfig struct {
 	DatasetId any
-	ModelId any
+	ModelId   any
 	ProjectId any
 }
 
@@ -513,7 +513,7 @@ type ModelAttrs struct {
 	BestTrialId any
 	// Output only. The time when this model was created, in millisecs since the epoch.
 	CreationTime any
-	DatasetId any
+	DatasetId    any
 	// Output only. The default trial_id to use in TVFs when the trial_id is not passed in. For single-objective [hyperparameter tuning](https://cloud.google.com/bigquery-ml/docs/reference/standard-sql/bigqueryml-syntax-hp-tuning-overview) models, this is the best trial ID. For multi-objective [hyperparameter tuning](https://cloud.google.com/bigquery-ml/docs/reference/standard-sql/bigqueryml-syntax-hp-tuning-overview) models, this is the smallest trial ID among all Pareto optimal trials.
 	DefaultTrialId any
 	// Optional. A user-friendly description of this model.
@@ -540,14 +540,14 @@ type ModelAttrs struct {
 	LastModifiedTime any
 	// Output only. The geographic location where the model resides. This value is inherited from the dataset.
 	Location any
-	ModelId any
+	ModelId  any
 	// Id path of a model.
 	ModelReference any
 	// Output only. Type of the model resource.
 	ModelType any
 	// Output only. For single-objective [hyperparameter tuning](https://cloud.google.com/bigquery-ml/docs/reference/standard-sql/bigqueryml-syntax-hp-tuning-overview) models, it only contains the best trial. For multi-objective [hyperparameter tuning](https://cloud.google.com/bigquery-ml/docs/reference/standard-sql/bigqueryml-syntax-hp-tuning-overview) models, it contains all Pareto optimal trials sorted by trial_id.
 	OptimalTrialIds any
-	ProjectId any
+	ProjectId       any
 	// Remote Model Info
 	RemoteModelInfo any
 	// Information for all training runs in increasing order of start_time.
@@ -560,7 +560,7 @@ var Model = ubx.DataSourceBinding{
 	WireType: "google_bigquery_model",
 	Fields: ubx.FieldMap{
 		"DatasetId": ubx.FieldSpec{WireName: "dataset_id"},
-		"ModelId": ubx.FieldSpec{WireName: "model_id"},
+		"ModelId":   ubx.FieldSpec{WireName: "model_id"},
 		"ProjectId": ubx.FieldSpec{WireName: "project_id"},
 	},
 }

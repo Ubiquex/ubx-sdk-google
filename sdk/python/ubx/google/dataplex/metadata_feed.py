@@ -38,8 +38,6 @@ _MetadataFeed_ScopeFields = {
 
 @dataclasses.dataclass
 class MetadataFeedConfig:
-    # Output only. The time when the feed was created.
-    create_time: Any = None
     # Filters defines the type of changes that you want to listen to. You can have multiple entry type filters and multiple aspect type filters. All of the entry type filters are OR'ed together. All of the aspect type filters are OR'ed together. All of the entry type filters and aspect type filters are AND'ed together.
     filters: Any = None
     # Optional. User-defined labels.
@@ -50,10 +48,6 @@ class MetadataFeedConfig:
     pubsub_topic: Any = None
     # Scope defines the scope of the metadata feed. Scopes are exclusive. Only one of the scopes can be specified.
     scope: Any = None
-    # Output only. A system-generated, globally unique ID for the metadata job. If the metadata job is deleted and then re-created with the same name, this ID is different.
-    uid: Any = None
-    # Output only. The time when the feed was updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class MetadataFeedAttrs:
@@ -77,7 +71,6 @@ class MetadataFeedAttrs:
 MetadataFeed = ubx.ResourceBinding(
     wire_type="google_dataplex_metadata_feed",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "filters": ubx.FieldSpec(
             wire_name="filters",
             kind="object",
@@ -91,7 +84,5 @@ MetadataFeed = ubx.ResourceBinding(
             kind="object",
             fields=_MetadataFeed_ScopeFields,
         ),
-        "uid": ubx.FieldSpec(wire_name="uid"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

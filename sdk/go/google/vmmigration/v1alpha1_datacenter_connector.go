@@ -44,68 +44,52 @@ type V1alpha1DatacenterConnector_UpgradeStatus struct {
 }
 
 var V1alpha1DatacenterConnector_AvailableVersions_InPlaceUpdateFields = ubx.FieldMap{
-		"Critical": ubx.FieldSpec{WireName: "critical"},
-		"ReleaseNotesUri": ubx.FieldSpec{WireName: "release_notes_uri"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"Critical":        ubx.FieldSpec{WireName: "critical"},
+	"ReleaseNotesUri": ubx.FieldSpec{WireName: "release_notes_uri"},
+	"Uri":             ubx.FieldSpec{WireName: "uri"},
+	"Version":         ubx.FieldSpec{WireName: "version"},
+}
 
 var V1alpha1DatacenterConnector_AvailableVersionsFields = ubx.FieldMap{
-		"InPlaceUpdate": ubx.FieldSpec{
-			WireName: "in_place_update",
-			Kind: "object",
-			Fields: V1alpha1DatacenterConnector_AvailableVersions_InPlaceUpdateFields,
-		},
-		"NewDeployableAppliance": ubx.FieldSpec{
-			WireName: "new_deployable_appliance",
-			Kind: "object",
-			Fields: V1alpha1DatacenterConnector_AvailableVersions_InPlaceUpdateFields,
-		},
-	}
+	"InPlaceUpdate": ubx.FieldSpec{
+		WireName: "in_place_update",
+		Kind:     "object",
+		Fields:   V1alpha1DatacenterConnector_AvailableVersions_InPlaceUpdateFields,
+	},
+	"NewDeployableAppliance": ubx.FieldSpec{
+		WireName: "new_deployable_appliance",
+		Kind:     "object",
+		Fields:   V1alpha1DatacenterConnector_AvailableVersions_InPlaceUpdateFields,
+	},
+}
 
 var V1alpha1DatacenterConnector_ErrorFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
+	"Code":    ubx.FieldSpec{WireName: "code"},
+	"Details": ubx.FieldSpec{WireName: "details"},
+	"Message": ubx.FieldSpec{WireName: "message"},
+}
 
 var V1alpha1DatacenterConnector_UpgradeStatusFields = ubx.FieldMap{
-		"Error": ubx.FieldSpec{
-			WireName: "error",
-			Kind: "object",
-			Fields: V1alpha1DatacenterConnector_ErrorFields,
-		},
-		"PreviousVersion": ubx.FieldSpec{WireName: "previous_version"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"Version": ubx.FieldSpec{WireName: "version"},
-	}
+	"Error": ubx.FieldSpec{
+		WireName: "error",
+		Kind:     "object",
+		Fields:   V1alpha1DatacenterConnector_ErrorFields,
+	},
+	"PreviousVersion": ubx.FieldSpec{WireName: "previous_version"},
+	"StartTime":       ubx.FieldSpec{WireName: "start_time"},
+	"State":           ubx.FieldSpec{WireName: "state"},
+	"Version":         ubx.FieldSpec{WireName: "version"},
+}
 
 type V1alpha1DatacenterConnectorConfig struct {
-	// Output only. Appliance OVA version. This is the OVA which is manually installed by the user and contains the infrastructure for the automatically updatable components on the appliance.
-	ApplianceInfrastructureVersion any
-	// Output only. Appliance last installed update bundle version. This is the version of the automatically updatable components on the appliance.
-	ApplianceSoftwareVersion any
 	// Holds information about the available versions for upgrade.
 	AvailableVersions any
-	// Output only. The communication channel between the datacenter connector and Google Cloud.
-	Bucket any
-	// Output only. The time the connector was created (as an API call, not when it was actually installed).
-	CreateTime any
 	// The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors).
 	Error any
-	// Output only. The connector's name.
-	Name any
 	// Immutable. A unique key for this connector. This key is internal to the OVA connector and is supplied with its creation during the registration process and can not be modified.
 	RegistrationId any
 	// The service account to use in the connector when communicating with the cloud.
 	ServiceAccount any
-	// Output only. State of the DatacenterConnector, as determined by the health checks.
-	State any
-	// Output only. The time the state was last set.
-	StateTime any
-	// Output only. The last time the connector was updated with an API call.
-	UpdateTime any
 	// UpgradeStatus contains information about upgradeAppliance operation.
 	UpgradeStatus any
 	// The version running in the DatacenterConnector. This is supplied by the OVA connector during the registration process and can not be modified.
@@ -146,30 +130,22 @@ type V1alpha1DatacenterConnectorAttrs struct {
 var V1alpha1DatacenterConnector = ubx.ResourceBinding{
 	WireType: "google_vmmigration_v1alpha1_datacenter_connector",
 	Fields: ubx.FieldMap{
-		"ApplianceInfrastructureVersion": ubx.FieldSpec{WireName: "appliance_infrastructure_version"},
-		"ApplianceSoftwareVersion": ubx.FieldSpec{WireName: "appliance_software_version"},
 		"AvailableVersions": ubx.FieldSpec{
 			WireName: "available_versions",
-			Kind: "object",
-			Fields: V1alpha1DatacenterConnector_AvailableVersionsFields,
+			Kind:     "object",
+			Fields:   V1alpha1DatacenterConnector_AvailableVersionsFields,
 		},
-		"Bucket": ubx.FieldSpec{WireName: "bucket"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Error": ubx.FieldSpec{
 			WireName: "error",
-			Kind: "object",
-			Fields: V1alpha1DatacenterConnector_ErrorFields,
+			Kind:     "object",
+			Fields:   V1alpha1DatacenterConnector_ErrorFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
 		"RegistrationId": ubx.FieldSpec{WireName: "registration_id"},
 		"ServiceAccount": ubx.FieldSpec{WireName: "service_account"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"StateTime": ubx.FieldSpec{WireName: "state_time"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 		"UpgradeStatus": ubx.FieldSpec{
 			WireName: "upgrade_status",
-			Kind: "object",
-			Fields: V1alpha1DatacenterConnector_UpgradeStatusFields,
+			Kind:     "object",
+			Fields:   V1alpha1DatacenterConnector_UpgradeStatusFields,
 		},
 		"Version": ubx.FieldSpec{WireName: "version"},
 	},

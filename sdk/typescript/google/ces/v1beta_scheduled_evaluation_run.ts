@@ -179,32 +179,16 @@ const V1betaScheduledEvaluationRun_SchedulingConfigFields: FieldMap = {
 export interface V1betaScheduledEvaluationRunConfig {
   /** Optional. Whether this config is active */
   active?: boolean | Computed<boolean>;
-  /** Output only. Timestamp when the scheduled evaluation run was created. */
-  createTime?: string | Computed<string>;
-  /** Output only. The user who created the scheduled evaluation run. */
-  createdBy?: string | Computed<string>;
   /** Optional. User-defined description of the scheduled evaluation run. */
   description?: string | Computed<string>;
   /** Required. User-defined display name of the scheduled evaluation run config. */
   displayName?: string | Computed<string>;
-  /** Output only. Etag used to ensure the object hasn't changed during a read-modify-write operation. If the etag is empty, the update will overwrite any concurrent changes. */
-  etag?: string | Computed<string>;
-  /** Output only. The last successful EvaluationRun of this scheduled execution. Format: `projects/{project}/locations/{location}/apps/{app}/evaluationRuns/{evaluationRun}` */
-  lastCompletedRun?: string | Computed<string>;
-  /** Output only. The user who last updated the evaluation. */
-  lastUpdatedBy?: string | Computed<string>;
   /** Identifier. The unique identifier of the scheduled evaluation run config. Format: projects/{projectId}/locations/{locationId}/apps/{appId}/scheduledEvaluationRuns/{scheduledEvaluationRunId} */
   name?: string | Computed<string>;
-  /** Output only. The next time this is scheduled to execute */
-  nextScheduledExecutionTime?: string | Computed<string>;
   /** Request message for EvaluationService.RunEvaluation. */
   request?: V1betaScheduledEvaluationRun_Request | Computed<V1betaScheduledEvaluationRun_Request>;
   /** Eval scheduling configuration details */
   schedulingConfig?: V1betaScheduledEvaluationRun_SchedulingConfig | Computed<V1betaScheduledEvaluationRun_SchedulingConfig>;
-  /** Output only. The total number of times this run has been executed */
-  totalExecutions?: number | Computed<number>;
-  /** Output only. Timestamp when the evaluation was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1betaScheduledEvaluationRunAttrs {
@@ -242,15 +226,9 @@ export const V1betaScheduledEvaluationRun: ResourceBinding<V1betaScheduledEvalua
   wireType: "google_ces_v1beta_scheduled_evaluation_run",
   fields: {
     active: "active",
-    createTime: "create_time",
-    createdBy: "created_by",
     description: "description",
     displayName: "display_name",
-    etag: "etag",
-    lastCompletedRun: "last_completed_run",
-    lastUpdatedBy: "last_updated_by",
     name: "name",
-    nextScheduledExecutionTime: "next_scheduled_execution_time",
     request: {
       wireName: "request",
       kind: "object",
@@ -261,7 +239,5 @@ export const V1betaScheduledEvaluationRun: ResourceBinding<V1betaScheduledEvalua
       kind: "object",
       fields: V1betaScheduledEvaluationRun_SchedulingConfigFields,
     },
-    totalExecutions: "total_executions",
-    updateTime: "update_time",
   },
 };

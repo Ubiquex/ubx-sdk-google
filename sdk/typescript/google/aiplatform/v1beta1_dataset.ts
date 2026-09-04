@@ -37,10 +37,6 @@ const V1beta1Dataset_SavedQueriesFields: FieldMap = {
 };
 
 export interface V1beta1DatasetConfig {
-  /** Output only. Timestamp when this Dataset was created. */
-  createTime?: string | Computed<string>;
-  /** Output only. The number of DataItems in this Dataset. Only apply for non-structured Dataset. */
-  dataItemCount?: string | Computed<string>;
   /** The description of the Dataset. */
   description?: string | Computed<string>;
   /** Required. The user-defined name of the Dataset. The name can be up to 128 characters long and can consist of any UTF-8 characters. */
@@ -53,22 +49,12 @@ export interface V1beta1DatasetConfig {
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Required. Additional information about the Dataset. */
   metadata?: unknown | Computed<unknown>;
-  /** Output only. The resource name of the Artifact that was created in MetadataStore when creating the Dataset. The Artifact resource name pattern is `projects/{project}/locations/{location}/metadataStores/{metadata_store}/artifacts/{artifact}`. */
-  metadataArtifact?: string | Computed<string>;
   /** Required. Points to a YAML file stored on Google Cloud Storage describing additional information about the Dataset. The schema is defined as an OpenAPI 3.0.2 Schema Object. The schema files that can be used here are found in gs://google-cloud-aiplatform/schema/dataset/metadata/. */
   metadataSchemaUri?: string | Computed<string>;
   /** Optional. Reference to the public base model last used by the dataset. Only set for prompt datasets. */
   modelReference?: string | Computed<string>;
-  /** Output only. Identifier. The resource name of the Dataset. Format: `projects/{project}/locations/{location}/datasets/{dataset}` */
-  name?: string | Computed<string>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzi?: boolean | Computed<boolean>;
-  /** Output only. Reserved for future use. */
-  satisfiesPzs?: boolean | Computed<boolean>;
   /** All SavedQueries belong to the Dataset will be returned in List/Get Dataset response. The annotation_specs field will not be populated except for UI cases which will only use annotation_spec_count. In CreateDataset request, a SavedQuery is created together if this field is set, up to one SavedQuery can be set in CreateDatasetRequest. The SavedQuery should not contain any AnnotationSpec. */
   savedQueries?: V1beta1Dataset_SavedQueries[] | Computed<V1beta1Dataset_SavedQueries[]>;
-  /** Output only. Timestamp when this Dataset was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface V1beta1DatasetAttrs {
@@ -109,8 +95,6 @@ export interface V1beta1DatasetAttrs {
 export const V1beta1Dataset: ResourceBinding<V1beta1DatasetConfig, V1beta1DatasetAttrs> = {
   wireType: "google_aiplatform_v1beta1_dataset",
   fields: {
-    createTime: "create_time",
-    dataItemCount: "data_item_count",
     description: "description",
     displayName: "display_name",
     encryptionSpec: {
@@ -121,17 +105,12 @@ export const V1beta1Dataset: ResourceBinding<V1beta1DatasetConfig, V1beta1Datase
     etag: "etag",
     labels: "labels",
     metadata: "metadata",
-    metadataArtifact: "metadata_artifact",
     metadataSchemaUri: "metadata_schema_uri",
     modelReference: "model_reference",
-    name: "name",
-    satisfiesPzi: "satisfies_pzi",
-    satisfiesPzs: "satisfies_pzs",
     savedQueries: {
       wireName: "saved_queries",
       kind: "list",
       fields: V1beta1Dataset_SavedQueriesFields,
     },
-    updateTime: "update_time",
   },
 };

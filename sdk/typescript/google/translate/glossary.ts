@@ -47,10 +47,6 @@ const Glossary_LanguagePairFields: FieldMap = {
 export interface GlossaryConfig {
   /** Optional. The display name of the glossary. */
   displayName?: string | Computed<string>;
-  /** Output only. When the glossary creation was finished. */
-  endTime?: string | Computed<string>;
-  /** Output only. The number of entries defined in the glossary. */
-  entryCount?: number | Computed<number>;
   /** Input configuration for glossaries. */
   inputConfig?: Glossary_InputConfig | Computed<Glossary_InputConfig>;
   /** Used with equivalent term set glossaries. */
@@ -59,8 +55,6 @@ export interface GlossaryConfig {
   languagePair?: Glossary_LanguagePair | Computed<Glossary_LanguagePair>;
   /** Identifier. The resource name of the glossary. Glossary names have the form `projects/{project-number-or-id}/locations/{location-id}/glossaries/{glossary-id}`. */
   name?: string | Computed<string>;
-  /** Output only. When CreateGlossary was called. */
-  submitTime?: string | Computed<string>;
 }
 
 export interface GlossaryAttrs {
@@ -86,8 +80,6 @@ export const Glossary: ResourceBinding<GlossaryConfig, GlossaryAttrs> = {
   wireType: "google_translate_glossary",
   fields: {
     displayName: "display_name",
-    endTime: "end_time",
-    entryCount: "entry_count",
     inputConfig: {
       wireName: "input_config",
       kind: "object",
@@ -104,6 +96,5 @@ export const Glossary: ResourceBinding<GlossaryConfig, GlossaryAttrs> = {
       fields: Glossary_LanguagePairFields,
     },
     name: "name",
-    submitTime: "submit_time",
   },
 };

@@ -19,7 +19,7 @@ type Server_GoogleManagedServerCredential struct {
 
 type Server_InternalConfig_ConsumerAcceptList struct {
 	ConnectionLimit any
-	Project any
+	Project         any
 }
 
 type Server_InternalConfig_ConsumerRejectList struct {
@@ -28,8 +28,8 @@ type Server_InternalConfig_ConsumerRejectList struct {
 
 type Server_InternalConfig_PscEndpoints struct {
 	Endpoint any
-	Network any
-	Status any
+	Network  any
+	Status   any
 }
 
 type Server_InternalConfig struct {
@@ -44,54 +44,52 @@ type Server_InternalConfig struct {
 }
 
 var Server_ExternalConfigFields = ubx.FieldMap{
-		"AllowedCidrBlocks": ubx.FieldSpec{WireName: "allowed_cidr_blocks"},
-		"IpAddress": ubx.FieldSpec{WireName: "ip_address"},
-	}
+	"AllowedCidrBlocks": ubx.FieldSpec{WireName: "allowed_cidr_blocks"},
+	"IpAddress":         ubx.FieldSpec{WireName: "ip_address"},
+}
 
 var Server_GoogleManagedServerCredentialFields = ubx.FieldMap{
-		"AsymmetricAlgorithm": ubx.FieldSpec{WireName: "asymmetric_algorithm"},
-		"Fingerprint": ubx.FieldSpec{WireName: "fingerprint"},
-	}
+	"AsymmetricAlgorithm": ubx.FieldSpec{WireName: "asymmetric_algorithm"},
+	"Fingerprint":         ubx.FieldSpec{WireName: "fingerprint"},
+}
 
 var Server_InternalConfig_ConsumerAcceptListFields = ubx.FieldMap{
-		"ConnectionLimit": ubx.FieldSpec{WireName: "connection_limit"},
-		"Project": ubx.FieldSpec{WireName: "project"},
-	}
+	"ConnectionLimit": ubx.FieldSpec{WireName: "connection_limit"},
+	"Project":         ubx.FieldSpec{WireName: "project"},
+}
 
 var Server_InternalConfig_ConsumerRejectListFields = ubx.FieldMap{
-		"Project": ubx.FieldSpec{WireName: "project"},
-	}
+	"Project": ubx.FieldSpec{WireName: "project"},
+}
 
 var Server_InternalConfig_PscEndpointsFields = ubx.FieldMap{
-		"Endpoint": ubx.FieldSpec{WireName: "endpoint"},
-		"Network": ubx.FieldSpec{WireName: "network"},
-		"Status": ubx.FieldSpec{WireName: "status"},
-	}
+	"Endpoint": ubx.FieldSpec{WireName: "endpoint"},
+	"Network":  ubx.FieldSpec{WireName: "network"},
+	"Status":   ubx.FieldSpec{WireName: "status"},
+}
 
 var Server_InternalConfigFields = ubx.FieldMap{
-		"ConsumerAcceptList": ubx.FieldSpec{
-			WireName: "consumer_accept_list",
-			Kind: "list",
-			Fields: Server_InternalConfig_ConsumerAcceptListFields,
-		},
-		"ConsumerRejectList": ubx.FieldSpec{
-			WireName: "consumer_reject_list",
-			Kind: "list",
-			Fields: Server_InternalConfig_ConsumerRejectListFields,
-		},
-		"PscEndpoints": ubx.FieldSpec{
-			WireName: "psc_endpoints",
-			Kind: "list",
-			Fields: Server_InternalConfig_PscEndpointsFields,
-		},
-		"ServiceAttachment": ubx.FieldSpec{WireName: "service_attachment"},
-	}
+	"ConsumerAcceptList": ubx.FieldSpec{
+		WireName: "consumer_accept_list",
+		Kind:     "list",
+		Fields:   Server_InternalConfig_ConsumerAcceptListFields,
+	},
+	"ConsumerRejectList": ubx.FieldSpec{
+		WireName: "consumer_reject_list",
+		Kind:     "list",
+		Fields:   Server_InternalConfig_ConsumerRejectListFields,
+	},
+	"PscEndpoints": ubx.FieldSpec{
+		WireName: "psc_endpoints",
+		Kind:     "list",
+		Fields:   Server_InternalConfig_PscEndpointsFields,
+	},
+	"ServiceAttachment": ubx.FieldSpec{WireName: "service_attachment"},
+}
 
 type ServerConfig struct {
 	// Required. The access type of the Server.
 	AccessType any
-	// Output only. [Output only] Create time stamp
-	CreateTime any
 	// Optional. Display name of the Server
 	DisplayName any
 	// Configuration for external server.
@@ -104,16 +102,6 @@ type ServerConfig struct {
 	Labels any
 	// Identifier. name of resource
 	Name any
-	// Output only. Whether the Server satisfies Physical Zone Isolation (PZI) requirements.
-	SatisfiesPzi any
-	// Output only. Whether the Server satisfies Physical Zone Separation (PZS) requirements.
-	SatisfiesPzs any
-	// Output only. Service agent used to access the customer bucket.
-	ServiceAgent any
-	// Output only. The state of the server.
-	State any
-	// Output only. [Output only] Update time stamp
-	UpdateTime any
 }
 
 type ServerAttrs struct {
@@ -148,30 +136,24 @@ type ServerAttrs struct {
 var Server = ubx.ResourceBinding{
 	WireType: "google_ftp_server",
 	Fields: ubx.FieldMap{
-		"AccessType": ubx.FieldSpec{WireName: "access_type"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
+		"AccessType":  ubx.FieldSpec{WireName: "access_type"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"ExternalConfig": ubx.FieldSpec{
 			WireName: "external_config",
-			Kind: "object",
-			Fields: Server_ExternalConfigFields,
+			Kind:     "object",
+			Fields:   Server_ExternalConfigFields,
 		},
 		"GoogleManagedServerCredential": ubx.FieldSpec{
 			WireName: "google_managed_server_credential",
-			Kind: "object",
-			Fields: Server_GoogleManagedServerCredentialFields,
+			Kind:     "object",
+			Fields:   Server_GoogleManagedServerCredentialFields,
 		},
 		"InternalConfig": ubx.FieldSpec{
 			WireName: "internal_config",
-			Kind: "object",
-			Fields: Server_InternalConfigFields,
+			Kind:     "object",
+			Fields:   Server_InternalConfigFields,
 		},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"SatisfiesPzi": ubx.FieldSpec{WireName: "satisfies_pzi"},
-		"SatisfiesPzs": ubx.FieldSpec{WireName: "satisfies_pzs"},
-		"ServiceAgent": ubx.FieldSpec{WireName: "service_agent"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"Name":   ubx.FieldSpec{WireName: "name"},
 	},
 }

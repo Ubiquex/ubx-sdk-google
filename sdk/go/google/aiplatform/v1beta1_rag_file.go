@@ -16,7 +16,7 @@ type V1beta1RagFile_GcsSource struct {
 }
 
 type V1beta1RagFile_GoogleDriveSource_ResourceIds struct {
-	ResourceId any
+	ResourceId   any
 	ResourceType any
 }
 
@@ -37,15 +37,15 @@ type V1beta1RagFile_ImportRagFilesConfig_ImportResultGcsSink struct {
 
 type V1beta1RagFile_ImportRagFilesConfig_JiraSource_JiraQueries_ApiKeyConfig struct {
 	ApiKeySecretVersion any
-	ApiKeyString any
+	ApiKeyString        any
 }
 
 type V1beta1RagFile_ImportRagFilesConfig_JiraSource_JiraQueries struct {
-	ApiKeyConfig any
+	ApiKeyConfig  any
 	CustomQueries any
-	Email any
-	Projects any
-	ServerUri any
+	Email         any
+	Projects      any
+	ServerUri     any
 }
 
 type V1beta1RagFile_ImportRagFilesConfig_JiraSource struct {
@@ -126,15 +126,15 @@ type V1beta1RagFile_ImportRagFilesConfig_RagFileTransformationConfig struct {
 }
 
 type V1beta1RagFile_ImportRagFilesConfig_SharePointSources_SharePointSources struct {
-	ClientId any
-	ClientSecret any
-	DriveId any
-	DriveName any
-	FileId any
-	SharepointFolderId any
+	ClientId             any
+	ClientSecret         any
+	DriveId              any
+	DriveName            any
+	FileId               any
+	SharepointFolderId   any
 	SharepointFolderPath any
-	SharepointSiteName any
-	TenantId any
+	SharepointSiteName   any
+	TenantId             any
 }
 
 type V1beta1RagFile_ImportRagFilesConfig_SharePointSources struct {
@@ -144,13 +144,13 @@ type V1beta1RagFile_ImportRagFilesConfig_SharePointSources struct {
 
 type V1beta1RagFile_ImportRagFilesConfig_SlackSource_Channels_Channels struct {
 	ChannelId any
-	EndTime any
+	EndTime   any
 	StartTime any
 }
 
 type V1beta1RagFile_ImportRagFilesConfig_SlackSource_Channels struct {
 	ApiKeyConfig any
-	Channels any
+	Channels     any
 }
 
 type V1beta1RagFile_ImportRagFilesConfig_SlackSource struct {
@@ -194,260 +194,260 @@ type V1beta1RagFile_ImportRagFilesConfig struct {
 }
 
 var V1beta1RagFile_GcsSourceFields = ubx.FieldMap{
-		"Uris": ubx.FieldSpec{WireName: "uris"},
-	}
+	"Uris": ubx.FieldSpec{WireName: "uris"},
+}
 
 var V1beta1RagFile_GoogleDriveSource_ResourceIdsFields = ubx.FieldMap{
-		"ResourceId": ubx.FieldSpec{WireName: "resource_id"},
-		"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
-	}
+	"ResourceId":   ubx.FieldSpec{WireName: "resource_id"},
+	"ResourceType": ubx.FieldSpec{WireName: "resource_type"},
+}
 
 var V1beta1RagFile_GoogleDriveSourceFields = ubx.FieldMap{
-		"ResourceIds": ubx.FieldSpec{
-			WireName: "resource_ids",
-			Kind: "list",
-			Fields: V1beta1RagFile_GoogleDriveSource_ResourceIdsFields,
-		},
-	}
+	"ResourceIds": ubx.FieldSpec{
+		WireName: "resource_ids",
+		Kind:     "list",
+		Fields:   V1beta1RagFile_GoogleDriveSource_ResourceIdsFields,
+	},
+}
 
 var V1beta1RagFile_ImportRagFilesConfig_ImportResultBigquerySinkFields = ubx.FieldMap{
-		"OutputUri": ubx.FieldSpec{WireName: "output_uri"},
-	}
+	"OutputUri": ubx.FieldSpec{WireName: "output_uri"},
+}
 
 var V1beta1RagFile_ImportRagFilesConfig_ImportResultGcsSinkFields = ubx.FieldMap{
-		"OutputUriPrefix": ubx.FieldSpec{WireName: "output_uri_prefix"},
-	}
+	"OutputUriPrefix": ubx.FieldSpec{WireName: "output_uri_prefix"},
+}
 
 var V1beta1RagFile_ImportRagFilesConfig_JiraSource_JiraQueries_ApiKeyConfigFields = ubx.FieldMap{
-		"ApiKeySecretVersion": ubx.FieldSpec{WireName: "api_key_secret_version"},
-		"ApiKeyString": ubx.FieldSpec{WireName: "api_key_string"},
-	}
+	"ApiKeySecretVersion": ubx.FieldSpec{WireName: "api_key_secret_version"},
+	"ApiKeyString":        ubx.FieldSpec{WireName: "api_key_string"},
+}
 
 var V1beta1RagFile_ImportRagFilesConfig_JiraSource_JiraQueriesFields = ubx.FieldMap{
-		"ApiKeyConfig": ubx.FieldSpec{
-			WireName: "api_key_config",
-			Kind: "object",
-			Fields: V1beta1RagFile_ImportRagFilesConfig_JiraSource_JiraQueries_ApiKeyConfigFields,
-		},
-		"CustomQueries": ubx.FieldSpec{WireName: "custom_queries"},
-		"Email": ubx.FieldSpec{WireName: "email"},
-		"Projects": ubx.FieldSpec{WireName: "projects"},
-		"ServerUri": ubx.FieldSpec{WireName: "server_uri"},
-	}
+	"ApiKeyConfig": ubx.FieldSpec{
+		WireName: "api_key_config",
+		Kind:     "object",
+		Fields:   V1beta1RagFile_ImportRagFilesConfig_JiraSource_JiraQueries_ApiKeyConfigFields,
+	},
+	"CustomQueries": ubx.FieldSpec{WireName: "custom_queries"},
+	"Email":         ubx.FieldSpec{WireName: "email"},
+	"Projects":      ubx.FieldSpec{WireName: "projects"},
+	"ServerUri":     ubx.FieldSpec{WireName: "server_uri"},
+}
 
 var V1beta1RagFile_ImportRagFilesConfig_JiraSourceFields = ubx.FieldMap{
-		"JiraQueries": ubx.FieldSpec{
-			WireName: "jira_queries",
-			Kind: "list",
-			Fields: V1beta1RagFile_ImportRagFilesConfig_JiraSource_JiraQueriesFields,
-		},
-	}
+	"JiraQueries": ubx.FieldSpec{
+		WireName: "jira_queries",
+		Kind:     "list",
+		Fields:   V1beta1RagFile_ImportRagFilesConfig_JiraSource_JiraQueriesFields,
+	},
+}
 
 var V1beta1RagFile_ImportRagFilesConfig_RagFileChunkingConfig_FixedLengthChunkingFields = ubx.FieldMap{
-		"ChunkOverlap": ubx.FieldSpec{WireName: "chunk_overlap"},
-		"ChunkSize": ubx.FieldSpec{WireName: "chunk_size"},
-	}
+	"ChunkOverlap": ubx.FieldSpec{WireName: "chunk_overlap"},
+	"ChunkSize":    ubx.FieldSpec{WireName: "chunk_size"},
+}
 
 var V1beta1RagFile_ImportRagFilesConfig_RagFileChunkingConfigFields = ubx.FieldMap{
-		"ChunkOverlap": ubx.FieldSpec{WireName: "chunk_overlap"},
-		"ChunkSize": ubx.FieldSpec{WireName: "chunk_size"},
-		"FixedLengthChunking": ubx.FieldSpec{
-			WireName: "fixed_length_chunking",
-			Kind: "object",
-			Fields: V1beta1RagFile_ImportRagFilesConfig_RagFileChunkingConfig_FixedLengthChunkingFields,
-		},
-	}
+	"ChunkOverlap": ubx.FieldSpec{WireName: "chunk_overlap"},
+	"ChunkSize":    ubx.FieldSpec{WireName: "chunk_size"},
+	"FixedLengthChunking": ubx.FieldSpec{
+		WireName: "fixed_length_chunking",
+		Kind:     "object",
+		Fields:   V1beta1RagFile_ImportRagFilesConfig_RagFileChunkingConfig_FixedLengthChunkingFields,
+	},
+}
 
 var V1beta1RagFile_ImportRagFilesConfig_RagFileMetadataConfigFields = ubx.FieldMap{
-		"GcsMetadataSchemaSource": ubx.FieldSpec{
-			WireName: "gcs_metadata_schema_source",
-			Kind: "object",
-			Fields: V1beta1RagFile_GcsSourceFields,
-		},
-		"GcsMetadataSource": ubx.FieldSpec{
-			WireName: "gcs_metadata_source",
-			Kind: "object",
-			Fields: V1beta1RagFile_GcsSourceFields,
-		},
-		"GoogleDriveMetadataSchemaSource": ubx.FieldSpec{
-			WireName: "google_drive_metadata_schema_source",
-			Kind: "object",
-			Fields: V1beta1RagFile_GoogleDriveSourceFields,
-		},
-		"GoogleDriveMetadataSource": ubx.FieldSpec{
-			WireName: "google_drive_metadata_source",
-			Kind: "object",
-			Fields: V1beta1RagFile_GoogleDriveSourceFields,
-		},
-		"InlineMetadataSchemaSource": ubx.FieldSpec{WireName: "inline_metadata_schema_source"},
-		"InlineMetadataSource": ubx.FieldSpec{WireName: "inline_metadata_source"},
-	}
+	"GcsMetadataSchemaSource": ubx.FieldSpec{
+		WireName: "gcs_metadata_schema_source",
+		Kind:     "object",
+		Fields:   V1beta1RagFile_GcsSourceFields,
+	},
+	"GcsMetadataSource": ubx.FieldSpec{
+		WireName: "gcs_metadata_source",
+		Kind:     "object",
+		Fields:   V1beta1RagFile_GcsSourceFields,
+	},
+	"GoogleDriveMetadataSchemaSource": ubx.FieldSpec{
+		WireName: "google_drive_metadata_schema_source",
+		Kind:     "object",
+		Fields:   V1beta1RagFile_GoogleDriveSourceFields,
+	},
+	"GoogleDriveMetadataSource": ubx.FieldSpec{
+		WireName: "google_drive_metadata_source",
+		Kind:     "object",
+		Fields:   V1beta1RagFile_GoogleDriveSourceFields,
+	},
+	"InlineMetadataSchemaSource": ubx.FieldSpec{WireName: "inline_metadata_schema_source"},
+	"InlineMetadataSource":       ubx.FieldSpec{WireName: "inline_metadata_source"},
+}
 
 var V1beta1RagFile_ImportRagFilesConfig_RagFileParsingConfig_AdvancedParserFields = ubx.FieldMap{
-		"UseAdvancedPdfParsing": ubx.FieldSpec{WireName: "use_advanced_pdf_parsing"},
-	}
+	"UseAdvancedPdfParsing": ubx.FieldSpec{WireName: "use_advanced_pdf_parsing"},
+}
 
 var V1beta1RagFile_ImportRagFilesConfig_RagFileParsingConfig_LayoutParserFields = ubx.FieldMap{
-		"GlobalMaxParsingRequestsPerMin": ubx.FieldSpec{WireName: "global_max_parsing_requests_per_min"},
-		"MaxParsingRequestsPerMin": ubx.FieldSpec{WireName: "max_parsing_requests_per_min"},
-		"ProcessorName": ubx.FieldSpec{WireName: "processor_name"},
-	}
+	"GlobalMaxParsingRequestsPerMin": ubx.FieldSpec{WireName: "global_max_parsing_requests_per_min"},
+	"MaxParsingRequestsPerMin":       ubx.FieldSpec{WireName: "max_parsing_requests_per_min"},
+	"ProcessorName":                  ubx.FieldSpec{WireName: "processor_name"},
+}
 
 var V1beta1RagFile_ImportRagFilesConfig_RagFileParsingConfig_LlmParserFields = ubx.FieldMap{
-		"CustomParsingPrompt": ubx.FieldSpec{WireName: "custom_parsing_prompt"},
-		"GlobalMaxParsingRequestsPerMin": ubx.FieldSpec{WireName: "global_max_parsing_requests_per_min"},
-		"MaxParsingRequestsPerMin": ubx.FieldSpec{WireName: "max_parsing_requests_per_min"},
-		"ModelName": ubx.FieldSpec{WireName: "model_name"},
-	}
+	"CustomParsingPrompt":            ubx.FieldSpec{WireName: "custom_parsing_prompt"},
+	"GlobalMaxParsingRequestsPerMin": ubx.FieldSpec{WireName: "global_max_parsing_requests_per_min"},
+	"MaxParsingRequestsPerMin":       ubx.FieldSpec{WireName: "max_parsing_requests_per_min"},
+	"ModelName":                      ubx.FieldSpec{WireName: "model_name"},
+}
 
 var V1beta1RagFile_ImportRagFilesConfig_RagFileParsingConfigFields = ubx.FieldMap{
-		"AdvancedParser": ubx.FieldSpec{
-			WireName: "advanced_parser",
-			Kind: "object",
-			Fields: V1beta1RagFile_ImportRagFilesConfig_RagFileParsingConfig_AdvancedParserFields,
-		},
-		"LayoutParser": ubx.FieldSpec{
-			WireName: "layout_parser",
-			Kind: "object",
-			Fields: V1beta1RagFile_ImportRagFilesConfig_RagFileParsingConfig_LayoutParserFields,
-		},
-		"LlmParser": ubx.FieldSpec{
-			WireName: "llm_parser",
-			Kind: "object",
-			Fields: V1beta1RagFile_ImportRagFilesConfig_RagFileParsingConfig_LlmParserFields,
-		},
-		"UseAdvancedPdfParsing": ubx.FieldSpec{WireName: "use_advanced_pdf_parsing"},
-	}
+	"AdvancedParser": ubx.FieldSpec{
+		WireName: "advanced_parser",
+		Kind:     "object",
+		Fields:   V1beta1RagFile_ImportRagFilesConfig_RagFileParsingConfig_AdvancedParserFields,
+	},
+	"LayoutParser": ubx.FieldSpec{
+		WireName: "layout_parser",
+		Kind:     "object",
+		Fields:   V1beta1RagFile_ImportRagFilesConfig_RagFileParsingConfig_LayoutParserFields,
+	},
+	"LlmParser": ubx.FieldSpec{
+		WireName: "llm_parser",
+		Kind:     "object",
+		Fields:   V1beta1RagFile_ImportRagFilesConfig_RagFileParsingConfig_LlmParserFields,
+	},
+	"UseAdvancedPdfParsing": ubx.FieldSpec{WireName: "use_advanced_pdf_parsing"},
+}
 
 var V1beta1RagFile_ImportRagFilesConfig_RagFileTransformationConfigFields = ubx.FieldMap{
-		"RagFileChunkingConfig": ubx.FieldSpec{
-			WireName: "rag_file_chunking_config",
-			Kind: "object",
-			Fields: V1beta1RagFile_ImportRagFilesConfig_RagFileChunkingConfigFields,
-		},
-	}
+	"RagFileChunkingConfig": ubx.FieldSpec{
+		WireName: "rag_file_chunking_config",
+		Kind:     "object",
+		Fields:   V1beta1RagFile_ImportRagFilesConfig_RagFileChunkingConfigFields,
+	},
+}
 
 var V1beta1RagFile_ImportRagFilesConfig_SharePointSources_SharePointSourcesFields = ubx.FieldMap{
-		"ClientId": ubx.FieldSpec{WireName: "client_id"},
-		"ClientSecret": ubx.FieldSpec{
-			WireName: "client_secret",
-			Kind: "object",
-			Fields: V1beta1RagFile_ImportRagFilesConfig_JiraSource_JiraQueries_ApiKeyConfigFields,
-		},
-		"DriveId": ubx.FieldSpec{WireName: "drive_id"},
-		"DriveName": ubx.FieldSpec{WireName: "drive_name"},
-		"FileId": ubx.FieldSpec{WireName: "file_id"},
-		"SharepointFolderId": ubx.FieldSpec{WireName: "sharepoint_folder_id"},
-		"SharepointFolderPath": ubx.FieldSpec{WireName: "sharepoint_folder_path"},
-		"SharepointSiteName": ubx.FieldSpec{WireName: "sharepoint_site_name"},
-		"TenantId": ubx.FieldSpec{WireName: "tenant_id"},
-	}
+	"ClientId": ubx.FieldSpec{WireName: "client_id"},
+	"ClientSecret": ubx.FieldSpec{
+		WireName: "client_secret",
+		Kind:     "object",
+		Fields:   V1beta1RagFile_ImportRagFilesConfig_JiraSource_JiraQueries_ApiKeyConfigFields,
+	},
+	"DriveId":              ubx.FieldSpec{WireName: "drive_id"},
+	"DriveName":            ubx.FieldSpec{WireName: "drive_name"},
+	"FileId":               ubx.FieldSpec{WireName: "file_id"},
+	"SharepointFolderId":   ubx.FieldSpec{WireName: "sharepoint_folder_id"},
+	"SharepointFolderPath": ubx.FieldSpec{WireName: "sharepoint_folder_path"},
+	"SharepointSiteName":   ubx.FieldSpec{WireName: "sharepoint_site_name"},
+	"TenantId":             ubx.FieldSpec{WireName: "tenant_id"},
+}
 
 var V1beta1RagFile_ImportRagFilesConfig_SharePointSourcesFields = ubx.FieldMap{
-		"SharePointSources": ubx.FieldSpec{
-			WireName: "share_point_sources",
-			Kind: "list",
-			Fields: V1beta1RagFile_ImportRagFilesConfig_SharePointSources_SharePointSourcesFields,
-		},
-	}
+	"SharePointSources": ubx.FieldSpec{
+		WireName: "share_point_sources",
+		Kind:     "list",
+		Fields:   V1beta1RagFile_ImportRagFilesConfig_SharePointSources_SharePointSourcesFields,
+	},
+}
 
 var V1beta1RagFile_ImportRagFilesConfig_SlackSource_Channels_ChannelsFields = ubx.FieldMap{
-		"ChannelId": ubx.FieldSpec{WireName: "channel_id"},
-		"EndTime": ubx.FieldSpec{WireName: "end_time"},
-		"StartTime": ubx.FieldSpec{WireName: "start_time"},
-	}
+	"ChannelId": ubx.FieldSpec{WireName: "channel_id"},
+	"EndTime":   ubx.FieldSpec{WireName: "end_time"},
+	"StartTime": ubx.FieldSpec{WireName: "start_time"},
+}
 
 var V1beta1RagFile_ImportRagFilesConfig_SlackSource_ChannelsFields = ubx.FieldMap{
-		"ApiKeyConfig": ubx.FieldSpec{
-			WireName: "api_key_config",
-			Kind: "object",
-			Fields: V1beta1RagFile_ImportRagFilesConfig_JiraSource_JiraQueries_ApiKeyConfigFields,
-		},
-		"Channels": ubx.FieldSpec{
-			WireName: "channels",
-			Kind: "list",
-			Fields: V1beta1RagFile_ImportRagFilesConfig_SlackSource_Channels_ChannelsFields,
-		},
-	}
+	"ApiKeyConfig": ubx.FieldSpec{
+		WireName: "api_key_config",
+		Kind:     "object",
+		Fields:   V1beta1RagFile_ImportRagFilesConfig_JiraSource_JiraQueries_ApiKeyConfigFields,
+	},
+	"Channels": ubx.FieldSpec{
+		WireName: "channels",
+		Kind:     "list",
+		Fields:   V1beta1RagFile_ImportRagFilesConfig_SlackSource_Channels_ChannelsFields,
+	},
+}
 
 var V1beta1RagFile_ImportRagFilesConfig_SlackSourceFields = ubx.FieldMap{
-		"Channels": ubx.FieldSpec{
-			WireName: "channels",
-			Kind: "list",
-			Fields: V1beta1RagFile_ImportRagFilesConfig_SlackSource_ChannelsFields,
-		},
-	}
+	"Channels": ubx.FieldSpec{
+		WireName: "channels",
+		Kind:     "list",
+		Fields:   V1beta1RagFile_ImportRagFilesConfig_SlackSource_ChannelsFields,
+	},
+}
 
 var V1beta1RagFile_ImportRagFilesConfigFields = ubx.FieldMap{
-		"GcsSource": ubx.FieldSpec{
-			WireName: "gcs_source",
-			Kind: "object",
-			Fields: V1beta1RagFile_GcsSourceFields,
-		},
-		"GlobalMaxEmbeddingRequestsPerMin": ubx.FieldSpec{WireName: "global_max_embedding_requests_per_min"},
-		"GoogleDriveSource": ubx.FieldSpec{
-			WireName: "google_drive_source",
-			Kind: "object",
-			Fields: V1beta1RagFile_GoogleDriveSourceFields,
-		},
-		"ImportResultBigquerySink": ubx.FieldSpec{
-			WireName: "import_result_bigquery_sink",
-			Kind: "object",
-			Fields: V1beta1RagFile_ImportRagFilesConfig_ImportResultBigquerySinkFields,
-		},
-		"ImportResultGcsSink": ubx.FieldSpec{
-			WireName: "import_result_gcs_sink",
-			Kind: "object",
-			Fields: V1beta1RagFile_ImportRagFilesConfig_ImportResultGcsSinkFields,
-		},
-		"JiraSource": ubx.FieldSpec{
-			WireName: "jira_source",
-			Kind: "object",
-			Fields: V1beta1RagFile_ImportRagFilesConfig_JiraSourceFields,
-		},
-		"MaxEmbeddingRequestsPerMin": ubx.FieldSpec{WireName: "max_embedding_requests_per_min"},
-		"PartialFailureBigquerySink": ubx.FieldSpec{
-			WireName: "partial_failure_bigquery_sink",
-			Kind: "object",
-			Fields: V1beta1RagFile_ImportRagFilesConfig_ImportResultBigquerySinkFields,
-		},
-		"PartialFailureGcsSink": ubx.FieldSpec{
-			WireName: "partial_failure_gcs_sink",
-			Kind: "object",
-			Fields: V1beta1RagFile_ImportRagFilesConfig_ImportResultGcsSinkFields,
-		},
-		"RagFileChunkingConfig": ubx.FieldSpec{
-			WireName: "rag_file_chunking_config",
-			Kind: "object",
-			Fields: V1beta1RagFile_ImportRagFilesConfig_RagFileChunkingConfigFields,
-		},
-		"RagFileMetadataConfig": ubx.FieldSpec{
-			WireName: "rag_file_metadata_config",
-			Kind: "object",
-			Fields: V1beta1RagFile_ImportRagFilesConfig_RagFileMetadataConfigFields,
-		},
-		"RagFileParsingConfig": ubx.FieldSpec{
-			WireName: "rag_file_parsing_config",
-			Kind: "object",
-			Fields: V1beta1RagFile_ImportRagFilesConfig_RagFileParsingConfigFields,
-		},
-		"RagFileTransformationConfig": ubx.FieldSpec{
-			WireName: "rag_file_transformation_config",
-			Kind: "object",
-			Fields: V1beta1RagFile_ImportRagFilesConfig_RagFileTransformationConfigFields,
-		},
-		"RebuildAnnIndex": ubx.FieldSpec{WireName: "rebuild_ann_index"},
-		"SharePointSources": ubx.FieldSpec{
-			WireName: "share_point_sources",
-			Kind: "object",
-			Fields: V1beta1RagFile_ImportRagFilesConfig_SharePointSourcesFields,
-		},
-		"SlackSource": ubx.FieldSpec{
-			WireName: "slack_source",
-			Kind: "object",
-			Fields: V1beta1RagFile_ImportRagFilesConfig_SlackSourceFields,
-		},
-	}
+	"GcsSource": ubx.FieldSpec{
+		WireName: "gcs_source",
+		Kind:     "object",
+		Fields:   V1beta1RagFile_GcsSourceFields,
+	},
+	"GlobalMaxEmbeddingRequestsPerMin": ubx.FieldSpec{WireName: "global_max_embedding_requests_per_min"},
+	"GoogleDriveSource": ubx.FieldSpec{
+		WireName: "google_drive_source",
+		Kind:     "object",
+		Fields:   V1beta1RagFile_GoogleDriveSourceFields,
+	},
+	"ImportResultBigquerySink": ubx.FieldSpec{
+		WireName: "import_result_bigquery_sink",
+		Kind:     "object",
+		Fields:   V1beta1RagFile_ImportRagFilesConfig_ImportResultBigquerySinkFields,
+	},
+	"ImportResultGcsSink": ubx.FieldSpec{
+		WireName: "import_result_gcs_sink",
+		Kind:     "object",
+		Fields:   V1beta1RagFile_ImportRagFilesConfig_ImportResultGcsSinkFields,
+	},
+	"JiraSource": ubx.FieldSpec{
+		WireName: "jira_source",
+		Kind:     "object",
+		Fields:   V1beta1RagFile_ImportRagFilesConfig_JiraSourceFields,
+	},
+	"MaxEmbeddingRequestsPerMin": ubx.FieldSpec{WireName: "max_embedding_requests_per_min"},
+	"PartialFailureBigquerySink": ubx.FieldSpec{
+		WireName: "partial_failure_bigquery_sink",
+		Kind:     "object",
+		Fields:   V1beta1RagFile_ImportRagFilesConfig_ImportResultBigquerySinkFields,
+	},
+	"PartialFailureGcsSink": ubx.FieldSpec{
+		WireName: "partial_failure_gcs_sink",
+		Kind:     "object",
+		Fields:   V1beta1RagFile_ImportRagFilesConfig_ImportResultGcsSinkFields,
+	},
+	"RagFileChunkingConfig": ubx.FieldSpec{
+		WireName: "rag_file_chunking_config",
+		Kind:     "object",
+		Fields:   V1beta1RagFile_ImportRagFilesConfig_RagFileChunkingConfigFields,
+	},
+	"RagFileMetadataConfig": ubx.FieldSpec{
+		WireName: "rag_file_metadata_config",
+		Kind:     "object",
+		Fields:   V1beta1RagFile_ImportRagFilesConfig_RagFileMetadataConfigFields,
+	},
+	"RagFileParsingConfig": ubx.FieldSpec{
+		WireName: "rag_file_parsing_config",
+		Kind:     "object",
+		Fields:   V1beta1RagFile_ImportRagFilesConfig_RagFileParsingConfigFields,
+	},
+	"RagFileTransformationConfig": ubx.FieldSpec{
+		WireName: "rag_file_transformation_config",
+		Kind:     "object",
+		Fields:   V1beta1RagFile_ImportRagFilesConfig_RagFileTransformationConfigFields,
+	},
+	"RebuildAnnIndex": ubx.FieldSpec{WireName: "rebuild_ann_index"},
+	"SharePointSources": ubx.FieldSpec{
+		WireName: "share_point_sources",
+		Kind:     "object",
+		Fields:   V1beta1RagFile_ImportRagFilesConfig_SharePointSourcesFields,
+	},
+	"SlackSource": ubx.FieldSpec{
+		WireName: "slack_source",
+		Kind:     "object",
+		Fields:   V1beta1RagFile_ImportRagFilesConfig_SlackSourceFields,
+	},
+}
 
 type V1beta1RagFileConfig struct {
 	// Config for importing RagFiles.
@@ -494,8 +494,8 @@ var V1beta1RagFile = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"ImportRagFilesConfig": ubx.FieldSpec{
 			WireName: "import_rag_files_config",
-			Kind: "object",
-			Fields: V1beta1RagFile_ImportRagFilesConfigFields,
+			Kind:     "object",
+			Fields:   V1beta1RagFile_ImportRagFilesConfigFields,
 		},
 	},
 }

@@ -32,24 +32,24 @@ type Policy_Applications_CustomAppConfig struct {
 }
 
 type Policy_Applications_ExtensionConfig struct {
-	NotificationReceiver any
+	NotificationReceiver         any
 	SigningKeyFingerprintsSha256 any
 }
 
 type Policy_Applications_InstallConstraint struct {
-	ChargingConstraint any
-	DeviceIdleConstraint any
+	ChargingConstraint    any
+	DeviceIdleConstraint  any
 	NetworkTypeConstraint any
 }
 
 type Policy_Applications_ManagedConfigurationTemplate struct {
 	ConfigurationVariables any
-	TemplateId any
+	TemplateId             any
 }
 
 type Policy_Applications_PermissionGrants struct {
 	Permission any
-	Policy any
+	Policy     any
 }
 
 type Policy_Applications_Roles struct {
@@ -61,36 +61,36 @@ type Policy_Applications_SigningKeyCerts struct {
 }
 
 type Policy_Applications struct {
-	AccessibleTrackIds any
+	AccessibleTrackIds           any
 	AlwaysOnVpnLockdownExemption any
-	AutoUpdateMode any
-	ConnectedWorkAndPersonalApp any
-	CredentialProviderPolicy any
-	CustomAppConfig any
-	DefaultPermissionPolicy any
-	DelegatedScopes any
-	Disabled any
-	ExtensionConfig any
-	InstallConstraint any
-	InstallPriority any
-	InstallType any
-	LockTaskAllowed any
-	ManagedConfiguration any
+	AutoUpdateMode               any
+	ConnectedWorkAndPersonalApp  any
+	CredentialProviderPolicy     any
+	CustomAppConfig              any
+	DefaultPermissionPolicy      any
+	DelegatedScopes              any
+	Disabled                     any
+	ExtensionConfig              any
+	InstallConstraint            any
+	InstallPriority              any
+	InstallType                  any
+	LockTaskAllowed              any
+	ManagedConfiguration         any
 	ManagedConfigurationTemplate any
-	MinimumVersionCode any
-	PackageName any
-	PermissionGrants any
-	PreferentialNetworkId any
-	Roles any
-	SigningKeyCerts any
-	UserControlSettings any
-	WorkProfileWidgets any
+	MinimumVersionCode           any
+	PackageName                  any
+	PermissionGrants             any
+	PreferentialNetworkId        any
+	Roles                        any
+	SigningKeyCerts              any
+	UserControlSettings          any
+	WorkProfileWidgets           any
 }
 
 type Policy_ChoosePrivateKeyRules struct {
-	PackageNames any
+	PackageNames    any
 	PrivateKeyAlias any
-	UrlPattern any
+	UrlPattern      any
 }
 
 type Policy_ComplianceRules_ApiLevelCondition struct {
@@ -99,15 +99,15 @@ type Policy_ComplianceRules_ApiLevelCondition struct {
 
 type Policy_ComplianceRules_NonComplianceDetailCondition struct {
 	NonComplianceReason any
-	PackageName any
-	SettingName any
+	PackageName         any
+	SettingName         any
 }
 
 type Policy_ComplianceRules struct {
-	ApiLevelCondition any
-	DisableApps any
+	ApiLevelCondition            any
+	DisableApps                  any
 	NonComplianceDetailCondition any
-	PackageNamesToDisable any
+	PackageNamesToDisable        any
 }
 
 type Policy_CrossDevicePolicies struct {
@@ -143,31 +143,31 @@ type Policy_DefaultApplicationSettings_DefaultApplications struct {
 
 type Policy_DefaultApplicationSettings struct {
 	DefaultApplicationScopes any
-	DefaultApplicationType any
-	DefaultApplications any
+	DefaultApplicationType   any
+	DefaultApplications      any
 }
 
 type Policy_DeviceConnectivityManagement_ApnPolicy_ApnSettings struct {
-	AlwaysOnSetting any
-	Apn any
-	ApnTypes any
-	AuthType any
-	CarrierId any
-	DisplayName any
-	MmsProxyAddress any
-	MmsProxyPort any
-	Mmsc any
-	MtuV4 any
-	MtuV6 any
-	MvnoType any
-	NetworkTypes any
+	AlwaysOnSetting   any
+	Apn               any
+	ApnTypes          any
+	AuthType          any
+	CarrierId         any
+	DisplayName       any
+	MmsProxyAddress   any
+	MmsProxyPort      any
+	Mmsc              any
+	MtuV4             any
+	MtuV6             any
+	MvnoType          any
+	NetworkTypes      any
 	NumericOperatorId any
-	Password any
-	Protocol any
-	ProxyAddress any
-	ProxyPort any
-	RoamingProtocol any
-	Username any
+	Password          any
+	Protocol          any
+	ProxyAddress      any
+	ProxyPort         any
+	RoamingProtocol   any
+	Username          any
 }
 
 type Policy_DeviceConnectivityManagement_ApnPolicy struct {
@@ -179,8 +179,8 @@ type Policy_DeviceConnectivityManagement_ApnPolicy struct {
 
 type Policy_DeviceConnectivityManagement_PreferentialNetworkServiceSettings_PreferentialNetworkServiceConfigs struct {
 	FallbackToDefaultConnection any
-	NonMatchingNetworks any
-	PreferentialNetworkId any
+	NonMatchingNetworks         any
+	PreferentialNetworkId       any
 }
 
 type Policy_DeviceConnectivityManagement_PreferentialNetworkServiceSettings struct {
@@ -199,7 +199,7 @@ type Policy_DeviceConnectivityManagement_PrivateDnsSettings struct {
 
 type Policy_DeviceConnectivityManagement_WifiRoamingPolicy_WifiRoamingSettings struct {
 	WifiRoamingMode any
-	WifiSsid any
+	WifiSsid        any
 }
 
 type Policy_DeviceConnectivityManagement_WifiRoamingPolicy struct {
@@ -298,36 +298,36 @@ type Policy_KioskCustomization struct {
 }
 
 type Policy_OncCertificateProviders_ContentProviderEndpoint struct {
-	PackageName any
+	PackageName        any
 	SigningCertsSha256 any
-	Uri any
+	Uri                any
 }
 
 type Policy_OncCertificateProviders struct {
-	CertificateReferences any
+	CertificateReferences   any
 	ContentProviderEndpoint any
 }
 
 type Policy_PasswordPolicies struct {
 	MaximumFailedPasswordsForWipe any
-	PasswordExpirationTimeout any
-	PasswordHistoryLength any
-	PasswordMinimumLength any
-	PasswordMinimumLetters any
-	PasswordMinimumLowerCase any
-	PasswordMinimumNonLetter any
-	PasswordMinimumNumeric any
-	PasswordMinimumSymbols any
-	PasswordMinimumUpperCase any
-	PasswordQuality any
-	PasswordScope any
-	RequirePasswordUnlock any
-	UnifiedLockSettings any
+	PasswordExpirationTimeout     any
+	PasswordHistoryLength         any
+	PasswordMinimumLength         any
+	PasswordMinimumLetters        any
+	PasswordMinimumLowerCase      any
+	PasswordMinimumNonLetter      any
+	PasswordMinimumNumeric        any
+	PasswordMinimumSymbols        any
+	PasswordMinimumUpperCase      any
+	PasswordQuality               any
+	PasswordScope                 any
+	RequirePasswordUnlock         any
+	UnifiedLockSettings           any
 }
 
 type Policy_PersistentPreferredActivities struct {
-	Actions any
-	Categories any
+	Actions          any
+	Categories       any
 	ReceiverActivity any
 }
 
@@ -357,18 +357,18 @@ type Policy_PersonalUsagePolicies struct {
 
 type Policy_PolicyEnforcementRules_BlockAction struct {
 	BlockAfterDays any
-	BlockScope any
+	BlockScope     any
 }
 
 type Policy_PolicyEnforcementRules_WipeAction struct {
-	PreserveFrp any
+	PreserveFrp   any
 	WipeAfterDays any
 }
 
 type Policy_PolicyEnforcementRules struct {
 	BlockAction any
 	SettingName any
-	WipeAction any
+	WipeAction  any
 }
 
 type Policy_RecommendedGlobalProxy struct {
@@ -384,8 +384,8 @@ type Policy_RecommendedGlobalProxy struct {
 
 type Policy_SetupActions struct {
 	Description any
-	LaunchApp any
-	Title any
+	LaunchApp   any
+	Title       any
 }
 
 type Policy_StatusReportingSettings_ApplicationReportingSettings struct {
@@ -421,13 +421,13 @@ type Policy_StatusReportingSettings struct {
 }
 
 type Policy_SystemUpdate_FreezePeriods_EndDate struct {
-	Day any
+	Day   any
 	Month any
-	Year any
+	Year  any
 }
 
 type Policy_SystemUpdate_FreezePeriods struct {
-	EndDate any
+	EndDate   any
 	StartDate any
 }
 
@@ -571,7 +571,7 @@ type PolicyAttrs struct {
 	ModifyAccountsDisabled any
 	// Whether the user mounting physical external media is disabled.
 	MountPhysicalMediaDisabled any
-	Name any
+	Name                       any
 	// Whether the network escape hatch is enabled. If a network connection can't be made at boot time, the escape hatch prompts the user to temporarily connect to a network in order to refresh the device policy. After applying policy, the temporary network will be forgotten and the device will continue booting. This prevents being unable to connect to a network if there is no suitable network in the last policy and the device boots into an app in lock task mode, or the user is otherwise unable to reach device settings.Note: Setting wifiConfigDisabled to true will override this setting under specific circumstances. Please see wifiConfigDisabled for further details. Setting configureWifi to DISALLOW_CONFIGURING_WIFI will override this setting under specific circumstances. Please see DISALLOW_CONFIGURING_WIFI for further details.
 	NetworkEscapeHatchEnabled any
 	// Whether resetting network settings is disabled. This applies only on fully managed devices. A NonComplianceDetail with MANAGEMENT_MODE is reported for other management modes.

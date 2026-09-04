@@ -106,18 +106,12 @@ _V1alphaAlphaEvolveProgram_EvaluationFields = {
 class V1alphaAlphaEvolveProgramConfig:
     # A self-contained message containing the content of a program. Can represent a collection of files.
     content: Any = None
-    # Output only. Time when the program was created.
-    create_time: Any = None
     # Evaluation results for a program candidate.
     evaluation: Any = None
     # Optional. Lock token for the program.
     lock_token: Any = None
     # Identifier. Unique identifier for the program. Format: `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}/sessions/{session}/alphaEvolveExperiments/{alpha_evolve_experiment}/alphaEvolvePrograms/{alpha_evolve_program}`
     name: Any = None
-    # Output only. Optionally specifies which parent programs this program was evolved from. Format: `projects/{project}/locations/{location}/collections/{collection}/engines/{engine}/sessions/{session}/alphaEvolveExperiments/{alpha_evolve_experiment}/alphaEvolvePrograms/{alpha_evolve_program}`
-    parent_programs: Any = None
-    # Output only. State of the program.
-    state: Any = None
 
 @dataclasses.dataclass
 class V1alphaAlphaEvolveProgramAttrs:
@@ -144,7 +138,6 @@ V1alphaAlphaEvolveProgram = ubx.ResourceBinding(
             kind="object",
             fields=_V1alphaAlphaEvolveProgram_ContentFields,
         ),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "evaluation": ubx.FieldSpec(
             wire_name="evaluation",
             kind="object",
@@ -152,7 +145,5 @@ V1alphaAlphaEvolveProgram = ubx.ResourceBinding(
         ),
         "lock_token": ubx.FieldSpec(wire_name="lock_token"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "parent_programs": ubx.FieldSpec(wire_name="parent_programs"),
-        "state": ubx.FieldSpec(wire_name="state"),
     },
 )

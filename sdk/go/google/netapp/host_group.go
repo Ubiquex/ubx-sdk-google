@@ -4,8 +4,6 @@ package netapp
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type HostGroupConfig struct {
-	// Output only. Create time of the host group.
-	CreateTime any
 	// Optional. Description of the host group.
 	Description any
 	// Required. The list of hosts associated with the host group.
@@ -16,8 +14,6 @@ type HostGroupConfig struct {
 	Name any
 	// Required. The OS type of the host group. It indicates the type of operating system used by all of the hosts in the HostGroup. All hosts in a HostGroup must be of the same OS type. This can be set only when creating a HostGroup.
 	OsType any
-	// Output only. State of the host group.
-	State any
 	// Required. Type of the host group.
 	Type any
 }
@@ -44,13 +40,11 @@ type HostGroupAttrs struct {
 var HostGroup = ubx.ResourceBinding{
 	WireType: "google_netapp_host_group",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
-		"Hosts": ubx.FieldSpec{WireName: "hosts"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"OsType": ubx.FieldSpec{WireName: "os_type"},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"Type": ubx.FieldSpec{WireName: "type"},
+		"Hosts":       ubx.FieldSpec{WireName: "hosts"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
+		"Name":        ubx.FieldSpec{WireName: "name"},
+		"OsType":      ubx.FieldSpec{WireName: "os_type"},
+		"Type":        ubx.FieldSpec{WireName: "type"},
 	},
 }

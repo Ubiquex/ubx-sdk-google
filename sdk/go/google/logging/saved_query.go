@@ -20,31 +20,31 @@ type SavedQuery_LoggingQuery struct {
 
 type SavedQuery_OpsAnalyticsQuery_QueryBuilder_FieldSources_ProjectedField_SqlAggregationFunction struct {
 	Parameters any
-	Type any
+	Type       any
 }
 
 type SavedQuery_OpsAnalyticsQuery_QueryBuilder_FieldSources_ProjectedField_VirtualField struct {
 	UnderlyingFieldSources any
-	VirtualFieldType any
+	VirtualFieldType       any
 }
 
 type SavedQuery_OpsAnalyticsQuery_QueryBuilder_FieldSources_ProjectedField struct {
-	Alias any
-	Cast any
-	Field any
-	Operation any
-	RegexExtraction any
+	Alias                  any
+	Cast                   any
+	Field                  any
+	Operation              any
+	RegexExtraction        any
 	SqlAggregationFunction any
-	TruncationGranularity any
-	VirtualField any
+	TruncationGranularity  any
+	VirtualField           any
 }
 
 type SavedQuery_OpsAnalyticsQuery_QueryBuilder_FieldSources struct {
-	AliasRef any
-	ColumnType any
-	Field any
-	IsJson any
-	ParentPath any
+	AliasRef       any
+	ColumnType     any
+	Field          any
+	IsJson         any
+	ParentPath     any
 	ProjectedField any
 }
 
@@ -71,7 +71,7 @@ type SavedQuery_OpsAnalyticsQuery_QueryBuilder_Filter struct {
 }
 
 type SavedQuery_OpsAnalyticsQuery_QueryBuilder_OrderBys struct {
-	FieldSource any
+	FieldSource        any
 	SortOrderDirection any
 }
 
@@ -98,142 +98,136 @@ type SavedQuery_OpsAnalyticsQuery struct {
 }
 
 var SavedQuery_LoggingQuery_SummaryFieldsFields = ubx.FieldMap{
-		"Field": ubx.FieldSpec{WireName: "field"},
-	}
+	"Field": ubx.FieldSpec{WireName: "field"},
+}
 
 var SavedQuery_LoggingQueryFields = ubx.FieldMap{
-		"Filter": ubx.FieldSpec{WireName: "filter"},
-		"SummaryFieldEnd": ubx.FieldSpec{WireName: "summary_field_end"},
-		"SummaryFieldStart": ubx.FieldSpec{WireName: "summary_field_start"},
-		"SummaryFields": ubx.FieldSpec{
-			WireName: "summary_fields",
-			Kind: "list",
-			Fields: SavedQuery_LoggingQuery_SummaryFieldsFields,
-		},
-	}
+	"Filter":            ubx.FieldSpec{WireName: "filter"},
+	"SummaryFieldEnd":   ubx.FieldSpec{WireName: "summary_field_end"},
+	"SummaryFieldStart": ubx.FieldSpec{WireName: "summary_field_start"},
+	"SummaryFields": ubx.FieldSpec{
+		WireName: "summary_fields",
+		Kind:     "list",
+		Fields:   SavedQuery_LoggingQuery_SummaryFieldsFields,
+	},
+}
 
 var SavedQuery_OpsAnalyticsQuery_QueryBuilder_FieldSources_ProjectedField_SqlAggregationFunctionFields = ubx.FieldMap{
-		"Parameters": ubx.FieldSpec{WireName: "parameters"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Parameters": ubx.FieldSpec{WireName: "parameters"},
+	"Type":       ubx.FieldSpec{WireName: "type"},
+}
 
 var SavedQuery_OpsAnalyticsQuery_QueryBuilder_FieldSources_ProjectedField_VirtualFieldFields = ubx.FieldMap{
-		"UnderlyingFieldSources": ubx.FieldSpec{WireName: "underlying_field_sources"},
-		"VirtualFieldType": ubx.FieldSpec{WireName: "virtual_field_type"},
-	}
+	"UnderlyingFieldSources": ubx.FieldSpec{WireName: "underlying_field_sources"},
+	"VirtualFieldType":       ubx.FieldSpec{WireName: "virtual_field_type"},
+}
 
 var SavedQuery_OpsAnalyticsQuery_QueryBuilder_FieldSources_ProjectedFieldFields = ubx.FieldMap{
-		"Alias": ubx.FieldSpec{WireName: "alias"},
-		"Cast": ubx.FieldSpec{WireName: "cast"},
-		"Field": ubx.FieldSpec{WireName: "field"},
-		"Operation": ubx.FieldSpec{WireName: "operation"},
-		"RegexExtraction": ubx.FieldSpec{WireName: "regex_extraction"},
-		"SqlAggregationFunction": ubx.FieldSpec{
-			WireName: "sql_aggregation_function",
-			Kind: "object",
-			Fields: SavedQuery_OpsAnalyticsQuery_QueryBuilder_FieldSources_ProjectedField_SqlAggregationFunctionFields,
-		},
-		"TruncationGranularity": ubx.FieldSpec{WireName: "truncation_granularity"},
-		"VirtualField": ubx.FieldSpec{
-			WireName: "virtual_field",
-			Kind: "object",
-			Fields: SavedQuery_OpsAnalyticsQuery_QueryBuilder_FieldSources_ProjectedField_VirtualFieldFields,
-		},
-	}
+	"Alias":           ubx.FieldSpec{WireName: "alias"},
+	"Cast":            ubx.FieldSpec{WireName: "cast"},
+	"Field":           ubx.FieldSpec{WireName: "field"},
+	"Operation":       ubx.FieldSpec{WireName: "operation"},
+	"RegexExtraction": ubx.FieldSpec{WireName: "regex_extraction"},
+	"SqlAggregationFunction": ubx.FieldSpec{
+		WireName: "sql_aggregation_function",
+		Kind:     "object",
+		Fields:   SavedQuery_OpsAnalyticsQuery_QueryBuilder_FieldSources_ProjectedField_SqlAggregationFunctionFields,
+	},
+	"TruncationGranularity": ubx.FieldSpec{WireName: "truncation_granularity"},
+	"VirtualField": ubx.FieldSpec{
+		WireName: "virtual_field",
+		Kind:     "object",
+		Fields:   SavedQuery_OpsAnalyticsQuery_QueryBuilder_FieldSources_ProjectedField_VirtualFieldFields,
+	},
+}
 
 var SavedQuery_OpsAnalyticsQuery_QueryBuilder_FieldSourcesFields = ubx.FieldMap{
-		"AliasRef": ubx.FieldSpec{WireName: "alias_ref"},
-		"ColumnType": ubx.FieldSpec{WireName: "column_type"},
-		"Field": ubx.FieldSpec{WireName: "field"},
-		"IsJson": ubx.FieldSpec{WireName: "is_json"},
-		"ParentPath": ubx.FieldSpec{WireName: "parent_path"},
-		"ProjectedField": ubx.FieldSpec{
-			WireName: "projected_field",
-			Kind: "object",
-			Fields: SavedQuery_OpsAnalyticsQuery_QueryBuilder_FieldSources_ProjectedFieldFields,
-		},
-	}
+	"AliasRef":   ubx.FieldSpec{WireName: "alias_ref"},
+	"ColumnType": ubx.FieldSpec{WireName: "column_type"},
+	"Field":      ubx.FieldSpec{WireName: "field"},
+	"IsJson":     ubx.FieldSpec{WireName: "is_json"},
+	"ParentPath": ubx.FieldSpec{WireName: "parent_path"},
+	"ProjectedField": ubx.FieldSpec{
+		WireName: "projected_field",
+		Kind:     "object",
+		Fields:   SavedQuery_OpsAnalyticsQuery_QueryBuilder_FieldSources_ProjectedFieldFields,
+	},
+}
 
 var SavedQuery_OpsAnalyticsQuery_QueryBuilder_Filter_LeafPredicateFields = ubx.FieldMap{
-		"Comparator": ubx.FieldSpec{WireName: "comparator"},
-		"FieldSource": ubx.FieldSpec{
-			WireName: "field_source",
-			Kind: "object",
-			Fields: SavedQuery_OpsAnalyticsQuery_QueryBuilder_FieldSourcesFields,
-		},
-		"FieldSourceValue": ubx.FieldSpec{
-			WireName: "field_source_value",
-			Kind: "object",
-			Fields: SavedQuery_OpsAnalyticsQuery_QueryBuilder_FieldSourcesFields,
-		},
-		"IsNegation": ubx.FieldSpec{WireName: "is_negation"},
-		"LiteralValue": ubx.FieldSpec{WireName: "literal_value"},
-	}
+	"Comparator": ubx.FieldSpec{WireName: "comparator"},
+	"FieldSource": ubx.FieldSpec{
+		WireName: "field_source",
+		Kind:     "object",
+		Fields:   SavedQuery_OpsAnalyticsQuery_QueryBuilder_FieldSourcesFields,
+	},
+	"FieldSourceValue": ubx.FieldSpec{
+		WireName: "field_source_value",
+		Kind:     "object",
+		Fields:   SavedQuery_OpsAnalyticsQuery_QueryBuilder_FieldSourcesFields,
+	},
+	"IsNegation":   ubx.FieldSpec{WireName: "is_negation"},
+	"LiteralValue": ubx.FieldSpec{WireName: "literal_value"},
+}
 
 var SavedQuery_OpsAnalyticsQuery_QueryBuilder_FilterFields = ubx.FieldMap{
-		"ChildPredicates": ubx.FieldSpec{WireName: "child_predicates"},
-		"LeafPredicate": ubx.FieldSpec{
-			WireName: "leaf_predicate",
-			Kind: "object",
-			Fields: SavedQuery_OpsAnalyticsQuery_QueryBuilder_Filter_LeafPredicateFields,
-		},
-		"OperatorType": ubx.FieldSpec{WireName: "operator_type"},
-	}
+	"ChildPredicates": ubx.FieldSpec{WireName: "child_predicates"},
+	"LeafPredicate": ubx.FieldSpec{
+		WireName: "leaf_predicate",
+		Kind:     "object",
+		Fields:   SavedQuery_OpsAnalyticsQuery_QueryBuilder_Filter_LeafPredicateFields,
+	},
+	"OperatorType": ubx.FieldSpec{WireName: "operator_type"},
+}
 
 var SavedQuery_OpsAnalyticsQuery_QueryBuilder_OrderBysFields = ubx.FieldMap{
-		"FieldSource": ubx.FieldSpec{
-			WireName: "field_source",
-			Kind: "object",
-			Fields: SavedQuery_OpsAnalyticsQuery_QueryBuilder_FieldSourcesFields,
-		},
-		"SortOrderDirection": ubx.FieldSpec{WireName: "sort_order_direction"},
-	}
+	"FieldSource": ubx.FieldSpec{
+		WireName: "field_source",
+		Kind:     "object",
+		Fields:   SavedQuery_OpsAnalyticsQuery_QueryBuilder_FieldSourcesFields,
+	},
+	"SortOrderDirection": ubx.FieldSpec{WireName: "sort_order_direction"},
+}
 
 var SavedQuery_OpsAnalyticsQuery_QueryBuilderFields = ubx.FieldMap{
-		"FieldSources": ubx.FieldSpec{
-			WireName: "field_sources",
-			Kind: "list",
-			Fields: SavedQuery_OpsAnalyticsQuery_QueryBuilder_FieldSourcesFields,
-		},
-		"Filter": ubx.FieldSpec{
-			WireName: "filter",
-			Kind: "object",
-			Fields: SavedQuery_OpsAnalyticsQuery_QueryBuilder_FilterFields,
-		},
-		"Limit": ubx.FieldSpec{WireName: "limit"},
-		"OrderBys": ubx.FieldSpec{
-			WireName: "order_bys",
-			Kind: "list",
-			Fields: SavedQuery_OpsAnalyticsQuery_QueryBuilder_OrderBysFields,
-		},
-		"ResourceNames": ubx.FieldSpec{WireName: "resource_names"},
-		"SearchTerm": ubx.FieldSpec{WireName: "search_term"},
-	}
+	"FieldSources": ubx.FieldSpec{
+		WireName: "field_sources",
+		Kind:     "list",
+		Fields:   SavedQuery_OpsAnalyticsQuery_QueryBuilder_FieldSourcesFields,
+	},
+	"Filter": ubx.FieldSpec{
+		WireName: "filter",
+		Kind:     "object",
+		Fields:   SavedQuery_OpsAnalyticsQuery_QueryBuilder_FilterFields,
+	},
+	"Limit": ubx.FieldSpec{WireName: "limit"},
+	"OrderBys": ubx.FieldSpec{
+		WireName: "order_bys",
+		Kind:     "list",
+		Fields:   SavedQuery_OpsAnalyticsQuery_QueryBuilder_OrderBysFields,
+	},
+	"ResourceNames": ubx.FieldSpec{WireName: "resource_names"},
+	"SearchTerm":    ubx.FieldSpec{WireName: "search_term"},
+}
 
 var SavedQuery_OpsAnalyticsQueryFields = ubx.FieldMap{
-		"QueryBuilder": ubx.FieldSpec{
-			WireName: "query_builder",
-			Kind: "object",
-			Fields: SavedQuery_OpsAnalyticsQuery_QueryBuilderFields,
-		},
-		"SqlQueryText": ubx.FieldSpec{WireName: "sql_query_text"},
-	}
+	"QueryBuilder": ubx.FieldSpec{
+		WireName: "query_builder",
+		Kind:     "object",
+		Fields:   SavedQuery_OpsAnalyticsQuery_QueryBuilderFields,
+	},
+	"SqlQueryText": ubx.FieldSpec{WireName: "sql_query_text"},
+}
 
 type SavedQueryConfig struct {
-	// Output only. The timestamp when the saved query was created.
-	CreateTime any
 	// Optional. A human readable description of the saved query.
 	Description any
 	// Required. The user specified title for the SavedQuery.
 	DisplayName any
 	// Describes a Cloud Logging query that can be run in Logs Explorer UI or via the logging API.In addition to the query itself, additional information may be stored to capture the display configuration and other UI state used in association with analysis of query results.
 	LoggingQuery any
-	// Output only. Resource name of the saved query.In the format: "projects/[PROJECT_ID]/locations/[LOCATION_ID]/savedQueries/[QUERY_ID]" For a list of supported locations, see Supported Regions (https://docs.cloud.google.com/logging/docs/region-support#bucket-regions)After the saved query is created, the location cannot be changed.If the user doesn't provide a QUERY_ID, the system will generate an alphanumeric ID.
-	Name any
 	// Describes a query that can be run in Log Analytics.
 	OpsAnalyticsQuery any
-	// Output only. The timestamp when the saved query was last updated.
-	UpdateTime any
 	// Required. The visibility status of this query, which determines its ownership.
 	Visibility any
 }
@@ -260,21 +254,18 @@ type SavedQueryAttrs struct {
 var SavedQuery = ubx.ResourceBinding{
 	WireType: "google_logging_saved_query",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"LoggingQuery": ubx.FieldSpec{
 			WireName: "logging_query",
-			Kind: "object",
-			Fields: SavedQuery_LoggingQueryFields,
+			Kind:     "object",
+			Fields:   SavedQuery_LoggingQueryFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
 		"OpsAnalyticsQuery": ubx.FieldSpec{
 			WireName: "ops_analytics_query",
-			Kind: "object",
-			Fields: SavedQuery_OpsAnalyticsQueryFields,
+			Kind:     "object",
+			Fields:   SavedQuery_OpsAnalyticsQueryFields,
 		},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 		"Visibility": ubx.FieldSpec{WireName: "visibility"},
 	},
 }

@@ -139,32 +139,18 @@ const AlphaGlobalVmExtensionPolicy_RolloutOperationFields: FieldMap = {
 };
 
 export interface AlphaGlobalVmExtensionPolicyConfig {
-  /** Output only. [Output Only] Creation timestamp inRFC3339 text format. */
-  creationTimestamp?: string | Computed<string>;
   /** An optional description of this resource. Provide this property when you create the resource. */
   description?: string | Computed<string>;
   /** Required. Map from extension (eg: "cloudops") to its policy configuration. The key is the name of the extension. */
   extensionPolicies?: Record<string, AlphaGlobalVmExtensionPolicy_ExtensionPolicies> | Computed<Record<string, AlphaGlobalVmExtensionPolicy_ExtensionPolicies>>;
-  /** Output only. [Output Only] The unique identifier for the resource. This identifier is defined by the server. */
-  id?: string | Computed<string>;
   /** Optional. Selector to target VMs for a policy. There is a logical "AND" between instance_selectors. */
   instanceSelectors?: AlphaGlobalVmExtensionPolicy_InstanceSelectors[] | Computed<AlphaGlobalVmExtensionPolicy_InstanceSelectors[]>;
-  /** Output only. [Output Only] Type of the resource. Alwayscompute#globalVmExtensionPolicy for globalVmExtensionPolicies. */
-  kind?: string | Computed<string>;
   /** Name of the resource. Provided by the client when the resource is created. The name must be 1-63 characters long, and comply withRFC1035. Specifically, the name must be 1-63 characters long and match the regular expression `[a-z]([-a-z0-9]*[a-z0-9])?` which means the first character must be a lowercase letter, and all following characters must be a dash, lowercase letter, or digit, except the last character, which cannot be a dash. */
   name?: string | Computed<string>;
   /** Optional. Used to resolve conflicts when multiple policies are active for the same extension. Defaults to 0. Larger the number, higher the priority. When the priority is the same, the policy with the newer create time has higher priority. */
   priority?: number | Computed<number>;
   /** Represents the rollout operation */
   rolloutOperation?: AlphaGlobalVmExtensionPolicy_RolloutOperation | Computed<AlphaGlobalVmExtensionPolicy_RolloutOperation>;
-  /** Output only. [Output Only] The scoped resource status. It's only for tracking the purging status of the policy. */
-  scopedResourceStatus?: string | Computed<string>;
-  /** Output only. [Output Only] Server-defined fully-qualified URL for this resource. */
-  selfLink?: string | Computed<string>;
-  /** Output only. [Output Only] Server-defined URL for this resource's resource id. */
-  selfLinkWithId?: string | Computed<string>;
-  /** Output only. [Output Only] Update timestamp inRFC3339 text format. */
-  updateTimestamp?: string | Computed<string>;
 }
 
 export interface AlphaGlobalVmExtensionPolicyAttrs {
@@ -199,20 +185,17 @@ export interface AlphaGlobalVmExtensionPolicyAttrs {
 export const AlphaGlobalVmExtensionPolicy: ResourceBinding<AlphaGlobalVmExtensionPolicyConfig, AlphaGlobalVmExtensionPolicyAttrs> = {
   wireType: "google_compute_alpha_global_vm_extension_policy",
   fields: {
-    creationTimestamp: "creation_timestamp",
     description: "description",
     extensionPolicies: {
       wireName: "extension_policies",
       kind: "map",
       fields: AlphaGlobalVmExtensionPolicy_ExtensionPoliciesFields,
     },
-    id: "id",
     instanceSelectors: {
       wireName: "instance_selectors",
       kind: "list",
       fields: AlphaGlobalVmExtensionPolicy_InstanceSelectorsFields,
     },
-    kind: "kind",
     name: "name",
     priority: "priority",
     rolloutOperation: {
@@ -220,9 +203,5 @@ export const AlphaGlobalVmExtensionPolicy: ResourceBinding<AlphaGlobalVmExtensio
       kind: "object",
       fields: AlphaGlobalVmExtensionPolicy_RolloutOperationFields,
     },
-    scopedResourceStatus: "scoped_resource_status",
-    selfLink: "self_link",
-    selfLinkWithId: "self_link_with_id",
-    updateTimestamp: "update_timestamp",
   },
 };

@@ -60,8 +60,6 @@ const LbTrafficExtension_ExtensionChainsFields: FieldMap = {
 };
 
 export interface LbTrafficExtensionConfig {
-  /** Output only. The timestamp when the resource was created. */
-  createTime?: string | Computed<string>;
   /** Optional. A human-readable description of the resource. */
   description?: string | Computed<string>;
   /** Required. A set of ordered extension chains that contain the match conditions and extensions to execute. Match conditions for each extension chain are evaluated in sequence for a given request. The first extension chain that has a condition that matches the request is executed. Any subsequent extension chains do not execute. Limited to 5 extension chains per resource. */
@@ -76,8 +74,6 @@ export interface LbTrafficExtensionConfig {
   metadata?: Record<string, unknown> | Computed<Record<string, unknown>>;
   /** Required. Identifier. Name of the `LbTrafficExtension` resource in the following format: `projects/{project}/locations/{location}/lbTrafficExtensions/{lb_traffic_extension}`. */
   name?: string | Computed<string>;
-  /** Output only. The timestamp when the resource was updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface LbTrafficExtensionAttrs {
@@ -104,7 +100,6 @@ export interface LbTrafficExtensionAttrs {
 export const LbTrafficExtension: ResourceBinding<LbTrafficExtensionConfig, LbTrafficExtensionAttrs> = {
   wireType: "google_networkservices_lb_traffic_extension",
   fields: {
-    createTime: "create_time",
     description: "description",
     extensionChains: {
       wireName: "extension_chains",
@@ -116,6 +111,5 @@ export const LbTrafficExtension: ResourceBinding<LbTrafficExtensionConfig, LbTra
     loadBalancingScheme: "load_balancing_scheme",
     metadata: "metadata",
     name: "name",
-    updateTime: "update_time",
   },
 };

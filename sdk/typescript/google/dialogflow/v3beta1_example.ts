@@ -562,15 +562,12 @@ const V3beta1Example_ActionsFields: FieldMap = {
 export interface V3beta1ExampleConfig {
   actions?: V3beta1Example_Actions[] | Computed<V3beta1Example_Actions[]>;
   conversationState?: string | Computed<string>;
-  createTime?: string | Computed<string>;
   description?: string | Computed<string>;
   displayName?: string | Computed<string>;
   languageCode?: string | Computed<string>;
   name?: string | Computed<string>;
   playbookInput?: V3beta1Example_Actions_PlaybookInvocation_PlaybookInput | Computed<V3beta1Example_Actions_PlaybookInvocation_PlaybookInput>;
   playbookOutput?: V3beta1Example_Actions_PlaybookInvocation_PlaybookOutput | Computed<V3beta1Example_Actions_PlaybookInvocation_PlaybookOutput>;
-  tokenCount?: string | Computed<string>;
-  updateTime?: string | Computed<string>;
 }
 
 export interface V3beta1ExampleAttrs {
@@ -596,7 +593,6 @@ export const V3beta1Example: ResourceBinding<V3beta1ExampleConfig, V3beta1Exampl
       fields: V3beta1Example_ActionsFields,
     },
     conversationState: "conversation_state",
-    createTime: "create_time",
     description: "description",
     displayName: "display_name",
     languageCode: "language_code",
@@ -611,7 +607,5 @@ export const V3beta1Example: ResourceBinding<V3beta1ExampleConfig, V3beta1Exampl
       kind: "object",
       fields: V3beta1Example_Actions_PlaybookInvocation_PlaybookOutputFields,
     },
-    tokenCount: "token_count",
-    updateTime: "update_time",
   },
 };

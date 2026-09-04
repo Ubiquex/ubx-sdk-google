@@ -37,10 +37,6 @@ _V1beta1WasmPlugin_LogConfigFields = {
     "sample_rate": ubx.FieldSpec(wire_name="sample_rate"),
 }
 
-_V1beta1WasmPlugin_UsedByFields = {
-    "name": ubx.FieldSpec(wire_name="name"),
-}
-
 _V1beta1WasmPlugin_VersionsFields = {
     "create_time": ubx.FieldSpec(wire_name="create_time"),
     "description": ubx.FieldSpec(wire_name="description"),
@@ -55,14 +51,10 @@ _V1beta1WasmPlugin_VersionsFields = {
 
 @dataclasses.dataclass
 class V1beta1WasmPluginConfig:
-    # Output only. The timestamp when the resource was created.
-    create_time: Any = None
     # Optional. A human-readable description of the resource.
     description: Any = None
     # Optional. The name of the customer-managed [CryptoKey](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys) to be used to encrypt the `WasmPlugin` image (provided by image_uri) and configuration (provided by plugin_config_data or plugin_config_uri) that are stored by the `Service Extensions` product at rest. Format: `projects/{project}/locations/{location}/keyRings/{keyring}/cryptoKeys/{key}` By default, Google Cloud automatically encrypts all data at rest using Google-owned and Google-managed encryption keys. If you need ownership and control of the keys that protect your data at rest, you can specify a customer-managed encryption key (CMEK) to encrypt your `WasmPlugin` data. For more information, see [Using customer-managed encryption keys](https://cloud.google.com/service-extensions/docs/cmek).
     kms_key_name: Any = None
-    # Output only. The name of the specific [CryptoKeyVersion](https://cloud.google.com/kms/docs/reference/rest/v1/projects.locations.keyRings.cryptoKeys.cryptoKeyVersions) used to encrypt the `WasmPlugin` data, if the kms_key_name field is set. Format: `projects/{project}/locations/{location}/keyRings/{keyring}/cryptoKeys/{key}/cryptoKeyVersions/{version}` This is a read-only field. `WasmPlugin` data is automatically encrypted using the most recent `CryptoKeyVersion` of the `CryptoKey` provided in the `kms_key_name` field. See [Cloud KMS resources](https://cloud.google.com/kms/docs/resource-hierarchy) for more information.
-    kms_key_version: Any = None
     # Optional. Set of labels associated with the `WasmPlugin` resource. The format must comply with [the following requirements](/compute/docs/labeling-resources#requirements).
     labels: Any = None
     # Specifies the logging options for the activity performed by this plugin. If logging is enabled, plugin logs are exported to Cloud Logging.
@@ -71,10 +63,6 @@ class V1beta1WasmPluginConfig:
     main_version_id: Any = None
     # Identifier. Name of the `WasmPlugin` resource in the following format: `projects/{project}/locations/{location}/wasmPlugins/{wasm_plugin}`.
     name: Any = None
-    # Output only. The timestamp when the resource was updated.
-    update_time: Any = None
-    # Output only. List of all [extensions](https://cloud.google.com/service-extensions/docs/overview) that use this `WasmPlugin` resource.
-    used_by: Any = None
     # Optional. All versions of this `WasmPlugin` resource in the key-value format. The key is the resource ID, and the value is the `VersionDetails` object. Lets you create or update a `WasmPlugin` resource and its versions in a single request. When the `main_version_id` field is not empty, it must point to one of the `VersionDetails` objects in the map. If provided in a `PATCH` request, the new versions replace the previous set. Any version omitted from the `versions` field is removed. Because the `WasmPluginVersion` resource is immutable, if a `WasmPluginVersion` resource with the same name already exists and differs, the request fails. Note: In a `GET` request, this field is populated only if the field `GetWasmPluginRequest.view` is set to `WASM_PLUGIN_VIEW_FULL`.
     versions: Any = None
 
@@ -106,10 +94,8 @@ class V1beta1WasmPluginAttrs:
 V1beta1WasmPlugin = ubx.ResourceBinding(
     wire_type="google_networkservices_v1beta1_wasm_plugin",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "kms_key_name": ubx.FieldSpec(wire_name="kms_key_name"),
-        "kms_key_version": ubx.FieldSpec(wire_name="kms_key_version"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "log_config": ubx.FieldSpec(
             wire_name="log_config",
@@ -118,12 +104,6 @@ V1beta1WasmPlugin = ubx.ResourceBinding(
         ),
         "main_version_id": ubx.FieldSpec(wire_name="main_version_id"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
-        "used_by": ubx.FieldSpec(
-            wire_name="used_by",
-            kind="list",
-            fields=_V1beta1WasmPlugin_UsedByFields,
-        ),
         "versions": ubx.FieldSpec(
             wire_name="versions",
             kind="map",

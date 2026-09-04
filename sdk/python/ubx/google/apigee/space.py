@@ -8,14 +8,8 @@ import ubx_sdk as ubx
 
 @dataclasses.dataclass
 class SpaceConfig:
-    # Output only. Create timestamp of the space.
-    create_time: Any = None
     # Optional. Display name of the space.
     display_name: Any = None
-    # Output only. Identifier. Id of the space. This field is used as the resource name, and must follow [AIP-122](https://google.aip.dev/122) guidelines.
-    name: Any = None
-    # Output only. Last modified timestamp of the space.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class SpaceAttrs:
@@ -31,9 +25,6 @@ class SpaceAttrs:
 Space = ubx.ResourceBinding(
     wire_type="google_apigee_space",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
-        "name": ubx.FieldSpec(wire_name="name"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

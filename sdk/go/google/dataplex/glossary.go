@@ -4,10 +4,6 @@ package dataplex
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type GlossaryConfig struct {
-	// Output only. The number of GlossaryCategories in the Glossary.
-	CategoryCount any
-	// Output only. The time at which the Glossary was created.
-	CreateTime any
 	// Optional. The user-mutable description of the Glossary.
 	Description any
 	// Optional. User friendly display name of the Glossary. This is user-mutable. This will be same as the GlossaryId, if not specified.
@@ -16,14 +12,6 @@ type GlossaryConfig struct {
 	Etag any
 	// Optional. User-defined labels for the Glossary.
 	Labels any
-	// Output only. Identifier. The resource name of the Glossary. Format: projects/{project_id_or_number}/locations/{location_id}/glossaries/{glossary_id}
-	Name any
-	// Output only. The number of GlossaryTerms in the Glossary.
-	TermCount any
-	// Output only. System generated unique id for the Glossary. This ID will be different if the Glossary is deleted and re-created with the same name.
-	Uid any
-	// Output only. The time at which the Glossary was last updated.
-	UpdateTime any
 }
 
 type GlossaryAttrs struct {
@@ -52,15 +40,9 @@ type GlossaryAttrs struct {
 var Glossary = ubx.ResourceBinding{
 	WireType: "google_dataplex_glossary",
 	Fields: ubx.FieldMap{
-		"CategoryCount": ubx.FieldSpec{WireName: "category_count"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Description": ubx.FieldSpec{WireName: "description"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"TermCount": ubx.FieldSpec{WireName: "term_count"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"Etag":        ubx.FieldSpec{WireName: "etag"},
+		"Labels":      ubx.FieldSpec{WireName: "labels"},
 	},
 }

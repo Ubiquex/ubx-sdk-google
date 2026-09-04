@@ -21,26 +21,20 @@ type Revision_Snapshot struct {
 }
 
 var Revision_SnapshotFields = ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Description": ubx.FieldSpec{WireName: "description"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"IsDefault": ubx.FieldSpec{WireName: "is_default"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Source": ubx.FieldSpec{WireName: "source"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
-	}
+	"CreateTime":  ubx.FieldSpec{WireName: "create_time"},
+	"Description": ubx.FieldSpec{WireName: "description"},
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"IsDefault":   ubx.FieldSpec{WireName: "is_default"},
+	"Name":        ubx.FieldSpec{WireName: "name"},
+	"Source":      ubx.FieldSpec{WireName: "source"},
+	"UpdateTime":  ubx.FieldSpec{WireName: "update_time"},
+}
 
 type RevisionConfig struct {
-	// Output only. Alternative IDs for this revision of the scorecard, e.g., `latest`.
-	AlternateIds any
-	// Output only. The timestamp that the revision was created.
-	CreateTime any
 	// Identifier. The name of the scorecard revision. Format: projects/{project}/locations/{location}/qaScorecards/{qa_scorecard}/revisions/{revision}
 	Name any
 	// A QaScorecard represents a collection of questions to be scored during analysis.
 	Snapshot any
-	// Output only. State of the scorecard revision, indicating whether it's ready to be used in analysis.
-	State any
 }
 
 type RevisionAttrs struct {
@@ -59,14 +53,11 @@ type RevisionAttrs struct {
 var Revision = ubx.ResourceBinding{
 	WireType: "google_contactcenterinsights_revision",
 	Fields: ubx.FieldMap{
-		"AlternateIds": ubx.FieldSpec{WireName: "alternate_ids"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
 		"Name": ubx.FieldSpec{WireName: "name"},
 		"Snapshot": ubx.FieldSpec{
 			WireName: "snapshot",
-			Kind: "object",
-			Fields: Revision_SnapshotFields,
+			Kind:     "object",
+			Fields:   Revision_SnapshotFields,
 		},
-		"State": ubx.FieldSpec{WireName: "state"},
 	},
 }

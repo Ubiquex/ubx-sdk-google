@@ -17,16 +17,10 @@ const V1alpha1ImportDataFile_UploadFileInfoFields: FieldMap = {
 };
 
 export interface V1alpha1ImportDataFileConfig {
-  /** Output only. The timestamp when the file was created. */
-  createTime?: string | Computed<string>;
   /** Optional. User-friendly display name. Maximum length is 256 characters. */
   displayName?: string | Computed<string>;
   /** Required. The payload format. */
   format?: string | Computed<string>;
-  /** Output only. The name of the file. */
-  name?: string | Computed<string>;
-  /** Output only. The state of the import data file. */
-  state?: string | Computed<string>;
   /** A resource that contains a URI to which a data file can be uploaded. */
   uploadFileInfo?: V1alpha1ImportDataFile_UploadFileInfo | Computed<V1alpha1ImportDataFile_UploadFileInfo>;
 }
@@ -49,11 +43,8 @@ export interface V1alpha1ImportDataFileAttrs {
 export const V1alpha1ImportDataFile: ResourceBinding<V1alpha1ImportDataFileConfig, V1alpha1ImportDataFileAttrs> = {
   wireType: "google_migrationcenter_v1alpha1_import_data_file",
   fields: {
-    createTime: "create_time",
     displayName: "display_name",
     format: "format",
-    name: "name",
-    state: "state",
     uploadFileInfo: {
       wireName: "upload_file_info",
       kind: "object",

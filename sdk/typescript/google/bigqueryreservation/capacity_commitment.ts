@@ -17,28 +17,18 @@ const CapacityCommitment_FailureStatusFields: FieldMap = {
 };
 
 export interface CapacityCommitmentConfig {
-  /** Output only. The end of the current commitment period. It is applicable only for ACTIVE capacity commitments. Note after renewal, commitment_end_time is the time the renewed commitment expires. So itwould be at a time after commitment_start_time + committed period, because we don't change commitment_start_time , */
-  commitmentEndTime?: string | Computed<string>;
-  /** Output only. The start of the current commitment period. It is applicable only for ACTIVE capacity commitments. Note after the commitment is renewed, commitment_start_time won't be changed. It refers to the start time of the original commitment. */
-  commitmentStartTime?: string | Computed<string>;
   /** Optional. Edition of the capacity commitment. */
   edition?: string | Computed<string>;
   /** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
   failureStatus?: CapacityCommitment_FailureStatus | Computed<CapacityCommitment_FailureStatus>;
-  /** Output only. If true, the commitment is a flat-rate commitment, otherwise, it's an edition commitment. */
-  isFlatRate?: boolean | Computed<boolean>;
   /** Applicable only for commitments located within one of the BigQuery multi-regions (US or EU). If set to true, this commitment is placed in the organization's secondary region which is designated for disaster recovery purposes. If false, this commitment is placed in the organization's default region. NOTE: this is a preview feature. Project must be allow-listed in order to set this field. */
   multiRegionAuxiliary?: boolean | Computed<boolean>;
-  /** Output only. The resource name of the capacity commitment, e.g., `projects/myproject/locations/US/capacityCommitments/123` The commitment_id must only contain lower case alphanumeric characters or dashes. It must start with a letter and must not end with a dash. Its maximum length is 64 characters. */
-  name?: string | Computed<string>;
   /** Optional. Capacity commitment commitment plan. */
   plan?: string | Computed<string>;
   /** Optional. The plan this capacity commitment is converted to after commitment_end_time passes. Once the plan is changed, committed period is extended according to commitment plan. Only applicable for ANNUAL and TRIAL commitments. */
   renewalPlan?: string | Computed<string>;
   /** Optional. Number of slots in this commitment. */
   slotCount?: string | Computed<string>;
-  /** Output only. State of the commitment. */
-  state?: string | Computed<string>;
 }
 
 export interface CapacityCommitmentAttrs {
@@ -69,20 +59,15 @@ export interface CapacityCommitmentAttrs {
 export const CapacityCommitment: ResourceBinding<CapacityCommitmentConfig, CapacityCommitmentAttrs> = {
   wireType: "google_bigqueryreservation_capacity_commitment",
   fields: {
-    commitmentEndTime: "commitment_end_time",
-    commitmentStartTime: "commitment_start_time",
     edition: "edition",
     failureStatus: {
       wireName: "failure_status",
       kind: "object",
       fields: CapacityCommitment_FailureStatusFields,
     },
-    isFlatRate: "is_flat_rate",
     multiRegionAuxiliary: "multi_region_auxiliary",
-    name: "name",
     plan: "plan",
     renewalPlan: "renewal_plan",
     slotCount: "slot_count",
-    state: "state",
   },
 };

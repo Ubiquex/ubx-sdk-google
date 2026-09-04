@@ -485,18 +485,15 @@ export interface V2beta1GeneratorConfig {
   agentCoachingContext?: V2beta1Generator_AgentCoachingContext | Computed<V2beta1Generator_AgentCoachingContext>;
   cesAppSpecs?: V2beta1Generator_CesAppSpecs[] | Computed<V2beta1Generator_CesAppSpecs[]>;
   cesToolSpecs?: V2beta1Generator_CesToolSpecs[] | Computed<V2beta1Generator_CesToolSpecs[]>;
-  createTime?: string | Computed<string>;
   description?: string | Computed<string>;
   freeFormContext?: V2beta1Generator_FreeFormContext | Computed<V2beta1Generator_FreeFormContext>;
   inferenceParameter?: V2beta1Generator_InferenceParameter | Computed<V2beta1Generator_InferenceParameter>;
-  name?: string | Computed<string>;
   publishedModel?: string | Computed<string>;
   suggestionDedupingConfig?: V2beta1Generator_SuggestionDedupingConfig | Computed<V2beta1Generator_SuggestionDedupingConfig>;
   summarizationContext?: V2beta1Generator_SummarizationContext | Computed<V2beta1Generator_SummarizationContext>;
   tools?: string[] | Computed<string[]>;
   toolsetTools?: V2beta1Generator_ToolsetTools[] | Computed<V2beta1Generator_ToolsetTools[]>;
   triggerEvent?: string | Computed<string>;
-  updateTime?: string | Computed<string>;
 }
 
 export interface V2beta1GeneratorAttrs {
@@ -535,7 +532,6 @@ export const V2beta1Generator: ResourceBinding<V2beta1GeneratorConfig, V2beta1Ge
       kind: "list",
       fields: V2beta1Generator_CesToolSpecsFields,
     },
-    createTime: "create_time",
     description: "description",
     freeFormContext: {
       wireName: "free_form_context",
@@ -547,7 +543,6 @@ export const V2beta1Generator: ResourceBinding<V2beta1GeneratorConfig, V2beta1Ge
       kind: "object",
       fields: V2beta1Generator_InferenceParameterFields,
     },
-    name: "name",
     publishedModel: "published_model",
     suggestionDedupingConfig: {
       wireName: "suggestion_deduping_config",
@@ -566,6 +561,5 @@ export const V2beta1Generator: ResourceBinding<V2beta1GeneratorConfig, V2beta1Ge
       fields: V2beta1Generator_ToolsetToolsFields,
     },
     triggerEvent: "trigger_event",
-    updateTime: "update_time",
   },
 };

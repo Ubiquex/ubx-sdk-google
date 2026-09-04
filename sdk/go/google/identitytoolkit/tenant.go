@@ -43,7 +43,7 @@ type Tenant_MfaConfig_ProviderConfigs_TotpProviderConfig struct {
 }
 
 type Tenant_MfaConfig_ProviderConfigs struct {
-	State any
+	State              any
 	TotpProviderConfig any
 }
 
@@ -72,17 +72,17 @@ type Tenant_Monitoring struct {
 }
 
 type Tenant_PasswordPolicyConfig_PasswordPolicyVersions_CustomStrengthOptions struct {
-	ContainsLowercaseCharacter any
+	ContainsLowercaseCharacter       any
 	ContainsNonAlphanumericCharacter any
-	ContainsNumericCharacter any
-	ContainsUppercaseCharacter any
-	MaxPasswordLength any
-	MinPasswordLength any
+	ContainsNumericCharacter         any
+	ContainsUppercaseCharacter       any
+	MaxPasswordLength                any
+	MinPasswordLength                any
 }
 
 type Tenant_PasswordPolicyConfig_PasswordPolicyVersions struct {
 	CustomStrengthOptions any
-	SchemaVersion any
+	SchemaVersion         any
 }
 
 type Tenant_PasswordPolicyConfig struct {
@@ -97,17 +97,17 @@ type Tenant_PasswordPolicyConfig struct {
 }
 
 type Tenant_RecaptchaConfig_ManagedRules struct {
-	Action any
+	Action   any
 	EndScore any
 }
 
 type Tenant_RecaptchaConfig_RecaptchaKeys struct {
-	Key any
+	Key  any
 	Type any
 }
 
 type Tenant_RecaptchaConfig_TollFraudManagedRules struct {
-	Action any
+	Action     any
 	StartScore any
 }
 
@@ -148,160 +148,160 @@ type Tenant_SmsRegionConfig struct {
 }
 
 var Tenant_Client_PermissionsFields = ubx.FieldMap{
-		"DisabledUserDeletion": ubx.FieldSpec{WireName: "disabled_user_deletion"},
-		"DisabledUserSignup": ubx.FieldSpec{WireName: "disabled_user_signup"},
-	}
+	"DisabledUserDeletion": ubx.FieldSpec{WireName: "disabled_user_deletion"},
+	"DisabledUserSignup":   ubx.FieldSpec{WireName: "disabled_user_signup"},
+}
 
 var Tenant_ClientFields = ubx.FieldMap{
-		"Permissions": ubx.FieldSpec{
-			WireName: "permissions",
-			Kind: "object",
-			Fields: Tenant_Client_PermissionsFields,
-		},
-	}
+	"Permissions": ubx.FieldSpec{
+		WireName: "permissions",
+		Kind:     "object",
+		Fields:   Tenant_Client_PermissionsFields,
+	},
+}
 
 var Tenant_EmailPrivacyConfigFields = ubx.FieldMap{
-		"EnableImprovedEmailPrivacy": ubx.FieldSpec{WireName: "enable_improved_email_privacy"},
-	}
+	"EnableImprovedEmailPrivacy": ubx.FieldSpec{WireName: "enable_improved_email_privacy"},
+}
 
 var Tenant_HashConfigFields = ubx.FieldMap{
-		"Algorithm": ubx.FieldSpec{WireName: "algorithm"},
-		"MemoryCost": ubx.FieldSpec{WireName: "memory_cost"},
-		"Rounds": ubx.FieldSpec{WireName: "rounds"},
-		"SaltSeparator": ubx.FieldSpec{WireName: "salt_separator"},
-		"SignerKey": ubx.FieldSpec{WireName: "signer_key"},
-	}
+	"Algorithm":     ubx.FieldSpec{WireName: "algorithm"},
+	"MemoryCost":    ubx.FieldSpec{WireName: "memory_cost"},
+	"Rounds":        ubx.FieldSpec{WireName: "rounds"},
+	"SaltSeparator": ubx.FieldSpec{WireName: "salt_separator"},
+	"SignerKey":     ubx.FieldSpec{WireName: "signer_key"},
+}
 
 var Tenant_InheritanceFields = ubx.FieldMap{
-		"EmailSendingConfig": ubx.FieldSpec{WireName: "email_sending_config"},
-	}
+	"EmailSendingConfig": ubx.FieldSpec{WireName: "email_sending_config"},
+}
 
 var Tenant_MfaConfig_ProviderConfigs_TotpProviderConfigFields = ubx.FieldMap{
-		"AdjacentIntervals": ubx.FieldSpec{WireName: "adjacent_intervals"},
-	}
+	"AdjacentIntervals": ubx.FieldSpec{WireName: "adjacent_intervals"},
+}
 
 var Tenant_MfaConfig_ProviderConfigsFields = ubx.FieldMap{
-		"State": ubx.FieldSpec{WireName: "state"},
-		"TotpProviderConfig": ubx.FieldSpec{
-			WireName: "totp_provider_config",
-			Kind: "object",
-			Fields: Tenant_MfaConfig_ProviderConfigs_TotpProviderConfigFields,
-		},
-	}
+	"State": ubx.FieldSpec{WireName: "state"},
+	"TotpProviderConfig": ubx.FieldSpec{
+		WireName: "totp_provider_config",
+		Kind:     "object",
+		Fields:   Tenant_MfaConfig_ProviderConfigs_TotpProviderConfigFields,
+	},
+}
 
 var Tenant_MfaConfigFields = ubx.FieldMap{
-		"EnabledProviders": ubx.FieldSpec{WireName: "enabled_providers"},
-		"ProviderConfigs": ubx.FieldSpec{
-			WireName: "provider_configs",
-			Kind: "list",
-			Fields: Tenant_MfaConfig_ProviderConfigsFields,
-		},
-		"State": ubx.FieldSpec{WireName: "state"},
-	}
+	"EnabledProviders": ubx.FieldSpec{WireName: "enabled_providers"},
+	"ProviderConfigs": ubx.FieldSpec{
+		WireName: "provider_configs",
+		Kind:     "list",
+		Fields:   Tenant_MfaConfig_ProviderConfigsFields,
+	},
+	"State": ubx.FieldSpec{WireName: "state"},
+}
 
 var Tenant_MobileLinksConfigFields = ubx.FieldMap{
-		"Domain": ubx.FieldSpec{WireName: "domain"},
-	}
+	"Domain": ubx.FieldSpec{WireName: "domain"},
+}
 
 var Tenant_Monitoring_RequestLoggingFields = ubx.FieldMap{
-		"Enabled": ubx.FieldSpec{WireName: "enabled"},
-	}
+	"Enabled": ubx.FieldSpec{WireName: "enabled"},
+}
 
 var Tenant_MonitoringFields = ubx.FieldMap{
-		"RequestLogging": ubx.FieldSpec{
-			WireName: "request_logging",
-			Kind: "object",
-			Fields: Tenant_Monitoring_RequestLoggingFields,
-		},
-	}
+	"RequestLogging": ubx.FieldSpec{
+		WireName: "request_logging",
+		Kind:     "object",
+		Fields:   Tenant_Monitoring_RequestLoggingFields,
+	},
+}
 
 var Tenant_PasswordPolicyConfig_PasswordPolicyVersions_CustomStrengthOptionsFields = ubx.FieldMap{
-		"ContainsLowercaseCharacter": ubx.FieldSpec{WireName: "contains_lowercase_character"},
-		"ContainsNonAlphanumericCharacter": ubx.FieldSpec{WireName: "contains_non_alphanumeric_character"},
-		"ContainsNumericCharacter": ubx.FieldSpec{WireName: "contains_numeric_character"},
-		"ContainsUppercaseCharacter": ubx.FieldSpec{WireName: "contains_uppercase_character"},
-		"MaxPasswordLength": ubx.FieldSpec{WireName: "max_password_length"},
-		"MinPasswordLength": ubx.FieldSpec{WireName: "min_password_length"},
-	}
+	"ContainsLowercaseCharacter":       ubx.FieldSpec{WireName: "contains_lowercase_character"},
+	"ContainsNonAlphanumericCharacter": ubx.FieldSpec{WireName: "contains_non_alphanumeric_character"},
+	"ContainsNumericCharacter":         ubx.FieldSpec{WireName: "contains_numeric_character"},
+	"ContainsUppercaseCharacter":       ubx.FieldSpec{WireName: "contains_uppercase_character"},
+	"MaxPasswordLength":                ubx.FieldSpec{WireName: "max_password_length"},
+	"MinPasswordLength":                ubx.FieldSpec{WireName: "min_password_length"},
+}
 
 var Tenant_PasswordPolicyConfig_PasswordPolicyVersionsFields = ubx.FieldMap{
-		"CustomStrengthOptions": ubx.FieldSpec{
-			WireName: "custom_strength_options",
-			Kind: "object",
-			Fields: Tenant_PasswordPolicyConfig_PasswordPolicyVersions_CustomStrengthOptionsFields,
-		},
-		"SchemaVersion": ubx.FieldSpec{WireName: "schema_version"},
-	}
+	"CustomStrengthOptions": ubx.FieldSpec{
+		WireName: "custom_strength_options",
+		Kind:     "object",
+		Fields:   Tenant_PasswordPolicyConfig_PasswordPolicyVersions_CustomStrengthOptionsFields,
+	},
+	"SchemaVersion": ubx.FieldSpec{WireName: "schema_version"},
+}
 
 var Tenant_PasswordPolicyConfigFields = ubx.FieldMap{
-		"ForceUpgradeOnSignin": ubx.FieldSpec{WireName: "force_upgrade_on_signin"},
-		"LastUpdateTime": ubx.FieldSpec{WireName: "last_update_time"},
-		"PasswordPolicyEnforcementState": ubx.FieldSpec{WireName: "password_policy_enforcement_state"},
-		"PasswordPolicyVersions": ubx.FieldSpec{
-			WireName: "password_policy_versions",
-			Kind: "list",
-			Fields: Tenant_PasswordPolicyConfig_PasswordPolicyVersionsFields,
-		},
-	}
+	"ForceUpgradeOnSignin":           ubx.FieldSpec{WireName: "force_upgrade_on_signin"},
+	"LastUpdateTime":                 ubx.FieldSpec{WireName: "last_update_time"},
+	"PasswordPolicyEnforcementState": ubx.FieldSpec{WireName: "password_policy_enforcement_state"},
+	"PasswordPolicyVersions": ubx.FieldSpec{
+		WireName: "password_policy_versions",
+		Kind:     "list",
+		Fields:   Tenant_PasswordPolicyConfig_PasswordPolicyVersionsFields,
+	},
+}
 
 var Tenant_RecaptchaConfig_ManagedRulesFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
-		"EndScore": ubx.FieldSpec{WireName: "end_score"},
-	}
+	"Action":   ubx.FieldSpec{WireName: "action"},
+	"EndScore": ubx.FieldSpec{WireName: "end_score"},
+}
 
 var Tenant_RecaptchaConfig_RecaptchaKeysFields = ubx.FieldMap{
-		"Key": ubx.FieldSpec{WireName: "key"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Key":  ubx.FieldSpec{WireName: "key"},
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var Tenant_RecaptchaConfig_TollFraudManagedRulesFields = ubx.FieldMap{
-		"Action": ubx.FieldSpec{WireName: "action"},
-		"StartScore": ubx.FieldSpec{WireName: "start_score"},
-	}
+	"Action":     ubx.FieldSpec{WireName: "action"},
+	"StartScore": ubx.FieldSpec{WireName: "start_score"},
+}
 
 var Tenant_RecaptchaConfigFields = ubx.FieldMap{
-		"EmailPasswordEnforcementState": ubx.FieldSpec{WireName: "email_password_enforcement_state"},
-		"ManagedRules": ubx.FieldSpec{
-			WireName: "managed_rules",
-			Kind: "list",
-			Fields: Tenant_RecaptchaConfig_ManagedRulesFields,
-		},
-		"PhoneEnforcementState": ubx.FieldSpec{WireName: "phone_enforcement_state"},
-		"RecaptchaKeys": ubx.FieldSpec{
-			WireName: "recaptcha_keys",
-			Kind: "list",
-			Fields: Tenant_RecaptchaConfig_RecaptchaKeysFields,
-		},
-		"TollFraudManagedRules": ubx.FieldSpec{
-			WireName: "toll_fraud_managed_rules",
-			Kind: "list",
-			Fields: Tenant_RecaptchaConfig_TollFraudManagedRulesFields,
-		},
-		"UseAccountDefender": ubx.FieldSpec{WireName: "use_account_defender"},
-		"UseSmsBotScore": ubx.FieldSpec{WireName: "use_sms_bot_score"},
-		"UseSmsTollFraudProtection": ubx.FieldSpec{WireName: "use_sms_toll_fraud_protection"},
-	}
+	"EmailPasswordEnforcementState": ubx.FieldSpec{WireName: "email_password_enforcement_state"},
+	"ManagedRules": ubx.FieldSpec{
+		WireName: "managed_rules",
+		Kind:     "list",
+		Fields:   Tenant_RecaptchaConfig_ManagedRulesFields,
+	},
+	"PhoneEnforcementState": ubx.FieldSpec{WireName: "phone_enforcement_state"},
+	"RecaptchaKeys": ubx.FieldSpec{
+		WireName: "recaptcha_keys",
+		Kind:     "list",
+		Fields:   Tenant_RecaptchaConfig_RecaptchaKeysFields,
+	},
+	"TollFraudManagedRules": ubx.FieldSpec{
+		WireName: "toll_fraud_managed_rules",
+		Kind:     "list",
+		Fields:   Tenant_RecaptchaConfig_TollFraudManagedRulesFields,
+	},
+	"UseAccountDefender":        ubx.FieldSpec{WireName: "use_account_defender"},
+	"UseSmsBotScore":            ubx.FieldSpec{WireName: "use_sms_bot_score"},
+	"UseSmsTollFraudProtection": ubx.FieldSpec{WireName: "use_sms_toll_fraud_protection"},
+}
 
 var Tenant_SmsRegionConfig_AllowByDefaultFields = ubx.FieldMap{
-		"DisallowedRegions": ubx.FieldSpec{WireName: "disallowed_regions"},
-	}
+	"DisallowedRegions": ubx.FieldSpec{WireName: "disallowed_regions"},
+}
 
 var Tenant_SmsRegionConfig_AllowlistOnlyFields = ubx.FieldMap{
-		"AllowedRegions": ubx.FieldSpec{WireName: "allowed_regions"},
-	}
+	"AllowedRegions": ubx.FieldSpec{WireName: "allowed_regions"},
+}
 
 var Tenant_SmsRegionConfigFields = ubx.FieldMap{
-		"AllowByDefault": ubx.FieldSpec{
-			WireName: "allow_by_default",
-			Kind: "object",
-			Fields: Tenant_SmsRegionConfig_AllowByDefaultFields,
-		},
-		"AllowlistOnly": ubx.FieldSpec{
-			WireName: "allowlist_only",
-			Kind: "object",
-			Fields: Tenant_SmsRegionConfig_AllowlistOnlyFields,
-		},
-	}
+	"AllowByDefault": ubx.FieldSpec{
+		WireName: "allow_by_default",
+		Kind:     "object",
+		Fields:   Tenant_SmsRegionConfig_AllowByDefaultFields,
+	},
+	"AllowlistOnly": ubx.FieldSpec{
+		WireName: "allowlist_only",
+		Kind:     "object",
+		Fields:   Tenant_SmsRegionConfig_AllowlistOnlyFields,
+	},
+}
 
 type TenantConfig struct {
 	// Whether to allow email/password user authentication.
@@ -330,8 +330,6 @@ type TenantConfig struct {
 	MobileLinksConfig any
 	// Configuration related to monitoring project activity.
 	Monitoring any
-	// Output only. Resource name of a tenant. For example: "projects/{project-id}/tenants/{tenant-id}"
-	Name any
 	// The configuration for the password policy on the project.
 	PasswordPolicyConfig any
 	// The reCAPTCHA Enterprise integration config.
@@ -384,62 +382,61 @@ type TenantAttrs struct {
 var Tenant = ubx.ResourceBinding{
 	WireType: "google_identitytoolkit_tenant",
 	Fields: ubx.FieldMap{
-		"AllowPasswordSignup": ubx.FieldSpec{WireName: "allow_password_signup"},
+		"AllowPasswordSignup":      ubx.FieldSpec{WireName: "allow_password_signup"},
 		"AutodeleteAnonymousUsers": ubx.FieldSpec{WireName: "autodelete_anonymous_users"},
 		"Client": ubx.FieldSpec{
 			WireName: "client",
-			Kind: "object",
-			Fields: Tenant_ClientFields,
+			Kind:     "object",
+			Fields:   Tenant_ClientFields,
 		},
 		"DisableAuth": ubx.FieldSpec{WireName: "disable_auth"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"EmailPrivacyConfig": ubx.FieldSpec{
 			WireName: "email_privacy_config",
-			Kind: "object",
-			Fields: Tenant_EmailPrivacyConfigFields,
+			Kind:     "object",
+			Fields:   Tenant_EmailPrivacyConfigFields,
 		},
-		"EnableAnonymousUser": ubx.FieldSpec{WireName: "enable_anonymous_user"},
+		"EnableAnonymousUser":   ubx.FieldSpec{WireName: "enable_anonymous_user"},
 		"EnableEmailLinkSignin": ubx.FieldSpec{WireName: "enable_email_link_signin"},
 		"HashConfig": ubx.FieldSpec{
 			WireName: "hash_config",
-			Kind: "object",
-			Fields: Tenant_HashConfigFields,
+			Kind:     "object",
+			Fields:   Tenant_HashConfigFields,
 		},
 		"Inheritance": ubx.FieldSpec{
 			WireName: "inheritance",
-			Kind: "object",
-			Fields: Tenant_InheritanceFields,
+			Kind:     "object",
+			Fields:   Tenant_InheritanceFields,
 		},
 		"MfaConfig": ubx.FieldSpec{
 			WireName: "mfa_config",
-			Kind: "object",
-			Fields: Tenant_MfaConfigFields,
+			Kind:     "object",
+			Fields:   Tenant_MfaConfigFields,
 		},
 		"MobileLinksConfig": ubx.FieldSpec{
 			WireName: "mobile_links_config",
-			Kind: "object",
-			Fields: Tenant_MobileLinksConfigFields,
+			Kind:     "object",
+			Fields:   Tenant_MobileLinksConfigFields,
 		},
 		"Monitoring": ubx.FieldSpec{
 			WireName: "monitoring",
-			Kind: "object",
-			Fields: Tenant_MonitoringFields,
+			Kind:     "object",
+			Fields:   Tenant_MonitoringFields,
 		},
-		"Name": ubx.FieldSpec{WireName: "name"},
 		"PasswordPolicyConfig": ubx.FieldSpec{
 			WireName: "password_policy_config",
-			Kind: "object",
-			Fields: Tenant_PasswordPolicyConfigFields,
+			Kind:     "object",
+			Fields:   Tenant_PasswordPolicyConfigFields,
 		},
 		"RecaptchaConfig": ubx.FieldSpec{
 			WireName: "recaptcha_config",
-			Kind: "object",
-			Fields: Tenant_RecaptchaConfigFields,
+			Kind:     "object",
+			Fields:   Tenant_RecaptchaConfigFields,
 		},
 		"SmsRegionConfig": ubx.FieldSpec{
 			WireName: "sms_region_config",
-			Kind: "object",
-			Fields: Tenant_SmsRegionConfigFields,
+			Kind:     "object",
+			Fields:   Tenant_SmsRegionConfigFields,
 		},
 		"TestPhoneNumbers": ubx.FieldSpec{WireName: "test_phone_numbers"},
 	},

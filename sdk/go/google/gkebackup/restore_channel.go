@@ -4,24 +4,14 @@ package gkebackup
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type RestoreChannelConfig struct {
-	// Output only. The timestamp when this RestoreChannel was created.
-	CreateTime any
 	// Optional. User specified descriptive string for this RestoreChannel.
 	Description any
 	// Required. Immutable. The project into which the backups will be restored. The format is `projects/{projectId}` or `projects/{projectNumber}`.
 	DestinationProject any
-	// Output only. The project_id where backups will be restored. Example Project ID: "my-project-id". This will be an OUTPUT_ONLY field to return the project_id of the destination project.
-	DestinationProjectId any
-	// Output only. `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a RestoreChannel from overwriting each other. It is strongly suggested that systems make use of the 'etag' in the read-modify-write cycle to perform RestoreChannel updates in order to avoid race conditions: An `etag` is returned in the response to `GetRestoreChannel`, and systems are expected to put that etag in the request to `UpdateRestoreChannel` or `DeleteRestoreChannel` to ensure that their change will be applied to the same version of the resource.
-	Etag any
 	// Optional. A set of custom labels supplied by user.
 	Labels any
 	// Identifier. The fully qualified name of the RestoreChannel. `projects/*/locations/*/restoreChannels/*`
 	Name any
-	// Output only. Server generated global unique identifier of [UUID](https://en.wikipedia.org/wiki/Universally_unique_identifier) format.
-	Uid any
-	// Output only. The timestamp when this RestoreChannel was last updated.
-	UpdateTime any
 }
 
 type RestoreChannelAttrs struct {
@@ -48,14 +38,9 @@ type RestoreChannelAttrs struct {
 var RestoreChannel = ubx.ResourceBinding{
 	WireType: "google_gkebackup_restore_channel",
 	Fields: ubx.FieldMap{
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":        ubx.FieldSpec{WireName: "description"},
 		"DestinationProject": ubx.FieldSpec{WireName: "destination_project"},
-		"DestinationProjectId": ubx.FieldSpec{WireName: "destination_project_id"},
-		"Etag": ubx.FieldSpec{WireName: "etag"},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"Labels":             ubx.FieldSpec{WireName: "labels"},
+		"Name":               ubx.FieldSpec{WireName: "name"},
 	},
 }

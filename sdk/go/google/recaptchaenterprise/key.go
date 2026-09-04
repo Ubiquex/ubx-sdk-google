@@ -71,72 +71,70 @@ type Key_WebSettings struct {
 }
 
 var Key_AndroidSettingsFields = ubx.FieldMap{
-		"AllowAllPackageNames": ubx.FieldSpec{WireName: "allow_all_package_names"},
-		"AllowedPackageNames": ubx.FieldSpec{WireName: "allowed_package_names"},
-		"SupportNonGoogleAppStoreDistribution": ubx.FieldSpec{WireName: "support_non_google_app_store_distribution"},
-	}
+	"AllowAllPackageNames":                 ubx.FieldSpec{WireName: "allow_all_package_names"},
+	"AllowedPackageNames":                  ubx.FieldSpec{WireName: "allowed_package_names"},
+	"SupportNonGoogleAppStoreDistribution": ubx.FieldSpec{WireName: "support_non_google_app_store_distribution"},
+}
 
 var Key_IosSettings_AppleDeveloperIdFields = ubx.FieldMap{
-		"KeyId": ubx.FieldSpec{WireName: "key_id"},
-		"PrivateKey": ubx.FieldSpec{WireName: "private_key"},
-		"TeamId": ubx.FieldSpec{WireName: "team_id"},
-	}
+	"KeyId":      ubx.FieldSpec{WireName: "key_id"},
+	"PrivateKey": ubx.FieldSpec{WireName: "private_key"},
+	"TeamId":     ubx.FieldSpec{WireName: "team_id"},
+}
 
 var Key_IosSettingsFields = ubx.FieldMap{
-		"AllowAllBundleIds": ubx.FieldSpec{WireName: "allow_all_bundle_ids"},
-		"AllowedBundleIds": ubx.FieldSpec{WireName: "allowed_bundle_ids"},
-		"AppleDeveloperId": ubx.FieldSpec{
-			WireName: "apple_developer_id",
-			Kind: "object",
-			Fields: Key_IosSettings_AppleDeveloperIdFields,
-		},
-	}
+	"AllowAllBundleIds": ubx.FieldSpec{WireName: "allow_all_bundle_ids"},
+	"AllowedBundleIds":  ubx.FieldSpec{WireName: "allowed_bundle_ids"},
+	"AppleDeveloperId": ubx.FieldSpec{
+		WireName: "apple_developer_id",
+		Kind:     "object",
+		Fields:   Key_IosSettings_AppleDeveloperIdFields,
+	},
+}
 
 var Key_TestingOptionsFields = ubx.FieldMap{
-		"TestingChallenge": ubx.FieldSpec{WireName: "testing_challenge"},
-		"TestingScore": ubx.FieldSpec{WireName: "testing_score"},
-	}
+	"TestingChallenge": ubx.FieldSpec{WireName: "testing_challenge"},
+	"TestingScore":     ubx.FieldSpec{WireName: "testing_score"},
+}
 
 var Key_WafSettingsFields = ubx.FieldMap{
-		"WafFeature": ubx.FieldSpec{WireName: "waf_feature"},
-		"WafService": ubx.FieldSpec{WireName: "waf_service"},
-	}
+	"WafFeature": ubx.FieldSpec{WireName: "waf_feature"},
+	"WafService": ubx.FieldSpec{WireName: "waf_service"},
+}
 
 var Key_WebSettings_ChallengeSettings_ActionSettingsFields = ubx.FieldMap{
-		"ScoreThreshold": ubx.FieldSpec{WireName: "score_threshold"},
-	}
+	"ScoreThreshold": ubx.FieldSpec{WireName: "score_threshold"},
+}
 
 var Key_WebSettings_ChallengeSettingsFields = ubx.FieldMap{
-		"ActionSettings": ubx.FieldSpec{
-			WireName: "action_settings",
-			Kind: "map",
-			Fields: Key_WebSettings_ChallengeSettings_ActionSettingsFields,
-		},
-		"DefaultSettings": ubx.FieldSpec{
-			WireName: "default_settings",
-			Kind: "object",
-			Fields: Key_WebSettings_ChallengeSettings_ActionSettingsFields,
-		},
-	}
+	"ActionSettings": ubx.FieldSpec{
+		WireName: "action_settings",
+		Kind:     "map",
+		Fields:   Key_WebSettings_ChallengeSettings_ActionSettingsFields,
+	},
+	"DefaultSettings": ubx.FieldSpec{
+		WireName: "default_settings",
+		Kind:     "object",
+		Fields:   Key_WebSettings_ChallengeSettings_ActionSettingsFields,
+	},
+}
 
 var Key_WebSettingsFields = ubx.FieldMap{
-		"AllowAllDomains": ubx.FieldSpec{WireName: "allow_all_domains"},
-		"AllowAmpTraffic": ubx.FieldSpec{WireName: "allow_amp_traffic"},
-		"AllowedDomains": ubx.FieldSpec{WireName: "allowed_domains"},
-		"ChallengeSecurityPreference": ubx.FieldSpec{WireName: "challenge_security_preference"},
-		"ChallengeSettings": ubx.FieldSpec{
-			WireName: "challenge_settings",
-			Kind: "object",
-			Fields: Key_WebSettings_ChallengeSettingsFields,
-		},
-		"IntegrationType": ubx.FieldSpec{WireName: "integration_type"},
-	}
+	"AllowAllDomains":             ubx.FieldSpec{WireName: "allow_all_domains"},
+	"AllowAmpTraffic":             ubx.FieldSpec{WireName: "allow_amp_traffic"},
+	"AllowedDomains":              ubx.FieldSpec{WireName: "allowed_domains"},
+	"ChallengeSecurityPreference": ubx.FieldSpec{WireName: "challenge_security_preference"},
+	"ChallengeSettings": ubx.FieldSpec{
+		WireName: "challenge_settings",
+		Kind:     "object",
+		Fields:   Key_WebSettings_ChallengeSettingsFields,
+	},
+	"IntegrationType": ubx.FieldSpec{WireName: "integration_type"},
+}
 
 type KeyConfig struct {
 	// Settings specific to keys that can be used by Android apps.
 	AndroidSettings any
-	// Output only. The timestamp corresponding to the creation of this key.
-	CreateTime any
 	// Required. Human-readable display name of this key. Modifiable by user.
 	DisplayName any
 	// Settings specific to keys that can be used for reCAPTCHA Express.
@@ -187,34 +185,33 @@ var Key = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"AndroidSettings": ubx.FieldSpec{
 			WireName: "android_settings",
-			Kind: "object",
-			Fields: Key_AndroidSettingsFields,
+			Kind:     "object",
+			Fields:   Key_AndroidSettingsFields,
 		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+		"DisplayName":     ubx.FieldSpec{WireName: "display_name"},
 		"ExpressSettings": ubx.FieldSpec{WireName: "express_settings"},
 		"IosSettings": ubx.FieldSpec{
 			WireName: "ios_settings",
-			Kind: "object",
-			Fields: Key_IosSettingsFields,
+			Kind:     "object",
+			Fields:   Key_IosSettingsFields,
 		},
 		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Name":   ubx.FieldSpec{WireName: "name"},
 		"TestingOptions": ubx.FieldSpec{
 			WireName: "testing_options",
-			Kind: "object",
-			Fields: Key_TestingOptionsFields,
+			Kind:     "object",
+			Fields:   Key_TestingOptionsFields,
 		},
 		"UniversalSettings": ubx.FieldSpec{WireName: "universal_settings"},
 		"WafSettings": ubx.FieldSpec{
 			WireName: "waf_settings",
-			Kind: "object",
-			Fields: Key_WafSettingsFields,
+			Kind:     "object",
+			Fields:   Key_WafSettingsFields,
 		},
 		"WebSettings": ubx.FieldSpec{
 			WireName: "web_settings",
-			Kind: "object",
-			Fields: Key_WebSettingsFields,
+			Kind:     "object",
+			Fields:   Key_WebSettingsFields,
 		},
 	},
 }

@@ -2,22 +2,10 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface ExternalAddressConfig {
-  /** Output only. Creation time of this resource. */
-  createTime?: string | Computed<string>;
   /** User-provided description for this resource. */
   description?: string | Computed<string>;
-  /** Output only. The external IP address of a workload VM. */
-  externalIp?: string | Computed<string>;
   /** The internal IP address of a workload VM. */
   internalIp?: string | Computed<string>;
-  /** Output only. Identifier. The resource name of this external IP address. Resource names are schemeless URIs that follow the conventions in https://cloud.google.com/apis/design/resource_names. For example: `projects/my-project/locations/us-central1-a/privateClouds/my-cloud/externalAddresses/my-address` */
-  name?: string | Computed<string>;
-  /** Output only. The state of the resource. */
-  state?: string | Computed<string>;
-  /** Output only. System-generated unique identifier for the resource. */
-  uid?: string | Computed<string>;
-  /** Output only. Last update time of this resource. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface ExternalAddressAttrs {
@@ -42,13 +30,7 @@ export interface ExternalAddressAttrs {
 export const ExternalAddress: ResourceBinding<ExternalAddressConfig, ExternalAddressAttrs> = {
   wireType: "google_vmwareengine_external_address",
   fields: {
-    createTime: "create_time",
     description: "description",
-    externalIp: "external_ip",
     internalIp: "internal_ip",
-    name: "name",
-    state: "state",
-    uid: "uid",
-    updateTime: "update_time",
   },
 };

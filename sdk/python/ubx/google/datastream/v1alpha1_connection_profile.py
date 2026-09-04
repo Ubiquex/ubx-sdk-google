@@ -122,8 +122,6 @@ _V1alpha1ConnectionProfile_PrivateConnectivityFields = {
 
 @dataclasses.dataclass
 class V1alpha1ConnectionProfileConfig:
-    # Output only. The create time of the resource.
-    create_time: Any = None
     # Required. Display name.
     display_name: Any = None
     # Forward SSH Tunnel connectivity.
@@ -134,8 +132,6 @@ class V1alpha1ConnectionProfileConfig:
     labels: Any = None
     # MySQL database profile.
     mysql_profile: Any = None
-    # Output only. The resource's name.
-    name: Any = None
     # No connectivity settings.
     no_connectivity: Any = None
     # Oracle database profile.
@@ -144,8 +140,6 @@ class V1alpha1ConnectionProfileConfig:
     private_connectivity: Any = None
     # Static IP address connectivity.
     static_service_ip_connectivity: Any = None
-    # Output only. The update time of the resource.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V1alpha1ConnectionProfileAttrs:
@@ -177,7 +171,6 @@ class V1alpha1ConnectionProfileAttrs:
 V1alpha1ConnectionProfile = ubx.ResourceBinding(
     wire_type="google_datastream_v1alpha1_connection_profile",
     fields={
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "display_name": ubx.FieldSpec(wire_name="display_name"),
         "forward_ssh_connectivity": ubx.FieldSpec(
             wire_name="forward_ssh_connectivity",
@@ -195,7 +188,6 @@ V1alpha1ConnectionProfile = ubx.ResourceBinding(
             kind="object",
             fields=_V1alpha1ConnectionProfile_MysqlProfileFields,
         ),
-        "name": ubx.FieldSpec(wire_name="name"),
         "no_connectivity": ubx.FieldSpec(wire_name="no_connectivity"),
         "oracle_profile": ubx.FieldSpec(
             wire_name="oracle_profile",
@@ -208,6 +200,5 @@ V1alpha1ConnectionProfile = ubx.ResourceBinding(
             fields=_V1alpha1ConnectionProfile_PrivateConnectivityFields,
         ),
         "static_service_ip_connectivity": ubx.FieldSpec(wire_name="static_service_ip_connectivity"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

@@ -2,8 +2,6 @@
 import type { Computed, FieldMap, ResourceBinding } from "@ubx/sdk";
 
 export interface QuotaRuleConfig {
-  /** Output only. Create time of the quota rule */
-  createTime?: string | Computed<string>;
   /** Optional. Description of the quota rule */
   description?: string | Computed<string>;
   /** Required. The maximum allowed disk space in MiB. */
@@ -12,10 +10,6 @@ export interface QuotaRuleConfig {
   labels?: Record<string, string> | Computed<Record<string, string>>;
   /** Identifier. The resource name of the quota rule. Format: `projects/{project_number}/locations/{location_id}/volumes/volumes/{volume_id}/quotaRules/{quota_rule_id}`. */
   name?: string | Computed<string>;
-  /** Output only. State of the quota rule */
-  state?: string | Computed<string>;
-  /** Output only. State details of the quota rule */
-  stateDetails?: string | Computed<string>;
   /** Optional. The quota rule applies to the specified user or group, identified by a Unix UID/GID, Windows SID, or null for default. */
   target?: string | Computed<string>;
   /** Required. The type of quota rule. */
@@ -46,13 +40,10 @@ export interface QuotaRuleAttrs {
 export const QuotaRule: ResourceBinding<QuotaRuleConfig, QuotaRuleAttrs> = {
   wireType: "google_netapp_quota_rule",
   fields: {
-    createTime: "create_time",
     description: "description",
     diskLimitMib: "disk_limit_mib",
     labels: "labels",
     name: "name",
-    state: "state",
-    stateDetails: "state_details",
     target: "target",
     type: "type",
   },

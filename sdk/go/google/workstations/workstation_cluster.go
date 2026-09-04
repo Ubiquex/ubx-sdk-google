@@ -4,7 +4,7 @@ package workstations
 import ubx "github.com/ubiquex/ubx-sdk-go/runtime"
 
 type WorkstationCluster_Conditions struct {
-	Code any
+	Code    any
 	Details any
 	Message any
 }
@@ -30,40 +30,24 @@ type WorkstationCluster_PrivateClusterConfig struct {
 	ServiceAttachmentUri any
 }
 
-var WorkstationCluster_ConditionsFields = ubx.FieldMap{
-		"Code": ubx.FieldSpec{WireName: "code"},
-		"Details": ubx.FieldSpec{WireName: "details"},
-		"Message": ubx.FieldSpec{WireName: "message"},
-	}
-
 var WorkstationCluster_DomainConfigFields = ubx.FieldMap{
-		"Domain": ubx.FieldSpec{WireName: "domain"},
-	}
+	"Domain": ubx.FieldSpec{WireName: "domain"},
+}
 
 var WorkstationCluster_GatewayConfigFields = ubx.FieldMap{
-		"Http2Enabled": ubx.FieldSpec{WireName: "http2_enabled"},
-	}
+	"Http2Enabled": ubx.FieldSpec{WireName: "http2_enabled"},
+}
 
 var WorkstationCluster_PrivateClusterConfigFields = ubx.FieldMap{
-		"AllowedProjects": ubx.FieldSpec{WireName: "allowed_projects"},
-		"ClusterHostname": ubx.FieldSpec{WireName: "cluster_hostname"},
-		"EnablePrivateEndpoint": ubx.FieldSpec{WireName: "enable_private_endpoint"},
-		"ServiceAttachmentUri": ubx.FieldSpec{WireName: "service_attachment_uri"},
-	}
+	"AllowedProjects":       ubx.FieldSpec{WireName: "allowed_projects"},
+	"ClusterHostname":       ubx.FieldSpec{WireName: "cluster_hostname"},
+	"EnablePrivateEndpoint": ubx.FieldSpec{WireName: "enable_private_endpoint"},
+	"ServiceAttachmentUri":  ubx.FieldSpec{WireName: "service_attachment_uri"},
+}
 
 type WorkstationClusterConfig struct {
 	// Optional. Client-specified annotations.
 	Annotations any
-	// Output only. Status conditions describing the workstation cluster's current state.
-	Conditions any
-	// Output only. The private IP address of the control plane for this workstation cluster. Workstation VMs need access to this IP address to work with the service, so make sure that your firewall rules allow egress from the workstation VMs to this address.
-	ControlPlaneIp any
-	// Output only. Time when this workstation cluster was created.
-	CreateTime any
-	// Output only. Whether this workstation cluster is in degraded mode, in which case it may require user action to restore full functionality. The conditions field contains detailed information about the status of the cluster.
-	Degraded any
-	// Output only. Time when this workstation cluster was soft-deleted.
-	DeleteTime any
 	// Optional. Human-readable name for this workstation cluster.
 	DisplayName any
 	// Configuration options for a custom domain.
@@ -80,16 +64,10 @@ type WorkstationClusterConfig struct {
 	Network any
 	// Configuration options for private workstation clusters.
 	PrivateClusterConfig any
-	// Output only. Indicates whether this workstation cluster is currently being updated to match its intended state.
-	Reconciling any
 	// Immutable. Name of the Compute Engine subnetwork in which instances associated with this workstation cluster will be created. Must be part of the subnetwork specified for this workstation cluster.
 	Subnetwork any
 	// Optional. Input only. Immutable. Tag keys/values directly bound to this resource. For example: "123/environment": "production", "123/costCenter": "marketing"
 	Tags any
-	// Output only. A system-assigned unique identifier for this workstation cluster.
-	Uid any
-	// Output only. Time when this workstation cluster was most recently updated.
-	UpdateTime any
 	// Optional. Specifies the redirect URL for unauthorized requests received by workstation VMs in this cluster. Redirects to this endpoint will send a base64 encoded `state` query param containing the target workstation name and original request hostname. The endpoint is responsible for retrieving a token using `GenerateAccessToken` and redirecting back to the original hostname with the token.
 	WorkstationAuthorizationUrl any
 	// Optional. Specifies the launch URL for workstations in this cluster. Requests sent to unstarted workstations will be redirected to this URL. Requests redirected to the launch endpoint will be sent with a `workstation` and `project` query parameter containing the full workstation resource name and project ID, respectively. The launch endpoint is responsible for starting the workstation, polling it until it reaches `STATE_RUNNING`, and then issuing a redirect to the workstation's host URL.
@@ -145,41 +123,29 @@ var WorkstationCluster = ubx.ResourceBinding{
 	WireType: "google_workstations_workstation_cluster",
 	Fields: ubx.FieldMap{
 		"Annotations": ubx.FieldSpec{WireName: "annotations"},
-		"Conditions": ubx.FieldSpec{
-			WireName: "conditions",
-			Kind: "list",
-			Fields: WorkstationCluster_ConditionsFields,
-		},
-		"ControlPlaneIp": ubx.FieldSpec{WireName: "control_plane_ip"},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Degraded": ubx.FieldSpec{WireName: "degraded"},
-		"DeleteTime": ubx.FieldSpec{WireName: "delete_time"},
 		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
 		"DomainConfig": ubx.FieldSpec{
 			WireName: "domain_config",
-			Kind: "object",
-			Fields: WorkstationCluster_DomainConfigFields,
+			Kind:     "object",
+			Fields:   WorkstationCluster_DomainConfigFields,
 		},
 		"Etag": ubx.FieldSpec{WireName: "etag"},
 		"GatewayConfig": ubx.FieldSpec{
 			WireName: "gateway_config",
-			Kind: "object",
-			Fields: WorkstationCluster_GatewayConfigFields,
+			Kind:     "object",
+			Fields:   WorkstationCluster_GatewayConfigFields,
 		},
-		"Labels": ubx.FieldSpec{WireName: "labels"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"Labels":  ubx.FieldSpec{WireName: "labels"},
+		"Name":    ubx.FieldSpec{WireName: "name"},
 		"Network": ubx.FieldSpec{WireName: "network"},
 		"PrivateClusterConfig": ubx.FieldSpec{
 			WireName: "private_cluster_config",
-			Kind: "object",
-			Fields: WorkstationCluster_PrivateClusterConfigFields,
+			Kind:     "object",
+			Fields:   WorkstationCluster_PrivateClusterConfigFields,
 		},
-		"Reconciling": ubx.FieldSpec{WireName: "reconciling"},
-		"Subnetwork": ubx.FieldSpec{WireName: "subnetwork"},
-		"Tags": ubx.FieldSpec{WireName: "tags"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
+		"Subnetwork":                  ubx.FieldSpec{WireName: "subnetwork"},
+		"Tags":                        ubx.FieldSpec{WireName: "tags"},
 		"WorkstationAuthorizationUrl": ubx.FieldSpec{WireName: "workstation_authorization_url"},
-		"WorkstationLaunchUrl": ubx.FieldSpec{WireName: "workstation_launch_url"},
+		"WorkstationLaunchUrl":        ubx.FieldSpec{WireName: "workstation_launch_url"},
 	},
 }

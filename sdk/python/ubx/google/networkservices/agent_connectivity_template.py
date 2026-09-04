@@ -48,8 +48,6 @@ class AgentConnectivityTemplateConfig:
     access_types: Any = None
     # Optional. The compute environment where the agent is hosted. Exactly one type of compute must be chosen.
     agent_compute: Any = None
-    # Output only. The timestamp when the resource was created.
-    create_time: Any = None
     # Required. The deployment model for the gateway.
     deployment_model: Any = None
     # Optional. A free-text description of the resource. Max length 1024 characters.
@@ -61,8 +59,6 @@ class AgentConnectivityTemplateConfig:
     labels: Any = None
     # Identifier. Name of the AgentConnectivityTemplate resource. It matches pattern `projects/*/locations/*/agentConnectivityTemplates/`.
     name: Any = None
-    # Output only. The timestamp when the resource was updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class AgentConnectivityTemplateAttrs:
@@ -94,7 +90,6 @@ AgentConnectivityTemplate = ubx.ResourceBinding(
         "access_path": ubx.FieldSpec(wire_name="access_path"),
         "access_types": ubx.FieldSpec(wire_name="access_types"),
         "agent_compute": ubx.FieldSpec(wire_name="agent_compute"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "deployment_model": ubx.FieldSpec(wire_name="deployment_model"),
         "description": ubx.FieldSpec(wire_name="description"),
         "egress_network_config": ubx.FieldSpec(
@@ -105,6 +100,5 @@ AgentConnectivityTemplate = ubx.ResourceBinding(
         "etag": ubx.FieldSpec(wire_name="etag"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "name": ubx.FieldSpec(wire_name="name"),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )

@@ -171,12 +171,8 @@ export interface V1beta1EntryConfig {
   displayName?: string | Computed<string>;
   /** Describes a Cloud Storage fileset entry. */
   gcsFilesetSpec?: V1beta1Entry_GcsFilesetSpec | Computed<V1beta1Entry_GcsFilesetSpec>;
-  /** Output only. This field indicates the entry's source system that Data Catalog integrates with, such as BigQuery or Pub/Sub. */
-  integratedSystem?: string | Computed<string>;
   /** The resource this metadata entry refers to. For Google Cloud Platform resources, `linked_resource` is the [full name of the resource](https://cloud.google.com/apis/design/resource_names#full_resource_name). For example, the `linked_resource` for a table resource from BigQuery is: * //bigquery.googleapis.com/projects/projectId/datasets/datasetId/tables/tableId Output only when Entry is of type in the EntryType enum. For entries with user_specified_type, this field is optional and defaults to an empty string. */
   linkedResource?: string | Computed<string>;
-  /** Output only. Identifier. The Data Catalog resource name of the entry in URL format. Example: * projects/{project_id}/locations/{location}/entryGroups/{entry_group_id}/entries/{entry_id} Note that this Entry and its child resources may not actually be stored in the location in this name. */
-  name?: string | Computed<string>;
   /** Represents a schema (e.g. BigQuery, GoogleSQL, Avro schema). */
   schema?: V1beta1Entry_Schema | Computed<V1beta1Entry_Schema>;
   /** Timestamps about this resource according to a particular system. */
@@ -242,9 +238,7 @@ export const V1beta1Entry: ResourceBinding<V1beta1EntryConfig, V1beta1EntryAttrs
       kind: "object",
       fields: V1beta1Entry_GcsFilesetSpecFields,
     },
-    integratedSystem: "integrated_system",
     linkedResource: "linked_resource",
-    name: "name",
     schema: {
       wireName: "schema",
       kind: "object",

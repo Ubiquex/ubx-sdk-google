@@ -408,8 +408,6 @@ const Toolset_ToolFakeConfigFields: FieldMap = {
 export interface ToolsetConfig {
   /** A toolset that generates tools from an Integration Connectors Connection. */
   connectorToolset?: Toolset_ConnectorToolset | Computed<Toolset_ConnectorToolset>;
-  /** Output only. Timestamp when the toolset was created. */
-  createTime?: string | Computed<string>;
   /** Optional. The description of the toolset. */
   description?: string | Computed<string>;
   /** Optional. The display name of the toolset. Must be unique within the same app. */
@@ -428,8 +426,6 @@ export interface ToolsetConfig {
   timeout?: string | Computed<string>;
   /** Configuration for tool behavior in fake mode. */
   toolFakeConfig?: Toolset_ToolFakeConfig | Computed<Toolset_ToolFakeConfig>;
-  /** Output only. Timestamp when the toolset was last updated. */
-  updateTime?: string | Computed<string>;
 }
 
 export interface ToolsetAttrs {
@@ -467,7 +463,6 @@ export const Toolset: ResourceBinding<ToolsetConfig, ToolsetAttrs> = {
       kind: "object",
       fields: Toolset_ConnectorToolsetFields,
     },
-    createTime: "create_time",
     description: "description",
     displayName: "display_name",
     etag: "etag",
@@ -489,6 +484,5 @@ export const Toolset: ResourceBinding<ToolsetConfig, ToolsetAttrs> = {
       kind: "object",
       fields: Toolset_ToolFakeConfigFields,
     },
-    updateTime: "update_time",
   },
 };

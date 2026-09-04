@@ -8,9 +8,9 @@ type V1alphaService_Attributes_BusinessOwners_Channel struct {
 }
 
 type V1alphaService_Attributes_BusinessOwners struct {
-	Channel any
+	Channel     any
 	DisplayName any
-	Email any
+	Email       any
 }
 
 type V1alphaService_Attributes_Criticality struct {
@@ -81,106 +81,104 @@ type V1alphaService_ServiceReference struct {
 }
 
 var V1alphaService_Attributes_BusinessOwners_ChannelFields = ubx.FieldMap{
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"Uri": ubx.FieldSpec{WireName: "uri"},
+}
 
 var V1alphaService_Attributes_BusinessOwnersFields = ubx.FieldMap{
-		"Channel": ubx.FieldSpec{
-			WireName: "channel",
-			Kind: "object",
-			Fields: V1alphaService_Attributes_BusinessOwners_ChannelFields,
-		},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Email": ubx.FieldSpec{WireName: "email"},
-	}
+	"Channel": ubx.FieldSpec{
+		WireName: "channel",
+		Kind:     "object",
+		Fields:   V1alphaService_Attributes_BusinessOwners_ChannelFields,
+	},
+	"DisplayName": ubx.FieldSpec{WireName: "display_name"},
+	"Email":       ubx.FieldSpec{WireName: "email"},
+}
 
 var V1alphaService_Attributes_CriticalityFields = ubx.FieldMap{
-		"Level": ubx.FieldSpec{WireName: "level"},
-		"MissionCritical": ubx.FieldSpec{WireName: "mission_critical"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Level":           ubx.FieldSpec{WireName: "level"},
+	"MissionCritical": ubx.FieldSpec{WireName: "mission_critical"},
+	"Type":            ubx.FieldSpec{WireName: "type"},
+}
 
 var V1alphaService_Attributes_EnvironmentFields = ubx.FieldMap{
-		"Environment": ubx.FieldSpec{WireName: "environment"},
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Environment": ubx.FieldSpec{WireName: "environment"},
+	"Type":        ubx.FieldSpec{WireName: "type"},
+}
 
 var V1alphaService_AttributesFields = ubx.FieldMap{
-		"BusinessOwners": ubx.FieldSpec{
-			WireName: "business_owners",
-			Kind: "list",
-			Fields: V1alphaService_Attributes_BusinessOwnersFields,
-		},
-		"Criticality": ubx.FieldSpec{
-			WireName: "criticality",
-			Kind: "object",
-			Fields: V1alphaService_Attributes_CriticalityFields,
-		},
-		"DeveloperOwners": ubx.FieldSpec{
-			WireName: "developer_owners",
-			Kind: "list",
-			Fields: V1alphaService_Attributes_BusinessOwnersFields,
-		},
-		"Environment": ubx.FieldSpec{
-			WireName: "environment",
-			Kind: "object",
-			Fields: V1alphaService_Attributes_EnvironmentFields,
-		},
-		"OperatorOwners": ubx.FieldSpec{
-			WireName: "operator_owners",
-			Kind: "list",
-			Fields: V1alphaService_Attributes_BusinessOwnersFields,
-		},
-	}
+	"BusinessOwners": ubx.FieldSpec{
+		WireName: "business_owners",
+		Kind:     "list",
+		Fields:   V1alphaService_Attributes_BusinessOwnersFields,
+	},
+	"Criticality": ubx.FieldSpec{
+		WireName: "criticality",
+		Kind:     "object",
+		Fields:   V1alphaService_Attributes_CriticalityFields,
+	},
+	"DeveloperOwners": ubx.FieldSpec{
+		WireName: "developer_owners",
+		Kind:     "list",
+		Fields:   V1alphaService_Attributes_BusinessOwnersFields,
+	},
+	"Environment": ubx.FieldSpec{
+		WireName: "environment",
+		Kind:     "object",
+		Fields:   V1alphaService_Attributes_EnvironmentFields,
+	},
+	"OperatorOwners": ubx.FieldSpec{
+		WireName: "operator_owners",
+		Kind:     "list",
+		Fields:   V1alphaService_Attributes_BusinessOwnersFields,
+	},
+}
 
 var V1alphaService_ServiceProperties_ExtendedMetadataFields = ubx.FieldMap{
-		"MetadataStruct": ubx.FieldSpec{WireName: "metadata_struct"},
-	}
+	"MetadataStruct": ubx.FieldSpec{WireName: "metadata_struct"},
+}
 
 var V1alphaService_ServiceProperties_FunctionalTypeFields = ubx.FieldMap{
-		"Type": ubx.FieldSpec{WireName: "type"},
-	}
+	"Type": ubx.FieldSpec{WireName: "type"},
+}
 
 var V1alphaService_ServiceProperties_IdentityFields = ubx.FieldMap{
-		"Principal": ubx.FieldSpec{WireName: "principal"},
-	}
+	"Principal": ubx.FieldSpec{WireName: "principal"},
+}
 
 var V1alphaService_ServicePropertiesFields = ubx.FieldMap{
-		"ExtendedMetadata": ubx.FieldSpec{
-			WireName: "extended_metadata",
-			Kind: "map",
-			Fields: V1alphaService_ServiceProperties_ExtendedMetadataFields,
-		},
-		"FunctionalType": ubx.FieldSpec{
-			WireName: "functional_type",
-			Kind: "object",
-			Fields: V1alphaService_ServiceProperties_FunctionalTypeFields,
-		},
-		"GcpProject": ubx.FieldSpec{WireName: "gcp_project"},
-		"Identity": ubx.FieldSpec{
-			WireName: "identity",
-			Kind: "object",
-			Fields: V1alphaService_ServiceProperties_IdentityFields,
-		},
-		"Location": ubx.FieldSpec{WireName: "location"},
-		"RegistrationType": ubx.FieldSpec{
-			WireName: "registration_type",
-			Kind: "object",
-			Fields: V1alphaService_ServiceProperties_FunctionalTypeFields,
-		},
-		"Zone": ubx.FieldSpec{WireName: "zone"},
-	}
+	"ExtendedMetadata": ubx.FieldSpec{
+		WireName: "extended_metadata",
+		Kind:     "map",
+		Fields:   V1alphaService_ServiceProperties_ExtendedMetadataFields,
+	},
+	"FunctionalType": ubx.FieldSpec{
+		WireName: "functional_type",
+		Kind:     "object",
+		Fields:   V1alphaService_ServiceProperties_FunctionalTypeFields,
+	},
+	"GcpProject": ubx.FieldSpec{WireName: "gcp_project"},
+	"Identity": ubx.FieldSpec{
+		WireName: "identity",
+		Kind:     "object",
+		Fields:   V1alphaService_ServiceProperties_IdentityFields,
+	},
+	"Location": ubx.FieldSpec{WireName: "location"},
+	"RegistrationType": ubx.FieldSpec{
+		WireName: "registration_type",
+		Kind:     "object",
+		Fields:   V1alphaService_ServiceProperties_FunctionalTypeFields,
+	},
+	"Zone": ubx.FieldSpec{WireName: "zone"},
+}
 
 var V1alphaService_ServiceReferenceFields = ubx.FieldMap{
-		"Path": ubx.FieldSpec{WireName: "path"},
-		"Uri": ubx.FieldSpec{WireName: "uri"},
-	}
+	"Path": ubx.FieldSpec{WireName: "path"},
+	"Uri":  ubx.FieldSpec{WireName: "uri"},
+}
 
 type V1alphaServiceConfig struct {
 	// Consumer provided attributes.
 	Attributes any
-	// Output only. Create time.
-	CreateTime any
 	// Optional. User-defined description of a Service. Can have a maximum length of 2048 characters.
 	Description any
 	// Required. Immutable. The resource name of the original discovered service.
@@ -193,12 +191,6 @@ type V1alphaServiceConfig struct {
 	ServiceProperties any
 	// Reference to an underlying networking resource that can comprise a Service.
 	ServiceReference any
-	// Output only. Service state.
-	State any
-	// Output only. A universally unique identifier (UUID) for the `Service` in the UUID4 format.
-	Uid any
-	// Output only. Update time.
-	UpdateTime any
 }
 
 type V1alphaServiceAttrs struct {
@@ -231,26 +223,22 @@ var V1alphaService = ubx.ResourceBinding{
 	Fields: ubx.FieldMap{
 		"Attributes": ubx.FieldSpec{
 			WireName: "attributes",
-			Kind: "object",
-			Fields: V1alphaService_AttributesFields,
+			Kind:     "object",
+			Fields:   V1alphaService_AttributesFields,
 		},
-		"CreateTime": ubx.FieldSpec{WireName: "create_time"},
-		"Description": ubx.FieldSpec{WireName: "description"},
+		"Description":       ubx.FieldSpec{WireName: "description"},
 		"DiscoveredService": ubx.FieldSpec{WireName: "discovered_service"},
-		"DisplayName": ubx.FieldSpec{WireName: "display_name"},
-		"Name": ubx.FieldSpec{WireName: "name"},
+		"DisplayName":       ubx.FieldSpec{WireName: "display_name"},
+		"Name":              ubx.FieldSpec{WireName: "name"},
 		"ServiceProperties": ubx.FieldSpec{
 			WireName: "service_properties",
-			Kind: "object",
-			Fields: V1alphaService_ServicePropertiesFields,
+			Kind:     "object",
+			Fields:   V1alphaService_ServicePropertiesFields,
 		},
 		"ServiceReference": ubx.FieldSpec{
 			WireName: "service_reference",
-			Kind: "object",
-			Fields: V1alphaService_ServiceReferenceFields,
+			Kind:     "object",
+			Fields:   V1alphaService_ServiceReferenceFields,
 		},
-		"State": ubx.FieldSpec{WireName: "state"},
-		"Uid": ubx.FieldSpec{WireName: "uid"},
-		"UpdateTime": ubx.FieldSpec{WireName: "update_time"},
 	},
 }

@@ -63,8 +63,6 @@ _V1beta1ServerTlsPolicy_MtlsPolicyFields = {
 class V1beta1ServerTlsPolicyConfig:
     # This field applies only for Traffic Director policies. It is must be set to false for Application Load Balancer policies. Determines if server allows plaintext connections. If set to true, server allows plain text connections. By default, it is set to false. This setting is not exclusive of other encryption modes. For example, if `allow_open` and `mtls_policy` are set, server allows both plain text and mTLS connections. See documentation of other encryption modes to confirm compatibility. Consider using it if you wish to upgrade in place your deployment to TLS while having mixed TLS and non-TLS traffic reaching port :80.
     allow_open: Any = None
-    # Output only. The timestamp when the resource was created.
-    create_time: Any = None
     # Free-text description of the resource.
     description: Any = None
     # Set of label tags associated with the resource.
@@ -75,8 +73,6 @@ class V1beta1ServerTlsPolicyConfig:
     name: Any = None
     # Specification of certificate provider. Defines the mechanism to obtain the certificate and private key for peer to peer authentication.
     server_certificate: Any = None
-    # Output only. The timestamp when the resource was updated.
-    update_time: Any = None
 
 @dataclasses.dataclass
 class V1beta1ServerTlsPolicyAttrs:
@@ -101,7 +97,6 @@ V1beta1ServerTlsPolicy = ubx.ResourceBinding(
     wire_type="google_networksecurity_v1beta1_server_tls_policy",
     fields={
         "allow_open": ubx.FieldSpec(wire_name="allow_open"),
-        "create_time": ubx.FieldSpec(wire_name="create_time"),
         "description": ubx.FieldSpec(wire_name="description"),
         "labels": ubx.FieldSpec(wire_name="labels"),
         "mtls_policy": ubx.FieldSpec(
@@ -115,6 +110,5 @@ V1beta1ServerTlsPolicy = ubx.ResourceBinding(
             kind="object",
             fields=_V1beta1ServerTlsPolicy_MtlsPolicy_ClientValidationCaFields,
         ),
-        "update_time": ubx.FieldSpec(wire_name="update_time"),
     },
 )
